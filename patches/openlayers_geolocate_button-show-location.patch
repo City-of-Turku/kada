@@ -1,0 +1,136 @@
+diff --git a/includes/behaviors/openlayers_behavior_geolocate_button.inc b/includes/behaviors/openlayers_behavior_geolocate_button.inc
+index 351eed6..32631a4 100644
+--- a/includes/behaviors/openlayers_behavior_geolocate_button.inc
++++ b/includes/behaviors/openlayers_behavior_geolocate_button.inc
+@@ -21,6 +21,9 @@ class openlayers_behavior_geolocate_button extends openlayers_behavior_geolocate
+         'timeout' => 7000,
+       ),
+       'zoom_level' => 12,
++      'show_location' => FALSE,
++      'show_location_accuracy_styles' => 'fillOpacity|0.25',
++      'show_location_position_styles' => "fillOpacity|1\npointRadius|10",
+     );
+   }
+ 
+@@ -44,6 +47,28 @@ class openlayers_behavior_geolocate_button extends openlayers_behavior_geolocate
+         '#description' => t('An integer zoom level for when a location is found.  0 is the most zoomed out and higher numbers mean more zoomed in (the number of zoom levels depends on your map).'),
+         '#default_value' => isset($defaults['zoom_level']) ? $defaults['zoom_level'] : $intials['zoom_level'],
+       ),
++      'show_location' => array(
++        '#title' => t('Show location on map'),
++        '#type' => 'select',
++        '#options' => array(
++          TRUE => t('Yes'),
++          FALSE => t('No'),
++        ),
++        '#description' => t('When enabled, if the geolocation control finds a location, it will show indicator on that location.'),
++        '#default_value' => isset($defaults['show_location']) ? $defaults['show_location'] : $intials['show_location'],
++      ),
++      'show_location_accuracy_styles' => array(
++        '#title' => t('Show location accuracy circle styles'),
++        '#type' => 'textarea',
++        '#description' => t('When Show location is enabled, define styles for accuracy vector. Enter one style property per line, in the format key|value. Options: http://dev.openlayers.org/apidocs/files/OpenLayers/Feature/Vector-js.html#OpenLayers.Feature.Vector.OpenLayers.Feature.Vector.style'),
++        '#default_value' => isset($defaults['show_location_accuracy_styles']) ? $defaults['show_location_accuracy_styles'] : $intials['show_location_accuracy_styles'],
++      ),
++      'show_location_position_styles' => array(
++        '#title' => t('Show location position styles'),
++        '#type' => 'textarea',
++        '#description' => t('When Show location is enabled, define styles for position vector. Enter one style property per line, in the format key|value. Options: http://dev.openlayers.org/apidocs/files/OpenLayers/Feature/Vector-js.html#OpenLayers.Feature.Vector.OpenLayers.Feature.Vector.style'),
++        '#default_value' => isset($defaults['show_location_position_styles']) ? $defaults['show_location_position_styles'] : $intials['show_location_position_styles'],
++      ),
+     );
+   }
+ 
+@@ -61,6 +86,26 @@ class openlayers_behavior_geolocate_button extends openlayers_behavior_geolocate
+     //make sure that $option['bind'] is a true boolean, and not a string '0'.
+     $this->options['bind'] = !!$this->options['bind'];
+ 
++    // Make sure that $option['show_location'] is a true boolean, and not a string '0'.
++    $this->options['show_location'] = !!$this->options['show_location'];
++
++    // Handle style fields with key val data.
++    $style_fields = array('show_location_accuracy_styles', 'show_location_position_styles');
++    foreach($style_fields as $field) {
++      // Taken from list field handling.
++      $values = array();
++      $list = explode("\n", $this->options[$field]);
++      $list = array_map('trim', $list);
++      $list = array_filter($list, 'strlen');
++      foreach ($list as $position => $text) {
++        $value = $key = FALSE;
++        if (preg_match('/(.*)\|(.*)/', $text, $matches)) {
++          $values[$matches[1]] = $matches[2];
++        }
++      }
++      $this->options[$field] = $values;
++    }
++
+     drupal_add_css(drupal_get_path('module', 'openlayers_geolocate_button') .
+       '/includes/behaviors/openlayers_behavior_geolocate_button.css');
+     drupal_add_js(drupal_get_path('module', 'openlayers_geolocate_button') .
+diff --git a/includes/behaviors/openlayers_behavior_geolocate_button.js b/includes/behaviors/openlayers_behavior_geolocate_button.js
+index 7a567f9..2675749 100644
+--- a/includes/behaviors/openlayers_behavior_geolocate_button.js
++++ b/includes/behaviors/openlayers_behavior_geolocate_button.js
+@@ -15,7 +15,13 @@ Drupal.openlayers.addBehavior('openlayers_behavior_geolocate_button', function (
+   });
+   data.openlayers.addControl(geolocatePanel);
+ 
+-  // Create toggling control and bcutton.
++  // Create new layer to contain location vectors.
++  if(options.show_location) {
++    var vectorLayer = new OpenLayers.Layer.Vector('geolocateVector');
++    data.openlayers.addLayer(vectorLayer);
++  }
++
++  // Create toggling control and button.
+   var toggler = OpenLayers.Function.bind(
+     Drupal.openlayers.geolocateToggle, data, data, options);
+   var button = new OpenLayers.Control.Button({
+@@ -30,7 +36,6 @@ Drupal.openlayers.addBehavior('openlayers_behavior_geolocate_button', function (
+  * Toggling function for geolocate control.
+  */
+ Drupal.openlayers.geolocateToggle = function (data, options) {
+-
+   // Create Geolocate control
+   var geolocate = new OpenLayers.Control.Geolocate(options);
+   data.openlayers.addControl(geolocate);
+@@ -41,6 +46,38 @@ Drupal.openlayers.geolocateToggle = function (data, options) {
+   // Add some event handling
+   geolocate.events.register('locationupdated', this, function(e) {
+     data.openlayers.setCenter(new OpenLayers.Geometry.Point(e.point.x, e.point.y), options.zoom_level);
++    // Handle location showing.
++    if(options.show_location) {
++      vectorLayer = data.openlayers.getLayersByName('geolocateVector');
++      if(typeof vectorLayer[0] != 'object') {
++        OpenLayers.Console.log(Drupal.t('geolocateVector layer is not there anymore!'));
++        return;
++      }
++      vectorLayer = vectorLayer[0];
++      vectorLayer.removeAllFeatures();
++      // Vector to illustrate accuracy.
++      var accuracyCircle = new OpenLayers.Feature.Vector(
++        OpenLayers.Geometry.Polygon.createRegularPolygon(
++          new OpenLayers.Geometry.Point(e.point.x, e.point.y),
++          e.position.coords.accuracy/2,
++          40,
++          0
++        ),
++        {},
++        options.show_location_accuracy_styles
++      );
++      // Vector to illustrate position.
++      var positionVector = new OpenLayers.Feature.Vector(
++        e.point,
++        {},
++        options.show_location_position_styles
++      );
++      // Add vectors.
++      vectorLayer.addFeatures([
++        accuracyCircle,
++        positionVector
++      ]);
++    }
+   });
+   geolocate.events.register('locationfailed', this, function(e) {
+     OpenLayers.Console.log(Drupal.t('Location detection failed'));

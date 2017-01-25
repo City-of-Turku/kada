@@ -1,0 +1,62 @@
+%block__title {
+  border-bottom: 4px solid $turku-blue;
+  font-size: 1.250em;
+  padding-bottom: 5px;
+}
+
+.block__title {
+  @extend %block__title;
+}
+
+.block--menu,
+.block--menu-block {
+  .block__title {
+    display: none;
+  }
+}
+
+// Left sidebar behavior
+.l-region--sidebar-first {
+  .block--menu-block {
+    margin: 2em 0;
+  }
+}
+
+// Right sidebar behavior
+.l-region--sidebar-second {
+  .block {
+    margin: 2em 0;
+  }
+
+  .block__title {
+    margin-top: 0;
+  }
+}
+
+// After content behavior
+.l-region--after-content {
+  .block {
+    @include breakpoint($small-desk) {
+      margin: 0 1em;
+    }
+  }
+}
+
+
+// Block from ip_geoloc for proximity demo
+#block-ip-geoloc-geocode-address {
+  margin-left: 1em;
+}
+
+// Hide proximity exposed filters which are submitted by JS
+.view.proximity .view-filters {
+  display: none;
+}
+
+// Exposed filters labels are styled similarly to block titles
+.l-region--sidebar-first .views-exposed-widget > label {
+  @extend %block__title;
+  display: block;
+  font-weight: 600;
+  margin: 30px 0 5px;
+}

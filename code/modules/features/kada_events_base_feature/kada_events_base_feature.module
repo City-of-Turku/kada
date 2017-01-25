@@ -1,0 +1,808 @@
+<?php
+/**
+ * @file
+ * Code for the KADA Events Base feature.
+ */
+
+include_once 'kada_events_base_feature.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function kada_events_base_feature_menu() {
+  // Custom settings page for events.
+  $items['admin/structure/events'] = array(
+    'title' => 'Event settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('kada_events_base_feature_settings'),
+    'access arguments' => array('administer event settings'),
+  );
+  // Custom entitysubqueue link page
+  $items['admin/content/subqueue'] = array(
+    'title' => 'Subqueues',
+    'page callback' => 'kada_events_base_feature_subqueue_page',
+    'access arguments' => array('manipulate entityqueues'),
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_cron().
+ */
+function kada_events_base_feature_cron() {
+  // Fetch 25 past events that are published
+  $q = new EntityFieldQuery();
+  $q->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'event')
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->fieldCondition('field_event_date', 'value2', date('Y-m-d H:i:s'), '<=')
+    ->range(0, 25);
+  $res = $q->execute();
+  if (!empty($res['node'])) {
+    // Load the event nodes
+    $nodes = entity_load('node', array_keys($res['node']));
+    foreach ($nodes as $node) {
+      // ... and unpublish each.
+      $node->status = 0;
+      node_save($node);
+    }
+  }
+}
+
+function kada_events_base_feature_subqueue_page() {
+  // Get language list for later use in l() function and title generation
+  $language_list = language_list();
+
+  $carousel_links = array();
+  $mosaic_links = array();
+
+  // Queues array contains main queue names that contains subqueues
+  $queues = array(
+    'carousel' => 'turkukalenteri_front_carousel_sub',
+    'mosaic' => 'turkukalenteri_front_mosaic_sub',
+  );
+  foreach ($queues as $queue_name => $queue) {
+    // Load subqueues of main queue
+    $subqueues = entityqueue_subqueue_load_multiple(FALSE, array('queue' => $queue));
+    // Carousel queues links
+    foreach ($subqueues as $key => $value) {
+      $sub_queue_id = $value->subqueue_id;
+      $sub_queue_name = $value->name;
+      $parent_queue = $value->queue;
+      $sub_queue_lang = $value->language;
+      // Read subqueue label and explode it into array
+      // These are used to create new link title
+      // [0] => turkucalendar
+      // [1] => event or hobby
+      // [2] => front
+      // [3] => carousel or mosaic
+      // [4] => sub
+      // [5] => language at end of name
+      $exploded_label = explode('_', $value->name);
+      $queue_category = $exploded_label[1];
+      $queue_type = $exploded_label[3];
+
+      // Create language neutral edit path
+      $sub_queue_edit_path = '/admin/structure/entityqueue/list/' . $parent_queue . '/subqueues/' . $sub_queue_id . '/edit';
+
+      // Get link title from array
+      $link_title = ucfirst($queue_category . ' ' . $queue_type . ' in ' . $language_list[$sub_queue_lang]->name);
+
+      // Link options array
+      // Add subqueue language to link
+      $options = array(
+        'language' => $language_list[$sub_queue_lang],
+      );
+      // Create edit link for queue
+      $subqueue_link = l($link_title, $sub_queue_edit_path, $options);
+
+      if ($queue_type == 'carousel') {
+        $carousel_links[$sub_queue_id] = array($subqueue_link);
+      }
+
+      elseif ($queue_type == 'mosaic') {
+        $mosaic_links[$sub_queue_id] = array($subqueue_link);
+      }
+    }
+  }
+
+  // Create $build array to show users the links for control page
+  $build = array();
+  $build['carousel_table'] = array(
+    '#theme' => 'table',
+    '#header' => array('Link'),
+    '#rows' => $carousel_links,
+    '#caption' => 'Carousel subqueues',
+  );
+  $build['mosaic_table'] = array(
+    '#theme' => 'table',
+    '#header' => array('Link'),
+    '#rows' => $mosaic_links,
+    '#caption' => 'Mosaic subqueues',
+  );
+
+  return $build;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function kada_events_base_feature_permission() {
+  return array(
+    'administer event settings' => array(
+      'title' => t('Administer event settings'),
+      'description' => t('Administer the custom event settings for TKUFI.'),
+    ),
+  );
+}
+
+/**
+ * Settings form for custom event settings.
+ */
+function kada_events_base_feature_settings($form, &$form_state) {
+  // Atom field base for images, taken from atom_reference_field_widget_form function.
+  $atom_field_base = array(
+    '#type' => 'textfield',
+    '#attributes' => array(
+      'data-types' => 'image',
+      'data-dnd-context' => 'sdl_editor_representation',
+    ),
+    '#preview_context' => 'sdl_editor_representation',
+    '#process' => array('atom_reference_field_widget_form_process'),
+    '#attached' => array(
+      'library' => array(
+        array(
+          'atom_reference',
+          'library',
+        ),
+      ),
+    ),
+  );
+  // Hobbies frontpage background atom.
+  $form['tkufi_hobbies_front_bg_atom'] = $atom_field_base + array(
+    '#title' => t('Events background'),
+    '#default_value' => variable_get('tkufi_hobbies_front_bg_atom', ''),
+  );
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function kada_events_base_feature_views_post_render(&$view, &$output, &$cache) {
+  // Check if we are in hobbies frontpage.
+  if ($view->name == 'driveturku_top_carousel'
+    && $view->current_display == 'section_turkukalenteri_hobbies_front') {
+    // If atom is set for hobbies frontpage, render it.
+    $hobbies_atom = scald_atom_load(variable_get('tkufi_hobbies_front_bg_atom', ''));
+    if ($hobbies_atom) {
+      // Replace existing output of the view.
+      $output = render(scald_atom_view($hobbies_atom, 'carousel'));
+    }
+  }
+}
+
+/**
+ * Implements hook_views_post_build().
+ */
+function kada_events_base_feature_views_pre_build(&$view) {
+  // Check if we are in events or hobbies frontpage from context.
+  $active_contexts = context_active_contexts();
+  if (isset($active_contexts['turkucalendar_front'])) {
+    // Get frontpage nid or bail out if not set.
+    $frontpage = explode('/', variable_get('site_frontpage', 'node'));
+    if (!isset($frontpage[1])) {
+      return;
+    }
+    $front_nid = $frontpage[1];
+    // Use real frontpage nid as argument for top carousel and footer.
+    if ($view->name == 'driveturku_top_carousel'
+      && in_array($view->current_display, array('section', 'section_turkukalenteri_hobbies_front'))) {
+      $view->args[0] = $front_nid;
+    }
+    else if ($view->name == 'driveturku_section_footer') {
+      $view->args[0] = $front_nid;
+    }
+  }
+
+  // If we are displaying an event node with multiple groups, we can add them all
+  // as the argument. For example Turku City Theatre has 3 groups for 3 languages:
+  // fi, en, sv. The contextual filter accepts multiple section nids,
+  // and a filter handles the rest by filtering to currently active language.
+  if ($view->name == 'driveturku_section_footer') {
+    if (arg(0) == 'node' && !arg(2)) {
+      $node = menu_get_object();
+      if(function_exists('tkufi_sections_feature_fetch_group_nids')){
+        $group_nids = tkufi_sections_feature_fetch_group_nids($node);
+        if(!empty($group_nids) && count($group_nids) > 1){
+          $view->args[0] = implode('+', $group_nids);
+        }
+      }
+    }
+  }
+}
+
+
+function kada_events_base_feature_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'event_node_form') {
+    $form['#validate'][] = 'kada_events_base_feature_event_node_form_validate';
+    $nid = $form['nid']['#value'];
+    $node = node_load($nid);
+    if (isset($node->field_super_event) && !empty($node->field_super_event)) {
+      $super_event_nid = $node->field_super_event['und'][0]['endpoints']['und'][1]['entity_id'];
+      drupal_set_message(t('This is a recurring event, values stored here will be only visible on this recurring event in the  event series. Consider editing the <a href="@event-series">event-series</a> if you wish to make changes visible in every recurring event.', array('@event-series' => url('node/' . $super_event_nid))), 'warning');
+    }
+
+    // Check "Repeat" by default when user selects event series as date type
+    $form['field_date_repeat']['und'][0]['show_repeat_settings']['#states'] = array(
+      'checked' => array(
+        ':input[name="field_date_type[und]"]' => array('value' => 'super'),
+      ),
+    );
+
+    // User is editing a super event
+    if ($form['#node']->type == 'event' && isset($form['#node']->field_date_type) && $form['#node']->field_date_type['und'][0]['value'] == 'super') {
+      // Change Delete button text for super events
+      $form['actions']['delete']['#value'] = t('Delete all recurring events');
+
+      // User is editing an existing super event
+      if ($form['nid']['#value'] !== NULL) {
+        // Let's disable access to date repeat fields because editing them
+        // afterwards  do not affect the repetitive events
+        $form['field_date_repeat']['#access'] = FALSE;
+        $form['field_date_repeat_extra']['#access'] = FALSE;
+      }
+    }
+    // N/A selection is useless, but Drupal creates it automatically for required
+    // fields. Let's get rid of that!
+    unset($form['field_date_type']['und']['#options']['_none']);
+  }
+
+  // Alter entityqueue form node add input fields width to 90% for better visual readable
+  if ($form_id == 'entityqueue_subqueue_edit_form') {
+    $form['eq_node']['und']['add']['entity']['#attributes']['style'] = 'width: 90%;';
+  }
+}
+
+function kada_events_base_feature_event_node_form_validate($form, &$form_state) {
+  $phone_ok = (!empty($form_state['values']['field_phone']) && !empty($form_state['values']['field_phone'][LANGUAGE_NONE][0]['value']));
+  $email_ok = (!empty($form_state['values']['field_email']) && !empty($form_state['values']['field_email'][LANGUAGE_NONE][0]['email']));
+  if (!$phone_ok && !$email_ok) {
+    form_set_error('field_email', t('You have to enter at least one of phone number and email address.'));
+  }
+
+  // Only do the validation for the external form
+  if (arg(0) != 'node' && !empty($form_state['values']['field_event_types'])) {
+    $parent_tid = 0;
+    $i = 0;
+    foreach ($form_state['values']['field_event_types'][LANGUAGE_NONE] as $val) {
+      $parent = end(taxonomy_get_parents_all($val['tid']));
+      if (!empty($parent->tid) && !empty($parent_tid) && ($parent->tid != $parent_tid)) {
+        form_set_error('field_event_types', t('You can only choose event types under one of the main categories.'));
+      }
+      if (++$i > 3) {
+        form_set_error('field_event_types', t('You can only choose three event categories.'));
+      }
+      $parent_tid = $parent->tid;
+    }
+  }
+}
+
+/**
+ * Implements hook_search_api_ajax_settings().
+ */
+function kada_events_base_feature_search_api_ajax_settings() {
+  $settings = array(
+    'content' => '#main-content',
+    'regions' => array(
+      'filters' => '.l-filters .l-region--filters',
+      'event_list' => '.event-tab-event_list',
+      'event_map' => '.event-tab-event_map',
+    ),
+    'facet_locations' => '.l-filters .l-region--filters',
+    'spinner' => drupal_get_path('module', 'search_api_ajax') .'/spinner.gif',
+    'fade' => 0,
+    'opacity' => 1,
+  );
+  return $settings;
+}
+
+/**
+ * Create search block for events search
+ */
+function kada_events_base_feature_block_info() {
+  $blocks['eventsearch'] = array(
+    'info' => t('Search event'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+  return $blocks;
+}
+
+function kada_events_base_feature_block_view($delta = '') {
+  $block = array();
+  if ($delta == 'eventsearch') {
+    $block['subject'] = t('Search event');
+    $block['content'] = drupal_get_form('kada_events_base_feature_search_form');
+  }
+  return $block;
+}
+
+function kada_events_base_feature_search_form($form, &$form_state) {
+  $form['q'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Keyword'),
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Search'),
+  );
+  return $form;
+}
+
+function kada_events_base_feature_search_form_submit($form, &$form_state) {
+  // TODO: Does this need to be sanitised?
+  $keyword = $form_state['values']['q'];
+
+  drupal_goto('event-search', array('query' => array('search' => $keyword)), 303);
+}
+
+/**
+ * Add conditional orderby to event happening soon display
+ */
+function kada_events_base_feature_views_query_alter(&$view, &$query) {
+  if ($view->current_display == 'event_tab_happening_soon') {
+    $query->orderby = array(
+      array(
+        'field' => 'CASE WHEN
+        field_data_field_last_day_to_sign_up.field_last_day_to_sign_up_value THEN
+        field_data_field_last_day_to_sign_up.field_last_day_to_sign_up_value ELSE
+        field_data_field_event_date_field_event_date_value2 END',
+        'direction' => 'ASC',
+      ),
+      array(
+        'field' => 'field_data_field_event_date_field_event_date_value2',
+        'direction' => 'ASC',
+      ),
+      array(
+        'field' => 'field_data_field_event_date_field_event_date_value',
+        'direction' => 'ASC',
+      ),
+    );
+  }
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function kada_events_base_feature_node_view($node, $view_mode, $langcode) {
+  // Make sure this is an event
+  if ($node->type == 'event') {
+    $wrapper = entity_metadata_wrapper('node', $node);
+
+    // Alter event date display in case of multiday events.
+    _driveturku_format_long_event_date($node, $node->content['field_event_date'][0]['#markup'], $view_mode);
+
+    if ($view_mode == 'event_map_item') {
+      // Event map items also have dates in duplicate title fields.
+      _driveturku_format_long_event_date($node, $node->content['duplicate_title'][0]['#markup'], $view_mode);
+    }
+
+    if (empty($node->field_date_type) || $wrapper->field_date_type->value() == 'single') {
+      // Don't display series events quicktabs unless in a series event
+      unset($node->content['series_events']);
+    }
+
+    if ($wrapper->field_date_type->value() == 'single') {
+      $node->original_date = $node->content['field_event_date'][0]['#markup'];
+      _driveturku_event_date_vignette($node, $node->content['field_event_date'][0]['#markup'], $view_mode, $langcode);
+    }
+    elseif ($wrapper->field_date_type->value() == 'super') {
+      $node->original_date = $node->content['field_event_date'][0]['#markup'];
+    }
+    // Make sure this sub event has a parent/master event reference
+    elseif ($wrapper->field_date_type->value() == 'sub' && !empty($node->field_super_event)) {
+      // Let's find the super event and display values from there
+      // Relation field doesn't seem to work with wrapper, doing it the
+      // old-skool way
+      $super_event_nid = $node->field_super_event['und'][0]['endpoints']['und'][1]['entity_id'];
+      // If for some reason super event nid has been messed, skip everything
+      // This code is intended for SUB events only, which should never have the same super_event_nid
+      // as their own nid, which will make nasty infinite loops
+      if ($super_event_nid == $node->nid) {
+        return;
+      }
+      // If for some reason this super event nid is empty, skip everything!
+      if (empty($super_event_nid)) {
+        return;
+      }
+      $super_event = node_load($super_event_nid);
+      node_build_content($super_event, $view_mode, $langcode);
+      // Non-overridden fields should be unset()'ted from $node2 before merging the two node objects
+      unset($super_event->content['duplicate_title']);
+
+      // Save the rendered date, we might need it later
+      $subevent_date = $node->content['field_event_date'][0]['#markup'];
+
+      // See if the super/sub events have custom date vignettes
+      $super_event_has_vignette = !empty($super_event->field_date_vignette[$langcode]);
+      $sub_event_has_vignette = !empty($node->field_date_vignette[$langcode]);
+
+      // If the super event has a vignette but the subevent doesn't,
+      // the whole field needs to be copied into the subevent to allow for generic processing
+      if ($view_mode !== 'full' && !$sub_event_has_vignette && $super_event_has_vignette) {
+        unset($node->content['field_event_date']);
+        $node->field_date_vignette = $super_event->field_date_vignette;
+      }
+
+      // If a sub event field is not empty, then do not display the value from
+      // the super event
+      foreach(field_info_instances('node', $node->type) as $instance) {
+        $field_name = $instance['field_name'];
+        $field = field_info_field($field_name);
+        if (!empty($node->content[$field_name][0]['#markup'])) {
+          unset($super_event->content[$field_name]);
+        }
+      }
+
+      // Unset date field from the superevent so subevents will display their own dates
+      unset($super_event->content['field_event_date']);
+
+      // Merge super event content into sub event for displaying
+      $node->content = array_merge($node->content, $super_event->content);
+
+      // If the subevent has a custom vignette, always override using it
+      $node->original_date = $subevent_date;
+      _driveturku_event_date_vignette($node, $node->content['field_event_date'][0]['#markup'], $view_mode, $langcode);
+    }
+  }
+}
+
+/**
+ * Replaces a node's field markup with date vignette.
+ */
+function _driveturku_event_date_vignette(&$node, &$target, $view_mode, $langcode) {
+  global $language;
+  if (!$langcode) {
+    $langcode = $language->language;
+  }
+  if (isset($node->event_date_vignette_processed) && $node->event_date_vignette_processed === TRUE) {
+    return;
+  }
+  $view_modes_to_skip = array(
+    'full',
+  );
+  if (in_array($view_mode, $view_modes_to_skip)) {
+    return;
+  }
+  // View modes to show both date vignette and date in
+  $view_modes_with_date_and_vignette = array(
+    'event_search_result',
+    'event_list_item',
+    'event_map_item',
+  );
+  if (!empty($node->field_date_vignette[$langcode])) {
+    $node->event_date_vignette_processed = TRUE;
+    $node_wrapper = entity_metadata_wrapper('node', $node);
+    $vignette = $node_wrapper->language($langcode)->field_date_vignette->value();
+    $vignette = '<div class="date__vignette">' . $vignette . '</div>';
+    if (in_array($view_mode, $view_modes_with_date_and_vignette)) {
+      if (isset($node->original_date)) {
+        $vignette = $vignette . $node->original_date;
+      }
+    }
+    $vignette = '<div class="event__date">' . $vignette . '</div>';
+    $target = $vignette;
+  }
+}
+
+/**
+ * Formats a long events' dates neatly, if needed.
+ * @param  &$node    node object
+ * @param  &$target  #markup field in render array
+ */
+function _driveturku_format_long_event_date(&$node, &$target, $view_mode) {
+  // View modes to apply alterations to
+  $date_view_modes = array(
+    'full',
+    'event_mosaic_item',
+    'event_grid_item',
+    'event_list_item',
+    'event_tab_list_item',
+    'event_map_item',
+    'event_top_carousel',
+    'event_search_result',
+  );
+  if (!in_array($view_mode, $date_view_modes)) {
+    return;
+  }
+  $node_wrapper = entity_metadata_wrapper('node', $node);
+  // Hours after midnight to consider a point in time to be "on the next day"
+  $grace_hours = 5;
+  $grace_time = $grace_hours * 60 * 60 + 1;
+  $begin = strtotime($node_wrapper->field_event_date->value()['value']);
+  $end = strtotime($node_wrapper->field_event_date->value()['value2']);
+  // If an event begins on a different day than it ends, it's a long event.
+  $is_long_event = date('z', $begin) !== date('z', $end);
+  // Grace time is subtracted from ending timestamp, so if an event ends
+  // inside the grace time, it's still considered to be on the previous day
+  $is_grace = date('z', $begin) == date('z', ($end - $grace_time));
+  $ends_in_same_month = date('n', $begin) == date('n', $end);
+  $ends_in_different_year = date('Y', $begin) !== date('Y', $end);
+  if ($is_long_event) {
+    if ($is_grace) {
+      // Within grace time: only show beginning date, but both begin and end times: "1.1. 14.00-15.00"
+      $output = format_date($begin, 'tkufi_date_only_no_zeros') . ' ' . format_date($begin, 'tkufi_time_only') . '–' . format_date($end, 'tkufi_time_only');
+    }
+    else {
+      // default for long events: "1.6.–1.7."
+      $output = format_date($begin, 'tkufi_day_month_only') . '–' . format_date($end, 'tkufi_date_only_no_zeros');
+      if ($ends_in_same_month) {
+        // if the event ends in the same month, the first month is dropped: "22.–29.8."
+        $output = format_date($begin, 'tkufi_day_only') . '–' . format_date($end, 'tkufi_date_only_no_zeros');
+      }
+      elseif ($ends_in_different_year) {
+        // if the event ends in a different year, show full dates: "20.11.2015–10.2.2016"
+        $output = format_date($begin, 'tkufi_date_only_no_zeros') . '–' . format_date($end, 'tkufi_date_only_no_zeros');
+      }
+    }
+    $target = $output;
+  }
+}
+
+/**
+ * Implements hook_form_node_delete_confirm_alter().
+ */
+function kada_events_base_feature_form_node_delete_confirm_alter(&$form, &$form_state, $form_id) {
+  // Nofity users about sub event deletion when deleting a super event
+  if ($form['#node']->type == 'event' && isset($form['#node']->field_date_type) && $form['#node']->field_date_type['und'][0]['value'] == 'super') {
+    $confirmation_text = t('You are about to delete an event series. By doing this, all the recurring events in the series will be deleted also.');
+    $form['description']['#markup'] = '<strong>' . $confirmation_text . '</strong>';
+    $form['actions']['submit']['#value'] = t('Delete all recurring events');
+  }
+}
+
+/**
+ * Implements hook_node_delete().
+ */
+function kada_events_base_feature_node_delete($node) {
+  // Delete all sub events when deleting a super event
+  if ($node->type == 'event' && isset($node->field_date_type) && $node->field_date_type['und'][0]['value'] == 'super') {
+    // Build a RelationQuery where this node is the target of a relation
+    $relation_query = relation_query('node', $node->nid, 1);
+
+    // Query will return all relations between super and sub events
+    $super_event_relations = $relation_query->execute();
+    foreach ($super_event_relations as $rid => $values) {
+      $relation = relation_load($values->rid);
+      // Each relation has entity ids as endpoint values for source and target
+      if ($relation->relation_type == 'super_event') {
+        // Because super event relation is from sub event to super event,
+        // the 0 value in the array is the source entity which we want to delete.
+        node_delete($relation->endpoints['und'][0]['entity_id']);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function kada_events_base_feature_views_pre_render(&$view) {
+  if ($view->name == 'driveturku_event_list' && $view->current_display == 'event_tab_happening_recurring') {
+    $super_relations = array();
+    foreach ($view->result as $key => &$result) {
+      // Super event nid
+      $super_id = $result->nid;
+      // Relation index for relation query
+      $relation_index = 1;
+      $sub_events = _kada_events_base_feature_related_sub_events($super_id, $relation_index);
+      if (!empty($sub_events)) {
+        // search from subevents if there is events happening in four days
+        $upcoming_subevent = _kada_events_base_feature_upcoming_event($sub_events);
+        if ($upcoming_subevent) {
+          continue;
+        }
+        else {
+          unset($view->result[$key]);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Search for relations and returns array of subevent ids
+ */
+function _kada_events_base_feature_related_sub_events($super_id, $relation_index) {
+  $sub_events = array();
+  $relation_query = relation_query('node', $super_id, $relation_index);
+  $relations = $relation_query->execute();
+  foreach ($relations as $rid => $values) {
+    if ($values->relation_type == 'super_event') {
+      $relation = relation_load($values->rid);
+      $sub_events[] = $relation->endpoints['und'][0]['entity_id'];
+    }
+  }
+  return $sub_events;
+}
+
+/**
+ * Search for subevent that is ends in four days
+ */
+function _kada_events_base_feature_upcoming_event($sub_events, $debug = FALSE) {
+  $show_super = FALSE;
+  if (isset($sub_events)) {
+    // Build field query
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'event')
+      ->entityCondition('entity_id', $sub_events, 'IN')
+      ->propertyCondition('status', NODE_PUBLISHED)
+      ->fieldOrderBy('field_event_date', 'value2', 'DESC')
+      ->range(0,1);
+    $result = $query->execute();
+    // Load entity
+    if (isset($result['node'])) {
+      $event_nids = array_keys($result['node']);
+      $event = entity_load('node', $event_nids);
+    }
+    // Check if event is ending within four full days
+    $max_date = date('Y-m-d H:i:s', strtotime('today +5 day'));
+    if (isset($event)) {
+      foreach ($event as $key => $value) {
+        if ($value->field_event_date['und'][0]['value2'] <= $max_date) {
+          $show_super = $key;
+        }
+      }
+    }
+  }
+  return $show_super;
+}
+
+/**
+ * Implements hook_ds_pre_render_alter().
+ * Alter super event url to point last sub event
+ */
+function kada_events_base_feature_ds_pre_render_alter(&$layout_render_array, $context, &$variables) {
+  $field_date_type = '';
+  if (isset($variables['field_date_type']['und'][0]['value'])) {
+    $field_date_type = $variables['field_date_type']['und'][0]['value'];
+  }
+
+  if ($variables['view_mode'] == 'event_tab_list_item' && $field_date_type == 'super') {
+    $super_id = $variables['nid'];
+    $relation_index = 1;
+    $sub_events = _kada_events_base_feature_related_sub_events($super_id, $relation_index);
+
+    // FIXME: Probably should hide the element if no sub events are found.
+    if (!empty($sub_events)) {
+      $sub_event_id = _kada_events_base_feature_upcoming_event($sub_events);
+      // Check that subevent id is there and is numeric to avoid empty link.
+      if(!empty($sub_event_id) && is_numeric($sub_event_id)) {
+        foreach ($layout_render_array['right'] as $key => &$field) {
+          if ($field['#field_name'] == 'title_field') {
+            $link_path = drupal_get_path_alias('node/' . $sub_event_id);
+            $link_title = $field['#items'][0]['value'];
+            $options = array(
+              'attributes' => array(
+                'title' => $link_title,
+              ),
+            );
+            $link_to_sub_event = l($link_title, $link_path, $options);
+            $field[0]['#markup'] = $link_to_sub_event;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_translation_insert().
+ * NOTE: we can run the same code as in update. Event nodes with super/sub
+ * event and their translations may sometimes be added at the same bootstrap
+ * as a node is added for example if the node is imported with feeds.
+ * In any case here we only want to add missing translations to recurring
+ * (sub)events of currently update super (master) events.
+ */
+function kada_events_base_feature_entity_translation_insert($entity_type, $entity, $translation, $values = array()) {
+  kada_events_base_feature_entity_translation_update($entity_type, $entity, $translation, $values);
+}
+
+/**
+ * Implements hook_entity_translation_update().
+ * This is a rewrite of rules based functionality with old fashioned hook.
+ * WARNING: Do not use entity_translation events in any of the rules!
+ * Using the events will break at least feeds importers with field translations
+ */
+function kada_events_base_feature_entity_translation_update($entity_type, $entity, $translation, $values = array()) {
+  if (!empty($translation['language'])){
+    $current_langcode =  $translation['language'];
+  }else{
+    return;
+  }
+
+  // React only on event type node
+  if ($entity_type == 'node' && $entity->type == 'event') {
+    // React only on super event (has sub events)
+    if ($entity->field_date_type['und'][0]['value'] == 'super') {
+      // Get id's for sub events from super_event backwards relation
+      $results = relation_query($entity_type, $entity->nid)
+        ->entityCondition('bundle', 'super_event')
+        ->range(0, 50)
+        ->execute();
+      $rids = array_keys($results);
+      if ($rids) {
+        foreach (relation_load_multiple($rids) as $relation) {
+          foreach ($relation->endpoints[LANGUAGE_NONE] as $endpoint) {
+            if ($endpoint['entity_id'] != $entity->nid) {
+              $entities_ids[] = $endpoint['entity_id'];
+            }
+          }
+        }
+      }
+      // Cycle through all sub events and update them accordingly
+      foreach ($entities_ids as $id) {
+        // Load sub event - WITHOUT STATIC CACHING.
+        // If this is loaded by default (static caching) and saved, the same node
+        // and its translations on the same Drupal bootstrap may get overwritten
+        // with less older values. If we always fetch the true node, we avoid
+        // this problem (third param true)
+        $sub_event = node_load($id, NULL, true);
+
+        // Overwrite subevent titles with titles from super event
+        // Note: the translation language code was missing, so no translations
+        // were added with the old method. Also, we only translate the subnode
+        // title if it wasnt already translated to this specific language
+        // (maybe there are events where each subnode title/translation may vary,
+        // and an user wants to override it per event?)
+        // TODO: add other field translations, or rely just on events inheriting
+        //      field values via other methods?
+        if (empty($sub_event->title_field[$current_langcode])){
+          $sub_event->title_field = $entity->title_field;
+        }
+
+        // This is a good place to make sure that some crucial language neutral fields
+        // are always uptodate in the subevents.
+        $update_fields = array(
+          'domains',
+          'domain_site',
+          'subdomains',
+          'og_group_ref',
+        );
+        foreach($update_fields as $field_name){
+          if(!empty($entity->{$field_name})){
+            $sub_event->{$field_name} = $entity->{$field_name};
+          }
+        }
+
+        // Core title should contain original title in source lang (fi),
+        // we can always overwrite this on subnode (its not translateable nor
+        // is it usually shown anyway).
+        $sub_event->title = $entity->title;
+
+        // To make sure that our subevent actually shows up as translated, saving
+        // the title node is not enough. We also need to tell Drupal that the node
+        // actually is translated, so it shows up as such in translation UI
+        // AND that our views filters (filtering on currently active language)
+        // actually find out that the node has a translation. Some views actually
+        // check specifically the title_field translation, but not all.
+        if (!empty($entity) && !empty($entity->translations->original)){
+          $original_langcode = $entity->translations->original;
+          $translations_orig = $entity->translations->data[$original_langcode];
+
+          // If currently translated language hasnt been registered yet,
+          // copy the source lang (usually fi), making fi the source.
+          if(empty($sub_event->translations->data[$current_langcode])){
+            $translations_orig['source'] = $original_langcode;
+            $translations_orig['language'] = $current_langcode;
+            $sub_event->translations->data[$current_langcode] = $translations_orig;
+          }
+        }
+
+        // Save sub event
+        node_save($sub_event);
+      }
+    }
+  }
+}

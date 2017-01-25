@@ -1,0 +1,16 @@
+name = KADA Editorial Tools
+description = Admin tools, listings and helpers for editorial workflow and content administration
+core = 7.x
+package = KADA
+version = 7.x-1.0-dev
+project = kada_editorial_tools_feature
+dependencies[] = views
+dependencies[] = domain_integration_vbo
+dependencies[] = wysiwyg
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = kada_admin_content
+features[views_view][] = kada_admin_people
+features[wysiwyg][] = full_html
+features[wysiwyg][] = wysiwyg
+features_exclude[dependencies][ctools] = ctools

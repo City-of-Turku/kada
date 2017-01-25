@@ -1,0 +1,218 @@
+$main-liftup-box-list-background: $darker-gray;
+$main-liftup-separator-color: darken($main-liftup-box-list-background, 5%);
+$main-liftups-background: $turku-white;
+$main-liftup-title-color: $body-font-color;
+
+$main-liftup-content-padding: 20px;
+
+$main-liftup-arrow-size: 25px;
+
+@include add-gutter(0);
+
+
+.main-liftups {
+  margin: 3% 0.5% 2%;
+  @include clearfix();
+}
+
+.main-liftup-row {
+  margin-bottom: 1%;
+  @include clearfix();
+}
+
+.main-liftup-box {
+  background-color: $main-liftups-background;
+  border-bottom: 4px solid $turku-blue;
+  position: relative;
+}
+
+.main-liftup-box__media {
+  background: $main-liftups-background;
+  position: relative;
+  margin-bottom: -4px; // Amount of the border
+
+  figure {
+    line-height: 0;
+    margin: 0;
+  }
+
+  &:after {
+    background: $main-liftups-background;
+    bottom: 0;
+    content: " ";
+    display: block;
+    height: $main-liftup-arrow-size;
+    margin-bottom: $main-liftup-arrow-size * -0.5;
+    position: absolute;
+    right: 50%;
+    width: $main-liftup-arrow-size;
+    @include transform-origin(50% 50%);
+    @include transform(rotate(45deg));
+
+    @include breakpoint($desk) {
+      bottom: auto;
+      margin-top: $main-liftup-arrow-size * -0.5;
+      margin-bottom: 0;
+      right: $main-liftup-arrow-size * -0.5;
+      top: 50%;
+    }
+  }
+
+  @include breakpoint($desk) {
+    @include grid-span(6, 1);
+  }
+}
+
+.main-liftup-box__content {
+  background: $main-liftups-background;
+  padding: $main-liftup-content-padding;
+
+  @include breakpoint($desk) {
+    @include grid-span(6, 7);
+  }
+}
+
+.main-liftup-box__title {
+  font-weight: 600;
+  margin: 0 0 0.5em;
+
+  a {
+    color: $main-liftup-title-color;
+  }
+}
+
+.main-liftup-box__text {
+  line-height: 1.6;
+}
+
+.main-liftup-box__caption {
+  // @todo we need a mixin to generate themed variants of classes
+  @include font-size(14px);
+  background-color: rgba($turku-blue, 1);
+  bottom: 10px;
+  color: $turku-white;
+  font-weight: 200;
+  left: 0;
+  line-height: 1.2em;
+  margin: 0;
+  padding: 10px 20px;
+  position: absolute;
+  width: 40%;
+
+  @include breakpoint($desk) {
+    width: 70%;
+    @include font-size(18px);
+  }
+}
+
+.main-liftup-box-4 {
+  clear: both;
+
+  .main-liftup-box__media {
+    &:after {
+      @include breakpoint($small-desk) {
+        bottom: auto;
+        margin-top: $main-liftup-arrow-size * -0.5;
+        margin-bottom: 0;
+        right: $main-liftup-arrow-size * -0.5;
+        top: 50%;
+      }
+    }
+
+    @include breakpoint($small-desk) {
+      @include grid-span(6, 1);
+    }
+  }
+
+  .main-liftup-box__content {
+    @include breakpoint($small-desk) {
+      @include grid-span(6, 7);
+    }
+
+    @include breakpoint($desk) {
+      padding: 30px;
+    }
+  }
+
+  .main-liftup-box__title {
+    font-size: 1.111 * $font-size-h2;
+
+    @include breakpoint($desk) {
+      font-size: 1.333 * $font-size-h2;
+    }
+
+    @include breakpoint($desk) {
+      font-size: 2 * $font-size-h2;
+    }
+  }
+}
+
+.main-liftup-box-2 {
+  .main-liftup-box__caption {
+    bottom: 20px;
+  }
+
+  @include breakpoint($small-desk) {
+    @include float-span(6);
+    // Add margin between the two floating elements
+    margin-right: 1%;
+    width: 49.5%;
+  }
+
+  @include breakpoint($desk) {
+    .main-liftup-box__content {
+      width: 50%;
+    }
+  }
+}
+
+// add separator and margin for 2-wide liftups on the left
+.main-liftup-box-2:first-child {
+  @include breakpoint($desk) {
+    .main-liftup-box__content {
+      width: 50%;
+    }
+  }
+}
+
+// reverse panes and add margin for 2-wide liftups on the right
+.main-liftup-box-2 + .main-liftup-box-2 {
+  margin-top: 1%;
+  margin-right: 0;
+
+  @include breakpoint($small-desk) {
+    margin-top: 0;
+
+    &:before {
+      background: none repeat scroll 0 0 #a8a8a8;
+      bottom: -4px;
+      content: " ";
+      display: block;
+      left: -1.025%;
+      position: absolute;
+      top: 0;
+      width: 1px;
+    }
+
+    .main-liftup-box__content {
+      padding: $main-liftup-content-padding;
+    }
+  }
+
+  @include breakpoint($desk) {
+    .main-liftup-box__media {
+      @include grid-span(6, 7);
+
+      &:after {
+        left: $main-liftup-arrow-size * -0.5;
+        right: auto;
+      }
+    }
+
+    .main-liftup-box__content {
+      @include grid-span(6, 1);
+      margin-right: -100%;
+      padding: $main-liftup-content-padding;
+    }
+  }
+}

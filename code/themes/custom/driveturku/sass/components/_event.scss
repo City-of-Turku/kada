@@ -1,0 +1,588 @@
+$turkucalendar-whitegray: mix(darken($turkucalendar-white, 2%), $turkucalendar-red, 98%);
+$text-label-color: #7c7576;
+$sidebar-text-label-color: #72706f;
+
+// TODO use this everywhere
+%text-label {
+  color: $text-label-color;
+  font-size: 0.875em;
+  text-transform: uppercase;
+}
+
+%sidebar-text-label {
+  @extend %text-label;
+
+  @include breakpoint($mobi-navi) {
+    color: $sidebar-text-label-color;
+  }
+}
+
+%event-responsive-vert-padding {
+  padding-bottom: 0;
+  padding-top: 15px;
+
+  @include breakpoint($tab) {
+    padding-top: 20px;
+  }
+
+  @include breakpoint($mobi-navi) {
+    padding-top: 30px;
+  }
+}
+
+%event-responsive-horz-padding {
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include breakpoint($tab) {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  @include breakpoint($mobi-navi) {
+    padding-left: 15%;
+    padding-right: 5%;
+  }
+}
+
+%event-sidebar-responsive-horz-padding {
+  @extend %event-responsive-horz-padding;
+
+  @include breakpoint($mobi-navi) {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+// No gutter for layouts in this file
+@include add-gutter(0);
+
+.event__content--bottom > div.some-links--wrapper {
+  background-color: $turkucalendar-some-buttons-background;
+  padding-top: 0;
+}
+
+.event__content--top,
+.event__content--bottom {
+  @include float-span(12);
+
+  @include breakpoint($mobi-navi) {
+    @include float-span(9);
+  }
+
+  > div {
+    @extend %event-responsive-horz-padding;
+  }
+}
+
+.event__content--bottom > div:first-child {
+  @extend %event-responsive-vert-padding
+}
+
+.event__sidebar--top,
+.event__sidebar--bottom {
+  @include float-span(12);
+  padding-bottom: 20px;
+  position: relative;
+
+  @include breakpoint($mobi-navi) {
+    @include float-span(3);
+    background-color: $turkucalendar-whitegray;
+  }
+
+  > div {
+    @extend %event-sidebar-responsive-horz-padding;
+
+    &.label-above:first-child {
+      border-top: 1px solid $text-label-color;
+      margin-top: 20px;
+    }
+  }
+
+  .label-above {
+    @extend %sidebar-text-label;
+  }
+}
+
+// event main image and its overlays
+.event__image--wrapper {
+  @include float-span(12);
+  @include clearfix;
+  position: relative;
+
+  .event__image {
+    line-height: 0;
+
+    figure {
+      margin: 0;
+
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+
+    > img {
+      width: 100%;
+    }
+  }
+
+  .event__image__content {
+    @extend .grid-item__content;
+
+    a {
+      color: $turkucalendar-white;
+    }
+  }
+
+  .event__image__content--top {
+    @extend .grid-item__content--top;
+  }
+
+  .event__image__content--bottom {
+    @extend .grid-item__content--bottom;
+    @include background(linear-gradient(to bottom, transparent, rgba($turkucalendar-fade, 0.7)));
+
+    .event__date {
+      @extend %grid-tag-left;
+      background-color: $turkucalendar-red;
+      color: $turkucalendar-white;
+      font-size: 1.2em;
+    }
+
+    .event__title {
+      padding: 0 1em;
+    }
+  }
+}
+
+// Event fields
+.event__title {
+  color: $turkucalendar-white;
+
+  h1 {
+    font-size: 18px;
+
+    @include breakpoint($mobi-navi) {
+      font-size: 24px;
+    }
+  }
+}
+
+.event__date {
+  .date-display-range {
+    display: inline-block;
+  }
+}
+
+.event__map {
+  // temporary styles so the generic map widget doesn't look *quite* as horrid
+  > div[style] {
+    overflow: hidden;
+    width: auto !important;
+
+    >div.olMap {
+      margin: 1em auto !important;
+      width: auto !important;
+
+      @include breakpoint($mobi-navi) {
+        margin: 0 !important;
+      }
+    }
+  }
+}
+
+.event__place {
+  ul {
+    padding-left: 0;
+    margin: 0;
+  }
+
+  > ul > li {
+    @extend .icon;
+    @include icon-after-location;
+
+    &:after {
+      color: $turkucalendar-mediumgray;
+      padding-left: 3px;
+    }
+
+    > a {
+      font-family: $body-font;
+    }
+  }
+}
+
+.event__sidebar--bottom {
+  .liftup-box {
+    background: transparent;
+
+    &.node {
+      @extend %event-sidebar-responsive-horz-padding;
+      padding-top: 0;
+    }
+  }
+
+  .liftup-box__header {
+    margin-top: 0;
+  }
+}
+
+// Event nodes in their FULL view mode
+.event.view-mode-full {
+  @include clearfix;
+
+  .event__title {
+    h1 {
+      @include breakpoint($phablet) {
+        font-size: 1.7em;
+      }
+
+      @include breakpoint($tab) {
+        font-size: 2em;
+      }
+
+      @include breakpoint($desk) {
+        font-size: 2.5em;
+      }
+    }
+  }
+
+  .event__leading {
+    @extend %event-responsive-vert-padding;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.6;
+  }
+
+  .event__description {
+    @extend %event-responsive-vert-padding;
+  }
+
+  .event__map {
+    padding: 0;
+    margin: 20px 0;
+
+    @include breakpoint($mobi-navi) {
+      margin: 0 0 5px;
+    }
+  }
+
+  .label-above {
+    @extend %text-label;
+    @extend %event-responsive-vert-padding;
+
+    @include breakpoint($mobi-navi) {
+      padding-top: 20px;
+    }
+  }
+
+  .event__ticket {
+    line-height: 45px;
+    margin-top: 1em;
+    margin-right: 0.5em;
+
+    a {
+      @include border-radius(2px);
+      background-color: $turkucalendar-blue;
+      color: $turkucalendar-white;
+      display: inline-block;
+      padding: 0px 15px;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+  }
+}
+
+// Event in a listing
+.event--list {
+  border-bottom: 1px solid $turku-gray;
+  clear: both;
+  float: left;
+  padding: 0px;
+  position: relative;
+  width: 100%;
+
+  @include breakpoint($small-desk) {
+    padding: 15px 15px;
+  }
+
+  .event__image__wrapper {
+    @include grid-span(4,1);
+    min-height: 100px;
+    padding: 15px 0;
+
+    @include breakpoint($phablet) {
+      @include grid-span(3,1);
+    }
+
+    @include breakpoint($small-desk) {
+      padding: 0;
+    }
+
+    @include breakpoint($desk) {
+      @include grid-span(2,1);
+    }
+  }
+
+  .event__content__wrapper {
+    @include grid-span(8,5);
+    padding: 10px 20px;
+
+    @include breakpoint($phablet) {
+      @include grid-span(9,4);
+    }
+
+    @include breakpoint($small-desk) {
+      padding: 0 30px;
+    }
+
+    @include breakpoint($desk) {
+      @include grid-span(8,3);
+    }
+  }
+
+  .event__information__wrapper {
+    display: none;
+
+    @include breakpoint($desk) {
+      @include grid-span(2,11);
+      display: block;
+      margin-top: 10px;
+    }
+  }
+
+  .event__title {
+    font-size: 1.3em;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+
+    @include breakpoint($tab) {
+      font-size: 1.6em;
+    }
+
+    @include breakpoint($small-desk) {
+      font-size: 2em;
+    }
+  }
+
+  .event__place {
+    font-size: 1.1em;
+    line-height: 1.5;
+
+    @include breakpoint($tab) {
+      font-size: 1.3em;
+    }
+  }
+
+  .event__date {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0.25em 0 0.5em;
+
+    @include breakpoint($small-desk) {
+      font-size: 15px;
+    }
+  }
+
+  .event__leading {
+    display: none;
+    font-style: italic;
+    margin: 0.5em 0 1em;
+
+    @include breakpoint($tab) {
+      display: block;
+    }
+
+    @include breakpoint($small-desk) {
+      margin: 0.5em 0 1.5em;
+    }
+
+    > p {
+      margin: 0.5em 0;
+    }
+  }
+
+  .event__ticket {
+    float: left;
+    line-height: 3;
+    margin-right: 1em;
+
+    a {
+      @include border-radius(2px);
+      background-color: $turkucalendar-blue;
+      color: $turkucalendar-white;
+      display: inline-block;
+      padding: 0px 15px;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+  }
+
+  .some-links {
+    display: none;
+
+    .some-links__list {
+      margin: 0;
+      text-align: left;
+      padding: 0;
+    }
+
+    @include breakpoint($small-desk) {
+      display: inline-block;
+    }
+  }
+}
+
+// Event map popup content
+.event-map-item {
+  background-color: $turkucalendar-white;
+  display: table-row;
+  padding: 5px;
+  position: relative;
+
+  @include breakpoint($small-desk) {
+    padding: 10px;
+  }
+
+  .event__image--wrapper {
+    display: none;
+    line-height: 0;
+    min-width: 120px;
+    max-width: 240px;
+
+    @include breakpoint($tab) {
+      display: table-cell;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .event__image__content {
+    line-height: normal;
+  }
+
+  .event__content--wrapper {
+    display: table-cell;
+    padding: 10px 20px;
+    vertical-align: top;
+
+    @include breakpoint($small-desk) {
+      padding: 10px 30px;
+    }
+  }
+
+  .event__title {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 0;
+
+    @include breakpoint($tab) {
+      font-size: 1.6em;
+    }
+
+    @include breakpoint($small-desk) {
+      font-size: 2em;
+    }
+  }
+
+  .event__place {
+    font-size: 1.1em;
+    margin-top: 5px;
+
+    @include breakpoint($tab) {
+      font-size: 1.3em;
+    }
+
+    > ul > li {
+      @extend .icon;
+      @include icon-after-location;
+
+      &:after {
+        color: $turkucalendar-mediumgray;
+        display: inline-block;
+        padding-left: 3px;
+      }
+    }
+  }
+
+  .event__date {
+    font-size: 12px;
+    margin-bottom: 10px;
+
+    @include breakpoint($small-desk) {
+      font-size: 14px;
+    }
+  }
+
+  .date-display-start,
+  .date-display-end {
+    display: inline-block;
+  }
+
+  .event__leading {
+    display: none;
+    font-style: italic;
+    margin-top: 20px;
+
+    @include breakpoint($tab) {
+      display: block;
+    }
+  }
+}
+
+// Recurring event quicktabs
+.event__series-events {
+  .quicktabs-wrapper {
+    margin: 0 0 1em;
+
+    .quicktabs-tabs {
+      margin: 0;
+      text-align: left;
+    }
+  }
+
+  .event {
+    @include clearfix;
+    display: table;
+    padding: 0.5em;
+    width: 100%;
+
+    @include breakpoint($tab) {
+      display: block;
+    }
+
+    &:nth-child(2n) {
+      background-color: $turkucalendar-whitegray;
+    }
+  }
+
+  .event > .event__title {
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .event > .event__date {
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+
+    @include breakpoint($tab) {
+      margin-bottom: 0;
+    }
+  }
+
+  .event > .event__ticket {
+    display: table-footer-group;
+
+    @include breakpoint($tab) {
+      display: block;
+      float: right;
+      margin-top: 0;
+      margin-right: 0;
+      margin-left: 0.5em;
+    }
+  }
+}

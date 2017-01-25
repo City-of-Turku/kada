@@ -1,0 +1,70 @@
+<?php
+/**
+ * @file
+ * Code for the KADA Service directory feature.
+ */
+
+include_once 'kada_service_directory_feature.features.inc';
+/**
+ * Implements hook_views_pre_execute()
+ */
+function kada_service_directory_feature_views_pre_execute(&$view) {
+  if ($view->name == 'service_directory') {
+    // Creating a custom query to include also synonym values per service
+    // description in the view results.
+    global $language;
+
+    // Node table is part of most queries when working with content lists
+    $query2 = db_select('node', 'node');
+    // Choose the values for synonym which is stored in field_alternative_name
+    $query2->innerJoin('field_data_field_alternative_name', 'field_data_field_alternative_name', 'node.nid = field_data_field_alternative_name.entity_id');
+    // This custom query has to match the Views query when it comes to SELECT,
+    // otherwise UNION is not possible and error happens.
+    $query2->addField('node', 'nid', 'nid');
+    $query2->addField('field_data_field_alternative_name', 'field_alternative_name_value', 'field_data_title_field_title_field_value');
+    $query2->addExpression("'node'", "field_data_title_field_node_entity_type");
+
+    // Conditions define the WHERE clause, so they should match the Views query
+    // as close as possible
+    $query2->condition('node.type', 'service', '=')
+           ->condition('node.status', 1, '=')
+           ->condition('field_data_field_alternative_name.language', $language->language, '=');
+
+    // UNION between the Views query and this custom query
+    $views_query = $view->build_info['query'];
+    $query2->union($views_query, 'UNION');
+
+    // Code below could be useful if we have problems with cardinality
+    // in order to prevent Cardinality violation errors i have to make a "total"
+    // query $total_query = db_select($query2,'total')->fields('total');
+    // update views query and count_query with my new query.
+    // $view->build_info['query'] = $total_query;
+
+    // Update Views query with the combined query
+    $view->build_info['query'] = $query2;
+    $view->build_info['count_query'] = $view->build_info['query']; //count_query is necessary for the pager
+  }
+}
+
+/**
+ * Implements hook_views_pre_execute()
+ */
+function kada_service_directory_feature_views_post_execute(&$view) {
+  if ($view->name == 'service_directory') {
+    // Because this view has been altered in hook_views_pre_execute, we have to
+    // make sure the output matches the requirements when it comes to the
+    // additional rows.
+    foreach ($view->result as $key => $row) {
+       if ($row->field_data_title_field_title_field_value != $row->field_title_field[0]['rendered']['#markup']) {
+        // If the values differ, then the row has been added in
+        // hook_views_pre_execute. Then we need to alter also the output of the
+        // row, so that Views can render them as we want.
+        $row->field_title_field[0]['rendered']['#markup'] = $row->field_data_title_field_title_field_value;
+        $row->field_title_field[0]['raw']['value'] = $row->field_data_title_field_title_field_value;
+        // This field is for grouping the results by first letter, so we do the
+        // same here.
+        $row->field_title_field_1[0]['rendered']['#markup'] = substr($row->field_data_title_field_title_field_value, 0, 1);
+       }
+     }
+  }
+}

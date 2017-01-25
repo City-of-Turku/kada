@@ -1,0 +1,36 @@
+.breadcrumb {
+  margin: 0;
+  padding: 0.5em;
+
+  @include breakpoint($small-desk) {
+    padding: 0.5em $gutters * 2;
+  }
+}
+
+.l-page.has-sidebar-first {
+  .breadcrumb {
+    @include breakpoint($small-desk) {
+      @include grid-span(9, 4);
+      padding: 0.5em 0;
+    }
+  }
+}
+
+.breadcrumb__item {
+  display: inline-block;
+  font-size: 0.8em;
+  list-style: none;
+  text-transform: uppercase;
+  &:after {
+    color: $link-color;
+    content: ">";
+    font-size: 0.875em;
+    margin: 0 5px;
+  }
+  &:last-child {
+    &:after {
+      content: "";
+      display: none;
+    }
+  }
+}

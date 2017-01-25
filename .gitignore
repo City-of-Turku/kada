@@ -1,0 +1,19 @@
+# Ignore configuration files that may contain sensitive information.
+# sites/*/settings*.php
+
+# Ignore paths that contain user-generated content.
+sites/*/files
+files/*
+private_files/*
+sites/*/private
+/current/
+/builds/
+/tmp
+/_build/
+/.make_cache/
+
+# Ignore PhpStorm generated content
+.idea
+
+# Ignore .DStore-files
+.DS_Store

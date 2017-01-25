@@ -1,0 +1,15 @@
+<?php
+/**
+ * Implementation of hook_install()
+ */
+function tkufi_sections_feature_install() {
+  /**
+   * Set tkufi_sections_feature module weight to -10 so it runs before og,
+   * allowing us to manipulate og_context(), settings correct lang group as
+   * context.
+   */
+  db_update('system')
+  ->fields(array('weight' => -10))
+  ->condition('name', 'tkufi_sections_feature', '=')
+  ->execute();
+}

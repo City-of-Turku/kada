@@ -1,0 +1,238 @@
+// Jquery UI accordion overrides
+.ui-accordion {
+  padding-left: 0;
+
+  .ui-accordion-header {
+    margin-top: 0;
+    padding: 0;
+
+    .ui-accordion-header-icon {
+      background: none;
+      left: auto;
+      margin-top: 0;
+      position: static;
+      top: auto;
+    }
+  }
+
+  .ui-accordion-content {
+    border: none;
+    padding: 0;
+  }
+}
+
+.ui-widget-content {
+  background: none;
+}
+
+.ui-state-default {
+  a,
+  a:focus,
+  a:link,
+  a:visited,
+  a:hover {
+   color: #FFFFFF;
+  }
+}
+
+.ui-icon,
+.ui-stage-default .ui-icon,
+.ui-state-active .ui-icon {
+  background: none;
+}
+
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-br,
+.ui-corner-left,
+.ui-corner-right,
+.ui-corner-top,
+.ui-corner-tr {
+  @include border-radius(0);
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+  background: none;
+  border: none;
+}
+
+.ui-helper-reset {
+  @include font-size(14px);
+}
+
+// Accordion styles
+
+$icon-height: 20px;
+$icon-width: 20px;
+
+$icon-line-width: 4px;
+
+.ui-accordion {
+  margin: 1em 0;
+
+  .ui-accordion-header {
+    background-color: $turku-blue;
+    color: $turku-white;
+    margin-bottom: 5px;
+    padding: 10px $icon-width + 15px 10px 10px;
+
+    h3 {
+      @include font-size(14px);
+      font-weight: normal;
+      margin: 0;
+
+      @include breakpoint($small-desk) {
+        @include font-size(16px);
+      }
+    }
+
+    .precondition {
+      @include font-size(11px);
+      color: #f5f5f5;
+    }
+
+    .ui-accordion-header-icon {
+      display: block;
+      height: $icon-height;
+      margin-top: -($icon-height / 2);
+      overflow: hidden;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      width: $icon-width;
+
+      &:after,
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+      }
+
+      &:after {
+        background: none repeat scroll 0 0 #FFFFFF;
+        height: $icon-line-width;
+        left: 0;
+        margin-top: -($icon-line-width / 2);
+        width: $icon-width;
+      }
+
+      &:before {
+        background: none repeat scroll 0 0 #FFFFFF;
+        height: $icon-height;
+        left: 50%;
+        margin-left: -($icon-line-width / 2);
+        margin-top: -50%;
+        width: $icon-line-width;
+      }
+    }
+
+    &.ui-accordion-header-active {
+      .ui-accordion-header-icon:before {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .ui-accordion-content {
+    @include font-size(12px);
+    background-color: #daf1f8;
+    margin-top: -5px;
+    padding: 21px 14px 14px;
+    position: relative;
+
+    @include breakpoint($small-desk) {
+      @include font-size(14px);
+      padding: 14px;
+    }
+
+    &.ui-accordion-content-active {
+      margin-bottom: 5px;
+    }
+
+    &:after {
+      @include arrow-down($turku-blue);
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .field {
+      margin: 1em 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .field-label,
+      .field__label {
+        color: #000000;
+      }
+
+      .field-item,
+      .field__item {
+        padding: 5px 10px 5px 10px;
+      }
+    }
+
+    .link-to-content {
+      border-top: 1px solid #fff;
+      margin-top: 10px;
+      padding-top: 10px;
+
+      a {
+        position: relative;
+
+        &:after {
+          @include small-arrow-right($turku-blue);
+          left: auto;
+          right: -15px;
+        }
+      }
+    }
+
+    .node--accordion {
+      .field {
+        @include font-size(12px);
+        line-height: 1.4;
+        margin: 0 -12px;
+        padding: 6px 12px;
+
+        @include breakpoint($small-desk) {
+          margin: 0 -14px;
+          padding: 6px 14px;
+        }
+
+        .field__item {
+          padding: 0;
+
+          p {
+            @include font-size(12px);
+            line-height: 1.4;
+          }
+        }
+
+        &:nth-child(even) {
+          background-color: lighten(#daf1f8, 5);
+        }
+      }
+    }
+  }
+}
+
+.compact-accordion-wrapper .ui-accordion {
+  .ui-accordion-header {
+    margin-bottom: 5px;
+    padding: 8px $icon-width + 15px 8px 8px;
+
+    h3 {
+      @include font-size(14px);
+    }
+  }
+}

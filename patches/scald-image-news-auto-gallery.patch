@@ -1,0 +1,21 @@
+diff --git a/modules/providers/scald_image/scald_image.module b/modules/providers/scald_image/scald_image.module
+index a1fe898..d65e7d9 100644
+--- a/modules/providers/scald_image/scald_image.module
++++ b/modules/providers/scald_image/scald_image.module
+@@ -259,6 +259,16 @@ function scald_image_scald_prerender($atom, $context, $options, $mode) {
+     if (!empty($options['link'])) {
+       $atom->rendered->player = l($atom->rendered->player, $options['link'], array('html' => TRUE));
+     }
++    elseif (menu_get_object()->type == 'news_item' && $context != 'current') {
++      global $language;
++      $image_caption = $atom->field_title_text[$language->language][0]['value'];
++      $image_styled_url = image_style_url('full_modal',$atom->base_entity->uri);
++      $atom->rendered->player = l($atom->rendered->player, $image_styled_url,
++        array('html' => TRUE,
++              'attributes' => array(
++                'title' => $image_caption),
++              ));
++    }
+   }
+ }
+ 

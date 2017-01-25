@@ -1,0 +1,194 @@
+/*******************************************************************************
+ * turkucalendar-front.layout.scss
+ *
+ * Layout built with Singularity.
+ ******************************************************************************/
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+body {
+  background: #343E51;
+}
+
+.l-header {
+  background: transparent;
+}
+
+.l-navigation-top {
+  z-index: 4;
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+.l-branding {
+  z-index: 5;
+  position: relative;
+}
+
+@media (min-width: 946px) {
+  .l-custom-navigation {
+    float: none;
+    margin: 0 auto;
+    max-width: 1320px;
+  }
+}
+
+.l-region--top-carousel {
+  width: 100%;
+  float: right;
+  margin-left: 0;
+  margin-right: 0;
+  clear: none;
+  background-color: #37475E;
+}
+@media (min-width: 1138px) {
+  .l-region--top-carousel {
+    width: 66.10169%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: none;
+  }
+}
+
+.l-region--top-tabs {
+  display: none;
+}
+@media (min-width: 1138px) {
+  .l-region--top-tabs {
+    width: 32.20339%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    display: block;
+  }
+}
+
+.l-filters {
+  z-index: 4;
+  background-color: #FAFCFD;
+  padding-top: 15px;
+  position: relative;
+}
+@media (min-width: 551px) {
+  .l-filters {
+    background-color: #37475E;
+    margin-top: 100px;
+    padding-top: 0;
+  }
+}
+
+.l-region--filters {
+  background-color: #37475E;
+  margin: 0 auto;
+  max-width: 1112px;
+}
+.l-region--filters:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (min-width: 551px) {
+  .l-region--filters {
+    position: relative;
+    top: -60px;
+  }
+}
+
+.l-main-wrapper {
+  z-index: 3;
+  background-color: #FAFCFD;
+  clear: both;
+  overflow: hidden;
+  padding: 2em 0;
+  position: relative;
+}
+
+.l-main {
+  padding-bottom: 1em;
+}
+.l-main:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.l-content {
+  background-color: #FFFFFF;
+  padding: 0 !important;
+}
+.l-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (min-width: 769px) {
+  .l-content {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+  }
+}
+
+.l-region,
+.l-content {
+  margin: 0 16px;
+}
+@media (min-width: 769px) {
+  .l-region,
+  .l-content {
+    margin: 0 auto;
+  }
+}
+
+.l-highlights .l-region {
+  margin: 0;
+}
+
+@media (min-width: 946px) {
+  .l-navigation-top,
+  .l-highlights,
+  .l-branding-wrapper,
+  .l-header-top .l-navigation {
+    float: none;
+    margin: 0 auto;
+    max-width: 1320px;
+    padding: 8px;
+  }
+}
+
+.l-highlights {
+  z-index: 4;
+  margin: 1em auto;
+  position: relative;
+}
+.l-highlights:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (min-width: 946px) {
+  .l-highlights {
+    margin: 2em auto;
+  }
+}
+
+.l-footer {
+  z-index: 3;
+  background: #37475E;
+}
+.l-footer .l-after-footer-wrapper {
+  background: #343E51;
+}
+
+@media (min-width: 769px) {
+  .l-main,
+  .l-footer .l-region {
+    float: none;
+    margin: 0 auto;
+    max-width: 1320px;
+    padding: 8px;
+  }
+}

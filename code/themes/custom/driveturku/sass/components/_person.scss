@@ -1,0 +1,153 @@
+%person-field-with-icon {
+  @extend .icon;
+  display: inline-block;
+
+  &:before {
+    color: $turku-blue;
+    display: inline-block;
+    font-size: 16px;
+    vertical-align: middle;
+    width: 25px;
+  }
+}
+
+.person {
+  &.view-mode-full {
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  @include add-gutter(3em);
+
+  .person__content-top,
+  .person__content-bottom,
+  .person__add-position-of-trust {
+    @include grid-span(12,1);
+
+    @include breakpoint($tab) {
+      @include grid-span(7,6);
+    }
+    @include breakpoint($small-desk) {
+      @include grid-span(8,5);
+    }
+  }
+
+  .person__image {
+    @include grid-span(12,1);
+    line-height: 0;
+    text-align: center;
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+
+    @include breakpoint($tab) {
+      @include grid-span(5,1);
+      padding-top: 2em;
+      text-align: right;
+    }
+    @include breakpoint($small-desk) {
+      @include grid-span(4,1);
+    }
+
+    img {
+      width: 225px;
+
+      @include breakpoint($tab) {
+        width: 100%;
+      }
+    }
+  }
+
+  .person__add-position-of-trust {
+    @extend .icon;
+    @include icon-plus;
+    clear: both;
+    margin: 10px 0;
+
+    &:before {
+      margin-right: 5px;
+    }
+  }
+
+  .person__name {
+    margin-bottom: 0;
+  }
+
+  .person__title {
+    font-weight: 600;
+    font-size: $font-size-h2;
+  }
+
+  .person__contact {
+    border-bottom: 1px solid $turku-blue;
+
+    > div {
+      margin-bottom: 5px;
+      padding: 0 20px 0 0;
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+    @include breakpoint($tab) {
+      margin: 10px 0;
+    }
+  }
+
+  .person__phone {
+    @extend %person-field-with-icon;
+    @include icon-phone;
+    &:before {
+      font-size: 22px;
+    }
+  }
+
+  .person__email {
+    @extend %person-field-with-icon;
+    @include icon-email-icon;
+  }
+
+  .person__contact-details {
+    padding-top: 1px;
+
+    h3 {
+      margin: 5px 0;
+    }
+  }
+
+  .person__employee,
+  .person__trustee {
+    h2 {
+      color: $turku-blue;
+      margin: 20px 0 5px;
+    }
+  }
+
+  .field__label {
+    @include breakpoint($tab) {
+      font-weight: 600;
+    }
+  }
+
+  .field--name-field-deputy-member {
+    h3 {
+      margin: 0;
+    }
+  }
+
+  .field--name-field-task-description {
+    margin-bottom: 1em;
+  }
+
+  .field--name-field-visiting-address {
+    white-space: pre-wrap;
+  }
+}
+
+.node--person--only-title {
+  margin: 1em 0;
+
+  a {
+    color: #FFF;
+  }
+}

@@ -1,0 +1,180 @@
+<?php
+/**
+ * @file
+ * Code for the TKUFI Places feature.
+ */
+
+include_once 'tkufi_places_feature.features.inc';
+/**
+ * @Implement hook_views_pre_view().
+ * Alter incomming verbal argument to node ID for contextual filtering
+ * Create link to event-search page.
+ */
+function tkufi_places_feature_views_pre_view(&$view, &$display_id, &$args) {
+  if ($view->name == 'driveturku_event_list' && $view->current_display == 'event_place_list_page') {
+    global $language;
+    $language = $language->language;
+    // Url aliases
+    $alias = array(
+      'fi' => 'toimipaikat',
+      'sv' => 'kontor',
+      'en' => 'places',
+    );
+    // Get argument value
+    $argument = $args[0];
+    // Get orginal node path with ID for contextual filter
+    $path = $alias[$language] . '/' . $argument;
+    $path = drupal_lookup_path('source', $path);
+    if (!empty($path)) {
+      $node_id = substr($path, 5);
+    }
+    else {
+      $node_id = $argument;
+    }
+
+    $args[0] = $node_id;
+
+    // Create link to event search page and attach it to attachment before
+    // Get domain path
+    $domain_id = domain_load_domain_id('calendar');
+    $domain = domain_lookup($domain_id);
+    $domain_path = domain_get_path($domain);
+    // Link language
+    if ($language != 'fi') {
+      $link_language = $language . '/';
+    }
+    else {
+      $link_language = '';
+    }
+    // Create link in l()
+    $link_title = t('Search in all events');
+    $link_path = $domain_path;
+    $link_path .= $link_language;
+    $link_path .= 'events/event-search/';
+    // link options array
+    $options = array(
+      'attributes' => array(
+        'class' => 'calendar__more-link button button--arrow',
+      ),
+    );
+    $link = l($link_title, $link_path, $options);
+    // Create container for link.
+    $link_wrapper = '<div class="place__event-list">' . $link . '</div>';
+    // Attach link container to view.
+    $view->attachment_before = $link_wrapper;
+  }
+}
+
+function tkufi_places_feature_views_pre_render(&$view) {
+  if ($view->name == 'driveturku_event_list' && $view->current_display == 'event_place_list_page') {
+    $view->build_info['title'] .= $view->build_info['substitutions']['%1'];
+  }
+}
+
+/**
+ * Declare what blocks are provided by this module.
+ * Implements hook_block_info().
+ */
+
+function tkufi_places_feature_block_info() {
+  $block['place_events_list_link'] = array(
+    'info' => t('Place event list link'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+    );
+
+  return $block;
+}
+
+/**
+ * Define what our block is going to look like.
+ * Implements hook_block_view().
+ */
+
+function tkufi_places_feature_block_view($delta = '') {
+  $block = array();
+
+  if (module_exists('kada_events_base_feature')) {
+    if ($delta == 'place_events_list_link' ) {
+      // Get ID from arg()
+      $arg = arg(1);
+      $events_found = _tkufi_place_feature_show_event_link($arg);
+      if ($events_found) {
+        // Get alias and explode string to array
+        $path_alias = drupal_get_path_alias('node/' . $arg);
+        $path_components = explode('/', $path_alias);
+        // Link title
+        $link_title = t('List of events');
+        // Link path
+        $link_path = 'place/';
+        $link_path .= $path_components[1];
+        $link_path .= '/events';
+        // Link options
+        $options = array(
+          'attributes' => array(
+            'class' => 'calendar__more-link button button--arrow',
+          ),
+        );
+        // Create link with l()
+        $link = l($link_title, $link_path, $options);
+
+        $block['subject'] = t('Events');
+
+        $block['content'] = '<div class="place__event-list">' . $link . '</div>';
+      }
+    }
+  }
+  return $block;
+}
+
+function _tkufi_place_feature_show_event_link($node_id) {
+  $node_ids = array();
+  $relation_query = relation_query('node', $node_id, 0);
+  // Query will return all relations between place and services
+  $relations = $relation_query->execute();
+  foreach ($relations as $rid => $values) {
+    $relation = relation_load($values->rid);
+    $node_ids[] = $relation->endpoints['und'][1]['entity_id'];
+  }
+
+  // If there are either services or events, then execute a query
+  $result = NULL;
+  if (!empty($node_ids)) {
+    // Build field query
+    $query = new EntityFieldQuery();
+    // Look if ids contains events that have not started yet
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'event')
+      ->entityCondition('entity_id', $node_ids, 'IN')
+      ->propertyCondition('status', NODE_PUBLISHED)
+      ->fieldCondition('field_event_date', 'value2', date('Y-m-d H:i:s', strtotime('now')), '>=');
+
+    $result = $query->execute();
+  }
+
+  // If events found return true else false
+  if (!empty($result)) {
+    return TRUE;
+  }
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function tkufi_places_feature_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'place_node_form') {
+    $address_fields = array(
+      'field_address_street',
+      'field_address_visiting',
+      'field_address_postal',
+      'field_address_billing',
+    );
+    global $language;
+    foreach ($address_fields as $field) {
+      // Hide Address 2 field from addressfield
+      $form[$field][$language->language][0]['street_block']['premise']['#access'] = FALSE;
+    }
+  }
+}

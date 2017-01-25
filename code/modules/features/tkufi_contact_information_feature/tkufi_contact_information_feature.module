@@ -1,0 +1,108 @@
+<?php
+/**
+ * @file
+ * Code for the TKUFI Contact information feature.
+ */
+
+include_once 'tkufi_contact_information_feature.features.inc';
+
+/**
+ * Implements MODULE_preprocess_HOOK().
+ */
+function tkufi_contact_information_feature_preprocess_node(&$vars) {
+  // If user has permission to create new Position of trust
+  if ($vars['type'] == 'person' && user_access('create position_of_trust content')) {
+    // Link for adding a new position of trust per Person which can be
+    // displayed as field when viewing the Person. Prepopulate module
+    // will grab the parameter and prepopulates the relation autocomplete
+    // field.
+    // NOTE: The field doesn't render correctly inside field groups,
+    // see more info at https://www.drupal.org/node/1342878
+
+    global $language;
+    // Get title and nid from the Person for form prepopulation
+    $node = $vars['node'];
+    $node_wrapper = entity_metadata_wrapper('node', $node);
+    $title = $node_wrapper->title_field->value();
+    $nid = $node->nid;
+
+    // Language prefix for destination parameter
+    $language_prefix = '';
+    if (!empty($language->prefix)) {
+      $language_prefix = '/' . $language->prefix;
+    }
+
+    // Construct the link
+    $path = "node/add/position-of-trust";
+    $query = array("edit[field_trustee][und][0][relation_options][targets][target_2]" => $title . " [node:$nid]", "destination" => $language_prefix . "/node/$nid");
+    $link = l(t('Add a new position of trust'), $path, array("query" => $query));
+    // DS preprocess field with a machine name add_position_link
+    $vars['content']['add_position_link'][0] = array(
+      '#markup' => '<div class="person__add-position-of-trust">' . $link . '</div>',
+    );
+  }
+}
+
+/**
+ * Implements hook_ds_fields_info().
+ * Add fields that are needed for widget rendering.
+ */
+function tkufi_contact_information_feature_ds_fields_info($entity_type) {
+  $fields = array();
+  // Widgets: Event carousel
+  $fields['node']['person_full_name'] = array(
+    'title' => t('Full name'),
+    'ui_limit' => array('person|*'),
+    'field_type' => DS_FIELD_TYPE_FUNCTION,
+    'function' => '_tkufi_contact_information_feature_ds_person_full_name'
+  );
+  // Positions of trust for search result view mode from a Views display
+  $fields['node']['positions_trust_search'] = array(
+    'title' => t('Positions of trust'),
+    'ui_limit' => array('person|search_result'),
+    'field_type' => DS_FIELD_TYPE_FUNCTION,
+    'function' => '_tkufi_contact_information_feature_ds_positions_trust_search'
+  );
+  if (isset($fields[$entity_type])) {
+    return array($entity_type => $fields[$entity_type]);
+
+  }
+  return;
+}
+
+function _tkufi_contact_information_feature_ds_person_full_name($field) {
+  $output = array();
+
+  if (!empty($field['entity']->field_first_name['und'][0]['safe_value'])) {
+    $output[] = $field['entity']->field_first_name['und'][0]['safe_value'];
+  }
+
+  if (!empty($field['entity']->field_surname['und'][0]['safe_value'])) {
+    $output[] = $field['entity']->field_surname['und'][0]['safe_value'];
+  }
+  return l(implode(' ', $output), 'node/' . $field['entity']->nid);
+}
+
+function _tkufi_contact_information_feature_ds_positions_trust_search($field) {
+  $view_name = 'driveturku_positions_of_trust';
+  $display_id = 'search';
+  $args = array($field['entity']->nid);
+  $view = views_get_view($view_name);
+  // Make sure there are some results in the view
+  if (is_object($view)) {
+    if (is_array($args)) {
+      $view->set_arguments($args);
+    }
+    $view->set_display($display_id);
+    $view->pre_execute();
+    $view->execute();
+
+    if (!empty($view->result[0])) {
+      // Collect positions of trust from a view
+      $positions = views_embed_view($view_name, $display_id, $args[0]);
+      return $positions;
+    } else {
+      return NULL;
+    }
+  }
+}

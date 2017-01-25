@@ -1,0 +1,14 @@
+diff --git a/geofield.widgets.openlayers.inc b/geofield.widgets.openlayers.inc
+index f76e95d..ae3200f 100644
+--- a/geofield.widgets.openlayers.inc
++++ b/geofield.widgets.openlayers.inc
+@@ -324,7 +324,8 @@ function openlayers_use_geocoder_submit($form, &$form_state) {
+   // Set the widget value based on geocoding results.
+   $field_state = field_form_get_state($parents, $field_name, $langcode, $form_state);
+   $geocoder_field = $field_state['instance']['widget']['settings']['geocoder_field'];
+-  if ($field_value = geocoder_widget_get_field_value($element['#entity_type'], $field_state['instance'], NULL, $form_state['values'][$geocoder_field][$langcode])) {
++  $geocoder_field_lang = $form[$geocoder_field]['#language'];
++  if ($field_value = geocoder_widget_get_field_value($element['#entity_type'], $field_state['instance'], NULL, $form_state['input'][$geocoder_field][$geocoder_field_lang])) {
+     geophp_load();
+     $geometry = geoPHP::load($field_value[$langcode][$delta]['geom']);
+     $field_value[$langcode][$delta]['geom'] = $geometry->out('wkt'); // OpenLayers can only use WKT, so translate

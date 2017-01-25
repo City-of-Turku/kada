@@ -1,0 +1,186 @@
+.block--tkufi-search-feature-quicksearch,
+.block--tkufi-search-feature-quicksearch--2 {
+  display: none;
+  white-space: nowrap;
+
+  .block__title {
+    display: none;
+  }
+
+  .form-item {
+    @extend .icon;
+    @include icon-search;
+    display: table-cell;
+    margin-bottom: 0;
+    position: relative;
+    width: auto;
+
+    &:before {
+      color: $turku-blue;
+      bottom: 8px;
+      font-size: 1.6em;
+      left: 6px;
+      position: absolute;
+    }
+
+    input {
+      background: $navigation-bg;
+      border: 0;
+      line-height: 1.5;
+      padding: 0.5em 1em 0.5em 2.75em;
+      width: 100%;
+      @include border-radius(0);
+      @include placeholder {
+        color: $body-font-color;
+        font-style: italic;
+      }
+    }
+
+    label {
+      display: none;
+    }
+  }
+
+  .form-submit {
+    background: transparent;
+    border: 1px solid rgba($light-gray, 0.8);
+    display: table-cell;
+    margin-right: 0;
+    padding: 0.5em 1em;
+    vertical-align: bottom;
+    @include border-radius(0);
+
+    @include breakpoint($tab) {
+      display: inline-block;
+    }
+  }
+}
+
+// Quick search; opens above header when smaller than mobi-navi
+.block--tkufi-search-feature-quicksearch {
+  @include breakpoint($tab) {
+    text-align: center;
+  }
+
+  &.has-animated-height {
+    display: block;
+    max-height: 92px;
+    overflow: hidden;
+    @include transition(max-height 0.25s ease-out);
+
+    // Don't show this block above mobi-navi; the other one is shown there
+    @include breakpoint($mobi-navi) {
+      display: none;
+    }
+
+    &.is-collapsed {
+      @include transition(max-height 0.25s ease-out);
+      max-height: 0;
+    }
+  }
+
+  .form-item {
+    border-right: 4px solid transparent;
+
+    @include breakpoint($tab) {
+      border-right: 0;
+      display: inline-block;
+      width: 70%;
+    }
+
+    @include breakpoint($small-desk) {
+      width: 60%;
+    }
+  }
+
+  .block__content {
+    padding: 3% 10px 2%;
+
+    @include breakpoint($tab) {
+      padding: 2% 1% 1%;
+    }
+  }
+
+  // we need a table-row to wrap table-cells nicely
+  form > div {
+    display: table-row;
+    @include breakpoint($tab) {
+      display: block;
+    }
+  }
+}
+
+// Quick search in header; always visible above mobi-navi
+.block--tkufi-search-feature-quicksearch--2 {
+  @include breakpoint($mobi-navi) {
+    display: inline-block;
+    margin-top: 1px;
+  }
+
+  .block__content {
+    padding: 0 0.5em;
+  }
+
+  .form-item {
+    display: inline-block;
+    width: 20em;
+  }
+
+  .form-submit {
+    margin-right: 0;
+    padding: 0.5em 1em;
+  }
+}
+
+.quick-search-toggler {
+  @extend .icon;
+  @include icon-search;
+  color: $turku-white;
+  cursor: pointer;
+  vertical-align: baseline;
+
+  &:before {
+    font-size: 1.6em;
+
+    @include breakpoint($mobi-navi) {
+      margin-right: 4px;
+    }
+  }
+}
+
+.l-navigation-top .quick-search-toggler {
+  display: none;
+
+  @include breakpoint($mobi-navi) {
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 0 0.35em;
+  }
+}
+
+.l-navigation .quick-search-toggler {
+  background-color: $turku-blue;
+  display: inline-block;
+  height: 35px;
+  text-align: center;
+  vertical-align: top;
+  width: 35px;
+
+  @include breakpoint($tab) {
+    height: 40px;
+    width: 40px;
+  }
+
+  &:before {
+    line-height: 35px;
+    vertical-align: middle;
+
+    @include breakpoint($tab) {
+      line-height: 40px;
+    }
+  }
+
+  @include breakpoint($mobi-navi) {
+    display: none;
+  }
+}

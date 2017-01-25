@@ -1,0 +1,81 @@
+diff --git a/theme/views-data-export-doc-lines-body.tpl.php b/theme/views-data-export-doc-lines-body.tpl.php
+new file mode 100644
+index 0000000..ed0d5b6
+--- /dev/null
++++ b/theme/views-data-export-doc-lines-body.tpl.php
+@@ -0,0 +1 @@
++<?php print $tbody; ?>
+\ No newline at end of file
+diff --git a/theme/views_data_export.theme.inc b/theme/views_data_export.theme.inc
+index 23fe27d..c33779e 100644
+--- a/theme/views_data_export.theme.inc
++++ b/theme/views_data_export.theme.inc
+@@ -263,18 +263,32 @@ function template_preprocess_views_data_export_doc_body(&$vars) {
+   // Pass through the generic MS Office preprocess.
+   template_preprocess_views_data_export_msoffice_body($vars);
+ }
++function template_preprocess_views_data_export_doc_lines_body(&$vars) {
++  // Pass through the generic MS Office preprocess.
++  template_preprocess_views_data_export_msoffice_doc_lines_body($vars);
++}
+ 
+ function template_preprocess_views_data_export_xls_body(&$vars) {
+   // Pass through the generic MS Office preprocess.
+   template_preprocess_views_data_export_msoffice_body($vars);
+ }
+ 
++function template_preprocess_views_data_export_msoffice_doc_lines_body(&$vars) {
++  //_views_data_export_header_shared_preprocess($vars);
++  _views_data_export_body_shared_preprocess($vars);
++  foreach($vars['themed_rows'] as $row) {
++    foreach($row as $field) {
++      $output .= strip_tags($field) . PHP_EOL;
++    }
++    $output .= PHP_EOL;
++  }
++  $vars['tbody'] = htmlspecialchars_decode($output);
++  return;
++}
+ function template_preprocess_views_data_export_msoffice_body(&$vars) {
+   _views_data_export_header_shared_preprocess($vars);
+   _views_data_export_body_shared_preprocess($vars);
+ 
+-  $output = '';
+-
+   // Construct the tbody of a table, see theme_table().
+ 
+   $ts = tablesort_init($vars['header']);
+@@ -338,6 +352,8 @@ function template_preprocess_views_data_export_xls_header(&$vars) {
+ }
+ 
+ function template_preprocess_views_data_export_msoffice_header(&$vars) {
++  $vars['header_row'] = "";
++  return;
+   _views_data_export_header_shared_preprocess($vars);
+ 
+   // Need to do a little work to construct the table header, see theme_table().
+diff --git a/views_data_export.views.inc b/views_data_export.views.inc
+index c433c79..73acd54 100644
+--- a/views_data_export.views.inc
++++ b/views_data_export.views.inc
+@@ -83,6 +83,20 @@ function views_data_export_views_plugins() {
+         ),
+         'additional themes base' => 'views_data_export_doc',
+       ) + $style_defaults,
++      'views_data_export_doc_lines' => array(
++          'title' => t('DOC file in line format'),
++          'help' => t('Display the view as a doc file.'),
++          'handler' => 'views_data_export_plugin_style_export',
++          'export headers' => array('Content-Type' => 'application/msword'),
++          'export feed type' => 'doc',
++          'export feed text' => 'Word Document',
++          'export feed file' => '%view.doc',
++          'export feed icon' => drupal_get_path('module', 'views_data_export') . '/images/doc.png',
++          'additional themes' => array(
++            'views_data_export_doc_lines_body' => 'style',
++          ),
++          'additional themes base' => 'views_data_export_doc_lines',
++        ) + $style_defaults,
+       'views_data_export_txt' => array(
+         'title' => t('TXT file'),
+         'help' => t('Display the view as a txt file.'),

@@ -1,0 +1,48 @@
+diff --git a/js/radioactivity-history.js b/js/radioactivity-history.js
+--- a/js/radioactivity-history.js
++++ b/js/radioactivity-history.js
+@@ -6,16 +6,18 @@ Drupal.behaviors.radioactivity_history = {
+     if ($.fn.sparkline) {
+       $('.radioactivity-history').each(function (match) {
+         var dataset = $.parseJSON($(this).text());
+-        $(this).sparkline(dataset.values, {
+-          type:'bar',
+-          height:'100%',
+-          width:'100%',
+-          chartRangeMin: dataset.cutoff,
+-          tooltipFormat: dataset.tooltipFormat,
+-          tooltipValueLookups: {
+-            tooltips: dataset.tooltips
+-          } 
+-        });
++        if (dataset) {
++          $(this).sparkline(dataset.values, {
++            type:'bar',
++            height:'100%',
++            width:'100%',
++            chartRangeMin: dataset.cutoff,
++            tooltipFormat: dataset.tooltipFormat,
++            tooltipValueLookups: {
++              tooltips: dataset.tooltips
++            }
++          });
++        }
+       });
+     }
+   }
+diff --git a/js/radioactivity.js b/js/radioactivity.js
+--- a/js/radioactivity.js
++++ b/js/radioactivity.js
+@@ -7,6 +7,12 @@ Drupal.behaviors.radioactivity = {
+   attach: function (context, settings) {
+ 
+     // Do an ajax callback to the given callback address {
++
++    // Skip if radioactivity is not set
++    if (typeof settings.radioactivity == 'undefined') {
++      return;
++    }
++
+     var data = settings.radioactivity.emitters;
+     var config = settings.radioactivity.config;
+ 

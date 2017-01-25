@@ -1,0 +1,12 @@
+ul {
+  margin: 1em 0;
+  padding-left: 20px;
+
+  li {
+    list-style-type: square;
+  }
+
+  ul {
+    margin: 0;
+  }
+}

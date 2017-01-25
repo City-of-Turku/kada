@@ -1,0 +1,30 @@
+version: '2'
+services:
+  web:
+    image: zeip/docker-php
+    environment:
+      - PLATFORM=drupal
+    ports:
+    - "8083:80"
+    - "2223:22"
+    volumes:
+    - .:/wwwroot:Z
+     # TODO: Should we use this?
+#    - logvolume01:/var/log
+    external_links:
+    - mariadb:mysql
+    - mailhog:mailhog
+    links:
+    - redis:redis
+    - solr4:solr
+    network_mode: bridge
+  redis:
+    image: redis
+    network_mode: bridge
+  solr4:
+    image: makuk66/docker-solr:4.10.4
+    network_mode: bridge
+    ports:
+    - "8989:8983"
+volumes:
+  logvolume01: {}

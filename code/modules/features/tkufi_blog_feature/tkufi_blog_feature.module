@@ -1,0 +1,24 @@
+<?php
+/**
+ * @file
+ * Code for the TKUFI Blog feature.
+ */
+
+include_once 'tkufi_blog_feature.features.inc';
+
+function tkufi_blog_feature_views_post_execute(&$view) {
+  $tkufi_page_classes = &drupal_static('tkufi_page_classes');
+
+  if ($view->name == 'driveturku_blog_image' && $view->current_display == 'blog_image') {
+    if (!empty($view->result)) {
+      $result = reset($view->result);
+
+      foreach (array('field_field_main_image') as $field) {
+        if (!empty($result->{$field})) {
+          $tkufi_page_classes = 'has-main-image';
+          break;
+        }
+      }
+    }
+  }
+}

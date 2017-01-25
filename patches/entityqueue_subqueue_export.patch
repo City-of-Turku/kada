@@ -1,0 +1,30 @@
+diff --git a/entityqueue.install b/entityqueue.install
+index e14868d..ccfdb39 100644
+--- a/entityqueue.install
++++ b/entityqueue.install
+@@ -80,6 +80,25 @@ function entityqueue_schema() {
+ 
+   $schema['entityqueue_subqueue'] = array(
+     'description' => 'Stores global information for each subqueue.',
++    'export' => array(
++      'key' => 'name',
++      'identifier' => 'subqueue',
++      'primary key' => 'name',
++      'object' => 'EntitySubqueue',
++      'admin_title' => 'label',
++      'default hook' => 'entityqueue_default_subqueues',
++      'api' => array(
++        'owner' => 'entityqueue',
++        'api' => 'entityqueue_default',
++        'minimum_version' => 1,
++        'current_version' => 1,
++      ),
++      'create callback' => 'entityqueue_subqueue_create',
++      'load callback' => 'entityqueue_subqueue_load',
++      'load multiple callback' => 'entityqueue_subqueue_load_multiple',
++      'save callback' => 'entityqueue_subqueue_save',
++      'delete callback' => 'entityqueue_subqueue_delete',
++    ),
+     'fields' => array(
+       'subqueue_id' => array(
+         'type' => 'serial',

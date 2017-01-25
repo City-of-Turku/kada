@@ -1,0 +1,13 @@
+diff --git a/radioactivity-bootstrap.inc b/radioactivity-bootstrap.inc
+index f4b850b..bfa71d8 100644
+--- a/radioactivity-bootstrap.inc
++++ b/radioactivity-bootstrap.inc
+@@ -23,7 +23,7 @@ else {
+  * Get the config file path of R
+  */
+ function _radioactivity_get_config_file_path() {
+-  $dir = dirname(__FILE__);
++  $dir = $_SERVER['DOCUMENT_ROOT'] . '/sites/default';
+   $config_file = $dir . "/radioactivity-bootstrap.cfg.inc";
+   return $config_file;
+ }

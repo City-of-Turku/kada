@@ -1,0 +1,21 @@
+diff --git a/plugins/FeedsProcessor.inc b/plugins/FeedsProcessor.inc
+index a77a284..6ead706 100644
+--- a/plugins/FeedsProcessor.inc
++++ b/plugins/FeedsProcessor.inc
+@@ -1206,12 +1206,12 @@ abstract class FeedsProcessor extends FeedsPlugin {
+    */
+   protected function createLogMessage(Exception $e, $entity, $item) {
+     $message = $e->getMessage();
+-    $message .= '<h3>Original item</h3>';
++    //$message .= '<h3>Original item</h3>';
+     // $this->exportObjectVars() already runs check_plain() for us, so we can
+     // concatenate here as is.
+-    $message .= '<pre>' . $this->exportObjectVars($item) . '</pre>';
+-    $message .= '<h3>Entity</h3>';
+-    $message .= '<pre>' . $this->exportObjectVars($entity) . '</pre>';
++    //$message .= '<pre>' . $this->exportObjectVars($item) . '</pre>';
++    //$message .= '<h3>Entity</h3>';
++    //$message .= '<pre>' . $this->exportObjectVars($entity) . '</pre>';
+
+     return $message;
+   }

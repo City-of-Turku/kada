@@ -1,0 +1,33 @@
+diff --git a/modules/hs_menu.module b/modules/hs_menu.module
+index 7306b54..0c6a9d0 100644
+--- a/modules/hs_menu.module
++++ b/modules/hs_menu.module
+@@ -33,7 +33,13 @@ function hs_menu_form_node_form_alter(&$form, &$form_state) {
+   if (isset($form['menu']['link']['parent']) && isset($form['menu']['#access']) && $form['menu']['#access']) {
+     unset($form['menu']['link']['parent']['#options']);
+     $form['menu']['link']['parent']['#type'] = 'hierarchical_select';
+-    _hs_menu_apply_config($form['menu']['link']['parent'], array('type' => $form['type']['#value']));
++    // Get menu name, needed to exclude current node
++    $menu_name = explode(':', $form['menu']['link']['parent']['#default_value']);
++    _hs_menu_apply_config($form['menu']['link']['parent'], array(
++      0 => $menu_name[0],
++      1 => $form['menu']['link']['mlid']['#value'],
++      'type' => $form['type']['#value'],
++    ));
+ 
+      // Set custom submit callback.
+      array_unshift($form['#submit'], 'hs_menu_node_form_submit');
+@@ -272,6 +278,13 @@ function _hs_menu_children($tree, $menu_name, $plid = 0, $exclude = FALSE) {
+  * Helper function to apply the HS config to a form item.
+  */
+ function _hs_menu_apply_config(&$form, $params) {
++  $params['exclude'] = $params[0] .':'. $params[1];
++  // The following is to ensure via javascript self is not listed.
++  if(!empty($params['exclude'])) {
++    drupal_add_js('jQuery(document).ready(function () {
++        jQuery("[value*=' . $params['exclude'] . ']").hide();
++    });', 'inline');
++  }
+   $form['#config'] = array(
+     'module' => 'hs_menu',
+     'params' => array(

@@ -1,0 +1,7 @@
+name = TKUFI Rules Entity translation
+description = Entity translation support for Rules module
+package = TKUFI
+core = 7.x
+
+dependencies[] = rules
+dependencies[] = entity_translation

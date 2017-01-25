@@ -1,0 +1,149 @@
+/*******************************************************************************
+ * driveturku-front.layout.scss
+ *
+ * Layout built with Singularity for DriveTurku front page.
+ ******************************************************************************/
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700);
+@media (min-width: 769px) {
+  .l-header {
+    height: 0;
+    padding-bottom: 47.26%;
+  }
+}
+
+.l-branding,
+.l-navigation {
+  z-index: 4;
+  left: 0;
+  position: relative;
+  top: 0;
+}
+@media (min-width: 946px) {
+  .l-branding,
+  .l-navigation {
+    left: auto;
+    position: relative;
+    top: auto;
+  }
+}
+
+.l-before-header {
+  z-index: 4;
+  position: relative;
+}
+
+.l-branding {
+  z-index: 5;
+}
+
+.l-navigation {
+  background-color: rgba(0, 55, 94, 0.7);
+  padding: 13px 0;
+  width: 100%;
+}
+@media (min-width: 946px) {
+  .l-navigation {
+    background-color: #fafafa;
+    padding: 0;
+  }
+}
+
+.l-before-content,
+.l-main-wrapper {
+  background: url("../../../images/bg_pattern.png") repeat 0 0 #fff;
+  clear: both;
+  overflow: hidden;
+}
+
+.l-after-content {
+  background: none 0 0 #B5B5B5;
+}
+
+.l-main {
+  background-color: #fff;
+}
+.l-main:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (min-width: 769px) {
+  .l-highlighted .l-region,
+  .l-main,
+  .l-before-content .l-region,
+  .l-after-content .l-region,
+  .l-footer .l-footer-content {
+    float: none;
+    margin: 0 auto;
+    max-width: 1320px;
+  }
+}
+
+.l-highlighted {
+  background-color: #acacac;
+}
+
+@media (min-width: 769px) {
+  .l-region--sidebar-first {
+    width: 23.72881%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: none;
+    padding-left: 16px;
+  }
+}
+
+@media (min-width: 769px) {
+  .l-region--sidebar-second {
+    width: 23.72881%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 769px) {
+  .l-content {
+    width: 100%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    padding: 0 16px;
+  }
+}
+
+@media (min-width: 769px) {
+  .l-page.has-one-sidebar.has-sidebar-first .l-content {
+    width: 74.57627%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+    padding: 0 16px 0 0;
+  }
+}
+@media (min-width: 769px) {
+  .l-page.has-one-sidebar.has-sidebar-second .l-content {
+    width: 74.57627%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: none;
+    padding: 0 0 0 16px;
+  }
+}
+@media (min-width: 769px) {
+  .l-page.has-two-sidebars .l-content {
+    width: 49.15254%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 25.42373%;
+    clear: none;
+    padding: 0;
+  }
+}

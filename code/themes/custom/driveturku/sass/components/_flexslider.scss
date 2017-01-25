@@ -1,0 +1,549 @@
+/* Browser Resets
+*********************************/
+.flex-container a:active,
+.flexslider a:active,
+.flex-container a:focus,
+.flexslider a:focus  {outline: none;}
+.slides,
+.flex-control-nav,
+
+/* FlexSlider Necessary Styles
+*********************************/
+.flexslider {margin: 0; padding: 0;}
+.flexslider .slides > li {display: none; -webkit-backface-visibility: hidden;} /* Hide the slides before the JS is loaded. Avoids image jumping */
+.flexslider .slides img {width: 100%; display: block;}
+.flex-pauseplay span {text-transform: capitalize;}
+
+/* Clearfix for the .slides element */
+.slides:after {content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+html[xmlns] .slides {display: block;}
+* html .slides {height: 1%;}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {display: block;}
+
+// Turku spesific flexslider styles
+.flexslider {
+  @include border-radius(0);
+  @include box-shadow(0 0 0 transparent);
+  border: none;
+  font-size: 0.8em;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+
+  @include breakpoint($small-desk) {
+    font-size: 1em;
+    margin: 0;
+  }
+
+  .flex-caption {
+    h1, h2, h3, h4, h5, h6, p {
+      margin-top: 0;
+    }
+
+    .flex-caption__title {
+      font-size: 1.607em;
+      margin-bottom: 10px;
+
+      @include breakpoint($small-desk) {
+        font-size: 2em;
+      }
+
+      @include breakpoint($desk) {
+        font-size: 2.5em;
+      }
+    }
+  }
+
+  .slides {
+    left: 0;
+    position: absolute;
+    top: 0;
+
+    @include breakpoint($small-desk) {
+      left: auto;
+      position: static;
+      top: auto;
+    }
+
+    figure {
+      margin: 0;
+    }
+  }
+}
+
+// fullwidth FlexSlider on turku.fi
+.l-header .flexslider {
+  background-color: $turku-black;
+
+  .flex-caption-wrapper,
+  .flex-control-nav-container {
+    @include breakpoint($small-desk) {
+      bottom: 5%;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      max-width: 1320px;
+      position: absolute;
+      width: 100%;
+    }
+
+    @include breakpoint($large-desk) {
+      bottom: 15%;
+    }
+  }
+
+  .flex-caption {
+    background-color: rgba($flexslider-bg, 1);
+    border-bottom: 4px solid $turku-blue;
+    color: #fff;
+    padding: 1em 1em 40px;
+    width: 100%;
+
+    @include breakpoint($small-desk) {
+      background-color: rgba($flexslider-bg, 0.8);
+      margin-left: $distance-from-items-small-desk;
+      padding: 2em 2em 32px;
+      width: 64.167%;
+    }
+
+    @include breakpoint($large-desk) {
+      margin-left: $distance-from-items-large-desk;
+      width: 48%;
+    }
+
+    .flex-caption__image {
+      margin: 0 auto;
+      max-width: 160px;
+      padding-bottom: 1em;
+
+      @include breakpoint($phablet) {
+        clear: none;
+        float: left;
+        max-width: none;
+        padding: 0;
+        width: 33.33%;
+      }
+
+      & + .flex-caption__content {
+        @include breakpoint($phablet) {
+          clear: none;
+          float: right;
+          padding-left: 1em;
+          width: 66.67%;
+        }
+
+        @include breakpoint($small-desk) {
+          padding-left: 2em;
+        }
+
+        .flex-caption__title {
+          font-size: 1.5em;
+
+          @include breakpoint($tab) {
+            font-size: 1.8em;
+          }
+        }
+      }
+    }
+
+    .flex-caption__body {
+      line-height: 1.8em;
+    }
+
+    a {
+      color: #fff;
+    }
+  }
+
+  .flex-direction-nav {
+    bottom: 14px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+
+    @include breakpoint($small-desk) {
+      bottom: 5%;
+      left: $distance-from-items-small-desk;
+      text-align: right;
+      width: 64.167%;
+    }
+
+    @include breakpoint($large-desk) {
+      left: $distance-from-items-large-desk;
+      bottom: 15%;
+      width: 48%;
+    }
+
+    li {
+      display: block;
+      float: left;
+      list-style: none;
+      margin-right: 10px;
+
+      @include breakpoint($small-desk) {
+        display: inline-block;
+        float: none;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        margin-right: 1px;
+      }
+
+      a {
+        background-color: #026892;
+        display: block;
+        font-size: 0;
+        height: 30px;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        width: 30px;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        &.flex-next {
+          @include icon-arrow-right;
+
+          &:before {
+            color: #fff;
+            font-size: 28px;
+            height: 30px;
+            line-height: 30px;
+            width: 30px;
+          }
+        }
+
+        &.flex-prev {
+          @include icon-arrow-left;
+
+          &:before {
+            color: #fff;
+            font-size: 28px;
+            height: 30px;
+            line-height: 30px;
+            width: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  .flex-control-paging {
+    bottom: 14px;
+    left: 10px;
+    position: absolute;
+    z-index: 3;
+
+    @include breakpoint($small-desk) {
+      bottom: 5%;
+      left: $distance-from-items-small-desk;
+      padding-bottom: 3px;
+      text-align: right;
+      width: 54.167%;
+    }
+
+    @include breakpoint($large-desk) {
+      bottom: 15%;
+      left: $distance-from-items-large-desk;
+      width: 42%;
+    }
+
+    > li {
+      display: inline-block;
+      vertical-align: bottom;
+
+      a {
+        @include icon-slider-indicator;
+        font-size: 0;
+        display: block;
+        margin: 10px 3px;
+        overflow: hidden;
+        width: 15px;
+
+        &:before {
+          color: #FFFFFF;
+          font-size: 12px;
+        }
+
+        &.flex-active {
+          @include icon-slider-indicator-active;
+          margin: 9px 3px;
+
+          &:before {
+            font-size: 14px;
+          }
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+// Smaller FlexSlider on turkukalenteri.fi
+.turkucalendar .flexslider,
+.l-highlighted .flexslider,
+.l-region--before-content .flexslider {
+  position: relative;
+
+  @include breakpoint($small-desk) {
+    padding-bottom: 0;
+  }
+
+  .flex-caption-wrapper {
+    margin: 0;
+    padding: 12px 12px 42px;
+    vertical-align: bottom;
+    width: 100%;
+
+    @include breakpoint($small-desk) {
+      @include background(linear-gradient(to bottom, transparent, $turkucalendar-background));
+      bottom: 0;
+      display: table-cell;
+      left: 0;
+      right: 0;
+      padding: 16px 35px 35px;
+      position: absolute;
+
+    }
+  }
+
+  .flex-caption {
+    color: #fff;
+
+    a {
+      color: #fff;
+    }
+  }
+
+  .flex-caption__date {
+    @extend %grid-tag-left;
+    font-size: 1.4em;
+    margin: 0;
+
+    @include breakpoint($tab) {
+      margin: 10px 0px;
+    }
+  }
+
+  .flex-caption__leading {
+    font-weight: bold;
+    margin: 10px 0px;
+    padding: 5px 0px;
+
+    @include breakpoint($tab) {
+      margin: 10px 0px;
+      padding: 0px;
+    }
+  }
+
+  .flex-caption__some {
+    padding: 0px;
+
+    @include breakpoint($tab) {
+      float: left;
+    }
+
+    ul.some-links__list {
+      display: inline-block;
+      height: 40px;
+      padding: 0px;
+      text-align: left;
+      vertical-align: middle;
+
+      @include breakpoint($small-desk) {
+        margin: 0px;
+      }
+    }
+
+    li.some-link {
+      color: $turkucalendar-flexslider-some-buttons-background;
+      height: 45px;
+
+      a {
+        color: $turkucalendar-flexslider-some-buttons;
+      }
+    }
+  }
+
+  .flex-caption__tickets {
+    @extend .button--buy-link;
+    float: left;
+    overflow: hidden;
+  }
+
+  .flex-control-nav-container {
+    bottom: 10px;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    width: 100%;
+    z-index: 2;
+
+    @include breakpoint($small-desk) {
+      bottom: 0;
+      left: auto;
+      margin: 0;
+      width: auto;
+    }
+  }
+
+  .flex-direction-nav {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+      list-style: none;
+      margin: 0 10px 0 0;
+      vertical-align: bottom;
+
+      @include breakpoint($small-desk) {
+        display: inline-block;
+        float: none;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        background-color: $turkucalendar-blue;
+        display: block;
+        font-size: 0;
+        height: 30px;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        width: 30px;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        &.flex-next {
+          @include icon-arrow-right;
+        }
+
+        &.flex-prev {
+          @include icon-arrow-left;
+        }
+
+        &.flex-next,
+        &.flex-prev {
+          &:before {
+            color: #FFFFFF;
+            font-size: 25px;
+            height: 30px;
+            line-height: 30px;
+            width: 30px;
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .flex-control-paging {
+    bottom: 0;
+    display: inline-block;
+    left: 0;
+    margin: 0 0 0 12px;
+    position: absolute;
+    z-index: 2;
+
+    @include breakpoint($small-desk) {
+      bottom: auto;
+      left: auto;
+      margin: 0 20px;
+      position: static;
+    }
+
+    > li {
+      display: inline-block;
+      vertical-align: bottom;
+
+    }
+
+    > li a {
+      @include icon-slider-indicator;
+      font-size: 0;
+      display: block;
+      margin: 10px 3px;
+      overflow: hidden;
+      width: 15px;
+
+      &:before {
+        color: #FFFFFF;
+        font-size: 12px;
+      }
+
+      &.flex-active {
+        @include icon-slider-indicator-active;
+        margin: 9px 3px;
+
+        &:before {
+          font-size: 14px;
+        }
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+}
+
+.l-region--before-content .flexslider {
+  .flex-caption__date {
+    background-color: $turku-blue;
+    margin-bottom: 7px;
+
+    @include breakpoint($small-desk) {
+      margin-bottom: 10px;
+    }
+  }
+
+  .flex-caption-wrapper {
+    background-color: rgba(0, 55, 94, 1);
+    padding: 12px 12px 52px;
+
+    @include breakpoint($small-desk) {
+      @include background(linear-gradient(to bottom, transparent, $turkucalendar-background));
+      padding: 16px 35px 35px;
+    }
+  }
+}
+
+.carousel__footer {
+  background-color: #000;
+  border-top: 2px solid #fff;
+  overflow: hidden;
+
+  .calendar__more-link {
+    color: #FFFFFF;
+    display: block;
+  }
+}
+
+// Hide navigation if the slider has only one slide
+.flexslider--one-slide {
+  .flex-direction-nav {
+    display: none;
+  }
+}

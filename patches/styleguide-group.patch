@@ -1,0 +1,20 @@
+diff --git a/styleguide.module b/styleguide.module
+index d04491b..b3acf1a 100644
+--- a/styleguide.module
++++ b/styleguide.module
+@@ -170,6 +170,7 @@ function styleguide_page($theme = NULL) {
+   $content = '';
+   // Process the elements, by group.
+   foreach ($groups as $group => $elements) {
++    $content .= '<section class="styleguide-group"><h1 class="styleguide-group-header">' . $group . '</h1>';
+     foreach ($elements as $key => $item) {
+       $display = '';
+       // Output a standard theme item.
+@@ -201,6 +202,7 @@ function styleguide_page($theme = NULL) {
+       // Prepare the header link.
+       $header[$group][] = l($item['title'], $_GET['q'], array('fragment' => $key));
+     }
++    $content .= '</section>';
+     $head .= theme('item_list', array('items' => $header[$group], 'title' => $group));
+   }
+   // Return the page.

@@ -1,0 +1,428 @@
+<?php
+/**
+ * @file
+ * Install, update and uninstall functions for the kadaprofile
+ * installation profile.
+ */
+
+/**
+ * Implements hook_install_tasks().
+ */
+function kadaprofile_install_tasks() {
+  // Increase maximum function nesting level to prevent install errors.
+  $max_nesting_level = ini_get('xdebug.max_nesting_level');
+  if ($max_nesting_level > 0 && $max_nesting_level <= '200') {
+    ini_set('xdebug.max_nesting_level', 200);
+  }
+  $tasks['kadaprofile_site_functionality_form'] = array(
+    'display_name' => st('Site functionality'),
+    'type' => 'form',
+  );
+  $tasks['kadaprofile_install_additional_modules'] = array(
+    'display_name' => st('Install additional functionality'),
+    'type' => 'batch',
+    'display' => TRUE,
+  );
+
+  return $tasks;
+}
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ *
+ * @see system_install()
+ */
+function kadaprofile_install() {
+  // Add text formats.
+  $full_html_format = array(
+    'format' => 'full_html',
+    'name' => 'Full HTML',
+    'weight' => 1,
+    'filters' => array(
+      // URL filter.
+      'filter_url' => array(
+        'weight' => 0,
+        'status' => 1,
+      ),
+      // Line break filter.
+      'filter_autop' => array(
+        'weight' => 1,
+        'status' => 1,
+      ),
+      // HTML corrector filter.
+      'filter_htmlcorrector' => array(
+        'weight' => 10,
+        'status' => 1,
+      ),
+    ),
+  );
+  $full_html_format = (object) $full_html_format;
+  filter_format_save($full_html_format);
+
+  // Allow visitor account creation with administrative approval.
+  variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
+
+  // Enable the admin theme.
+  db_update('system')
+    ->fields(array('status' => 1))
+    ->condition('type', 'theme')
+    ->condition('name', 'seven')
+    ->execute();
+  variable_set('admin_theme', 'seven');
+  variable_set('node_admin_theme', '1');
+
+  // Enable the default theme
+  // @TODO: Change to KADA theme when it has been refactored
+  $default_theme = 'driveturku';
+  $enable = array(
+    'theme_default' => $default_theme,
+  );
+  theme_enable($enable);
+  foreach ($enable as $var => $theme) {
+    if (!is_numeric($var)) {
+      variable_set($var, $theme);
+    }
+  }
+
+  // Disable the default Bartik theme
+  theme_disable(array('bartik'));
+
+  // Configure blocks
+  $blocks = array(
+    array(
+      'module' => 'system',
+      'delta' => 'main',
+      'theme' => $default_theme,
+      'status' => 0,
+      'weight' => 0,
+      'region' => 'content',
+      'pages' => '',
+      'cache' => -1,
+    ),
+    array(
+      'module' => 'system',
+      'delta' => 'help',
+      'theme' => $default_theme,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'help',
+      'pages' => '',
+      'cache' => -1,
+    ),
+  );
+  $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'));
+  foreach ($blocks as $block) {
+    $query->values($block);
+  }
+  $query->execute();
+
+  // Create admin role.
+  $admin_role = new stdClass();
+  $admin_role->name = 'admin';
+  $admin_role->weight = 10;
+  user_role_save($admin_role);
+  user_role_grant_permissions($admin_role->rid, array_keys(module_invoke_all('permission')));
+  // Set this as the administrator role.
+  variable_set('user_admin_role', $admin_role->rid);
+  // Assign user 1 the "administrator" role.
+  db_insert('users_roles')
+    ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
+    ->execute();
+
+  // Create other roles so that features can be reverted cleanly during install.
+  // @TODO: Remove unused ones if excluded from features.
+  $roles = array(
+    'content editor',
+    'event editor',
+    'event external editor',
+    'external editor',
+    'web journalist'
+  );
+
+  foreach ($roles as $name) {
+    $role = new stdClass();
+    $role->name = $name;
+    user_role_save($role);
+    // Create a user for testing permissions.
+    if ($name == 'content editor') {
+      $account = array(
+        'name' => 'editor',
+        'pass' => 'secretpass',
+        'mail' => 'editor@example.com',
+        'status' => 1,
+        'init' => 'install profile', // Just an example
+        'roles' => array(
+          $role->rid => $role->rid,
+        ),
+      );
+      user_save(null, $account);
+    }
+  }
+
+  // Update the menu router information.
+  menu_rebuild();
+}
+
+/**
+ * Task callback: returns the form allowing the user to add example store content on install.
+ */
+function kadaprofile_site_functionality_form() {
+  drupal_set_title(st('Site functionality'));
+
+  // @TODO: Can be removed, used only during building the install profile.
+  $required = array(
+    'configuration' => 'Site core configuration (required)',
+  );
+  // Features which don't have direct dependencies to others can be chosen here.
+  $extras = array(
+    'page' => 'Pages',
+    'landing_page' => 'Landing pages',
+    'news' => 'News',
+    'liftups' => 'Liftups',
+    'blog' => 'Blog',
+    'some_content' => 'Social media updates',
+    'service_offer' => 'Places and services',
+    'service_directory' => 'Service directory',
+    'sections' => 'Sections',
+    'events_base' => 'Events (not working yet)',
+    'contact_information' => 'Contact information',
+  );
+  $form['functionality'] = array(
+    '#type' => 'fieldset',
+    '#title' => st('Functionality'),
+  );
+  $form['functionality']['required'] = array(
+    '#type' => 'checkboxes',
+    '#options' => $required,
+    '#title' => t("Required functionality"),
+  );
+  $form['functionality']['extras'] = array(
+    '#type' => 'checkboxes',
+    '#options' => $extras,
+    '#title' => t("Install additional functionality"),
+  );
+
+  $form['actions'] = array('#type' => 'actions');
+  $form['actions']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => st('Create and Finish'),
+    '#weight' => 15,
+  );
+  return $form;
+}
+/**
+ * Submit callback: creates the requested sample content.
+ */
+function kadaprofile_site_functionality_form_submit(&$form, &$form_state) {
+  variable_set('kadaprofile_selected_extras', $form_state['values']['extras']);
+
+  // @TODO: This sounds useful from Commerce Kickstart!
+  // Kickstart features rebuild themselves in their hook_enable() hooks, disable
+  // features_modules_enabled() until the end of install.
+  //variable_set('features_rebuild_on_module_install', FALSE);
+}
+
+/**
+ * Task callback: uses Batch API to import modules based on user selection.
+ *
+ * Any modules providing custom blocks should be enabled here, and not before
+ * (as an install profile dependency), because the themes are setup during
+ * kadaprofile_install(), which means region assignment can only happen
+ * after that.
+ */
+function kadaprofile_install_additional_modules() {
+  global $install_state;
+
+  // Add settings.inc file from domain module.
+  module_load_include('inc', 'domain', 'settings');
+  // Enable Domain.
+  // Add other domains modules here.
+  module_enable(array('domain', 'domain_alias', 'domain_variable', 'domain_variable_i18n'), TRUE);
+
+  // Required features should be enabled before content types features
+  // and the most dependent features last, such as Sections feature.
+  // Configuration feature is a dependency on most features, so it will be
+  // enabled no matter what is chosen.
+  $modules = array();
+  $selected_extras = variable_get('kadaprofile_selected_extras', array());
+  if (!empty($selected_extras['page'])) {
+    $modules[] = 'tkufi_page_feature';
+  }
+  if (!empty($selected_extras['landing_pages'])) {
+    $modules[] = 'kada_landing_page_feature';
+  }
+  if (!empty($selected_extras['news'])) {
+    $modules[] = 'tkufi_news_feature';
+  }
+  if (!empty($selected_extras['liftups'])) {
+    $modules[] = 'tkufi_liftups_feature';
+  }
+  if (!empty($selected_extras['blog'])) {
+    $modules[] = 'tkufi_blog_feature';
+  }
+  if (!empty($selected_extras['some_content'])) {
+    $modules[] = 'kada_some_content_feature';
+  }
+  if (!empty($selected_extras['service_offer'])) {
+    $modules[] = 'tkufi_service_offer_feature';
+  }
+  if (!empty($selected_extras['service_directory'])) {
+    $modules[] = 'kada_service_directory_feature';
+  }
+  if (!empty($selected_extras['events_base'])) {
+    $modules[] = 'kada_events_base_feature';
+  }
+  if (!empty($selected_extras['contact_information'])) {
+    $modules[] = 'tkufi_contact_information_feature';
+  }
+  if (!empty($selected_extras['sections'])) {
+    $modules[] = 'tkufi_sections_feature';
+  }
+
+  // Resolve the dependencies now, so that module_enable() doesn't need
+  // to do it later for each individual module (which kills performance).
+  $files = system_rebuild_module_data();
+  $modules_sorted = array();
+  foreach ($modules as $module) {
+    if ($files[$module]->requires) {
+      // Create a list of dependencies that haven't been installed yet.
+      $dependencies = array_keys($files[$module]->requires);
+      $dependencies = array_filter($dependencies, '_kadaprofile_filter_dependencies');
+      // Add them to the module list.
+      $modules = array_merge($modules, $dependencies);
+    }
+  }
+  $modules = array_unique($modules);
+  foreach ($modules as $module) {
+    $modules_sorted[$module] = $files[$module]->sort;
+  }
+  arsort($modules_sorted);
+
+  $operations = array();
+  // Enable the selected modules.
+  foreach ($modules_sorted as $module => $weight) {
+    $operations[] = array('_kadaprofile_enable_module', array($module, $files[$module]->info['name']));
+  }
+  $operations[] = array('_kadaprofile_flush_caches', array(st('Flushed caches.')));
+
+  $batch = array(
+    'title' => st('Installing additional functionality'),
+    'operations' => $operations,
+  );
+
+  return $batch;
+}
+
+/**
+ * BatchAPI callback.
+ */
+function _kadaprofile_enable_module($module, $module_name, &$context) {
+  module_enable(array($module), FALSE);
+  $context['message'] = st('Installed %module module.', array('%module' => $module_name));
+}
+
+/**
+ * BatchAPI callback.
+ */
+function _kadaprofile_flush_caches($operation, &$context) {
+  $context['message'] = t('@operation', array('@operation' => $operation));
+  drupal_flush_all_caches();
+}
+
+/**
+ * Custom installation task; perform final steps and redirect the user to the new site if there are no errors.
+ *
+ * @param $install_state
+ *   An array of information about the current installation state.
+ *
+ * @return
+ *   A message informing the user about errors if there was some.
+ */
+function kadaprofile_install_finished(&$install_state) {
+  // Add settings.inc file from domain module.
+  module_load_include('inc', 'domain', 'settings');
+  // Revert features.
+  $modules = array();
+  $selected_extras = variable_get('kadaprofile_selected_extras', array());
+  if (!empty($selected_extras['page'])) {
+    $modules[] = 'tkufi_page_feature';
+  }
+  if (!empty($selected_extras['landing_pages'])) {
+    $modules[] = 'kada_landing_page_feature';
+  }
+  if (!empty($selected_extras['news'])) {
+    $modules[] = 'tkufi_news_feature';
+  }
+  if (!empty($selected_extras['liftups'])) {
+    $modules[] = 'tkufi_liftups_feature';
+  }
+  if (!empty($selected_extras['blog'])) {
+    $modules[] = 'tkufi_blog_feature';
+  }
+  if (!empty($selected_extras['some_content'])) {
+    $modules[] = 'kada_some_content_feature';
+  }
+  if (!empty($selected_extras['service_offer'])) {
+    $modules[] = 'tkufi_places_feature';
+    $modules[] = 'tkufi_services_feature';
+    $modules[] = 'tkufi_service_offer_feature';
+  }
+  if (!empty($selected_extras['service_directory'])) {
+    $modules[] = 'kada_service_directory_feature';
+  }
+  if (!empty($selected_extras['sections'])) {
+    $modules[] = 'tkufi_sections_feature';
+  }
+  if (!empty($selected_extras['events_base'])) {
+    $modules[] = 'kada_events_base_feature';
+  }
+  if (!empty($selected_extras['contact_information'])) {
+    $modules[] = 'tkufi_contact_information_feature';
+  }
+
+  features_revert($modules);
+
+  // Flush cache & magick whoo!
+  module_list(TRUE);
+
+  // Flush all caches to ensure that any full bootstraps during the installer
+  // do not leave stale cached data, and that any content types or other items
+  // registered by the install profile are registered correctly.
+  drupal_flush_all_caches();
+
+  if (isset($messages['error'])) {
+    $output = '<p>' . (isset($messages['error']) ? st('Review the messages above before visiting <a href="@url">your new site</a>.', array('@url' => url(''))) : st('<a href="@url">Visit your new site</a>.', array('@url' => url('')))) . '</p>';
+    return $output;
+  }
+  else {
+    // Since any module can add a drupal_set_message, this can bug the user
+    // when we redirect him to the front page. For a better user experience,
+    // remove all the message that are only "notifications" message.
+    drupal_get_messages('status', TRUE);
+    drupal_get_messages('completed', TRUE);
+    // Migrate adds its messages under the wrong type, see #1659150.
+    drupal_get_messages('ok', TRUE);
+
+    // If we don't install drupal using Drush, redirect the user to the front
+    // page.
+    if (!drupal_is_cli()) {
+      if (module_exists('overlay')) {
+        // Special case when no clean urls.
+        $fragment = empty($GLOBALS['conf']['clean_url']) ? urlencode('?q=admin') : 'admin';
+        drupal_goto('', array('fragment' => 'overlay=' . $fragment));
+      }
+      else {
+        drupal_goto('admin');
+      }
+    }
+  }
+}
+
+/**
+ * array_filter() callback used to filter out already installed dependencies.
+ */
+function _kadaprofile_filter_dependencies($dependency) {
+  return !module_exists($dependency);
+}

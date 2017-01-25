@@ -1,0 +1,42 @@
+$emergency-message-background-color: yellow;
+$emergency-message-text-color: black;
+$emergency-message-border-color: red;
+
+.l-emergency-messages {
+  background-color: $emergency-message-background-color;
+  border-bottom: 4px solid $emergency-message-border-color;
+  color: $emergency-message-text-color;
+  margin: 0;
+}
+
+.emergency-message-list {
+  margin: 0;
+  padding: 0 10px;
+}
+
+.emergency-message {
+  list-style-type: none;
+  padding: 10px 0;
+}
+
+.emergency-message__title {
+  font-size: 1.1em;
+  margin: 0;
+  text-transform: uppercase;
+
+  a {
+    color: $emergency-message-text-color;
+  }
+
+  @include breakpoint($small-desk) {
+    font-size: 1.4em;
+  }
+}
+
+.emergency-message__text {
+  font-size: 1em;
+
+  @include breakpoint($small-desk) {
+    font-size: 1.1em;
+  }
+}

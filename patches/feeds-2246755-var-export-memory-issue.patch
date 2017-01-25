@@ -1,0 +1,19 @@
+diff --git a/plugins/FeedsProcessor.inc b/plugins/FeedsProcessor.inc
+index c2b0af5..75442a6 100755
+--- a/plugins/FeedsProcessor.inc
++++ b/plugins/FeedsProcessor.inc
+@@ -811,10 +811,10 @@ abstract class FeedsProcessor extends FeedsPlugin {
+   protected function createLogMessage(Exception $e, $entity, $item) {
+     include_once DRUPAL_ROOT . '/includes/utility.inc';
+     $message = $e->getMessage();
+-    $message .= '<h3>Original item</h3>';
+-    $message .= '<pre>' . drupal_var_export($item). '</pre>';
+-    $message .= '<h3>Entity</h3>';
+-    $message .= '<pre>' . drupal_var_export($entity) . '</pre>';
++    //$message .= '<h3>Original item</h3>';
++    //$message .= '<pre>' . drupal_var_export($item). '</pre>';
++    //$message .= '<h3>Entity</h3>';
++    //$message .= '<pre>' . drupal_var_export($entity) . '</pre>';
+     return $message;
+   }
+ 

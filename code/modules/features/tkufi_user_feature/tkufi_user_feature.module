@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Tkufi user feature feature.
+ */
+
+include_once 'tkufi_user_feature.features.inc';

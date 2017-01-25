@@ -1,0 +1,233 @@
+%shadow-below {
+  box-shadow: 0 4px 0 0 rgba($turkucalendar-black, 0.2);
+}
+
+// Three-tab widget at the top of the page
+.block--quicktabs-turkucalendar-top-tabs {
+  height: 0;
+  padding-bottom: 106.2%;
+  position: relative;
+
+  .block__title {
+    display: none;
+  }
+
+  .quicktabs-wrapper {
+    margin: 0;
+
+    .quicktabs-tabs {
+      background: transparent;
+      display: table;
+      margin: 0;
+      text-align: center;
+      width: 100%;
+
+      > li {
+        border-bottom: 4px solid $turkucalendar-darkgray;
+        display: table-cell;
+        padding: 0;
+
+        > a {
+          color: $turkucalendar-white;
+          display: block;
+          font-size: 1em;
+          font-weight: 400;
+          padding: 20px 5px 12px;
+        }
+
+        &.active,
+        &:hover {
+          background-color: $turkucalendar-background;
+          border-color: transparent;
+          @include border-radius(2px 2px 0 0);
+
+          > a {
+            text-decoration: none;
+            background-color: transparent;
+          }
+        }
+
+        &:only-child {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .quicktabs_main {
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    overflow-y: auto;
+    position: absolute;
+    right: 0;
+    top: 55px;
+  }
+
+  .quicktabs-tabpage  {
+    background-color: $turkucalendar-background;
+
+    .liftup-box-list {
+      margin: 0;
+    }
+
+  }
+}
+
+// Single item, tabs at top of page
+.event-tab-item {
+  box-shadow: 0 19px 0 -15px $turkucalendar-darkgray;
+  color: $turkucalendar-white;
+  @include clearfix;
+
+  &:last-child {
+    box-shadow: none;
+  }
+
+  a {
+    color: $turkucalendar-white;
+  }
+
+  .event-tab-item__group-left {
+    line-height: 0;
+    padding: 16px 15px 14px;
+    width: auto;
+  }
+
+  .event-tab-item__group-right {
+    line-height: 90px;
+    padding: 16px 10px 14px 5px;
+    width: 66.667%;
+  }
+
+  .event-tab-item__details {
+    display: inline-block;
+    line-height: 1.4;
+    vertical-align: middle;
+  }
+
+  .date-display-start,
+  .date-display-end {
+    display: inline-block;
+  }
+
+  .event__signup {
+    color: $turku-yellow;
+
+    .signup__label {
+      display: inline-block;
+      margin-right: 10px;
+    }
+  }
+
+  .event__image {
+    @extend %shadow-below;
+  }
+
+  .event__title {
+    padding: 0;
+    font-size: 1.1em;
+    font-weight: 600;
+  }
+
+  .event__place {
+    line-height: 1;
+
+    > ul > li:after {
+      color: $turkucalendar-lightgray;
+      font-size: 75%;
+    }
+  }
+}
+
+
+$tabs-height: 59px;
+
+%tab-button {
+  @extend .icon;
+  display: inline-block;
+  line-height: $tabs-height;
+  overflow: hidden;
+  width: $tabs-height;
+  cursor: pointer;
+
+  &:before {
+    display: inline-block;
+    font-size: 1.3em;
+    text-align: center;
+    vertical-align: baseline;
+    width: $tabs-height;
+  }
+}
+
+// Turkucalendar front mosaic, list and map tabs
+.event-tabs-wrapper {
+  @include clearfix;
+  position: relative;
+  margin: 0;
+
+
+  .block__title {
+    border-bottom: 1px solid $turkucalendar-content-header-border-color;
+    margin: 0;
+    padding: 1em 0;
+    text-align: center;
+  }
+
+  .quicktabs-tabs {
+    margin: 0 auto;
+    text-align: center;
+
+    @include breakpoint($mobi-navi) {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    > li {
+      padding: 0;
+
+      > a {
+        background-color: transparent;
+        color: $turkucalendar-gray;
+        display: inline-block;
+        height: $tabs-height;
+        padding: 0;
+        vertical-align: top;
+      }
+
+      &.active > a {
+        background-color: transparent;
+        color: $turkucalendar-gray;
+      }
+
+      > a:hover {
+        background-color: $turkucalendar-lightgray;
+        color: $turkucalendar-gray;
+      }
+    }
+
+    li a.event_mosaic {
+      @include icon-th;
+      @extend %tab-button;
+    }
+
+    li a.event_list {
+      @include icon-th-list;
+      @extend %tab-button;
+    }
+
+    li a.event_map {
+      @include icon-location;
+      @extend %tab-button;
+    }
+  }
+
+  .quicktabs-tabpage {
+    @include clearfix;
+
+    &.is-collapsed {
+      display: none;
+    }
+  }
+}

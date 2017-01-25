@@ -1,0 +1,282 @@
+<?php
+/**
+ * @file
+ * Code for the KADA SoMe content feature.
+ */
+
+include_once 'kada_some_content_feature.features.inc';
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function kada_some_content_feature_ctools_plugin_directory($owner, $plugin) {
+  if ($owner == 'feeds_tamper') {
+    return 'plugins';
+  }
+}
+/**
+ * Implements hook_menu().
+ */
+function kada_some_content_feature_menu() {
+  // Custom settings page for crisis site.
+  $items['admin/structure/some_content'] = array(
+    'title' => 'Social media settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('kada_some_content_feature_settings'),
+    'access arguments' => array('administer some_content settings'),
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function kada_some_content_feature_permission() {
+  return array(
+    'administer some_content settings' => array(
+      'title' => t('Administer Social media content settings'),
+      'description' => t('Administer the Social media settings.'),
+    ),
+  );
+}
+
+/**
+ * Settings form for crisis site settings.
+ */
+function kada_some_content_feature_settings($form, &$form_state) {
+  // Access token and secret for Twitter API.
+  $form['kada_some_content_twitter'] = array(
+    '#title' => t('Twitter'),
+    '#type' => 'fieldset',
+    '#description' => 'Provide the Access token and secret values for a Twitter app. The same values will work when reading any public Twitter feed.',
+  );
+  $form['kada_some_content_twitter']['kada_some_content_twitter_token'] = array(
+    '#title' => t('Access token'),
+    '#description' => 'Copy the <em>Access token</em> value from <a href="https://apps.twitter.com/app/APP_ID/keys" target="_blank">Twitter Apps</a>',
+    '#type' => 'textfield',
+    '#size' => 62,
+    '#default_value' => variable_get('kada_some_content_twitter_token', ''),
+  );
+  $form['kada_some_content_twitter']['kada_some_content_twitter_token_secret'] = array(
+    '#title' => t('Access token secret'),
+    '#description' => 'Copy the <em>Access token secret</em> value from <a href="https://apps.twitter.com/app/APP_ID/keys" target="_blank">Twitter Apps</a>',
+    '#type' => 'textfield',
+    '#size' => 56,
+    '#default_value' => variable_get('kada_some_content_twitter_token_secret', ''),
+  );
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_feeds_oauth_authenticator().
+ */
+function kada_some_content_feature_feeds_oauth_authenticator() {
+  return array('kada_some_content_feature_get_tokens_twitter' => 'KADA');
+}
+
+/**
+ * Callback function for providing oauth token + secret
+ */
+function kada_some_content_feature_get_tokens_twitter() {
+  // Get the site specific Twitter token and secret.
+  $oauth_token = variable_get('kada_some_content_twitter_token', '');
+  $oauth_token_secret = variable_get('kada_some_content_twitter_token_secret', '');
+  return array(
+    'oauth_token' => $oauth_token,
+    'oauth_token_secret' => $oauth_token_secret,
+  );
+}
+
+/**
+ * Implements hook_feeds_parser_sources_alter().
+ */
+function kada_some_content_feature_feeds_parser_sources_alter(&$sources, $content_type) {
+  $configs = _kada_feed_content_type_config();
+  if (isset($configs[$content_type])) {
+    $sources['parent:og:og_group_ref'] = array(
+      'name' => t('Feed node: OG Groups audience'),
+      'description' => t('OG Groups audience from feed node.'),
+      'callback' => 'kada_some_content_feature_feeds_get_og_source',
+    );
+    $sources['parent:language'] = array(
+      'name' => t('Feed node: Language'),
+      'description' => t('Language of the Feed node.'),
+      'callback' => 'kada_some_content_feature_feeds_get_language',
+    );
+  }
+}
+
+/**
+ * Callback, returns og groups audience from feed node.
+ */
+function kada_some_content_feature_feeds_get_og_source(FeedsSource $source, FeedsParserResult $result, $key) {
+  if (($node = node_load($source->feed_nid)) && !empty($node->og_group_ref[LANGUAGE_NONE])) {
+    $result = array();
+    foreach ($node->og_group_ref[LANGUAGE_NONE] as $ref) {
+      $result[] = $ref['target_id'];
+    }
+    return $result;
+  }
+}
+
+/**
+ * Callback, language from feed node.
+ */
+function kada_some_content_feature_feeds_get_language(FeedsSource $source, FeedsParserResult $result, $key) {
+  if (($node = node_load($source->feed_nid))) {
+    // Return the language of the Feed node
+    return $node->language;
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function kada_some_content_feature_form_alter(&$form, &$form_state, $form_id) {
+  // Get feed content types and transform values into form ids, used to build a list of feed forms to alter.
+  $feed_content_forms = array_keys(_kada_feed_content_type_config());
+  foreach ($feed_content_forms as &$feed_content_form) {
+    $feed_content_form .= '_node_form';
+  }
+  if (in_array($form_id, $feed_content_forms)) {
+    // Add custom validator to set feeds url correctly.
+    $form['#validate'] = array('kada_some_content_feature_feed_import_form_validate') + $form['#validate'];
+    // Hide feed field, preventing editors from editing the url we make on their behalf.
+    $form['feeds']['#access'] = FALSE;
+  }
+}
+
+/**
+ * Implements hook_node_presave().
+ */
+function kada_some_content_feature_feed_import_form_validate($form, &$form_state) {
+  // Handle feed url field data within validate, cool huh. What is cool here is
+  // that we're replacing tokens from _kada_feed_content_type_config() with
+  // values from the feed import node.
+  $configs = _kada_feed_content_type_config();
+  $config = $configs[$form['#node']->type];
+  // Create replace array out of available feed fields.
+  $replace = array();
+  $replace_fields = array(
+    'feed_user_id',
+    'feed_client_token',
+    'feed_client_secret',
+  );
+  foreach ($replace_fields as $field) {
+    $field_name = 'field_' . $field;
+    if (isset($form_state['values'][$field_name])) {
+      $val = $form_state['values'][$field_name][LANGUAGE_NONE][0]['value'];
+      $replace['[' . strtoupper($field) . ']'] = $val;
+    }
+  }
+  // Get fetcher key from form structure.
+  $feeds_fetcher = array_keys($form_state['values']['feeds']);
+  $feeds_fetcher = $feeds_fetcher[0];
+  // Replace placeholders from URL and set it to the feed source.
+  $form_state['values']['feeds'][$feeds_fetcher]['source'] = str_replace(array_keys($replace), $replace, $config['url']);
+}
+
+/**
+ * Create content_type mapping for feeds to be used in custom code.
+ */
+function _kada_feed_content_type_config() {
+  // To have your replacement done, see kada_some_content_feature_feed_import_form_validate().
+  return array(
+    'feed_import_instagram' => array(
+      // See: Get information about the owner of the access_token at
+      // https://www.instagram.com/developer/endpoints/users.
+      'url' => 'https://api.instagram.com/v1/users/self/media/recent/?access_token=[FEED_CLIENT_TOKEN]',
+    ),
+    'feed_import_facebook' => array(
+      'url' => 'https://graph.facebook.com/v2.8/[FEED_USER_ID]/posts?access_token=[FEED_CLIENT_TOKEN]|[FEED_CLIENT_SECRET]&fields=created_time,message,picture,link,name,caption,description,type,object_id',
+    ),
+    'feed_import_twitter' => array(
+      'url' => 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=[FEED_USER_ID]',
+    ),
+    'feed_import_youtube_channel' => array(
+      'url' => 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&channelId=[FEED_USER_ID]&key=[FEED_CLIENT_SECRET]',
+    ),
+  );
+}
+
+/**
+* Implements hook_field_formatter_info().
+*/
+function kada_some_content_feature_field_formatter_info() {
+  // Custom formatter for Some ID field for linking to original post
+  $info = array(
+    'kada_some_id_link' => array(
+      'label' => t('ID linked to social media post'),
+      'field types' => array('text', 'number_integer'),
+      'description' => t('Social media post ID linked to the source.'),
+    ),
+  );
+  return $info;
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function kada_some_content_feature_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+   switch ($display['type']) {
+    // ID value linked to social media post
+    case 'kada_some_id_link':
+      $element = array();
+      $wrapper = entity_metadata_wrapper($entity_type, $entity);
+      $type = $wrapper->field_some_type->value();
+      $some_id = $wrapper->field_some_id->value();
+
+      // Because not all social media feeds have a direct link available to
+      // the post, we will generate it from ID or use an image link.
+      switch ($type) {
+        case 'facebook':
+          $splitted_some_id = explode('_', $some_id);
+          $user_id = $splitted_some_id[0];
+          $post_id = $splitted_some_id[1];
+          $path = "http://www.facebook.com/" . $user_id . "/posts/" . $post_id;
+        break;
+        case 'instagram':
+          // Instagram posts have the link to the image in the first link field, so
+          // we can use that.
+          $links = $wrapper->field_link->value();
+          $path = $links[0]['url'];
+        break;
+        case 'twitter':
+          $path = 'http://twitter.com/statuses/' . $some_id;
+        break;
+        case 'youtube':
+          $path = 'http://www.youtube.com/watch?v=' . $some_id;
+        break;
+      }
+
+      $link_title = t('Link to post');
+      foreach ($items as $delta => $item) {
+        $element[$delta] = array(
+          '#theme' => 'kada_some_content_feature_some_link',
+          '#link_title' => $link_title,
+          '#type' => $type,
+          '#url' => $path,
+          '#some_id' => $some_id,
+        );
+      }
+    break;
+  }
+  return $element;
+}
+
+/**
+* Implements hook_theme().
+*/
+function kada_some_content_feature_theme() {
+  return array(
+    'kada_some_content_feature_some_link' => array(
+      'template' => 'kada_some_content_feature_some_link',
+      'variables' => array(
+        'link_title' => NULL,
+        'type' => NULL,
+        'url' => NULL,
+        'some_id' => NULL,
+      ),
+    ),
+  );
+}

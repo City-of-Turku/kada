@@ -1,0 +1,148 @@
+/**
+ * @file
+ * Visual styles for person search page.
+ */
+.views-exposed-form-driveturku-solr-search-page {
+  .views-exposed-widget {
+    padding: 0;
+    .form-submit {
+      margin-top: 0;
+      padding: 18px 10px;
+      display: inline-block;
+    }
+  }
+
+  .views-widget-filter-search_api_views_fulltext {
+    width: 70%;
+  }
+
+  .form-item-search-api-views-fulltext {
+    background: #00aeef;
+    padding: 15px 10px;
+    .form-text {
+      width: 95%;
+      margin-left: 15px;
+    }
+  }
+
+  .views-submit-button {
+    width: 30%;
+  }
+}
+
+.facetapi-facet-field-political-party,
+.facetapi-facet-relation-trustee-person-node-reversefield-trustee-role,
+.facetapi-facet-relation-trustee-person-node-reversefield-trust-unit {
+  .leaf {
+    list-style: none;
+  }
+
+  .facet__count {
+    vertical-align: middle;
+  }
+}
+
+.node--person--search-result {
+  border-bottom: 1px solid $turku-gray;
+  clear: both;
+  float: left;
+  padding: 0px;
+  position: relative;
+  width: 100%;
+
+  @include breakpoint($small-desk) {
+    padding: 10px 15px;
+  }
+
+  .person__full-name {
+    font-size: 18px;
+
+    @include breakpoint($mobi-navi) {
+      font-size: 24px;
+    }
+  }
+
+  .person__email {
+    ul {
+      padding-left: 0;
+      margin: 0;
+    }
+
+    > ul > li {
+      &:after {
+        color: $turkucalendar-mediumgray;
+        padding-left: 3px;
+      }
+
+      > a {
+        font-family: $body-font;
+      }
+    }
+  }
+
+  .person__phone {
+    @extend %person-field-with-icon;
+    @include icon-phone;
+    &:before {
+      font-size: 22px;
+    }
+  }
+
+  // person main image and its overlays
+  .person__image--wrapper {
+    @include grid-span(4,1);
+    min-height: 100px;
+    padding: 15px 0;
+
+    @include breakpoint($phablet) {
+      @include grid-span(3,1);
+    }
+
+    @include breakpoint($small-desk) {
+      padding: 0;
+    }
+
+    @include breakpoint($desk) {
+      @include grid-span(2,1);
+    }
+  }
+
+  .person__content--wrapper {
+    @include grid-span(8,5);
+    padding: 10px 20px;
+
+    @include breakpoint($phablet) {
+      @include grid-span(9,4);
+    }
+
+    @include breakpoint($small-desk) {
+      padding: 10px 30px;
+    }
+
+    @include breakpoint($desk) {
+      @include grid-span(8,3);
+    }
+  }
+  .field--name-positions-trust-search {
+    .field-items,
+    .field__items {
+      margin-left: 0;
+    }
+  }
+}
+
+/* Adding a separator in CSS because it seems too difficult in PHP */
+.search-result--person,
+.node--person--search-result {
+  .field-name-field-office-tr,
+  .field--name-field-office-tr {
+    .field__item:nth-child(2),
+    .field-item:nth-child(2),
+    .field__item:nth-child(3),
+    .field-item:nth-child(3) {
+      .taxonomy-term::before {
+        content: '›';
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the TKUFI News feature.
+ */
+
+include_once 'tkufi_news_feature.features.inc';

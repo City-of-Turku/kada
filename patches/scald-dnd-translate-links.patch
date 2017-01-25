@@ -1,0 +1,19 @@
+diff --git a/scald.module b/scald.module
+index f3be399..80ce239 100644
+--- a/scald.module
++++ b/scald.module
+@@ -2298,6 +2298,14 @@ function scald_atom_user_build_actions_links($atom, $query = NULL) {
+     }
+   }
+ 
++  $links['translate'] = array(
++    'title' => t('Translate'),
++    'href' => 'atom/' . $atom->sid . "/translate/dnd/nojs",
++  );
++  $links['translate']['attributes'] = array(
++    'class' => array('ctools-use-modal', 'ctools-modal-custom-style'),
++  );
++
+   return $links;
+ }
+ 

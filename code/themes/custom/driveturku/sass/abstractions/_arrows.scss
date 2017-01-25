@@ -1,0 +1,50 @@
+@mixin arrow-down($color){
+  border-color: $color transparent transparent;
+  border-style: solid;
+  border-width: 15px 15px 0;
+  content: "";
+  height: 0;
+  position: absolute;
+  right: 50%;
+  top: 0;
+  width: 0;
+}
+
+@mixin arrow-left($color){
+  border-color: transparent $color transparent transparent;
+  border-style: solid;
+  border-width: 15px 15px 15px 0;
+  content: "";
+  height: 0;
+  margin-top: -15px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+}
+
+@mixin arrow-right($color){
+  border-color: transparent transparent transparent $color;
+  border-style: solid;
+  border-width: 15px 0 15px 15px;
+  content: "";
+  height: 0;
+  left: 0;
+  margin-top: -15px;
+  position: absolute;
+  top: 50%;
+  width: 0;
+}
+
+@mixin small-arrow-right($color){
+  border-color: transparent transparent transparent $color;
+  border-style: solid;
+  border-width: 6px 0 6px 6px;
+  content: "";
+  height: 0;
+  left: 0;
+  margin-top: -6px;
+  position: absolute;
+  top: 50%;
+  width: 0;
+}

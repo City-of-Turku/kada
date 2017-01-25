@@ -1,0 +1,14 @@
+RELEASE NOTES
+This file should be checked before and after any deployment for possible manual
+changes required on the production server.
+
+Format:
+== Date added ==
+Message
+
+After every release, a line should be added with a date, so that older notes can
+be ignored.
+
+=== NOTES ===
+== 2015-08-28 ==
+Make sure office vocabulary has term name custom display mode enabled before saving and indexing contact information.

@@ -1,0 +1,42 @@
+<?php
+/**
+ * @file
+ * Code for the TKUFI Field bases feature.
+ */
+
+include_once 'tkufi_field_bases_feature.features.inc';
+/**
+ * @file
+ */
+
+/**
+ * Implements hook_views_pre_execute()
+ */
+function tkufi_field_bases_feature_views_post_execute(&$view) {
+  if ($view->name == 'driveturku_accessibilities' && $view->current_display == 'ds_block') {
+    // Because field collection doesn't work with entity translation, we have
+    // to use our own display logic. Displaying only the values in current
+    // language.
+    global $language;
+    switch ($language->language) {
+      case 'fi':
+        foreach ($view->result as $key => $row) {
+          if (!empty($row->field_field_description_en)) unset($row->field_field_description_en);
+          if (!empty($row->field_field_description_sv)) unset($row->field_field_description_sv);
+        }
+      break;
+      case 'sv':
+        foreach ($view->result as $key => $row) {
+          if (!empty($row->field_field_description_en)) unset($row->field_field_description_en);
+          if (!empty($row->field_field_description_fi)) unset($row->field_field_description_fi);
+        }
+      break;
+      case 'en':
+        foreach ($view->result as $key => $row) {
+          if (!empty($row->field_field_description_fi)) unset($row->field_field_description_fi);
+          if (!empty($row->field_field_description_sv)) unset($row->field_field_description_sv);
+        }
+      break;
+    }
+  }
+}
