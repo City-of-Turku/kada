@@ -1,4 +1,56 @@
-Some instructions which are not related to the vagrant nor ansible setup.
+LICENSING
+=========
+
+The project is licensed under the same license as Drupal itself, namely
+GNU General Public License 2 or later.
+
+KADA Drupal distribution.
+		Copyright © 2017 City of Turku, http://www.turku.fi/, turun.kaupunki@turku.fi
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+MA 02110-1301, USA
+
+LISENSSI
+========
+
+Projekti on lisensoitu samalla lisenssisopimuksella kuin Drupal itsessään,
+eli GNU Yleinen Lisenssi (GNU General Public License) 2 tai myöhempi.
+
+KADA-Drupal-jakelu
+Tekijänoikeus © 2017 Turun kaupunki, http://www.turku.fi/, turun.kaupunki@turku.fi
+
+Tämä ohjelma on vapaa; tätä ohjelmaa on sallittu levittää edelleen
+ja muuttaa GNU yleisen lisenssin (GPL-lisenssin) ehtojen mukaan
+sellaisina kuin Free Software Foundation on ne julkaissut; joko
+Lisenssin version 2, tai (valinnan mukaan) minkä tahansa myöhemmän
+version mukaisesti.
+
+Tätä ohjelmaa levitetään siinä toivossa, että se olisi hyödyllinen,
+mutta ilman mitään takuuta; ilman edes hiljaista takuuta
+kaupallisesti hyväksyttävästä laadusta tai soveltuvuudesta
+tiettyyn tarkoitukseen. Katso GPL-lisenssistä lisää yksityiskohtia.
+
+Tämän ohjelman mukana pitäisi tulla kopio GPL-lisenssistä; jos
+näin ei ole, kirjoita osoitteeseen Free Software Foundation Inc.,
+59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+
+PROJECT README
+==============
+
+Some instructions which are not related to the vagrant nor ansible
+setup.
 
 PROJECT STRUCTURE
 =================
