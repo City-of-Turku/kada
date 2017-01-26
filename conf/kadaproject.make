@@ -322,6 +322,7 @@ projects[feeds_ex][subdir] = contrib
 
 projects[feeds_oauth][version] = 1.0-beta3
 projects[feeds_oauth][subdir] = contrib
+projects[feeds_oauth][patch][] = "../patches/feeds_oauth_library_404_fix.patch"
 
 projects[feeds_tamper][version] = 1.0
 projects[feeds_tamper][subdir] = contrib

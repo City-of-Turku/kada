@@ -1,0 +1,14 @@
+diff --git a/feeds_oauth.make b/feeds_oauth.make
+index 4325179..2874717 100644
+--- a/feeds_oauth.make
++++ b/feeds_oauth.make
+@@ -2,6 +2,6 @@ core = 7.x
+ api = 2
+ 
+ libraries[php-proauth][download][type] = "git"
+-libraries[php-proauth][download][url] = "https://github.com/infojunkie/php-proauth.git"
++libraries[php-proauth][download][url] = "https://github.com/RobLoach/php-proauth.git"
+ libraries[php-proauth][directory_name] = php-proauth
+-libraries[php-proauth][destination] = libraries
+\ No newline at end of file
++libraries[php-proauth][destination] = libraries
