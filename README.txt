@@ -46,6 +46,14 @@ Tämän ohjelman mukana pitäisi tulla kopio GPL-lisenssistä; jos
 näin ei ole, kirjoita osoitteeseen Free Software Foundation Inc.,
 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
+GET IN TOUCH
+============
+
+The platform developers use Slack as the primary communication method.
+If you want to join the Slack channel, contact drupal@citrus.fi or
+any current developer of the platform for an invitation. The Slack
+is free to join for all.
+
 PROJECT README
 ==============
 
