@@ -1,5 +1,4 @@
-LICENSING
-=========
+## LICENSING
 
 The project is licensed under the same license as Drupal itself, namely
 GNU General Public License 2 or later.
@@ -22,8 +21,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 MA 02110-1301, USA
 
-LISENSSI
-========
+### LISENSSI
 
 Projekti on lisensoitu samalla lisenssisopimuksella kuin Drupal itsessään,
 eli GNU Yleinen Lisenssi (GNU General Public License) 2 tai myöhempi.
@@ -46,22 +44,19 @@ Tämän ohjelman mukana pitäisi tulla kopio GPL-lisenssistä; jos
 näin ei ole, kirjoita osoitteeseen Free Software Foundation Inc.,
 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
 
-GET IN TOUCH
-============
+## GET IN TOUCH
 
 The platform developers use Slack as the primary communication method.
 If you want to join the Slack channel, contact drupal@citrus.fi or
 any current developer of the platform for an invitation. The Slack
 is free to join for all.
 
-PROJECT README
-==============
+## PROJECT README
 
 Some instructions which are not related to the vagrant nor ansible
 setup.
 
-PROJECT STRUCTURE
-=================
+### PROJECT STRUCTURE
 
 <root>
 	builds
@@ -116,8 +111,7 @@ PROJECT STRUCTURE
 		- Is supposed to be used when running build outside vagrant box (not tested, better to login to vagrant and build there for now)
 
 
-QUICK MANUAL SETUP
-==================
+### QUICK MANUAL SETUP
 
 Note, this assumes you already did a successful "vagrant up".
 
@@ -143,17 +137,16 @@ $ ./build.sh new
   - You can login with editor:secretpass to see what a content editor has access to
 
 
-SYNCING FROM DEVELOPMENT/PRODUCTION
-===================================
+### SYNCING FROM DEVELOPMENT/PRODUCTION
 
-PREPARING (optional)
+#### PREPARING (optional)
 
 Copy your own SSH public key to Vagrant's authorized keys (to make it easy to connect with Sequel Pro for example)
   $ pbcopy < ~/.ssh/id_rsa.pub (copies the public key to clipboard)
   $ vagrant ssh
   $ vi ~/.ssh/authorized_keys (paste the contents of your publickey to the end of this file)
 
-RUNNING SYNC SCRIPTS
+#### RUNNING SYNC SCRIPTS
 
 There is a script for syncing database + files from development.
 
@@ -162,17 +155,15 @@ $ ./drupal/kada_devsync.sh
 
 After syncing database and files, syncscript runs additional commands, like downloads+enables Devel module.
 
+### DEVELOPMENT
 
-DEVELOPMENT
-===========
-
-ENVIRONMENT
+#### ENVIRONMENT
 
 All the tools required for managing the development environment are built into the vagrant box and means that all of these commands mentioned below should be run inside the vagrant box. You can access the vagrant box with:
 
 $ vagrant ssh
 
-BUILD / BRANCH CHECKOUT
+#### BUILD / BRANCH CHECKOUT
 
 Build is needed when there is changes (or vanilla project repo checkout) made in drush make file. And if in doubt after checking out some other people's code, there is no harm done if you run this command (unless you have done something not so cool like modified core / contrib code).
 
@@ -188,16 +179,16 @@ $ drush fra -y && drush fra -y && drush cc all
 
 Feature revert is ran twice as we have notices that for some reason features might not get reverted in first run.
 
-INSTALL PROFILE
+#### INSTALL PROFILE
 
 - Contains update hooks for feature / module enabling
 
-CUSTOM MODULES
+#### CUSTOM MODULES
 
 - Naming: kada_NAME
 - Avoid creating custom modules or if you really have to, please consult other developers first
 
-FEATURES
+#### FEATURES
 
 - Naming: kada_NAME_feature
 - Should contain update hooks to enable additional modules related to feature change
