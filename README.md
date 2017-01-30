@@ -58,7 +58,7 @@ setup.
 
 ### PROJECT STRUCTURE
 
-<root>
+```<root>
 	builds
 		- Contains built codebases, preserves history
 	code
@@ -109,49 +109,46 @@ setup.
 		- Syncs sql and files from development
 	drush.sh
 		- Is supposed to be used when running build outside vagrant box (not tested, better to login to vagrant and build there for now)
-
+```
 
 ### QUICK MANUAL SETUP
 
 Note, this assumes you already did a successful "vagrant up".
 
 1. Go to inside the box
-
-$ vagrant ssh
-
+...$ vagrant ssh
 2. Build Drupal from the make file
-
-$ cd /vagrant/drupal
-$ ./build.sh new
-
+...$ cd /vagrant/drupal
+...$ ./build.sh new
 3. Do a site-install at http://local.kada.fi/install.php?profile=kadaprofile (try with port 8080 if varnish is preventing install).
-  - Choose some features to enable during install
-    - Events base feature is not yet working with the site-install
-  - Domains will give notice during install, can be ignored
-  - If you get timeouts, just refresh the page and batch process will continue
+..* Choose some features to enable during install
+..* Events base feature is not yet working with the site-install
+..* Domains will give notice during install, can be ignored
+..* If you get timeouts, just refresh the page and batch process will continue
 4. When install is finished, visit the site at http://local.kada.fi
-  - The cache has to be rebuilt and features reverted, probably a couple of times before things start working
-  - If some database error occurs due to missing module, add the module to correct feature's .info file.
+..* The cache has to be rebuilt and features reverted, probably a couple of times before things start working
+..* If some database error occurs due to missing module, add the module to correct feature's .info file.
 5. Enable User feature and revert it
-  - drush en tkufi_user_feature -y; drush fr tkufi_user_feature -y
-  - You can login with editor:secretpass to see what a content editor has access to
-
+..* drush en tkufi_user_feature -y; drush fr tkufi_user_feature -y
+..* You can login with editor:secretpass to see what a content editor has access to
 
 ### SYNCING FROM DEVELOPMENT/PRODUCTION
 
 #### PREPARING (optional)
 
 Copy your own SSH public key to Vagrant's authorized keys (to make it easy to connect with Sequel Pro for example)
-  $ pbcopy < ~/.ssh/id_rsa.pub (copies the public key to clipboard)
-  $ vagrant ssh
-  $ vi ~/.ssh/authorized_keys (paste the contents of your publickey to the end of this file)
 
+```$ pbcopy < ~/.ssh/id_rsa.pub (copies the public key to clipboard)
+$ vagrant ssh
+$ vi ~/.ssh/authorized_keys (paste the contents of your publickey to the end of this file)
+```
 #### RUNNING SYNC SCRIPTS
 
 There is a script for syncing database + files from development.
 
 From the project root:
-$ ./drupal/kada_devsync.sh
+```$ ./drupal/kada_devsync.sh
+```
 
 After syncing database and files, syncscript runs additional commands, like downloads+enables Devel module.
 
@@ -161,7 +158,8 @@ After syncing database and files, syncscript runs additional commands, like down
 
 All the tools required for managing the development environment are built into the vagrant box and means that all of these commands mentioned below should be run inside the vagrant box. You can access the vagrant box with:
 
-$ vagrant ssh
+```$ vagrant ssh
+```
 
 #### BUILD / BRANCH CHECKOUT
 
@@ -169,29 +167,31 @@ Build is needed when there is changes (or vanilla project repo checkout) made in
 
 Also you should be syncing database from develop environment frequently to ensure that you have most up to date database. This way you should be able to avoid adding unnecessary changes into feature recreates.
 
-$ cd <PROJECT_ROOT>
+```$ cd <PROJECT_ROOT>
 $ ./build.sh update
+```
 
 After build is done, it's advised to run bunch of drush commands to ensure that database is in the same state as in the feature code.
 
-$ cd <PROJECT_ROOT>/current
+```$ cd <PROJECT_ROOT>/current
 $ drush fra -y && drush fra -y && drush cc all
+```
 
 Feature revert is ran twice as we have notices that for some reason features might not get reverted in first run.
 
 #### INSTALL PROFILE
 
-- Contains update hooks for feature / module enabling
+* Contains update hooks for feature / module enabling
 
 #### CUSTOM MODULES
 
-- Naming: kada_NAME
-- Avoid creating custom modules or if you really have to, please consult other developers first
+* Naming: kada_NAME
+* Avoid creating custom modules or if you really have to, please consult other developers first
 
 #### FEATURES
 
-- Naming: kada_NAME_feature
-- Should contain update hooks to enable additional modules related to feature change
-- Feature specific custom code can be inserted into *.module instead of creating custom modules
-- Fill out changes and other important notes into README.txt file in the feature directory (if you need template, look at tkufi_page_feature)
-- ALWAYS RECREATE FEATURES AND SAVE VIEWS IN ENGLISH!!! (make sure there is /en prefix in the path, otherwise all views translations and such will be exported to code in Finnish)
+* Naming: kada_NAME_feature
+* Should contain update hooks to enable additional modules related to feature change
+* Feature specific custom code can be inserted into *.module instead of creating custom modules
+* Fill out changes and other important notes into README.txt file in the feature directory (if you need template, look at tkufi_page_feature)
+* ALWAYS RECREATE FEATURES AND SAVE VIEWS IN ENGLISH!!! (make sure there is /en prefix in the path, otherwise all views translations and such will be exported to code in Finnish)
