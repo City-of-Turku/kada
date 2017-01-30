@@ -116,10 +116,14 @@ setup.
 Note, this assumes you already did a successful "vagrant up".
 
 1. Go to inside the box
+   ```
    $ vagrant ssh
+   ```
 2. Build Drupal from the make file
+   ```
    $ cd /vagrant/drupal
    $ ./build.sh new
+   ```
 3. Do a site-install at http://local.kada.fi/install.php?profile=kadaprofile (try with port 8080 if varnish is preventing install).
   - Choose some features to enable during install
   - Events base feature is not yet working with the site-install
