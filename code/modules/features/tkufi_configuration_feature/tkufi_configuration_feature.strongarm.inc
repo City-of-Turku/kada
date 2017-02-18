@@ -3190,7 +3190,7 @@ user/*/*';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'radioactivity_checksum_salt';
-  $strongarm->value = '2YAYxkYNzDehizk6n2gzAycDU8A6DG4iPiHn4EYxzz5Tb6jX8KrgnXZ7WYVnogxx2x2Ax9AJ96vVjCQfJcoX4QGEXiENuSDxE7Ae';
+  $strongarm->value = 'undefined';
   $export['radioactivity_checksum_salt'] = $strongarm;
 
   $strongarm = new stdClass();
