@@ -47,9 +47,12 @@ näin ei ole, kirjoita osoitteeseen Free Software Foundation Inc.,
 ## GET IN TOUCH
 
 The platform developers use Slack as the primary communication method.
-If you want to join the Slack channel, contact drupal@citrus.fi or
-any current developer of the platform for an invitation. The Slack
+If you want to join the Slack channel, sign up at https://kada-slack.herokuapp.com/ or contact drupal@citrus.fi. The Slack
 is free to join for all.
+
+## REPORTING SECURITY ISSUES
+
+We kindly ask you to report security issues in a responsible manner: Report your security concerns first to juha.niemi@wunder.io who will collaborate with you on reporting the issue to the KADA-project while also ensuring that the existing production systems are not compromised. 
 
 ## PROJECT README
 
