@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_blog_feature.features.user_permission.inc
+ * kada_blog_feature.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function tkufi_blog_feature_user_default_permissions() {
+function kada_blog_feature_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'create blog content'.

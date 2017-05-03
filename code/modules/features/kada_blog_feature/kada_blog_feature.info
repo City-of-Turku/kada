@@ -1,9 +1,9 @@
-name = TKUFI Blog
-description = Feature for tkufi blogs and blog posts
+name = KADA Blog
+description = Feature for KADA blogs and blog posts
 core = 7.x
-package = TKUFI
+package = KADA
 version = 7.x-1.0-beta1
-project = tkufi_blog_feature
+project = kada_blog_feature
 dependencies[] = atom_reference
 dependencies[] = domain
 dependencies[] = field_group
