@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * Code for the TKUFI Blog feature.
+ * Code for the KADA Blog feature.
  */
 
-include_once 'tkufi_blog_feature.features.inc';
+include_once 'kada_blog_feature.features.inc';
 
-function tkufi_blog_feature_views_post_execute(&$view) {
-  $tkufi_page_classes = &drupal_static('tkufi_page_classes');
+function kada_blog_feature_views_post_execute(&$view) {
+  $kada_page_classes = &drupal_static('kada_page_classes');
 
   if ($view->name == 'driveturku_blog_image' && $view->current_display == 'blog_image') {
     if (!empty($view->result)) {
@@ -15,7 +15,7 @@ function tkufi_blog_feature_views_post_execute(&$view) {
 
       foreach (array('field_field_main_image') as $field) {
         if (!empty($result->{$field})) {
-          $tkufi_page_classes = 'has-main-image';
+          $kada_page_classes = 'has-main-image';
           break;
         }
       }

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_blog_feature.context.inc
+ * kada_blog_feature.context.inc
  */
 
 /**
  * Implements hook_context_default_contexts().
  */
-function tkufi_blog_feature_context_default_contexts() {
+function kada_blog_feature_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();

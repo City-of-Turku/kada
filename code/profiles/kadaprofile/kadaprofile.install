@@ -260,7 +260,7 @@ function kadaprofile_install_additional_modules() {
     $modules[] = 'tkufi_liftups_feature';
   }
   if (!empty($selected_extras['blog'])) {
-    $modules[] = 'tkufi_blog_feature';
+    $modules[] = 'kada_blog_feature';
   }
   if (!empty($selected_extras['some_content'])) {
     $modules[] = 'kada_some_content_feature';
@@ -359,7 +359,7 @@ function kadaprofile_install_finished(&$install_state) {
     $modules[] = 'tkufi_liftups_feature';
   }
   if (!empty($selected_extras['blog'])) {
-    $modules[] = 'tkufi_blog_feature';
+    $modules[] = 'kada_blog_feature';
   }
   if (!empty($selected_extras['some_content'])) {
     $modules[] = 'kada_some_content_feature';

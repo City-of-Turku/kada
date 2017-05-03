@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_blog_feature.ds.inc
+ * kada_blog_feature.ds.inc
  */
 
 /**
  * Implements hook_ds_field_settings_info().
  */
-function tkufi_blog_feature_ds_field_settings_info() {
+function kada_blog_feature_ds_field_settings_info() {
   $export = array();
 
   $ds_fieldsetting = new stdClass();
@@ -264,7 +264,7 @@ function tkufi_blog_feature_ds_field_settings_info() {
 /**
  * Implements hook_ds_layout_settings_info().
  */
-function tkufi_blog_feature_ds_layout_settings_info() {
+function kada_blog_feature_ds_layout_settings_info() {
   $export = array();
 
   $ds_layout = new stdClass();
