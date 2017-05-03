@@ -65,8 +65,17 @@ setup.
 	builds
 		- Contains built codebases, preserves history
 	code
+		site
+			- IMPORTANT: Use site_ or other custom prefix with custom and feature modules.
+			custom
+				- Site-specific custom modules directory
+				- Symlinked from current codebase build when in development
+			features
+				- Site-specific features directory
+				- Symlinked from current codebase build when in development
 		modules
-			- IMPORTANT: Use tkufi_ prefix with custom and feature modules
+			- IMPORTANT: Use kada_ prefix with custom and feature modules
+			- Is maintained upstream, handle with care to preserve compatibility!
 			custom
 				- Custom modules directory
 				- Symlinked from current codebase build when in development

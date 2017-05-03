@@ -54,6 +54,9 @@ dependencies[] = uuid
 dependencies[] = views
 dependencies[] = views_ui
 
+; Site "profile" module
+dependencies[] = kada_site
+
 ; Features
 
 ; Custom
