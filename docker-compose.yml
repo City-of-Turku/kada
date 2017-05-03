@@ -1,30 +1,51 @@
 version: '2'
 services:
   web:
-    image: zeip/docker-php
+    # Needs to be changed
+    ports:
+      - "8088:80"
+      - "2228:22"
     environment:
       - PLATFORM=drupal
-    ports:
-    - "8083:80"
-    - "2223:22"
+    image: citrussolutions/docker-php
     volumes:
-    - .:/wwwroot:Z
-     # TODO: Should we use this?
-#    - logvolume01:/var/log
+      - .:/wwwroot:Z
+      # TODO: Should we use this?
+#      - logvolume01:/var/log
     external_links:
-    - mariadb:mysql
-    - mailhog:mailhog
+      - mariadb:mysql
+      - mailhog:mailhog
     links:
-    - redis:redis
-    - solr4:solr
+      - redis
+      - solr
+      - elasticsearch
+    depends_on:
+      - redis
+      - solr
+      - elasticsearch
     network_mode: bridge
+    build:
+      context: https://github.com/CitrusSolutions/docker-php.git#stable
+  solr:
+    # Needs to be changed
+    ports:
+      - "8988:8983"
+    image: makuk66/docker-solr:4.10.4
+    network_mode: bridge
+#  elasticsearch:
+#    # Needs to be changed
+#    ports:
+#      - "9208:9200"
+#    image: elasticsearch:2
+#    network_mode: bridge
+#    command:
+#      - elasticsearch
+#      - -Dhttp.cors.enabled=true
+#      - -Dhttp.cors.allow-origin=*
+#      - -Dhttp.cors.allow-methods=OPTIONS,HEAD,GET,POST,PUT,DELETE
+#      - -Dhttp.cors.allow-headers=X-Requested-With,X-Auth-Token,Content-Type,Content-Length
   redis:
     image: redis
     network_mode: bridge
-  solr4:
-    image: makuk66/docker-solr:4.10.4
-    network_mode: bridge
-    ports:
-    - "8989:8983"
 volumes:
   logvolume01: {}
