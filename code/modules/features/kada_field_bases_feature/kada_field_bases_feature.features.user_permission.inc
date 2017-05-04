@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_field_bases_feature.features.user_permission.inc
+ * kada_field_bases_feature.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function tkufi_field_bases_feature_user_default_permissions() {
+function kada_field_bases_feature_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'geocoder_service_all_handlers'.

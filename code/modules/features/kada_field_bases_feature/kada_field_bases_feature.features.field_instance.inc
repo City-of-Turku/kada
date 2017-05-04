@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_field_bases_feature.features.field_instance.inc
+ * kada_field_bases_feature.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function tkufi_field_bases_feature_field_default_field_instances() {
+function kada_field_bases_feature_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'field_collection_item-field_accessibility-field_accessibility_type_er'

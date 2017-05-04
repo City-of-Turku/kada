@@ -10,7 +10,7 @@
  *
  * This should probably be request_uri?
  */
-class tkufi_context_request_uri_condition_context_condition_requesturi extends context_condition_path {
+class kada_context_request_uri_condition_context_condition_requesturi extends context_condition_path {
 
   /**
    * Documentation (@TODO).
@@ -26,5 +26,4 @@ class tkufi_context_request_uri_condition_context_condition_requesturi extends c
       }
     }
   }
-
 }

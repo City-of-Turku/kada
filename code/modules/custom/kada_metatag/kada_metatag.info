@@ -1,8 +1,8 @@
-name = TKUFI Metatag
+name = KADA Metatag
 description = Metatag-related custom code
-package = TKUFI
+package = KADA
 core = 7.x
 
 dependencies[] = metatag
 dependencies[] = og
-dependencies[] = tkufi_search_feature
+dependencies[] = tkufi_media_feature

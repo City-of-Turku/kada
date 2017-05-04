@@ -8,12 +8,12 @@
 /**
  * Implements hook_menu().
  */
-function tkufi_metatag_menu() {
+function kada_metatag_menu() {
   // Custom settings page for sharing-related things.
   $items['admin/structure/sharing'] = array(
     'title' => 'Sharing settings',
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('tkufi_metatag_settings'),
+    'page arguments' => array('kada_metatag_settings'),
     'access arguments' => array('administer sharing settings'),
   );
   return $items;
@@ -22,11 +22,11 @@ function tkufi_metatag_menu() {
 /**
  * Implements hook_permission().
  */
-function tkufi_metatag_permission() {
+function kada_metatag_permission() {
   return array(
     'administer sharing settings' => array(
       'title' => t('Administer sharing settings'),
-      'description' => t('Administer the custom sharing settings for TKUFI.'),
+      'description' => t('Administer the custom sharing settings for KADA.'),
     ),
   );
 }
@@ -34,7 +34,7 @@ function tkufi_metatag_permission() {
 /**
  * Settings form for custom sharing settings.
  */
-function tkufi_metatag_settings($form, &$form_state) {
+function kada_metatag_settings($form, &$form_state) {
   // Atom field base for images, from atom_reference_field_widget_form function.
   $atom_field_base = array(
     '#type' => 'textfield',
@@ -54,9 +54,9 @@ function tkufi_metatag_settings($form, &$form_state) {
     ),
   );
   // Default sharing image atom.
-  $form['tkufi_default_sharing_image_atom'] = $atom_field_base + array(
+  $form['kada_default_sharing_image_atom'] = $atom_field_base + array(
     '#title' => t('Default sharing image'),
-    '#default_value' => variable_get('tkufi_default_sharing_image_atom', ''),
+    '#default_value' => variable_get('kada_default_sharing_image_atom', ''),
   );
   return system_settings_form($form);
 }
@@ -75,7 +75,7 @@ function tkufi_metatag_settings($form, &$form_state) {
  * @param array $options
  *   All of the options used to generate the meta tags.
  */
-function tkufi_metatag_metatag_metatags_view_alter(&$output, $instance, $options) {
+function kada_metatag_metatag_metatags_view_alter(&$output, $instance, $options) {
   if (!empty($output['og:image:type'])) {
     // If og:image is empty, unset og:image:type.
     if (empty($output['og:image'])) {
@@ -87,44 +87,44 @@ function tkufi_metatag_metatag_metatags_view_alter(&$output, $instance, $options
 /**
  * Implements hook_token_info().
  */
-function tkufi_metatag_token_info() {
+function kada_metatag_token_info() {
   $info = array();
 
-  // Token type "tkufi".
-  $info['types']['tkufi'] = array(
-    'name' => t('TKUFI tokens'),
-    'description' => t('TKUFI custom tokens'),
+  // Token type "kada".
+  $info['types']['kada'] = array(
+    'name' => t('KADA tokens'),
+    'description' => t('KADA custom tokens'),
   );
 
-  // Tokens of type "tkufi".
-  $info['tokens']['tkufi']['metatag_description'] = array(
+  // Tokens of type "kada".
+  $info['tokens']['kada']['metatag_description'] = array(
     'name' => t('Metatag description'),
     'description' => t('Description of current content for use in metatags, limited to about 150 characters.'),
   );
-  $info['tokens']['tkufi']['metatag_short_description'] = array(
+  $info['tokens']['kada']['metatag_short_description'] = array(
     'name' => t('Metatag short description'),
     'description' => t('Short description of content for use in metatags, limited to about 70 characters.'),
   );
-  $info['tokens']['tkufi']['metatag_image'] = array(
+  $info['tokens']['kada']['metatag_image'] = array(
     'name' => t('Metatag image'),
     'description' => t('Image from current content for use in metatags.'),
   );
-  $info['tokens']['tkufi']['metatag_keywords'] = array(
+  $info['tokens']['kada']['metatag_keywords'] = array(
     'name' => t('Metatag keywords'),
     'description' => t('Keywords from current content for use in metatags.'),
   );
-  $info['tokens']['tkufi']['metatag_related'] = array(
+  $info['tokens']['kada']['metatag_related'] = array(
     'name' => t('Metatag related content'),
     'description' => t('Content related to current content for use in metatags.'),
   );
 
   // Default sharing image.
-  $info['tokens']['tkufi']['metatag_default_sharing_image'] = array(
+  $info['tokens']['kada']['metatag_default_sharing_image'] = array(
     'name' => t('Metatag default sharing image'),
     'description' => t('Default sharing image for use in metatags.'),
   );
   // Section sharing image.
-  $info['tokens']['tkufi']['metatag_section_sharing_image'] = array(
+  $info['tokens']['kada']['metatag_section_sharing_image'] = array(
     'name' => t('Metatag section sharing image'),
     'description' => t('Sharing image from current section for use in metatags.'),
   );
@@ -135,7 +135,7 @@ function tkufi_metatag_token_info() {
 /**
  * Implements hook_tokens().
  */
-function tkufi_metatag_tokens($type, $tokens, array $data = array(), array $options = array()) {
+function kada_metatag_tokens($type, $tokens, array $data = array(), array $options = array()) {
   $replacements = array();
   $mapping = array(
 
@@ -181,8 +181,8 @@ function tkufi_metatag_tokens($type, $tokens, array $data = array(), array $opti
         '[node:field-content-image-et:scald-file:opengraph]',
         '[node:field_content_image_ext:opengraph]',
         '[node:field-person-image:scald-file:opengraph]',
-        '[tkufi:metatag_section_sharing_image]',
-        '[tkufi:metatag_default_sharing_image]',
+        '[kada:metatag_section_sharing_image]',
+        '[kada:metatag_default_sharing_image]',
       ),
     ),
 
@@ -208,7 +208,7 @@ function tkufi_metatag_tokens($type, $tokens, array $data = array(), array $opti
   );
 
   // Create tokens from mapping.
-  if ($type == 'tkufi' && !empty($data['node'])) {
+  if ($type == 'kada' && !empty($data['node'])) {
     $node = $data['node'];
     foreach ($mapping as $token => $token_options) {
       if (isset($tokens[$token])) {
@@ -229,7 +229,7 @@ function tkufi_metatag_tokens($type, $tokens, array $data = array(), array $opti
 /**
  * Implements hook_page_alter().
  */
-function tkufi_metatag_page_alter(&$page) {
+function kada_metatag_page_alter(&$page) {
   $og = og_context();
 
   if (isset($og['gid']) && $og['group_type'] == 'node') {
@@ -303,7 +303,7 @@ function _token_fallback($token_options, &$node) {
  * Documentation (@TODO).
  */
 function _get_default_sharing_image(&$node) {
-  $sid = variable_get('tkufi_default_sharing_image_atom', '');
+  $sid = variable_get('kada_default_sharing_image_atom', '');
   if ($atom = scald_atom_load($sid)) {
     $scald_context_config = scald_context_config_load('opengraph');
     $transcoder = $scald_context_config->transcoder['image']['*'];

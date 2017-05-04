@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_field_bases_feature.ds.inc
+ * kada_field_bases_feature.ds.inc
  */
 
 /**
  * Implements hook_ds_layout_settings_info().
  */
-function tkufi_field_bases_feature_ds_layout_settings_info() {
+function kada_field_bases_feature_ds_layout_settings_info() {
   $export = array();
 
   $ds_layout = new stdClass();

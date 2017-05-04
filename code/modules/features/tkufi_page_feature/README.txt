@@ -42,7 +42,7 @@ tkufi_page_feature.module file:
   - NEEDS DESCRIPTION
 
 == FEATURE DEPENDENCIES ==
-tkufi_field_bases_feature:
+kada_field_bases_feature:
 Has all the field base configuration for fields which have instances in this feature.
 
 kada_configuration_feature:

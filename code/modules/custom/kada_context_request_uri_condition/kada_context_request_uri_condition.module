@@ -8,12 +8,12 @@
 /**
  * Implements hook_context_plugins().
  */
-function tkufi_context_request_uri_condition_context_plugins() {
-  $plugins['tkufi_context_request_uri_condition_context_condition_requesturi'] = array(
+function kada_context_request_uri_condition_context_plugins() {
+  $plugins['kada_context_request_uri_condition_context_condition_requesturi'] = array(
     'handler' => array(
-      'path' => drupal_get_path('module', 'tkufi_context_request_uri_condition'),
-      'file' => 'tkufi_context_request_uri_condition.inc',
-      'class' => 'tkufi_context_request_uri_condition_context_condition_requesturi',
+      'path' => drupal_get_path('module', 'kada_context_request_uri_condition'),
+      'file' => 'kada_context_request_uri_condition.inc',
+      'class' => 'kada_context_request_uri_condition_context_condition_requesturi',
       'parent' => 'context_condition',
     ),
   );
@@ -23,13 +23,13 @@ function tkufi_context_request_uri_condition_context_plugins() {
 /**
  * Implements hook_context_registry().
  */
-function tkufi_context_request_uri_condition_context_registry() {
+function kada_context_request_uri_condition_context_registry() {
   return array(
     'conditions' => array(
       'requesturi' => array(
         'title' => t('Request URI'),
         'description' => t('Set this context based on the request URI.'),
-        'plugin' => 'tkufi_context_request_uri_condition_context_condition_requesturi',
+        'plugin' => 'kada_context_request_uri_condition_context_condition_requesturi',
       ),
     ),
   );
@@ -38,7 +38,7 @@ function tkufi_context_request_uri_condition_context_registry() {
 /**
  * Implements hook_init().
  */
-function tkufi_context_request_uri_condition_init() {
+function kada_context_request_uri_condition_init() {
   if ($plugin = context_get_plugin('condition', 'requesturi')) {
     $plugin->execute();
   }
