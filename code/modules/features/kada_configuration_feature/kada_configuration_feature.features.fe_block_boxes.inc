@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_configuration_feature.features.fe_block_boxes.inc
+ * kada_configuration_feature.features.fe_block_boxes.inc
  */
 
 /**
  * Implements hook_default_fe_block_boxes().
  */
-function tkufi_configuration_feature_default_fe_block_boxes() {
+function kada_configuration_feature_default_fe_block_boxes() {
   $export = array();
 
   $fe_block_boxes = new stdClass();

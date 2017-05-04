@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_configuration_feature.features.filter.inc
+ * kada_configuration_feature.features.filter.inc
  */
 
 /**
  * Implements hook_filter_default_formats().
  */
-function tkufi_configuration_feature_filter_default_formats() {
+function kada_configuration_feature_filter_default_formats() {
   $formats = array();
 
   // Exported format: Display Suite code.

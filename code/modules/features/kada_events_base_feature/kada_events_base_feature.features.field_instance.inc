@@ -1712,7 +1712,7 @@ function kada_events_base_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'tkufi_date_only',
+          'format_type' => 'kada_date_only',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -1787,7 +1787,7 @@ function kada_events_base_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'tkufi_day_month_only_with_time',
+          'format_type' => 'kada_day_month_only_with_time',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',
@@ -1832,7 +1832,7 @@ function kada_events_base_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
-          'format_type' => 'tkufi_date_only',
+          'format_type' => 'kada_date_only',
           'fromto' => 'both',
           'multiple_from' => '',
           'multiple_number' => '',

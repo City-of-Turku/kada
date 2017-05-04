@@ -353,7 +353,7 @@ function tkufi_widget_feature_views_default_views() {
   $handler->display->display_options['fields']['field_event_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['settings'] = array(
-    'format_type' => 'tkufi_date_only',
+    'format_type' => 'kada_date_only',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -631,7 +631,7 @@ function tkufi_widget_feature_views_default_views() {
   $handler->display->display_options['fields']['field_event_date']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['settings'] = array(
-    'format_type' => 'tkufi_date_only',
+    'format_type' => 'kada_date_only',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -1199,7 +1199,7 @@ function tkufi_widget_feature_views_default_views() {
   $handler->display->display_options['fields']['field_event_date']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_event_date']['type'] = 'date_plain';
   $handler->display->display_options['fields']['field_event_date']['settings'] = array(
-    'format_type' => 'tkufi_date_only',
+    'format_type' => 'kada_date_only',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',

@@ -4,12 +4,12 @@
  * Code for the Tkufi configuration feature feature.
  */
 
-include_once 'tkufi_configuration_feature.features.inc';
+include_once 'kada_configuration_feature.features.inc';
 
 /**
  * Implements hook_menu().
  */
-function tkufi_configuration_feature_init() {
+function kada_configuration_feature_init() {
   // Redirect to no translation info page if node page is not translated.
   // Look only for node page views.
   if (arg(0) == 'node' && arg(2) === NULL) {
@@ -42,12 +42,12 @@ function tkufi_configuration_feature_init() {
 /**
  * Implements hook_theme().
  */
-function tkufi_configuration_feature_theme() {
+function kada_configuration_feature_theme() {
   return array(
     'page_not_translated' => array(
       'variables' => array('text' => NULL, 'backlink' => NULL),
       'template' => 'page-not-translated',
-      'path' => drupal_get_path('module', 'tkufi_configuration_feature') . '/templates',
+      'path' => drupal_get_path('module', 'kada_configuration_feature') . '/templates',
     ),
   );
 }
@@ -55,11 +55,11 @@ function tkufi_configuration_feature_theme() {
 /**
  * Implements hook_menu().
  */
-function tkufi_configuration_feature_menu() {
+function kada_configuration_feature_menu() {
   // Create menu callback to show info regarding content translation.
   $items['page-not-translated'] = array(
     'title' => 'Page has not been translated',
-    'page callback' => 'tkufi_configuration_feature_translation_unavailable',
+    'page callback' => 'kada_configuration_feature_translation_unavailable',
     'access callback' => TRUE,
     'type' => MENU_CALLBACK,
   );
@@ -76,7 +76,7 @@ function tkufi_configuration_feature_menu() {
 /**
  * Implements hook_block_info().
  */
-function tkufi_configuration_feature_block_info() {
+function kada_configuration_feature_block_info() {
   return array(
     'tweet_embed' => array(
       'info' => t('Tweet embed'),
@@ -87,11 +87,11 @@ function tkufi_configuration_feature_block_info() {
 /**
  * Implements hook_block_view().
  */
-function tkufi_configuration_feature_block_view($delta = '') {
+function kada_configuration_feature_block_view($delta = '') {
   $block = array();
   switch ($delta) {
     case 'tweet_embed':
-      $block['content'] = tkufi_configuration_feature_tweet_embed();
+      $block['content'] = kada_configuration_feature_tweet_embed();
       break;
   }
   return $block;
@@ -100,7 +100,7 @@ function tkufi_configuration_feature_block_view($delta = '') {
 /**
  * Renders tweet embed block data for given page.
  */
-function tkufi_configuration_feature_tweet_embed() {
+function kada_configuration_feature_tweet_embed() {
   $node = menu_get_object();
   $content = array();
   // If embed contains value, render it and add javascript for Twitter widgets.
@@ -119,7 +119,7 @@ function tkufi_configuration_feature_tweet_embed() {
 /**
  * Renders no translation info page.
  */
-function tkufi_configuration_feature_translation_unavailable() {
+function kada_configuration_feature_translation_unavailable() {
   $vars = array(
     'text' => t('Unfortunately, this page has not been translated.<br />Please use the search function or navigation to find similar contents.'),
   );
@@ -129,17 +129,17 @@ function tkufi_configuration_feature_translation_unavailable() {
 /**
  * Implements hook_field_widget_form_alter().
  */
-function tkufi_configuration_feature_field_widget_form_alter(&$element, &$form_state, $context) {
+function kada_configuration_feature_field_widget_form_alter(&$element, &$form_state, $context) {
   // Add validator for tweet_embed field.
   if ($context['field']['field_name'] == 'field_tweet_embed') {
-    $element['#element_validate'][] = '_tkufi_configuration_feature_field_tweet_embed_validate';
+    $element['#element_validate'][] = '_kada_configuration_feature_field_tweet_embed_validate';
   }
 }
 
 /**
  * Validator for field_tweed_embed field. Also parses unneeded stuff away.
  */
-function _tkufi_configuration_feature_field_tweet_embed_validate($element, &$form_state, $form) {
+function _kada_configuration_feature_field_tweet_embed_validate($element, &$form_state, $form) {
   if (!empty($element['value']['#value'])) {
     $dom = new DOMDocument();
     // DOMDocument expects ISO-8859-1 as per HTML4.0 standards
@@ -167,41 +167,41 @@ function _tkufi_configuration_feature_field_tweet_embed_validate($element, &$for
 /**
  * Implements hook_date_formats().
  */
-function tkufi_configuration_feature_date_formats() {
+function kada_configuration_feature_date_formats() {
   return array(
     // Creates a new format for a new, custom format type.
     array(
-      'type' => 'tkufi_date_only',
+      'type' => 'kada_date_only',
       'format' => 'd.m.Y',
       'locales' => array(),
     ),
     array(
-      'type' => 'tkufi_date_only_no_zeros',
+      'type' => 'kada_date_only_no_zeros',
       'format' => 'j.n.Y',
       'locales' => array(),
     ),
     array(
-      'type' => 'tkufi_time_only',
+      'type' => 'kada_time_only',
       'format' => 'H.i',
       'locales' => array(),
     ),
     array(
-      'type' => 'tkufi_rss_time',
+      'type' => 'kada_rss_time',
       'format' => 'r',
       'locales' => array(),
     ),
     array(
-      'type' => 'tkufi_day_only',
+      'type' => 'kada_day_only',
       'format' => 'j.',
       'locales' => array(),
     ),
     array(
-      'type' => 'tkufi_day_month_only',
+      'type' => 'kada_day_month_only',
       'format' => 'j.n.',
       'locales' => array(),
     ),
     array(
-      'type' => 'tkufi_day_month_only_with_time',
+      'type' => 'kada_day_month_only_with_time',
       'format' => 'j.n. - G:i',
       'locales' => array(),
     ),
@@ -211,19 +211,19 @@ function tkufi_configuration_feature_date_formats() {
 /**
  * Implements hook_date_format_types().
  */
-function tkufi_configuration_feature_date_format_types() {
+function kada_configuration_feature_date_format_types() {
   return array(
-    'tkufi_date_only' => t('Date only'),
-    'tkufi_date_only_no_zeros' => t('Date only, no leading zeros'),
-    'tkufi_time_only' => t('Time only'),
-    'tkufi_rss_time' => t('RSS time'),
-    'tkufi_day_only' => t('Day only'),
-    'tkufi_day_month_only' => t('Day and month only'),
-    'tkufi_day_month_only_with_time' => t('Day and month only with time'),
+    'kada_date_only' => t('Date only'),
+    'kada_date_only_no_zeros' => t('Date only, no leading zeros'),
+    'kada_time_only' => t('Time only'),
+    'kada_rss_time' => t('RSS time'),
+    'kada_day_only' => t('Day only'),
+    'kada_day_month_only' => t('Day and month only'),
+    'kada_day_month_only_with_time' => t('Day and month only with time'),
   );
 }
 
-function tkufi_configuration_feature_entity_view($entity, $type, $view_mode, $langcode) {
+function kada_configuration_feature_entity_view($entity, $type, $view_mode, $langcode) {
   // Because field collection doesn't work with entity translation, we have
   // to use our own display logic. Displaying only the values in current
   // language.
@@ -249,14 +249,14 @@ function tkufi_configuration_feature_entity_view($entity, $type, $view_mode, $la
 /**
  * Moves Node clone link from action links to task links
  */
-function tkufi_configuration_feature_menu_alter(&$items) {
+function kada_configuration_feature_menu_alter(&$items) {
   $items['node/%node/clone/%clone_token']['type'] = MENU_LOCAL_TASK;
 }
 
 /**
  * Implements hook_js_alter().
  */
-function tkufi_configuration_feature_js_alter(&$js) {
+function kada_configuration_feature_js_alter(&$js) {
   // Move the settings JS after libraries so maps will work with AdvAgg enabled
   $js['settings']['group'] = -99;
 }
@@ -264,7 +264,7 @@ function tkufi_configuration_feature_js_alter(&$js) {
 /**
  * Implements hook_form_alter().
  */
-function tkufi_configuration_feature_form_alter(&$form, &$form_state, $form_id) {
+function kada_configuration_feature_form_alter(&$form, &$form_state, $form_id) {
   $node_forms = array(
     'landing_page_node_form',
     'page_node_form',

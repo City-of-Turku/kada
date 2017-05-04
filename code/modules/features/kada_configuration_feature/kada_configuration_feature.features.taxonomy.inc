@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_configuration_feature.features.taxonomy.inc
+ * kada_configuration_feature.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function tkufi_configuration_feature_taxonomy_default_vocabularies() {
+function kada_configuration_feature_taxonomy_default_vocabularies() {
   return array(
     'accessibility' => array(
       'name' => 'Accessibility',

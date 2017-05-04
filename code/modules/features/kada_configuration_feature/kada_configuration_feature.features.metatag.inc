@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_configuration_feature.features.metatag.inc
+ * kada_configuration_feature.features.metatag.inc
  */
 
 /**
  * Implements hook_metatag_export_default().
  */
-function tkufi_configuration_feature_metatag_export_default() {
+function kada_configuration_feature_metatag_export_default() {
   $config = array();
 
   // Exported Metatag config instance: global.

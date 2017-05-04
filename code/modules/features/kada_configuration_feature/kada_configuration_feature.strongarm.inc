@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_configuration_feature.strongarm.inc
+ * kada_configuration_feature.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function tkufi_configuration_feature_strongarm() {
+function kada_configuration_feature_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();
@@ -397,51 +397,51 @@ function tkufi_configuration_feature_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'date_format_tkufi_date_only';
+  $strongarm->name = 'date_format_kada_date_only';
   $strongarm->value = 'd.m.Y';
-  $export['date_format_tkufi_date_only'] = $strongarm;
+  $export['date_format_kada_date_only'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'date_format_tkufi_date_only_no_zeros';
+  $strongarm->name = 'date_format_kada_date_only_no_zeros';
   $strongarm->value = 'j.n.Y';
-  $export['date_format_tkufi_date_only_no_zeros'] = $strongarm;
+  $export['date_format_kada_date_only_no_zeros'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'date_format_tkufi_day_month_only';
+  $strongarm->name = 'date_format_kada_day_month_only';
   $strongarm->value = 'j.n.';
-  $export['date_format_tkufi_day_month_only'] = $strongarm;
+  $export['date_format_kada_day_month_only'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'date_format_tkufi_day_month_only_with_time';
+  $strongarm->name = 'date_format_kada_day_month_only_with_time';
   $strongarm->value = 'j.n. H.i';
-  $export['date_format_tkufi_day_month_only_with_time'] = $strongarm;
+  $export['date_format_kada_day_month_only_with_time'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'date_format_tkufi_day_only';
+  $strongarm->name = 'date_format_kada_day_only';
   $strongarm->value = 'j.';
-  $export['date_format_tkufi_day_only'] = $strongarm;
+  $export['date_format_kada_day_only'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'date_format_tkufi_rss_time';
+  $strongarm->name = 'date_format_kada_rss_time';
   $strongarm->value = 'r';
-  $export['date_format_tkufi_rss_time'] = $strongarm;
+  $export['date_format_kada_rss_time'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'date_format_tkufi_time_only';
+  $strongarm->name = 'date_format_kada_time_only';
   $strongarm->value = 'H.i';
-  $export['date_format_tkufi_time_only'] = $strongarm;
+  $export['date_format_kada_time_only'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

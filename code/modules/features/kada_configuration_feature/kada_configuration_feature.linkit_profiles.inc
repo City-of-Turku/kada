@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_configuration_feature.linkit_profiles.inc
+ * kada_configuration_feature.linkit_profiles.inc
  */
 
 /**
  * Implements hook_default_linkit_profiles().
  */
-function tkufi_configuration_feature_default_linkit_profiles() {
+function kada_configuration_feature_default_linkit_profiles() {
   $export = array();
 
   $linkit_profile = new LinkitProfile();

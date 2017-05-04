@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_configuration_feature.features.language.inc
+ * kada_configuration_feature.features.language.inc
  */
 
 /**
  * Implements hook_locale_default_languages().
  */
-function tkufi_configuration_feature_locale_default_languages() {
+function kada_configuration_feature_locale_default_languages() {
   $languages = array();
 
   // Exported language: en.

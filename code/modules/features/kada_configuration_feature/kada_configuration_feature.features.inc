@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_configuration_feature.features.inc
+ * kada_configuration_feature.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function tkufi_configuration_feature_ctools_plugin_api($module = NULL, $api = NULL) {
+function kada_configuration_feature_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
@@ -34,14 +34,14 @@ function tkufi_configuration_feature_ctools_plugin_api($module = NULL, $api = NU
 /**
  * Implements hook_views_api().
  */
-function tkufi_configuration_feature_views_api($module = NULL, $api = NULL) {
+function kada_configuration_feature_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_flag_default_flags().
  */
-function tkufi_configuration_feature_flag_default_flags() {
+function kada_configuration_feature_flag_default_flags() {
   $flags = array();
   // Exported flag: "Carousel".
   $flags['carousel'] = array(
@@ -76,7 +76,7 @@ function tkufi_configuration_feature_flag_default_flags() {
     'access_author' => '',
     'show_contextual_link' => 0,
     'i18n' => 0,
-    'module' => 'tkufi_configuration_feature',
+    'module' => 'kada_configuration_feature',
     'locked' => array(
       0 => 'name',
     ),
@@ -128,7 +128,7 @@ function tkufi_configuration_feature_flag_default_flags() {
     'access_author' => '',
     'show_contextual_link' => 0,
     'i18n' => 0,
-    'module' => 'tkufi_configuration_feature',
+    'module' => 'kada_configuration_feature',
     'locked' => array(
       0 => 'name',
     ),
@@ -167,7 +167,7 @@ function tkufi_configuration_feature_flag_default_flags() {
     'access_author' => '',
     'show_contextual_link' => 0,
     'i18n' => 0,
-    'module' => 'tkufi_configuration_feature',
+    'module' => 'kada_configuration_feature',
     'locked' => array(
       0 => 'name',
     ),
@@ -180,7 +180,7 @@ function tkufi_configuration_feature_flag_default_flags() {
 /**
  * Implements hook_image_default_styles().
  */
-function tkufi_configuration_feature_image_default_styles() {
+function kada_configuration_feature_image_default_styles() {
   $styles = array();
 
   // Exported image style: accessibility_icon.
@@ -213,7 +213,7 @@ function tkufi_configuration_feature_image_default_styles() {
 /**
  * Implements hook_node_info().
  */
-function tkufi_configuration_feature_node_info() {
+function kada_configuration_feature_node_info() {
   $items = array(
     'webform' => array(
       'name' => t('Webform'),

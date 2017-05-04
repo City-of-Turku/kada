@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_configuration_feature.features.field_base.inc
+ * kada_configuration_feature.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function tkufi_configuration_feature_field_default_field_bases() {
+function kada_configuration_feature_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'description_field'

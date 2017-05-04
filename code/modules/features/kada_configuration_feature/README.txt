@@ -16,7 +16,7 @@ The mother of all features, contains all sitewide configuration etc. If a export
 - search_result: Used with Search API views which display results from Solr index
 
 == BLOCK CONTENT ==
-- Footer blocks: Contact information in different languages. WYSIWYG editing is disabled in custom code in tkufi_media_feature because SCALD seems to break CKEditor in block body.
+- Footer blocks: Contact information in different languages. WYSIWYG editing is disabled in custom code in kada_media_feature because SCALD seems to break CKEditor in block body.
 
 == BLOCK SETTINGS ==
 - For different modules which have configuration
@@ -40,7 +40,7 @@ The terms have to be in Finnish and no duplicates should exist in the source dat
 - wysiwyg: The default formatter for content. Has CKEditor enabled. Embedding of SCALD atoms into text.
 
 == FLAG ==
-See the tkufi_liftups_feature for the logic how flagged content is displayed.
+See the kada_liftups_feature for the logic how flagged content is displayed.
 - carousel: "Web journalist"-role can flag liftups on and off the carousel.
 - current: "Web journalist"-role can flag liftups on and off the current content grid.
 - project: "Web journalist"-role can flag liftups on and off the project liftups list.
@@ -76,10 +76,10 @@ driveturku_contact_information: Contact information in teaser display mode per c
 Exported WYSIWYG module configuration for wysiwyg and full_html text formats.
 
 == CUSTOM CODE ==
-function tkufi_configuration_feature_date_formats():
+function kada_configuration_feature_date_formats():
 Defines custom date formats which can be used with custom date format types. These do not appear in the UI at /admin/config/regional/date-time/formats, but they are mapped directly to a date format type.
 
-function tkufi_configuration_feature_date_format_types():
+function kada_configuration_feature_date_format_types():
 Defines custom date format types and their date format. These appear in the UI at /admin/config/regional/date-time but the format cannot be changed.
 
 Custom block to show tweet embeds - also tweet_embed field validation functionality.

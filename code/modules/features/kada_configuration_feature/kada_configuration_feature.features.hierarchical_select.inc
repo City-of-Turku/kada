@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_configuration_feature.features.hierarchical_select.inc
+ * kada_configuration_feature.features.hierarchical_select.inc
  */
 
 /**
  * Implements hook_hierarchical_select_default_configs().
  */
-function tkufi_configuration_feature_hierarchical_select_default_configs() {
+function kada_configuration_feature_hierarchical_select_default_configs() {
 $configs = array();
 $config = array(
   'config_id'       => 'taxonomy-field_classification',
