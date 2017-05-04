@@ -79,8 +79,8 @@ function tkufi_news_feature_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-9',
         ),
-        'tkufi_configuration_feature-tweet_embed' => array(
-          'module' => 'tkufi_configuration_feature',
+        'kada_configuration_feature-tweet_embed' => array(
+          'module' => 'kada_configuration_feature',
           'delta' => 'tweet_embed',
           'region' => 'sidebar_second',
           'weight' => '-8',
