@@ -7,7 +7,7 @@
                 var container = $(this);
                 var id = container.attr('data-widget-id');
                 // Grab event calendar settings.
-                var settings = Drupal.settings.tkufiWidgetFeature.eventCalendar[id];
+                var settings = Drupal.settings.kadaWidgetFeature.eventCalendar[id];
                 // Create datepicker element.
                 var datepicker = $('<div class="datepicker"></div>');
                 // Initialize calendar.

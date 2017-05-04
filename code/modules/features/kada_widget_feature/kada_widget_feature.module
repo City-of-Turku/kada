@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the TKUFI Widget feature.
+ * Code for the KADA Widget feature.
  */
 
 include_once 'kada_widget_feature.features.inc';
@@ -424,7 +424,7 @@ function kada_widget_feature_event_calendar($widget, $view_args, $search_url) {
       ),
     );
     drupal_add_library('system', 'ui.datepicker');
-    drupal_add_js(array('tkufiWidgetFeature' => array('eventCalendar' => $settings)), 'setting');
+    drupal_add_js(array('kadaWidgetFeature' => array('eventCalendar' => $settings)), 'setting');
     // Return wrapper for calendar.
     return theme('widget_event_calendar', array('wid' => $widget->getIdentifier()));
   }

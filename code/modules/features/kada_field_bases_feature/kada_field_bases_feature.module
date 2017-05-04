@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the TKUFI Field bases feature.
+ * Code for the KADA Field bases feature.
  */
 
 include_once 'kada_field_bases_feature.features.inc';

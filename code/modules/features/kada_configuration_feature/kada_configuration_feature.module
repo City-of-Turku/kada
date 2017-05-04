@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the Tkufi configuration feature feature.
+ * Code for the KADA configuration feature feature.
  */
 
 include_once 'kada_configuration_feature.features.inc';

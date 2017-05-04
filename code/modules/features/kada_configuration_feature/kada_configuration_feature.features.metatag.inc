@@ -193,19 +193,19 @@ function kada_configuration_feature_metatag_export_default() {
         'value' => '[node:title] | [site:name]',
       ),
       'description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'abstract' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'keywords' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'news_keywords' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'image_src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'content-language' => array(
         'value' => '[node:language]',
@@ -217,10 +217,10 @@ function kada_configuration_feature_metatag_export_default() {
         'value' => '[node:author]',
       ),
       'dcterms.subject' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'dcterms.description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'dcterms.date' => array(
         'value' => '[node:created:custom:Y-m-d\\TH:iP]',
@@ -235,25 +235,25 @@ function kada_configuration_feature_metatag_export_default() {
         'value' => 'Article',
       ),
       'itemprop:description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'itemprop:image' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'og:title' => array(
         'value' => '[node:title]',
       ),
       'og:description' => array(
-        'value' => '[tkufi:metatag_short_description]',
+        'value' => '[kada:metatag_short_description]',
       ),
       'og:updated_time' => array(
         'value' => '[node:changed:custom:c]',
       ),
       'og:see_also' => array(
-        'value' => '[tkufi:metatag_related]',
+        'value' => '[kada:metatag_related]',
       ),
       'og:image' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'og:locality' => array(
         'value' => '[node:field-district]',
@@ -262,7 +262,7 @@ function kada_configuration_feature_metatag_export_default() {
         'value' => '[node:language]',
       ),
       'article:tag' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'article:published_time' => array(
         'value' => '[node:created:custom:c]',
@@ -274,10 +274,10 @@ function kada_configuration_feature_metatag_export_default() {
         'value' => '[node:title]',
       ),
       'twitter:description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'twitter:image:src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
     ),
   );
@@ -287,28 +287,28 @@ function kada_configuration_feature_metatag_export_default() {
     'instance' => 'node:blog',
     'config' => array(
       'description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'abstract' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'keywords' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'news_keywords' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'image_src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'dcterms.subject' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'dcterms.description' => array(
-        'value' => '[tkufi:metatag_short_description]',
+        'value' => '[kada:metatag_short_description]',
       ),
       'itemprop:description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'itemprop:image' => array(
         'value' => '',
@@ -317,13 +317,13 @@ function kada_configuration_feature_metatag_export_default() {
         'value' => 'blog',
       ),
       'og:description' => array(
-        'value' => '[tkufi:metatag_short_description]',
+        'value' => '[kada:metatag_short_description]',
       ),
       'og:see_also' => array(
         'value' => '',
       ),
       'og:image' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'og:street_address' => array(
         'value' => '',
@@ -335,10 +335,10 @@ function kada_configuration_feature_metatag_export_default() {
         'value' => '[node:field-blog-tags]',
       ),
       'twitter:description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'twitter:image:src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
     ),
   );
@@ -348,40 +348,40 @@ function kada_configuration_feature_metatag_export_default() {
     'instance' => 'node:blog_post',
     'config' => array(
       'description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'abstract' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'keywords' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'news_keywords' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'image_src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'dcterms.subject' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'dcterms.description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'itemprop:description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'itemprop:image' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'og:description' => array(
-        'value' => '[tkufi:metatag_short_description]',
+        'value' => '[kada:metatag_short_description]',
       ),
       'og:see_also' => array(
-        'value' => '[tkufi:metatag_related]',
+        'value' => '[kada:metatag_related]',
       ),
       'og:image' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'og:street_address' => array(
         'value' => '',
@@ -390,13 +390,13 @@ function kada_configuration_feature_metatag_export_default() {
         'value' => '',
       ),
       'article:tag' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'twitter:description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'twitter:image:src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
     ),
   );
@@ -406,46 +406,46 @@ function kada_configuration_feature_metatag_export_default() {
     'instance' => 'node:event',
     'config' => array(
       'description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'abstract' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'keywords' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'news_keywords' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'image_src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'dcterms.subject' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'dcterms.description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'dcterms.type' => array(
         'value' => 'Event',
       ),
       'itemprop:description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'itemprop:image' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'og:type' => array(
         'value' => 'activity',
       ),
       'og:description' => array(
-        'value' => '[tkufi:metatag_short_description]',
+        'value' => '[kada:metatag_short_description]',
       ),
       'og:see_also' => array(
-        'value' => '[tkufi:metatag_related]',
+        'value' => '[kada:metatag_related]',
       ),
       'og:image' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'og:latitude' => array(
         'value' => '[node:field-location:lat]',
@@ -466,10 +466,10 @@ function kada_configuration_feature_metatag_export_default() {
         'value' => '[node:field-contact-phone-number]',
       ),
       'twitter:description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'twitter:image:src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
     ),
   );
@@ -479,40 +479,40 @@ function kada_configuration_feature_metatag_export_default() {
     'instance' => 'node:landing_page',
     'config' => array(
       'description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'abstract' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'keywords' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'news_keywords' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'image_src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'dcterms.subject' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'dcterms.description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'itemprop:description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'itemprop:image' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'og:description' => array(
-        'value' => '[tkufi:metatag_short_description]',
+        'value' => '[kada:metatag_short_description]',
       ),
       'og:see_also' => array(
-        'value' => '[tkufi:metatag_related]',
+        'value' => '[kada:metatag_related]',
       ),
       'og:image' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'og:street_address' => array(
         'value' => '',
@@ -521,10 +521,10 @@ function kada_configuration_feature_metatag_export_default() {
         'value' => '[node:field-keywords]',
       ),
       'twitter:description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'twitter:image:src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
     ),
   );
@@ -534,40 +534,40 @@ function kada_configuration_feature_metatag_export_default() {
     'instance' => 'node:news_item',
     'config' => array(
       'description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'abstract' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'keywords' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'news_keywords' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'image_src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'dcterms.subject' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'dcterms.description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'itemprop:description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'itemprop:image' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'og:description' => array(
-        'value' => '[tkufi:metatag_short_description]',
+        'value' => '[kada:metatag_short_description]',
       ),
       'og:see_also' => array(
-        'value' => '[tkufi:metatag_related]',
+        'value' => '[kada:metatag_related]',
       ),
       'og:image' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'og:latitude' => array(
         'value' => '[node:field-location:lat]',
@@ -582,13 +582,13 @@ function kada_configuration_feature_metatag_export_default() {
         'value' => 'Finland',
       ),
       'article:tag' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'twitter:description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'twitter:image:src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
     ),
   );
@@ -598,52 +598,52 @@ function kada_configuration_feature_metatag_export_default() {
     'instance' => 'node:page',
     'config' => array(
       'description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'abstract' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'keywords' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'news_keywords' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'image_src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'dcterms.subject' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'dcterms.description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'itemprop:description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'itemprop:image' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'og:description' => array(
-        'value' => '[tkufi:metatag_short_description]',
+        'value' => '[kada:metatag_short_description]',
       ),
       'og:see_also' => array(
-        'value' => '[tkufi:metatag_related]',
+        'value' => '[kada:metatag_related]',
       ),
       'og:image' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'og:street_address' => array(
         'value' => '',
       ),
       'article:tag' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'twitter:description' => array(
-        'value' => '[tkufi:metatag_description]',
+        'value' => '[kada:metatag_description]',
       ),
       'twitter:image:src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
     ),
   );
@@ -668,7 +668,7 @@ function kada_configuration_feature_metatag_export_default() {
         'value' => '',
       ),
       'image_src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'dcterms.subject' => array(
         'value' => '',
@@ -680,7 +680,7 @@ function kada_configuration_feature_metatag_export_default() {
         'value' => '',
       ),
       'itemprop:image' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'og:description' => array(
         'value' => '',
@@ -689,7 +689,7 @@ function kada_configuration_feature_metatag_export_default() {
         'value' => '',
       ),
       'og:image' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'og:street_address' => array(
         'value' => '[node:field-visiting-address]',
@@ -707,7 +707,7 @@ function kada_configuration_feature_metatag_export_default() {
         'value' => '',
       ),
       'twitter:image:src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
     ),
   );
