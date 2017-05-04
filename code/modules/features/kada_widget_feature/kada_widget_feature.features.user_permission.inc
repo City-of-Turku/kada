@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_widget_feature.features.user_permission.inc
+ * kada_widget_feature.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function tkufi_widget_feature_user_default_permissions() {
+function kada_widget_feature_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'eck add widget bundles'.

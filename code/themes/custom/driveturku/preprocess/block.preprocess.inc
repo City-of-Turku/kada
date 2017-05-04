@@ -42,7 +42,7 @@ function driveturku_preprocess_block(&$variables) {
     $variables['content_attributes_array']['id'] = $variables['block_html_id'];
   }
 
-  if ($block->module == 'tkufi_widget_feature') {
+  if ($block->module == 'kada_widget_feature') {
     $node_nid = arg(1);
     $node_content = node_load($node_nid);
     if (!empty($node_content->field_theme['und']['0']['tid'])) {

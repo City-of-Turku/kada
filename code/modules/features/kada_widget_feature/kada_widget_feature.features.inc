@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_widget_feature.features.inc
+ * kada_widget_feature.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function tkufi_widget_feature_ctools_plugin_api($module = NULL, $api = NULL) {
+function kada_widget_feature_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
@@ -19,14 +19,14 @@ function tkufi_widget_feature_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function tkufi_widget_feature_views_api($module = NULL, $api = NULL) {
+function kada_widget_feature_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_eck_bundle_info().
  */
-function tkufi_widget_feature_eck_bundle_info() {
+function kada_widget_feature_eck_bundle_info() {
   $items = array(
     'widget_event_carousel' => array(
       'machine_name' => 'widget_event_carousel',
@@ -67,7 +67,7 @@ function tkufi_widget_feature_eck_bundle_info() {
 /**
  * Implements hook_eck_entity_type_info().
  */
-function tkufi_widget_feature_eck_entity_type_info() {
+function kada_widget_feature_eck_entity_type_info() {
   $items = array(
     'widget' => array(
       'name' => 'widget',

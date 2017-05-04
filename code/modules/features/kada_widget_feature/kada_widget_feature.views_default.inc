@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_widget_feature.views_default.inc
+ * kada_widget_feature.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function tkufi_widget_feature_views_default_views() {
+function kada_widget_feature_views_default_views() {
   $export = array();
 
   $view = new view();

@@ -68,8 +68,8 @@ function tkufi_page_feature_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-8',
         ),
-        'tkufi_widget_feature-widget_before_content' => array(
-          'module' => 'tkufi_widget_feature',
+        'kada_widget_feature-widget_before_content' => array(
+          'module' => 'kada_widget_feature',
           'delta' => 'widget_before_content',
           'region' => 'before_content',
           'weight' => '-10',

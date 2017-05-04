@@ -4,18 +4,18 @@
  * Code for the TKUFI Widget feature.
  */
 
-include_once 'tkufi_widget_feature.features.inc';
+include_once 'kada_widget_feature.features.inc';
 
 /**
  * Implements hook_menu().
  */
-function tkufi_widget_feature_menu() {
+function kada_widget_feature_menu() {
   // Menu items to point into widget add pages.
   $items['admin/content/widget/add'] = array(
     'title' => 'Add widget',
     'page callback' => 'drupal_goto',
     'page arguments' => array('admin/structure/entity-type/widget/add'),
-    'access callback' => 'tkufi_widget_feature_widget_access',
+    'access callback' => 'kada_widget_feature_widget_access',
     'access arguments' => array('add', 'event_carousel'),
   );
   // Get widget bundles and add those also.
@@ -25,7 +25,7 @@ function tkufi_widget_feature_menu() {
       'title' => $bundle->label,
       'page callback' => 'drupal_goto',
       'page arguments' => array('admin/structure/entity-type/widget/' . $bundle->name . '/add'),
-      'access callback' => 'tkufi_widget_feature_widget_access',
+      'access callback' => 'kada_widget_feature_widget_access',
       'access arguments' => array('add', $bundle->name),
     );
   }
@@ -36,7 +36,7 @@ function tkufi_widget_feature_menu() {
  * Checks if user has widget permissions for operation.
  * This is done because for some reason eck permission checking doesn't work in menu hook.
  */
-function tkufi_widget_feature_widget_access($op, $bundle) {
+function kada_widget_feature_widget_access($op, $bundle) {
   global $user;
   return eck__entity_access($op, $bundle, $user, 'widget');
 }
@@ -44,12 +44,12 @@ function tkufi_widget_feature_widget_access($op, $bundle) {
 /**
  * Implements hook_theme().
  */
-function tkufi_widget_feature_theme() {
+function kada_widget_feature_theme() {
   return array(
     'widget_event_calendar' => array(
       'variables' => array('wid' => NULL),
       'template' => 'widget-event-calendar',
-      'path' => drupal_get_path('module', 'tkufi_widget_feature') . '/templates',
+      'path' => drupal_get_path('module', 'kada_widget_feature') . '/templates',
     ),
   );
 }
@@ -57,11 +57,11 @@ function tkufi_widget_feature_theme() {
 /**
  * Implements hook_block_info().
  */
-function tkufi_widget_feature_block_info() {
+function kada_widget_feature_block_info() {
   return array(
     'widget_before_content' => array(
       'info' => t('Widgets: Before content'),
-      'content_callback' => 'tkufi_widget_feature_block_before_content',
+      'content_callback' => 'kada_widget_feature_block_before_content',
     ),
   );
 }
@@ -69,8 +69,8 @@ function tkufi_widget_feature_block_info() {
 /**
  * Implements hook_block_view().
  */
-function tkufi_widget_feature_block_view($delta = '') {
-  $blocks = tkufi_widget_feature_block_info();
+function kada_widget_feature_block_view($delta = '') {
+  $blocks = kada_widget_feature_block_info();
   $block = array();
   if (isset($blocks[$delta])) {
     $block['content'] = $blocks[$delta]['content_callback']();
@@ -82,7 +82,7 @@ function tkufi_widget_feature_block_view($delta = '') {
  * Implements hook_ds_fields_info().
  * Add fields that are needed for widget rendering.
  */
-function tkufi_widget_feature_ds_fields_info($entity_type) {
+function kada_widget_feature_ds_fields_info($entity_type) {
   $fields = array();
   // Widgets: Event carousel
   $fields['widget']['widget_carousel_view'] = array(
@@ -114,10 +114,10 @@ function tkufi_widget_feature_ds_fields_info($entity_type) {
 /**
  * Implements hook_entity_view().
  */
-function tkufi_widget_feature_entity_view($entity, $type, $view_mode, $langcode) {
+function kada_widget_feature_entity_view($entity, $type, $view_mode, $langcode) {
   // Handle only widgets.
   if ($type != 'widget'
-    || !($build_function = "tkufi_widget_feature_build_" . $entity->type)
+    || !($build_function = "kada_widget_feature_build_" . $entity->type)
     || !function_exists($build_function)) {
     return;
   }
@@ -128,7 +128,7 @@ function tkufi_widget_feature_entity_view($entity, $type, $view_mode, $langcode)
 /**
  * Implements hook_views_query_alter().
  */
-function tkufi_widget_feature_views_query_alter(&$view, &$query) {
+function kada_widget_feature_views_query_alter(&$view, &$query) {
   // Add tag for super event relation view displays to be used in hook_query_TAG_alter.
   if (($view->name == 'driveturku_widget_event_carousel' && $view->current_display == 'carousel_series')
     || ($view->name == 'driveturku_widget_event_mosaic' && $view->current_display == 'mosaic_series')) {
@@ -144,7 +144,7 @@ function tkufi_widget_feature_views_query_alter(&$view, &$query) {
  *
  * http://majorursa.net/content/adding-group-clause-view
  */
-function tkufi_widget_feature_query_widget_event_series_alter(QueryAlterableInterface $query) {
+function kada_widget_feature_query_widget_event_series_alter(QueryAlterableInterface $query) {
   $query->groupBy('field_data_endpoints2.endpoints_entity_id');
 }
 
@@ -156,10 +156,10 @@ function tkufi_widget_feature_query_widget_event_series_alter(QueryAlterableInte
 /**
  * Build content for event carousel widget.
  */
-function tkufi_widget_feature_build_event_carousel(&$entity, $view_mode, $langcode) {
+function kada_widget_feature_build_event_carousel(&$entity, $view_mode, $langcode) {
   $widget = entity_metadata_wrapper('widget', $entity);
   // Parse view args and search params from widget.
-  list($view_args, $search_params) = tkufi_widget_feature_parse_event_args($widget);
+  list($view_args, $search_params) = kada_widget_feature_parse_event_args($widget);
   // Create single event view.
   $view = views_get_view('driveturku_widget_event_carousel');
   $view->set_display('carousel');
@@ -201,7 +201,7 @@ function tkufi_widget_feature_build_event_carousel(&$entity, $view_mode, $langco
   ksort($combined_result);
   $view->result = array_slice($combined_result, 0, $view->query->limit);
   // Set search link into footer if it can be created.
-  $search_url = tkufi_widget_feature_get_event_search_url($search_params);
+  $search_url = kada_widget_feature_get_event_search_url($search_params);
   if ($search_url) {
     $view->footer['area']->options['content'] = l(t('See matching events'), $search_url, array(
       'attributes' => array('class' => 'calendar__more-link button button--arrow')
@@ -213,7 +213,7 @@ function tkufi_widget_feature_build_event_carousel(&$entity, $view_mode, $langco
   $entity->content['widget_carousel_view'] = array('#markup' => $view_content);
   // Populate calendar if view has content.
   if (!empty($view->result)) {
-    $calendar_content = tkufi_widget_feature_event_calendar($widget, $view_args, $search_url);
+    $calendar_content = kada_widget_feature_event_calendar($widget, $view_args, $search_url);
     $entity->content['widget_event_calendar'] = array('#markup' => $calendar_content);
   }
 }
@@ -221,11 +221,11 @@ function tkufi_widget_feature_build_event_carousel(&$entity, $view_mode, $langco
 /**
  * Build content for event mosaic widget.
  */
-function tkufi_widget_feature_build_event_mosaic(&$entity, $view_mode, $langcode) {
+function kada_widget_feature_build_event_mosaic(&$entity, $view_mode, $langcode) {
   $widget = entity_metadata_wrapper('widget', $entity);
 
   // Parse view args and search params from widget.
-  list($view_args, $search_params) = tkufi_widget_feature_parse_event_args($widget);
+  list($view_args, $search_params) = kada_widget_feature_parse_event_args($widget);
   // Create single event view.
   $view = views_get_view('driveturku_widget_event_mosaic');
 
@@ -262,7 +262,7 @@ function tkufi_widget_feature_build_event_mosaic(&$entity, $view_mode, $langcode
   $view->result = array_slice($combined_result, 0, $view->query->limit);
 
   // Set search link into footer if it can be created.
-  $search_url = tkufi_widget_feature_get_event_search_url($search_params);
+  $search_url = kada_widget_feature_get_event_search_url($search_params);
   if ($search_url) {
     $view->footer['area']->options['content'] = l(t('See matching events'), $search_url, array(
       'attributes' => array('class' => 'mosaic__more-link button button--arrow'),
@@ -274,7 +274,7 @@ function tkufi_widget_feature_build_event_mosaic(&$entity, $view_mode, $langcode
   $entity->content['widget_event_mosaic_view'] = array('#markup' => $view_content);
   // Populate calendar if view has content.
   if (!empty($view->result)) {
-    $calendar_content = tkufi_widget_feature_event_calendar($widget, $view_args, $search_url);
+    $calendar_content = kada_widget_feature_event_calendar($widget, $view_args, $search_url);
     $entity->content['widget_event_calendar'] = array('#markup' => $calendar_content);
   }
 }
@@ -287,7 +287,7 @@ function tkufi_widget_feature_build_event_mosaic(&$entity, $view_mode, $langcode
 /**
  * Build content for widget_before_content block.
  */
-function tkufi_widget_feature_block_before_content() {
+function kada_widget_feature_block_before_content() {
   $content = array();
   $node = menu_get_object();
   // Get widgets from field_widget_before_content and render those.
@@ -310,7 +310,7 @@ function tkufi_widget_feature_block_before_content() {
 /**
  * Parse args from widget to be used in event filtering.
  */
-function tkufi_widget_feature_parse_event_args($widget) {
+function kada_widget_feature_parse_event_args($widget) {
   // Available filters.
   $filters = array(
     'field_keywords_et' => array(
@@ -362,7 +362,7 @@ function tkufi_widget_feature_parse_event_args($widget) {
 /**
  * Creates event search link for given params.
  */
-function tkufi_widget_feature_get_event_search_url($search_params) {
+function kada_widget_feature_get_event_search_url($search_params) {
   // Set link to event search page into footer.
   global $language;
   $language_prefix = !empty($language->prefix) ? $language->prefix . '/': '';
@@ -373,7 +373,7 @@ function tkufi_widget_feature_get_event_search_url($search_params) {
 /**
  * Creates event calendar for given event view args and search params.
  */
-function tkufi_widget_feature_event_calendar($widget, $view_args, $search_url) {
+function kada_widget_feature_event_calendar($widget, $view_args, $search_url) {
   $view = views_get_view('driveturku_widget_misc_event_calendar');
   $view->set_display('calendar');
 

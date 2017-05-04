@@ -147,8 +147,8 @@ function kada_configuration_feature_context_default_contexts() {
           'region' => 'highlighted',
           'weight' => '-10',
         ),
-        'tkufi_widget_feature-widget_before_content' => array(
-          'module' => 'tkufi_widget_feature',
+        'kada_widget_feature-widget_before_content' => array(
+          'module' => 'kada_widget_feature',
           'delta' => 'widget_before_content',
           'region' => 'highlighted',
           'weight' => '-9',
