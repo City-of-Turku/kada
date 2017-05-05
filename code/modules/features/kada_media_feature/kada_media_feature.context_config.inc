@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_media_feature.context_config.inc
+ * kada_media_feature.context_config.inc
  */
 
 /**
  * Implements hook_default_scald_context_config().
  */
-function tkufi_media_feature_default_scald_context_config() {
+function kada_media_feature_default_scald_context_config() {
   $export = array();
 
   $context_config = new stdClass();
