@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the TKUFI Media feature.
+ * Code for the KADA Media feature.
  */
 
 include_once 'kada_media_feature.features.inc';

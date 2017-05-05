@@ -1,6 +1,6 @@
 (function ($) {
 // Modified from Shadowbox Drupal module's shadowbox_auto.js. Licensed under GPL.
-Drupal.behaviors.tku_colorbox = {
+Drupal.behaviors.kada_colorbox = {
   attach: function(context, settings) {
     if (!$.isFunction($.colorbox)) {
       return;
