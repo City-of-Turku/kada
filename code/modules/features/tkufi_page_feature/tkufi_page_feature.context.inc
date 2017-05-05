@@ -62,14 +62,14 @@ function tkufi_page_feature_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '-9',
         ),
-        'tkufi_configuration_feature-tweet_embed' => array(
-          'module' => 'tkufi_configuration_feature',
+        'kada_configuration_feature-tweet_embed' => array(
+          'module' => 'kada_configuration_feature',
           'delta' => 'tweet_embed',
           'region' => 'sidebar_second',
           'weight' => '-8',
         ),
-        'tkufi_widget_feature-widget_before_content' => array(
-          'module' => 'tkufi_widget_feature',
+        'kada_widget_feature-widget_before_content' => array(
+          'module' => 'kada_widget_feature',
           'delta' => 'widget_before_content',
           'region' => 'before_content',
           'weight' => '-10',

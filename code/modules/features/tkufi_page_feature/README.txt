@@ -15,7 +15,7 @@ Because the client wants to keep the main navigation simple (max. 3 levels in th
 == FIELDS ==
 - field_contact_information: Entity reference to Place.
 - field_main_image: Is displayed in the header as big banner image. Is also displayed on "service package pages" if the page has been referenced. See Topic-field for more info.
-- field_theme: Predefined list of themes which are part of the site structure. On the main menu 1st level is used for displaying liftups with same theme. See more information about the theme taxonomy in tkufi_configuration_module README.
+- field_theme: Predefined list of themes which are part of the site structure. On the main menu 1st level is used for displaying liftups with same theme. See more information about the theme taxonomy in kada_configuration_module README.
 - field_keyword: Has been added only for content editors to provide metadata about content. Can be used later for "similar content" etc.
 - field_district: Has been added only for content editors to provide metadata about content. Can be used later for "location aware" content etc.
 - field_target_audience: Has been added only for content editors to provide metadata about content. Can be used later for "context aware" content etc.
@@ -42,10 +42,10 @@ tkufi_page_feature.module file:
   - NEEDS DESCRIPTION
 
 == FEATURE DEPENDENCIES ==
-tkufi_field_bases_feature:
+kada_field_bases_feature:
 Has all the field base configuration for fields which have instances in this feature.
 
-tkufi_configuration_feature:
+kada_configuration_feature:
 Check the text format and taxonomy documentations which relate to other content types also.
 
 == Changelog ==

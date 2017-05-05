@@ -25,7 +25,7 @@ function tkufi_liftups_feature_ds_field_settings_info() {
     'post_date' => array(
       'weight' => '2',
       'label' => 'hidden',
-      'format' => 'ds_post_date_tkufi_date_only',
+      'format' => 'ds_post_date_kada_date_only',
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
@@ -218,7 +218,7 @@ function tkufi_liftups_feature_ds_field_settings_info() {
     'post_date' => array(
       'weight' => '1',
       'label' => 'hidden',
-      'format' => 'ds_post_date_tkufi_date_only',
+      'format' => 'ds_post_date_kada_date_only',
     ),
   );
   $export['node|liftup|search_result'] = $ds_fieldsetting;
@@ -233,7 +233,7 @@ function tkufi_liftups_feature_ds_field_settings_info() {
     'post_date' => array(
       'weight' => '3',
       'label' => 'hidden',
-      'format' => 'ds_post_date_tkufi_date_only',
+      'format' => 'ds_post_date_kada_date_only',
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',

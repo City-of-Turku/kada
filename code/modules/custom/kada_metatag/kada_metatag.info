@@ -1,0 +1,8 @@
+name = KADA Metatag
+description = Metatag-related custom code
+package = KADA
+core = 7.x
+
+dependencies[] = metatag
+dependencies[] = og
+dependencies[] = tkufi_media_feature

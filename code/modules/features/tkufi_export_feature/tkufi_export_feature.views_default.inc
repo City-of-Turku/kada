@@ -139,7 +139,7 @@ function tkufi_export_feature_views_default_views() {
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['created']['date_format'] = 'tkufi_rss_time';
+  $handler->display->display_options['fields']['created']['date_format'] = 'kada_rss_time';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
   /* Field: COMBINED IN CODE Liftup image */
   $handler->display->display_options['fields']['scald_thumbnail']['id'] = 'scald_thumbnail';
