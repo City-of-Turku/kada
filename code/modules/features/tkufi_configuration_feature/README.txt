@@ -16,7 +16,7 @@ The mother of all features, contains all sitewide configuration etc. If a export
 - search_result: Used with Search API views which display results from Solr index
 
 == BLOCK CONTENT ==
-- Footer blocks: Contact information in different languages. WYSIWYG editing is disabled in custom code in tkufi_media_feature because SCALD seems to break CKEditor in block body.
+- Footer blocks: Contact information in different languages. WYSIWYG editing is disabled in custom code in kada_media_feature because SCALD seems to break CKEditor in block body.
 
 == BLOCK SETTINGS ==
 - For different modules which have configuration

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_media_feature.flexslider_default_preset.inc
+ * kada_media_feature.flexslider_default_preset.inc
  */
 
 /**
  * Implements hook_flexslider_default_presets().
  */
-function tkufi_media_feature_flexslider_default_presets() {
+function kada_media_feature_flexslider_default_presets() {
   $export = array();
 
   $preset = new stdClass();

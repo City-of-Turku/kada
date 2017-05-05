@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_media_feature.default_breakpoints.inc
+ * kada_media_feature.default_breakpoints.inc
  */
 
 /**
  * Implements hook_default_breakpoints().
  */
-function tkufi_media_feature_default_breakpoints() {
+function kada_media_feature_default_breakpoints() {
   $export = array();
 
   $breakpoint = new stdClass();

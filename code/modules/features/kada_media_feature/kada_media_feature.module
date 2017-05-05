@@ -4,12 +4,12 @@
  * Code for the TKUFI Media feature.
  */
 
-include_once 'tkufi_media_feature.features.inc';
+include_once 'kada_media_feature.features.inc';
 
 /**
  * Implements hook_menu().
  */
-function tkufi_media_feature_menu() {
+function kada_media_feature_menu() {
   // Menu items to point into atom add pages
   $items['admin/content/atom/add'] = array(
     'title' => 'Add media',
@@ -32,9 +32,9 @@ function tkufi_media_feature_menu() {
 /**
  * Implements hook_permission().
  */
-function tkufi_media_feature_permission() {
+function kada_media_feature_permission() {
   return array(
-    'tkufi_media_feature view only own atoms' => array(
+    'kada_media_feature view only own atoms' => array(
       'title' => t('View ONLY own atoms in administration'),
       'description' => t('NOTE: This overrides normal SCALD permissions in administration views because all atoms typically have view and fetch actions chosen.'),
     ),
@@ -44,18 +44,18 @@ function tkufi_media_feature_permission() {
 /**
  * Implements hook_views_default_view_override_views_to_override().
  */
-function tkufi_media_feature_views_default_view_override_views_to_override() {
+function kada_media_feature_views_default_view_override_views_to_override() {
   return array(
-    // Override default scald atoms and library views with DriveTurku specific ones.
-    'scald_atoms' => 'tkufi_scald_atoms',
-    'scald_library' => 'tkufi_scald_library',
+    // Override default scald atoms and library views with Kada specific ones.
+    'scald_atoms' => 'kada_scald_atoms',
+    'scald_library' => 'kada_scald_library',
   );
 }
 
 /**
  * Implements hook_ds_fields_info().
  */
-function tkufi_media_feature_ds_fields_info($entity_type) {
+function kada_media_feature_ds_fields_info($entity_type) {
   $fields = array();
   // Scald File: Title file link.
   $fields['scald_atom']['title_file_link'] = array(
@@ -72,7 +72,7 @@ function tkufi_media_feature_ds_fields_info($entity_type) {
 /**
  * Implements hook_entity_view().
  */
-function tkufi_media_feature_entity_view($entity, $type, $view_mode, $langcode) {
+function kada_media_feature_entity_view($entity, $type, $view_mode, $langcode) {
   // Handle only widgets.
   if ($type != 'scald_atom') {
     return;
@@ -104,7 +104,7 @@ function tkufi_media_feature_entity_view($entity, $type, $view_mode, $langcode) 
 /**
  * Implements hook_entity_presave().
  */
-function tkufi_media_feature_entity_presave($entity, $type) {
+function kada_media_feature_entity_presave($entity, $type) {
   // Make sure we only work with atoms.
   if ($type != 'scald_atom') {
     return;
@@ -131,7 +131,7 @@ function tkufi_media_feature_entity_presave($entity, $type) {
 
 /**
  * Determines whether a given event node belongs to events or hobbies.
- * 
+ *
  * returns 'hobby' or 'event' or (FALSE if not an event node)
  */
 function _determine_event_type($node) {
@@ -174,7 +174,7 @@ function _determine_event_type($node) {
 /**
  * Implements hook_node_view();
  */
-function tkufi_media_feature_node_view($node, $view_mode, $langcode) {
+function kada_media_feature_node_view($node, $view_mode, $langcode) {
   if ($node->type == 'liftup' && $view_mode == 'current') {
     $node->content['field_main_image']['#markup'] = theme('remote_image_style', array(
         'style_name' => 'current',
@@ -298,18 +298,18 @@ function tkufi_media_feature_node_view($node, $view_mode, $langcode) {
 /**
  * Implements hook_colorbox_settings_alter()
  */
-function tkufi_media_feature_colorbox_settings_alter(&$data, $style, $context) {
+function kada_media_feature_colorbox_settings_alter(&$data, $style, $context) {
   $menu_object = menu_get_object();
   if ($menu_object !== NULL && $menu_object->type == 'news_item') {
     $data['rel'] = 'node-gallery';
-    drupal_add_js(drupal_get_path('module', 'tkufi_media_feature') . '/auto_gallery.js');
+    drupal_add_js(drupal_get_path('module', 'kada_media_feature') . '/auto_gallery.js');
   }
 }
 
 /**
 * Implements hook_entity_view_mode_alter()
 */
-function tkufi_media_feature_entity_view_mode_alter(&$view_mode, $context) {
+function kada_media_feature_entity_view_mode_alter(&$view_mode, $context) {
   // Set wide view mode for wide main news liftups
   if ($context['entity_type'] == 'node' && $view_mode == 'main_news') {
     if ($context['entity']->field_liftup_width[LANGUAGE_NONE][0]['value'] == '4') {
@@ -321,7 +321,7 @@ function tkufi_media_feature_entity_view_mode_alter(&$view_mode, $context) {
 /**
 * Implements hook_token_info().
 */
-function tkufi_media_feature_token_info_alter(&$data) {
+function kada_media_feature_token_info_alter(&$data) {
   $data['tokens']['atom']['title_text'] = array(
     'name' => t('Title text'),
     'description' => t('The caption of the atom.'),
@@ -335,7 +335,7 @@ function tkufi_media_feature_token_info_alter(&$data) {
 /**
 * Implements hook_tokens().
 */
-function tkufi_media_feature_tokens($type, $tokens, array $data = array(), array $options = array()) {
+function kada_media_feature_tokens($type, $tokens, array $data = array(), array $options = array()) {
   $replacements = array();
   if ($type == 'atom' && !empty($data['atom'])) {
     $atom = $data['atom'];
@@ -366,7 +366,7 @@ function tkufi_media_feature_tokens($type, $tokens, array $data = array(), array
 /**
  * Implements hook_form_alter().
  */
-function tkufi_media_feature_form_alter(&$form, &$form_state, $form_id) {
+function kada_media_feature_form_alter(&$form, &$form_state, $form_id) {
   // Target block forms and disable wysiwyg as scald breaks it.
   if (in_array($form_id, array('block_add_block_form', 'block_admin_configure'))) {
     $form['settings']['body_field']['body']['#wysiwyg'] = FALSE;
@@ -376,7 +376,7 @@ function tkufi_media_feature_form_alter(&$form, &$form_state, $form_id) {
 /**
 * Implements hook_mee_form_alter().
 */
-function tkufi_media_feature_mee_form_alter(&$form, &$form_state, $form_id){
+function kada_media_feature_mee_form_alter(&$form, &$form_state, $form_id){
   $form['instance']['settings']['context'] = array(
     '#type' => 'select',
     '#title' => t('Scald Editor Context'),
@@ -385,13 +385,13 @@ function tkufi_media_feature_mee_form_alter(&$form, &$form_state, $form_id){
     '#options' => $context_options,
   );
 
-  $form['#submit'][] = 'tkufi_media_feature_mee_submit_handler';
+  $form['#submit'][] = 'kada_media_feature_mee_submit_handler';
 }
 
 /**
 * MEE form custom submit handler to set default DND context.
 */
-function tkufi_media_feature_mee_submit_handler($form, &$form_state) {
+function kada_media_feature_mee_submit_handler($form, &$form_state) {
   $context = $form_state['values']['instance']['settings']['context'];
   variable_set('dnd_context_default', $context);
 }
@@ -399,7 +399,7 @@ function tkufi_media_feature_mee_submit_handler($form, &$form_state) {
 /**
 * Implements hook_field_attach_preprocess_alter().
 */
-function tkufi_media_feature_field_attach_preprocess_alter(&$variables, $context) {
+function kada_media_feature_field_attach_preprocess_alter(&$variables, $context) {
   global $language;
   // Set scald_thumbnail fields alt and title texts properly, quite hackish.
   if($context['entity_type'] == 'scald_atom') {
@@ -430,7 +430,7 @@ function tkufi_media_feature_field_attach_preprocess_alter(&$variables, $context
 /**
 * Implements template_preprocess_sdl_editor_legend().
 */
-function tkufi_media_feature_preprocess_sdl_editor_legend(&$variables) {
+function kada_media_feature_preprocess_sdl_editor_legend(&$variables) {
   global $language;
   // Use correct title text for legend.
   if (in_array($variables['atom']->type, array('image', 'file', 'video'))) {
@@ -447,11 +447,11 @@ function tkufi_media_feature_preprocess_sdl_editor_legend(&$variables) {
  * Implements hook_filter_info().
  * @see: https://www.drupal.org/node/2236261
  */
-function tkufi_media_feature_filter_info() {
+function kada_media_feature_filter_info() {
   $filters = array();
   $filters['noteditable'] = array(
     'title' => t('Remove the attribute "contenteditable" from filtered text'),
-    'process callback' => '_tkufi_media_feature_filter',
+    'process callback' => '_kada_media_feature_filter',
   );
   return $filters;
 }
@@ -459,19 +459,19 @@ function tkufi_media_feature_filter_info() {
 /**
  * Filter callback for our "noteditable" filter.
  */
-function _tkufi_media_feature_filter($text, $filter, $format, $langcode, $cache, $cache_id) {
+function _kada_media_feature_filter($text, $filter, $format, $langcode, $cache, $cache_id) {
   return str_ireplace('contenteditable="true"', '', $text);
 }
 
 /**
  * Add user uid filtering based on custom permission
  */
-function tkufi_media_feature_views_query_alter(&$view, &$query) {
+function kada_media_feature_views_query_alter(&$view, &$query) {
   global $user;
   // List of filtered views
   $view_name = array(
-    'tkufi_scald_library',
-    'tkufi_scald_atoms',
+    'kada_scald_library',
+    'kada_scald_atoms',
   );
   // List of filtered displays for views
   $current_display = array(
@@ -481,7 +481,7 @@ function tkufi_media_feature_views_query_alter(&$view, &$query) {
 
   // If check for right views and custom permission
   if (in_array($view->name, $view_name) && in_array($view->current_display, $current_display)
-    && user_access('tkufi_media_feature view only own atoms')) {
+    && user_access('kada_media_feature view only own atoms')) {
     $where = array(
       'field' => 'users_scald_atoms.uid',
       'value' => $user->uid,

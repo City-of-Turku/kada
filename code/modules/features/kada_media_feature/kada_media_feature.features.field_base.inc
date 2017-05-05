@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_media_feature.features.field_base.inc
+ * kada_media_feature.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function tkufi_media_feature_field_default_field_bases() {
+function kada_media_feature_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_alt_text'

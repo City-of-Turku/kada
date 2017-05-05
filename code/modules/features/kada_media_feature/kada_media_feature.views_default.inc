@@ -1,21 +1,21 @@
 <?php
 /**
  * @file
- * tkufi_media_feature.views_default.inc
+ * kada_media_feature.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function tkufi_media_feature_views_default_views() {
+function kada_media_feature_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'tkufi_scald_atoms';
+  $view->name = 'kada_scald_atoms';
   $view->description = 'Atoms listing view provided by Scald to access atoms.';
   $view->tag = '';
   $view->base_table = 'scald_atoms';
-  $view->human_name = 'tkufi_scald_atoms';
+  $view->human_name = 'kada_scald_atoms';
   $view->core = 0;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -307,7 +307,7 @@ function tkufi_media_feature_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  $translatables['tkufi_scald_atoms'] = array(
+  $translatables['kada_scald_atoms'] = array(
     t('Master'),
     t('Atoms Library'),
     t('more'),
@@ -338,10 +338,10 @@ function tkufi_media_feature_views_default_views() {
     t('My Media'),
     t('All'),
   );
-  $export['tkufi_scald_atoms'] = $view;
+  $export['kada_scald_atoms'] = $view;
 
   $view = new view();
-  $view->name = 'tkufi_scald_library';
+  $view->name = 'kada_scald_library';
   $view->description = 'Library view provided by Scald to access atoms.';
   $view->tag = '';
   $view->base_table = 'scald_atoms';
@@ -498,7 +498,7 @@ function tkufi_media_feature_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['path'] = 'scald/library_dnd';
-  $translatables['tkufi_scald_library'] = array(
+  $translatables['kada_scald_library'] = array(
     t('Master'),
     t('Atoms Library'),
     t('more'),
@@ -526,7 +526,7 @@ function tkufi_media_feature_views_default_views() {
     t('Tags'),
     t('Scald Library'),
   );
-  $export['tkufi_scald_library'] = $view;
+  $export['kada_scald_library'] = $view;
 
   return $export;
 }

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_media_feature.features.taxonomy.inc
+ * kada_media_feature.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function tkufi_media_feature_taxonomy_default_vocabularies() {
+function kada_media_feature_taxonomy_default_vocabularies() {
   return array(
     'scald_authors' => array(
       'name' => 'Authors',

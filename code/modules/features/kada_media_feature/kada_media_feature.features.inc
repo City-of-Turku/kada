@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_media_feature.features.inc
+ * kada_media_feature.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function tkufi_media_feature_ctools_plugin_api($module = NULL, $api = NULL) {
+function kada_media_feature_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "breakpoints" && $api == "default_breakpoint_group") {
     return array("version" => "1");
   }
@@ -34,14 +34,14 @@ function tkufi_media_feature_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function tkufi_media_feature_views_api($module = NULL, $api = NULL) {
+function kada_media_feature_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_image_default_styles().
  */
-function tkufi_media_feature_image_default_styles() {
+function kada_media_feature_image_default_styles() {
   $styles = array();
 
   // Exported image style: content_full.
