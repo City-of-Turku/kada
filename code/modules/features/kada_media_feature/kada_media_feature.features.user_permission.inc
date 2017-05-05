@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_media_feature.features.user_permission.inc
+ * kada_media_feature.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function tkufi_media_feature_user_default_permissions() {
+function kada_media_feature_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'access scald dnd library'.
@@ -186,13 +186,13 @@ function tkufi_media_feature_user_default_permissions() {
     'module' => 'better_formats',
   );
 
-  // Exported permission: 'tkufi_media_feature view only own atoms'.
-  $permissions['tkufi_media_feature view only own atoms'] = array(
-    'name' => 'tkufi_media_feature view only own atoms',
+  // Exported permission: 'kada_media_feature view only own atoms'.
+  $permissions['kada_media_feature view only own atoms'] = array(
+    'name' => 'kada_media_feature view only own atoms',
     'roles' => array(
       'event external editor' => 'event external editor',
     ),
-    'module' => 'tkufi_media_feature',
+    'module' => 'kada_media_feature',
   );
 
   // Exported permission: 'view any atom'.

@@ -53,17 +53,17 @@ Custom scald views that overwrites default views.
 - Atom library
 
 == Custom code ==
-tkufi_media_feature.module file:
-- tkufi_media_feature_menu()
+kada_media_feature.module file:
+- kada_media_feature_menu()
   - Add menu links to point into atom create pages
-- tkufi_media_feature_views_default_view_override_views_to_override()
+- kada_media_feature_views_default_view_override_views_to_override()
   - Overrides scald default views
-- tkufi_media_feature_entity_presave($entity, $type)
+- kada_media_feature_entity_presave($entity, $type)
   - Inserts file / source id into default title field
-- tkufi_media_feature_mee_form_alter
+- kada_media_feature_mee_form_alter
   - Adds default context selector for DND
-- tkufi_media_feature_field_attach_preprocess_alter
-  - Corrects alt & title attributes for scald atom images  
+- kada_media_feature_field_attach_preprocess_alter
+  - Corrects alt & title attributes for scald atom images
 
 == Other notes ==
 
@@ -94,5 +94,5 @@ Updated image style for better quality images on tablet width.
 #509: Front page news liftups
 Added image styles & scald contexts for main liftup images.
 
-* 2015-03-24 * 
+* 2015-03-24 *
 #1294: Added responsive styles for grid items

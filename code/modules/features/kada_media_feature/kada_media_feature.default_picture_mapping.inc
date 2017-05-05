@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_media_feature.default_picture_mapping.inc
+ * kada_media_feature.default_picture_mapping.inc
  */
 
 /**
  * Implements hook_default_picture_mapping().
  */
-function tkufi_media_feature_default_picture_mapping() {
+function kada_media_feature_default_picture_mapping() {
   $export = array();
 
   $picture_mapping = new PictureMapping();

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_media_feature.strongarm.inc
+ * kada_media_feature.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function tkufi_media_feature_strongarm() {
+function kada_media_feature_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

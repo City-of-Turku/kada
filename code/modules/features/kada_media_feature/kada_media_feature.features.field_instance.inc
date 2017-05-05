@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_media_feature.features.field_instance.inc
+ * kada_media_feature.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function tkufi_media_feature_field_default_field_instances() {
+function kada_media_feature_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'scald_atom-file-field_title_text'
