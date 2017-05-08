@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_user_feature.features.user_permission.inc
+ * kada_user_feature.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function tkufi_user_feature_user_default_permissions() {
+function kada_user_feature_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'access admin theme'.
