@@ -39,6 +39,7 @@ dependencies[] = kada_domains_feature
 dependencies[] = kada_field_bases_feature
 dependencies[] = kada_media_feature
 dependencies[] = kada_metatag
+dependencies[] = kada_user_feature
 dependencies[] = kada_widget_feature
 dependencies[] = linkchecker
 dependencies[] = linkit
