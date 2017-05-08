@@ -144,7 +144,7 @@ function kada_some_content_feature_ds_field_settings_info() {
     'post_date' => array(
       'weight' => '7',
       'label' => 'hidden',
-      'format' => 'ds_post_date_tkufi_date_only',
+      'format' => 'ds_post_date_kada_date_only',
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',

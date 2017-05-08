@@ -531,18 +531,18 @@ function _driveturku_format_long_event_date(&$node, &$target, $view_mode) {
   if ($is_long_event) {
     if ($is_grace) {
       // Within grace time: only show beginning date, but both begin and end times: "1.1. 14.00-15.00"
-      $output = format_date($begin, 'tkufi_date_only_no_zeros') . ' ' . format_date($begin, 'tkufi_time_only') . '–' . format_date($end, 'tkufi_time_only');
+      $output = format_date($begin, 'kada_date_only_no_zeros') . ' ' . format_date($begin, 'kada_time_only') . '–' . format_date($end, 'kada_time_only');
     }
     else {
       // default for long events: "1.6.–1.7."
-      $output = format_date($begin, 'tkufi_day_month_only') . '–' . format_date($end, 'tkufi_date_only_no_zeros');
+      $output = format_date($begin, 'kada_day_month_only') . '–' . format_date($end, 'kada_date_only_no_zeros');
       if ($ends_in_same_month) {
         // if the event ends in the same month, the first month is dropped: "22.–29.8."
-        $output = format_date($begin, 'tkufi_day_only') . '–' . format_date($end, 'tkufi_date_only_no_zeros');
+        $output = format_date($begin, 'kada_day_only') . '–' . format_date($end, 'kada_date_only_no_zeros');
       }
       elseif ($ends_in_different_year) {
         // if the event ends in a different year, show full dates: "20.11.2015–10.2.2016"
-        $output = format_date($begin, 'tkufi_date_only_no_zeros') . '–' . format_date($end, 'tkufi_date_only_no_zeros');
+        $output = format_date($begin, 'kada_date_only_no_zeros') . '–' . format_date($end, 'kada_date_only_no_zeros');
       }
     }
     $target = $output;

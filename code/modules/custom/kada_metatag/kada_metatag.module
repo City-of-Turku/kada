@@ -1,0 +1,332 @@
+<?php
+
+/**
+ * @file
+ * Context condition for active menu.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function kada_metatag_menu() {
+  // Custom settings page for sharing-related things.
+  $items['admin/structure/sharing'] = array(
+    'title' => 'Sharing settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('kada_metatag_settings'),
+    'access arguments' => array('administer sharing settings'),
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function kada_metatag_permission() {
+  return array(
+    'administer sharing settings' => array(
+      'title' => t('Administer sharing settings'),
+      'description' => t('Administer the custom sharing settings for KADA.'),
+    ),
+  );
+}
+
+/**
+ * Settings form for custom sharing settings.
+ */
+function kada_metatag_settings($form, &$form_state) {
+  // Atom field base for images, from atom_reference_field_widget_form function.
+  $atom_field_base = array(
+    '#type' => 'textfield',
+    '#attributes' => array(
+      'data-types' => 'image',
+      'data-dnd-context' => 'sdl_editor_representation',
+    ),
+    '#preview_context' => 'sdl_editor_representation',
+    '#process' => array('atom_reference_field_widget_form_process'),
+    '#attached' => array(
+      'library' => array(
+        array(
+          'atom_reference',
+          'library',
+        ),
+      ),
+    ),
+  );
+  // Default sharing image atom.
+  $form['kada_default_sharing_image_atom'] = $atom_field_base + array(
+    '#title' => t('Default sharing image'),
+    '#default_value' => variable_get('kada_default_sharing_image_atom', ''),
+  );
+  return system_settings_form($form);
+}
+
+/**
+ * Alter metatags before being cached.
+ *
+ * This hook is invoked prior to the meta tags for a given page are cached.
+ *
+ * @param array $output
+ *   All of the meta tags to be output for this page in their raw format. This
+ *   is a heavily nested array.
+ * @param string $instance
+ *   An identifier for the current page's page type, typically a combination
+ *   of the entity name and bundle name, e.g. "node:story".
+ * @param array $options
+ *   All of the options used to generate the meta tags.
+ */
+function kada_metatag_metatag_metatags_view_alter(&$output, $instance, $options) {
+  if (!empty($output['og:image:type'])) {
+    // If og:image is empty, unset og:image:type.
+    if (empty($output['og:image'])) {
+      unset($output['og:image:type']);
+    }
+  }
+}
+
+/**
+ * Implements hook_token_info().
+ */
+function kada_metatag_token_info() {
+  $info = array();
+
+  // Token type "kada".
+  $info['types']['kada'] = array(
+    'name' => t('KADA tokens'),
+    'description' => t('KADA custom tokens'),
+  );
+
+  // Tokens of type "kada".
+  $info['tokens']['kada']['metatag_description'] = array(
+    'name' => t('Metatag description'),
+    'description' => t('Description of current content for use in metatags, limited to about 150 characters.'),
+  );
+  $info['tokens']['kada']['metatag_short_description'] = array(
+    'name' => t('Metatag short description'),
+    'description' => t('Short description of content for use in metatags, limited to about 70 characters.'),
+  );
+  $info['tokens']['kada']['metatag_image'] = array(
+    'name' => t('Metatag image'),
+    'description' => t('Image from current content for use in metatags.'),
+  );
+  $info['tokens']['kada']['metatag_keywords'] = array(
+    'name' => t('Metatag keywords'),
+    'description' => t('Keywords from current content for use in metatags.'),
+  );
+  $info['tokens']['kada']['metatag_related'] = array(
+    'name' => t('Metatag related content'),
+    'description' => t('Content related to current content for use in metatags.'),
+  );
+
+  // Default sharing image.
+  $info['tokens']['kada']['metatag_default_sharing_image'] = array(
+    'name' => t('Metatag default sharing image'),
+    'description' => t('Default sharing image for use in metatags.'),
+  );
+  // Section sharing image.
+  $info['tokens']['kada']['metatag_section_sharing_image'] = array(
+    'name' => t('Metatag section sharing image'),
+    'description' => t('Sharing image from current section for use in metatags.'),
+  );
+
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function kada_metatag_tokens($type, $tokens, array $data = array(), array $options = array()) {
+  $replacements = array();
+  $mapping = array(
+
+    'metatag_description' => array(
+      // List of fallbacks in order -
+      // dashed names may not work for entity tokens.
+      'fallbacks' => array(
+        '[node:field_lead_paragraph_long_text]',
+        '[node:field_lead_paragraph_et]',
+        '[node:field_description]',
+        '[node:body]',
+        '[node:field_service_offer]',
+        '[node:field_target_audience]',
+        '[node:title]',
+      ),
+      // Options can be left out if you don't need to trim the final output.
+      'options' => array(
+        'summary' => TRUE,
+        'length' => 150,
+      ),
+    ),
+
+    'metatag_short_description' => array(
+      'fallbacks' => array(
+        '[node:field_lead_paragraph_long_text]',
+        '[node:field_lead_paragraph_et]',
+        '[node:field_description]',
+        '[node:body]',
+        '[node:field_service_offer:1]',
+        '[node:field_target_audience]',
+        '[node:title]',
+      ),
+      'options' => array(
+        'summary' => TRUE,
+        'length' => 70,
+      ),
+    ),
+
+    'metatag_image' => array(
+      'fallbacks' => array(
+        '[node:field-main-image:scald-file:opengraph]',
+        '[node:field-content-image:scald-file:opengraph]',
+        '[node:field-content-image-et:scald-file:opengraph]',
+        '[node:field_content_image_ext:opengraph]',
+        '[node:field-person-image:scald-file:opengraph]',
+        '[kada:metatag_section_sharing_image]',
+        '[kada:metatag_default_sharing_image]',
+      ),
+    ),
+
+    'metatag_keywords' => array(
+      'fallbacks' => array(
+        '[node:field-keywords]',
+        '[node:field-keywords-et]',
+        '[node:field-blog-tags]',
+        '[node:field-classification]',
+      ),
+    ),
+
+    'metatag_related' => array(
+      'fallbacks' => array(
+        '[node:field-related-content:0:url]',
+        '[node:field_related_content:0:url]',
+        '[node:field-related-content-et:0:url]',
+        '[node:field_related_content_et:0:url]',
+        '[node:field-link-to-content-multiple:0:url]',
+        '[node:field_link_to_content_multiple:0:url]',
+      ),
+    ),
+  );
+
+  // Create tokens from mapping.
+  if ($type == 'kada' && !empty($data['node'])) {
+    $node = $data['node'];
+    foreach ($mapping as $token => $token_options) {
+      if (isset($tokens[$token])) {
+        $replacements[$tokens[$token]] = _token_fallback($token_options, $node);
+      }
+    }
+    if (isset($tokens['metatag_default_sharing_image'])) {
+      $replacements[$tokens['metatag_default_sharing_image']] = _get_default_sharing_image($node);
+    }
+    if (isset($tokens['metatag_section_sharing_image'])) {
+      $replacements[$tokens['metatag_section_sharing_image']] = _get_sharing_image($node);
+    }
+  }
+
+  return $replacements;
+}
+
+/**
+ * Implements hook_page_alter().
+ */
+function kada_metatag_page_alter(&$page) {
+  $og = og_context();
+
+  if (isset($og['gid']) && $og['group_type'] == 'node') {
+    $excluded_groups = variable_get('tku_search_feature_exclude_groups', array());
+
+    // Check if current group context gid should be excluded.
+    if (in_array($og['gid'], $excluded_groups)) {
+      // Do not allow crawlers to index this page.
+      drupal_add_html_head(array(
+        '#tag' => 'meta',
+        '#attributes' => array(
+          'name' => 'robots',
+          'content' => 'noindex, nofollow',
+        ),
+      ), 'excluded_og_meta');
+    }
+  }
+}
+
+/**
+ * Documentation (@TODO).
+ */
+function _get_token($token, &$node) {
+  global $language;
+  $token_content = token_replace($token, array('node' => $node), array(
+    'language' => $language,
+    'sanitize' => TRUE,
+  ));
+  // See if token gets replaced.
+  if ($token_content != $token) {
+    // See if token has actual content.
+    if (!empty($token_content)) {
+      $token_content = strip_tags($token_content);
+      // Strip whitespace AND the \xC2\xA0 UTF-8 non-breaking space.
+      $token_content = trim($token_content, " \t\n\r\0\x0B\xC2\xA0");
+      return $token_content;
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Documentation (@TODO).
+ */
+function _token_fallback($token_options, &$node) {
+  $options = array();
+  if (isset($token_options['options'])) {
+    $options = $token_options['options'];
+  }
+  // Loop through fallbacks.
+  while ($token = array_shift($token_options['fallbacks'])) {
+    $token_content = _get_token($token, $node);
+    if ($token_content) {
+      // Truncate if specified.
+      if (isset($options['summary']) && isset($options['length'])) {
+        $trim_opts = array(
+          'max_length' => $options['length'],
+          'ellipsis' => TRUE,
+          'word_boundary' => TRUE,
+          'html' => FALSE,
+        );
+        $token_content = views_trim_text($trim_opts, $token_content);
+      }
+      return $token_content;
+    }
+  }
+  return '';
+}
+
+/**
+ * Documentation (@TODO).
+ */
+function _get_default_sharing_image(&$node) {
+  $sid = variable_get('kada_default_sharing_image_atom', '');
+  if ($atom = scald_atom_load($sid)) {
+    $scald_context_config = scald_context_config_load('opengraph');
+    $transcoder = $scald_context_config->transcoder['image']['*'];
+
+    $pattern = '/^style-(.+)/';
+    if (preg_match($pattern, $transcoder, $matches)) {
+      $image_style = $matches[1];
+      $uri = $atom->file_source;
+    }
+  }
+  return !empty($uri) ? image_style_url($image_style, $uri) : FALSE;
+}
+
+/**
+ * Documentation (@TODO).
+ */
+function _get_sharing_image(&$node) {
+  // Check if content is inside a section.
+  if (isset($node->og_group_ref[LANGUAGE_NONE]['0']['target_id'])) {
+    $section = node_load($node->og_group_ref[LANGUAGE_NONE]['0']['target_id']);
+    return _get_token('[node:field-sharing-image:scald-file:opengraph]', $section);
+  }
+  else {
+    return FALSE;
+  }
+}

@@ -578,7 +578,7 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['fields']['created']['table'] = 'users';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = 'Member since';
-  $handler->display->display_options['fields']['created']['date_format'] = 'tkufi_date_only';
+  $handler->display->display_options['fields']['created']['date_format'] = 'kada_date_only';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
   /* Field: User: Last access */
   $handler->display->display_options['fields']['access']['id'] = 'access';

@@ -40,7 +40,7 @@ News are time-sensitive articles about current topics.
   awareness
 - field_theme: Predefined list of themes which are part of the site structure.
   On the main menu 1st level is used for displaying liftups with same theme. See
-  more information about the theme taxonomy in tkufi_configuration_module README
+  more information about the theme taxonomy in kada_configuration_module README
 - og_group_ref: Organic Group entity reference to a section content type, which wraps all content per section together.
 
 == Flag ==
