@@ -1,9 +1,9 @@
-name = TKUFI User
+name = KADA User
 description = User related configuration: roles, permissions, variables
 core = 7.x
-package = TKUFI
+package = KADA
 version = 7.x-1.0-dev
-project = tkufi_user_feature
+project = kada_user_feature
 dependencies[] = admin_menu
 dependencies[] = admin_notification
 dependencies[] = admin_theme

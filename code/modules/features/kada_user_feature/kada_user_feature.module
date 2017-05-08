@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the KADA user feature feature.
+ */
+
+include_once 'kada_user_feature.features.inc';

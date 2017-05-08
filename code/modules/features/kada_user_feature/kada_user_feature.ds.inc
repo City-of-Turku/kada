@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_user_feature.ds.inc
+ * kada_user_feature.ds.inc
  */
 
 /**
  * Implements hook_ds_field_settings_info().
  */
-function tkufi_user_feature_ds_field_settings_info() {
+function kada_user_feature_ds_field_settings_info() {
   $export = array();
 
   $ds_fieldsetting = new stdClass();
@@ -50,7 +50,7 @@ function tkufi_user_feature_ds_field_settings_info() {
 /**
  * Implements hook_ds_custom_fields_info().
  */
-function tkufi_user_feature_ds_custom_fields_info() {
+function kada_user_feature_ds_custom_fields_info() {
   $export = array();
 
   $ds_field = new stdClass();
@@ -111,7 +111,7 @@ function tkufi_user_feature_ds_custom_fields_info() {
 /**
  * Implements hook_ds_layout_settings_info().
  */
-function tkufi_user_feature_ds_layout_settings_info() {
+function kada_user_feature_ds_layout_settings_info() {
   $export = array();
 
   $ds_layout = new stdClass();

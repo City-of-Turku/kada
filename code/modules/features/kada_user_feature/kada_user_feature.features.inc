@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_user_feature.features.inc
+ * kada_user_feature.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function tkufi_user_feature_ctools_plugin_api($module = NULL, $api = NULL) {
+function kada_user_feature_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }

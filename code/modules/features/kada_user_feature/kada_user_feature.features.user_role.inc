@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_user_feature.features.user_role.inc
+ * kada_user_feature.features.user_role.inc
  */
 
 /**
  * Implements hook_user_default_roles().
  */
-function tkufi_user_feature_user_default_roles() {
+function kada_user_feature_user_default_roles() {
   $roles = array();
 
   // Exported role: admin.
