@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_sections_feature.features.og_features_permission.inc
+ * kada_sections_feature.features.og_features_permission.inc
  */
 
 /**
  * Implements hook_og_features_default_permissions().
  */
-function tkufi_sections_feature_og_features_default_permissions() {
+function kada_sections_feature_og_features_default_permissions() {
   $permissions = array();
 
   // Exported og permission: 'node:section:access all webform results'

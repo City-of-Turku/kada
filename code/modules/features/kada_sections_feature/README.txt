@@ -22,8 +22,8 @@ Web journalist can add, edit and delete. Content editors cannot do anything. Ano
 Organic Group permissions because Section content type is a group type.
 
 == CUSTOM CODE ==
-tkufi_sections_feature.module file:
-- tkufi_sections_feature_entity_insert()
+kada_sections_feature.module file:
+- kada_sections_feature_entity_insert()
   - Creates a multilingual domain variable when creating a new section into a domain other than default domain. Assigning it through the UI is buggy and complext procedure for a web journalist.
 
 == Changelog ==

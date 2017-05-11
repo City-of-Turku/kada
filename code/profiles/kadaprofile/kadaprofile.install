@@ -278,7 +278,7 @@ function kadaprofile_install_additional_modules() {
     $modules[] = 'tkufi_contact_information_feature';
   }
   if (!empty($selected_extras['sections'])) {
-    $modules[] = 'tkufi_sections_feature';
+    $modules[] = 'kada_sections_feature';
   }
 
   // Resolve the dependencies now, so that module_enable() doesn't need
@@ -373,7 +373,7 @@ function kadaprofile_install_finished(&$install_state) {
     $modules[] = 'kada_service_directory_feature';
   }
   if (!empty($selected_extras['sections'])) {
-    $modules[] = 'tkufi_sections_feature';
+    $modules[] = 'kada_sections_feature';
   }
   if (!empty($selected_extras['events_base'])) {
     $modules[] = 'kada_events_base_feature';

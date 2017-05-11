@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_sections_feature.context.inc
+ * kada_sections_feature.context.inc
  */
 
 /**
  * Implements hook_context_default_contexts().
  */
-function tkufi_sections_feature_context_default_contexts() {
+function kada_sections_feature_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();

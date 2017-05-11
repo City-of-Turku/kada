@@ -1,21 +1,21 @@
 <?php
 /**
  * @file
- * tkufi_sections_feature.views_default.inc
+ * kada_sections_feature.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function tkufi_sections_feature_views_default_views() {
+function kada_sections_feature_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'driveturku_section_footer';
+  $view->name = 'kada_section_footer';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Section Footer';
+  $view->human_name = 'KADA Section Footer';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -110,8 +110,8 @@ function tkufi_sections_feature_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
 
-  /* Display: Turkucalendar | Hobbies frontpage */
-  $handler = $view->new_display('block', 'Turkucalendar | Hobbies frontpage', 'block_2');
+  /* Display: KADAcalendar | Hobbies frontpage */
+  $handler = $view->new_display('block', 'KADAcalendar | Hobbies frontpage', 'block_2');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -123,7 +123,7 @@ function tkufi_sections_feature_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
-  $translatables['driveturku_section_footer'] = array(
+  $translatables['kada_section_footer'] = array(
     t('Master'),
     t('more'),
     t('Apply'),
@@ -133,17 +133,17 @@ function tkufi_sections_feature_views_default_views() {
     t('Desc'),
     t('Kaikki'),
     t('Block'),
-    t('Turkucalendar | Hobbies frontpage'),
+    t('KADAcalendar | Hobbies frontpage'),
     t('All'),
   );
-  $export['driveturku_section_footer'] = $view;
+  $export['kada_section_footer'] = $view;
 
   $view = new view();
-  $view->name = 'driveturku_section_header';
+  $view->name = 'kada_section_header';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Section Header';
+  $view->human_name = 'kada Section Header';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -229,7 +229,7 @@ function tkufi_sections_feature_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block_1');
-  $translatables['driveturku_section_header'] = array(
+  $translatables['kada_section_header'] = array(
     t('Master'),
     t('more'),
     t('Apply'),
@@ -240,7 +240,7 @@ function tkufi_sections_feature_views_default_views() {
     t('All'),
     t('Block'),
   );
-  $export['driveturku_section_header'] = $view;
+  $export['kada_section_header'] = $view;
 
   return $export;
 }

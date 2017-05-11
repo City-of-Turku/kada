@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_sections_feature.features.menu_custom.inc
+ * kada_sections_feature.features.menu_custom.inc
  */
 
 /**
  * Implements hook_menu_default_menu_custom().
  */
-function tkufi_sections_feature_menu_default_menu_custom() {
+function kada_sections_feature_menu_default_menu_custom() {
   $menus = array();
 
   // Exported menu: menu-sections.

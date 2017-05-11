@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_sections_feature.features.metatag.inc
+ * kada_sections_feature.features.metatag.inc
  */
 
 /**
  * Implements hook_metatag_export_default().
  */
-function tkufi_sections_feature_metatag_export_default() {
+function kada_sections_feature_metatag_export_default() {
   $config = array();
 
 // Exported Metatag config instance: node:section.
@@ -24,10 +24,10 @@ function tkufi_sections_feature_metatag_export_default() {
         'value' => '',
       ),
       'news_keywords' => array(
-        'value' => '[tkufi:metatag_keywords]',
+        'value' => '[kada:metatag_keywords]',
       ),
       'image_src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'dcterms.subject' => array(
         'value' => '',
@@ -39,7 +39,7 @@ function tkufi_sections_feature_metatag_export_default() {
         'value' => '',
       ),
       'itemprop:image' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'og:type' => array(
         'value' => 'website',
@@ -48,10 +48,10 @@ function tkufi_sections_feature_metatag_export_default() {
         'value' => '',
       ),
       'og:see_also' => array(
-        'value' => '[tkufi:metatag_related]',
+        'value' => '[kada:metatag_related]',
       ),
       'og:image' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
       'og:street_address' => array(
         'value' => '',
@@ -63,7 +63,7 @@ function tkufi_sections_feature_metatag_export_default() {
         'value' => '',
       ),
       'twitter:image:src' => array(
-        'value' => '[tkufi:metatag_image]',
+        'value' => '[kada:metatag_image]',
       ),
     ),
   );
