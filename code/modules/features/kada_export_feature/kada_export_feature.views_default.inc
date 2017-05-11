@@ -1,21 +1,21 @@
 <?php
 /**
  * @file
- * tkufi_export_feature.views_default.inc
+ * kada_export_feature.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function tkufi_export_feature_views_default_views() {
+function kada_export_feature_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'driveturku_feeds';
+  $view->name = 'kada_feeds';
   $view->description = '';
   $view->tag = '';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Feeds';
+  $view->human_name = 'KADA Feeds';
   $view->core = 0;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -531,7 +531,7 @@ function tkufi_export_feature_views_default_views() {
   $handler->display->display_options['displays'] = array(
     'default' => 'default',
   );
-  $translatables['driveturku_feeds'] = array(
+  $translatables['kada_feeds'] = array(
     t('Defaults'),
     t('Title overridden in code'),
     t('more'),
@@ -566,7 +566,7 @@ function tkufi_export_feature_views_default_views() {
     t('current'),
     t('News RSS'),
   );
-  $export['driveturku_feeds'] = $view;
+  $export['kada_feeds'] = $view;
 
   return $export;
 }

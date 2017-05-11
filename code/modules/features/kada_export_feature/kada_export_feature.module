@@ -1,16 +1,16 @@
 <?php
 /**
  * @file
- * Code for the TKUFI Export feature.
+ * Code for the kada Export feature.
  */
 
-include_once 'tkufi_export_feature.features.inc';
+include_once 'kada_export_feature.features.inc';
 
 /**
  * Implementation of hook_views_pre_render()
  */
-function tkufi_export_feature_views_pre_render(&$view) {
-  if ($view->name == 'driveturku_feeds') {
+function kada_export_feature_views_pre_render(&$view) {
+  if ($view->name == 'kada_feeds') {
     global $language;
     // Alter feeds that cannot be done with the Views UI
     foreach ($view->result as $result) {
@@ -32,14 +32,14 @@ function tkufi_export_feature_views_pre_render(&$view) {
       case 'term_rss':
         if (is_numeric(arg(1))) {
           $i18n_object = i18n_get_object('taxonomy_term', arg(1));
-          $title = $i18n_object->localize($language->language)->name . ' | Turku.fi';
+          $title = $i18n_object->localize($language->language)->name . ' | example.com';
         }
         break;
       case 'frontpage_rss':
-        $title = t('Latest News | Turku.fi');
+        $title = t('Latest News | example.com');
         break;
       case 'news_rss':
-        $title = t('News Archive | Turku.fi');
+        $title = t('News Archive | example.com');
     }
     $view->build_info['title'] = $title;
   }
@@ -48,20 +48,20 @@ function tkufi_export_feature_views_pre_render(&$view) {
 /**
  * Implements hook_block_info().
  */
-function tkufi_export_feature_block_info() {
-  $block['tkufi_rss_feed_for_section'] = array(
+function kada_export_feature_block_info() {
+  $block['kada_rss_feed_for_section'] = array(
     'info' => t('RSS feed link: Section'),
     'cache' => DRUPAL_CACHE_PER_PAGE,
   );
-  $block['tkufi_rss_feed_for_landing_page'] = array(
+  $block['kada_rss_feed_for_landing_page'] = array(
     'info' => t('RSS feed link: Landing page'),
     'cache' => DRUPAL_CACHE_PER_PAGE,
   );
-  $block['tkufi_rss_feed_for_theme'] = array(
+  $block['kada_rss_feed_for_theme'] = array(
     'info' => t('RSS feed link: Theme'),
     'cache' => DRUPAL_CACHE_PER_PAGE,
   );
-  $block['tkufi_rss_feed_for_news_archive'] = array(
+  $block['kada_rss_feed_for_news_archive'] = array(
     'info' => t('RSS feed link: News Archive'),
     'cache' => DRUPAL_CACHE_PER_PAGE,
   );
@@ -71,10 +71,10 @@ function tkufi_export_feature_block_info() {
 /**
  * Implements hook_block_view().
  */
-function tkufi_export_feature_block_view($delta = '') {
+function kada_export_feature_block_view($delta = '') {
   $block = array();
   switch ($delta) {
-    case 'tkufi_rss_feed_for_section':
+    case 'kada_rss_feed_for_section':
       if (arg(0) == 'node' && is_numeric(arg(1))) {
         $node = menu_get_object();
         if ($node->type == 'section') {
@@ -82,7 +82,7 @@ function tkufi_export_feature_block_view($delta = '') {
         }
       }
       break;
-    case 'tkufi_rss_feed_for_landing_page':
+    case 'kada_rss_feed_for_landing_page':
       if (arg(0) == 'node' && is_numeric(arg(1))) {
         $node = menu_get_object();
         if ($node->type == 'landing_page') {
@@ -104,7 +104,7 @@ function tkufi_export_feature_block_view($delta = '') {
         }
       }
       break;
-    case 'tkufi_rss_feed_for_theme':
+    case 'kada_rss_feed_for_theme':
       if (arg(0) == 'node' && is_numeric(arg(1))) {
         $node = menu_get_object();
         if (!empty($node->field_theme)) {
@@ -113,7 +113,7 @@ function tkufi_export_feature_block_view($delta = '') {
         }
       }
       break;
-    case 'tkufi_rss_feed_for_news_archive':
+    case 'kada_rss_feed_for_news_archive':
         $url = 'news/rss.xml';
       break;
   }

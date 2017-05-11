@@ -202,9 +202,9 @@ function tkufi_news_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'tkufi_export_feature-tkufi_rss_feed_for_news_archive' => array(
-          'module' => 'tkufi_export_feature',
-          'delta' => 'tkufi_rss_feed_for_news_archive',
+        'kada_export_feature-kada_rss_feed_for_news_archive' => array(
+          'module' => 'kada_export_feature',
+          'delta' => 'kada_rss_feed_for_news_archive',
           'region' => 'after_content',
           'weight' => '-10',
         ),

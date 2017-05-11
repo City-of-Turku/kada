@@ -53,8 +53,8 @@ function kada_landing_page_feature_context_default_contexts() {
           'region' => 'before_content',
           'weight' => '-9',
         ),
-        'tkufi_export_feature-kada_rss_feed_for_landing_page' => array(
-          'module' => 'tkufi_export_feature',
+        'kada_export_feature-kada_rss_feed_for_landing_page' => array(
+          'module' => 'kada_export_feature',
           'delta' => 'kada_rss_feed_for_landing_page',
           'region' => 'before_content',
           'weight' => '-8',
