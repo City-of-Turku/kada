@@ -248,7 +248,7 @@ function kadaprofile_install_additional_modules() {
   $modules = array();
   $selected_extras = variable_get('kadaprofile_selected_extras', array());
   if (!empty($selected_extras['page'])) {
-    $modules[] = 'tkufi_page_feature';
+    $modules[] = 'kada_page_feature';
   }
   if (!empty($selected_extras['landing_pages'])) {
     $modules[] = 'kada_landing_page_feature';
@@ -347,7 +347,7 @@ function kadaprofile_install_finished(&$install_state) {
   $modules = array();
   $selected_extras = variable_get('kadaprofile_selected_extras', array());
   if (!empty($selected_extras['page'])) {
-    $modules[] = 'tkufi_page_feature';
+    $modules[] = 'kada_page_feature';
   }
   if (!empty($selected_extras['landing_pages'])) {
     $modules[] = 'kada_landing_page_feature';

@@ -71,9 +71,9 @@ function tkufi_sections_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-driveturku_pages-top_image' => array(
+        'views-kada_pages-top_image' => array(
           'module' => 'views',
-          'delta' => 'driveturku_pages-top_image',
+          'delta' => 'kada_pages-top_image',
           'region' => 'header',
           'weight' => '-10',
         ),

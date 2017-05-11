@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_page_feature.quicktabs.inc
+ * kada_page_feature.quicktabs.inc
  */
 
 /**
  * Implements hook_quicktabs_default_quicktabs().
  */
-function tkufi_page_feature_quicktabs_default_quicktabs() {
+function kada_page_feature_quicktabs_default_quicktabs() {
   $export = array();
 
   $quicktabs = new stdClass();

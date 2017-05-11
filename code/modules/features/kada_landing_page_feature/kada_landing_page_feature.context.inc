@@ -35,9 +35,9 @@ function kada_landing_page_feature_context_default_contexts() {
           'region' => 'header',
           'weight' => '-89',
         ),
-        'views-driveturku_pages-top_image' => array(
+        'views-kada_pages-top_image' => array(
           'module' => 'views',
-          'delta' => 'driveturku_pages-top_image',
+          'delta' => 'kada_pages-top_image',
           'region' => 'header',
           'weight' => '-88',
         ),

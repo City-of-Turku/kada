@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_page_feature.features.field_base.inc
+ * kada_page_feature.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function tkufi_page_feature_field_default_field_bases() {
+function kada_page_feature_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_info_box_bottom'

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_page_feature.features.inc
+ * kada_page_feature.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function tkufi_page_feature_ctools_plugin_api($module = NULL, $api = NULL) {
+function kada_page_feature_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
@@ -28,14 +28,14 @@ function tkufi_page_feature_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function tkufi_page_feature_views_api($module = NULL, $api = NULL) {
+function kada_page_feature_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_node_info().
  */
-function tkufi_page_feature_node_info() {
+function kada_page_feature_node_info() {
   $items = array(
     'page' => array(
       'name' => t('Page'),

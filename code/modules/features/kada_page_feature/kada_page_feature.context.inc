@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_page_feature.context.inc
+ * kada_page_feature.context.inc
  */
 
 /**
  * Implements hook_context_default_contexts().
  */
-function tkufi_page_feature_context_default_contexts() {
+function kada_page_feature_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();
@@ -44,9 +44,9 @@ function tkufi_page_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-driveturku_pages-top_image' => array(
+        'views-kada_pages-top_image' => array(
           'module' => 'views',
-          'delta' => 'driveturku_pages-top_image',
+          'delta' => 'kada_pages-top_image',
           'region' => 'header',
           'weight' => '-10',
         ),

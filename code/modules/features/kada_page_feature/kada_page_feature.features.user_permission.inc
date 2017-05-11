@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_page_feature.features.user_permission.inc
+ * kada_page_feature.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function tkufi_page_feature_user_default_permissions() {
+function kada_page_feature_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'create page content'.

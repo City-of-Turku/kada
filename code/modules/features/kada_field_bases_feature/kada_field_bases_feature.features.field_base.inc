@@ -2247,7 +2247,7 @@ function kada_field_bases_feature_field_default_field_bases() {
         'view' => array(
           'args' => array(),
           'display_name' => 'page_er',
-          'view_name' => 'driveturku_pages',
+          'view_name' => 'kada_pages',
         ),
       ),
       'target_type' => 'node',
@@ -2347,7 +2347,7 @@ function kada_field_bases_feature_field_default_field_bases() {
         'view' => array(
           'args' => array(),
           'display_name' => 'page_er',
-          'view_name' => 'driveturku_pages',
+          'view_name' => 'kada_pages',
         ),
       ),
       'target_type' => 'node',

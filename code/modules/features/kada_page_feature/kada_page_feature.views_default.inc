@@ -1,21 +1,21 @@
 <?php
 /**
  * @file
- * tkufi_page_feature.views_default.inc
+ * kada_page_feature.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function tkufi_page_feature_views_default_views() {
+function kada_page_feature_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'driveturku_pages';
+  $view->name = 'kada_pages';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Pages';
+  $view->human_name = 'KADA Pages';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -228,7 +228,7 @@ function tkufi_page_feature_views_default_views() {
     'place' => 'place',
     'section' => 'section',
   );
-  $translatables['driveturku_pages'] = array(
+  $translatables['kada_pages'] = array(
     t('Master'),
     t('more'),
     t('Apply'),
@@ -254,7 +254,7 @@ function tkufi_page_feature_views_default_views() {
     t('[field_main_image_1]'),
     t('All'),
   );
-  $export['driveturku_pages'] = $view;
+  $export['kada_pages'] = $view;
 
   return $export;
 }

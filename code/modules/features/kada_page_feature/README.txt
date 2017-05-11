@@ -37,8 +37,8 @@ Only the page context is in use at the moment, the localized versions are not re
 - page: Displays the navigation (menu blocks in navigation and first sidebar) and content attached to a page with views blocks which have a contextual filter.
 
 == CUSTOM CODE ==
-tkufi_page_feature.module file:
-- tkufi_page_feature_views_post_execute():
+kada_page_feature.module file:
+- kada_page_feature_views_post_execute():
   - NEEDS DESCRIPTION
 
 == FEATURE DEPENDENCIES ==

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_page_feature.ds.inc
+ * kada_page_feature.ds.inc
  */
 
 /**
  * Implements hook_ds_field_settings_info().
  */
-function tkufi_page_feature_ds_field_settings_info() {
+function kada_page_feature_ds_field_settings_info() {
   $export = array();
 
   $ds_fieldsetting = new stdClass();
@@ -70,7 +70,7 @@ function tkufi_page_feature_ds_field_settings_info() {
 /**
  * Implements hook_ds_custom_fields_info().
  */
-function tkufi_page_feature_ds_custom_fields_info() {
+function kada_page_feature_ds_custom_fields_info() {
   $export = array();
 
   $ds_field = new stdClass();
@@ -135,7 +135,7 @@ function tkufi_page_feature_ds_custom_fields_info() {
 /**
  * Implements hook_ds_layout_settings_info().
  */
-function tkufi_page_feature_ds_layout_settings_info() {
+function kada_page_feature_ds_layout_settings_info() {
   $export = array();
 
   $ds_layout = new stdClass();
@@ -229,7 +229,7 @@ function tkufi_page_feature_ds_layout_settings_info() {
 /**
  * Implements hook_ds_view_modes_info().
  */
-function tkufi_page_feature_ds_view_modes_info() {
+function kada_page_feature_ds_view_modes_info() {
   $export = array();
 
   $ds_view_mode = new stdClass();

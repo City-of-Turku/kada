@@ -33,8 +33,8 @@ function driveturku_preprocess_html(&$variables) {
   }
 
   // Fetch body classes from custom static variable.
-  // @see tkufi_page_feature_views_post_execute()
-  $classes = &drupal_static('tkufi_page_classes');
+  // @see kada_page_feature_views_post_execute()
+  $classes = &drupal_static('kada_page_classes');
 
   if ($classes) {
     $variables['classes_array'][] = $classes;

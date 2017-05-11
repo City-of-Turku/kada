@@ -1895,7 +1895,7 @@ function tkufi_liftups_feature_views_default_views() {
   $handler->display->display_options['empty']['view']['field'] = 'view';
   $handler->display->display_options['empty']['view']['label'] = 'Top Image';
   $handler->display->display_options['empty']['view']['empty'] = TRUE;
-  $handler->display->display_options['empty']['view']['view_to_insert'] = 'driveturku_pages:top_image';
+  $handler->display->display_options['empty']['view']['view_to_insert'] = 'kada_pages:top_image';
   $handler->display->display_options['empty']['view']['inherit_arguments'] = TRUE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   /* Relationship: Flags: carousel */
