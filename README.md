@@ -62,56 +62,56 @@ setup.
 ### PROJECT STRUCTURE
 
 ```<root>
-	builds
-		- Contains built codebases, preserves history
-	code
-		modules
-			- IMPORTANT: Use tkufi_ prefix with custom and feature modules
-			custom
-				- Custom modules directory
+builds
+	- Contains built codebases, preserves history
+code
+	modules
+		- IMPORTANT: Use tkufi_ prefix with custom and feature modules
+		custom
+			- Custom modules directory
+			- Symlinked from current codebase build when in development
+		features
+			- Features directory
+			- Symlinked from current codebase build when in development
+	profiles
+		kadaprofile
+			- KADA Drupal install profile
+			- Symlinked from current codebase build when in development
+	themes
+		custom
+			driveturku
+				- DriveTurku theme
 				- Symlinked from current codebase build when in development
-			features
-				- Features directory
-				- Symlinked from current codebase build when in development
-		profiles
-			kadaprofile
-				- KADA Drupal install profile
-				- Symlinked from current codebase build when in development
-		themes
-			custom
-				driveturku
-					- DriveTurku theme
-					- Symlinked from current codebase build when in development
-	conf
-		_ping.php
-			- Is copied to Drupal root during build
-		dev.settings.php
-			- Settings for develop environment
-		kadaproject.make
-			- Drush make file that defines what drupal core, contrib modules / themes and libraries are used in the project
-			- Each additional dependency must be set into this file as contrib code is not in version control
-		robots.txt
-			- Prevents indexing of set paths
-		site.yml
-			- Configures custom build.sh behaviour for each environment
-		vagrant.settings.php
-			- Settings for local environment
-	current
-		- Current build code
-	files
-		- Actual location for sites/default/files
-	patches
-		- Local patches that are not in any drupal.org issue queue
-	build.sh
-		- Custom project build script
-		- Use when checking out code that has new contrib dependencies
-		- Behaviour of this script depends on conf/site.yml
-	kada.aliases.drushrc.php
-		- Project drush aliases
-	kada_devsync.sh
-		- Syncs sql and files from development
-	drush.sh
-		- Is supposed to be used when running build outside vagrant box (not tested, better to login to vagrant and build there for now)
+conf
+	_ping.php
+		- Is copied to Drupal root during build
+	dev.settings.php
+		- Settings for develop environment
+	kadaproject.make
+		- Drush make file that defines what drupal core, contrib modules / themes and libraries are used in the project
+	- Each additional dependency must be set into this file as contrib code is not in version control
+	robots.txt
+		- Prevents indexing of set paths
+	site.yml
+		- Configures custom build.sh behaviour for each environment
+	vagrant.settings.php
+		- Settings for local environment
+current
+	- Current build code
+files
+	- Actual location for sites/default/files
+patches
+	- Local patches that are not in any drupal.org issue queue
+build.sh
+	- Custom project build script
+	- Use when checking out code that has new contrib dependencies
+	- Behaviour of this script depends on conf/site.yml
+kada.aliases.drushrc.php
+	- Project drush aliases
+kada_devsync.sh
+	- Syncs sql and files from development
+drush.sh
+	- Is supposed to be used when running build outside vagrant box (not tested, better to login to vagrant and build there for now)
 ```
 
 ### QUICK MANUAL SETUP
