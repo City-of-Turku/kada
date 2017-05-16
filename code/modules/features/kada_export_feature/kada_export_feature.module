@@ -21,6 +21,7 @@ function kada_export_feature_views_pre_render(&$view) {
     }
     // Alter RSS feed title based on View current display and contextual filter
     $title = $view->build_info['title'];
+    $site_name = variable_get('site_name');
     switch ($view->current_display) {
       case 'section_rss':
       case 'section_rss_full':
@@ -32,14 +33,14 @@ function kada_export_feature_views_pre_render(&$view) {
       case 'term_rss':
         if (is_numeric(arg(1))) {
           $i18n_object = i18n_get_object('taxonomy_term', arg(1));
-          $title = $i18n_object->localize($language->language)->name . ' | example.com';
+          $title = $i18n_object->localize($language->language)->name . ' | ' . $site_name;
         }
         break;
       case 'frontpage_rss':
-        $title = t('Latest News | example.com');
+        $title = t('Latest News') . ' | ' . $site_name;
         break;
       case 'news_rss':
-        $title = t('News Archive | example.com');
+        $title = t('News Archive') . ' | ' . $site_name;
     }
     $view->build_info['title'] = $title;
   }
