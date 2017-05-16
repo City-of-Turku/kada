@@ -1008,7 +1008,7 @@ function kada_page_feature_field_default_field_instances() {
     'bundle' => 'page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Go to Twitter and do search for hashtags or keywords you want to get to the Kada site. Then create embed out of the search results, see the tutorial video: <a href="http://monosnap.com/file/5uPXucQCVsialYbdGSlVvlKw3pyq6a" target="_blank">http://monosnap.com/file/5uPXucQCVsialYbdGSlVvlKw3pyq6a</a>',
+    'description' => 'Go to Twitter and do search for hashtags or keywords you want to get to the KADA site. Then create embed out of the search results, see the tutorial video: <a href="http://monosnap.com/file/5uPXucQCVsialYbdGSlVvlKw3pyq6a" target="_blank">http://monosnap.com/file/5uPXucQCVsialYbdGSlVvlKw3pyq6a</a>',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1250,7 +1250,7 @@ function kada_page_feature_field_default_field_instances() {
   t('District');
   t('Feed tabs');
   t('Give a link to the content if the liftup is a shortcut to somewhere. In some content types this link is displayed as the title for the liftup, in others it is a separate link after the body text. Use the <em>Search content</em> button if the link is not to a external source.');
-  t('Go to Twitter and do search for hashtags or keywords you want to get to the Kada site. Then create embed out of the search results, see the tutorial video: <a href="http://monosnap.com/file/5uPXucQCVsialYbdGSlVvlKw3pyq6a" target="_blank">http://monosnap.com/file/5uPXucQCVsialYbdGSlVvlKw3pyq6a</a>');
+  t('Go to Twitter and do search for hashtags or keywords you want to get to the KADA site. Then create embed out of the search results, see the tutorial video: <a href="http://monosnap.com/file/5uPXucQCVsialYbdGSlVvlKw3pyq6a" target="_blank">http://monosnap.com/file/5uPXucQCVsialYbdGSlVvlKw3pyq6a</a>');
   t('Groups audience');
   t('Info box (bottom)');
   t('Info box (top)');

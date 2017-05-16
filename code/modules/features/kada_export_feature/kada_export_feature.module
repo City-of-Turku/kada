@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the kada Export feature.
+ * Code for the KADA Export feature.
  */
 
 include_once 'kada_export_feature.features.inc';
