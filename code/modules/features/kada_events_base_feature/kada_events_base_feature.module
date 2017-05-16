@@ -200,7 +200,7 @@ function kada_events_base_feature_views_pre_build(&$view) {
       && in_array($view->current_display, array('section', 'section_turkukalenteri_hobbies_front'))) {
       $view->args[0] = $front_nid;
     }
-    else if ($view->name == 'driveturku_section_footer') {
+    else if ($view->name == 'kada_section_footer') {
       $view->args[0] = $front_nid;
     }
   }
@@ -209,11 +209,11 @@ function kada_events_base_feature_views_pre_build(&$view) {
   // as the argument. For example Turku City Theatre has 3 groups for 3 languages:
   // fi, en, sv. The contextual filter accepts multiple section nids,
   // and a filter handles the rest by filtering to currently active language.
-  if ($view->name == 'driveturku_section_footer') {
+  if ($view->name == 'kada_section_footer') {
     if (arg(0) == 'node' && !arg(2)) {
       $node = menu_get_object();
-      if(function_exists('tkufi_sections_feature_fetch_group_nids')){
-        $group_nids = tkufi_sections_feature_fetch_group_nids($node);
+      if(function_exists('kada_sections_feature_fetch_group_nids')){
+        $group_nids = kada_sections_feature_fetch_group_nids($node);
         if(!empty($group_nids) && count($group_nids) > 1){
           $view->args[0] = implode('+', $group_nids);
         }

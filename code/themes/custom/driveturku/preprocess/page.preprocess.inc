@@ -122,8 +122,8 @@ function driveturku_preprocess_page(&$variables) {
   // Color palette
   // TO-DO: This is rather hackish, but I wanted to avoid section override code duplication.
   if (!empty($color_palette)) {
-    $tkufi_page_classes = &drupal_static('tkufi_page_classes');
-    $tkufi_page_classes .= ' color-palette--' . $color_palette;
+    $kada_page_classes = &drupal_static('kada_page_classes');
+    $kada_page_classes .= ' color-palette--' . $color_palette;
   }
 
   // Help text on search page.

@@ -1,0 +1,24 @@
+<?php
+/**
+ * @file
+ * Code for the KADA Page feature.
+ */
+
+include_once 'kada_page_feature.features.inc';
+
+function kada_page_feature_views_post_execute(&$view) {
+  $kada_page_classes = &drupal_static('kada_page_classes');
+
+  if ($view->name == 'kada_pages' && $view->current_display == 'top_image') {
+    if (!empty($view->result)) {
+      $result = reset($view->result);
+
+      foreach (array('field_field_main_image', 'field_field_main_image_1', 'field_field_main_image_2', 'field_field_main_image_3') as $field) {
+        if (!empty($result->{$field})) {
+          $kada_page_classes = 'has-main-image';
+          break;
+        }
+      }
+    }
+  }
+}

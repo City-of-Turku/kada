@@ -60,9 +60,9 @@ function tkufi_liftups_feature_context_default_contexts() {
           'region' => 'before_content',
           'weight' => '-9',
         ),
-        'tkufi_export_feature-tkufi_rss_feed_for_theme' => array(
-          'module' => 'tkufi_export_feature',
-          'delta' => 'tkufi_rss_feed_for_theme',
+        'kada_export_feature-kada_rss_feed_for_theme' => array(
+          'module' => 'kada_export_feature',
+          'delta' => 'kada_rss_feed_for_theme',
           'region' => 'before_content',
           'weight' => '-8',
         ),
