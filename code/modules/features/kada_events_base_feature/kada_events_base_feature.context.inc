@@ -385,9 +385,9 @@ function kada_events_base_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-driveturku_top_carousel-section' => array(
+        'views-kada_top_carousel-section' => array(
           'module' => 'views',
-          'delta' => 'driveturku_top_carousel-section',
+          'delta' => 'kada_top_carousel-section',
           'region' => 'header',
           'weight' => '-10',
         ),

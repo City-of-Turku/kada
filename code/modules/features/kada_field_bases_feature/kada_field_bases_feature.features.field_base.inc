@@ -1887,7 +1887,7 @@ function kada_field_bases_feature_field_default_field_bases() {
         'view' => array(
           'args' => array(),
           'display_name' => 'entityreference_1',
-          'view_name' => 'driveturku_liftups',
+          'view_name' => 'kada_liftups',
         ),
       ),
       'target_type' => 'node',
@@ -1933,7 +1933,7 @@ function kada_field_bases_feature_field_default_field_bases() {
         'view' => array(
           'args' => array(),
           'display_name' => 'entityreference_1',
-          'view_name' => 'driveturku_liftups',
+          'view_name' => 'kada_liftups',
         ),
       ),
       'target_type' => 'node',

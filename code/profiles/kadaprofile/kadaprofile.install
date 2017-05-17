@@ -254,10 +254,10 @@ function kadaprofile_install_additional_modules() {
     $modules[] = 'kada_landing_page_feature';
   }
   if (!empty($selected_extras['news'])) {
-    $modules[] = 'tkufi_news_feature';
+    $modules[] = 'kada_news_feature';
   }
   if (!empty($selected_extras['liftups'])) {
-    $modules[] = 'tkufi_liftups_feature';
+    $modules[] = 'kada_liftups_feature';
   }
   if (!empty($selected_extras['blog'])) {
     $modules[] = 'kada_blog_feature';
@@ -353,10 +353,10 @@ function kadaprofile_install_finished(&$install_state) {
     $modules[] = 'kada_landing_page_feature';
   }
   if (!empty($selected_extras['news'])) {
-    $modules[] = 'tkufi_news_feature';
+    $modules[] = 'kada_news_feature';
   }
   if (!empty($selected_extras['liftups'])) {
-    $modules[] = 'tkufi_liftups_feature';
+    $modules[] = 'kada_liftups_feature';
   }
   if (!empty($selected_extras['blog'])) {
     $modules[] = 'kada_blog_feature';
@@ -366,7 +366,7 @@ function kadaprofile_install_finished(&$install_state) {
   }
   if (!empty($selected_extras['service_offer'])) {
     $modules[] = 'tkufi_places_feature';
-    $modules[] = 'tkufi_services_feature';
+    $modules[] = 'kada_services_feature';
     $modules[] = 'tkufi_service_offer_feature';
   }
   if (!empty($selected_extras['service_directory'])) {

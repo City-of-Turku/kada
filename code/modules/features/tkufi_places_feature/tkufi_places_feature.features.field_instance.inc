@@ -912,7 +912,7 @@ function tkufi_places_feature_field_default_field_instances() {
             ),
           ),
         ),
-        'openlayers_map' => 'tkufi_location_input',
+        'openlayers_map' => 'kada_location_input',
         'use_geocoder' => 1,
       ),
       'type' => 'geofield_openlayers',

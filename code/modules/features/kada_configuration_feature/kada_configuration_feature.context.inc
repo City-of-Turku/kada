@@ -141,9 +141,9 @@ function kada_configuration_feature_context_default_contexts() {
           'region' => 'header',
           'weight' => '-10',
         ),
-        'views-driveturku_news-front_block' => array(
+        'views-kada_news-front_block' => array(
           'module' => 'views',
-          'delta' => 'driveturku_news-front_block',
+          'delta' => 'kada_news-front_block',
           'region' => 'highlighted',
           'weight' => '-10',
         ),

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the KADA News feature.
+ */
+
+include_once 'kada_news_feature.features.inc';

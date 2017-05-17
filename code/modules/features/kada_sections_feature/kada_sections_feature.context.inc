@@ -130,9 +130,9 @@ function kada_sections_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-driveturku_top_carousel-section' => array(
+        'views-kada_top_carousel-section' => array(
           'module' => 'views',
-          'delta' => 'driveturku_top_carousel-section',
+          'delta' => 'kada_top_carousel-section',
           'region' => 'header',
           'weight' => '-10',
         ),
@@ -142,9 +142,9 @@ function kada_sections_feature_context_default_contexts() {
           'region' => 'header',
           'weight' => '-9',
         ),
-        'views-driveturku_news-section_main' => array(
+        'views-kada_news-section_main' => array(
           'module' => 'views',
-          'delta' => 'driveturku_news-section_main',
+          'delta' => 'kada_news-section_main',
           'region' => 'highlighted',
           'weight' => '-10',
         ),

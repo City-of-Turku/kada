@@ -11,11 +11,11 @@ function tkufi_places_feature_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'driveturku_place_map';
+  $view->name = 'kada_place_map';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Place Map';
+  $view->human_name = 'KADA Place Map';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -158,11 +158,11 @@ function tkufi_places_feature_views_default_views() {
   $handler->display->display_options['display_description'] = 'Map per place';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'openlayers_map';
-  $handler->display->display_options['style_options']['map'] = 'tkufi_place_map';
+  $handler->display->display_options['style_options']['map'] = 'kada_place_map';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $translatables['driveturku_place_map'] = array(
+  $translatables['kada_place_map'] = array(
     t('Master'),
     t('more'),
     t('Apply'),
@@ -176,7 +176,7 @@ function tkufi_places_feature_views_default_views() {
     t('Map | Place'),
     t('Map per place'),
   );
-  $export['driveturku_place_map'] = $view;
+  $export['kada_place_map'] = $view;
 
   $view = new view();
   $view->name = 'driveturku_places';
