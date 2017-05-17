@@ -1,9 +1,9 @@
-name = TKUFI Performance
+name = KADA Performance
 description = Feature that contains performance related settings
 core = 7.x
-package = TKUFI
+package = KADA
 version = 7.x-1.0-dev
-project = tkufi_performance_feature
+project = kada_performance_feature
 dependencies[] = advagg
 dependencies[] = advagg_bundler
 dependencies[] = advagg_mod
