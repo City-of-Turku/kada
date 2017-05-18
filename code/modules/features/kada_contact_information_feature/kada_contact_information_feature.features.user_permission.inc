@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_contact_information_feature.features.user_permission.inc
+ * kada_contact_information_feature.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function tkufi_contact_information_feature_user_default_permissions() {
+function kada_contact_information_feature_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'create person content'.

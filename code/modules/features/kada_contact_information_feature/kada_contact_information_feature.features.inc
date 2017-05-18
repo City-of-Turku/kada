@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_contact_information_feature.features.inc
+ * kada_contact_information_feature.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function tkufi_contact_information_feature_ctools_plugin_api($module = NULL, $api = NULL) {
+function kada_contact_information_feature_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
@@ -28,14 +28,14 @@ function tkufi_contact_information_feature_ctools_plugin_api($module = NULL, $ap
 /**
  * Implements hook_views_api().
  */
-function tkufi_contact_information_feature_views_api($module = NULL, $api = NULL) {
+function kada_contact_information_feature_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_node_info().
  */
-function tkufi_contact_information_feature_node_info() {
+function kada_contact_information_feature_node_info() {
   $items = array(
     'person' => array(
       'name' => t('Person'),

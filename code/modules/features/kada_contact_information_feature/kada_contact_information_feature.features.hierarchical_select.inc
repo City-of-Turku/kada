@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_contact_information_feature.features.hierarchical_select.inc
+ * kada_contact_information_feature.features.hierarchical_select.inc
  */
 
 /**
  * Implements hook_hierarchical_select_default_configs().
  */
-function tkufi_contact_information_feature_hierarchical_select_default_configs() {
+function kada_contact_information_feature_hierarchical_select_default_configs() {
 $configs = array();
 $config = array(
   'config_id'       => 'taxonomy-field_office_tr',

@@ -1,15 +1,15 @@
 <?php
 /**
  * @file
- * Code for the TKUFI Contact information feature.
+ * Code for the KADA Contact information feature.
  */
 
-include_once 'tkufi_contact_information_feature.features.inc';
+include_once 'kada_contact_information_feature.features.inc';
 
 /**
  * Implements MODULE_preprocess_HOOK().
  */
-function tkufi_contact_information_feature_preprocess_node(&$vars) {
+function kada_contact_information_feature_preprocess_node(&$vars) {
   // If user has permission to create new Position of trust
   if ($vars['type'] == 'person' && user_access('create position_of_trust content')) {
     // Link for adding a new position of trust per Person which can be
@@ -47,21 +47,21 @@ function tkufi_contact_information_feature_preprocess_node(&$vars) {
  * Implements hook_ds_fields_info().
  * Add fields that are needed for widget rendering.
  */
-function tkufi_contact_information_feature_ds_fields_info($entity_type) {
+function kada_contact_information_feature_ds_fields_info($entity_type) {
   $fields = array();
   // Widgets: Event carousel
   $fields['node']['person_full_name'] = array(
     'title' => t('Full name'),
     'ui_limit' => array('person|*'),
     'field_type' => DS_FIELD_TYPE_FUNCTION,
-    'function' => '_tkufi_contact_information_feature_ds_person_full_name'
+    'function' => '_kada_contact_information_feature_ds_person_full_name'
   );
   // Positions of trust for search result view mode from a Views display
   $fields['node']['positions_trust_search'] = array(
     'title' => t('Positions of trust'),
     'ui_limit' => array('person|search_result'),
     'field_type' => DS_FIELD_TYPE_FUNCTION,
-    'function' => '_tkufi_contact_information_feature_ds_positions_trust_search'
+    'function' => '_kada_contact_information_feature_ds_positions_trust_search'
   );
   if (isset($fields[$entity_type])) {
     return array($entity_type => $fields[$entity_type]);
@@ -70,7 +70,7 @@ function tkufi_contact_information_feature_ds_fields_info($entity_type) {
   return;
 }
 
-function _tkufi_contact_information_feature_ds_person_full_name($field) {
+function _kada_contact_information_feature_ds_person_full_name($field) {
   $output = array();
 
   if (!empty($field['entity']->field_first_name['und'][0]['safe_value'])) {
@@ -83,8 +83,8 @@ function _tkufi_contact_information_feature_ds_person_full_name($field) {
   return l(implode(' ', $output), 'node/' . $field['entity']->nid);
 }
 
-function _tkufi_contact_information_feature_ds_positions_trust_search($field) {
-  $view_name = 'driveturku_positions_of_trust';
+function _kada_contact_information_feature_ds_positions_trust_search($field) {
+  $view_name = 'kada_positions_of_trust';
   $display_id = 'search';
   $args = array($field['entity']->nid);
   $view = views_get_view($view_name);

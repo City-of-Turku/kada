@@ -1,11 +1,11 @@
 <?php
 
-function tkufi_contact_information_feature_drush_command() {
-  $items['tkufi-person-translation-sync'] = array(
+function kada_contact_information_feature_drush_command() {
+  $items['kada-person-translation-sync'] = array(
     'description' => 'Syncs person field values from finnish to other languages. IMPORTANT! Use base url in drush command in order to get content indexed properly.',
     'aliases' => array('tpts'),
   );
-  $items['tkufi-person-employee-title-sync'] = array(
+  $items['kada-person-employee-title-sync'] = array(
     'description' => 'Syncs person field_employee_title values from und to other languages. IMPORTANT! Use base url in drush command in order to get content indexed properly.',
     'aliases' => array('tpets'),
   );
@@ -13,7 +13,7 @@ function tkufi_contact_information_feature_drush_command() {
   return $items;
 }
 
-function drush_tkufi_contact_information_feature_tkufi_person_translation_sync() {
+function drush_kada_contact_information_feature_kada_person_translation_sync() {
   module_load_include('inc', 'node', 'node.pages');
   $languages = array('en', 'sv');
   $persons_query = new EntityFieldQuery;
@@ -58,7 +58,7 @@ function drush_tkufi_contact_information_feature_tkufi_person_translation_sync()
   }
 }
 
-function drush_tkufi_contact_information_feature_tkufi_person_employee_title_sync() {
+function drush_kada_contact_information_feature_kada_person_employee_title_sync() {
   $persons_query = new EntityFieldQuery;
   $persons = $persons_query->entityCondition('entity_type', 'node')
     ->entityCondition('bundle', 'person')

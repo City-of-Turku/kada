@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_contact_information_feature.strongarm.inc
+ * kada_contact_information_feature.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function tkufi_contact_information_feature_strongarm() {
+function kada_contact_information_feature_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

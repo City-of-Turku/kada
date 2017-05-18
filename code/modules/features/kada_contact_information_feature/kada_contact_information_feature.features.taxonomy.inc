@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_contact_information_feature.features.taxonomy.inc
+ * kada_contact_information_feature.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function tkufi_contact_information_feature_taxonomy_default_vocabularies() {
+function kada_contact_information_feature_taxonomy_default_vocabularies() {
   return array(
     'office' => array(
       'name' => 'Office',

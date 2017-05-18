@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_contact_information_feature.taxonomy_display.inc
+ * kada_contact_information_feature.taxonomy_display.inc
  */
 
 /**
  * Implements hook_taxonomy_display_default_displays().
  */
-function tkufi_contact_information_feature_taxonomy_display_default_displays() {
+function kada_contact_information_feature_taxonomy_display_default_displays() {
   $export = array();
 
   $taxonomy_display = new stdClass();
@@ -32,7 +32,7 @@ function tkufi_contact_information_feature_taxonomy_display_default_displays() {
   $taxonomy_display->term_display_options = '';
   $taxonomy_display->associated_display_plugin = 'TaxonomyDisplayAssociatedDisplayHandlerViews';
   $taxonomy_display->associated_display_options = array(
-    'view' => 'driveturku_trust_units',
+    'view' => 'kada_trust_units',
     'display' => 'trust_units',
   );
   $taxonomy_display->add_feed = TRUE;

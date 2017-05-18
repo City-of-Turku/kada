@@ -86,21 +86,21 @@ Web journalist can add/edit/delete Persons and Positions of trust. Anonymous can
 - trustee_role: Person as a trustee has a role (in trust unit)
 
 == TAXONOMY DISPLAY==
-- trust_unit: Uses a block from driveturku_trust_units view for displaying terms on the taxonomy term page instead of core listing.
+- trust_unit: Uses a block from kada_trust_units view for displaying terms on the taxonomy term page instead of core listing.
 - office: Term name display mode
 
 == VIEWS ==
-- driveturku_positions_of_trust: Fetches Positions of trust per Person through trustee member relation.
-- driveturku_trust_units: Overrides default taxonomy listing for Trust unit vocabulary.
-- driveturku_persons: A small tool for checking imported person values.
+- kada_positions_of_trust: Fetches Positions of trust per Person through trustee member relation.
+- kada_trust_units: Overrides default taxonomy listing for Trust unit vocabulary.
+- kada_persons: A small tool for checking imported person values.
 
 == CUSTOM CODE ==
-- tkufi_contact_information_feature_preprocess_node(): Provides markup for a link to create a Position of trust per person. Link which has parameters to prepopulate a relation field when creating a Position of trust.
-- tkufi_contact_information_feature_feeds_after_save(): Feeds doesn't support setting a language for per term when using entity translation, so it is handled in custom code. Also saving translations of contact information in Swedish and English to make sure they appear in Solr index.
-- tkufi_contact_information_feature_ds_fields_info(): Custom DS fields for rendering.
-- _tkufi_contact_information_feature_ds_person_full_name(): Combines full name for widgets.
-- _tkufi_contact_information_feature_ds_positions_trust_search(): Uses a view to get positions of trust for search result view mode.
-- tkufi_contact_information_feature_cron(): For running AD related importers in right order and stopping importing for a certain time period when they are finished.
+- kada_contact_information_feature_preprocess_node(): Provides markup for a link to create a Position of trust per person. Link which has parameters to prepopulate a relation field when creating a Position of trust.
+- kada_contact_information_feature_feeds_after_save(): Feeds doesn't support setting a language for per term when using entity translation, so it is handled in custom code. Also saving translations of contact information in Swedish and English to make sure they appear in Solr index.
+- kada_contact_information_feature_ds_fields_info(): Custom DS fields for rendering.
+- _kada_contact_information_feature_ds_person_full_name(): Combines full name for widgets.
+- _kada_contact_information_feature_ds_positions_trust_search(): Uses a view to get positions of trust for search result view mode.
+- kada_contact_information_feature_cron(): For running AD related importers in right order and stopping importing for a certain time period when they are finished.
 
 == Changelog ==
 * 2015-10-08 *

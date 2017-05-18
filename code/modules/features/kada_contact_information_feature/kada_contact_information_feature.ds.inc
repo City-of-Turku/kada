@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_contact_information_feature.ds.inc
+ * kada_contact_information_feature.ds.inc
  */
 
 /**
  * Implements hook_ds_field_settings_info().
  */
-function tkufi_contact_information_feature_ds_field_settings_info() {
+function kada_contact_information_feature_ds_field_settings_info() {
   $export = array();
 
   $ds_fieldsetting = new stdClass();
@@ -281,7 +281,7 @@ function tkufi_contact_information_feature_ds_field_settings_info() {
 /**
  * Implements hook_ds_custom_fields_info().
  */
-function tkufi_contact_information_feature_ds_custom_fields_info() {
+function kada_contact_information_feature_ds_custom_fields_info() {
   $export = array();
 
   $ds_field = new stdClass();
@@ -349,7 +349,7 @@ elseif (!empty($entity->field_phone_switch)) {
 /**
  * Implements hook_ds_layout_settings_info().
  */
-function tkufi_contact_information_feature_ds_layout_settings_info() {
+function kada_contact_information_feature_ds_layout_settings_info() {
   $export = array();
 
   $ds_layout = new stdClass();

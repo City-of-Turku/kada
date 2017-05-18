@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_contact_information_feature.features.field_base.inc
+ * kada_contact_information_feature.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function tkufi_contact_information_feature_field_default_field_bases() {
+function kada_contact_information_feature_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_account_name'

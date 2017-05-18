@@ -1,28 +1,28 @@
 <?php
 /**
  * @file
- * tkufi_contact_information_feature.views_default.inc
+ * kada_contact_information_feature.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function tkufi_contact_information_feature_views_default_views() {
+function kada_contact_information_feature_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'driveturku_persons';
+  $view->name = 'kada_persons';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Persons';
+  $view->human_name = 'KADA Persons';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'DriveTurku Persons';
+  $handler->display->display_options['title'] = 'KADA Persons';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -473,9 +473,9 @@ function tkufi_contact_information_feature_views_default_views() {
   $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $translatables['driveturku_persons'] = array(
+  $translatables['kada_persons'] = array(
     t('Master'),
-    t('DriveTurku Persons'),
+    t('KADA Persons'),
     t('more'),
     t('Filter'),
     t('Reset'),
@@ -505,14 +505,14 @@ function tkufi_contact_information_feature_views_default_views() {
     t('Office (field_office_tr)'),
     t('Page'),
   );
-  $export['driveturku_persons'] = $view;
+  $export['kada_persons'] = $view;
 
   $view = new view();
-  $view->name = 'driveturku_positions_of_trust';
+  $view->name = 'kada_positions_of_trust';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Positions of trust';
+  $view->human_name = 'KADA Positions of trust';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -632,7 +632,7 @@ function tkufi_contact_information_feature_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity_1']['display'] = 'view';
   $handler->display->display_options['fields']['rendered_entity_1']['view_mode'] = 'only_title';
   $handler->display->display_options['fields']['rendered_entity_1']['bypass_access'] = 0;
-  $translatables['driveturku_positions_of_trust'] = array(
+  $translatables['kada_positions_of_trust'] = array(
     t('Master'),
     t('Positions of trust'),
     t('more'),
@@ -650,14 +650,14 @@ function tkufi_contact_information_feature_views_default_views() {
     t('Search result'),
     t('List of positions for search result display mode'),
   );
-  $export['driveturku_positions_of_trust'] = $view;
+  $export['kada_positions_of_trust'] = $view;
 
   $view = new view();
-  $view->name = 'driveturku_trust_units';
+  $view->name = 'kada_trust_units';
   $view->description = 'A view to emulate Drupal core\'s handling of taxonomy/term.';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Trust units';
+  $view->human_name = 'KADA Trust units';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -845,7 +845,7 @@ function tkufi_contact_information_feature_views_default_views() {
   /* Display: Taxonomy Display */
   $handler = $view->new_display('block', 'Taxonomy Display', 'trust_units');
   $handler->display->display_options['display_description'] = 'For Taxonomy Display module';
-  $translatables['driveturku_trust_units'] = array(
+  $translatables['kada_trust_units'] = array(
     t('Master'),
     t('more'),
     t('Apply'),
@@ -862,7 +862,7 @@ function tkufi_contact_information_feature_views_default_views() {
     t('Taxonomy Display'),
     t('For Taxonomy Display module'),
   );
-  $export['driveturku_trust_units'] = $view;
+  $export['kada_trust_units'] = $view;
 
   return $export;
 }
