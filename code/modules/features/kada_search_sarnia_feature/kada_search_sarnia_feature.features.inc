@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_search_sarnia_feature.features.inc
+ * kada_search_sarnia_feature.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function tkufi_search_sarnia_feature_ctools_plugin_api($module = NULL, $api = NULL) {
+function kada_search_sarnia_feature_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
@@ -25,21 +25,21 @@ function tkufi_search_sarnia_feature_ctools_plugin_api($module = NULL, $api = NU
 /**
  * Implements hook_views_api().
  */
-function tkufi_search_sarnia_feature_views_api($module = NULL, $api = NULL) {
+function kada_search_sarnia_feature_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_default_search_api_index().
  */
-function tkufi_search_sarnia_feature_default_search_api_index() {
+function kada_search_sarnia_feature_default_search_api_index() {
   $items = array();
-  $items['sarnia_driveturku_sarnia_search'] = entity_import('search_api_index', '{
-    "name" : "DriveTurku Sarnia search (Sarnia index)",
-    "machine_name" : "sarnia_driveturku_sarnia_search",
+  $items['sarnia_kada_sarnia_search'] = entity_import('search_api_index', '{
+    "name" : "KADA Sarnia search (Sarnia index)",
+    "machine_name" : "sarnia_kada_sarnia_search",
     "description" : "This index is managed by the Sarnia module.",
-    "server" : "driveturku_sarnia_search",
-    "item_type" : "sarnia_driveturku_sarnia_search",
+    "server" : "kada_sarnia_search",
+    "item_type" : "sarnia_kada_sarnia_search",
     "options" : {
       "cron_limit" : 0,
       "fields" : {
@@ -288,14 +288,14 @@ function tkufi_search_sarnia_feature_default_search_api_index() {
           "type" : "none",
           "boost" : "1.0"
         },
-        "sort_tkufi_rendered_entity" : {
-          "name" : "sort_tkufi_rendered_entity",
+        "sort_kada_rendered_entity" : {
+          "name" : "sort_kada_rendered_entity",
           "indexed" : true,
           "type" : "none",
           "boost" : "1.0"
         },
-        "sort_tkufi_translated_url" : {
-          "name" : "sort_tkufi_translated_url",
+        "sort_kada_translated_url" : {
+          "name" : "sort_kada_translated_url",
           "indexed" : true,
           "type" : "none",
           "boost" : "1.0"
@@ -337,14 +337,14 @@ function tkufi_search_sarnia_feature_default_search_api_index() {
           "type" : "none",
           "boost" : "1.0"
         },
-        "ss_tkufi_rendered_entity" : {
-          "name" : "ss_tkufi_rendered_entity",
+        "ss_kada_rendered_entity" : {
+          "name" : "ss_kada_rendered_entity",
           "indexed" : true,
           "type" : "none",
           "boost" : "1.0"
         },
-        "ss_tkufi_translated_url" : {
-          "name" : "ss_tkufi_translated_url",
+        "ss_kada_translated_url" : {
+          "name" : "ss_kada_translated_url",
           "indexed" : true,
           "type" : "none",
           "boost" : "1.0"
@@ -547,11 +547,11 @@ function tkufi_search_sarnia_feature_default_search_api_index() {
 /**
  * Implements hook_default_search_api_server().
  */
-function tkufi_search_sarnia_feature_default_search_api_server() {
+function kada_search_sarnia_feature_default_search_api_server() {
   $items = array();
-  $items['driveturku_sarnia_search'] = entity_import('search_api_server', '{
-    "name" : "DriveTurku Sarnia search",
-    "machine_name" : "driveturku_sarnia_search",
+  $items['kada_sarnia_search'] = entity_import('search_api_server', '{
+    "name" : "KADA Sarnia search",
+    "machine_name" : "kada_sarnia_search",
     "description" : "",
     "class" : "sarnia_solr_service",
     "options" : {

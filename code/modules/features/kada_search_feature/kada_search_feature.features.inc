@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_search_feature.features.inc
+ * kada_search_feature.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function tkufi_search_feature_ctools_plugin_api($module = NULL, $api = NULL) {
+function kada_search_feature_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
@@ -22,20 +22,20 @@ function tkufi_search_feature_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function tkufi_search_feature_views_api($module = NULL, $api = NULL) {
+function kada_search_feature_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_default_search_api_index().
  */
-function tkufi_search_feature_default_search_api_index() {
+function kada_search_feature_default_search_api_index() {
   $items = array();
   $items['default_node_index'] = entity_import('search_api_index', '{
-    "name" : "DriveTurku node translated",
+    "name" : "KADA node translated",
     "machine_name" : "default_node_index",
     "description" : null,
-    "server" : "driveturku",
+    "server" : "kada",
     "item_type" : "node",
     "options" : {
       "index_directly" : 0,
@@ -72,7 +72,7 @@ function tkufi_search_feature_default_search_api_index() {
           "settings" : { "fields" : { "search_api_aggregation_1" : {
                 "name" : "rendered_entity",
                 "type" : "fulltext",
-                "fields" : [ "tkufi_rendered_entity" ],
+                "fields" : [ "kada_rendered_entity" ],
                 "description" : "A Fulltext aggregation of the following fields: Rendered entity."
               }
             }
@@ -201,19 +201,19 @@ function tkufi_search_feature_default_search_api_index() {
         "search_api_language" : { "type" : "string" },
         "status" : { "type" : "integer" },
         "title" : { "type" : "text", "boost" : "8.0" },
-        "tkufi_rendered_entity" : { "type" : "string" },
-        "tkufi_translated_url" : { "type" : "uri" },
+        "kada_rendered_entity" : { "type" : "string" },
+        "kada_translated_url" : { "type" : "uri" },
         "type" : { "type" : "string" }
       }
     },
     "enabled" : "1",
     "read_only" : "0"
   }');
-  $items['driveturku_content'] = entity_import('search_api_index', '{
-    "name" : "DriveTurku entity translated",
-    "machine_name" : "driveturku_content",
+  $items['kada_content'] = entity_import('search_api_index', '{
+    "name" : "KADA entity translated",
+    "machine_name" : "kada_content",
     "description" : null,
-    "server" : "driveturku",
+    "server" : "kada",
     "item_type" : "search_api_et_node",
     "options" : {
       "index_directly" : 0,
@@ -292,8 +292,8 @@ function tkufi_search_feature_default_search_api_index() {
         "search_api_language" : { "type" : "string" },
         "status" : { "type" : "integer" },
         "title_field" : { "type" : "string" },
-        "tkufi_rendered_entity" : { "type" : "string" },
-        "tkufi_translated_url" : { "type" : "string" },
+        "kada_rendered_entity" : { "type" : "string" },
+        "kada_translated_url" : { "type" : "string" },
         "type" : { "type" : "string" }
       },
       "data_alter_callbacks" : {
@@ -325,7 +325,7 @@ function tkufi_search_feature_default_search_api_index() {
           "settings" : { "fields" : { "search_api_aggregation_1" : {
                 "name" : "rendered_entity",
                 "type" : "fulltext",
-                "fields" : [ "tkufi_rendered_entity", "title_field" ],
+                "fields" : [ "kada_rendered_entity", "title_field" ],
                 "description" : "A Fulltext aggregation of the following fields: Rendered entity, Event title."
               }
             }
@@ -394,11 +394,11 @@ function tkufi_search_feature_default_search_api_index() {
 /**
  * Implements hook_default_search_api_server().
  */
-function tkufi_search_feature_default_search_api_server() {
+function kada_search_feature_default_search_api_server() {
   $items = array();
-  $items['driveturku'] = entity_import('search_api_server', '{
-    "name" : "DriveTurku",
-    "machine_name" : "driveturku",
+  $items['kada'] = entity_import('search_api_server', '{
+    "name" : "KADA",
+    "machine_name" : "kada",
     "description" : "",
     "class" : "search_api_solr_service",
     "options" : {

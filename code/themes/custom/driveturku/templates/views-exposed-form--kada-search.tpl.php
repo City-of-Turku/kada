@@ -17,8 +17,8 @@
  *
  * @ingroup views_templates
  */
-if (!function_exists('_driveturku_template_views_search_exposed_render')) {
-  function _driveturku_template_views_search_exposed_render($widget) {
+if (!function_exists('_kada_template_views_search_exposed_render')) {
+  function _kada_template_views_search_exposed_render($widget) {
   ?>
     <div id="<?php print $widget->id; ?>-wrapper" class="views-exposed-widget <?php print $widget->id; ?> search-original-filter">
       <?php if (!empty($widget->label)): ?>
@@ -55,11 +55,11 @@ if (!function_exists('_driveturku_template_views_search_exposed_render')) {
       <?php
         $widget = $widgets['filter-search_api_views_fulltext'];
         unset($widgets['filter-search_api_views_fulltext']);
-        _driveturku_template_views_search_exposed_render($widget);
+        _kada_template_views_search_exposed_render($widget);
       ?>
       <div class="row">
         <?php foreach ($widgets as $id => $widget): ?>
-          <?php _driveturku_template_views_search_exposed_render($widget); ?>
+          <?php _kada_template_views_search_exposed_render($widget); ?>
         <?php endforeach; ?>
         <div class="search-filters__wrapper">
           <span id="toggle--searchpage_filters"><a id="toggle--filters" class="filter__button toggle--filters">

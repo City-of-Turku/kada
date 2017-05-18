@@ -1,21 +1,21 @@
 <?php
 /**
  * @file
- * tkufi_search_feature.views_default.inc
+ * kada_search_feature.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function tkufi_search_feature_views_default_views() {
+function kada_search_feature_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'driveturku_event_search_page';
+  $view->name = 'kada_event_search_page';
   $view->description = '';
   $view->tag = 'default';
-  $view->base_table = 'search_api_index_driveturku_content';
-  $view->human_name = 'DriveTurku Event search page';
+  $view->base_table = 'search_api_index_kada_content';
+  $view->human_name = 'KADA Event search page';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -38,36 +38,36 @@ function tkufi_search_feature_views_default_views() {
   $handler->display->display_options['row_options']['view_mode'] = 'event_search_result';
   /* Sort criterion: Event date: Start date (indexed) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
-  $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
   /* Sort criterion: Event date: End date (indexed) */
   $handler->display->display_options['sorts']['field_event_date_value2']['id'] = 'field_event_date_value2';
-  $handler->display->display_options['sorts']['field_event_date_value2']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['sorts']['field_event_date_value2']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['sorts']['field_event_date_value2']['field'] = 'field_event_date_value2';
   /* Filter criterion: Indexed Multilingual Node: Content type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
   );
   /* Filter criterion: Indexed Multilingual Node: Status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['filters']['status']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = array(
     1 => '1',
   );
   /* Filter criterion: Indexed Multilingual Node: Item language */
   $handler->display->display_options['filters']['search_api_language']['id'] = 'search_api_language';
-  $handler->display->display_options['filters']['search_api_language']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['filters']['search_api_language']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['filters']['search_api_language']['field'] = 'search_api_language';
   $handler->display->display_options['filters']['search_api_language']['value'] = array(
     'current' => 'current',
   );
   /* Filter criterion: Search: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
@@ -84,7 +84,7 @@ function tkufi_search_feature_views_default_views() {
   );
   /* Filter criterion: Event date: End date (indexed) */
   $handler->display->display_options['filters']['field_event_date_value2']['id'] = 'field_event_date_value2';
-  $handler->display->display_options['filters']['field_event_date_value2']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['filters']['field_event_date_value2']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['filters']['field_event_date_value2']['field'] = 'field_event_date_value2';
   $handler->display->display_options['filters']['field_event_date_value2']['operator'] = '>';
   $handler->display->display_options['filters']['field_event_date_value2']['value'] = 'now';
@@ -93,7 +93,7 @@ function tkufi_search_feature_views_default_views() {
   $handler = $view->new_display('page', 'Search | Event', 'event_search_page');
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['path'] = 'event-search';
-  $translatables['driveturku_event_search_page'] = array(
+  $translatables['kada_event_search_page'] = array(
     t('Master'),
     t('Event search'),
     t('more'),
@@ -111,7 +111,7 @@ function tkufi_search_feature_views_default_views() {
     t('last »'),
     t('Search | Event'),
   );
-  $export['driveturku_event_search_page'] = $view;
+  $export['kada_event_search_page'] = $view;
 
   return $export;
 }

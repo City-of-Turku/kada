@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_search_feature.context.inc
+ * kada_search_feature.context.inc
  */
 
 /**
  * Implements hook_context_default_contexts().
  */
-function tkufi_search_feature_context_default_contexts() {
+function kada_search_feature_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();
@@ -15,7 +15,7 @@ function tkufi_search_feature_context_default_contexts() {
   $context->api_version = 3;
   $context->name = 'event_search';
   $context->description = 'Event search page';
-  $context->tag = 'section_turkucalendar';
+  $context->tag = 'section_kadacalendar';
   $context->conditions = array(
     'path' => array(
       'values' => array(
@@ -77,7 +77,7 @@ function tkufi_search_feature_context_default_contexts() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Event search page');
-  t('section_turkucalendar');
+  t('section_kadacalendar');
   $export['event_search'] = $context;
 
   return $export;

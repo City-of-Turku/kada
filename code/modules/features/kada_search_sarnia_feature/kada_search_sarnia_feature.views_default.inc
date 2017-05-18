@@ -1,21 +1,21 @@
 <?php
 /**
  * @file
- * tkufi_search_sarnia_feature.views_default.inc
+ * kada_search_sarnia_feature.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function tkufi_search_sarnia_feature_views_default_views() {
+function kada_search_sarnia_feature_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'driveturku_sarnia_search';
+  $view->name = 'kada_sarnia_search';
   $view->description = 'Check templates for some custom rendering logic';
   $view->tag = 'default';
-  $view->base_table = 'search_api_index_sarnia_driveturku_sarnia_search';
-  $view->human_name = 'DriveTurku Sarnia search';
+  $view->base_table = 'search_api_index_sarnia_kada_sarnia_search';
+  $view->human_name = 'KADA Sarnia search';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -45,18 +45,18 @@ function tkufi_search_sarnia_feature_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Oops, nothing was found with the given search terms. Please try again with different search entry.';
   $handler->display->display_options['empty']['area']['format'] = 'plain_text';
-  /* Field: DriveTurku Sarnia search (Sarnia index): Data: ss_tkufi_translated_url */
+  /* Field: KADA Sarnia search (Sarnia index): Data: ss_kada_translated_url */
   $handler->display->display_options['fields']['solr_document_4']['id'] = 'solr_document_4';
-  $handler->display->display_options['fields']['solr_document_4']['table'] = 'search_api_index_sarnia_driveturku_sarnia_search';
+  $handler->display->display_options['fields']['solr_document_4']['table'] = 'search_api_index_sarnia_kada_sarnia_search';
   $handler->display->display_options['fields']['solr_document_4']['field'] = 'solr_document';
   $handler->display->display_options['fields']['solr_document_4']['label'] = '';
   $handler->display->display_options['fields']['solr_document_4']['exclude'] = TRUE;
   $handler->display->display_options['fields']['solr_document_4']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['solr_document_4']['solr_property'] = 'ss_tkufi_translated_url';
+  $handler->display->display_options['fields']['solr_document_4']['solr_property'] = 'ss_kada_translated_url';
   $handler->display->display_options['fields']['solr_document_4']['formatter'] = '0';
-  /* Field: DriveTurku Sarnia search (Sarnia index): Data: ss_title_field */
+  /* Field: KADA Sarnia search (Sarnia index): Data: ss_title_field */
   $handler->display->display_options['fields']['solr_document_5']['id'] = 'solr_document_5';
-  $handler->display->display_options['fields']['solr_document_5']['table'] = 'search_api_index_sarnia_driveturku_sarnia_search';
+  $handler->display->display_options['fields']['solr_document_5']['table'] = 'search_api_index_sarnia_kada_sarnia_search';
   $handler->display->display_options['fields']['solr_document_5']['field'] = 'solr_document';
   $handler->display->display_options['fields']['solr_document_5']['label'] = '';
   $handler->display->display_options['fields']['solr_document_5']['alter']['make_link'] = TRUE;
@@ -67,9 +67,9 @@ function tkufi_search_sarnia_feature_views_default_views() {
   $handler->display->display_options['fields']['solr_document_5']['multivalue']['count'] = '0';
   $handler->display->display_options['fields']['solr_document_5']['multivalue']['list_type'] = 'separator';
   $handler->display->display_options['fields']['solr_document_5']['multivalue']['list_separator'] = '';
-  /* Field: DriveTurku Sarnia search (Sarnia index): Data: tm_title */
+  /* Field: KADA Sarnia search (Sarnia index): Data: tm_title */
   $handler->display->display_options['fields']['solr_document']['id'] = 'solr_document';
-  $handler->display->display_options['fields']['solr_document']['table'] = 'search_api_index_sarnia_driveturku_sarnia_search';
+  $handler->display->display_options['fields']['solr_document']['table'] = 'search_api_index_sarnia_kada_sarnia_search';
   $handler->display->display_options['fields']['solr_document']['field'] = 'solr_document';
   $handler->display->display_options['fields']['solr_document']['label'] = '';
   $handler->display->display_options['fields']['solr_document']['alter']['make_link'] = TRUE;
@@ -82,9 +82,9 @@ function tkufi_search_sarnia_feature_views_default_views() {
     'input_format' => 'plain_text',
   );
   $handler->display->display_options['fields']['solr_document']['is_multivalue'] = TRUE;
-  /* Field: DriveTurku Sarnia search (Sarnia index): Data: im_field_theme */
+  /* Field: KADA Sarnia search (Sarnia index): Data: im_field_theme */
   $handler->display->display_options['fields']['solr_document_1']['id'] = 'solr_document_1';
-  $handler->display->display_options['fields']['solr_document_1']['table'] = 'search_api_index_sarnia_driveturku_sarnia_search';
+  $handler->display->display_options['fields']['solr_document_1']['table'] = 'search_api_index_sarnia_kada_sarnia_search';
   $handler->display->display_options['fields']['solr_document_1']['field'] = 'solr_document';
   $handler->display->display_options['fields']['solr_document_1']['label'] = '';
   $handler->display->display_options['fields']['solr_document_1']['exclude'] = TRUE;
@@ -98,47 +98,47 @@ function tkufi_search_sarnia_feature_views_default_views() {
   $handler->display->display_options['fields']['solr_document_1']['multivalue']['count'] = '0';
   $handler->display->display_options['fields']['solr_document_1']['multivalue']['list_type'] = 'separator';
   $handler->display->display_options['fields']['solr_document_1']['multivalue']['list_separator'] = '-';
-  /* Field: DriveTurku Sarnia search (Sarnia index): Data: ss_type */
+  /* Field: KADA Sarnia search (Sarnia index): Data: ss_type */
   $handler->display->display_options['fields']['solr_document_3']['id'] = 'solr_document_3';
-  $handler->display->display_options['fields']['solr_document_3']['table'] = 'search_api_index_sarnia_driveturku_sarnia_search';
+  $handler->display->display_options['fields']['solr_document_3']['table'] = 'search_api_index_sarnia_kada_sarnia_search';
   $handler->display->display_options['fields']['solr_document_3']['field'] = 'solr_document';
   $handler->display->display_options['fields']['solr_document_3']['label'] = '';
   $handler->display->display_options['fields']['solr_document_3']['exclude'] = TRUE;
   $handler->display->display_options['fields']['solr_document_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['solr_document_3']['solr_property'] = 'ss_type';
   $handler->display->display_options['fields']['solr_document_3']['formatter'] = '0';
-  /* Field: DriveTurku Sarnia search (Sarnia index): Data: ss_tkufi_rendered_entity */
+  /* Field: KADA Sarnia search (Sarnia index): Data: ss_kada_rendered_entity */
   $handler->display->display_options['fields']['solr_document_2']['id'] = 'solr_document_2';
-  $handler->display->display_options['fields']['solr_document_2']['table'] = 'search_api_index_sarnia_driveturku_sarnia_search';
+  $handler->display->display_options['fields']['solr_document_2']['table'] = 'search_api_index_sarnia_kada_sarnia_search';
   $handler->display->display_options['fields']['solr_document_2']['field'] = 'solr_document';
   $handler->display->display_options['fields']['solr_document_2']['label'] = '';
   $handler->display->display_options['fields']['solr_document_2']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['solr_document_2']['solr_property'] = 'ss_tkufi_rendered_entity';
+  $handler->display->display_options['fields']['solr_document_2']['solr_property'] = 'ss_kada_rendered_entity';
   $handler->display->display_options['fields']['solr_document_2']['formatter'] = 'sarnia_formatter_text';
   $handler->display->display_options['fields']['solr_document_2']['settings'] = array(
     'input_format' => 'full_html',
   );
   /* Field: Search: Excerpt */
   $handler->display->display_options['fields']['search_api_excerpt']['id'] = 'search_api_excerpt';
-  $handler->display->display_options['fields']['search_api_excerpt']['table'] = 'search_api_index_sarnia_driveturku_sarnia_search';
+  $handler->display->display_options['fields']['search_api_excerpt']['table'] = 'search_api_index_sarnia_kada_sarnia_search';
   $handler->display->display_options['fields']['search_api_excerpt']['field'] = 'search_api_excerpt';
   $handler->display->display_options['fields']['search_api_excerpt']['label'] = '';
   $handler->display->display_options['fields']['search_api_excerpt']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['search_api_excerpt']['link_to_entity'] = 0;
   /* Sort criterion: Search: Relevance */
   $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
-  $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_sarnia_driveturku_sarnia_search';
+  $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_sarnia_kada_sarnia_search';
   $handler->display->display_options['sorts']['search_api_relevance']['field'] = 'search_api_relevance';
   $handler->display->display_options['sorts']['search_api_relevance']['order'] = 'DESC';
-  /* Sort criterion: DriveTurku Sarnia search (Sarnia index): Data: ds_created */
+  /* Sort criterion: KADA Sarnia search (Sarnia index): Data: ds_created */
   $handler->display->display_options['sorts']['solr_document']['id'] = 'solr_document';
-  $handler->display->display_options['sorts']['solr_document']['table'] = 'search_api_index_sarnia_driveturku_sarnia_search';
+  $handler->display->display_options['sorts']['solr_document']['table'] = 'search_api_index_sarnia_kada_sarnia_search';
   $handler->display->display_options['sorts']['solr_document']['field'] = 'solr_document';
   $handler->display->display_options['sorts']['solr_document']['order'] = 'DESC';
   $handler->display->display_options['sorts']['solr_document']['solr_property'] = 'ds_created';
   /* Filter criterion: Search: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_sarnia_driveturku_sarnia_search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_sarnia_kada_sarnia_search';
   $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
@@ -158,7 +158,7 @@ function tkufi_search_sarnia_feature_views_default_views() {
   $handler = $view->new_display('page', 'Overridden in templates', 'page');
   $handler->display->display_options['display_description'] = 'Templates have some custom rendering logic';
   $handler->display->display_options['path'] = 'search';
-  $translatables['driveturku_sarnia_search'] = array(
+  $translatables['kada_sarnia_search'] = array(
     t('Master'),
     t('Search'),
     t('more'),
@@ -179,7 +179,7 @@ function tkufi_search_sarnia_feature_views_default_views() {
     t('Overridden in templates'),
     t('Templates have some custom rendering logic'),
   );
-  $export['driveturku_sarnia_search'] = $view;
+  $export['kada_sarnia_search'] = $view;
 
   return $export;
 }

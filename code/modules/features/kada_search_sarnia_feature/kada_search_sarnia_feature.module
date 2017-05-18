@@ -1,14 +1,14 @@
 <?php
 /**
  * @file
- * Code for the TKUFI Search Sarnia feature.
+ * Code for the KADA Search Sarnia feature.
  */
 
-include_once 'tkufi_search_sarnia_feature.features.inc';
+include_once 'kada_search_sarnia_feature.features.inc';
 /**
  * Implements hook_facet_items_alter() from Facet Bonus module.
  */
-function tkufi_search_sarnia_feature_facet_items_alter(&$build, &$settings) {
+function kada_search_sarnia_feature_facet_items_alter(&$build, &$settings) {
   global $language;
   // All terms have only tid in Solr index, so the translated name has to be
   // fetched and the facet item label replaced.
@@ -86,13 +86,13 @@ function tkufi_search_sarnia_feature_facet_items_alter(&$build, &$settings) {
 /**
  * Alters sarnia search query
  */
-function tkufi_search_sarnia_feature_search_api_query_alter(SearchApiQueryInterface $query) {
+function kada_search_sarnia_feature_search_api_query_alter(SearchApiQueryInterface $query) {
   // Get user language from global variable
   global $language;
   if ($query->getIndex()->getEntityType()) {
     $info = entity_get_info($query->getIndex()->getEntityType());
-    if(isset($info['bundles']['sarnia_driveturku_sarnia_search'])) {
-      if ($info['bundles']['sarnia_driveturku_sarnia_search']['machine_name'] == 'sarnia_driveturku_sarnia_search') {
+    if(isset($info['bundles']['sarnia_kada_sarnia_search'])) {
+      if ($info['bundles']['sarnia_kada_sarnia_search']['machine_name'] == 'sarnia_kada_sarnia_search') {
         // Add language condition to language field / filter
         $query->condition('ss_search_api_language', $language->language, '=');
       }
@@ -103,7 +103,7 @@ function tkufi_search_sarnia_feature_search_api_query_alter(SearchApiQueryInterf
 /**
  * Implements hook_search_api_solr_query_alter().
  */
-function tkufi_search_sarnia_feature_search_api_solr_query_alter(array &$call_args, SearchApiQueryInterface $query) {
+function kada_search_sarnia_feature_search_api_solr_query_alter(array &$call_args, SearchApiQueryInterface $query) {
   // Dig into facet array and alter call arguments to include also liftups when
   // searching for news items.
   $facet_item = $query->getFilter()->getFilters();

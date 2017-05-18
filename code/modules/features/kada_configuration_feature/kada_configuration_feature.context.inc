@@ -309,8 +309,8 @@ function kada_configuration_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'tkufi_search_feature-quicksearch' => array(
-          'module' => 'tkufi_search_feature',
+        'kada_search_feature-quicksearch' => array(
+          'module' => 'kada_search_feature',
           'delta' => 'quicksearch',
           'region' => 'before_header',
           'weight' => '-10',

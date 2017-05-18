@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_search_sarnia_feature.context.inc
+ * kada_search_sarnia_feature.context.inc
  */
 
 /**
  * Implements hook_context_default_contexts().
  */
-function tkufi_search_sarnia_feature_context_default_contexts() {
+function kada_search_sarnia_feature_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();

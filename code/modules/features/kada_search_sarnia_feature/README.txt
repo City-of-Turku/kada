@@ -11,9 +11,9 @@ indexes, all the other indexes are removed.
 Sarnia is a way to use any Solr data, including non-Drupal results, in a Drupal
 search functionality.
 
-On the Drupal end we have two different Search API indexes for Drupal content in the Search feature (tkufi_search_feature):
+On the Drupal end we have two different Search API indexes for Drupal content in the Search feature (kada_search_feature):
 - default_node_index (Node translated content): Indexes all content which is using Drupal core node translation. This includes Page, News item, Blog and Blog post.
-- driveturku_content (Entity translated content): All the rest is using entity translation and this index is using Multilingual node as index type from search_api_et module.
+- kada_content (Entity translated content): All the rest is using entity translation and this index is using Multilingual node as index type from search_api_et module.
 
 The Sarnia server and index included in this feature are configured to handle the data which appears in the index from the two indexes mentioned previously. And any content index from external sources. They need to use the same fields as the indexes in Drupal are using.
 
@@ -32,19 +32,19 @@ multiple reverts to take full effect.
 
 The Sarnia entity type is also exported as a part of the feature, but the current
 version of Feature doesn't seem to be able to import it; thus, it's added in
-a tkufi_search_feature.install update hook.
+a kada_search_feature.install update hook.
 
 == SARNIA ==
-- sarnia_driveturku_sarnia_search: Basic Sarnia configuration, doesn't work that well with Features, so check the .install file for update hook which sets some configuration.
+- sarnia_kada_sarnia_search: Basic Sarnia configuration, doesn't work that well with Features, so check the .install file for update hook which sets some configuration.
 
 == SEARCH INDEX ==
-- sarnia_driveturku_sarnia_search: Sarnia index for mapping field and facet configuration to Drupal which are available in the Search server.
+- sarnia_kada_sarnia_search: Sarnia index for mapping field and facet configuration to Drupal which are available in the Search server.
 
 == SEARCH SERVER ==
-- driveturku_sarnia_search: Checks the Solr index and makes different types of field available for the Sarnia indexer.
+- kada_sarnia_search: Checks the Solr index and makes different types of field available for the Sarnia indexer.
 
 == VIEWS ==
-- driveturku_sarnia_search: Sarnia index view, which is displaying required content from Solr index.
+- kada_sarnia_search: Sarnia index view, which is displaying required content from Solr index.
 
 == QUIRKS ==
 About nothing other than the Data field in Views works, so use that to access any
@@ -83,15 +83,15 @@ A: You use the one added by Search API, so the Data field should be seen there. 
 == POSSIBLE BUGS ==
 It might be that running sarnia_entity_type_save() adds the Search API index already,
 and that the index in the feature might not be applied at all or properly. If this
-happens, see about replacing the tkufi_search_feature.install update hook call to
+happens, see about replacing the kada_search_feature.install update hook call to
 sarnia_entity_type_save() with Something Else(TM).
 
 == CUSTOM CODE ==
-- tkufi_search_sarnia_feature_entity_property_info_alter(): Provides a "Rendered entity" property, which can be indexed to Solr in different languages. Search API (especially with Sarnia) works poorly with Display Suite display modes, so we can instead index the html and display it "blindly". Also better for other services using the same Solr index.
+- kada_search_sarnia_feature_entity_property_info_alter(): Provides a "Rendered entity" property, which can be indexed to Solr in different languages. Search API (especially with Sarnia) works poorly with Display Suite display modes, so we can instead index the html and display it "blindly". Also better for other services using the same Solr index.
 Provides also "Translated URL" property for correctly indexing url's in different languages.
-- tkufi_search_sarnia_feature_rendered_entity_callback(): Rendering of the entities in "Search result" display mode.
-- tkufi_search_sarnia_feature_translated_url_callback(): Indexing of item url correctly in different languages.
-- tkufi_search_sarnia_feature_facet_items_alter(): Custom altering of facet items which have only tid in the Solr index.
+- kada_search_sarnia_feature_rendered_entity_callback(): Rendering of the entities in "Search result" display mode.
+- kada_search_sarnia_feature_translated_url_callback(): Indexing of item url correctly in different languages.
+- kada_search_sarnia_feature_facet_items_alter(): Custom altering of facet items which have only tid in the Solr index.
 
 == CHANGELOG ==
 * 2015-08-27 *

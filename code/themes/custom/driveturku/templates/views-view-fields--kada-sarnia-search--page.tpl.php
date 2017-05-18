@@ -32,7 +32,7 @@ global $language;
 
       $add_classes = array('');
 
-      $original_url = isset($row_group['ss_tkufi_translated_url']) ? $row_group['ss_tkufi_translated_url'] : '';
+      $original_url = isset($row_group['ss_kada_translated_url']) ? $row_group['ss_kada_translated_url'] : '';
 
       if (!empty($row_group['#attributes']['class']['theme'])) {
         array_push($add_classes, $row_group['#attributes']['class']['theme']);
@@ -60,9 +60,9 @@ global $language;
           </div>
         <?php endif; ?>
 
-        <?php if (!empty($row_group['ss_tkufi_rendered_entity'])): ?>
+        <?php if (!empty($row_group['ss_kada_rendered_entity'])): ?>
           <div class="search-result__body">
-            <?php print $row_group['ss_tkufi_rendered_entity']; ?>
+            <?php print $row_group['ss_kada_rendered_entity']; ?>
           </div>
         <?php else: ?>
           <div class="search-result__body">

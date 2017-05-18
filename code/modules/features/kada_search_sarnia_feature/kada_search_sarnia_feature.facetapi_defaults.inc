@@ -1,20 +1,20 @@
 <?php
 /**
  * @file
- * tkufi_search_sarnia_feature.facetapi_defaults.inc
+ * kada_search_sarnia_feature.facetapi_defaults.inc
  */
 
 /**
  * Implements hook_facetapi_default_facet_settings().
  */
-function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
+function kada_search_sarnia_feature_facetapi_default_facet_settings() {
   $export = array();
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search::im_field_classification';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search::im_field_classification';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = '';
   $facet->facet = 'im_field_classification';
   $facet->enabled = FALSE;
@@ -33,13 +33,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
     'exclude' => 0,
     'pretty_paths_alias' => 'classification',
   );
-  $export['search_api@sarnia_driveturku_sarnia_search::im_field_classification'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search::im_field_classification'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search::im_field_district';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search::im_field_district';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = '';
   $facet->facet = 'im_field_district';
   $facet->enabled = FALSE;
@@ -58,13 +58,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
     'exclude' => 0,
     'pretty_paths_alias' => 'district',
   );
-  $export['search_api@sarnia_driveturku_sarnia_search::im_field_district'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search::im_field_district'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search::im_field_keywords';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search::im_field_keywords';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = '';
   $facet->facet = 'im_field_keywords';
   $facet->enabled = FALSE;
@@ -83,13 +83,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
     'exclude' => 0,
     'pretty_paths_alias' => 'keywords',
   );
-  $export['search_api@sarnia_driveturku_sarnia_search::im_field_keywords'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search::im_field_keywords'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search::im_field_office_tr';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search::im_field_office_tr';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = '';
   $facet->facet = 'im_field_office_tr';
   $facet->enabled = FALSE;
@@ -108,13 +108,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
     'exclude' => 0,
     'pretty_paths_alias' => 'office',
   );
-  $export['search_api@sarnia_driveturku_sarnia_search::im_field_office_tr'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search::im_field_office_tr'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search::im_field_target_audience';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search::im_field_target_audience';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = '';
   $facet->facet = 'im_field_target_audience';
   $facet->enabled = FALSE;
@@ -133,13 +133,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
     'exclude' => 0,
     'pretty_paths_alias' => 'audience',
   );
-  $export['search_api@sarnia_driveturku_sarnia_search::im_field_target_audience'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search::im_field_target_audience'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search::im_field_theme';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search::im_field_theme';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = '';
   $facet->facet = 'im_field_theme';
   $facet->enabled = FALSE;
@@ -158,13 +158,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
     'exclude' => 0,
     'pretty_paths_alias' => 'theme',
   );
-  $export['search_api@sarnia_driveturku_sarnia_search::im_field_theme'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search::im_field_theme'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search::im_relation_trustee_person_node_reverse$field_trust_unit';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search::im_relation_trustee_person_node_reverse$field_trust_unit';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = '';
   $facet->facet = 'im_relation_trustee_person_node_reverse$field_trust_unit';
   $facet->enabled = FALSE;
@@ -183,13 +183,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
     'exclude' => 0,
     'pretty_paths_alias' => 'trust-unit',
   );
-  $export['search_api@sarnia_driveturku_sarnia_search::im_relation_trustee_person_node_reverse$field_trust_unit'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search::im_relation_trustee_person_node_reverse$field_trust_unit'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search::im_relation_trustee_person_node_reverse$field_trustee_role';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search::im_relation_trustee_person_node_reverse$field_trustee_role';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = '';
   $facet->facet = 'im_relation_trustee_person_node_reverse$field_trustee_role';
   $facet->enabled = FALSE;
@@ -208,13 +208,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
     'exclude' => 0,
     'pretty_paths_alias' => 'role',
   );
-  $export['search_api@sarnia_driveturku_sarnia_search::im_relation_trustee_person_node_reverse$field_trustee_role'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search::im_relation_trustee_person_node_reverse$field_trustee_role'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search::is_field_political_party';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search::is_field_political_party';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = '';
   $facet->facet = 'is_field_political_party';
   $facet->enabled = FALSE;
@@ -233,13 +233,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
     'exclude' => 0,
     'pretty_paths_alias' => 'political-party',
   );
-  $export['search_api@sarnia_driveturku_sarnia_search::is_field_political_party'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search::is_field_political_party'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search::sm_field_person_type';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search::sm_field_person_type';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = '';
   $facet->facet = 'sm_field_person_type';
   $facet->enabled = FALSE;
@@ -258,13 +258,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
     'exclude' => 0,
     'pretty_paths_alias' => 'person-type',
   );
-  $export['search_api@sarnia_driveturku_sarnia_search::sm_field_person_type'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search::sm_field_person_type'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search::ss_type';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search::ss_type';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = '';
   $facet->facet = 'ss_type';
   $facet->enabled = FALSE;
@@ -283,13 +283,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
     'exclude' => 0,
     'pretty_paths_alias' => 'type',
   );
-  $export['search_api@sarnia_driveturku_sarnia_search::ss_type'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search::ss_type'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search:block:dm_individual_dates';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search:block:dm_individual_dates';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = 'block';
   $facet->facet = 'dm_individual_dates';
   $facet->enabled = FALSE;
@@ -319,13 +319,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
     'nofollow' => 1,
     'show_expanded' => 0,
   );
-  $export['search_api@sarnia_driveturku_sarnia_search:block:dm_individual_dates'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search:block:dm_individual_dates'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search:block:ds_created';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search:block:ds_created';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = 'block';
   $facet->facet = 'ds_created';
   $facet->enabled = TRUE;
@@ -435,13 +435,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
     'expand' => 1,
     'collapsible_children' => 0,
   );
-  $export['search_api@sarnia_driveturku_sarnia_search:block:ds_created'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search:block:ds_created'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search:block:im_field_classification';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search:block:im_field_classification';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = 'block';
   $facet->facet = 'im_field_classification';
   $facet->enabled = TRUE;
@@ -577,13 +577,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
       'format' => 'wysiwyg',
     ),
   );
-  $export['search_api@sarnia_driveturku_sarnia_search:block:im_field_classification'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search:block:im_field_classification'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search:block:im_field_district';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search:block:im_field_district';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = 'block';
   $facet->facet = 'im_field_district';
   $facet->enabled = TRUE;
@@ -719,13 +719,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
       'format' => 'wysiwyg',
     ),
   );
-  $export['search_api@sarnia_driveturku_sarnia_search:block:im_field_district'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search:block:im_field_district'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search:block:im_field_keywords';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search:block:im_field_keywords';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = 'block';
   $facet->facet = 'im_field_keywords';
   $facet->enabled = TRUE;
@@ -861,13 +861,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
     'show_minimum_items' => 2,
     'rewrite_items' => 1,
   );
-  $export['search_api@sarnia_driveturku_sarnia_search:block:im_field_keywords'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search:block:im_field_keywords'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search:block:im_field_office_tr';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search:block:im_field_office_tr';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = 'block';
   $facet->facet = 'im_field_office_tr';
   $facet->enabled = TRUE;
@@ -1003,13 +1003,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
       'format' => 'wysiwyg',
     ),
   );
-  $export['search_api@sarnia_driveturku_sarnia_search:block:im_field_office_tr'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search:block:im_field_office_tr'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search:block:im_field_target_audience';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search:block:im_field_target_audience';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = 'block';
   $facet->facet = 'im_field_target_audience';
   $facet->enabled = TRUE;
@@ -1145,13 +1145,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
       'format' => 'wysiwyg',
     ),
   );
-  $export['search_api@sarnia_driveturku_sarnia_search:block:im_field_target_audience'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search:block:im_field_target_audience'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search:block:im_field_theme';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search:block:im_field_theme';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = 'block';
   $facet->facet = 'im_field_theme';
   $facet->enabled = TRUE;
@@ -1287,13 +1287,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
       'format' => 'wysiwyg',
     ),
   );
-  $export['search_api@sarnia_driveturku_sarnia_search:block:im_field_theme'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search:block:im_field_theme'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search:block:im_relation_trustee_person_node_reverse$field_trust_unit';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search:block:im_relation_trustee_person_node_reverse$field_trust_unit';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = 'block';
   $facet->facet = 'im_relation_trustee_person_node_reverse$field_trust_unit';
   $facet->enabled = TRUE;
@@ -1429,13 +1429,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
       'format' => 'wysiwyg',
     ),
   );
-  $export['search_api@sarnia_driveturku_sarnia_search:block:im_relation_trustee_person_node_reverse$field_trust_unit'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search:block:im_relation_trustee_person_node_reverse$field_trust_unit'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search:block:im_relation_trustee_person_node_reverse$field_trustee_role';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search:block:im_relation_trustee_person_node_reverse$field_trustee_role';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = 'block';
   $facet->facet = 'im_relation_trustee_person_node_reverse$field_trustee_role';
   $facet->enabled = TRUE;
@@ -1571,13 +1571,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
       'format' => 'wysiwyg',
     ),
   );
-  $export['search_api@sarnia_driveturku_sarnia_search:block:im_relation_trustee_person_node_reverse$field_trustee_role'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search:block:im_relation_trustee_person_node_reverse$field_trustee_role'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search:block:is_field_political_party';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search:block:is_field_political_party';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = 'block';
   $facet->facet = 'is_field_political_party';
   $facet->enabled = TRUE;
@@ -1713,13 +1713,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
       'format' => 'wysiwyg',
     ),
   );
-  $export['search_api@sarnia_driveturku_sarnia_search:block:is_field_political_party'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search:block:is_field_political_party'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search:block:sm_field_person_type';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search:block:sm_field_person_type';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = 'block';
   $facet->facet = 'sm_field_person_type';
   $facet->enabled = TRUE;
@@ -1855,13 +1855,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
     'show_minimum_items' => 2,
     'rewrite_items' => 1,
   );
-  $export['search_api@sarnia_driveturku_sarnia_search:block:sm_field_person_type'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search:block:sm_field_person_type'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search:block:ss_search_api_language';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search:block:ss_search_api_language';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = 'block';
   $facet->facet = 'ss_search_api_language';
   $facet->enabled = TRUE;
@@ -1919,13 +1919,13 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
     'regex' => 0,
     'show_minimum_items' => 2,
   );
-  $export['search_api@sarnia_driveturku_sarnia_search:block:ss_search_api_language'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search:block:ss_search_api_language'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@sarnia_driveturku_sarnia_search:block:ss_type';
-  $facet->searcher = 'search_api@sarnia_driveturku_sarnia_search';
+  $facet->name = 'search_api@sarnia_kada_sarnia_search:block:ss_type';
+  $facet->searcher = 'search_api@sarnia_kada_sarnia_search';
   $facet->realm = 'block';
   $facet->facet = 'ss_type';
   $facet->enabled = TRUE;
@@ -2061,7 +2061,7 @@ function tkufi_search_sarnia_feature_facetapi_default_facet_settings() {
       'format' => 'wysiwyg',
     ),
   );
-  $export['search_api@sarnia_driveturku_sarnia_search:block:ss_type'] = $facet;
+  $export['search_api@sarnia_kada_sarnia_search:block:ss_type'] = $facet;
 
   return $export;
 }

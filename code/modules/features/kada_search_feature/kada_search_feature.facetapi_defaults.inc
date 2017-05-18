@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_search_feature.facetapi_defaults.inc
+ * kada_search_feature.facetapi_defaults.inc
  */
 
 /**
  * Implements hook_facetapi_default_facet_settings().
  */
-function tkufi_search_feature_facetapi_default_facet_settings() {
+function kada_search_feature_facetapi_default_facet_settings() {
   $export = array();
 
   $facet = new stdClass();
@@ -478,8 +478,8 @@ function tkufi_search_feature_facetapi_default_facet_settings() {
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@driveturku_content::field_event_types';
-  $facet->searcher = 'search_api@driveturku_content';
+  $facet->name = 'search_api@kada_content::field_event_types';
+  $facet->searcher = 'search_api@kada_content';
   $facet->realm = '';
   $facet->facet = 'field_event_types';
   $facet->enabled = FALSE;
@@ -507,13 +507,13 @@ function tkufi_search_feature_facetapi_default_facet_settings() {
     'pretty_paths_taxonomy_pathauto' => 0,
     'pretty_paths_taxonomy_pathauto_vocabulary' => 'event_types',
   );
-  $export['search_api@driveturku_content::field_event_types'] = $facet;
+  $export['search_api@kada_content::field_event_types'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@driveturku_content::field_target_audience';
-  $facet->searcher = 'search_api@driveturku_content';
+  $facet->name = 'search_api@kada_content::field_target_audience';
+  $facet->searcher = 'search_api@kada_content';
   $facet->realm = '';
   $facet->facet = 'field_target_audience';
   $facet->enabled = FALSE;
@@ -541,13 +541,13 @@ function tkufi_search_feature_facetapi_default_facet_settings() {
     'pretty_paths_taxonomy_pathauto' => 0,
     'pretty_paths_taxonomy_pathauto_vocabulary' => 'target_audience',
   );
-  $export['search_api@driveturku_content::field_target_audience'] = $facet;
+  $export['search_api@kada_content::field_target_audience'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@driveturku_content::individual_dates';
-  $facet->searcher = 'search_api@driveturku_content';
+  $facet->name = 'search_api@kada_content::individual_dates';
+  $facet->searcher = 'search_api@kada_content';
   $facet->realm = '';
   $facet->facet = 'individual_dates';
   $facet->enabled = FALSE;
@@ -573,13 +573,13 @@ function tkufi_search_feature_facetapi_default_facet_settings() {
     'exclude' => 0,
     'pretty_paths_alias' => 'dates',
   );
-  $export['search_api@driveturku_content::individual_dates'] = $facet;
+  $export['search_api@kada_content::individual_dates'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@driveturku_content::og_group_ref';
-  $facet->searcher = 'search_api@driveturku_content';
+  $facet->name = 'search_api@kada_content::og_group_ref';
+  $facet->searcher = 'search_api@kada_content';
   $facet->realm = '';
   $facet->facet = 'og_group_ref';
   $facet->enabled = FALSE;
@@ -605,13 +605,13 @@ function tkufi_search_feature_facetapi_default_facet_settings() {
     'exclude' => 0,
     'pretty_paths_alias' => 'section',
   );
-  $export['search_api@driveturku_content::og_group_ref'] = $facet;
+  $export['search_api@kada_content::og_group_ref'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@driveturku_content::relation_place_service_node:relation_service_offer_service_node:field_classification';
-  $facet->searcher = 'search_api@driveturku_content';
+  $facet->name = 'search_api@kada_content::relation_place_service_node:relation_service_offer_service_node:field_classification';
+  $facet->searcher = 'search_api@kada_content';
   $facet->realm = '';
   $facet->facet = 'relation_place_service_node:relation_service_offer_service_node:field_classification';
   $facet->enabled = FALSE;
@@ -639,13 +639,13 @@ function tkufi_search_feature_facetapi_default_facet_settings() {
     'pretty_paths_taxonomy_pathauto' => 0,
     'pretty_paths_taxonomy_pathauto_vocabulary' => 'service_classification',
   );
-  $export['search_api@driveturku_content::relation_place_service_node:relation_service_offer_service_node:field_classification'] = $facet;
+  $export['search_api@kada_content::relation_place_service_node:relation_service_offer_service_node:field_classification'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@driveturku_content::relation_place_service_node:relation_service_offer_service_node:field_target_audience';
-  $facet->searcher = 'search_api@driveturku_content';
+  $facet->name = 'search_api@kada_content::relation_place_service_node:relation_service_offer_service_node:field_target_audience';
+  $facet->searcher = 'search_api@kada_content';
   $facet->realm = '';
   $facet->facet = 'relation_place_service_node:relation_service_offer_service_node:field_target_audience';
   $facet->enabled = FALSE;
@@ -673,13 +673,13 @@ function tkufi_search_feature_facetapi_default_facet_settings() {
     'pretty_paths_taxonomy_pathauto' => 0,
     'pretty_paths_taxonomy_pathauto_vocabulary' => 'target_audience',
   );
-  $export['search_api@driveturku_content::relation_place_service_node:relation_service_offer_service_node:field_target_audience'] = $facet;
+  $export['search_api@kada_content::relation_place_service_node:relation_service_offer_service_node:field_target_audience'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@driveturku_content:block:field_district';
-  $facet->searcher = 'search_api@driveturku_content';
+  $facet->name = 'search_api@kada_content:block:field_district';
+  $facet->searcher = 'search_api@kada_content';
   $facet->realm = 'block';
   $facet->facet = 'field_district';
   $facet->enabled = TRUE;
@@ -786,13 +786,13 @@ function tkufi_search_feature_facetapi_default_facet_settings() {
       'format' => 'wysiwyg',
     ),
   );
-  $export['search_api@driveturku_content:block:field_district'] = $facet;
+  $export['search_api@kada_content:block:field_district'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@driveturku_content:block:field_event_types';
-  $facet->searcher = 'search_api@driveturku_content';
+  $facet->name = 'search_api@kada_content:block:field_event_types';
+  $facet->searcher = 'search_api@kada_content';
   $facet->realm = 'block';
   $facet->facet = 'field_event_types';
   $facet->enabled = TRUE;
@@ -902,13 +902,13 @@ function tkufi_search_feature_facetapi_default_facet_settings() {
     'expand' => 1,
     'collapsible_children' => 0,
   );
-  $export['search_api@driveturku_content:block:field_event_types'] = $facet;
+  $export['search_api@kada_content:block:field_event_types'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@driveturku_content:block:field_keywords_et';
-  $facet->searcher = 'search_api@driveturku_content';
+  $facet->name = 'search_api@kada_content:block:field_keywords_et';
+  $facet->searcher = 'search_api@kada_content';
   $facet->realm = 'block';
   $facet->facet = 'field_keywords_et';
   $facet->enabled = TRUE;
@@ -1015,13 +1015,13 @@ function tkufi_search_feature_facetapi_default_facet_settings() {
       'format' => 'wysiwyg',
     ),
   );
-  $export['search_api@driveturku_content:block:field_keywords_et'] = $facet;
+  $export['search_api@kada_content:block:field_keywords_et'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@driveturku_content:block:field_target_audience';
-  $facet->searcher = 'search_api@driveturku_content';
+  $facet->name = 'search_api@kada_content:block:field_target_audience';
+  $facet->searcher = 'search_api@kada_content';
   $facet->realm = 'block';
   $facet->facet = 'field_target_audience';
   $facet->enabled = TRUE;
@@ -1128,13 +1128,13 @@ function tkufi_search_feature_facetapi_default_facet_settings() {
       'add_range' => 'Add a new date range',
     ),
   );
-  $export['search_api@driveturku_content:block:field_target_audience'] = $facet;
+  $export['search_api@kada_content:block:field_target_audience'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@driveturku_content:block:individual_dates';
-  $facet->searcher = 'search_api@driveturku_content';
+  $facet->name = 'search_api@kada_content:block:individual_dates';
+  $facet->searcher = 'search_api@kada_content';
   $facet->realm = 'block';
   $facet->facet = 'individual_dates';
   $facet->enabled = TRUE;
@@ -1241,13 +1241,13 @@ function tkufi_search_feature_facetapi_default_facet_settings() {
       'format' => 'wysiwyg',
     ),
   );
-  $export['search_api@driveturku_content:block:individual_dates'] = $facet;
+  $export['search_api@kada_content:block:individual_dates'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@driveturku_content:block:og_group_ref';
-  $facet->searcher = 'search_api@driveturku_content';
+  $facet->name = 'search_api@kada_content:block:og_group_ref';
+  $facet->searcher = 'search_api@kada_content';
   $facet->realm = 'block';
   $facet->facet = 'og_group_ref';
   $facet->enabled = TRUE;
@@ -1354,13 +1354,13 @@ function tkufi_search_feature_facetapi_default_facet_settings() {
       'format' => 'wysiwyg',
     ),
   );
-  $export['search_api@driveturku_content:block:og_group_ref'] = $facet;
+  $export['search_api@kada_content:block:og_group_ref'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@driveturku_content:block:relation_place_service_node:relation_service_offer_service_node:field_classification';
-  $facet->searcher = 'search_api@driveturku_content';
+  $facet->name = 'search_api@kada_content:block:relation_place_service_node:relation_service_offer_service_node:field_classification';
+  $facet->searcher = 'search_api@kada_content';
   $facet->realm = 'block';
   $facet->facet = 'relation_place_service_node:relation_service_offer_service_node:field_classification';
   $facet->enabled = TRUE;
@@ -1470,13 +1470,13 @@ function tkufi_search_feature_facetapi_default_facet_settings() {
     'expand' => 1,
     'collapsible_children' => 1,
   );
-  $export['search_api@driveturku_content:block:relation_place_service_node:relation_service_offer_service_node:field_classification'] = $facet;
+  $export['search_api@kada_content:block:relation_place_service_node:relation_service_offer_service_node:field_classification'] = $facet;
 
   $facet = new stdClass();
   $facet->disabled = FALSE; /* Edit this to true to make a default facet disabled initially */
   $facet->api_version = 1;
-  $facet->name = 'search_api@driveturku_content:block:relation_place_service_node:relation_service_offer_service_node:field_target_audience';
-  $facet->searcher = 'search_api@driveturku_content';
+  $facet->name = 'search_api@kada_content:block:relation_place_service_node:relation_service_offer_service_node:field_target_audience';
+  $facet->searcher = 'search_api@kada_content';
   $facet->realm = 'block';
   $facet->facet = 'relation_place_service_node:relation_service_offer_service_node:field_target_audience';
   $facet->enabled = TRUE;
@@ -1586,7 +1586,7 @@ function tkufi_search_feature_facetapi_default_facet_settings() {
     'expand' => 1,
     'collapsible_children' => 0,
   );
-  $export['search_api@driveturku_content:block:relation_place_service_node:relation_service_offer_service_node:field_target_audience'] = $facet;
+  $export['search_api@kada_content:block:relation_place_service_node:relation_service_offer_service_node:field_target_audience'] = $facet;
 
   return $export;
 }
