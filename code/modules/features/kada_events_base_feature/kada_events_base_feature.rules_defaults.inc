@@ -50,13 +50,13 @@ function kada_events_base_feature_default_rules_configuration() {
       "LABEL" : "Add repeated event translations",
       "PLUGIN" : "action set",
       "OWNER" : "rules",
-      "REQUIRES" : [ "tkufi_rules_et", "rules_conditional", "rules" ],
+      "REQUIRES" : [ "kada_rules_et", "rules_conditional", "rules" ],
       "USES VARIABLES" : {
         "original_event" : { "label" : "Original event", "type" : "node" },
         "repeated_event" : { "label" : "Repeated event", "type" : "node" }
       },
       "ACTION SET" : [
-        { "tkufi_rules_et_get_translation_languages" : {
+        { "kada_rules_et_get_translation_languages" : {
             "USING" : { "entity" : [ "original-event" ] },
             "PROVIDE" : {
               "source_lang_code" : { "source_lang_code" : "Source language code" },
@@ -68,7 +68,7 @@ function kada_events_base_feature_default_rules_configuration() {
             "USING" : { "list" : [ "lang-codes" ] },
             "ITEM" : { "lang_code" : "Language code" },
             "DO" : [
-              { "tkufi_rules_et_get_translated_field_value" : {
+              { "kada_rules_et_get_translated_field_value" : {
                   "USING" : {
                     "entity" : [ "original-event" ],
                     "language_code" : [ "lang-code" ],
@@ -81,14 +81,14 @@ function kada_events_base_feature_default_rules_configuration() {
                   {
                     "IF" : { "NOT data_is_empty" : { "data" : [ "translated-title" ] } },
                     "DO" : [
-                      { "tkufi_rules_et_set_translated_field_value" : {
+                      { "kada_rules_et_set_translated_field_value" : {
                           "entity" : [ "repeated-event" ],
                           "language_code" : [ "lang-code" ],
                           "field_machine_name" : "title_field",
                           "translated_value" : [ "translated-title" ]
                         }
                       },
-                      { "tkufi_rules_et_add_translation" : {
+                      { "kada_rules_et_add_translation" : {
                           "entity" : [ "repeated-event" ],
                           "target_language_code" : [ "lang-code" ]
                         }
@@ -112,7 +112,7 @@ function kada_events_base_feature_default_rules_configuration() {
       "LABEL" : "Create repeating event skeleton",
       "PLUGIN" : "action set",
       "OWNER" : "rules",
-      "REQUIRES" : [ "rules", "rules_conditional", "tkufi_rules_et", "kada_domains_feature" ],
+      "REQUIRES" : [ "rules", "rules_conditional", "kada_rules_et", "kada_domains_feature" ],
       "USES VARIABLES" : {
         "original_event" : { "label" : "Original event", "type" : "node" },
         "start_date" : { "label" : "Start date", "type" : "date" },
@@ -179,7 +179,7 @@ function kada_events_base_feature_default_rules_configuration() {
                     "value" : [ "original-event:og-group-ref" ]
                   }
                 },
-                { "tkufi_rules_et_set_translated_field_value" : {
+                { "kada_rules_et_set_translated_field_value" : {
                     "entity" : [ "repeated-event" ],
                     "language_code" : [ "original-event:language" ],
                     "field_machine_name" : "field_event_organizer_et",

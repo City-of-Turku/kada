@@ -2,13 +2,13 @@
 
 /**
  * @file
- * Custom facets for Turku.
+ * Custom facets for KADA.
  */
 
 /**
  * Needs documentation (@TODO).
  */
-function tkufi_facets_facetapi_widgets() {
+function kada_facets_facetapi_widgets() {
   return array(
     'facetapi_calendar_links' => array(
       'handler' => array(

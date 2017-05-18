@@ -1,6 +1,6 @@
-name = TKUFI Rules Entity translation
+name = KADA Rules Entity translation
 description = Entity translation support for Rules module
-package = TKUFI
+package = KADA
 core = 7.x
 
 dependencies[] = rules

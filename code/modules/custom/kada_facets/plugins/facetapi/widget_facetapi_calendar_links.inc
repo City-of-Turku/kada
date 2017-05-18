@@ -17,7 +17,7 @@ class FacetapiWidgetCalendarLinks extends FacetapiWidgetLinks {
     parent::init();
     // We just need our own js to be loaded to handle ui.datepicker stuff.
     drupal_add_library('system', 'ui.datepicker');
-    drupal_add_js(drupal_get_path('module', 'tkufi_facets') . '/plugins/facetapi/widget_facetapi_calendar_links.js');
+    drupal_add_js(drupal_get_path('module', 'kada_facets') . '/plugins/facetapi/widget_facetapi_calendar_links.js');
   }
 
   /**

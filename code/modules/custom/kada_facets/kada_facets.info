@@ -1,6 +1,6 @@
-name = TKUFI Facets
-description = Custom facets for Turku
-package = TKUFI
+name = KADA Facets
+description = Custom facets for KADA
+package = KADA
 core = 7.x
 
 dependencies[] = facetapi

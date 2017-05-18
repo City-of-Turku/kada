@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the TKUFI Service offer feature.
+ * Code for the KADA Service offer feature.
  */
 
 include_once 'kada_service_offer_feature.features.inc';

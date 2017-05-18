@@ -8,9 +8,9 @@
 /**
  * Implements hook_rules_action_info().
  */
-function tkufi_rules_et_rules_action_info() {
+function kada_rules_et_rules_action_info() {
   return array(
-    'tkufi_rules_et_get_translated_field_value' => array(
+    'kada_rules_et_get_translated_field_value' => array(
       'label' => t('Get translated field value'),
       'group' => t('Custom'),
       'parameter' => array(
@@ -25,7 +25,7 @@ function tkufi_rules_et_rules_action_info() {
         'language_code' => array(
           'type' => 'text',
           'label' => t('Language'),
-          'options list' => 'tkufi_rules_et_list_languages',
+          'options list' => 'kada_rules_et_list_languages',
         ),
         'field_machine_name' => array(
           'type' => 'text',
@@ -39,7 +39,7 @@ function tkufi_rules_et_rules_action_info() {
         ),
       ),
     ),
-    'tkufi_rules_et_get_translated_formatted_field_value' => array(
+    'kada_rules_et_get_translated_formatted_field_value' => array(
       'label' => t('Get translated formatted field value'),
       'group' => t('Custom'),
       'parameter' => array(
@@ -54,7 +54,7 @@ function tkufi_rules_et_rules_action_info() {
         'language_code' => array(
           'type' => 'text',
           'label' => t('Language'),
-          'options list' => 'tkufi_rules_et_list_languages',
+          'options list' => 'kada_rules_et_list_languages',
         ),
         'field_machine_name' => array(
           'type' => 'text',
@@ -68,7 +68,7 @@ function tkufi_rules_et_rules_action_info() {
         ),
       ),
     ),
-    'tkufi_rules_et_set_translated_field_value' => array(
+    'kada_rules_et_set_translated_field_value' => array(
       'label' => t('Set translated field value'),
       'group' => t('Custom'),
       'parameter' => array(
@@ -83,7 +83,7 @@ function tkufi_rules_et_rules_action_info() {
         'language_code' => array(
           'type' => 'text',
           'label' => t('Language'),
-          'options list' => 'tkufi_rules_et_list_languages',
+          'options list' => 'kada_rules_et_list_languages',
         ),
         'field_machine_name' => array(
           'type' => 'text',
@@ -96,7 +96,7 @@ function tkufi_rules_et_rules_action_info() {
         ),
       ),
     ),
-    'tkufi_rules_et_set_translated_formatted_field_value' => array(
+    'kada_rules_et_set_translated_formatted_field_value' => array(
       'label' => t('Set translated formatted field value'),
       'group' => t('Custom'),
       'parameter' => array(
@@ -111,7 +111,7 @@ function tkufi_rules_et_rules_action_info() {
         'language_code' => array(
           'type' => 'text',
           'label' => t('Language'),
-          'options list' => 'tkufi_rules_et_list_languages',
+          'options list' => 'kada_rules_et_list_languages',
         ),
         'field_machine_name' => array(
           'type' => 'text',
@@ -124,7 +124,7 @@ function tkufi_rules_et_rules_action_info() {
         ),
       ),
     ),
-    'tkufi_rules_et_add_translation' => array(
+    'kada_rules_et_add_translation' => array(
       'label' => t('Add translation to entity'),
       'group' => t('Custom'),
       'parameter' => array(
@@ -138,11 +138,11 @@ function tkufi_rules_et_rules_action_info() {
         'target_language_code' => array(
           'type' => 'text',
           'label' => t('Language'),
-          'options list' => 'tkufi_rules_et_list_languages',
+          'options list' => 'kada_rules_et_list_languages',
         ),
       ),
     ),
-    'tkufi_rules_et_get_translation_languages' => array(
+    'kada_rules_et_get_translation_languages' => array(
       'label' => t('Get source language and translated languages'),
       'group' => t('Custom'),
       'parameter' => array(
@@ -171,7 +171,7 @@ function tkufi_rules_et_rules_action_info() {
 /**
  * Return an array of enabled languages.
  */
-function tkufi_rules_et_list_languages() {
+function kada_rules_et_list_languages() {
   return locale_language_list('name');
 }
 
@@ -181,7 +181,7 @@ function tkufi_rules_et_list_languages() {
  * Return the translated value from the given entity's given field in the
  * selected language.
  */
-function tkufi_rules_et_get_translated_field_value($entity, $language_code, $field_machine_name) {
+function kada_rules_et_get_translated_field_value($entity, $language_code, $field_machine_name) {
   // If the entity is new, for example imported data, then we cannot use
   // Entity Metadata wrapper.
   if ($entity->is_new) {
@@ -206,7 +206,7 @@ function tkufi_rules_et_get_translated_field_value($entity, $language_code, $fie
  * Return the translated value from the given entity's given field in the
  * selected language.
  */
-function tkufi_rules_et_get_translated_formatted_field_value($entity, $language_code, $field_machine_name) {
+function kada_rules_et_get_translated_formatted_field_value($entity, $language_code, $field_machine_name) {
   // If the entity is new, for example imported data, then we cannot use
   // Entity Metadata wrapper.
   if ($entity->is_new) {
@@ -236,7 +236,7 @@ function tkufi_rules_et_get_translated_formatted_field_value($entity, $language_
  * Save the translated value to the given entity's given field in the selected
  * language.
  */
-function tkufi_rules_et_set_translated_field_value($entity, $language_code, $field_machine_name, $translated_value) {
+function kada_rules_et_set_translated_field_value($entity, $language_code, $field_machine_name, $translated_value) {
   $field_info = field_info_field($field_machine_name);
   // Checking if the field is a single value field or not.
   if ($field_info['cardinality'] == 1) {
@@ -253,7 +253,7 @@ function tkufi_rules_et_set_translated_field_value($entity, $language_code, $fie
  * Save the translated value to the given entity's given field in the selected
  * language.
  */
-function tkufi_rules_et_set_translated_formatted_field_value($entity, $language_code, $field_machine_name, $translated_value) {
+function kada_rules_et_set_translated_formatted_field_value($entity, $language_code, $field_machine_name, $translated_value) {
   $field_info = field_info_field($field_machine_name);
   // Checking if the field is a single value field or not.
   if ($field_info['cardinality'] == 1) {
@@ -267,7 +267,7 @@ function tkufi_rules_et_set_translated_formatted_field_value($entity, $language_
 /**
  * Return an array of enabled languages.
  */
-function tkufi_rules_et_add_translation($entity, $target_language_code) {
+function kada_rules_et_add_translation($entity, $target_language_code) {
   $translation = array(
     'translate' => 0,
     'status' => 1,
@@ -292,7 +292,7 @@ function tkufi_rules_et_add_translation($entity, $target_language_code) {
 /**
  * Return source language and translated languages of given entity.
  */
-function tkufi_rules_et_get_translation_languages($entity) {
+function kada_rules_et_get_translation_languages($entity) {
   $translated_lang_codes = array();
   $source_lang_code = '';
   if (isset($entity->translations->original)) {

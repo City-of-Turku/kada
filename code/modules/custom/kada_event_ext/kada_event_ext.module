@@ -2,7 +2,7 @@
 
 /**
  * @file
- * DriveTurku event management for external users.
+ * KADA event management for external users.
  */
 
 module_load_include('inc', 'node', 'node.pages');
@@ -12,11 +12,11 @@ module_load_include('inc', 'node', 'node.pages');
  *
  * @TODO: Figure out correct access restriction.
  */
-function tkufi_event_ext_menu() {
+function kada_event_ext_menu() {
   $items['event/add'] = array(
     'title' => 'Create event',
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('tkufi_event_ext_event_translations_form'),
+    'page arguments' => array('kada_event_ext_event_translations_form'),
     'access callback' => TRUE,
   );
   return $items;
@@ -25,7 +25,7 @@ function tkufi_event_ext_menu() {
 /**
  * Implements hook_form_FORM_ID_alter().
  */
-function tkufi_event_ext_form_event_node_form_alter(&$form, &$form_state) {
+function kada_event_ext_form_event_node_form_alter(&$form, &$form_state) {
   // Hide the ext image fields in node form.
   $form['field_content_image_ext_rights']['#access'] = FALSE;
   $form['field_content_image_ext']['#access'] = FALSE;
@@ -34,7 +34,7 @@ function tkufi_event_ext_form_event_node_form_alter(&$form, &$form_state) {
 /**
  * Documentation (@TODO).
  */
-function tkufi_event_ext_event_translations_form($form, &$form_state) {
+function kada_event_ext_event_translations_form($form, &$form_state) {
   // Define an array of data for the entities to show in the form.
   $entity_data = array();
 
@@ -172,10 +172,10 @@ function tkufi_event_ext_event_translations_form($form, &$form_state) {
 
   // Custom submit function for geocoder button because of our custom form
   // structure will not work with the default submit function.
-  $form['language_tabs']['node:new_0']['field_location']['und'][0]['use_geocoder']['#submit'][0] = 'tkufi_event_ext_use_geocoder_submit';
+  $form['language_tabs']['node:new_0']['field_location']['und'][0]['use_geocoder']['#submit'][0] = 'kada_event_ext_use_geocoder_submit';
 
   // Custom validate function for date_repeat field.
-  $form['language_tabs']['node:new_0']['field_date_repeat']['und'][0]['#element_validate'][] = 'tkufi_event_ext_date_repeat_widget_validate';
+  $form['language_tabs']['node:new_0']['field_date_repeat']['und'][0]['#element_validate'][] = 'kada_event_ext_date_repeat_widget_validate';
 
   $form['#attached']['css'][] = drupal_get_path('module', 'field_group') . '/horizontal-tabs/horizontal-tabs.css';
   $form['#attached']['js'][] = drupal_get_path('module', 'field_group') . '/horizontal-tabs/horizontal-tabs.js';
@@ -183,8 +183,8 @@ function tkufi_event_ext_event_translations_form($form, &$form_state) {
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Add translated event'),
-    '#validate' => array('tkufi_event_ext_event_translations_validate'),
-    '#submit' => array('tkufi_event_ext_event_translations_submit'),
+    '#validate' => array('kada_event_ext_event_translations_validate'),
+    '#submit' => array('kada_event_ext_event_translations_submit'),
     '#limit_validation_errors' => array(array($form_by_lang['und'])),
     '#weight' => 99,
     '#prefix' => '<p class="submit__info">' . t('Do not save while filling the form. Fill information to all tabs and save when completed. You cannot edit your event after saving.') . '</p>',
@@ -193,7 +193,7 @@ function tkufi_event_ext_event_translations_form($form, &$form_state) {
   // Add honeypot check to form.
   honeypot_add_form_protection($form, $form_state, array('honeypot', 'time_restriction'));
 
-  $form['#after_build'][] = 'tkufi_event_ext_after_build';
+  $form['#after_build'][] = 'kada_event_ext_after_build';
 
   return $form;
 }
@@ -201,7 +201,7 @@ function tkufi_event_ext_event_translations_form($form, &$form_state) {
 /**
  * Documentation (@TODO).
  */
-function tkufi_event_ext_event_translations_validate(&$form, &$form_state) {
+function kada_event_ext_event_translations_validate(&$form, &$form_state) {
   foreach ($form['language_tabs']['#entity_form_keys'] as $key => $form_key) {
     if (!isset($form_state['values'][$form_key]['title_field'])) {
       continue;
@@ -213,9 +213,9 @@ function tkufi_event_ext_event_translations_validate(&$form, &$form_state) {
     }
     else {
       // Clear the validation preventers.
-      _tkufi_event_ext_clear_key($form['language_tabs'][$form_key], '#limit_validation_errors');
-      _tkufi_event_ext_clear_key($form_state['triggering_element'], '#limit_validation_errors');
-      _tkufi_event_ext_clear_key($form['language_tabs'][$form_key], '#validated');
+      _kada_event_ext_clear_key($form['language_tabs'][$form_key], '#limit_validation_errors');
+      _kada_event_ext_clear_key($form_state['triggering_element'], '#limit_validation_errors');
+      _kada_event_ext_clear_key($form['language_tabs'][$form_key], '#validated');
       drupal_static_reset('form_set_error');
       drupal_static_reset('form_set_error:limit_validation_errors');
 
@@ -226,8 +226,8 @@ function tkufi_event_ext_event_translations_validate(&$form, &$form_state) {
   // If no languages have been entered,
   // throw a validation error on the FI title.
   if (count($form['language_tabs']['#entity_form_keys']) <= 1) {
-    _tkufi_event_ext_clear_key($form['language_tabs']['node:new_1'], '#limit_validation_errors');
-    _tkufi_event_ext_clear_key($form_state['triggering_element'], '#limit_validation_errors');
+    _kada_event_ext_clear_key($form['language_tabs']['node:new_1'], '#limit_validation_errors');
+    _kada_event_ext_clear_key($form_state['triggering_element'], '#limit_validation_errors');
     drupal_static_reset('form_set_error:limit_validation_errors');
 
     form_set_error('node:new_1][title_field][fi][0][value', t('At least one language must be submitted!'));
@@ -267,11 +267,11 @@ function tkufi_event_ext_event_translations_validate(&$form, &$form_state) {
 /**
  * Documentation (@TODO).
  */
-function _tkufi_event_ext_clear_key(&$parent, $key) {
+function _kada_event_ext_clear_key(&$parent, $key) {
   unset($parent[$key]);
   foreach ($parent as $k => &$v) {
     if (is_array($v)) {
-      _tkufi_event_ext_clear_key($v, $key);
+      _kada_event_ext_clear_key($v, $key);
     }
   }
 }
@@ -279,7 +279,7 @@ function _tkufi_event_ext_clear_key(&$parent, $key) {
 /**
  * Documentation (@TODO).
  */
-function tkufi_event_ext_event_translations_submit($form, &$form_state) {
+function kada_event_ext_event_translations_submit($form, &$form_state) {
   multiple_entity_form_submit($form['language_tabs'], $form_state);
 
   $source_language = '';
@@ -389,7 +389,7 @@ function tkufi_event_ext_event_translations_submit($form, &$form_state) {
  * assumes that the field used for geocoding is always on the form array root
  * level, which is not the case in the custom form.
  */
-function tkufi_event_ext_use_geocoder_submit($form, &$form_state) {
+function kada_event_ext_use_geocoder_submit($form, &$form_state) {
   $button = $form_state['triggering_element'];
 
   // Go one level up in the form, to the widgets container.
@@ -424,7 +424,7 @@ function tkufi_event_ext_use_geocoder_submit($form, &$form_state) {
  * date_repeat_field module and patch from issue
  * https://www.drupal.org/node/2051033
  */
-function tkufi_event_ext_date_repeat_widget_validate($element, &$form_state) {
+function kada_event_ext_date_repeat_widget_validate($element, &$form_state) {
   $field = field_widget_field($element, $form_state);
   if (empty($field['settings']['repeat'])) {
     return;
@@ -461,7 +461,7 @@ function tkufi_event_ext_date_repeat_widget_validate($element, &$form_state) {
       : $error_field_base . '][rrule][until_child][datetime';
 
     form_set_error($error_field,
-      t('You are trying to create too many (!repeats) repeating events. 
+      t('You are trying to create too many (!repeats) repeating events.
       The maximum is (!max_repeats).',
         array('!repeats' => $date_repeats, '!max_repeats' => $max_repeats),
         array('context' => 'Date repeat')));
@@ -471,7 +471,7 @@ function tkufi_event_ext_date_repeat_widget_validate($element, &$form_state) {
 /**
  * Custom after build function.
  */
-function tkufi_event_ext_after_build($form, &$form_state) {
+function kada_event_ext_after_build($form, &$form_state) {
   // Hiding additions and exceptions fields because they are not working on
   // custom event form.
   $form['language_tabs']['node:new_0']['field_date_repeat'][LANGUAGE_NONE][0]['rrule']['show_additions']['#access'] = FALSE;

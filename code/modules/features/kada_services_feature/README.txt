@@ -23,8 +23,8 @@ Service (description) describes a service and holds information about the target
 
 == RULES CONFIGURATION ==
 - rules_import_service_from_nc: Set default language to Finnish
-- rules_update_translation_service_en: Fetches the source translation for Service using NC ID and updates the field translations in Swedish with actions from the custom tkufi_rules_et module.
-- rules_update_translation_service_se: Fetches the source translation for Service using NC ID and updates the field translations in English with actions from the custom tkufi_rules_et module.
+- rules_update_translation_service_en: Fetches the source translation for Service using NC ID and updates the field translations in Swedish with actions from the custom kada_rules_et module.
+- rules_update_translation_service_se: Fetches the source translation for Service using NC ID and updates the field translations in English with actions from the custom kada_rules_et module.
 
 == VIEWS ==
 kada_service_descriptions: Displays a link from the referenced page to the service description. Displays Service description text on the referenced Page.

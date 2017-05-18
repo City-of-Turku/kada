@@ -1332,7 +1332,7 @@ function kada_events_base_feature_views_default_views() {
   $handler = $view->new_display('block', 'Map | Event indexed', 'indexed_event_map');
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'openlayers_map';
-  $handler->display->display_options['style_options']['map'] = 'tkufi_event_map_indexed';
+  $handler->display->display_options['style_options']['map'] = 'kada_event_map_indexed';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -1684,7 +1684,7 @@ function kada_events_base_feature_views_default_views() {
   $handler->display->display_options['display_description'] = 'Show events on map';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'openlayers_map';
-  $handler->display->display_options['style_options']['map'] = 'tkufi_event_map';
+  $handler->display->display_options['style_options']['map'] = 'kada_event_map';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -1788,7 +1788,7 @@ function kada_events_base_feature_views_default_views() {
   $handler = $view->new_display('block', 'Map | Event single', 'map_single');
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'openlayers_map';
-  $handler->display->display_options['style_options']['map'] = 'tkufi_event_map_single_event';
+  $handler->display->display_options['style_options']['map'] = 'kada_event_map_single_event';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;

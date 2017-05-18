@@ -131,7 +131,7 @@ function kada_events_base_feature_permission() {
   return array(
     'administer event settings' => array(
       'title' => t('Administer event settings'),
-      'description' => t('Administer the custom event settings for TKUFI.'),
+      'description' => t('Administer the custom event settings for KADA.'),
     ),
   );
 }
@@ -159,9 +159,9 @@ function kada_events_base_feature_settings($form, &$form_state) {
     ),
   );
   // Hobbies frontpage background atom.
-  $form['tkufi_hobbies_front_bg_atom'] = $atom_field_base + array(
+  $form['kada_hobbies_front_bg_atom'] = $atom_field_base + array(
     '#title' => t('Events background'),
-    '#default_value' => variable_get('tkufi_hobbies_front_bg_atom', ''),
+    '#default_value' => variable_get('kada_hobbies_front_bg_atom', ''),
   );
   return system_settings_form($form);
 }
@@ -174,7 +174,7 @@ function kada_events_base_feature_views_post_render(&$view, &$output, &$cache) {
   if ($view->name == 'kada_top_carousel'
     && $view->current_display == 'section_kadacalendar_hobbies_front') {
     // If atom is set for hobbies frontpage, render it.
-    $hobbies_atom = scald_atom_load(variable_get('tkufi_hobbies_front_bg_atom', ''));
+    $hobbies_atom = scald_atom_load(variable_get('kada_hobbies_front_bg_atom', ''));
     if ($hobbies_atom) {
       // Replace existing output of the view.
       $output = render(scald_atom_view($hobbies_atom, 'carousel'));
