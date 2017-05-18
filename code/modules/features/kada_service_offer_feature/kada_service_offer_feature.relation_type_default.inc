@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_service_offer_feature.relation_type_default.inc
+ * kada_service_offer_feature.relation_type_default.inc
  */
 
 /**
  * Implements hook_relation_default_relation_types().
  */
-function tkufi_service_offer_feature_relation_default_relation_types() {
+function kada_service_offer_feature_relation_default_relation_types() {
   $export = array();
 
   $relation_type = new stdClass();

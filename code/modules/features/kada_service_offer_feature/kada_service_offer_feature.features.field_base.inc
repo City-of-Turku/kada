@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_service_offer_feature.features.field_base.inc
+ * kada_service_offer_feature.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function tkufi_service_offer_feature_field_default_field_bases() {
+function kada_service_offer_feature_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_place_nc_id'

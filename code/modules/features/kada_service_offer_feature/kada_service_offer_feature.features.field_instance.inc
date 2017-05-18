@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_service_offer_feature.features.field_instance.inc
+ * kada_service_offer_feature.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function tkufi_service_offer_feature_field_default_field_instances() {
+function kada_service_offer_feature_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'comment-comment_node_service_offer-comment_body'

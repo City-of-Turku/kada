@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_service_offer_feature.features.user_permission.inc
+ * kada_service_offer_feature.features.user_permission.inc
  */
 
 /**
  * Implements hook_user_default_permissions().
  */
-function tkufi_service_offer_feature_user_default_permissions() {
+function kada_service_offer_feature_user_default_permissions() {
   $permissions = array();
 
   // Exported permission: 'create service_offer content'.

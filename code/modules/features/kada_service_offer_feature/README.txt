@@ -51,15 +51,15 @@ Placed these field bases in this feature because they are unlikely to be used an
 - rules_update_service_offer_sv: Fetches the source translation for Service using NC ID and updates the field translations in Swedish with actions from the custom tkufi_rules_et module. Fetches first all Service offers which share the same Service NC ID, and then loops through them to find the one which has the same Place NC ID.
 
 == VIEWS ==
-- driveturku_services: Provides lists of content through relations. For example "Places per Service" and "Services per Place". Uses Views Accordion.
+- kada_services: Provides lists of content through relations. For example "Places per Service" and "Services per Place". Uses Views Accordion.
 
 == CUSTOM CODE ==
-tkufi_service_offer_feature.module file:
-- tkufi_service_offer_feature_form_alter():
+kada_service_offer_feature.module file:
+- kada_service_offer_feature_form_alter():
   - Custom code for prepopulating a place value for field_provided_at relation field.
-- tkufi_service_offer_feature_block_info():
+- kada_service_offer_feature_block_info():
   - Block for adding service offer to place with a prepopulated value from place.
-- tkufi_service_offer_feature_block_view():
+- kada_service_offer_feature_block_view():
   - Rendering links for adding a new service offer with a prepopulated place value and editing a place.
 
 == Changelog ==

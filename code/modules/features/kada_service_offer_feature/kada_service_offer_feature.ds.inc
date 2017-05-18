@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_service_offer_feature.ds.inc
+ * kada_service_offer_feature.ds.inc
  */
 
 /**
  * Implements hook_ds_field_settings_info().
  */
-function tkufi_service_offer_feature_ds_field_settings_info() {
+function kada_service_offer_feature_ds_field_settings_info() {
   $export = array();
 
   $ds_fieldsetting = new stdClass();
@@ -33,7 +33,7 @@ function tkufi_service_offer_feature_ds_field_settings_info() {
 /**
  * Implements hook_ds_layout_settings_info().
  */
-function tkufi_service_offer_feature_ds_layout_settings_info() {
+function kada_service_offer_feature_ds_layout_settings_info() {
   $export = array();
 
   $ds_layout = new stdClass();

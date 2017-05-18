@@ -4,12 +4,12 @@
  * Code for the TKUFI Service offer feature.
  */
 
-include_once 'tkufi_service_offer_feature.features.inc';
+include_once 'kada_service_offer_feature.features.inc';
 
 /**
  * Implementation of hook_form_alter()
  */
-function tkufi_service_offer_feature_form_alter(&$form, &$form_state, $form_id) {
+function kada_service_offer_feature_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == "service_offer_node_form") {
     // If content editor is using a link from place page to create a new service
     // offer, then try to fetch the given node and prepopulate the form with the
@@ -29,7 +29,7 @@ function tkufi_service_offer_feature_form_alter(&$form, &$form_state, $form_id) 
 /**
  * Implements hook_block_info().
  */
-function tkufi_service_offer_feature_block_info() {
+function kada_service_offer_feature_block_info() {
   $blocks = array();
   $blocks['service_offer_add'] = array(
     'info' => t('Add a service offer to place block'),
@@ -40,7 +40,7 @@ function tkufi_service_offer_feature_block_info() {
 /**
  * Implements hook_block_view().
  */
-function tkufi_service_offer_feature_block_view($delta = '') {
+function kada_service_offer_feature_block_view($delta = '') {
   $block = array();
 
   switch ($delta) {

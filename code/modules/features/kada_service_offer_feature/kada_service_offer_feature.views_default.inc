@@ -1,28 +1,28 @@
 <?php
 /**
  * @file
- * tkufi_service_offer_feature.views_default.inc
+ * kada_service_offer_feature.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function tkufi_service_offer_feature_views_default_views() {
+function kada_service_offer_feature_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'driveturku_services';
+  $view->name = 'kada_services';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Services&Places';
+  $view->human_name = 'KADA Services&Places';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'DriveTurku Services';
+  $handler->display->display_options['title'] = 'KADA Services';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'views_content_cache';
@@ -771,9 +771,9 @@ function tkufi_service_offer_feature_views_default_views() {
   $handler->display->display_options['fields']['path']['element_wrapper_class'] = 'link-to-content';
   $handler->display->display_options['fields']['path']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['path']['absolute'] = TRUE;
-  $translatables['driveturku_services'] = array(
+  $translatables['kada_services'] = array(
     t('Master'),
-    t('DriveTurku Services'),
+    t('KADA Services'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -814,7 +814,7 @@ function tkufi_service_offer_feature_views_default_views() {
     t('[title_field]'),
     t('Show more'),
   );
-  $export['driveturku_services'] = $view;
+  $export['kada_services'] = $view;
 
   return $export;
 }

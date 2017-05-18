@@ -91,8 +91,8 @@ function kada_places_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'tkufi_service_offer_feature-service_offer_add' => array(
-          'module' => 'tkufi_service_offer_feature',
+        'kada_service_offer_feature-service_offer_add' => array(
+          'module' => 'kada_service_offer_feature',
           'delta' => 'service_offer_add',
           'region' => 'tools_container',
           'weight' => '-10',

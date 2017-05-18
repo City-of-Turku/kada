@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_service_offer_feature.features.inc
+ * kada_service_offer_feature.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function tkufi_service_offer_feature_ctools_plugin_api($module = NULL, $api = NULL) {
+function kada_service_offer_feature_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
@@ -25,14 +25,14 @@ function tkufi_service_offer_feature_ctools_plugin_api($module = NULL, $api = NU
 /**
  * Implements hook_views_api().
  */
-function tkufi_service_offer_feature_views_api($module = NULL, $api = NULL) {
+function kada_service_offer_feature_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_node_info().
  */
-function tkufi_service_offer_feature_node_info() {
+function kada_service_offer_feature_node_info() {
   $items = array(
     'service_offer' => array(
       'name' => t('Service offer'),

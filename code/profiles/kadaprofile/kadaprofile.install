@@ -266,7 +266,7 @@ function kadaprofile_install_additional_modules() {
     $modules[] = 'kada_some_content_feature';
   }
   if (!empty($selected_extras['service_offer'])) {
-    $modules[] = 'tkufi_service_offer_feature';
+    $modules[] = 'kada_service_offer_feature';
   }
   if (!empty($selected_extras['service_directory'])) {
     $modules[] = 'kada_service_directory_feature';
@@ -367,7 +367,7 @@ function kadaprofile_install_finished(&$install_state) {
   if (!empty($selected_extras['service_offer'])) {
     $modules[] = 'kada_places_feature';
     $modules[] = 'kada_services_feature';
-    $modules[] = 'tkufi_service_offer_feature';
+    $modules[] = 'kada_service_offer_feature';
   }
   if (!empty($selected_extras['service_directory'])) {
     $modules[] = 'kada_service_directory_feature';
