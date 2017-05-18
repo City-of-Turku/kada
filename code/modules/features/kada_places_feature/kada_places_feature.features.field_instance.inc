@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_places_feature.features.field_instance.inc
+ * kada_places_feature.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function tkufi_places_feature_field_default_field_instances() {
+function kada_places_feature_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'comment-comment_node_place-comment_body'

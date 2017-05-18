@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_places_feature.field_group.inc
+ * kada_places_feature.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function tkufi_places_feature_field_group_info() {
+function kada_places_feature_field_group_info() {
   $field_groups = array();
 
   $field_group = new stdClass();

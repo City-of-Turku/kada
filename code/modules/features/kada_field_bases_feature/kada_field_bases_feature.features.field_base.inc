@@ -434,7 +434,7 @@ function kada_field_bases_feature_field_default_field_bases() {
         'view' => array(
           'args' => array(),
           'display_name' => 'places_title_entityreference',
-          'view_name' => 'driveturku_places_er',
+          'view_name' => 'kada_places_er',
         ),
       ),
       'target_type' => 'node',

@@ -1,16 +1,16 @@
 <?php
 /**
  * @file
- * Code for the TKUFI Places feature.
+ * Code for the KADA Places feature.
  */
 
-include_once 'tkufi_places_feature.features.inc';
+include_once 'kada_places_feature.features.inc';
 /**
  * @Implement hook_views_pre_view().
  * Alter incomming verbal argument to node ID for contextual filtering
  * Create link to event-search page.
  */
-function tkufi_places_feature_views_pre_view(&$view, &$display_id, &$args) {
+function kada_places_feature_views_pre_view(&$view, &$display_id, &$args) {
   if ($view->name == 'kada_event_list' && $view->current_display == 'event_place_list_page') {
     global $language;
     $language = $language->language;
@@ -65,7 +65,7 @@ function tkufi_places_feature_views_pre_view(&$view, &$display_id, &$args) {
   }
 }
 
-function tkufi_places_feature_views_pre_render(&$view) {
+function kada_places_feature_views_pre_render(&$view) {
   if ($view->name == 'kada_event_list' && $view->current_display == 'event_place_list_page') {
     $view->build_info['title'] .= $view->build_info['substitutions']['%1'];
   }
@@ -76,7 +76,7 @@ function tkufi_places_feature_views_pre_render(&$view) {
  * Implements hook_block_info().
  */
 
-function tkufi_places_feature_block_info() {
+function kada_places_feature_block_info() {
   $block['place_events_list_link'] = array(
     'info' => t('Place event list link'),
     'cache' => DRUPAL_CACHE_GLOBAL,
@@ -90,14 +90,14 @@ function tkufi_places_feature_block_info() {
  * Implements hook_block_view().
  */
 
-function tkufi_places_feature_block_view($delta = '') {
+function kada_places_feature_block_view($delta = '') {
   $block = array();
 
   if (module_exists('kada_events_base_feature')) {
     if ($delta == 'place_events_list_link' ) {
       // Get ID from arg()
       $arg = arg(1);
-      $events_found = _tkufi_place_feature_show_event_link($arg);
+      $events_found = _kada_place_feature_show_event_link($arg);
       if ($events_found) {
         // Get alias and explode string to array
         $path_alias = drupal_get_path_alias('node/' . $arg);
@@ -126,7 +126,7 @@ function tkufi_places_feature_block_view($delta = '') {
   return $block;
 }
 
-function _tkufi_place_feature_show_event_link($node_id) {
+function _kada_place_feature_show_event_link($node_id) {
   $node_ids = array();
   $relation_query = relation_query('node', $node_id, 0);
   // Query will return all relations between place and services
@@ -163,7 +163,7 @@ function _tkufi_place_feature_show_event_link($node_id) {
 /**
  * Implements hook_form_alter().
  */
-function tkufi_places_feature_form_alter(&$form, &$form_state, $form_id) {
+function kada_places_feature_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'place_node_form') {
     $address_fields = array(
       'field_address_street',

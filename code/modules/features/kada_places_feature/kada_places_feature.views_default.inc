@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_places_feature.views_default.inc
+ * kada_places_feature.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function tkufi_places_feature_views_default_views() {
+function kada_places_feature_views_default_views() {
   $export = array();
 
   $view = new view();
@@ -179,18 +179,18 @@ function tkufi_places_feature_views_default_views() {
   $export['kada_place_map'] = $view;
 
   $view = new view();
-  $view->name = 'driveturku_places';
+  $view->name = 'kada_places';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Places';
+  $view->human_name = 'KADA Places';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'DriveTurku Places';
+  $handler->display->display_options['title'] = 'KADA Places';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -452,9 +452,9 @@ function tkufi_places_feature_views_default_views() {
   $handler->display->display_options['tab_options']['type'] = 'tab';
   $handler->display->display_options['tab_options']['title'] = 'Places';
   $handler->display->display_options['tab_options']['weight'] = '0';
-  $translatables['driveturku_places'] = array(
+  $translatables['kada_places'] = array(
     t('Master'),
-    t('DriveTurku Places'),
+    t('KADA Places'),
     t('more'),
     t('Filter'),
     t('Reset'),
@@ -486,14 +486,14 @@ function tkufi_places_feature_views_default_views() {
     t('Data export'),
     t('Places Address Migration'),
   );
-  $export['driveturku_places'] = $view;
+  $export['kada_places'] = $view;
 
   $view = new view();
-  $view->name = 'driveturku_places_er';
+  $view->name = 'kada_places_er';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Places ER';
+  $view->human_name = 'KADA Places ER';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -592,7 +592,7 @@ function tkufi_places_feature_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entityreference_fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $translatables['driveturku_places_er'] = array(
+  $translatables['kada_places_er'] = array(
     t('Master'),
     t('more'),
     t('Apply'),
@@ -610,7 +610,7 @@ function tkufi_places_feature_views_default_views() {
     t('Titles ER'),
     t('Title search for entity reference'),
   );
-  $export['driveturku_places_er'] = $view;
+  $export['kada_places_er'] = $view;
 
   return $export;
 }

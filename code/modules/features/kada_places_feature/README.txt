@@ -7,8 +7,8 @@ Places are physical locations which offer for example services.
 - place: Displays Services of the Place. Displays links for managing service offers per place.
 
 == CUSTOM CODE ==
-- tkufi_places_features.module:
-  - tkufi_places_feature_form_alter(): Changes to the place node form.
+- kada_places_features.module:
+  - kada_places_feature_form_alter(): Changes to the place node form.
 
 == FIELD INSTANCES ==
 - field_description: Describes the place, field translation enabled.

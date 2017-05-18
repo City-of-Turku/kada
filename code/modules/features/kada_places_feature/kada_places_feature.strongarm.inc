@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_places_feature.strongarm.inc
+ * kada_places_feature.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function tkufi_places_feature_strongarm() {
+function kada_places_feature_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

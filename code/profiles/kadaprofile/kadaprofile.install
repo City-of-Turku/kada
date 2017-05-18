@@ -365,7 +365,7 @@ function kadaprofile_install_finished(&$install_state) {
     $modules[] = 'kada_some_content_feature';
   }
   if (!empty($selected_extras['service_offer'])) {
-    $modules[] = 'tkufi_places_feature';
+    $modules[] = 'kada_places_feature';
     $modules[] = 'kada_services_feature';
     $modules[] = 'tkufi_service_offer_feature';
   }

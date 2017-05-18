@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * tkufi_places_feature.context.inc
+ * kada_places_feature.context.inc
  */
 
 /**
  * Implements hook_context_default_contexts().
  */
-function tkufi_places_feature_context_default_contexts() {
+function kada_places_feature_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();
@@ -41,14 +41,14 @@ function tkufi_places_feature_context_default_contexts() {
           'region' => 'header',
           'weight' => '-10',
         ),
-        'views-driveturku_services-services' => array(
+        'views-kada_services-services' => array(
           'module' => 'views',
-          'delta' => 'driveturku_services-services',
+          'delta' => 'kada_services-services',
           'region' => 'content',
           'weight' => '1',
         ),
-        'tkufi_places_feature-place_events_list_link' => array(
-          'module' => 'tkufi_places_feature',
+        'kada_places_feature-place_events_list_link' => array(
+          'module' => 'kada_places_feature',
           'delta' => 'place_events_list_link',
           'region' => 'content',
           'weight' => '2',
