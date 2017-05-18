@@ -136,9 +136,9 @@ function kada_sections_feature_context_default_contexts() {
           'region' => 'header',
           'weight' => '-10',
         ),
-        'views-driveturku_recommended-block' => array(
+        'views-kada_recommended-block' => array(
           'module' => 'views',
-          'delta' => 'driveturku_recommended-block',
+          'delta' => 'kada_recommended-block',
           'region' => 'header',
           'weight' => '-9',
         ),

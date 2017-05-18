@@ -69,8 +69,8 @@ NOTE: Terms are not translated because it makes it complicated to select correct
 All sorts of sitewide variables exported to code. Other features have more variables if they fit better there.
 
 == VIEWS ==
-- driveturku_accessibilities: Accessiblities per Place from referenced accessibility field collections.
-driveturku_contact_information: Contact information in teaser display mode per content from referenced Place.
+- kada_accessibilities: Accessiblities per Place from referenced accessibility field collections.
+- kada_contact_information: Contact information in teaser display mode per content from referenced Place.
 
 == WYSIWYG PROFILES ==
 Exported WYSIWYG module configuration for wysiwyg and full_html text formats.

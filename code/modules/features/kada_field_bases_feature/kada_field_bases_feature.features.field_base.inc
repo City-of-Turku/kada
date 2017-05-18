@@ -161,7 +161,7 @@ function kada_field_bases_feature_field_default_field_bases() {
         'view' => array(
           'args' => array(),
           'display_name' => 'entityreference_1',
-          'view_name' => 'driveturku_accessibilities',
+          'view_name' => 'kada_accessibilities',
         ),
       ),
       'target_type' => 'taxonomy_term',

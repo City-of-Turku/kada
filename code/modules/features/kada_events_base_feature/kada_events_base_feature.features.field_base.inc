@@ -49,7 +49,7 @@ function kada_events_base_feature_field_default_field_bases() {
         'view' => array(
           'args' => array(),
           'display_name' => 'entityreference_1',
-          'view_name' => 'driveturku_eventcalendar_er',
+          'view_name' => 'kada_eventcalendar_er',
         ),
       ),
       'target_type' => 'node',

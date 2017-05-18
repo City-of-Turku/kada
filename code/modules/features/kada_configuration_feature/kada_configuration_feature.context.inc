@@ -135,9 +135,9 @@ function kada_configuration_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-driveturku_recommended-block' => array(
+        'views-kada_recommended-block' => array(
           'module' => 'views',
-          'delta' => 'driveturku_recommended-block',
+          'delta' => 'kada_recommended-block',
           'region' => 'header',
           'weight' => '-10',
         ),
