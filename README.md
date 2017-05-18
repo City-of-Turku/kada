@@ -56,9 +56,6 @@ We kindly ask you to report security issues in a responsible manner: Report your
 
 ## PROJECT README
 
-Some instructions which are not related to the vagrant nor ansible
-setup.
-
 ### PROJECT STRUCTURE
 
 ```<root>
@@ -114,42 +111,30 @@ drush.sh
 	- Is supposed to be used when running build outside vagrant box (not tested, better to login to vagrant and build there for now)
 ```
 
-### QUICK MANUAL SETUP
+### INSTALLING
 
-Note, this assumes you already did a successful "vagrant up".
+You need to have a Drupal-compatible development environment, such as the ones in https://github.com/CitrusSolutions/docker-php/tree/stable or
+https://github.com/wunderkraut/WunderTools.
 
-1. Go to inside the box
+1. Build Drupal from the make file
    ```
-   $ vagrant ssh
-   ```
-2. Build Drupal from the make file
-   ```
-   $ cd /vagrant/drupal
+   $ cd kada
    $ ./build.sh new
    ```
-3. Do a site-install at http://local.kada.fi/install.php?profile=kadaprofile (try with port 8080 if varnish is preventing install).
+2. Do a site-install at http://local.kada.fi/install.php?profile=kadaprofile (try with port 8080 if varnish is preventing install).
   - Choose some features to enable during install
   - Events base feature is not yet working with the site-install
   - Domains will give notice during install, can be ignored
   - If you get timeouts, just refresh the page and batch process will continue
-4. When install is finished, visit the site at http://local.kada.fi
+3. When install is finished, visit the site at http://local.kada.fi
   - The cache has to be rebuilt and features reverted, probably a couple of times before things start working
   - If some database error occurs due to missing module, add the module to correct feature's .info file.
-5. Enable User feature and revert it
+4. Enable User feature and revert it
   - drush en tkufi_user_feature -y; drush fr tkufi_user_feature -y
   - You can login with editor:secretpass to see what a content editor has access to
 
 ### SYNCING FROM DEVELOPMENT/PRODUCTION
 
-#### PREPARING (optional)
-
-Copy your own SSH public key to Vagrant's authorized keys (to make it easy to connect with Sequel Pro for example)
-
-```
-$ pbcopy < ~/.ssh/id_rsa.pub (copies the public key to clipboard)
-$ vagrant ssh
-$ vi ~/.ssh/authorized_keys (paste the contents of your publickey to the end of this file)
-```
 #### RUNNING SYNC SCRIPTS
 
 There is a script for syncing database + files from development.
@@ -162,14 +147,6 @@ $ ./drupal/kada_devsync.sh
 After syncing database and files, syncscript runs additional commands, like downloads+enables Devel module.
 
 ### DEVELOPMENT
-
-#### ENVIRONMENT
-
-All the tools required for managing the development environment are built into the vagrant box and means that all of these commands mentioned below should be run inside the vagrant box. You can access the vagrant box with:
-
-```
-$ vagrant ssh
-```
 
 #### BUILD / BRANCH CHECKOUT
 
