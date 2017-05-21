@@ -21,14 +21,14 @@ Because the client wants to keep the main navigation simple (max. 3 levels in th
 - field_target_audience: Has been added only for content editors to provide metadata about content. Can be used later for "context aware" content etc.
 - body: Textarea with WYSIWYG text format (see configuration module for more info about the text format).
 - field_info_box: Typical small gray infobox next to body with WYSIWYG text format.
-- field_related_content: Liftups can be referenced here and they will appear in the sidebar. Entityreference view (driveturku_liftups) used in the field configuration is defined in tkufi_liftups_feature.
+- field_related_content: Liftups can be referenced here and they will appear in the sidebar. Entityreference view (kada_liftups) used in the field configuration is defined in kada_liftups_feature.
 - field_topic: Page in the 2nd level of the main navigation is called a "service package" (Palvelukokonaisuus), which consists of 0 or more Topics (Aihekokonaisuus) referenced in this field. The Topics are displayed on the Service package page with a title and image linked to the page.
 - field_subpage: Page in the 3rd level of the main navigation (more or less) is called a Topic (Aihekokonaisuus) and it will have 0 or more subpages (alasivu) referenced here. These subpages are displayed on the Topic page with titles linked to the subpages themselves.
 - og_group_ref: Section (organic group) can be assigned to a page, which will make it possible to assign it to a Group menu, which will display a group specific menu.
 - field_theme_main_page: Boolean field for marking a page as theme main page. This is a condition in a context.
 
 == VIEWS ==
-driveturku_pages:
+kada_pages:
 - Titles ER (page_er): Entityreference view which is used for field_topic and field_subpage.
 - Top image (top_image): Block which displays the main image of the page and it is placed to the header region in page context. Contextual filter is used to get the page user is viewing. Three relationships use the entityreferences of field_topic and field_subpage in such fashion that a main image from "top-down" is displayed. Subpage gets main image from either Topic or Service package if it does not have an image of its own. Topic gets main image from Service package if it does not have a main image. Worst case scenario is if a page is referenced as both a topic and subpage, then it will have two images. But this should not happen.
 

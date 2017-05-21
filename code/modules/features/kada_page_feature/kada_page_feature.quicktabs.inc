@@ -20,7 +20,7 @@ function kada_page_feature_quicktabs_default_quicktabs() {
   $quicktabs->title = 'Places';
   $quicktabs->tabs = array(
     0 => array(
-      'vid' => 'driveturku_services',
+      'vid' => 'kada_services',
       'display' => 'places_page',
       'args' => '',
       'title' => 'List',
@@ -28,7 +28,7 @@ function kada_page_feature_quicktabs_default_quicktabs() {
       'type' => 'view',
     ),
     1 => array(
-      'vid' => 'driveturku_service_map',
+      'vid' => 'kada_service_map',
       'display' => 'map_page',
       'args' => '',
       'title' => 'Map',

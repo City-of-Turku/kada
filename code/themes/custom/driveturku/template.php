@@ -104,7 +104,7 @@ function driveturku_process_flexslider_views(&$vars) {
       $i++;
     }
     // Add classes to event types
-    if ($vars['view']->current_display == "turkukalenteri") {
+    if ($vars['view']->current_display == "kadacalendar") {
       $i = 0;
       foreach ($vars['rows'] as $id => $row) {
         if ($row->_field_data['nid']['entity']->type == "event" &&
@@ -312,7 +312,7 @@ function driveturku_views_pre_render(&$view) {
   }
 
   // Add link to map popup title
-  if ($view->name == 'driveturku_services_on_map' && $view->current_display == 'ol_service_data') {
+  if ($view->name == 'kada_services_on_map' && $view->current_display == 'ol_service_data') {
     foreach ($view->result as $result) {
       $language = $result->_field_data['nid']['entity']->language;
       $title = $result->_field_data['nid']['entity']->title_field[$language][0]['safe_value'];

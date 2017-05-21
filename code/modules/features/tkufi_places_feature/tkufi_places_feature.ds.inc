@@ -259,7 +259,7 @@ function tkufi_places_feature_ds_custom_fields_info() {
   );
   $ds_field->ui_limit = 'place|*';
   $ds_field->properties = array(
-    'block' => 'views|driveturku_place_map-map',
+    'block' => 'views|kada_place_map-map',
     'block_render' => '3',
   );
   $export['map_place'] = $ds_field;

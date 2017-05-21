@@ -58,8 +58,8 @@ function kada_events_base_feature_subqueue_page() {
 
   // Queues array contains main queue names that contains subqueues
   $queues = array(
-    'carousel' => 'turkukalenteri_front_carousel_sub',
-    'mosaic' => 'turkukalenteri_front_mosaic_sub',
+    'carousel' => 'kadacalendar_front_carousel_sub',
+    'mosaic' => 'kadacalendar_front_mosaic_sub',
   );
   foreach ($queues as $queue_name => $queue) {
     // Load subqueues of main queue
@@ -171,8 +171,8 @@ function kada_events_base_feature_settings($form, &$form_state) {
  */
 function kada_events_base_feature_views_post_render(&$view, &$output, &$cache) {
   // Check if we are in hobbies frontpage.
-  if ($view->name == 'driveturku_top_carousel'
-    && $view->current_display == 'section_turkukalenteri_hobbies_front') {
+  if ($view->name == 'kada_top_carousel'
+    && $view->current_display == 'section_kadacalendar_hobbies_front') {
     // If atom is set for hobbies frontpage, render it.
     $hobbies_atom = scald_atom_load(variable_get('tkufi_hobbies_front_bg_atom', ''));
     if ($hobbies_atom) {
@@ -196,8 +196,8 @@ function kada_events_base_feature_views_pre_build(&$view) {
     }
     $front_nid = $frontpage[1];
     // Use real frontpage nid as argument for top carousel and footer.
-    if ($view->name == 'driveturku_top_carousel'
-      && in_array($view->current_display, array('section', 'section_turkukalenteri_hobbies_front'))) {
+    if ($view->name == 'kada_top_carousel'
+      && in_array($view->current_display, array('section', 'section_kadacalendar_hobbies_front'))) {
       $view->args[0] = $front_nid;
     }
     else if ($view->name == 'kada_section_footer') {
@@ -588,7 +588,7 @@ function kada_events_base_feature_node_delete($node) {
  * Implements hook_views_pre_render().
  */
 function kada_events_base_feature_views_pre_render(&$view) {
-  if ($view->name == 'driveturku_event_list' && $view->current_display == 'event_tab_happening_recurring') {
+  if ($view->name == 'kada_event_list' && $view->current_display == 'event_tab_happening_recurring') {
     $super_relations = array();
     foreach ($view->result as $key => &$result) {
       // Super event nid

@@ -11,7 +11,7 @@ include_once 'tkufi_places_feature.features.inc';
  * Create link to event-search page.
  */
 function tkufi_places_feature_views_pre_view(&$view, &$display_id, &$args) {
-  if ($view->name == 'driveturku_event_list' && $view->current_display == 'event_place_list_page') {
+  if ($view->name == 'kada_event_list' && $view->current_display == 'event_place_list_page') {
     global $language;
     $language = $language->language;
     // Url aliases
@@ -66,7 +66,7 @@ function tkufi_places_feature_views_pre_view(&$view, &$display_id, &$args) {
 }
 
 function tkufi_places_feature_views_pre_render(&$view) {
-  if ($view->name == 'driveturku_event_list' && $view->current_display == 'event_place_list_page') {
+  if ($view->name == 'kada_event_list' && $view->current_display == 'event_place_list_page') {
     $view->build_info['title'] .= $view->build_info['substitutions']['%1'];
   }
 }
