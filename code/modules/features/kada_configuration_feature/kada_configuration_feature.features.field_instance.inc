@@ -10,7 +10,7 @@
 function kada_configuration_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-webform-body'
+  // Exported field_instance: 'node-webform-body'.
   $field_instances['node-webform-body'] = array(
     'bundle' => 'webform',
     'default_value' => NULL,
@@ -95,7 +95,7 @@ function kada_configuration_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-webform-og_group_ref'
+  // Exported field_instance: 'node-webform-og_group_ref'.
   $field_instances['node-webform-og_group_ref'] = array(
     'bundle' => 'webform',
     'default_value' => NULL,
@@ -154,7 +154,7 @@ function kada_configuration_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-accessibility-description_field'
+  // Exported field_instance: 'taxonomy_term-accessibility-description_field'.
   $field_instances['taxonomy_term-accessibility-description_field'] = array(
     'bundle' => 'accessibility',
     'default_value' => NULL,
@@ -228,7 +228,7 @@ function kada_configuration_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-accessibility-field_icon'
+  // Exported field_instance: 'taxonomy_term-accessibility-field_icon'.
   $field_instances['taxonomy_term-accessibility-field_icon'] = array(
     'bundle' => 'accessibility',
     'deleted' => 0,
@@ -284,7 +284,7 @@ function kada_configuration_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-accessibility-field_mds_code'
+  // Exported field_instance: 'taxonomy_term-accessibility-field_mds_code'.
   $field_instances['taxonomy_term-accessibility-field_mds_code'] = array(
     'bundle' => 'accessibility',
     'default_value' => NULL,
@@ -324,7 +324,7 @@ function kada_configuration_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-accessibility-name_field'
+  // Exported field_instance: 'taxonomy_term-accessibility-name_field'.
   $field_instances['taxonomy_term-accessibility-name_field'] = array(
     'bundle' => 'accessibility',
     'default_value' => NULL,
@@ -372,7 +372,7 @@ function kada_configuration_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-district-field_location'
+  // Exported field_instance: 'taxonomy_term-district-field_location'.
   $field_instances['taxonomy_term-district-field_location'] = array(
     'bundle' => 'district',
     'default_value' => array(),
@@ -433,7 +433,7 @@ function kada_configuration_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-district-field_mds_code'
+  // Exported field_instance: 'taxonomy_term-district-field_mds_code'.
   $field_instances['taxonomy_term-district-field_mds_code'] = array(
     'bundle' => 'district',
     'default_value' => NULL,
@@ -473,7 +473,7 @@ function kada_configuration_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-municipality-field_mds_code'
+  // Exported field_instance: 'taxonomy_term-municipality-field_mds_code'.
   $field_instances['taxonomy_term-municipality-field_mds_code'] = array(
     'bundle' => 'municipality',
     'default_value' => NULL,
@@ -509,7 +509,7 @@ function kada_configuration_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-municipality-name_field'
+  // Exported field_instance: 'taxonomy_term-municipality-name_field'.
   $field_instances['taxonomy_term-municipality-name_field'] = array(
     'bundle' => 'municipality',
     'default_value' => NULL,
@@ -549,7 +549,7 @@ function kada_configuration_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-service_classification-name_field'
+  // Exported field_instance: 'taxonomy_term-service_classification-name_field'.
   $field_instances['taxonomy_term-service_classification-name_field'] = array(
     'bundle' => 'service_classification',
     'default_value' => NULL,
@@ -606,7 +606,7 @@ function kada_configuration_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-theme-field_color_name'
+  // Exported field_instance: 'taxonomy_term-theme-field_color_name'.
   $field_instances['taxonomy_term-theme-field_color_name'] = array(
     'bundle' => 'theme',
     'default_value' => NULL,

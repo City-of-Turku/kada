@@ -10,21 +10,13 @@
 function kada_configuration_feature_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'description_field'
+  // Exported field_base: 'description_field'.
   $field_bases['description_field'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'description_field',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -39,21 +31,13 @@ function kada_configuration_feature_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_classification'
+  // Exported field_base: 'field_classification'.
   $field_bases['field_classification'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_classification',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -75,14 +59,13 @@ function kada_configuration_feature_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_color_name'
+  // Exported field_base: 'field_color_name'.
   $field_bases['field_color_name'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_color_name',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -107,21 +90,13 @@ function kada_configuration_feature_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_district'
+  // Exported field_base: 'field_district'.
   $field_bases['field_district'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_district',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -143,21 +118,13 @@ function kada_configuration_feature_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_keywords'
+  // Exported field_base: 'field_keywords'.
   $field_bases['field_keywords'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_keywords',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -179,14 +146,13 @@ function kada_configuration_feature_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_mds_code'
+  // Exported field_base: 'field_mds_code'.
   $field_bases['field_mds_code'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_mds_code',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'number',
@@ -197,14 +163,13 @@ function kada_configuration_feature_field_default_field_bases() {
     'type' => 'number_integer',
   );
 
-  // Exported field_base: 'field_radioactivity'
+  // Exported field_base: 'field_radioactivity'.
   $field_bases['field_radioactivity'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_radioactivity',
-    'foreign keys' => array(),
     'indexes' => array(
       'energy' => array(
         0 => 'radioactivity_energy',
@@ -219,21 +184,13 @@ function kada_configuration_feature_field_default_field_bases() {
     'type' => 'radioactivity',
   );
 
-  // Exported field_base: 'field_target_audience'
+  // Exported field_base: 'field_target_audience'.
   $field_bases['field_target_audience'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_target_audience',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -255,21 +212,13 @@ function kada_configuration_feature_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_theme'
+  // Exported field_base: 'field_theme'.
   $field_bases['field_theme'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_theme',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
