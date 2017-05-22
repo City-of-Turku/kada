@@ -10,7 +10,7 @@
 function kada_events_base_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-event-field_address'
+  // Exported field_instance: 'node-event-field_address'.
   $field_instances['node-event-field_address'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -153,7 +153,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_contact_email'
+  // Exported field_instance: 'node-event-field_contact_email'.
   $field_instances['node-event-field_contact_email'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -254,7 +254,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_contact_phone_number'
+  // Exported field_instance: 'node-event-field_contact_phone_number'.
   $field_instances['node-event-field_contact_phone_number'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -393,7 +393,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_content_image_et'
+  // Exported field_instance: 'node-event-field_content_image_et'.
   $field_instances['node-event-field_content_image_et'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -538,7 +538,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_content_image_ext'
+  // Exported field_instance: 'node-event-field_content_image_ext'.
   $field_instances['node-event-field_content_image_ext'] = array(
     'bundle' => 'event',
     'deleted' => 0,
@@ -646,7 +646,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_content_image_ext_rights'
+  // Exported field_instance: 'node-event-field_content_image_ext_rights'.
   $field_instances['node-event-field_content_image_ext_rights'] = array(
     'bundle' => 'event',
     'default_value' => array(
@@ -750,7 +750,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_date_repeat'
+  // Exported field_instance: 'node-event-field_date_repeat'.
   $field_instances['node-event-field_date_repeat'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -861,7 +861,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_date_repeat_extra'
+  // Exported field_instance: 'node-event-field_date_repeat_extra'.
   $field_instances['node-event-field_date_repeat_extra'] = array(
     'bundle' => 'event',
     'deleted' => 0,
@@ -971,7 +971,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_date_type'
+  // Exported field_instance: 'node-event-field_date_type'.
   $field_instances['node-event-field_date_type'] = array(
     'bundle' => 'event',
     'default_value' => array(
@@ -1078,7 +1078,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_date_vignette'
+  // Exported field_instance: 'node-event-field_date_vignette'.
   $field_instances['node-event-field_date_vignette'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1216,7 +1216,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_description'
+  // Exported field_instance: 'node-event-field_description'.
   $field_instances['node-event-field_description'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1360,7 +1360,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_district'
+  // Exported field_instance: 'node-event-field_district'.
   $field_instances['node-event-field_district'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1459,7 +1459,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_email'
+  // Exported field_instance: 'node-event-field_email'.
   $field_instances['node-event-field_email'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1559,7 +1559,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_event_address_extension'
+  // Exported field_instance: 'node-event-field_event_address_extension'.
   $field_instances['node-event-field_event_address_extension'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1701,7 +1701,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_event_date'
+  // Exported field_instance: 'node-event-field_event_date'.
   $field_instances['node-event-field_event_date'] = array(
     'bundle' => 'event',
     'deleted' => 0,
@@ -1920,7 +1920,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_event_facebook_page_et'
+  // Exported field_instance: 'node-event-field_event_facebook_page_et'.
   $field_instances['node-event-field_event_facebook_page_et'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -2044,7 +2044,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_event_free_admission'
+  // Exported field_instance: 'node-event-field_event_free_admission'.
   $field_instances['node-event-field_event_free_admission'] = array(
     'bundle' => 'event',
     'default_value' => array(
@@ -2148,7 +2148,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_event_import_id'
+  // Exported field_instance: 'node-event-field_event_import_id'.
   $field_instances['node-event-field_event_import_id'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -2284,7 +2284,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_event_organizer_et'
+  // Exported field_instance: 'node-event-field_event_organizer_et'.
   $field_instances['node-event-field_event_organizer_et'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -2427,7 +2427,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_event_price_et'
+  // Exported field_instance: 'node-event-field_event_price_et'.
   $field_instances['node-event-field_event_price_et'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -2568,7 +2568,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_event_signup_url_et'
+  // Exported field_instance: 'node-event-field_event_signup_url_et'.
   $field_instances['node-event-field_event_signup_url_et'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -2692,7 +2692,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_event_tickets_url_et'
+  // Exported field_instance: 'node-event-field_event_tickets_url_et'.
   $field_instances['node-event-field_event_tickets_url_et'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -2820,7 +2820,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_event_turnout'
+  // Exported field_instance: 'node-event-field_event_turnout'.
   $field_instances['node-event-field_event_turnout'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -2959,7 +2959,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_event_twitter_page_et'
+  // Exported field_instance: 'node-event-field_event_twitter_page_et'.
   $field_instances['node-event-field_event_twitter_page_et'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -3083,7 +3083,7 @@ function kada_events_base_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_event_types'
+  // Exported field_instance: 'node-event-field_event_types'.
   $field_instances['node-event-field_event_types'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -3190,7 +3190,7 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
     ),
   );
 
-  // Exported field_instance: 'node-event-field_keywords_et'
+  // Exported field_instance: 'node-event-field_keywords_et'.
   $field_instances['node-event-field_keywords_et'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -3293,7 +3293,7 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
     ),
   );
 
-  // Exported field_instance: 'node-event-field_last_day_to_sign_up'
+  // Exported field_instance: 'node-event-field_last_day_to_sign_up'.
   $field_instances['node-event-field_last_day_to_sign_up'] = array(
     'bundle' => 'event',
     'deleted' => 0,
@@ -3421,7 +3421,7 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
     ),
   );
 
-  // Exported field_instance: 'node-event-field_lead_paragraph_et'
+  // Exported field_instance: 'node-event-field_lead_paragraph_et'.
   $field_instances['node-event-field_lead_paragraph_et'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -3579,7 +3579,7 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
     ),
   );
 
-  // Exported field_instance: 'node-event-field_location'
+  // Exported field_instance: 'node-event-field_location'.
   $field_instances['node-event-field_location'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -3703,7 +3703,7 @@ You can place multiple single point selections.',
     ),
   );
 
-  // Exported field_instance: 'node-event-field_person_in_charge'
+  // Exported field_instance: 'node-event-field_person_in_charge'.
   $field_instances['node-event-field_person_in_charge'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -3841,7 +3841,7 @@ You can place multiple single point selections.',
     ),
   );
 
-  // Exported field_instance: 'node-event-field_phone'
+  // Exported field_instance: 'node-event-field_phone'.
   $field_instances['node-event-field_phone'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -3979,7 +3979,7 @@ You can place multiple single point selections.',
     ),
   );
 
-  // Exported field_instance: 'node-event-field_provided_at'
+  // Exported field_instance: 'node-event-field_provided_at'.
   $field_instances['node-event-field_provided_at'] = array(
     'bundle' => 'event',
     'deleted' => 0,
@@ -4094,7 +4094,7 @@ You can place multiple single point selections.',
     ),
   );
 
-  // Exported field_instance: 'node-event-field_radioactivity'
+  // Exported field_instance: 'node-event-field_radioactivity'.
   $field_instances['node-event-field_radioactivity'] = array(
     'bundle' => 'event',
     'default_value' => array(
@@ -4205,7 +4205,7 @@ You can place multiple single point selections.',
     ),
   );
 
-  // Exported field_instance: 'node-event-field_related_content_et'
+  // Exported field_instance: 'node-event-field_related_content_et'.
   $field_instances['node-event-field_related_content_et'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -4318,7 +4318,7 @@ You can place multiple single point selections.',
     ),
   );
 
-  // Exported field_instance: 'node-event-field_super_event'
+  // Exported field_instance: 'node-event-field_super_event'.
   $field_instances['node-event-field_super_event'] = array(
     'bundle' => 'event',
     'deleted' => 0,
@@ -4428,7 +4428,7 @@ You can place multiple single point selections.',
     ),
   );
 
-  // Exported field_instance: 'node-event-field_target_audience'
+  // Exported field_instance: 'node-event-field_target_audience'.
   $field_instances['node-event-field_target_audience'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -4526,7 +4526,7 @@ You can place multiple single point selections.',
     ),
   );
 
-  // Exported field_instance: 'node-event-field_website_et'
+  // Exported field_instance: 'node-event-field_website_et'.
   $field_instances['node-event-field_website_et'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -4650,7 +4650,7 @@ You can place multiple single point selections.',
     ),
   );
 
-  // Exported field_instance: 'node-event-og_group_ref'
+  // Exported field_instance: 'node-event-og_group_ref'.
   $field_instances['node-event-og_group_ref'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -4772,7 +4772,7 @@ You can place multiple single point selections.',
     ),
   );
 
-  // Exported field_instance: 'node-event-title_field'
+  // Exported field_instance: 'node-event-title_field'.
   $field_instances['node-event-title_field'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -4947,7 +4947,7 @@ You can place multiple single point selections.',
     ),
   );
 
-  // Exported field_instance: 'relation-super_event-endpoints'
+  // Exported field_instance: 'relation-super_event-endpoints'.
   $field_instances['relation-super_event-endpoints'] = array(
     'bundle' => 'super_event',
     'default_value' => NULL,
@@ -5002,7 +5002,7 @@ You can place multiple single point selections.',
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-event_types-field_url_keyword'
+  // Exported field_instance: 'taxonomy_term-event_types-field_url_keyword'.
   $field_instances['taxonomy_term-event_types-field_url_keyword'] = array(
     'bundle' => 'event_types',
     'default_value' => NULL,
