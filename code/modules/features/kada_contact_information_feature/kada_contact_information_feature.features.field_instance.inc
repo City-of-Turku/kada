@@ -10,7 +10,7 @@
 function kada_contact_information_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_person-comment_body'
+  // Exported field_instance: 'comment-comment_node_person-comment_body'.
   $field_instances['comment-comment_node_person-comment_body'] = array(
     'bundle' => 'comment_node_person',
     'default_value' => NULL,
@@ -47,7 +47,8 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'comment-comment_node_position_of_trust-comment_body'
+  // Exported field_instance:
+  // 'comment-comment_node_position_of_trust-comment_body'.
   $field_instances['comment-comment_node_position_of_trust-comment_body'] = array(
     'bundle' => 'comment_node_position_of_trust',
     'default_value' => NULL,
@@ -84,7 +85,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_account_name'
+  // Exported field_instance: 'node-person-field_account_name'.
   $field_instances['node-person-field_account_name'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -175,7 +176,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_assistant'
+  // Exported field_instance: 'node-person-field_assistant'.
   $field_instances['node-person-field_assistant'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -243,7 +244,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_email_single'
+  // Exported field_instance: 'node-person-field_email_single'.
   $field_instances['node-person-field_email_single'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -304,7 +305,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_employee_title'
+  // Exported field_instance: 'node-person-field_employee_title'.
   $field_instances['node-person-field_employee_title'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -408,7 +409,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_fax_number'
+  // Exported field_instance: 'node-person-field_fax_number'.
   $field_instances['node-person-field_fax_number'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -511,7 +512,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_first_name'
+  // Exported field_instance: 'node-person-field_first_name'.
   $field_instances['node-person-field_first_name'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -615,7 +616,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_mobile_phone'
+  // Exported field_instance: 'node-person-field_mobile_phone'.
   $field_instances['node-person-field_mobile_phone'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -718,7 +719,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_mobile_phone_work'
+  // Exported field_instance: 'node-person-field_mobile_phone_work'.
   $field_instances['node-person-field_mobile_phone_work'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -821,7 +822,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_municipality'
+  // Exported field_instance: 'node-person-field_municipality'.
   $field_instances['node-person-field_municipality'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -912,7 +913,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_office_tr'
+  // Exported field_instance: 'node-person-field_office_tr'.
   $field_instances['node-person-field_office_tr'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -968,7 +969,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_person_image'
+  // Exported field_instance: 'node-person-field_person_image'.
   $field_instances['node-person-field_person_image'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -1047,7 +1048,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_person_type'
+  // Exported field_instance: 'node-person-field_person_type'.
   $field_instances['node-person-field_person_type'] = array(
     'bundle' => 'person',
     'default_value' => array(),
@@ -1098,7 +1099,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_phone'
+  // Exported field_instance: 'node-person-field_phone'.
   $field_instances['node-person-field_phone'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -1201,7 +1202,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_phone_switch'
+  // Exported field_instance: 'node-person-field_phone_switch'.
   $field_instances['node-person-field_phone_switch'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -1304,7 +1305,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_political_party'
+  // Exported field_instance: 'node-person-field_political_party'.
   $field_instances['node-person-field_political_party'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -1378,7 +1379,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_postal_code'
+  // Exported field_instance: 'node-person-field_postal_code'.
   $field_instances['node-person-field_postal_code'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -1469,7 +1470,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_profession'
+  // Exported field_instance: 'node-person-field_profession'.
   $field_instances['node-person-field_profession'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -1572,7 +1573,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_street_address'
+  // Exported field_instance: 'node-person-field_street_address'.
   $field_instances['node-person-field_street_address'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -1663,7 +1664,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_superior'
+  // Exported field_instance: 'node-person-field_superior'.
   $field_instances['node-person-field_superior'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -1731,7 +1732,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_surname'
+  // Exported field_instance: 'node-person-field_surname'.
   $field_instances['node-person-field_surname'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -1835,7 +1836,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_task_description'
+  // Exported field_instance: 'node-person-field_task_description'.
   $field_instances['node-person-field_task_description'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -1939,7 +1940,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-field_visiting_address'
+  // Exported field_instance: 'node-person-field_visiting_address'.
   $field_instances['node-person-field_visiting_address'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -2032,7 +2033,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-person-title_field'
+  // Exported field_instance: 'node-person-title_field'.
   $field_instances['node-person-title_field'] = array(
     'bundle' => 'person',
     'default_value' => NULL,
@@ -2137,7 +2138,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-position_of_trust-field_deputy_member'
+  // Exported field_instance: 'node-position_of_trust-field_deputy_member'.
   $field_instances['node-position_of_trust-field_deputy_member'] = array(
     'bundle' => 'position_of_trust',
     'default_value' => NULL,
@@ -2201,7 +2202,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-position_of_trust-field_periodic_duty_time'
+  // Exported field_instance: 'node-position_of_trust-field_periodic_duty_time'.
   $field_instances['node-position_of_trust-field_periodic_duty_time'] = array(
     'bundle' => 'position_of_trust',
     'deleted' => 0,
@@ -2274,7 +2275,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-position_of_trust-field_trust_unit'
+  // Exported field_instance: 'node-position_of_trust-field_trust_unit'.
   $field_instances['node-position_of_trust-field_trust_unit'] = array(
     'bundle' => 'position_of_trust',
     'default_value' => NULL,
@@ -2336,7 +2337,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-position_of_trust-field_trustee'
+  // Exported field_instance: 'node-position_of_trust-field_trustee'.
   $field_instances['node-position_of_trust-field_trustee'] = array(
     'bundle' => 'position_of_trust',
     'deleted' => 0,
@@ -2393,7 +2394,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-position_of_trust-field_trustee_role'
+  // Exported field_instance: 'node-position_of_trust-field_trustee_role'.
   $field_instances['node-position_of_trust-field_trustee_role'] = array(
     'bundle' => 'position_of_trust',
     'default_value' => NULL,
@@ -2455,7 +2456,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-position_of_trust-title_field'
+  // Exported field_instance: 'node-position_of_trust-title_field'.
   $field_instances['node-position_of_trust-title_field'] = array(
     'bundle' => 'position_of_trust',
     'default_value' => NULL,
@@ -2507,7 +2508,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'relation-trustee_person-endpoints'
+  // Exported field_instance: 'relation-trustee_person-endpoints'.
   $field_instances['relation-trustee_person-endpoints'] = array(
     'bundle' => 'trustee_person',
     'default_value' => NULL,
@@ -2560,7 +2561,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-office-name_field'
+  // Exported field_instance: 'taxonomy_term-office-name_field'.
   $field_instances['taxonomy_term-office-name_field'] = array(
     'bundle' => 'office',
     'default_value' => NULL,
@@ -2607,7 +2608,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-political_party-name_field'
+  // Exported field_instance: 'taxonomy_term-political_party-name_field'.
   $field_instances['taxonomy_term-political_party-name_field'] = array(
     'bundle' => 'political_party',
     'default_value' => NULL,
@@ -2647,7 +2648,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-trust_unit-name_field'
+  // Exported field_instance: 'taxonomy_term-trust_unit-name_field'.
   $field_instances['taxonomy_term-trust_unit-name_field'] = array(
     'bundle' => 'trust_unit',
     'default_value' => NULL,
@@ -2693,7 +2694,8 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-trustee_role-field_hide_in_listing'
+  // Exported field_instance:
+  // 'taxonomy_term-trustee_role-field_hide_in_listing'.
   $field_instances['taxonomy_term-trustee_role-field_hide_in_listing'] = array(
     'bundle' => 'trustee_role',
     'default_value' => array(
@@ -2732,7 +2734,7 @@ function kada_contact_information_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-trustee_role-name_field'
+  // Exported field_instance: 'taxonomy_term-trustee_role-name_field'.
   $field_instances['taxonomy_term-trustee_role-name_field'] = array(
     'bundle' => 'trustee_role',
     'default_value' => NULL,

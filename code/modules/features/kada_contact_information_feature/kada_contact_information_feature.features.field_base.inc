@@ -10,21 +10,13 @@
 function kada_contact_information_feature_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_account_name'
+  // Exported field_base: 'field_account_name'.
   $field_bases['field_account_name'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_account_name',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -40,21 +32,13 @@ function kada_contact_information_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_assistant'
+  // Exported field_base: 'field_assistant'.
   $field_bases['field_assistant'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_assistant',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -87,21 +71,13 @@ function kada_contact_information_feature_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_deputy_member'
+  // Exported field_base: 'field_deputy_member'.
   $field_bases['field_deputy_member'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_deputy_member',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -134,21 +110,13 @@ function kada_contact_information_feature_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_employee_title'
+  // Exported field_base: 'field_employee_title'.
   $field_bases['field_employee_title'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_employee_title',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -164,14 +132,13 @@ function kada_contact_information_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_hide_in_listing'
+  // Exported field_base: 'field_hide_in_listing'.
   $field_bases['field_hide_in_listing'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_hide_in_listing',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -191,21 +158,13 @@ function kada_contact_information_feature_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_office_tr'
+  // Exported field_base: 'field_office_tr'.
   $field_bases['field_office_tr'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_office_tr',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -227,14 +186,13 @@ function kada_contact_information_feature_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_periodic_duty_time'
+  // Exported field_base: 'field_periodic_duty_time'.
   $field_bases['field_periodic_duty_time'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_periodic_duty_time',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -259,14 +217,13 @@ function kada_contact_information_feature_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_person_type'
+  // Exported field_base: 'field_person_type'.
   $field_bases['field_person_type'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_person_type',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -286,21 +243,13 @@ function kada_contact_information_feature_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_political_party'
+  // Exported field_base: 'field_political_party'.
   $field_bases['field_political_party'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_political_party',
-    'foreign keys' => array(
-      'taxonomy_term_data' => array(
-        'columns' => array(
-          'target_id' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -333,21 +282,13 @@ function kada_contact_information_feature_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_street_address'
+  // Exported field_base: 'field_street_address'.
   $field_bases['field_street_address'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_street_address',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -363,21 +304,13 @@ function kada_contact_information_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_superior'
+  // Exported field_base: 'field_superior'.
   $field_bases['field_superior'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_superior',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -410,21 +343,13 @@ function kada_contact_information_feature_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_task_description'
+  // Exported field_base: 'field_task_description'.
   $field_bases['field_task_description'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_task_description',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -440,21 +365,13 @@ function kada_contact_information_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_trust_unit'
+  // Exported field_base: 'field_trust_unit'.
   $field_bases['field_trust_unit'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_trust_unit',
-    'foreign keys' => array(
-      'taxonomy_term_data' => array(
-        'columns' => array(
-          'target_id' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -487,14 +404,13 @@ function kada_contact_information_feature_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_trustee'
+  // Exported field_base: 'field_trustee'.
   $field_bases['field_trustee'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_trustee',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'relation_add',
@@ -505,21 +421,13 @@ function kada_contact_information_feature_field_default_field_bases() {
     'type' => 'relation_add',
   );
 
-  // Exported field_base: 'field_trustee_role'
+  // Exported field_base: 'field_trustee_role'.
   $field_bases['field_trustee_role'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_trustee_role',
-    'foreign keys' => array(
-      'taxonomy_term_data' => array(
-        'columns' => array(
-          'target_id' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -552,21 +460,13 @@ function kada_contact_information_feature_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_visiting_address'
+  // Exported field_base: 'field_visiting_address'.
   $field_bases['field_visiting_address'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_visiting_address',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
