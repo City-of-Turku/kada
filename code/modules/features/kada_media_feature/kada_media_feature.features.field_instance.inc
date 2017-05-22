@@ -10,7 +10,7 @@
 function kada_media_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'scald_atom-file-field_title_text'
+  // Exported field_instance: 'scald_atom-file-field_title_text'.
   $field_instances['scald_atom-file-field_title_text'] = array(
     'bundle' => 'file',
     'default_value' => NULL,
@@ -80,7 +80,7 @@ function kada_media_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'scald_atom-file-scald_authors'
+  // Exported field_instance: 'scald_atom-file-scald_authors'.
   $field_instances['scald_atom-file-scald_authors'] = array(
     'bundle' => 'file',
     'default_value' => NULL,
@@ -119,7 +119,7 @@ function kada_media_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'scald_atom-file-scald_file'
+  // Exported field_instance: 'scald_atom-file-scald_file'.
   $field_instances['scald_atom-file-scald_file'] = array(
     'bundle' => 'file',
     'deleted' => 0,
@@ -161,7 +161,7 @@ function kada_media_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'scald_atom-file-scald_tags'
+  // Exported field_instance: 'scald_atom-file-scald_tags'.
   $field_instances['scald_atom-file-scald_tags'] = array(
     'bundle' => 'file',
     'default_value' => NULL,
@@ -200,7 +200,7 @@ function kada_media_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'scald_atom-file-scald_thumbnail'
+  // Exported field_instance: 'scald_atom-file-scald_thumbnail'.
   $field_instances['scald_atom-file-scald_thumbnail'] = array(
     'bundle' => 'file',
     'deleted' => 0,
@@ -246,7 +246,7 @@ function kada_media_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'scald_atom-image-field_alt_text'
+  // Exported field_instance: 'scald_atom-image-field_alt_text'.
   $field_instances['scald_atom-image-field_alt_text'] = array(
     'bundle' => 'image',
     'default_value' => NULL,
@@ -400,7 +400,7 @@ function kada_media_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'scald_atom-image-field_title_text'
+  // Exported field_instance: 'scald_atom-image-field_title_text'.
   $field_instances['scald_atom-image-field_title_text'] = array(
     'bundle' => 'image',
     'default_value' => NULL,
@@ -554,7 +554,7 @@ function kada_media_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'scald_atom-image-scald_authors'
+  // Exported field_instance: 'scald_atom-image-scald_authors'.
   $field_instances['scald_atom-image-scald_authors'] = array(
     'bundle' => 'image',
     'default_value' => NULL,
@@ -677,7 +677,7 @@ function kada_media_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'scald_atom-image-scald_tags'
+  // Exported field_instance: 'scald_atom-image-scald_tags'.
   $field_instances['scald_atom-image-scald_tags'] = array(
     'bundle' => 'image',
     'default_value' => NULL,
@@ -800,7 +800,7 @@ function kada_media_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'scald_atom-image-scald_thumbnail'
+  // Exported field_instance: 'scald_atom-image-scald_thumbnail'.
   $field_instances['scald_atom-image-scald_thumbnail'] = array(
     'bundle' => 'image',
     'deleted' => 0,
@@ -1094,7 +1094,7 @@ function kada_media_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'scald_atom-video-field_title_text'
+  // Exported field_instance: 'scald_atom-video-field_title_text'.
   $field_instances['scald_atom-video-field_title_text'] = array(
     'bundle' => 'video',
     'default_value' => NULL,
@@ -1171,7 +1171,7 @@ function kada_media_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'scald_atom-video-scald_authors'
+  // Exported field_instance: 'scald_atom-video-scald_authors'.
   $field_instances['scald_atom-video-scald_authors'] = array(
     'bundle' => 'video',
     'default_value' => NULL,
@@ -1217,7 +1217,7 @@ function kada_media_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'scald_atom-video-scald_tags'
+  // Exported field_instance: 'scald_atom-video-scald_tags'.
   $field_instances['scald_atom-video-scald_tags'] = array(
     'bundle' => 'video',
     'default_value' => NULL,
@@ -1263,7 +1263,7 @@ function kada_media_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'scald_atom-video-scald_thumbnail'
+  // Exported field_instance: 'scald_atom-video-scald_thumbnail'.
   $field_instances['scald_atom-video-scald_thumbnail'] = array(
     'bundle' => 'video',
     'deleted' => 0,
@@ -1339,7 +1339,7 @@ function kada_media_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'taxonomy_term-scald_authors-scald_author_url'
+  // Exported field_instance: 'taxonomy_term-scald_authors-scald_author_url'.
   $field_instances['taxonomy_term-scald_authors-scald_author_url'] = array(
     'bundle' => 'scald_authors',
     'default_value' => NULL,
