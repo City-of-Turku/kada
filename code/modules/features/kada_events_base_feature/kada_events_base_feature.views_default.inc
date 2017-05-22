@@ -15,7 +15,7 @@ function kada_events_base_feature_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Kada Event list';
+  $view->human_name = 'KADA Event list';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -351,7 +351,7 @@ function kada_events_base_feature_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  $handler->display->display_options['block_description'] = 'View: Kada Event list | Block';
+  $handler->display->display_options['block_description'] = 'View: KADA Event list | Block';
 
   /* Display: Event tab | Free event */
   $handler = $view->new_display('block', 'Event tab | Free event', 'event_tab_free');
@@ -986,7 +986,7 @@ function kada_events_base_feature_views_default_views() {
     t('Target audience'),
     t('District'),
     t('Event types'),
-    t('View: Kada Event list | Block'),
+    t('View: KADA Event list | Block'),
     t('Event tab | Free event'),
     t('Free events shown in list under Free tab'),
     t('terms'),
@@ -1013,7 +1013,7 @@ function kada_events_base_feature_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Kada eventcalendar ER';
+  $view->human_name = 'KADA eventcalendar ER';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1178,7 +1178,7 @@ function kada_events_base_feature_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'search_api_index_kada_content';
-  $view->human_name = 'Kada Events Indexed';
+  $view->human_name = 'KADA Events Indexed';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1392,7 +1392,7 @@ function kada_events_base_feature_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Kada Events Map';
+  $view->human_name = 'KADA Events Map';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1850,7 +1850,7 @@ function kada_events_base_feature_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Kada Recurring events';
+  $view->human_name = 'KADA Recurring events';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */

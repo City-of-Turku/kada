@@ -91,10 +91,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_full_16_9_breakpoints_theme_driveturku_desktop_1x.
-  $styles['content_full_16_9_breakpoints_theme_driveturku_desktop_1x'] = array(
-    'name' => 'content_full_16_9_breakpoints_theme_driveturku_desktop_1x',
-    'label' => 'content_full_16_9_breakpoints_theme_driveturku_desktop_1x',
+  // Exported image style: content_full_16_9_breakpoints_theme_kada_desktop_1x.
+  $styles['content_full_16_9_breakpoints_theme_kada_desktop_1x'] = array(
+    'name' => 'content_full_16_9_breakpoints_theme_kada_desktop_1x',
+    'label' => 'content_full_16_9_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       38 => array(
         'label' => 'Scale and crop',
@@ -114,10 +114,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_full_16_9_breakpoints_theme_driveturku_mobile_1x.
-  $styles['content_full_16_9_breakpoints_theme_driveturku_mobile_1x'] = array(
-    'name' => 'content_full_16_9_breakpoints_theme_driveturku_mobile_1x',
-    'label' => 'content_full_16_9_breakpoints_theme_driveturku_mobile_1x',
+  // Exported image style: content_full_16_9_breakpoints_theme_kada_mobile_1x.
+  $styles['content_full_16_9_breakpoints_theme_kada_mobile_1x'] = array(
+    'name' => 'content_full_16_9_breakpoints_theme_kada_mobile_1x',
+    'label' => 'content_full_16_9_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       39 => array(
         'label' => 'Scale and crop',
@@ -137,10 +137,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_full_16_9_breakpoints_theme_driveturku_phablet_1x.
-  $styles['content_full_16_9_breakpoints_theme_driveturku_phablet_1x'] = array(
-    'name' => 'content_full_16_9_breakpoints_theme_driveturku_phablet_1x',
-    'label' => 'content_full_16_9_breakpoints_theme_driveturku_phablet_1x',
+  // Exported image style: content_full_16_9_breakpoints_theme_kada_phablet_1x.
+  $styles['content_full_16_9_breakpoints_theme_kada_phablet_1x'] = array(
+    'name' => 'content_full_16_9_breakpoints_theme_kada_phablet_1x',
+    'label' => 'content_full_16_9_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       40 => array(
         'label' => 'Scale and crop',
@@ -160,10 +160,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_full_16_9_breakpoints_theme_driveturku_smalldesktop_1x.
-  $styles['content_full_16_9_breakpoints_theme_driveturku_smalldesktop_1x'] = array(
-    'name' => 'content_full_16_9_breakpoints_theme_driveturku_smalldesktop_1x',
-    'label' => 'content_full_16_9_breakpoints_theme_driveturku_smalldesktop_1x',
+  // Exported image style: content_full_16_9_breakpoints_theme_kada_smalldesktop_1x.
+  $styles['content_full_16_9_breakpoints_theme_kada_smalldesktop_1x'] = array(
+    'name' => 'content_full_16_9_breakpoints_theme_kada_smalldesktop_1x',
+    'label' => 'content_full_16_9_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       41 => array(
         'label' => 'Scale and crop',
@@ -183,10 +183,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_full_16_9_breakpoints_theme_driveturku_tablet_1x.
-  $styles['content_full_16_9_breakpoints_theme_driveturku_tablet_1x'] = array(
-    'name' => 'content_full_16_9_breakpoints_theme_driveturku_tablet_1x',
-    'label' => 'content_full_16_9_breakpoints_theme_driveturku_tablet_1x',
+  // Exported image style: content_full_16_9_breakpoints_theme_kada_tablet_1x.
+  $styles['content_full_16_9_breakpoints_theme_kada_tablet_1x'] = array(
+    'name' => 'content_full_16_9_breakpoints_theme_kada_tablet_1x',
+    'label' => 'content_full_16_9_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       42 => array(
         'label' => 'Scale and crop',
@@ -206,10 +206,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_full_breakpoints_theme_driveturku_desktop_1x.
-  $styles['content_full_breakpoints_theme_driveturku_desktop_1x'] = array(
-    'name' => 'content_full_breakpoints_theme_driveturku_desktop_1x',
-    'label' => 'content_full_breakpoints_theme_driveturku_desktop_1x',
+  // Exported image style: content_full_breakpoints_theme_kada_desktop_1x.
+  $styles['content_full_breakpoints_theme_kada_desktop_1x'] = array(
+    'name' => 'content_full_breakpoints_theme_kada_desktop_1x',
+    'label' => 'content_full_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       2 => array(
         'label' => 'Scale',
@@ -230,10 +230,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_full_breakpoints_theme_driveturku_mobile_1x.
-  $styles['content_full_breakpoints_theme_driveturku_mobile_1x'] = array(
-    'name' => 'content_full_breakpoints_theme_driveturku_mobile_1x',
-    'label' => 'content_full_breakpoints_theme_driveturku_mobile_1x',
+  // Exported image style: content_full_breakpoints_theme_kada_mobile_1x.
+  $styles['content_full_breakpoints_theme_kada_mobile_1x'] = array(
+    'name' => 'content_full_breakpoints_theme_kada_mobile_1x',
+    'label' => 'content_full_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       6 => array(
         'label' => 'Scale',
@@ -254,10 +254,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_full_breakpoints_theme_driveturku_phablet_1x.
-  $styles['content_full_breakpoints_theme_driveturku_phablet_1x'] = array(
-    'name' => 'content_full_breakpoints_theme_driveturku_phablet_1x',
-    'label' => 'content_full_breakpoints_theme_driveturku_phablet_1x',
+  // Exported image style: content_full_breakpoints_theme_kada_phablet_1x.
+  $styles['content_full_breakpoints_theme_kada_phablet_1x'] = array(
+    'name' => 'content_full_breakpoints_theme_kada_phablet_1x',
+    'label' => 'content_full_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       5 => array(
         'label' => 'Scale',
@@ -278,10 +278,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_full_breakpoints_theme_driveturku_smalldesktop_1x.
-  $styles['content_full_breakpoints_theme_driveturku_smalldesktop_1x'] = array(
-    'name' => 'content_full_breakpoints_theme_driveturku_smalldesktop_1x',
-    'label' => 'content_full_breakpoints_theme_driveturku_smalldesktop_1x',
+  // Exported image style: content_full_breakpoints_theme_kada_smalldesktop_1x.
+  $styles['content_full_breakpoints_theme_kada_smalldesktop_1x'] = array(
+    'name' => 'content_full_breakpoints_theme_kada_smalldesktop_1x',
+    'label' => 'content_full_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       3 => array(
         'label' => 'Scale',
@@ -302,10 +302,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_full_breakpoints_theme_driveturku_tablet_1x.
-  $styles['content_full_breakpoints_theme_driveturku_tablet_1x'] = array(
-    'name' => 'content_full_breakpoints_theme_driveturku_tablet_1x',
-    'label' => 'content_full_breakpoints_theme_driveturku_tablet_1x',
+  // Exported image style: content_full_breakpoints_theme_kada_tablet_1x.
+  $styles['content_full_breakpoints_theme_kada_tablet_1x'] = array(
+    'name' => 'content_full_breakpoints_theme_kada_tablet_1x',
+    'label' => 'content_full_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       4 => array(
         'label' => 'Scale',
@@ -373,10 +373,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_half_16_9_breakpoints_theme_driveturku_desktop_1x.
-  $styles['content_half_16_9_breakpoints_theme_driveturku_desktop_1x'] = array(
-    'name' => 'content_half_16_9_breakpoints_theme_driveturku_desktop_1x',
-    'label' => 'content_half_16_9_breakpoints_theme_driveturku_desktop_1x',
+  // Exported image style: content_half_16_9_breakpoints_theme_kada_desktop_1x.
+  $styles['content_half_16_9_breakpoints_theme_kada_desktop_1x'] = array(
+    'name' => 'content_half_16_9_breakpoints_theme_kada_desktop_1x',
+    'label' => 'content_half_16_9_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       32 => array(
         'label' => 'Scale and crop',
@@ -396,10 +396,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_half_16_9_breakpoints_theme_driveturku_mobile_1x.
-  $styles['content_half_16_9_breakpoints_theme_driveturku_mobile_1x'] = array(
-    'name' => 'content_half_16_9_breakpoints_theme_driveturku_mobile_1x',
-    'label' => 'content_half_16_9_breakpoints_theme_driveturku_mobile_1x',
+  // Exported image style: content_half_16_9_breakpoints_theme_kada_mobile_1x.
+  $styles['content_half_16_9_breakpoints_theme_kada_mobile_1x'] = array(
+    'name' => 'content_half_16_9_breakpoints_theme_kada_mobile_1x',
+    'label' => 'content_half_16_9_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       33 => array(
         'label' => 'Scale and crop',
@@ -419,10 +419,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_half_16_9_breakpoints_theme_driveturku_phablet_1x.
-  $styles['content_half_16_9_breakpoints_theme_driveturku_phablet_1x'] = array(
-    'name' => 'content_half_16_9_breakpoints_theme_driveturku_phablet_1x',
-    'label' => 'content_half_16_9_breakpoints_theme_driveturku_phablet_1x',
+  // Exported image style: content_half_16_9_breakpoints_theme_kada_phablet_1x.
+  $styles['content_half_16_9_breakpoints_theme_kada_phablet_1x'] = array(
+    'name' => 'content_half_16_9_breakpoints_theme_kada_phablet_1x',
+    'label' => 'content_half_16_9_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       34 => array(
         'label' => 'Scale and crop',
@@ -442,10 +442,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_half_16_9_breakpoints_theme_driveturku_smalldesktop_1x.
-  $styles['content_half_16_9_breakpoints_theme_driveturku_smalldesktop_1x'] = array(
-    'name' => 'content_half_16_9_breakpoints_theme_driveturku_smalldesktop_1x',
-    'label' => 'content_half_16_9_breakpoints_theme_driveturku_smalldesktop_1x',
+  // Exported image style: content_half_16_9_breakpoints_theme_kada_smalldesktop_1x.
+  $styles['content_half_16_9_breakpoints_theme_kada_smalldesktop_1x'] = array(
+    'name' => 'content_half_16_9_breakpoints_theme_kada_smalldesktop_1x',
+    'label' => 'content_half_16_9_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       35 => array(
         'label' => 'Scale and crop',
@@ -465,10 +465,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_half_16_9_breakpoints_theme_driveturku_tablet_1x.
-  $styles['content_half_16_9_breakpoints_theme_driveturku_tablet_1x'] = array(
-    'name' => 'content_half_16_9_breakpoints_theme_driveturku_tablet_1x',
-    'label' => 'content_half_16_9_breakpoints_theme_driveturku_tablet_1x',
+  // Exported image style: content_half_16_9_breakpoints_theme_kada_tablet_1x.
+  $styles['content_half_16_9_breakpoints_theme_kada_tablet_1x'] = array(
+    'name' => 'content_half_16_9_breakpoints_theme_kada_tablet_1x',
+    'label' => 'content_half_16_9_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       36 => array(
         'label' => 'Scale and crop',
@@ -488,10 +488,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_half_breakpoints_theme_driveturku_desktop_1x.
-  $styles['content_half_breakpoints_theme_driveturku_desktop_1x'] = array(
-    'name' => 'content_half_breakpoints_theme_driveturku_desktop_1x',
-    'label' => 'content_half_breakpoints_theme_driveturku_desktop_1x',
+  // Exported image style: content_half_breakpoints_theme_kada_desktop_1x.
+  $styles['content_half_breakpoints_theme_kada_desktop_1x'] = array(
+    'name' => 'content_half_breakpoints_theme_kada_desktop_1x',
+    'label' => 'content_half_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       8 => array(
         'label' => 'Scale',
@@ -512,10 +512,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_half_breakpoints_theme_driveturku_mobile_1x.
-  $styles['content_half_breakpoints_theme_driveturku_mobile_1x'] = array(
-    'name' => 'content_half_breakpoints_theme_driveturku_mobile_1x',
-    'label' => 'content_half_breakpoints_theme_driveturku_mobile_1x',
+  // Exported image style: content_half_breakpoints_theme_kada_mobile_1x.
+  $styles['content_half_breakpoints_theme_kada_mobile_1x'] = array(
+    'name' => 'content_half_breakpoints_theme_kada_mobile_1x',
+    'label' => 'content_half_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       12 => array(
         'label' => 'Scale',
@@ -536,10 +536,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_half_breakpoints_theme_driveturku_phablet_1x.
-  $styles['content_half_breakpoints_theme_driveturku_phablet_1x'] = array(
-    'name' => 'content_half_breakpoints_theme_driveturku_phablet_1x',
-    'label' => 'content_half_breakpoints_theme_driveturku_phablet_1x',
+  // Exported image style: content_half_breakpoints_theme_kada_phablet_1x.
+  $styles['content_half_breakpoints_theme_kada_phablet_1x'] = array(
+    'name' => 'content_half_breakpoints_theme_kada_phablet_1x',
+    'label' => 'content_half_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       11 => array(
         'label' => 'Scale',
@@ -560,10 +560,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_half_breakpoints_theme_driveturku_smalldesktop_1x.
-  $styles['content_half_breakpoints_theme_driveturku_smalldesktop_1x'] = array(
-    'name' => 'content_half_breakpoints_theme_driveturku_smalldesktop_1x',
-    'label' => 'content_half_breakpoints_theme_driveturku_smalldesktop_1x',
+  // Exported image style: content_half_breakpoints_theme_kada_smalldesktop_1x.
+  $styles['content_half_breakpoints_theme_kada_smalldesktop_1x'] = array(
+    'name' => 'content_half_breakpoints_theme_kada_smalldesktop_1x',
+    'label' => 'content_half_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       9 => array(
         'label' => 'Scale',
@@ -584,10 +584,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: content_half_breakpoints_theme_driveturku_tablet_1x.
-  $styles['content_half_breakpoints_theme_driveturku_tablet_1x'] = array(
-    'name' => 'content_half_breakpoints_theme_driveturku_tablet_1x',
-    'label' => 'content_half_breakpoints_theme_driveturku_tablet_1x',
+  // Exported image style: content_half_breakpoints_theme_kada_tablet_1x.
+  $styles['content_half_breakpoints_theme_kada_tablet_1x'] = array(
+    'name' => 'content_half_breakpoints_theme_kada_tablet_1x',
+    'label' => 'content_half_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       10 => array(
         'label' => 'Scale',
@@ -655,10 +655,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: event_list_image_breakpoints_theme_driveturku_desktop_1x.
-  $styles['event_list_image_breakpoints_theme_driveturku_desktop_1x'] = array(
-    'name' => 'event_list_image_breakpoints_theme_driveturku_desktop_1x',
-    'label' => 'event_list_image_breakpoints_theme_driveturku_desktop_1x',
+  // Exported image style: event_list_image_breakpoints_theme_kada_desktop_1x.
+  $styles['event_list_image_breakpoints_theme_kada_desktop_1x'] = array(
+    'name' => 'event_list_image_breakpoints_theme_kada_desktop_1x',
+    'label' => 'event_list_image_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       2 => array(
         'label' => 'Scale and crop',
@@ -678,10 +678,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: event_list_image_breakpoints_theme_driveturku_mobile_1x.
-  $styles['event_list_image_breakpoints_theme_driveturku_mobile_1x'] = array(
-    'name' => 'event_list_image_breakpoints_theme_driveturku_mobile_1x',
-    'label' => 'event_list_image_breakpoints_theme_driveturku_mobile_1x',
+  // Exported image style: event_list_image_breakpoints_theme_kada_mobile_1x.
+  $styles['event_list_image_breakpoints_theme_kada_mobile_1x'] = array(
+    'name' => 'event_list_image_breakpoints_theme_kada_mobile_1x',
+    'label' => 'event_list_image_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       6 => array(
         'label' => 'Scale and crop',
@@ -701,10 +701,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: event_list_image_breakpoints_theme_driveturku_phablet_1x.
-  $styles['event_list_image_breakpoints_theme_driveturku_phablet_1x'] = array(
-    'name' => 'event_list_image_breakpoints_theme_driveturku_phablet_1x',
-    'label' => 'event_list_image_breakpoints_theme_driveturku_phablet_1x',
+  // Exported image style: event_list_image_breakpoints_theme_kada_phablet_1x.
+  $styles['event_list_image_breakpoints_theme_kada_phablet_1x'] = array(
+    'name' => 'event_list_image_breakpoints_theme_kada_phablet_1x',
+    'label' => 'event_list_image_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       5 => array(
         'label' => 'Scale and crop',
@@ -724,10 +724,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: event_list_image_breakpoints_theme_driveturku_smalldesktop_1x.
-  $styles['event_list_image_breakpoints_theme_driveturku_smalldesktop_1x'] = array(
-    'name' => 'event_list_image_breakpoints_theme_driveturku_smalldesktop_1x',
-    'label' => 'event_list_image_breakpoints_theme_driveturku_smalldesktop_1x',
+  // Exported image style: event_list_image_breakpoints_theme_kada_smalldesktop_1x.
+  $styles['event_list_image_breakpoints_theme_kada_smalldesktop_1x'] = array(
+    'name' => 'event_list_image_breakpoints_theme_kada_smalldesktop_1x',
+    'label' => 'event_list_image_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       3 => array(
         'label' => 'Scale and crop',
@@ -747,10 +747,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: event_list_image_breakpoints_theme_driveturku_tablet_1x.
-  $styles['event_list_image_breakpoints_theme_driveturku_tablet_1x'] = array(
-    'name' => 'event_list_image_breakpoints_theme_driveturku_tablet_1x',
-    'label' => 'event_list_image_breakpoints_theme_driveturku_tablet_1x',
+  // Exported image style: event_list_image_breakpoints_theme_kada_tablet_1x.
+  $styles['event_list_image_breakpoints_theme_kada_tablet_1x'] = array(
+    'name' => 'event_list_image_breakpoints_theme_kada_tablet_1x',
+    'label' => 'event_list_image_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       4 => array(
         'label' => 'Scale and crop',
@@ -793,10 +793,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: event_node_breakpoints_theme_driveturku_desktop_1x.
-  $styles['event_node_breakpoints_theme_driveturku_desktop_1x'] = array(
-    'name' => 'event_node_breakpoints_theme_driveturku_desktop_1x',
-    'label' => 'event_node_breakpoints_theme_driveturku_desktop_1x',
+  // Exported image style: event_node_breakpoints_theme_kada_desktop_1x.
+  $styles['event_node_breakpoints_theme_kada_desktop_1x'] = array(
+    'name' => 'event_node_breakpoints_theme_kada_desktop_1x',
+    'label' => 'event_node_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       2 => array(
         'label' => 'Scale and crop',
@@ -816,10 +816,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: event_node_breakpoints_theme_driveturku_mobile_1x.
-  $styles['event_node_breakpoints_theme_driveturku_mobile_1x'] = array(
-    'name' => 'event_node_breakpoints_theme_driveturku_mobile_1x',
-    'label' => 'event_node_breakpoints_theme_driveturku_mobile_1x',
+  // Exported image style: event_node_breakpoints_theme_kada_mobile_1x.
+  $styles['event_node_breakpoints_theme_kada_mobile_1x'] = array(
+    'name' => 'event_node_breakpoints_theme_kada_mobile_1x',
+    'label' => 'event_node_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       6 => array(
         'label' => 'Scale and crop',
@@ -839,10 +839,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: event_node_breakpoints_theme_driveturku_phablet_1x.
-  $styles['event_node_breakpoints_theme_driveturku_phablet_1x'] = array(
-    'name' => 'event_node_breakpoints_theme_driveturku_phablet_1x',
-    'label' => 'event_node_breakpoints_theme_driveturku_phablet_1x',
+  // Exported image style: event_node_breakpoints_theme_kada_phablet_1x.
+  $styles['event_node_breakpoints_theme_kada_phablet_1x'] = array(
+    'name' => 'event_node_breakpoints_theme_kada_phablet_1x',
+    'label' => 'event_node_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       5 => array(
         'label' => 'Scale and crop',
@@ -862,10 +862,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: event_node_breakpoints_theme_driveturku_smalldesktop_1x.
-  $styles['event_node_breakpoints_theme_driveturku_smalldesktop_1x'] = array(
-    'name' => 'event_node_breakpoints_theme_driveturku_smalldesktop_1x',
-    'label' => 'event_node_breakpoints_theme_driveturku_smalldesktop_1x',
+  // Exported image style: event_node_breakpoints_theme_kada_smalldesktop_1x.
+  $styles['event_node_breakpoints_theme_kada_smalldesktop_1x'] = array(
+    'name' => 'event_node_breakpoints_theme_kada_smalldesktop_1x',
+    'label' => 'event_node_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       3 => array(
         'label' => 'Scale and crop',
@@ -885,10 +885,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: event_node_breakpoints_theme_driveturku_tablet_1x.
-  $styles['event_node_breakpoints_theme_driveturku_tablet_1x'] = array(
-    'name' => 'event_node_breakpoints_theme_driveturku_tablet_1x',
-    'label' => 'event_node_breakpoints_theme_driveturku_tablet_1x',
+  // Exported image style: event_node_breakpoints_theme_kada_tablet_1x.
+  $styles['event_node_breakpoints_theme_kada_tablet_1x'] = array(
+    'name' => 'event_node_breakpoints_theme_kada_tablet_1x',
+    'label' => 'event_node_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       4 => array(
         'label' => 'Scale and crop',
@@ -978,10 +978,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: full_modal_breakpoints_theme_driveturku_desktop_1x.
-  $styles['full_modal_breakpoints_theme_driveturku_desktop_1x'] = array(
-    'name' => 'full_modal_breakpoints_theme_driveturku_desktop_1x',
-    'label' => 'full_modal_breakpoints_theme_driveturku_desktop_1x',
+  // Exported image style: full_modal_breakpoints_theme_kada_desktop_1x.
+  $styles['full_modal_breakpoints_theme_kada_desktop_1x'] = array(
+    'name' => 'full_modal_breakpoints_theme_kada_desktop_1x',
+    'label' => 'full_modal_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       1 => array(
         'label' => 'Scale',
@@ -1002,10 +1002,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: full_modal_breakpoints_theme_driveturku_mobile_1x.
-  $styles['full_modal_breakpoints_theme_driveturku_mobile_1x'] = array(
-    'name' => 'full_modal_breakpoints_theme_driveturku_mobile_1x',
-    'label' => 'full_modal_breakpoints_theme_driveturku_mobile_1x',
+  // Exported image style: full_modal_breakpoints_theme_kada_mobile_1x.
+  $styles['full_modal_breakpoints_theme_kada_mobile_1x'] = array(
+    'name' => 'full_modal_breakpoints_theme_kada_mobile_1x',
+    'label' => 'full_modal_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       5 => array(
         'label' => 'Scale',
@@ -1026,10 +1026,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: full_modal_breakpoints_theme_driveturku_phablet_1x.
-  $styles['full_modal_breakpoints_theme_driveturku_phablet_1x'] = array(
-    'name' => 'full_modal_breakpoints_theme_driveturku_phablet_1x',
-    'label' => 'full_modal_breakpoints_theme_driveturku_phablet_1x',
+  // Exported image style: full_modal_breakpoints_theme_kada_phablet_1x.
+  $styles['full_modal_breakpoints_theme_kada_phablet_1x'] = array(
+    'name' => 'full_modal_breakpoints_theme_kada_phablet_1x',
+    'label' => 'full_modal_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       4 => array(
         'label' => 'Scale',
@@ -1050,10 +1050,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: full_modal_breakpoints_theme_driveturku_smalldesktop_1x.
-  $styles['full_modal_breakpoints_theme_driveturku_smalldesktop_1x'] = array(
-    'name' => 'full_modal_breakpoints_theme_driveturku_smalldesktop_1x',
-    'label' => 'full_modal_breakpoints_theme_driveturku_smalldesktop_1x',
+  // Exported image style: full_modal_breakpoints_theme_kada_smalldesktop_1x.
+  $styles['full_modal_breakpoints_theme_kada_smalldesktop_1x'] = array(
+    'name' => 'full_modal_breakpoints_theme_kada_smalldesktop_1x',
+    'label' => 'full_modal_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       2 => array(
         'label' => 'Scale',
@@ -1074,10 +1074,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: full_modal_breakpoints_theme_driveturku_tablet_1x.
-  $styles['full_modal_breakpoints_theme_driveturku_tablet_1x'] = array(
-    'name' => 'full_modal_breakpoints_theme_driveturku_tablet_1x',
-    'label' => 'full_modal_breakpoints_theme_driveturku_tablet_1x',
+  // Exported image style: full_modal_breakpoints_theme_kada_tablet_1x.
+  $styles['full_modal_breakpoints_theme_kada_tablet_1x'] = array(
+    'name' => 'full_modal_breakpoints_theme_kada_tablet_1x',
+    'label' => 'full_modal_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       3 => array(
         'label' => 'Scale',
@@ -1121,10 +1121,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: grid_item_breakpoints_theme_driveturku_desktop_1x.
-  $styles['grid_item_breakpoints_theme_driveturku_desktop_1x'] = array(
-    'name' => 'grid_item_breakpoints_theme_driveturku_desktop_1x',
-    'label' => 'grid_item_breakpoints_theme_driveturku_desktop_1x',
+  // Exported image style: grid_item_breakpoints_theme_kada_desktop_1x.
+  $styles['grid_item_breakpoints_theme_kada_desktop_1x'] = array(
+    'name' => 'grid_item_breakpoints_theme_kada_desktop_1x',
+    'label' => 'grid_item_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       2 => array(
         'label' => 'Scale and crop',
@@ -1144,10 +1144,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: grid_item_breakpoints_theme_driveturku_mobile_1x.
-  $styles['grid_item_breakpoints_theme_driveturku_mobile_1x'] = array(
-    'name' => 'grid_item_breakpoints_theme_driveturku_mobile_1x',
-    'label' => 'grid_item_breakpoints_theme_driveturku_mobile_1x',
+  // Exported image style: grid_item_breakpoints_theme_kada_mobile_1x.
+  $styles['grid_item_breakpoints_theme_kada_mobile_1x'] = array(
+    'name' => 'grid_item_breakpoints_theme_kada_mobile_1x',
+    'label' => 'grid_item_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       6 => array(
         'label' => 'Scale and crop',
@@ -1167,10 +1167,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: grid_item_breakpoints_theme_driveturku_phablet_1x.
-  $styles['grid_item_breakpoints_theme_driveturku_phablet_1x'] = array(
-    'name' => 'grid_item_breakpoints_theme_driveturku_phablet_1x',
-    'label' => 'grid_item_breakpoints_theme_driveturku_phablet_1x',
+  // Exported image style: grid_item_breakpoints_theme_kada_phablet_1x.
+  $styles['grid_item_breakpoints_theme_kada_phablet_1x'] = array(
+    'name' => 'grid_item_breakpoints_theme_kada_phablet_1x',
+    'label' => 'grid_item_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       5 => array(
         'label' => 'Scale and crop',
@@ -1190,10 +1190,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: grid_item_breakpoints_theme_driveturku_smalldesktop_1x.
-  $styles['grid_item_breakpoints_theme_driveturku_smalldesktop_1x'] = array(
-    'name' => 'grid_item_breakpoints_theme_driveturku_smalldesktop_1x',
-    'label' => 'grid_item_breakpoints_theme_driveturku_smalldesktop_1x',
+  // Exported image style: grid_item_breakpoints_theme_kada_smalldesktop_1x.
+  $styles['grid_item_breakpoints_theme_kada_smalldesktop_1x'] = array(
+    'name' => 'grid_item_breakpoints_theme_kada_smalldesktop_1x',
+    'label' => 'grid_item_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       3 => array(
         'label' => 'Scale and crop',
@@ -1213,10 +1213,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: grid_item_breakpoints_theme_driveturku_tablet_1x.
-  $styles['grid_item_breakpoints_theme_driveturku_tablet_1x'] = array(
-    'name' => 'grid_item_breakpoints_theme_driveturku_tablet_1x',
-    'label' => 'grid_item_breakpoints_theme_driveturku_tablet_1x',
+  // Exported image style: grid_item_breakpoints_theme_kada_tablet_1x.
+  $styles['grid_item_breakpoints_theme_kada_tablet_1x'] = array(
+    'name' => 'grid_item_breakpoints_theme_kada_tablet_1x',
+    'label' => 'grid_item_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       4 => array(
         'label' => 'Scale and crop',
@@ -1259,10 +1259,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: main_content_breakpoints_theme_driveturku_desktop_1x.
-  $styles['main_content_breakpoints_theme_driveturku_desktop_1x'] = array(
-    'name' => 'main_content_breakpoints_theme_driveturku_desktop_1x',
-    'label' => 'main_content_breakpoints_theme_driveturku_desktop_1x',
+  // Exported image style: main_content_breakpoints_theme_kada_desktop_1x.
+  $styles['main_content_breakpoints_theme_kada_desktop_1x'] = array(
+    'name' => 'main_content_breakpoints_theme_kada_desktop_1x',
+    'label' => 'main_content_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       17 => array(
         'label' => 'Scale and crop',
@@ -1282,10 +1282,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: main_content_breakpoints_theme_driveturku_mobile_1x.
-  $styles['main_content_breakpoints_theme_driveturku_mobile_1x'] = array(
-    'name' => 'main_content_breakpoints_theme_driveturku_mobile_1x',
-    'label' => 'main_content_breakpoints_theme_driveturku_mobile_1x',
+  // Exported image style: main_content_breakpoints_theme_kada_mobile_1x.
+  $styles['main_content_breakpoints_theme_kada_mobile_1x'] = array(
+    'name' => 'main_content_breakpoints_theme_kada_mobile_1x',
+    'label' => 'main_content_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       21 => array(
         'label' => 'Scale and crop',
@@ -1305,10 +1305,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: main_content_breakpoints_theme_driveturku_phablet_1x.
-  $styles['main_content_breakpoints_theme_driveturku_phablet_1x'] = array(
-    'name' => 'main_content_breakpoints_theme_driveturku_phablet_1x',
-    'label' => 'main_content_breakpoints_theme_driveturku_phablet_1x',
+  // Exported image style: main_content_breakpoints_theme_kada_phablet_1x.
+  $styles['main_content_breakpoints_theme_kada_phablet_1x'] = array(
+    'name' => 'main_content_breakpoints_theme_kada_phablet_1x',
+    'label' => 'main_content_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       20 => array(
         'label' => 'Scale and crop',
@@ -1328,10 +1328,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: main_content_breakpoints_theme_driveturku_smalldesktop_1x.
-  $styles['main_content_breakpoints_theme_driveturku_smalldesktop_1x'] = array(
-    'name' => 'main_content_breakpoints_theme_driveturku_smalldesktop_1x',
-    'label' => 'main_content_breakpoints_theme_driveturku_smalldesktop_1x',
+  // Exported image style: main_content_breakpoints_theme_kada_smalldesktop_1x.
+  $styles['main_content_breakpoints_theme_kada_smalldesktop_1x'] = array(
+    'name' => 'main_content_breakpoints_theme_kada_smalldesktop_1x',
+    'label' => 'main_content_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       18 => array(
         'label' => 'Scale and crop',
@@ -1351,10 +1351,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: main_content_breakpoints_theme_driveturku_tablet_1x.
-  $styles['main_content_breakpoints_theme_driveturku_tablet_1x'] = array(
-    'name' => 'main_content_breakpoints_theme_driveturku_tablet_1x',
-    'label' => 'main_content_breakpoints_theme_driveturku_tablet_1x',
+  // Exported image style: main_content_breakpoints_theme_kada_tablet_1x.
+  $styles['main_content_breakpoints_theme_kada_tablet_1x'] = array(
+    'name' => 'main_content_breakpoints_theme_kada_tablet_1x',
+    'label' => 'main_content_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       19 => array(
         'label' => 'Scale and crop',
@@ -1397,10 +1397,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: main_liftup_narrow_breakpoints_theme_driveturku_desktop_1x.
-  $styles['main_liftup_narrow_breakpoints_theme_driveturku_desktop_1x'] = array(
-    'name' => 'main_liftup_narrow_breakpoints_theme_driveturku_desktop_1x',
-    'label' => 'main_liftup_narrow_breakpoints_theme_driveturku_desktop_1x',
+  // Exported image style: main_liftup_narrow_breakpoints_theme_kada_desktop_1x.
+  $styles['main_liftup_narrow_breakpoints_theme_kada_desktop_1x'] = array(
+    'name' => 'main_liftup_narrow_breakpoints_theme_kada_desktop_1x',
+    'label' => 'main_liftup_narrow_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       6 => array(
         'label' => 'Scale and crop',
@@ -1420,10 +1420,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: main_liftup_narrow_breakpoints_theme_driveturku_mobile_1x.
-  $styles['main_liftup_narrow_breakpoints_theme_driveturku_mobile_1x'] = array(
-    'name' => 'main_liftup_narrow_breakpoints_theme_driveturku_mobile_1x',
-    'label' => 'main_liftup_narrow_breakpoints_theme_driveturku_mobile_1x',
+  // Exported image style: main_liftup_narrow_breakpoints_theme_kada_mobile_1x.
+  $styles['main_liftup_narrow_breakpoints_theme_kada_mobile_1x'] = array(
+    'name' => 'main_liftup_narrow_breakpoints_theme_kada_mobile_1x',
+    'label' => 'main_liftup_narrow_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       10 => array(
         'label' => 'Scale and crop',
@@ -1443,10 +1443,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: main_liftup_narrow_breakpoints_theme_driveturku_phablet_1x.
-  $styles['main_liftup_narrow_breakpoints_theme_driveturku_phablet_1x'] = array(
-    'name' => 'main_liftup_narrow_breakpoints_theme_driveturku_phablet_1x',
-    'label' => 'main_liftup_narrow_breakpoints_theme_driveturku_phablet_1x',
+  // Exported image style: main_liftup_narrow_breakpoints_theme_kada_phablet_1x.
+  $styles['main_liftup_narrow_breakpoints_theme_kada_phablet_1x'] = array(
+    'name' => 'main_liftup_narrow_breakpoints_theme_kada_phablet_1x',
+    'label' => 'main_liftup_narrow_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       9 => array(
         'label' => 'Scale and crop',
@@ -1466,10 +1466,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: main_liftup_narrow_breakpoints_theme_driveturku_smalldesktop_1x.
-  $styles['main_liftup_narrow_breakpoints_theme_driveturku_smalldesktop_1x'] = array(
-    'name' => 'main_liftup_narrow_breakpoints_theme_driveturku_smalldesktop_1x',
-    'label' => 'main_liftup_narrow_breakpoints_theme_driveturku_smalldesktop_1x',
+  // Exported image style: main_liftup_narrow_breakpoints_theme_kada_smalldesktop_1x.
+  $styles['main_liftup_narrow_breakpoints_theme_kada_smalldesktop_1x'] = array(
+    'name' => 'main_liftup_narrow_breakpoints_theme_kada_smalldesktop_1x',
+    'label' => 'main_liftup_narrow_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       7 => array(
         'label' => 'Scale and crop',
@@ -1489,10 +1489,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: main_liftup_narrow_breakpoints_theme_driveturku_tablet_1x.
-  $styles['main_liftup_narrow_breakpoints_theme_driveturku_tablet_1x'] = array(
-    'name' => 'main_liftup_narrow_breakpoints_theme_driveturku_tablet_1x',
-    'label' => 'main_liftup_narrow_breakpoints_theme_driveturku_tablet_1x',
+  // Exported image style: main_liftup_narrow_breakpoints_theme_kada_tablet_1x.
+  $styles['main_liftup_narrow_breakpoints_theme_kada_tablet_1x'] = array(
+    'name' => 'main_liftup_narrow_breakpoints_theme_kada_tablet_1x',
+    'label' => 'main_liftup_narrow_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       8 => array(
         'label' => 'Scale and crop',
@@ -1535,10 +1535,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: main_liftup_wide_breakpoints_theme_driveturku_desktop_1x.
-  $styles['main_liftup_wide_breakpoints_theme_driveturku_desktop_1x'] = array(
-    'name' => 'main_liftup_wide_breakpoints_theme_driveturku_desktop_1x',
-    'label' => 'main_liftup_wide_breakpoints_theme_driveturku_desktop_1x',
+  // Exported image style: main_liftup_wide_breakpoints_theme_kada_desktop_1x.
+  $styles['main_liftup_wide_breakpoints_theme_kada_desktop_1x'] = array(
+    'name' => 'main_liftup_wide_breakpoints_theme_kada_desktop_1x',
+    'label' => 'main_liftup_wide_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       11 => array(
         'label' => 'Scale and crop',
@@ -1558,10 +1558,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: main_liftup_wide_breakpoints_theme_driveturku_mobile_1x.
-  $styles['main_liftup_wide_breakpoints_theme_driveturku_mobile_1x'] = array(
-    'name' => 'main_liftup_wide_breakpoints_theme_driveturku_mobile_1x',
-    'label' => 'main_liftup_wide_breakpoints_theme_driveturku_mobile_1x',
+  // Exported image style: main_liftup_wide_breakpoints_theme_kada_mobile_1x.
+  $styles['main_liftup_wide_breakpoints_theme_kada_mobile_1x'] = array(
+    'name' => 'main_liftup_wide_breakpoints_theme_kada_mobile_1x',
+    'label' => 'main_liftup_wide_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       15 => array(
         'label' => 'Scale and crop',
@@ -1581,10 +1581,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: main_liftup_wide_breakpoints_theme_driveturku_phablet_1x.
-  $styles['main_liftup_wide_breakpoints_theme_driveturku_phablet_1x'] = array(
-    'name' => 'main_liftup_wide_breakpoints_theme_driveturku_phablet_1x',
-    'label' => 'main_liftup_wide_breakpoints_theme_driveturku_phablet_1x',
+  // Exported image style: main_liftup_wide_breakpoints_theme_kada_phablet_1x.
+  $styles['main_liftup_wide_breakpoints_theme_kada_phablet_1x'] = array(
+    'name' => 'main_liftup_wide_breakpoints_theme_kada_phablet_1x',
+    'label' => 'main_liftup_wide_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       14 => array(
         'label' => 'Scale and crop',
@@ -1604,10 +1604,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: main_liftup_wide_breakpoints_theme_driveturku_smalldesktop_1x.
-  $styles['main_liftup_wide_breakpoints_theme_driveturku_smalldesktop_1x'] = array(
-    'name' => 'main_liftup_wide_breakpoints_theme_driveturku_smalldesktop_1x',
-    'label' => 'main_liftup_wide_breakpoints_theme_driveturku_smalldesktop_1x',
+  // Exported image style: main_liftup_wide_breakpoints_theme_kada_smalldesktop_1x.
+  $styles['main_liftup_wide_breakpoints_theme_kada_smalldesktop_1x'] = array(
+    'name' => 'main_liftup_wide_breakpoints_theme_kada_smalldesktop_1x',
+    'label' => 'main_liftup_wide_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       12 => array(
         'label' => 'Scale and crop',
@@ -1627,10 +1627,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: main_liftup_wide_breakpoints_theme_driveturku_tablet_1x.
-  $styles['main_liftup_wide_breakpoints_theme_driveturku_tablet_1x'] = array(
-    'name' => 'main_liftup_wide_breakpoints_theme_driveturku_tablet_1x',
-    'label' => 'main_liftup_wide_breakpoints_theme_driveturku_tablet_1x',
+  // Exported image style: main_liftup_wide_breakpoints_theme_kada_tablet_1x.
+  $styles['main_liftup_wide_breakpoints_theme_kada_tablet_1x'] = array(
+    'name' => 'main_liftup_wide_breakpoints_theme_kada_tablet_1x',
+    'label' => 'main_liftup_wide_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       13 => array(
         'label' => 'Scale and crop',
@@ -1698,10 +1698,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: person_breakpoints_theme_driveturku_mobile_1x.
-  $styles['person_breakpoints_theme_driveturku_mobile_1x'] = array(
-    'name' => 'person_breakpoints_theme_driveturku_mobile_1x',
-    'label' => 'person_breakpoints_theme_driveturku_mobile_1x',
+  // Exported image style: person_breakpoints_theme_kada_mobile_1x.
+  $styles['person_breakpoints_theme_kada_mobile_1x'] = array(
+    'name' => 'person_breakpoints_theme_kada_mobile_1x',
+    'label' => 'person_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       9 => array(
         'label' => 'Scale',
@@ -1722,10 +1722,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: person_breakpoints_theme_driveturku_phablet_1x.
-  $styles['person_breakpoints_theme_driveturku_phablet_1x'] = array(
-    'name' => 'person_breakpoints_theme_driveturku_phablet_1x',
-    'label' => 'person_breakpoints_theme_driveturku_phablet_1x',
+  // Exported image style: person_breakpoints_theme_kada_phablet_1x.
+  $styles['person_breakpoints_theme_kada_phablet_1x'] = array(
+    'name' => 'person_breakpoints_theme_kada_phablet_1x',
+    'label' => 'person_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       8 => array(
         'label' => 'Scale',
@@ -1746,10 +1746,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: person_breakpoints_theme_driveturku_smalldesktop_1x.
-  $styles['person_breakpoints_theme_driveturku_smalldesktop_1x'] = array(
-    'name' => 'person_breakpoints_theme_driveturku_smalldesktop_1x',
-    'label' => 'person_breakpoints_theme_driveturku_smalldesktop_1x',
+  // Exported image style: person_breakpoints_theme_kada_smalldesktop_1x.
+  $styles['person_breakpoints_theme_kada_smalldesktop_1x'] = array(
+    'name' => 'person_breakpoints_theme_kada_smalldesktop_1x',
+    'label' => 'person_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       7 => array(
         'label' => 'Scale',
@@ -1793,10 +1793,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: project_breakpoints_theme_driveturku_mobile_1x.
-  $styles['project_breakpoints_theme_driveturku_mobile_1x'] = array(
-    'name' => 'project_breakpoints_theme_driveturku_mobile_1x',
-    'label' => 'project_breakpoints_theme_driveturku_mobile_1x',
+  // Exported image style: project_breakpoints_theme_kada_mobile_1x.
+  $styles['project_breakpoints_theme_kada_mobile_1x'] = array(
+    'name' => 'project_breakpoints_theme_kada_mobile_1x',
+    'label' => 'project_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       8 => array(
         'label' => 'Scale and crop',
@@ -1816,10 +1816,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: project_breakpoints_theme_driveturku_phablet_1x.
-  $styles['project_breakpoints_theme_driveturku_phablet_1x'] = array(
-    'name' => 'project_breakpoints_theme_driveturku_phablet_1x',
-    'label' => 'project_breakpoints_theme_driveturku_phablet_1x',
+  // Exported image style: project_breakpoints_theme_kada_phablet_1x.
+  $styles['project_breakpoints_theme_kada_phablet_1x'] = array(
+    'name' => 'project_breakpoints_theme_kada_phablet_1x',
+    'label' => 'project_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       7 => array(
         'label' => 'Scale and crop',
@@ -1839,10 +1839,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: project_breakpoints_theme_driveturku_smalldesktop_1x.
-  $styles['project_breakpoints_theme_driveturku_smalldesktop_1x'] = array(
-    'name' => 'project_breakpoints_theme_driveturku_smalldesktop_1x',
-    'label' => 'project_breakpoints_theme_driveturku_smalldesktop_1x',
+  // Exported image style: project_breakpoints_theme_kada_smalldesktop_1x.
+  $styles['project_breakpoints_theme_kada_smalldesktop_1x'] = array(
+    'name' => 'project_breakpoints_theme_kada_smalldesktop_1x',
+    'label' => 'project_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       5 => array(
         'label' => 'Scale and crop',
@@ -1862,10 +1862,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: project_breakpoints_theme_driveturku_tablet_1x.
-  $styles['project_breakpoints_theme_driveturku_tablet_1x'] = array(
-    'name' => 'project_breakpoints_theme_driveturku_tablet_1x',
-    'label' => 'project_breakpoints_theme_driveturku_tablet_1x',
+  // Exported image style: project_breakpoints_theme_kada_tablet_1x.
+  $styles['project_breakpoints_theme_kada_tablet_1x'] = array(
+    'name' => 'project_breakpoints_theme_kada_tablet_1x',
+    'label' => 'project_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       6 => array(
         'label' => 'Scale and crop',
@@ -1955,10 +1955,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: top_carousel_breakpoints_theme_driveturku_mobile_1x.
-  $styles['top_carousel_breakpoints_theme_driveturku_mobile_1x'] = array(
-    'name' => 'top_carousel_breakpoints_theme_driveturku_mobile_1x',
-    'label' => 'top_carousel_breakpoints_theme_driveturku_mobile_1x',
+  // Exported image style: top_carousel_breakpoints_theme_kada_mobile_1x.
+  $styles['top_carousel_breakpoints_theme_kada_mobile_1x'] = array(
+    'name' => 'top_carousel_breakpoints_theme_kada_mobile_1x',
+    'label' => 'top_carousel_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       12 => array(
         'label' => 'Scale and crop',
@@ -1978,10 +1978,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: top_carousel_breakpoints_theme_driveturku_phablet_1x.
-  $styles['top_carousel_breakpoints_theme_driveturku_phablet_1x'] = array(
-    'name' => 'top_carousel_breakpoints_theme_driveturku_phablet_1x',
-    'label' => 'top_carousel_breakpoints_theme_driveturku_phablet_1x',
+  // Exported image style: top_carousel_breakpoints_theme_kada_phablet_1x.
+  $styles['top_carousel_breakpoints_theme_kada_phablet_1x'] = array(
+    'name' => 'top_carousel_breakpoints_theme_kada_phablet_1x',
+    'label' => 'top_carousel_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       11 => array(
         'label' => 'Scale and crop',
@@ -2001,10 +2001,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: top_carousel_breakpoints_theme_driveturku_smalldesktop_1x.
-  $styles['top_carousel_breakpoints_theme_driveturku_smalldesktop_1x'] = array(
-    'name' => 'top_carousel_breakpoints_theme_driveturku_smalldesktop_1x',
-    'label' => 'top_carousel_breakpoints_theme_driveturku_smalldesktop_1x',
+  // Exported image style: top_carousel_breakpoints_theme_kada_smalldesktop_1x.
+  $styles['top_carousel_breakpoints_theme_kada_smalldesktop_1x'] = array(
+    'name' => 'top_carousel_breakpoints_theme_kada_smalldesktop_1x',
+    'label' => 'top_carousel_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       9 => array(
         'label' => 'Scale and crop',
@@ -2024,10 +2024,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: top_carousel_breakpoints_theme_driveturku_tablet_1x.
-  $styles['top_carousel_breakpoints_theme_driveturku_tablet_1x'] = array(
-    'name' => 'top_carousel_breakpoints_theme_driveturku_tablet_1x',
-    'label' => 'top_carousel_breakpoints_theme_driveturku_tablet_1x',
+  // Exported image style: top_carousel_breakpoints_theme_kada_tablet_1x.
+  $styles['top_carousel_breakpoints_theme_kada_tablet_1x'] = array(
+    'name' => 'top_carousel_breakpoints_theme_kada_tablet_1x',
+    'label' => 'top_carousel_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       10 => array(
         'label' => 'Scale and crop',
@@ -2070,10 +2070,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: topics_breakpoints_theme_driveturku_mobile_1x.
-  $styles['topics_breakpoints_theme_driveturku_mobile_1x'] = array(
-    'name' => 'topics_breakpoints_theme_driveturku_mobile_1x',
-    'label' => 'topics_breakpoints_theme_driveturku_mobile_1x',
+  // Exported image style: topics_breakpoints_theme_kada_mobile_1x.
+  $styles['topics_breakpoints_theme_kada_mobile_1x'] = array(
+    'name' => 'topics_breakpoints_theme_kada_mobile_1x',
+    'label' => 'topics_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       16 => array(
         'label' => 'Scale and crop',
@@ -2093,10 +2093,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: topics_breakpoints_theme_driveturku_phablet_1x.
-  $styles['topics_breakpoints_theme_driveturku_phablet_1x'] = array(
-    'name' => 'topics_breakpoints_theme_driveturku_phablet_1x',
-    'label' => 'topics_breakpoints_theme_driveturku_phablet_1x',
+  // Exported image style: topics_breakpoints_theme_kada_phablet_1x.
+  $styles['topics_breakpoints_theme_kada_phablet_1x'] = array(
+    'name' => 'topics_breakpoints_theme_kada_phablet_1x',
+    'label' => 'topics_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       15 => array(
         'label' => 'Scale and crop',
@@ -2116,10 +2116,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: topics_breakpoints_theme_driveturku_smalldesktop_1x.
-  $styles['topics_breakpoints_theme_driveturku_smalldesktop_1x'] = array(
-    'name' => 'topics_breakpoints_theme_driveturku_smalldesktop_1x',
-    'label' => 'topics_breakpoints_theme_driveturku_smalldesktop_1x',
+  // Exported image style: topics_breakpoints_theme_kada_smalldesktop_1x.
+  $styles['topics_breakpoints_theme_kada_smalldesktop_1x'] = array(
+    'name' => 'topics_breakpoints_theme_kada_smalldesktop_1x',
+    'label' => 'topics_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       13 => array(
         'label' => 'Scale and crop',
@@ -2139,10 +2139,10 @@ function kada_media_feature_image_default_styles() {
     ),
   );
 
-  // Exported image style: topics_breakpoints_theme_driveturku_tablet_1x.
-  $styles['topics_breakpoints_theme_driveturku_tablet_1x'] = array(
-    'name' => 'topics_breakpoints_theme_driveturku_tablet_1x',
-    'label' => 'topics_breakpoints_theme_driveturku_tablet_1x',
+  // Exported image style: topics_breakpoints_theme_kada_tablet_1x.
+  $styles['topics_breakpoints_theme_kada_tablet_1x'] = array(
+    'name' => 'topics_breakpoints_theme_kada_tablet_1x',
+    'label' => 'topics_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       14 => array(
         'label' => 'Scale and crop',

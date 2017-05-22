@@ -290,7 +290,7 @@ function driveturku_page_alter(&$page) {
 }
 
 function driveturku_views_pre_render(&$view) {
-  if ($view->name == 'driveturku_search') {
+  if ($view->name == 'kada_search') {
     foreach ($view->result as $result) {
       $theme_raw = $result->_entity_properties['field_theme']['0'];
       $theme_term = taxonomy_term_load($theme_raw);
@@ -300,7 +300,7 @@ function driveturku_views_pre_render(&$view) {
       $result->_entity_properties['#attributes']['class']['page'] = $page;
     }
   }
-  elseif ($view->name == 'driveturku_sarnia_search') {
+  elseif ($view->name == 'kada_sarnia_search') {
     foreach ($view->result as $result) {
       if (!empty($result->entity->solr_document['im_field_theme'])) {
         $theme_raw = $result->entity->solr_document['im_field_theme'][0];
@@ -365,7 +365,7 @@ function _driveturku_term_parents_search($term) {
 
 function driveturku_preprocess_views_view_fields(&$vars) {
   // @TODO: This needs refactoring. Should be converted so that it can be used later again.
-  if ($vars['view']->name == 'driveturku_widget_event_carousel') {
+  if ($vars['view']->name == 'kada_widget_event_carousel') {
 
     $term_id = $vars['row']->field_field_event_types[0]['raw']['tid'];
     $term = _driveturku_term_parents_search($term_id);
