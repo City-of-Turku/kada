@@ -7,7 +7,6 @@ dependencies[] = ctools
 dependencies[] = date_views
 dependencies[] = ds
 dependencies[] = eck
-dependencies[] = eck
 dependencies[] = entity_translation
 dependencies[] = features
 dependencies[] = flexslider_views
