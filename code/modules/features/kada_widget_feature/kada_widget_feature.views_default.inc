@@ -359,7 +359,7 @@ function kada_widget_feature_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Title */
+  /* Field: Content: Name */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -637,7 +637,7 @@ function kada_widget_feature_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Title */
+  /* Field: Content: Name */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -982,7 +982,7 @@ function kada_widget_feature_views_default_views() {
   $handler->display->display_options['filters']['field_content_image_ext_fid']['field'] = 'field_content_image_ext_fid';
   $handler->display->display_options['filters']['field_content_image_ext_fid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_content_image_ext_fid']['group'] = 3;
-  /* Filter criterion: Content: Title (title_field:language) */
+  /* Filter criterion: Content: Name (title_field:language) */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -1086,7 +1086,7 @@ function kada_widget_feature_views_default_views() {
     'sub' => 'sub',
   );
   $handler->display->display_options['filters']['field_date_type_value']['group'] = 1;
-  /* Filter criterion: Content: Title (title_field:language) */
+  /* Filter criterion: Content: Name (title_field:language) */
   $handler->display->display_options['filters']['language_1']['id'] = 'language_1';
   $handler->display->display_options['filters']['language_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['language_1']['field'] = 'language';
@@ -1274,7 +1274,7 @@ function kada_widget_feature_views_default_views() {
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Title (title_field:language) */
+  /* Filter criterion: Content: Name (title_field:language) */
   $handler->display->display_options['filters']['language_1']['id'] = 'language_1';
   $handler->display->display_options['filters']['language_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['language_1']['field'] = 'language';
@@ -1322,7 +1322,7 @@ function kada_widget_feature_views_default_views() {
     t('Desc'),
     t('OG membership from node'),
     t('Translations'),
-    t('Title'),
+    t('Name'),
     t('Edit link'),
     t('All'),
     t('Calendar'),

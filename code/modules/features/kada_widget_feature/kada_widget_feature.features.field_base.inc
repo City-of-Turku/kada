@@ -10,21 +10,13 @@
 function kada_widget_feature_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_widget_before_content'
+  // Exported field_base: 'field_widget_before_content'.
   $field_bases['field_widget_before_content'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_widget_before_content',
-    'foreign keys' => array(
-      'eck_widget' => array(
-        'columns' => array(
-          'target_id' => 'id',
-        ),
-        'table' => 'eck_widget',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
