@@ -10,7 +10,7 @@
 function kada_liftups_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_liftup-comment_body'
+  // Exported field_instance: 'comment-comment_node_liftup-comment_body'.
   $field_instances['comment-comment_node_liftup-comment_body'] = array(
     'bundle' => 'comment_node_liftup',
     'default_value' => NULL,
@@ -47,7 +47,7 @@ function kada_liftups_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-liftup-body'
+  // Exported field_instance: 'node-liftup-body'.
   $field_instances['node-liftup-body'] = array(
     'bundle' => 'liftup',
     'default_value' => NULL,
@@ -166,7 +166,7 @@ function kada_liftups_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-liftup-field_address'
+  // Exported field_instance: 'node-liftup-field_address'.
   $field_instances['node-liftup-field_address'] = array(
     'bundle' => 'liftup',
     'default_value' => NULL,
@@ -273,7 +273,7 @@ function kada_liftups_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-liftup-field_district'
+  // Exported field_instance: 'node-liftup-field_district'.
   $field_instances['node-liftup-field_district'] = array(
     'bundle' => 'liftup',
     'default_value' => NULL,
@@ -342,7 +342,7 @@ function kada_liftups_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-liftup-field_keywords'
+  // Exported field_instance: 'node-liftup-field_keywords'.
   $field_instances['node-liftup-field_keywords'] = array(
     'bundle' => 'liftup',
     'default_value' => NULL,
@@ -415,7 +415,7 @@ function kada_liftups_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-liftup-field_link_to_content'
+  // Exported field_instance: 'node-liftup-field_link_to_content'.
   $field_instances['node-liftup-field_link_to_content'] = array(
     'bundle' => 'liftup',
     'default_value' => NULL,
@@ -521,7 +521,7 @@ function kada_liftups_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-liftup-field_location'
+  // Exported field_instance: 'node-liftup-field_location'.
   $field_instances['node-liftup-field_location'] = array(
     'bundle' => 'liftup',
     'default_value' => NULL,
@@ -617,7 +617,7 @@ function kada_liftups_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-liftup-field_main_image'
+  // Exported field_instance: 'node-liftup-field_main_image'.
   $field_instances['node-liftup-field_main_image'] = array(
     'bundle' => 'liftup',
     'default_value' => NULL,
@@ -713,7 +713,7 @@ function kada_liftups_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-liftup-field_secondary_image'
+  // Exported field_instance: 'node-liftup-field_secondary_image'.
   $field_instances['node-liftup-field_secondary_image'] = array(
     'bundle' => 'liftup',
     'default_value' => NULL,
@@ -797,7 +797,7 @@ function kada_liftups_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-liftup-field_target_audience'
+  // Exported field_instance: 'node-liftup-field_target_audience'.
   $field_instances['node-liftup-field_target_audience'] = array(
     'bundle' => 'liftup',
     'default_value' => NULL,
@@ -866,7 +866,7 @@ function kada_liftups_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-liftup-field_theme'
+  // Exported field_instance: 'node-liftup-field_theme'.
   $field_instances['node-liftup-field_theme'] = array(
     'bundle' => 'liftup',
     'default_value' => NULL,
@@ -934,7 +934,7 @@ function kada_liftups_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-liftup-field_vignette'
+  // Exported field_instance: 'node-liftup-field_vignette'.
   $field_instances['node-liftup-field_vignette'] = array(
     'bundle' => 'liftup',
     'default_value' => NULL,
@@ -1043,7 +1043,7 @@ function kada_liftups_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-liftup-field_visible_title'
+  // Exported field_instance: 'node-liftup-field_visible_title'.
   $field_instances['node-liftup-field_visible_title'] = array(
     'bundle' => 'liftup',
     'default_value' => NULL,
@@ -1158,7 +1158,7 @@ function kada_liftups_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-liftup-og_group_ref'
+  // Exported field_instance: 'node-liftup-og_group_ref'.
   $field_instances['node-liftup-og_group_ref'] = array(
     'bundle' => 'liftup',
     'default_value' => NULL,

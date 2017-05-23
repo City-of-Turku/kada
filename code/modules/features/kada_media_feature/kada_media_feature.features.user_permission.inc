@@ -170,6 +170,15 @@ function kada_media_feature_user_default_permissions() {
     'module' => 'scald',
   );
 
+  // Exported permission: 'kada_media_feature view only own atoms'.
+  $permissions['kada_media_feature view only own atoms'] = array(
+    'name' => 'kada_media_feature view only own atoms',
+    'roles' => array(
+      'event external editor' => 'event external editor',
+    ),
+    'module' => 'kada_media_feature',
+  );
+
   // Exported permission: 'restrict atom access'.
   $permissions['restrict atom access'] = array(
     'name' => 'restrict atom access',
@@ -184,15 +193,6 @@ function kada_media_feature_user_default_permissions() {
     'name' => 'show format selection for scald_atom',
     'roles' => array(),
     'module' => 'better_formats',
-  );
-
-  // Exported permission: 'kada_media_feature view only own atoms'.
-  $permissions['kada_media_feature view only own atoms'] = array(
-    'name' => 'kada_media_feature view only own atoms',
-    'roles' => array(
-      'event external editor' => 'event external editor',
-    ),
-    'module' => 'kada_media_feature',
   );
 
   // Exported permission: 'view any atom'.

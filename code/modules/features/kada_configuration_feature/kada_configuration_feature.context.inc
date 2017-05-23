@@ -135,9 +135,9 @@ function kada_configuration_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-driveturku_recommended-block' => array(
+        'views-kada_recommended-block' => array(
           'module' => 'views',
-          'delta' => 'driveturku_recommended-block',
+          'delta' => 'kada_recommended-block',
           'region' => 'header',
           'weight' => '-10',
         ),
@@ -292,39 +292,6 @@ function kada_configuration_feature_context_default_contexts() {
   t('Triggers on specific pages that are not in scope of normal content.');
   t('special non-content page');
   $export['non_content_special_page'] = $context;
-
-  $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
-  $context->name = 'quick_search';
-  $context->description = 'Displays the quick search';
-  $context->tag = 'menus';
-  $context->conditions = array(
-    'context' => array(
-      'values' => array(
-        '~event_search' => '~event_search',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'tkufi_search_feature-quicksearch' => array(
-          'module' => 'tkufi_search_feature',
-          'delta' => 'quicksearch',
-          'region' => 'before_header',
-          'weight' => '-10',
-        ),
-      ),
-    ),
-  );
-  $context->condition_mode = 1;
-
-  // Translatables
-  // Included for use with string extractors like potx.
-  t('Displays the quick search');
-  t('menus');
-  $export['quick_search'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */

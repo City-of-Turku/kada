@@ -15,6 +15,7 @@ dependencies[] = field_group
 dependencies[] = i18n_taxonomy
 dependencies[] = kada_configuration_feature
 dependencies[] = kada_field_bases_feature
+dependencies[] = kada_landing_page_feature
 dependencies[] = kada_sections_feature
 dependencies[] = link
 dependencies[] = menu_block

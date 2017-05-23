@@ -105,6 +105,5 @@ function kada_configuration_feature_menu_default_menu_custom() {
   t('Top menu FI');
   t('Top menu SV');
 
-
   return $menus;
 }
