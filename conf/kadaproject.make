@@ -173,13 +173,11 @@ projects[context_omega][patch][] = "https://www.drupal.org/files/i2115997-3.patc
 ;projects[css3pie][version] = 2.1
 ;projects[css3pie][subdir] = contrib
 
-projects[ctools][version] = 1.8
+projects[ctools][version] = 1.12
 projects[ctools][subdir] = contrib
 
-projects[date][version] = 2.9
+projects[date][version] = 2.10
 projects[date][subdir] = contrib
-; Patch for displaying date repeat field description (help text) on form
-projects[date][patch][] = "https://www.drupal.org/files/issues/date-fieldset-help-texts-2186191-21.patch"
 
 ;Dev version fixes "Missing argument" 1 bug https://www.drupal.org/node/2125599
 projects[date_facets][type] = "module"
@@ -192,10 +190,10 @@ projects[date_facets][patch][] = "https://www.drupal.org/files/issues/2226429-da
 ; Patch to fix a flood of notices
 projects[date_facets][patch][] = "https://www.drupal.org/files/issues/date_facets-undefined-index-2220227-2.patch"
 
-projects[diff][version] = 3.2
+projects[diff][version] = 3.3
 projects[diff][subdir] = contrib
 
-projects[domain][version] = 3.12
+projects[domain][version] = 3.13
 projects[domain][subdir] = contrib
 
 projects[domaincontext][version] = 1.0-alpha1
@@ -252,7 +250,7 @@ projects[entity_base_type][download][type] = git
 projects[entity_base_type][download][url] = http://git.drupal.org/project/entity_base_type.git
 projects[entity_base_type][download][revision] = 011b7f2b9221ca87846ee5dc0f22dc5c8507807d
 
-projects[entity_translation][version] = 1.0-beta5
+projects[entity_translation][version] = 1.0-beta6
 projects[entity_translation][subdir] = contrib
 
 projects[expire][version] = 2.0-rc4
@@ -285,7 +283,7 @@ projects[features][subdir] = contrib
 ; Remove annoying mtime from feature export which causes conflicts
 projects[features][patch][] = "https://www.drupal.org/files/issues/2381739-features-mtime.patch"
 
-projects[features_extra][version] = 1.0-beta1
+projects[features_extra][version] = 1.0
 projects[features_extra][subdir] = contrib
 
 projects[field_collection][version] = 1.0-beta8
@@ -374,10 +372,8 @@ projects[honeypot][subdir] = contrib
 projects[httprl][version] = 1.14
 projects[httprl][subdir] = contrib
 
-projects[i18n][version] = 1.11
+projects[i18n][version] = 1.17
 projects[i18n][subdir] = contrib
-; Fix for WSOD after saving a new translation
-projects[i18n][patch][] = "https://www.drupal.org/files/issues/i18n_string-2227523-20.patch"
 
 projects[imageapi_optimize][version] = 1.2
 projects[imageapi_optimize][subdir] = contrib
@@ -402,7 +398,7 @@ projects[jquery_update][subdir] = contrib
 projects[language_access][version] = 1.01
 projects[language_access][subdir] = contrib
 
-projects[libraries][version] = 2.2
+projects[libraries][version] = 2.3
 projects[libraries][subdir] = contrib
 
 projects[link][version] = 1.4
@@ -435,7 +431,7 @@ projects[menu_block][subdir] = contrib
 projects[metatag][version] = 1.6
 projects[metatag][subdir] = contrib
 
-projects[module_filter][version] = 2.0-alpha2
+projects[module_filter][version] = 2.0
 projects[module_filter][subdir] = contrib
 
 projects[multiple_entity_form][version] = 1.3
@@ -480,7 +476,7 @@ projects[og_webform][subdir] = "contrib"
 projects[og_webform][patch][] = "http://cgit.drupalcode.org/og_webform/patch/?id=b60f03ae4de8050bb2499106484df085b9884b25"
 projects[og_webform][patch][] = "https://www.drupal.org/files/og_webform_api2-1946432_0.patch"
 
-projects[pathauto][version] = 1.2
+projects[pathauto][version] = 1.3
 projects[pathauto][subdir] = contrib
 
 projects[picture][version] = 2.9
@@ -536,7 +532,7 @@ projects[responsive_menus][download][revision] = "397a6edb8d1708689d118229429f4c
 projects[restrict_node_page_view][version] = 1.2
 projects[restrict_node_page_view][subdir] = contrib
 
-projects[rules][version] = 2.9
+projects[rules][version] = 2.10
 projects[rules][subdir] = contrib
 ; Fixes a "Class name must be a valid object or a string" error message when enabling a feature
 projects[rules][patch][] = "https://www.drupal.org/files/issues/rules-rules_i18n_fatal-2495599-2.patch"
@@ -636,13 +632,13 @@ projects[taxonomy_manager][subdir] = contrib
 projects[title][version] = 1.0-alpha9
 projects[title][subdir] = contrib
 
-projects[token][version] = 1.6
+projects[token][version] = 1.7
 projects[token][subdir] = contrib
 
 projects[transliteration][version] = 3.2
 projects[transliteration][subdir] = contrib
 
-projects[uuid][version] = 1.0-alpha6
+projects[uuid][version] = 1.0
 projects[uuid][subdir] = contrib
 
 projects[uuid_features][version] = 1.0-alpha4
@@ -705,5 +701,5 @@ projects[wysiwyg][download][revision] = "898d022cf7d0b6c6a6e7d813199d561b4ad39f8
 ; Contrib themes
 ; ------------
 
-projects[omega][version] = 4.3
+projects[omega][version] = 4.4
 projects[omega][subdir] = contrib
