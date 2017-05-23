@@ -13,7 +13,6 @@ The mother of all features, contains all sitewide configuration etc. If a export
 - current: For displaying flagged content in the main region for theme front pages
 - carousel: For displaying flagged content in the main slideshow in header region.
 - project: For displaying flagged content in the before_footer region
-- search_result: Used with Search API views which display results from Solr index
 
 == BLOCK CONTENT ==
 - Footer blocks: Contact information in different languages. WYSIWYG editing is disabled in custom code in kada_media_feature because SCALD seems to break CKEditor in block body.
@@ -88,6 +87,10 @@ Custom block to show tweet embeds - also tweet_embed field validation functional
 None. More or less all other features depend on this feature.
 
 == Changelog ==
+* 2017-05-23 *
+Moved DS view mode "search_result" to search feature.
+Moved context "quick_search" to search feature.
+
 * 2015-08-27 *
 New display mode for taxonomies: Term name.
 
