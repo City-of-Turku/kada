@@ -20,7 +20,7 @@ api = 2
 ; Core project
 ; ------------
 projects[drupal][type] = core
-projects[drupal][version] = "7.53"
+projects[drupal][version] = "7.54"
 
 ; Use vocabulary machine name for permissions (https://www.drupal.org/node/995156)
 projects[drupal][patch][995156] = https://www.drupal.org/files/issues/995156-5_portable_taxonomy_permissions.patch
@@ -80,7 +80,7 @@ libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archi
 
 ; Openlayers library
 libraries[openlayers][download][type] = get
-libraries[openlayers][download][url] = https://github.com/openlayers/openlayers/releases/download/release-2.13.1/OpenLayers-2.13.1.zip
+libraries[openlayers][download][url] = https://github.com/openlayers/openlayers/archive/v2.13.1.zip
 
 ; Contrib modules
 ; ------------
@@ -334,7 +334,7 @@ projects[feeds_tamper_conditional][subdir] = contrib
 projects[fitvids][version] = 1.17
 projects[fitvids][subdir] = contrib
 
-projects[flag][version] = 3.5
+projects[flag][version] = 3.9
 projects[flag][subdir] = contrib
 
 projects[flexslider][version] = 2.0-alpha3
@@ -396,7 +396,7 @@ projects[ip_geoloc][subdir] = contrib
 projects[job_scheduler][version] = 2.0-alpha3
 projects[job_scheduler][subdir] = contrib
 
-projects[jquery_update][version] = 2.5
+projects[jquery_update][version] = 2.7
 projects[jquery_update][subdir] = contrib
 
 projects[language_access][version] = 1.01
@@ -633,7 +633,7 @@ projects[taxonomy_display][subdir] = contrib
 projects[taxonomy_manager][version] = 1.0
 projects[taxonomy_manager][subdir] = contrib
 
-projects[title][version] = 1.0-alpha7
+projects[title][version] = 1.0-alpha9
 projects[title][subdir] = contrib
 
 projects[token][version] = 1.6

@@ -1,12 +1,15 @@
 version: '2'
 services:
   web:
+    hostname: &hostname pori-kada.fi.docker.amazee.io
+
     # Needs to be changed
     ports:
       - "8088:80"
       - "2228:22"
     environment:
       - PLATFORM=drupal
+      - VIRTUAL_HOST=*hostname
     image: citrussolutions/docker-php
     volumes:
       - .:/wwwroot:Z
@@ -14,15 +17,15 @@ services:
 #      - logvolume01:/var/log
     external_links:
       - mariadb:mysql
-      - mailhog:mailhog
+      #- mailhog:mailhog
     links:
       - redis
       - solr
-      - elasticsearch
+      #- elasticsearch
     depends_on:
       - redis
       - solr
-      - elasticsearch
+      #- elasticsearch
     network_mode: bridge
     build:
       context: https://github.com/CitrusSolutions/docker-php.git#stable
