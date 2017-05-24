@@ -12,6 +12,7 @@ dependencies[] = features
 dependencies[] = geocoder
 dependencies[] = geocoder_rules
 dependencies[] = ip_geoloc
+dependencies[] = kada_contact_information_feature
 dependencies[] = menu_block
 dependencies[] = openlayers_geolocate_button
 dependencies[] = openlayers_views
