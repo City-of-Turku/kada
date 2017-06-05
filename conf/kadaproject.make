@@ -430,6 +430,8 @@ projects[menu_block][subdir] = contrib
 
 projects[metatag][version] = 1.21
 projects[metatag][subdir] = contrib
+; Notice : Undefined index: group in metatag_views_i18n_object_info() for 1.21 version
+projects[metatag][patch][] = "https://www.drupal.org/files/issues/undefined_group_in_i18n-2882048-5.patch"
 
 projects[module_filter][version] = 2.0
 projects[module_filter][subdir] = contrib
@@ -484,6 +486,7 @@ projects[picture][subdir] = contrib
 
 projects[piwik][version] = 2.9
 projects[piwik][subdir] = contrib
+
 
 projects[plupload][version] = 1.7
 projects[plupload][subdir] = contrib
