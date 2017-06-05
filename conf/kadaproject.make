@@ -142,7 +142,7 @@ projects[coffee][subdir] = contrib
 projects[ckeditor_link][version] = 2.3
 projects[ckeditor_link][subdir] = contrib
 
-projects[colorbox][version] = 2.8
+projects[colorbox][version] = 2.13
 projects[colorbox][subdir] = contrib
 
 projects[conditional_fields][version] = 3.0-alpha1
@@ -223,7 +223,7 @@ projects[eck][download][url] = "http://git.drupal.org/project/eck.git"
 projects[eck][download][revision] = "e29ecd7b68a485373e6923c101f54cc7095f56c9"
 projects[eck][patch][] = "https://www.drupal.org/files/issues/entity_translation-2490530-1.patch"
 
-projects[elysia_cron][version] = 2.1
+projects[elysia_cron][version] = 2.4
 projects[elysia_cron][subdir] = contrib
 
 projects[email][version] = 1.3
@@ -428,7 +428,7 @@ projects[menu_attributes][subdir] = contrib
 projects[menu_block][version] = 2.4
 projects[menu_block][subdir] = contrib
 
-projects[metatag][version] = 1.6
+projects[metatag][version] = 1.21
 projects[metatag][subdir] = contrib
 
 projects[module_filter][version] = 2.0
@@ -482,13 +482,13 @@ projects[pathauto][subdir] = contrib
 projects[picture][version] = 2.9
 projects[picture][subdir] = contrib
 
-projects[piwik][version] = 2.7
+projects[piwik][version] = 2.9
 projects[piwik][subdir] = contrib
 
 projects[plupload][version] = 1.7
 projects[plupload][subdir] = contrib
 
-projects[prepopulate][version] = 2.0
+projects[prepopulate][version] = 2.1
 projects[prepopulate][subdir] = contrib
 
 projects[proj4js][version] = 1.2
@@ -668,7 +668,7 @@ projects[views_content_cache][subdir] = contrib
 ; Fixing og compatibility: https://www.drupal.org/node/2054811#comment-9945729
 projects[views_content_cache][patch][og] = "https://www.drupal.org/files/issues/views_content_cache-og-2054811-9.patch"
 
-projects[views][version] = 3.8
+projects[views][version] = 3.16
 projects[views][subdir] = contrib
 
 projects[views_accordion][version] = 1.1
@@ -677,7 +677,7 @@ projects[views_accordion][subdir] = contrib
 projects[views_data_export][version] = 3.0-beta9
 projects[views_data_export][subdir] = contrib
 
-projects[views_bulk_operations][version] = 3.2
+projects[views_bulk_operations][version] = 3.4
 projects[views_bulk_operations][subdir] = contrib
 
 projects[views_default_view_override][version] = 2.0
