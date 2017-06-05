@@ -66,11 +66,11 @@ function kada_liftups_feature_context_default_contexts() {
           'region' => 'before_content',
           'weight' => '-8',
         ),
-        'views-5f19412c456ca29977366d02fe15c93e' => array(
-          'module' => 'views',
-          'delta' => '5f19412c456ca29977366d02fe15c93e',
-          'region' => 'before_footer',
-          'weight' => '-10',
+        'views-kada_project_liftups-block' => array(
+           'module' => 'views',
+           'delta' => 'kada_project_liftups-block',
+           'region' => 'before_footer',
+           'weight' => '-10',
         ),
       ),
       'layout' => 'driveturku-front',
