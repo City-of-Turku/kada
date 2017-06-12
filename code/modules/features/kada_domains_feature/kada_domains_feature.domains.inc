@@ -14,8 +14,8 @@ function kada_domains_feature_domain_default_domains() {
     'sitename' => 'Kada.fi',
     'scheme' => 'http',
     'valid' => 1,
-    'weight' => -1,
-    'is_default' => 1,
+    'weight' => 0,
+    'is_default' => 0,
     'machine_name' => 'local_kada_fi',
   );
 
