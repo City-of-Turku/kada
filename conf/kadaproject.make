@@ -20,7 +20,7 @@ api = 2
 ; Core project
 ; ------------
 projects[drupal][type] = core
-projects[drupal][version] = "7.54"
+projects[drupal][version] = "7.55"
 
 ; Use vocabulary machine name for permissions (https://www.drupal.org/node/995156)
 projects[drupal][patch][995156] = https://www.drupal.org/files/issues/995156-5_portable_taxonomy_permissions.patch
@@ -76,7 +76,7 @@ libraries[predis][download][url] = https://github.com/nrk/predis/archive/v1.0.0.
 
 ; Colorbox library
 libraries[colorbox][download][type] = get
-libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archive/1.5.14.zip
+libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archive/1.6.1.zip
 
 ; Openlayers library
 libraries[openlayers][download][type] = get
@@ -112,11 +112,8 @@ projects[auto_entitylabel][patch][] = "https://www.drupal.org/files/issues/auto_
 ; Fixes VBO update entity label action
 projects[auto_entitylabel][patch][] = "https://www.drupal.org/files/issues/node_operation_update-2503081-9.patch"
 
-projects[better_exposed_filters][type] = "module"
-projects[better_exposed_filters][subdir] = "contrib"
-projects[better_exposed_filters][download][type] = "git"
-projects[better_exposed_filters][download][url] = "http://git.drupal.org/project/better_exposed_filters.git"
-projects[better_exposed_filters][download][revision] = "4ff18a16ba7d8eb675c0b0cbeb3b20d8929050c4"
+projects[better_exposed_filters][version] = 3.4
+projects[better_exposed_filters][subdir] = contrib
 
 projects[better_formats][version] = 1.0-beta1
 projects[better_formats][subdir] = contrib
@@ -148,13 +145,13 @@ projects[colorbox][subdir] = contrib
 projects[conditional_fields][version] = 3.0-alpha1
 projects[conditional_fields][subdir] = contrib
 
-projects[context][version] = 3.4
+projects[context][version] = 3.7
 projects[context][subdir] = contrib
 ; Fixes context ui performance issues
 projects[context][patch][] = "https://www.drupal.org/files/issues/context-node-taxonomy-performance-autocomplete-873936-47.patch"
 ; Set $conf['menu_override_parent_selector'] = false; in settings.php, it will disable
 ; menu links condition in context, but we don't want content related configuration to our features anyway
-projects[context][patch][] = "https://www.drupal.org/files/context_0001-Issue-873936-by-wojtha-Fabianx-Massively-increase-pe.patch"
+; projects[context][patch][] = "https://www.drupal.org/files/context_0001-Issue-873936-by-wojtha-Fabianx-Massively-increase-pe.patch"
 
 ; Dev-version supports field "not empty" condition. NOTE: if new view modes are
 ; added, all contexts which use conditions from this module have to be resaved!
@@ -278,10 +275,8 @@ projects[facetapi_select][download][type] = "git"
 projects[facetapi_select][download][url] = "http://git.drupal.org/project/facetapi_select.git"
 projects[facetapi_select][download][revision] = c960e188fd9ce1cbc21d63cec0e331b0ab70ff5f
 
-projects[features][version] = 2.2
+projects[features][version] = 2.10
 projects[features][subdir] = contrib
-; Remove annoying mtime from feature export which causes conflicts
-projects[features][patch][] = "https://www.drupal.org/files/issues/2381739-features-mtime.patch"
 
 projects[features_extra][version] = 1.0
 projects[features_extra][subdir] = contrib
@@ -525,12 +520,8 @@ projects[relation][patch][better_rules] = "https://www.drupal.org/files/issues/r
 projects[relation_add][version] = 1.4
 projects[relation_add][subdir] = contrib
 
-; Dev-version contains fix for breakpoint calculations
-projects[responsive_menus][type] = "module"
-projects[responsive_menus][subdir] = "contrib"
-projects[responsive_menus][download][type] = "git"
-projects[responsive_menus][download][url] = "http://git.drupal.org/project/responsive_menus.git"
-projects[responsive_menus][download][revision] = "397a6edb8d1708689d118229429f4cdc5f9c7c41"
+projects[responsive_menus][version] = 1.6
+projects[responsive_menus][subdir] = contrib
 
 projects[restrict_node_page_view][version] = 1.2
 projects[restrict_node_page_view][subdir] = contrib
@@ -677,7 +668,7 @@ projects[views][subdir] = contrib
 projects[views_accordion][version] = 1.1
 projects[views_accordion][subdir] = contrib
 
-projects[views_data_export][version] = 3.0-beta9
+projects[views_data_export][version] = 3.2
 projects[views_data_export][subdir] = contrib
 
 projects[views_bulk_operations][version] = 3.4
