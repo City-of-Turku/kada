@@ -80,6 +80,18 @@ function kada_some_content_feature_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'kada_facebook_json-picture-convert_php_image';
+  $feeds_tamper->importer = 'kada_facebook_json';
+  $feeds_tamper->source = 'picture';
+  $feeds_tamper->plugin_id = 'convert_php_image';
+  $feeds_tamper->settings = '';
+  $feeds_tamper->weight = 6;
+  $feeds_tamper->description = 'Convert Facebook Safeimage PHP to images';
+  $export['kada_facebook_json-picture-convert_php_image'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'kada_facebook_json-picture-fb_bigger_image';
   $feeds_tamper->importer = 'kada_facebook_json';
   $feeds_tamper->source = 'picture';
@@ -88,7 +100,7 @@ function kada_some_content_feature_feeds_tamper_default() {
     'graph_url' => 'https://graph.facebook.com/',
     'object_id_field' => 'object_id',
   );
-  $feeds_tamper->weight = 1;
+  $feeds_tamper->weight = 5;
   $feeds_tamper->description = 'Facebook BIG image';
   $export['kada_facebook_json-picture-fb_bigger_image'] = $feeds_tamper;
 
@@ -102,7 +114,7 @@ function kada_some_content_feature_feeds_tamper_default() {
   $feeds_tamper->settings = array(
     'allowed_tags' => '',
   );
-  $feeds_tamper->weight = 0;
+  $feeds_tamper->weight = 3;
   $feeds_tamper->description = 'Strip tags';
   $export['kada_facebook_json-picture-strip_tags'] = $feeds_tamper;
 
@@ -143,7 +155,7 @@ function kada_some_content_feature_feeds_tamper_default() {
   $feeds_tamper->importer = 'kada_facebook_json';
   $feeds_tamper->source = 'share_description';
   $feeds_tamper->plugin_id = 'utf8_chars_only';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 1;
   $feeds_tamper->description = 'Strip non utf8 characters';
   $export['kada_facebook_json-share_description-utf8_chars_only'] = $feeds_tamper;
@@ -241,6 +253,75 @@ function kada_some_content_feature_feeds_tamper_default() {
   $feeds_tamper->weight = 0;
   $feeds_tamper->description = 'Implode';
   $export['kada_instagram-tags-implode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'kada_linkedin_json-blank_source_2-rewrite_title';
+  $feeds_tamper->importer = 'kada_linkedin_json';
+  $feeds_tamper->source = 'Blank source 2';
+  $feeds_tamper->plugin_id = 'rewrite';
+  $feeds_tamper->settings = array(
+    'text' => 'LinkedIn: [share_title]',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'LinkedIn: title';
+  $export['kada_linkedin_json-blank_source_2-rewrite_title'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'kada_linkedin_json-blank_source_4-default_value_business';
+  $feeds_tamper->importer = 'kada_linkedin_json';
+  $feeds_tamper->source = 'Blank source 4';
+  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->settings = array(
+    'default_value' => 'Business',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Set value Business';
+  $export['kada_linkedin_json-blank_source_4-default_value_business'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'kada_linkedin_json-blank_source_5-default_value_linkedin';
+  $feeds_tamper->importer = 'kada_linkedin_json';
+  $feeds_tamper->source = 'Blank source 5';
+  $feeds_tamper->plugin_id = 'default_value';
+  $feeds_tamper->settings = array(
+    'default_value' => 'linkedin',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Default value to LinkedIn';
+  $export['kada_linkedin_json-blank_source_5-default_value_linkedin'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'kada_linkedin_json-created-cast_to_int';
+  $feeds_tamper->importer = 'kada_linkedin_json';
+  $feeds_tamper->source = 'created';
+  $feeds_tamper->plugin_id = 'cast_to_int';
+  $feeds_tamper->settings = array();
+  $feeds_tamper->weight = 7;
+  $feeds_tamper->description = 'Cast to integer';
+  $export['kada_linkedin_json-created-cast_to_int'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'kada_linkedin_json-created-remove_milliseconds';
+  $feeds_tamper->importer = 'kada_linkedin_json';
+  $feeds_tamper->source = 'created';
+  $feeds_tamper->plugin_id = 'math';
+  $feeds_tamper->settings = array(
+    'operation' => 'division',
+    'value' => '1000',
+  );
+  $feeds_tamper->weight = 6;
+  $feeds_tamper->description = 'Remove milliseconds';
+  $export['kada_linkedin_json-created-remove_milliseconds'] = $feeds_tamper;
 
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
