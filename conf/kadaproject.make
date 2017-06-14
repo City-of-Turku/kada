@@ -28,6 +28,9 @@ projects[drupal][patch][995156] = https://www.drupal.org/files/issues/995156-5_p
 ; Get rid or Undefined variable: localized_options from logs
 projects[drupal][patch][1018614] = https://www.drupal.org/files/drupal-menu_navigation_links-1018614-83.patch
 
+;image_derivatives
+projects[drupal][patch][] = https://www.drupal.org/files/issues/image_derivatives-1109312-200.patch
+
 
 ; Libraries
 ; ------------
@@ -548,6 +551,7 @@ projects[sarnia][patch][] = "https://www.drupal.org/files/issues/displayHighligh
 
 projects[scald][version] = 1.8
 projects[scald][subdir] = contrib
+projects[scald][patch][] = "../patches/restructure-library-render.patch"
 
 projects[scald_vimeo][version] = 1.4
 projects[scald_vimeo][subdir] = contrib
