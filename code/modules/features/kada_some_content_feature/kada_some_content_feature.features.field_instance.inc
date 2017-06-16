@@ -10,7 +10,8 @@
 function kada_some_content_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_feed_import_facebook-comment_body'
+  // Exported field_instance:
+  // 'comment-comment_node_feed_import_facebook-comment_body'.
   $field_instances['comment-comment_node_feed_import_facebook-comment_body'] = array(
     'bundle' => 'comment_node_feed_import_facebook',
     'default_value' => NULL,
@@ -47,7 +48,8 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'comment-comment_node_feed_import_instagram-comment_body'
+  // Exported field_instance:
+  // 'comment-comment_node_feed_import_instagram-comment_body'.
   $field_instances['comment-comment_node_feed_import_instagram-comment_body'] = array(
     'bundle' => 'comment_node_feed_import_instagram',
     'default_value' => NULL,
@@ -84,7 +86,8 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'comment-comment_node_feed_import_twitter-comment_body'
+  // Exported field_instance:
+  // 'comment-comment_node_feed_import_twitter-comment_body'.
   $field_instances['comment-comment_node_feed_import_twitter-comment_body'] = array(
     'bundle' => 'comment_node_feed_import_twitter',
     'default_value' => NULL,
@@ -121,7 +124,8 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'comment-comment_node_feed_import_youtube_channel-comment_body'
+  // Exported field_instance:
+  // 'comment-comment_node_feed_import_youtube_channel-comment_body'.
   $field_instances['comment-comment_node_feed_import_youtube_channel-comment_body'] = array(
     'bundle' => 'comment_node_feed_import_youtube_channel',
     'default_value' => NULL,
@@ -158,7 +162,8 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'comment-comment_node_social_media_update-comment_body'
+  // Exported field_instance:
+  // 'comment-comment_node_social_media_update-comment_body'.
   $field_instances['comment-comment_node_social_media_update-comment_body'] = array(
     'bundle' => 'comment_node_social_media_update',
     'default_value' => NULL,
@@ -195,7 +200,8 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_facebook-field_feed_client_secret'
+  // Exported field_instance:
+  // 'node-feed_import_facebook-field_feed_client_secret'.
   $field_instances['node-feed_import_facebook-field_feed_client_secret'] = array(
     'bundle' => 'feed_import_facebook',
     'default_value' => NULL,
@@ -274,7 +280,8 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_facebook-field_feed_client_token'
+  // Exported field_instance:
+  // 'node-feed_import_facebook-field_feed_client_token'.
   $field_instances['node-feed_import_facebook-field_feed_client_token'] = array(
     'bundle' => 'feed_import_facebook',
     'default_value' => NULL,
@@ -353,7 +360,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_facebook-field_feed_user_id'
+  // Exported field_instance: 'node-feed_import_facebook-field_feed_user_id'.
   $field_instances['node-feed_import_facebook-field_feed_user_id'] = array(
     'bundle' => 'feed_import_facebook',
     'default_value' => NULL,
@@ -432,7 +439,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_facebook-field_theme'
+  // Exported field_instance: 'node-feed_import_facebook-field_theme'.
   $field_instances['node-feed_import_facebook-field_theme'] = array(
     'bundle' => 'feed_import_facebook',
     'default_value' => NULL,
@@ -471,7 +478,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_facebook-og_group_ref'
+  // Exported field_instance: 'node-feed_import_facebook-og_group_ref'.
   $field_instances['node-feed_import_facebook-og_group_ref'] = array(
     'bundle' => 'feed_import_facebook',
     'default_value' => NULL,
@@ -531,7 +538,8 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_instagram-field_feed_client_token'
+  // Exported field_instance:
+  // 'node-feed_import_instagram-field_feed_client_token'.
   $field_instances['node-feed_import_instagram-field_feed_client_token'] = array(
     'bundle' => 'feed_import_instagram',
     'default_value' => NULL,
@@ -614,7 +622,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_instagram-field_feed_user_id'
+  // Exported field_instance: 'node-feed_import_instagram-field_feed_user_id'.
   $field_instances['node-feed_import_instagram-field_feed_user_id'] = array(
     'bundle' => 'feed_import_instagram',
     'default_value' => NULL,
@@ -693,7 +701,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_instagram-field_theme'
+  // Exported field_instance: 'node-feed_import_instagram-field_theme'.
   $field_instances['node-feed_import_instagram-field_theme'] = array(
     'bundle' => 'feed_import_instagram',
     'default_value' => NULL,
@@ -732,7 +740,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_instagram-og_group_ref'
+  // Exported field_instance: 'node-feed_import_instagram-og_group_ref'.
   $field_instances['node-feed_import_instagram-og_group_ref'] = array(
     'bundle' => 'feed_import_instagram',
     'default_value' => NULL,
@@ -792,7 +800,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_twitter-field_feed_user_id'
+  // Exported field_instance: 'node-feed_import_twitter-field_feed_user_id'.
   $field_instances['node-feed_import_twitter-field_feed_user_id'] = array(
     'bundle' => 'feed_import_twitter',
     'default_value' => NULL,
@@ -871,7 +879,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_twitter-field_theme'
+  // Exported field_instance: 'node-feed_import_twitter-field_theme'.
   $field_instances['node-feed_import_twitter-field_theme'] = array(
     'bundle' => 'feed_import_twitter',
     'default_value' => NULL,
@@ -910,7 +918,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_twitter-og_group_ref'
+  // Exported field_instance: 'node-feed_import_twitter-og_group_ref'.
   $field_instances['node-feed_import_twitter-og_group_ref'] = array(
     'bundle' => 'feed_import_twitter',
     'default_value' => NULL,
@@ -970,7 +978,8 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_youtube_channel-field_feed_client_secret'
+  // Exported field_instance:
+  // 'node-feed_import_youtube_channel-field_feed_client_secret'.
   $field_instances['node-feed_import_youtube_channel-field_feed_client_secret'] = array(
     'bundle' => 'feed_import_youtube_channel',
     'default_value' => NULL,
@@ -1049,7 +1058,8 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_youtube_channel-field_feed_user_id'
+  // Exported field_instance:
+  // 'node-feed_import_youtube_channel-field_feed_user_id'.
   $field_instances['node-feed_import_youtube_channel-field_feed_user_id'] = array(
     'bundle' => 'feed_import_youtube_channel',
     'default_value' => NULL,
@@ -1128,7 +1138,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_youtube_channel-field_theme'
+  // Exported field_instance: 'node-feed_import_youtube_channel-field_theme'.
   $field_instances['node-feed_import_youtube_channel-field_theme'] = array(
     'bundle' => 'feed_import_youtube_channel',
     'default_value' => NULL,
@@ -1167,7 +1177,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_youtube_channel-og_group_ref'
+  // Exported field_instance: 'node-feed_import_youtube_channel-og_group_ref'.
   $field_instances['node-feed_import_youtube_channel-og_group_ref'] = array(
     'bundle' => 'feed_import_youtube_channel',
     'default_value' => NULL,
@@ -1227,7 +1237,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-body'
+  // Exported field_instance: 'node-social_media_update-body'.
   $field_instances['node-social_media_update-body'] = array(
     'bundle' => 'social_media_update',
     'default_value' => NULL,
@@ -1317,7 +1327,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-field_image'
+  // Exported field_instance: 'node-social_media_update-field_image'.
   $field_instances['node-social_media_update-field_image'] = array(
     'bundle' => 'social_media_update',
     'deleted' => 0,
@@ -1389,7 +1399,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-field_image_url'
+  // Exported field_instance: 'node-social_media_update-field_image_url'.
   $field_instances['node-social_media_update-field_image_url'] = array(
     'bundle' => 'social_media_update',
     'default_value' => NULL,
@@ -1466,7 +1476,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-field_keywords'
+  // Exported field_instance: 'node-social_media_update-field_keywords'.
   $field_instances['node-social_media_update-field_keywords'] = array(
     'bundle' => 'social_media_update',
     'default_value' => NULL,
@@ -1520,7 +1530,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-field_link'
+  // Exported field_instance: 'node-social_media_update-field_link'.
   $field_instances['node-social_media_update-field_link'] = array(
     'bundle' => 'social_media_update',
     'default_value' => NULL,
@@ -1598,7 +1608,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-field_location'
+  // Exported field_instance: 'node-social_media_update-field_location'.
   $field_instances['node-social_media_update-field_location'] = array(
     'bundle' => 'social_media_update',
     'default_value' => NULL,
@@ -1654,7 +1664,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-field_location_name'
+  // Exported field_instance: 'node-social_media_update-field_location_name'.
   $field_instances['node-social_media_update-field_location_name'] = array(
     'bundle' => 'social_media_update',
     'default_value' => NULL,
@@ -1745,7 +1755,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-field_object_id'
+  // Exported field_instance: 'node-social_media_update-field_object_id'.
   $field_instances['node-social_media_update-field_object_id'] = array(
     'bundle' => 'social_media_update',
     'default_value' => NULL,
@@ -1834,7 +1844,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-field_share_caption'
+  // Exported field_instance: 'node-social_media_update-field_share_caption'.
   $field_instances['node-social_media_update-field_share_caption'] = array(
     'bundle' => 'social_media_update',
     'default_value' => NULL,
@@ -1924,7 +1934,8 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-field_share_description'
+  // Exported field_instance:
+  // 'node-social_media_update-field_share_description'.
   $field_instances['node-social_media_update-field_share_description'] = array(
     'bundle' => 'social_media_update',
     'default_value' => NULL,
@@ -2014,7 +2025,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-field_share_title'
+  // Exported field_instance: 'node-social_media_update-field_share_title'.
   $field_instances['node-social_media_update-field_share_title'] = array(
     'bundle' => 'social_media_update',
     'default_value' => NULL,
@@ -2103,7 +2114,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-field_share_type'
+  // Exported field_instance: 'node-social_media_update-field_share_type'.
   $field_instances['node-social_media_update-field_share_type'] = array(
     'bundle' => 'social_media_update',
     'default_value' => NULL,
@@ -2192,7 +2203,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-field_some_id'
+  // Exported field_instance: 'node-social_media_update-field_some_id'.
   $field_instances['node-social_media_update-field_some_id'] = array(
     'bundle' => 'social_media_update',
     'default_value' => NULL,
@@ -2282,7 +2293,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-field_some_type'
+  // Exported field_instance: 'node-social_media_update-field_some_type'.
   $field_instances['node-social_media_update-field_some_type'] = array(
     'bundle' => 'social_media_update',
     'default_value' => NULL,
@@ -2333,7 +2344,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-field_theme'
+  // Exported field_instance: 'node-social_media_update-field_theme'.
   $field_instances['node-social_media_update-field_theme'] = array(
     'bundle' => 'social_media_update',
     'default_value' => NULL,
@@ -2384,7 +2395,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-og_group_ref'
+  // Exported field_instance: 'node-social_media_update-og_group_ref'.
   $field_instances['node-social_media_update-og_group_ref'] = array(
     'bundle' => 'social_media_update',
     'default_value' => NULL,

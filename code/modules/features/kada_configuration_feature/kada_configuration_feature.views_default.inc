@@ -11,11 +11,11 @@ function kada_configuration_feature_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'driveturku_accessibilities';
+  $view->name = 'kada_accessibilities';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'taxonomy_term_data';
-  $view->human_name = 'DriveTurku Accessibilities';
+  $view->human_name = 'KADA Accessibilities';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -166,7 +166,7 @@ function kada_configuration_feature_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $translatables['driveturku_accessibilities'] = array(
+  $translatables['kada_accessibilities'] = array(
     t('Master'),
     t('more'),
     t('Käytä'),
@@ -188,14 +188,14 @@ function kada_configuration_feature_views_default_views() {
     t('field_accessibility'),
     t('Kaikki'),
   );
-  $export['driveturku_accessibilities'] = $view;
+  $export['kada_accessibilities'] = $view;
 
   $view = new view();
-  $view->name = 'driveturku_contact_information';
+  $view->name = 'kada_contact_information';
   $view->description = 'Display contant information from referenced Place';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Contact information';
+  $view->human_name = 'KADA Contact information';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -293,7 +293,7 @@ function kada_configuration_feature_views_default_views() {
   /* Display: Places */
   $handler = $view->new_display('block', 'Places', 'contact_info');
   $handler->display->display_options['display_description'] = 'Places referenced via contact information field';
-  $translatables['driveturku_contact_information'] = array(
+  $translatables['kada_contact_information'] = array(
     t('Master'),
     t('Yhteystiedot'),
     t('more'),
@@ -307,14 +307,14 @@ function kada_configuration_feature_views_default_views() {
     t('Places'),
     t('Places referenced via contact information field'),
   );
-  $export['driveturku_contact_information'] = $view;
+  $export['kada_contact_information'] = $view;
 
   $view = new view();
-  $view->name = 'driveturku_recommended';
+  $view->name = 'kada_recommended';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Recommended';
+  $view->human_name = 'KADA Recommended';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -374,7 +374,7 @@ function kada_configuration_feature_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
-  $translatables['driveturku_recommended'] = array(
+  $translatables['kada_recommended'] = array(
     t('Master'),
     t('more'),
     t('Käytä'),
@@ -385,7 +385,7 @@ function kada_configuration_feature_views_default_views() {
     t('Kaikki'),
     t('Block'),
   );
-  $export['driveturku_recommended'] = $view;
+  $export['kada_recommended'] = $view;
 
   return $export;
 }

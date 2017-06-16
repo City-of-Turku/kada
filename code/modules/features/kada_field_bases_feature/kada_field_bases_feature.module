@@ -13,7 +13,7 @@ include_once 'kada_field_bases_feature.features.inc';
  * Implements hook_views_pre_execute()
  */
 function kada_field_bases_feature_views_post_execute(&$view) {
-  if ($view->name == 'driveturku_accessibilities' && $view->current_display == 'ds_block') {
+  if ($view->name == 'kada_accessibilities' && $view->current_display == 'ds_block') {
     // Because field collection doesn't work with entity translation, we have
     // to use our own display logic. Displaying only the values in current
     // language.

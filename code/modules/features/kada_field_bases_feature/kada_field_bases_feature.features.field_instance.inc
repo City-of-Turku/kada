@@ -10,7 +10,8 @@
 function kada_field_bases_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_accessibility-field_accessibility_type_er'
+  // Exported field_instance:
+  // 'field_collection_item-field_accessibility-field_accessibility_type_er'.
   $field_instances['field_collection_item-field_accessibility-field_accessibility_type_er'] = array(
     'bundle' => 'field_accessibility',
     'default_value' => NULL,
@@ -51,7 +52,8 @@ function kada_field_bases_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_accessibility-field_description_en'
+  // Exported field_instance:
+  // 'field_collection_item-field_accessibility-field_description_en'.
   $field_instances['field_collection_item-field_accessibility-field_description_en'] = array(
     'bundle' => 'field_accessibility',
     'default_value' => NULL,
@@ -126,7 +128,8 @@ function kada_field_bases_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_accessibility-field_description_fi'
+  // Exported field_instance:
+  // 'field_collection_item-field_accessibility-field_description_fi'.
   $field_instances['field_collection_item-field_accessibility-field_description_fi'] = array(
     'bundle' => 'field_accessibility',
     'default_value' => NULL,
@@ -201,7 +204,8 @@ function kada_field_bases_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'field_collection_item-field_accessibility-field_description_sv'
+  // Exported field_instance:
+  // 'field_collection_item-field_accessibility-field_description_sv'.
   $field_instances['field_collection_item-field_accessibility-field_description_sv'] = array(
     'bundle' => 'field_accessibility',
     'default_value' => NULL,

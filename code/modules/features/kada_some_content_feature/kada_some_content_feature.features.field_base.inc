@@ -10,21 +10,13 @@
 function kada_some_content_feature_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_feed_client_secret'
+  // Exported field_base: 'field_feed_client_secret'.
   $field_bases['field_feed_client_secret'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_feed_client_secret',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -40,21 +32,13 @@ function kada_some_content_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_feed_client_token'
+  // Exported field_base: 'field_feed_client_token'.
   $field_bases['field_feed_client_token'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_feed_client_token',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -70,21 +54,13 @@ function kada_some_content_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_feed_user_id'
+  // Exported field_base: 'field_feed_user_id'.
   $field_bases['field_feed_user_id'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_feed_user_id',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',

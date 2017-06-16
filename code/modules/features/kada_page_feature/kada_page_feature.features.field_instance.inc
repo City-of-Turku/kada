@@ -10,7 +10,7 @@
 function kada_page_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_page-comment_body'
+  // Exported field_instance: 'comment-comment_node_page-comment_body'.
   $field_instances['comment-comment_node_page-comment_body'] = array(
     'bundle' => 'comment_node_page',
     'default_value' => NULL,
@@ -47,7 +47,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-body'
+  // Exported field_instance: 'node-page-body'.
   $field_instances['node-page-body'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -136,7 +136,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_contact_information'
+  // Exported field_instance: 'node-page-field_contact_information'.
   $field_instances['node-page-field_contact_information'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -201,7 +201,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_district'
+  // Exported field_instance: 'node-page-field_district'.
   $field_instances['node-page-field_district'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -251,7 +251,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_feed_tabs'
+  // Exported field_instance: 'node-page-field_feed_tabs'.
   $field_instances['node-page-field_feed_tabs'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -301,7 +301,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_info_box'
+  // Exported field_instance: 'node-page-field_info_box'.
   $field_instances['node-page-field_info_box'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -390,7 +390,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_info_box_bottom'
+  // Exported field_instance: 'node-page-field_info_box_bottom'.
   $field_instances['node-page-field_info_box_bottom'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -479,7 +479,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_keywords'
+  // Exported field_instance: 'node-page-field_keywords'.
   $field_instances['node-page-field_keywords'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -533,7 +533,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_link_to_content_multiple'
+  // Exported field_instance: 'node-page-field_link_to_content_multiple'.
   $field_instances['node-page-field_link_to_content_multiple'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -608,7 +608,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_main_image'
+  // Exported field_instance: 'node-page-field_main_image'.
   $field_instances['node-page-field_main_image'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -673,7 +673,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_related_content'
+  // Exported field_instance: 'node-page-field_related_content'.
   $field_instances['node-page-field_related_content'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -730,7 +730,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_subpage'
+  // Exported field_instance: 'node-page-field_subpage'.
   $field_instances['node-page-field_subpage'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -789,7 +789,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_target_audience'
+  // Exported field_instance: 'node-page-field_target_audience'.
   $field_instances['node-page-field_target_audience'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -839,7 +839,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_theme'
+  // Exported field_instance: 'node-page-field_theme'.
   $field_instances['node-page-field_theme'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -889,7 +889,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_theme_main_page'
+  // Exported field_instance: 'node-page-field_theme_main_page'.
   $field_instances['node-page-field_theme_main_page'] = array(
     'bundle' => 'page',
     'default_value' => array(
@@ -945,7 +945,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_topic'
+  // Exported field_instance: 'node-page-field_topic'.
   $field_instances['node-page-field_topic'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -1003,7 +1003,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_tweet_embed'
+  // Exported field_instance: 'node-page-field_tweet_embed'.
   $field_instances['node-page-field_tweet_embed'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -1095,7 +1095,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-field_widget_before_content'
+  // Exported field_instance: 'node-page-field_widget_before_content'.
   $field_instances['node-page-field_widget_before_content'] = array(
     'bundle' => 'page',
     'default_value' => NULL,
@@ -1155,7 +1155,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-page-og_group_ref'
+  // Exported field_instance: 'node-page-og_group_ref'.
   $field_instances['node-page-og_group_ref'] = array(
     'bundle' => 'page',
     'default_value' => NULL,

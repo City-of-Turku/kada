@@ -1,6 +1,0 @@
-name = TKUFI Event Ext
-description = DriveTurku event management for external users
-core = 7.x
-package = TKUFI
-
-dependencies[] = multiple_entity_form

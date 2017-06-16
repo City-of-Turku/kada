@@ -10,21 +10,13 @@
 function kada_media_feature_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_alt_text'
+  // Exported field_base: 'field_alt_text'.
   $field_bases['field_alt_text'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_alt_text',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -40,21 +32,13 @@ function kada_media_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_title_text'
+  // Exported field_base: 'field_title_text'.
   $field_bases['field_title_text'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_title_text',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -70,21 +54,13 @@ function kada_media_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'scald_author_url'
+  // Exported field_base: 'scald_author_url'.
   $field_bases['scald_author_url'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'scald_author_url',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -101,21 +77,13 @@ function kada_media_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'scald_authors'
+  // Exported field_base: 'scald_authors'.
   $field_bases['scald_authors'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'scald_authors',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -138,21 +106,13 @@ function kada_media_feature_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'scald_file'
+  // Exported field_base: 'scald_file'.
   $field_bases['scald_file'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'scald_file',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
@@ -172,21 +132,13 @@ function kada_media_feature_field_default_field_bases() {
     'type' => 'file',
   );
 
-  // Exported field_base: 'scald_tags'
+  // Exported field_base: 'scald_tags'.
   $field_bases['scald_tags'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'scald_tags',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -209,21 +161,13 @@ function kada_media_feature_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'scald_thumbnail'
+  // Exported field_base: 'scald_thumbnail'.
   $field_bases['scald_thumbnail'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'scald_thumbnail',
-    'foreign keys' => array(
-      'fid' => array(
-        'columns' => array(
-          'fid' => 'fid',
-        ),
-        'table' => 'file_managed',
-      ),
-    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
