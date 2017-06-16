@@ -15,7 +15,7 @@ function kada_events_base_feature_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Kada Event list';
+  $view->human_name = 'KADA Event list';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -351,7 +351,7 @@ function kada_events_base_feature_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  $handler->display->display_options['block_description'] = 'View: Kada Event list | Block';
+  $handler->display->display_options['block_description'] = 'View: KADA Event list | Block';
 
   /* Display: Event tab | Free event */
   $handler = $view->new_display('block', 'Event tab | Free event', 'event_tab_free');
@@ -986,7 +986,7 @@ function kada_events_base_feature_views_default_views() {
     t('Target audience'),
     t('District'),
     t('Event types'),
-    t('View: Kada Event list | Block'),
+    t('View: KADA Event list | Block'),
     t('Event tab | Free event'),
     t('Free events shown in list under Free tab'),
     t('terms'),
@@ -1013,7 +1013,7 @@ function kada_events_base_feature_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Kada eventcalendar ER';
+  $view->human_name = 'KADA eventcalendar ER';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1177,8 +1177,8 @@ function kada_events_base_feature_views_default_views() {
   $view->name = 'kada_events_indexed';
   $view->description = '';
   $view->tag = 'default';
-  $view->base_table = 'search_api_index_driveturku_content';
-  $view->human_name = 'Kada Events Indexed';
+  $view->base_table = 'search_api_index_kada_content';
+  $view->human_name = 'KADA Events Indexed';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1197,19 +1197,19 @@ function kada_events_base_feature_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: Indexed Multilingual Node: Multilingual ID */
   $handler->display->display_options['fields']['search_api_et_id']['id'] = 'search_api_et_id';
-  $handler->display->display_options['fields']['search_api_et_id']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['fields']['search_api_et_id']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['fields']['search_api_et_id']['field'] = 'search_api_et_id';
   /* Sort criterion: Event date: End date (indexed) */
   $handler->display->display_options['sorts']['field_event_date_value2']['id'] = 'field_event_date_value2';
-  $handler->display->display_options['sorts']['field_event_date_value2']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['sorts']['field_event_date_value2']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['sorts']['field_event_date_value2']['field'] = 'field_event_date_value2';
   /* Sort criterion: Event date: Start date (indexed) */
   $handler->display->display_options['sorts']['field_event_date_value']['id'] = 'field_event_date_value';
-  $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['sorts']['field_event_date_value']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['sorts']['field_event_date_value']['field'] = 'field_event_date_value';
   /* Contextual filter: Event category: All parent terms (indexed) */
   $handler->display->display_options['arguments']['field_event_types_parents_all']['id'] = 'field_event_types_parents_all';
-  $handler->display->display_options['arguments']['field_event_types_parents_all']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['arguments']['field_event_types_parents_all']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['arguments']['field_event_types_parents_all']['field'] = 'field_event_types_parents_all';
   $handler->display->display_options['arguments']['field_event_types_parents_all']['default_action'] = 'default';
   $handler->display->display_options['arguments']['field_event_types_parents_all']['default_argument_type'] = 'taxonomy_tid';
@@ -1222,7 +1222,7 @@ function kada_events_base_feature_views_default_views() {
   );
   /* Filter criterion: Indexed Multilingual Node: Content type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
-  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'event' => 'event',
@@ -1230,7 +1230,7 @@ function kada_events_base_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Indexed Multilingual Node: Item language */
   $handler->display->display_options['filters']['search_api_language']['id'] = 'search_api_language';
-  $handler->display->display_options['filters']['search_api_language']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['filters']['search_api_language']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['filters']['search_api_language']['field'] = 'search_api_language';
   $handler->display->display_options['filters']['search_api_language']['value'] = array(
     'current' => 'current',
@@ -1238,7 +1238,7 @@ function kada_events_base_feature_views_default_views() {
   $handler->display->display_options['filters']['search_api_language']['group'] = 1;
   /* Filter criterion: Indexed Multilingual Node: Status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['filters']['status']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = array(
     1 => '1',
@@ -1246,14 +1246,14 @@ function kada_events_base_feature_views_default_views() {
   $handler->display->display_options['filters']['status']['group'] = 1;
   /* Filter criterion: Event date: Start date (indexed) */
   $handler->display->display_options['filters']['field_event_date_value']['id'] = 'field_event_date_value';
-  $handler->display->display_options['filters']['field_event_date_value']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['filters']['field_event_date_value']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['filters']['field_event_date_value']['field'] = 'field_event_date_value';
   $handler->display->display_options['filters']['field_event_date_value']['operator'] = '>=';
   $handler->display->display_options['filters']['field_event_date_value']['value'] = 'now';
   $handler->display->display_options['filters']['field_event_date_value']['group'] = 2;
   /* Filter criterion: Event date: End date (indexed) */
   $handler->display->display_options['filters']['field_event_date_value2']['id'] = 'field_event_date_value2';
-  $handler->display->display_options['filters']['field_event_date_value2']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['filters']['field_event_date_value2']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['filters']['field_event_date_value2']['field'] = 'field_event_date_value2';
   $handler->display->display_options['filters']['field_event_date_value2']['operator'] = '>=';
   $handler->display->display_options['filters']['field_event_date_value2']['value'] = 'now';
@@ -1302,7 +1302,7 @@ function kada_events_base_feature_views_default_views() {
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Multilingual Node: Location */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
-  $handler->display->display_options['fields']['field_location']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['fields']['field_location']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['label'] = '';
   $handler->display->display_options['fields']['field_location']['exclude'] = TRUE;
@@ -1313,7 +1313,7 @@ function kada_events_base_feature_views_default_views() {
   );
   /* Field: Indexed Multilingual Node: Node ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
   /* Field: Content: Rendered Node */
@@ -1332,7 +1332,7 @@ function kada_events_base_feature_views_default_views() {
   $handler = $view->new_display('block', 'Map | Event indexed', 'indexed_event_map');
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'openlayers_map';
-  $handler->display->display_options['style_options']['map'] = 'tkufi_event_map_indexed';
+  $handler->display->display_options['style_options']['map'] = 'kada_event_map_indexed';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -1346,13 +1346,13 @@ function kada_events_base_feature_views_default_views() {
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Multilingual Node: Node ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Event category: All parent terms (indexed) */
   $handler->display->display_options['arguments']['field_event_types_parents_all']['id'] = 'field_event_types_parents_all';
-  $handler->display->display_options['arguments']['field_event_types_parents_all']['table'] = 'search_api_index_driveturku_content';
+  $handler->display->display_options['arguments']['field_event_types_parents_all']['table'] = 'search_api_index_kada_content';
   $handler->display->display_options['arguments']['field_event_types_parents_all']['field'] = 'field_event_types_parents_all';
   $handler->display->display_options['arguments']['field_event_types_parents_all']['default_action'] = 'empty';
   $handler->display->display_options['arguments']['field_event_types_parents_all']['default_argument_type'] = 'fixed';
@@ -1392,7 +1392,7 @@ function kada_events_base_feature_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Kada Events Map';
+  $view->human_name = 'KADA Events Map';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1684,7 +1684,7 @@ function kada_events_base_feature_views_default_views() {
   $handler->display->display_options['display_description'] = 'Show events on map';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'openlayers_map';
-  $handler->display->display_options['style_options']['map'] = 'tkufi_event_map';
+  $handler->display->display_options['style_options']['map'] = 'kada_event_map';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -1788,7 +1788,7 @@ function kada_events_base_feature_views_default_views() {
   $handler = $view->new_display('block', 'Map | Event single', 'map_single');
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'openlayers_map';
-  $handler->display->display_options['style_options']['map'] = 'tkufi_event_map_single_event';
+  $handler->display->display_options['style_options']['map'] = 'kada_event_map_single_event';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
@@ -1850,7 +1850,7 @@ function kada_events_base_feature_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Kada Recurring events';
+  $view->human_name = 'KADA Recurring events';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */

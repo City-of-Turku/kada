@@ -130,8 +130,8 @@ function kada_widget_feature_entity_view($entity, $type, $view_mode, $langcode) 
  */
 function kada_widget_feature_views_query_alter(&$view, &$query) {
   // Add tag for super event relation view displays to be used in hook_query_TAG_alter.
-  if (($view->name == 'driveturku_widget_event_carousel' && $view->current_display == 'carousel_series')
-    || ($view->name == 'driveturku_widget_event_mosaic' && $view->current_display == 'mosaic_series')) {
+  if (($view->name == 'kada_widget_event_carousel' && $view->current_display == 'carousel_series')
+    || ($view->name == 'kada_widget_event_mosaic' && $view->current_display == 'mosaic_series')) {
     $query->add_tag('widget_event_series');
   }
 }
@@ -161,14 +161,14 @@ function kada_widget_feature_build_event_carousel(&$entity, $view_mode, $langcod
   // Parse view args and search params from widget.
   list($view_args, $search_params) = kada_widget_feature_parse_event_args($widget);
   // Create single event view.
-  $view = views_get_view('driveturku_widget_event_carousel');
+  $view = views_get_view('kada_widget_event_carousel');
   $view->set_display('carousel');
   // Set arguments.
   $view->set_arguments($view_args);
   $view->pre_execute();
   $view->execute();
   // Create series event view.
-  $view2 = views_get_view('driveturku_widget_event_carousel');
+  $view2 = views_get_view('kada_widget_event_carousel');
   $view2->set_display('carousel_series');
   // Set arguments.
   $view2->set_arguments($view_args);
@@ -227,7 +227,7 @@ function kada_widget_feature_build_event_mosaic(&$entity, $view_mode, $langcode)
   // Parse view args and search params from widget.
   list($view_args, $search_params) = kada_widget_feature_parse_event_args($widget);
   // Create single event view.
-  $view = views_get_view('driveturku_widget_event_mosaic');
+  $view = views_get_view('kada_widget_event_mosaic');
 
   $view->set_display('mosaic');
   // Set arguments.
@@ -235,7 +235,7 @@ function kada_widget_feature_build_event_mosaic(&$entity, $view_mode, $langcode)
   $view->pre_execute();
   $view->execute();
   // Create series event view.
-  $view2 = views_get_view('driveturku_widget_event_mosaic');
+  $view2 = views_get_view('kada_widget_event_mosaic');
 
   $view2->set_display('mosaic_series');
   // Set arguments.
@@ -374,7 +374,7 @@ function kada_widget_feature_get_event_search_url($search_params) {
  * Creates event calendar for given event view args and search params.
  */
 function kada_widget_feature_event_calendar($widget, $view_args, $search_url) {
-  $view = views_get_view('driveturku_widget_misc_event_calendar');
+  $view = views_get_view('kada_widget_misc_event_calendar');
   $view->set_display('calendar');
 
   // Set arguments.

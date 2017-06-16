@@ -45,7 +45,7 @@
 
   // Ticket links in view should be placed similarly regardless of
   // having availability colors or not.
-  .view-id-driveturku_recurring_events .view-content & {
+  .view-id-kada_recurring_events .view-content & {
     .event__ticket {
       float: left;
       margin-right: 0em;
@@ -82,7 +82,7 @@
 }
 
 // Styling of a separate field to show ticket info (almost unused).
-.event.node--event, 
+.event.node--event,
 .view .view-content {
   div.event__ticket_availability {
     margin-top: 0.5em;

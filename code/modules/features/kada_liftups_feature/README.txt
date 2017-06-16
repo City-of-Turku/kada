@@ -3,6 +3,17 @@ This file describes the feature, from developer to developer. It should focus on
 == PURPOSE ==
 Liftups give content editors a tool to make visually catching shortcuts in the site or promote content outside the site.
 
+== ENABLING ==
+Create the following entity queues after enabling the feature, as otherwise related views don't work.
+- kadacalendar_event_front_carousel_sub_fi
+- kadacalendar_event_front_carousel_sub_sv
+- kadacalendar_event_front_carousel_sub_en
+- kadacalendar_event_front_carousel_sub_ru
+- kadacalendar_hobby_front_carousel_sub_fi
+- kadacalendar_hobby_front_carousel_sub_sv
+- kadacalendar_hobby_front_carousel_sub_en
+- kadacalendar_hobby_front_carousel_sub_ru
+
 == CONTEXT ==
 - theme_liftups: Will display the view blocks for top carousel, current and project liftups. The paths are "hard-coded" in conditions, there could be a better way to activate this context for first level menu items only.
 

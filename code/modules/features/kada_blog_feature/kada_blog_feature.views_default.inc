@@ -92,11 +92,11 @@ function kada_blog_feature_views_default_views() {
   $export['blog_posts'] = $view;
 
   $view = new view();
-  $view->name = 'driveturku_blog_image';
+  $view->name = 'kada_blog_image';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Blog Image';
+  $view->human_name = 'KADA Blog Image';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -204,7 +204,7 @@ function kada_blog_feature_views_default_views() {
   /* Display: Blog Image */
   $handler = $view->new_display('block', 'Blog Image', 'blog_image');
   $handler->display->display_options['display_description'] = 'Display top image from main blog';
-  $translatables['driveturku_blog_image'] = array(
+  $translatables['kada_blog_image'] = array(
     t('Master'),
     t('more'),
     t('Apply'),
@@ -218,14 +218,14 @@ function kada_blog_feature_views_default_views() {
     t('Blog Image'),
     t('Display top image from main blog'),
   );
-  $export['driveturku_blog_image'] = $view;
+  $export['kada_blog_image'] = $view;
 
   $view = new view();
-  $view->name = 'driveturku_other_blogs';
+  $view->name = 'kada_other_blogs';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Other Blogs';
+  $view->human_name = 'KADA Other Blogs';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -276,7 +276,7 @@ function kada_blog_feature_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
-  $translatables['driveturku_other_blogs'] = array(
+  $translatables['kada_other_blogs'] = array(
     t('Master'),
     t('Other Blogs'),
     t('more'),
@@ -287,14 +287,14 @@ function kada_blog_feature_views_default_views() {
     t('Desc'),
     t('Block'),
   );
-  $export['driveturku_other_blogs'] = $view;
+  $export['kada_other_blogs'] = $view;
 
   $view = new view();
-  $view->name = 'driveturku_popular_from_other_blogs';
+  $view->name = 'kada_popular_from_other_blogs';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Popular from other blogs';
+  $view->human_name = 'KADA Popular from other blogs';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -368,7 +368,7 @@ function kada_blog_feature_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
-  $translatables['driveturku_popular_from_other_blogs'] = array(
+  $translatables['kada_popular_from_other_blogs'] = array(
     t('Master'),
     t('Posts from other blogs'),
     t('more'),
@@ -381,14 +381,14 @@ function kada_blog_feature_views_default_views() {
     t('All'),
     t('Block'),
   );
-  $export['driveturku_popular_from_other_blogs'] = $view;
+  $export['kada_popular_from_other_blogs'] = $view;
 
   $view = new view();
-  $view->name = 'driveturku_posts_from_same_blog';
+  $view->name = 'kada_posts_from_same_blog';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku posts from same blog';
+  $view->human_name = 'KADA posts from same blog';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -472,7 +472,7 @@ function kada_blog_feature_views_default_views() {
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
-  $translatables['driveturku_posts_from_same_blog'] = array(
+  $translatables['kada_posts_from_same_blog'] = array(
     t('Master'),
     t('Recent posts from this blog'),
     t('more'),
@@ -486,7 +486,7 @@ function kada_blog_feature_views_default_views() {
     t('All'),
     t('Block'),
   );
-  $export['driveturku_posts_from_same_blog'] = $view;
+  $export['kada_posts_from_same_blog'] = $view;
 
   return $export;
 }

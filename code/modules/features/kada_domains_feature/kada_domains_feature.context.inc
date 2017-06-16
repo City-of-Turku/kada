@@ -108,7 +108,7 @@ function kada_domains_feature_context_default_contexts() {
   $context->conditions = array(
     'context' => array(
       'values' => array(
-        '~turkucalendar' => '~turkucalendar',
+        '~kadacalendar' => '~kadacalendar',
       ),
     ),
     'entity_field' => array(
@@ -139,7 +139,7 @@ function kada_domains_feature_context_default_contexts() {
   $context->conditions = array(
     'context' => array(
       'values' => array(
-        '~turkucalendar' => '~turkucalendar',
+        '~kadacalendar' => '~kadacalendar',
       ),
     ),
   );

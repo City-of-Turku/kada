@@ -5394,7 +5394,7 @@ html.js .tkufi-event-ext-event-translations-form .form-autocomplete.throbbing {
 .event__ticket_wrapper .traffic-light-red {
   border-right: solid #FF1D41 1.5em;
 }
-.view-id-driveturku_recurring_events .view-content .event__ticket_wrapper .event__ticket {
+.view-id-kada_recurring_events .view-content .event__ticket_wrapper .event__ticket {
   float: left;
   margin-right: 0em;
 }
@@ -10156,10 +10156,10 @@ html[xmlns] .slides {
   background-color: #0089bc;
 }
 
-.view-driveturku-news .views-row h2, .view-driveturku-news .views-row .search-result__title {
+.view-kada-news .views-row h2, .view-kada-news .views-row .search-result__title {
   margin-bottom: 0;
 }
-.view-driveturku-news .views-row .views-field-created {
+.view-kada-news .views-row .views-field-created {
   margin-bottom: 15px;
 }
 
@@ -11602,7 +11602,7 @@ body {
   margin: 1em 0;
 }
 
-.view-driveturku-services-on-map {
+.view-kada-services-on-map {
   margin-bottom: 16px;
 }
 
@@ -12031,7 +12031,7 @@ div.horizontal-tabs fieldset.horizontal-tabs-pane {
   color: #fff;
 }
 
-.view-driveturku-trust-units .views-row {
+.view-kada-trust-units .views-row {
   height: 380px;
   cursor: pointer;
   font-size: 16px;
@@ -12043,14 +12043,14 @@ div.horizontal-tabs fieldset.horizontal-tabs-pane {
   margin-right: 0;
 }
 @media (min-width: 551px) {
-  .view-driveturku-trust-units .views-row {
+  .view-kada-trust-units .views-row {
     width: 49.29577%;
     clear: right;
     float: left;
     margin-left: 0;
     margin-right: 1.40845%;
   }
-  .view-driveturku-trust-units .views-row:nth-child(2n) {
+  .view-kada-trust-units .views-row:nth-child(2n) {
     width: 49.29577%;
     clear: right;
     float: right;
@@ -12058,21 +12058,21 @@ div.horizontal-tabs fieldset.horizontal-tabs-pane {
   }
 }
 @media (min-width: 769px) {
-  .view-driveturku-trust-units .views-row {
+  .view-kada-trust-units .views-row {
     width: 32.39437%;
     clear: right;
     float: left;
     margin-left: 0;
     margin-right: 1.40845%;
   }
-  .view-driveturku-trust-units .views-row:nth-child(2n) {
+  .view-kada-trust-units .views-row:nth-child(2n) {
     width: 32.39437%;
     clear: right;
     float: left;
     margin-left: 0;
     margin-right: 1.40845%;
   }
-  .view-driveturku-trust-units .views-row:nth-child(3n) {
+  .view-kada-trust-units .views-row:nth-child(3n) {
     width: 32.39437%;
     clear: right;
     float: right;
@@ -12080,34 +12080,34 @@ div.horizontal-tabs fieldset.horizontal-tabs-pane {
   }
 }
 @media (min-width: 1138px) {
-  .view-driveturku-trust-units .views-row {
+  .view-kada-trust-units .views-row {
     width: 23.94366%;
     clear: right;
     float: left;
     margin-left: 0;
     margin-right: 1.40845%;
   }
-  .view-driveturku-trust-units .views-row:nth-child(2n), .view-driveturku-trust-units .views-row:nth-child(3n) {
+  .view-kada-trust-units .views-row:nth-child(2n), .view-kada-trust-units .views-row:nth-child(3n) {
     width: 23.94366%;
     clear: right;
     float: left;
     margin-left: 0;
     margin-right: 1.40845%;
   }
-  .view-driveturku-trust-units .views-row:nth-child(4n) {
+  .view-kada-trust-units .views-row:nth-child(4n) {
     width: 23.94366%;
     clear: right;
     float: right;
     margin-right: 0;
   }
 }
-.view-driveturku-trust-units .views-row a:hover {
+.view-kada-trust-units .views-row a:hover {
   text-decoration: none;
 }
-.view-driveturku-trust-units .views-row h2, .view-driveturku-trust-units .views-row .search-result__title {
+.view-kada-trust-units .views-row h2, .view-kada-trust-units .views-row .search-result__title {
   margin-top: 5px;
 }
-.view-driveturku-trust-units .views-row-last {
+.view-kada-trust-units .views-row-last {
   margin-bottom: 2em;
 }
 
@@ -12125,7 +12125,7 @@ div.horizontal-tabs fieldset.horizontal-tabs-pane {
 
 @media (min-width: 946px) {
   .entity-widget .mosaic,
-  .view-driveturku-widget-event-carousel {
+  .view-kada-widget-event-carousel {
     float: left;
     margin-right: 27%;
     position: relative;
@@ -12146,24 +12146,24 @@ div.horizontal-tabs fieldset.horizontal-tabs-pane {
 }
 
 @media (min-width: 946px) {
-  .view-driveturku-widget-event-carousel {
+  .view-kada-widget-event-carousel {
     padding: 1.5% 0;
   }
 }
 
-.theme-front .view-driveturku-widget-event-carousel {
+.theme-front .view-kada-widget-event-carousel {
   padding: 0;
 }
 
 @media (min-width: 946px) {
   .has-two-sidebars .entity-widget .mosaic,
-  .has-two-sidebars .view-driveturku-widget-event-carousel {
+  .has-two-sidebars .view-kada-widget-event-carousel {
     float: none;
     margin-right: 0;
     width: 100%;
   }
 }
-.has-two-sidebars .view-driveturku-widget-event-carousel {
+.has-two-sidebars .view-kada-widget-event-carousel {
   padding: 0;
 }
 @media (min-width: 946px) {
@@ -12176,7 +12176,7 @@ div.horizontal-tabs fieldset.horizontal-tabs-pane {
 
 @media (min-width: 946px) {
   .has-one-sidebar .entity-widget .mosaic,
-  .has-one-sidebar .view-driveturku-widget-event-carousel {
+  .has-one-sidebar .view-kada-widget-event-carousel {
     float: none;
     margin-right: 0;
     width: 100%;
@@ -12184,7 +12184,7 @@ div.horizontal-tabs fieldset.horizontal-tabs-pane {
 }
 @media (min-width: 1138px) {
   .has-one-sidebar .entity-widget .mosaic,
-  .has-one-sidebar .view-driveturku-widget-event-carousel {
+  .has-one-sidebar .view-kada-widget-event-carousel {
     float: left;
     margin-right: 34%;
     width: 66%;
@@ -12589,7 +12589,7 @@ div.horizontal-tabs fieldset.horizontal-tabs-pane {
 .domain-teatteri-dt-demo-turku-fi {
   background-color: #000;
 }
-.domain-teatteri-dt-demo-turku-fi .view-driveturku-section-header .section-title {
+.domain-teatteri-dt-demo-turku-fi .view-kada-section-header .section-title {
   display: none;
 }
 .domain-teatteri-dt-demo-turku-fi .block__title {

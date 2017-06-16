@@ -14,7 +14,7 @@
 
 // Carousel & mosaic widget styles
 .entity-widget .mosaic,
-.view-driveturku-widget-event-carousel {
+.view-kada-widget-event-carousel {
   @include breakpoint($mobi-navi) {
     float: left;
     margin-right: 27%;
@@ -37,20 +37,20 @@
 }
 
 // Carousel widget specific styles
-.view-driveturku-widget-event-carousel {
+.view-kada-widget-event-carousel {
   @include breakpoint($mobi-navi) {
     padding: 1.5% 0;
   }
 }
 
-.theme-front .view-driveturku-widget-event-carousel {
+.theme-front .view-kada-widget-event-carousel {
   padding: 0;
 }
 
 .has-two-sidebars {
   // Carousel & mosaic widget styles
   .entity-widget .mosaic,
-  .view-driveturku-widget-event-carousel {
+  .view-kada-widget-event-carousel {
     @include breakpoint($mobi-navi) {
       float: none;
       margin-right: 0;
@@ -58,7 +58,7 @@
     }
   }
 
-  .view-driveturku-widget-event-carousel {
+  .view-kada-widget-event-carousel {
     padding: 0;
   }
 
@@ -75,7 +75,7 @@
 .has-one-sidebar {
   // Carousel & mosaic widget styles
   .entity-widget .mosaic,
-  .view-driveturku-widget-event-carousel {
+  .view-kada-widget-event-carousel {
     @include breakpoint($mobi-navi) {
       float: none;
       margin-right: 0;

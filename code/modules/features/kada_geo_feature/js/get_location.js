@@ -3,7 +3,7 @@
   /**
    *  Ask location from browser when this view is opened in a tab.
    */
-  Drupal.behaviors.tkufiGetLocation = {
+  Drupal.behaviors.kadaGetLocation = {
     attach: function (context, settings) {
       $('.view.proximity').once(function(){
         // There should be only one view with prximity class, so we get the

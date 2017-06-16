@@ -10,7 +10,7 @@
 function kada_widget_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'widget-event_carousel-field_event_types'
+  // Exported field_instance: 'widget-event_carousel-field_event_types'.
   $field_instances['widget-event_carousel-field_event_types'] = array(
     'bundle' => 'event_carousel',
     'default_value' => NULL,
@@ -48,7 +48,7 @@ function kada_widget_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'widget-event_carousel-field_keywords_et'
+  // Exported field_instance: 'widget-event_carousel-field_keywords_et'.
   $field_instances['widget-event_carousel-field_keywords_et'] = array(
     'bundle' => 'event_carousel',
     'default_value' => NULL,
@@ -89,7 +89,7 @@ function kada_widget_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'widget-event_carousel-field_target_audience'
+  // Exported field_instance: 'widget-event_carousel-field_target_audience'.
   $field_instances['widget-event_carousel-field_target_audience'] = array(
     'bundle' => 'event_carousel',
     'default_value' => NULL,
@@ -127,7 +127,7 @@ function kada_widget_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'widget-event_carousel-og_group_ref'
+  // Exported field_instance: 'widget-event_carousel-og_group_ref'.
   $field_instances['widget-event_carousel-og_group_ref'] = array(
     'bundle' => 'event_carousel',
     'default_value' => NULL,
@@ -181,7 +181,7 @@ function kada_widget_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'widget-event_mosaic-field_event_types'
+  // Exported field_instance: 'widget-event_mosaic-field_event_types'.
   $field_instances['widget-event_mosaic-field_event_types'] = array(
     'bundle' => 'event_mosaic',
     'default_value' => NULL,
@@ -219,7 +219,7 @@ function kada_widget_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'widget-event_mosaic-field_keywords_et'
+  // Exported field_instance: 'widget-event_mosaic-field_keywords_et'.
   $field_instances['widget-event_mosaic-field_keywords_et'] = array(
     'bundle' => 'event_mosaic',
     'default_value' => NULL,
@@ -260,7 +260,7 @@ function kada_widget_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'widget-event_mosaic-field_target_audience'
+  // Exported field_instance: 'widget-event_mosaic-field_target_audience'.
   $field_instances['widget-event_mosaic-field_target_audience'] = array(
     'bundle' => 'event_mosaic',
     'default_value' => NULL,
@@ -298,7 +298,7 @@ function kada_widget_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'widget-event_mosaic-og_group_ref'
+  // Exported field_instance: 'widget-event_mosaic-og_group_ref'.
   $field_instances['widget-event_mosaic-og_group_ref'] = array(
     'bundle' => 'event_mosaic',
     'default_value' => NULL,

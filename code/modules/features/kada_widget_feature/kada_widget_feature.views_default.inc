@@ -11,18 +11,18 @@ function kada_widget_feature_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'driveturku_admin_widgets';
+  $view->name = 'kada_admin_widgets';
   $view->description = 'Provides admin view for widgets.';
   $view->tag = 'default';
   $view->base_table = 'eck_widget';
-  $view->human_name = 'DriveTurku Admin Widgets';
+  $view->human_name = 'KADA Admin Widgets';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'DriveTurku Admin Widgets';
+  $handler->display->display_options['title'] = 'KADA Admin Widgets';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'eck list widget event_carousel entities';
@@ -236,9 +236,9 @@ function kada_widget_feature_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
-  $translatables['driveturku_admin_widgets'] = array(
+  $translatables['kada_admin_widgets'] = array(
     t('Master'),
-    t('DriveTurku Admin Widgets'),
+    t('KADA Admin Widgets'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -267,14 +267,14 @@ function kada_widget_feature_views_default_views() {
     t('Delete link'),
     t('Page'),
   );
-  $export['driveturku_admin_widgets'] = $view;
+  $export['kada_admin_widgets'] = $view;
 
   $view = new view();
-  $view->name = 'driveturku_widget_event_carousel';
+  $view->name = 'kada_widget_event_carousel';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Widget - Event carousel';
+  $view->human_name = 'KADA Widget - Event carousel';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -359,7 +359,7 @@ function kada_widget_feature_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Title */
+  /* Field: Content: Name */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -637,7 +637,7 @@ function kada_widget_feature_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Content: Title */
+  /* Field: Content: Name */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -802,7 +802,7 @@ function kada_widget_feature_views_default_views() {
   $handler->display->display_options['filters']['field_content_image_et_sid_1']['relationship'] = 'relation_super_event_node';
   $handler->display->display_options['filters']['field_content_image_et_sid_1']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_content_image_et_sid_1']['group'] = 3;
-  $translatables['driveturku_widget_event_carousel'] = array(
+  $translatables['kada_widget_event_carousel'] = array(
     t('Master'),
     t('more'),
     t('Apply'),
@@ -821,14 +821,14 @@ function kada_widget_feature_views_default_views() {
     t('[field_content_image_ext_1]'),
     t('[field_content_image_et_1]'),
   );
-  $export['driveturku_widget_event_carousel'] = $view;
+  $export['kada_widget_event_carousel'] = $view;
 
   $view = new view();
-  $view->name = 'driveturku_widget_event_mosaic';
+  $view->name = 'kada_widget_event_mosaic';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Widget - Event mosaic';
+  $view->human_name = 'KADA Widget - Event mosaic';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -982,7 +982,7 @@ function kada_widget_feature_views_default_views() {
   $handler->display->display_options['filters']['field_content_image_ext_fid']['field'] = 'field_content_image_ext_fid';
   $handler->display->display_options['filters']['field_content_image_ext_fid']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_content_image_ext_fid']['group'] = 3;
-  /* Filter criterion: Content: Title (title_field:language) */
+  /* Filter criterion: Content: Name (title_field:language) */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -1086,7 +1086,7 @@ function kada_widget_feature_views_default_views() {
     'sub' => 'sub',
   );
   $handler->display->display_options['filters']['field_date_type_value']['group'] = 1;
-  /* Filter criterion: Content: Title (title_field:language) */
+  /* Filter criterion: Content: Name (title_field:language) */
   $handler->display->display_options['filters']['language_1']['id'] = 'language_1';
   $handler->display->display_options['filters']['language_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['language_1']['field'] = 'language';
@@ -1137,7 +1137,7 @@ function kada_widget_feature_views_default_views() {
   $handler->display->display_options['filters']['field_content_image_ext_fid_1']['relationship'] = 'relation_super_event_node';
   $handler->display->display_options['filters']['field_content_image_ext_fid_1']['operator'] = 'not empty';
   $handler->display->display_options['filters']['field_content_image_ext_fid_1']['group'] = 3;
-  $translatables['driveturku_widget_event_mosaic'] = array(
+  $translatables['kada_widget_event_mosaic'] = array(
     t('Master'),
     t('more'),
     t('Apply'),
@@ -1153,14 +1153,14 @@ function kada_widget_feature_views_default_views() {
     t('Includes magic from hook_views_query_alter + hook_query_TAG_alter in widget feature module.'),
     t('super event'),
   );
-  $export['driveturku_widget_event_mosaic'] = $view;
+  $export['kada_widget_event_mosaic'] = $view;
 
   $view = new view();
-  $view->name = 'driveturku_widget_misc_event_calendar';
+  $view->name = 'kada_widget_misc_event_calendar';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'DriveTurku Widget Misc - Event calendar';
+  $view->human_name = 'KADA Widget Misc - Event calendar';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1274,7 +1274,7 @@ function kada_widget_feature_views_default_views() {
     'event' => 'event',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Title (title_field:language) */
+  /* Filter criterion: Content: Name (title_field:language) */
   $handler->display->display_options['filters']['language_1']['id'] = 'language_1';
   $handler->display->display_options['filters']['language_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['language_1']['field'] = 'language';
@@ -1312,7 +1312,7 @@ function kada_widget_feature_views_default_views() {
 
   /* Display: Calendar */
   $handler = $view->new_display('block', 'Calendar', 'calendar');
-  $translatables['driveturku_widget_misc_event_calendar'] = array(
+  $translatables['kada_widget_misc_event_calendar'] = array(
     t('Master'),
     t('more'),
     t('Apply'),
@@ -1322,12 +1322,12 @@ function kada_widget_feature_views_default_views() {
     t('Desc'),
     t('OG membership from node'),
     t('Translations'),
-    t('Title'),
+    t('Name'),
     t('Edit link'),
     t('All'),
     t('Calendar'),
   );
-  $export['driveturku_widget_misc_event_calendar'] = $view;
+  $export['kada_widget_misc_event_calendar'] = $view;
 
   return $export;
 }
