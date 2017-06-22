@@ -486,9 +486,6 @@ projects[pathauto][subdir] = contrib
 projects[picture][version] = 2.9
 projects[picture][subdir] = contrib
 
-projects[piwik][version] = 2.7
-projects[piwik][subdir] = contrib
-
 projects[plupload][version] = 1.7
 projects[plupload][subdir] = contrib
 
