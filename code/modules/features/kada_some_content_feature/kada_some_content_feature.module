@@ -409,7 +409,7 @@ function kada_some_content_feature_feed_import_form_validate($form, &$form_state
  */
 function _kada_feed_content_type_config() {
   // To have your replacement done, see kada_some_content_feature_feed_import_form_validate().
-  return array(
+  $config = array(
     'feed_import_instagram' => array(
       'url' => 'https://api.instagram.com/v1/users/[FEED_USER_ID]/media/recent/?client_id=[FEED_CLIENT_TOKEN]&access_token=[ACCESS_TOKEN]',
     ),
@@ -426,6 +426,9 @@ function _kada_feed_content_type_config() {
       'url' => '?',
     ),
   );
+  // Make it possible for other modules to alter this configuration.
+  drupal_alter('kada_feed_content_type_config', $config);
+  return $config;
 }
 
 /**
