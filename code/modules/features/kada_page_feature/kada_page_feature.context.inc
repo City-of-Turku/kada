@@ -50,15 +50,15 @@ function kada_page_feature_context_default_contexts() {
           'region' => 'header',
           'weight' => '-10',
         ),
-        'views-aafd0f17d7912d5e11541ed2cc396491' => array(
+        'views-09708f3bf4cf5bd7917e7b662c6c2bc6' => array(
           'module' => 'views',
-          'delta' => 'aafd0f17d7912d5e11541ed2cc396491',
+          'delta' => '09708f3bf4cf5bd7917e7b662c6c2bc6',
           'region' => 'content',
           'weight' => '-10',
         ),
-        'views-022fce84329c415f416a08a7d3abf9d2' => array(
+        'views-kada_related_content-liftups' => array(
           'module' => 'views',
-          'delta' => '022fce84329c415f416a08a7d3abf9d2',
+          'delta' => 'kada_related_content-liftups',
           'region' => 'sidebar_second',
           'weight' => '-9',
         ),
