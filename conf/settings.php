@@ -79,6 +79,23 @@ if (file_exists(__DIR__ . '/all.settings.php')) {
   include __DIR__ . '/all.settings.php';
 }
 
+/**
+ * Add the domain module setup routine.
+ */
+if (!defined('IS_BE_PROBE') || !IS_BE_PROBE) {
+  include DRUPAL_ROOT . '/sites/all/modules/contrib/domain/settings.inc';
+}
+
+$conf['menu_override_parent_selector'] = true;
+
+if (getenv('AMAZEEIO_SITE_URL')) {
+  // Set "domain space" that is necessary to handle redirects between domains
+  define('DOMAIN_SPACE', getenv('AMAZEEIO_SITE_URL'));
+
+  // HACK - REMOVE WHEN DOMAIN URLS FOR DIFFERENT ENVS CAN BE DONE PROPERLY
+  define('KADACALENDAR_BASE_URL', 'http://calendar.'. getenv('AMAZEEIO_SITE_URL') .'/');
+}
+
 // Environment specific settings files.
 if(getenv('AMAZEEIO_SITE_ENVIRONMENT')){
   if (file_exists(__DIR__ . '/' . getenv('AMAZEEIO_SITE_ENVIRONMENT') . '.settings.php')) {
