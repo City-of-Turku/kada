@@ -5,7 +5,7 @@ services:
     # Choose your URL and hostname for this Docker Container
     # NEEDS to end with '.docker.amazee.io' !
     # DO NOT remove the '&hostname'
-    hostname: &hostname imatra.com.docker.amazee.io
+    hostname: &hostname imatra.fi.docker.amazee.io
 
     environment:
 
