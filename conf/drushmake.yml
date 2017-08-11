@@ -444,7 +444,7 @@ projects:
     version: '1.9'
     subdir: contrib
     patch:
-      - '../patches/restructure-library-render.patch'
+      - '../../patches/restructure-library-render.patch'
   scald_vimeo:
     version: '1.5'
     subdir: contrib
