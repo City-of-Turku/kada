@@ -44,22 +44,22 @@ projects:
   better_formats:
     version: 1.0-beta2
     subdir: contrib
-  bigmenu:
-    type: module
-    subdir: contrib
-    download:
-      type: git
-      url: 'http://git.drupal.org/project/bigmenu.git'
-      revision: ab3bc0592234a36df4a36746909e54350565785a
+#  bigmenu:
+#    type: module
+#    subdir: contrib
+#    download:
+#      type: git
+#      url: 'http://git.drupal.org/project/bigmenu.git'
+#      revision: ab3bc0592234a36df4a36746909e54350565785a
   breakpoints:
     version: '1.4'
     subdir: contrib
   cache_actions:
     version: 2.0-alpha5
     subdir: contrib
-  coffee:
-    version: '2.2'
-    subdir: contrib
+#  coffee:
+#    version: '2.2'
+#    subdir: contrib
   ckeditor_link:
     version: '2.4'
     subdir: contrib
@@ -443,6 +443,8 @@ projects:
   scald:
     version: '1.9'
     subdir: contrib
+    patch:
+      - '../patches/restructure-library-render.patch'
   scald_vimeo:
     version: '1.5'
     subdir: contrib
