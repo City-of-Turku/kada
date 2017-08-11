@@ -87,7 +87,7 @@ projects:
   breakpoints:
     version: '1.4'
   cache_actions:
-    version: '2.0-alpha5v
+    version: '2.0-alpha5'
 #  coffee:
 #    version: '2.2'
   ckeditor_link:
@@ -402,11 +402,9 @@ projects:
   search_api_override:
     version: '1.0-rc1'
   search_api_solr:
-    version: '1.6'
+    version: '1.12'
   service_links:
-    version: '2.2'
-    patch:
-      - 'https://www.drupal.org/files/service_links-2039431.patch'
+    version: '2.3'
   shortcutperrole:
     version: '1.2'
   shorten:
