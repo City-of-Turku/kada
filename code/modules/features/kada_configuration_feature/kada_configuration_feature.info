@@ -46,7 +46,6 @@ dependencies[] = linkchecker
 dependencies[] = linkit
 dependencies[] = list
 dependencies[] = locale
-dependencies[] = memcache
 dependencies[] = menu
 dependencies[] = menu_block
 dependencies[] = metatag
