@@ -273,14 +273,10 @@ projects:
     version: '1.2'
     subdir: contrib
   imagecache_token:
-    type: module
+    version: '1.0-rc2'
     subdir: contrib
-    download:
-      type: git
-      url: 'http://git.drupal.org/project/imagecache_token.git'
-      revision: 8d3ec91e613155cf826aed04e9c9e736c984f304
     patch:
-      - 'https://www.drupal.org/files/issues/imagecache_token-scald_compatibility-2528180-3.patch'
+      - 'https://www.drupal.org/files/issues/imagecache_token-scald_compatibility-2528180-16.patch'
   ip_geoloc:
     version: '1.30'
     subdir: contrib
