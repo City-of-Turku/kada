@@ -1,0 +1,29 @@
+sitegroup: imatra_fi
+
+deploy_tasks:
+  development:
+    before_deploy:
+      - mkdir -p -m 770 files files_private
+      - composer install --no-dev --prefer-dist --no-suggest --optimize-autoloader --ansi
+      - bin/mana-build testing && bin/mana-release latest
+    after_deploy:
+      - cd $AMAZEEIO_WEBROOT && drush vset file_private_path ../files_private
+      - cd $AMAZEEIO_WEBROOT && drush -y updb --cache-clear=0
+      - cd $AMAZEEIO_WEBROOT && drush -y cc all
+      - cd $AMAZEEIO_WEBROOT && drush -y fra --force
+  production:
+    before_deploy:
+      - mkdir -p -m 770 ~/shared/files ~/shared/files_private
+      - composer install --no-dev --prefer-dist --no-suggest --optimize-autoloader --ansi
+      - bin/mana-build production && bin/mana-release latest
+    after_deploy:
+      - ln -sfn ~/shared/files public/sites/default/files
+      - cd $AMAZEEIO_WEBROOT && drush vset file_private_path ~/shared/files_private
+      - cd $AMAZEEIO_WEBROOT && drush -y updb --cache-clear=0
+      - cd $AMAZEEIO_WEBROOT && drush -y cc all
+      - cd $AMAZEEIO_WEBROOT && drush -y fra --force
+
+#shared:
+#  production:
+#    - src: files
+#      dst: current/sites/default/files
