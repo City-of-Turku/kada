@@ -27,6 +27,8 @@ if(getenv('AMAZEEIO_SITENAME')){
     'host' => getenv('AMAZEEIO_DB_HOST'),
     'port' => getenv('AMAZEEIO_DB_PORT'),
     'prefix' => '',
+    'charset' => 'utf8mb4',
+    'collation' => 'utf8mb4_general_ci',
   );
 }
 
