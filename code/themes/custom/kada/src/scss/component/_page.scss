@@ -1,0 +1,62 @@
+body {
+  background-color: $bg;
+}
+
+.l-region--before-content,
+.l-region--after-content {
+  clear: both;
+  overflow: hidden;
+}
+
+/* Top image */
+.view-display-id-top_image {
+  figure.top-carousel {
+    margin: 0px;
+    img {
+       width: 100%; display: block;
+    }
+  }
+}
+
+// Highlighted area styles
+.l-highlighted {
+  overflow: auto;
+}
+
+// First sidebar needs to be hidden on majority of pages when browsing on mobile
+.l-region--sidebar-first {
+  display: none;
+
+  @media screen and (min-width: $tablet-portrait) {
+    display: block;
+  }
+}
+
+.l-content__wrapper {
+  overflow: hidden;
+}
+
+.l-content__two-columns {
+  .l-content__column--left {
+    @media screen and (min-width: $tablet-portrait) {
+      clear: none;
+      float: left;
+      margin-bottom: 1em;
+      margin-right: 1%;
+      width: 54%;
+    }
+  }
+
+  .l-content__column--right {
+    float: none;
+    margin: 1em 0 1em 0;
+    width: 100%;
+
+    @media screen and (min-width: $tablet-portrait) {
+      clear: none;
+      float: left;
+      margin: 0;
+      width: 45%;
+    }
+  }
+}

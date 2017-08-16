@@ -1,0 +1,18 @@
+@mixin in-front-of-header {
+  z-index: 4;
+}
+
+// Content needs a lower z-index than the navigation to stay behind it on desktop.
+@mixin content-in-front-of-header {
+  z-index: 3;
+}
+
+// Branding needs higher z-index than the navigation to stay clickable on mobile.
+@mixin branding-in-front-of-header {
+  z-index: 5;
+}
+
+// Custom menu needs higher z-index than branding to stay clickable
+@mixin custom-menu-in-front-of-header {
+  z-index: 6;
+}

@@ -1,0 +1,40 @@
+.page-event-search {
+  .l-region--sidebar-first {
+    display: block;
+
+    // Datepicker for the event search
+    .facetapi-facetapi-calendar-links .datepicker {
+      .ui-datepicker {
+        color: $turkucalendar-gray;
+
+        .ui-datepicker-header {
+          border-color: $turkucalendar-gray;
+        }
+
+        .ui-datepicker-header,
+        .ui-datepicker-header .ui-datepicker-prev,
+        .ui-datepicker-header .ui-datepicker-next,
+        .ui-datepicker-calendar tbody tr td span {
+          color: $turkucalendar-gray;
+        }
+
+        .ui-datepicker-header .ui-datepicker-prev:hover,
+        .ui-datepicker-header .ui-datepicker-next:hover {
+          background-color: $turkucalendar-gray;
+          color: #FFFFFF;
+        }
+
+        .ui-datepicker-calendar tbody tr td a,
+        .ui-datepicker-buttonpane .ui-datepicker-current {
+          color: #FFFFFF;
+          background-color: $turkucalendar-gray;
+        }
+
+        .ui-datepicker-calendar tbody tr td.is-active span,
+        .ui-datepicker-calendar tbody tr td.is-active a {
+          background-color: $turkucalendar-red;
+        }
+      }
+    }
+  }
+}

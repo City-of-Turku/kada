@@ -1,0 +1,15 @@
+//
+// @file
+// This file includes all imports from the theme folder
+//
+
+@charset 'UTF-8';
+
+@import 'lib/variables/colors-temp';
+@import 'lib/variables/colors-sparkup';
+@import 'lib/variables/media-queries';
+@import 'theme/lib/variables/*';
+@import 'lib/mixins/arrow';
+@import 'theme/lib/mixins/*';
+
+@import 'theme/component/*';
