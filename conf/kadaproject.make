@@ -322,7 +322,7 @@ projects[feeds_tamper_conditional][subdir] = contrib
 projects[fitvids][version] = 1.17
 projects[fitvids][subdir] = contrib
 
-projects[flag][version] = 3.5
+projects[flag][version] = 3.9
 projects[flag][subdir] = contrib
 
 projects[flexslider][version] = 2.0-alpha3
