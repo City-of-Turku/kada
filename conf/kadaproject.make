@@ -373,7 +373,7 @@ projects[imagecache_token][subdir] = "contrib"
 ; Scald atom support
 projects[imagecache_token][patch][] = "https://www.drupal.org/files/issues/imagecache_token-scald_compatibility-2528180-16.patch"
 
-projects[ip_geoloc][version] = 1.26
+projects[ip_geoloc][version] = 1.30
 projects[ip_geoloc][subdir] = contrib
 
 projects[job_scheduler][version] = 2.0-alpha3
