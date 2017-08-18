@@ -276,7 +276,7 @@ projects[features][subdir] = contrib
 projects[features_extra][version] = 1.0
 projects[features_extra][subdir] = contrib
 
-projects[field_collection][version] = 1.0-beta8
+projects[field_collection][version] = 1.0-beta12
 projects[field_collection][subdir] = contrib
 
 projects[field_group][version] = 1.5
