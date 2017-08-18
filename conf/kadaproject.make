@@ -105,12 +105,10 @@ projects[advagg][subdir] = contrib
 ;projects[autocache][version] = 1.4
 ;projects[autocache][subdir] = contrib
 
-projects[auto_entitylabel][version] = 1.3
+projects[auto_entitylabel][version] = 1.4
 projects[auto_entitylabel][subdir] = contrib
 ; Support for entity translation and title_field
 projects[auto_entitylabel][patch][] = "https://www.drupal.org/files/issues/auto_entitylabel_translation_placeholder_2427539_1.patch"
-; Fixes VBO update entity label action
-projects[auto_entitylabel][patch][] = "https://www.drupal.org/files/issues/node_operation_update-2503081-9.patch"
 
 projects[better_exposed_filters][type] = "module"
 projects[better_exposed_filters][subdir] = "contrib"
