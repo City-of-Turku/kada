@@ -488,7 +488,7 @@ projects[radioactivity][patch][] = "../patches/radioactivity_javascript_history_
 projects[radioactivity][patch][] = "https://www.drupal.org/files/issues/radioactivity-predis-support-1284228-12_0.patch"
 projects[radioactivity][patch][] = "../patches/radioactivity-config-location.patch"
 
-projects[redirect][version] = 1.0-rc1
+projects[redirect][version] = 1.0-rc3
 projects[redirect][subdir] = contrib
 
 projects[redis][version] = 2.12
