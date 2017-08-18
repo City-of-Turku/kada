@@ -568,7 +568,7 @@ projects[search_api_et][download][revision] = "a56f5273bc4cef18ebac797a9f0441022
 projects[search_api_override][version] = 1.0-rc1
 projects[search_api_override][subdir] = contrib
 
-projects[search_api_solr][version] = 1.6
+projects[search_api_solr][version] = 1.12
 projects[search_api_solr][subdir] = contrib
 
 projects[service_links][version] = 2.2
