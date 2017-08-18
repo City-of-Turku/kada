@@ -273,7 +273,7 @@ projects[facetapi_select][download][revision] = c960e188fd9ce1cbc21d63cec0e331b0
 projects[features][version] = 2.10
 projects[features][subdir] = contrib
 
-projects[features_extra][version] = 1.0-beta1
+projects[features_extra][version] = 1.0
 projects[features_extra][subdir] = contrib
 
 projects[field_collection][version] = 1.0-beta8
