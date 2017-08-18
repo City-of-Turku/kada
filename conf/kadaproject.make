@@ -368,13 +368,10 @@ projects[i18n][subdir] = contrib
 projects[imageapi_optimize][version] = 1.2
 projects[imageapi_optimize][subdir] = contrib
 
-projects[imagecache_token][type] = "module"
+projects[imagecache_token][version] = 1.0-rc2
 projects[imagecache_token][subdir] = "contrib"
-projects[imagecache_token][download][type] = "git"
-projects[imagecache_token][download][url] = "http://git.drupal.org/project/imagecache_token.git"
-projects[imagecache_token][download][revision] = "8d3ec91e613155cf826aed04e9c9e736c984f304"
 ; Scald atom support
-projects[imagecache_token][patch][] = "https://www.drupal.org/files/issues/imagecache_token-scald_compatibility-2528180-3.patch"
+projects[imagecache_token][patch][] = "https://www.drupal.org/files/issues/imagecache_token-scald_compatibility-2528180-16.patch"
 
 projects[ip_geoloc][version] = 1.26
 projects[ip_geoloc][subdir] = contrib
