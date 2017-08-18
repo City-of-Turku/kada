@@ -113,7 +113,7 @@ projects[auto_entitylabel][patch][] = "https://www.drupal.org/files/issues/auto_
 projects[better_exposed_filters][version] = 3.4
 projects[better_exposed_filters][subdir] = "contrib"
 
-projects[better_formats][version] = 1.0-beta1
+projects[better_formats][version] = 1.0-beta2
 projects[better_formats][subdir] = contrib
 
 ; Dev-version doesn't duplicate "Show row weights" link in JS
