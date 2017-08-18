@@ -362,10 +362,8 @@ projects[honeypot][subdir] = contrib
 projects[httprl][version] = 1.14
 projects[httprl][subdir] = contrib
 
-projects[i18n][version] = 1.11
+projects[i18n][version] = 1.18
 projects[i18n][subdir] = contrib
-; Fix for WSOD after saving a new translation
-projects[i18n][patch][] = "https://www.drupal.org/files/issues/i18n_string-2227523-20.patch"
 
 projects[imageapi_optimize][version] = 1.2
 projects[imageapi_optimize][subdir] = contrib
