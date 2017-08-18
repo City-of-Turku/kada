@@ -478,7 +478,7 @@ projects[proj4js][subdir] = contrib
 projects[publishcontent][version] = 1.4
 projects[publishcontent][subdir] = contrib
 
-projects[quicktabs][version] = 3.6
+projects[quicktabs][version] = 3.8
 projects[quicktabs][subdir] = contrib
 
 projects[radioactivity][version] = 2.9
