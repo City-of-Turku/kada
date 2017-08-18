@@ -356,7 +356,7 @@ projects[google_analytics][subdir] = contrib
 projects[hierarchical_select][version] = 3.0-beta8
 projects[hierarchical_select][subdir] = contrib
 
-projects[honeypot][version] = 1.18
+projects[honeypot][version] = 1.22
 projects[honeypot][subdir] = contrib
 
 projects[httprl][version] = 1.14
