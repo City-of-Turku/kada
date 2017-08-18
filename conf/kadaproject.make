@@ -606,7 +606,7 @@ projects[taxonomy_manager][subdir] = contrib
 projects[title][version] = 1.0-alpha9
 projects[title][subdir] = contrib
 
-projects[token][version] = 1.6
+projects[token][version] = 1.7
 projects[token][subdir] = contrib
 
 projects[transliteration][version] = 3.2
