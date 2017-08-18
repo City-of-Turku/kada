@@ -639,7 +639,7 @@ projects[views][subdir] = contrib
 projects[views_accordion][version] = 1.1
 projects[views_accordion][subdir] = contrib
 
-projects[views_data_export][version] = 3.0-beta9
+projects[views_data_export][version] = 3.2
 projects[views_data_export][subdir] = contrib
 
 projects[views_bulk_operations][version] = 3.2
