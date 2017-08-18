@@ -406,7 +406,7 @@ projects[maxlength][subdir] = contrib
 projects[memcache][version] = 1.5
 projects[memcache][subdir] = contrib
 
-projects[menu_attributes][version] = 1.0-rc3
+projects[menu_attributes][version] = 1.0
 projects[menu_attributes][subdir] = contrib
 
 projects[menu_block][version] = 2.4
