@@ -633,7 +633,7 @@ projects[views_content_cache][subdir] = contrib
 ; Fixing og compatibility: https://www.drupal.org/node/2054811#comment-9945729
 projects[views_content_cache][patch][og] = "https://www.drupal.org/files/issues/views_content_cache-og-2054811-9.patch"
 
-projects[views][version] = 3.8
+projects[views][version] = 3.17
 projects[views][subdir] = contrib
 
 projects[views_accordion][version] = 1.1
