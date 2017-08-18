@@ -215,7 +215,7 @@ projects[eck][version] = 2.0-rc9
 projects[eck][subdir] = contrib
 projects[eck][patch][] = "https://www.drupal.org/files/issues/entity_translation-2490530-1.patch"
 
-projects[elysia_cron][version] = 2.1
+projects[elysia_cron][version] = 2.4
 projects[elysia_cron][subdir] = contrib
 
 projects[email][version] = 1.3
