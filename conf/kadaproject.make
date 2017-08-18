@@ -91,7 +91,7 @@ projects[addressfield][version] = 1.2
 projects[admin_notification][subdir] = contrib
 projects[admin_notification][version] = 1.0-rc3
 
-projects[admin_menu][version] = 3.0-rc4
+projects[admin_menu][version] = 3.0-rc5
 projects[admin_menu][subdir] = contrib
 
 projects[admin_theme][version] = 1.0
