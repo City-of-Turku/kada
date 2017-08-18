@@ -544,9 +544,8 @@ projects[scald_file][subdir] = "contrib"
 projects[scheduler][version] = 1.5
 projects[scheduler][subdir] = contrib
 
-projects[search_api][version] = 1.14
+projects[search_api][version] = 1.22
 projects[search_api][subdir] = contrib
-projects[search_api][patch][] = "https://www.drupal.org/files/issues/2190627-16--views_abort_build_on_errors.patch"
 
 ; Use dev version which has latest bug fixes
 projects[search_api_ajax][type] = "module"
