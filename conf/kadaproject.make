@@ -654,7 +654,7 @@ projects[views_rss][subdir] = contrib
 projects[views_ajax_get][version] = 1.3
 projects[views_ajax_get][subdir] = contrib
 
-projects[webform][version] = 4.11
+projects[webform][version] = 4.15
 projects[webform][subdir] = contrib
 
 projects[wysiwyg][type] = "module"
