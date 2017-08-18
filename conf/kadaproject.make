@@ -615,7 +615,7 @@ projects[transliteration][subdir] = contrib
 projects[uuid][version] = 1.0
 projects[uuid][subdir] = contrib
 
-projects[uuid_features][version] = 1.0-alpha4
+projects[uuid_features][version] = 1.0-rc1
 projects[uuid_features][subdir] = contrib
 
 projects[variable][version] = 2.5
