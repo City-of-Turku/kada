@@ -496,7 +496,7 @@ projects[redis][subdir] = contrib
 ; Patch to support Predis 1.0
 projects[redis][patch][] = "https://www.drupal.org/files/issues/redis-predis-path-183934-19.patch"
 
-projects[relation][version] = 1.0
+projects[relation][version] = 1.1
 projects[relation][subdir] = contrib
 projects[relation][patch][better_rules] = "https://www.drupal.org/files/issues/relation-query_endpoints-1302788-33.patch"
 
