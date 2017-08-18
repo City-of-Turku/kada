@@ -140,7 +140,7 @@ projects[ckeditor_link][subdir] = contrib
 projects[colorbox][version] = 2.13
 projects[colorbox][subdir] = contrib
 
-projects[conditional_fields][version] = 3.0-alpha1
+projects[conditional_fields][version] = 3.0-alpha2
 projects[conditional_fields][subdir] = contrib
 
 projects[context][version] = 3.4
