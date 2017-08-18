@@ -330,7 +330,7 @@ projects[flexslider][subdir] = contrib
 ; Fix for initial height of 0px
 projects[flexslider][patch][] = "https://www.drupal.org/files/issues/0001-Issue-2086525-by-alvar0hurtad0-Johnny-vd-Laar-Flexsl_0.patch"
 
-projects[geocoder][version] = 1.2
+projects[geocoder][version] = 1.3
 projects[geocoder][subdir] = contrib
 
 ; Only dev-version is available
