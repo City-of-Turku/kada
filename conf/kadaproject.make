@@ -171,10 +171,8 @@ projects[context_omega][patch][] = "https://www.drupal.org/files/i2115997-3.patc
 projects[ctools][version] = 1.12
 projects[ctools][subdir] = contrib
 
-projects[date][version] = 2.9
+projects[date][version] = 2.10
 projects[date][subdir] = contrib
-; Patch for displaying date repeat field description (help text) on form
-projects[date][patch][] = "https://www.drupal.org/files/issues/date-fieldset-help-texts-2186191-21.patch"
 
 ;Dev version fixes "Missing argument" 1 bug https://www.drupal.org/node/2125599
 projects[date_facets][type] = "module"
