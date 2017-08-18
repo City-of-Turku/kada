@@ -463,7 +463,7 @@ projects[og_webform][patch][] = "https://www.drupal.org/files/og_webform_api2-19
 projects[pathauto][version] = 1.3
 projects[pathauto][subdir] = contrib
 
-projects[picture][version] = 2.9
+projects[picture][version] = 2.13
 projects[picture][subdir] = contrib
 
 projects[plupload][version] = 1.7
