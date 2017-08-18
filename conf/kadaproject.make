@@ -621,17 +621,8 @@ projects[uuid_features][subdir] = contrib
 projects[variable][version] = 2.5
 projects[variable][subdir] = contrib
 
-projects[varnish][version] = 1.1
+projects[varnish][version] = 1.4
 projects[varnish][subdir] = contrib
-; Varnish banning with expire + domain_access + no static base_url in settings.php
-; leads to problems which can show up as most of bans (flushes) not being applied,
-; or only applied on specific domains, when we usually want all domains to be affected.
-; This can be tested with with "drush vp 'url'", which may show up in varnishlog as:
-;  Rd ban req.http.host ~ default && req.url ~ ^path$
-: The "default"-part of the domain should be the base_url, or if none is specified
-; the "eq.http.host" should be skipped.
-; https://www.drupal.org/node/2558729 / Varnish 3 normal ban remove http host with base path
-projects[varnish][patch][2558729] = "https://www.drupal.org/files/issues/varnish-remove-host-with-base-path-2558729-3.patch"
 
 projects[view_unpublished][version] = 1.2
 projects[view_unpublished][subdir] = contrib
