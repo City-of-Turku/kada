@@ -535,7 +535,7 @@ projects[scald][subdir] = contrib
 projects[scald_vimeo][version] = 1.5
 projects[scald_vimeo][subdir] = contrib
 
-projects[scald_youtube][version] = 1.5
+projects[scald_youtube][version] = 1.6
 projects[scald_youtube][subdir] = contrib
 
 projects[scald_file][version] = 1.3
