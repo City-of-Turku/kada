@@ -651,7 +651,7 @@ projects[views_default_view_override][subdir] = contrib
 projects[views_rss][version] = 2.0-rc4
 projects[views_rss][subdir] = contrib
 
-projects[views_ajax_get][version] = 1.2
+projects[views_ajax_get][version] = 1.3
 projects[views_ajax_get][subdir] = contrib
 
 projects[webform][version] = 4.11
