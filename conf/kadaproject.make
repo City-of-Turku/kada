@@ -143,13 +143,13 @@ projects[colorbox][subdir] = contrib
 projects[conditional_fields][version] = 3.0-alpha2
 projects[conditional_fields][subdir] = contrib
 
-projects[context][version] = 3.4
+projects[context][version] = 3.7
 projects[context][subdir] = contrib
 ; Fixes context ui performance issues
 projects[context][patch][] = "https://www.drupal.org/files/issues/context-node-taxonomy-performance-autocomplete-873936-47.patch"
 ; Set $conf['menu_override_parent_selector'] = false; in settings.php, it will disable
 ; menu links condition in context, but we don't want content related configuration to our features anyway
-projects[context][patch][] = "https://www.drupal.org/files/context_0001-Issue-873936-by-wojtha-Fabianx-Massively-increase-pe.patch"
+;projects[context][patch][] = "https://www.drupal.org/files/context_0001-Issue-873936-by-wojtha-Fabianx-Massively-increase-pe.patch"
 
 ; Dev-version supports field "not empty" condition. NOTE: if new view modes are
 ; added, all contexts which use conditions from this module have to be resaved!
