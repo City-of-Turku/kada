@@ -188,7 +188,7 @@ projects[date_facets][patch][] = "https://www.drupal.org/files/issues/date_facet
 projects[diff][version] = 3.3
 projects[diff][subdir] = contrib
 
-projects[domain][version] = 3.12
+projects[domain][version] = 3.13
 projects[domain][subdir] = contrib
 
 projects[domaincontext][version] = 1.0-alpha1
