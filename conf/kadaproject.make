@@ -185,7 +185,7 @@ projects[date_facets][patch][] = "https://www.drupal.org/files/issues/2226429-da
 ; Patch to fix a flood of notices
 projects[date_facets][patch][] = "https://www.drupal.org/files/issues/date_facets-undefined-index-2220227-2.patch"
 
-projects[diff][version] = 3.2
+projects[diff][version] = 3.3
 projects[diff][subdir] = contrib
 
 projects[domain][version] = 3.12
