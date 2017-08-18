@@ -110,11 +110,8 @@ projects[auto_entitylabel][subdir] = contrib
 ; Support for entity translation and title_field
 projects[auto_entitylabel][patch][] = "https://www.drupal.org/files/issues/auto_entitylabel_translation_placeholder_2427539_1.patch"
 
-projects[better_exposed_filters][type] = "module"
+projects[better_exposed_filters][version] = 3.4
 projects[better_exposed_filters][subdir] = "contrib"
-projects[better_exposed_filters][download][type] = "git"
-projects[better_exposed_filters][download][url] = "http://git.drupal.org/project/better_exposed_filters.git"
-projects[better_exposed_filters][download][revision] = "4ff18a16ba7d8eb675c0b0cbeb3b20d8929050c4"
 
 projects[better_formats][version] = 1.0-beta1
 projects[better_formats][subdir] = contrib
