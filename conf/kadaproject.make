@@ -509,7 +509,7 @@ projects[responsive_menus][subdir] = "contrib"
 projects[restrict_node_page_view][version] = 1.2
 projects[restrict_node_page_view][subdir] = contrib
 
-projects[rules][version] = 2.9
+projects[rules][version] = 2.10
 projects[rules][subdir] = contrib
 ; Fixes a "Class name must be a valid object or a string" error message when enabling a feature
 projects[rules][patch][] = "https://www.drupal.org/files/issues/rules-rules_i18n_fatal-2495599-2.patch"
