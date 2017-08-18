@@ -460,7 +460,7 @@ projects[og_webform][subdir] = "contrib"
 projects[og_webform][patch][] = "http://cgit.drupalcode.org/og_webform/patch/?id=b60f03ae4de8050bb2499106484df085b9884b25"
 projects[og_webform][patch][] = "https://www.drupal.org/files/og_webform_api2-1946432_0.patch"
 
-projects[pathauto][version] = 1.2
+projects[pathauto][version] = 1.3
 projects[pathauto][subdir] = contrib
 
 projects[picture][version] = 2.9
