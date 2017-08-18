@@ -500,7 +500,7 @@ projects[relation][version] = 1.1
 projects[relation][subdir] = contrib
 projects[relation][patch][better_rules] = "https://www.drupal.org/files/issues/relation-query_endpoints-1302788-33.patch"
 
-projects[relation_add][version] = 1.4
+projects[relation_add][version] = 1.6
 projects[relation_add][subdir] = contrib
 
 ; Dev-version contains fix for breakpoint calculations
