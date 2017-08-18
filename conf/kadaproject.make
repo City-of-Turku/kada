@@ -612,7 +612,7 @@ projects[token][subdir] = contrib
 projects[transliteration][version] = 3.2
 projects[transliteration][subdir] = contrib
 
-projects[uuid][version] = 1.0-alpha6
+projects[uuid][version] = 1.0
 projects[uuid][subdir] = contrib
 
 projects[uuid_features][version] = 1.0-alpha4
