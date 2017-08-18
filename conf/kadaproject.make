@@ -207,7 +207,7 @@ projects[domain_variable][patch][] = "https://www.drupal.org/files/issues/domain
 
 projects[domain_feeds][version] = 1.4
 
-projects[ds][version] = 2.10
+projects[ds][version] = 2.14
 projects[ds][subdir] = contrib
 
 ; Dev-version which includes entity_translation support.
