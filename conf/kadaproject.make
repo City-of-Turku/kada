@@ -305,7 +305,7 @@ projects[feeds][type] = "module"
 ; Exposes Drupal core field language selection for Feeds, required for importing to content types which has entity translation enabled
 ;projects[feeds][patch][] = "https://www.drupal.org/files/feeds-field_translation_imports-1183440-80.patch"
 
-projects[feeds_ex][version] = 1.0-beta1
+projects[feeds_ex][version] = 1.0-beta2
 projects[feeds_ex][subdir] = contrib
 
 projects[feeds_oauth][version] = 1.0-beta3
