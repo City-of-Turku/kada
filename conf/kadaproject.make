@@ -395,13 +395,10 @@ projects[linkchecker][version] = 1.3
 projects[linkchecker][subdir] = contrib
 
 ; Dev version includes a fix for wysiwyg and the patch applies to dev version
-projects[linkit][type] = "module"
+projects[linkit][version] = 3.5
 projects[linkit][subdir] = "contrib"
-projects[linkit][download][type] = "git"
-projects[linkit][download][url] = "http://git.drupal.org/project/linkit.git"
-projects[linkit][download][revision] = "f03cde2bd7d7ce2d2049c819ae8bb397bc72c8f4"
 ; Entity translation support
-projects[linkit][patch][] = "https://www.drupal.org/files/issues/linkit-entity-translation-support-2280441-13.patch"
+projects[linkit][patch][] = "https://www.drupal.org/files/issues/entity_translation-2280441-31.patch"
 
 projects[maxlength][version] = 3.2
 projects[maxlength][subdir] = contrib
