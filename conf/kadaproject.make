@@ -541,7 +541,7 @@ projects[scald_youtube][subdir] = contrib
 projects[scald_file][version] = 1.4
 projects[scald_file][subdir] = "contrib"
 
-projects[scheduler][version] = 1.3
+projects[scheduler][version] = 1.5
 projects[scheduler][subdir] = contrib
 
 projects[search_api][version] = 1.14
