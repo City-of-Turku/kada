@@ -211,11 +211,8 @@ projects[ds][version] = 2.14
 projects[ds][subdir] = contrib
 
 ; Dev-version which includes entity_translation support.
-projects[eck][type] = module
+projects[eck][version] = 2.0-rc9
 projects[eck][subdir] = contrib
-projects[eck][download][type] = "git"
-projects[eck][download][url] = "http://git.drupal.org/project/eck.git"
-projects[eck][download][revision] = "e29ecd7b68a485373e6923c101f54cc7095f56c9"
 projects[eck][patch][] = "https://www.drupal.org/files/issues/entity_translation-2490530-1.patch"
 
 projects[elysia_cron][version] = 2.1
