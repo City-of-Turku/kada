@@ -379,7 +379,7 @@ projects[ip_geoloc][subdir] = contrib
 projects[job_scheduler][version] = 2.0-alpha3
 projects[job_scheduler][subdir] = contrib
 
-projects[jquery_update][version] = 2.5
+projects[jquery_update][version] = 2.7
 projects[jquery_update][subdir] = contrib
 
 projects[language_access][version] = 1.01
