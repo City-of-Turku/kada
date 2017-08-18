@@ -503,12 +503,8 @@ projects[relation][patch][better_rules] = "https://www.drupal.org/files/issues/r
 projects[relation_add][version] = 1.6
 projects[relation_add][subdir] = contrib
 
-; Dev-version contains fix for breakpoint calculations
-projects[responsive_menus][type] = "module"
+projects[responsive_menus][version] = 1.6
 projects[responsive_menus][subdir] = "contrib"
-projects[responsive_menus][download][type] = "git"
-projects[responsive_menus][download][url] = "http://git.drupal.org/project/responsive_menus.git"
-projects[responsive_menus][download][revision] = "397a6edb8d1708689d118229429f4cdc5f9c7c41"
 
 projects[restrict_node_page_view][version] = 1.2
 projects[restrict_node_page_view][subdir] = contrib
