@@ -137,7 +137,7 @@ projects[coffee][subdir] = contrib
 projects[ckeditor_link][version] = 2.4
 projects[ckeditor_link][subdir] = contrib
 
-projects[colorbox][version] = 2.8
+projects[colorbox][version] = 2.13
 projects[colorbox][subdir] = contrib
 
 projects[conditional_fields][version] = 3.0-alpha1
