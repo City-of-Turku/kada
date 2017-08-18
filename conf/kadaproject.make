@@ -603,7 +603,7 @@ projects[taxonomy_display][subdir] = contrib
 projects[taxonomy_manager][version] = 1.0
 projects[taxonomy_manager][subdir] = contrib
 
-projects[title][version] = 1.0-alpha7
+projects[title][version] = 1.0-alpha9
 projects[title][subdir] = contrib
 
 projects[token][version] = 1.6
