@@ -475,7 +475,7 @@ projects[prepopulate][subdir] = contrib
 projects[proj4js][version] = 1.2
 projects[proj4js][subdir] = contrib
 
-projects[publishcontent][version] = 1.3
+projects[publishcontent][version] = 1.4
 projects[publishcontent][subdir] = contrib
 
 projects[quicktabs][version] = 3.6
