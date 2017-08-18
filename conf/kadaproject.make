@@ -242,7 +242,7 @@ projects[entity_base_type][download][type] = git
 projects[entity_base_type][download][url] = http://git.drupal.org/project/entity_base_type.git
 projects[entity_base_type][download][revision] = 011b7f2b9221ca87846ee5dc0f22dc5c8507807d
 
-projects[entity_translation][version] = 1.0-beta5
+projects[entity_translation][version] = 1.0-beta6
 projects[entity_translation][subdir] = contrib
 
 projects[expire][version] = 2.0-rc4
