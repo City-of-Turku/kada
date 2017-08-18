@@ -469,7 +469,7 @@ projects[picture][subdir] = contrib
 projects[plupload][version] = 1.7
 projects[plupload][subdir] = contrib
 
-projects[prepopulate][version] = 2.0
+projects[prepopulate][version] = 2.1
 projects[prepopulate][subdir] = contrib
 
 projects[proj4js][version] = 1.2
