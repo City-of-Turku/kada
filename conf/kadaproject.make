@@ -666,5 +666,5 @@ projects[wysiwyg][download][revision] = "898d022cf7d0b6c6a6e7d813199d561b4ad39f8
 ; Contrib themes
 ; ------------
 
-projects[omega][version] = 4.3
+projects[omega][version] = 4.4
 projects[omega][subdir] = contrib
