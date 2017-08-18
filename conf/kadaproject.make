@@ -532,7 +532,7 @@ projects[sarnia][patch][] = "https://www.drupal.org/files/issues/displayHighligh
 projects[scald][version] = 1.8
 projects[scald][subdir] = contrib
 
-projects[scald_vimeo][version] = 1.4
+projects[scald_vimeo][version] = 1.5
 projects[scald_vimeo][subdir] = contrib
 
 projects[scald_youtube][version] = 1.5
