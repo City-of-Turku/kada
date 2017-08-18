@@ -415,7 +415,7 @@ projects[menu_block][subdir] = contrib
 projects[metatag][version] = 1.22
 projects[metatag][subdir] = contrib
 
-projects[module_filter][version] = 2.0-alpha2
+projects[module_filter][version] = 2.1
 projects[module_filter][subdir] = contrib
 
 projects[multiple_entity_form][version] = 1.3
