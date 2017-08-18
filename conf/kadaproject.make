@@ -580,7 +580,7 @@ projects[shortcutperrole][subdir] = contrib
 projects[shorten][version] = 1.4
 projects[shorten][subdir] = contrib
 
-projects[smtp][version] = 1.2
+projects[smtp][version] = 1.7
 projects[smtp][subdir] = contrib
 
 projects[stage_file_proxy][version] = 1.7
