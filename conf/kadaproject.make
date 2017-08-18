@@ -421,7 +421,7 @@ projects[module_filter][subdir] = contrib
 projects[multiple_entity_form][version] = 1.3
 projects[multiple_entity_form][subdir] = contrib
 
-projects[multiple_selects][version] = 1.2
+projects[multiple_selects][version] = 1.3
 projects[multiple_selects][subdir] = contrib
 
 projects[node_clone][version] = 1.0
