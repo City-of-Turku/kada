@@ -642,7 +642,7 @@ projects[views_accordion][subdir] = contrib
 projects[views_data_export][version] = 3.2
 projects[views_data_export][subdir] = contrib
 
-projects[views_bulk_operations][version] = 3.2
+projects[views_bulk_operations][version] = 3.4
 projects[views_bulk_operations][subdir] = contrib
 
 projects[views_default_view_override][version] = 2.0
