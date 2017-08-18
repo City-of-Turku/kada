@@ -270,10 +270,8 @@ projects[facetapi_select][download][type] = "git"
 projects[facetapi_select][download][url] = "http://git.drupal.org/project/facetapi_select.git"
 projects[facetapi_select][download][revision] = c960e188fd9ce1cbc21d63cec0e331b0ab70ff5f
 
-projects[features][version] = 2.2
+projects[features][version] = 2.10
 projects[features][subdir] = contrib
-; Remove annoying mtime from feature export which causes conflicts
-projects[features][patch][] = "https://www.drupal.org/files/issues/2381739-features-mtime.patch"
 
 projects[features_extra][version] = 1.0-beta1
 projects[features_extra][subdir] = contrib
