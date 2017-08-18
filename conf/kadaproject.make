@@ -391,7 +391,7 @@ projects[libraries][subdir] = contrib
 projects[link][version] = 1.4
 projects[link][subdir] = contrib
 
-projects[linkchecker][version] = 1.2
+projects[linkchecker][version] = 1.3
 projects[linkchecker][subdir] = contrib
 
 ; Dev version includes a fix for wysiwyg and the patch applies to dev version
