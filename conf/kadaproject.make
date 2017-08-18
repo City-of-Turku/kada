@@ -168,7 +168,7 @@ projects[context_omega][patch][] = "https://www.drupal.org/files/i2115997-3.patc
 ;projects[css3pie][version] = 2.1
 ;projects[css3pie][subdir] = contrib
 
-projects[ctools][version] = 1.8
+projects[ctools][version] = 1.12
 projects[ctools][subdir] = contrib
 
 projects[date][version] = 2.9
