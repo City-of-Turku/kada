@@ -76,11 +76,11 @@ libraries[predis][download][url] = https://github.com/nrk/predis/archive/v1.0.0.
 
 ; Colorbox library
 libraries[colorbox][download][type] = get
-libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archive/1.5.14.zip
+libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archive/1.6.1.zip
 
 ; Openlayers library
 libraries[openlayers][download][type] = get
-libraries[openlayers][download][url] = https://github.com/openlayers/openlayers/releases/download/release-2.13.1/OpenLayers-2.13.1.zip
+libraries[openlayers][download][url] = https://github.com/openlayers/openlayers/archive/v2.13.1.zip
 
 ; Contrib modules
 ; ------------
