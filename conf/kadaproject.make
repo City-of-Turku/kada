@@ -80,7 +80,7 @@ libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archi
 
 ; Openlayers library
 libraries[openlayers][download][type] = get
-libraries[openlayers][download][url] = https://github.com/openlayers/openlayers/archive/v2.13.1.zip
+libraries[openlayers][download][url] = https://github.com/openlayers/ol2/releases/download/release-2.13.1/OpenLayers-2.13.1.zip
 
 ; Contrib modules
 ; ------------
