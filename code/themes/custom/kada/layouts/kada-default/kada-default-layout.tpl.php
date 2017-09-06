@@ -45,24 +45,25 @@
 
           <?php print render($page['branding']); ?>
 
-          <div class="l-navigation-top">
-            <!-- <div class="accessibility-font-increase">
-              <span class="accessibility-font-increase__text"><?php print t('Text size'); ?>
-              <div class="accessibility-font-increase__options font-increase">
-                <a href="#font-increase-default" class="font-increase__item font-increase__item--default font-increase__item--is-active">A</a>
-                <a href="#font-increase-medium" class="font-increase__item font-increase__item--medium">A</a>
-                <a href="#font-increase-large" class="font-increase__item font-increase__item--large">A</a>
-              </div>
-            </div> -->
+          <?php if($page['header_top'] OR $page['navigation_top']): ?>
+            <div class="l-navigation-top">
+              <!-- <div class="accessibility-font-increase">
+                <span class="accessibility-font-increase__text"><?php print t('Text size'); ?>
+                <div class="accessibility-font-increase__options font-increase">
+                  <a href="#font-increase-default" class="font-increase__item font-increase__item--default font-increase__item--is-active">A</a>
+                  <a href="#font-increase-medium" class="font-increase__item font-increase__item--medium">A</a>
+                  <a href="#font-increase-large" class="font-increase__item font-increase__item--large">A</a>
+                </div>
+              </div> -->
 
-            <?php print render($page['navigation_top_extra']); ?>
+              <?php
+                // We print the header-top region here first time and a second time later to achieve desired DOM for mobile.
+                print render($page['header_top']);
+              ?>
 
-            <?php
-              // We print the header-top region here first time and a second time later to achieve desired DOM for mobile.
-              print render($page['header_top']);
-            ?>
-            <?php print render($page['navigation_top']); ?>
-          </div>
+              <?php print render($page['navigation_top']); ?>
+            </div>
+          <?endif; ?>
         </div>
       </div>
 
