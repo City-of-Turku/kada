@@ -1,3 +1,12 @@
+.site-branding {
+  @media screen and (min-width: $desktop-narrow) {
+    width: span(3);
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: span(2);
+  }
+}
 .site-branding__name {
   margin-bottom: 0;
 }

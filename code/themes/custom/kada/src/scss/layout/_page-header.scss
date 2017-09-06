@@ -25,10 +25,13 @@
 }
 
 .page-header__top {
+  padding-top: 1.25rem;
+
   @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
-    position: relative;
+    padding-bottom: 1.25rem;
   }
 }
 
