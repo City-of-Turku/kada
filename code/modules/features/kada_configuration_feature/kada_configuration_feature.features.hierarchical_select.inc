@@ -10,30 +10,26 @@
 function kada_configuration_feature_hierarchical_select_default_configs() {
 $configs = array();
 $config = array(
-  'config_id'       => 'taxonomy-field_classification',
-  'save_lineage'    => 1,
-  'enforce_deepest' => 0,
-  'resizable'       => 1,
+  'save_lineage' => '1',
+  'enforce_deepest' => '0',
+  'resizable' => '1',
   'level_labels' => array(
     'status' => 0,
-    'labels' => array(
-    ),
+    'labels' => array(),
   ),
   'dropbox' => array(
-    'status'    => 1,
-    'title'     => 'All selections',
-    'limit'     => 0,
-    'reset_hs'  => 0,
-    'sort'      => 1,
+    'status' => 1,
+    'title' => 'All selections',
+    'limit' => '0',
+    'reset_hs' => '0',
+    'sort' => 1,
   ),
   'editability' => array(
     'status' => 0,
-    'item_types' => array(
-    ),
-    'allowed_levels' => array(
-    ),
+    'item_types' => array(),
+    'allowed_levels' => array(),
     'allow_new_levels' => 0,
-    'max_levels'       => 2,
+    'max_levels' => '2',
   ),
   'entity_count' => array(
     'enabled' => 0,
@@ -53,6 +49,10 @@ $config = array(
       ),
     ),
   ),
+  'animation_delay' => 400,
+  'special_items' => array(),
+  'render_flat_select' => 0,
+  'config_id' => 'taxonomy-field_classification',
 );
 
 $configs['taxonomy-field_classification'] = $config;

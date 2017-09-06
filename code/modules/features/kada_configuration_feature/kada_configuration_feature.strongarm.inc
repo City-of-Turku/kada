@@ -376,27 +376,6 @@ function kada_configuration_feature_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'date_format_long';
-  $strongarm->value = 'l, F j, Y - H:i';
-  $export['date_format_long'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_format_medium';
-  $strongarm->value = 'D, m/d/Y - H:i';
-  $export['date_format_medium'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'date_format_short';
-  $strongarm->value = 'j.n.Y H.i';
-  $export['date_format_short'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'date_format_kada_date_only';
   $strongarm->value = 'd.m.Y';
   $export['date_format_kada_date_only'] = $strongarm;
@@ -442,6 +421,27 @@ function kada_configuration_feature_strongarm() {
   $strongarm->name = 'date_format_kada_time_only';
   $strongarm->value = 'H.i';
   $export['date_format_kada_time_only'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_long';
+  $strongarm->value = 'l, F j, Y - H:i';
+  $export['date_format_long'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_medium';
+  $strongarm->value = 'D, m/d/Y - H:i';
+  $export['date_format_medium'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_short';
+  $strongarm->value = 'j.n.Y H.i';
+  $export['date_format_short'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -3082,7 +3082,7 @@ example.org';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'responsive_menus_media_size';
-  $strongarm->value = '945';
+  $strongarm->value = '59.94';
   $export['responsive_menus_media_size'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -3784,13 +3784,14 @@ example.org';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'shorten_www';
-  $strongarm->value = 0;
+  $strongarm->value = 'driveturku';
   $export['shorten_www'] = $strongarm;
 
+  $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'theme_default';
-  $strongarm->value = 'driveturku';
+  $strongarm->value = 'kada';
   $export['theme_default'] = $strongarm;
 
   $strongarm = new stdClass();
