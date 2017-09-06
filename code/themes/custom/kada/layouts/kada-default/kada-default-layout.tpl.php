@@ -66,7 +66,7 @@
         </div>
       </div>
 
-      <div class="l-navigation default-bg-10">
+      <div class="l-navigation">
         <div class="container l-navigation__container l-navigation-inner">
           <?php print render($page['navigation']); ?>
         </div>
@@ -101,7 +101,7 @@
 
   <main id="main" class="page-main l-main" role="main">
     <a id="main-content" tabindex="-1"></a>
-    <div class="l-breadcrumb default-bg-10">
+    <div class="l-breadcrumb">
       <div class="container l-breadcrumb__container">
         <?php print render($page['highlighted']); ?>
         <?php if($breadcrumb): ?>

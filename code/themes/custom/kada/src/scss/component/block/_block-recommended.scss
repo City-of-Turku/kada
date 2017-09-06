@@ -121,7 +121,7 @@
     &:focus,
     &:hover::after,
     &:focus::after {
-      color: $primary-color-opacity-20;
+      color: $primary-color-opacity-50;
     }
   }
 }
@@ -143,7 +143,7 @@
   &:focus {
     .fa-icon--close {
       &::before {
-        color: $primary-color-opacity-20;
+        color: $primary-color-opacity-50;
       }
     }
   }

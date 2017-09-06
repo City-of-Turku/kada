@@ -69,7 +69,7 @@
         </div>
       </div>
 
-      <div class="l-navigation default-bg-10">
+      <div class="l-navigation">
         <div class="container l-navigation__container l-navigation-inner">
           <?php print render($page['navigation']); ?>
         </div>
@@ -88,7 +88,7 @@
   </header>
 
   <?php if ($page['highlighted']): ?>
-    <div id="highlighted" class="page-highlighted l-highlighted default-bg-10">
+    <div id="highlighted" class="page-highlighted l-highlighted">
       <div class="container page-highlighted__container">
         <?php print render($page['highlighted']); ?>
       </div>
