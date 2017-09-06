@@ -8,13 +8,13 @@
 $rembase: 16;
 $base-font-size: 16px; // Leave at 16px for correct container width
 $base-font-size-rem: 1rem;
-$base-line-height: 1.385; // 24px absolute line-height. For relative line-height (1.385), see http://cssleading.com/
+$base-line-height: 1.5; // 24px absolute line-height. For relative line-height (1.5), see http://cssleading.com/
 
 // Font families
 $helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $open-sans: 'Open Sans', sans-serif;
 
-$heading-font-family: $helvetica;
+$heading-font-family: $open-sans;
 
 $font-size-heading-1: 2.5rem;
 $font-size-heading-2: 1.875rem;

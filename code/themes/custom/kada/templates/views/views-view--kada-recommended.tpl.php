@@ -47,9 +47,11 @@
 <?php endif; ?>
 
 <?php if ($rows): ?>
-  <div class="recommended-block__content">
+  <div class="recommended-block__header">
     <h2 class="recommended-block__title"><?php print t('Recommended');?></h2>
-    <button class="recommended-block__close"><?php print t('Close');?></button>
+    <button class="recommended-block__close"><i class="fa-icon fa-icon--close" aria-hidden="true"></i><?php print t('Close');?></button>
+  </div>
+  <div class="recommended-block__content">
     <?php print $rows; ?>
   </div>
 <?php elseif ($empty): ?>

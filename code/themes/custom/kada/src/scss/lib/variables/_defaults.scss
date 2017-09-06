@@ -19,7 +19,9 @@ $default-clean-menus: true !default;
 $default-clean-list-styles: true !default;
 
 // Typography
-$default-font-family: 'PT Serif', serif;
+$default-font-family: 'Open Sans', serif;
+
+$responsive-font-size: true !default;
 
 // Other defaults
 $default-border-radius: 0 !default;

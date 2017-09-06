@@ -1,278 +1,274 @@
-// Emergency messages styles
-.l-emergency-messages {
-  .l-region {
-    margin: 0;
-  }
-}
+// // Emergency messages styles
+// .l-emergency-messages {
+//   .l-region {
+//     margin: 0;
+//   }
+// }
 
-// Header styles. Header wraps all the elements on the header.
-.l-header {
-  @include clearfix;
-  background-color: $footer-bg;
-  overflow: visible;
-  position: relative;
+// // Header styles. Header wraps all the elements on the header.
+// .l-header {
+//   // @include clearfix;
+//   // background-color: $footer-bg;
+//   // overflow: visible;
+//   //position: relative;
 
-  @media screen and (min-width: $desktop-narrow) {
-    background-color: $footer-bg;
-  }
+//   // @media screen and (min-width: $desktop-narrow) {
+//   //   background-color: $footer-bg;
+//   // }
 
-  .l-header-inner {
-    height: 0;
-    padding-bottom: 47.3%;
-  }
+//   .l-header-inner {
+//     height: 0;
+//     padding-bottom: 47.3%;
+//   }
 
-  .l-region {
-    margin: 0;
-  }
-}
+//   .l-region {
+//     margin: 0;
+//   }
+// }
 
-.l-before-header {
-  background-color: $header-overlay-bg;
-  float: left;
-  width: 100%;
-}
+// .l-before-header {
+//   background-color: $header-overlay-bg;
+//   float: left;
+//   width: 100%;
+// }
 
-// Branding styles. Branding includes the site logo, additional navigation and section title (only larger screens).
-.l-branding {
-  // @include layout(18) {
-  //   @include grid-span(8,1);
-  // }
-  clear: left;
-  overflow: hidden;
-  z-index: 3;
+// // Branding styles. Branding includes the site logo, additional navigation and section title (only larger screens).
+// .l-branding {
+//   //@include span(4);
+//   // clear: left;
+//   // overflow: hidden;
+//   // z-index: 3;
 
-  @media screen and (min-width: $desktop-narrow) {
-    background-color: $header-overlay-bg;
-    float: none;
-    margin: 0;
-    width: 100%;
-  }
+//   // @media screen and (min-width: $desktop-narrow) {
+//   //   background-color: $header-overlay-bg;
+//   //   float: none;
+//   //   margin: 0;
+//   //   width: 100%;
+//   // }
 
-  .l-branding-inner {
-    @media screen and (min-width: $desktop-narrow) {
-      display: table;
-      float: none;
-      width: 100%;
-    }
+//   .l-branding-inner {
+//     // @media screen and (min-width: $desktop-narrow) {
+//     //   display: table;
+//     //   float: none;
+//     //   width: 100%;
+//     // }
 
-    .l-region--header-top {
-      display: none; // This region is rendered to header top area when browsing with mobile client.
+//     .l-region--header-top {
+//       display: none; // This region is rendered to header top area when browsing with mobile client.
 
-      @media screen and (min-width: $desktop-narrow) {
-        display: block;
-        width: 100%;
-      }
-    }
-  }
-}
+//       @media screen and (min-width: $desktop-narrow) {
+//         display: block;
+//         width: 100%;
+//       }
+//     }
+//   }
+// }
 
-// The inner parts of the areas are used to limit the width and center the elements on large screens.
-.l-before-header-inner,
-.l-emergency-messages-inner,
-.l-branding-inner,
-.l-navigation-inner {
-  @media screen and (min-width: $desktop-narrow) {
-    float: none;
-    margin: 0 auto;
-    max-width: 1320px;
-  }
-}
+// // The inner parts of the areas are used to limit the width and center the elements on large screens.
+// // .l-before-header-inner,
+// // .l-emergency-messages-inner,
+// // .l-branding-inner,
+// // .l-navigation-inner {
+// //   @media screen and (min-width: $desktop-narrow) {
+// //     float: none;
+// //     margin: 0 auto;
+// //     max-width: 1320px;
+// //   }
+// // }
 
-// Header top styles. Header top includes for example section title. This is used only on mobile devices.
-.l-header-top {
-  clear: both;
-  position: relative;
-  z-index: 3;
+// // Header top styles. Header top includes for example section title. This is used only on mobile devices.
+// .l-header-top {
+//   clear: both;
+//   position: relative;
+//   z-index: 3;
 
-  @media screen and (min-width: $desktop-narrow) {
-    display: none; // This area is rendered in the branding area's header top region on devices with large screens.
-  }
-}
+//   @media screen and (min-width: $desktop-narrow) {
+//     display: none; // This area is rendered in the branding area's header top region on devices with large screens.
+//   }
+// }
 
-// Header top styles when the main image is present
-.has-main-image {
-  .l-header-top {
-    height: 0;
-  }
-}
+// // Header top styles when the main image is present
+// .has-main-image {
+//   .l-header-top {
+//     height: 0;
+//   }
+// }
 
-// Navigation styles. This area has additional styles on _navigation.scss file.
-.l-navigation {
-  // @include layout(18) {
-  //   @include grid-span(10,9);
-  // }
-  padding: 10px 0;
+// // // Navigation styles. This area has additional styles on _navigation.scss file.
+// // .l-navigation {
+// //   //@include span(last 8);
+// //   padding: 10px 0;
 
-  @media screen and (min-width: $desktop-narrow) {
-    //@include grid-span(12,1);
-    box-shadow: rgba(0,0,0,0.16) 0 2px 2px;
-    background-color: $navigation-bg;
-    float: none;
-    padding: 0;
-  }
-}
+// //   @media screen and (min-width: $desktop-narrow) {
+// //     //@include grid-span(12,1);
+// //     box-shadow: rgba(0,0,0,0.16) 0 2px 2px;
+// //     background-color: $navigation-bg;
+// //     float: none;
+// //     padding: 0;
+// //   }
+// // }
 
-// Logo-region
-.l-region--logo {
-  padding: 7px 5px;
+// // Logo-region
+// .l-region--logo {
+//   padding: 7px 5px;
 
-  @media screen and (min-width: $mobile-landscape-wide) {
-    padding: 10px 5px;
-  }
+//   @media screen and (min-width: $mobile-landscape-wide) {
+//     padding: 10px 5px;
+//   }
 
-  @media screen and (min-width: $desktop-narrow) {
-    display: table-cell;
-    width: 20%;
-  }
-}
+//   @media screen and (min-width: $desktop-narrow) {
+//     display: table-cell;
+//     width: 20%;
+//   }
+// }
 
-// Header top and navigation top regions
-.l-navigation-top {
-  clear: both;
-  overflow: hidden;
-  text-align: right;
+// // Header top and navigation top regions
+// .l-navigation-top {
+//   clear: both;
+//   overflow: hidden;
+//   text-align: right;
 
-  @media screen and (min-width: $desktop-narrow) {
-    display: table-cell;
-    vertical-align: bottom;
-    width: 80%;
-  }
-}
+//   @media screen and (min-width: $desktop-narrow) {
+//     display: table-cell;
+//     vertical-align: bottom;
+//     width: 80%;
+//   }
+// }
 
-// Navigation region
-.l-region--navigation {
-  line-height: 0;
-  margin: 3px 0;
-  text-align: right;
+// // Navigation region
+// // .l-region--navigation {
+// //   line-height: 0;
+// //   margin: 3px 0;
+// //   text-align: right;
 
-  @media screen and (min-width: $desktop-narrow) {
-    line-height: auto;
-    margin: 0 auto;
-    position: relative;
-    text-align: left;
-  }
-}
+// //   @media screen and (min-width: $desktop-narrow) {
+// //     line-height: auto;
+// //     margin: 0 auto;
+// //     position: relative;
+// //     text-align: left;
+// //   }
+// // }
 
-// Header region. Includes for example main image and picture carousels.
-.l-region--header {
-  background-color: $footer-bg;
-  margin: 0;
-  width: 100%;
-  z-index: 1;
+// // Header region. Includes for example main image and picture carousels.
+// // .l-region--header {
+// //   background-color: $footer-bg;
+// //   margin: 0;
+// //   width: 100%;
+// //   z-index: 1;
 
-  @media screen and (min-width: $tablet-portrait) {
-    left: 0;
-    position: absolute;
-    top: 0;
-  }
-}
+// //   // @media screen and (min-width: $tablet-portrait) {
+// //   //   left: 0;
+// //   //   position: absolute;
+// //   //   top: 0;
+// //   // }
+// // }
 
-// Logo & site name
-.site-name {
-  margin: 0 $gutters * 2 0 0;
-  overflow: hidden;
-  padding: 0;
+// // Logo & site name
+// .site-name {
+//   margin: 0 $gutters * 2 0 0;
+//   overflow: hidden;
+//   padding: 0;
 
-  @media screen and (min-width: $mobile-landscape-wide) {
-    margin: 0 $gutters;
-  }
+//   @media screen and (min-width: $mobile-landscape-wide) {
+//     margin: 0 $gutters;
+//   }
 
-  @media screen and (min-width: $desktop-narrow) {
-    margin: 0;
-  }
-  a {
-    display: block;
-    float: left;
-    line-height: 0;
-    max-width: 100%;
+//   @media screen and (min-width: $desktop-narrow) {
+//     margin: 0;
+//   }
+//   a {
+//     display: block;
+//     float: left;
+//     line-height: 0;
+//     max-width: 100%;
 
-    img {
-      max-height: 40px;
+//     img {
+//       max-height: 40px;
 
-      @media screen and (min-width: $mobile-landscape-wide) {
-        max-height: 46px;
-      }
+//       @media screen and (min-width: $mobile-landscape-wide) {
+//         max-height: 46px;
+//       }
 
-      @media screen and (min-width: $desktop-narrow) {
-        max-height: 100%;
-      }
-    }
-  }
-}
+//       @media screen and (min-width: $desktop-narrow) {
+//         max-height: 100%;
+//       }
+//     }
+//   }
+// }
 
-// Font zoom toggle
-.font-zoom-level-changer {
-  color: #FFFFFF;
-  display: none;
-  text-align: right;
-  vertical-align: middle;
+// // Font zoom toggle
+// .font-zoom-level-changer {
+//   color: #FFFFFF;
+//   display: none;
+//   text-align: right;
+//   vertical-align: middle;
 
-  @media screen and (min-width: $desktop-narrow) {
-    display: inline-block;
-    padding: 0 0.5em;
-  }
+//   @media screen and (min-width: $desktop-narrow) {
+//     display: inline-block;
+//     padding: 0 0.5em;
+//   }
 
-  span {
-    &.is-active,
-    &:hover {
-      color: #FFFFFF;
-      cursor: pointer;
-      text-decoration: underline;
-    }
-  }
+//   span {
+//     &.is-active,
+//     &:hover {
+//       color: #FFFFFF;
+//       cursor: pointer;
+//       text-decoration: underline;
+//     }
+//   }
 
-  .font-zoom-level--medium {
-    font-size: 1.3em;
-  }
+//   .font-zoom-level--medium {
+//     font-size: 1.3em;
+//   }
 
-  .font-zoom-level--large {
-    font-size: 1.5em;
-  }
-}
+//   .font-zoom-level--large {
+//     font-size: 1.5em;
+//   }
+// }
 
-// Section header styles
-.section-header {
-  .section-title {
-    color: #fff;
-    font-weight: normal;
-    margin: 0 $gutters $gutters;
-    text-align: center;
+// // Section header styles
+// .section-header {
+//   .section-title {
+//     color: #fff;
+//     font-weight: normal;
+//     margin: 0 $gutters $gutters;
+//     text-align: center;
 
-    @media screen and (min-width: $desktop-narrow) {
-      font-size: 2em;
-      font-weight: bold;
-      line-height: 1.4;
-      margin: 0 7px 0 0;
-      text-align: right;
-    }
+//     @media screen and (min-width: $desktop-narrow) {
+//       font-size: 2em;
+//       font-weight: bold;
+//       line-height: 1.4;
+//       margin: 0 7px 0 0;
+//       text-align: right;
+//     }
 
-    a {
-      color: #FFFFFF;
+//     a {
+//       color: #FFFFFF;
 
-      @media screen and (min-width: $desktop-narrow) {
-        top: 5px;
-      }
+//       @media screen and (min-width: $desktop-narrow) {
+//         top: 5px;
+//       }
 
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
-}
+//       &:hover {
+//         text-decoration: none;
+//       }
+//     }
+//   }
+// }
 
-// Section header styles when there is main image present
-.has-main-image {
-  .section-header .section-title {
-    margin-bottom: 0;
-    text-align: right;
-  }
-}
+// // Section header styles when there is main image present
+// .has-main-image {
+//   .section-header .section-title {
+//     margin-bottom: 0;
+//     text-align: right;
+//   }
+// }
 
 
 
-// On sections, when viewing the page on desktop mode, the section header needs to be vertically centered.
-.og-context {
-  .l-navigation-top {
-    vertical-align: middle;
-  }
-}
+// // On sections, when viewing the page on desktop mode, the section header needs to be vertically centered.
+// .og-context {
+//   .l-navigation-top {
+//     vertical-align: middle;
+//   }
+// }

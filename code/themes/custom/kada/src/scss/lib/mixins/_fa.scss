@@ -1,0 +1,20 @@
+/// Include a Font Awesome Icon
+/// @param {string} $content [none] - content icon ("\000")
+/// @param {number} $font-size [16] - font size to scale the icon, rem unit
+@mixin fa($content, $font-size: 1rem, $responsive: $responsive-font-size) {
+  @include fontsmoothing();
+  display: inline-block;
+  color: inherit;
+  content: $content;
+  font-family: FontAwesome;
+  @if $responsive {
+    @include font-size-responsive($font-size);
+  }
+  @else {
+    font-size: $font-size;
+  }
+  line-height: 1 !important;
+  speak: none;
+  text-rendering: auto;
+  transform: translate(0, 0);
+}

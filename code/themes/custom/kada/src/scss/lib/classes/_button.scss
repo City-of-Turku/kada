@@ -1,0 +1,125 @@
+.button {
+  border: 1px solid;
+  border-radius: .125rem;
+  display: inline-block;
+  line-height: inherit;
+  padding: .5rem 1.25rem .575rem;
+  font-size: $base-font-size-rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+
+  + .ajax-progress-throbber {
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.button--no-border-radius {
+  border-radius: 0;
+}
+
+.button,
+.button:hover,
+.button:focus {
+  color: $white;
+}
+
+.button--default {
+  background-color: $default-color-60;
+  border-color: $default-color-60;
+
+  &:hover,
+  &:focus {
+    background-color: $default-color;
+    border-color: $default-color;
+  }
+}
+
+.button--primary {
+  background-color: $primary-color;
+  border-color: $primary-color;
+
+  &:hover,
+  &:focus {
+    background-color: darken($primary-color, 15%);
+    border-color: darken($primary-color, 15%);
+  }
+}
+
+// .button--secondary {
+//   background-color: $secondary-color;
+//   border-color: $secondary-color;
+
+//   &:hover,
+//   &:focus {
+//     background-color: darken($secondary-color, 25%);
+//     border-color: darken($secondary-color, 25%);
+//   }
+// }
+
+// @keyframes colorchange {
+//   0%   {
+//     background: $primary-color;
+//     border-color: $primary-color;
+//   }
+//   50%  {
+//     background: $primary-color-darkest;
+//     border-color: $primary-color-darkest;
+//   }
+//   100% {
+//     background: $primary-color;
+//     border-color: $primary-color;
+//   }
+// }
+
+// @-webkit-keyframes colorchange { /* Safari and Chrome - necessary duplicate */
+//   0%   {
+//     background: $primary-color;
+//     border-color: $primary-color;
+//   }
+//   50%  {
+//     background: $primary-color-darkest;
+//     border-color: $primary-color-darkest;
+//   }
+//   100% {
+//     background: $primary-color;
+//     border-color: $primary-color;
+//   }
+// }
+
+// .button--primary.progress-disabled {
+//   animation: colorchange 2s infinite;
+//   opacity: .5;
+// }
+
+// @media screen and (max-width: $mobile-landscape-narrow - 1px) {
+//   .button {
+//     width: 100%;
+//   }
+
+//   .button + .button,
+//   .shipping-service__block .button {
+//     margin-top: 15px;
+//   }
+// }
+
+// @media screen and (min-width: $mobile-landscape-narrow) {
+//   .button + .button,
+//   .ajax-progress + .button {
+//     margin-left: 10px;
+//   }
+
+//   .product-detail__add-to-cart .button {
+//     font-size: 1.5rem;
+//   }
+// }
+
+// @media screen and (min-width: $tablet-portrait) {
+//   .button {
+//     .sidebar & {
+//       margin-top: 15px;
+//       width: 100%;
+//     }
+//   }
+// }

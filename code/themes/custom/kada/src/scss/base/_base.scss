@@ -1,96 +1,61 @@
-body {
-  color: $body-font-color;
-  font: 14px $body-font;
-}
+//
+// @file
+// This file includes everything related to the basic setup
+// Below the typography and wysiwyg styles are imported
+//
 
-.l-header {
-  @include font-size(14px);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bolder;
-}
-
-h1 {
-  font-size: $font-size-h1;
-}
-
-h2 {
-  font-size: $font-size-h2;
-  font-weight: 600;
-  margin: 30px 0 5px;
-}
-
-h3 {
-  font-size: $font-size-h3;
-  font-weight: 600;
-  margin: 30px 0 5px;
-}
-
-h2 + p,
-h3 + p{
-  margin-top: 0;
-}
-
-p {
-  font-size: 1.071em;
-  line-height: 1.6;
-}
-
-a {
-  color: $link-color;
-  text-decoration: none;
-  &:link,
-  &:focus,
-  &:active,
-  &:visited {
-    color: $link-color;
-    text-decoration: none;
+// Set all dom nodes to border-box
+@if $default-border-box {
+  *,
+  *:after,
+  *:before {
+    box-sizing: inherit;
   }
-  &:hover {
-    text-decoration: underline;
+
+  html {
+    box-sizing: border-box;
   }
 }
 
-.general-header {
-  @include font-size(20px);
-}
-
-// Medium font-sizes
-body.font-zoom-level--medium {
-  @include font-size(18px);
-
-  .flexslider {
-    @media screen and (min-width: $tablet-portrait) {
-      font-size: 16px;
-    }
+// Use font-smoothing
+@if $default-font-smoothing {
+  html,
+  html a {
+    @include fontsmoothing();
   }
 }
 
-// Large font-sizes
-body.font-zoom-level--large {
-  @include font-size(22px);
-
-  .flexslider {
-    @media screen and (min-width: $tablet-portrait) {
-      font-size: 18px;
-    }
-
-    @media screen and (min-width: $desktop) {
-      font-size: 20px;
-    }
+// Disable outlining
+@if $default-disable-outline {
+  *:active,
+  *:hover {
+    outline: 0;
   }
 }
 
-ul {
-  margin: 1em 0;
-  padding-left: 20px;
-
-  li {
-    list-style-type: square;
-  }
-
-  ul {
+// clean menu items
+@if $default-clean-menus {
+  .menu,
+  ul,
+  ol,
+  dl {
     margin: 0;
+    padding: 0;
   }
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  background: $body-background;
+  color: $body-color;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
 }

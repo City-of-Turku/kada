@@ -53,26 +53,44 @@
 <?php else: ?>
   <html class="no-js" lang="<?php print $language->language; ?>" dir="<?php print $language->dir; ?>"<?php print $rdf_namespaces; ?>>
 <?php endif; ?>
-<head>
-  <?php print $head; ?>
-  <title><?php print $head_title; ?></title>
-  <?php print $styles; ?>
-  <?php print $scripts; ?>
-</head>
-<body<?php print $attributes;?>>
-  <!-- Qualaroo for turku.fi -->
-  <script type="text/javascript">
-    var _kiq = _kiq || [];
-    (function(){
-      setTimeout(function(){
-      var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script'); s.type = 'text/javascript';
-      s.async = true; s.src = '//s3.amazonaws.com/ki.js/58607/d3v.js'; f.parentNode.insertBefore(s, f);
-      }, 1);
-    })();
-  </script>
-  <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
-  <?php print $page_top; ?>
-  <?php print $page; ?>
-  <?php print $page_bottom; ?>
-</body>
+  <head>
+    <?php print $head; ?>
+    <title><?php print $head_title; ?></title>
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="cleartype" content="on">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/icon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/icon/favicon-16x16.png" sizes="16x16">
+    <!-- Apple touch icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/icon/apple-touch-icon.png">
+    <!-- Icon / Android -->
+    <link rel="manifest" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/icon/manifest.json">
+    <!-- Safari pinned tab -->
+    <link rel="mask-icon" href="<?php print file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/icon/safari-pinned-tab.svg" color="#ff273e">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:image" content="<?php print file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/icon/image_src.png" /> <!-- @todo create a 200x200 png file -->
+
+    <?php print $styles; ?>
+    <?php print $scripts; ?>
+  </head>
+  <body<?php print $attributes;?>>
+    <script type="text/javascript">
+      var _kiq = _kiq || [];
+      (function(){
+        setTimeout(function(){
+        var d = document, f = d.getElementsByTagName('script')[0], s = d.createElement('script'); s.type = 'text/javascript';
+        s.async = true; s.src = '//s3.amazonaws.com/ki.js/58607/d3v.js'; f.parentNode.insertBefore(s, f);
+        }, 1);
+      })();
+    </script>
+    <a href="#main-content" class="element-invisible element-focusable"><?php print t('Skip to main content'); ?></a>
+    <?php print $page_top; ?>
+    <?php print $page; ?>
+    <?php print $page_bottom; ?>
+  </body>
 </html>

@@ -36,7 +36,7 @@
     }
 
     .event__buy-link {
-      @extend .button--buy-link;
+      // @extend .button--buy-link;
       left: 10px;
       line-height: 1em;
       position: absolute;
@@ -158,7 +158,7 @@
     clear: both;
 
     .mosaic__more-link {
-      @extend .button;
+      // @extend .button;
       color: #FFFFFF;
       display: block;
 

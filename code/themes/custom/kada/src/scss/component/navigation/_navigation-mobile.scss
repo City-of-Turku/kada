@@ -1,0 +1,17 @@
+.menu-name-main-menu,
+[class*="menu-name-menu-main-menu"] {
+  @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
+    .toggler {
+      //padding-top: .475rem;
+      color: transparent;
+      font-size: 0;
+      //text-align: center;
+
+      &::before {
+        @include fa('\f0c9', 1.5rem, false);
+        color: $white;
+        font-style: normal;
+      }
+    }
+  }
+}

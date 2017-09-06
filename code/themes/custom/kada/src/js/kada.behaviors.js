@@ -39,38 +39,38 @@
    */
 
     // Masonry configuration
-  Drupal.behaviors.kadaMasonry = {
-    attach: function (context) {
-      $('.liftup-box-list', context).each(function (key, element) {
-        var masonry_container = $(element);
-        $(window).load(function () {
-          masonry_container.once('kada-masonry', function () {
-            // Init masonry
-            var msnry = new Masonry(masonry_container[0], {
-              columnWidth: '.liftup-box',
-              itemSelector: '.liftup-box'
-            });
-            // Check if masonry lists are inside quicktabs
-            var qt_tabpage = masonry_container.parents('.quicktabs-tabpage:first');
-            if (qt_tabpage.length === 1) {
-              var qt_tab_id = qt_tabpage.attr('id').replace(/tabpage/, 'tab');
-              // On tab click, trigger masonry layout in order to render items correctly
-              $('#' + qt_tab_id).bind('click', function () {
-                imagesLoaded(qt_tabpage, function () {
-                  msnry.layout();
-                });
-              });
-            }
+  // Drupal.behaviors.kadaMasonry = {
+  //   attach: function (context) {
+  //     $('.liftup-box-list', context).each(function (key, element) {
+  //       var masonry_container = $(element);
+  //       $(window).load(function () {
+  //         masonry_container.once('kada-masonry', function () {
+  //           // Init masonry
+  //           var msnry = new Masonry(masonry_container[0], {
+  //             columnWidth: '.liftup-box',
+  //             itemSelector: '.liftup-box'
+  //           });
+  //           // Check if masonry lists are inside quicktabs
+  //           var qt_tabpage = masonry_container.parents('.quicktabs-tabpage:first');
+  //           if (qt_tabpage.length === 1) {
+  //             var qt_tab_id = qt_tabpage.attr('id').replace(/tabpage/, 'tab');
+  //             // On tab click, trigger masonry layout in order to render items correctly
+  //             $('#' + qt_tab_id).bind('click', function () {
+  //               imagesLoaded(qt_tabpage, function () {
+  //                 msnry.layout();
+  //               });
+  //             });
+  //           }
 
-            // When resizing zoom level the masonry layout needs to be triggered to render items correctly
-            $('.font-zoom-level-changer span').click(function () {
-              msnry.layout();
-            });
-          });
-        });
-      });
-    }
-  };
+  //           // When resizing zoom level the masonry layout needs to be triggered to render items correctly
+  //           $('.font-zoom-level-changer span').click(function () {
+  //             msnry.layout();
+  //           });
+  //         });
+  //       });
+  //     });
+  //   }
+  // };
 
   Drupal.behaviors.kadaQuicktabs = {
     attach: function () {
@@ -111,7 +111,7 @@
       $('.toggler').on('click.responsive-menu-toggle', function () {
         var currentMenu = $(this).parents('.responsive-menus:first');
         allMenus.not(currentMenu).removeClass('responsive-toggled');
-        $('.recommended-block.is-visible').removeClass('is-visible');
+        $('.block--views-kada-recommended-block').removeClass('block--views-recommended-block--is-visible').addClass('block--views-recommended-block--is-hidden');
       });
 
       // Open and close sub-menu items from toggle button
@@ -180,118 +180,118 @@
     }
   };
 
-  Drupal.behaviors.kadaEqualHeightsBehavior = {
-    attach: function (context) {
-      $(window).load(function () {
-        var resizeOk = true;
+  // Drupal.behaviors.kadaEqualHeightsBehavior = {
+  //   attach: function (context) {
+  //     $(window).load(function () {
+  //       var resizeOk = true;
 
-        setInterval(function () {
-          resizeOk = true;
-        }, 33);
+  //       setInterval(function () {
+  //         resizeOk = true;
+  //       }, 33);
 
-        function adjustHeight() {
-          if (resizeOk === false) {
-            return;
-          }
+  //       function adjustHeight() {
+  //         if (resizeOk === false) {
+  //           return;
+  //         }
 
-          // Switch between mobile and desktop menu behavior on resize
-          switchMainMenuBehavior(context);
+  //         // Switch between mobile and desktop menu behavior on resize
+  //         switchMainMenuBehavior(context);
 
-          // Trigger only when using desktop menu
-          if ($(window).width() >= '946') {
-            $('.l-footer .menu-block-wrapper > .menu').each(function () {
-              var highestElement = 0;
-              $('.menu__item--first-level', this).each(function () {
-                if ($(this).height() > highestElement) {
-                  highestElement = $(this).height();
-                }
-              });
-              $('.menu__item--first-level', this).height(highestElement);
-            });
-          }
+  //         // Trigger only when using desktop menu
+  //         if ($(window).width() >= '946') {
+  //           $('.l-footer .menu-block-wrapper > .menu').each(function () {
+  //             var highestElement = 0;
+  //             $('.menu__item--first-level', this).each(function () {
+  //               if ($(this).height() > highestElement) {
+  //                 highestElement = $(this).height();
+  //               }
+  //             });
+  //             $('.menu__item--first-level', this).height(highestElement);
+  //           });
+  //         }
 
-          // Calculate all menus under active level to have the same height
-          $('.l-region--navigation .menu__item--first-level.is-active-trail').hover(function () {
-            var secondLevelChild = $(this).find('> .menu');
-            var thirdLevelChild = secondLevelChild.find('li.is-active-trail > .menu');
+  //         // Calculate all menus under active level to have the same height
+  //         $('.l-region--navigation .menu__item--first-level.is-active-trail').hover(function () {
+  //           var secondLevelChild = $(this).find('> .menu');
+  //           var thirdLevelChild = secondLevelChild.find('li.is-active-trail > .menu');
 
-            var highestMenu = 0;
+  //           var highestMenu = 0;
 
-            var secondLevelHeight = secondLevelChild.outerHeight();
-            var thirdLevelHeight = thirdLevelChild.outerHeight();
+  //           var secondLevelHeight = secondLevelChild.outerHeight();
+  //           var thirdLevelHeight = thirdLevelChild.outerHeight();
 
-            if ($(window).width() >= '946') {
-              if (secondLevelHeight > thirdLevelHeight) {
-                highestMenu = secondLevelHeight;
-              }
-              else {
-                highestMenu = thirdLevelHeight;
-              }
+  //           if ($(window).width() >= '946') {
+  //             if (secondLevelHeight > thirdLevelHeight) {
+  //               highestMenu = secondLevelHeight;
+  //             }
+  //             else {
+  //               highestMenu = thirdLevelHeight;
+  //             }
 
-              secondLevelChild.css('height', highestMenu);
-              thirdLevelChild.css('height', highestMenu);
-            }
-          });
+  //             secondLevelChild.css('height', highestMenu);
+  //             thirdLevelChild.css('height', highestMenu);
+  //           }
+  //         });
 
-          // Calculate all menus under second level to same height when hovered
-          $('.l-region--navigation .menu__item--second-level').hover(function () {
+  //         // Calculate all menus under second level to same height when hovered
+  //         $('.l-region--navigation .menu__item--second-level').hover(function () {
 
-            var $this = $(this).parent();
-            var thirdLevelChild = $(this).find('> .menu');
+  //           var $this = $(this).parent();
+  //           var thirdLevelChild = $(this).find('> .menu');
 
-            var highestMenu = 0;
+  //           var highestMenu = 0;
 
-            var secondLevelHeight = $this.outerHeight();
-            var thirdLevelHeight = thirdLevelChild.outerHeight();
+  //           var secondLevelHeight = $this.outerHeight();
+  //           var thirdLevelHeight = thirdLevelChild.outerHeight();
 
-            if ($(window).width() >= '946') {
-              if (thirdLevelHeight > secondLevelHeight) {
-                highestMenu = thirdLevelHeight;
-              }
-              else {
-                highestMenu = secondLevelHeight;
-              }
+  //           if ($(window).width() >= '946') {
+  //             if (thirdLevelHeight > secondLevelHeight) {
+  //               highestMenu = thirdLevelHeight;
+  //             }
+  //             else {
+  //               highestMenu = secondLevelHeight;
+  //             }
 
-              thirdLevelChild.css('height', highestMenu);
-              $this.css('height', highestMenu);
-            }
-          });
+  //             thirdLevelChild.css('height', highestMenu);
+  //             $this.css('height', highestMenu);
+  //           }
+  //         });
 
 
-          if ($(window).width() >= '946') {
-            $('.l-region--navigation .menu').css('height', '');
-          }
+  //         if ($(window).width() >= '946') {
+  //           $('.l-region--navigation .menu').css('height', '');
+  //         }
 
-          // Remove height from menus elements when mouse leaves the hovered menu and them menu is not active
-          $('.l-region--navigation .menu__item--first-level:not(.is-active-trail) .menu__item--second-level').hover(function (event) {
-            var $this = $(this).parent();
-            var thirdLevelChild = $this.find('> .menu');
+  //         // Remove height from menus elements when mouse leaves the hovered menu and them menu is not active
+  //         $('.l-region--navigation .menu__item--first-level:not(.is-active-trail) .menu__item--second-level').hover(function (event) {
+  //           var $this = $(this).parent();
+  //           var thirdLevelChild = $this.find('> .menu');
 
-            if (event.type === 'mouseleave') {
-              $this.css('height', '');
-              thirdLevelChild.css('height', '');
-            }
-          });
+  //           if (event.type === 'mouseleave') {
+  //             $this.css('height', '');
+  //             thirdLevelChild.css('height', '');
+  //           }
+  //         });
 
-          // Remove height from menus elements when mouse leaves the hovered menu and them menu is not active
-          $('.l-region--navigation .menu__item--first-level.is-active .menu__item--second-level').hover(function (event) {
-            var $this = $(this).parent();
-            var thirdLevelChild = $this.find('> .menu');
+  //         // Remove height from menus elements when mouse leaves the hovered menu and them menu is not active
+  //         $('.l-region--navigation .menu__item--first-level.is-active .menu__item--second-level').hover(function (event) {
+  //           var $this = $(this).parent();
+  //           var thirdLevelChild = $this.find('> .menu');
 
-            if (event.type === 'mouseleave') {
-              $this.css('height', '');
-              thirdLevelChild.css('height', '');
-            }
-          });
+  //           if (event.type === 'mouseleave') {
+  //             $this.css('height', '');
+  //             thirdLevelChild.css('height', '');
+  //           }
+  //         });
 
-          resizeOk = false;
-        }
+  //         resizeOk = false;
+  //       }
 
-        $(window).resize(adjustHeight);
-        adjustHeight();
-      });
-    }
-  };
+  //       $(window).resize(adjustHeight);
+  //       adjustHeight();
+  //     });
+  //   }
+  // };
 
   // Help region toggler
   Drupal.behaviors.kadaToolsToggle = {
@@ -361,15 +361,15 @@
     attach: function () {
       // Adds language switcher button to navigation bar with the active language as text
       $('.block--locale-language').once('language-switcher', function () {
-        $(this).find('.menu--language-switcher').before('<span class="language-select">' + $(this).find('.menu__link.active').text() + '</span>');
+        $(this).find('.menu--language-switcher').addClass('menu--language-switcher--is-hidden').before('<button class="language-select language-select--is-closed">' + $(this).find('.menu__link.active').text() + '</button>');
 
         // Changes the mobile menu toggler text to the active language
         $(this).find('.toggler').text($(this).find('.menu__link.active').text());
 
         $(function () {
           $('.language-select').click(function () {
-            $('.menu--language-switcher').toggleClass('is-visible');
-            $(this).toggleClass('is-open');
+            $('.menu--language-switcher').toggleClass('menu--language-switcher--is-visible menu--language-switcher--is-hidden');
+            $(this).toggleClass('language-select--is-open language-select--is-closed');
           });
           $('.menu--language-switcher a').click(function () {
             $('.language-select').text($(this).text());
@@ -385,8 +385,10 @@
   Drupal.behaviors.kadaRecommendedToggle = {
     attach: function () {
       $('.recommended-button, .recommended-block__close').once('recommended-toggle', function () {
+        $('.block--views-kada-recommended-block').addClass('block--views-recommended-block--is-hidden');
         $(this).click(function () {
-          $('.recommended-block').toggleClass('is-visible');
+          console.log('click');
+          $('.block--views-kada-recommended-block').toggleClass('block--views-recommended-block--is-visible block--views-recommended-block--is-hidden');
           if ($('.responsive-menus.responsive-toggled')) {
             $('.responsive-menus.responsive-toggled').removeClass('responsive-toggled');
           }

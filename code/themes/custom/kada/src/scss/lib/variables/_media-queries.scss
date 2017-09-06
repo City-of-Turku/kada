@@ -3,10 +3,14 @@
 // This file includes all variables related to media queries
 //
 
-$mobile-portrait: 320px;
-$mobile-landscape-narrow: 480px;
-$mobile-landscape-wide: 640px;
-$tablet-portrait: 768px;
-$desktop-narrow: 960px;
-$tablet-landscape: 1024px;
-$desktop: 1200px;
+$mobile-portrait: 20em; // = 320px;
+$mobile-landscape-narrow: 30em; // = 480px;
+$tablet-portrait-narrow: 37.5em; // = 600px;
+$mobile-landscape-wide: 40em; // = 640px;
+$tablet-portrait: 48em; // = 768px;
+$desktop-narrow: 60em; // = 960px;
+$tablet-landscape: 64em; // = 1024px;
+$desktop: 75em; // = 1200px;
+$container: 84.5em; // = 1320px + 2 * 1rem
+
+$max-width-deduction: .0625em;

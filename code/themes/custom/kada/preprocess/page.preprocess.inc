@@ -3,7 +3,7 @@
 /**
  * Implements hook_preprocess_page().
  */
-function driveturku_preprocess_page(&$variables) {
+function kada_preprocess_page(&$variables) {
   global $language;
 
   // Check if page is node page.
@@ -92,7 +92,7 @@ function driveturku_preprocess_page(&$variables) {
       if (!empty($node->field_link_to_content_multiple)) {
         $variables['page']['navigation'] = array(
           'recommended_button' => array(
-            '#markup' => '<button class="recommended-button"><span class="recommended-button__inner">'. t('Recommended') .'</span></button>',
+            '#markup' => '<div id="block-recommended-button" class="block block--recommended-button"><button class="recommended-button"><i class="fa-icon fa-icon--star" aria-hidden="true"></i><span class="recommended-button__inner">'. t('Recommended') .'</span></button></div>',
             '#weight' => 0,
           ),
         ) + $variables['page']['navigation'];
@@ -110,14 +110,14 @@ function driveturku_preprocess_page(&$variables) {
   // If page logo is not set, use default from theme.
   if (empty($site_logo_path)) {
     $lang_suffix = $language->language == 'sv' ? '_sv': '';
-    $site_logo_path = drupal_get_path('theme', 'driveturku') . '/images/sprites/logo' . $lang_suffix . '.png';
+    $site_logo_path = drupal_get_path('theme', variable_get('theme_default', NULL)) . '/logo' . $lang_suffix . '.png';
   }
   // Set page logo markup.
   $variables['site_logo']['#markup'] = theme('remote_image_style', array(
     'style_name' => 'site_logo',
     'path' => $site_logo_path,
   ));
-
+  $variables['site_logo_path'] = $site_logo_path;
 
   // Color palette
   // TO-DO: This is rather hackish, but I wanted to avoid section override code duplication.

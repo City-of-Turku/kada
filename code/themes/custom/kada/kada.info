@@ -10,7 +10,7 @@ core = 7.x
 ; ========================================
 stylesheets[all][] = dist/css/styles-lib.css
 stylesheets[all][] = dist/css/styles.css
-stylesheets[all][] = dist/css/styles-theme.css
+;stylesheets[all][] = dist/css/styles-theme.css
 
 ; ========================================
 ; Scripts
@@ -56,7 +56,8 @@ regions[filters] = Turkucalendar event filters
 ;breakpoints[phablet] = (min-width: 321px)
 ;breakpoints[mobile] = (min-width: 0px)
 
-breakpoints[mbl] = (max-width: 479px);
+breakpoints[mbl_prtrt] = (max-width: 319px)
+breakpoints[mbl] = (max-width: 479px)
 breakpoints[mbl_nrw] = (max-width: 639px)
 breakpoints[mbl_wide] = (max-width: 767px)
 breakpoints[tbl] = (max-width: 959px)

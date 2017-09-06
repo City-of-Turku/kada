@@ -3,7 +3,7 @@
 /**
  * Implements hook_preprocess_menu_link().
  */
-function driveturku_preprocess_menu_link(&$variables) {
+function kada_preprocess_menu_link(&$variables) {
 
   $variables['element']['#attributes']['class'] = array();
 
@@ -45,6 +45,6 @@ function driveturku_preprocess_menu_link(&$variables) {
   }
 
   if (isset($menu_level[$menu_item['#original_link']['depth']])) {
-    $variables['element']['#attributes']['class'][] = 'menu__item--' . $menu_level[$menu_item_level] . '-level';
+    $variables['element']['#attributes']['class'][] = 'menu__item--has-' . $menu_level[$menu_item_level] . '-level';
   }
 }

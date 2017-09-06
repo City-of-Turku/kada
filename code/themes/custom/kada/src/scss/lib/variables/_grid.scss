@@ -2,16 +2,20 @@
 // @file
 // This file includes all variables related to the grid
 //
+// Read all Susy 2 specs at http://susy.readthedocs.io
+//
 @import "../../bower_components/susy/sass/susy";
 
 // susy one
 $susy: (
   columns: 12,
-  container: 1200px,
+  container: 84.5rem,
   container-position: center,
-  gutters: .5,
+  gutters: .6,
   column-width: false,
   math: fluid,
   output: float,
   gutter-position: after
 );
+
+$container-gutter: 1rem;

@@ -1,7 +1,7 @@
-name = DriveTurku - default
-description = Default layout for DriveTurku
+name = Kada - default
+description = Default layout for Kada
 preview = preview.png
-template = driveturku-default-layout
+template = kada-default-layout
 
 ; Regions
 regions[emergency_messages] = Emergency messages
@@ -24,4 +24,4 @@ regions[footer]             = Footer
 regions[after_footer]       = After footer
 
 ; Stylesheets
-stylesheets[all][] = dist/css/driveturku-default.layout.css
+stylesheets[all][] = dist/css/kada-default.layout.css

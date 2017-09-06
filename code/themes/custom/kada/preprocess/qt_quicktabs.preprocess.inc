@@ -3,7 +3,7 @@
 /**
  * Implements hook_preprocess_qt_quicktabs().
  */
-function driveturku_preprocess_qt_quicktabs(&$variables) {
+function kada_preprocess_qt_quicktabs(&$variables) {
   $qt = substr($variables['element']['#options']['attributes']['id'], strlen('quicktabs-'));
   if (in_array($qt, array("feed_tabs", "feed_tabs_section"))) {
     $quicktab = quicktabs_load($qt);

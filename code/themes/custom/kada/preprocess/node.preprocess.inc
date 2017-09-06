@@ -3,7 +3,7 @@
 /**
  * Implements hook_preprocess_node().
  */
-function driveturku_preprocess_node(&$variables) {
+function kada_preprocess_node(&$variables) {
   $node = $variables['node'];
 
   if ($variables['type'] == 'liftup' || $variables['type'] == 'page') {

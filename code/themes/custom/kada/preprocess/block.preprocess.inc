@@ -3,7 +3,7 @@
 /**
  * Implements hook_preprocess_block().
  */
-function driveturku_preprocess_block(&$variables) {
+function kada_preprocess_block(&$variables) {
   $node = menu_get_object();
 
   if (!is_null($node)) {

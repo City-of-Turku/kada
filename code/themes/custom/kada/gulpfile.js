@@ -74,7 +74,6 @@ gulp.task('browserSync', function() {
 
 // Sass task
 gulp.task('sass', function(minify) {
-  console.log('sass');
   return gulp.src(path.styles.src + '**/*.scss')
     .pipe(gulpif(path.sourcemaps.prod, sourcemaps.init()))
     .pipe(sassGlob())
@@ -127,7 +126,7 @@ gulp.task('imagemin', function() {
 
 // Default tasks
 gulp.task('default', ['sass', 'watch', 'scripts'], function() {
-  // console.log('Running default tasks');
+  console.log('Running default tasks');
 });
 
 gulp.task('build', ['sass', 'scripts', 'imagemin'], function() {

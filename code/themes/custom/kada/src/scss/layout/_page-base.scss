@@ -1,0 +1,5 @@
+.container {
+  @include container;
+  padding-right: $container-gutter;
+  padding-left: $container-gutter;
+}

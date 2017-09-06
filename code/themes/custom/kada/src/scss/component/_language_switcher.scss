@@ -4,99 +4,99 @@
     position: relative;
   }
 
-  .responsive-menus.responsified span.toggler {
-    @include font-size(20px);
-    background-image: none;
-    color: #fff;
-    line-height: 33px;
-    text-align: center;
-    text-indent: 0;
+  // .responsive-menus.responsified span.toggler {
+  //   @include font-size(20px);
+  //   background-image: none;
+  //   color: #fff;
+  //   line-height: 33px;
+  //   text-align: center;
+  //   text-indent: 0;
 
-    @media screen and (min-width: $mobile-landscape-wide) {
-      line-height: 37px;
-    }
-  }
+  //   @media screen and (min-width: $mobile-landscape-wide) {
+  //     line-height: 37px;
+  //   }
+  // }
 
-  .menu--language-switcher {
-    display:none;
-    position: absolute;
-    top: 100%;
-    z-index: 10;
+  // .menu--language-switcher {
+  //   display:none;
+  //   position: absolute;
+  //   //top: 100%;
+  //   z-index: 10;
 
-    @media screen and (min-width: $desktop-narrow) {
-      width: 45px;
-    }
+  //   @media screen and (min-width: $desktop-narrow) {
+  //     width: 45px;
+  //   }
 
-    @media screen and (min-width: 1400px) {
-      width: 50px;
-    }
-  }
+  //   @media screen and (min-width: 1400px) {
+  //     width: 50px;
+  //   }
+  // }
 
   // TODO: Refactor so that the wrapping element gets menu__item--active-trail class
-  .menu__item {
-    @media screen and (min-width: $desktop-narrow) {
-      display: block;
-      text-align: center;
-    }
-    > a.active {
-      background-color: $language-switcher-bg;
-    }
-  }
+  // .menu__item {
+  //   @media screen and (min-width: $desktop-narrow) {
+  //     display: block;
+  //     text-align: center;
+  //   }
+  //   > a.active {
+  //     background-color: $language-switcher-bg;
+  //   }
+  // }
 
-  .language-select{
-    background-color: $language-switcher-bg;
-    display: none;
-    font-size: 1em;
-    line-height: 1.15;
-    padding: 0.8em 1em 1.2em;
-    text-align: center;
+  .language-select {
+    // background-color: $language-switcher-bg;
+    // display: none;
+    // font-size: 1em;
+    // line-height: 1.15;
+    // padding: 0.8em 1em 1.2em;
+    // text-align: center;
 
-    @media screen and (min-width: $desktop-narrow) {
-      display: block;
-      font-size: 0.9em;
-      position: relative;
-      width: 45px;
-    }
+    // @media screen and (min-width: $desktop-narrow) {
+    //   display: block;
+    //   font-size: 0.9em;
+    //   position: relative;
+    //   width: 45px;
+    // }
 
-    @media screen and (min-width: 1400px) {
-      font-size: 1em;
-      width: 50px;
-    }
+    // @media screen and (min-width: 1400px) {
+    //   font-size: 1em;
+    //   width: 50px;
+    // }
 
-    &:after {
-      bottom: 2px;
-      border: solid transparent;
-      border-color: rgba(0, 0, 0, 0);
-      border-top-color: #000000;
-      border-width: 5px;
-      content: " ";
-      height: 0;
-      left: 50%;
-      margin-left: -5px;
-      position: absolute;
-      pointer-events: none;
-      width: 0;
-    }
+    // &:after {
+    //   bottom: 2px;
+    //   border: solid transparent;
+    //   border-color: rgba(0, 0, 0, 0);
+    //   border-top-color: #000000;
+    //   border-width: 5px;
+    //   content: " ";
+    //   height: 0;
+    //   left: 50%;
+    //   margin-left: -5px;
+    //   position: absolute;
+    //   pointer-events: none;
+    //   width: 0;
+    // }
 
-    &.is-open {
-      &:after {
-        bottom: 7px;
-        border: solid transparent;
-        border-color: rgba(0, 0, 0, 0);
-        border-bottom-color: #000000;
-        border-width: 5px;
-        content: '';
-        height: 0;
-        left: 50%;
-        margin-left: -5px;
-        position: absolute;
-        pointer-events: none;
-        width: 0;
-      }
-    }
+    // &.is-open {
+    //   &:after {
+    //     bottom: 7px;
+    //     border: solid transparent;
+    //     border-color: rgba(0, 0, 0, 0);
+    //     border-bottom-color: #000000;
+    //     border-width: 5px;
+    //     content: '';
+    //     height: 0;
+    //     left: 50%;
+    //     margin-left: -5px;
+    //     position: absolute;
+    //     pointer-events: none;
+    //     width: 0;
+    //   }
+    // }
 
-    &:hover {
-      cursor: pointer;
-    }
+    // &:hover {
+    //   cursor: pointer;
+    // }
   }
 }

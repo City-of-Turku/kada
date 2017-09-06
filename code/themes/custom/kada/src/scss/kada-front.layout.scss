@@ -1,18 +1,8 @@
 /*******************************************************************************
- * driveturku-front.layout.scss
+ * kada-front.layout.scss
  *
- * Layout built with Singularity for DriveTurku front page.
+ * Layout built with Susy 2.
  ******************************************************************************/
-
-// Import external libraries.
-// @import "compass";
-// @import "breakpoint";
-// @import "singularitygs";
-// @import "toolkit";
-
-// // Globbing from within sub-folders only works with relative paths.
-// @import "../../abstractions/**/*";
-// @import "../../variables/**/*";
 
 @charset 'UTF-8';
 
@@ -21,28 +11,21 @@
 @import 'lib/variables/*';
 @import 'lib/mixins/*';
 
-.l-header {
-  @media screen and (min-width: $tablet-portrait) {
-    height: 0;
-    padding-bottom: 47.26%;
-  }
-}
-
 // In mobile size these areas need to be positioned absolutely above the slider. Slider's size changes according to the
 // caption field's content since the caption field is not over the image but under it on small screens.
-.l-branding,
-.l-navigation {
-  @include in-front-of-header;
-  left: 0;
-  position: relative;
-  top: 0;
+// .l-branding,
+// .l-navigation {
+//   // @include in-front-of-header;
+//   // left: 0;
+//   // position: relative;
+//   // top: 0;
 
-  @media screen and (min-width: $desktop-narrow) {
-    left: auto;
-    position: relative;
-    top: auto;
-  }
-}
+//   // @media screen and (min-width: $desktop-narrow) {
+//   //   left: auto;
+//   //   position: relative;
+//   //   top: auto;
+//   // }
+// }
 
 .l-before-header {
   @include in-front-of-header;
@@ -54,14 +37,15 @@
 }
 
 .l-navigation {
-  background-color: $header-overlay-bg;
-  padding: 13px 0;
-  width: 100%;
+  @include in-front-of-header;
+  //background-color: $header-overlay-bg;
+  // padding: 13px 0;
+  //width: 100%;
 
-  @media screen and (min-width: $desktop-narrow) {
-    background-color: $navigation-bg;
-    padding: 0;
-  }
+  // @media screen and (min-width: $desktop-narrow) {
+  //   background-color: $navigation-bg;
+  //   padding: 0;
+  // }
 }
 
 .l-before-content,
@@ -80,17 +64,17 @@
   background-color: $after-content-bg;
 }
 
-.l-highlighted .l-region,
-.l-main,
-.l-before-content .l-region,
-.l-after-content .l-region,
-.l-footer .l-footer-content {
-  @media screen and (min-width: $tablet-portrait) {
-    float: none;
-    margin: 0 auto;
-    max-width: 1320px;
-  }
-}
+// .l-highlighted .l-region,
+// .l-main,
+// .l-before-content .l-region,
+// .l-after-content .l-region,
+// .l-footer .l-footer-content {
+//   @media screen and (min-width: $tablet-portrait) {
+//     float: none;
+//     margin: 0 auto;
+//     max-width: 1320px;
+//   }
+// }
 
 // Highlighted area works as the container for breadcrumb etc on sub-pages so the background color is defined here
 .l-highlighted {
@@ -99,22 +83,15 @@
 
 .l-region--sidebar-first {
   @media screen and (min-width: $tablet-portrait) {
-    @include span(3 of 12);
+    @include span(3);
     padding-left: $gutters * 2;
   }
 }
 
 .l-region--sidebar-second {
   @media screen and (min-width: $tablet-portrait) {
-    //@include grid-span(3, 10);
+    @include span(last 3);
     padding-right: $gutters * 2;
-  }
-}
-
-.l-content {
-  @media screen and (min-width: $tablet-portrait) {
-    @include span(12 of 12);
-    padding: 0 $gutters * 2;
   }
 }
 
@@ -122,7 +99,7 @@
   &.has-one-sidebar.has-sidebar-first {
     .l-content {
       @media screen and (min-width: $tablet-portrait) {
-        //@include grid-span(9, 4);
+        @include span(last 9);
         padding: 0 $gutters * 2 0 0;
       }
     }
@@ -130,7 +107,7 @@
   &.has-one-sidebar.has-sidebar-second {
     .l-content {
       @media screen and (min-width: $tablet-portrait) {
-        @include span(9 of 12);
+        @include span(9);
         padding: 0 0 0 $gutters * 2;
       }
     }
@@ -138,7 +115,7 @@
   &.has-two-sidebars {
     .l-content {
       @media screen and (min-width: $tablet-portrait) {
-        //@include grid-span(6, 4);
+        @include span(6);
         padding: 0;
       }
     }

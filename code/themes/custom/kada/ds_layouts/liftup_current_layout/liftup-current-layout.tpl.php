@@ -22,30 +22,31 @@
  * - $extra_classes: String of classes that can be used to style the "Extra" region.
  */
 ?>
-<<?php print $layout_wrapper; print $layout_attributes; ?> class="liftup-box liftup-box--responsive <?php print $classes;?> clearfix">
+<<?php print $layout_wrapper; print $layout_attributes; ?> class="liftup-box <?php print $classes;?>">
+  <div class="liftup-box__inner">
+    <!-- Needed to activate contextual links -->
+    <?php if (isset($title_suffix['contextual_links'])): ?>
+      <?php print render($title_suffix['contextual_links']); ?>
+    <?php endif; ?>
 
-  <!-- Needed to activate contextual links -->
-  <?php if (isset($title_suffix['contextual_links'])): ?>
-    <?php print render($title_suffix['contextual_links']); ?>
-  <?php endif; ?>
+    <?php if(!empty($header)): ?>
+      <<?php print $header_wrapper; ?> class="liftup-box__header<?php print $header_classes; ?>">
+        <?php if (isset($liftup_link_url)): ?>
+          <a href="<?php print $liftup_link_url; ?>">
+        <?php endif; ?>
 
-  <?php if(!empty($header)): ?>
-    <<?php print $header_wrapper; ?> class="liftup-box__header<?php print $header_classes; ?>">
-      <?php if (isset($liftup_link_url)): ?>
-        <a href="<?php print $liftup_link_url; ?>">
-      <?php endif; ?>
+        <?php print $header; ?>
 
-      <?php print $header; ?>
+        <?php if (isset($liftup_link_url)): ?>
+          </a>
+        <?php endif; ?>
+      </<?php print $header_wrapper; ?>>
+    <?php endif; ?>
 
-      <?php if (isset($liftup_link_url)): ?>
-        </a>
-      <?php endif; ?>
-    </<?php print $header_wrapper; ?>>
-  <?php endif; ?>
-
-  <<?php print $main_wrapper; ?> class="liftup-box__content<?php print $main_classes; ?>">
-    <?php print $main; ?>
-  </<?php print $main_wrapper; ?>>
+    <<?php print $main_wrapper; ?> class="liftup-box__content<?php print $main_classes; ?>">
+      <?php print $main; ?>
+    </<?php print $main_wrapper; ?>>
+  </div>
 
 </<?php print $layout_wrapper ?>>
 

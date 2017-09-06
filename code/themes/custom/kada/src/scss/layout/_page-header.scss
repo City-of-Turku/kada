@@ -1,0 +1,79 @@
+.page-header {
+  .l-branding {
+    @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
+      width: 33.333333%;
+    }
+  }
+
+  .l-navigation {
+    @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
+      width: 66.666666%;
+    }
+
+    @media screen and (min-width: $desktop-narrow) {
+      background-color: $default-color-10;
+    }
+  }
+
+  .l-banner {
+    position: relative;
+
+    @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
+      width: 100%;
+    }
+  }
+}
+
+.page-header__top {
+  @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+}
+
+.l-region--navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+
+  .block {
+    margin-left: .5rem;
+
+    .toggler,
+    .recommended-button {
+      display: block;
+      height: 40px;
+      width: 40px;
+      background: $primary-color;
+      color: $white;
+
+      &:hover,
+      &:focus {
+        background-color: darken($primary-color, 15%);
+      }
+
+      @media screen and (min-width: $desktop-narrow) {
+        display: none;
+      }
+    }
+
+    .toggler {
+      padding-top: .475rem;
+      text-align: center;
+
+      &:hover,
+      &:focus {
+        cursor: pointer;
+      }
+    }
+  }
+
+  @media screen and (min-width: $desktop-narrow) {
+    justify-content: space-between;
+
+    .block--locale-language {
+      order: 2;
+    }
+  }
+}

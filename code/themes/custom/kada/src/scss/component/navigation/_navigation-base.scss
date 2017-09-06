@@ -1,0 +1,19 @@
+.menu {
+  list-style: none;
+}
+
+.menu__item {
+  a {
+    text-decoration: none;
+  }
+}
+
+.responsive-menus {
+  &.responsified .menu {
+    display: none;
+  }
+
+  &.responsive-toggled .menu {
+    display: block;
+  }
+}

@@ -4,29 +4,34 @@
  * Implements hook_preprocess_html().
  */
 
-function driveturku_preprocess_html(&$variables) {
+function kada_preprocess_html(&$variables) {
   global $language;
   $path = current_path();
 
-  drupal_add_js(drupal_get_path('theme', 'driveturku') . '/js/masonry.pkgd.min.js', array(
+  drupal_add_js(drupal_get_path('theme', variable_get('theme_default', NULL)) . '/dist/js/vendor/modernizr.min.js', array(
+    'scope' => 'header',
+    'weight' => '15'
+  ));
+
+  drupal_add_js(drupal_get_path('theme', variable_get('theme_default', NULL)) . '/dist/js/vendor/masonry.pkgd.min.js', array(
     'scope' => 'footer',
     'weight' => '15'
   ));
 
-  drupal_add_js(drupal_get_path('theme', 'driveturku') . '/js/imagesloaded.pkgd.min.js', array(
+  drupal_add_js(drupal_get_path('theme', variable_get('theme_default', NULL)) . '/dist/js/vendor/imagesloaded.pkgd.min.js', array(
     'scope' => 'header',
     'weight' => '15'
   ));
 
   // TODO moment should be conditionally loaded
-  drupal_add_js(drupal_get_path('theme', 'driveturku') . '/js/moment.min.js', array(
+  drupal_add_js(drupal_get_path('theme', variable_get('theme_default', NULL)) . '/dist/js/vendor/moment.min.js', array(
     'scope' => 'footer',
     'weight' => '15'
   ));
 
   // Add chat to event add form page.
   if ($path == 'event/add' && $language->language == 'fi') {
-    drupal_add_js(drupal_get_path('theme', 'driveturku') . '/js/chat/event.js', array(
+    drupal_add_js(drupal_get_path('theme', variable_get('theme_default', NULL)) . '/dist/js/vendor/event.js', array(
       'scope' => 'header',
       'weight' => '15',
     ));

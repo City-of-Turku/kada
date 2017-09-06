@@ -1,0 +1,58 @@
+.menu-name-main-menu,
+.menu-name-menu-main-menu-en {
+  .menu {
+    @include clearfix;
+  }
+
+  .menu__item {
+    margin-top: 0;
+
+    a {
+      display: block;
+      color: $default-color;
+      font-size: 1.067rem;
+    }
+  }
+
+  .menu__item--has-first-level {
+    margin-left: .25rem;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    > a {
+      padding: .75rem;
+
+      &:hover,
+      &:focus {
+        color: $primary-color;
+      }
+    }
+
+    > .active,
+    > .active:hover,
+    > .active:focus {
+      color: $white;
+    }
+
+    > .active {
+      background: $primary-color;
+    }
+  }
+}
+
+// First level menu item styles
+.menu__item--has-first-level {
+  background-color: $mobile-navigation-item-bg;
+  border-left: 4px solid $turku-blue;
+  margin-bottom: 1px;
+  position: relative;
+
+  @media screen and (min-width: $desktop-narrow) {
+    background-color: transparent;
+    border-left: none;
+    float: left;
+    margin-bottom: 0;
+  }
+}

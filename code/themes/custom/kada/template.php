@@ -33,8 +33,8 @@ function kada_links__locale_block(&$variables) {
   foreach ($variables['links'] as $language => $info) {
     $name     = $info['language']->native;
     $href     = isset($info['href']) ? $info['href'] : '';
-    $li_classes   = array('menu__item');
-    $link_classes = array('menu__link');
+    $li_classes   = array('menu__item', 'menu--language-switcher__item');
+    $link_classes = array('menu__link', 'menu--language-switcher__link');
     $options = array('attributes' => array('class'    => $link_classes),
       'language' => $info['language'],
       'html'     => true
@@ -138,7 +138,7 @@ function kada_process_flexslider_list_item(&$vars) {
   // Remove wrapping div from flex-caption
   $caption = substr($caption, 26);
   if (!empty($caption)) {
-    $caption = '<div class="flex-caption-wrapper"><div class="flex-caption theme-color-'. $vars['theme_color'] .' clearfix">' . $caption . '</div>';
+    $caption = '<div class="flex-caption-wrapper container flexslider__container"><div class="flex-caption theme-color-'. $vars['theme_color'] .' clearfix">' . $caption . '</div>';
   }
 }
 
@@ -209,84 +209,6 @@ function kada_service_links_block_format($variables) {
       $output = theme('item_list', array('items' => array_values($items)));
   }
   return '<div class="some-links"><ul class="some-links__list">'. $output .'</ul></div>';
-}
-
-/**
- * Add Android and Windows favicons
- */
-function kada_page_alter(&$page) {
-  $path = $GLOBALS['base_url'] . '/' . drupal_get_path('theme', 'kada');
-  $favicons = array(
-    array(
-      'rel' => 'icon',
-      'type' => 'image/png',
-      'href' => $path . '/favicon-32x32.png',
-      'sizes' => '32x32',
-    ),
-    array(
-      'rel' => 'icon',
-      'type' => 'image/png',
-      'href' => $path . '/favicon-194x194.png',
-      'sizes' => '194x194',
-    ),
-    array(
-      'rel' => 'icon',
-      'type' => 'image/png',
-      'href' => $path . '/favicon-96x96.png',
-      'sizes' => '96x96',
-    ),
-    array(
-      'rel' => 'icon',
-      'type' => 'image/png',
-      'href' => $path . '/android-chrome-192x192.png',
-      'sizes' => '192x192',
-    ),
-    array(
-      'rel' => 'icon',
-      'type' => 'image/png',
-      'href' => $path . '/favicon-16x16.png',
-      'sizes' => '16x16',
-    ),
-    array(
-      'rel' => 'manifest',
-      'href' => $path . '/manifest.json',
-    ),
-  );
-
-  foreach ($favicons as $link) {
-    drupal_add_html_head_link($link);
-  }
-
-  $meta = array(
-    array(
-      '#tag' => 'meta',
-      '#attributes' => array(
-        'name' => 'msapplication-TileColor',
-        'content' => '#00a5d8',
-      ),
-      '#weight' => '-99997',
-    ),
-    array(
-      '#tag' => 'meta',
-      '#attributes' => array(
-        'name' => 'msapplication-TileImage',
-        'content' => $path . '/mstile-144x144.png',
-      ),
-      '#weight' => '-99998',
-    ),
-    array(
-      '#tag' => 'meta',
-      '#attributes' => array(
-        'name' => 'theme-color',
-        'content' => '#ffffff',
-      ),
-      '#weight' => '-99999',
-    ),
-  );
-
-  foreach ($meta as $meta_link => $meta_value) {
-    drupal_add_html_head($meta_value, $meta_link);
-  }
 }
 
 function kada_views_pre_render(&$view) {
@@ -456,7 +378,7 @@ function kada_ds_pre_render_alter(&$layout_render_array, $context, &$variables) 
 
       // Add SoMe type to node classes
       if (!empty($variables['field_some_type']['und'][0]['value'])) {
-        $variables['classes_array'][] = 'some-type-' . $variables['field_some_type']['und'][0]['value'];
+        $variables['classes_array'][] = 'node--' . $variables['field_some_type']['und'][0]['value'];
       }
       // Linking image to URL if update has image
       if (!empty($variables['field_image'][0]['fid'])) {
@@ -1126,8 +1048,8 @@ function kada_date_display_range($variables) {
  */
 function kada_feed_icon($variables) {
   $text = t('Subscribe to feed');
-  if ($image = theme('image', array('path' => drupal_get_path('theme', 'kada') . '/images/rss-icon.svg', 'width' => 16, 'height' => 16, 'alt' => $text))) {
-    return l($image, $variables['url'], array('html' => TRUE, 'attributes' => array('class' => array('feed-icon'), 'title' => $text)));
+  if ($image = theme('image', array('path' => drupal_get_path('theme', variable_get('theme_default', NULL)) . '/dist/image/rss-icon.svg', 'width' => 16, 'height' => 16, 'alt' => $text))) {
+    return '<div class="rss-feed">' . l($image, $variables['url'], array('html' => TRUE, 'attributes' => array('class' => array('rss-feed__link'), 'title' => $text))) . '</div>';
   }
 }
 

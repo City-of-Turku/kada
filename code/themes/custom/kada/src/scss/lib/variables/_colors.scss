@@ -1,0 +1,41 @@
+//
+// @file
+// This file includes all variables related to colors
+//
+
+$three-sign: #d6003d; // Red used in 3sign logo
+
+$black: #000;
+$white: #fff;
+
+$error-dark: #b43b4b;
+$error-light: #e98491;
+$status-light: #92c25e;
+$status-dark: #62922d;
+$warning-light: #f6813e;
+$warning-dark: #cf4b00;
+
+$default-color: $black;
+$default-color-80: lighten($black, 20%);
+$default-color-70: lighten($black, 30%);
+$default-color-60: lighten($black, 40%);
+$default-color-50: lighten($black, 50%);
+$default-color-40: lighten($black, 60%);
+$default-color-30: lighten($black, 70%);
+$default-color-20: lighten($black, 80%);
+$default-color-10: lighten($black, 90%);
+
+$primary-color: #fc421d;
+
+$primary-color-opacity-20: lighten($primary-color, 20%);
+
+$link-color: $primary-color;
+$link-color-hover: darken($primary-color, 20%);
+
+$body-color: $default-color;
+$body-background: $white;
+
+$heading-color: $primary-color;
+
+// Social media colors
+$twitter-color: #55acee;
