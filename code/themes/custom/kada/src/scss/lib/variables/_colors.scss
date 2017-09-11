@@ -24,7 +24,7 @@ $default-color-medium: lighten($black, 50%);
 $default-color-medium-light: lighten($black, 60%);
 $default-color-light: lighten($black, 70%);
 $default-color-lighter: lighten($black, 80%);
-$default-color-lightest: lighten($black, 90%);
+$default-color-lightest: lighten($black, 95%);
 
 // Primary colors
 $primary-color: #fc421d;
@@ -47,9 +47,22 @@ $primary-color-opacity-40: rgba($white, .4);
 $primary-color-opacity-40: rgba($white, .3);
 $primary-color-opacity-20: rgba($white, .2);
 
+// Seconcary colors
+$secondary-color: #966f4d;
+
+$secondary-color-darkest: lighten($secondary-color, 10%);
+$secondary-color-darker: lighten($secondary-color, 20%);
+$secondary-color-dark: lighten($secondary-color, 30%);
+$secondary-color-medium-dark: lighten($secondary-color, 40%);
+$secondary-color-medium: lighten($secondary-color, 50%);
+$secondary-color-medium-light: lighten($secondary-color, 60%);
+$secondary-color-light: lighten($secondary-color, 70%);
+$secondary-color-lighter: lighten($secondary-color, 80%);
+$secondary-color-lightest: lighten($secondary-color, 90%);
+
 // General colors
-$link-color: $primary-color;
-$link-color-hover: darken($primary-color, 20%);
+$link-color: $secondary-color;
+$link-color-hover: darken($secondary-color, 20%);
 
 $body-color: $default-color;
 $body-background: $white;

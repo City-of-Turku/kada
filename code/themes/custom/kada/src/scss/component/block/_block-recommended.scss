@@ -23,7 +23,7 @@
 
   .fa-icon--star {
     &::before {
-      @include fa('\f005', 1.5rem, false);
+      @include fa('\f005', 1.5rem, 1, false);
       color: $white;
       font-style: normal;
     }
@@ -31,21 +31,24 @@
 }
 
 .block--views-kada-recommended-block {
-  .page-header .l-banner & {
+  .page-header & {
     position: absolute;
     width: 100%;
-    z-index: 5;
+    z-index: 2;
 
     @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
       top: 0;
     }
 
     @media screen and (min-width: $desktop-narrow) {
+      @include responsive-whitespace;
       bottom: 0;
       right: 0;
-      padding-right: $container-gutter;
-      padding-left: $container-gutter;
-      width: span(4.5);
+      width: span(4);
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: span(3.5);
     }
 
     @media screen and (min-width: $container) {
@@ -133,7 +136,7 @@
 
   .fa-icon--close {
     &::before {
-      @include fa('\f00d', 1.5rem, false);
+      @include fa('\f00d', 1.5rem, 1, false);
       color: $white;
       font-style: normal;
     }

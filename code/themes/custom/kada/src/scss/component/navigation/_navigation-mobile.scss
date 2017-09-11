@@ -8,7 +8,7 @@
       //text-align: center;
 
       &::before {
-        @include fa('\f0c9', 1.5rem, false);
+        @include fa('\f0c9', 1.5rem, 1, false);
         color: $white;
         font-style: normal;
       }

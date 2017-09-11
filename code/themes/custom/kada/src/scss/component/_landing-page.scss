@@ -20,26 +20,26 @@
     }
   }
 
-  .l-region--before-content {
-    //background: image-url('bg_pattern.png') repeat 0 0 $after-content-bg;
-    //@include content-in-front-of-header;
-    position: relative;
+  // .l-region--before-content {
+  //   //background: image-url('bg_pattern.png') repeat 0 0 $after-content-bg;
+  //   //@include content-in-front-of-header;
+  //   position: relative;
 
-    .quicktabs-wrapper {
-      background-color: rgba($turku-white, 0.4);
-      margin: 0;
-      padding: 1% 1% 40px; // 40px to make space for the rss button
+  //   .quicktabs-wrapper {
+  //     background-color: rgba($turku-white, 0.4);
+  //     margin: 0;
+  //     padding: 1% 1% 40px; // 40px to make space for the rss button
 
-      &.quicktabs-empty {
-        margin: 0;
-        padding: 0;
+  //     &.quicktabs-empty {
+  //       margin: 0;
+  //       padding: 0;
 
-        .quicktabs-tabs {
-          margin: 0;
-        }
-      }
-    }
-  }
+  //       .quicktabs-tabs {
+  //         margin: 0;
+  //       }
+  //     }
+  //   }
+  // }
 
   .l-content {
 

@@ -122,8 +122,8 @@
   // }
 
   .menu__item {
-    display: block;
-    list-style: none;
+    // display: block;
+    // list-style: none;
     // > a {
     //   color: $body-font-color;
     //   display: block;
@@ -142,11 +142,11 @@
     //   }
     // }
 
-    &.is-active {
-      @media screen and (min-width: $desktop-narrow) {
-        background-color: #ececec;
-      }
-    }
+    // &.is-active {
+    //   @media screen and (min-width: $desktop-narrow) {
+    //     background-color: #ececec;
+    //   }
+    // }
 
     &.menu__item--top-menu {
       background-color: #fff;

@@ -8,12 +8,12 @@
   }
 }
 
-.responsive-menus {
-  &.responsified .menu {
-    display: none;
-  }
 
-  &.responsive-toggled .menu {
-    display: block;
-  }
+.responsified .menu {
+  display: none;
 }
+
+.responsive-toggled .menu {
+  display: block;
+}
+
