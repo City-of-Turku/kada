@@ -105,16 +105,6 @@
     <div id="content" class="content l-content">
       <div class="container page-main__container content__container">
 
-        <?php if($page['sidebar_first'] OR $page['sidebar_second']): ?>
-          <div class="content__wrapper content-wrapper">
-        <?php endif; ?>
-
-        <?php if($page['sidebar_first']): ?>
-          <aside id="sidebar-first" class="sidebar sidebar--first">
-            <?php print render($page['sidebar_first']); ?>
-          </aside>
-        <?php endif;?>
-
         <?php if ($messages): ?>
           <div class="drupal-messages">
             <?php print $messages; ?>
@@ -130,6 +120,16 @@
         <?php if ($action_links): ?>
           <ul class="action-links"><?php print render($action_links); ?></ul>
         <?php endif; ?>
+
+        <?php if($page['sidebar_first'] OR $page['sidebar_second']): ?>
+          <div class="content__wrapper content-wrapper">
+        <?php endif; ?>
+
+        <?php if($page['sidebar_first']): ?>
+          <aside id="sidebar-first" class="sidebar sidebar--first">
+            <?php print render($page['sidebar_first']); ?>
+          </aside>
+        <?php endif;?>
 
         <?php if($page['before_content']): ?>
           <div id="content-top" class="content-top">

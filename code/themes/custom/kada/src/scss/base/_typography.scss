@@ -55,14 +55,6 @@ h6 {
   }
 }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: $heading-color;
-}
-
 h1 {
   @include font-size-responsive($font-size-heading-1);
   margin-bottom: 2rem;
@@ -72,6 +64,7 @@ h1 {
 h2 {
   @include font-size-responsive($font-size-heading-2);
   margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
 h3 {

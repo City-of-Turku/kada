@@ -49,68 +49,68 @@
 //   }
 // }
 
-.l-region--sidebar-first {
-  @media screen and (min-width: $tablet-portrait) {
-    @include span(4);
-    padding-left: $gutters * 2;
-  }
+// .l-region--sidebar-first {
+//   @media screen and (min-width: $tablet-portrait) {
+//     @include span(4);
+//     padding-left: $gutters * 2;
+//   }
 
-  @media screen and (min-width: $desktop-narrow) {
-    @include span(3);
-    padding-left: $gutters * 2;
-  }
-}
+//   @media screen and (min-width: $desktop-narrow) {
+//     @include span(3);
+//     padding-left: $gutters * 2;
+//   }
+// }
 
-.l-region--sidebar-second {
-  @media screen and (min-width: $tablet-portrait) {
-    @include span(last 3);
-    padding-right: $gutters * 2;
-  }
-}
+// .l-region--sidebar-second {
+//   @media screen and (min-width: $tablet-portrait) {
+//     @include span(last 3);
+//     padding-right: $gutters * 2;
+//   }
+// }
 
-.l-content {
-  @media screen and (min-width: $tablet-portrait) {
-    @include span(12);
-    padding: 0 $gutters * 2;
-  }
-}
+// .l-content {
+//   @media screen and (min-width: $tablet-portrait) {
+//     @include span(12);
+//     padding: 0 $gutters * 2;
+//   }
+// }
 
-.l-page {
-  &.has-one-sidebar.has-sidebar-first {
-    .l-content {
-      @media screen and (min-width: $tablet-portrait) {
-        @include span(last 8);
-        padding: 0 $gutters * 2 0 0;
-      }
+// .l-page {
+//   &.has-one-sidebar.has-sidebar-first {
+//     .l-content {
+//       @media screen and (min-width: $tablet-portrait) {
+//         @include span(last 8);
+//         padding: 0 $gutters * 2 0 0;
+//       }
 
-      @media screen and (min-width: $desktop-narrow) {
-        @include span(last 9);
-        padding: 0 $gutters * 2 0 0;
-      }
-    }
-  }
-  &.has-one-sidebar.has-sidebar-second {
-    .l-content {
-      @media screen and (min-width: $tablet-portrait) {
-        @include span(9);
-        padding: 0 0 0 $gutters * 2;
-      }
-    }
-  }
-  &.has-two-sidebars {
-    .l-content {
-      @media screen and (min-width: $tablet-portrait) {
-        @include span(5);
-        padding: 0;
-      }
+//       @media screen and (min-width: $desktop-narrow) {
+//         @include span(last 9);
+//         padding: 0 $gutters * 2 0 0;
+//       }
+//     }
+//   }
+//   &.has-one-sidebar.has-sidebar-second {
+//     .l-content {
+//       @media screen and (min-width: $tablet-portrait) {
+//         @include span(9);
+//         padding: 0 0 0 $gutters * 2;
+//       }
+//     }
+//   }
+//   &.has-two-sidebars {
+//     .l-content {
+//       @media screen and (min-width: $tablet-portrait) {
+//         @include span(5);
+//         padding: 0;
+//       }
 
-      @media screen and (min-width: $desktop-narrow) {
-        @include span(6);
-        padding: 0;
-      }
-    }
-  }
-}
+//       @media screen and (min-width: $desktop-narrow) {
+//         @include span(6);
+//         padding: 0;
+//       }
+//     }
+//   }
+// }
 
 // Main container goes over the header image on content pages
 .has-main-image {

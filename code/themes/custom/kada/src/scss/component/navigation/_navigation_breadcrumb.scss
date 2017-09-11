@@ -1,0 +1,28 @@
+.breadcrumb {
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumb__item {
+  display: inline-block;
+  color: $primary-color;
+  font-size: 0.9375;
+
+
+  &::after {
+    color: $default-color-lighter;
+    content: '/';
+    margin: 0 .25rem;
+  }
+
+  &:last-child {
+    &::after {
+      display: none;
+      content: '';
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+}

@@ -41,7 +41,9 @@
   justify-content: flex-end;
 
   .block {
-    margin-left: .5rem;
+    @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
+      margin-left: .5rem;
+    }
 
     .toggler,
     .recommended-button {
