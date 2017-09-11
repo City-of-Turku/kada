@@ -4,10 +4,9 @@
 }
 
 .breadcrumb__item {
+  @include font-size-responsive(0.9375rem);
   display: inline-block;
   color: $primary-color;
-  font-size: 0.9375;
-
 
   &::after {
     color: $default-color-lighter;
