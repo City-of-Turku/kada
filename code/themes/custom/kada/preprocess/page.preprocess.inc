@@ -111,6 +111,7 @@ function kada_preprocess_page(&$variables) {
   if (empty($site_logo_path)) {
     $lang_suffix = $language->language == 'sv' ? '_sv': '';
     $site_logo_path = drupal_get_path('theme', variable_get('theme_default', NULL)) . '/logo' . $lang_suffix . '.png';
+    $site_logo_footer_path = drupal_get_path('theme', variable_get('theme_default', NULL)) . '/logo-footer.png';
   }
   // Set page logo markup.
   $variables['site_logo']['#markup'] = theme('remote_image_style', array(
@@ -118,6 +119,7 @@ function kada_preprocess_page(&$variables) {
     'path' => $site_logo_path,
   ));
   $variables['site_logo_path'] = $site_logo_path;
+  $variables['site_logo_footer_path'] = $site_logo_footer_path;
 
   // Color palette
   // TO-DO: This is rather hackish, but I wanted to avoid section override code duplication.
