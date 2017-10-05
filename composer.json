@@ -1,0 +1,26 @@
+{
+    "name": "druidfi/d7-template",
+    "description": "Drupal 7 template with build and QA tools",
+    "type": "project-template",
+    "authors": [
+        {
+            "name": "Bart Feenstra",
+            "email": "bart.feenstra@druid.fi"
+        },
+        {
+            "name": "Marko Korhonen",
+            "email": "marko.korhonen@druid.fi"
+        },
+        {
+            "name": "Tero Elonen",
+            "email": "tero.elonen@druid.fi"
+        }
+    ],
+    "require": {
+        "php": "^5.6 || ^7.0",
+        "druidfi/mana": "0.2.0"
+    },
+    "config": {
+        "bin-dir": "bin"
+    }
+}
