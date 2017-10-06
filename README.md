@@ -29,8 +29,9 @@ $ cd pori-kada
 ```
 
 Run composer:
+```
 $ composer install
-
+```
 Create a build:
 
 ```
