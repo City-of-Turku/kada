@@ -29,8 +29,9 @@ $ cd pori-kada
 ```
 
 Run composer:
+```
 $ composer install
-
+```
 Create a build:
 
 ```
@@ -48,7 +49,11 @@ Connect to `drupal` container:
 ```
 $ docker-compose exec --user drupal drupal bash
 ```
+Now your site should be available on the following address:
+http://pori.fi.docker.amazee.io/
 
+Attention! If you are running something else on port 80 such as local apache things might not work. Stop the service and you should be good to go.
+ 
 Sync database and filed from production:
 
 ```
