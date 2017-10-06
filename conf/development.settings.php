@@ -7,27 +7,27 @@ define('PREDIS_BASE_PATH', DRUPAL_ROOT . '/sites/all/libraries/predis/src/');
 $conf['radioactivity_memcached_host'] = 'memcache.local';
 
 // Activating memcache as primary cache backend
-$conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
-$conf['cache_default_class'] = 'MemCacheDrupal';
-$conf['memcache_key_prefix'] = 'tku_';
+//$conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
+//$conf['cache_default_class'] = 'MemCacheDrupal';
+//$conf['memcache_key_prefix'] = 'tku_';
 
-$conf['memcache_servers'] = array(
-  '127.0.0.1:11211' => 'default',
-);
+//$conf['memcache_servers'] = array(
+//  '127.0.0.1:11211' => 'default',
+//);
 
 // This shouldn't be necessary to set. Memcache module is pretty smart in handling bins.
-$conf['memcache_bins'] = array(
-    'cache' => 'default',
-);
+//$conf['memcache_bins'] = array(
+//    'cache' => 'default',
+//);
 
-$conf['memcache_persistent'] = TRUE;
+//$conf['memcache_persistent'] = TRUE;
 
 // Cache_form bin is assigned to non-volatile storage:
-$conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
-$conf['cache_prefix']['default'] = 'tku_';
+//$conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+//$conf['cache_prefix']['default'] = 'tku_';
 
 // Use memcache as the system lock to avoid deadlock (which occur easily with semaphore in database)
-$conf['lock_inc'] = 'sites/all/modules/contrib/memcache/memcache-lock.inc';
+//$conf['lock_inc'] = 'sites/all/modules/contrib/memcache/memcache-lock.inc';
 
 // Varnish
 $conf['cache_backends'][] = 'sites/all/modules/contrib/varnish/varnish.cache.inc';
