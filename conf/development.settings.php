@@ -1,21 +1,5 @@
 <?php
 
-$databases = array (
-  'default' =>
-  array (
-    'default' =>
-    array (
-      'database' => 'tku_dev',
-      'username' => 'tku_dev',
-      'password' => '',
-      'host' => 'db.local',
-      'port' => '',
-      'driver' => 'mysql',
-      'prefix' => '',
-    ),
-  ),
-);
-
 // Needed for Predis-1.0 which changed the library paths from 0.8.7
 define('PREDIS_BASE_PATH', DRUPAL_ROOT . '/sites/all/libraries/predis/src/');
 
@@ -95,20 +79,3 @@ $conf['search_api_override_servers'] = array(
 
 $conf['advagg_auth_basic_user'] = 'dev';
 $conf['advagg_auth_basic_pass'] = 'asdf';
-
-/**
- * Add the domain module setup routine.
- */
-if (!defined('IS_BE_PROBE') || !IS_BE_PROBE) {
-  include DRUPAL_ROOT . '/sites/all/modules/contrib/domain/settings.inc';
-}
-
-$conf['menu_override_parent_selector'] = true;
-$conf['file_temporary_path'] = "/tmp";
-
-// Set "domain space" that is necessary to handle redirects between domains
-define('DOMAIN_SPACE', 'pori.fi.docker.amazee.io');
-
-// HACK - REMOVE WHEN DOMAIN URLS FOR DIFFERENT ENVS CAN BE DONE PROPERLY
-define('KADACALENDAR_BASE_URL', 'http://calendar.pori-kada-development.druid.fi/');
-
