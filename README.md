@@ -53,8 +53,20 @@ Now your site should be available on the following address:
 http://pori.fi.docker.amazee.io/
 
 Attention! If you are running something else on port 80 such as local apache things might not work. Stop the service and you should be good to go.
- 
-Sync database and filed from production:
+
+You need to create files folder to the root of the public_html folder on the docker container. At this point we don't have sync script or a real testing server for that matter so after this you might want to extract the files folder content included in the repository to that folder. Once inside the docker container run the following:
+
+```
+$ cd ~/public_html
+$ tar xvzf files.tar.gz
+```
+
+Now you need to use the provided sql-file and import it to the site manually. Once you are inside the docker container you need to run
+```
+$ drush sqlc < ~/public_html/pori-kada_init.sql
+```
+
+(Currently not working) Sync database and filed from production:
 
 ```
 $ drush sync-db
