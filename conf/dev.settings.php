@@ -103,8 +103,12 @@ if (!defined('IS_BE_PROBE') || !IS_BE_PROBE) {
   include DRUPAL_ROOT . '/sites/all/modules/contrib/domain/settings.inc';
 }
 
+$conf['menu_override_parent_selector'] = true;
+$conf['file_temporary_path'] = "/tmp";
+
 // Set "domain space" that is necessary to handle redirects between domains
-define('DOMAIN_SPACE', 'dt-demo.turku.fi');
+define('DOMAIN_SPACE', 'pori.fi.docker.amazee.io');
 
 // HACK - REMOVE WHEN DOMAIN URLS FOR DIFFERENT ENVS CAN BE DONE PROPERLY
-define('TURKUCALENDAR_BASE_URL', 'http://turkukalenteri.dt-demo.turku.fi/');
+define('KADACALENDAR_BASE_URL', 'http://calendar.pori-kada-development.druid.fi/');
+
