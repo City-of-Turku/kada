@@ -1,3 +1,89 @@
+# pori.fi (based on KADA)
+
+## Branches linked to Amazee.io
+
+Env | Branch | Drush alias | URL
+--- | ------ | ----------- | ---
+development | * | - | http://pori.fi.docker.amazee.io/
+
+## Requirements
+
+You need to have these applications installed to operate on all environments:
+
+- [Docker for Mac](https://github.com/druidfi/guidelines/blob/master/docs/docker_for_mac.md)
+- [Pygmy](https://github.com/druidfi/guidelines/blob/master/docs/pygmy.md)
+
+For the new person:
+
+- Your SSH public key needs to be added to servers
+- Inform your GitHub SSH keys link e.g.: `https://github.com/back-2-95.keys` to Amazee in the Slack OR ask Marko to do
+that
+
+## How to develop?
+
+Clone this repository (default branch is `development`) and go to folder:
+
+```
+$ git clone git@github.com:City-of-Pori/pori-kada.git
+$ cd pori-kada
+```
+
+Run composer:
+$ composer install
+
+Create a build:
+
+```
+$ bin/mana-dev
+```
+
+Start the Docker containers (Docker for Mac and Pygmy must be running):
+
+```
+$ docker-compose up -d
+```
+
+Connect to `drupal` container:
+
+```
+$ docker-compose exec --user drupal drupal bash
+```
+
+Sync database and filed from production:
+
+```
+$ drush sync-db
+$ drush sync-files
+```
+
+Or you can use aliases provided by Amazee:
+
+```
+$ dsql @master
+$ dfiles @master
+```
+
+Ready! Now go to [http://pori.fi.docker.amazee.io/](http://pori.fi.docker.amazee.io/) to see your site.
+
+## FAQ
+
+### How to access Amazee instances of this site?
+
+First access your local container and from there use drush to connect:
+
+```
+$ docker-compose exec --user drupal drupal bash
+$ drush @master ssh
+```
+
+### How to connect to local database?
+
+Add your database to e.g. Sequel Pro with these instructions:
+
+https://docs.amazee.io/local_docker_development/connect_to_mysql_from_external.html
+
+# KADA old readme
+
 ## LICENSING
 
 The project is licensed under the same license as Drupal itself, namely
