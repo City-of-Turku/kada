@@ -1,8 +1,0 @@
-# Include main make file
-includes:
-  - "../drushmake.yml"
-
-# Modules for development OR override
-#projects:
-#  devel:
-#    version: ~

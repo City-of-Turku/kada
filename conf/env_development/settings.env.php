@@ -1,5 +1,0 @@
-<?php
-
-/**
- * Environment specific settings.
- */
