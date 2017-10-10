@@ -35,6 +35,15 @@ function kada_some_content_feature_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'clear kada_linkedin_json feeds'.
+  $permissions['clear kada_linkedin_json feeds'] = array(
+    'name' => 'clear kada_linkedin_json feeds',
+    'roles' => array(
+      'admin' => 'admin',
+    ),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'clear kada_tweets_json feeds'.
   $permissions['clear kada_tweets_json feeds'] = array(
     'name' => 'clear kada_tweets_json feeds',
@@ -400,6 +409,16 @@ function kada_some_content_feature_user_default_permissions() {
     'module' => 'feeds',
   );
 
+  // Exported permission: 'import kada_linkedin_json feeds'.
+  $permissions['import kada_linkedin_json feeds'] = array(
+    'name' => 'import kada_linkedin_json feeds',
+    'roles' => array(
+      'admin' => 'admin',
+      'web journalist' => 'web journalist',
+    ),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'import kada_tweets_json feeds'.
   $permissions['import kada_tweets_json feeds'] = array(
     'name' => 'import kada_tweets_json feeds',
@@ -453,6 +472,15 @@ function kada_some_content_feature_user_default_permissions() {
   $permissions['unlock kada_instagram feeds'] = array(
     'name' => 'unlock kada_instagram feeds',
     'roles' => array(),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'unlock kada_linkedin_json feeds'.
+  $permissions['unlock kada_linkedin_json feeds'] = array(
+    'name' => 'unlock kada_linkedin_json feeds',
+    'roles' => array(
+      'admin' => 'admin',
+    ),
     'module' => 'feeds',
   );
 

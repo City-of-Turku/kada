@@ -46,17 +46,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_full.
   $styles['content_full'] = array(
-    'name' => 'content_full',
     'label' => 'Content full',
     'effects' => array(
       1 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 1288,
@@ -70,17 +62,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_full_16_9.
   $styles['content_full_16_9'] = array(
-    'name' => 'content_full_16_9',
     'label' => 'Content full 16:9',
     'effects' => array(
       37 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 1288,
@@ -93,17 +77,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_full_16_9_breakpoints_theme_kada_desktop_1x.
   $styles['content_full_16_9_breakpoints_theme_kada_desktop_1x'] = array(
-    'name' => 'content_full_16_9_breakpoints_theme_kada_desktop_1x',
     'label' => 'content_full_16_9_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       38 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 1288,
@@ -116,17 +92,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_full_16_9_breakpoints_theme_kada_mobile_1x.
   $styles['content_full_16_9_breakpoints_theme_kada_mobile_1x'] = array(
-    'name' => 'content_full_16_9_breakpoints_theme_kada_mobile_1x',
     'label' => 'content_full_16_9_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       39 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 288,
@@ -139,17 +107,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_full_16_9_breakpoints_theme_kada_phablet_1x.
   $styles['content_full_16_9_breakpoints_theme_kada_phablet_1x'] = array(
-    'name' => 'content_full_16_9_breakpoints_theme_kada_phablet_1x',
     'label' => 'content_full_16_9_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       40 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 518,
@@ -162,17 +122,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_full_16_9_breakpoints_theme_kada_smalldesktop_1x.
   $styles['content_full_16_9_breakpoints_theme_kada_smalldesktop_1x'] = array(
-    'name' => 'content_full_16_9_breakpoints_theme_kada_smalldesktop_1x',
     'label' => 'content_full_16_9_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       41 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 1106,
@@ -185,17 +137,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_full_16_9_breakpoints_theme_kada_tablet_1x.
   $styles['content_full_16_9_breakpoints_theme_kada_tablet_1x'] = array(
-    'name' => 'content_full_16_9_breakpoints_theme_kada_tablet_1x',
     'label' => 'content_full_16_9_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       42 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 736,
@@ -208,17 +152,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_full_breakpoints_theme_kada_desktop_1x.
   $styles['content_full_breakpoints_theme_kada_desktop_1x'] = array(
-    'name' => 'content_full_breakpoints_theme_kada_desktop_1x',
     'label' => 'content_full_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       2 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 1288,
@@ -232,17 +168,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_full_breakpoints_theme_kada_mobile_1x.
   $styles['content_full_breakpoints_theme_kada_mobile_1x'] = array(
-    'name' => 'content_full_breakpoints_theme_kada_mobile_1x',
     'label' => 'content_full_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       6 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 288,
@@ -256,17 +184,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_full_breakpoints_theme_kada_phablet_1x.
   $styles['content_full_breakpoints_theme_kada_phablet_1x'] = array(
-    'name' => 'content_full_breakpoints_theme_kada_phablet_1x',
     'label' => 'content_full_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       5 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 518,
@@ -280,17 +200,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_full_breakpoints_theme_kada_smalldesktop_1x.
   $styles['content_full_breakpoints_theme_kada_smalldesktop_1x'] = array(
-    'name' => 'content_full_breakpoints_theme_kada_smalldesktop_1x',
     'label' => 'content_full_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       3 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 1106,
@@ -304,17 +216,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_full_breakpoints_theme_kada_tablet_1x.
   $styles['content_full_breakpoints_theme_kada_tablet_1x'] = array(
-    'name' => 'content_full_breakpoints_theme_kada_tablet_1x',
     'label' => 'content_full_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       4 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 736,
@@ -328,17 +232,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_half.
   $styles['content_half'] = array(
-    'name' => 'content_half',
     'label' => 'Content half',
     'effects' => array(
       7 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 644,
@@ -352,17 +248,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_half_16_9.
   $styles['content_half_16_9'] = array(
-    'name' => 'content_half_16_9',
     'label' => 'Content half 16:9',
     'effects' => array(
       31 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 644,
@@ -375,17 +263,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_half_16_9_breakpoints_theme_kada_desktop_1x.
   $styles['content_half_16_9_breakpoints_theme_kada_desktop_1x'] = array(
-    'name' => 'content_half_16_9_breakpoints_theme_kada_desktop_1x',
     'label' => 'content_half_16_9_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       32 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 644,
@@ -398,17 +278,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_half_16_9_breakpoints_theme_kada_mobile_1x.
   $styles['content_half_16_9_breakpoints_theme_kada_mobile_1x'] = array(
-    'name' => 'content_half_16_9_breakpoints_theme_kada_mobile_1x',
     'label' => 'content_half_16_9_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       33 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 288,
@@ -421,17 +293,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_half_16_9_breakpoints_theme_kada_phablet_1x.
   $styles['content_half_16_9_breakpoints_theme_kada_phablet_1x'] = array(
-    'name' => 'content_half_16_9_breakpoints_theme_kada_phablet_1x',
     'label' => 'content_half_16_9_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       34 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 518,
@@ -444,17 +308,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_half_16_9_breakpoints_theme_kada_smalldesktop_1x.
   $styles['content_half_16_9_breakpoints_theme_kada_smalldesktop_1x'] = array(
-    'name' => 'content_half_16_9_breakpoints_theme_kada_smalldesktop_1x',
     'label' => 'content_half_16_9_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       35 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 533,
@@ -467,17 +323,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_half_16_9_breakpoints_theme_kada_tablet_1x.
   $styles['content_half_16_9_breakpoints_theme_kada_tablet_1x'] = array(
-    'name' => 'content_half_16_9_breakpoints_theme_kada_tablet_1x',
     'label' => 'content_half_16_9_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       36 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 368,
@@ -490,17 +338,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_half_breakpoints_theme_kada_desktop_1x.
   $styles['content_half_breakpoints_theme_kada_desktop_1x'] = array(
-    'name' => 'content_half_breakpoints_theme_kada_desktop_1x',
     'label' => 'content_half_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       8 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 644,
@@ -514,17 +354,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_half_breakpoints_theme_kada_mobile_1x.
   $styles['content_half_breakpoints_theme_kada_mobile_1x'] = array(
-    'name' => 'content_half_breakpoints_theme_kada_mobile_1x',
     'label' => 'content_half_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       12 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 288,
@@ -538,17 +370,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_half_breakpoints_theme_kada_phablet_1x.
   $styles['content_half_breakpoints_theme_kada_phablet_1x'] = array(
-    'name' => 'content_half_breakpoints_theme_kada_phablet_1x',
     'label' => 'content_half_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       11 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 518,
@@ -562,17 +386,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_half_breakpoints_theme_kada_smalldesktop_1x.
   $styles['content_half_breakpoints_theme_kada_smalldesktop_1x'] = array(
-    'name' => 'content_half_breakpoints_theme_kada_smalldesktop_1x',
     'label' => 'content_half_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       9 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 533,
@@ -586,17 +402,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: content_half_breakpoints_theme_kada_tablet_1x.
   $styles['content_half_breakpoints_theme_kada_tablet_1x'] = array(
-    'name' => 'content_half_breakpoints_theme_kada_tablet_1x',
     'label' => 'content_half_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       10 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 368,
@@ -610,17 +418,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: current.
   $styles['current'] = array(
-    'name' => 'current',
     'label' => 'Current',
     'effects' => array(
       2 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 315,
@@ -634,17 +434,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: event_list_image.
   $styles['event_list_image'] = array(
-    'name' => 'event_list_image',
     'label' => 'Event list image',
     'effects' => array(
       7 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 231,
@@ -657,17 +449,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: event_list_image_breakpoints_theme_kada_desktop_1x.
   $styles['event_list_image_breakpoints_theme_kada_desktop_1x'] = array(
-    'name' => 'event_list_image_breakpoints_theme_kada_desktop_1x',
     'label' => 'event_list_image_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       2 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 231,
@@ -680,17 +464,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: event_list_image_breakpoints_theme_kada_mobile_1x.
   $styles['event_list_image_breakpoints_theme_kada_mobile_1x'] = array(
-    'name' => 'event_list_image_breakpoints_theme_kada_mobile_1x',
     'label' => 'event_list_image_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       6 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 231,
@@ -703,17 +479,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: event_list_image_breakpoints_theme_kada_phablet_1x.
   $styles['event_list_image_breakpoints_theme_kada_phablet_1x'] = array(
-    'name' => 'event_list_image_breakpoints_theme_kada_phablet_1x',
     'label' => 'event_list_image_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       5 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 231,
@@ -726,17 +494,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: event_list_image_breakpoints_theme_kada_smalldesktop_1x.
   $styles['event_list_image_breakpoints_theme_kada_smalldesktop_1x'] = array(
-    'name' => 'event_list_image_breakpoints_theme_kada_smalldesktop_1x',
     'label' => 'event_list_image_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       3 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 231,
@@ -749,17 +509,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: event_list_image_breakpoints_theme_kada_tablet_1x.
   $styles['event_list_image_breakpoints_theme_kada_tablet_1x'] = array(
-    'name' => 'event_list_image_breakpoints_theme_kada_tablet_1x',
     'label' => 'event_list_image_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       4 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 231,
@@ -772,17 +524,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: event_node.
   $styles['event_node'] = array(
-    'name' => 'event_node',
     'label' => 'Event node',
     'effects' => array(
       1 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 1320,
@@ -795,17 +539,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: event_node_breakpoints_theme_kada_desktop_1x.
   $styles['event_node_breakpoints_theme_kada_desktop_1x'] = array(
-    'name' => 'event_node_breakpoints_theme_kada_desktop_1x',
     'label' => 'event_node_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       2 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 1320,
@@ -818,17 +554,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: event_node_breakpoints_theme_kada_mobile_1x.
   $styles['event_node_breakpoints_theme_kada_mobile_1x'] = array(
-    'name' => 'event_node_breakpoints_theme_kada_mobile_1x',
     'label' => 'event_node_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       6 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 360,
@@ -841,17 +569,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: event_node_breakpoints_theme_kada_phablet_1x.
   $styles['event_node_breakpoints_theme_kada_phablet_1x'] = array(
-    'name' => 'event_node_breakpoints_theme_kada_phablet_1x',
     'label' => 'event_node_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       5 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 520,
@@ -864,17 +584,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: event_node_breakpoints_theme_kada_smalldesktop_1x.
   $styles['event_node_breakpoints_theme_kada_smalldesktop_1x'] = array(
-    'name' => 'event_node_breakpoints_theme_kada_smalldesktop_1x',
     'label' => 'event_node_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       3 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 1138,
@@ -887,17 +599,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: event_node_breakpoints_theme_kada_tablet_1x.
   $styles['event_node_breakpoints_theme_kada_tablet_1x'] = array(
-    'name' => 'event_node_breakpoints_theme_kada_tablet_1x',
     'label' => 'event_node_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       4 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 768,
@@ -910,17 +614,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: event_tab_item.
   $styles['event_tab_item'] = array(
-    'name' => 'event_tab_item',
     'label' => 'Event tab item',
     'effects' => array(
       1 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 90,
@@ -933,17 +629,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: event_top_carousel.
   $styles['event_top_carousel'] = array(
-    'name' => 'event_top_carousel',
     'label' => 'Event top carousel',
     'effects' => array(
       1 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 862,
@@ -956,17 +644,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: full_modal.
   $styles['full_modal'] = array(
-    'name' => 'full_modal',
     'label' => 'Full modal',
     'effects' => array(
       1 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 800,
@@ -980,17 +660,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: full_modal_breakpoints_theme_kada_desktop_1x.
   $styles['full_modal_breakpoints_theme_kada_desktop_1x'] = array(
-    'name' => 'full_modal_breakpoints_theme_kada_desktop_1x',
     'label' => 'full_modal_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       1 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 1138,
@@ -1004,17 +676,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: full_modal_breakpoints_theme_kada_mobile_1x.
   $styles['full_modal_breakpoints_theme_kada_mobile_1x'] = array(
-    'name' => 'full_modal_breakpoints_theme_kada_mobile_1x',
     'label' => 'full_modal_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       5 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 300,
@@ -1028,17 +692,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: full_modal_breakpoints_theme_kada_phablet_1x.
   $styles['full_modal_breakpoints_theme_kada_phablet_1x'] = array(
-    'name' => 'full_modal_breakpoints_theme_kada_phablet_1x',
     'label' => 'full_modal_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       4 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 321,
@@ -1052,17 +708,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: full_modal_breakpoints_theme_kada_smalldesktop_1x.
   $styles['full_modal_breakpoints_theme_kada_smalldesktop_1x'] = array(
-    'name' => 'full_modal_breakpoints_theme_kada_smalldesktop_1x',
     'label' => 'full_modal_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       2 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 769,
@@ -1076,17 +724,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: full_modal_breakpoints_theme_kada_tablet_1x.
   $styles['full_modal_breakpoints_theme_kada_tablet_1x'] = array(
-    'name' => 'full_modal_breakpoints_theme_kada_tablet_1x',
     'label' => 'full_modal_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       3 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 551,
@@ -1100,17 +740,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: grid_item.
   $styles['grid_item'] = array(
-    'name' => 'grid_item',
     'label' => 'Grid item',
     'effects' => array(
       1 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 330,
@@ -1123,17 +755,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: grid_item_breakpoints_theme_kada_desktop_1x.
   $styles['grid_item_breakpoints_theme_kada_desktop_1x'] = array(
-    'name' => 'grid_item_breakpoints_theme_kada_desktop_1x',
     'label' => 'grid_item_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       2 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 330,
@@ -1146,17 +770,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: grid_item_breakpoints_theme_kada_mobile_1x.
   $styles['grid_item_breakpoints_theme_kada_mobile_1x'] = array(
-    'name' => 'grid_item_breakpoints_theme_kada_mobile_1x',
     'label' => 'grid_item_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       6 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 330,
@@ -1169,17 +785,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: grid_item_breakpoints_theme_kada_phablet_1x.
   $styles['grid_item_breakpoints_theme_kada_phablet_1x'] = array(
-    'name' => 'grid_item_breakpoints_theme_kada_phablet_1x',
     'label' => 'grid_item_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       5 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 330,
@@ -1192,17 +800,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: grid_item_breakpoints_theme_kada_smalldesktop_1x.
   $styles['grid_item_breakpoints_theme_kada_smalldesktop_1x'] = array(
-    'name' => 'grid_item_breakpoints_theme_kada_smalldesktop_1x',
     'label' => 'grid_item_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       3 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 330,
@@ -1215,17 +815,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: grid_item_breakpoints_theme_kada_tablet_1x.
   $styles['grid_item_breakpoints_theme_kada_tablet_1x'] = array(
-    'name' => 'grid_item_breakpoints_theme_kada_tablet_1x',
     'label' => 'grid_item_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       4 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 330,
@@ -1238,17 +830,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_content.
   $styles['main_content'] = array(
-    'name' => 'main_content',
     'label' => 'Main content',
     'effects' => array(
       16 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 649,
@@ -1261,17 +845,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_content_breakpoints_theme_kada_desktop_1x.
   $styles['main_content_breakpoints_theme_kada_desktop_1x'] = array(
-    'name' => 'main_content_breakpoints_theme_kada_desktop_1x',
     'label' => 'main_content_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       17 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 649,
@@ -1284,17 +860,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_content_breakpoints_theme_kada_mobile_1x.
   $styles['main_content_breakpoints_theme_kada_mobile_1x'] = array(
-    'name' => 'main_content_breakpoints_theme_kada_mobile_1x',
     'label' => 'main_content_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       21 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 288,
@@ -1307,17 +875,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_content_breakpoints_theme_kada_phablet_1x.
   $styles['main_content_breakpoints_theme_kada_phablet_1x'] = array(
-    'name' => 'main_content_breakpoints_theme_kada_phablet_1x',
     'label' => 'main_content_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       20 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 518,
@@ -1330,17 +890,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_content_breakpoints_theme_kada_smalldesktop_1x.
   $styles['main_content_breakpoints_theme_kada_smalldesktop_1x'] = array(
-    'name' => 'main_content_breakpoints_theme_kada_smalldesktop_1x',
     'label' => 'main_content_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       18 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 559,
@@ -1353,17 +905,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_content_breakpoints_theme_kada_tablet_1x.
   $styles['main_content_breakpoints_theme_kada_tablet_1x'] = array(
-    'name' => 'main_content_breakpoints_theme_kada_tablet_1x',
     'label' => 'main_content_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       19 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 736,
@@ -1376,17 +920,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_liftup_narrow.
   $styles['main_liftup_narrow'] = array(
-    'name' => 'main_liftup_narrow',
     'label' => 'Main liftup, narrow',
     'effects' => array(
       2 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 334,
@@ -1399,17 +935,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_liftup_narrow_breakpoints_theme_kada_desktop_1x.
   $styles['main_liftup_narrow_breakpoints_theme_kada_desktop_1x'] = array(
-    'name' => 'main_liftup_narrow_breakpoints_theme_kada_desktop_1x',
     'label' => 'main_liftup_narrow_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       6 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 327,
@@ -1422,17 +950,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_liftup_narrow_breakpoints_theme_kada_mobile_1x.
   $styles['main_liftup_narrow_breakpoints_theme_kada_mobile_1x'] = array(
-    'name' => 'main_liftup_narrow_breakpoints_theme_kada_mobile_1x',
     'label' => 'main_liftup_narrow_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       10 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 320,
@@ -1445,17 +965,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_liftup_narrow_breakpoints_theme_kada_phablet_1x.
   $styles['main_liftup_narrow_breakpoints_theme_kada_phablet_1x'] = array(
-    'name' => 'main_liftup_narrow_breakpoints_theme_kada_phablet_1x',
     'label' => 'main_liftup_narrow_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       9 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 545,
@@ -1468,17 +980,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_liftup_narrow_breakpoints_theme_kada_smalldesktop_1x.
   $styles['main_liftup_narrow_breakpoints_theme_kada_smalldesktop_1x'] = array(
-    'name' => 'main_liftup_narrow_breakpoints_theme_kada_smalldesktop_1x',
     'label' => 'main_liftup_narrow_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       7 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 558,
@@ -1491,17 +995,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_liftup_narrow_breakpoints_theme_kada_tablet_1x.
   $styles['main_liftup_narrow_breakpoints_theme_kada_tablet_1x'] = array(
-    'name' => 'main_liftup_narrow_breakpoints_theme_kada_tablet_1x',
     'label' => 'main_liftup_narrow_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       8 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 768,
@@ -1514,17 +1010,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_liftup_wide.
   $styles['main_liftup_wide'] = array(
-    'name' => 'main_liftup_wide',
     'label' => 'Main liftup, wide',
     'effects' => array(
       1 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 650,
@@ -1537,17 +1025,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_liftup_wide_breakpoints_theme_kada_desktop_1x.
   $styles['main_liftup_wide_breakpoints_theme_kada_desktop_1x'] = array(
-    'name' => 'main_liftup_wide_breakpoints_theme_kada_desktop_1x',
     'label' => 'main_liftup_wide_breakpoints_theme_kada_desktop_1x',
     'effects' => array(
       11 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 564,
@@ -1560,17 +1040,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_liftup_wide_breakpoints_theme_kada_mobile_1x.
   $styles['main_liftup_wide_breakpoints_theme_kada_mobile_1x'] = array(
-    'name' => 'main_liftup_wide_breakpoints_theme_kada_mobile_1x',
     'label' => 'main_liftup_wide_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       15 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 320,
@@ -1583,17 +1055,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_liftup_wide_breakpoints_theme_kada_phablet_1x.
   $styles['main_liftup_wide_breakpoints_theme_kada_phablet_1x'] = array(
-    'name' => 'main_liftup_wide_breakpoints_theme_kada_phablet_1x',
     'label' => 'main_liftup_wide_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       14 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 545,
@@ -1606,17 +1070,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_liftup_wide_breakpoints_theme_kada_smalldesktop_1x.
   $styles['main_liftup_wide_breakpoints_theme_kada_smalldesktop_1x'] = array(
-    'name' => 'main_liftup_wide_breakpoints_theme_kada_smalldesktop_1x',
     'label' => 'main_liftup_wide_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       12 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 563,
@@ -1629,17 +1085,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: main_liftup_wide_breakpoints_theme_kada_tablet_1x.
   $styles['main_liftup_wide_breakpoints_theme_kada_tablet_1x'] = array(
-    'name' => 'main_liftup_wide_breakpoints_theme_kada_tablet_1x',
     'label' => 'main_liftup_wide_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       13 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 768,
@@ -1652,17 +1100,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: opengraph.
   $styles['opengraph'] = array(
-    'name' => 'opengraph',
     'label' => 'OpenGraph',
     'effects' => array(
       1 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 1200,
@@ -1676,17 +1116,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: person.
   $styles['person'] = array(
-    'name' => 'person',
     'label' => 'Person',
     'effects' => array(
       1 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 225,
@@ -1700,17 +1132,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: person_breakpoints_theme_kada_mobile_1x.
   $styles['person_breakpoints_theme_kada_mobile_1x'] = array(
-    'name' => 'person_breakpoints_theme_kada_mobile_1x',
     'label' => 'person_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       9 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 500,
@@ -1724,17 +1148,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: person_breakpoints_theme_kada_phablet_1x.
   $styles['person_breakpoints_theme_kada_phablet_1x'] = array(
-    'name' => 'person_breakpoints_theme_kada_phablet_1x',
     'label' => 'person_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       8 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 400,
@@ -1748,17 +1164,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: person_breakpoints_theme_kada_smalldesktop_1x.
   $styles['person_breakpoints_theme_kada_smalldesktop_1x'] = array(
-    'name' => 'person_breakpoints_theme_kada_smalldesktop_1x',
     'label' => 'person_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       7 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 225,
@@ -1772,17 +1180,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: project.
   $styles['project'] = array(
-    'name' => 'project',
     'label' => 'Project',
     'effects' => array(
       4 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 768,
@@ -1795,17 +1195,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: project_breakpoints_theme_kada_mobile_1x.
   $styles['project_breakpoints_theme_kada_mobile_1x'] = array(
-    'name' => 'project_breakpoints_theme_kada_mobile_1x',
     'label' => 'project_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       8 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 320,
@@ -1818,17 +1210,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: project_breakpoints_theme_kada_phablet_1x.
   $styles['project_breakpoints_theme_kada_phablet_1x'] = array(
-    'name' => 'project_breakpoints_theme_kada_phablet_1x',
     'label' => 'project_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       7 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 550,
@@ -1841,17 +1225,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: project_breakpoints_theme_kada_smalldesktop_1x.
   $styles['project_breakpoints_theme_kada_smalldesktop_1x'] = array(
-    'name' => 'project_breakpoints_theme_kada_smalldesktop_1x',
     'label' => 'project_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       5 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 653,
@@ -1864,17 +1240,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: project_breakpoints_theme_kada_tablet_1x.
   $styles['project_breakpoints_theme_kada_tablet_1x'] = array(
-    'name' => 'project_breakpoints_theme_kada_tablet_1x',
     'label' => 'project_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       6 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 768,
@@ -1887,17 +1255,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: search_result.
   $styles['search_result'] = array(
-    'name' => 'search_result',
     'label' => 'Search result',
     'effects' => array(
       2 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 250,
@@ -1910,17 +1270,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: site_logo.
   $styles['site_logo'] = array(
-    'name' => 'site_logo',
     'label' => 'Site logo',
     'effects' => array(
       9 => array(
-        'label' => 'Scale',
-        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => '',
@@ -1934,21 +1286,73 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: top_carousel.
   $styles['top_carousel'] = array(
-    'name' => 'top_carousel',
     'label' => 'Top Carousel',
     'effects' => array(
-      2 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
+      6 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 1600,
+          'width' => 1800,
           'height' => 757,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: top_carousel_breakpoints_theme_kada_dsktp_nrw_1x.
+  $styles['top_carousel_breakpoints_theme_kada_dsktp_nrw_1x'] = array(
+    'label' => 'top_carousel_breakpoints_theme_kada_dsktp_nrw_1x',
+    'effects' => array(
+      4 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 960,
+          'height' => 454,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: top_carousel_breakpoints_theme_kada_dsktp_wide_1x.
+  $styles['top_carousel_breakpoints_theme_kada_dsktp_wide_1x'] = array(
+    'label' => 'top_carousel_breakpoints_theme_kada_dsktp_wide_1x',
+    'effects' => array(
+      5 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 1200,
+          'height' => 567,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: top_carousel_breakpoints_theme_kada_mbl_nrw_1x.
+  $styles['top_carousel_breakpoints_theme_kada_mbl_nrw_1x'] = array(
+    'label' => 'top_carousel_breakpoints_theme_kada_mbl_nrw_1x',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 480,
+          'height' => 227,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: top_carousel_breakpoints_theme_kada_mbl_wide_1x.
+  $styles['top_carousel_breakpoints_theme_kada_mbl_wide_1x'] = array(
+    'label' => 'top_carousel_breakpoints_theme_kada_mbl_wide_1x',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 640,
+          'height' => 302,
         ),
         'weight' => 1,
       ),
@@ -1957,17 +1361,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: top_carousel_breakpoints_theme_kada_mobile_1x.
   $styles['top_carousel_breakpoints_theme_kada_mobile_1x'] = array(
-    'name' => 'top_carousel_breakpoints_theme_kada_mobile_1x',
     'label' => 'top_carousel_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       12 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 320,
@@ -1980,17 +1376,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: top_carousel_breakpoints_theme_kada_phablet_1x.
   $styles['top_carousel_breakpoints_theme_kada_phablet_1x'] = array(
-    'name' => 'top_carousel_breakpoints_theme_kada_phablet_1x',
     'label' => 'top_carousel_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       11 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 550,
@@ -2003,17 +1391,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: top_carousel_breakpoints_theme_kada_smalldesktop_1x.
   $styles['top_carousel_breakpoints_theme_kada_smalldesktop_1x'] = array(
-    'name' => 'top_carousel_breakpoints_theme_kada_smalldesktop_1x',
     'label' => 'top_carousel_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       9 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 1600,
@@ -2026,17 +1406,24 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: top_carousel_breakpoints_theme_kada_tablet_1x.
   $styles['top_carousel_breakpoints_theme_kada_tablet_1x'] = array(
-    'name' => 'top_carousel_breakpoints_theme_kada_tablet_1x',
     'label' => 'top_carousel_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       10 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 768,
+          'height' => 363,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: top_carousel_breakpoints_theme_kada_tbl_1x.
+  $styles['top_carousel_breakpoints_theme_kada_tbl_1x'] = array(
+    'label' => 'top_carousel_breakpoints_theme_kada_tbl_1x',
+    'effects' => array(
+      3 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 768,
@@ -2049,17 +1436,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: topics.
   $styles['topics'] = array(
-    'name' => 'topics',
     'label' => 'Topics',
     'effects' => array(
       1 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 425,
@@ -2072,17 +1451,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: topics_breakpoints_theme_kada_mobile_1x.
   $styles['topics_breakpoints_theme_kada_mobile_1x'] = array(
-    'name' => 'topics_breakpoints_theme_kada_mobile_1x',
     'label' => 'topics_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       16 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 277,
@@ -2095,17 +1466,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: topics_breakpoints_theme_kada_phablet_1x.
   $styles['topics_breakpoints_theme_kada_phablet_1x'] = array(
-    'name' => 'topics_breakpoints_theme_kada_phablet_1x',
     'label' => 'topics_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       15 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 497,
@@ -2118,17 +1481,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: topics_breakpoints_theme_kada_smalldesktop_1x.
   $styles['topics_breakpoints_theme_kada_smalldesktop_1x'] = array(
-    'name' => 'topics_breakpoints_theme_kada_smalldesktop_1x',
     'label' => 'topics_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       13 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 479,
@@ -2141,17 +1496,9 @@ function kada_media_feature_image_default_styles() {
 
   // Exported image style: topics_breakpoints_theme_kada_tablet_1x.
   $styles['topics_breakpoints_theme_kada_tablet_1x'] = array(
-    'name' => 'topics_breakpoints_theme_kada_tablet_1x',
     'label' => 'topics_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
       14 => array(
-        'label' => 'Scale and crop',
-        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
-        'effect callback' => 'image_scale_and_crop_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'image_resize_form',
-        'summary theme' => 'image_resize_summary',
-        'module' => 'image',
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 360,

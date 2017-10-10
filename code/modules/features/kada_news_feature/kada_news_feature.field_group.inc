@@ -67,7 +67,7 @@ function kada_news_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Liftup header',
-    'weight' => '11',
+    'weight' => '24',
     'children' => array(),
     'format_type' => 'div',
     'format_settings' => array(

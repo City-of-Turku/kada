@@ -13,6 +13,58 @@ function kada_media_feature_default_picture_mapping() {
   $picture_mapping = new PictureMapping();
   $picture_mapping->disabled = FALSE; /* Edit this to true to make a default picture_mapping disabled initially */
   $picture_mapping->api_version = 2;
+  $picture_mapping->label = 'Responsive carousel';
+  $picture_mapping->machine_name = 'responsive_carousel';
+  $picture_mapping->breakpoint_group = 'kada';
+  $picture_mapping->mapping = array(
+    'breakpoints.theme.kada.mbl_prtrt' => array(
+      '1x' => array(
+        'mapping_type' => 'image_style',
+        'image_style' => 'top_carousel_breakpoints_theme_kada_mobile_1x',
+      ),
+    ),
+    'breakpoints.theme.kada.mbl' => array(
+      '1x' => array(
+        'mapping_type' => 'image_style',
+        'image_style' => 'top_carousel_breakpoints_theme_kada_mbl_nrw_1x',
+      ),
+    ),
+    'breakpoints.theme.kada.mbl_nrw' => array(
+      '1x' => array(
+        'mapping_type' => 'image_style',
+        'image_style' => 'top_carousel_breakpoints_theme_kada_mbl_wide_1x',
+      ),
+    ),
+    'breakpoints.theme.kada.mbl_wide' => array(
+      '1x' => array(
+        'mapping_type' => 'image_style',
+        'image_style' => 'top_carousel_breakpoints_theme_kada_tbl_1x',
+      ),
+    ),
+    'breakpoints.theme.kada.tbl' => array(
+      '1x' => array(
+        'mapping_type' => 'image_style',
+        'image_style' => 'top_carousel_breakpoints_theme_kada_dsktp_nrw_1x',
+      ),
+    ),
+    'breakpoints.theme.kada.dsktp_nrw' => array(
+      '1x' => array(
+        'mapping_type' => 'image_style',
+        'image_style' => 'top_carousel_breakpoints_theme_kada_dsktp_wide_1x',
+      ),
+    ),
+    'breakpoints.theme.kada.dsktp_wide' => array(
+      '1x' => array(
+        'mapping_type' => 'image_style',
+        'image_style' => 'top_carousel',
+      ),
+    ),
+  );
+  $export['responsive_carousel'] = $picture_mapping;
+
+  $picture_mapping = new PictureMapping();
+  $picture_mapping->disabled = FALSE; /* Edit this to true to make a default picture_mapping disabled initially */
+  $picture_mapping->api_version = 2;
   $picture_mapping->label = 'Responsive content full';
   $picture_mapping->machine_name = 'responsive_content_full';
   $picture_mapping->breakpoint_group = 'kada';

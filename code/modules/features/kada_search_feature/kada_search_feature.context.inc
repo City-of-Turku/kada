@@ -27,9 +27,9 @@ function kada_search_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-128a13a89a8095c2d84b97a86d46f5bb' => array(
+        'views-d946dd52c7a4fe1d564447a7ed65b848' => array(
           'module' => 'views',
-          'delta' => '128a13a89a8095c2d84b97a86d46f5bb',
+          'delta' => 'd946dd52c7a4fe1d564447a7ed65b848',
           'region' => 'content',
           'weight' => '-10',
         ),

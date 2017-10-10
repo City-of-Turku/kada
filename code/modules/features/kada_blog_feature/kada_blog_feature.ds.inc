@@ -18,7 +18,7 @@ function kada_blog_feature_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'current';
   $ds_fieldsetting->settings = array(
     'post_date' => array(
-      'weight' => '1',
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'ds_post_date_kada_date_only',
       'formatter_settings' => array(
@@ -27,54 +27,6 @@ function kada_blog_feature_ds_field_settings_info() {
           'fi' => TRUE,
           'fi-el' => 'div',
           'fi-cl' => 'liftup-box__caption',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
-      ),
-    ),
-    'field_blog' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'lb' => 'More from the same author',
-          'lb-el' => 'div',
-          'lb-cl' => 'liftup-box__author-label',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'liftup-box__author',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-          'fi' => TRUE,
-          'fi-el' => 'h3',
-          'fi-cl' => '',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
-      ),
-    ),
-    'field_main_image' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'liftup-box__image',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
-      ),
-    ),
-    'field_quote' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'h2',
-          'fi-cl' => 'liftup-box__quote',
           'fi-at' => '',
           'fi-def-at' => FALSE,
           'fi-odd-even' => FALSE,
@@ -277,8 +229,8 @@ function kada_blog_feature_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'header' => array(
-        0 => 'field_main_image',
-        1 => 'post_date',
+        0 => 'post_date',
+        1 => 'field_main_image',
       ),
       'main' => array(
         2 => 'field_quote',
@@ -286,8 +238,8 @@ function kada_blog_feature_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'field_main_image' => 'header',
       'post_date' => 'header',
+      'field_main_image' => 'header',
       'field_quote' => 'main',
       'field_blog' => 'main',
     ),
@@ -301,6 +253,7 @@ function kada_blog_feature_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|blog_post|current'] = $ds_layout;
 

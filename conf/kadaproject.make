@@ -485,7 +485,6 @@ projects[picture][subdir] = contrib
 projects[piwik][version] = 2.9
 projects[piwik][subdir] = contrib
 
-
 projects[plupload][version] = 1.7
 projects[plupload][subdir] = contrib
 
