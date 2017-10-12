@@ -14,6 +14,7 @@ function kada_some_content_feature_ctools_plugin_directory($owner, $plugin) {
     return 'plugins';
   }
 }
+
 /**
  * Implements hook_menu().
  */
@@ -25,7 +26,22 @@ function kada_some_content_feature_menu() {
     'page arguments' => array('kada_some_content_feature_settings'),
     'access arguments' => array('administer some_content settings'),
   );
+  $items['admin/instagram/authorize'] = array(
+    'title' => 'Instagram authorize',
+    'type' => MENU_CALLBACK,
+    'page callback' => 'kada_some_content_feature_instagram_authorize',
+    'access arguments' => array(
+      'access content',
+    ),
+  );
+
   return $items;
+}
+
+/**
+ * Implements hook_cron().
+ */
+function kada_some_content_feature_cron() {
 }
 
 /**
@@ -130,6 +146,70 @@ function kada_some_content_feature_feeds_get_language(FeedsSource $source, Feeds
 }
 
 /**
+ * Request an access token from instagram oauth API.
+ *
+ * @param string $client_id
+ *   Instagram client id
+ * @param string $client_secret
+ *   Instagram client secret
+ * @param string $redirect_url
+ *   Url redirection. This should be exactly the same as the one passed to the authorization url.
+ * @param string $code
+ *   Code parameter from redirection
+ *
+ * @return object
+ *   Response object
+ */
+function _kada_some_content_feature_request_instagram_access_token($client_id, $client_secret, $redirect_url, $code) {
+  return drupal_http_request(
+    'https://api.instagram.com/oauth/access_token',
+    array(
+      'headers' => array('Content-Type' => 'application/x-www-form-urlencoded'),
+      'method' => 'POST',
+      'data' => drupal_http_build_query(array(
+        'client_id' => $client_id,
+        'client_secret' => $client_secret,
+        'redirect_uri' => $redirect_url,
+        'grant_type' => 'authorization_code',
+        'code' => $code,
+      )),
+    )
+  );
+}
+
+/**
+ * Build the instagram authorization url.
+ *
+ * @param array $options
+ *   name/value array of options.
+ *
+ * @return string
+ *   url string.
+ */
+function _kada_some_content_feature_authorization_url($options = array()) {
+  // Default query parameters.
+  $query = array(
+    'response_type' => 'code',
+    'scope' => 'public_content',
+  );
+
+  $query = array_merge($options, $query);
+
+  return 'https://api.instagram.com/oauth/authorize/?' . drupal_http_build_query($query);
+}
+
+/**
+ * Contains markup with texts for Instagram authorization.
+ */
+function _kada_some_content_feature_instagram_info_text() {
+  $content = t('<p><strong>Important! Use the following settings on your Instagram Client:</strong></p>');
+
+  $content .= t('<p>Website Url: %url</p>', array('%url' => url('/', array('absolute' => TRUE))));
+  $content .= t('<p>Valid redirect URIs: %url</p>', array('%url' => url('/admin/instagram/authorize', array('absolute' => TRUE))));
+  return $content;
+}
+
+/**
  * Implements hook_form_alter().
  */
 function kada_some_content_feature_form_alter(&$form, &$form_state, $form_id) {
@@ -143,6 +223,152 @@ function kada_some_content_feature_form_alter(&$form, &$form_state, $form_id) {
     $form['#validate'] = array('kada_some_content_feature_feed_import_form_validate') + $form['#validate'];
     // Hide feed field, preventing editors from editing the url we make on their behalf.
     $form['feeds']['#access'] = FALSE;
+  }
+
+  // Alter Instagram feed node form.
+  if ($form_id == 'feed_import_instagram_node_form') {
+    $form['api_access'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Instagram Authentication'),
+      '#weight' => 5
+    );
+
+    $form['api_access']['info'] = array(
+      '#markup' => _kada_some_content_feature_instagram_info_text(),
+    );
+
+    // Hide access token field. This shouldn't be modified by the user.
+    $form['field_access_token']['#access'] = FALSE;
+
+    // Display access token links and instructions when editing instagram feeds.
+    if (isset($form['nid']['#value']) && intval($form['nid']['#value'])) {
+
+      // Build authorization url.
+      $auth_url = _kada_some_content_feature_authorization_url(array(
+        'client_id' => $form_state['node']->field_feed_client_token[LANGUAGE_NONE][0]['value'],
+        'redirect_uri' => url('/admin/instagram/authorize', array('absolute' => TRUE)),
+        'state' => (int) $form['nid']['#value'],
+      ));
+
+      // Create a link with auth url.
+      $link = l(t('Authorize feed'), $auth_url);
+
+      $form['api_access']['info'] = array(
+        '#markup' => _kada_some_content_feature_instagram_info_text(),
+      );
+      $form['api_access']['link'] = array(
+        '#markup' => t('<strong>Click this link to authenticate this feed on Instagram:</strong> !link', array('!link' => $link)),
+      );
+    }
+  }
+}
+
+/**
+ * Obtain and store authorization token from instagram.
+ *
+ * This method is executed after redirection from instagram.
+ * The parameters will contain the 'code' which will be used to authorize
+ * the request, and also the 'state' parameter which has the feed's node id.
+ * We could obtain the client_id, client_secret by loading the node using the node id.
+ */
+function kada_some_content_feature_instagram_authorize() {
+  global $user;
+  $query = drupal_get_query_parameters();
+
+  if (isset($query['state']) && isset($query['code']) && $nid = intval($query['state'])) {
+    $node = node_load($nid);
+
+    // Check if user has permission to update the node.
+    if ($node && node_access('update', $node)) {
+      // Client id from node field.
+      $client_id = $node->field_feed_client_token[LANGUAGE_NONE][0]['value'];
+      // Client secret from node field.
+      $client_secret = $node->field_feed_client_secret[LANGUAGE_NONE][0]['value'];
+      // Build redirect url.
+      $redirect_url = url('/admin/instagram/authorize', array('absolute' => TRUE));
+
+      // Send access token request.
+      $response = _kada_some_content_feature_request_instagram_access_token(
+        $client_id,
+        $client_secret,
+        $redirect_url,
+        $query['code']
+      );
+
+      // Check if we the request's response was 200 OK.
+      if ($response && $response->code == 200 && $response->status_message == 'OK') {
+        // Decode json data which contains access token.
+        $data = json_decode($response->data);
+        // Check if we are able to decode data and access token property exists.
+        if ($data != NULL && $data !== FALSE && isset($data->access_token)) {
+          try {
+            // We need to update the Feed's source with the new access token
+            // that we received. So we need to save the node using
+            // drupal_form_submit so it will trigger the validation hook where
+            // the source is updated. Normal node_save does not trigger it.
+            $_form_state['values']['field_access_token'][LANGUAGE_NONE][0]['value'] = $data->access_token;
+            $_form_state['values']['op'] = t('Save');
+            drupal_form_submit($node->type . '_node_form', $_form_state, $node);
+          }
+          catch (Exception $e) {
+            // Log this so we could debug later.
+            watchdog('InstagramAuth', 'Failed to store auth token. Nid: %nid. User: %uid',
+              array('%nid' => $node->nid, '%uid' => $user->uid),
+              WATCHDOG_ERROR
+            );
+
+            drupal_set_message(t('An error occured while updating Instagram feed node'), 'error');
+
+            return drupal_goto('node/' . (int) $node->nid);
+          }
+
+          // If everything went well, we inform the user.
+          drupal_set_message(t('Authorization complete!'));
+
+          watchdog('InstagramAuth', 'Instagram feed authorized. Nid: %nid. User: %uid',
+            array('%nid' => $node->nid, '%uid' => $user->uid)
+          );
+        }
+      }
+      else {
+        // Something went wrong with the request.
+        drupal_set_message(t('An error occured while authorizing Instagram feed'), 'error');
+
+        watchdog('InstagramAuth', 'Request error while getting access token. Nid: %nid. User: %uid',
+          array('%nid' => $node->nid, '%uid' => $user->uid),
+          WATCHDOG_ERROR
+        );
+      }
+
+      return drupal_goto('node/' . (int) $node->nid);
+    }
+  }
+
+  return drupal_not_found();
+}
+
+/**
+ * Implements hook_node_view().
+ */
+function kada_some_content_feature_node_view($node, $view_mode, $langcode) {
+  // Show authorization link.
+  if ($node->type == 'feed_import_instagram' && $view_mode == 'full') {
+    $auth_url = _kada_some_content_feature_authorization_url(array(
+      'client_id' => $node->field_feed_client_token[LANGUAGE_NONE][0]['value'],
+      'redirect_uri' => url('/admin/instagram/authorize', array('absolute' => TRUE)),
+      'state' => (int) $node->nid,
+    ));
+
+    $link = l(t('Authorize feed'), $auth_url);
+
+    $node->content['instagram_auth_field'] = array(
+      '#type' => 'fieldset',
+      '#title' => t('Access Token Authentication'),
+    );
+
+    $node->content['instagram_auth_field']['link'] = array(
+      '#markup' => t('<strong>Click this link to authenticate this feed on Instagram:</strong> !link', array('!link' => $link)),
+    );
   }
 }
 
@@ -161,11 +387,13 @@ function kada_some_content_feature_feed_import_form_validate($form, &$form_state
     'feed_user_id',
     'feed_client_token',
     'feed_client_secret',
+    'access_token',
   );
   foreach ($replace_fields as $field) {
     $field_name = 'field_' . $field;
     if (isset($form_state['values'][$field_name])) {
       $val = $form_state['values'][$field_name][LANGUAGE_NONE][0]['value'];
+
       $replace['[' . strtoupper($field) . ']'] = $val;
     }
   }
@@ -181,11 +409,9 @@ function kada_some_content_feature_feed_import_form_validate($form, &$form_state
  */
 function _kada_feed_content_type_config() {
   // To have your replacement done, see kada_some_content_feature_feed_import_form_validate().
-  return array(
+  $config = array(
     'feed_import_instagram' => array(
-      // See: Get information about the owner of the access_token at
-      // https://www.instagram.com/developer/endpoints/users.
-      'url' => 'https://api.instagram.com/v1/users/self/media/recent/?access_token=[FEED_CLIENT_TOKEN]',
+      'url' => 'https://api.instagram.com/v1/users/[FEED_USER_ID]/media/recent/?client_id=[FEED_CLIENT_TOKEN]&access_token=[ACCESS_TOKEN]',
     ),
     'feed_import_facebook' => array(
       'url' => 'https://graph.facebook.com/v2.8/[FEED_USER_ID]/posts?access_token=[FEED_CLIENT_TOKEN]|[FEED_CLIENT_SECRET]&fields=created_time,message,picture,link,name,caption,description,type,object_id',
@@ -196,7 +422,13 @@ function _kada_feed_content_type_config() {
     'feed_import_youtube_channel' => array(
       'url' => 'https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=50&channelId=[FEED_USER_ID]&key=[FEED_CLIENT_SECRET]',
     ),
+    'feed_import_linkedin' => array(
+      'url' => '?',
+    ),
   );
+  // Make it possible for other modules to alter this configuration.
+  drupal_alter('kada_feed_content_type_config', $config);
+  return $config;
 }
 
 /**
@@ -240,6 +472,11 @@ function kada_some_content_feature_field_formatter_view($entity_type, $entity, $
           // we can use that.
           $links = $wrapper->field_link->value();
           $path = $links[0]['url'];
+        break;
+        case 'linkedin':
+          // @TODO: Importer not working at the moment, need to figure out
+          // syntax for the direct link. Using the profile page until then.
+          $path = 'https://www.linkedin.com/';
         break;
         case 'twitter':
           $path = 'http://twitter.com/statuses/' . $some_id;

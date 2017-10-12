@@ -433,7 +433,7 @@ function kada_blog_feature_strongarm() {
           ),
           'current' => array(
             'weight' => '22',
-            'visible' => TRUE,
+            'visible' => FALSE,
           ),
           'full' => array(
             'weight' => '20',
@@ -454,8 +454,8 @@ function kada_blog_feature_strongarm() {
             'visible' => FALSE,
           ),
           'current' => array(
-            'weight' => '17',
-            'visible' => TRUE,
+            'weight' => '18',
+            'visible' => FALSE,
           ),
           'default' => array(
             'weight' => '0',

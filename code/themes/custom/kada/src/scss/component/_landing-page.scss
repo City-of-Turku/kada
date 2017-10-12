@@ -1,0 +1,52 @@
+// Landing page title
+.landing-page-title {
+  background-color: $turku-white;
+  border-bottom: 4px solid $turku-blue;
+  margin: 0;
+  padding: 16px;
+}
+
+.landing-page {
+  .l-header {
+    @media screen and (min-width: $tablet-portrait) {
+      height: auto;
+      padding-bottom: 0;
+    }
+  }
+
+  .l-before-content {
+    @media screen and (min-width: $tablet-portrait) {
+      margin-top: 20%;
+    }
+  }
+
+  // .l-region--before-content {
+  //   //background: image-url('bg_pattern.png') repeat 0 0 $after-content-bg;
+  //   //@include content-in-front-of-header;
+  //   position: relative;
+
+  //   .quicktabs-wrapper {
+  //     background-color: rgba($turku-white, 0.4);
+  //     margin: 0;
+  //     padding: 1% 1% 40px; // 40px to make space for the rss button
+
+  //     &.quicktabs-empty {
+  //       margin: 0;
+  //       padding: 0;
+
+  //       .quicktabs-tabs {
+  //         margin: 0;
+  //       }
+  //     }
+  //   }
+  // }
+
+  .l-content {
+
+  }
+
+  .l-main {
+    //@include content-in-front-of-header;
+    position: relative;
+  }
+}

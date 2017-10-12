@@ -1,0 +1,363 @@
+$theatre-thin:    "BrandonGrotesque-Thin";
+$theatre-light:   "BrandonGrotesque-Light";
+$theatre-regular: "BrandonGrotesque-Regular";
+$theatre-medium:  "BrandonGrotesque-Medium";
+$theatre-bold:    "BrandonGrotesque-Bold";
+$theatre-black:   "BrandonGrotesque-Black";
+
+$theatre-thin-italic:    "BrandonGrotesque-ThinItalic";
+$theatre-light-italic:   "BrandonGrotesque-LightItalic";
+$theatre-regular-italic: "BrandonGrotesque-RegularItalic";
+$theatre-medium-italic:  "BrandonGrotesque-MediumItalic";
+$theatre-bold-italic:    "BrandonGrotesque-BoldItalic";
+$theatre-black-italic:   "BrandonGrotesque-BlackItalic";
+
+$theatre-header-bg: rgba(0,0,0,0.7);
+$theatre-main-bg: #214b63;
+$theatre-footer-separator: #4B4B4B;
+
+$theatre-brand: #0196a7;
+
+.domain-teatteri-dt-demo-turku-fi {
+  background-color: #000;
+
+  // hide header title
+  .view-kada-section-header .section-title {
+    display: none;
+  }
+
+  .block__title {
+    border-color: $theatre-brand;
+  }
+
+  &.theme-front .l-navigation,
+  &.has-main-image .l-navigation {
+    background-color: rgba(#000, 0.7);
+
+    @include breakpoint($mobi-navi) {
+      background-color: $navigation-bg;
+    }
+  }
+
+  &.og-context .l-navigation {
+    .responsive-menus.responsified {
+      .menu__item--first-level {
+        &.is-collapsed,
+        &.is-expanded {
+          > .menu__item--expanded-toggle {
+            background-color: $theatre-brand;
+          }
+        }
+      }
+      span.toggler {
+        background-color: $theatre-brand;
+      }
+    }
+
+    .quick-search-toggler {
+      background-color: $theatre-brand;
+    }
+  }
+
+  // Navigation menu
+  // First level menu items need correct fonts and increased padding.
+  .l-navigation {
+    .block--og-menu-single,
+    .block--menu-block {
+      .responsive-menus.responsified {
+        .menu__item--first-level,
+        .menu__item--second-level {
+          &.is-collapsed,
+          &.is-expanded {
+            > .menu__item--expanded-toggle {
+              &:before {
+                top: 4px;
+              }
+              }
+            }
+          }
+        }
+
+      .menu__item {
+        > a {
+          font-family: $theatre-regular;
+          @include font-size(16px);
+          font-weight: normal;
+          text-transform: uppercase;
+        }
+      }
+
+      .menu__item--first-level {
+        > a {
+          font-family: $theatre-bold;
+          font-weight: normal;
+          text-transform: uppercase;
+
+          @include breakpoint($mobi-navi) {
+            padding: 1.5em 0.7em 1.45em;
+          }
+
+          @include breakpoint($large-desk) {
+            padding: 1.5em 1em 1.45em;
+          }
+        }
+
+        &.is-collapsed,
+        &.is-expanded {
+          > a {
+            @include breakpoint($mobi-navi) {
+              padding: 1.5em 2em 1.45em 0.7em;
+            }
+
+            @include breakpoint($large-desk) {
+              padding: 1.5em 3em 1.45em 1em;
+            }
+          }
+        }
+      }
+
+      .menu__item--second-level .menu__item > a:hover {
+        background-color: #f7f7f7;
+      }
+    }
+  }
+
+  // Sidebar menu
+  // Left sidebar navigation
+  .l-region--sidebar-first {
+    font-family: $theatre-regular;
+    @include font-size(18px);
+    line-height: 34px;
+
+    .menu__item--second-level.is-active > a {
+      font-weight: normal;
+      font-family: $theatre-bold;
+    }
+  }
+
+  // Language selector
+  // Needs padding like navigation menu
+  .l-navigation .language-select {
+    @include font-size(16px);
+
+    @include breakpoint($mobi-navi) {
+      padding: 1.5em 1em 1.45em;
+    }
+  }
+
+  // Header uses a transparent black background that needs to be set on
+  // various elements depending on breakpoint
+  .l-navigation {
+    background-color: $theatre-header-bg;
+
+    @include breakpoint($mobi-navi) {
+      background-color: $navigation-bg;
+    }
+  }
+  .l-before-header {
+    @include breakpoint($tab) {
+      background-color: $theatre-header-bg;
+    }
+  }
+  .l-branding {
+    @include breakpoint($mobi-navi) {
+      background-color: $theatre-header-bg;
+    }
+  }
+
+  .l-header {
+    background-color: #000 !important;
+
+    .flexslider .flex-caption {
+      background-color: $theatre-header-bg;
+      border-color: $theatre-brand;
+    }
+  }
+
+  // Calendar styles
+  .ui-datepicker .ui-datepicker-calendar tbody tr td a {
+    background-color: $theatre-brand;
+  }
+
+  // Mosaic more link
+  .mosaic .mosaic__footer .mosaic__more-link {
+    background-color: $theatre-brand;
+
+    &:before {
+      background-color: darken($theatre-brand, 20%);
+    }
+  }
+
+  // flexslider captions
+  .flex-caption__title {
+    font-family: $theatre-bold;
+    @include font-size(34px);
+    font-weight: normal;
+    line-height: 40px;
+    text-transform: uppercase;
+  }
+
+  .flex-caption__body {
+    font-family: $theatre-regular;
+
+    p {
+      @include font-size(17px);
+      line-height: 22px;
+    }
+
+    strong {
+      font-family: $theatre-bold;
+      font-weight: normal;
+    }
+  }
+
+  // Current area
+  .l-before-content,
+  .l-main-wrapper {
+    background: $theatre-main-bg;
+  }
+
+  .quicktabs-wrapper .quicktabs-tabs > li {
+    a {
+      color: #fff;
+      font-family: $theatre-regular;
+
+      &:hover {
+        background-color: mix($theatre-brand, $theatre-main-bg, 50%);
+      }
+    }
+
+    &.active a {
+      background-color: $theatre-brand;
+    }
+  }
+
+  // RSS icon styles
+  .feed-icon {
+    &:before,
+    &:after {
+      background-color: $theatre-brand;
+    }
+  }
+
+  // breadcrumbs
+  .breadcrumb__item > a,
+  .breadcrumb__current-page {
+    text-transform: none;
+    font-family: $theatre-medium-italic;
+    @include font-size(14px);
+    font-weight: normal;
+  }
+
+  // Main content area
+  .l-main {
+    h1 {
+      font-family: $theatre-bold;
+      font-weight: normal;
+      margin-top: 2.75em;
+      text-transform: uppercase;
+      @include font-size(24px);
+    }
+
+    h2, h3, h4, h5, h6 {
+      font-family: $theatre-medium-italic;
+      font-weight: normal;
+    }
+
+    h2 {
+      @include font-size(20px);
+      margin: 2.5em 0 1em;
+    }
+
+    .node {
+      font-family: $theatre-regular;
+      @include font-size(17px);
+      line-height: 22px;
+    }
+  }
+
+  // Liftups
+  .liftup-box {
+    border-color: $theatre-brand;
+    font-family: $theatre-regular;
+    @include font-size(17px);
+    line-height: 22px;
+
+    .liftup-box__date {
+      font-family: $theatre-light-italic;
+      @include font-size(16px);
+      font-style: normal;
+    }
+
+    .liftup-box__title {
+      font-family: $theatre-regular;
+      @include font-size(18px);
+      line-height: 22px;
+      text-transform: uppercase;
+    }
+
+    .liftup-box__caption {
+      background-color: $theatre-brand;
+      font-family: $theatre-light-italic;
+      @include font-size(22px);
+      font-style: normal;
+      font-weight: normal;
+      line-height: 22px;
+    }
+  }
+
+  .liftup-box--wide {
+    .liftup-box__title {
+      @include font-size(34px);
+      line-height: 40px;
+      text-transform: uppercase;
+    }
+  }
+
+  // Footer
+  .l-footer {
+    background: #000;
+    font-family: $theatre-regular;
+
+    .field .field__label {
+      font-family: $theatre-bold;
+      @include font-size(16px);
+      font-weight: normal;
+    }
+
+    h1, h2, h3 {
+      font-family: $theatre-bold;
+      @include font-size(16px);
+      line-height: 1;
+      font-weight: normal;
+      text-transform: uppercase;
+    }
+
+    ul {
+      padding-left: 0;
+      position: relative;
+
+      &:before {
+        background: $theatre-footer-separator;
+        content: " ";
+        display: block;
+        height: 200px;
+        left: -14px;
+        position: absolute;
+        top: 0;
+        width: 1px;
+      }
+
+      li {
+        list-style-type: none;
+        font-family: $theatre-regular;
+        @include font-size(14px);
+        line-height: 1;
+      }
+    }
+
+    a {
+      font: 0.875em $theatre-regular;
+    }
+  }
+}

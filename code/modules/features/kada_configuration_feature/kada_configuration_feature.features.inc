@@ -185,17 +185,9 @@ function kada_configuration_feature_image_default_styles() {
 
   // Exported image style: accessibility_icon.
   $styles['accessibility_icon'] = array(
-    'name' => 'accessibility_icon',
     'label' => 'accessibility_icon',
     'effects' => array(
       1 => array(
-        'label' => 'Skaalaa',
-        'help' => 'Skaalaus säilyttää kuvan alkuperäisen kuvasuhteen. Jos vain yksi ulottuvuus on määritettynä, järjestelmä laskee toisen ulottuvuuden automaattisesti.',
-        'effect callback' => 'image_scale_effect',
-        'dimensions callback' => 'image_scale_dimensions',
-        'form callback' => 'image_scale_form',
-        'summary theme' => 'image_scale_summary',
-        'module' => 'image',
         'name' => 'image_scale',
         'data' => array(
           'width' => 40,

@@ -38,17 +38,23 @@ Content editors don't need to usually edit or delete this content, but web journ
 Sitewide flag permissions give Web journalists the power to hide/show the content by flagging them.
 
 == CUSTOM CODE ==
-- function kada_some_content_feature_ctools_plugin_directory($owner, $plugin):
-Tells CTools to look for Feeds Tamper plugins from "plugins" folder.
-
 - function kada_some_content_feature_settings()
 Form for Social media update configuration. Currenly only Twiter Access token and secret for API access.
+
+- function kada_some_content_feature_cron():
+Implements a cron hook, which can be run with Elysia cron as often as required. That is why the feed importer themselves do not have periodic import on. Runs the imports and forces the import url because that setting cannot be exported to a feature.
 
 - function kada_some_content_feature_feeds_oauth_authenticator():
 Returns an array of keys and names for Feeds OAuth module. The keys are function names which define custom authenticators.
 
 - function kada_some_content_feature_get_tokens_twitter():
 Returns OAuth token + secret for Twitter.
+
+- function kada_some_content_feature_get_tokens_facebook():
+Doesn't really matter what this returns, because Facebook Apps don't provide permanent token + secret for authentication. Instead the application ID + secret can be provided in the url in a "access_token" parameter. More info https://developers.facebook.com/docs/facebook-login/access-tokens
+
+- function kada_some_content_feature_ctools_plugin_directory($owner, $plugin):
+Tells CTools to look for Feeds Tamper plugins from "plugins" folder.
 
 - function kada_some_content_feature_feeds_parser_sources_alter(&$sources, $content_type):
 Support for OG Groups entity reference source.

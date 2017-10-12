@@ -1850,7 +1850,7 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_link_to_content']['label'] = '';
   $handler->display->display_options['fields']['field_link_to_content']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_link_to_content']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<h3 class="flex-caption__title">[field_link_to_content]</h3>';
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<h2 class="flex-caption__title">[field_link_to_content]</h2>';
   $handler->display->display_options['fields']['field_link_to_content']['element_type'] = 'h3';
   $handler->display->display_options['fields']['field_link_to_content']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_link_to_content']['element_wrapper_type'] = '0';
@@ -1858,6 +1858,23 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_link_to_content']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_link_to_content']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_link_to_content']['group_column'] = 'entity_id';
+  /* Field: Content: Link to content */
+  $handler->display->display_options['fields']['field_link_to_content_1']['id'] = 'field_link_to_content_1';
+  $handler->display->display_options['fields']['field_link_to_content_1']['table'] = 'field_data_field_link_to_content';
+  $handler->display->display_options['fields']['field_link_to_content_1']['field'] = 'field_link_to_content';
+  $handler->display->display_options['fields']['field_link_to_content_1']['label'] = '';
+  $handler->display->display_options['fields']['field_link_to_content_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_link_to_content_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_link_to_content_1']['alter']['text'] = '<div class="flex-caption__read-more"><a class="button button--primary" href="[field_link_to_content_1-url]" title="[field_link_to_content_1-title] ">Read more</a></div>';
+  $handler->display->display_options['fields']['field_link_to_content_1']['alter']['path'] = '[field_link_to_content_1-url]';
+  $handler->display->display_options['fields']['field_link_to_content_1']['alter']['alt'] = '[field_link_to_content_1-title] ';
+  $handler->display->display_options['fields']['field_link_to_content_1']['alter']['link_class'] = 'button button--primary';
+  $handler->display->display_options['fields']['field_link_to_content_1']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_link_to_content_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link_to_content_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_link_to_content_1']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_link_to_content_1']['type'] = 'link_title_plain';
+  $handler->display->display_options['fields']['field_link_to_content_1']['group_column'] = 'entity_id';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -1866,7 +1883,8 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['text'] = '[field_link_to_content]
-<div class="flex-caption__body">[body]</div>';
+<div class="flex-caption__body">[body]</div>
+[field_link_to_content_1]';
   $handler->display->display_options['fields']['body']['element_type'] = '0';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
@@ -2002,33 +2020,12 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entityqueue: Node Queue */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
   $handler->display->display_options['relationships']['entityqueue_relationship']['label'] = 'Event carousel liftups';
   $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
-  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
-  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
-    'kadacalendar_event_front_carousel_sub_fi' => 'kadacalendar_event_front_carousel_sub_fi',
-    'kadacalendar_front_mosaic' => 0,
-    'kadacalendar_front_carousel' => 0,
-    'kadacalendar_event_front_carousel_sub_sv' => 0,
-    'kadacalendar_event_front_carousel_sub_en' => 0,
-    'kadacalendar_event_front_carousel_sub_ru' => 0,
-    'kadacalendar_hobby_front_carousel_sub_fi' => 0,
-    'kadacalendar_hobby_front_carousel_sub_sv' => 0,
-    'kadacalendar_hobby_front_carousel_sub_en' => 0,
-    'kadacalendar_hobby_front_carousel_sub_ru' => 0,
-    'kadacalendar_event_front_mosaic_sub_fi' => 0,
-    'kadacalendar_event_front_mosaic_sub_sv' => 0,
-    'kadacalendar_event_front_mosaic_sub_en' => 0,
-    'kadacalendar_event_front_mosaic_sub_ru' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_fi' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_sv' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_en' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_ru' => 0,
-  );
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Event image */
   $handler->display->display_options['fields']['field_content_image_et_1']['id'] = 'field_content_image_et_1';
@@ -2098,7 +2095,7 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_event_types']['group_column'] = 'entity_id';
   $handler->display->display_options['fields']['field_event_types']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Entityqueue: Node Queue Position */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['sorts']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['sorts']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
@@ -2171,33 +2168,12 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entityqueue: Node Queue */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
   $handler->display->display_options['relationships']['entityqueue_relationship']['label'] = 'Event carousel liftups';
   $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
-  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
-  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
-    'kadacalendar_event_front_carousel_sub_sv' => 'kadacalendar_event_front_carousel_sub_sv',
-    'kadacalendar_front_mosaic' => 0,
-    'kadacalendar_front_carousel' => 0,
-    'kadacalendar_event_front_carousel_sub_fi' => 0,
-    'kadacalendar_event_front_carousel_sub_en' => 0,
-    'kadacalendar_event_front_carousel_sub_ru' => 0,
-    'kadacalendar_hobby_front_carousel_sub_fi' => 0,
-    'kadacalendar_hobby_front_carousel_sub_sv' => 0,
-    'kadacalendar_hobby_front_carousel_sub_en' => 0,
-    'kadacalendar_hobby_front_carousel_sub_ru' => 0,
-    'kadacalendar_event_front_mosaic_sub_fi' => 0,
-    'kadacalendar_event_front_mosaic_sub_sv' => 0,
-    'kadacalendar_event_front_mosaic_sub_en' => 0,
-    'kadacalendar_event_front_mosaic_sub_ru' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_fi' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_sv' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_en' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_ru' => 0,
-  );
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Event image */
   $handler->display->display_options['fields']['field_content_image_et']['id'] = 'field_content_image_et';
@@ -2267,7 +2243,7 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_event_types']['group_column'] = 'entity_id';
   $handler->display->display_options['fields']['field_event_types']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Entityqueue: Node Queue Position */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['sorts']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['sorts']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
@@ -2340,33 +2316,12 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entityqueue: Node Queue */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
   $handler->display->display_options['relationships']['entityqueue_relationship']['label'] = 'Event carousel liftups';
   $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
-  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
-  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
-    'kadacalendar_event_front_carousel_sub_en' => 'kadacalendar_event_front_carousel_sub_en',
-    'kadacalendar_front_mosaic' => 0,
-    'kadacalendar_front_carousel' => 0,
-    'kadacalendar_event_front_carousel_sub_fi' => 0,
-    'kadacalendar_event_front_carousel_sub_sv' => 0,
-    'kadacalendar_event_front_carousel_sub_ru' => 0,
-    'kadacalendar_hobby_front_carousel_sub_fi' => 0,
-    'kadacalendar_hobby_front_carousel_sub_sv' => 0,
-    'kadacalendar_hobby_front_carousel_sub_en' => 0,
-    'kadacalendar_hobby_front_carousel_sub_ru' => 0,
-    'kadacalendar_event_front_mosaic_sub_fi' => 0,
-    'kadacalendar_event_front_mosaic_sub_sv' => 0,
-    'kadacalendar_event_front_mosaic_sub_en' => 0,
-    'kadacalendar_event_front_mosaic_sub_ru' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_fi' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_sv' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_en' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_ru' => 0,
-  );
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Event image */
   $handler->display->display_options['fields']['field_content_image_et']['id'] = 'field_content_image_et';
@@ -2436,7 +2391,7 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_event_types']['group_column'] = 'entity_id';
   $handler->display->display_options['fields']['field_event_types']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Entityqueue: Node Queue Position */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['sorts']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['sorts']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
@@ -2509,33 +2464,12 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entityqueue: Node Queue */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
   $handler->display->display_options['relationships']['entityqueue_relationship']['label'] = 'Event carousel liftups';
   $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
-  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
-  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
-    'kadacalendar_event_front_carousel_sub_en' => 'kadacalendar_event_front_carousel_sub_en',
-    'kadacalendar_front_mosaic' => 0,
-    'kadacalendar_front_carousel' => 0,
-    'kadacalendar_event_front_carousel_sub_fi' => 0,
-    'kadacalendar_event_front_carousel_sub_sv' => 0,
-    'kadacalendar_event_front_carousel_sub_ru' => 0,
-    'kadacalendar_hobby_front_carousel_sub_fi' => 0,
-    'kadacalendar_hobby_front_carousel_sub_sv' => 0,
-    'kadacalendar_hobby_front_carousel_sub_en' => 0,
-    'kadacalendar_hobby_front_carousel_sub_ru' => 0,
-    'kadacalendar_event_front_mosaic_sub_fi' => 0,
-    'kadacalendar_event_front_mosaic_sub_sv' => 0,
-    'kadacalendar_event_front_mosaic_sub_en' => 0,
-    'kadacalendar_event_front_mosaic_sub_ru' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_fi' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_sv' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_en' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_ru' => 0,
-  );
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Event image */
   $handler->display->display_options['fields']['field_content_image_et']['id'] = 'field_content_image_et';
@@ -2605,7 +2539,7 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_event_types']['group_column'] = 'entity_id';
   $handler->display->display_options['fields']['field_event_types']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Entityqueue: Node Queue Position */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['sorts']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['sorts']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
@@ -2758,33 +2692,12 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entityqueue: Node Queue */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
   $handler->display->display_options['relationships']['entityqueue_relationship']['label'] = 'Event carousel liftups';
   $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
-  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
-  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
-    'kadacalendar_hobby_front_carousel_sub_fi' => 'kadacalendar_hobby_front_carousel_sub_fi',
-    'kadacalendar_front_mosaic' => 0,
-    'kadacalendar_front_carousel' => 0,
-    'kadacalendar_event_front_carousel_sub_fi' => 0,
-    'kadacalendar_event_front_carousel_sub_sv' => 0,
-    'kadacalendar_event_front_carousel_sub_en' => 0,
-    'kadacalendar_event_front_carousel_sub_ru' => 0,
-    'kadacalendar_hobby_front_carousel_sub_sv' => 0,
-    'kadacalendar_hobby_front_carousel_sub_en' => 0,
-    'kadacalendar_hobby_front_carousel_sub_ru' => 0,
-    'kadacalendar_event_front_mosaic_sub_fi' => 0,
-    'kadacalendar_event_front_mosaic_sub_sv' => 0,
-    'kadacalendar_event_front_mosaic_sub_en' => 0,
-    'kadacalendar_event_front_mosaic_sub_ru' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_fi' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_sv' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_en' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_ru' => 0,
-  );
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Event image */
   $handler->display->display_options['fields']['field_content_image_et']['id'] = 'field_content_image_et';
@@ -2854,7 +2767,7 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_event_types']['group_column'] = 'entity_id';
   $handler->display->display_options['fields']['field_event_types']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Entityqueue: Node Queue Position */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['sorts']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['sorts']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
@@ -2927,33 +2840,12 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entityqueue: Node Queue */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
   $handler->display->display_options['relationships']['entityqueue_relationship']['label'] = 'Event carousel liftups';
   $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
-  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
-  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
-    'kadacalendar_hobby_front_carousel_sub_en' => 'kadacalendar_hobby_front_carousel_sub_en',
-    'kadacalendar_front_mosaic' => 0,
-    'kadacalendar_front_carousel' => 0,
-    'kadacalendar_event_front_carousel_sub_fi' => 0,
-    'kadacalendar_event_front_carousel_sub_sv' => 0,
-    'kadacalendar_event_front_carousel_sub_en' => 0,
-    'kadacalendar_event_front_carousel_sub_ru' => 0,
-    'kadacalendar_hobby_front_carousel_sub_fi' => 0,
-    'kadacalendar_hobby_front_carousel_sub_sv' => 0,
-    'kadacalendar_hobby_front_carousel_sub_ru' => 0,
-    'kadacalendar_event_front_mosaic_sub_fi' => 0,
-    'kadacalendar_event_front_mosaic_sub_sv' => 0,
-    'kadacalendar_event_front_mosaic_sub_en' => 0,
-    'kadacalendar_event_front_mosaic_sub_ru' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_fi' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_sv' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_en' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_ru' => 0,
-  );
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Event image */
   $handler->display->display_options['fields']['field_content_image_et']['id'] = 'field_content_image_et';
@@ -3023,7 +2915,7 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_event_types']['group_column'] = 'entity_id';
   $handler->display->display_options['fields']['field_event_types']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Entityqueue: Node Queue Position */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['sorts']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['sorts']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
@@ -3096,33 +2988,12 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entityqueue: Node Queue */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
   $handler->display->display_options['relationships']['entityqueue_relationship']['label'] = 'Event carousel liftups';
   $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
-  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
-  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
-    'kadacalendar_hobby_front_carousel_sub_sv' => 'kadacalendar_hobby_front_carousel_sub_sv',
-    'kadacalendar_front_mosaic' => 0,
-    'kadacalendar_front_carousel' => 0,
-    'kadacalendar_event_front_carousel_sub_fi' => 0,
-    'kadacalendar_event_front_carousel_sub_sv' => 0,
-    'kadacalendar_event_front_carousel_sub_en' => 0,
-    'kadacalendar_event_front_carousel_sub_ru' => 0,
-    'kadacalendar_hobby_front_carousel_sub_fi' => 0,
-    'kadacalendar_hobby_front_carousel_sub_en' => 0,
-    'kadacalendar_hobby_front_carousel_sub_ru' => 0,
-    'kadacalendar_event_front_mosaic_sub_fi' => 0,
-    'kadacalendar_event_front_mosaic_sub_sv' => 0,
-    'kadacalendar_event_front_mosaic_sub_en' => 0,
-    'kadacalendar_event_front_mosaic_sub_ru' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_fi' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_sv' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_en' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_ru' => 0,
-  );
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Event image */
   $handler->display->display_options['fields']['field_content_image_et']['id'] = 'field_content_image_et';
@@ -3192,7 +3063,7 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_event_types']['group_column'] = 'entity_id';
   $handler->display->display_options['fields']['field_event_types']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Entityqueue: Node Queue Position */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['sorts']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['sorts']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
@@ -3265,33 +3136,12 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Entityqueue: Node Queue */
+  /* Relationship: Broken/missing handler */
   $handler->display->display_options['relationships']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['relationships']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['relationships']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
   $handler->display->display_options['relationships']['entityqueue_relationship']['label'] = 'Event carousel liftups';
   $handler->display->display_options['relationships']['entityqueue_relationship']['required'] = TRUE;
-  $handler->display->display_options['relationships']['entityqueue_relationship']['limit'] = 1;
-  $handler->display->display_options['relationships']['entityqueue_relationship']['queues'] = array(
-    'kadacalendar_hobby_front_carousel_sub_ru' => 'kadacalendar_hobby_front_carousel_sub_ru',
-    'kadacalendar_front_mosaic' => 0,
-    'kadacalendar_front_carousel' => 0,
-    'kadacalendar_event_front_carousel_sub_fi' => 0,
-    'kadacalendar_event_front_carousel_sub_sv' => 0,
-    'kadacalendar_event_front_carousel_sub_en' => 0,
-    'kadacalendar_event_front_carousel_sub_ru' => 0,
-    'kadacalendar_hobby_front_carousel_sub_fi' => 0,
-    'kadacalendar_hobby_front_carousel_sub_sv' => 0,
-    'kadacalendar_hobby_front_carousel_sub_en' => 0,
-    'kadacalendar_event_front_mosaic_sub_fi' => 0,
-    'kadacalendar_event_front_mosaic_sub_sv' => 0,
-    'kadacalendar_event_front_mosaic_sub_en' => 0,
-    'kadacalendar_event_front_mosaic_sub_ru' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_fi' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_sv' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_en' => 0,
-    'kadacalendar_hobby_front_mosaic_sub_ru' => 0,
-  );
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Event image */
   $handler->display->display_options['fields']['field_content_image_et']['id'] = 'field_content_image_et';
@@ -3361,7 +3211,7 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_event_types']['group_column'] = 'entity_id';
   $handler->display->display_options['fields']['field_event_types']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Entityqueue: Node Queue Position */
+  /* Sort criterion: Broken/missing handler */
   $handler->display->display_options['sorts']['entityqueue_relationship']['id'] = 'entityqueue_relationship';
   $handler->display->display_options['sorts']['entityqueue_relationship']['table'] = 'node';
   $handler->display->display_options['sorts']['entityqueue_relationship']['field'] = 'entityqueue_relationship';
@@ -3432,14 +3282,18 @@ function kada_liftups_feature_views_default_views() {
     t('All'),
     t('FlexSlider'),
     t('Slideshow of liftups per theme'),
-    t('<h3 class="flex-caption__title">[field_link_to_content]</h3>'),
+    t('<h2 class="flex-caption__title">[field_link_to_content]</h2>'),
+    t('<div class="flex-caption__read-more"><a class="button button--primary" href="[field_link_to_content_1-url]" title="[field_link_to_content_1-title] ">Read more</a></div>'),
+    t('[field_link_to_content_1-title] '),
     t('[field_link_to_content]
-<div class="flex-caption__body">[body]</div>'),
+<div class="flex-caption__body">[body]</div>
+[field_link_to_content_1]'),
     t('[field_link_to_content]'),
     t('FlexSlider | Section'),
     t('Slideshow of liftups per section'),
     t('Top Image'),
     t('OG membership from node'),
+    t('<h3 class="flex-caption__title">[field_link_to_content]</h3>'),
     t('<div class="flex-caption__image">[field_secondary_image]</div>'),
     t('[field_secondary_image]
 <div class="flex-caption__content">
@@ -3455,6 +3309,8 @@ function kada_liftups_feature_views_default_views() {
     t('FlexSlider | Section | KADAcalendar - Hobbies front'),
     t('Slideshow of liftups for KADAcalendar Hobbies frontpage.'),
     t('Hobbies frontpage atom'),
+    t('[field_link_to_content]
+<div class="flex-caption__body">[body]</div>'),
     t('FlexSlider | KADAcalendar Hobby'),
     t('FlexSlider | KADAcalendar Hobby EN'),
     t('FlexSlider | KADAcalendar Hobby SV'),

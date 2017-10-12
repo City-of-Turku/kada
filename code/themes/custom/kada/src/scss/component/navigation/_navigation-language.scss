@@ -1,0 +1,79 @@
+.language-select {
+  position: relative;
+  border: 0;
+  display: none;
+  padding: .75rem 0;
+  background-color: transparent;
+  color: $link-color;
+  font-size: .9375rem;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $desktop-narrow) {
+    display: block;
+  }
+
+  &::after {
+    @include fa('\f107', 1.5rem, .75);
+    position: relative;
+    top: .075rem;
+    margin-left: .5rem;
+    font-weight: normal;
+  }
+
+  &:hover,
+  &:focus,
+  &:hover::after,
+  &:focus::after {
+    color: $primary-color;
+  }
+}
+
+.language-select--is-open {
+  &::after {
+    top: .125rem;
+    transform: rotate(180deg);
+  }
+}
+
+.menu--language-switcher {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 5;
+  background: $default-color-lightest;
+
+  @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 9px 8px 0 rgba($black, .75);
+  }
+
+  .menu__item {
+    margin-top: 0;
+  }
+
+  .menu__link {
+    display: block;
+    padding: .75rem;
+
+    &:hover,
+    &:focus {
+      background: $white;
+    }
+
+    &.active {
+      background: $primary-color;
+      color: $white;
+    }
+  }
+}
+
+.menu--language-switcher--is-hidden,
+.responsive-toggled .menu--language-switcher--is-hidden {
+  @media screen and (min-width: $desktop-narrow) {
+    display: none;
+  }
+}
+
+

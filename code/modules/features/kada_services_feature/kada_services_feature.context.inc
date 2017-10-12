@@ -68,9 +68,9 @@ function kada_services_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-62726f00262b5eba1b09fdf630f556dc' => array(
+        'views-7ebd51bc4805105c3d9558e7b25bb7dd' => array(
           'module' => 'views',
-          'delta' => '62726f00262b5eba1b09fdf630f556dc',
+          'delta' => '7ebd51bc4805105c3d9558e7b25bb7dd',
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),
@@ -100,9 +100,9 @@ function kada_services_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-5465ffb853360ad59bff291260bd4532' => array(
+        'views-1c1fa7debf647843938ea9b00bbdaa59' => array(
           'module' => 'views',
-          'delta' => '5465ffb853360ad59bff291260bd4532',
+          'delta' => '1c1fa7debf647843938ea9b00bbdaa59',
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),

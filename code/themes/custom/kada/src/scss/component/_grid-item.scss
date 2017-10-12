@@ -1,0 +1,41 @@
+.grid-item {
+  position: relative;
+}
+
+.grid-item__image {
+  height: auto;
+  line-height: 0;
+  margin: 0;
+  width: 100%;
+  z-index: 0;
+
+  img {
+    width: 100%;
+  }
+}
+
+.grid-item__content {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.grid-item__content--top {
+  display: table-cell;
+  left: 0;
+  position: absolute;
+  top: 0;
+  vertical-align: top;
+  width: 100%;
+}
+
+.grid-item__content--bottom {
+  bottom: 0;
+  display: table-cell;
+  left: 0;
+  position: absolute;
+  vertical-align: bottom;
+  width: 100%;
+}

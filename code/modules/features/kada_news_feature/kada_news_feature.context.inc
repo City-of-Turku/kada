@@ -26,9 +26,9 @@ function kada_news_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-4a4b63fe461a5be841eb9efb087e7362' => array(
+        'views-kada_news-emergency_message' => array(
           'module' => 'views',
-          'delta' => '4a4b63fe461a5be841eb9efb087e7362',
+          'delta' => 'kada_news-emergency_message',
           'region' => 'emergency_messages',
           'weight' => '-10',
         ),
@@ -67,15 +67,15 @@ function kada_news_feature_context_default_contexts() {
           'region' => 'header',
           'weight' => '-9',
         ),
-        'views-b49e46913a83593047ac68546f073a62' => array(
+        'views-8800832114b919bcfa2b166f3ecc0aeb' => array(
           'module' => 'views',
-          'delta' => 'b49e46913a83593047ac68546f073a62',
+          'delta' => '8800832114b919bcfa2b166f3ecc0aeb',
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
-        'views-022fce84329c415f416a08a7d3abf9d2' => array(
+        'views-kada_related_content-liftups' => array(
           'module' => 'views',
-          'delta' => '022fce84329c415f416a08a7d3abf9d2',
+          'delta' => 'kada_related_content-liftups',
           'region' => 'sidebar_second',
           'weight' => '-9',
         ),
@@ -220,7 +220,7 @@ function kada_news_feature_context_default_contexts() {
   $export['news_list'] = $context;
 
   $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'news_rss_feed';
   $context->description = 'Links news RSS feed to theme page';
