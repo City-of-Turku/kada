@@ -10,3 +10,33 @@
 .site-branding__name {
   margin-bottom: 0;
 }
+
+// Hide the logo image since we use backgrounds but leave it for the screen readers to find.
+.site-branding--header__visual {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.site-branding__link {
+  display: block;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+.site-branding--header__link {
+  background: url('../../logo_minimal.svg') no-repeat 0 0 transparent;
+  height: 40px;
+  width: 43px;
+
+  @media screen and (min-width: $tablet-portrait-narrow) {
+    background-image: url('../../logo_full.svg');
+    height: 40px;
+    width: 158px;
+  }
+}
+
+.site-branding--footer__link {
+  background: url('../../logo_minimal.svg') no-repeat 0 0 transparent;
+  height: 80px;
+  width: 86px;
+}
