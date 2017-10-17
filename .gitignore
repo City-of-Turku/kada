@@ -21,8 +21,5 @@ drupal/_build
 # Ignore ansible retry files
 conf/*.retry
 
-# Ignore secrets folder
-secrets
-
 # Ignore python virtualenv created by provision.sh
 .virtualenv
