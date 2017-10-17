@@ -77,9 +77,11 @@ develop:
     - conf/_ping.php: _ping.php
 
   local_commands:
-    update:
-      - make
+    build:
       - shell: chmod -R a+w web
+      - make
+
+    update:
       - finalize
       - update
       - cleanup
@@ -109,9 +111,11 @@ stage:
     - conf/_ping.php: _ping.php
 
   local_commands:
-    update:
-      - make
+    build:
       - shell: chmod -R a+w web
+      - make
+
+    update:
       - finalize
       - update
       - cleanup
