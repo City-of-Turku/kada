@@ -1,0 +1,130 @@
+---
+
+# Setup firewalls using upcloud api
+- include: upcloud.yml
+
+# Example of standard single server setup without production services (monitoring, logging etc.)
+- hosts: wundertools-stage
+  become: false
+  become_method: sudo
+  user: root
+  roles:
+   - { role: base, tags: [ 'base' ] }
+   - { role: varnish, tags: [ 'varnish' ] }
+   - { role: dbserver, tags: [ 'dbserver' ] }
+   - { role: drupal-db, tags: [ 'drupal-db' ] }
+   - { role: certbot, tags: [ 'certbot' ] }
+   - { role: sslterminator, tags: [ 'sslterminator' ] }
+   - { role: nginx, tags: [ 'nginx' ] }
+   - { role: php-fpm, tags: [ 'php-fpm' ] }
+   - { role: drush, tags: [ 'drush' ] }
+   - { role: drupal-log, tags: [ 'drupal-log' ] }
+
+  vars_files:
+  - stage-vars.yml
+
+  tasks:
+    # Disable email from cron
+    - name: "Disable emails from failed cronjobs for nginx user"
+      cron:
+        name: "MAILTO"
+        env: yes
+        value: ""
+        state: "present"
+        user: nginx
+      tags: ['cron']
+    # Run Drupal cron job
+    - name: "Add drupal cronjob to nginx user"
+      cron:
+        name: "Run Drupal cronjobs with drush"
+        minute: "*/2"
+        job: "/usr/lib/composer/vendor/bin/drush --root={{ drupal_web_root }} cron"
+        state: "present"
+        user: nginx
+      tags: ['cron']
+      when: drupal_web_root is defined
+
+  vars:
+    wkv_site_env: stage
+
+    # You can set custom variables if the same value is used in multiple places so it can be easily changed here
+    # You can use it anywhere after this using " {{ variable_name }}"
+    domain_name: stage.example.com
+
+    # This is used in cronjob and varnish and nginx configs
+    drupal_web_root: "/var/www/{{ domain_name }}/current/web"
+
+    partition_var_log: False
+    partition_var_lib_mysql: False
+
+    # How to assign memory for each role and set the correct
+    # memory_app and memory_db define how much total system memory is allocated to each.
+    # On dedicated DB server memory_db should max be around 80% of total memory and would ideally fit the whole db + some more.
+    memory_db: 1024 # In MB
+    memory_app: 1024 # In MB
+
+    # NOTE: memory_app needs to be at least 2x php_memory_limit
+    # NOTE: ALWAYS leave some spare memory for the server
+    # php memory limits etc are in variables.yml
+
+    # Let's encrypt. Always use SSL if possible!
+    certbot_email: support@wundertools.com
+    certbot_domains:
+      - "{{ domain_name }}"
+    certbot_renewal_docroot: /var/www/letsencrypt-auto
+
+    # On dev and stage it's good idea to protect the site with htauth
+    basicauth_enabled: True
+    basicauth_username: wunder
+    basicauth_password: tools
+    # Basic auth can also be disabled for certain ip's
+    basicauth_ip:
+      - address: 84.20.132.177
+      - address: 87.94.15.10
+      - address: 94.237.27.124
+      - address: 94.237.33.88
+      - address: 83.136.248.231
+
+    # Apps I want to run on this server
+    apps:
+      - server_name: "{{ domain_name }}"
+        http_port: 8080
+        docroot: "{{ drupal_web_root }}"
+
+    create_docroot: True
+
+    # This server also acts as a load balancer
+    varnish:
+      port: 8081
+      memory: 512M
+      directors:
+        - name: example
+          host: "{{ domain_name }}"
+          backends:
+            - name: example_http
+              address: 127.0.0.1
+              port: 8080
+
+    # Use https for this host
+    sslterminators:
+      - server_name: "{{ domain_name }}"
+        ssl_certificate: "/etc/letsencrypt/live/{{ domain_name }}/fullchain.pem"
+        ssl_certificate_key: "/etc/letsencrypt/live/{{ domain_name }}/privkey.pem"
+        backends:
+          - 127.0.0.1:8081 # Pass it to local varnish
+
+    # Make sure all traffic is redirected to https
+    httpforwards:
+      - server_name: "{{ domain_name }}"
+        forwarded_domains: "{{ domain_name }}"
+        http_port: 80
+
+    databases:
+      - name: drupal
+        host: localhost
+        user: drupal
+        pass: "{{ drupal_db_password }}"
+        hosts:
+          - "127.0.0.1"
+          - "::1"
+          - "localhost"

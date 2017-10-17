@@ -1,0 +1,21 @@
+project:
+  name: wundertools
+  file_sync_url: https://www.example1.com
+ansible:
+  remote: git@github.com:wunderio/WunderMachina.git
+  branch: master
+  revision:
+buildsh:
+  enabled: true
+  branch: master
+  revision:
+wundertools:
+  branch: master
+externaldrupal:
+  remote:
+  branch:
+drush:
+  alias_path: drupal/drush
+wundersecrets:
+  remote: git@github.com:wunderio/WunderSecrets.git
+

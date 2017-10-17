@@ -1,0 +1,21 @@
+[wundertools-dev]
+10.10.10.1
+
+[wundertools-stage]
+10.10.10.2
+
+[wundertools-prod-db]
+10.10.10.3
+
+[wundertools-prod-lb]
+10.10.10.4
+
+[wundertools-prod-front]
+10.10.10.5
+10.10.10.6
+
+# Add all groups here which need http/https ports to be open in UpCloud firewall
+[firewall_web:children]
+wundertools-dev
+wundertools-stage
+wundertools-prod-lb
