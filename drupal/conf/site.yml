@@ -90,7 +90,7 @@ develop:
       - drush: composer-json-rebuild -y
       - drush: composer-manager update -y
       - shell: chmod -R a-w web
-      - shell: systemctl restart nginx php-fpm varnish memcached
+      - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 # Test environment:
 stage:
@@ -124,6 +124,6 @@ stage:
       - drush: composer-json-rebuild -y
       - drush: composer-manager update -y
       - shell: chmod -R a-w web
-      - shell: systemctl restart nginx php-fpm varnish memcached
+      - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 
