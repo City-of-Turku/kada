@@ -53,7 +53,7 @@
     domain_name: pori.stage.wunder.io
 
     # This is used in cronjob and varnish and nginx configs
-    drupal_web_root: "/var/www/{{ domain_name }}/current"
+    drupal_web_root: "/var/www/{{ domain_name }}/current/web"
 
     partition_var_log: False
     partition_var_lib_mysql: False
@@ -129,3 +129,6 @@
           - "127.0.0.1"
           - "::1"
           - "localhost"
+
+    yum_extra_packages:
+      - php71u-pecl-memcached

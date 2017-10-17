@@ -1,7 +1,7 @@
 # Generic ones
 .DS_Store
 .vagrant
-drupal/current
+drupal/web
 drupal/builds
 drupal/.make_cache
 drupal/drupal.sqlite

@@ -7,10 +7,10 @@ $databases = array (
     array (
       'default' =>
         array (
-          'database' => 'porikada',
-          'username' => 'porikada',
-          'password' => 'kada?KODIAQ',
-          'host'     => 'localhost',
+          'database' => getenv('DB_NAME_DRUPAL'),
+          'username' => getenv('DB_USER_DRUPAL'),
+          'password' => getenv('DB_PASS_DRUPAL'),
+          'host'     => getenv('DB_HOST_DRUPAL'),
           'port'     => '',
           'driver'   => 'mysql',
           'prefix'   => '',
@@ -19,20 +19,20 @@ $databases = array (
 );
 
 // CACHING
-#$conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
-#$conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
-#$conf['cache_default_class'] = 'MemCacheDrupal';
-#$conf['memcache_key_prefix'] = 'wk';
+$conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
+$conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+$conf['cache_default_class'] = 'MemCacheDrupal';
+$conf['memcache_key_prefix'] = 'wk';
 // Needed for Predis-1.0 which changed the library paths from 0.8.7
-define('PREDIS_BASE_PATH', DRUPAL_ROOT . '/sites/all/libraries/predis/src/');
+#define('PREDIS_BASE_PATH', DRUPAL_ROOT . '/sites/all/libraries/predis/src/');
 
-$conf['redis_client_interface'] = 'Predis'; // Can be "Predis".
-$conf['redis_client_host']      = 'localhost';  // Your Redis instance hostname.
-$conf['redis_client_password']  = '';
-$conf['lock_inc']               = 'sites/all/modules/contrib/redis/redis.lock.inc';
-$conf['path_inc']               = 'sites/all/modules/contrib/redis/redis.path.inc';
-$conf['cache_backends'][]       = 'sites/all/modules/contrib/redis/redis.autoload.inc';
-$conf['cache_default_class']    = 'Redis_Cache';
+#$conf['redis_client_interface'] = 'Predis'; // Can be "Predis".
+#$conf['redis_client_host']      = 'localhost';  // Your Redis instance hostname.
+#$conf['redis_client_password']  = '';
+#$conf['lock_inc']               = 'sites/all/modules/contrib/redis/redis.lock.inc';
+#$conf['path_inc']               = 'sites/all/modules/contrib/redis/redis.path.inc';
+#$conf['cache_backends'][]       = 'sites/all/modules/contrib/redis/redis.autoload.inc';
+#$conf['cache_default_class']    = 'Redis_Cache';
 //$conf['cache_default_class']    = 'DrupalDatabaseCache';
 // Do not use Redis for cache_form (no performance difference).
 $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
@@ -55,26 +55,29 @@ $conf['varnish_control_key'] = "";
 // Flush caches on cron run
 $conf['varnish_flush_cron'] = "0";
 // Varnish version
-$conf['varnish_version'] = "3";
+$conf['varnish_version'] = "4";
 
 
-// Override search API server settings fetched from default configuration.
-$conf['search_api_override_mode'] = 'load';
-$conf['search_api_override_servers'] = array(
-  'kada' => array(
-    'name' => 'KADA',
-    'options' => array(
-      'host' => 'localhost',
-      'port' => '8983',
-      'path' => '/solr/kada',
-      'http_user' => '',
-      'http_pass' => '',
-      'excerpt' => 1,
-      'retrieve_data' => 1,
-      'http_method' => 'AUTO',
+$env = getenv('WKV_SITE_ENV');
+if ($env != 'production') {
+  // Override search API server settings fetched from default configuration.
+  $conf['search_api_override_mode'] = 'load';
+  $conf['search_api_override_servers'] = array(
+    'kada' => array(
+      'name' => 'KADA',
+      'options' => array(
+        'host' => 'localhost',
+        'port' => '8983',
+        'path' => '/solr/kada',
+        'http_user' => '',
+        'http_pass' => '',
+        'excerpt' => 1,
+        'retrieve_data' => 1,
+        'http_method' => 'AUTO',
+      ),
     ),
-  ),
-);
+  );
+}
 
 /**
  * Add the domain module setup routine.
