@@ -14,6 +14,8 @@ php_fpm_pm_start_servers: "{{ php_fpm_pm_max_children|int // 2 }}"
 php_fpm_pm_min_spare_servers: "{{ php_fpm_pm_max_children|int // 2 }}"
 php_fpm_pm_max_spare_servers: "{{ php_fpm_pm_max_children|int // 2 }}"
 
+# SSH Public key service
+base_pubkeys_host: key.wunder.io
 base_pubkeys_url: https://{{ base_pubkeys_host }}/auth?hostname={{ ansible_nodename }}
 base_addhost_url: https://{{ base_pubkeys_host }}/auth/add_server?hostname={{ ansible_nodename }}
 

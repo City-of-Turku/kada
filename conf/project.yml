@@ -17,5 +17,5 @@ externaldrupal:
 drush:
   alias_path: drupal/drush
 wundersecrets:
-  remote: git@github.com:wunderio/WunderSecrets.git
+  remote: 
 
