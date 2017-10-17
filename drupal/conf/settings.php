@@ -59,6 +59,27 @@ $conf['varnish_version'] = "4";
 
 
 $env = getenv('WKV_SITE_ENV');
+switch ($env) {
+    case 'production':
+      $conf['simple_environment_indicator'] = '#d4000f Production';
+    break;
+
+    case 'stage':
+      $conf['simple_environment_indicator'] = '#e56716 Stage';
+      break;
+
+    case 'dev':
+      $conf['simple_environment_indicator'] = '#004984 Development';
+    break;
+
+    case 'local':
+      $conf['simple_environment_indicator'] = '#88b700 Local';
+      $conf['preprocess_css'] = false;
+      $conf['preprocess_js'] = false;
+    break;
+}
+
+
 if ($env != 'production') {
   // Override search API server settings fetched from default configuration.
   $conf['search_api_override_mode'] = 'load';
