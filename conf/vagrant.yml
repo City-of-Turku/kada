@@ -45,7 +45,7 @@
     - cron: name="check dirs" minute="0" hour="5,2" job="ls -alh > /dev/null"
 
   vars:
-    domain_name: local.wundertools.com
+    domain_name: local.pori.fi
 
     wkv_site_env: local
     base_pubkeys_enable: False
@@ -107,12 +107,26 @@
         ssl_certificate_key: ssl/certificate.key
         backends:
           - 127.0.0.1:8081
+      extra_proxy_locations:
+        - location: "/mailhog"
+          definition: |
+            rewrite /mailhog/(.*) /$1 break;
+            proxy_pass http://0.0.0.0:8025;
+            chunked_transfer_encoding on;
+            proxy_hide_header X-Frame-Options;
+            add_header Content-Security-Policy "default-src https: data: 'unsafe-inline' 'unsafe-eval'; connect-src ws: https:;" always;
+            proxy_set_header X-NginX-Proxy true;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            proxy_http_version 1.1;
+            proxy_redirect off;
+            proxy_buffering off;
+
+
 
     httpforwards:
       - server_name: "{{ domain_name }}"
         forwarded_domains: '"{{ domain_name }}"'
-
-    php_env_vars_include_db: True
 
     # Set a low heap allocation for Elasticsearch on vagrant.
     elasticsearch_heap_size: 200m
