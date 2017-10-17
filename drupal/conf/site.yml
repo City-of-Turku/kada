@@ -80,9 +80,9 @@ develop:
     build:
       - shell: chmod -R a+w web
       - make
+      - finalize
 
     update:
-      - finalize
       - update
       - cleanup
       - drush: en devel -y
@@ -114,9 +114,9 @@ stage:
     build:
       - shell: chmod -R a+w web
       - make
+      - finalize
 
     update:
-      - finalize
       - update
       - cleanup
       - drush: en devel -y
