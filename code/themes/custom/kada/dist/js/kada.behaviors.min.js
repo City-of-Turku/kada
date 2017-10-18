@@ -137,7 +137,7 @@
       // Undo everything mobileMenuBehavior does, in reverse order
       // close open submenus
       $(this).find('li.is-expanded:not(.is-active-trail)').toggleClass('is-expanded is-collapsed').find('ul.menu.is-visible').toggleClass('is-visible is-hidden');
-      $(this).find('li.menu__item--first-level.is-collapsed').toggleClass('is-expanded is-collapsed');
+      $(this).find('li.menu__item--has-first-level.is-collapsed').toggleClass('is-expanded is-collapsed');
       $(this).find('span.menu__item--expanded-toggle').off('click.submenu-toggle');
       $(this).find('.toggler').off('click.responsive-menu-toggle');
 
@@ -180,118 +180,119 @@
     }
   };
 
-  // Drupal.behaviors.kadaEqualHeightsBehavior = {
-  //   attach: function (context) {
-  //     $(window).load(function () {
-  //       var resizeOk = true;
+  Drupal.behaviors.kadaEqualHeightsBehavior = {
+    attach: function (context) {
+      $(window).load(function () {
+        var resizeOk = true;
 
-  //       setInterval(function () {
-  //         resizeOk = true;
-  //       }, 33);
+        setInterval(function () {
+          resizeOk = true;
+        }, 33);
+        function adjustHeight() {
+          if (resizeOk === false) {
+            return;
+          }
+          // Switch between mobile and desktop menu behavior on resize
+          switchMainMenuBehavior(context);
 
-  //       function adjustHeight() {
-  //         if (resizeOk === false) {
-  //           return;
-  //         }
+          // Trigger only when using desktop menu
+          if ($(window).width() >= '946') {
+            $('.l-footer .menu-block-wrapper > .menu').each(function () {
+              var highestElement = 0;
+              $('.menu__item--has-first-level', this).each(function () {
+                if ($(this).height() > highestElement) {
+                  highestElement = $(this).height();
+                }
+              });
+              $('.menu__item--has-first-level', this).height(highestElement);
 
-  //         // Switch between mobile and desktop menu behavior on resize
-  //         switchMainMenuBehavior(context);
+            });
 
-  //         // Trigger only when using desktop menu
-  //         if ($(window).width() >= '946') {
-  //           $('.l-footer .menu-block-wrapper > .menu').each(function () {
-  //             var highestElement = 0;
-  //             $('.menu__item--first-level', this).each(function () {
-  //               if ($(this).height() > highestElement) {
-  //                 highestElement = $(this).height();
-  //               }
-  //             });
-  //             $('.menu__item--first-level', this).height(highestElement);
-  //           });
-  //         }
+          }
 
-  //         // Calculate all menus under active level to have the same height
-  //         $('.l-region--navigation .menu__item--first-level.is-active-trail').hover(function () {
-  //           var secondLevelChild = $(this).find('> .menu');
-  //           var thirdLevelChild = secondLevelChild.find('li.is-active-trail > .menu');
+          // Calculate all menus under active level to have the same height
+          $('.l-region--navigation .menu__item--has-first-level.is-active-trail').hover(function () {
 
-  //           var highestMenu = 0;
+            var secondLevelChild = $(this).find('> .menu');
+            var thirdLevelChild = secondLevelChild.find('li.is-active-trail > .menu');
 
-  //           var secondLevelHeight = secondLevelChild.outerHeight();
-  //           var thirdLevelHeight = thirdLevelChild.outerHeight();
+            var highestMenu = 0;
 
-  //           if ($(window).width() >= '946') {
-  //             if (secondLevelHeight > thirdLevelHeight) {
-  //               highestMenu = secondLevelHeight;
-  //             }
-  //             else {
-  //               highestMenu = thirdLevelHeight;
-  //             }
+            var secondLevelHeight = secondLevelChild.outerHeight();
+            var thirdLevelHeight = thirdLevelChild.outerHeight();
 
-  //             secondLevelChild.css('height', highestMenu);
-  //             thirdLevelChild.css('height', highestMenu);
-  //           }
-  //         });
+            if ($(window).width() >= '946') {
+              if (secondLevelHeight > thirdLevelHeight) {
+                highestMenu = secondLevelHeight;
+              }
+              else {
+                highestMenu = thirdLevelHeight;
+              }
 
-  //         // Calculate all menus under second level to same height when hovered
-  //         $('.l-region--navigation .menu__item--second-level').hover(function () {
+              secondLevelChild.css('height', highestMenu);
+              thirdLevelChild.css('height', highestMenu);
+            }
 
-  //           var $this = $(this).parent();
-  //           var thirdLevelChild = $(this).find('> .menu');
+          });
 
-  //           var highestMenu = 0;
+          // Calculate all menus under second level to same height when hovered
+          $('.l-region--navigation .menu__item--has-second-level').hover(function () {
+            var $this = $(this).parent();
+            var thirdLevelChild = $(this).find('> .menu');
 
-  //           var secondLevelHeight = $this.outerHeight();
-  //           var thirdLevelHeight = thirdLevelChild.outerHeight();
+            var highestMenu = 0;
 
-  //           if ($(window).width() >= '946') {
-  //             if (thirdLevelHeight > secondLevelHeight) {
-  //               highestMenu = thirdLevelHeight;
-  //             }
-  //             else {
-  //               highestMenu = secondLevelHeight;
-  //             }
+            var secondLevelHeight = $this.outerHeight();
+            var thirdLevelHeight = thirdLevelChild.outerHeight();
 
-  //             thirdLevelChild.css('height', highestMenu);
-  //             $this.css('height', highestMenu);
-  //           }
-  //         });
+            if ($(window).width() >= '946') {
+              if (thirdLevelHeight > secondLevelHeight) {
+                highestMenu = thirdLevelHeight;
+              }
+              else {
+                highestMenu = secondLevelHeight;
+              }
+
+              thirdLevelChild.css('height', highestMenu);
+              $this.css('height', highestMenu);
+            }
+          });
 
 
-  //         if ($(window).width() >= '946') {
-  //           $('.l-region--navigation .menu').css('height', '');
-  //         }
+          if ($(window).width() >= '946') {
+            $('.l-region--navigation .menu').css('height', '');
+          }
 
-  //         // Remove height from menus elements when mouse leaves the hovered menu and them menu is not active
-  //         $('.l-region--navigation .menu__item--first-level:not(.is-active-trail) .menu__item--second-level').hover(function (event) {
-  //           var $this = $(this).parent();
-  //           var thirdLevelChild = $this.find('> .menu');
+          // Remove height from menus elements when mouse leaves the hovered menu and them menu is not active
+          $('.l-region--navigation .menu__item--has-first-level:not(.is-active-trail) .menu__item--has-second-level').hover(function (event) {
+            var $this = $(this).parent();
+            var thirdLevelChild = $this.find('> .menu');
 
-  //           if (event.type === 'mouseleave') {
-  //             $this.css('height', '');
-  //             thirdLevelChild.css('height', '');
-  //           }
-  //         });
+            if (event.type === 'mouseleave') {
+              $this.css('height', '');
+              thirdLevelChild.css('height', '');
+            }
+          });
 
-  //         // Remove height from menus elements when mouse leaves the hovered menu and them menu is not active
-  //         $('.l-region--navigation .menu__item--first-level.is-active .menu__item--second-level').hover(function (event) {
-  //           var $this = $(this).parent();
-  //           var thirdLevelChild = $this.find('> .menu');
+          // Remove height from menus elements when mouse leaves the hovered menu and them menu is not active
+          $('.l-region--navigation .menu__item--has-first-level.is-active .menu__item--has-second-level').hover(function (event) {
+            var $this = $(this).parent();
+            var thirdLevelChild = $this.find('> .menu');
 
-  //           if (event.type === 'mouseleave') {
-  //             $this.css('height', '');
-  //             thirdLevelChild.css('height', '');
-  //           }
-  //         });
+            if (event.type === 'mouseleave') {
+              $this.css('height', '');
+              thirdLevelChild.css('height', '');
+            }
+          });
 
-  //         resizeOk = false;
-  //       }
+          resizeOk = false;
+        }
 
-  //       $(window).resize(adjustHeight);
-  //       adjustHeight();
-  //     });
-  //   }
-  // };
+        $(window).resize(adjustHeight);
+        adjustHeight();
+      });
+    }
+  };
 
   // Help region toggler
   Drupal.behaviors.kadaToolsToggle = {
@@ -311,7 +312,7 @@
         $(this).append($('.l-region--navigation-top ul.menu > li').clone().addClass('menu__item--top-menu'));
 
         // E-service links
-        $(this).find('.menu__item--first-level > ul.menu').each(function () {
+        $(this).find('.menu__item--has-first-level > ul.menu').each(function () {
           var $thisMenu = $(this);
           var $eServiceLink = $thisMenu.find('.menu__item--e-service a');
 
