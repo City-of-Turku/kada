@@ -10,7 +10,7 @@
       margin-top: 0;
 
       a {
-        border-bottom: 1px solid $gray-light;
+        border-top: 1px solid $gray-light;
         color: $primary-color;
         display: block;
         font-size: .9375rem;
@@ -37,8 +37,8 @@
 
       > .menu {
         background-color: $gray-lighter;
-        border-bottom: 4px solid $secondary-color;
-        border-top: 4px solid $secondary-color;
+        //border-bottom: 4px solid $secondary-color;
+        //border-top: 4px solid $secondary-color;
         display: none;
         left: 0;
         position: absolute;
@@ -89,6 +89,12 @@
 
       > a {
         position: relative;
+      }
+
+      &:first-child {
+        > a {
+          border-top: 0 none;
+        }
       }
 
       &:hover {
@@ -179,18 +185,19 @@
       > a {
         background: url('../../dist/image/e-service-icon--white.svg') no-repeat 1.875rem center $secondary-color;
         background-size: 1.875rem auto;
-        border-bottom: 0;
+        border-top: 0;
         color: $white;
         font-weight: bold;
         padding-left: 4.688rem;
       }
 
-      > ul {
+      > .menu {
+        display: block;
         list-style-type: none;
         margin: 0;
         padding: 0 1.875rem;
 
-        li {
+        .menu__item {
           border-bottom: 1px solid $primary-color;
           margin: 0;
 

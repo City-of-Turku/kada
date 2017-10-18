@@ -196,7 +196,7 @@
           switchMainMenuBehavior(context);
 
           // Trigger only when using desktop menu
-          if ($(window).width() >= '946') {
+          if ($(window).width() >= '840') {
             $('.l-footer .menu-block-wrapper > .menu').each(function () {
               var highestElement = 0;
               $('.menu__item--has-first-level', this).each(function () {
@@ -221,7 +221,7 @@
             var secondLevelHeight = secondLevelChild.outerHeight();
             var thirdLevelHeight = thirdLevelChild.outerHeight();
 
-            if ($(window).width() >= '946') {
+            if ($(window).width() >= '840') {
               if (secondLevelHeight > thirdLevelHeight) {
                 highestMenu = secondLevelHeight;
               }
@@ -245,7 +245,7 @@
             var secondLevelHeight = $this.outerHeight();
             var thirdLevelHeight = thirdLevelChild.outerHeight();
 
-            if ($(window).width() >= '946') {
+            if ($(window).width() >= '840') {
               if (thirdLevelHeight > secondLevelHeight) {
                 highestMenu = thirdLevelHeight;
               }
@@ -259,7 +259,7 @@
           });
 
 
-          if ($(window).width() >= '946') {
+          if ($(window).width() >= '840') {
             $('.l-region--navigation .menu').css('height', '');
           }
 
@@ -319,9 +319,9 @@
           $eServiceLink.closest('.menu__item').remove();
           if ($eServiceLink.length) {
             var $title = $('<a href="javascript:;" aria-label="' + (Drupal.t('E-services')) + '">' + Drupal.t('E-services') + ':</a>');
-            var $list = $('<ul></ul>');
+            var $list = $('<ul class="menu"></ul>');
             $eServiceLink.each(function (i, link) {
-              $list.append($('<li></li>').append(link));
+              $list.append($('<li class="menu__item"></li>').append(link));
             });
             var $wrapper = $('<li class="e-service-wrapper"></li>').append([$title, $list]);
             $thisMenu.append($wrapper);

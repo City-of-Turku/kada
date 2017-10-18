@@ -98,6 +98,7 @@ $menu-padding: 1.25rem;
     .menu__item--has-first-level {
       border-bottom: 1px solid $white;
 
+      &.is-expanded,
       &:last-child {
         border-bottom: 0 none;
       }
@@ -159,6 +160,40 @@ $menu-padding: 1.25rem;
 
     .responsified > .menu {
       width: 100%;
+    }
+
+    .e-service-wrapper {
+      background-color: $secondary-color-medium-dark;
+      margin: 0;
+
+      > a {
+        display: none;
+      }
+
+      > .menu {
+        padding: 0 1.875rem;
+
+        .menu__item {
+          background-color: transparent;
+          border-bottom: 1px solid $primary-color;
+          margin: 0;
+
+          a {
+            background: url('../../dist/image/arrow-right-icon.svg') no-repeat right center transparent;
+            background-size: .938rem auto;
+            border-bottom: 0 none;
+            color: $primary-color;
+            display: inline-block;
+            font-weight: bold;
+            padding: 1.25rem 1.875rem 1.25rem 0;
+            text-transform: none;
+          }
+
+          &:last-child {
+            border-bottom: 0 none;
+          }
+        }
+      }
     }
   }
 }
