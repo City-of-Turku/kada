@@ -196,6 +196,10 @@ projects:
     version: '2.10'
   features_extra:
     version: '1.0'
+  features_override:
+    version: '2.0-rc3'
+    patch:
+      - 'https://www.drupal.org/files/issues/features_override-serialization-2629912-2.patch'
   field_collection:
     version: '1.0-beta12'
   field_group:
