@@ -315,9 +315,14 @@
           var $thisMenu = $(this);
           var $eServiceLink = $thisMenu.find('.menu__item--e-service a');
 
-          $eServiceLink.parent().remove();
+          $eServiceLink.closest('.menu__item').remove();
           if ($eServiceLink.length) {
-            var $wrapper = $('<li class="e-service-wrapper"></li>').append($eServiceLink);
+            var $title = $('<a href="javascript:;" aria-label="' + (Drupal.t('E-services')) + '">' + Drupal.t('E-services') + ':</a>');
+            var $list = $('<ul></ul>');
+            $eServiceLink.each(function (i, link) {
+              $list.append($('<li></li>').append(link));
+            });
+            var $wrapper = $('<li class="e-service-wrapper"></li>').append([$title, $list]);
             $thisMenu.append($wrapper);
           }
         });

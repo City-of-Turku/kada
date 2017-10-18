@@ -1,18 +1,18 @@
 .page-header {
   .l-branding {
-    @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
-      width: 33.333333%;
-    }
+    height: 3.125rem;
   }
 
   .l-navigation {
-    @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
-      width: 66.666666%;
-    }
+    width: 100%;
 
-    @media screen and (min-width: $desktop-narrow) {
-      background-color: $default-color-lightest;
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      background-color: $primary-color;
     }
+  }
+
+  .l-navigation__container {
+    padding: 0; // Override default container padding.
   }
 
   .l-banner {
@@ -28,10 +28,14 @@
   padding-top: 1.25rem;
 
   @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
-    position: relative;
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: 1.25rem;
+    justify-content: space-between;
+    padding-bottom: 0;
+    padding-top: 0;
+    position: relative;
+    z-index: 10;
   }
 }
 
@@ -39,46 +43,52 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+  position: relative;
+
+  @media screen and (min-width: $mobile-menu-breakpoint) {
+    justify-content: space-between;
+  }
 
   .block {
-    @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
-      margin-left: .5rem;
-    }
-
-    .toggler,
-    .recommended-button {
-      display: block;
-      height: 40px;
-      width: 40px;
-      background: $primary-color;
-      color: $white;
-
-      &:hover,
-      &:focus {
-        background-color: darken($primary-color, 15%);
-      }
-
-      @media screen and (min-width: $desktop-narrow) {
-        display: none;
-      }
-    }
-
-    .toggler {
-      padding-top: .475rem;
-      text-align: center;
-
-      &:hover,
-      &:focus {
-        cursor: pointer;
-      }
+    @media screen and (max-width: $mobile-menu-breakpoint) {
+      position: absolute;
+      top: -3.125rem; // Height of the mobile header
     }
   }
 
-  @media screen and (min-width: $desktop-narrow) {
-    justify-content: space-between;
+  .block--recommended-button {
+    @media screen and (max-width: $mobile-menu-breakpoint) {
+      right: 3.75rem + 4.375rem; // Menu toggler + language switcher
+    }
+  }
 
-    .block--locale-language {
+  .block--locale-language {
+    // Mobile
+    @media screen and (max-width: $mobile-menu-breakpoint) {
       order: 2;
+      right: 3.75rem;
+    }
+
+    // Desktop
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      position: absolute;
+
+      display: none; // HIDING LANGUAGE SWITCHER IN DESKTOP UNTIL NEXT STORY
+    }
+  }
+
+  .block--menu-block {
+    width: 100%;
+
+    @media screen and (max-width: $mobile-menu-breakpoint) {
+      top: 0;
+      right: 0;
+    }
+
+    .toggler {
+      @media screen and (max-width: $mobile-menu-breakpoint) {
+        width: 3.75rem;
+      }
     }
   }
 }

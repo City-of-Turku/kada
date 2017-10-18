@@ -22,10 +22,16 @@
   }
 
   .fa-icon--star {
+    border-left: 1px solid $gray-light;
+    display: block;
+    height: 3.125rem;
+    width: 3.75rem;
+
     &::before {
       @include fa('\f005', 1.5rem, 1, false);
-      color: $white;
+      color: $primary-color;
       font-style: normal;
+      line-height: 3.125rem;
     }
   }
 }
