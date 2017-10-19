@@ -1,0 +1,218 @@
+$main-liftup-box-list-background: $darker-gray;
+$main-liftup-separator-color: darken($main-liftup-box-list-background, 5%);
+$main-liftups-background: $turku-white;
+$main-liftup-title-color: $body-font-color;
+
+$main-liftup-content-padding: 20px;
+
+$main-liftup-arrow-size: 25px;
+
+//@include add-gutter(0);
+
+
+.main-liftups {
+  margin: 3% 0.5% 2%;
+  @include clearfix;
+}
+
+.main-liftup-row {
+  margin-bottom: 1%;
+  @include clearfix;
+}
+
+.main-liftup-box {
+  background-color: $main-liftups-background;
+  border-bottom: 4px solid $turku-blue;
+  position: relative;
+}
+
+.main-liftup-box__media {
+  background: $main-liftups-background;
+  position: relative;
+  margin-bottom: -4px; // Amount of the border
+
+  figure {
+    line-height: 0;
+    margin: 0;
+  }
+
+  &:after {
+    background: $main-liftups-background;
+    bottom: 0;
+    content: " ";
+    display: block;
+    height: $main-liftup-arrow-size;
+    margin-bottom: $main-liftup-arrow-size * -0.5;
+    position: absolute;
+    right: 50%;
+    width: $main-liftup-arrow-size;
+    transform-origin: 50% 50%;
+    transform: rotate(45deg);
+
+    @media screen and (min-width: $desktop) {
+      bottom: auto;
+      margin-top: $main-liftup-arrow-size * -0.5;
+      margin-bottom: 0;
+      right: $main-liftup-arrow-size * -0.5;
+      top: 50%;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    // @include grid-span(6, 1);
+  }
+}
+
+.main-liftup-box__content {
+  background: $main-liftups-background;
+  padding: $main-liftup-content-padding;
+
+  @media screen and (min-width: $desktop) {
+    // @include grid-span(6, 7);
+  }
+}
+
+.main-liftup-box__title {
+  font-weight: 600;
+  margin: 0 0 0.5em;
+
+  a {
+    color: $main-liftup-title-color;
+  }
+}
+
+.main-liftup-box__text {
+  line-height: 1.6;
+}
+
+.main-liftup-box__caption {
+  // @todo we need a mixin to generate themed variants of classes
+  @include font-size(14px);
+  background-color: rgba($turku-blue, 1);
+  bottom: 10px;
+  color: $turku-white;
+  font-weight: 200;
+  left: 0;
+  line-height: 1.2em;
+  margin: 0;
+  padding: 10px 20px;
+  position: absolute;
+  width: 40%;
+
+  @media screen and (min-width: $desktop) {
+    width: 70%;
+    @include font-size(18px);
+  }
+}
+
+.main-liftup-box-4 {
+  clear: both;
+
+  .main-liftup-box__media {
+    &:after {
+      @media screen and (min-width: $tablet-portrait) {
+        bottom: auto;
+        margin-top: $main-liftup-arrow-size * -0.5;
+        margin-bottom: 0;
+        right: $main-liftup-arrow-size * -0.5;
+        top: 50%;
+      }
+    }
+
+    @media screen and (min-width: $tablet-portrait) {
+      //@include grid-span(6, 1);
+    }
+  }
+
+  .main-liftup-box__content {
+    @media screen and (min-width: $tablet-portrait) {
+      //@include grid-span(6, 7);
+    }
+
+    @media screen and (min-width: $desktop) {
+      padding: 30px;
+    }
+  }
+
+  .main-liftup-box__title {
+    font-size: 1.111 * $font-size-h2;
+
+    @media screen and (min-width: $desktop) {
+      font-size: 1.333 * $font-size-h2;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-size: 2 * $font-size-h2;
+    }
+  }
+}
+
+.main-liftup-box-2 {
+  .main-liftup-box__caption {
+    bottom: 20px;
+  }
+
+  @media screen and (min-width: $tablet-portrait) {
+    //@include float-span(6);
+    // Add margin between the two floating elements
+    margin-right: 1%;
+    width: 49.5%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    .main-liftup-box__content {
+      width: 50%;
+    }
+  }
+}
+
+// add separator and margin for 2-wide liftups on the left
+.main-liftup-box-2:first-child {
+  @media screen and (min-width: $desktop) {
+    .main-liftup-box__content {
+      width: 50%;
+    }
+  }
+}
+
+// reverse panes and add margin for 2-wide liftups on the right
+.main-liftup-box-2 + .main-liftup-box-2 {
+  margin-top: 1%;
+  margin-right: 0;
+
+  @media screen and (min-width: $tablet-portrait) {
+    margin-top: 0;
+
+    &:before {
+      background: none repeat scroll 0 0 #a8a8a8;
+      bottom: -4px;
+      content: " ";
+      display: block;
+      left: -1.025%;
+      position: absolute;
+      top: 0;
+      width: 1px;
+    }
+
+    .main-liftup-box__content {
+      padding: $main-liftup-content-padding;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    .main-liftup-box__media {
+      //@include grid-span(6, 7);
+
+      &:after {
+        left: $main-liftup-arrow-size * -0.5;
+        right: auto;
+      }
+    }
+
+    .main-liftup-box__content {
+      //@include grid-span(6, 1);
+      margin-right: -100%;
+      padding: $main-liftup-content-padding;
+    }
+  }
+}

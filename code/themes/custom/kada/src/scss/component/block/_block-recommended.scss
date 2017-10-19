@@ -1,0 +1,157 @@
+.no-js {
+  .block--recommended-button,
+  .recommended-block__close {
+    display: none;
+  }
+}
+
+.block--recommended-button,
+.block--views-kada-recommended-block {
+  button {
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    color: transparent;
+    font-size: 0;
+  }
+}
+
+.block--recommended-button {
+  @media screen and (min-width: $desktop-narrow) {
+    display: none;
+  }
+
+  .fa-icon--star {
+    &::before {
+      @include fa('\f005', 1.5rem, 1, false);
+      color: $white;
+      font-style: normal;
+    }
+  }
+}
+
+.block--views-kada-recommended-block {
+  .page-header & {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+
+    @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
+      top: 0;
+    }
+
+    @media screen and (min-width: $desktop-narrow) {
+      @include responsive-whitespace;
+      bottom: 0;
+      right: 0;
+      width: span(4);
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: span(3.5);
+    }
+
+    @media screen and (min-width: $container) {
+      @include container;
+      left: 0;
+      width: auto;
+    }
+  }
+}
+
+.block--views-recommended-block--is-hidden {
+  @media screen and (max-width: $desktop-narrow - .0625em) {
+    display: none;
+  }
+}
+
+.block-views-recommended-block--is-visible {
+  display: block;
+}
+
+.recommended-block-wrapper {
+  @media screen and (min-width: $container) {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.recommended-block {
+  padding: 1.5rem 1.75rem 2rem;
+  background: $primary-color;
+
+  @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
+    box-shadow: 0 9px 8px 0 rgba($black, .75);
+  }
+
+  @media screen and (min-width: $container) {
+    width: span(3);
+  }
+}
+
+.recommended-block__header {
+  position: relative;
+}
+
+.recommended-block__title {
+  @include font-size-responsive(1.3125rem);
+  margin-bottom: .5rem;
+  color: $white;
+  font-weight: 800;
+}
+
+.recommended-block__item {
+  border-bottom: 1px solid $primary-color-opacity-20;
+
+  &:first-of-type {
+    border-top: 1px solid $primary-color-opacity-20;
+  }
+
+  a {
+    position: relative;
+    display: block;
+    padding: .5rem 0 .625rem;
+    color: $white;
+    text-decoration: none;
+
+    &::after {
+      @include fa('\f105', 1.5rem);
+      position: absolute;
+      right: 0;
+    }
+
+    &:hover,
+    &:focus,
+    &:hover::after,
+    &:focus::after {
+      color: $primary-color-opacity-50;
+    }
+  }
+}
+
+.recommended-block__close {
+  position: absolute;
+  right: 0;
+  top: .25rem;
+
+  .fa-icon--close {
+    &::before {
+      @include fa('\f00d', 1.5rem, 1, false);
+      color: $white;
+      font-style: normal;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    .fa-icon--close {
+      &::before {
+        color: $primary-color-opacity-50;
+      }
+    }
+  }
+
+  @media screen and (min-width: $desktop-narrow) {
+    display: none;
+  }
+}

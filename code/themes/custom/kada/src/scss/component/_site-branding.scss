@@ -1,0 +1,21 @@
+.site-branding__link {
+  display: block;
+}
+
+.site-branding--header__link {
+  background: url('../../logo_minimal.svg') no-repeat 0 0 transparent;
+  height: 40px;
+  width: 43px;
+
+  @media screen and (min-width: $tablet-portrait-narrow) {
+    background-image: url('../../logo_full.svg');
+    height: 40px;
+    width: 158px;
+  }
+}
+
+.site-branding--footer__link {
+  background: url('../../logo_minimal.svg') no-repeat 0 0 transparent;
+  height: 80px;
+  width: 86px;
+}

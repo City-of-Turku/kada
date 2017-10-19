@@ -41,9 +41,9 @@ function kada_blog_feature_context_default_contexts() {
           'region' => 'content',
           'weight' => '10',
         ),
-        'views-572995f0239440197dacd182e3ad2ff5' => array(
+        'views-5ebc5b1ecdea9e3e5eaa6110ae155417' => array(
           'module' => 'views',
-          'delta' => '572995f0239440197dacd182e3ad2ff5',
+          'delta' => '5ebc5b1ecdea9e3e5eaa6110ae155417',
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
@@ -77,15 +77,15 @@ function kada_blog_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-34c2f5f2b05884a593ae487ce4d038e7' => array(
+        'views-kada_blog_image-blog_image' => array(
           'module' => 'views',
-          'delta' => '34c2f5f2b05884a593ae487ce4d038e7',
+          'delta' => 'kada_blog_image-blog_image',
           'region' => 'header',
           'weight' => '-10',
         ),
-        'views-00bbe9081a0cfc77a0e723be88aba8d3' => array(
+        'views-kada_posts_from_same_blog-block' => array(
           'module' => 'views',
-          'delta' => '00bbe9081a0cfc77a0e723be88aba8d3',
+          'delta' => 'kada_posts_from_same_blog-block',
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),

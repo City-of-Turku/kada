@@ -13,6 +13,7 @@ function kada_configuration_feature_metatag_export_default() {
   // Exported Metatag config instance: global.
   $config['global'] = array(
     'instance' => 'global',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[current-page:title] | [site:name]',
@@ -68,6 +69,7 @@ function kada_configuration_feature_metatag_export_default() {
   // Exported Metatag config instance: global:403.
   $config['global:403'] = array(
     'instance' => 'global:403',
+    'disabled' => FALSE,
     'config' => array(
       'canonical' => array(
         'value' => '[site:url]',
@@ -105,6 +107,7 @@ function kada_configuration_feature_metatag_export_default() {
   // Exported Metatag config instance: global:404.
   $config['global:404'] = array(
     'instance' => 'global:404',
+    'disabled' => FALSE,
     'config' => array(
       'canonical' => array(
         'value' => '[site:url]',
@@ -142,6 +145,7 @@ function kada_configuration_feature_metatag_export_default() {
   // Exported Metatag config instance: global:frontpage.
   $config['global:frontpage'] = array(
     'instance' => 'global:frontpage',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name]',
@@ -188,6 +192,7 @@ function kada_configuration_feature_metatag_export_default() {
   // Exported Metatag config instance: node.
   $config['node'] = array(
     'instance' => 'node',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[node:title] | [site:name]',
@@ -276,7 +281,7 @@ function kada_configuration_feature_metatag_export_default() {
       'twitter:description' => array(
         'value' => '[kada:metatag_description]',
       ),
-      'twitter:image:src' => array(
+      'twitter:image' => array(
         'value' => '[kada:metatag_image]',
       ),
     ),
@@ -285,6 +290,7 @@ function kada_configuration_feature_metatag_export_default() {
   // Exported Metatag config instance: node:blog.
   $config['node:blog'] = array(
     'instance' => 'node:blog',
+    'disabled' => FALSE,
     'config' => array(
       'description' => array(
         'value' => '[kada:metatag_description]',
@@ -337,7 +343,7 @@ function kada_configuration_feature_metatag_export_default() {
       'twitter:description' => array(
         'value' => '[kada:metatag_description]',
       ),
-      'twitter:image:src' => array(
+      'twitter:image' => array(
         'value' => '[kada:metatag_image]',
       ),
     ),
@@ -346,6 +352,7 @@ function kada_configuration_feature_metatag_export_default() {
   // Exported Metatag config instance: node:blog_post.
   $config['node:blog_post'] = array(
     'instance' => 'node:blog_post',
+    'disabled' => FALSE,
     'config' => array(
       'description' => array(
         'value' => '[kada:metatag_description]',
@@ -395,7 +402,7 @@ function kada_configuration_feature_metatag_export_default() {
       'twitter:description' => array(
         'value' => '[kada:metatag_description]',
       ),
-      'twitter:image:src' => array(
+      'twitter:image' => array(
         'value' => '[kada:metatag_image]',
       ),
     ),
@@ -404,6 +411,7 @@ function kada_configuration_feature_metatag_export_default() {
   // Exported Metatag config instance: node:event.
   $config['node:event'] = array(
     'instance' => 'node:event',
+    'disabled' => FALSE,
     'config' => array(
       'description' => array(
         'value' => '[kada:metatag_description]',
@@ -468,7 +476,7 @@ function kada_configuration_feature_metatag_export_default() {
       'twitter:description' => array(
         'value' => '[kada:metatag_description]',
       ),
-      'twitter:image:src' => array(
+      'twitter:image' => array(
         'value' => '[kada:metatag_image]',
       ),
     ),
@@ -477,6 +485,7 @@ function kada_configuration_feature_metatag_export_default() {
   // Exported Metatag config instance: node:landing_page.
   $config['node:landing_page'] = array(
     'instance' => 'node:landing_page',
+    'disabled' => FALSE,
     'config' => array(
       'description' => array(
         'value' => '[kada:metatag_description]',
@@ -523,7 +532,7 @@ function kada_configuration_feature_metatag_export_default() {
       'twitter:description' => array(
         'value' => '[kada:metatag_description]',
       ),
-      'twitter:image:src' => array(
+      'twitter:image' => array(
         'value' => '[kada:metatag_image]',
       ),
     ),
@@ -532,6 +541,7 @@ function kada_configuration_feature_metatag_export_default() {
   // Exported Metatag config instance: node:news_item.
   $config['node:news_item'] = array(
     'instance' => 'node:news_item',
+    'disabled' => FALSE,
     'config' => array(
       'description' => array(
         'value' => '[kada:metatag_description]',
@@ -587,7 +597,7 @@ function kada_configuration_feature_metatag_export_default() {
       'twitter:description' => array(
         'value' => '[kada:metatag_description]',
       ),
-      'twitter:image:src' => array(
+      'twitter:image' => array(
         'value' => '[kada:metatag_image]',
       ),
     ),
@@ -596,6 +606,7 @@ function kada_configuration_feature_metatag_export_default() {
   // Exported Metatag config instance: node:page.
   $config['node:page'] = array(
     'instance' => 'node:page',
+    'disabled' => FALSE,
     'config' => array(
       'description' => array(
         'value' => '[kada:metatag_description]',
@@ -642,7 +653,7 @@ function kada_configuration_feature_metatag_export_default() {
       'twitter:description' => array(
         'value' => '[kada:metatag_description]',
       ),
-      'twitter:image:src' => array(
+      'twitter:image' => array(
         'value' => '[kada:metatag_image]',
       ),
     ),
@@ -651,6 +662,7 @@ function kada_configuration_feature_metatag_export_default() {
   // Exported Metatag config instance: node:person.
   $config['node:person'] = array(
     'instance' => 'node:person',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[node:field-first-name] [node:field-surname] | [site:name]',
@@ -706,7 +718,7 @@ function kada_configuration_feature_metatag_export_default() {
       'twitter:description' => array(
         'value' => '',
       ),
-      'twitter:image:src' => array(
+      'twitter:image' => array(
         'value' => '[kada:metatag_image]',
       ),
     ),
@@ -715,6 +727,7 @@ function kada_configuration_feature_metatag_export_default() {
   // Exported Metatag config instance: taxonomy_term.
   $config['taxonomy_term'] = array(
     'instance' => 'taxonomy_term',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[term:name] | [site:name]',
@@ -752,6 +765,7 @@ function kada_configuration_feature_metatag_export_default() {
   // Exported Metatag config instance: view.
   $config['view'] = array(
     'instance' => 'view',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[view:title] | [site:name]',

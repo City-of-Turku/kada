@@ -83,15 +83,15 @@ function kada_sections_feature_context_default_contexts() {
           'region' => 'tools_container',
           'weight' => '-10',
         ),
-        'views-022fce84329c415f416a08a7d3abf9d2' => array(
+        'views-kada_related_content-liftups' => array(
           'module' => 'views',
-          'delta' => '022fce84329c415f416a08a7d3abf9d2',
+          'delta' => 'kada_related_content-liftups',
           'region' => 'sidebar_second',
           'weight' => '-10',
         ),
-        'views-0a0d9387bc0aa482d252922194524b92' => array(
+        'views-kada_section_footer-block_1' => array(
           'module' => 'views',
-          'delta' => '0a0d9387bc0aa482d252922194524b92',
+          'delta' => 'kada_section_footer-block_1',
           'region' => 'footer',
           'weight' => '-10',
         ),
@@ -172,21 +172,21 @@ function kada_sections_feature_context_default_contexts() {
           'region' => 'before_content',
           'weight' => '-8',
         ),
-        'views-b036322676ddcc7223120f5722503e9c' => array(
+        'views-kada_project_liftups-section' => array(
           'module' => 'views',
-          'delta' => 'b036322676ddcc7223120f5722503e9c',
+          'delta' => 'kada_project_liftups-section',
           'region' => 'before_footer',
           'weight' => '-10',
         ),
-        'views-b49e46913a83593047ac68546f073a62' => array(
+        'views-8800832114b919bcfa2b166f3ecc0aeb' => array(
           'module' => 'views',
-          'delta' => 'b49e46913a83593047ac68546f073a62',
+          'delta' => '8800832114b919bcfa2b166f3ecc0aeb',
           'region' => 'footer',
           'weight' => '-10',
         ),
-        'views-0a0d9387bc0aa482d252922194524b92' => array(
+        'views-kada_section_footer-block_1' => array(
           'module' => 'views',
-          'delta' => '0a0d9387bc0aa482d252922194524b92',
+          'delta' => 'kada_section_footer-block_1',
           'region' => 'footer',
           'weight' => '-9',
         ),
@@ -227,9 +227,9 @@ function kada_sections_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-ac941ffb7d27a34f919a463725a1dac6' => array(
+        'views-kada_section_header-block_1' => array(
           'module' => 'views',
-          'delta' => 'ac941ffb7d27a34f919a463725a1dac6',
+          'delta' => 'kada_section_header-block_1',
           'region' => 'header_top',
           'weight' => '-10',
         ),

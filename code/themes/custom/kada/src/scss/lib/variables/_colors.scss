@@ -1,0 +1,73 @@
+//
+// @file
+// This file includes all variables related to colors
+//
+
+$black: #000;
+$white: #fff;
+
+// Messages colors
+$error-dark: #b43b4b;
+$error-light: #e98491;
+$status-light: #92c25e;
+$status-dark: #62922d;
+$warning-light: #f6813e;
+$warning-dark: #cf4b00;
+
+// Default = grays
+$default-color: $black;
+$default-color-darkest: lighten($black, 10%);
+$default-color-darker: lighten($black, 20%);
+$default-color-dark: lighten($black, 30%);
+$default-color-medium-dark: lighten($black, 40%);
+$default-color-medium: lighten($black, 50%);
+$default-color-medium-light: lighten($black, 60%);
+$default-color-light: lighten($black, 70%);
+$default-color-lighter: lighten($black, 80%);
+$default-color-lightest: lighten($black, 95%);
+
+// Primary colors
+$primary-color: #fc421d;
+
+$primary-color-darkest: lighten($primary-color, 10%);
+$primary-color-darker: lighten($primary-color, 20%);
+$primary-color-dark: lighten($primary-color, 30%);
+$primary-color-medium-dark: lighten($primary-color, 40%);
+$primary-color-medium: lighten($primary-color, 50%);
+$primary-color-medium-light: lighten($primary-color, 60%);
+$primary-color-light: lighten($primary-color, 70%);
+$primary-color-lighter: lighten($primary-color, 80%);
+$primary-color-lightest: lighten($primary-color, 90%);
+
+$primary-color-opacity-80: rgba($white, .8);
+$primary-color-opacity-70: rgba($white, .7);
+$primary-color-opacity-60: rgba($white, .6);
+$primary-color-opacity-50: rgba($white, .5);
+$primary-color-opacity-40: rgba($white, .4);
+$primary-color-opacity-40: rgba($white, .3);
+$primary-color-opacity-20: rgba($white, .2);
+
+// Seconcary colors
+$secondary-color: #966f4d;
+
+$secondary-color-darkest: lighten($secondary-color, 10%);
+$secondary-color-darker: lighten($secondary-color, 20%);
+$secondary-color-dark: lighten($secondary-color, 30%);
+$secondary-color-medium-dark: lighten($secondary-color, 40%);
+$secondary-color-medium: lighten($secondary-color, 50%);
+$secondary-color-medium-light: lighten($secondary-color, 60%);
+$secondary-color-light: lighten($secondary-color, 70%);
+$secondary-color-lighter: lighten($secondary-color, 80%);
+$secondary-color-lightest: lighten($secondary-color, 90%);
+
+// General colors
+$link-color: $secondary-color;
+$link-color-hover: darken($secondary-color, 20%);
+
+$body-color: $default-color;
+$body-background: $white;
+
+$heading-color: $primary-color;
+
+// Social media colors
+$twitter-color: #55acee;

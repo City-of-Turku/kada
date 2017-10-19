@@ -1,0 +1,15 @@
+name = Kada Subtheme
+description = Responsive Kada subtheme.
+base theme = kada
+screenshot = screenshot.png
+engine = phptemplate
+core = 7.x
+
+; Stylesheets
+stylesheets[all][] = dist/css/styles-lib.css
+stylesheets[all][] = dist/css/styles.css
+
+; ========================================
+; Scripts
+; ========================================
+scripts[] = dist/js/kada-subtheme.behaviors.min.js

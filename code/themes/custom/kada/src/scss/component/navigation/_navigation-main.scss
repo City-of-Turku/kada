@@ -1,0 +1,73 @@
+@media screen and (min-width: $desktop-narrow) {
+  .menu-name-main-menu,
+  .menu-name-menu-main-menu-en {
+    .menu {
+      @include clearfix;
+      border-right: 1px solid $default-color-lighter;
+      border-left: 1px solid $default-color-lighter;
+    }
+
+    .menu__item {
+      margin-top: 0;
+
+      a {
+        display: block;
+        font-size: .9375rem;
+      }
+    }
+
+    .menu__item--has-first-level {
+      float: left;
+
+      &:first-child {
+        > a {
+          border-left: 0;
+        }
+      }
+
+      > a {
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+        border-left: 1px solid $default-color-lighter;
+        padding: .75rem 1.25rem;
+
+        &:hover,
+        &:focus {
+          background: $white;
+          border-top-color: $default-color-lighter;
+          border-bottom-color: $default-color-lighter;
+        }
+      }
+
+      > a:hover,
+      > a:focus,
+      > .active {
+        color: $primary-color;
+      }
+
+      &.is-expanded {
+        > a {
+          &:hover,
+          &:focus {
+            border-bottom-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
+// First level menu item styles
+// .menu__item--has-first-level {
+//   background-color: $mobile-navigation-item-bg;
+//   border-left: 4px solid $turku-blue;
+//   margin-bottom: 1px;
+//   position: relative;
+
+//   @media screen and (min-width: $desktop-narrow) {
+//     background-color: transparent;
+//     border-left: none;
+//     float: left;
+//     margin-bottom: 0;
+//   }
+// }

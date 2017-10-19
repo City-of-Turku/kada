@@ -514,22 +514,25 @@ function kada_some_content_feature_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'domain' => array(
-          'weight' => '7',
+          'weight' => '10',
         ),
         'metatags' => array(
-          'weight' => '11',
+          'weight' => '14',
         ),
         'title' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'path' => array(
-          'weight' => '8',
+          'weight' => '12',
         ),
         'redirect' => array(
-          'weight' => '9',
+          'weight' => '13',
         ),
         'feeds' => array(
-          'weight' => '1',
+          'weight' => '2',
+        ),
+        'language' => array(
+          'weight' => '0',
         ),
       ),
       'display' => array(),
@@ -542,32 +545,112 @@ function kada_some_content_feature_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__feed_import_instagram';
   $strongarm->value = array(
-    'view_modes' => array(),
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'rss' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+      'accordion' => array(
+        'custom_settings' => FALSE,
+      ),
+      'carousel' => array(
+        'custom_settings' => FALSE,
+      ),
+      'current' => array(
+        'custom_settings' => FALSE,
+      ),
+      'project' => array(
+        'custom_settings' => FALSE,
+      ),
+      'search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'event_grid_item' => array(
+        'custom_settings' => FALSE,
+      ),
+      'event_list_item' => array(
+        'custom_settings' => FALSE,
+      ),
+      'event_map_item' => array(
+        'custom_settings' => FALSE,
+      ),
+      'event_mosaic_item' => array(
+        'custom_settings' => FALSE,
+      ),
+      'event_search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'event_tab_list_item' => array(
+        'custom_settings' => FALSE,
+      ),
+      'event_top_carousel' => array(
+        'custom_settings' => FALSE,
+      ),
+      'main_news' => array(
+        'custom_settings' => FALSE,
+      ),
+      'main_news_wide' => array(
+        'custom_settings' => FALSE,
+      ),
+      'only_title' => array(
+        'custom_settings' => FALSE,
+      ),
+      'map' => array(
+        'custom_settings' => FALSE,
+      ),
+      'revision' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
     'extra_fields' => array(
       'form' => array(
         'domain' => array(
-          'weight' => '9',
+          'weight' => '11',
         ),
         'metatags' => array(
-          'weight' => '12',
+          'weight' => '14',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '10',
+          'weight' => '12',
         ),
         'redirect' => array(
-          'weight' => '11',
+          'weight' => '13',
         ),
         'feeds' => array(
-          'weight' => '8',
+          'weight' => '10',
         ),
         'language' => array(
           'weight' => '1',
         ),
       ),
-      'display' => array(),
+      'display' => array(
+        'domain' => array(
+          'default' => array(
+            'weight' => '1',
+            'visible' => TRUE,
+          ),
+        ),
+        'language' => array(
+          'default' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__feed_import_instagram'] = $strongarm;
@@ -581,19 +664,25 @@ function kada_some_content_feature_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'domain' => array(
-          'weight' => '4',
+          'weight' => '9',
         ),
         'metatags' => array(
-          'weight' => '8',
+          'weight' => '12',
         ),
         'title' => array(
-          'weight' => '0',
+          'weight' => '2',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '10',
         ),
         'redirect' => array(
-          'weight' => '6',
+          'weight' => '11',
+        ),
+        'feeds' => array(
+          'weight' => '1',
+        ),
+        'language' => array(
+          'weight' => '0',
         ),
       ),
       'display' => array(),
@@ -610,22 +699,25 @@ function kada_some_content_feature_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'domain' => array(
-          'weight' => '6',
+          'weight' => '10',
         ),
         'metatags' => array(
-          'weight' => '9',
+          'weight' => '13',
         ),
         'title' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '11',
         ),
         'redirect' => array(
-          'weight' => '8',
+          'weight' => '12',
         ),
         'feeds' => array(
-          'weight' => '1',
+          'weight' => '2',
+        ),
+        'language' => array(
+          'weight' => '0',
         ),
       ),
       'display' => array(),
@@ -709,19 +801,19 @@ function kada_some_content_feature_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '22',
+          'weight' => '23',
         ),
         'redirect' => array(
-          'weight' => '21',
+          'weight' => '22',
         ),
         'flag' => array(
-          'weight' => '20',
+          'weight' => '21',
         ),
         'domain' => array(
           'weight' => '2',
         ),
         'metatags' => array(
-          'weight' => '23',
+          'weight' => '24',
         ),
         'language' => array(
           'weight' => '1',
@@ -758,6 +850,10 @@ function kada_some_content_feature_strongarm() {
           'teaser' => array(
             'weight' => '0',
             'visible' => TRUE,
+          ),
+          'event_grid_item' => array(
+            'weight' => '0',
+            'visible' => FALSE,
           ),
         ),
       ),
@@ -804,7 +900,7 @@ function kada_some_content_feature_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'i18n_node_extended_social_media_update';
-  $strongarm->value = '1';
+  $strongarm->value = 1;
   $export['i18n_node_extended_social_media_update'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -1,0 +1,77 @@
+.some-links {
+}
+
+ul.some-links__list {
+  line-height: 45px;
+  margin: 1em 0;
+  padding: 0.5em 0;
+  text-align: center;
+}
+
+li.some-link {
+  // @extend .icon;
+  // @include icon-circle;
+  color: $light-gray;
+  display: inline-block;
+  list-style-type: none;
+  position: relative;
+
+  &:before {
+    font-size: 45px;
+    line-height: 40px;
+  }
+
+  a {
+    //@extend .icon;
+    color: $turku-blue;
+    display: inline-block;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    width: 0;
+
+    &:before {
+      font-size: 24px;
+      left: 0;
+      position: absolute;
+      text-indent: 0;
+      top: 0;
+      vertical-align: middle;
+      width: 45px;
+    }
+  }
+}
+
+.event {
+  .some-link {
+    color: $light-gray;
+
+    a {
+      color: $darker-gray;
+    }
+  }
+}
+
+@mixin some-link-type($title, $brand-color) {
+  .some-link--#{$title} {
+    &:hover {
+      color: $brand-color !important;
+
+      a:before {
+        color: $light-gray !important;
+      }
+    }
+  }
+}
+
+@include some-link-type('twitter', #00ACED);
+//.some-link--twitter a { @include icon-twitter; }
+
+@include some-link-type('facebook', #3B5998);
+//.some-link--facebook a { @include icon-facebook; }
+
+@include some-link-type('instagram', #517FA4);
+//.some-link--instagram a { @include icon-instagram; }
+
+@include some-link-type('linkedin', #007BB6);
+//.some-link--linkedin a { @include icon-linkedin; }

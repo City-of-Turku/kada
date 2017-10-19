@@ -1,0 +1,96 @@
+---
+
+#
+# NORMAL SITE
+#
+
+# Default environment is Vagrant:
+default:
+
+  makefile: conf/kadaproject.make
+  temporary: _build
+  final: current
+  previous: builds
+  profile: kadaprofile
+  site: KADA
+
+  aliases:
+    - vagrant
+
+  # In development environments we want to use symlinks, note settings.php
+  link:
+    - files: sites/default/files
+    - code/modules/custom: sites/all/modules/custom
+    - code/modules/features: sites/all/modules/features
+    - code/themes/custom: sites/all/themes/custom
+    - code/profiles/kadaprofile: profiles/kadaprofile
+    - conf/vagrant.settings.php: sites/default/settings.php
+    - conf/vagrant.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
+
+  # We can provide local commands or override global ones.
+  local_commands:
+
+    # Running command "./build.sh update" without environment or with "vagrant" as environment "./build.sh update vagrant" will also make sure that stage_file_proxy is enabled.
+    # Basic site update functionality
+    update:
+      - make
+      - backup:
+          ignore:
+            - sites/default/files
+      - shell: chmod -R a+w current
+      - finalize
+      - update
+      - cleanup
+      - shell: cp conf/_ping.php current
+      - shell: cd current && drush en devel -y
+      - shell: cd current && drush cc drush && drush composer-json-rebuild -y
+      - shell: cd current && drush composer-manager update -y
+      - shell: chmod -R a-w current
+
+# Local environment:
+local:
+
+  # Local is sometimes used outside of Vagrant boxes, for example with MAMP)
+  link:
+    - files: sites/default/files
+    - code/modules/custom: sites/all/modules/custom
+    - code/modules/features: sites/all/modules/features
+    - code/themes/custom: sites/all/themes/custom
+    - code/profiles/kadaprofile: profiles/kadaprofile
+    - conf/local.settings.php: sites/default/settings.php
+    - conf/local.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
+
+# Test environment:
+test:
+
+  aliases:
+    - develop
+
+  # Test environment only symlinks files
+  link:
+    - files: sites/default/files
+
+  # Other files are copied, note settings.php
+  copy:
+    - code/modules/custom: sites/all/modules/custom
+    - code/modules/features: sites/all/modules/features
+    - code/themes/custom: sites/all/themes/custom
+    - code/profiles/kadaprofile: profiles/kadaprofile
+    - conf/development.settings.php: sites/default/settings.php
+    - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
+
+# Production environment:
+testing:
+
+  # Prod environment only symlinks files
+  link:
+    - files: sites/default/files
+
+  # Other files are copied, note settings.php
+  copy:
+    - code/modules/custom: sites/all/modules/custom
+    - code/modules/features: sites/all/modules/features
+    - code/themes/custom: sites/all/themes/custom
+    - code/profiles/kadaprofile: profiles/kadaprofile
+    - conf/testing.settings.php: sites/default/settings.php
+    - conf/testing.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc

@@ -34,7 +34,7 @@ function kada_media_feature_flexslider_default_presets() {
     'keyboard' => 1,
     'multipleKeyboard' => 0,
     'mousewheel' => 0,
-    'controlsContainer' => '.flex-control-nav-container',
+    'controlsContainer' => '.flex-controls',
     'sync' => '',
     'asNavFor' => '',
     'itemWidth' => '0',
@@ -45,7 +45,7 @@ function kada_media_feature_flexslider_default_presets() {
     'animation' => 'fade',
     'slideshow' => 1,
     'slideshowSpeed' => '8000',
-    'directionNav' => 1,
+    'directionNav' => 0,
     'controlNav' => '1',
     'prevText' => 'Previous',
     'nextText' => 'Next',
@@ -56,8 +56,8 @@ function kada_media_feature_flexslider_default_presets() {
     'thumbCaptions' => 0,
     'thumbCaptionsBoth' => 0,
     'animationLoop' => 1,
-    'pauseOnAction' => 1,
-    'pauseOnHover' => 0,
+    'pauseOnAction' => 0,
+    'pauseOnHover' => 1,
     'manualControls' => '',
   );
   $export['top_carousel'] = $preset;
