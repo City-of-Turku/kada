@@ -211,24 +211,26 @@
           }
 
           // Calculate all menus under active level to have the same height
-          $('.l-region--navigation .menu__item--has-first-level.is-active-trail').hover(function () {
+          $('.l-region--navigation .menu__item--has-first-level').hover(function () {
 
             var secondLevelChild = $(this).find('> .menu');
             var thirdLevelChild = secondLevelChild.find('li.is-active-trail > .menu');
+            var eserviceWrapper = $(this).find('.e-service-wrapper');
 
             var highestMenu = 0;
 
             var secondLevelHeight = secondLevelChild.outerHeight();
             var thirdLevelHeight = thirdLevelChild.outerHeight();
+            var eserviceWrapperHeight = eserviceWrapper.outerHeight();
 
             if ($(window).width() >= '839') {
-              if (secondLevelHeight > thirdLevelHeight) {
+              highestMenu = thirdLevelHeight;
+              if (secondLevelHeight > highestMenu) {
                 highestMenu = secondLevelHeight;
               }
-              else {
-                highestMenu = thirdLevelHeight;
+              if (eserviceWrapperHeight > highestMenu) {
+                highestMenu = eserviceWrapperHeight;
               }
-
               secondLevelChild.css('height', highestMenu);
               thirdLevelChild.css('height', highestMenu);
             }
@@ -239,18 +241,21 @@
           $('.l-region--navigation .menu__item--has-second-level').hover(function () {
             var $this = $(this).parent();
             var thirdLevelChild = $(this).find('> .menu');
+            var eserviceWrapper = $('.l-region--navigation').find('.e-service-wrapper');
 
             var highestMenu = 0;
 
             var secondLevelHeight = $this.outerHeight();
             var thirdLevelHeight = thirdLevelChild.outerHeight();
+            var eserviceWrapperHeight = eserviceWrapper.outerHeight();
 
             if ($(window).width() >= '839') {
-              if (thirdLevelHeight > secondLevelHeight) {
-                highestMenu = thirdLevelHeight;
-              }
-              else {
+              highestMenu = thirdLevelHeight;
+              if (secondLevelHeight > highestMenu) {
                 highestMenu = secondLevelHeight;
+              }
+              if (eserviceWrapperHeight > highestMenu) {
+                highestMenu = eserviceWrapperHeight;
               }
 
               thirdLevelChild.css('height', highestMenu);
