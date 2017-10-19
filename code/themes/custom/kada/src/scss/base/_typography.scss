@@ -8,7 +8,7 @@
 body {
   @include font-size-responsive($base-font-size-rem);
   //font-size: $base-font-size-rem;
-  font-family: $default-font-family;
+  font-family: $text-font-family;
   line-height: $base-line-height;
 }
 
@@ -46,6 +46,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: $heading-font-family;
   margin-top: 0;
 
   a {

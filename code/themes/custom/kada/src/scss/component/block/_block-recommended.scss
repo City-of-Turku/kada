@@ -44,15 +44,12 @@
       @include responsive-whitespace;
       bottom: 0;
       right: 0;
-      width: span(4);
     }
 
     @media screen and (min-width: $desktop) {
-      width: span(3.5);
     }
 
     @media screen and (min-width: $container) {
-      @include container;
       left: 0;
       width: auto;
     }
@@ -71,8 +68,11 @@
 
 .recommended-block-wrapper {
   @media screen and (min-width: $container) {
+    @include responsive-whitespace;
     display: flex;
     justify-content: flex-end;
+    margin: 0 auto;
+    max-width: $inner-container-width;
   }
 }
 
@@ -85,7 +85,6 @@
   }
 
   @media screen and (min-width: $container) {
-    width: span(3);
   }
 }
 
