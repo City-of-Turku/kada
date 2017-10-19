@@ -50,21 +50,21 @@
   }
 
   .block {
-    @media screen and (max-width: $mobile-menu-breakpoint) {
+    @media screen and (max-width: $mobile-menu-breakpoint-max) {
       position: absolute;
       top: -3.125rem; // Height of the mobile header
     }
   }
 
   .block--recommended-button {
-    @media screen and (max-width: $mobile-menu-breakpoint) {
+    @media screen and (max-width: $mobile-menu-breakpoint-max) {
       right: 3.75rem + 4.375rem; // Menu toggler + language switcher
     }
   }
 
   .block--locale-language {
     // Mobile
-    @media screen and (max-width: $mobile-menu-breakpoint) {
+    @media screen and (max-width: $mobile-menu-breakpoint-max) {
       order: 2;
       right: 3.75rem;
     }
@@ -80,13 +80,13 @@
   .block--menu-block {
     width: 100%;
 
-    @media screen and (max-width: $mobile-menu-breakpoint) {
+    @media screen and (max-width: $mobile-menu-breakpoint-max) {
       top: 0;
       right: 0;
     }
 
     .toggler {
-      @media screen and (max-width: $mobile-menu-breakpoint) {
+      @media screen and (max-width: $mobile-menu-breakpoint-max) {
         width: 3.75rem;
       }
     }

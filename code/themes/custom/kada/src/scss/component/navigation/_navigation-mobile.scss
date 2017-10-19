@@ -19,7 +19,7 @@ $menu-padding: 1.25rem;
   }
 }
 
-@media screen and (max-width: $mobile-menu-breakpoint) {
+@media screen and (max-width: $mobile-menu-breakpoint-max) {
   .menu-name-main-menu,
   [class*="menu-name-menu-main-menu"] {
     .toggler {

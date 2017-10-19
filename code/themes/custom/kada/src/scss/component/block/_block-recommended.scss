@@ -17,7 +17,7 @@
 }
 
 .block--recommended-button {
-  @media screen and (min-width: $desktop-narrow) {
+  @media screen and (min-width: $mobile-menu-breakpoint) {
     display: none;
   }
 

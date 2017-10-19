@@ -165,7 +165,7 @@
 
   var switchMainMenuBehavior = function (context) {
     var menu = $('.l-region--navigation .block--menu-block', context);
-    if ($(window).width() >= '946') {
+    if ($(window).width() >= '839') {
       desktopMenuBehavior.call(menu);
     }
     else {
@@ -196,7 +196,7 @@
           switchMainMenuBehavior(context);
 
           // Trigger only when using desktop menu
-          if ($(window).width() >= '840') {
+          if ($(window).width() >= '839') {
             $('.l-footer .menu-block-wrapper > .menu').each(function () {
               var highestElement = 0;
               $('.menu__item--has-first-level', this).each(function () {
@@ -221,7 +221,7 @@
             var secondLevelHeight = secondLevelChild.outerHeight();
             var thirdLevelHeight = thirdLevelChild.outerHeight();
 
-            if ($(window).width() >= '840') {
+            if ($(window).width() >= '839') {
               if (secondLevelHeight > thirdLevelHeight) {
                 highestMenu = secondLevelHeight;
               }
@@ -245,7 +245,7 @@
             var secondLevelHeight = $this.outerHeight();
             var thirdLevelHeight = thirdLevelChild.outerHeight();
 
-            if ($(window).width() >= '840') {
+            if ($(window).width() >= '839') {
               if (thirdLevelHeight > secondLevelHeight) {
                 highestMenu = thirdLevelHeight;
               }
@@ -259,7 +259,7 @@
           });
 
 
-          if ($(window).width() >= '840') {
+          if ($(window).width() >= '839') {
             $('.l-region--navigation .menu').css('height', '');
           }
 
