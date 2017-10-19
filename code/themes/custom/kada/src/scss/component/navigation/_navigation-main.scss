@@ -157,6 +157,12 @@
         text-transform: none;
       }
 
+      &:first-child {
+        > a {
+          border-top: 0 none;
+        }
+      }
+
       &:hover {
         background-color: $secondary-color;
 
