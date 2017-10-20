@@ -191,7 +191,6 @@ function kada_sections_feature_context_default_contexts() {
           'weight' => '-9',
         ),
       ),
-      'layout' => 'driveturku-front',
     ),
     'theme_html' => array(
       'class' => 'theme-front',

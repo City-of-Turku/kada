@@ -10,7 +10,7 @@
 function kada_news_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_news_item-comment_body'
+  // Exported field_instance: 'comment-comment_node_news_item-comment_body'.
   $field_instances['comment-comment_node_news_item-comment_body'] = array(
     'bundle' => 'comment_node_news_item',
     'default_value' => NULL,
@@ -47,7 +47,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-body'
+  // Exported field_instance: 'node-news_item-body'.
   $field_instances['node-news_item-body'] = array(
     'bundle' => 'news_item',
     'default_value' => NULL,
@@ -58,7 +58,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 23,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -155,7 +155,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_address'
+  // Exported field_instance: 'node-news_item-field_address'.
   $field_instances['node-news_item-field_address'] = array(
     'bundle' => 'news_item',
     'default_value' => NULL,
@@ -166,7 +166,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 33,
       ),
       'default' => array(
         'label' => 'above',
@@ -261,7 +261,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_contact_information'
+  // Exported field_instance: 'node-news_item-field_contact_information'.
   $field_instances['node-news_item-field_contact_information'] = array(
     'bundle' => 'news_item',
     'default_value' => NULL,
@@ -273,12 +273,13 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 18,
       ),
       'default' => array(
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -342,7 +343,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_content_image'
+  // Exported field_instance: 'node-news_item-field_content_image'.
   $field_instances['node-news_item-field_content_image'] = array(
     'bundle' => 'news_item',
     'default_value' => NULL,
@@ -357,7 +358,7 @@ function kada_news_feature_field_default_field_instances() {
           'override' => 0,
         ),
         'type' => 'current',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -445,7 +446,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_district'
+  // Exported field_instance: 'node-news_item-field_district'.
   $field_instances['node-news_item-field_district'] = array(
     'bundle' => 'news_item',
     'default_value' => NULL,
@@ -456,7 +457,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 32,
       ),
       'default' => array(
         'label' => 'above',
@@ -515,7 +516,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_info_box'
+  // Exported field_instance: 'node-news_item-field_info_box'.
   $field_instances['node-news_item-field_info_box'] = array(
     'bundle' => 'news_item',
     'default_value' => NULL,
@@ -526,7 +527,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 27,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -623,7 +624,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_keywords'
+  // Exported field_instance: 'node-news_item-field_keywords'.
   $field_instances['node-news_item-field_keywords'] = array(
     'bundle' => 'news_item',
     'default_value' => NULL,
@@ -634,7 +635,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 30,
       ),
       'default' => array(
         'label' => 'above',
@@ -697,7 +698,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_lead_paragraph_long_text'
+  // Exported field_instance: 'node-news_item-field_lead_paragraph_long_text'.
   $field_instances['node-news_item-field_lead_paragraph_long_text'] = array(
     'bundle' => 'news_item',
     'default_value' => NULL,
@@ -822,7 +823,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_liftup_width'
+  // Exported field_instance: 'node-news_item-field_liftup_width'.
   $field_instances['node-news_item-field_liftup_width'] = array(
     'bundle' => 'news_item',
     'default_value' => array(
@@ -837,7 +838,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 21,
       ),
       'default' => array(
         'label' => 'above',
@@ -894,7 +895,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_location'
+  // Exported field_instance: 'node-news_item-field_location'.
   $field_instances['node-news_item-field_location'] = array(
     'bundle' => 'news_item',
     'default_value' => NULL,
@@ -905,7 +906,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 29,
       ),
       'default' => array(
         'label' => 'above',
@@ -987,7 +988,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_order_time'
+  // Exported field_instance: 'node-news_item-field_order_time'.
   $field_instances['node-news_item-field_order_time'] = array(
     'bundle' => 'news_item',
     'deleted' => 0,
@@ -997,7 +998,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 17,
       ),
       'default' => array(
         'label' => 'above',
@@ -1066,7 +1067,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_related_content'
+  // Exported field_instance: 'node-news_item-field_related_content'.
   $field_instances['node-news_item-field_related_content'] = array(
     'bundle' => 'news_item',
     'default_value' => NULL,
@@ -1077,7 +1078,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 19,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -1138,7 +1139,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_target_audience'
+  // Exported field_instance: 'node-news_item-field_target_audience'.
   $field_instances['node-news_item-field_target_audience'] = array(
     'bundle' => 'news_item',
     'default_value' => NULL,
@@ -1149,7 +1150,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 26,
       ),
       'default' => array(
         'label' => 'above',
@@ -1207,7 +1208,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_theme'
+  // Exported field_instance: 'node-news_item-field_theme'.
   $field_instances['node-news_item-field_theme'] = array(
     'bundle' => 'news_item',
     'default_value' => NULL,
@@ -1218,7 +1219,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 31,
       ),
       'default' => array(
         'label' => 'above',
@@ -1275,7 +1276,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_tweet_embed'
+  // Exported field_instance: 'node-news_item-field_tweet_embed'.
   $field_instances['node-news_item-field_tweet_embed'] = array(
     'bundle' => 'news_item',
     'default_value' => NULL,
@@ -1286,7 +1287,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 20,
       ),
       'default' => array(
         'label' => 'above',
@@ -1386,7 +1387,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-field_vignette'
+  // Exported field_instance: 'node-news_item-field_vignette'.
   $field_instances['node-news_item-field_vignette'] = array(
     'bundle' => 'news_item',
     'default_value' => NULL,
@@ -1398,7 +1399,7 @@ function kada_news_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'above',
@@ -1497,7 +1498,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news_item-og_group_ref'
+  // Exported field_instance: 'node-news_item-og_group_ref'.
   $field_instances['node-news_item-og_group_ref'] = array(
     'bundle' => 'news_item',
     'default_value' => NULL,
@@ -1509,7 +1510,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 16,
       ),
       'default' => array(
         'label' => 'above',

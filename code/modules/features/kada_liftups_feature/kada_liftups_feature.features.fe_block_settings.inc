@@ -23,10 +23,16 @@ function kada_liftups_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'driveturku' => array(
+      'kada' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'driveturku',
+        'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
         'weight' => 0,
       ),
       'seven' => array(
@@ -51,10 +57,16 @@ function kada_liftups_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'driveturku' => array(
+      'kada' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'driveturku',
+        'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
         'weight' => 0,
       ),
       'seven' => array(

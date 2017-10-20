@@ -42,7 +42,7 @@ function kada_news_feature_ds_field_settings_info() {
       'format' => 'default',
     ),
     'post_date' => array(
-      'weight' => '2',
+      'weight' => '0',
       'label' => 'hidden',
       'format' => 'ds_post_date_kada_date_only',
       'formatter_settings' => array(
@@ -51,39 +51,6 @@ function kada_news_feature_ds_field_settings_info() {
           'fi' => TRUE,
           'fi-el' => 'div',
           'fi-cl' => 'liftup-box__date',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
-      ),
-    ),
-    'field_content_image' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'liftup-box__image',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
-      ),
-    ),
-    'field_lead_paragraph_long_text' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-        ),
-      ),
-    ),
-    'field_vignette' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'liftup-box__caption',
           'fi-at' => '',
           'fi-def-at' => FALSE,
           'fi-odd-even' => FALSE,
@@ -425,20 +392,20 @@ function kada_news_feature_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'header' => array(
-        0 => 'field_content_image',
-        1 => 'field_vignette',
+        0 => 'post_date',
+        1 => 'field_content_image',
+        2 => 'field_vignette',
       ),
       'main' => array(
-        2 => 'post_date',
         3 => 'title',
         4 => 'field_lead_paragraph_long_text',
         5 => 'links',
       ),
     ),
     'fields' => array(
+      'post_date' => 'header',
       'field_content_image' => 'header',
       'field_vignette' => 'header',
-      'post_date' => 'main',
       'title' => 'main',
       'field_lead_paragraph_long_text' => 'main',
       'links' => 'main',
@@ -453,6 +420,7 @@ function kada_news_feature_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|news_item|current'] = $ds_layout;
 

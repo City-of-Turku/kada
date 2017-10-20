@@ -177,7 +177,6 @@ function kada_page_feature_context_default_contexts() {
           'weight' => '-10',
         ),
       ),
-      'layout' => 'driveturku-default',
     ),
   );
   $context->condition_mode = 1;

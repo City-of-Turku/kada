@@ -6,11 +6,15 @@ sites/*/files
 files/*
 private_files/*
 sites/*/private
+/bin/
 /current/
 /builds/
 /tmp
 /_build/
 /.make_cache/
+/public/
+/vendor/
+public
 
 # Ignore PhpStorm generated content
 .idea

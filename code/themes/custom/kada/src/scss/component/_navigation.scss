@@ -1,0 +1,875 @@
+// .menu {
+//   margin: 0;
+//   padding: 0;
+// }
+
+// .menu__item {
+//   list-style: none;
+//   a {
+//     &:hover {
+//       text-decoration: none;
+//     }
+//   }
+// }
+
+.responsive-menus {
+  .toggler {
+    @media screen and (min-width: $desktop-narrow) {
+      display: none;
+    }
+  }
+}
+
+// Navigation inside navigation wrapper
+.l-navigation {
+  .block {
+    // display: inline-block;
+    // margin: 0 0.35em;
+    // vertical-align: middle;
+
+    // @media screen and (min-width: $desktop-narrow) {
+    //   display: block;
+    //   float: right;
+    //   margin: 0;
+    // }
+
+    // &:last-child {
+    //   margin-left: 0;
+    //   @media screen and (min-width: $desktop-narrow) {
+    //     float: none;
+    //   }
+    // }
+
+    &.contextual-links-region {
+      position: static;
+      .contextual-links-wrapper,
+      .contextual-links-trigger,
+      .contextual-links {
+        display: none !important;
+      }
+    }
+  }
+
+  // ul {
+  //   margin: 0;
+  //   padding: 0;
+  //   @include clearfix();
+
+  //   li {
+  //     list-style: none;
+  //   }
+  // }
+
+  // TODO: Needs refactoring if we are able to rewrite responsive menus classes
+  .responsive-menus.responsified {
+    // > .menu {
+    //   display: none !important;
+    //   left: 0;
+    //   position: absolute;
+    //   //top: 100%; // Height of mobile menu
+    //   z-index: 1000;
+    // }
+
+    &.responsive-toggled {
+      // > .menu {
+      //   display: block !important;
+      //   box-shadow: 0 2px 2px rgba(0,0,0,0.16);
+      // }
+
+      // span.toggler {
+      //   border: none;
+      // }
+    }
+
+    // span.toggler {
+    //   border-radius: 0;
+    //   box-shadow: 0 0 0 transparent;
+    //   background-color: $turku-blue;
+    //   border: none;
+    //   color: #FFFFFF;
+    //   float: right;
+    //   font-size: 0;
+    //   height: 35px;
+    //   overflow: hidden;
+    //   position: relative;
+    //   width: 35px;
+
+    //   @media screen and (min-width: $mobile-landscape-wide) {
+    //     height: 40px;
+    //     width: 40px;
+    //   }
+
+    //   &:hover {
+    //     cursor: pointer;
+    //   }
+    // }
+
+    .menu__item--second-level .menu {
+      border-color: #e7e7e7 !important; // Override theme border colors on second level
+    }
+  }
+
+  // General menu styles
+  // .menu {
+  //   background-color: $mobile-navigation-bg;
+  //   border-top: 1px solid #e7e7e7;
+  //   width: 100%;
+
+  //   @media screen and (min-width: $desktop-narrow) {
+  //     background-color: $navigation-bg;
+  //     border-top: none;
+  //   }
+  // }
+
+  .menu__item {
+    // display: block;
+    // list-style: none;
+    // > a {
+    //   color: $body-font-color;
+    //   display: block;
+    //   font: 1em $navigation-font;
+    //   padding: 1em;
+    //   position: relative;
+    //   line-height: 1.15em;
+
+    //   @media screen and (min-width: $desktop-narrow) {
+    //     font-size: 0.9em;
+    //     letter-spacing: -0.1px;
+    //   }
+
+    //   @media screen and (min-width: 1400px) {
+    //     font-size: 1em;
+    //   }
+    // }
+
+    // &.is-active {
+    //   @media screen and (min-width: $desktop-narrow) {
+    //     background-color: #ececec;
+    //   }
+    // }
+
+    &.menu__item--top-menu {
+      background-color: #fff;
+      border-left: 0 none;
+
+      @media screen and (min-width: $desktop-narrow) {
+        display: none;
+      }
+
+      a {
+        font-weight: normal;
+        text-transform: uppercase;
+
+        &.active {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .menu__item--expanded-toggle {
+      cursor: pointer;
+      display: none;
+    }
+  }
+
+  .block--menu-block,
+  .block--og-menu-single-menu {
+    .responsive-menus.responsified {
+      // span.toggler {
+      //   //@include icon-mobile-menu;
+
+      //   &:before {
+      //     font-size: 39px;
+      //     height: 39px; // Scale the before-element a bit over the original button
+      //     left: -2px; // Move the oversized before-element to center
+      //     line-height: 100%;
+      //     position: absolute;
+      //     text-align: center;
+      //     top: -2px;
+      //     width: 39px;
+
+      //     @media screen and (min-width: $mobile-landscape-wide) {
+      //       font-size: 45px;
+      //       height: 44px;
+      //       width: 44px;
+      //     }
+      //   }
+      // }
+    }
+  }
+
+  // First level menu item styles
+  .menu__item--has-first-level {
+    // background-color: $mobile-navigation-item-bg;
+    // border-left: 4px solid $turku-blue;
+    // margin-bottom: 1px;
+    // position: relative;
+
+    // @media screen and (min-width: $desktop-narrow) {
+    //   background-color: transparent;
+    //   border-left: none;
+    //   float: left;
+    //   margin-bottom: 0;
+    //   position: static;
+    // }
+
+    // > a {
+    //   font-weight: bold;
+
+    //   @media screen and (min-width: $desktop-narrow) {
+    //     font-weight: normal;
+    //   }
+    //   @media screen and (min-width: 1400px) {
+    //     font-weight: bold;
+    //   }
+    // }
+
+    .menu {
+      position: relative;
+
+      @media screen and (min-width: $desktop-narrow) {
+        border-bottom: 5px solid $turku-blue;
+      }
+    }
+
+    &.is-collapsed,
+    &.is-expanded {
+      > .menu__item--expanded-toggle {
+        background-color: $turku-blue;
+        border-left: 1px solid $mobile-navigation-bg;
+        display: block;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 45px;
+        z-index: 10;
+
+        @media screen and (min-width: $desktop-narrow) {
+          display: none;
+        }
+
+        &:before {
+          color: #FFFFFF;
+          font-size: 40px;
+          font-weight: normal;
+          height: 100%;
+          line-height: 100%;
+          position: absolute;
+          text-align: center;
+          top: 0;
+          width: 45px;
+        }
+      }
+
+      > a {
+        padding-right: 45px;
+
+        @media screen and (min-width: $desktop-narrow) {
+          //@include icon-menu-collapsed;
+          padding-right: 30px;
+        }
+
+        @media screen and (min-width: 1400px) {
+          padding-right: 45px;
+        }
+
+        &:before {
+          @media screen and (min-width: $desktop-narrow) {
+            color: #d3d3d3;
+            font-size: 34px;
+            font-weight: normal;
+            line-height: 34px;
+            margin-top: -16px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+          }
+
+          @media screen and (min-width: 1400px) {
+            font-size: 48px;
+            line-height: 48px;
+            margin-top: -24px;
+          }
+        }
+      }
+
+      &:hover {
+        > a {
+          @media screen and (min-width: $desktop-narrow) {
+            //@include icon-menu-expanded;
+          }
+
+          &:after {
+            @media screen and (min-width: $desktop-narrow) {
+              background-color: rgba(255, 255, 255, 0.4);
+              border: 1px solid #FFFFFF;
+              content: "";
+              height: 16px;
+              line-height: 100%;
+              margin-top: -8px;
+              position: absolute;
+              right: 9px;
+              top: 50%;
+              width: 16px;
+            }
+
+            @media screen and (min-width: 1400px) {
+              height: 22px;
+              margin-top: -11px;
+              right: 14px;
+              width: 22px;
+            }
+          }
+
+          &:before {
+            @media screen and (min-width: $desktop-narrow) {
+              color: #FFFFFF;
+              font-size: 34px;
+              font-weight: normal;
+              line-height: 34px;
+              margin-top: -16px;
+              position: absolute;
+              right: 0;
+              top: 50%;
+            }
+
+            @media screen and (min-width: 1400px) {
+              font-size: 48px;
+              line-height: 48px;
+              margin-top: -25px;
+              right: 1px;
+            }
+          }
+        }
+      }
+    }
+
+    &.is-expanded {
+      // > .menu__item--expanded-toggle {
+      //   @include icon-angle-down;
+      // }
+
+      &.is-active-trail,
+      &.is-active {
+        > a {
+          // @media screen and (min-width: $desktop-narrow) {
+          //   @include icon-menu-expanded;
+          // }
+
+          &:after {
+            @media screen and (min-width: $desktop-narrow) {
+              background-color: rgba(255, 255, 255, 0.4);
+              border: 1px solid #FFFFFF;
+              content: "";
+              height: 16px;
+              line-height: 100%;
+              margin-top: -8px;
+              position: absolute;
+              right: 9px;
+              top: 50%;
+              width: 16px;
+            }
+
+            @media screen and (min-width: 1400px) {
+              height: 22px;
+              margin-top: -11px;
+              right: 14px;
+              width: 22px;
+            }
+          }
+
+          &:before {
+            @media screen and (min-width: $desktop-narrow) {
+              color: $turku-white;
+              font-size: 34px;
+              font-weight: normal;
+              line-height: 34px;
+              margin-top: -16px;
+              position: absolute;
+              right: 0;
+              top: 50%;
+            }
+
+            @media screen and (min-width: 1400px) {
+              font-size: 48px;
+              line-height: 1;
+              margin-top: -25px;
+              right: 1px;
+            }
+          }
+        }
+      }
+    }
+
+    // &.is-collapsed {
+    //   > .menu__item--expanded-toggle {
+    //     @include icon-angle-right;
+    //   }
+    // }
+
+    &.is-active-trail,
+    &.is-active {
+      > a {
+        // background-color: #ececec;
+
+        // @media screen and (min-width: $desktop-narrow) {
+        //   background-color: $turku-blue;
+        //   color: $turku-white;
+        // }
+      }
+
+      > .menu {
+        @media screen and (min-width: $desktop-narrow) {
+          display: none;
+        }
+      }
+    }
+
+    > .menu {
+      background-color: $mobile-navigation-2nd-level-bg;
+      z-index: 10;
+
+      @media screen and (min-width: $desktop-narrow) {
+        background-color: #f7f7f7;
+        display: none;
+        left: 0;
+        padding: 2em 0;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        z-index: 100;
+      }
+    }
+
+    &:hover {
+      // > a {
+      //   @media screen and (min-width: $desktop-narrow) {
+      //     background-color: $turku-blue;
+      //     color: $turku-white;
+      //   }
+      // }
+
+      > .menu {
+        @media screen and (min-width: $desktop-narrow) {
+          display: block;
+        }
+      }
+    }
+  }
+
+  // Second level menu item styles
+  .menu__item--second-level {
+    background-color: #FFFFFF;
+    margin-bottom: 1px;
+    position: relative;
+
+    @media screen and (min-width: $desktop-narrow) {
+      background-color: transparent;
+      clear: both;
+      display: block;
+      position: static;
+      width: 35%;
+      z-index: 101;
+    }
+
+    > a {
+      padding-left: 2em;
+
+      @media screen and (min-width: $desktop-narrow) {
+        color: $body-font-color;
+        padding-left: 110px;
+        padding-right: 40px;
+        position: relative;
+        z-index: 102;
+
+        &:hover {
+          background-color: #FFFFFF;
+        }
+      }
+
+      &:after {
+        @media screen and (min-width: $desktop-narrow) {
+          content: "";
+          height: 100%;
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 45px;
+        }
+      }
+    }
+
+    .menu {
+      background-color: #f5f5f5;
+      z-index: 11;
+    }
+
+    &.is-collapsed,
+    &.is-expanded {
+      > a {
+        padding-right: 46px;
+
+        @media screen and (min-width: $desktop-narrow) {
+          //@include icon-menu-collapsed-right;
+          padding-right: 45px;
+        }
+
+        &:before {
+          @media screen and (min-width: $desktop-narrow) {
+            color: #d3d3d3;
+            font-size: 34px;
+            font-weight: normal;
+            line-height: 34px;
+            margin-top: -16px;
+            position: absolute;
+            right: 0;
+            top: 50%;
+          }
+
+          @media screen and (min-width: 1400px) {
+            font-size: 48px;
+            line-height: 48px;
+            margin-top: -24px;
+          }
+        }
+      }
+
+      > .menu__item--expanded-toggle {
+        background-color: darken($turku-blue, 10%);
+        border-left: 1px solid $mobile-navigation-2nd-level-bg;
+        display: block;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 45px;
+        z-index: 10;
+
+        @media screen and (min-width: $desktop-narrow) {
+          display: none;
+        }
+
+        &:before {
+          color: #FFFFFF;
+          font-size: 40px;
+          font-weight: normal;
+          height: 100%;
+          line-height: 100%;
+          position: absolute;
+          top: 0;
+          text-align: center;
+          width: 45px;
+        }
+      }
+    }
+
+    // &.is-expanded {
+    //   > .menu__item--expanded-toggle {
+    //     @include icon-angle-down;
+    //   }
+    // }
+
+    // &.is-collapsed {
+    //   > .menu__item--expanded-toggle {
+    //     @include icon-angle-right;
+    //   }
+    // }
+
+    &.is-active-trail {
+      > a {
+        font-weight: bold;
+
+        @media screen and (min-width: $desktop-narrow) {
+          background-color: #ececec;
+        }
+      }
+    }
+
+    &.is-active {
+      > a {
+        font-weight: bold;
+
+        @media screen and (min-width: $desktop-narrow) {
+          background-color: #ececec;
+        }
+      }
+    }
+
+    > .menu {
+      @media screen and (min-width: $desktop-narrow) {
+        background-color: #fcfcfc;
+        border-bottom: 5px solid $turku-blue;
+        display: none;
+        left: 35%;
+        padding: 2em 0;
+        position: absolute;
+        top: 0;
+        width: 65%;
+      }
+    }
+
+    &:hover {
+      > .menu {
+        @media screen and (min-width: $desktop-narrow) {
+          display: block;
+          z-index: 100;
+        }
+      }
+    }
+  }
+
+  // Third level menu item styles
+  .menu__item--third-level {
+    > a {
+      //@include icon-menu-third-level;
+      padding-left: 3.5em;
+      position: relative;
+
+      @media screen and (min-width: $desktop-narrow) {
+        padding-left: 1em;
+      }
+
+      &:before {
+        color: #b9b9b9;
+        font-size: 58px;
+        font-weight: normal;
+        height: 60px;
+        left: 5px;
+        position: absolute;
+        top: 10px;
+        width: 60px;
+
+        @media screen and (min-width: $desktop-narrow) {
+          display: none;
+          font-size: 0;
+          height: 0;
+          width: 0;
+        }
+      }
+
+      &:hover {
+        background-color: #f7f7f7;
+      }
+    }
+
+    &.is-active {
+      > a {
+        font-weight: bold;
+      }
+
+      > .menu {
+        @media screen and (min-width: $desktop-narrow) {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// Left sidebar navigation
+.l-region--sidebar-first {
+  .menu {
+    padding-left: 2em;
+  }
+
+  .menu__item {
+    a {
+      color: $body-font-color;
+      display: inline-block;
+      font-size: 0.9em;
+      padding: 10px 0;
+    }
+  }
+
+  .menu__item--second-level {
+    a {
+      //@include icon-menu-third-level;
+      position: relative;
+
+      &:before {
+        @media screen and (min-width: $desktop-narrow) {
+          color: #b9b9b9;
+          font-size: 58px;
+          font-weight: normal;
+          height: 60px;
+          left: -45px;
+          position: absolute;
+          top: -18px;
+          width: 60px;
+        }
+      }
+    }
+
+    &.is-active-trail,
+    &.is-active {
+      > a {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .menu__item--third-level {
+    &.is-active {
+      > a {
+        font-weight: bold;
+      }
+    }
+  }
+
+  // If the menu starts from level 2, that level must function as if it was first menu level
+  .menu-level-2 {
+    .menu__item--second-level {
+      > a {
+        &:before {
+          font-size: 0;
+          height: 0;
+          width: 0;
+        }
+      }
+    }
+  }
+
+  .menu-block-wrapper {
+    > .menu {
+      padding-left: 0;
+
+      @media screen and (min-width: 1400px) {
+        padding-left: 1em;
+      }
+      > .menu__item:first-child > a {
+        padding-top: 0;
+      }
+
+      // Remove icons from first level items if the menu starts from second level in the dom.
+      > .menu__item--second-level > a:before {
+        background: none;
+        content: "";
+        display: none;
+      }
+    }
+  }
+}
+
+
+// Top menu styles
+.l-region--navigation-top {
+  .block--menu-block {
+    display: none;
+
+    @media screen and (min-width: $desktop-narrow) {
+      display: block;
+    }
+  }
+
+  .menu {
+    text-align: right;
+
+    .menu__item {
+      display: inline-block;
+
+      &:last-child {
+        a {
+          margin: 0 0 0 5px;
+        }
+      }
+
+      a {
+        color: $turku-white;
+        display: block;
+        margin: 0 5px;
+        padding: 0.5em;
+        text-transform: uppercase;
+
+        &.active,
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Section navigation defaults are gray instead of the normal blue
+.og-context {
+  .l-navigation {
+    .responsive-menus.responsified span.toggler {
+      background-color: $turku-gray;
+      color: $turku-black;
+    }
+
+    .menu__item--has-first-level {
+      &.is-active-trail > a,
+      &.is-active > a,
+      &:hover > a {
+        background-color: $turku-gray;
+        color: $turku-black;
+      }
+
+      .menu {
+        border-color: $turku-gray;
+      }
+    }
+
+    .quick-search-toggler {
+      background-color: $turku-gray;
+      color: $turku-black;
+    }
+  }
+}
+
+.e-service-wrapper {
+  background-color: #f7f7f7;
+  display: block;
+  overflow: hidden;
+  padding: 1em;
+
+  @media screen and (min-width: $desktop-narrow) {
+    height: 100%;
+    padding: 2em;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 33%;
+    z-index: 100;
+  }
+
+  a {
+    //@include icon-after-angle-right;
+    //@include icon-e-service-icon;
+    background-color: $turku-blue;
+    color: #FFF;
+    display: block;
+    line-height: 1.5;
+    margin: 0 0 0.5em;
+    padding: 10px 30px 10px 65px;
+    position: relative;
+    text-transform: uppercase;
+
+    &:before {
+      font-size: 45px;
+      left: 10px;
+      line-height: 30px;
+      margin-top: -15px;
+      position: absolute;
+      top: 50%;
+    }
+
+    &:after {
+      font-size: 28px;
+      height: 100%;
+      line-height: 100%;
+      margin-top: -14px;
+      position: absolute;
+      right: 0;
+      text-align: center;
+      top: 50%;
+      width: 30px;
+      z-index: 2;
+    }
+
+    &:hover {
+      background-color: darken($turku-blue, 10%);
+    }
+  }
+}
