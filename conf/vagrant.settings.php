@@ -7,9 +7,9 @@ $databases = array (
     array (
       'default' =>
         array (
-          'database' => 'drupal',
-          'username' => 'drupal',
-          'password' => 'password',
+          'database' => 'porikada',
+          'username' => 'porikada',
+          'password' => 'kada?KODIAQ',
           'host'     => 'localhost',
           'port'     => '',
           'driver'   => 'mysql',
@@ -27,7 +27,7 @@ $databases = array (
 define('PREDIS_BASE_PATH', DRUPAL_ROOT . '/sites/all/libraries/predis/src/');
 
 $conf['redis_client_interface'] = 'Predis'; // Can be "Predis".
-$conf['redis_client_host']      = 'local.kada.fi';  // Your Redis instance hostname.
+$conf['redis_client_host']      = 'localhost';  // Your Redis instance hostname.
 $conf['redis_client_password']  = '';
 $conf['lock_inc']               = 'sites/all/modules/contrib/redis/redis.lock.inc';
 $conf['path_inc']               = 'sites/all/modules/contrib/redis/redis.path.inc';
@@ -87,8 +87,8 @@ $conf['menu_override_parent_selector'] = true;
 $conf['file_temporary_path'] = "/tmp";
 
 // Set "domain space" that is necessary to handle redirects between domains
-define('DOMAIN_SPACE', 'local.kada.fi');
+define('DOMAIN_SPACE', 'pori-kada-development.druid.fi');
 
 // HACK - REMOVE WHEN DOMAIN URLS FOR DIFFERENT ENVS CAN BE DONE PROPERLY
-define('KADACALENDAR_BASE_URL', 'http://calendar.local.kada.fi/');
+define('KADACALENDAR_BASE_URL', 'http://calendar.pori-kada-development.druid.fi/');
 

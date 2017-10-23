@@ -76,5 +76,21 @@ test:
     - code/modules/features: sites/all/modules/features
     - code/themes/custom: sites/all/themes/custom
     - code/profiles/kadaprofile: profiles/kadaprofile
-    - conf/dev.settings.php: sites/default/settings.php
+    - conf/development.settings.php: sites/default/settings.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
+
+# Production environment:
+testing:
+
+  # Prod environment only symlinks files
+  link:
+    - files: sites/default/files
+
+  # Other files are copied, note settings.php
+  copy:
+    - code/modules/custom: sites/all/modules/custom
+    - code/modules/features: sites/all/modules/features
+    - code/themes/custom: sites/all/themes/custom
+    - code/profiles/kadaprofile: profiles/kadaprofile
+    - conf/testing.settings.php: sites/default/settings.php
+    - conf/testing.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc

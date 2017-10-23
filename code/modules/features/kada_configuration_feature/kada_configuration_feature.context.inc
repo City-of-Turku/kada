@@ -145,16 +145,16 @@ function kada_configuration_feature_context_default_contexts() {
           'module' => 'views',
           'delta' => 'kada_news-front_block',
           'region' => 'highlighted',
-          'weight' => '-10',
+          'weight' => '-86',
         ),
         'kada_widget_feature-widget_before_content' => array(
           'module' => 'kada_widget_feature',
           'delta' => 'widget_before_content',
-          'region' => 'highlighted',
-          'weight' => '-9',
+          'region' => 'before_content',
+          'weight' => '-10',
         ),
       ),
-      'layout' => 'driveturku-front',
+      'layout' => 'kada-front',
     ),
   );
   $context->condition_mode = 1;

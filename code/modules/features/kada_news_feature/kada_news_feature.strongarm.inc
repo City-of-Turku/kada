@@ -195,7 +195,7 @@ function kada_news_feature_strongarm() {
       'display' => array(
         'domain' => array(
           'current' => array(
-            'weight' => '16',
+            'weight' => '28',
             'visible' => FALSE,
           ),
           'main_news' => array(
@@ -225,8 +225,8 @@ function kada_news_feature_strongarm() {
         ),
         'language' => array(
           'current' => array(
-            'weight' => '12',
-            'visible' => TRUE,
+            'weight' => '25',
+            'visible' => FALSE,
           ),
           'default' => array(
             'weight' => '2',

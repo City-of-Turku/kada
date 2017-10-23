@@ -1,0 +1,17 @@
+diff --git a/modules/library/scald_dnd_library/scald_dnd_library.module b/modules/library/scald_dnd_library/scald_dnd_library.module
+index dae3a1a..28955d4 100644
+--- a/modules/library/scald_dnd_library/scald_dnd_library.module
++++ b/modules/library/scald_dnd_library/scald_dnd_library.module
+@@ -169,6 +169,12 @@ function scald_dnd_library_scald_render($atom, $context, $options) {
+   if (!empty($atom->rendered->thumbnail_transcoded_url)) {
+     $path = $atom->rendered->thumbnail_transcoded_url;
+   }
++  elseif (!empty($atom->rendered->thumbnail_source_url)) {
++    $path = $atom->rendered->thumbnail_source_url;
++  }
++  elseif (!empty($atom->rendered->file_transcoded_url)) {
++    $path = $atom->rendered->file_transcoded_url;
++  }
+   else {
+     $path = image_style_url('library', $atom->thumbnail_source);
+   }

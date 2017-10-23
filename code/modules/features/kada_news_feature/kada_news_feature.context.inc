@@ -220,7 +220,7 @@ function kada_news_feature_context_default_contexts() {
   $export['news_list'] = $context;
 
   $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->disabled = TRUE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'news_rss_feed';
   $context->description = 'Links news RSS feed to theme page';

@@ -1,0 +1,41 @@
+.container {
+  @include container;
+  @include responsive-whitespace;
+}
+
+.has-two-sidebars {
+  @media screen and (min-width: $tablet-portrait) {
+    .sidebar--first {
+      @include span(4);
+    }
+
+    .section--content {
+      @include span(last 8);
+    }
+  }
+
+  @media screen and (min-width: $desktop-narrow) {
+    .sidebar--first,
+    .sidebar--second {
+      @include span(3);
+    }
+
+    .sidebar--second {
+      @include last;
+    }
+
+    .section--content {
+      @include span(6);
+    }
+  }
+
+  // @media screen and (min-width: $desktop) {
+  //   .sidebar--second {
+  //     width: span(2);
+  //   }
+
+  //   .section--content {
+  //     width: span()
+  //   }
+  // }
+}

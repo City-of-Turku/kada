@@ -1,0 +1,330 @@
+.turkucalendar {
+
+  .l-branding {
+    @include clearfix;
+    @include grid-span(12,1);
+    background-color: transparent;
+  }
+
+  .l-branding-inner {
+    @include breakpoint($mobi-navi) {
+      float: none;
+      margin: 0 auto;
+      max-width: 1320px;
+    }
+  }
+
+  .l-region--header {
+    display: none;
+
+    @include breakpoint($mobi-navi) {
+      display: block;
+    }
+  }
+
+  .l-region--navigation-top {
+    display: block;
+
+    @include breakpoint($small-desk) {
+      display: inline-block;
+    }
+
+    .menu.menu--language-switcher {
+      margin: 0 10px;
+
+      @include breakpoint($small-desk) {
+        margin: 0 0 0 10px;
+      }
+
+      .menu__item a {
+        margin: 0;
+      }
+    }
+
+    .menu__link {
+      font-size: 0.875rem;
+      margin: 0;
+    }
+
+    .language-select {
+      display: none;
+    }
+  }
+
+  .l-navigation-top {
+    display: block;
+    text-align: right;
+    width: 100%;
+
+    .block--locale-language {
+      @include breakpoint($tab) {
+        display: inline-block;
+      }
+    }
+
+    .font-zoom-level-changer {
+      @include breakpoint($mobi-navi) {
+        display: inline-block;
+        margin: 0 15px;
+      }
+    }
+  }
+
+  .l-custom-navigation {
+    @include clearfix;
+    @include custom-menu-in-front-of-header;
+    @include grid-span(12,1);
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    pointer-events: none;
+    position: relative;
+    padding: 0 8px;
+
+    .l-region--navigation {
+      @include grid-span(12,1);
+      clear: both;
+      line-height: 2;
+      margin-bottom: 1em;
+      pointer-events: initial;
+
+      @include breakpoint($tab) {
+        @include grid-span(8,5);
+        clear: none;
+        margin-top: -3.5em;
+      }
+
+      @include breakpoint($mobi-navi) {
+        @include grid-span(9,4);
+        margin-top: -4em;
+      }
+    }
+  }
+
+  .menu {
+    text-align: center;
+
+    @include breakpoint($tab) {
+      text-align: left;
+    }
+  }
+
+  .menu__item {
+    display: inline;
+    position: relative;
+
+    a {
+      color: $turkucalendar-white;
+      font-size: 1.3em;
+      padding: 5px 20px;
+
+      &.active:after {
+        content: " ";
+        display: block;
+        height: 24px;
+        bottom: -15px;
+        left: 50%;
+        margin-left: -12px;
+        position: absolute;
+        width: 24px;
+        z-index: -1;
+        @include transform-origin(50% 50%);
+        @include transform(rotate(45deg));
+      }
+    }
+  }
+
+  .menu__item--hobbies > a {
+    font-weight: 600;
+
+    &, &.active:after {
+      background-color: $turkucalendar-hobbies;
+    }
+  }
+
+  .menu__item--events > a {
+    font-weight: 600;
+
+    &, &.active:after {
+      background-color: $turkucalendar-events;
+    }
+  }
+
+  .menu__item--event-add {
+    > a {
+      @extend .icon;
+      @include icon-calendar-o;
+      @include border-radius(2px);
+      background-color: $turkucalendar-blue;
+      color: $turkucalendar-white;
+      font-size: 1em;
+      font-weight: 300;
+      padding: 8px 15px;
+
+      &:before {
+        margin-right: 15px;
+      }
+    }
+  }
+
+  .l-header .menu__item--event-add {
+    display: none;
+
+    @include breakpoint($mobi-navi) {
+      display: inline-block;
+      float: right;
+    }
+  }
+
+  .l-footer .menu__item--event-add {
+    margin: 3em 0;
+
+    @include breakpoint($small-desk) {
+      margin: 0;
+    }
+  }
+
+  .l-footer .l-region--footer {
+    background-image: none;
+  }
+}
+
+
+@mixin grid-tag {
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+%grid-tag-left {
+  @include grid-tag;
+  padding: 5px 15px 5px 5px;
+
+  @include breakpoint($phablet) {
+    padding: 5px 10px 5px 10px;
+  }
+
+  @include breakpoint($small-desk) {
+    padding: 5px 10px 5px 15px;
+  }
+}
+
+%grid-tag-right {
+  @include grid-tag;
+  padding: 5px 5px 5px 15px;
+  float: right;
+
+  @include breakpoint($phablet) {
+    padding: 5px 10px 5px 10px;
+  }
+
+  @include breakpoint($small-desk) {
+    padding: 5px 15px 5px 10px;
+  }
+}
+
+.turkucalendar .mosaic {
+  background-color: transparent;
+  float: none;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  position: static;
+
+  .grid-item {
+    @include layout(24, $gutter: 0) {
+      @include float-span(24);
+
+      @include breakpoint($tab) {
+        @include float-span(12);
+      }
+
+      @include breakpoint($small-desk) {
+        @include float-span(8);
+      }
+
+      @include breakpoint($desk) {
+        @include float-span(6);
+      }
+    }
+  }
+}
+
+// Turkucalendar front FlexSlider
+.turkucalendar .flexslider {
+  .flex-caption__date {
+    @extend %grid-tag-left;
+    margin: 0 0 10px;
+
+    @include breakpoint($tab) {
+      margin: 20px 0;
+    }
+  }
+}
+
+$variants: (
+  'hobbies': $turkucalendar-hobbies,
+  'events': $turkucalendar-events,
+);
+
+@each $variant, $color in $variants {
+  .turkucalendar-#{$variant} {
+
+    .flex-caption__date {
+      background-color: rgba($color, 0.8);
+    }
+
+    .grid-item,
+    .event__image__content {
+      .event__date {
+        background-color: rgba($color, 0.8);
+      }
+    }
+
+    &.node-type-event .l-main-wrapper {
+      background-color: darken($color, 25%);
+    }
+
+    .event-tabs-wrapper .quicktabs-tabs > li.active > a {
+      color: $color;
+    }
+
+    .event--list,
+    .event-map-item,
+    .event-tab-item {
+      .event__title > a {
+        color: $color;
+      }
+    }
+
+    .filter__toggle {
+      background-color: $color;
+    }
+    .filter__state {
+      background-color: $color;
+      .clear {
+        background-color: darken($color, 10%);
+      }
+    }
+
+    .l-region--filters .filter.is-expanded {
+      .filter__toggle {
+        background-color: darken($color, 10%);
+      }
+
+      .filter-icon {
+        color: $turkucalendar-white;
+      }
+    }
+
+    .node--event--full .quicktabs-wrapper {
+      .quicktabs-tabs {
+        > li {
+          &.active > a,
+          > a:hover {
+            background-color: $color;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+/**
+ * Carousels share styles from flexslider because they essentially are flexsliders so part of the styles can be found
+ * from the _flexslider.scss file. Rest of mosaic styles are in _mosaic.scss file.
+ */
+
+// Widget container
+.block--tkufi-widget-feature {
+  background-color: #000000;
+}
+
+.theme-front .block--tkufi-widget-feature {
+  margin-top: 3%;
+}
+
+// Carousel & mosaic widget styles
+.entity-widget .mosaic,
+.view-kada-widget-event-carousel {
+  @media screen and (min-width: $desktop-narrow) {
+    float: left;
+    margin-right: 27%;
+    position: relative;
+    width: 73%;
+  }
+}
+
+
+// Calendar widget styles
+.widget-event-calendar {
+  color: $turku-white;
+  margin-top: 30px;
+
+  @media screen and (min-width: $desktop-narrow) {
+    float: right;
+    margin-left: -100%;
+    width: 27%;
+  }
+}
+
+// Carousel widget specific styles
+.view-kada-widget-event-carousel {
+  @media screen and (min-width: $desktop-narrow) {
+    padding: 1.5% 0;
+  }
+}
+
+.theme-front .view-kada-widget-event-carousel {
+  padding: 0;
+}
+
+.has-two-sidebars {
+  // Carousel & mosaic widget styles
+  .entity-widget .mosaic,
+  .view-kada-widget-event-carousel {
+    @media screen and (min-width: $desktop-narrow) {
+      float: none;
+      margin-right: 0;
+      width: 100%;
+    }
+  }
+
+  .view-kada-widget-event-carousel {
+    padding: 0;
+  }
+
+  // Calendar widget styles
+  .widget-event-calendar {
+    @media screen and (min-width: $desktop-narrow) {
+      float: none;
+      margin-left: 0;
+      width: auto;
+    }
+  }
+}
+
+.has-one-sidebar {
+  // Carousel & mosaic widget styles
+  .entity-widget .mosaic,
+  .view-kada-widget-event-carousel {
+    @media screen and (min-width: $desktop-narrow) {
+      float: none;
+      margin-right: 0;
+      width: 100%;
+    }
+
+    @media screen and (min-width: $desktop) {
+      float: left;
+      margin-right: 34%;
+      width: 66%;
+    }
+  }
+
+  // Calendar widget styles
+  .widget-event-calendar {
+    @media screen and (min-width: $desktop-narrow) {
+      float: none;
+      margin-left: 0;
+      width: auto;
+    }
+
+    @media screen and (min-width: $desktop) {
+      float: right;
+      margin-left: -100%;
+      width: 34%;
+    }
+  }
+}

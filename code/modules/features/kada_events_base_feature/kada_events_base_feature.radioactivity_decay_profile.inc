@@ -20,7 +20,7 @@ function kada_events_base_feature_default_radioactivity_decay_profile() {
   $radioactivity_decay_profile->granularity = '60';
   $radioactivity_decay_profile->half_life = 21600;
   $radioactivity_decay_profile->cut_off = '0.1';
-  $radioactivity_decay_profile->storage = 'Memcached';
+  #$radioactivity_decay_profile->storage = 'Memcached';
   $export['events'] = $radioactivity_decay_profile;
 
   return $export;

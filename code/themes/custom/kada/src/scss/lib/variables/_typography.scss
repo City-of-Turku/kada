@@ -1,0 +1,31 @@
+//
+// @file
+// This file includes all variables related to typography
+//
+
+
+// Font sizes
+$rembase: 16;
+$base-font-size: 16px; // Leave at 16px for correct container width
+$base-font-size-rem: 1rem;
+$base-line-height: 1.5; // 24px absolute line-height. For relative line-height (1.5), see http://cssleading.com/
+
+// Font families
+$helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+
+$heading-font-family: $open-sans;
+
+$font-size-heading-1: 2rem;
+$font-size-heading-2: 1.5rem;
+$font-size-heading-3: 1.3125rem;
+$font-size-heading-4: 1.125rem;
+$font-size-heading-5: $base-font-size-rem;
+
+$font-size-heading-intro: 2.25rem;
+$font-size-intro-text: 1.25rem;
+
+// Vertical Rythm
+$rhythm-unit: 'rem';
+$rem-with-px-fallback: false;
+$round-to-nearest-half-line: true;
