@@ -154,7 +154,6 @@ function kada_configuration_feature_context_default_contexts() {
           'weight' => '-10',
         ),
       ),
-      'layout' => 'kada-front',
     ),
   );
   $context->condition_mode = 1;
@@ -236,7 +235,6 @@ function kada_configuration_feature_context_default_contexts() {
           'weight' => '-8',
         ),
       ),
-      'layout' => 'driveturku-default',
     ),
   );
   $context->condition_mode = 1;
@@ -505,7 +503,6 @@ function kada_configuration_feature_context_default_contexts() {
           'weight' => '-8',
         ),
       ),
-      'layout' => 'driveturku-default',
     ),
   );
   $context->condition_mode = 1;

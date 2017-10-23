@@ -66,7 +66,6 @@ function kada_landing_page_feature_context_default_contexts() {
           'weight' => '-10',
         ),
       ),
-      'layout' => 'driveturku-front',
     ),
     'theme_html' => array(
       'class' => 'landing-page',
