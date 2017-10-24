@@ -1,0 +1,90 @@
+---
+##
+# This plabook configures Upcloud firewalls
+##
+
+# Make sure that the upcloud credentials are set as env
+- hosts: localhost
+  connection: local
+  become: false
+  tags: ['upcloud']
+  vars:
+    - upcloud_api_user: "{{ lookup('env', 'UPCLOUD_API_USER') }}"
+    - upcloud_api_passwd: "{{ lookup('env', 'UPCLOUD_API_PASSWD') }}"
+  tasks:
+    - name: Ensure that UPCLOUD_API_USER is present
+      fail:
+        msg: "You must set UPCLOUD_API_USER env in your local machine"
+      when: upcloud_api_user == ""
+
+    - name: Ensure that UPCLOUD_API_PASSWD is present
+      fail:
+        msg: "You must set UPCLOUD_API_PASSWD env in your local machine"
+      when: upcloud_api_passwd == ""
+
+# NOTE: This will create servers if upcloud_server_spec_list and upcloud_project_name variables are defined
+- name: Create Upcloud servers
+  hosts: localhost
+  connection: local
+  become: False
+  roles:
+    - { role: upcloud-servers, tags: ['upcloud', 'server'] }
+  tasks:
+    # This task updates the inventory file
+    - name: Update Upcloud Servers to server.inventory file
+      ini_file:
+        state: "{{ item['invocation']['module_args']['state'] }}"
+        path: ./server.inventory
+        section: "{{ item['item'] | json_query( '[*].group' ) | first }}"
+        option: "{{ item['public_ip'] }}"
+        allow_no_value: yes
+      with_items:
+        - "{{ upcloud_created_instances.results }}"
+      when: upcloud_created_instances is defined and item['item'] | json_query( '[*].group' ) | length == 1
+      tags: ['create', 'ini-config']
+
+    - name: Update UpCloud Secondary Groups to server.inventory file
+      ini_file:
+        state: present
+        path: ./server.inventory
+        section: "{{ item.1 }}:children"
+        option: "{{ item.0.group }}"
+        allow_no_value: yes
+      with_subelements:
+        - "{{ upcloud_server_spec_list }}"
+        - secondary_groups
+      tags: ['create', 'ini-config']
+
+# Creates firewalls for all project machines in UpCloud.
+# This means that the firewall rules will be updated even
+# for machines which were not provisioned by ansible originally.
+# NOTE: This will work for any machine in server.inventory which has IP-address from UpCloud.
+- hosts: localhost
+  connection: local
+  become: false
+  roles:
+    - { role: upcloud-firewall, tags: ['upcloud', 'firewall'] }
+
+# NOTE: This will setup disks to servers if upcloud_server_spec_list and upcloud_project_name variables are defined
+# Setups disks for all servers and disallows SSH password access
+- name: Setup Upcloud Servers
+  hosts: upcloud_created_servers
+  roles:
+    - { role: upcloud-disks, tags: ['upcloud', 'disks'] }
+    - { role: resize-root-disk, tags: ['disks'] }
+
+  tasks:
+    - name: Disallow SSH access with password
+      lineinfile:
+        dest: /etc/ssh/sshd_config
+        regexp: "^PasswordAuthentication"
+        line: "PasswordAuthentication no"
+        state: present
+      notify: restart sshd
+
+  handlers:
+    - name: restart sshd
+      service:
+        name: sshd
+        state: restarted
+

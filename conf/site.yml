@@ -76,7 +76,7 @@ test:
     - code/modules/features: sites/all/modules/features
     - code/themes/custom: sites/all/themes/custom
     - code/profiles/kadaprofile: profiles/kadaprofile
-    - conf/dev.settings.php: sites/default/settings.php
+    - conf/development.settings.php: sites/default/settings.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
 
 # Production environment:

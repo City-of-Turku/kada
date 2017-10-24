@@ -1,0 +1,37 @@
+.accessibility {
+   margin: 0 -12px -12px;
+
+   .accessibility-type {
+     border-bottom: none;
+     display: inline-block;
+     margin: 0;
+     padding: 10px 12px;
+     position: relative;
+     width: 100%;
+
+     &:first-child {
+       margin-top: 10px;
+     }
+
+     &:nth-child(odd) {
+       background-color: #f4f4f4;
+     }
+
+     .accessibility-type--name {
+       font-weight: bold;
+       margin-bottom: 3px;
+       margin-left: 50px;
+     }
+
+     .accessibility-type--icon {
+       background-color: #FFFFFF;
+       float: left;
+       line-height: 0;
+       margin-right: -100%;
+     }
+
+     .accessibility-type--description {
+       margin-left: 50px;
+     }
+   }
+ }

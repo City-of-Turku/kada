@@ -1,0 +1,500 @@
+# Main makefile
+#
+# - Use alphabetical order
+# - Document all the patches that are applied
+#
+
+# Core version
+core: "7.x"
+
+# API version
+api: 2
+
+# Defaults
+defaults:
+  projects:
+    subdir: "contrib"
+
+# Download translations
+#translations:
+#  - fi
+
+# Core & modules
+projects:
+
+  # Examples
+
+  # Patching module release
+  #entityreference:
+  #  version: 1.1
+  #  patch:
+  #    # COMMENT HERE WHY THIS PATCH IS USED
+  #    module_load_include: # SHORT MACHINE NAME FOR PATCH
+  #      url: https://www.drupal.org/files/issues/entityreference_1836106_48.patch
+
+  # Downloading straight up git version of module
+  #entityreference:
+  #  download:
+  #    type: "git"
+  #    url: "https://github.com/ckeditor/ckeditor-releases.git"
+  #    # Version 4.5.3
+  #    revision: "a93cb51eb1fc85a13892706dd61eccfd4c999947"
+
+  # Core
+  drupal:
+    type: core
+    version: '7.56'
+    patch:
+      995156: 'https://www.drupal.org/files/issues/995156-5_portable_taxonomy_permissions.patch'
+      1018614: 'https://www.drupal.org/files/drupal-menu_navigation_links-1018614-83.patch'
+
+  # Projects
+  plupload_lib:
+    type: library
+    download:
+      type: get
+      url: 'https://github.com/moxiecode/plupload/archive/v1.5.8.zip'
+    directory_name: plupload
+    patch:
+      - 'https://www.drupal.org/files/issues/plupload-1_5_8-rm_examples-1903850-21.patch'
+  addressfield:
+    version: '1.2'
+  admin_notification:
+    version: '1.0-rc3'
+  admin_menu:
+    version: '3.0-rc5'
+  admin_theme:
+    version: '1.0'
+    patch:
+      - 'https://www.drupal.org/files/disable_admin_theme.patch'
+  advagg:
+    version: '2.13'
+  auto_entitylabel:
+    version: '1.4'
+    patch:
+      - 'https://www.drupal.org/files/issues/auto_entitylabel_translation_placeholder_2427539_1.patch'
+  better_exposed_filters:
+    version: '3.4'
+  better_formats:
+    version: '1.0-beta2'
+#  bigmenu:
+#    type: module
+#    download:
+#      type: git
+#      url: 'http://git.drupal.org/project/bigmenu.git'
+#      revision: ab3bc0592234a36df4a36746909e54350565785a
+  breakpoints:
+    version: '1.4'
+  cache_actions:
+    version: '2.0-alpha5'
+#  coffee:
+#    version: '2.2'
+  cdn:
+    version: '2.10'
+  ckeditor_link:
+    version: '2.4'
+  colorbox:
+    version: '2.13'
+  conditional_fields:
+    version: '3.0-alpha2'
+  context:
+    version: '3.7'
+    patch:
+      - 'https://www.drupal.org/files/issues/context-node-taxonomy-performance-autocomplete-873936-47.patch'
+      #- 'https://www.drupal.org/files/context_0001-Issue-873936-by-wojtha-Fabianx-Massively-increase-pe.patch'
+  context_entity_field:
+    type: module
+    download:
+      type: git
+      url: 'http://git.drupal.org/project/context_entity_field.git'
+      #revision: 3e60e94f8541a4c72b2ef207a9c073d45c7b9c14
+      revision: 97170bcfb397c947034e5817814bb3eaac458e5f
+    patch:
+      - 'https://www.drupal.org/files/issues/context_entity_field-view_mode-2022197-4.patch'
+  context_omega:
+    version: '1.1'
+    patch:
+      - 'https://www.drupal.org/files/i2115997-3.patch'
+  ctools:
+    version: '1.12'
+  date:
+    version: '2.10'
+  date_facets:
+    type: module
+    download:
+      type: git
+      url: 'http://git.drupal.org/project/date_facets.git'
+      revision: 9037608bc2736096b9e30d94e843958aab27e584
+    patch:
+      - 'https://www.drupal.org/files/issues/2226429-date_facets_not_translatable-4.patch'
+      - 'https://www.drupal.org/files/issues/date_facets-undefined-index-2220227-2.patch'
+  diff:
+    version: '3.3'
+  domain:
+    version: '3.13'
+  domaincontext:
+    version: '1.0-alpha1'
+    patch:
+      - 'https://www.drupal.org/files/1542406-5-domain-machine-names.patch'
+  domain_integration:
+    version: '1.1'
+  domain_variable:
+    version: '1.1'
+    patch:
+      - 'https://www.drupal.org/files/issues/domain_variable_i18n_fixes-2308283-4.patch'
+  domain_feeds:
+    version: '1.4'
+  ds:
+    version: '2.14'
+  eck:
+    version: '2.0-rc9'
+    patch:
+      - 'https://www.drupal.org/files/issues/entity_translation-2490530-1.patch'
+  elysia_cron:
+    version: '2.4'
+  email:
+    version: '1.3'
+  entity:
+    version: '1.8'
+  entityreference:
+    version: '1.5'
+  entityreference_prepopulate:
+    version: '1.5'
+  entityqueue:
+    version: '1.1'
+    patch:
+      - ../../patches/entityqueue_subqueue_export.patch
+  entity_base_type:
+    type: module
+    download:
+      type: git
+      url: 'http://git.drupal.org/project/entity_base_type.git'
+      revision: 011b7f2b9221ca87846ee5dc0f22dc5c8507807d
+  entity_translation:
+    version: '1.0-beta7'
+  expire:
+    version: '2.0-rc4'
+  facetapi:
+    version: '1.5'
+  facetapi_bonus:
+    version: '1.1'
+  facetapi_collapsible:
+    type: module
+    download:
+      type: git
+      url: 'http://git.drupal.org/project/facetapi_collapsible.git'
+      revision: 88d15496926e1f9aa599e6b09afe09377a413482
+  facetapi_pretty_paths:
+    version: '1.4'
+  facetapi_select:
+    type: module
+    download:
+      type: git
+      url: 'http://git.drupal.org/project/facetapi_select.git'
+      revision: c960e188fd9ce1cbc21d63cec0e331b0ab70ff5f
+  features:
+    version: '2.10'
+  features_extra:
+    version: '1.0'
+  features_override:
+    version: '2.0-rc3'
+    patch:
+      - 'https://www.drupal.org/files/issues/features_override-serialization-2629912-2.patch'
+  field_collection:
+    version: '1.0-beta12'
+  field_group:
+    version: '1.5'
+  feeds:
+    version: '2.0-beta3'
+    type: module
+  feeds_ex:
+    version: '1.0-beta2'
+  feeds_oauth:
+    version: '1.0-beta3'
+    patch:
+      - ../../patches/feeds_oauth_library_404_fix.patch
+  feeds_tamper:
+    version: '1.1'
+    patch:
+      - 'https://www.drupal.org/files/issues/easyconfigimport_1946222_0.patch'
+  feeds_tamper_conditional:
+    version: '1.0-beta2'
+  fitvids:
+    version: '1.17'
+  flag:
+    version: '3.9'
+  flexslider:
+    version: '2.0-alpha3'
+    #version: '2.0-rc2'
+    patch:
+      - 'https://www.drupal.org/files/issues/0001-Issue-2086525-by-alvar0hurtad0-Johnny-vd-Laar-Flexsl_0.patch'
+  geocoder:
+    version: '1.3'
+  geocoder_rules:
+    type: module
+    download:
+      type: git
+      url: 'http://git.drupal.org/project/geocoder_rules.git'
+      revision: 4d6910d6d2ec80aedd9078ee68cdb844d0934a3c
+  geofield:
+    version: '2.3'
+    patch:
+      - 'https://www.drupal.org/files/issues/geofield-delete_feature_fix-1350320-20.patch'
+      - ../../patches/geofield-entity-translation-field-lang.patch
+  geophp:
+    version: '1.7'
+  google_analytics:
+    version: '2.0'
+  hierarchical_select:
+    version: '3.0-beta8'
+  honeypot:
+    version: '1.22'
+  httprl:
+    version: '1.14'
+  i18n:
+    version: '1.18'
+  imageapi_optimize:
+    version: '1.2'
+  imagecache_token:
+    version: '1.0-rc2'
+    patch:
+      - 'https://www.drupal.org/files/issues/imagecache_token-scald_compatibility-2528180-16.patch'
+  ip_geoloc:
+    version: '1.30'
+  job_scheduler:
+    version: '2.0-alpha3'
+  jquery_update:
+    version: '2.7'
+  language_access:
+    version: '1.01'
+  libraries:
+    version: '2.3'
+  link:
+    version: '1.4'
+  linkchecker:
+    version: '1.3'
+  linkit:
+    version: '3.5'
+    patch:
+      #- 'https://www.drupal.org/files/issues/linkit-entity-translation-support-2280441-13.patch'
+      - 'https://www.drupal.org/files/issues/entity_translation-2280441-31.patch'
+  maxlength:
+    version: '3.2'
+#  memcache:
+#    version: '1.5'
+  menu_attributes:
+    version: '1.0'
+  menu_block:
+    version: '2.7'
+  metatag:
+    version: '1.22'
+  module_filter:
+    version: '2.1'
+  multiple_entity_form:
+    version: '1.3'
+  multiple_selects:
+    version: '1.2'
+  node_clone:
+    version: '1.0'
+  openlayers:
+    version: '2.0-beta11'
+    patch:
+      - ../../patches/openlayers_internal_variant.patch
+  openlayers_geolocate_button:
+    version: '1.0'
+    patch:
+      - ../../patches/openlayers_geolocate_button-show-location.patch
+  options_element:
+    version: '1.12'
+  og:
+    version: '2.7'
+    patch:
+      - 'https://www.drupal.org/files/issues/add-gid-to-relationship-field-1890370-34.patch'
+  og_extras:
+    version: '1.2'
+  og_menu_single:
+    version: '1.0-beta2'
+    patch:
+      - 'https://www.drupal.org/files/issues/og_menu_single-check-menu-access-2027109-14.patch'
+  og_webform:
+    version: '1.0-beta1'
+    patch:
+      - 'http://cgit.drupalcode.org/og_webform/patch/?id=b60f03ae4de8050bb2499106484df085b9884b25'
+      - 'https://www.drupal.org/files/og_webform_api2-1946432_0.patch'
+  pathauto:
+    version: '1.3'
+  picture:
+    version: '2.13'
+  piwik:
+    version: '2.9'
+  plupload:
+    version: '1.7'
+  prepopulate:
+    version: '2.1'
+  proj4js:
+    version: '1.2'
+  publishcontent:
+    version: '1.4'
+  quicktabs:
+    version: '3.8'
+  radioactivity:
+    version: '2.10'
+    patch:
+      - ../../patches/radioactivity-config-location.patch
+  redirect:
+    version: '1.0-rc3'
+#  redis:
+#    version: '2.12'
+#    patch:
+#      - 'https://www.drupal.org/files/issues/redis-predis-path-183934-19.patch'
+  relation:
+    version: '1.1'
+    patch:
+      better_rules: 'https://www.drupal.org/files/issues/relation-query_endpoints-1302788-33.patch'
+  relation_add:
+    version: '1.6'
+  responsive_menus:
+    version: '1.6'
+  restrict_node_page_view:
+    version: '1.2'
+  rules:
+    version: '2.10'
+    patch:
+      - 'https://www.drupal.org/files/issues/rules-rules_i18n_fatal-2495599-2.patch'
+  rules_batch:
+    version: '1.0-beta1'
+  rules_conditional:
+    version: '1.0-beta2'
+  sarnia:
+    download:
+      type: git
+      url: 'http://git.drupal.org/project/sarnia.git'
+      revision: f266c3e84c744a28b61418987baee32fe22a473b
+    patch:
+      - 'https://www.drupal.org/files/issues/2513444-sarnia-date-facets-1.patch'
+      - 'https://www.drupal.org/files/issues/displayHighlight-2507513-10032369.patch'
+  scald:
+    version: '1.9'
+    patch:
+      - '../../patches/restructure-library-render.patch'
+  scald_vimeo:
+    version: '1.5'
+  scald_youtube:
+    version: '1.6'
+  scald_file:
+    version: '1.4'
+  scheduler:
+    version: '1.5'
+  search_api:
+    version: '1.22'
+  search_api_et:
+    type: module
+    download:
+      type: git
+      url: 'http://git.drupal.org/project/search_api_et.git'
+      revision: a56f5273bc4cef18ebac797a9f04410224601d2f
+  search_api_override:
+    version: '1.0-rc1'
+  search_api_solr:
+    version: '1.12'
+  service_links:
+    version: '2.3'
+  shortcutperrole:
+    version: '1.2'
+  shorten:
+    version: '1.4'
+  smtp:
+    version: '1.7'
+  stage_file_proxy:
+    version: '1.7'
+  stringoverrides:
+    version: '1.8'
+  strongarm:
+    version: '2.0'
+  styleguide:
+    version: '1.1'
+    patch:
+      - ../../patches/styleguide-group.patch
+  system_status:
+    version: '3.2'
+  taxonomy_display:
+    version: '1.1'
+  title:
+    version: '1.0-alpha9'
+  token:
+    version: '1.7'
+  transliteration:
+    version: '3.2'
+  uuid:
+    version: '1.0'
+  uuid_features:
+    version: '1.0-rc1'
+  variable:
+    version: '2.5'
+  varnish:
+    version: '1.4'
+  view_unpublished:
+    version: '1.2'
+  views_content_cache:
+    version: '3.0-alpha3'
+    patch:
+      og: 'https://www.drupal.org/files/issues/views_content_cache-og-2054811-9.patch'
+  views:
+    version: '3.18'
+  views_accordion:
+    version: '1.1'
+  views_data_export:
+    version: '3.2'
+  views_bulk_operations:
+    version: '3.4'
+  views_default_view_override:
+    version: '2.0'
+  views_rss:
+    version: '2.0-rc4'
+  views_ajax_get:
+    version: '1.3'
+  webform:
+    version: '4.15'
+  wysiwyg:
+    type: module
+    download:
+      type: git
+      url: 'http://git.drupal.org/project/wysiwyg.git'
+      revision: 898d022cf7d0b6c6a6e7d813199d561b4ad39f8b
+
+  # Themes
+  omega:
+    version: '4.4'
+
+libraries:
+  ckeditor:
+    download:
+      type: get
+      url: 'http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.5/ckeditor_4.4.5_full.zip'
+  fitvids:
+    download:
+      type: get
+      url: 'https://raw.github.com/davatron5000/FitVids.js/master/jquery.fitvids.js'
+  flexslider:
+    download:
+      type: get
+      url: 'https://github.com/woothemes/FlexSlider/archive/version/2.2.2.zip'
+    patch:
+      - ../../patches/flexslider_ie_vertical_pan_support.patch
+  jsonpath:
+    download:
+      type: file
+      url: code/libraries/jsonpath/jsonpath.php
+#  predis:
+#    download:
+#      type: get
+#      url: 'https://github.com/nrk/predis/archive/v1.0.0.zip'
+  colorbox:
+    download:
+      type: get
+      url: 'https://github.com/jackmoore/colorbox/archive/1.6.1.zip'
+  openlayers:
+    download:
+      type: get
+      #url: 'https://github.com/openlayers/openlayers/archive/v2.13.1.zip'
+      url: 'https://github.com/openlayers/ol2/releases/download/release-2.13.1/OpenLayers-2.13.1.zip'
