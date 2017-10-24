@@ -209,24 +209,26 @@
         adjustHeight('.l-region--navigation .menu__item--has-first-level');
 
         function adjustHeight(elem) {
-          // Get the heights of the second level (on the left), the third level (in the middle)
-          // and the optional e-services list (on the right if it exists)
+          if ($(window).width() >= '839') {
+            // Get the heights of the second level (on the left), the third level (in the middle)
+            // and the optional e-services list (on the right if it exists)
 
-          // Reset previous height alterations
-          $(elem).css('height', '');
+            // Reset previous height alterations
+            $(elem).css('height', '');
 
-          var leftHeight = $(elem).outerHeight();
-          var middleHeight = getHighest($(elem).find('.menu:visible'));
-          var rightHeight = getHighest($(elem).children('.e-service-wrapper'));
-          var highest = leftHeight;
-          if (middleHeight > highest) {
-            highest = middleHeight;
+            var leftHeight = $(elem).outerHeight();
+            var middleHeight = getHighest($(elem).find('.menu:visible'));
+            var rightHeight = getHighest($(elem).children('.e-service-wrapper'));
+            var highest = leftHeight;
+            if (middleHeight > highest) {
+              highest = middleHeight;
+            }
+            if (rightHeight > highest) {
+              highest = rightHeight;
+            }
+            $(elem).css('height', highest);
+            switchMainMenuBehavior(context);
           }
-          if (rightHeight > highest) {
-            highest = rightHeight;
-          }
-          $(elem).css('height', highest);
-          switchMainMenuBehavior(context);
         }
         function getHighest(elems) {
           var highest = 0;
