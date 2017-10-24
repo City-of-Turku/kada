@@ -31,6 +31,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'theme' => 'kada',
         'weight' => 0,
       ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -59,6 +65,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
         'weight' => 0,
       ),
       'seven' => array(
@@ -91,6 +103,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'theme' => 'kada',
         'weight' => 0,
       ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -119,6 +137,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
         'weight' => 0,
       ),
       'seven' => array(
@@ -151,6 +175,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'theme' => 'kada',
         'weight' => 0,
       ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -181,6 +211,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'theme' => 'kada',
         'weight' => 0,
       ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -207,6 +243,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
         'weight' => 0,
       ),
       'seven' => array(
@@ -237,6 +279,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'theme' => 'kada',
         'weight' => 0,
       ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -263,6 +311,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
         'weight' => 0,
       ),
       'seven' => array(
@@ -295,6 +349,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'theme' => 'kada',
         'weight' => 0,
       ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -323,6 +383,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
         'weight' => 0,
       ),
       'seven' => array(
@@ -355,6 +421,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'theme' => 'kada',
         'weight' => 0,
       ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -385,6 +457,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'theme' => 'kada',
         'weight' => 0,
       ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -413,6 +491,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'theme' => 'kada',
         'weight' => 0,
       ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -439,6 +523,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
         'weight' => 0,
       ),
       'seven' => array(
@@ -471,6 +561,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'theme' => 'kada',
         'weight' => 0,
       ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -499,6 +595,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
         'weight' => 0,
       ),
       'seven' => array(
@@ -531,6 +633,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'theme' => 'kada',
         'weight' => 0,
       ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -559,6 +667,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
         'weight' => 0,
       ),
       'seven' => array(
@@ -591,6 +705,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'theme' => 'kada',
         'weight' => 0,
       ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -617,6 +737,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
         'weight' => 0,
       ),
       'seven' => array(
@@ -647,6 +773,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'theme' => 'kada',
         'weight' => 0,
       ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -675,6 +807,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'theme' => 'kada',
         'weight' => 0,
       ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -701,6 +839,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
         'weight' => 0,
       ),
       'seven' => array(
@@ -733,6 +877,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'theme' => 'kada',
         'weight' => 0,
       ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -763,6 +913,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'theme' => 'kada',
         'weight' => 0,
       ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -789,6 +945,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
         'weight' => 0,
       ),
       'seven' => array(
@@ -819,6 +981,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'theme' => 'kada',
         'weight' => 0,
       ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
       'seven' => array(
         'region' => '',
         'status' => 0,
@@ -845,6 +1013,12 @@ function kada_configuration_feature_default_fe_block_settings() {
         'region' => '',
         'status' => 0,
         'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
         'weight' => 0,
       ),
       'seven' => array(

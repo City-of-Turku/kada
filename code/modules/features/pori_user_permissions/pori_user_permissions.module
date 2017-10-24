@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Pori user permissions feature.
+ */
+
+include_once 'pori_user_permissions.features.inc';

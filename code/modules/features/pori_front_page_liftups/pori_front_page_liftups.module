@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Pori front page liftups feature.
+ */
+
+include_once 'pori_front_page_liftups.features.inc';

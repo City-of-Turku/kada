@@ -52,7 +52,6 @@ function kada_geo_feature_context_default_contexts() {
           'weight' => '-9',
         ),
       ),
-      'layout' => 'driveturku-front',
     ),
   );
   $context->condition_mode = 0;
