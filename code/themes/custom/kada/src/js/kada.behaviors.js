@@ -188,6 +188,35 @@
         setInterval(function () {
           resizeOk = true;
         }, 33);
+        function setToMaxHeight(elem) {
+          // Get the heights of the second level (on the left), the third level (in the middle)
+          // and the optional e-services list (on the right if it exists)
+
+          // Reset previous height alterations
+          $(elem).css('height', '');
+
+          var leftHeight = $(elem).outerHeight();
+          var middleHeight = getHighest($(elem).find('.menu:visible'));
+          var rightHeight = getHighest($(elem).children('.e-service-wrapper'));
+          var highest = leftHeight;
+          if (middleHeight > highest) {
+            highest = middleHeight;
+          }
+          if (rightHeight > highest) {
+            highest = rightHeight;
+          }
+          $(elem).css('height', highest);
+        }
+        function getHighest(elems) {
+          var highest = 0;
+          for (var i = 0; i < $(elems).length; i++) {
+            var height = $(elems[i]).outerHeight();
+            if (height > highest) {
+              highest = height;
+            }
+          }
+          return highest;
+        }
         function adjustHeight() {
           if (resizeOk === false) {
             return;
@@ -197,100 +226,14 @@
 
           // Trigger only when using desktop menu
           if ($(window).width() >= '839') {
-            $('.l-footer .menu-block-wrapper > .menu').each(function () {
-              var highestElement = 0;
-              $('.menu__item--has-first-level', this).each(function () {
-                if ($(this).height() > highestElement) {
-                  highestElement = $(this).height();
-                }
-              });
-              $('.menu__item--has-first-level', this).height(highestElement);
-
+            $('.l-region--navigation .menu__item--has-first-level', context).hover(function() {
+              setToMaxHeight($(this).children('.menu'));
+            });
+            $('.l-region--navigation .menu__item--has-second-level', context).hover(function() {
+              setToMaxHeight($(this).parent('.menu'));
             });
 
           }
-
-          // Calculate all menus under active level to have the same height
-          $('.l-region--navigation .menu__item--has-first-level').hover(function () {
-
-            var secondLevelChild = $(this).find('> .menu');
-            var thirdLevelChild = secondLevelChild.find('li.is-active-trail > .menu');
-            var eserviceWrapper = $(this).find('.e-service-wrapper');
-
-            var highestMenu = 0;
-
-            var secondLevelHeight = secondLevelChild.outerHeight();
-            var thirdLevelHeight = thirdLevelChild.outerHeight();
-            var eserviceWrapperHeight = eserviceWrapper.outerHeight();
-
-            if ($(window).width() >= '839') {
-              highestMenu = thirdLevelHeight;
-              if (secondLevelHeight > highestMenu) {
-                highestMenu = secondLevelHeight;
-              }
-              if (eserviceWrapperHeight > highestMenu) {
-                highestMenu = eserviceWrapperHeight;
-              }
-              secondLevelChild.css('height', highestMenu);
-              thirdLevelChild.css('height', highestMenu);
-            }
-
-          });
-
-          // Calculate all menus under second level to same height when hovered
-          $('.l-region--navigation .menu__item--has-second-level').hover(function () {
-            var $this = $(this).parent();
-            var thirdLevelChild = $(this).find('> .menu');
-            var eserviceWrapper = $('.l-region--navigation').find('.e-service-wrapper');
-
-            var highestMenu = 0;
-
-            var secondLevelHeight = $this.outerHeight();
-            var thirdLevelHeight = thirdLevelChild.outerHeight();
-            var eserviceWrapperHeight = eserviceWrapper.outerHeight();
-
-            if ($(window).width() >= '839') {
-              highestMenu = thirdLevelHeight;
-              if (secondLevelHeight > highestMenu) {
-                highestMenu = secondLevelHeight;
-              }
-              if (eserviceWrapperHeight > highestMenu) {
-                highestMenu = eserviceWrapperHeight;
-              }
-
-              thirdLevelChild.css('height', highestMenu);
-              $this.css('height', highestMenu);
-            }
-          });
-
-
-          if ($(window).width() >= '839') {
-            $('.l-region--navigation .menu').css('height', '');
-          }
-
-          // Remove height from menus elements when mouse leaves the hovered menu and them menu is not active
-          $('.l-region--navigation .menu__item--has-first-level:not(.is-active-trail) .menu__item--has-second-level').hover(function (event) {
-            var $this = $(this).parent();
-            var thirdLevelChild = $this.find('> .menu');
-
-            if (event.type === 'mouseleave') {
-              $this.css('height', '');
-              thirdLevelChild.css('height', '');
-            }
-          });
-
-          // Remove height from menus elements when mouse leaves the hovered menu and them menu is not active
-          $('.l-region--navigation .menu__item--has-first-level.is-active .menu__item--has-second-level').hover(function (event) {
-            var $this = $(this).parent();
-            var thirdLevelChild = $this.find('> .menu');
-
-            if (event.type === 'mouseleave') {
-              $this.css('height', '');
-              thirdLevelChild.css('height', '');
-            }
-          });
-
-          resizeOk = false;
         }
 
         $(window).resize(adjustHeight);
