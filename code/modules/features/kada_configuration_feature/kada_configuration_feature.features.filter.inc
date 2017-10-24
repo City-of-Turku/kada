@@ -88,7 +88,7 @@ function kada_configuration_feature_filter_default_formats() {
         'weight' => -10,
         'status' => 1,
         'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <h3> <h2> <p> <table> <td> <tr> <hr> <tbody> <th> <thead> <br> <img> <iframe> <figure> <picture> <figcaption> <div>',
+          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <h5> <h4> <h3> <h2> <p> <table> <td> <tr> <hr> <tbody> <th> <thead> <br> <img> <iframe> <figure> <picture> <figcaption> <div>',
           'filter_html_help' => 1,
           'filter_html_nofollow' => 0,
         ),

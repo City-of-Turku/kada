@@ -3,7 +3,7 @@
 // This file includes all variables related to colors
 //
 
-$black: #000;
+$black: #1e1e1e;
 $white: #fff;
 
 // Messages colors
@@ -27,7 +27,7 @@ $default-color-lighter: lighten($black, 80%);
 $default-color-lightest: lighten($black, 95%);
 
 // Primary colors
-$primary-color: #fc421d;
+$primary-color: #1e1e1e;
 
 $primary-color-darkest: lighten($primary-color, 10%);
 $primary-color-darker: lighten($primary-color, 20%);
@@ -61,10 +61,10 @@ $secondary-color-lighter: lighten($secondary-color, 80%);
 $secondary-color-lightest: lighten($secondary-color, 90%);
 
 // General colors
-$link-color: $secondary-color;
-$link-color-hover: darken($secondary-color, 20%);
+$link-color: #009bea;
+$link-color-hover: #005eb8;
 
-$body-color: $default-color;
+$body-color: $primary-color;
 $body-background: $white;
 
 $heading-color: $primary-color;

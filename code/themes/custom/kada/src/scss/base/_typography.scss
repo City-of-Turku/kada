@@ -13,17 +13,9 @@ body {
 }
 
 a {
-  // background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
-  // background-repeat: repeat-x;
-  // background-position: bottom 0.25rem center;
-  // background-size: 100% 0.05rem;
   color: $link-color;
+  text-decoration: none;
   transition: all 150ms linear;
-  // text-decoration: none;
-  // text-shadow: 0.05rem 0 0 $white, -0.05rem 0 0 $white,
-  //   0 0.05rem 0 $white, 0 -0.05rem 0 $white,
-  //   0.1rem 0 0 $white, -0.1rem 0 0 $white,
-  //   0 0.1rem 0 $white, 0 -0.1rem 0 $white;
 
   &:hover,
   &:focus {
@@ -44,10 +36,10 @@ h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
+h5 {
   font-family: $heading-font-family;
   margin-top: 0;
+  text-transform: uppercase;
 
   a {
     color: inherit;
@@ -58,33 +50,35 @@ h6 {
 
 h1 {
   @include font-size-responsive($font-size-heading-1);
+  line-height: 1.1666;
   margin-bottom: 2rem;
-  line-height: 1.2125;
 }
 
 h2 {
   @include font-size-responsive($font-size-heading-2);
+  line-height: 1.1111;
   margin-bottom: 1.5rem;
   font-weight: 600;
 }
 
 h3 {
   @include font-size-responsive($font-size-heading-3);
+  line-height: 1.25;
   margin-bottom: 1rem;
 }
 
 h4 {
   @include font-size-responsive($font-size-heading-4);
+  line-height: 1.5;
   margin-bottom: .75rem;
+  text-transform: none;
 }
 
 h5 {
   @include font-size-responsive($font-size-heading-5);
+  line-height: 1.556;
   margin-bottom: .275rem;
-}
-
-h6 {
-  font-size: 90%;
+  text-transform: none;
 }
 
 p {
