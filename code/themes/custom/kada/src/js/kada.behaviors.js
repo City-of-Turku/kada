@@ -231,6 +231,8 @@
             });
             $('.l-region--navigation .menu__item--has-second-level', context).hover(function() {
               setToMaxHeight($(this).parent('.menu'));
+              $('.menu__item--has-second-level').children('ul').show();
+              $('.menu__item--has-second-level').not(this).children('ul').hide();
             });
 
           }
