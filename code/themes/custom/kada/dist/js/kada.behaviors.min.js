@@ -188,24 +188,43 @@
         setInterval(function () {
           resizeOk = true;
         }, 33);
-        function setToMaxHeight(elem) {
-          // Get the heights of the second level (on the left), the third level (in the middle)
-          // and the optional e-services list (on the right if it exists)
 
-          // Reset previous height alterations
-          $(elem).css('height', '');
+        $('.l-region--navigation .menu__item--has-first-level', context).hover(function(event) {
+          adjustHeight($(this).children('.menu'));
+          if (event.type === 'mouseleave') {
+            $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
+          }
+        });
+        $('.l-region--navigation .menu__item--has-second-level', context).hover(function() {
+          $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
+          $('.menu__item--has-second-level').not(this).children('ul').addClass('is-hidden');
+          adjustHeight($(this).parent('.menu'));
+        });
 
-          var leftHeight = $(elem).outerHeight();
-          var middleHeight = getHighest($(elem).find('.menu:visible'));
-          var rightHeight = getHighest($(elem).children('.e-service-wrapper'));
-          var highest = leftHeight;
-          if (middleHeight > highest) {
-            highest = middleHeight;
+        $(window).resize(adjustHeight('.l-region--navigation .menu__item--has-first-level'));
+        adjustHeight('.l-region--navigation .menu__item--has-first-level');
+
+        function adjustHeight(elem) {
+          if ($(window).width() >= '839') {
+            // Get the heights of the second level (on the left), the third level (in the middle)
+            // and the optional e-services list (on the right if it exists)
+
+            // Reset previous height alterations
+            $(elem).css('height', '');
+
+            var leftHeight = $(elem).outerHeight();
+            var middleHeight = getHighest($(elem).find('.menu:visible'));
+            var rightHeight = getHighest($(elem).children('.e-service-wrapper'));
+            var highest = leftHeight;
+            if (middleHeight > highest) {
+              highest = middleHeight;
+            }
+            if (rightHeight > highest) {
+              highest = rightHeight;
+            }
+            $(elem).css('height', highest);
           }
-          if (rightHeight > highest) {
-            highest = rightHeight;
-          }
-          $(elem).css('height', highest);
+          switchMainMenuBehavior(context);
         }
         function getHighest(elems) {
           var highest = 0;
@@ -217,32 +236,6 @@
           }
           return highest;
         }
-        function adjustHeight() {
-          if (resizeOk === false) {
-            return;
-          }
-          // Switch between mobile and desktop menu behavior on resize
-          switchMainMenuBehavior(context);
-
-          // Trigger only when using desktop menu
-          if ($(window).width() >= '839') {
-            $('.l-region--navigation .menu__item--has-first-level', context).hover(function(event) {
-              setToMaxHeight($(this).children('.menu'));
-              if (event.type === 'mouseleave') {
-                $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
-              }
-            });
-            $('.l-region--navigation .menu__item--has-second-level', context).hover(function() {
-              $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
-              $('.menu__item--has-second-level').not(this).children('ul').addClass('is-hidden');
-              setToMaxHeight($(this).parent('.menu'));
-            });
-
-          }
-        }
-
-        $(window).resize(adjustHeight);
-        adjustHeight();
       });
     }
   };
