@@ -226,8 +226,12 @@
 
           // Trigger only when using desktop menu
           if ($(window).width() >= '839') {
-            $('.l-region--navigation .menu__item--has-first-level', context).hover(function() {
+            $('.l-region--navigation .menu__item--has-first-level', context).hover(function(event) {
               setToMaxHeight($(this).children('.menu'));
+              if (event.type === 'mouseleave') {
+                $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
+                console.log('lollerskaytz');
+              }
             });
             $('.l-region--navigation .menu__item--has-second-level', context).hover(function() {
               $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
