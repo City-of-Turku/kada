@@ -191,7 +191,6 @@
 
         $('.l-region--navigation .menu__item--has-first-level', context).hover(function(event) {
           if ($(window).width() >= '839') {
-            console.log('paskaa');
             adjustHeight($(this).children('.menu'));
             if (event.type === 'mouseleave') {
               $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
