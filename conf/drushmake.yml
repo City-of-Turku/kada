@@ -387,6 +387,8 @@ projects:
     version: '1.5'
   search_api:
     version: '1.22'
+  search_api_ajax:
+    version: '1.2'
   search_api_et:
     type: module
     download:
@@ -417,6 +419,8 @@ projects:
       - ../../patches/styleguide-group.patch
   system_status:
     version: '3.2'
+  taxonomy_csv:
+    version: '5.10'
   taxonomy_display:
     version: '1.1'
   title:
