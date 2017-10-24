@@ -230,8 +230,8 @@
               setToMaxHeight($(this).children('.menu'));
             });
             $('.l-region--navigation .menu__item--has-second-level', context).hover(function() {
-              $('.menu__item--has-second-level').children('ul').show();
-              $('.menu__item--has-second-level').not(this).children('ul').hide();
+              $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
+              $('.menu__item--has-second-level').not(this).children('ul').addClass('is-hidden');
               setToMaxHeight($(this).parent('.menu'));
             });
 
