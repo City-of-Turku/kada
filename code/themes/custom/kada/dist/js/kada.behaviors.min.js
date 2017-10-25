@@ -205,9 +205,6 @@
           }
         });
 
-        $(window).resize(adjustHeight('.l-region--navigation .menu__item--has-first-level'));
-        adjustHeight('.l-region--navigation .menu__item--has-first-level');
-
         function adjustHeight(elem) {
           if ($(window).width() >= '839') {
             // Get the heights of the second level (on the left), the third level (in the middle)
