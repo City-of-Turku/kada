@@ -1,0 +1,11 @@
+name = Pori configuration
+description = Changes responsive menus media query to more suitable for Pori.fi
+core = 7.x
+package = KADA
+version = 7.x-1.0
+dependencies[] = kada_configuration_feature
+features[features_api][] = api:2
+features[features_override_items][] = variable.responsive_menus_media_size
+features[features_override_items][] = variable.responsive_menus_media_unit
+features[features_overrides][] = variable.responsive_menus_media_size.value
+features[features_overrides][] = variable.responsive_menus_media_unit.value

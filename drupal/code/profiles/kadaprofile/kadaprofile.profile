@@ -26,3 +26,15 @@ function kadaprofile_form_install_configure_form_alter(&$form, $form_state) {
   $form['server_settings']['site_default_country']['#default_value'] = "FI";
   $form['server_settings']['date_default_timezone']['#default_value'] = "Europe/Helsinki";
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables Pori features
+ */
+function kadaprofile_update_7101() {
+  $modules = array('pori_configuration', 'pori_front_page_liftups', 'pori_user_permissions');
+  $enable_dependencies = TRUE;
+
+  module_enable($modules, $enable_dependencies);
+}
