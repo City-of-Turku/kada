@@ -137,7 +137,7 @@
       // Undo everything mobileMenuBehavior does, in reverse order
       // close open submenus
       $(this).find('li.is-expanded:not(.is-active-trail)').toggleClass('is-expanded is-collapsed').find('ul.menu.is-visible').toggleClass('is-visible is-hidden');
-      $(this).find('li.menu__item--first-level.is-collapsed').toggleClass('is-expanded is-collapsed');
+      $(this).find('li.menu__item--has-first-level.is-collapsed').toggleClass('is-expanded is-collapsed');
       $(this).find('span.menu__item--expanded-toggle').off('click.submenu-toggle');
       $(this).find('.toggler').off('click.responsive-menu-toggle');
 
@@ -165,7 +165,7 @@
 
   var switchMainMenuBehavior = function (context) {
     var menu = $('.l-region--navigation .block--menu-block', context);
-    if ($(window).width() >= '946') {
+    if ($(window).width() >= '839') {
       desktopMenuBehavior.call(menu);
     }
     else {
@@ -180,118 +180,66 @@
     }
   };
 
-  // Drupal.behaviors.kadaEqualHeightsBehavior = {
-  //   attach: function (context) {
-  //     $(window).load(function () {
-  //       var resizeOk = true;
+  Drupal.behaviors.kadaEqualHeightsBehavior = {
+    attach: function (context) {
+      $(window).load(function () {
+        var resizeOk = true;
 
-  //       setInterval(function () {
-  //         resizeOk = true;
-  //       }, 33);
+        setInterval(function () {
+          resizeOk = true;
+        }, 33);
 
-  //       function adjustHeight() {
-  //         if (resizeOk === false) {
-  //           return;
-  //         }
+        $('.l-region--navigation .menu__item--has-first-level', context).hover(function(event) {
+          if ($(window).width() >= '839') {
+            adjustHeight($(this).children('.menu'));
+            if (event.type === 'mouseleave') {
+              $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
+            }
+          }
+        });
+        $('.l-region--navigation .menu__item--has-second-level', context).hover(function() {
+          if ($(window).width() >= '839') {
+            $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
+            $('.menu__item--has-second-level').not(this).children('ul').addClass('is-hidden');
+            adjustHeight($(this).parent('.menu'));
+          }
+        });
 
-  //         // Switch between mobile and desktop menu behavior on resize
-  //         switchMainMenuBehavior(context);
+        function adjustHeight(elem) {
+          if ($(window).width() >= '839') {
+            // Get the heights of the second level (on the left), the third level (in the middle)
+            // and the optional e-services list (on the right if it exists)
 
-  //         // Trigger only when using desktop menu
-  //         if ($(window).width() >= '946') {
-  //           $('.l-footer .menu-block-wrapper > .menu').each(function () {
-  //             var highestElement = 0;
-  //             $('.menu__item--first-level', this).each(function () {
-  //               if ($(this).height() > highestElement) {
-  //                 highestElement = $(this).height();
-  //               }
-  //             });
-  //             $('.menu__item--first-level', this).height(highestElement);
-  //           });
-  //         }
+            // Reset previous height alterations
+            $(elem).css('height', '');
 
-  //         // Calculate all menus under active level to have the same height
-  //         $('.l-region--navigation .menu__item--first-level.is-active-trail').hover(function () {
-  //           var secondLevelChild = $(this).find('> .menu');
-  //           var thirdLevelChild = secondLevelChild.find('li.is-active-trail > .menu');
-
-  //           var highestMenu = 0;
-
-  //           var secondLevelHeight = secondLevelChild.outerHeight();
-  //           var thirdLevelHeight = thirdLevelChild.outerHeight();
-
-  //           if ($(window).width() >= '946') {
-  //             if (secondLevelHeight > thirdLevelHeight) {
-  //               highestMenu = secondLevelHeight;
-  //             }
-  //             else {
-  //               highestMenu = thirdLevelHeight;
-  //             }
-
-  //             secondLevelChild.css('height', highestMenu);
-  //             thirdLevelChild.css('height', highestMenu);
-  //           }
-  //         });
-
-  //         // Calculate all menus under second level to same height when hovered
-  //         $('.l-region--navigation .menu__item--second-level').hover(function () {
-
-  //           var $this = $(this).parent();
-  //           var thirdLevelChild = $(this).find('> .menu');
-
-  //           var highestMenu = 0;
-
-  //           var secondLevelHeight = $this.outerHeight();
-  //           var thirdLevelHeight = thirdLevelChild.outerHeight();
-
-  //           if ($(window).width() >= '946') {
-  //             if (thirdLevelHeight > secondLevelHeight) {
-  //               highestMenu = thirdLevelHeight;
-  //             }
-  //             else {
-  //               highestMenu = secondLevelHeight;
-  //             }
-
-  //             thirdLevelChild.css('height', highestMenu);
-  //             $this.css('height', highestMenu);
-  //           }
-  //         });
-
-
-  //         if ($(window).width() >= '946') {
-  //           $('.l-region--navigation .menu').css('height', '');
-  //         }
-
-  //         // Remove height from menus elements when mouse leaves the hovered menu and them menu is not active
-  //         $('.l-region--navigation .menu__item--first-level:not(.is-active-trail) .menu__item--second-level').hover(function (event) {
-  //           var $this = $(this).parent();
-  //           var thirdLevelChild = $this.find('> .menu');
-
-  //           if (event.type === 'mouseleave') {
-  //             $this.css('height', '');
-  //             thirdLevelChild.css('height', '');
-  //           }
-  //         });
-
-  //         // Remove height from menus elements when mouse leaves the hovered menu and them menu is not active
-  //         $('.l-region--navigation .menu__item--first-level.is-active .menu__item--second-level').hover(function (event) {
-  //           var $this = $(this).parent();
-  //           var thirdLevelChild = $this.find('> .menu');
-
-  //           if (event.type === 'mouseleave') {
-  //             $this.css('height', '');
-  //             thirdLevelChild.css('height', '');
-  //           }
-  //         });
-
-  //         resizeOk = false;
-  //       }
-
-  //       $(window).resize(adjustHeight);
-  //       adjustHeight();
-  //     });
-  //   }
-  // };
+            var leftHeight = $(elem).outerHeight();
+            var middleHeight = getHighest($(elem).find('.menu:visible'));
+            var rightHeight = getHighest($(elem).children('.e-service-wrapper'));
+            var highest = leftHeight;
+            if (middleHeight > highest) {
+              highest = middleHeight;
+            }
+            if (rightHeight > highest) {
+              highest = rightHeight;
+            }
+            $(elem).css('height', highest);
+            switchMainMenuBehavior(context);
+          }
+        }
+        function getHighest(elems) {
+          var highest = 0;
+          for (var i = 0; i < $(elems).length; i++) {
+            var height = $(elems[i]).outerHeight();
+            if (height > highest) {
+              highest = height;
+            }
+          }
+          return highest;
+        }
+      });
+    }
+  };
 
   // Help region toggler
   Drupal.behaviors.kadaToolsToggle = {
@@ -311,13 +259,18 @@
         $(this).append($('.l-region--navigation-top ul.menu > li').clone().addClass('menu__item--top-menu'));
 
         // E-service links
-        $(this).find('.menu__item--first-level > ul.menu').each(function () {
+        $(this).find('.menu__item--has-first-level > ul.menu').each(function () {
           var $thisMenu = $(this);
           var $eServiceLink = $thisMenu.find('.menu__item--e-service a');
 
-          $eServiceLink.parent().remove();
+          $eServiceLink.closest('.menu__item').remove();
           if ($eServiceLink.length) {
-            var $wrapper = $('<li class="e-service-wrapper"></li>').append($eServiceLink);
+            var $title = $('<a href="javascript:;" aria-label="' + (Drupal.t('E-services')) + '">' + Drupal.t('E-services') + ':</a>');
+            var $list = $('<ul class="menu"></ul>');
+            $eServiceLink.each(function (i, link) {
+              $list.append($('<li class="menu__item"></li>').append(link));
+            });
+            var $wrapper = $('<li class="e-service-wrapper"></li>').append([$title, $list]);
             $thisMenu.append($wrapper);
           }
         });

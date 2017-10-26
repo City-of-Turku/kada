@@ -25,12 +25,14 @@
                 <h1 class="site-name site-branding__name site-branding--header__name">
                   <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__link site-branding--header__link">
                     <span class="element-invisible"><?php print $site_name; ?></span>
+                    <img src="/<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
                   </a>
                 </h1>
               <?php else: ?>
                 <h2 class="site-name site-branding__name site-branding--header__name">
                   <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__link site-branding--header__link">
                     <span class="element-invisible"><?php print $site_name; ?></span>
+                    <img src="/<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
                   </a>
                 </h2>
               <?php endif; ?>
