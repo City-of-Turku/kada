@@ -165,7 +165,7 @@
 
   var switchMainMenuBehavior = function (context) {
     var menu = $('.l-region--navigation .block--menu-block', context);
-    if ($(window).width() >= '839') {
+    if ($(window).width() >= '1025') {
       desktopMenuBehavior.call(menu);
     }
     else {
@@ -190,7 +190,7 @@
         }, 33);
 
         $('.l-region--navigation .menu__item--has-first-level', context).hover(function(event) {
-          if ($(window).width() >= '839') {
+          if ($(window).width() >= '1025') {
             adjustHeight($(this).children('.menu'));
             if (event.type === 'mouseleave') {
               $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
@@ -198,7 +198,7 @@
           }
         });
         $('.l-region--navigation .menu__item--has-second-level', context).hover(function() {
-          if ($(window).width() >= '839') {
+          if ($(window).width() >= '1025') {
             $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
             $('.menu__item--has-second-level').not(this).children('ul').addClass('is-hidden');
             adjustHeight($(this).parent('.menu'));
@@ -206,7 +206,7 @@
         });
 
         function adjustHeight(elem) {
-          if ($(window).width() >= '839') {
+          if ($(window).width() >= '1025') {
             // Get the heights of the second level (on the left), the third level (in the middle)
             // and the optional e-services list (on the right if it exists)
 
