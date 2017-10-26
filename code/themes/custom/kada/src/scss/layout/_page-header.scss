@@ -1,6 +1,22 @@
 .page-header {
+  .l-navigation-top {
+    display: none;
+
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      background-color: $gray-lighter;
+      display: block;
+    }
+  }
+
   .l-branding {
     height: 3.125rem;
+
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      height: 6.25rem;
+      margin: 0 auto;
+      max-width: $inner-container-width;
+      position: relative;
+    }
   }
 
   .l-navigation {
@@ -12,13 +28,20 @@
   }
 
   .l-branding__container {
-    margin: 0 auto;
-    max-width: $inner-container-width;
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    padding: 0 $container-gutter;
   }
 
   .l-navigation__container {
     margin: 0 auto;
     max-width: $container-width;
+
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      position: relative;
+    }
   }
 
   .l-banner {
@@ -45,6 +68,17 @@
   }
 }
 
+.l-region--branding {
+  .block--locale-language {
+    // Mobile
+    @media screen and (max-width: $mobile-menu-breakpoint-max) {
+      position: absolute;
+      right: 3.75rem;
+      top: 0;
+    }
+  }
+}
+
 .l-region--navigation {
   display: flex;
   flex-wrap: wrap;
@@ -65,21 +99,6 @@
   .block--recommended-button {
     @media screen and (max-width: $mobile-menu-breakpoint-max) {
       right: 3.75rem + 4.375rem; // Menu toggler + language switcher
-    }
-  }
-
-  .block--locale-language {
-    // Mobile
-    @media screen and (max-width: $mobile-menu-breakpoint-max) {
-      order: 2;
-      right: 3.75rem;
-    }
-
-    // Desktop
-    @media screen and (min-width: $mobile-menu-breakpoint) {
-      position: absolute;
-
-      display: none; // HIDING LANGUAGE SWITCHER IN DESKTOP UNTIL NEXT STORY
     }
   }
 

@@ -19,7 +19,7 @@
         color: $primary-color;
         display: block;
         font-size: 1rem;
-        padding: 1.25rem 1.875rem;
+        padding: 1.25rem $container-gutter;
         text-transform: uppercase;
       }
     }
@@ -32,7 +32,7 @@
       > a {
         border-top: 0 none;
         color: $white;
-        padding: .75rem 1.875rem;
+        padding: .75rem $container-gutter;
 
         &:hover,
         &:focus {

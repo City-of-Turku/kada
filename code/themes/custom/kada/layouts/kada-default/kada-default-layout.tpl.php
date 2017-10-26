@@ -7,7 +7,8 @@
     </div>
   <?php endif; ?>
 
-  <header id="header" class="page-header l-header clearfix" role="banner">
+  <header id="header" class="page-header l-header" role="banner">
+
     <?php if ($page['before_header']): ?>
       <div class="l-before-header">
         <div class="container l-before-header__container l-before-header-inner">
@@ -15,62 +16,56 @@
         </div>
       </div>
     <?php endif; ?>
-    <div class="page-header__top">
-      <div class="l-branding">
-        <div class="l-branding__container l-branding-inner">
-          <?php if($site_name OR $site_slogan): ?>
-          <div class="site-branding site-branding--header l-region l-region--logo">
-            <?php if($site_name): ?>
-              <?php if($is_front): ?>
-                <h1 class="site-name site-branding__name site-branding--header__name">
-                  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__link site-branding--header__link">
-                    <span class="element-invisible"><?php print $site_name; ?></span>
-                    <img src="/<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
-                  </a>
-                </h1>
-              <?php else: ?>
-                <h2 class="site-name site-branding__name site-branding--header__name">
-                  <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__link site-branding--header__link">
-                    <span class="element-invisible"><?php print $site_name; ?></span>
-                    <img src="/<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
-                  </a>
-                </h2>
-              <?php endif; ?>
-            <?php endif; ?>
-            <?php if ($site_slogan): ?>
-              <p class="site-branding__slogan site-branding--header__slogan"><?php print $site_slogan; ?></p>
-            <?php endif; ?>
-          </div>
-          <?php endif; ?>
 
-          <?php print render($page['branding']); ?>
-
-          <?php if($page['header_top'] OR $page['navigation_top']): ?>
-            <div class="l-navigation-top">
-              <!-- <div class="accessibility-font-increase">
-                <span class="accessibility-font-increase__text"><?php print t('Text size'); ?>
-                <div class="accessibility-font-increase__options font-increase">
-                  <a href="#font-increase-default" class="font-increase__item font-increase__item--default font-increase__item--is-active">A</a>
-                  <a href="#font-increase-medium" class="font-increase__item font-increase__item--medium">A</a>
-                  <a href="#font-increase-large" class="font-increase__item font-increase__item--large">A</a>
-                </div>
-              </div> -->
-
-              <?php
-                // We print the header-top region here first time and a second time later to achieve desired DOM for mobile.
-                print render($page['header_top']);
-              ?>
-
-              <?php print render($page['navigation_top']); ?>
-            </div>
-          <?endif; ?>
+    <?php if ($page['navigation_top']): ?>
+      <div class="l-navigation-top">
+        <div class="navigation-top__container navigation-top-inner">
+            <?php print render($page['navigation_top']); ?>
         </div>
       </div>
+    <?endif; ?>
 
-      <div class="l-navigation">
-        <div class="l-navigation__container l-navigation-inner">
-          <?php print render($page['navigation']); ?>
+    <div class="l-branding">
+      <div class="l-branding__container l-branding-inner">
+        <?php if($site_name OR $site_slogan): ?>
+        <div class="site-branding site-branding--header l-region l-region--logo">
+          <?php if($site_name): ?>
+            <?php if($is_front): ?>
+              <h1 class="site-name site-branding__name site-branding--header__name">
+                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__link site-branding--header__link">
+                  <span class="element-invisible"><?php print $site_name; ?></span>
+                  <img src="/<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
+                </a>
+              </h1>
+            <?php else: ?>
+              <h2 class="site-name site-branding__name site-branding--header__name">
+                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__link site-branding--header__link">
+                  <span class="element-invisible"><?php print $site_name; ?></span>
+                  <img src="/<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
+                </a>
+              </h2>
+            <?php endif; ?>
+          <?php endif; ?>
+          <?php if ($site_slogan): ?>
+            <p class="site-branding__slogan site-branding--header__slogan"><?php print $site_slogan; ?></p>
+          <?php endif; ?>
         </div>
+        <?php endif; ?>
+        <?php print render($page['branding']); ?>
+        <div class="accessibility-font-increase">
+          <span class="accessibility-font-increase__text"><?php print t('Text size'); ?><span class="accessibility-font-increase__toggle"><span class="accessibility-font-increase__toggle--small">A</span><span class="accessibility-font-increase__toggle--large">A</span></span>
+            <div class="accessibility-font-increase__options accessibility-font-increase__options--is-hidden font-increase">
+            <a href="#font-increase-default" class="font-increase__item font-increase__item--default font-increase__item--is-active"><?php print t('Normal'); ?></a>
+            <a href="#font-increase-medium" class="font-increase__item font-increase__item--medium"><?php print t('Medium'); ?></a>
+            <a href="#font-increase-large" class="font-increase__item font-increase__item--large"><?php print t('Large'); ?></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="l-navigation">
+      <div class="l-navigation__container l-navigation-inner">
+        <?php print render($page['navigation']); ?>
       </div>
     </div>
 
