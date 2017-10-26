@@ -1,7 +1,7 @@
-name = TKUFI Telephone numbers
+name = KADA Telephone numbers
 description = Fields and functionalities related to phonenumbers.
 core = 7.x
-package = TKUFI
+package = KADA
 version = 7.x-1.0-dev
 dependencies[] = ctools
 dependencies[] = ds

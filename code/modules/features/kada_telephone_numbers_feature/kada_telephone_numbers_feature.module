@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the TKUFI Telephone numbers feature.
+ * Code for the KADA Telephone numbers feature.
  */
 
 include_once 'kada_telephone_numbers_feature.features.inc';
@@ -177,7 +177,7 @@ function _kada_telephone_numbers_feature_phonenumber_format($number, $lang) {
 
     $len = strlen($local);
     if (!isset($formatters[$len])) {
-      watchdog('turkufi', t('Missing phone number formatter for length %len'), array('%len' => $len), WATCHDOG_WARNING);
+      watchdog('kada', t('Missing phone number formatter for length %len'), array('%len' => $len), WATCHDOG_WARNING);
       continue;
     }
     $formatter = $formatters[$len];

@@ -2,7 +2,7 @@
 
 function kada_telephone_numbers_feature_drush_command() {
   return array(
-    'tkufi-telephone-numbers-feature-migrate-numbers' => array(
+    'kada-telephone-numbers-feature-migrate-numbers' => array(
       'description' => 'Migrate old phonenumber fields to new telephone numbers.',
     ),
   );
