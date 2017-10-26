@@ -1,0 +1,232 @@
+<?php
+/**
+ * @file
+ * Code for the TKUFI Telephone numbers feature.
+ */
+
+include_once 'kada_telephone_numbers_feature.features.inc';
+
+/**
+ * Implements hook_views_pre_execute().
+ */
+function kada_telephone_numbers_feature_views_pre_execute(&$view) {
+  if ($view->name != 'driveturku_telephone_numbers') {
+    return;
+  }
+  $languages = array(
+    'en' => 'en',
+    'fi' => 'fi',
+    'sv' => 'sv',
+  );
+  // Phone number descriptions are implemented as separate fields for each
+  // language. Hide other languages than the active one.
+  global $language;
+  unset($languages[$language->language]);
+  foreach ($languages as $lang) {
+    unset($view->field['field_tn_description_' . $lang]);
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function kada_telephone_numbers_feature_theme() {
+  return array(
+    'phone_numbers' => array(
+      'variables' => array(
+        'number_groups' => array(),
+      ),
+      'template' => 'phone-numbers',
+      'path' => drupal_get_path('module', 'kada_telephone_numbers_feature') . '/templates',
+    ),
+  );
+}
+
+/**
+ * Implements hook_ds_fields_info().
+ */
+function kada_telephone_numbers_feature_ds_fields_info($entity_type) {
+  $fields = array();
+  // Node: Phone numbers
+  $bundles = _tn_get_field_collection_bundles();
+  $node_bundles = $bundles['node'];
+  foreach ($node_bundles as $bundle) {
+    $node_bundles[$bundle] = $bundle . '|*';
+  }
+  $fields['node']['phone_numbers'] = array(
+    'title' => t('Phone numbers, all combined'),
+    'ui_limit' => $node_bundles,
+    'field_type' => DS_FIELD_TYPE_PREPROCESS,
+  );
+  if (isset($fields[$entity_type])) {
+    return array($entity_type => $fields[$entity_type]);
+  }
+  return;
+}
+
+/**
+ * Implements hook_entity_view().
+ */
+function kada_telephone_numbers_feature_entity_view($entity, $type, $view_mode, $langcode) {
+  // Handle only node types that contains telephone numbers.
+  if ($type == 'node') {
+    $bundles = _oh_get_field_collection_bundles();
+    if(isset($bundles['node'][$entity->type])) {
+      $entity->content['phone_numbers'] = kada_telephone_numbers_feature_build_phone_numbers($entity, $langcode);
+    }
+  }
+}
+
+/**
+ * Build content for phone numbers.
+ * @param  object $entity Entity of phone numbers.
+ * @param  string         Language code.
+ * @return array          Built render array.
+ */
+function kada_telephone_numbers_feature_build_phone_numbers($entity, $langcode) {
+  $build = array(
+    '#theme' => 'phone_numbers',
+    '#number_groups' => array(),
+  );
+  $entity_wrapper = entity_metadata_wrapper('node', $entity);
+  $short_days = _oh_get_short_days();
+  // Normal.
+  foreach ($entity_wrapper->field_telephone_numbers as $fc_wrapper) {
+    $number_type = $fc_wrapper->field_tn_type->value();
+    $build['#number_groups'][$number_type][] = array(
+      'description' => $fc_wrapper->{"field_tn_description_" . $langcode}->value(),
+      'code' => $fc_wrapper->field_tn_code->value(),
+      'number' => $fc_wrapper->field_tn_number->value(),
+      'formatted_number' => _kada_telephone_numbers_feature_phonenumber_format($fc_wrapper->field_tn_code->value() . $fc_wrapper->field_tn_number->value(), $langcode)[0],
+      'type' => $number_type,
+    );
+  }
+  return $build;
+}
+
+/**
+ * Alter phone numbers for rendering
+ */
+function _kada_telephone_numbers_feature_phonenumber_format($number, $lang) {
+  $formatters = array(
+    5 => '### ##',
+    6 => '### ###',
+    7 => '### ####',
+    8 => '#### ####',
+    9 => '### ### ###',
+    10 => '### ### ####',
+  );
+
+  // Remove all whitespace
+  $number = trim(preg_replace('/\s-\(\)/', '', $number));
+
+  // Separate multiple numbers with , or /
+  $numbers = explode(', ', $number);
+  if (count($numbers) <= 1) {
+    $numbers = explode(' / ', $number);
+  }
+
+  if (!is_array($numbers)) {
+    $numbers = array($number);
+  }
+
+  $output = array();
+  // Loop through the number(s)
+  foreach ($numbers as $number) {
+    // Change the international code to a zero
+    $number = preg_replace('/^\+?358\s*/', '0', $number);
+
+    // Remove everything except digits
+    $number = trim(preg_replace('/[^0-9]/', '', $number));
+
+    // Number doesn't contain prefix
+    if (substr($number, 0, 1) != '0') {
+      // Number is long enough for prefix (shortest one is 050 12345 = 7 digits)
+      if (strlen($number) >= 7) {
+        $number = '0' . $number;
+      }
+      // Turku landlines (without prefix)
+      elseif (in_array(substr($number, 0, 3), array('262', '266'))) {
+        $number = '02' . $number;
+      }
+    }
+
+    // Too short, probably a local number or something
+    if (strlen($number) < 8) {
+      continue;
+    }
+
+    // Separate the prefix (03, 017, 019, 041, 044, 045, 050, 0400, 0800).
+    preg_match('/^(0\d(?:1|4|5|7|9|0{0,2}))(\d+)/', $number, $matches);
+
+    $prefix = $matches[1];
+
+    // Add intl prefix if necessary
+    if ($lang == 'en') {
+      $prefix = '+358 ' . substr($prefix, 1);
+    }
+    // Add parentheses if necessary (optional prefix) – two digits or 01{7,9}.
+    elseif (substr($prefix, 2) === FALSE || in_array(substr($prefix, 2), array('7', '9'))) {
+      $prefix = '(' . $prefix . ')';
+    }
+
+    // Prefix
+    $formatted = $prefix . ' ';
+
+    $local = $matches[2];
+
+    $len = strlen($local);
+    if (!isset($formatters[$len])) {
+      watchdog('turkufi', t('Missing phone number formatter for length %len'), array('%len' => $len), WATCHDOG_WARNING);
+      continue;
+    }
+    $formatter = $formatters[$len];
+
+    $char_i = 0;
+    foreach (str_split($formatter, 1) as $i => $tpl) {
+      if ($tpl == ' ') {
+        $formatted .= ' ';
+      }
+      else {
+        $formatted .= substr($local, $char_i++, 1);
+      }
+    }
+
+    $output[] = $formatted;
+  }
+
+  return $output;
+}
+
+
+/**
+ * Get field names of telephone number field collections.
+ * @return array List of field names.
+ */
+function _tn_get_field_collection_infos() {
+  $fields = array();
+  foreach (field_read_fields(array('type' => 'field_collection')) as $field_name => $field) {
+    if (strpos($field_name, "field_telephone_numbers") !== FALSE) {
+      $fields[$field_name] = field_info_field($field_name);
+    }
+  }
+  return $fields;
+}
+
+/**
+ * Get list of bundles where telephone number field collections are used.
+ * @return array List bundles.
+ */
+function _tn_get_field_collection_bundles() {
+  $bundles = array();
+  $fields = _tn_get_field_collection_infos();
+  foreach ($fields as $field) {
+    foreach ($field['bundles'] as $entity_type => $entity_bundles) {
+      if (empty($bundles[$entity_type])) {
+        $bundles[$entity_type] = array();
+      }
+      $bundles[$entity_type] += array_combine($entity_bundles, $entity_bundles);
+    }
+  }
+  return $bundles;
+}

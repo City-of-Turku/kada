@@ -974,8 +974,8 @@ function _driveturku_phonenumber_format($number, $lang) {
       continue;
     }
 
-    // Separate the prefix (03, 019, 041, 044, 045, 050, 0400, 0800)
-    preg_match('/^(0\d(?:1|4|5|9|0{0,2}))(\d+)/', $number, $matches);
+    // Separate the prefix (03, 017, 019, 041, 044, 045, 050, 0400, 0800).
+    preg_match('/^(0\d(?:1|4|5|7|9|0{0,2}))(\d+)/', $number, $matches);
 
     $prefix = $matches[1];
 
@@ -983,8 +983,8 @@ function _driveturku_phonenumber_format($number, $lang) {
     if ($lang == 'en') {
       $prefix = '+358 ' . substr($prefix, 1);
     }
-    // Add parentheses if necessary (optional prefix) – either two digits or 019
-    elseif (substr($prefix, 2, 0) === FALSE || substr($prefix, 2, 0) == '9') {
+    // Add parentheses if necessary (optional prefix) – two digits or 01{7,9}.
+    elseif (substr($prefix, 2) === FALSE || in_array(substr($prefix, 2), array('7', '9'))) {
       $prefix = '(' . $prefix . ')';
     }
 
@@ -1027,7 +1027,11 @@ function driveturku_preprocess_field(&$variables) {
       global $language;
       $current_language = $language->language;
       $numbers = $variables['items'][0]['#markup'];
-      $numbers = _driveturku_phonenumber_format($numbers, $current_language);
+      // FIXME: If we had the module enabled we wouldn't need this.
+      module_load_include('module', 'kada_telephone_numbers_feature');
+      if (function_exists('_kada_telephone_numbers_feature_phonenumber_format')) {
+        $numbers = _kada_telephone_numbers_feature_phonenumber_format($numbers, $current_language);
+      }
       $numbers_formated = '';
       foreach ($numbers as $number) {
         $numbers_formated .= $number . ', ';
