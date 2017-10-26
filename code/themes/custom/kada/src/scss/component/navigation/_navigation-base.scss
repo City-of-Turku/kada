@@ -6,8 +6,19 @@
   a {
     text-decoration: none;
   }
-}
 
+  &.menu__item--has-first-level {
+    font-family: $navigation-first-level-family;
+  }
+
+  &.menu__item--has-second-level {
+    font-family: $navigation-second-level-family;
+  }
+
+  &.menu__item--has-third-level {
+    font-family: $navigation-third-level-family;
+  }
+}
 
 .responsified .menu {
   display: none;
@@ -17,3 +28,8 @@
   display: block;
 }
 
+.e-service-wrapper {
+  .menu__item {
+    font-family: $navigation-e-service-family;
+  }
+}

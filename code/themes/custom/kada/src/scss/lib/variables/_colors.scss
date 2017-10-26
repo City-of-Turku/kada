@@ -5,6 +5,9 @@
 
 $black: #1e1e1e;
 $white: #fff;
+$gray: #bcbcbc;
+$gray-light: #ddd;
+$gray-lighter: #f8f8f8;
 
 // Messages colors
 $error-dark: #b43b4b;
@@ -29,36 +32,21 @@ $default-color-lightest: lighten($black, 95%);
 // Primary colors
 $primary-color: #1e1e1e;
 
-$primary-color-darkest: lighten($primary-color, 10%);
-$primary-color-darker: lighten($primary-color, 20%);
-$primary-color-dark: lighten($primary-color, 30%);
-$primary-color-medium-dark: lighten($primary-color, 40%);
-$primary-color-medium: lighten($primary-color, 50%);
-$primary-color-medium-light: lighten($primary-color, 60%);
-$primary-color-light: lighten($primary-color, 70%);
-$primary-color-lighter: lighten($primary-color, 80%);
-$primary-color-lightest: lighten($primary-color, 90%);
-
-$primary-color-opacity-80: rgba($white, .8);
-$primary-color-opacity-70: rgba($white, .7);
-$primary-color-opacity-60: rgba($white, .6);
-$primary-color-opacity-50: rgba($white, .5);
-$primary-color-opacity-40: rgba($white, .4);
-$primary-color-opacity-40: rgba($white, .3);
-$primary-color-opacity-20: rgba($white, .2);
+$primary-color-opacity-80: rgba($primary-color, .8);
+$primary-color-opacity-70: rgba($primary-color, .7);
+$primary-color-opacity-60: rgba($primary-color, .6);
+$primary-color-opacity-50: rgba($primary-color, .5);
+$primary-color-opacity-40: rgba($primary-color, .4);
+$primary-color-opacity-40: rgba($primary-color, .3);
+$primary-color-opacity-20: rgba($primary-color, .2);
 
 // Seconcary colors
-$secondary-color: #966f4d;
+$secondary-color: #ec1c24;
 
 $secondary-color-darkest: lighten($secondary-color, 10%);
 $secondary-color-darker: lighten($secondary-color, 20%);
 $secondary-color-dark: lighten($secondary-color, 30%);
 $secondary-color-medium-dark: lighten($secondary-color, 40%);
-$secondary-color-medium: lighten($secondary-color, 50%);
-$secondary-color-medium-light: lighten($secondary-color, 60%);
-$secondary-color-light: lighten($secondary-color, 70%);
-$secondary-color-lighter: lighten($secondary-color, 80%);
-$secondary-color-lightest: lighten($secondary-color, 90%);
 
 // General colors
 $link-color: #009bea;

@@ -1,3 +1,61 @@
+.block--locale-language {
+  .toggler {
+    // We might need to move this to FontAwesome, now using separate icon.
+    background: url(../../dist/image/language-icon.svg) no-repeat 10px center transparent;
+    background-size: auto 25px;
+    font-size: 1.1rem;
+    line-height: 50px;
+    padding-left: 30px;
+    width: 70px;
+  }
+}
+
+.menu--language-switcher {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 5;
+  background: $default-color-lightest;
+
+  @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-shadow: 0 9px 8px 0 rgba($primary-color, .75);
+  }
+
+  .menu__item {
+    margin-top: 0;
+  }
+
+  .menu__link {
+    color: $primary-color;
+    display: block;
+    font-size: 1.1rem;
+    padding: .75rem;
+    text-align: center;
+
+    &:hover,
+    &:focus {
+      background: $white;
+    }
+
+    &.active {
+      background: $primary-color;
+      color: $white;
+    }
+  }
+}
+
+.menu--language-switcher--is-hidden,
+.responsive-toggled .menu--language-switcher--is-hidden {
+  @media screen and (min-width: $desktop-narrow) {
+    display: none;
+  }
+}
+
+
+// OLD STUFF ->
 .language-select {
   position: relative;
   border: 0;
@@ -34,46 +92,3 @@
     transform: rotate(180deg);
   }
 }
-
-.menu--language-switcher {
-  position: absolute;
-  right: 0;
-  top: 100%;
-  z-index: 5;
-  background: $default-color-lightest;
-
-  @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
-    left: 0;
-    right: 0;
-    width: 100%;
-    box-shadow: 0 9px 8px 0 rgba($black, .75);
-  }
-
-  .menu__item {
-    margin-top: 0;
-  }
-
-  .menu__link {
-    display: block;
-    padding: .75rem;
-
-    &:hover,
-    &:focus {
-      background: $white;
-    }
-
-    &.active {
-      background: $primary-color;
-      color: $white;
-    }
-  }
-}
-
-.menu--language-switcher--is-hidden,
-.responsive-toggled .menu--language-switcher--is-hidden {
-  @media screen and (min-width: $desktop-narrow) {
-    display: none;
-  }
-}
-
-
