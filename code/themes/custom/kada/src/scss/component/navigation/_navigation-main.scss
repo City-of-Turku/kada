@@ -6,6 +6,11 @@
       justify-content: space-between;
     }
 
+    .responsive-menus > .menu {
+      margin: 0 auto;
+      max-width: $inner-container-width;
+    }
+
     .menu__item {
       margin-top: 0;
 

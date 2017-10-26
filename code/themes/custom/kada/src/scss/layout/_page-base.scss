@@ -1,7 +1,7 @@
 .container {
   @include responsive-whitespace;
   margin: 0 auto;
-  max-width: $inner-container-width;
+  max-width: $container-width;
 }
 
 .has-two-sidebars {
@@ -24,14 +24,4 @@
     .section--content {
     }
   }
-
-  // @media screen and (min-width: $desktop) {
-  //   .sidebar--second {
-  //     width: span(2);
-  //   }
-
-  //   .section--content {
-  //     width: span()
-  //   }
-  // }
 }

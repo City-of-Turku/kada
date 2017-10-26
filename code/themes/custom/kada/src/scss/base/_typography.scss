@@ -51,37 +51,38 @@ h5 {
 h1 {
   @include font-size-responsive($font-size-heading-1);
   line-height: 1.1666;
-  margin-bottom: 2rem;
+  margin-bottom: $font-size-heading-1;
 }
 
 h2 {
   @include font-size-responsive($font-size-heading-2);
-  line-height: 1.1111;
-  margin-bottom: 1.5rem;
   font-weight: 600;
+  line-height: 1.1111;
+  margin-bottom: $font-size-heading-2;
 }
 
 h3 {
   @include font-size-responsive($font-size-heading-3);
   line-height: 1.25;
-  margin-bottom: 1rem;
+  margin-bottom: 1.875rem;
 }
 
 h4 {
   @include font-size-responsive($font-size-heading-4);
   line-height: 1.5;
-  margin-bottom: .75rem;
+  margin-bottom: 1.875rem;
   text-transform: none;
 }
 
 h5 {
   @include font-size-responsive($font-size-heading-5);
   line-height: 1.556;
-  margin-bottom: .275rem;
+  margin-bottom: 1.875rem;
   text-transform: none;
 }
 
 p {
+  margin-bottom: 1.875rem;
   margin-top: 0;
 }
 
