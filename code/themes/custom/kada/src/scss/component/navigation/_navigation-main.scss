@@ -42,8 +42,9 @@
 
       > .menu {
         background-color: $gray-lighter;
-        //border-bottom: 4px solid $secondary-color;
-        //border-top: 4px solid $secondary-color;
+        border-bottom: 4px solid $secondary-color;
+        box-sizing: content-box;
+        border-top: 4px solid $secondary-color;
         display: none;
         left: 0;
         position: absolute;

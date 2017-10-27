@@ -213,7 +213,7 @@
             // Reset previous height alterations
             $(elem).css('height', '');
 
-            var leftHeight = $(elem).outerHeight();
+            var leftHeight = $(elem).innerHeight();
             var middleHeight = getHighest($(elem).find('.menu:visible'));
             var rightHeight = getHighest($(elem).children('.e-service-wrapper'));
             var highest = leftHeight;
