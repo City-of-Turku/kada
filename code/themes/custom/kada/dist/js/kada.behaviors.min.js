@@ -213,7 +213,7 @@
             // Reset previous height alterations
             $(elem).css('height', '');
 
-            var leftHeight = $(elem).outerHeight();
+            var leftHeight = $(elem).innerHeight();
             var middleHeight = getHighest($(elem).find('.menu:visible'));
             var rightHeight = getHighest($(elem).children('.e-service-wrapper'));
             var highest = leftHeight;
@@ -252,12 +252,10 @@
     }
   };
 
-  // Include top menu to mobile menu
+  //Include top menu to mobile menu
   Drupal.behaviors.kadaTopMenuMobile = {
     attach: function (context) {
       $('.responsive-menus-0-0 > ul.menu', context).once('top-menu-mobile', function () {
-        $(this).append($('.l-region--navigation-top ul.menu > li').clone().addClass('menu__item--top-menu'));
-
         // E-service links
         $(this).find('.menu__item--has-first-level > ul.menu').each(function () {
           var $thisMenu = $(this);
@@ -267,7 +265,7 @@
           if ($eServiceLink.length) {
             var $title = $('<a href="javascript:;" aria-label="' + (Drupal.t('E-services')) + '">' + Drupal.t('E-services') + ':</a>');
             var $list = $('<ul class="menu"></ul>');
-            $eServiceLink.each(function (i, link) {
+             $eServiceLink.each(function (i, link) {
               $list.append($('<li class="menu__item"></li>').append(link));
             });
             var $wrapper = $('<li class="e-service-wrapper"></li>').append([$title, $list]);
@@ -312,25 +310,9 @@
 
   Drupal.behaviors.kadaLanguageSwitcher = {
     attach: function () {
-      // Adds language switcher button to navigation bar with the active language as text
       $('.block--locale-language').once('language-switcher', function () {
-        $(this).find('.menu--language-switcher').addClass('menu--language-switcher--is-hidden').before('<button class="language-select language-select--is-closed">' + $(this).find('.menu__link.active').text() + '</button>');
-
         // Changes the mobile menu toggler text to the active language
         $(this).find('.toggler').text($(this).find('.menu__link.active').text());
-
-        $(function () {
-          $('.language-select').click(function () {
-            $('.menu--language-switcher').toggleClass('menu--language-switcher--is-visible menu--language-switcher--is-hidden');
-            $(this).toggleClass('language-select--is-open language-select--is-closed');
-          });
-          $('.menu--language-switcher a').click(function () {
-            $('.language-select').text($(this).text());
-            $('.block--locale-language .toggler').text($(this).text());
-            $('.language-select').toggleClass('is-open');
-            $('.menu--language-switcher').toggleClass('is-visible');
-          });
-        });
       });
     }
   };
@@ -340,11 +322,21 @@
       $('.recommended-button, .recommended-block__close').once('recommended-toggle', function () {
         $('.block--views-kada-recommended-block').addClass('block--views-recommended-block--is-hidden');
         $(this).click(function () {
-          console.log('click');
           $('.block--views-kada-recommended-block').toggleClass('block--views-recommended-block--is-visible block--views-recommended-block--is-hidden');
           if ($('.responsive-menus.responsive-toggled')) {
             $('.responsive-menus.responsive-toggled').removeClass('responsive-toggled');
           }
+        });
+      });
+    }
+  };
+
+  Drupal.behaviors.kadaTextSizeToggle = {
+    attach: function () {
+      $('.accessibility-font-increase__toggle').once('accessibility-font-increase__toggle', function () {
+        $(this).click(function () {
+          $(this).toggleClass('accessibility-font-increase__toggle--active');
+          $('.accessibility-font-increase__options').toggleClass('accessibility-font-increase__options--is-visible accessibility-font-increase__options--is-hidden');
         });
       });
     }
