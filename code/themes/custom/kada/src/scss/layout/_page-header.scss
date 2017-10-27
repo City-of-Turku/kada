@@ -89,13 +89,6 @@
     justify-content: space-between;
   }
 
-  .block {
-    @media screen and (max-width: $mobile-menu-breakpoint-max) {
-      position: absolute;
-      top: -3.125rem; // Height of the mobile header
-    }
-  }
-
   .block--recommended-button {
     @media screen and (max-width: $mobile-menu-breakpoint-max) {
       right: 3.75rem + 4.375rem; // Menu toggler + language switcher
