@@ -252,31 +252,29 @@
     }
   };
 
-  // Include top menu to mobile menu
-  //Drupal.behaviors.kadaTopMenuMobile = {
-  //  attach: function (context) {
-  //    $('.responsive-menus-0-0 > ul.menu', context).once('top-menu-mobile', function () {
-  //      $(this).append($('.l-region--navigation-top ul.menu > li').clone().addClass('menu__item--top-menu'));
+  //Include top menu to mobile menu
+  Drupal.behaviors.kadaTopMenuMobile = {
+    attach: function (context) {
+      $('.responsive-menus-0-0 > ul.menu', context).once('top-menu-mobile', function () {
+        // E-service links
+        $(this).find('.menu__item--has-first-level > ul.menu').each(function () {
+          var $thisMenu = $(this);
+          var $eServiceLink = $thisMenu.find('.menu__item--e-service a');
 
-  //      // E-service links
-  //      $(this).find('.menu__item--has-first-level > ul.menu').each(function () {
-  //        var $thisMenu = $(this);
-  //        var $eServiceLink = $thisMenu.find('.menu__item--e-service a');
-
-  //        $eServiceLink.closest('.menu__item').remove();
-  //        if ($eServiceLink.length) {
-  //          var $title = $('<a href="javascript:;" aria-label="' + (Drupal.t('E-services')) + '">' + Drupal.t('E-services') + ':</a>');
-  //          var $list = $('<ul class="menu"></ul>');
-  //          $eServiceLink.each(function (i, link) {
-  //            $list.append($('<li class="menu__item"></li>').append(link));
-  //          });
-  //          var $wrapper = $('<li class="e-service-wrapper"></li>').append([$title, $list]);
-  //          $thisMenu.append($wrapper);
-  //        }
-  //      });
-  //    });
-  //  }
-  //};
+          $eServiceLink.closest('.menu__item').remove();
+          if ($eServiceLink.length) {
+            var $title = $('<a href="javascript:;" aria-label="' + (Drupal.t('E-services')) + '">' + Drupal.t('E-services') + ':</a>');
+            var $list = $('<ul class="menu"></ul>');
+             $eServiceLink.each(function (i, link) {
+              $list.append($('<li class="menu__item"></li>').append(link));
+            });
+            var $wrapper = $('<li class="e-service-wrapper"></li>').append([$title, $list]);
+            $thisMenu.append($wrapper);
+          }
+        });
+      });
+    }
+  };
 
   // Font zoom
   Drupal.behaviors.kadaFontZoom = {
