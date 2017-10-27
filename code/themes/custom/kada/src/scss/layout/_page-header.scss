@@ -11,8 +11,14 @@
     }
   }
 
+  .l-branding__container {
+    margin: 0 auto;
+    max-width: $inner-container-width;
+  }
+
   .l-navigation__container {
-    padding: 0; // Override default container padding.
+    margin: 0 auto;
+    max-width: $container-width;
   }
 
   .l-banner {

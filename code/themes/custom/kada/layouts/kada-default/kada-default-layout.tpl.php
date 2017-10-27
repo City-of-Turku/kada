@@ -17,7 +17,7 @@
     <?php endif; ?>
     <div class="page-header__top">
       <div class="l-branding">
-        <div class="container l-branding__container l-branding-inner">
+        <div class="l-branding__container l-branding-inner">
           <?php if($site_name OR $site_slogan): ?>
           <div class="site-branding site-branding--header l-region l-region--logo">
             <?php if($site_name): ?>
@@ -68,7 +68,7 @@
       </div>
 
       <div class="l-navigation">
-        <div class="container l-navigation__container l-navigation-inner">
+        <div class="l-navigation__container l-navigation-inner">
           <?php print render($page['navigation']); ?>
         </div>
       </div>

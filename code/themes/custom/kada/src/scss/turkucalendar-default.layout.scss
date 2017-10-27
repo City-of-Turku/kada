@@ -16,8 +16,6 @@
 
 @charset 'UTF-8';
 
-@import '../../bower_components/susy/sass/susy';
-
 @import 'lib/variables/*';
 @import 'lib/mixins/*';
 
@@ -47,7 +45,6 @@ body {
 
 .l-region,
 .l-content {
-  margin: 0 $gutters * 2;
 
   @media screen and (min-width: $tablet-portrait) {
     margin: 0 auto;
@@ -88,22 +85,17 @@ body {
 }
 .l-region--sidebar-first {
   @media screen and (min-width: $tablet-portrait) {
-    @include span(3 of 12);
-    padding-left: $gutters * 2;
   }
 }
 
 .l-region--sidebar-second {
   @media screen and (min-width: $tablet-portrait) {
     //@include grid-span(3, 10);
-    padding-right: $gutters * 2;
   }
 }
 
 .l-content {
   @media screen and (min-width: $tablet-portrait) {
-    @include span(12 of 12);
-    padding: 0 $gutters * 2;
   }
 }
 
@@ -111,23 +103,18 @@ body {
   &.has-one-sidebar.has-sidebar-first {
     .l-content {
       @media screen and (min-width: $tablet-portrait) {
-        @include span(12 of 12);
-        padding: 0 $gutters * 2 0 0;
       }
     }
   }
   &.has-one-sidebar.has-sidebar-second {
     .l-content {
       @media screen and (min-width: $tablet-portrait) {
-        @include span(12 of 12);
-        padding: 0 0 0 $gutters * 2;
       }
     }
   }
   &.has-two-sidebars {
     .l-content {
       @media screen and (min-width: $tablet-portrait) {
-        @include span(12 of 12);
         padding: 0;
       }
     }

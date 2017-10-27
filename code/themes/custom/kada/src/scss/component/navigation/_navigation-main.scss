@@ -6,6 +6,11 @@
       justify-content: space-between;
     }
 
+    .responsive-menus > .menu {
+      margin: 0 auto;
+      max-width: $inner-container-width;
+    }
+
     .menu__item {
       margin-top: 0;
 
@@ -13,7 +18,7 @@
         border-top: 1px solid $gray-light;
         color: $primary-color;
         display: block;
-        font-size: .9375rem;
+        font-size: 1rem;
         padding: 1.25rem 1.875rem;
         text-transform: uppercase;
       }
