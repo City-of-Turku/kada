@@ -19,6 +19,8 @@ function pori_configuration_features_override_default_overrides() {
   $overrides["variable.responsive_menus_css_selectors.value"] = '.l-navigation .menu-block-wrapper > .menu
       .l-navigation .block--og-menu-single .block__content > .menu
       .l-branding .menu--language-switcher';
+  $overrides["variable.responsive_menus_media_size.value"] = 1025;
+  $overrides["variable.responsive_menus_media_unit.value"] = 'px';
 
  return $overrides;
 }
