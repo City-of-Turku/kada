@@ -1,0 +1,8 @@
+# Add all groups here which need http/https ports to be open in UpCloud firewall
+[firewall_web:children]
+stage
+develop
+[stage]
+94.237.36.22
+[develop]
+94.237.38.42

@@ -1,0 +1,96 @@
+---
+
+innodb_buffer_pool_size: "{{ memory_db }}"
+
+php_memory_limit: 256 # In MB "256MB ought to be enough for anyone." -Bill Gates
+
+# Estimated average memory usage per process
+# Use `ps --no-headers -o "rss,cmd" -C php-fpm | awk '{ sum+=$1 } END { printf ("%d%s\n", sum/NR/1024,"Mb") }'` to get the average
+php_app_memory_usage_average: 64
+
+# Following values are highly dependand on server resources so we just calculate suitable values for them here.
+php_fpm_pm_max_children: "{{ memory_app // php_app_memory_usage_average }}"
+php_fpm_pm_start_servers: "{{ php_fpm_pm_max_children|int // 2 }}"
+php_fpm_pm_min_spare_servers: "{{ php_fpm_pm_max_children|int // 2 }}"
+php_fpm_pm_max_spare_servers: "{{ php_fpm_pm_max_children|int // 2 }}"
+
+# SSH Public key service
+base_pubkeys_url: https://{{ base_pubkeys_host }}/auth?hostname={{ ansible_nodename }}
+base_addhost_url: https://{{ base_pubkeys_host }}/auth/add_server?hostname={{ ansible_nodename }}
+
+partition_var_log: False
+partition_var_lib_mysql: False
+
+# PHP version to be used. Available options: php56u, php70u
+php_package: "php71u"
+
+php_env_vars_include_db: True
+
+# Variables to create/update UpCloud Servers
+upcloud_project_name: Pori
+
+# These are the specifications for servers in this project
+upcloud_server_spec_list:
+  #- group: production
+    ## This can be used to add these machines into multiple groups
+    #secondary_groups:
+      #- firewall_web
+    #members:
+      #- { name: web1, state: present }
+    #settings:
+      #plan: 6xCPU-8GB
+      #zone: fi-hel1
+      ## Allows ansible to reboot the machine when making changes to the disks
+      #allow_reboot_on_resize: true
+      #storage_devices:
+        #- title: root
+          #os: CentOS 7.0
+          #size: 200
+          #backup_rule: { interval: daily, time: '0430', retention: 14 }
+        #- title: logs
+          #size: 10
+          #mount:
+            #path: /var/log
+            #fstype: ext4
+            #opts: defaults,noatime
+        #- title: database
+          #size: 30
+          #mount:
+            #path: /var/lib/mysql
+            #fstype: ext4
+            ## Options for mysql performance
+            ## These are the same as Mozilla is using for their mysql servers: https://bugzilla.mozilla.org/show_bug.cgi?id=874039
+            #opts: defaults,noatime,data=writeback,barrier=0,dioread_nolock
+          #backup_rule: { interval: daily, time: '0430', retention: 14 }
+  - group: stage
+    # This can be used to add these machines into multiple groups
+    secondary_groups:
+      - firewall_web
+    members:
+      - { name: web1, state: present }
+    settings:
+      plan: 2xCPU-2GB
+      zone: fi-hel1
+      # Allows ansible to reboot the machine when making changes to the disks
+      allow_reboot_on_resize: true
+      storage_devices:
+        - title: root
+          size: 50
+          os: CentOS 7.0
+  - group: develop
+    # This can be used to add these machines into multiple groups
+    secondary_groups:
+      - firewall_web
+    members:
+      - { name: web1, state: present }
+    settings:
+      plan: 2xCPU-2GB
+      zone: fi-hel1
+      # Allows ansible to reboot the machine when making changes to the disks
+      allow_reboot_on_resize: true
+      storage_devices:
+        - title: root
+          size: 50
+          os: CentOS 7.0
+        
+
