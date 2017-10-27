@@ -812,18 +812,6 @@
     }
   };
 
-  Drupal.behaviors.kadaSectionFooterContactInfo = {
-    attach: function (context) {
-      $('.l-region--footer', context).once('section-footer-contact-info', function () {
-        // Move contact info into first footer item
-        var $info = $(this).find('.contact-information');
-        var $block = $info.parent().parent();
-        $(this).find('.section-footer--item:first').append($info);
-        $block.remove();
-      });
-    }
-  };
-
   Drupal.behaviors.kadaSearchFiltersMobile = {
     attach: function (context) {
 

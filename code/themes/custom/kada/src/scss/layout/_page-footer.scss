@@ -10,7 +10,14 @@
 }
 
 .page-footer {
-  padding-top: 3.5rem;
-  padding-bottom: 4rem;
+  border-bottom: 0.938rem solid $secondary-color;
+  padding-top: 3.125rem;
+  padding-bottom: 1.875rem;
   background: $white;
+
+  .page-footer__container {
+    @media screen and (min-width: $mobile-footer-breakpoint) {
+      position: relative;
+    }
+  }
 }
