@@ -180,6 +180,16 @@
     }
   };
 
+  Drupal.behaviors.kadaFooterMenuBehavior = {
+    attach: function (context) {
+      $('.l-region--footer .menu__item--expanded-toggle').click(
+        function () {
+          $('.menu', $(this).parent()).toggleClass('is-hidden');
+        }
+      );
+    }
+  };
+
   Drupal.behaviors.kadaEqualHeightsBehavior = {
     attach: function (context) {
       $(window).load(function () {
