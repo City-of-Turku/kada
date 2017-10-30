@@ -134,16 +134,16 @@ $main-liftup-arrow-size: 25px;
     }
   }
 
-  .main-liftup-box__title {
-    font-size: 1.111 * $font-size-h2;
+  .main-liftup-box__title {//
+    //font-size: 1.111 * $font-size-h2;
 
-    @media screen and (min-width: $desktop) {
-      font-size: 1.333 * $font-size-h2;
-    }
+    //@media screen and (min-width: $desktop) {
+    //  font-size: 1.333 * $font-size-h2;
+    //}
 
-    @media screen and (min-width: $desktop) {
-      font-size: 2 * $font-size-h2;
-    }
+    //@media screen and (min-width: $desktop) {
+    //  font-size: 2 * $font-size-h2;
+    //}
   }
 }
 
