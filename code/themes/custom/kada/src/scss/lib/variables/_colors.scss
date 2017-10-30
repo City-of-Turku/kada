@@ -49,10 +49,10 @@ $secondary-color-dark: lighten($secondary-color, 30%);
 $secondary-color-medium-dark: lighten($secondary-color, 40%);
 
 // General colors
-$link-color: $secondary-color;
-$link-color-hover: darken($secondary-color, 20%);
+$link-color: #009bea;
+$link-color-hover: #005eb8;
 
-$body-color: $default-color;
+$body-color: $primary-color;
 $body-background: $white;
 
 $heading-color: $primary-color;

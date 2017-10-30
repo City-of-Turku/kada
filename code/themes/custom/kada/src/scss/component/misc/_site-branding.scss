@@ -1,12 +1,3 @@
-.site-branding {
-  @media screen and (min-width: $desktop-narrow) {
-    width: span(3);
-  }
-
-  @media screen and (min-width: $desktop) {
-    width: span(2);
-  }
-}
 .site-branding__name {
   align-items: center;
   display: flex;
@@ -38,8 +29,35 @@
   }
 }
 
+.site-branding--footer {
+  margin-bottom: 1.875rem;
+
+  @media screen and (min-width: $mobile-footer-breakpoint) {
+    left: 1.25rem;
+    margin: 0;
+    position: absolute;
+    top: 0;
+  }
+
+  .site-branding__name {
+    height: auto;
+    line-height: 0;
+    padding: 0 1.25rem;
+
+    @media screen and (min-width: $mobile-footer-breakpoint) {
+      padding: 0;
+    }
+  }
+}
+
 .site-branding--footer__link {
-  background: url('../../logo_minimal.svg') no-repeat 0 0 transparent;
-  height: 5rem;
-  width: 5.375rem;
+  background: url('../../logo_full.svg') no-repeat 0 0 transparent;
+  height: 1.96rem;
+  width: 7.5rem;
+
+  @media screen and (min-width: $mobile-footer-breakpoint) {
+    background-image: url('../../logo_minimal.svg');
+    height: 5.188rem;
+    width: 5.625rem;
+  }
 }

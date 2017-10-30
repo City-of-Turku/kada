@@ -6,6 +6,11 @@
       justify-content: space-between;
     }
 
+    .responsive-menus > .menu {
+      margin: 0 auto;
+      max-width: $inner-container-width;
+    }
+
     .menu__item {
       margin-top: 0;
 
@@ -13,8 +18,8 @@
         border-top: 1px solid $gray-light;
         color: $primary-color;
         display: block;
-        font-size: .9375rem;
-        padding: 1.25rem 1.875rem;
+        font-size: 1rem;
+        padding: 1.25rem $container-gutter;
         text-transform: uppercase;
       }
     }
@@ -27,7 +32,7 @@
       > a {
         border-top: 0 none;
         color: $white;
-        padding: .75rem 1.875rem;
+        padding: .75rem $container-gutter;
 
         &:hover,
         &:focus {
@@ -37,8 +42,9 @@
 
       > .menu {
         background-color: $gray-lighter;
-        //border-bottom: 4px solid $secondary-color;
-        //border-top: 4px solid $secondary-color;
+        border-bottom: 4px solid $secondary-color;
+        box-sizing: content-box;
+        border-top: 4px solid $secondary-color;
         display: none;
         left: 0;
         position: absolute;

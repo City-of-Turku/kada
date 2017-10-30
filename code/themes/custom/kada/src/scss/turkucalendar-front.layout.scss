@@ -16,8 +16,6 @@
 
 @charset 'UTF-8';
 
-@import '../../bower_components/susy/sass/susy';
-
 @import 'lib/variables/*';
 @import 'lib/mixins/*';
 
@@ -50,11 +48,9 @@ body {
 }
 
 .l-region--top-carousel {
-  @include span(12 of 12);
   background-color: $turkucalendar-background;
 
   @media screen and (min-width: $desktop) {
-    @include span(8 of 12);
   }
 }
 
@@ -113,13 +109,11 @@ body {
   padding: 0 !important;
 
   @media screen and (min-width: $tablet-portrait) {
-    @include span(12 of 12);
   }
 }
 
 .l-region,
 .l-content {
-  margin: 0 $gutters * 2;
 
   @media screen and (min-width: $tablet-portrait) {
     margin: 0 auto;

@@ -1,5 +1,5 @@
 {
-  "name": "Cucumber",
+  "name": "cucumber",
   "description": "Bower configuration for Cucumber Drupal 8 theme",
   "main": "",
   "authors": [
@@ -9,8 +9,7 @@
   "homepage": "",
   "private": true,
   "dependencies": {
-    "susy": "^2.2.12",
-    "font-awesome": "^4.6.3"
+    "font-awesome": "^4.7.0"
   },
   "overrides": {
     "font-awesome": {
