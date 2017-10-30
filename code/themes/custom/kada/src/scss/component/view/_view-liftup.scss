@@ -59,9 +59,13 @@
 
 .liftup-box-list  {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @media screen and (min-width: $tablet-portrait) {
+    flex-direction: row;
+  }
 }
 
 .liftup-box--topic {
@@ -77,9 +81,16 @@
   }
 
   @media screen and (min-width: $container) {
-    margin: 80px 0;
+    margin: 40px 0;
     width: 32.3333%;
 
+  }
+
+  & .liftup-box--topic__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
   }
 
   & .liftup-box__image {

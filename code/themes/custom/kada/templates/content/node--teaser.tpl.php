@@ -79,7 +79,7 @@
  */
 ?>
 <div class="liftup-box liftup-box--topic <?php print $classes; ?>" role="article">
-  <a href="<?php print $node_url; ?>" rel="bookmark">
+  <a class="liftup-box--topic__container" href="<?php print $node_url; ?>" rel="bookmark">
     <div class="liftup-box__image">
       <?php
         // We hide the comments and links now so that we can render them later.
