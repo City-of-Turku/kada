@@ -56,3 +56,43 @@
 .liftup-box__header {
   margin-bottom: 1rem;
 }
+
+.liftup-box-list  {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.liftup-box--topic {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 20px 0;
+  width: 100%;
+
+
+  @media screen and (min-width: $tablet-portrait) {
+    width: 49%;
+  }
+
+  @media screen and (min-width: $container) {
+    margin: 80px 0;
+    width: 32.3333%;
+
+  }
+
+  & .liftup-box__image {
+    border-top: 10px solid $turku-black;
+  }
+}
+
+.liftup-box__caption {
+  color: $body-font-color;
+  margin-top: 20px;
+  word-break: break-all;
+
+  @media screen and (min-width: $container) {
+    margin-top: 50px;
+  }
+}

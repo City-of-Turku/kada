@@ -90,7 +90,7 @@
     </div>
 
     <?php print render($title_prefix); ?>
-      <h2 class="liftup-box__caption"><?php print $title; ?></h2>
+      <h4 class="liftup-box__caption"><?php print $title; ?></h4>
     <?php print render($title_suffix); ?>
   </a>
 </div>
