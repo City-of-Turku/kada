@@ -72,18 +72,17 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  margin: 20px 0;
+  margin: 1.25em 0;
   width: 100%;
 
 
   @media screen and (min-width: $tablet-portrait) {
-    width: 49%;
+    width: 49.5%;
   }
 
   @media screen and (min-width: $container) {
-    margin: 40px 0;
-    width: 32.3333%;
-
+    margin: 1.875em 0;
+    width: 32.66%;
   }
 
   & .liftup-box--topic__container {
@@ -94,16 +93,19 @@
   }
 
   & .liftup-box__image {
-    border-top: 10px solid $turku-black;
+    border-top: 12px solid $turku-black;
   }
 }
 
 .liftup-box__caption {
   color: $body-font-color;
-  margin-top: 20px;
-  word-break: break-all;
+  margin-top: 1.150rem;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  word-break: break-word;
 
   @media screen and (min-width: $container) {
-    margin-top: 50px;
+    margin-top: 1.250rem;
+    margin-bottom: 0;
   }
 }
