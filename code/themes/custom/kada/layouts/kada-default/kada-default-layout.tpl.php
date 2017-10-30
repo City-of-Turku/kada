@@ -187,7 +187,7 @@
       <?php if($page['footer']): ?>
         <div id="footer" class="page-footer l-footer-content" role="contentinfo">
           <div class="container page-footer__container">
-            <div class="site-branding site-branding--header l-region l-region--logo">
+            <div class="site-branding site-branding--footer l-region l-region--logo">
               <h2 class="site-name site-branding__name site-branding--footer__name">
                 <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__link site-branding--footer__link">
                   <span class="element-invisible"><?php print $site_name; ?></span>

@@ -16,5 +16,9 @@ $desktop-narrow: 60em; // = 960px;
 $tablet-landscape: 64em; // = 1024px;
 $desktop: 75em; // = 1200px;
 $container: 84.5em; // = 1320px + 2 * 1rem
+$full: 100rem; // 1600px
 
 $max-width-deduction: .0625em;
+
+$mobile-footer-breakpoint: $desktop;
+$mobile-footer-breakpoint-max: 74.063rem;
