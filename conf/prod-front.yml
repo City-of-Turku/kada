@@ -3,12 +3,12 @@
 - hosts: prod-front
   user: root
   roles:
-    #   - { role: base, tags: [ 'base' ] }
-     #   - { role: certbot, tags: [ 'certbot' ] }
-     #- { role: varnish, tags: [ 'varnish' ] }
-     #- { role: papertrail, tags: [ 'papertrail' ] }
-     #- { role: nginx, tags: [ 'nginx' ] }
-     #- { role: sslterminator, tags: [ 'sslterminator' ] }
+   - { role: base, tags: [ 'base' ] }
+   - { role: certbot, tags: [ 'certbot' ] }
+   - { role: varnish, tags: [ 'varnish' ] }
+   - { role: papertrail, tags: [ 'papertrail' ] }
+   - { role: nginx, tags: [ 'nginx' ] }
+   - { role: sslterminator, tags: [ 'sslterminator' ] }
    - { role: php-fpm, tags: [ 'php-fpm' ] }
    - { role: memcached, tags: [ 'memcached' ] }
    - { role: drush, tags: [ 'drush' ] }
