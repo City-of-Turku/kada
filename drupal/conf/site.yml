@@ -21,9 +21,9 @@ default:
   # In development environments we want to use symlinks, note settings.php
   link:
     - files: sites/default/files
-    - code/modules/custom: sites/all/modules/custom
-    - code/modules/features: sites/all/modules/features
-    - code/themes/custom: sites/all/themes/custom
+    - code/modules/custom: web/sites/all/modules/custom
+    - code/modules/features: web/sites/all/modules/features
+    - code/themes/custom: web/sites/all/themes/custom
     - code/profiles/kadaprofile: profiles/kadaprofile
     - conf/settings.php: sites/default/settings.php
     - conf/vagrant.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
@@ -68,9 +68,9 @@ develop:
 
   # Other files are copied, note settings.php
   copy:
-    - code/modules/custom: sites/all/modules/custom
-    - code/modules/features: sites/all/modules/features
-    - code/themes/custom: sites/all/themes/custom
+    - code/modules/custom: web/sites/all/modules/custom
+    - code/modules/features: web/sites/all/modules/features
+    - code/themes/custom: web/sites/all/themes/custom
     - code/profiles/kadaprofile: profiles/kadaprofile
     - conf/settings.php: sites/default/settings.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
@@ -102,9 +102,9 @@ stage:
 
   # Other files are copied, note settings.php
   copy:
-    - code/modules/custom: sites/all/modules/custom
-    - code/modules/features: sites/all/modules/features
-    - code/themes/custom: sites/all/themes/custom
+    - code/modules/custom: web/sites/all/modules/custom
+    - code/modules/features: web/sites/all/modules/features
+    - code/themes/custom: web/sites/all/themes/custom
     - code/profiles/kadaprofile: profiles/kadaprofile
     - conf/settings.php: sites/default/settings.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
