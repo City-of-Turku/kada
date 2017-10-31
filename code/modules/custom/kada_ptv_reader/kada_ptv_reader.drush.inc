@@ -151,7 +151,7 @@ function kada_ptv_reader_import_service($guid, $langcode = 'fi') {
   $entity = entity_create('node', $values);
 
   $ewrapper = entity_metadata_wrapper('node', $entity);
-  $ewrapper->title->set(kada_ptv_reader_get_value_from($data->names, ['language' => $langcode], 'value'));
+  $ewrapper->title->set(kada_ptv_reader_get_value_from($data->names, ['language' => $langcode, 'type' => 'Name'], 'value'));
 
   $desc = kada_ptv_reader_get_value_from($data->descriptions, ['language' => $langcode, 'type' => 'BackgroundDescription'], 'value');
   $ewrapper->field_description->set(['value' => $desc]);
@@ -190,7 +190,7 @@ function kada_ptv_reader_import_service_offer($guid, $langcode = 'fi') {
   $entity = entity_create('node', $values);
 
   $ewrapper = entity_metadata_wrapper('node', $entity);
-  $ewrapper->title->set(kada_ptv_reader_get_value_from($data->serviceNames, ['language' => $langcode], 'value'));
+  $ewrapper->title->set(kada_ptv_reader_get_value_from($data->serviceNames, ['language' => $langcode, 'type' => 'Name'], 'value'));
 
   $desc = kada_ptv_reader_get_value_from($data->serviceDescriptions, ['language' => $langcode, 'type' => 'Description'], 'value');
   $ewrapper->field_description->set(['value' => $desc]);
@@ -231,7 +231,7 @@ function kada_ptv_reader_import_service_channel($guid, $langcode = 'fi') {
   $entity = entity_create('node', $values);
 
   $ewrapper = entity_metadata_wrapper('node', $entity);
-  $title = kada_ptv_reader_get_value_from($data->serviceChannelNames, ['language' => $langcode], 'value');
+  $title = kada_ptv_reader_get_value_from($data->serviceChannelNames, ['language' => $langcode, 'type' => 'Name'], 'value');
   $ewrapper->title->set($title);
 
   $desc = kada_ptv_reader_get_value_from($data->serviceChannelDescriptions, ['language' => $langcode, 'type' => 'Description'], 'value');
