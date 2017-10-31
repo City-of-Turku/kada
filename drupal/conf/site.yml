@@ -126,4 +126,38 @@ stage:
       - shell: chmod -R a-w web
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
+prod:
+
+
+  # Test environment only symlinks files
+  link:
+    - /var/www/pori.prod.wunder.io/files: sites/default/files
+
+  # Other files are copied, note settings.php
+  copy:
+    - code/modules/custom: sites/all/modules/custom
+    - code/modules/features: sites/all/modules/features
+    - code/themes/custom: sites/all/themes/custom
+    - code/profiles/kadaprofile: profiles/kadaprofile
+    - conf/settings.php: sites/default/settings.php
+    - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
+    - conf/_ping.php: _ping.php
+
+  local_commands:
+    build:
+      - shell: chmod -R a+w web
+      - make
+      - finalize
+
+    update:
+      - update
+      - cleanup
+      - drush: en devel -y
+      - drush: cc drush
+      - drush: composer-json-rebuild -y
+      - drush: composer-manager update -y
+      - shell: chmod -R a-w web
+      - shell: sudo systemctl restart nginx php-fpm varnish memcached
+
+
 
