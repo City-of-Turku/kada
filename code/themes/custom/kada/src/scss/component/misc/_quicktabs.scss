@@ -1,22 +1,90 @@
 .quicktabs-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
   .quicktabs-tab {
-    border: 1px solid $default-color;
-    border-radius: .125rem;
-    display: inline-block;
+    background-color: transparent;
+    border: 0 none;
+    border-radius: 0;
+    color: $primary-color;
+    display: block;
+    height: 2.917rem;
     line-height: inherit;
-    margin: 0 .25rem .5rem;
-    padding: .5rem 1.25rem .575rem;
-    background-color: $default-color;
-    color: $white;
-    font-size: $base-font-size-rem;
-    font-weight: 600;
-    text-align: center;
-    text-decoration: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    text-indent: -9999px;
+    width: 2.917rem;
 
     &:hover,
-    &:focus {
-      border-color: $default-color-medium-dark;
-      background-color: $default-color-medium-dark;
+    &:focus,
+    &.active {
+      background-color: $secondary-color;
+      color: $white;
     }
+
+    &::after {
+      left: 50%;
+      position: absolute;
+      text-indent: 0;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .quicktabs-tab-block-kada-liftups-feature-delta-current-combined {
+    &::after {
+      background: url('../../dist/image/current-all-icon.svg') no-repeat center center transparent;
+      background-size: auto 100%;
+      content: "";
+      height: 1.25rem;
+      width: 1.25rem;
+    }
+
+    &:hover,
+    &:focus,
+    &.active {
+      &::after {
+        background-image: url('../../dist/image/current-all-icon--white.svg');
+      }
+    }
+  }
+
+  .quicktabs-tab-view-kada-current-promoted--tab-news::after {
+    @include fa('\f073', 1.2rem, 1, false);
+  }
+
+  .quicktabs-tab-view-kada-current-promoted--tab-nearby::after {
+    @include fa('\f041', 1.2rem, 1, false);
+  }
+
+  .quicktabs-tab-view-kada-current-promoted--tab-facebook::after {
+    @include fa('\f230', 1.2rem, 1, false);
+  }
+
+  .quicktabs-tab-view-kada-current-promoted--tab-instagram::after {
+    @include fa('\f16d', 1.2rem, 1, false);
+  }
+
+  .quicktabs-tab-view-kada-current-promoted--tab-twitter::after {
+    @include fa('\f099', 1.2rem, 1, false);
+  }
+
+  .quicktabs-tab-view-kada-current-promoted--tab-linkedin::after {
+    @include fa('\f08c', 1.2rem, 1, false);
+  }
+
+  .quicktabs-tab-view-kada-current-promoted--tab-youtube::after{
+    @include fa('\f16a', 1.2rem, 1, false);
+  }
+
+  .quicktabs-tab-view-kada-current-promoted--tab-blogs::after {
+    @include fa('\f044', 1.2rem, 1, false);
+  }
+
+  .quicktabs_main {
+    border-top: .313rem solid $secondary-color;
+    width: 100%;
   }
 }
