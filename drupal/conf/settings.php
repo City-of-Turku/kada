@@ -62,14 +62,17 @@ $env = getenv('WKV_SITE_ENV');
 switch ($env) {
     case 'production':
       $conf['simple_environment_indicator'] = '#d4000f Production';
+      $conf['file_private_path'] = '/var/www/pori.prod.wunder.io/private_files';
     break;
 
     case 'stage':
       $conf['simple_environment_indicator'] = '#e56716 Stage';
+      $conf['file_private_path'] = '/var/www/pori.stage.wunder.io/private_files';
       break;
 
     case 'dev':
       $conf['simple_environment_indicator'] = '#004984 Development';
+      $conf['file_private_path'] = '/var/www/pori.dev.wunder.io/private_files';
     break;
 
     case 'local':

@@ -1,7 +1,8 @@
 ---
 
-innodb_buffer_pool_size: "{{ memory_db }}"
+project_name: Pori
 
+innodb_buffer_pool_size: "{{ memory_db }}"
 php_memory_limit: 256 # In MB "256MB ought to be enough for anyone." -Bill Gates
 
 # Estimated average memory usage per process
@@ -27,41 +28,66 @@ php_package: "php71u"
 php_env_vars_include_db: True
 
 # Variables to create/update UpCloud Servers
-upcloud_project_name: Pori
+upcloud_project_name: "{{ project_name }}"
 
 # These are the specifications for servers in this project
 upcloud_server_spec_list:
-  #- group: production
-    ## This can be used to add these machines into multiple groups
-    #secondary_groups:
-      #- firewall_web
-    #members:
-      #- { name: web1, state: present }
-    #settings:
-      #plan: 6xCPU-8GB
-      #zone: fi-hel1
-      ## Allows ansible to reboot the machine when making changes to the disks
-      #allow_reboot_on_resize: true
-      #storage_devices:
-        #- title: root
-          #os: CentOS 7.0
-          #size: 200
-          #backup_rule: { interval: daily, time: '0430', retention: 14 }
-        #- title: logs
-          #size: 10
-          #mount:
-            #path: /var/log
-            #fstype: ext4
-            #opts: defaults,noatime
-        #- title: database
-          #size: 30
-          #mount:
-            #path: /var/lib/mysql
-            #fstype: ext4
-            ## Options for mysql performance
-            ## These are the same as Mozilla is using for their mysql servers: https://bugzilla.mozilla.org/show_bug.cgi?id=874039
-            #opts: defaults,noatime,data=writeback,barrier=0,dioread_nolock
-          #backup_rule: { interval: daily, time: '0430', retention: 14 }
+  - group: prod-front
+    secondary_groups:
+      - firewall_web
+      - prod
+    members:
+      - { name: 1, state: present }
+    settings:
+      plan: 6xCPU-8GB
+      zone: fi-hel1
+      # Allows ansible to reboot the machine when making changes to the disks 
+      allow_reboot_on_resize: true
+      storage_devices:
+        - title: root
+          os: CentOS 7.0
+          size: 50
+        - title: logs
+          size: 10
+          mount:
+            path: /var/log
+            fstype: ext4
+            opts: defaults,noatime
+  - group: prod-db
+    secondary_groups:
+      - prod
+    members:
+      - { name: 1, state: present }
+    settings:
+      plan: 6xCPU-8GB
+      zone: fi-hel1
+      # Allows ansible to reboot the machine when making changes to the disks
+      allow_reboot_on_resize: true
+      storage_devices:
+        - title: root
+          os: CentOS 7.0
+          size: 50
+        - title: logs
+          size: 10
+          mount:
+            path: /var/log
+            fstype: ext4
+            opts: defaults,noatime
+        - title: nfs
+          size: 100
+          mount:
+            path: /nfs-files
+            fstype: ext4
+            opts: defaults,noatime
+          backup_rule: { interval: daily, time: '0330', retention: 14 }
+        - title: database
+          size: 30
+          mount:
+            path: /var/lib/mysql
+            fstype: ext4
+            # Options for mysql performance
+            # These are the same as Mozilla is using for their mysql servers: https://bugzilla.mozilla.org/show_bug.cgi?id=874039
+            opts: defaults,noatime,data=writeback,barrier=0,dioread_nolock
   - group: stage
     # This can be used to add these machines into multiple groups
     secondary_groups:

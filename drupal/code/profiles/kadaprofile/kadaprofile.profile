@@ -38,3 +38,10 @@ function kadaprofile_update_7101() {
 
   module_enable($modules, $enable_dependencies);
 }
+
+function kadaprofile_update_7102() {
+  $modules = array('hotjar');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+
+}
