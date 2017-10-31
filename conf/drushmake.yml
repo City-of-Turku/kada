@@ -247,6 +247,8 @@ projects:
     version: '2.0'
   hierarchical_select:
     version: '3.0-beta8'
+  hotjar:
+    version: '1.2'
   honeypot:
     version: '1.22'
   httprl:

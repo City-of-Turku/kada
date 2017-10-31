@@ -180,6 +180,16 @@
     }
   };
 
+  Drupal.behaviors.kadaFooterMenuBehavior = {
+    attach: function (context) {
+      $('.l-region--footer .menu__item--expanded-toggle').click(
+        function () {
+          $('.menu', $(this).parent()).toggleClass('is-hidden');
+        }
+      );
+    }
+  };
+
   Drupal.behaviors.kadaEqualHeightsBehavior = {
     attach: function (context) {
       $(window).load(function () {
@@ -808,18 +818,6 @@
         var $after_footer = $('<div class="l-after-footer"></div>');
         $after_footer.append($(this).find('.section-footer--item').filter(function (i) { return i >= 3; }));
         $(this).find('.l-after-footer-wrapper').append($after_footer);
-      });
-    }
-  };
-
-  Drupal.behaviors.kadaSectionFooterContactInfo = {
-    attach: function (context) {
-      $('.l-region--footer', context).once('section-footer-contact-info', function () {
-        // Move contact info into first footer item
-        var $info = $(this).find('.contact-information');
-        var $block = $info.parent().parent();
-        $(this).find('.section-footer--item:first').append($info);
-        $block.remove();
       });
     }
   };

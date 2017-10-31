@@ -1,0 +1,163 @@
+---
+
+#
+# NORMAL SITE
+#
+
+# Default environment is Vagrant:
+default:
+
+  makefile: conf/kadaproject.make
+  temporary: _build
+  final: web
+  previous: builds
+  profile: kadaprofile
+  site: KADA
+
+  aliases:
+    - vagrant
+    - local
+
+  # In development environments we want to use symlinks, note settings.php
+  link:
+    - files: sites/default/files
+    - code/modules/custom: sites/all/modules/custom
+    - code/modules/features: sites/all/modules/features
+    - code/themes/custom: sites/all/themes/custom
+    - code/profiles/kadaprofile: profiles/kadaprofile
+    - conf/settings.php: sites/default/settings.php
+    - conf/vagrant.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
+    - conf/_ping.php: _ping.php
+
+  # We can provide local commands or override global ones.
+  local_commands:
+    new:
+      - verify: "Type yes to verify you want to build a new installation: "
+      - make
+      - backup
+      # Install dev modules
+      - purge
+      - finalize
+      - install
+      - cleanup
+      - drush: cc drush
+      - drush: composer-json-rebuild -y
+      - drush: composer-manager update -y
+      - shell: systemctl restart nginx php-fpm varnish memcached
+
+
+    # Running command "./build.sh update" without environment or with "vagrant" as environment "./build.sh update vagrant" will also make sure that stage_file_proxy is enabled.
+    # Basic site update functionality
+    update:
+      - make
+      - finalize
+      - update
+      - cleanup
+      - drush: en devel -y
+      - drush: cc drush
+      - drush: composer-json-rebuild -y
+      - drush: composer-manager update -y
+      - shell: systemctl restart nginx php-fpm varnish memcached
+
+# Test environment:
+develop:
+
+  # Test environment only symlinks files
+  link:
+    - /var/www/pori.dev.wunder.io/files: sites/default/files
+
+  # Other files are copied, note settings.php
+  copy:
+    - code/modules/custom: sites/all/modules/custom
+    - code/modules/features: sites/all/modules/features
+    - code/themes/custom: sites/all/themes/custom
+    - code/profiles/kadaprofile: profiles/kadaprofile
+    - conf/settings.php: sites/default/settings.php
+    - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
+    - conf/_ping.php: _ping.php
+
+  local_commands:
+    build:
+      - shell: chmod -R a+w web
+      - make
+      - finalize
+
+    update:
+      - update
+      - cleanup
+      - drush: en devel -y
+      - drush: cc drush
+      - drush: composer-json-rebuild -y
+      - drush: composer-manager update -y
+      - shell: chmod -R a-w web
+      - shell: sudo systemctl restart nginx php-fpm varnish memcached
+
+# Test environment:
+stage:
+
+
+  # Test environment only symlinks files
+  link:
+    - /var/www/pori.stage.wunder.io/files: sites/default/files
+
+  # Other files are copied, note settings.php
+  copy:
+    - code/modules/custom: sites/all/modules/custom
+    - code/modules/features: sites/all/modules/features
+    - code/themes/custom: sites/all/themes/custom
+    - code/profiles/kadaprofile: profiles/kadaprofile
+    - conf/settings.php: sites/default/settings.php
+    - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
+    - conf/_ping.php: _ping.php
+
+  local_commands:
+    build:
+      - shell: chmod -R a+w web
+      - make
+      - finalize
+
+    update:
+      - update
+      - cleanup
+      - drush: en devel -y
+      - drush: cc drush
+      - drush: composer-json-rebuild -y
+      - drush: composer-manager update -y
+      - shell: chmod -R a-w web
+      - shell: sudo systemctl restart nginx php-fpm varnish memcached
+
+prod:
+
+
+  # Test environment only symlinks files
+  link:
+    - /var/www/pori.prod.wunder.io/files: sites/default/files
+
+  # Other files are copied, note settings.php
+  copy:
+    - code/modules/custom: sites/all/modules/custom
+    - code/modules/features: sites/all/modules/features
+    - code/themes/custom: sites/all/themes/custom
+    - code/profiles/kadaprofile: profiles/kadaprofile
+    - conf/settings.php: sites/default/settings.php
+    - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
+    - conf/_ping.php: _ping.php
+
+  local_commands:
+    build:
+      - shell: chmod -R a+w web
+      - make
+      - finalize
+
+    update:
+      - update
+      - cleanup
+      - drush: en devel -y
+      - drush: cc drush
+      - drush: composer-json-rebuild -y
+      - drush: composer-manager update -y
+      - shell: chmod -R a-w web
+      - shell: sudo systemctl restart nginx php-fpm varnish memcached
+
+
+

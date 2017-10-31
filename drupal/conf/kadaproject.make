@@ -603,6 +603,9 @@ projects[shortcutperrole][subdir] = contrib
 projects[shorten][version] = 1.4
 projects[shorten][subdir] = contrib
 
+projects[simplei][version] = "1.0"
+projects[smtp][subdir] = contrib
+ 
 projects[smtp][version] = 1.2
 projects[smtp][subdir] = contrib
 
@@ -686,7 +689,7 @@ projects[views_rss][subdir] = contrib
 projects[views_ajax_get][version] = 1.2
 projects[views_ajax_get][subdir] = contrib
 
-projects[webform][version] = 4.11
+projects[webform][version] = 4.16
 projects[webform][subdir] = contrib
 
 projects[wysiwyg][type] = "module"
