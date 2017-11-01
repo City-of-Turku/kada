@@ -10,58 +10,6 @@
   }
 }
 
-.flexslider__controls {
-  position: absolute;
-  bottom: 1.5rem;
-  width: 100%;
-  z-index: 5;
-
-  .flex-control-nav {
-    display: flex;
-    justify-content: center;
-    margin: 0 -.25rem;
-  }
-
-  li {
-    display: inline-block;
-    margin: 0;
-    padding: 0 .25rem;
-  }
-
-  a {
-    border: 1px solid $white;
-    border-radius: 50%;
-    display: block;
-    height: .75rem;
-    width: .75rem;
-    background: transparent;
-    color: transparent;
-    font-size: 0;
-
-    &:hover,
-    &:focus {
-      background: $white;
-      cursor: pointer;
-    }
-
-    @media screen and (max-width: $tablet-portrait - $max-width-deduction) {
-      border-color: $black;
-
-      &:hover,
-      &:focus {
-        background: $black;
-      }
-    }
-  }
-
-  .flex-active,
-  .flex-active:hover,
-  .flex-active:focus {
-    border-color: $primary-color;
-    background: $primary-color;
-  }
-}
-
 .touchevents .flexslider {
   .flex-control-nav {
     margin: 0 -.5rem;
@@ -98,33 +46,8 @@
   }
 }
 
-.flex-caption,
-.flex-caption__title a {
-  color: $black;
-
-  @media screen and (min-width: $tablet-portrait) {
-    color: $white;
-  }
-}
-
-.flex-caption {
-  padding: 0 1.75rem;
-  line-height: normal;
-
-  @media screen and (min-width: $tablet-portrait) {
-    width: span(9);
-  }
-
-  @media screen and (min-width: $desktop-narrow) {
-    width: span(7.5);
-  }
-
-  @media screen and (min-width: $container) {
-    width: span(6);
-  }
-}
-
 .flex-caption__title {
+  color: $black;
   margin-bottom: 1rem;
   font-size: 1.5rem;
   font-weight: 800;
@@ -152,6 +75,7 @@
 
 .flex-caption__body {
   @include font-size-responsive(1.125rem);
+  line-height: 1.8em;
 
   @media screen and (min-width: $tablet-portrait) and (max-width: 819px) {
     font-size: 1rem;
@@ -171,3 +95,254 @@
     font-size: 1.25rem;
   }
 }
+
+.flex-caption {
+  background-color: $white;
+  bottom: 0;
+  color: $black;
+  left: 0;
+  line-height: normal;
+  padding: 1rem 1rem 1.5rem 1rem;
+  position: absolute;
+  width: 100%;
+
+  @media screen and (min-width: $tablet-portrait) {
+    background-color: $white;
+    //margin-left: $distance-from-items-tablet-portrait;
+    left: 3rem;
+    padding: 3rem 6rem 5.5rem 6rem;
+    width: 74.167%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    //margin-left: $distance-from-items-large-desk;
+    width: 55%;
+  }
+
+  .flex-caption__image {
+    margin: 0 auto;
+    max-width: 160px;
+    padding-bottom: 1em;
+
+    @media screen and (min-width: $mobile-portrait) {
+      clear: none;
+      float: left;
+      max-width: none;
+      padding: 0;
+      width: 33.33%;
+    }
+
+    & + .flex-caption__content {
+      @media screen and (min-width: $mobile-portrait) {
+        clear: none;
+        float: right;
+        padding-left: 1em;
+        width: 66.67%;
+      }
+
+      @media screen and (min-width: $tablet-portrait) {
+        padding-left: 2em;
+      }
+
+      .flex-caption__title {
+        font-size: 1.5em;
+
+        @media screen and (min-width: $mobile-landscape-wide) {
+          font-size: 1.8em;
+        }
+      }
+    }
+  }
+
+  .flex-caption__read-more {
+    color: $white;
+  }
+}
+
+.flex-caption-wrapper,
+.flex-control-nav-container {
+  @media screen and (min-width: $tablet-portrait) {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 1320px;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.flexslider__controls {
+  position: absolute;
+  bottom: 0rem;
+  padding: 1rem 1rem 1.5rem 1rem;
+  width: 100%;
+  z-index: 5;
+
+  @media screen and (min-width: $tablet-portrait) {
+    bottom: 2.5rem;
+    left: 3rem;
+    padding: 3rem 6rem 5.5rem 6rem;
+    width: 74.167%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 55%;
+  }
+
+  .flex-control-nav {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 1rem;
+    margin: 0 -.25rem;
+
+    @media screen and (min-width: $tablet-portrait) {
+      padding: 0 6rem;
+    }
+  }
+
+  li {
+    display: inline-block;
+    margin: 0;
+    padding: 0 .25rem;
+  }
+
+  a {
+    border: 1.5px solid $black;
+    border-radius: 100%;
+    display: block;
+    height: .75rem;
+    width: .75rem;
+    background: transparent;
+    color: transparent;
+    font-size: 0;
+
+    &:hover,
+    &:focus {
+      background: $white;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: $tablet-portrait - $max-width-deduction) {
+      border-color: $black;
+
+      &:hover,
+      &:focus {
+        background: $black;
+      }
+    }
+  }
+
+  .flex-control-paging {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: 3;
+
+    @media screen and (min-width: $tablet-portrait) {
+      bottom: 0;
+      // left: $distance-from-items-tablet-portrait;
+      //left: 3rem;
+      padding-bottom: 3px;
+      text-align: left;
+      //width: 54.167%;
+    }
+
+    @media screen and (min-width: $desktop) {
+      // left: $distance-from-items-large-desk;
+      //width: 42%;
+    }
+
+    > li {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+  }
+
+  .flex-active,
+  .flex-active:hover,
+  .flex-active:focus {
+    border-color: $primary-color;
+    background: $primary-color;
+  }
+
+  .flex-pauseplay {
+    bottom: 0;
+    display: inline-block;
+    right: 2.18rem;
+    margin: 0;
+    position: absolute;
+    padding: 0;
+
+    @media screen and (min-width: $tablet-portrait) {
+      right: 4.18rem;
+    }
+  }
+
+  .flex-direction-nav {
+    bottom: 0;
+    display: inline-block;
+    right: 1rem;
+    margin: 0;
+    position: absolute;
+    padding: 0;
+
+    @media screen and (min-width: $tablet-portrait) {
+      right: 3rem;
+    }
+
+    li {
+      display: inline-block;
+      list-style: none;
+      margin: 0 10px 0 0;
+      vertical-align: bottom;
+
+      @media screen and (min-width: $tablet-portrait) {
+        display: inline-block;
+        float: none;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      a {
+        background-color: $white;
+        display: block;
+        font-size: 0;
+        height: 0.75rem;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        width: 0.75rem;
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        &.flex-next {
+          //@include arrow-right($white);
+        }
+
+        &.flex-prev {
+          //@include arrow-left($white);
+        }
+
+        &.flex-next,
+        &.flex-prev {
+          &:before {
+            color: #FFFFFF;
+            font-size: 25px;
+            line-height: 30px;
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
