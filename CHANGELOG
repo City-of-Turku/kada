@@ -1,0 +1,50 @@
+9
+(optional) WunderTools now supports having a custom repository for WunderTools
+and build.sh (only on GitHub for now). To use it, create a fork of WunderTools
+and/or build.sh, add your repo url and branches to conf/project.yml, here is an
+example:
+
+buildsh:
+  enabled: true
+  branch: develop
+  repository: badrange/build.sh
+  revision:
+wundertools:
+  repository: badrange/WunderTools
+  branch: feature/custom-wundertools-repository
+
+8
+varnish.control_key variable added (optional). This will set up a Varnish control key in
+/etc/varnish/secret and makes it a php environment variable for use in
+vagrant.settings.php. Check vagrant.settings.php for Varnish 4 compatible
+settings.
+
+7
+hash_behaviour changed to merge so that you don't need to copy the whole dict object from defaults when you just want to override some of the values in it.
+To comply with this add "hash_behaviour=merge" to projects ansible.cfg file.
+
+6
+wkv_site_env variable is now required.
+
+5
+Varnish role has added parametrized probe url (probe_resource_url) that needs to be added to varnish configs or provisioning will fail.
+This should usually point to _ping.php e.g. :  probe_resource_url: "_ping.php"
+See ansible/playbook/roles/varnish/defaults/main.yml for reference.
+
+4
+Removed local_ansible_roles linking from wundertools. Make sure you have anisble.cfg in your repo root that defines roles_path like this:
+roles_path=./local_ansible_roles:./ansible/playbook/roles
+
+3
+Centos7 branch is now the default (master) branch. If your project is still using centos6 update the ansible branch variable to "centos6" in the conf/project.yml or consider upgrading your project to use centos7.
+For centos7 projects you should update the ansible branch to "master" as the centos7 branch will be deprecated and will not receive any updates in the future.
+
+2
+Possibility to use external repository for drupal. In that case you need to define following variables in conf/project.yml
+externaldrupal:
+  remote: [external drupal repository url]
+  branch: [branch to use from the external repository]
+Repository should have drupal installation directly under the repository root.
+
+1
+Added support for managed version updates for build.sh
