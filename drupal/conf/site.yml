@@ -120,7 +120,7 @@ stage:
       - update
       - cleanup
       - drush: en devel -y
-      - drush: en fra -y
+      - drush: fra -y
       - drush: cc drush
       - drush: composer-json-rebuild -y
       - drush: composer-manager update -y
@@ -154,7 +154,7 @@ prod:
       - update
       - cleanup
       - drush: dis devel -y
-      - drush: en fra -y
+      - drush: fra -y
       - drush: cc drush
       - drush: composer-json-rebuild -y
       - drush: composer-manager update -y
