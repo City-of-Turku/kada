@@ -550,7 +550,7 @@ projects[search_api_solr][subdir] = contrib
 projects[service_links][version] = 2.3
 projects[service_links][subdir] = contrib
 ; Patch for Facebook Like button visibility
-projects[service_links][patch][] = "https://www.drupal.org/files/service_links-2039431.patch"
+; projects[service_links][patch][] = "https://www.drupal.org/files/service_links-2039431.patch"
 
 projects[shortcutperrole][version] = 1.2
 projects[shortcutperrole][subdir] = contrib
