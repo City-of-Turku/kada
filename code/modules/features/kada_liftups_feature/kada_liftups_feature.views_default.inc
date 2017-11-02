@@ -1496,6 +1496,45 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+
+  /* Display: Projects | Promoted */
+  $handler = $view->new_display('block', 'Projects | Promoted', 'block_1');
+  $handler->display->display_options['display_description'] = 'Content flagged to projects';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'liftup' => 'liftup',
+  );
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Content: Promoted to front page */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
   $translatables['kada_project_liftups'] = array(
     t('Master'),
     t('more'),
@@ -1511,6 +1550,7 @@ function kada_liftups_feature_views_default_views() {
     t('Projects | Section'),
     t('Content flagged to projects per section'),
     t('OG membership from node'),
+    t('Projects | Promoted'),
   );
   $export['kada_project_liftups'] = $view;
 
@@ -3268,6 +3308,107 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['filters']['field_event_date_value2']['group'] = 2;
   $handler->display->display_options['filters']['field_event_date_value2']['granularity'] = 'hour';
   $handler->display->display_options['filters']['field_event_date_value2']['default_date'] = 'now';
+
+  /* Display: FlexSlider | promoted content */
+  $handler = $view->new_display('block', 'FlexSlider | promoted content', 'block_1');
+  $handler->display->display_options['display_description'] = 'Slideshow of liftups per theme';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Main image */
+  $handler->display->display_options['fields']['field_main_image']['id'] = 'field_main_image';
+  $handler->display->display_options['fields']['field_main_image']['table'] = 'field_data_field_main_image';
+  $handler->display->display_options['fields']['field_main_image']['field'] = 'field_main_image';
+  $handler->display->display_options['fields']['field_main_image']['label'] = '';
+  $handler->display->display_options['fields']['field_main_image']['element_type'] = '0';
+  $handler->display->display_options['fields']['field_main_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_main_image']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_main_image']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_main_image']['click_sort_column'] = 'sid';
+  $handler->display->display_options['fields']['field_main_image']['type'] = 'carousel';
+  $handler->display->display_options['fields']['field_main_image']['settings'] = array(
+    'link' => '0',
+  );
+  $handler->display->display_options['fields']['field_main_image']['group_column'] = 'sid';
+  /* Field: Content: Link to content */
+  $handler->display->display_options['fields']['field_link_to_content']['id'] = 'field_link_to_content';
+  $handler->display->display_options['fields']['field_link_to_content']['table'] = 'field_data_field_link_to_content';
+  $handler->display->display_options['fields']['field_link_to_content']['field'] = 'field_link_to_content';
+  $handler->display->display_options['fields']['field_link_to_content']['label'] = '';
+  $handler->display->display_options['fields']['field_link_to_content']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<h3 class="flex-caption__title">[field_link_to_content]</h3>';
+  $handler->display->display_options['fields']['field_link_to_content']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['field_link_to_content']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link_to_content']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['field_link_to_content']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['field_link_to_content']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_link_to_content']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_link_to_content']['group_column'] = 'entity_id';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['body']['alter']['text'] = '[field_link_to_content]
+<div class="flex-caption__body">[body]</div>';
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '380';
+  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['body']['element_type'] = '0';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['body']['empty'] = '[field_link_to_content]';
+  $handler->display->display_options['fields']['body']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['body']['group_column'] = 'entity_id';
+  /* Field: Taxonomy term: Color name */
+  $handler->display->display_options['fields']['field_color_name']['id'] = 'field_color_name';
+  $handler->display->display_options['fields']['field_color_name']['table'] = 'field_data_field_color_name';
+  $handler->display->display_options['fields']['field_color_name']['field'] = 'field_color_name';
+  $handler->display->display_options['fields']['field_color_name']['relationship'] = 'term_node_tid';
+  $handler->display->display_options['fields']['field_color_name']['label'] = '';
+  $handler->display->display_options['fields']['field_color_name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_color_name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_color_name']['type'] = 'list_key';
+  $handler->display->display_options['fields']['field_color_name']['group_column'] = 'entity_id';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'liftup' => 'liftup',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Flags: Flagged */
+  $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['filters']['flagged']['value'] = '1';
+  $handler->display->display_options['filters']['flagged']['group'] = 1;
+  /* Filter criterion: Content: Promoted to front page */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
   $translatables['kada_top_carousel'] = array(
     t('Master'),
     t('more'),
@@ -3315,6 +3456,7 @@ function kada_liftups_feature_views_default_views() {
     t('FlexSlider | KADAcalendar Hobby EN'),
     t('FlexSlider | KADAcalendar Hobby SV'),
     t('FlexSlider | KADAcalendar Hobby RU'),
+    t('FlexSlider | promoted content'),
   );
   $export['kada_top_carousel'] = $view;
 
