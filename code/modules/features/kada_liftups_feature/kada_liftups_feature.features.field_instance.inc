@@ -92,8 +92,10 @@ function kada_liftups_feature_field_default_field_instances() {
       'project' => array(
         'label' => 'hidden',
         'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
+        'settings' => array(
+          'trim_length' => 330,
+        ),
+        'type' => 'text_trimmed',
         'weight' => 2,
       ),
       'search_result' => array(
@@ -202,7 +204,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 19,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -309,7 +311,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 24,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -378,7 +380,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 21,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -559,7 +561,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 23,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -668,7 +670,7 @@ function kada_liftups_feature_field_default_field_instances() {
           'override' => 0,
         ),
         'type' => 'project',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -756,7 +758,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 20,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -833,7 +835,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 26,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -902,7 +904,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 27,
       ),
       'search_result' => array(
         'label' => 'inline',
@@ -969,10 +971,9 @@ function kada_liftups_feature_field_default_field_instances() {
       ),
       'project' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 0,
+        'type' => 'hidden',
+        'weight' => 18,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -1195,7 +1196,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 22,
       ),
       'search_result' => array(
         'label' => 'above',

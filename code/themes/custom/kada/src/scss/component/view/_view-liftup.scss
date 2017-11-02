@@ -56,3 +56,132 @@
 .liftup-box__header {
   margin-bottom: 1rem;
 }
+
+/* Project liftups */
+.liftup-box.liftup-box--wide  {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  width: 100%;
+  //@media screen and (min-width: $mobile-landscape-wide) {
+  //  flex-direction: row;
+  //}
+  //
+  //@media screen and (min-width: $tablet-landscape) {
+  //  width: 33.333333%;
+  //}
+  //
+  //@media screen and (min-width: $container) {
+  //  width: 100%;
+  //}
+}
+.liftup-box--wide {
+  background-color: $white;
+  border-bottom: none;
+  color: $black;
+  margin: 0;
+  padding: 0;
+
+  .node--liftup {
+    display: flex;
+    flex-direction: column-reverse;
+    max-width: 1320px;
+    margin: 0 auto;
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      flex-direction: row;
+    }
+  }
+
+  &:nth-child(2) {
+    .node--liftup {
+      flex-direction: column-reverse;
+      @media screen and (min-width: $mobile-landscape-wide) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+    .field--name-post-date {
+      text-align: left;
+    }
+
+    .field--name-field-link-to-content a {
+      border: 1px solid;
+      display: inline-block;
+      margin-top: 3rem;
+      padding: 1rem 3rem;
+    }
+
+    .theme-color-blue {
+      border-top: 12px solid $turku-blue;
+    }
+
+    .field--name-body {
+      background-color: $white;
+      bottom: 20px;
+      color: $black;
+      font-size: 1rem;
+      width: auto;
+
+      @media screen and (min-width: $tablet-portrait) {
+        @include font-size(15px);
+
+        left: auto;
+        right: 0;
+      }
+    }
+
+    .liftup-box__group-right {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      width: 100%;
+
+      @media screen and (min-width: $tablet-portrait) {
+        width: 50%;
+      }
+    }
+
+    .liftup-box__group-left {
+      display: flex;
+      flex-direction: column;
+      padding: 2.5em 5rem;
+      width: 100%;
+
+      @media screen and (min-width: $tablet-portrait) {
+        width: 50%;
+      }
+    }
+
+    &:nth-child(2) {
+      background-color: $turku-white;
+      color: rgba($turku-black, 0.7);
+
+      //.liftup-box__caption {
+      //  background-color: rgba($turku-white, 1);
+      //  color: $body-font-color;
+      //  left: 0;
+      //  max-width: 50%;
+      //  right: auto;
+      //  width: auto;
+      //}
+
+      .liftup-box__group-right {
+
+
+        @media screen and (min-width: 1400px) {
+          margin-left: 0;
+        }
+      }
+
+      .liftup-box__group-left {
+
+        @media screen and (min-width: 1400px) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
