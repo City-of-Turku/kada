@@ -130,6 +130,3 @@
 
     # Set a low heap allocation for Elasticsearch on vagrant.
     elasticsearch_heap_size: 200m
-
-    yum_extra_packages:
-      - php71u-pecl-memcached

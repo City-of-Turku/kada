@@ -238,7 +238,7 @@ function kada_liftups_feature_strongarm() {
             'visible' => FALSE,
           ),
           'project' => array(
-            'weight' => '15',
+            'weight' => '28',
             'visible' => FALSE,
           ),
           'event_top_carousel' => array(
@@ -269,6 +269,10 @@ function kada_liftups_feature_strongarm() {
           ),
           'teaser' => array(
             'weight' => '1',
+            'visible' => FALSE,
+          ),
+          'project' => array(
+            'weight' => '25',
             'visible' => FALSE,
           ),
         ),

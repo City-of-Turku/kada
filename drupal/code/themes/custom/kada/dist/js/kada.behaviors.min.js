@@ -234,6 +234,7 @@
               highest = rightHeight;
             }
             $(elem).css('height', highest);
+            $(elem).find('.menu:visible').css('height', highest);
             switchMainMenuBehavior(context);
           }
         }

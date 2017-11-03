@@ -23,7 +23,7 @@
             <?php print render($page['navigation_top']); ?>
         </div>
       </div>
-    <?endif; ?>
+    <?php endif; ?>
 
     <div class="l-branding">
       <div class="l-branding__container l-branding-inner">
@@ -139,7 +139,7 @@
               <?php print render($page['before_content']); ?>
             <!-- </div> -->
           </div>
-        <?php endif  ?>
+        <?php endif;  ?>
 
         <section class="section section--content">
           <?php if ($title && !$is_front): ?>
@@ -159,13 +159,13 @@
               <?php print render($page['after_content']); ?>
             <!-- </div> -->
           </div>
-        <?php endif  ?>
+        <?php endif; ?>
 
         <?php if($page['sidebar_second']): ?>
           <aside id="sidebar-second" class="sidebar sidebar--second">
             <?php print render($page['sidebar_second']); ?>
           </aside>
-        <?php endif;?>
+        <?php endif; ?>
 
         <?php if($page['sidebar_first'] OR $page['sidebar_second']): ?>
           </div>
