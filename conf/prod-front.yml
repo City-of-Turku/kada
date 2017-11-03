@@ -1,0 +1,253 @@
+---
+
+- hosts: prod-front
+  user: root
+  roles:
+   - { role: base, tags: [ 'base' ] }
+   - { role: certbot, tags: [ 'certbot' ] }
+   - { role: varnish, tags: [ 'varnish' ] }
+   - { role: papertrail, tags: [ 'papertrail' ] }
+   - { role: nginx, tags: [ 'nginx' ] }
+   - { role: sslterminator, tags: [ 'sslterminator' ] }
+   - { role: php-fpm, tags: [ 'php-fpm' ] }
+   - { role: memcached, tags: [ 'memcached' ] }
+   - { role: drush, tags: [ 'drush' ] }
+   - { role: drupal-log, tags: [ 'drupal-log' ] }
+   - { role: external-smtp, tags: [ 'external-smtp' ] }
+   - { role: nfs_client, tags: [ 'nfs_client' ] }
+   - { role: monit, tags: [ 'monit' ] }
+   - { role: newrelic, tags: [ 'newrelic' ] }
+   - { role: newrelic-sysmon, tags: [ 'newrelic-sysmon' ] }
+   - { role: newrelic-infra, tags: [ 'newrelic-infra' ] }
+
+  vars_files:
+  - prod-vars.yml
+
+  tasks:
+    # Disable email from cron
+    - name: "Disable emails from failed cronjobs for nginx user"
+      cron:
+        name: "MAILTO"
+        env: yes
+        value: ""
+        state: "present"
+        user: nginx
+      tags: ['cron']
+
+    # Set drupal cron to be run every minute and alternate between both servers
+    - name: "Run drupal cronjob with nginx user at even minutes"
+      cron:
+        name: "Run Drupal cronjobs with drush"
+        minute: "*/2"
+        job: "/usr/lib/composer/vendor/bin/drush --root={{ drupal_web_root }} elysia-cron run"
+        state: "present"
+        user: nginx
+      tags: ['cron']
+      when: ansible_eth0.ipv4.address == groups['prod-front'][0] and drupal_web_root is defined
+
+  vars:
+
+    partition_var_log: False
+
+    memory_app: 4096 # In MB should be atleast 4x php_memory_limit
+
+
+    ## Nginx ##
+
+    # Apps I want to run on this server
+    apps:
+      - server_name: "{{ domain1_name }}"
+        http_port: 8080
+        docroot: "/var/www/{{ domain1_name }}/current/web"
+      #- server_name: "www.{{ domain2_name }}"
+        #server_aliases: "{{ domain2_name }}"
+        #server_forwards: "{{ domain2_name }}"  # we redirect to www subdomain
+        #http_port: 8080
+        #docroot: "/var/www/{{ domain1_name }}/current/web"
+
+    # You can also define aliases with app_dir_aliases, see ansible/playbook/roles/nginx/templates/all_apps.conf.j2
+
+    # Automatically create docroot folders
+    create_docroot: True
+
+
+
+    ## Php-fpm ##
+
+    php_ini_file: /etc/php.d/zz_wundertools.ini
+
+    # You can set any php.ini variable like this:
+    #php_ini:
+    #  - section: [section]
+    #    options:
+    #      - key: [php variable]
+    #        val: "[value]"
+
+    # See ansible_playbook/roles/php-fpm/defaults/main.yml for examples
+
+    ## Memcached ##
+
+    #memcached_port: 11211
+    #memcached_maxconn: 1024
+    #memcached_cachesize: 256
+    #memcached_options: "-I 4M"
+
+
+    ## Drush ##
+
+    drush: {
+      version: "8.*",
+    }
+
+
+    ## Drupal-log ##
+
+    drupal_log_path: /var/log/drupal.log
+
+
+    ## External-smtp ##
+
+    external_smtp_tls_security_level: 'encrypt'
+    external_smtp_relayhost: '[smtp.sparkpostmail.com]:587'
+    # external_smtp_sasl_password_maps value defined in prod-vars.yml
+
+    ## Nfs-client ##
+
+    nfsserver: "{{ db_ip }}"
+
+
+    ## Monit ##
+    monit_enabled: True
+    monit_alert_email_service_name: "{{ project_name }} front {{ ansible_nodename }}"
+    monit_alert_email_from: "alert@wundertools.com"
+    monit_alert_email_to: alert@wunder.io
+    monit_allow:
+      - localhost
+      - user:password
+    monit_check_sshd: True
+    monit_check_nginx: True
+    monit_check_memcached: True
+    monit_check_php_fpm: True
+    monit_check_remote_syslog: True
+    monit_check_cron: True
+    monit_check_varnish: True
+
+    ## Papertrail ##
+    papertrail_enabled: True
+    papertrail_remote_syslog2_version: "0.16"
+    papertrail_conf: "/etc/log_files.yml"
+    papertrail_logs:
+      - /var/log/secure
+
+    # papertrail host and port defined in prod-vars.yml
+
+    # Define additional papertrail logs from nginx (from nginx role)
+    nginx_papertrail_follow:
+      - /var/log/nginx/http-*error.log
+
+
+    php_fpm_papertrail_follow:
+      - /var/log/php-fpm/www-error.log
+
+    # Define additional papertrail logs from sslterminator (from sslterminator role)
+    sslterminator_papertrail_follow:
+      - /var/log/nginx/ssl-*error.log
+
+    ## Newrelic ##
+    newrelic_enabled: True
+    newrelic_infra_enabled: True
+    # newrelic_license_key defined in prod_vars.yml
+    newrelic_appname: "{{ project_name }}"
+
+    ## Letsencrypt ##
+
+    certbot_email: fi.support@wunder.io
+    certbot_domains:
+      - "{{ domain1_name }}"
+      #- "{{ domain2_name }}"
+      #- "www.{{ domain2_name }}"
+    certbot_renewal_docroot: /var/www/letsencrypt-auto
+    #certbot_commands: allows yo uto customize the command to run, see ansible/playbook/roles/certbot/defaults/main.yml
+
+
+    ## Varnish ##
+
+    # This server also acts as a load balancer
+    varnish:
+      port: 8081
+      memory: 1G
+      # Basic configuration for error pages
+      #error_header_cache_control: "no-cache, max-age: 0, must-revalidate"
+      error_header_x_site_name: "{{ project_name }}"
+      error_header_x_sitetitle: "{{ project_name }}"
+      error_header_x_ua: "insert_GA_code"
+      # It's possible to define custom error page template with
+      #custom_error_template:
+      # you can also set the control_key
+      control_key: "{{ varnish_control_key }}"
+      probe_resource_url: "_ping.php"
+      acl_internal:
+        - ip: 84.20.132.177
+        - ip: 87.94.15.10
+        - ip: 94.237.27.124
+        - ip: 94.237.33.88
+        - ip: 83.136.248.231
+      acl_purge:
+        - ip: 127.0.0.1
+        - ip: "{{ front1_ip }}"
+      acl_upstream_proxy:
+        - ip: 127.0.0.1
+      directors:
+        - name: prod1
+          host: "{{ domain1_name }}"
+          backends:
+            - name: prod1_http1
+              address: "{{ front1_ip }}"
+              port: 8080
+        #- name: prod2
+          #host: "www.{{ domain2_name }}"
+          #backends:
+            #- name: prod2_http1
+              #address: "{{ front1_ip }}"
+              #port: 8080
+
+    # There is more customization options for hashes, cookies etc. see ansible/playbook/roles/varnish/templates/default.vcl.j2 for reference
+
+    ## Nginx ##
+
+    # You can also define aliases with app_dir_aliases, see ansible/playbook/roles/nginx/templates/all_apps.conf.j2
+
+    # If using 3rd party CDN / proxy you can define those ip's here so that the real original request ip will be passed through
+    # For example Cloudflare:
+    nginx_real_ip:
+      - 127.0.0.1
+
+    ## Sslterminator ##
+    # we only use https for this host
+    sslterminators:
+      - server_name: "{{ domain1_name }}"
+        ssl_certificate: "/etc/letsencrypt/live/{{ domain1_name }}/fullchain.pem"
+        ssl_certificate_key: "/etc/letsencrypt/live/{{ domain1_name}}/privkey.pem"
+        use_dhparam: True
+        backends:
+          - 127.0.0.1:8081
+      #- server_name: "www.{{ domain2_name }}"
+        #server_forwards: "{{ domain2_name }}"  # we redirect to www subdomain
+        #ssl_certificate: "/etc/letsencrypt/live/{{ domain1_name }}/fullchain.pem"
+        #ssl_certificate_key: "/etc/letsencrypt/live/{{ domain1_name}}/privkey.pem"
+        #use_dhparam: True
+        #backends:
+          #- 127.0.0.1:8081
+
+    # Forward to www and https.
+    httpforwards:
+      - server_name: "{{ domain1_name }}"
+        forwarded_domains: "{{ domain1_name}}"
+      #- server_name: "www.{{ domain2_name }}"
+        #forwarded_domains: "{{ domain2_name}} www.{{ domain2_name }} {{ domain1_name }}"
+    # You can also use extra_forwards and httpextraforwards to define additional domains to listen & forward
+    # See ansible/playbook/roles/sslterminator/templates/ssl_terminators.conf.j2 for reference.
+
+    
+
+

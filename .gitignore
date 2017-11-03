@@ -1,7 +1,23 @@
-# Ignore configuration files that may contain sensitive information.
-# sites/*/settings*.php
+# Generic ones
+.DS_Store
+.vagrant
+drupal/web
+drupal/builds
+drupal/.make_cache
+drupal/drupal.sqlite
+.idea
+ansible
+local.*
+test/composer.lock
+test/vendor
+test/bin
+VERSION
 
 # Ignore paths that contain user-generated content.
+
+drupal/files/*
+drupal/private_files/*
+drupal/_build
 sites/*/files
 files/*
 private_files/*
@@ -16,8 +32,8 @@ sites/*/private
 /vendor/
 public
 
-# Ignore PhpStorm generated content
-.idea
+# Ignore ansible retry files
+conf/*.retry
 
-# Ignore .DStore-files
-.DS_Store
+# Ignore python virtualenv created by provision.sh
+.virtualenv
