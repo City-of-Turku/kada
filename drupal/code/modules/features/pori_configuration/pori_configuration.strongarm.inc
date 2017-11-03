@@ -15,7 +15,7 @@ function pori_configuration_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'hotjar_settings';
   $strongarm->value = array(
-    'hotjar_account' => '673361',
+    'hotjar_account' => '673332',
     'hotjar_visibility_pages' => '0',
     'hotjar_pages' => 'admin
 admin/*
