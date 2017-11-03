@@ -399,7 +399,7 @@ function kada_liftups_feature_ds_layout_settings_info() {
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
-    'layout_link_attribute' => 'tokens',
+    'layout_link_attribute' => 'content',
     'layout_link_custom' => '',
     'layout_disable_css' => 0,
   );
