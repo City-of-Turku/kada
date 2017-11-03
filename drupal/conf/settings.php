@@ -38,8 +38,8 @@ $conf['memcache_key_prefix'] = 'wk';
 $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 $conf['cache_prefix']['default'] = 'kada_';
 
-$conf['radioactivity_redis_host'] = $conf['redis_client_host'];
-$conf['radioactivity_redis_password'] = $conf['redis_client_password'];
+#$conf['radioactivity_redis_host'] = $conf['redis_client_host'];
+#$conf['radioactivity_redis_password'] = $conf['redis_client_password'];
 
 // VARNISH
 $conf['cache_backends'][] = 'sites/all/modules/contrib/varnish/varnish.cache.inc';
