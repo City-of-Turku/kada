@@ -121,89 +121,10 @@ function kada_liftups_feature_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'liftup';
   $ds_fieldsetting->view_mode = 'project';
   $ds_fieldsetting->settings = array(
-    'duplicate_vignette' => array(
-      'weight' => '6',
+    'post_date' => array(
+      'weight' => '0',
       'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'show_title' => 0,
-        'title_wrapper' => '',
-        'ctools' => 'a:3:{s:4:"conf";a:9:{s:5:"label";s:6:"hidden";s:9:"formatter";s:12:"text_default";s:11:"delta_limit";i:0;s:12:"delta_offset";s:1:"0";s:14:"delta_reversed";b:0;s:18:"formatter_settings";a:0:{}s:7:"context";s:25:"argument_entity_id:node_1";s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";}s:4:"type";s:12:"entity_field";s:7:"subtype";s:19:"node:field_vignette";}',
-        'load_terms' => 0,
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'liftup-box__caption',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
-      ),
-    ),
-    'links' => array(
-      'weight' => '4',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'body' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-        ),
-      ),
-    ),
-    'field_link_to_content' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'liftup-box__link',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
-      ),
-    ),
-    'field_visible_title' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'h2',
-          'fi-cl' => 'liftup-box__title',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
-      ),
-    ),
-    'field_main_image' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'liftup-box__image',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
-      ),
-    ),
-    'field_vignette' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'liftup-box__vignette',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
-      ),
+      'format' => 'ds_post_date_kada_date_only_no_zeros',
     ),
   );
   $export['node|liftup|project'] = $ds_fieldsetting;
@@ -454,25 +375,21 @@ function kada_liftups_feature_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'left' => array(
-        0 => 'field_vignette',
+        0 => 'post_date',
         1 => 'field_visible_title',
         2 => 'body',
         3 => 'field_link_to_content',
-        4 => 'links',
       ),
       'right' => array(
-        5 => 'field_main_image',
-        6 => 'duplicate_vignette',
+        4 => 'field_main_image',
       ),
     ),
     'fields' => array(
-      'field_vignette' => 'left',
+      'post_date' => 'left',
       'field_visible_title' => 'left',
       'body' => 'left',
       'field_link_to_content' => 'left',
-      'links' => 'left',
       'field_main_image' => 'right',
-      'duplicate_vignette' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -482,8 +399,9 @@ function kada_liftups_feature_ds_layout_settings_info() {
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
-    'layout_link_attribute' => '',
+    'layout_link_attribute' => 'content',
     'layout_link_custom' => '',
+    'layout_disable_css' => 0,
   );
   $export['node|liftup|project'] = $ds_layout;
 
