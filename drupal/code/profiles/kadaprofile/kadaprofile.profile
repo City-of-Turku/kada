@@ -47,6 +47,7 @@ function kadaprofile_update_7101() {
 function kadaprofile_update_7102() {
   $modules = array('hotjar');
   $enable_dependencies = TRUE;
+
   module_enable($modules, $enable_dependencies);
 
 }
@@ -58,6 +59,18 @@ function kadaprofile_update_7102() {
  */
 function kadaprofile_update_7103() {
   $modules = array('pori_media');
+  $enable_dependencies = TRUE;
+
+  module_enable($modules, $enable_dependencies);
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Enables more Pori features
+ */
+function kadaprofile_update_7104() {
+  $modules = array('pori_domains');
   $enable_dependencies = TRUE;
 
   module_enable($modules, $enable_dependencies);
