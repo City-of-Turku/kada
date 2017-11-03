@@ -1,0 +1,56 @@
+---
+
+# Setup firewalls using upcloud api
+# This is currently needed to check the private ip addresses of the front machines
+- hosts: prod-front:prod-db
+  user: root
+  tasks: [ ]
+
+- include: upcloud.yml
+
+
+- name: Common
+  hosts: prod
+  user: root
+
+  vars_files:
+    - prod-vars.yml
+
+  vars:
+    ## Internal / helper vars ##
+    # Production specific
+    database:
+      - name: drupal
+        user: drupal
+        # defined in prod-vars.yml
+        pass: "{{ drupal_db_password }}"
+        hosts:
+          - "127.0.0.1"
+          - "::1"
+          - "localhost"
+          - "{{ front1_ip }}"
+
+
+  tasks:
+    - name: Set internal ip addresses
+      set_fact:
+        db_ip: "{{ groups['prod-db'] | map('extract', hostvars, ['ansible_eth1', 'ipv4', 'address']) | first }}"
+        front1_ip: "{{ groups['prod-front'] | map('extract', hostvars, ['ansible_eth1', 'ipv4', 'address']) | first }}"
+      tags: ['common']
+
+    - name: Set common facts
+      set_fact:
+        domain1_name: "pori.prod.wunder.io"
+        domain2_name: "pori.fi"
+        wkv_site_env: "prod"
+        databases: "{{ database }}"
+      tags: ['common']
+
+    # this need to be separate as we are using another fact here
+    - name: Set drupal web root
+      set_fact:
+        drupal_web_root: "/var/www/{{ domain1_name }}/current/web"
+      tags: ['common']
+
+- include: prod-db.yml
+- include: prod-front.yml
