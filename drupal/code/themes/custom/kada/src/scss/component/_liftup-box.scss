@@ -182,87 +182,87 @@
 // }
 
 
-// /* Project liftups */
+//// /* Project liftups */
 // .liftup-box--wide {
 //   background-color: $turku-blue;
 //   border-bottom: none;
 //   color: rgba($turku-white, 1);
 //   margin: 0;
 //   padding: 0;
-
+//
 //   .node {
 //     max-width: 1320px;
 //     margin: 0 auto;
 //   }
-
+//
 //   .liftup-box__caption {
 //     background-color: rgba($turku-blue, 1);
 //     bottom: 20px;
 //     color: $turku-white;
 //     max-width: 50%;
 //     width: auto;
-
+//
 //     @media screen and (min-width: $tablet-portrait) {
 //       @include font-size(15px);
 //       left: auto;
 //       right: 0;
 //     }
 //   }
-
+//
 //   .liftup-box__title {
 //     color: $turku-white;
 //     font-size: 2em;
 //     margin-bottom: 0.5em;
 //   }
-
+//
 //   .liftup-box__group-right {
 //     float: none;
 //     position: relative;
 //     width: 100%;
-
+//
 //     @media screen and (min-width: $tablet-portrait) {
 //       float: left;
 //       width: 50%;
 //     }
-
+//
 //     // @media screen and (min-width: 1400px) {
 //     //   margin-left: $distance-from-items1400px;
 //     //   width: 50% - $distance-from-items1400px;
 //     // }
-
+//
 //     &:after {
 //       @include arrow-down($turku-blue);
-
+//
 //       @media screen and (min-width: $tablet-portrait) {
 //         @include arrow-left($turku-blue);
 //       }
 //     }
 //   }
-
+//
 //   .liftup-box__group-left {
 //     float: none;
 //     padding: 2em;
 //     width: 100%;
-
+//
 //     @media screen and (min-width: $tablet-portrait) {
 //       float: right;
 //       width: 50%;
 //     }
-
+//
 //     // @media screen and (min-width: 1400px) {
 //     //   margin-right: $distance-from-items1400px;
 //     //   width: 50% - $distance-from-items1400px;
 //     // }
 //   }
-
+//
 //   &:nth-child(2) {
 //     background-color: $turku-white;
 //     color: rgba($turku-black, 0.7);
-
+//
 //     .liftup-box__title {
 //       color: $turku-black;
 //     }
-
+//
 //     .liftup-box__caption {
 //       background-color: rgba($turku-white, 1);
 //       color: $body-font-color;
@@ -271,27 +271,27 @@
 //       right: auto;
 //       width: auto;
 //     }
-
+//
 //     .liftup-box__group-right {
 //       @media screen and (min-width: 1400px) {
 //         margin-left: 0;
 //         //margin-right: $distance-from-items1400px;
 //       }
-
+//
 //       &:after {
 //         @include arrow-down($turku-white);
-
+//
 //         @media screen and (min-width: $tablet-portrait) {
 //           @include arrow-right($turku-white);
 //         }
 //       }
 //     }
-
+//
 //     .liftup-box__group-left {
 //       @media screen and (min-width: $tablet-portrait) {
 //         float: left;
 //       }
-
+//
 //       @media screen and (min-width: 1400px) {
 //         margin-right: 0;
 //         //margin-left: $distance-from-items1400px;

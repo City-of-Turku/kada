@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": ";AAAA,IAAK;EACH,SAAS,EAAE,IAAI;;;AAGjB,KAAM;EACJ,aAAa,EAAE,GAAG;EAClB,KAAK,EAAE,IAAI;;EAEX;UACG;IACD,OAAO,EAAE,GAAG;;EAGd,QAAG;IACD,gBAAgB,EAAE,OAAO",
-"sources": ["../sass/ckeditor.scss"],
-"names": [],
-"file": "ckeditor.css"
-}
