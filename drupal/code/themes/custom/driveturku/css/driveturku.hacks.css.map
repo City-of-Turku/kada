@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AACA,iCAAkC;;EAChC,qBAAsB;IACpB,OAAO,EAAE,IAAI;;;EAIb,uCAA8B;IAC5B,WAAW,EAAE,YAAY;IACzB,UAAU,EAAE,YAAY",
-"sources": ["../sass/driveturku.hacks.scss"],
-"names": [],
-"file": "driveturku.hacks.css"
-}
