@@ -116,6 +116,31 @@
 
   .liftup-box__image {
     border-top: 12px solid $turku-black;
+    position: relative;
+
+    // Image placeholder
+    &::after {
+      background-color: $gray-light;
+      content: '';
+      display: block;
+      padding-top: 56.25%; // 16:9 aspect-ratio
+    }
+
+    &::before {
+      @include fa('\f05e', 1.5rem, 1, false);
+      color: $gray;
+      font-size: 10rem;
+      position: absolute;
+      transform: translate(0, 50%);
+      text-align: center;
+      width: 100%;
+    }
+
+    > * {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
   }
 }
 
