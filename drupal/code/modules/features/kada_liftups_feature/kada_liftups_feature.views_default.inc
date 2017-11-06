@@ -3335,8 +3335,8 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_link_to_content']['label'] = '';
   $handler->display->display_options['fields']['field_link_to_content']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_link_to_content']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<h3 class="flex-caption__title">[field_link_to_content]</h3>';
-  $handler->display->display_options['fields']['field_link_to_content']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__title">[field_link_to_content]</div>';
+  $handler->display->display_options['fields']['field_link_to_content']['element_type'] = 'div';
   $handler->display->display_options['fields']['field_link_to_content']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_link_to_content']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_link_to_content']['element_default_classes'] = FALSE;
@@ -3351,15 +3351,19 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['body']['alter']['text'] = '[field_link_to_content]
-<div class="flex-caption__body">[body]</div>';
-  $handler->display->display_options['fields']['body']['alter']['max_length'] = '380';
-  $handler->display->display_options['fields']['body']['alter']['trim'] = TRUE;
+<div class="flex-caption__body">[body]</div>
+';
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = '510';
   $handler->display->display_options['fields']['body']['element_type'] = '0';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['body']['empty'] = '[field_link_to_content]';
   $handler->display->display_options['fields']['body']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['body']['type'] = 'text_trimmed';
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'trim_length' => '310',
+  );
   $handler->display->display_options['fields']['body']['group_column'] = 'entity_id';
   /* Field: Taxonomy term: Color name */
   $handler->display->display_options['fields']['field_color_name']['id'] = 'field_color_name';
@@ -3457,6 +3461,10 @@ function kada_liftups_feature_views_default_views() {
     t('FlexSlider | KADAcalendar Hobby SV'),
     t('FlexSlider | KADAcalendar Hobby RU'),
     t('FlexSlider | promoted content'),
+    t('<div class="flex-caption__title">[field_link_to_content]</div>'),
+    t('[field_link_to_content]
+<div class="flex-caption__body">[body]</div>
+'),
   );
   $export['kada_top_carousel'] = $view;
 

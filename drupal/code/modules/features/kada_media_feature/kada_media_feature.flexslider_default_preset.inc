@@ -56,8 +56,8 @@ function kada_media_feature_flexslider_default_presets() {
     'thumbCaptions' => 0,
     'thumbCaptionsBoth' => 0,
     'animationLoop' => 1,
-    'pauseOnAction' => 0,
-    'pauseOnHover' => 1,
+    'pauseOnAction' => 1,
+    'pauseOnHover' => 0,
     'manualControls' => '',
   );
   $export['top_carousel'] = $preset;
