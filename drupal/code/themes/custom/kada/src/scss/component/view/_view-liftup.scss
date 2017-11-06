@@ -78,9 +78,10 @@
     flex-direction: column-reverse;
     max-width: 1320px;
     margin: 0 auto;
+    width: 100%;
 
     @media screen and (min-width: $tablet-portrait) {
-      flex-direction: row;
+      flex-direction: row-reverse;
     }
   }
 
@@ -88,13 +89,22 @@
     .node--liftup {
       flex-direction: column-reverse;
       @media screen and (min-width: $tablet-portrait) {
-        flex-direction: row-reverse;
+        flex-direction: row;
       }
     }
   }
 
   .field--name-post-date {
+    color: $gray;
     text-align: left;
+  }
+
+  .field--name-field-visible-title h3 {
+    font-weight: 400;
+
+    @media screen and (min-width: $tablet-portrait) {
+      margin-bottom: 1.25rem;
+    }
   }
 
   .field--name-field-link-to-content a {
@@ -102,15 +112,18 @@
     display: inline-block;
     margin-top: 2rem;
     padding: .65rem 1.5rem;
+    text-align: center;
+    width: 100%;
 
     @media screen and (min-width: $tablet-portrait) {
-      margin-top: 2rem;
-      padding: .75rem 2.5rem;
+      margin-top: 1.75rem;
+      padding: .5rem 2rem;
+      width: auto;
     }
 
     @media screen and (min-width: $desktop-narrow) {
-      margin-top: 3rem;
-      padding: 1rem 3rem;
+      margin-top: 2.5rem;
+      padding: .95rem 2.25rem;
     }
   }
 
@@ -152,18 +165,16 @@
     width: 100%;
 
     @media screen and (min-width: $tablet-portrait) {
+      padding: 1.85em 1.95rem 0 1.95rem;
       width: 50%;
     }
 
     @media screen and (min-width: $desktop-narrow) {
-      padding: 2.5em 4rem 0 4rem;
+      padding: 2em 3.5rem 0 3.5rem;
     }
   }
 
   &:nth-child(2) {
-    background-color: $turku-white;
-    color: rgba($turku-black, 0.7);
-
     .liftup-box__group-right {
       @media screen and (min-width: 1400px) {
         margin-left: 0;

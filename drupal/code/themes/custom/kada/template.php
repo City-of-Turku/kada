@@ -332,7 +332,6 @@ function kada_preprocess_views_view_fields(&$vars) {
  * Implements hook_ds_pre_render_alter().
  */
 function kada_ds_pre_render_alter(&$layout_render_array, $context, &$variables) {
-
   /**
    * Change mosaic links to point to correct domain.
    * @TODO: This needs refactoring. Copy paste from previous function since it isn't reuseable.
@@ -373,6 +372,14 @@ function kada_ds_pre_render_alter(&$layout_render_array, $context, &$variables) 
   }
 
   if ($context['entity_type'] == 'node') {
+    // Wrap Project liftup visible title in h3.
+    if ($variables['type'] == 'liftup' && $variables['view_mode'] == 'project') {
+      if(!empty($layout_render_array['left'][1][0]['#markup'])) {
+        $markup = $layout_render_array['left'][1][0]['#markup'];
+        $layout_render_array['left'][1][0]['#markup'] = '<h3>' . $markup . '</h3>';
+      }
+    }
+
     if ($variables['type'] == 'social_media_update') {
       $hide_link = FALSE;
 
