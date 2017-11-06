@@ -25,10 +25,10 @@
   }
 
   .field--name-post-date {
+    color: $gray;
     font-family: $bergen-mono;
     font-size: .875rem;
     margin-bottom: 1rem;
-    text-align: right;
 
     @media screen and (min-width: $tablet-portrait) {
       font-size: 1rem;
@@ -196,11 +196,6 @@
     }
   }
 
-  .field--name-post-date {
-    color: $gray;
-    text-align: left;
-  }
-
   .field--name-field-visible-title h2 {
     @media screen and (min-width: $tablet-landscape) {
       margin-bottom: 1.25rem;
@@ -301,31 +296,63 @@
 }
 
 .liftup-box-list--current {
-  margin: 0;
+  @media screen and (min-width: $mobile-landscape-wide) {
+    margin: 0 -.5%;
+  }
 
   .liftup-box-list__content {
     display: block;
     margin: 0;
     width: 100%;
   }
+
   .liftup-box {
+    margin-top: 3rem;
 
     @media screen and (min-width: $mobile-landscape-wide) {
+      margin-top: 2rem;
+      padding: .5%;
       width: 50%;
     }
 
     @media screen and (min-width: $tablet-landscape) {
-      width: 33.333333%;
+      width: 33.3333%;
     }
 
     @media screen and (min-width: $container) {
-      padding: 0 1% 0 0;
-      width: 24.25%;
+      width: 25%;
     }
 
-    &:nth-child(4n) {
-      @media screen and (min-width: $container) {
-        padding-right: 0;
+    &:first-child {
+      margin-top: 0;
+
+      @media screen and (min-width: $mobile-landscape-wide) {
+        margin-top: 2rem;
+      }
+    }
+
+    .field--name-post-date {
+      margin: 1.25rem 0 .313rem;
+
+      @media screen and (min-width: $tablet-landscape) {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  .liftup-box__header {
+    border-top: .938rem solid $primary-color;
+  }
+
+  .field--name-title {
+    margin-bottom: 2rem;
+
+    a {
+      color: $primary-color;
+
+      &:hover,
+      &:focus {
+        color: $primary-color;
       }
     }
   }

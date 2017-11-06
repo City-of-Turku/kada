@@ -1,6 +1,7 @@
 .quicktabs-wrapper {
   display: flex;
   flex-wrap: wrap;
+  margin: 2.5rem 0;
 
   .quicktabs-tab {
     background-color: transparent;
@@ -105,6 +106,7 @@
 
   .quicktabs_main {
     border-top: .313rem solid $secondary-color;
+    padding-top: .938rem;
     width: 100%;
 
     @media screen and (min-width: $tablet-landscape) {

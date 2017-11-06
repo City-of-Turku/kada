@@ -12,9 +12,9 @@ function pori_media_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: image
-  $overrides["image.current.effects|0|data|height"] = 225;
+  $overrides["image.current.effects|0|data|height"] = 245;
   $overrides["image.current.effects|0|data|upscale"]["DELETED"] = TRUE;
-  $overrides["image.current.effects|0|data|width"] = 400;
+  $overrides["image.current.effects|0|data|width"] = 435;
   $overrides["image.current.effects|0|name"] = 'image_scale_and_crop';
   $overrides["image.current.effects|0|weight"] = 1;
   $overrides["image.topics.effects|0|data|height"] = 257;
