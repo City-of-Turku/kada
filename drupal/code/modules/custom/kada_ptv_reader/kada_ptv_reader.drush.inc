@@ -310,9 +310,11 @@ function kada_ptv_reader_import_service_channel($guid, $langcode = 'fi') {
     }
     $availability_text = '';
     foreach ($serviceHour->openingHour as $openingHour) {
-      $availability_text .= $hours = dt($openingHour->dayFrom) .' '. $openingHour->from .' - '. $openingHour->to ."\n";
-      $ewrapper->field_availability->set(['value' => $availability_text, 'format' => 'plain_text']);
+      $from = substr($openingHour->from, 0, 5);
+      $to = substr($openingHour->to, 0, 5);
+      $availability_text .= dt($openingHour->dayFrom) ." $from - $to\n";
     }
+    $ewrapper->field_availability->set(['value' => $availability_text, 'format' => 'plain_text']);
   }
 
   $ewrapper->save();
