@@ -273,21 +273,33 @@ function kada_ptv_reader_import_service_channel($guid, $langcode = 'fi') {
     $visit_address = kada_ptv_reader_get_value_from($data->addresses, ['type' => 'Location'], 'streetAddress');
     if (!empty($visit_address)) {
       $st_address_name = kada_ptv_reader_get_value_from($visit_address->street, ['language' => $langcode], 'value');
+      $st_municipality_name = kada_ptv_reader_get_value_from($visit_address->municipality->name, ['language' => $langcode], 'value');
       $st_address = $st_address_name . ' ' . $visit_address->streetNumber;
-      print_r($st_address);
-      $ewrapper->field_address_street->set([$st_address]);
-      $ewrapper->field_address_visiting->set([$st_address]);
+      $st_postal_code = $visit_address->postalCode;
+
+      $ewrapper->field_address_street->thoroughfare = $st_address;
+      $ewrapper->field_address_street->postal_code = $st_postal_code;
+      $ewrapper->field_address_street->locality = $st_municipality_name;
+      $ewrapper->field_address_street->country = 'FI';
+
+      $ewrapper->field_address_visiting->thoroughfare = $st_address;
+      $ewrapper->field_address_visiting->postal_code = $st_postal_code;
+      $ewrapper->field_address_visiting->locality = $st_municipality_name;
+      $ewrapper->field_address_visiting->country = 'FI';
     }
 
     /** Postal address: **/
     $post_address = kada_ptv_reader_get_value_from($data->addresses, ['type' => 'Postal'], 'postOfficeBoxAddress');
     if (!empty($post_address)) {
-      $box = kada_ptv_reader_get_value_from($post_address->postOfficeBox, ['language' => $langcode], 'value');
-      $office = kada_ptv_reader_get_value_from($post_address->postOffice, ['language' => $langcode], 'value');
-      $code = $post_address->postalCode;
-      $postal_code = "$box $code $office";
-      print_r($postal_code);
-      $ewrapper->field_address_postal->set([$postal_code]);
+      $postal_box = kada_ptv_reader_get_value_from($post_address->postOfficeBox, ['language' => $langcode], 'value');
+      //$postal_office = kada_ptv_reader_get_value_from($post_address->postOffice, ['language' => $langcode], 'value');
+      $post_municipality_name = kada_ptv_reader_get_value_from($post_address->municipality->name, ['language' => $langcode], 'value');
+      $postal_code = $post_address->postalCode;
+
+      $ewrapper->field_address_postal->thoroughfare = $postal_box;
+      $ewrapper->field_address_postal->postal_code = $postal_code;
+      $ewrapper->field_address_postal->locality = $post_municipality_name;
+      $ewrapper->field_address_postal->country = 'FI';
     }
   }
 
