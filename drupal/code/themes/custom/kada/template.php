@@ -372,11 +372,11 @@ function kada_ds_pre_render_alter(&$layout_render_array, $context, &$variables) 
   }
 
   if ($context['entity_type'] == 'node') {
-    // Wrap Project liftup visible title in h3.
+    // Wrap Project liftup visible title in h2.
     if ($variables['type'] == 'liftup' && $variables['view_mode'] == 'project') {
       if(!empty($layout_render_array['left'][1][0]['#markup'])) {
         $markup = $layout_render_array['left'][1][0]['#markup'];
-        $layout_render_array['left'][1][0]['#markup'] = '<h3>' . $markup . '</h3>';
+        $layout_render_array['left'][1][0]['#markup'] = '<h2>' . $markup . '</h2>';
       }
     }
 
