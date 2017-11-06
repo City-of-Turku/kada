@@ -312,15 +312,15 @@
     @media screen and (min-width: $mobile-landscape-wide) {
       margin-top: 2rem;
       padding: .5%;
-      width: 50%;
+      width: 49.999%;
     }
 
     @media screen and (min-width: $tablet-landscape) {
-      width: 33.3333%;
+      width: 33.222%;
     }
 
     @media screen and (min-width: $container) {
-      width: 25%;
+      width: 24.999%;
     }
 
     &:first-child {
