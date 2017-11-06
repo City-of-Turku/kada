@@ -22,7 +22,7 @@
       color: $secondary-color;
       height: auto;
       margin-right: .625rem;
-      padding: .625rem 1.563rem;
+      padding: .625rem 1.563rem .625rem 2.5rem;
       text-indent: 0;
       text-transform: uppercase;
       width: auto;
@@ -44,7 +44,7 @@
       transform: translate(-50%, -50%);
 
       @media screen and (min-width: $tablet-landscape) {
-        display: none;
+        left: 1.25rem;
       }
     }
   }
@@ -56,6 +56,10 @@
       content: "";
       height: 1.25rem;
       width: 1.25rem;
+
+      @media screen and (min-width: $tablet-landscape) {
+        background-image: url('../../dist/image/current-all-icon--red.svg');
+      }
     }
 
     &:hover,

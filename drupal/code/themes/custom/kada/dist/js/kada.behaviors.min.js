@@ -38,39 +38,39 @@
    *   modifications made by the Ajax callback that also produced 'context'.
    */
 
-    // Masonry configuration
-  // Drupal.behaviors.kadaMasonry = {
-  //   attach: function (context) {
-  //     $('.liftup-box-list', context).each(function (key, element) {
-  //       var masonry_container = $(element);
-  //       $(window).load(function () {
-  //         masonry_container.once('kada-masonry', function () {
-  //           // Init masonry
-  //           var msnry = new Masonry(masonry_container[0], {
-  //             columnWidth: '.liftup-box',
-  //             itemSelector: '.liftup-box'
-  //           });
-  //           // Check if masonry lists are inside quicktabs
-  //           var qt_tabpage = masonry_container.parents('.quicktabs-tabpage:first');
-  //           if (qt_tabpage.length === 1) {
-  //             var qt_tab_id = qt_tabpage.attr('id').replace(/tabpage/, 'tab');
-  //             // On tab click, trigger masonry layout in order to render items correctly
-  //             $('#' + qt_tab_id).bind('click', function () {
-  //               imagesLoaded(qt_tabpage, function () {
-  //                 msnry.layout();
-  //               });
-  //             });
-  //           }
+  // Masonry configuration
+  Drupal.behaviors.kadaMasonry = {
+    attach: function (context) {
+      $('.liftup-box-list--current', context).each(function (key, element) {
+        var masonry_container = $(element);
+        $(window).load(function () {
+          masonry_container.once('kada-masonry', function () {
+            // Init masonry
+            var msnry = new Masonry(masonry_container[0], {
+              columnWidth: '.liftup-box',
+              itemSelector: '.liftup-box'
+            });
+            // Check if masonry lists are inside quicktabs
+            var qt_tabpage = masonry_container.parents('.quicktabs-tabpage:first');
+            if (qt_tabpage.length === 1) {
+              var qt_tab_id = qt_tabpage.attr('id').replace(/tabpage/, 'tab');
+              // On tab click, trigger masonry layout in order to render items correctly
+              $('#' + qt_tab_id).bind('click', function () {
+                imagesLoaded(qt_tabpage, function () {
+                  msnry.layout();
+                });
+              });
+            }
 
-  //           // When resizing zoom level the masonry layout needs to be triggered to render items correctly
-  //           $('.font-zoom-level-changer span').click(function () {
-  //             msnry.layout();
-  //           });
-  //         });
-  //       });
-  //     });
-  //   }
-  // };
+            // When resizing zoom level the masonry layout needs to be triggered to render items correctly
+            $('.font-zoom-level-changer span').click(function () {
+              msnry.layout();
+            });
+          });
+        });
+      });
+    }
+  };
 
   Drupal.behaviors.kadaQuicktabs = {
     attach: function () {

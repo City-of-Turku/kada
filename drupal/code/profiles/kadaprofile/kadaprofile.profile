@@ -75,3 +75,54 @@ function kadaprofile_update_7104() {
 
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables more Pori features
+ */
+function kadaprofile_update_7106() {
+  $modules = array('pori_liftups');
+  $enable_dependencies = TRUE;
+
+  module_enable($modules, $enable_dependencies);
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Enables more Pori features
+ */
+function kadaprofile_update_7107()
+{
+  $modules = array('pori_news');
+  $enable_dependencies = TRUE;
+
+  module_enable($modules, $enable_dependencies);
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Enables more Pori features
+ */
+function kadaprofile_update_7108()
+{
+  $modules = array('pori_blog');
+  $enable_dependencies = TRUE;
+
+  module_enable($modules, $enable_dependencies);
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Enables more Pori features
+ */
+function kadaprofile_update_7109()
+{
+  $modules = array('pori_some_content');
+  $enable_dependencies = TRUE;
+
+  module_enable($modules, $enable_dependencies);
+}

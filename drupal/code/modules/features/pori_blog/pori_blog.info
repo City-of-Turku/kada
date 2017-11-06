@@ -1,0 +1,12 @@
+name = Pori blog
+description = Blog feature overrides
+core = 7.x
+package = KADA
+version = 7.x-1.0
+dependencies[] = kada_blog_feature
+features[features_api][] = api:2
+features[features_override_items][] = ds_field_settings.node|blog_post|current
+features[features_override_items][] = ds_layout_settings.node|blog_post|current
+features[features_overrides][] = ds_field_settings.node|blog_post|current.settings|post_date|weight
+features[features_overrides][] = ds_layout_settings.node|blog_post|current.settings|regions|header|0
+features[features_overrides][] = ds_layout_settings.node|blog_post|current.settings|regions|header|1

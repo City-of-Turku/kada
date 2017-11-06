@@ -12,6 +12,11 @@ function pori_media_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: image
+  $overrides["image.current.effects|0|data|height"] = 225;
+  $overrides["image.current.effects|0|data|upscale"]["DELETED"] = TRUE;
+  $overrides["image.current.effects|0|data|width"] = 400;
+  $overrides["image.current.effects|0|name"] = 'image_scale_and_crop';
+  $overrides["image.current.effects|0|weight"] = 1;
   $overrides["image.topics.effects|0|data|height"] = 257;
   $overrides["image.topics.effects|0|data|width"] = 457;
   $overrides["image.topics_breakpoints_theme_kada_mobile_1x.effects|0|data|height"] = 158;

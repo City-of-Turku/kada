@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Pori some content feature.
+ */
+
+include_once 'pori_some_content.features.inc';

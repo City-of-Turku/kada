@@ -12,6 +12,18 @@
   flex-wrap: wrap;
   margin-top: 2.5rem;
 
+  @media screen and (min-width: $mobile-landscape-wide) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: $tablet-landscape) {
+    width: 33.333333%;
+  }
+
+  @media screen and (min-width: $container) {
+    width: 25%;
+  }
+
   .field--name-post-date {
     font-family: $bergen-mono;
     font-size: .875rem;
@@ -38,28 +50,12 @@
       }
     }
   }
-
-  @media screen and (min-width: $mobile-landscape-wide) {
-    width: 50%;
-  }
-
-  @media screen and (min-width: $tablet-landscape) {
-    width: 33.333333%;
-  }
-
-  @media screen and (min-width: $container) {
-    width: 25%;
-  }
 }
 
 .liftup-box__inner {
-  border: 1px solid $default-color-lighter;
-  padding: 1.25rem;
-  width: 100%;
 }
 
 .liftup-box__header {
-  margin-bottom: 1rem;
 }
 
 .liftup-box-list  {
@@ -301,5 +297,36 @@
 
   @media screen and (min-width: $mobile-landscape-wide) {
     margin: 0;
+  }
+}
+
+.liftup-box-list--current {
+  margin: 0;
+
+  .liftup-box-list__content {
+    display: block;
+    margin: 0;
+    width: 100%;
+  }
+  .liftup-box {
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: $tablet-landscape) {
+      width: 33.333333%;
+    }
+
+    @media screen and (min-width: $container) {
+      padding: 0 1% 0 0;
+      width: 24.25%;
+    }
+
+    &:nth-child(4n) {
+      @media screen and (min-width: $container) {
+        padding-right: 0;
+      }
+    }
   }
 }
