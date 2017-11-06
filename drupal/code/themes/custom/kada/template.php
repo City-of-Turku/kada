@@ -332,7 +332,6 @@ function kada_preprocess_views_view_fields(&$vars) {
  * Implements hook_ds_pre_render_alter().
  */
 function kada_ds_pre_render_alter(&$layout_render_array, $context, &$variables) {
-
   /**
    * Change mosaic links to point to correct domain.
    * @TODO: This needs refactoring. Copy paste from previous function since it isn't reuseable.
