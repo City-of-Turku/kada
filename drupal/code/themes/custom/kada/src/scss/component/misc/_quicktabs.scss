@@ -17,6 +17,17 @@
     text-indent: -9999px;
     width: 2.917rem;
 
+    @media screen and (min-width: $tablet-landscape) {
+      border: .063rem solid $secondary-color;
+      color: $secondary-color;
+      height: auto;
+      margin-right: .625rem;
+      padding: .625rem 1.563rem;
+      text-indent: 0;
+      text-transform: uppercase;
+      width: auto;
+    }
+
     &:hover,
     &:focus,
     &.active {
@@ -25,11 +36,16 @@
     }
 
     &::after {
+      display: inline-block;
       left: 50%;
       position: absolute;
       text-indent: 0;
       top: 50%;
       transform: translate(-50%, -50%);
+
+      @media screen and (min-width: $tablet-landscape) {
+        display: none;
+      }
     }
   }
 
@@ -86,5 +102,9 @@
   .quicktabs_main {
     border-top: .313rem solid $secondary-color;
     width: 100%;
+
+    @media screen and (min-width: $tablet-landscape) {
+      border: 0 none;
+    }
   }
 }

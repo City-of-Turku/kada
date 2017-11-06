@@ -3,7 +3,6 @@
 /// @param {number} $font-size [16] - font size to scale the icon, rem unit
 @mixin fa($content, $font-size: 1rem, $line-height: 1, $responsive: $default-responsive-font-size) {
   @include fontsmoothing();
-  display: inline-block;
   color: inherit;
   content: $content;
   font-family: FontAwesome;
