@@ -243,12 +243,14 @@ function kada_ptv_reader_import_service_channel($guid, $langcode = 'fi') {
   $email = kada_ptv_reader_get_value_from($data->emails, ['language' => $langcode], 'value');
   $ewrapper->field_email->set([$email]);
 
-  $link = array(
-    'url' => kada_ptv_reader_get_value_from($data->webPages, ['language' => $langcode], 'url'),
-    'title' => kada_ptv_reader_get_value_from($data->webPages, ['language' => $langcode], 'value'),
-    'attributes' => []
-  );
-  // $ewrapper->field_website_et->set($link);
+  if (!empty($data->webPages)) {
+    $link = array(
+      'url' => kada_ptv_reader_get_value_from($data->webPages, ['language' => $langcode], 'url'),
+      'title' => kada_ptv_reader_get_value_from($data->webPages, ['language' => $langcode], 'value'),
+      'attributes' => []
+    );
+    $ewrapper->field_website_et->set($link);
+  }
 
   $phone_prefix = kada_ptv_reader_get_value_from($data->phoneNumbers, ['language' => $langcode], 'prefixNumber');
   $phone_number = kada_ptv_reader_get_value_from($data->phoneNumbers, ['language' => $langcode], 'number');
