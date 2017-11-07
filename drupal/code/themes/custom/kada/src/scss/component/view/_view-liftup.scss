@@ -13,9 +13,14 @@
   margin-top: 2.5rem;
 
   .field--name-post-date {
+    font-family: $bergen-mono;
+    font-size: .875rem;
     margin-bottom: 1rem;
-    font-size: .75rem;
     text-align: right;
+
+    @media screen and (min-width: $tablet-portrait) {
+      font-size: 1rem;
+    }
   }
 
   .field--name-title {
@@ -57,6 +62,102 @@
   margin-bottom: 1rem;
 }
 
+.liftup-box-list  {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @media screen and (min-width: $tablet-portrait) {
+    flex-direction: row;
+  }
+}
+
+.liftup-box--topic {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 1.25em 0;
+  width: 100%;
+
+
+  @media screen and (min-width: $tablet-portrait) {
+    margin: 1.25em 1% 1.25rem 0;
+    width: 49.5%;
+  }
+
+  @media screen and (min-width: $container) {
+    margin: 1.875em 1% 1.875rem 0;
+    width: 32.66%;
+  }
+
+  &:nth-child(2n) {
+    @media screen and (min-width: $tablet-portrait) {
+      margin-right: 0;
+    }
+
+    @media screen and (min-width: $container) {
+      margin-right: 1%;
+    }
+  }
+
+  &:nth-child(3n) {
+    @media screen and (min-width: $container) {
+      margin-right: 0;
+    }
+  }
+
+  .liftup-box--topic__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+  }
+
+  .liftup-box__image {
+    border-top: 12px solid $turku-black;
+    position: relative;
+
+    // Image placeholder
+    &::after {
+      background-color: $gray-light;
+      content: '';
+      display: block;
+      padding-top: 56.25%; // 16:9 aspect-ratio
+    }
+
+    &::before {
+      @include fa('\f05e', 1.5rem, 1, false);
+      color: $gray;
+      font-size: 10rem;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      text-align: center;
+      width: 100%;
+    }
+
+    > * {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+.liftup-box__caption {
+  color: $body-font-color;
+  margin-top: 1.150rem;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  word-break: break-word;
+
+  @media screen and (min-width: $container) {
+    margin-top: 1.250rem;
+    margin-bottom: 0;
+  }
+}
+
 .liftup-box.liftup-box--wide  {
   display: flex;
   flex-direction: column;
@@ -68,54 +169,74 @@
 .liftup-box--wide {
   background-color: $white;
   border-bottom: none;
+  border-top: .938rem solid $primary-color;
   color: $black;
   cursor: pointer;
   margin: 0;
   padding: 0;
 
   .node--liftup {
+    align-items: flex-start;
     display: flex;
     flex-direction: column-reverse;
-    max-width: 1320px;
     margin: 0 auto;
+    width: 100%;
 
-    @media screen and (min-width: $tablet-portrait) {
-      flex-direction: row;
+    @media screen and (min-width: $tablet-landscape) {
+      flex-direction: row-reverse;
+    }
+
+    @media screen and (min-width: $desktop) {
+      align-items: center;
     }
   }
 
   &:nth-child(2) {
     .node--liftup {
       flex-direction: column-reverse;
-      @media screen and (min-width: $tablet-portrait) {
-        flex-direction: row-reverse;
+
+      @media screen and (min-width: $tablet-landscape) {
+        flex-direction: row;
       }
     }
   }
 
   .field--name-post-date {
+    color: $gray;
     text-align: left;
   }
 
-  .field--name-field-link-to-content a {
-    border: 1px solid;
-    display: inline-block;
-    margin-top: 2rem;
-    padding: .65rem 1.5rem;
-
-    @media screen and (min-width: $tablet-portrait) {
-      margin-top: 2rem;
-      padding: .75rem 2.5rem;
-    }
-
-    @media screen and (min-width: $desktop-narrow) {
-      margin-top: 3rem;
-      padding: 1rem 3rem;
+  .field--name-field-visible-title h2 {
+    @media screen and (min-width: $tablet-landscape) {
+      margin-bottom: 1.25rem;
     }
   }
 
-  .theme-color-blue {
-    border-top: 12px solid $turku-blue;
+  .field--name-field-link-to-content a {
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    display: inline-block;
+    margin-top: 2rem;
+    padding: .65rem 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+
+    @media screen and (min-width: $tablet-landscape) {
+      margin-top: 1.5rem;
+      padding: .95rem 2.25rem;
+      width: auto;
+    }
+
+    @media screen and (min-width: $container) {
+      margin-top: 2.5rem;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $primary-color;
+      color: $white;
+    }
   }
 
   .field--name-body {
@@ -125,45 +246,41 @@
     font-size: 1rem;
     width: auto;
 
-    @media screen and (min-width: $tablet-portrait) {
-      @include font-size(15px);
-
+    @media screen and (min-width: $tablet-landscape) {
       left: auto;
       right: 0;
     }
   }
 
   .liftup-box__group-right {
-    display: flex;
-    flex-direction: column;
     position: relative;
     width: 100%;
 
-    @media screen and (min-width: $tablet-portrait) {
+    @media screen and (min-width: $tablet-landscape) {
       width: 50%;
     }
   }
 
   .liftup-box__group-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1.5em 2.5rem 0 2.5rem;
+    float: none;
+    padding: 1.5em $container-gutter 0;
     width: 100%;
 
-    @media screen and (min-width: $tablet-portrait) {
+    @media screen and (min-width: $mobile-landscape-wide) {
+      padding: 1.5em 0 0;
+    }
+
+    @media screen and (min-width: $tablet-landscape) {
+      padding: 1rem 1.5rem 0;
       width: 50%;
     }
 
-    @media screen and (min-width: $desktop-narrow) {
-      padding: 2.5em 4rem 0 4rem;
+    @media screen and (min-width: $container) {
+      padding: 2rem 3.5rem 0;
     }
   }
 
   &:nth-child(2) {
-    background-color: $turku-white;
-    color: rgba($turku-black, 0.7);
-
     .liftup-box__group-right {
       @media screen and (min-width: 1400px) {
         margin-left: 0;
@@ -179,3 +296,11 @@
   }
 }
 
+// Project liftup mobile spesific styles
+.view-kada-project-liftups {
+  margin: 0 -1.25rem;
+
+  @media screen and (min-width: $mobile-landscape-wide) {
+    margin: 0;
+  }
+}
