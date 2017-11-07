@@ -22,3 +22,12 @@ function pori_blog_ds_layout_settings_info_alter(&$data) {
     $data['node|blog_post|current']->settings['regions']['header'][1] = 'post_date'; /* WAS: 'field_main_image' */
   }
 }
+
+/**
+ * Implements hook_field_default_field_instances_alter().
+ */
+function pori_blog_field_default_field_instances_alter(&$data) {
+  if (isset($data['node-blog_post-field_blog'])) {
+    $data['node-blog_post-field_blog']['display']['current']['label'] = 'hidden'; /* WAS: 'above' */
+  }
+}

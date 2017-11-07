@@ -50,9 +50,15 @@
       }
     }
   }
+
+  .field--name-field-image {
+    line-height: 0;
+    margin: 0;
+  }
 }
 
 .liftup-box__inner {
+  width: 100%;
 }
 
 .liftup-box__header {
@@ -346,7 +352,9 @@
   }
 
   .field--name-title {
-    margin-bottom: 2rem;
+    @include font-size-responsive($font-size-heading-4);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
 
     a {
       color: $primary-color;
@@ -356,5 +364,78 @@
         color: $primary-color;
       }
     }
+  }
+
+  .field--name-field-quote {
+    margin: .625rem 0 0;
+    padding: .625rem 0 .625rem 3.5rem;
+    position: relative;
+
+    &:before {
+      color: $primary-color;
+      content: "”";
+      font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+      font-size: 6.25rem;
+      font-weight: bold;
+      left: -.375rem;
+      line-height: 6.25rem;
+      position: absolute;
+      top: 0;
+    }
+
+    a {
+      @include font-size-responsive($font-size-heading-4);
+      color: $primary-color;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+  }
+
+  .field--name-field-blog {
+    margin-left: 3.5rem;
+
+    a {
+      color: $gray;
+    }
+  }
+}
+
+
+.liftup-box--social {
+  .field--name-field-image-url,
+  .field--name-field-share-caption,
+  .field--name-field-share-description {
+    display: none; // Not quite sure what these are used for but hiding them for now.
+  }
+}
+
+
+.liftup-box--social.node--facebook {
+  .liftup-box__header {
+    border-color: $facebook-color;
+  }
+}
+
+.liftup-box--social.node--instagram {
+  .liftup-box__header {
+    border-color: $instagram-color;
+  }
+}
+
+.liftup-box--social.node--linkedin {
+  .liftup-box__header {
+    border-color: $linkedin-color;
+  }
+}
+
+.liftup-box--social.node--twitter {
+  .liftup-box__header {
+    border-color: $twitter-color;
+  }
+}
+
+.liftup-box--social.node--youtube {
+  .liftup-box__header {
+    border-color: $youtube-color;
   }
 }

@@ -18,5 +18,8 @@ function pori_blog_features_override_default_overrides() {
   $overrides["ds_layout_settings.node|blog_post|current.settings|regions|header|0"] = 'field_main_image';
   $overrides["ds_layout_settings.node|blog_post|current.settings|regions|header|1"] = 'post_date';
 
+  // Exported overrides for: field_instance
+  $overrides["field_instance.node-blog_post-field_blog.display|current|label"] = 'hidden';
+
  return $overrides;
 }
