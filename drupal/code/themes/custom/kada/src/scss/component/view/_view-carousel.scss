@@ -307,11 +307,10 @@
         box-sizing: border-box;
         content: "";
         height: .9rem;
-        margin-top: 6px;
-        margin-right: -.395rem;
         position: absolute;
-        right: 50%;
-        top: 0;
+        right: -0.125rem;
+        top: 50%;
+        transform: translate(-100%, -50%);
         width: 0;
       }
     }
@@ -327,11 +326,10 @@
         border-color: $white;
         content: "";
         height: .9rem;
-        margin-top: 6px;
-        margin-right: -0.331rem;
         position: absolute;
-        right: 50%;
-        top: 0;
+        right: -0.063rem;
+        top: 50%;
+        transform: translate(-100%, -50%);
         width: 0;
       }
     }
