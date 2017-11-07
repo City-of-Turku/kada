@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Remove existing main image and info box fields because Features Override
+ * cannot remove them, it can only prevent them from being added back when
+ * the original feature containing them is reverted.
+ */
+function pori_pages_install() {
+  if ($instance = field_info_instance('node', 'field_main_image', 'page')) {
+    field_delete_instance($instance);
+  }
+  if ($instance = field_info_instance('node', 'field_info_box', 'page')) {
+    field_delete_instance($instance);
+  }
+}
