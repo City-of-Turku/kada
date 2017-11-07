@@ -127,7 +127,8 @@
       color: $gray;
       font-size: 10rem;
       position: absolute;
-      transform: translate(0, 50%);
+      top: 50%;
+      transform: translate(0, -50%);
       text-align: center;
       width: 100%;
     }

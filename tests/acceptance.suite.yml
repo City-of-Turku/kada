@@ -1,0 +1,16 @@
+# Codeception Test Suite Configuration
+#
+# Suite for acceptance tests.
+# Perform tests in browser using the WebDriver or PhpBrowser.
+# If you need both WebDriver and PHPBrowser tests - create a separate suite.
+# I think you can comment out lines 16-20 if you want to try and run tests on the PHP browser.  
+
+class_name: WebGuy
+modules:
+    enabled:
+        - WebDriver
+        #- WebHelper
+    config:
+        WebDriver:
+            url: 'https://pori:kada@pori.stage.wunder.io/'
+            browser: 'chrome'
