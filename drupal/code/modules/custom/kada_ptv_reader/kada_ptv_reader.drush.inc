@@ -197,7 +197,6 @@ function kada_ptv_reader_import_service_offer($guid, $langcode = 'fi') {
 
   $ewrapper->save();
   $my_nid = $ewrapper->getIdentifier();
-  $node = node_load($my_nid);
 
   $service_channels = [];
   foreach ($data->serviceChannels as $service_channel) {
@@ -205,12 +204,12 @@ function kada_ptv_reader_import_service_offer($guid, $langcode = 'fi') {
   }
 
   foreach ($service_channels as $service_channel_nid) {
-    $node->field_provided_at[LANGUAGE_NONE][] = [
-      'other_entity_type' => 'node',
-      'other_entity_id' => $service_channel_nid,
+    $endpoints = [
+      ['entity_type' => 'node', 'entity_id' => $service_channel_nid],
+      ['entity_type' => 'node', 'entity_id' => $my_nid],
     ];
+    $rid = relation_insert('place_service', $endpoints);
   }
-  node_save($node);
 
 }
 
