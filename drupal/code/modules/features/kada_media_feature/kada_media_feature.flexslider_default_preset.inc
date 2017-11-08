@@ -43,7 +43,7 @@ function kada_media_feature_flexslider_default_presets() {
     'maxItems' => '0',
     'move' => '0',
     'animation' => 'fade',
-    'slideshow' => 0,
+    'slideshow' => 1,
     'slideshowSpeed' => '8000',
     'directionNav' => 0,
     'controlNav' => '1',
@@ -56,8 +56,8 @@ function kada_media_feature_flexslider_default_presets() {
     'thumbCaptions' => 0,
     'thumbCaptionsBoth' => 0,
     'animationLoop' => 1,
-    'pauseOnAction' => 1,
-    'pauseOnHover' => 0,
+    'pauseOnAction' => 0,
+    'pauseOnHover' => 1,
     'manualControls' => '',
   );
   $export['top_carousel'] = $preset;
