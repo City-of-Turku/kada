@@ -25,6 +25,7 @@
   }
 }
 
+.flex-control-wrapper,
 .flex-caption-wrapper,
 .flex-controls {
   @media screen and (min-width: $tablet-portrait) {
@@ -34,7 +35,7 @@
     z-index: 5;
   }
 }
-
+.flex-control-wrapper,
 .flex-caption-wrapper {
   @media screen and (max-width: $tablet-portrait - $max-width-deduction) {
     padding-top: 1.5rem;
@@ -177,8 +178,8 @@
   }
 }
 
-.flex-caption-wrapper,
-.flex-control-nav-container {
+.flex-control-wrapper,
+.flex-caption-wrapper {
   @media screen and (min-width: $tablet-portrait) {
     bottom: 0;
     left: 0;
