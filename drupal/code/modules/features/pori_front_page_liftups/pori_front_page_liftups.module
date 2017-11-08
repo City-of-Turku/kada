@@ -5,3 +5,37 @@
  */
 
 include_once 'pori_front_page_liftups.features.inc';
+
+
+/**
+ * Implements hook_quicktabs_alter().
+ *
+ * If we are on the front page, hide quicktabs that are not enabled via
+ * the current tabs pseudo-configuration on the front page node
+ */
+function pori_front_page_liftups_quicktabs_alter(&$quicktabs) {
+  if ($quicktabs->machine_name == 'feed_tabs_frontpage_promoted_con') {
+    $front_page = explode('/', variable_get('site_frontpage', 'node'))[1];
+    if (is_numeric($front_page)) {
+      $node = node_load($front_page);
+      if ($node) {
+        $mapping = array(
+          'tab_news' => 'news',
+          'tab_nearby' => 'nearby',
+          'tab_facebook' => 'facebook',
+          'tab_twitter' => 'twitter',
+          'tab_instaham' => 'instagram',
+          'tab_linkedin' => 'linkedin',
+          'tab_youtube' => 'youtube',
+          'tab_blogs' => 'blogit'
+        );
+        $enabled_qtabs = array_map(function($e) { return $e['value']; }, $node->field_feed_tabs[LANGUAGE_NONE]);
+        for ($i = 0; $i < count($quicktabs->tabs); $i++) {
+          if (!in_array($mapping[$quicktabs->tabs[$i]['display']], $enabled_qtabs)) {
+            unset($quicktabs->tabs[$i]);
+          }
+        }
+      }
+    }
+  }
+}
