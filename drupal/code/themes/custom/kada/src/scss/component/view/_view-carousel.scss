@@ -1,5 +1,5 @@
-.flexslider {
-  background: $default-color-lightest;
+.l-header .flexslider {
+  background: $white;
 
   li {
     margin-top: 0;
@@ -38,7 +38,7 @@
 .flex-caption-wrapper {
   @media screen and (max-width: $tablet-portrait - $max-width-deduction) {
     padding-top: 1.5rem;
-    padding-bottom: 3.5rem;
+    padding-bottom: 2.5rem;
   }
 
   @media screen and (min-width: $tablet-portrait) {
@@ -102,14 +102,16 @@
   color: $black;
   left: 0;
   line-height: normal;
-  padding: 1rem 1rem 1.5rem 1rem;
-  position: absolute;
   width: 100%;
+
+  padding: 1rem 0rem;
+  position: relative;
 
   @media screen and (min-width: $tablet-portrait) {
     background-color: $white;
     //margin-left: $distance-from-items-tablet-portrait;
     left: 3rem;
+    position: absolute;
     padding: 2rem 5rem 3.5rem 5rem;
     width: 74.167%;
   }
@@ -182,7 +184,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    max-width: 1320px;
+    max-width: 110rem;
     position: absolute;
     width: 100%;
   }
@@ -191,7 +193,7 @@
 .flexslider__controls {
   position: absolute;
   bottom: 0rem;
-  padding: 1rem 1rem 2.5rem 1rem;
+  padding: 1rem 1rem;
   margin: 0;
   width: 100%;
   z-index: 5;
@@ -199,7 +201,7 @@
   @media screen and (min-width: $tablet-portrait) {
     bottom: 2.5rem;
     left: 2rem;
-    padding: 3rem 6rem 5.5rem 6rem;
+    padding: 3rem 6rem 5.5rem 4rem;
     width: 74.167%;
   }
 
@@ -214,7 +216,7 @@
     margin: 0 -.25rem;
 
     @media screen and (min-width: $tablet-portrait) {
-      padding: 0 6rem;
+      padding: 0 5rem;
     }
   }
 
@@ -258,17 +260,11 @@
 
     @media screen and (min-width: $tablet-portrait) {
       bottom: 0;
-      // left: $distance-from-items-tablet-portrait;
-      //left: 3rem;
+      left: 1rem;
       padding-bottom: 3px;
       text-align: left;
-      //width: 54.167%;
     }
 
-    @media screen and (min-width: $desktop) {
-      // left: $distance-from-items-large-desk;
-      //width: 42%;
-    }
 
     > li {
       display: inline-block;
