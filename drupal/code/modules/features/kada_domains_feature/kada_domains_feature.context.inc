@@ -42,7 +42,7 @@ function kada_domains_feature_context_default_contexts() {
   $context->conditions = array(
     'domain' => array(
       'values' => array(
-        'calendar' => 'calendar',
+        'tapahtumat_pori_fi' => 'tapahtumat_pori_fi',
       ),
     ),
   );
@@ -64,7 +64,7 @@ function kada_domains_feature_context_default_contexts() {
   $context->conditions = array(
     'domain' => array(
       'values' => array(
-        'calendar' => 'calendar',
+        'tapahtumat_pori_fi' => 'tapahtumat_pori_fi',
       ),
     ),
   );
