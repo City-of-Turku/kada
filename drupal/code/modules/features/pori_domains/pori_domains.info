@@ -5,6 +5,4 @@ package = KADA
 version = 7.x-1.0
 dependencies[] = kada_domains_feature
 features[features_api][] = api:2
-features[features_override_items][] = context.default_domain
-features[features_overrides][] = context.default_domain.conditions|domain|values|local_kada_fi
-features[features_overrides][] = context.default_domain.conditions|domain|values|pori_kada_testing_druid_fi
+
