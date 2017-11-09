@@ -9,15 +9,6 @@
  */
 function kada_domains_feature_domain_default_domains() {
   $domains = array();
-  $domains['tapahtumat_pori_fi'] = array(
-    'subdomain' => 'tapahtumat.pori.fi',
-    'sitename' => 'Tapahtumakalenteri',
-    'scheme' => 'http',
-    'valid' => 1,
-    'weight' => -1,
-    'is_default' => 0,
-    'machine_name' => 'tapahtumat_pori_fi',
-  );
   $domains['pori_fi'] = array(
     'subdomain' => 'beta.pori.fi',
     'sitename' => 'Pori.fi',
@@ -26,6 +17,15 @@ function kada_domains_feature_domain_default_domains() {
     'weight' => -3,
     'is_default' => 1,
     'machine_name' => 'pori_fi',
+  );
+  $domains['tapahtumat_pori_fi'] = array(
+    'subdomain' => 'tapahtumat.pori.fi',
+    'sitename' => 'Tapahtumakalenteri',
+    'scheme' => 'http',
+    'valid' => 1,
+    'weight' => -1,
+    'is_default' => 0,
+    'machine_name' => 'tapahtumat_pori_fi',
   );
   $domains['visitpori_fi'] = array(
     'subdomain' => 'visitpori.fi',
@@ -67,6 +67,7 @@ function kada_domains_feature_domain_alias_default_aliases() {
       'machine_name' => 'pori_fi',
     ),
   );
+  $domain_aliases['tapahtumat_pori_fi'] = array();
   $domain_aliases['visitpori_fi'] = array(
     'local.kada.fi' => array(
       'pattern' => 'local.kada.fi',
