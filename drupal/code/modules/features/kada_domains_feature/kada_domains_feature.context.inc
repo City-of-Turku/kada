@@ -86,7 +86,7 @@ function kada_domains_feature_context_default_contexts() {
   $context->conditions = array(
     'domain' => array(
       'values' => array(
-        'local_kada_fi' => 'local_kada_fi',
+        'pori_fi' => 'pori_fi',
       ),
     ),
   );

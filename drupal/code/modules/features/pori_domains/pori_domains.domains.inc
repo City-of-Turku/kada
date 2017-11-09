@@ -9,14 +9,14 @@
  */
 function pori_domains_domain_default_domains() {
   $domains = array();
-  $domains['calendar'] = array(
+  $domains['tapahtumat_pori_fi'] = array(
     'subdomain' => 'tapahtumat.pori.fi',
     'sitename' => 'Tapahtumakalenteri',
     'scheme' => 'http',
     'valid' => 1,
     'weight' => -1,
     'is_default' => 0,
-    'machine_name' => 'calendar',
+    'machine_name' => 'tapahtumat_pori_fi',
   );
   $domains['pori_fi'] = array(
     'subdomain' => 'beta.pori.fi',
@@ -45,13 +45,6 @@ function pori_domains_domain_default_domains() {
  */
 function pori_domains_domain_alias_default_aliases() {
   $domain_aliases = array();
-  $domain_aliases['calendar'] = array(
-    'calendar.local.kada.fi' => array(
-      'pattern' => 'calendar.local.kada.fi',
-      'redirect' => 0,
-      'machine_name' => 'calendar',
-    ),
-  );
   $domain_aliases['pori_fi'] = array(
     'pori.stage.wunder.io' => array(
       'pattern' => 'pori.stage.wunder.io',

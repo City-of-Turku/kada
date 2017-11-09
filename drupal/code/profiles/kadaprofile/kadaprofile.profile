@@ -87,3 +87,16 @@ function kadaprofile_update_7105() {
 
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables more Pori features
+ */
+function kadaprofile_update_7106() {
+  $modules = array('pori_domains');
+  $enable_dependencies = TRUE;
+
+  module_disable($modules, $enable_dependencies);
+  drupal_uninstall_modules($modules);
+}

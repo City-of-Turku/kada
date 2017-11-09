@@ -3,14 +3,6 @@ description = Overrides default Kada domain configuration
 core = 7.x
 package = KADA
 version = 7.x-1.0
-dependencies[] = domain
-dependencies[] = domain_alias
 dependencies[] = kada_domains_feature
-features[domain][] = calendar
-features[domain][] = pori_fi
-features[domain][] = visitpori_fi
-features[domain_alias][] = calendar
-features[domain_alias][] = pori_fi
-features[domain_alias][] = visitpori_fi
 features[features_api][] = api:2
-features[features_override_items][] = context.default_domain
+
