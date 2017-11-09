@@ -1,0 +1,155 @@
+/*******************************************************************************
+ * turkucalendar-default.layout.scss
+ *
+ * Layout built with Singularity.
+ ******************************************************************************/
+
+// Import external libraries.
+// @import "compass";
+// @import "breakpoint";
+// @import "singularitygs";
+// @import "toolkit";
+
+// // Globbing from within sub-folders only works with relative paths.
+// @import "../../abstractions/**/*";
+// @import "../../variables/**/*";
+
+@charset 'UTF-8';
+
+@import 'lib/variables/*';
+@import 'lib/mixins/*';
+
+body {
+  background: $turkucalendar-subfooter-background;
+}
+
+.l-header {
+  background: transparent;
+}
+
+.l-main-wrapper {
+  clear: both;
+  overflow: hidden;
+  padding: 2em 0;
+}
+
+.l-main {
+  @include clearfix();
+  padding-bottom: 1em;
+}
+
+.l-content {
+  background-color: $turkucalendar-content-background;
+  padding: 0 !important;
+}
+
+.l-region,
+.l-content {
+
+  @media screen and (min-width: $tablet-portrait) {
+    margin: 0 auto;
+  }
+}
+
+.l-navigation-top,
+.l-branding-wrapper,
+.l-custom-navigation,
+.l-header-top .l-navigation {
+  @media screen and (min-width: $desktop-narrow) {
+    float: none;
+    margin: 0 auto;
+    max-width: 1320px;
+  }
+}
+
+.l-region--after-content {
+  background-color: $turkucalendar-white;
+  padding-bottom: 2em;
+}
+
+.l-footer {
+  background: $turkucalendar-footer-background;
+}
+
+.l-after-footer-wrapper {
+  background: $turkucalendar-subfooter-background;
+}
+
+.l-main,
+.l-footer .l-region {
+  @media screen and (min-width: $tablet-portrait) {
+    float: none;
+    margin: 0 auto;
+    max-width: 1320px;
+  }
+}
+.l-region--sidebar-first {
+  @media screen and (min-width: $tablet-portrait) {
+  }
+}
+
+.l-region--sidebar-second {
+  @media screen and (min-width: $tablet-portrait) {
+    //@include grid-span(3, 10);
+  }
+}
+
+.l-content {
+  @media screen and (min-width: $tablet-portrait) {
+  }
+}
+
+.l-page {
+  &.has-one-sidebar.has-sidebar-first {
+    .l-content {
+      @media screen and (min-width: $tablet-portrait) {
+      }
+    }
+  }
+  &.has-one-sidebar.has-sidebar-second {
+    .l-content {
+      @media screen and (min-width: $tablet-portrait) {
+      }
+    }
+  }
+  &.has-two-sidebars {
+    .l-content {
+      @media screen and (min-width: $tablet-portrait) {
+        padding: 0;
+      }
+    }
+  }
+}
+
+// Main container goes over the header image on content pages
+.has-main-image {
+  .l-branding,
+  .l-custom-navigation {
+    @include in-front-of-header;
+    position: relative;
+  }
+
+  .l-navigation-top {
+    @include in-front-of-header;
+    position: relative;
+  }
+
+  .l-branding {
+    @include branding-in-front-of-header;
+    @media screen and (min-width: $mobile-landscape-wide) {
+      padding-top: 4em;
+    }
+  }
+
+  .l-filters-wrapper {
+    @include in-front-of-header;
+    position: relative;
+  }
+
+  .l-main-wrapper {
+    @media screen and (min-width: $tablet-portrait) {
+      @include content-in-front-of-header;
+      position: relative;
+    }
+  }
+}
