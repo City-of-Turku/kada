@@ -75,3 +75,15 @@ function kadaprofile_update_7104() {
 
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables more Pori features
+ */
+function kadaprofile_update_7105() {
+  $modules = array('pori_pages');
+  $enable_dependencies = TRUE;
+
+  module_enable($modules, $enable_dependencies);
+}
