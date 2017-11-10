@@ -10,9 +10,13 @@ function kada_preprocess_node(&$variables) {
     // Getting color for those liftups which have a theme with a color set
     $node_wrapper = entity_metadata_wrapper('node', $node);
     foreach ($node_wrapper->field_theme->getIterator() as $delta => $term_wrapper) {
-      $color = $term_wrapper->field_color_name->value();
-      if (!empty($color)) {
-        $variables['classes_array'][] = 'theme-color-' . $color;
+      try {
+        $color = $term_wrapper->field_color_name->value();
+        if (!empty($color)) {
+          $variables['classes_array'][] = 'theme-color-' . $color;
+        }
+      }
+      catch (EntityMetadataWrapperException $e) {
       }
     }
   }
@@ -40,10 +44,15 @@ function kada_preprocess_node(&$variables) {
     if ($variables['view_mode'] == 'main_news' || $variables['view_mode'] == 'main_news_wide') {
       $node_wrapper = entity_metadata_wrapper('node', $node);
       foreach ($node_wrapper->field_theme->getIterator() as $delta => $term_wrapper) {
-        $color = $term_wrapper->field_color_name->value();
-        if (!empty($color)) {
-          $variables['classes_array'][] = 'theme-color-' . $color;
+        try {
+          $color = $term_wrapper->field_color_name->value();
+          if (!empty($color)) {
+            $variables['classes_array'][] = 'theme-color-' . $color;
+          }
         }
+        catch (EntityMetadataWrapperException $e) {
+        }
+
       }
     }
   }
