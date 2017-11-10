@@ -16,11 +16,32 @@
 
       a {
         border-top: 1px solid $gray-light;
-        color: $primary-color;
+        color: $white;
         display: block;
         font-size: 1rem;
         padding: 1.25rem $container-gutter;
         text-transform: uppercase;
+
+      }
+
+      &:nth-child(1) {
+        background-color: $red;
+      }
+
+      &:nth-child(2) {
+        background-color: $orange;
+      }
+
+      &:nth-child(3) {
+        background-color: $green-light;
+      }
+
+      &:nth-child(4) {
+        background-color: $green;
+      }
+
+      &:nth-child(5) {
+        background-color: $blue;
       }
     }
 
