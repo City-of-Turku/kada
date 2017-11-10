@@ -18,14 +18,14 @@
 }
 
 .site-branding--header__link {
-  background: url('../../logo_minimal.svg') no-repeat 0 0 transparent;
+  background: url('../../visitpori-logo.svg') no-repeat 0 0 transparent;
   height: 2.188rem;
   width: 2.375rem;
 
   @media screen and (min-width: $tablet-portrait-narrow) {
-    background-image: url('../../logo_full.svg');
-    height: 2.5rem;
-    width: 9.875rem;
+    background-image: url('../../visitpori-logo.svg');
+    height: 45px;
+    width: 300px;
   }
 }
 
@@ -51,12 +51,12 @@
 }
 
 .site-branding--footer__link {
-  background: url('../../logo_full.svg') no-repeat 0 0 transparent;
+  background: url('../../visitpori-logo.svg') no-repeat 0 0 transparent;
   height: 1.96rem;
   width: 7.5rem;
 
   @media screen and (min-width: $mobile-footer-breakpoint) {
-    background-image: url('../../logo_minimal.svg');
+    background-image: url('../../visitpori-logo.svg');
     height: 5.188rem;
     width: 5.625rem;
   }
