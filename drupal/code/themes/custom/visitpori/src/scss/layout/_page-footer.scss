@@ -6,12 +6,12 @@
 
 .page-footer,
 .page-footer a {
-  color: $black;
+  color: $white;
 }
 
 .page-footer {
   padding-top: 3.125rem;
-  background: $white;
+  background: $secondary-color;
 
   .page-footer__container {
     border-bottom: 0.938rem solid $secondary-color;
