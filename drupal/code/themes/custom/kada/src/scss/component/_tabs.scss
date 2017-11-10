@@ -78,7 +78,7 @@
 // Admin tab styling
 .tabs--primary {
   border-bottom: none;
-  margin: 0;
+  margin: 0 0 3rem;
 
   &.links--inline li {
     margin: 0;
@@ -87,7 +87,7 @@
   a {
     background-color: $turku-black;
     color: #fff;
-    margin: 10px 5px;
+    margin: 0 .063rem .063rem 0;
     padding: 10px 20px;
 
     &.active,
