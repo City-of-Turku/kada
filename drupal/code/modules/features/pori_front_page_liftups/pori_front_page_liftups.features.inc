@@ -69,8 +69,143 @@ function pori_front_page_liftups_views_default_views_alter(&$data) {
   }
   if (isset($data['kada_top_carousel'])) {
     $data['kada_top_carousel']->display['block_1']->display_options['fields']['body']['alter']['max_length'] = 460; /* WAS: '' */
-    $data['kada_top_carousel']->display['block_1']->display_options['fields']['body']['alter']['trim'] = TRUE; /* WAS: '' */
-    $data['kada_top_carousel']->display['block_1']->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__title">[field_link_to_content]</div>'; /* WAS: '<h3 class="flex-caption__title">[field_link_to_content]</h3>' */
-    $data['kada_top_carousel']->display['block_1']->display_options['fields']['field_link_to_content']['element_type'] = 'div'; /* WAS: 'h3' */
+    $data['kada_top_carousel']->display['block_1']->display_options['fields']['body']['alter']['path'] = '[field_link_to_content]'; /* WAS: '' */
+    $data['kada_top_carousel']->display['block_1']->display_options['fields']['field_link_to_content']['alter']['make_link'] = TRUE; /* WAS: '' */
+    $data['kada_top_carousel']->display['block_1']->display_options['fields']['field_link_to_content']['alter']['path'] = '[field_link_to_content]'; /* WAS: '' */
+    $data['kada_top_carousel']->display['block_1']->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+    <div class="flex-caption__body">[body]</div>'; /* WAS: '<h3 class="flex-caption__title">[field_link_to_content]</h3>' */
+    $data['kada_top_carousel']->display['block_1']->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+    <div class="flex-caption__body">[body]</div>'; /* WAS: '' */
+    $data['kada_top_carousel']->display['block_1']->display_options['fields']['field_link_to_content']['hide_alter_empty'] = FALSE; /* WAS: '' */
+    $data['kada_top_carousel']->display['block_1']->display_options['fields']['field_link_to_content']['type'] = 'link_absolute'; /* WAS: '' */
+    $data['kada_top_carousel']->display['block_1']->display_options['fields']['field_main_image']['alter'] = array(
+      'path' => '[field_link_to_content]',
+    ); /* WAS: '' */
+    $data['kada_top_carousel']->display['block_1']->display_options['fields']['field_target_audience'] = array(
+      'id' => 'field_target_audience',
+      'table' => 'field_data_field_target_audience',
+      'field' => 'field_target_audience',
+      'label' => '',
+      'exclude' => TRUE,
+      'alter' => array(
+        'alter_text' => TRUE,
+        'text' => '<span class="flex-caption__target-group__item">[field_target_audience]</span>',
+      ),
+      'element_label_colon' => FALSE,
+      'type' => 'i18n_taxonomy_term_reference_plain',
+      'delta_offset' => 0,
+    ); /* WAS: '' */
+    $data['kada_top_carousel']->display['block_1']->display_options['fields']['field_theme'] = array(
+      'id' => 'field_theme',
+      'table' => 'field_data_field_theme',
+      'field' => 'field_theme',
+      'label' => '',
+      'exclude' => TRUE,
+      'alter' => array(
+        'alter_text' => TRUE,
+        'text' => '<span class="flex-caption__target-group__item">[field_theme]</span>',
+      ),
+      'element_label_colon' => FALSE,
+      'type' => 'i18n_taxonomy_term_reference_plain',
+      'delta_offset' => 0,
+    ); /* WAS: '' */
+    $data['kada_top_carousel']->display['default']->display_options['style_options']['captionfield'] = 'field_link_to_content'; /* WAS: 'body' */
+    $data['kada_top_carousel']->display['section']->display_options['fields']['body']['hide_empty'] = TRUE; /* WAS: '' */
+    $data['kada_top_carousel']->display['section']->display_options['fields']['field_link_to_content']['alter']['make_link'] = TRUE; /* WAS: '' */
+    $data['kada_top_carousel']->display['section']->display_options['fields']['field_link_to_content']['alter']['path'] = '[field_link_to_content]'; /* WAS: '' */
+    $data['kada_top_carousel']->display['section']->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+    <div class="flex-caption__body">[body]</div>'; /* WAS: '<h3 class="flex-caption__title">[field_link_to_content]</h3>' */
+    $data['kada_top_carousel']->display['section']->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+    <div class="flex-caption__body">[body]</div>'; /* WAS: '' */
+    $data['kada_top_carousel']->display['section']->display_options['fields']['field_link_to_content']['hide_alter_empty'] = FALSE; /* WAS: '' */
+    $data['kada_top_carousel']->display['section']->display_options['fields']['field_link_to_content']['type'] = 'link_plain'; /* WAS: '' */
+    $data['kada_top_carousel']->display['section']->display_options['fields']['field_target_audience'] = array(
+      'id' => 'field_target_audience',
+      'table' => 'field_data_field_target_audience',
+      'field' => 'field_target_audience',
+      'label' => '',
+      'exclude' => TRUE,
+      'alter' => array(
+        'alter_text' => TRUE,
+        'text' => '<span class="flex-caption__target-group__item">[field_target_audience]</span>',
+      ),
+      'element_label_colon' => FALSE,
+      'type' => 'i18n_taxonomy_term_reference_plain',
+      'delta_offset' => 0,
+    ); /* WAS: '' */
+    $data['kada_top_carousel']->display['section']->display_options['fields']['field_theme'] = array(
+      'id' => 'field_theme',
+      'table' => 'field_data_field_theme',
+      'field' => 'field_theme',
+      'label' => '',
+      'exclude' => TRUE,
+      'alter' => array(
+        'alter_text' => TRUE,
+        'text' => '<span class="flex-caption__target-group__item">[field_theme]</span>',
+      ),
+      'element_label_colon' => FALSE,
+      'type' => 'i18n_taxonomy_term_reference_plain',
+      'delta_offset' => 0,
+    ); /* WAS: '' */
+    $data['kada_top_carousel']->display['slider']->display_options['fields']['body']['hide_empty'] = TRUE; /* WAS: '' */
+    $data['kada_top_carousel']->display['slider']->display_options['fields']['field_link_to_content']['alter']['make_link'] = TRUE; /* WAS: '' */
+    $data['kada_top_carousel']->display['slider']->display_options['fields']['field_link_to_content']['alter']['path'] = '[field_link_to_content]'; /* WAS: '' */
+    $data['kada_top_carousel']->display['slider']->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+    <div class="flex-caption__body">[body]</div>'; /* WAS: '<h2 class="flex-caption__title">[field_link_to_content]</h2>' */
+    $data['kada_top_carousel']->display['slider']->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+    <div class="flex-caption__body">[body]</div>'; /* WAS: '' */
+    $data['kada_top_carousel']->display['slider']->display_options['fields']['field_link_to_content']['hide_alter_empty'] = FALSE; /* WAS: '' */
+    $data['kada_top_carousel']->display['slider']->display_options['fields']['field_link_to_content']['type'] = 'link_plain'; /* WAS: '' */
+    $data['kada_top_carousel']->display['slider']->display_options['fields']['field_target_audience'] = array(
+      'id' => 'field_target_audience',
+      'table' => 'field_data_field_target_audience',
+      'field' => 'field_target_audience',
+      'label' => '',
+      'exclude' => TRUE,
+      'alter' => array(
+        'alter_text' => TRUE,
+        'text' => '<span class="flex-caption__target-group__item">[field_target_audience]</span>',
+      ),
+      'element_label_colon' => FALSE,
+      'type' => 'i18n_taxonomy_term_reference_plain',
+      'delta_offset' => 0,
+    ); /* WAS: '' */
+    $data['kada_top_carousel']->display['slider']->display_options['fields']['field_theme'] = array(
+      'id' => 'field_theme',
+      'table' => 'field_data_field_theme',
+      'field' => 'field_theme',
+      'label' => '',
+      'exclude' => TRUE,
+      'alter' => array(
+        'alter_text' => TRUE,
+        'text' => '<span class="flex-caption__target-group__item">[field_theme]</span>',
+      ),
+      'element_label_colon' => FALSE,
+      'type' => 'i18n_taxonomy_term_reference_plain',
+      'delta_offset' => 0,
+    ); /* WAS: '' */
+    unset($data['kada_top_carousel']->display['block_1']->display_options['fields']['body']['alter']['alter_text']);
+    unset($data['kada_top_carousel']->display['block_1']->display_options['fields']['body']['alter']['text']);
+    unset($data['kada_top_carousel']->display['block_1']->display_options['fields']['field_link_to_content']['element_default_classes']);
+    unset($data['kada_top_carousel']->display['block_1']->display_options['fields']['field_link_to_content']['element_type']);
+    unset($data['kada_top_carousel']->display['block_1']->display_options['fields']['field_link_to_content']['element_wrapper_type']);
+    unset($data['kada_top_carousel']->display['block_1']->display_options['fields']['field_link_to_content']['hide_empty']);
+    unset($data['kada_top_carousel']->display['section']->display_options['fields']['body']['alter']);
+    unset($data['kada_top_carousel']->display['section']->display_options['fields']['body']['element_type']);
+    unset($data['kada_top_carousel']->display['section']->display_options['fields']['body']['element_wrapper_type']);
+    unset($data['kada_top_carousel']->display['section']->display_options['fields']['body']['empty']);
+    unset($data['kada_top_carousel']->display['section']->display_options['fields']['field_link_to_content']['element_type']);
+    unset($data['kada_top_carousel']->display['section']->display_options['fields']['field_link_to_content']['element_wrapper_type']);
+    unset($data['kada_top_carousel']->display['section']->display_options['fields']['field_link_to_content']['hide_empty']);
+    unset($data['kada_top_carousel']->display['section']->display_options['fields']['field_secondary_image']);
+    unset($data['kada_top_carousel']->display['slider']->display_options['fields']['body']['alter']);
+    unset($data['kada_top_carousel']->display['slider']->display_options['fields']['body']['element_type']);
+    unset($data['kada_top_carousel']->display['slider']->display_options['fields']['body']['element_wrapper_type']);
+    unset($data['kada_top_carousel']->display['slider']->display_options['fields']['body']['empty']);
+    unset($data['kada_top_carousel']->display['slider']->display_options['fields']['field_link_to_content_1']);
+    unset($data['kada_top_carousel']->display['slider']->display_options['fields']['field_link_to_content']['element_default_classes']);
+    unset($data['kada_top_carousel']->display['slider']->display_options['fields']['field_link_to_content']['element_type']);
+    unset($data['kada_top_carousel']->display['slider']->display_options['fields']['field_link_to_content']['element_wrapper_type']);
+    unset($data['kada_top_carousel']->display['slider']->display_options['fields']['field_link_to_content']['hide_empty']);
   }
 }
