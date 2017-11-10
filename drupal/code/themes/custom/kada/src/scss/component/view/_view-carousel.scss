@@ -97,29 +97,54 @@
   }
 }
 
+.flex-caption__target-group {
+  color:  $link-color-hover;
+  font-family: $bergen-mono;
+  margin-bottom: .875rem;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $tablet-portrait) {
+    margin-bottom: 1.875rem;
+  }
+
+  .flex-caption__target-group__item:last-child::before {
+    content:", ";
+  }
+
+  .flex-caption__target-group__item:first-child::before {
+    content:"";
+  }
+}
+
 .flex-caption {
   background-color: $white;
   bottom: 0;
   color: $black;
   left: 0;
   line-height: normal;
+  padding: 0 0 1rem 0;
+  position: relative;
   width: 100%;
 
-  padding: 1rem 0rem;
-  position: relative;
+  @media screen and (min-width: $mobile-landscape-wide) {
+    padding: 1rem 0;
+  }
 
   @media screen and (min-width: $tablet-portrait) {
     background-color: $white;
-    //margin-left: $distance-from-items-tablet-portrait;
     left: 3rem;
     position: absolute;
-    padding: 2rem 5rem 3.5rem 5rem;
+    padding: 3rem 5rem 3.5rem 5rem;
     width: 74.167%;
   }
 
   @media screen and (min-width: $desktop) {
     //margin-left: $distance-from-items-large-desk;
     width: 55%;
+  }
+
+  > a {
+    color: $primary-color;
   }
 
   .flex-caption__image {
@@ -164,12 +189,18 @@
   }
 
   .flex-caption__body {
-    @include font-size-responsive(1rem);
     font-family: $bergen-text;
-    line-height: 1.6em;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.5;
 
-    @media screen and (min-width: $tablet-portrait) and (max-width: 819px) {
-      font-size: 1rem;
+    @media screen and (min-width: $tablet-portrait) {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
     }
   }
 
@@ -191,18 +222,29 @@
   }
 }
 
+.flex-control-wrapper {
+  bottom: 2.5rem;
+  height: 20px;
+  position: relative;
+  padding: 0;
+  top: auto;
+
+  @media screen and (min-width: $tablet-portrait) {
+    position: absolute;
+  }
+}
+
 .flexslider__controls {
   position: absolute;
-  bottom: 0rem;
-  padding: 1rem 1rem;
+  bottom: 0;
+  padding: 0;
+  height: 20px;
   margin: 0;
   width: 100%;
   z-index: 5;
 
   @media screen and (min-width: $tablet-portrait) {
-    bottom: 2.5rem;
     left: 2rem;
-    padding: 3rem 6rem 5.5rem 4rem;
     width: 74.167%;
   }
 
