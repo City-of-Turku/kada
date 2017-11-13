@@ -1,6 +1,16 @@
+.container.l-breadcrumb__container {
+  padding: 0;
+}
+
 .breadcrumb {
-  padding: 2rem 0 0;
+  @include responsive-whitespace;
+  border-top: .313rem solid $primary-color;
   list-style: none;
+  padding-top: 3.125rem;
+
+  @media screen and (min-width: $mobile-menu-breakpoint) {
+    border-top: 0 none;
+  }
 }
 
 .breadcrumb__item {

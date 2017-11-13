@@ -15,9 +15,11 @@
 
   .page-footer__container {
     border-bottom: 0.938rem solid $secondary-color;
-    padding-bottom: 1.875rem;
+    padding: 0 0 1.875rem;
     
     @media screen and (min-width: $mobile-footer-breakpoint) {
+      padding-right: $container-gutter;
+      padding-left: $container-gutter;
       position: relative;
     }
   }

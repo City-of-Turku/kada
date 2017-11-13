@@ -19,10 +19,9 @@ function pori_pages_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 24,
       ),
       'only_title' => array(
         'label' => 'above',
