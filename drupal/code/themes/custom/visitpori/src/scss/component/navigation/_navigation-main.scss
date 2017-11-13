@@ -57,9 +57,14 @@
           .menu__item--has-second-level {
             &:hover {
               background-color: $color;
+              a { color: $white; }
+            }
+            a {
+              color: $color;
             }
             &.is-active-trail {
               background-color: $color;
+              a { color: $white; }
             }
           }
         }
