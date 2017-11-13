@@ -23,7 +23,15 @@
     width: 100%;
 
     @media screen and (min-width: $mobile-menu-breakpoint) {
-      background-color: $white;
+        background-color: $white;
+        /*background-image:     linear-gradient(
+          to right, 
+          $red-light,
+          $red-light 15%,
+          $red-light 15%,
+          $blue 85%,
+          $blue 85%
+        );*/
     }
   }
 
@@ -36,8 +44,7 @@
   }
 
   .l-navigation__container {
-    margin: 0 auto;
-    max-width: $container-width;
+    width: 100%;
 
     @media screen and (min-width: $mobile-menu-breakpoint) {
       position: relative;
