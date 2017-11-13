@@ -17,13 +17,12 @@
       width: 100%;
 
       a {
-        border-top: 1px solid $gray-light;
+        //border-top: 1px solid $gray-light;
         color: $white;
         display: block;
         font-size: 1rem;
         padding: 1.25rem $container-gutter;
         text-transform: uppercase;
-
       }
     }
 
@@ -44,7 +43,7 @@
         }
       }
 
-      // Loop through each Visitpori color and color menu items.
+      // Loop through each Visitpori color and set colors.
       $colors: $red-light, $orange, $green-light, $green, $blue;
 
       @each $color in $colors {
