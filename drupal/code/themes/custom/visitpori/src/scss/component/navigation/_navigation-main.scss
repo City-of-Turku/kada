@@ -12,7 +12,10 @@
     }
 
     .menu__item {
+      display: flex;
+      justify-content: center;
       margin-top: 0;
+      width: 100%;
 
       a {
         border-top: 1px solid $gray-light;
@@ -22,26 +25,6 @@
         padding: 1.25rem $container-gutter;
         text-transform: uppercase;
 
-      }
-
-      &:nth-child(1) {
-        background-color: $red;
-      }
-
-      &:nth-child(2) {
-        background-color: $orange;
-      }
-
-      &:nth-child(3) {
-        background-color: $green-light;
-      }
-
-      &:nth-child(4) {
-        background-color: $green;
-      }
-
-      &:nth-child(5) {
-        background-color: $blue;
       }
     }
 
@@ -53,24 +36,43 @@
       > a {
         border-top: 0 none;
         color: $white;
-        padding: .75rem $container-gutter;
+        padding: .75rem 1.91rem;
 
         &:hover,
         &:focus {
-          background-color: $secondary-color;
+          text-decoration: underline;
+          //background-color: $secondary-color;
+        }
+      }
+
+      // Loop through each Visitpori color and color menu items.
+      $colors: $red-light, $orange, $green-light, $green, $blue;
+
+      @each $color in $colors {
+        $i: index($colors, $color);
+        &:nth-child(#{$i}) { 
+          background-color: $color;
+
+          > .menu {
+            border-bottom: 4px solid $color;
+          }
+          .menu__item--has-second-level {
+            &:hover {
+              background-color: $color;
+            }
+            &.is-active-trail {
+              background-color: $color;
+            }
+          }
         }
       }
 
       > .menu {
         background-color: $gray-lighter;
-        border-bottom: 4px solid $secondary-color;
         box-sizing: content-box;
-        border-top: 4px solid $secondary-color;
         display: none;
-        left: 0;
         position: absolute;
         top: 100%;
-        width: 100%;
         z-index: 100;
       }
 
@@ -88,9 +90,9 @@
         }
       }
 
-      &.is-active-trail {
-        background-color: $secondary-color;
-      }
+      //&.is-active-trail {
+      //  background-color: $secondary-color;
+      //}
 
       > .menu__item--expanded-toggle {
         display: none;
@@ -102,19 +104,20 @@
       clear: both;
       display: block;
       position: static;
-      width: 35%;
+      width: 100%;
       z-index: 101;
 
       > .menu {
         background-color: $gray-lighter;
         display: none;
-        left: 35%;
+        left: 100%;
         position: absolute;
         top: 0;
         width: 31%;
       }
 
       > a {
+        color: $black;
         position: relative;
       }
 
@@ -125,7 +128,6 @@
       }
 
       &:hover {
-        background-color: $secondary-color;
 
         > a {
           color: $white;
@@ -173,36 +175,6 @@
 
         > .menu {
           display: block;
-        }
-      }
-    }
-
-    .menu__item--has-third-level {
-      > a {
-        border-color: $gray-lighter;
-        font-weight: bold;
-        text-transform: none;
-      }
-
-      &:first-child {
-        > a {
-          border-top: 0 none;
-        }
-      }
-
-      &:hover {
-        background-color: $secondary-color;
-
-        > a {
-          color: $white;
-        }
-      }
-
-      &.is-active-trail {
-        background-color: $secondary-color;
-
-        > a {
-          color: $white;
         }
       }
     }

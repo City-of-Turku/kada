@@ -151,7 +151,7 @@
 
       @media screen and (min-width: $mobile-footer-breakpoint) {
         background-color: transparent;
-        color: $primary-color;
+        border-bottom: 2px solid $black;
       }
 
       > a {
