@@ -78,6 +78,16 @@ function pori_front_page_liftups_context_default_contexts_alter(&$data) {
 }
 
 /**
+ * Implements hook_quicktabs_default_quicktabs_alter().
+ */
+function pori_front_page_liftups_quicktabs_default_quicktabs_alter(&$data) {
+  if (isset($data['feed_tabs'])) {
+    $data['feed_tabs']->ajax = 1; /* WAS: 0 */
+    $data['feed_tabs']->renderer = 'ui_tabs'; /* WAS: 'quicktabs' */
+  }
+}
+
+/**
  * Implements hook_views_default_views_alter().
  */
 function pori_front_page_liftups_views_default_views_alter(&$data) {
