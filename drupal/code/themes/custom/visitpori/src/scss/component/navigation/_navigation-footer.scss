@@ -50,7 +50,7 @@
       display: none;
 
       @media screen and (max-width: $mobile-footer-breakpoint-max) {
-        background: url('../../dist/image/plus-icon--white.svg') no-repeat center center $black;
+        background: url('../../dist/image/plus-icon.svg') no-repeat center center $white;
         background-size: auto .7rem;
         border-radius: 100%;
         display: block;
@@ -74,8 +74,8 @@
     &.is-active-trail {
       > .menu__item--expanded-toggle {
         @media screen and (max-width: $mobile-footer-breakpoint-max) {
-          background-image: url('../../dist/image/plus-icon.svg');
-          background-color: $white;
+          background-image: url('../../dist/image/plus-icon--white.svg');
+          background-color: $black;
         }
       }
     }
@@ -84,7 +84,7 @@
   .is-collapsed {
     > .menu__item--expanded-toggle {
       @media screen and (max-width: $mobile-footer-breakpoint-max) {
-        background-image: url('../../dist/image/minus-icon--white.svg');
+        background-image: url('../../dist/image/minus-icon.svg');
       }
     }
 
@@ -93,8 +93,8 @@
     &.is-active-trail {
       > .menu__item--expanded-toggle {
         @media screen and (max-width: $mobile-footer-breakpoint-max) {
-          background-image: url('../../dist/image/minus-icon.svg');
-          background-color: $white;
+          background-image: url('../../dist/image/minus-icon--white.svg');
+          background-color: $black;
         }
       }
     }
@@ -141,24 +141,34 @@
       font-size: 1.5rem;
     }
 
+    &.is-collapsed {
+      > a {
+        background-color: $gray-light;
+        color: $black;
+        @media screen and (min-width: $mobile-footer-breakpoint) {
+          background-color: $white;
+        }
+      }
+    }
+
     &:hover,
     &:focus,
     &.active,
     &.is-active-trail {
       background-color: $secondary-color;
-      border-color: $secondary-color;
+      border-color: $primary-color;
       font-weight: bold;
 
       @media screen and (min-width: $mobile-footer-breakpoint) {
         background-color: transparent;
-        border-bottom: 2px solid $black;
+        //border-bottom: 2px solid $black;
       }
 
       > a {
-        color: $white;
+        color: $black;
 
         @media screen and (min-width: $mobile-footer-breakpoint) {
-          color: $primary-color;
+          color: $white;
         }
       }
     }
@@ -168,7 +178,7 @@
       > a {
         background-color: $secondary-color;
         color: $white;
-        font-weight: bold;
+        font-weight: normal;
 
         @media screen and (min-width: $mobile-footer-breakpoint) {
           background-color: transparent;
@@ -177,7 +187,7 @@
 
         &::after {
           @media screen and (min-width: $mobile-footer-breakpoint) {
-            background-color: $secondary-color;
+            background-color: $primary-color;
             bottom: -.188rem;
             content: "";
             height: .25rem;
@@ -219,7 +229,7 @@
       &:focus {
         &::after {
           @media screen and (min-width: $mobile-footer-breakpoint) {
-            background-color: $secondary-color;
+            background-color: $primary-color;
             bottom: -.188rem;
             content: "";
             height: .25rem;
@@ -247,15 +257,14 @@
 
   // Second menu item specific styles
   .menu__item--has-second-level {
-    background-color: $gray-lighter;
+    background-color: $white;
     font-family: $bergen-text;
-    font-weight: bold;
+    font-weight: normal;
     text-transform: none;
 
     @media screen and (min-width: $mobile-footer-breakpoint) {
       background-color: transparent;
       font-size: .875rem;
-      font-weight: normal;
       margin-bottom: .875rem;
     }
 
@@ -264,9 +273,13 @@
     }
 
     > a {
+      background-color: $white;
+      color: $primary-color;
       padding: 1.25rem 1.875rem;
 
       @media screen and (min-width: $mobile-footer-breakpoint) {
+        background-color: transparent;
+        color: $white;
         padding: 0;
         position: relative;
       }
@@ -283,7 +296,7 @@
 
         &::after {
           @media screen and (min-width: $mobile-footer-breakpoint) {
-            background-color: $secondary-color;
+            background-color: $primary-color;
             bottom: -.125rem;
             content: "";
             height: .125rem;

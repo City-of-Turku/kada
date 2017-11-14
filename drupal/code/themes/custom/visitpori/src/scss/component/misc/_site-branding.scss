@@ -23,7 +23,7 @@
   width: 5rem;
 
   @media screen and (min-width: $tablet-portrait-narrow) {
-    background-image: url('../../visitpori-logo.svg');
+    background-image: url('../../visitpori-logo-full.svg');
     height: 5.625rem;
     width: 23.125rem;
   }
@@ -51,9 +51,9 @@
 }
 
 .site-branding--footer__link {
-  background: url('../../visitpori-footer-logo.svg') no-repeat 0 0 transparent;
-  height: 1.96rem;
-  width: 7.5rem;
+  background: url('../../visitpori-logo-full-white.svg') no-repeat 0 0 transparent;
+  height: 6rem;
+  width: 100%;
 
   @media screen and (min-width: $mobile-footer-breakpoint) {
     background-image: url('../../visitpori-footer-logo.svg');
