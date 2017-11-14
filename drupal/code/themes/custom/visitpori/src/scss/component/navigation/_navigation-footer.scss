@@ -132,7 +132,7 @@
       border-bottom: 0 none;
       font-family: $bergen-text;
       font-size: 1.2rem;
-      font-weight: bold;
+      font-weight: normal;
       text-transform: none;
       width: 20%;
     }
@@ -157,7 +157,7 @@
     &.is-active-trail {
       background-color: $secondary-color;
       border-color: $primary-color;
-      font-weight: bold;
+      font-weight: normal;
 
       @media screen and (min-width: $mobile-footer-breakpoint) {
         background-color: transparent;
