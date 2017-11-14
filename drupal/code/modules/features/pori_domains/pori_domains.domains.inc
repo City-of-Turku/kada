@@ -1,23 +1,14 @@
 <?php
 /**
  * @file
- * kada_domains_feature.domains.inc
+ * pori_domains.domains.inc
  */
 
 /**
  * Implements hook_domain_default_domains().
  */
-function kada_domains_feature_domain_default_domains() {
+function pori_domains_domain_default_domains() {
   $domains = array();
-  $domains['pori_fi'] = array(
-    'subdomain' => 'beta.pori.fi',
-    'sitename' => 'Pori.fi',
-    'scheme' => 'http',
-    'valid' => 1,
-    'weight' => -3,
-    'is_default' => 1,
-    'machine_name' => 'pori_fi',
-  );
   $domains['tapahtumat_pori_fi'] = array(
     'subdomain' => 'tapahtumat.pori.fi',
     'sitename' => 'Tapahtumakalenteri',
@@ -26,6 +17,15 @@ function kada_domains_feature_domain_default_domains() {
     'weight' => -1,
     'is_default' => 0,
     'machine_name' => 'tapahtumat_pori_fi',
+  );
+  $domains['pori_fi'] = array(
+    'subdomain' => 'beta.pori.fi',
+    'sitename' => 'Pori.fi',
+    'scheme' => 'http',
+    'valid' => 1,
+    'weight' => -3,
+    'is_default' => 1,
+    'machine_name' => 'pori_fi',
   );
   $domains['visitpori_fi'] = array(
     'subdomain' => 'visitpori.fi',
@@ -43,7 +43,7 @@ function kada_domains_feature_domain_default_domains() {
 /**
  * Implements hook_domain_alias_default_aliases().
  */
-function kada_domains_feature_domain_alias_default_aliases() {
+function pori_domains_domain_alias_default_aliases() {
   $domain_aliases = array();
   $domain_aliases['pori_fi'] = array(
     'pori.stage.wunder.io' => array(
@@ -67,7 +67,6 @@ function kada_domains_feature_domain_alias_default_aliases() {
       'machine_name' => 'pori_fi',
     ),
   );
-  $domain_aliases['tapahtumat_pori_fi'] = array();
   $domain_aliases['visitpori_fi'] = array(
     'local.kada.fi' => array(
       'pattern' => 'local.kada.fi',
