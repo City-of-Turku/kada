@@ -21,6 +21,7 @@ function kada_preprocess_block(&$variables) {
         }
       }
       catch (EntityMetadataWrapperException $e) {
+        watchdog('kada_theme', 'EntityMetadataWrapperException with message %message', array('%message' => $e->getMessage()), WATCHDOG_ERROR);
       }
 
     }
