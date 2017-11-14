@@ -5,6 +5,36 @@
  */
 
 /**
+ * Implements hook_field_default_field_instances_alter().
+ */
+function pori_media_field_default_field_instances_alter(&$data) {
+  if (isset($data['scald_atom-file-scald_authors'])) {
+    $data['scald_atom-file-scald_authors']['required'] = 1; /* WAS: FALSE */
+    $data['scald_atom-file-scald_authors']['widget']['active'] = 0; /* WAS: '' */
+  }
+  if (isset($data['scald_atom-file-scald_tags'])) {
+    $data['scald_atom-file-scald_tags']['required'] = 1; /* WAS: FALSE */
+    $data['scald_atom-file-scald_tags']['widget']['active'] = 0; /* WAS: '' */
+  }
+  if (isset($data['scald_atom-image-scald_authors'])) {
+    $data['scald_atom-image-scald_authors']['required'] = 1; /* WAS: FALSE */
+    $data['scald_atom-image-scald_authors']['widget']['active'] = 0; /* WAS: '' */
+  }
+  if (isset($data['scald_atom-image-scald_tags'])) {
+    $data['scald_atom-image-scald_tags']['required'] = 1; /* WAS: FALSE */
+    $data['scald_atom-image-scald_tags']['widget']['active'] = 0; /* WAS: '' */
+  }
+  if (isset($data['scald_atom-video-scald_authors'])) {
+    $data['scald_atom-video-scald_authors']['required'] = 1; /* WAS: FALSE */
+    $data['scald_atom-video-scald_authors']['widget']['active'] = 0; /* WAS: '' */
+  }
+  if (isset($data['scald_atom-video-scald_tags'])) {
+    $data['scald_atom-video-scald_tags']['required'] = 1; /* WAS: FALSE */
+    $data['scald_atom-video-scald_tags']['widget']['active'] = 0; /* WAS: '' */
+  }
+}
+
+/**
  * Implements hook_flexslider_default_presets_alter().
  */
 function pori_media_flexslider_default_presets_alter(&$data) {
