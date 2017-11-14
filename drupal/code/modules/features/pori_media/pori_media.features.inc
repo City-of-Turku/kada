@@ -35,6 +35,19 @@ function pori_media_field_default_field_instances_alter(&$data) {
 }
 
 /**
+ * Implements hook_flexslider_default_presets_alter().
+ */
+function pori_media_flexslider_default_presets_alter(&$data) {
+  if (isset($data['default'])) {
+    unset($data['default']->export_type);
+    unset($data['default']->type);
+  }
+  if (isset($data['top_carousel'])) {
+    $data['top_carousel']->options['slideshow'] = 0; /* WAS: 1 */
+  }
+}
+
+/**
  * Implements hook_image_styles_alter().
  */
 function pori_media_image_styles_alter(&$data) {
@@ -92,5 +105,23 @@ function pori_media_image_styles_alter(&$data) {
     $data['topics_breakpoints_theme_kada_tablet_1x']['effects'] = array_values($data['topics_breakpoints_theme_kada_tablet_1x']['effects']);
     $data['topics_breakpoints_theme_kada_tablet_1x']['effects'][0]['data']['width'] = 687;
   }
+  }
+}
+
+/**
+ * Implements hook_openlayers_maps_alter().
+ */
+function pori_media_openlayers_maps_alter(&$data) {
+  if (isset($data['default'])) {
+    $data['default']->disabled = FALSE; /* WAS: '' */
+  }
+}
+
+/**
+ * Implements hook_openlayers_styles_alter().
+ */
+function pori_media_openlayers_styles_alter(&$data) {
+  if (isset($data['default'])) {
+    $data['default']->disabled = FALSE; /* WAS: '' */
   }
 }

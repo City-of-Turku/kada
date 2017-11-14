@@ -24,6 +24,10 @@ function pori_media_features_override_default_overrides() {
   $overrides["field_instance.scald_atom-video-scald_authors.widget|active"] = 0;
   $overrides["field_instance.scald_atom-video-scald_tags.required"] = 1;
   $overrides["field_instance.scald_atom-video-scald_tags.widget|active"] = 0;
+  // Exported overrides for: flexslider_optionset
+  $overrides["flexslider_optionset.default.export_type"]["DELETED"] = TRUE;
+  $overrides["flexslider_optionset.default.type"]["DELETED"] = TRUE;
+  $overrides["flexslider_optionset.top_carousel.options|slideshow"] = 0;
 
   // Exported overrides for: image
   $overrides["image.topics.effects|0|data|height"] = 257;
@@ -35,6 +39,12 @@ function pori_media_features_override_default_overrides() {
   $overrides["image.topics_breakpoints_theme_kada_smalldesktop_1x.effects|0|data|width"] = 649;
   $overrides["image.topics_breakpoints_theme_kada_tablet_1x.effects|0|data|height"] = 386;
   $overrides["image.topics_breakpoints_theme_kada_tablet_1x.effects|0|data|width"] = 687;
+
+  // Exported overrides for: openlayers_maps
+  $overrides["openlayers_maps.default.disabled"] = FALSE;
+
+  // Exported overrides for: openlayers_styles
+  $overrides["openlayers_styles.default.disabled"] = FALSE;
 
  return $overrides;
 }
