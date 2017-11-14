@@ -21,13 +21,13 @@
 
         &:hover,
         &:focus {
-          color: $link-color;
+          color: $red-light;
         }
       }
 
       &.is-active-trail {
         a {
-          color: $link-color;
+          color: $red-light;
         }
       }
     }
