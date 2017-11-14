@@ -40,7 +40,7 @@
         &:hover,
         &:focus {
           text-decoration: underline;
-          //background-color: $secondary-color;
+          background-color: transparent;
         }
       }
 
@@ -54,6 +54,7 @@
 
           > .menu {
             border-bottom: 4px solid $color;
+            border-top: 0;
           }
           .menu__item--has-second-level {
             &:hover {
@@ -75,6 +76,7 @@
         background-color: $gray-lighter;
         box-sizing: content-box;
         display: none;
+        left: auto;
         position: absolute;
         top: 100%;
         z-index: 100;

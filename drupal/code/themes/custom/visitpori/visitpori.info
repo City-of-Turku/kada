@@ -8,8 +8,9 @@ core = 7.x
 ; ========================================
 ; Stylesheets
 ; ========================================
-stylesheets[all][] = dist/css/styles-lib.css
-stylesheets[all][] = dist/css/styles.css
+stylesheets[all][] = dist/css/visitpori-styles-lib.css
+stylesheets[all][] = dist/css/visitpori-styles.css
+stylesheets[all][] = dist/css/visitpori-styles-theme.css
 
 ; ========================================
 ; Scripts
