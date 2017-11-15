@@ -148,6 +148,7 @@
         $('.l-region--navigation .menu__item--has-first-level', context).hover(function(event) {
           if ($(window).width() >= '1025') {
             adjustHeight($(this).children('.menu'));
+            adjustWidth($(this));
             if (event.type === 'mouseleave') {
               $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
             }
@@ -160,6 +161,18 @@
             adjustHeight($(this).parent('.menu'));
           }
         });
+
+
+        function adjustWidth(elem) {
+          if ($(window).width() >= '1025') {
+            $(elem).css('width', '');
+            var topLevelWidth = $(elem).innerWidth();
+
+            $(elem).children('.menu').css('width', topLevelWidth);
+            $(elem).find('.menu:visible').children('.menu').css('width', topLevelWidth);
+            switchMainMenuBehavior(context);
+          }
+        }
 
         function adjustHeight(elem) {
           if ($(window).width() >= '1025') {
@@ -197,38 +210,5 @@
       });
     }
   };
-
-  Drupal.behaviors.kadaEqualWidthsBehavior = {
-    attach: function (context) {
-      $(window).load(function () {
-        var resizeOk = true;
-
-        setInterval(function () {
-          resizeOk = true;
-        }, 33);
-
-        $('.l-region--navigation .menu__item--has-first-level', context).hover(function(event) {
-          if ($(window).width() >= '1025') {
-            adjustWidth($(this));
-            if (event.type === 'mouseleave') {
-              $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
-            }
-          }
-        });
-
-        function adjustWidth(elem) {
-          if ($(window).width() >= '1025') {
-            $(elem).css('width', '');
-            var topLevelWidth = $(elem).innerWidth();
-
-            $(elem).children('.menu').css('width', topLevelWidth);
-            $(elem).find('.menu:visible').children('.menu').css('width', topLevelWidth);
-            switchMainMenuBehavior(context);
-          }
-        }
-
-      });
-    }
-  }
 
 })(jQuery);
