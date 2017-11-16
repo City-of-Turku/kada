@@ -380,13 +380,6 @@ function kada_ds_pre_render_alter(&$layout_render_array, $context, &$variables) 
       }
     }
 
-//    if ($variables['type'] == 'news_item' && $variables['view_mode'] == 'main_news') {
-//      if(!empty($layout_render_array['main'][2][0]['#markup'])) {
-//        $markup = $layout_render_array['main'][2][0]['#markup'];
-//        $layout_render_array['main'][2][0]['#markup'] = '<h3>' . $markup . '</h3>';
-//      }
-//    }
-
     if ($variables['type'] == 'social_media_update') {
       $hide_link = FALSE;
 
