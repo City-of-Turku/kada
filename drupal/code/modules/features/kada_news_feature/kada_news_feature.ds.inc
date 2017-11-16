@@ -67,18 +67,6 @@ function kada_news_feature_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'news_item';
   $ds_fieldsetting->view_mode = 'full';
   $ds_fieldsetting->settings = array(
-    'duplicate_title' => array(
-      'weight' => '1',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'show_title' => 0,
-        'title_wrapper' => '',
-        'ctools' => 'a:3:{s:4:"conf";a:7:{s:4:"link";i:1;s:6:"markup";s:2:"h1";s:2:"id";s:0:"";s:5:"class";s:12:"field--title";s:7:"context";s:25:"argument_entity_id:node_1";s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";}s:4:"type";s:10:"node_title";s:7:"subtype";s:10:"node_title";}',
-        'load_terms' => 0,
-        'ft' => array(),
-      ),
-    ),
     'post_date' => array(
       'weight' => '0',
       'label' => 'hidden',
@@ -435,20 +423,18 @@ function kada_news_feature_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'post_date',
-        1 => 'duplicate_title',
-        2 => 'domain',
-        3 => 'field_lead_paragraph_long_text',
-        4 => 'field_content_image',
-        5 => 'field_info_box',
-        6 => 'body',
-        7 => 'service_links_displays_group',
-        8 => 'field_keywords',
-        9 => 'field_district',
+        1 => 'domain',
+        2 => 'field_lead_paragraph_long_text',
+        3 => 'field_content_image',
+        4 => 'field_info_box',
+        5 => 'body',
+        6 => 'service_links_displays_group',
+        7 => 'field_keywords',
+        8 => 'field_district',
       ),
     ),
     'fields' => array(
       'post_date' => 'ds_content',
-      'duplicate_title' => 'ds_content',
       'domain' => 'ds_content',
       'field_lead_paragraph_long_text' => 'ds_content',
       'field_content_image' => 'ds_content',
@@ -467,8 +453,7 @@ function kada_news_feature_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
-    'hide_page_title' => '1',
-    'page_option_title' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|news_item|full'] = $ds_layout;
 
