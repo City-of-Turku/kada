@@ -199,6 +199,7 @@
           resizeOk = true;
         }, 33);
 
+        $('.l-region--navigation .e-service-wrapper', context).children('.menu').addClass('e-service-menu');
         $('.l-region--navigation .menu__item--has-first-level', context).hover(function(event) {
           if ($(window).width() >= '1025') {
             adjustHeight($(this).children('.menu'));
@@ -234,7 +235,7 @@
               highest = rightHeight;
             }
             $(elem).css('height', highest);
-            $(elem).find('.menu:visible').css('height', highest);
+            $(elem).find('.menu:visible').not('.e-service-menu').css('height', highest);
             switchMainMenuBehavior(context);
           }
         }
