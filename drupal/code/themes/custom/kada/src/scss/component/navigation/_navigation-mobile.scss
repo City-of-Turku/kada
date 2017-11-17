@@ -2,6 +2,7 @@ $menu-padding: 1.25rem;
 
 .toggler {
   background: none;
+  border-left: 1px solid $gray-light;
   color: $primary-color;
   display: block;
   height: 3.125rem;
@@ -14,6 +15,7 @@ $menu-padding: 1.25rem;
 
   // Hide toggler after desktop narrow
   @media screen and (min-width: $mobile-menu-breakpoint) {
+    border: 0;
     display: none;
   }
 }
