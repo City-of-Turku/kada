@@ -343,16 +343,17 @@
     }
   };
 
-  Drupal.behaviors.kadaTextSizeToggle = {
-    attach: function () {
-      $('.accessibility-font-increase__toggle').once('accessibility-font-increase__toggle', function () {
-        $(this).click(function () {
-          $(this).toggleClass('accessibility-font-increase__toggle--active');
-          $('.accessibility-font-increase__options').toggleClass('accessibility-font-increase__options--is-visible accessibility-font-increase__options--is-hidden');
-        });
-      });
-    }
-  };
+  // Text size toggle disabled for the time being.
+  // Drupal.behaviors.kadaTextSizeToggle = {
+  //   attach: function () {
+  //     $('.accessibility-font-increase__toggle').once('accessibility-font-increase__toggle', function () {
+  //       $(this).click(function () {
+  //         $(this).toggleClass('accessibility-font-increase__toggle--active');
+  //         $('.accessibility-font-increase__options').toggleClass('accessibility-font-increase__options--is-visible accessibility-font-increase__options--is-hidden');
+  //       });
+  //     });
+  //   }
+  // };
 
   // Mobile tables
   Drupal.behaviors.kadaTableMobilize = {
