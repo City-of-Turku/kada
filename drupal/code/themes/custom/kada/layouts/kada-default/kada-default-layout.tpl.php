@@ -52,14 +52,14 @@
         </div>
         <?php endif; ?>
         <?php print render($page['branding']); ?>
-        <div class="accessibility-font-increase">
+        <!-- <div class="accessibility-font-increase">
           <span class="accessibility-font-increase__text"><?php print t('Text size'); ?><span class="accessibility-font-increase__toggle"><span class="accessibility-font-increase__toggle--small">A</span><span class="accessibility-font-increase__toggle--large">A</span></span>
             <div class="accessibility-font-increase__options accessibility-font-increase__options--is-hidden font-increase">
             <a href="#font-increase-default" class="font-increase__item font-increase__item--default font-increase__item--is-active"><?php print t('Normal'); ?></a>
             <a href="#font-increase-medium" class="font-increase__item font-increase__item--medium"><?php print t('Medium'); ?></a>
             <a href="#font-increase-large" class="font-increase__item font-increase__item--large"><?php print t('Large'); ?></a>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
