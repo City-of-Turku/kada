@@ -7,8 +7,12 @@ $main-liftup-content-padding: 20px;
 
 
 .main-liftups {
-  margin: 3% 0.5% 2%;
   @include clearfix;
+  margin: 0 -1.25rem;
+
+  @media screen and (min-width: $mobile-landscape-wide) {
+    margin: 3% 0 2%;
+  }
 }
 
 .main-liftups .view-content {
@@ -25,7 +29,6 @@ $main-liftup-content-padding: 20px;
 
 .main-liftup-row {
   border-top: .938rem solid $primary-color;
-  margin-bottom: .5rem;
   width: 100%;
   @media screen and (min-width: $desktop) {
     width: 49%;
@@ -34,6 +37,7 @@ $main-liftup-content-padding: 20px;
 
 .main-liftup-box {
   background-color: $main-liftups-background;
+  padding-bottom: .5rem;
   position: relative;
 
   &:after {
@@ -67,10 +71,15 @@ $main-liftup-content-padding: 20px;
 
 .main-liftup-box__content {
   background: $main-liftups-background;
-  padding: 0 1.5rem;
+  padding: 0 1.25rem;
   width: 100%;
 
+  @media screen and (min-width: $mobile-landscape-wide) {
+    padding: 0;
+  }
+
   @media screen and (min-width: $tablet-portrait) {
+    padding: 0 2rem;
     width: 50%;
   }
 }
@@ -123,6 +132,6 @@ $main-liftup-content-padding: 20px;
 
   @media screen and (min-width: $tablet-portrait) {
     flex-direction: row;
-    padding: 3rem 0;
+    padding: 2rem 0;
   }
 }
