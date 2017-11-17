@@ -2,12 +2,12 @@ language: php
 php:
   - '7.0'
 install:
-  - composer require codeception/codeception --dev
+  - composer global require codeception/codeception --dev
 before_script:
   - phantomjs --webdriver=4444 &
   - sleep 3
 script:
-  - ./vendor/bin/codecept run acceptance -d
+  - /home/travis/.composer/vendor/codeception/codeception/codecept run acceptance -d
 notifications:
   slack:
     secure: LDnZ3I8qBqOPzU1OXlxQ1YVJ60Fo3gAIGukfzazITod+dcAjC3iZB/5B1M23GfvLSPUyP0pEcllnHJiEo3A7X7uVYW8tIGNk+4M2qEqLIwg90/GntFasBvaZ6TBXzRi5a1UyuzonXbfqdXgHBXLvXggHP7H8pWVTtiwaN/b3nMZU6apD3Mt6fpHX8o3qE6YLWPVglGhkAn0OQ0rozxw21TU8ajjqnfeiYdvlRSj4wVuwXFFeXe5CVyFi38/V4OsKFkPnc8/EbsnDFq7KKBMpQZviDOPccaNw36q5C1dZernjMBOlbNcVku/PTIEV0AP/UABAtj96fKrLL2X945b6j9E16va5gTJUHDFWNEC/5aIyV/wXJSF15MPj3bv9G4+dZtEN8ShEW8Gf7c+R5yuNi2K7oVyHOaR6S52xmM5tFlal9rSTRi2CwoFusZpejy3hgo5PIq8vQYaqHU+eNDcHxA8/uZ3T31qiaoUMziYC4jcJr0QKrqmbvw05FqCWPTucM5egvZhA+R6UxdvHHMUgZKcgKwU5otGylOklFNkZKlkJIq/r0FOxDs7vJlqqpVy0FSyg0un+ljyiGETDD3oxwbJtQlVm4w5W99QBSaZj4ADPH1Qo2J0uawhnOwSyfXGy6ZTtSIStkm38OdvR91V0rwMyYcFdNZynGwxmj7pjyvQ=
