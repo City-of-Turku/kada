@@ -62,12 +62,14 @@
     <meta http-equiv="cleartype" content="on">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-
-    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/apple-touch-icon.png?v=M4yYbYA4bq">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/favicon-32x32.png?v=M4yYbYA4bq">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/favicon-16x16.png?v=M4yYbYA4bq">
+    <link rel="shortcut icon" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/favicon.ico?v=M4yYbYA4bq">
     <link rel="manifest" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/manifest.json">
     <link rel="mask-icon" href="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/safari-pinned-tab.svg" color="#ec1c24">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/mstile-144x144.png?v=M4yYbYA4bq">
     <meta name="theme-color" content="#ffffff">
 
     <meta property="og:image" content="<?php print file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/icon/image_src.png" /> <!-- @todo create a 200x200 png file -->
