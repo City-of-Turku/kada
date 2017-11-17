@@ -29,7 +29,7 @@ $main-liftup-content-padding: 20px;
 .main-liftup-row {
   border-top: .938rem solid $primary-color;
   width: 100%;
-  
+
   @media screen and (min-width: $desktop) {
     width: 49%;
   }
@@ -95,7 +95,7 @@ $main-liftup-content-padding: 20px;
 
 .field--name-field-lead-paragraph-long-text {
   background-color: $white;
-  bottom: 20px;
+  bottom: 1.250rem;
   color: $black;
   font-size: 1rem;
   word-break: break-word;
@@ -117,7 +117,7 @@ $main-liftup-content-padding: 20px;
     width: 100%;
 
     @media screen and (min-width: $desktop) {
-      padding: 1.875em;
+      padding: 1.875rem;
       width: 50%;
     }
   }
