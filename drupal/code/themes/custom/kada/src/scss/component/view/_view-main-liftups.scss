@@ -29,6 +29,7 @@ $main-liftup-content-padding: 20px;
 .main-liftup-row {
   border-top: .938rem solid $primary-color;
   width: 100%;
+  
   @media screen and (min-width: $desktop) {
     width: 49%;
   }
