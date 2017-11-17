@@ -7,7 +7,6 @@ $main-liftup-content-padding: 20px;
 
 
 .main-liftups {
-  @include clearfix;
   margin: 0 -1.25rem;
 
   @media screen and (min-width: $mobile-landscape-wide) {
@@ -71,7 +70,7 @@ $main-liftup-content-padding: 20px;
 
 .main-liftup-box__content {
   background: $main-liftups-background;
-  padding: 0 1.25rem;
+  padding: 0 $container-gutter;
   width: 100%;
 
   @media screen and (min-width: $mobile-landscape-wide) {
@@ -117,7 +116,7 @@ $main-liftup-content-padding: 20px;
     width: 100%;
 
     @media screen and (min-width: $desktop) {
-      padding: 30px;
+      padding: 1.875em;
       width: 50%;
     }
   }
