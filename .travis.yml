@@ -7,6 +7,7 @@ before_script:
   - phantomjs --webdriver=4444 &
   - sleep 3
 script:
+  - /home/travis/.composer/vendor/codeception/codeception/codecept bootstrap
   - /home/travis/.composer/vendor/codeception/codeception/codecept run acceptance -d
 notifications:
   slack:
