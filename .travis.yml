@@ -1,0 +1,6 @@
+language: php
+install: true
+before_script:
+  - phantomjs --webdriver=4444
+script:
+  - ./vendor/bin/codecept run acceptance -d
