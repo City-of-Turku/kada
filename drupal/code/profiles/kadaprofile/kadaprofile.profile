@@ -81,8 +81,8 @@ function kadaprofile_update_7104() {
  *
  * Enables more Pori features
  */
-function kadaprofile_update_7106() {
-  $modules = array('pori_liftups');
+function kadaprofile_update_7105() {
+  $modules = array('pori_pages');
   $enable_dependencies = TRUE;
 
   module_enable($modules, $enable_dependencies);
@@ -91,11 +91,23 @@ function kadaprofile_update_7106() {
 /**
  * Implements hook_update().
  *
+ * Disables pori domains
+ */
+function kadaprofile_update_7106() {
+  $modules = array('pori_domains');
+  $enable_dependencies = TRUE;
+
+  module_disable($modules, $enable_dependencies);
+  drupal_uninstall_modules($modules);
+}
+
+/**
+ * Implements hook_update().
+ *
  * Enables more Pori features
  */
-function kadaprofile_update_7107()
-{
-  $modules = array('pori_news');
+function kadaprofile_update_7107() {
+  $modules = array('pori_liftups');
   $enable_dependencies = TRUE;
 
   module_enable($modules, $enable_dependencies);
@@ -108,7 +120,7 @@ function kadaprofile_update_7107()
  */
 function kadaprofile_update_7108()
 {
-  $modules = array('pori_blog');
+  $modules = array('pori_news');
   $enable_dependencies = TRUE;
 
   module_enable($modules, $enable_dependencies);
@@ -120,6 +132,19 @@ function kadaprofile_update_7108()
  * Enables more Pori features
  */
 function kadaprofile_update_7109()
+{
+  $modules = array('pori_blog');
+  $enable_dependencies = TRUE;
+
+  module_enable($modules, $enable_dependencies);
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Enables more Pori features
+ */
+function kadaprofile_update_7110()
 {
   $modules = array('pori_some_content');
   $enable_dependencies = TRUE;

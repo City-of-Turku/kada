@@ -199,6 +199,7 @@
           resizeOk = true;
         }, 33);
 
+        $('.l-region--navigation .e-service-wrapper', context).children('.menu').addClass('e-service-menu');
         $('.l-region--navigation .menu__item--has-first-level', context).hover(function(event) {
           if ($(window).width() >= '1025') {
             adjustHeight($(this).children('.menu'));
@@ -234,7 +235,7 @@
               highest = rightHeight;
             }
             $(elem).css('height', highest);
-            $(elem).find('.menu:visible').css('height', highest);
+            $(elem).find('.menu:visible').not('.e-service-menu').css('height', highest);
             switchMainMenuBehavior(context);
           }
         }
@@ -342,16 +343,17 @@
     }
   };
 
-  Drupal.behaviors.kadaTextSizeToggle = {
-    attach: function () {
-      $('.accessibility-font-increase__toggle').once('accessibility-font-increase__toggle', function () {
-        $(this).click(function () {
-          $(this).toggleClass('accessibility-font-increase__toggle--active');
-          $('.accessibility-font-increase__options').toggleClass('accessibility-font-increase__options--is-visible accessibility-font-increase__options--is-hidden');
-        });
-      });
-    }
-  };
+  // Text size toggle disabled for the time being.
+  // Drupal.behaviors.kadaTextSizeToggle = {
+  //   attach: function () {
+  //     $('.accessibility-font-increase__toggle').once('accessibility-font-increase__toggle', function () {
+  //       $(this).click(function () {
+  //         $(this).toggleClass('accessibility-font-increase__toggle--active');
+  //         $('.accessibility-font-increase__options').toggleClass('accessibility-font-increase__options--is-visible accessibility-font-increase__options--is-hidden');
+  //       });
+  //     });
+  //   }
+  // };
 
   // Mobile tables
   Drupal.behaviors.kadaTableMobilize = {

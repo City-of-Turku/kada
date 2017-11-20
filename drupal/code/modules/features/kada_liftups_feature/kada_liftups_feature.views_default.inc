@@ -1787,7 +1787,7 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '5';
   $handler->display->display_options['style_plugin'] = 'flexslider';
   $handler->display->display_options['style_options']['optionset'] = 'top_carousel';
-  $handler->display->display_options['style_options']['captionfield'] = 'body';
+  $handler->display->display_options['style_options']['captionfield'] = 'field_link_to_content';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
@@ -1883,56 +1883,18 @@ function kada_liftups_feature_views_default_views() {
     'link' => '0',
   );
   $handler->display->display_options['fields']['field_main_image']['group_column'] = 'sid';
-  /* Field: Content: Link to content */
-  $handler->display->display_options['fields']['field_link_to_content']['id'] = 'field_link_to_content';
-  $handler->display->display_options['fields']['field_link_to_content']['table'] = 'field_data_field_link_to_content';
-  $handler->display->display_options['fields']['field_link_to_content']['field'] = 'field_link_to_content';
-  $handler->display->display_options['fields']['field_link_to_content']['label'] = '';
-  $handler->display->display_options['fields']['field_link_to_content']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_link_to_content']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<h2 class="flex-caption__title">[field_link_to_content]</h2>';
-  $handler->display->display_options['fields']['field_link_to_content']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['field_link_to_content']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_link_to_content']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_link_to_content']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_link_to_content']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_link_to_content']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_link_to_content']['group_column'] = 'entity_id';
-  /* Field: Content: Link to content */
-  $handler->display->display_options['fields']['field_link_to_content_1']['id'] = 'field_link_to_content_1';
-  $handler->display->display_options['fields']['field_link_to_content_1']['table'] = 'field_data_field_link_to_content';
-  $handler->display->display_options['fields']['field_link_to_content_1']['field'] = 'field_link_to_content';
-  $handler->display->display_options['fields']['field_link_to_content_1']['label'] = '';
-  $handler->display->display_options['fields']['field_link_to_content_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_link_to_content_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_link_to_content_1']['alter']['text'] = '<div class="flex-caption__read-more"><a class="button button--primary" href="[field_link_to_content_1-url]" title="[field_link_to_content_1-title] ">Read more</a></div>';
-  $handler->display->display_options['fields']['field_link_to_content_1']['alter']['path'] = '[field_link_to_content_1-url]';
-  $handler->display->display_options['fields']['field_link_to_content_1']['alter']['alt'] = '[field_link_to_content_1-title] ';
-  $handler->display->display_options['fields']['field_link_to_content_1']['alter']['link_class'] = 'button button--primary';
-  $handler->display->display_options['fields']['field_link_to_content_1']['element_type'] = '0';
-  $handler->display->display_options['fields']['field_link_to_content_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_link_to_content_1']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_link_to_content_1']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_link_to_content_1']['type'] = 'link_title_plain';
-  $handler->display->display_options['fields']['field_link_to_content_1']['group_column'] = 'entity_id';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['text'] = '[field_link_to_content]
-<div class="flex-caption__body">[body]</div>
-[field_link_to_content_1]';
-  $handler->display->display_options['fields']['body']['element_type'] = '0';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['body']['empty'] = '[field_link_to_content]';
+  $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['body']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['body']['group_column'] = 'entity_id';
-  /* Field: Taxonomy term: Color name */
+  /* Field: Luokittelutermi: Color name */
   $handler->display->display_options['fields']['field_color_name']['id'] = 'field_color_name';
   $handler->display->display_options['fields']['field_color_name']['table'] = 'field_data_field_color_name';
   $handler->display->display_options['fields']['field_color_name']['field'] = 'field_color_name';
@@ -1942,6 +1904,44 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_color_name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_color_name']['type'] = 'list_key';
   $handler->display->display_options['fields']['field_color_name']['group_column'] = 'entity_id';
+  /* Field: Field: Target audience */
+  $handler->display->display_options['fields']['field_target_audience']['id'] = 'field_target_audience';
+  $handler->display->display_options['fields']['field_target_audience']['table'] = 'field_data_field_target_audience';
+  $handler->display->display_options['fields']['field_target_audience']['field'] = 'field_target_audience';
+  $handler->display->display_options['fields']['field_target_audience']['label'] = '';
+  $handler->display->display_options['fields']['field_target_audience']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_target_audience']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_target_audience']['alter']['text'] = '<span class="flex-caption__target-group__item">[field_target_audience]</span>';
+  $handler->display->display_options['fields']['field_target_audience']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_target_audience']['type'] = 'i18n_taxonomy_term_reference_plain';
+  /* Field: Content: Theme */
+  $handler->display->display_options['fields']['field_theme']['id'] = 'field_theme';
+  $handler->display->display_options['fields']['field_theme']['table'] = 'field_data_field_theme';
+  $handler->display->display_options['fields']['field_theme']['field'] = 'field_theme';
+  $handler->display->display_options['fields']['field_theme']['label'] = '';
+  $handler->display->display_options['fields']['field_theme']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_theme']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_theme']['alter']['text'] = '<span class="flex-caption__target-group__item">[field_theme]</span>';
+  $handler->display->display_options['fields']['field_theme']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_theme']['type'] = 'i18n_taxonomy_term_reference_plain';
+  /* Field: Content: Link to content */
+  $handler->display->display_options['fields']['field_link_to_content']['id'] = 'field_link_to_content';
+  $handler->display->display_options['fields']['field_link_to_content']['table'] = 'field_data_field_link_to_content';
+  $handler->display->display_options['fields']['field_link_to_content']['field'] = 'field_link_to_content';
+  $handler->display->display_options['fields']['field_link_to_content']['label'] = '';
+  $handler->display->display_options['fields']['field_link_to_content']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+        <div class="flex-caption__body">[body]</div>';
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['path'] = '[field_link_to_content]';
+  $handler->display->display_options['fields']['field_link_to_content']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+        <div class="flex-caption__body">[body]</div>';
+  $handler->display->display_options['fields']['field_link_to_content']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_link_to_content']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_link_to_content']['type'] = 'link_plain';
+  $handler->display->display_options['fields']['field_link_to_content']['group_column'] = 'entity_id';
 
   /* Display: FlexSlider | Section */
   $handler = $view->new_display('block', 'FlexSlider | Section', 'section');
@@ -1982,6 +1982,37 @@ function kada_liftups_feature_views_default_views() {
     'link' => '0',
   );
   $handler->display->display_options['fields']['field_main_image']['group_column'] = 'entity_id';
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['body']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['body']['group_column'] = 'entity_id';
+  /* Field: Field: Target audience */
+  $handler->display->display_options['fields']['field_target_audience']['id'] = 'field_target_audience';
+  $handler->display->display_options['fields']['field_target_audience']['table'] = 'field_data_field_target_audience';
+  $handler->display->display_options['fields']['field_target_audience']['field'] = 'field_target_audience';
+  $handler->display->display_options['fields']['field_target_audience']['label'] = '';
+  $handler->display->display_options['fields']['field_target_audience']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_target_audience']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_target_audience']['alter']['text'] = '<span class="flex-caption__target-group__item">[field_target_audience]</span>';
+  $handler->display->display_options['fields']['field_target_audience']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_target_audience']['type'] = 'i18n_taxonomy_term_reference_plain';
+  /* Field: Content: Theme */
+  $handler->display->display_options['fields']['field_theme']['id'] = 'field_theme';
+  $handler->display->display_options['fields']['field_theme']['table'] = 'field_data_field_theme';
+  $handler->display->display_options['fields']['field_theme']['field'] = 'field_theme';
+  $handler->display->display_options['fields']['field_theme']['label'] = '';
+  $handler->display->display_options['fields']['field_theme']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_theme']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_theme']['alter']['text'] = '<span class="flex-caption__target-group__item">[field_theme]</span>';
+  $handler->display->display_options['fields']['field_theme']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_theme']['type'] = 'i18n_taxonomy_term_reference_plain';
   /* Field: Content: Link to content */
   $handler->display->display_options['fields']['field_link_to_content']['id'] = 'field_link_to_content';
   $handler->display->display_options['fields']['field_link_to_content']['table'] = 'field_data_field_link_to_content';
@@ -1989,50 +2020,18 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_link_to_content']['label'] = '';
   $handler->display->display_options['fields']['field_link_to_content']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_link_to_content']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<h3 class="flex-caption__title">[field_link_to_content]</h3>';
-  $handler->display->display_options['fields']['field_link_to_content']['element_type'] = 'h3';
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+        <div class="flex-caption__body">[body]</div>';
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['path'] = '[field_link_to_content]';
   $handler->display->display_options['fields']['field_link_to_content']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_link_to_content']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_link_to_content']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_link_to_content']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+        <div class="flex-caption__body">[body]</div>';
+  $handler->display->display_options['fields']['field_link_to_content']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_link_to_content']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_link_to_content']['type'] = 'link_plain';
   $handler->display->display_options['fields']['field_link_to_content']['group_column'] = 'entity_id';
-  /* Field: Content: Secondary image */
-  $handler->display->display_options['fields']['field_secondary_image']['id'] = 'field_secondary_image';
-  $handler->display->display_options['fields']['field_secondary_image']['table'] = 'field_data_field_secondary_image';
-  $handler->display->display_options['fields']['field_secondary_image']['field'] = 'field_secondary_image';
-  $handler->display->display_options['fields']['field_secondary_image']['label'] = '';
-  $handler->display->display_options['fields']['field_secondary_image']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_secondary_image']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_secondary_image']['alter']['text'] = '<div class="flex-caption__image">[field_secondary_image]</div>';
-  $handler->display->display_options['fields']['field_secondary_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_secondary_image']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_secondary_image']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['field_secondary_image']['click_sort_column'] = 'sid';
-  $handler->display->display_options['fields']['field_secondary_image']['type'] = 'current';
-  $handler->display->display_options['fields']['field_secondary_image']['settings'] = array(
-    'link' => '0',
-  );
-  $handler->display->display_options['fields']['field_secondary_image']['group_column'] = 'entity_id';
-  /* Field: Content: Body */
-  $handler->display->display_options['fields']['body']['id'] = 'body';
-  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
-  $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['text'] = '[field_secondary_image]
-<div class="flex-caption__content">
-[field_link_to_content]
-<div class="flex-caption__body">[body]</div>
-</div>';
-  $handler->display->display_options['fields']['body']['element_type'] = '0';
-  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['body']['empty'] = '[field_link_to_content]';
-  $handler->display->display_options['fields']['body']['hide_alter_empty'] = FALSE;
-  $handler->display->display_options['fields']['body']['group_column'] = 'entity_id';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Field: Groups audience (og_group_ref) */
   $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
@@ -3318,6 +3317,7 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_main_image']['table'] = 'field_data_field_main_image';
   $handler->display->display_options['fields']['field_main_image']['field'] = 'field_main_image';
   $handler->display->display_options['fields']['field_main_image']['label'] = '';
+  $handler->display->display_options['fields']['field_main_image']['alter']['path'] = '[field_link_to_content]';
   $handler->display->display_options['fields']['field_main_image']['element_type'] = '0';
   $handler->display->display_options['fields']['field_main_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_main_image']['element_wrapper_type'] = '0';
@@ -3328,38 +3328,22 @@ function kada_liftups_feature_views_default_views() {
     'link' => '0',
   );
   $handler->display->display_options['fields']['field_main_image']['group_column'] = 'sid';
-  /* Field: Content: Link to content */
-  $handler->display->display_options['fields']['field_link_to_content']['id'] = 'field_link_to_content';
-  $handler->display->display_options['fields']['field_link_to_content']['table'] = 'field_data_field_link_to_content';
-  $handler->display->display_options['fields']['field_link_to_content']['field'] = 'field_link_to_content';
-  $handler->display->display_options['fields']['field_link_to_content']['label'] = '';
-  $handler->display->display_options['fields']['field_link_to_content']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_link_to_content']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<h3 class="flex-caption__title">[field_link_to_content]</h3>';
-  $handler->display->display_options['fields']['field_link_to_content']['element_type'] = 'h3';
-  $handler->display->display_options['fields']['field_link_to_content']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_link_to_content']['element_wrapper_type'] = '0';
-  $handler->display->display_options['fields']['field_link_to_content']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_link_to_content']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_link_to_content']['click_sort_column'] = 'url';
-  $handler->display->display_options['fields']['field_link_to_content']['group_column'] = 'entity_id';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['body']['alter']['text'] = '[field_link_to_content]
-<div class="flex-caption__body">[body]</div>';
+  $handler->display->display_options['fields']['body']['alter']['path'] = '[field_link_to_content]';
+  $handler->display->display_options['fields']['body']['alter']['max_length'] = 460;
   $handler->display->display_options['fields']['body']['element_type'] = '0';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['body']['empty'] = '[field_link_to_content]';
+  $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['body']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['body']['group_column'] = 'entity_id';
-  /* Field: Taxonomy term: Color name */
+  /* Field: Luokittelutermi: Color name */
   $handler->display->display_options['fields']['field_color_name']['id'] = 'field_color_name';
   $handler->display->display_options['fields']['field_color_name']['table'] = 'field_data_field_color_name';
   $handler->display->display_options['fields']['field_color_name']['field'] = 'field_color_name';
@@ -3369,6 +3353,44 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_color_name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_color_name']['type'] = 'list_key';
   $handler->display->display_options['fields']['field_color_name']['group_column'] = 'entity_id';
+  /* Field: Field: Target audience */
+  $handler->display->display_options['fields']['field_target_audience']['id'] = 'field_target_audience';
+  $handler->display->display_options['fields']['field_target_audience']['table'] = 'field_data_field_target_audience';
+  $handler->display->display_options['fields']['field_target_audience']['field'] = 'field_target_audience';
+  $handler->display->display_options['fields']['field_target_audience']['label'] = '';
+  $handler->display->display_options['fields']['field_target_audience']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_target_audience']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_target_audience']['alter']['text'] = '<span class="flex-caption__target-group__item">[field_target_audience]</span>';
+  $handler->display->display_options['fields']['field_target_audience']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_target_audience']['type'] = 'i18n_taxonomy_term_reference_plain';
+  /* Field: Content: Theme */
+  $handler->display->display_options['fields']['field_theme']['id'] = 'field_theme';
+  $handler->display->display_options['fields']['field_theme']['table'] = 'field_data_field_theme';
+  $handler->display->display_options['fields']['field_theme']['field'] = 'field_theme';
+  $handler->display->display_options['fields']['field_theme']['label'] = '';
+  $handler->display->display_options['fields']['field_theme']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_theme']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_theme']['alter']['text'] = '<span class="flex-caption__target-group__item">[field_theme]</span>';
+  $handler->display->display_options['fields']['field_theme']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_theme']['type'] = 'i18n_taxonomy_term_reference_plain';
+  /* Field: Content: Link to content */
+  $handler->display->display_options['fields']['field_link_to_content']['id'] = 'field_link_to_content';
+  $handler->display->display_options['fields']['field_link_to_content']['table'] = 'field_data_field_link_to_content';
+  $handler->display->display_options['fields']['field_link_to_content']['field'] = 'field_link_to_content';
+  $handler->display->display_options['fields']['field_link_to_content']['label'] = '';
+  $handler->display->display_options['fields']['field_link_to_content']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+        <div class="flex-caption__body">[body]</div>';
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['path'] = '[field_link_to_content]';
+  $handler->display->display_options['fields']['field_link_to_content']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+        <div class="flex-caption__body">[body]</div>';
+  $handler->display->display_options['fields']['field_link_to_content']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['field_link_to_content']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_link_to_content']['type'] = 'link_absolute';
+  $handler->display->display_options['fields']['field_link_to_content']['group_column'] = 'entity_id';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -3421,24 +3443,14 @@ function kada_liftups_feature_views_default_views() {
     t('All'),
     t('FlexSlider'),
     t('Slideshow of liftups per theme'),
-    t('<h2 class="flex-caption__title">[field_link_to_content]</h2>'),
-    t('<div class="flex-caption__read-more"><a class="button button--primary" href="[field_link_to_content_1-url]" title="[field_link_to_content_1-title] ">Read more</a></div>'),
-    t('[field_link_to_content_1-title] '),
-    t('[field_link_to_content]
-<div class="flex-caption__body">[body]</div>
-[field_link_to_content_1]'),
-    t('[field_link_to_content]'),
+    t('<span class="flex-caption__target-group__item">[field_target_audience]</span>'),
+    t('<span class="flex-caption__target-group__item">[field_theme]</span>'),
+    t('<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+        <div class="flex-caption__body">[body]</div>'),
     t('FlexSlider | Section'),
     t('Slideshow of liftups per section'),
     t('Top Image'),
     t('OG membership from node'),
-    t('<h3 class="flex-caption__title">[field_link_to_content]</h3>'),
-    t('<div class="flex-caption__image">[field_secondary_image]</div>'),
-    t('[field_secondary_image]
-<div class="flex-caption__content">
-[field_link_to_content]
-<div class="flex-caption__body">[body]</div>
-</div>'),
     t('FlexSlider | KADAcalendar'),
     t('Slideshow of liftups in KADAcalendar'),
     t('Event carousel liftups'),
@@ -3448,8 +3460,10 @@ function kada_liftups_feature_views_default_views() {
     t('FlexSlider | Section | KADAcalendar - Hobbies front'),
     t('Slideshow of liftups for KADAcalendar Hobbies frontpage.'),
     t('Hobbies frontpage atom'),
+    t('<h3 class="flex-caption__title">[field_link_to_content]</h3>'),
     t('[field_link_to_content]
 <div class="flex-caption__body">[body]</div>'),
+    t('[field_link_to_content]'),
     t('FlexSlider | KADAcalendar Hobby'),
     t('FlexSlider | KADAcalendar Hobby EN'),
     t('FlexSlider | KADAcalendar Hobby SV'),

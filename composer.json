@@ -26,10 +26,12 @@
     ],
     "require": {
         "php": "^5.6 || ^7.0",
-        "druidfi/mana": "0.2.0",
-        "codeception/codeception": "^2.2"
+        "druidfi/mana": "0.2.0"
     },
     "config": {
         "bin-dir": "bin"
+    },
+    "require-dev": {
+        "codeception/codeception": "^2.3"
     }
 }
