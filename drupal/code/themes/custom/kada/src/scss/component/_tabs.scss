@@ -78,7 +78,8 @@
 // Admin tab styling
 .tabs--primary {
   border-bottom: none;
-  margin: 0 0 3rem;
+  margin: 0 auto 3rem;
+  max-width: $inner-container-width;
 
   &.links--inline li {
     margin: 0;
@@ -95,6 +96,14 @@
       background-color: lighten($turku-black, 20%);
       text-decoration: none;
     }
+  }
+}
+
+.theme-main-page {
+  .tabs--primary {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
   }
 }
 

@@ -17,49 +17,10 @@ function kada_page_feature_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'page';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'description_page' => array(
-      'weight' => '6',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
-    'duplicate_info_box_bottom' => array(
-      'weight' => '3',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'show_title' => 0,
-        'title_wrapper' => '',
-        'ctools' => 'a:3:{s:4:"conf";a:9:{s:5:"label";s:6:"hidden";s:9:"formatter";s:12:"text_default";s:11:"delta_limit";i:0;s:12:"delta_offset";s:1:"0";s:14:"delta_reversed";b:0;s:18:"formatter_settings";a:0:{}s:7:"context";s:25:"argument_entity_id:node_1";s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";}s:4:"type";s:12:"entity_field";s:7:"subtype";s:26:"node:field_info_box_bottom";}',
-        'load_terms' => 0,
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'info-box--dupicate',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
     'places_for_services' => array(
-      'weight' => '10',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
-    ),
-    'field_contact_information' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'info-box--additional',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
-        ),
-      ),
     ),
   );
   $export['node|page|default'] = $ds_fieldsetting;
@@ -144,47 +105,48 @@ function kada_page_feature_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'page';
   $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'page_layout';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
+      'main_content' => array(
         0 => 'domain',
-        1 => 'field_topic',
-        2 => 'field_info_box',
-        3 => 'duplicate_info_box_bottom',
-        4 => 'field_contact_information',
-        5 => 'body',
-        6 => 'description_page',
-        7 => 'field_info_box_bottom',
-        8 => 'field_keywords',
-        9 => 'field_district',
-        10 => 'places_for_services',
-        11 => 'field_subpage',
+        1 => 'field_lead_paragraph',
+        2 => 'body',
+      ),
+      'sidebar' => array(
+        3 => 'field_keywords',
+        4 => 'field_info_box_bottom',
+        5 => 'field_subpage',
+        6 => 'field_contact_information',
+        7 => 'places_for_services',
+      ),
+      'after_content' => array(
+        8 => 'field_topic',
       ),
     ),
     'fields' => array(
-      'domain' => 'ds_content',
-      'field_topic' => 'ds_content',
-      'field_info_box' => 'ds_content',
-      'duplicate_info_box_bottom' => 'ds_content',
-      'field_contact_information' => 'ds_content',
-      'body' => 'ds_content',
-      'description_page' => 'ds_content',
-      'field_info_box_bottom' => 'ds_content',
-      'field_keywords' => 'ds_content',
-      'field_district' => 'ds_content',
-      'places_for_services' => 'ds_content',
-      'field_subpage' => 'ds_content',
+      'domain' => 'main_content',
+      'field_lead_paragraph' => 'main_content',
+      'body' => 'main_content',
+      'field_keywords' => 'sidebar',
+      'field_info_box_bottom' => 'sidebar',
+      'field_subpage' => 'sidebar',
+      'field_contact_information' => 'sidebar',
+      'places_for_services' => 'sidebar',
+      'field_topic' => 'after_content',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'main_content' => 'div',
+      'sidebar' => 'div',
+      'after_content' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|page|default'] = $ds_layout;
 

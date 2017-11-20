@@ -11,6 +11,7 @@ function ds_page_layout() {
     'regions' => array(
       'main_content' => t('Content'),
       'sidebar' => t('Sidebar'),
+      'after_content' => t('After content'),
     ),
   );
 }

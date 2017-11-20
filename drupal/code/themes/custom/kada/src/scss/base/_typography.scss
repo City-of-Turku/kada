@@ -7,7 +7,6 @@
 // ########## General ########## //
 body {
   @include font-size-responsive($base-font-size-rem);
-  //font-size: $base-font-size-rem;
   font-family: $text-font-family;
   line-height: $base-line-height;
 }
@@ -51,14 +50,14 @@ h5 {
 h1 {
   @include font-size-responsive($font-size-heading-1);
   line-height: 1.1666;
-  margin-bottom: $font-size-heading-1;
+  margin-bottom: 3.15rem;
 }
 
 h2 {
   @include font-size-responsive($font-size-heading-2);
   font-weight: 600;
   line-height: 1.1111;
-  margin-bottom: $font-size-heading-2;
+  margin-bottom: 1.875rem;
 }
 
 h3 {
@@ -90,7 +89,7 @@ p,
 ul,
 ol {
   + h2 {
-    margin-top: 2rem;
+    margin-top: 3.15rem;
   }
 
   + h3 {
