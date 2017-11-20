@@ -1,107 +1,146 @@
-.quicktabs-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 2.5rem 0;
+.quicktabs-ui-wrapper {
+  border: 0;
+  font-family: $bergen-text;
+  font-size: 1.125rem;
+  padding: 0;
 
-  .quicktabs-tab {
-    background-color: transparent;
-    border: 0 none;
-    border-radius: 0;
-    color: $primary-color;
-    display: block;
-    height: 2.917rem;
-    line-height: inherit;
-    margin: 0;
-    overflow: hidden;
-    padding: 0;
-    position: relative;
-    text-indent: -9999px;
-    width: 2.917rem;
+  .ui-tabs-nav {
+    background: transparent;
+    border-bottom: 5px solid $secondary-color;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    font-family: $bergen-mono;
+    font-size: 1.125rem;
+    margin: 0 (-$container-gutter) .938rem;
+    padding: 0 $container-gutter;
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      margin: 0 (-$container-gutter * 2);
+      padding: 0 ($container-gutter * 2);
+    }
 
     @media screen and (min-width: $tablet-landscape) {
-      border: .063rem solid $secondary-color;
-      color: $secondary-color;
-      height: auto;
-      margin-right: .625rem;
-      padding: .625rem 1.563rem .625rem 2.5rem;
-      text-indent: 0;
-      text-transform: uppercase;
-      width: auto;
+      border: 0;
+      margin: 0;
+      padding: 0;
     }
 
-    &:hover,
-    &:focus,
-    &.active {
-      background-color: $secondary-color;
-      color: $white;
-    }
-
-    &::after {
-      display: inline-block;
-      left: 50%;
-      position: absolute;
-      text-indent: 0;
-      top: 50%;
-      transform: translate(-50%, -50%);
+    .ui-state-default {
+      background-color: transparent;
+      border: 0 none;
+      border-radius: 0;
+      display: block;
+      height: 2.917rem;
+      line-height: inherit;
+      margin: 0;
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+      text-indent: -9999px;
+      width: 2.917rem;
 
       @media screen and (min-width: $tablet-landscape) {
-        left: 1.25rem;
+        border: .063rem solid $secondary-color;
+        height: auto;
+        margin-right: .625rem;
+        text-indent: 0;
+        text-transform: uppercase;
+        width: auto;
+      }
+
+      .ui-tabs-anchor {
+        color: $primary-color;
+        display: block;
+        float: none;
+        padding: 0;
+
+        @media screen and (min-width: $tablet-landscape) {
+          color: $secondary-color;
+          padding: .625rem 1.563rem .625rem 2.5rem;
+        }
+
+        &::after {
+          display: inline-block;
+          left: 50%;
+          position: absolute;
+          text-indent: 0;
+          top: 50%;
+          transform: translate(-50%, -50%);
+
+          @media screen and (min-width: $tablet-landscape) {
+            left: 1.25rem;
+          }
+        }
+
+        &.all {
+          &::after {
+            background: url('../../dist/image/current-all-icon.svg') no-repeat center center transparent;
+            background-size: auto 100%;
+            content: "";
+            height: 1.25rem;
+            width: 1.25rem;
+
+            @media screen and (min-width: $tablet-landscape) {
+              background-image: url('../../dist/image/current-all-icon--red.svg');
+            }
+          }
+        }
+
+        &.news::after {
+          @include fa('\f073', 1.2rem, 1, false);
+        }
+
+        &.nearby::after {
+          @include fa('\f041', 1.2rem, 1, false);
+        }
+
+        &.facebook::after {
+          @include fa('\f230', 1.2rem, 1, false);
+        }
+
+        &.instagram::after {
+          @include fa('\f16d', 1.2rem, 1, false);
+        }
+
+        &.twitter::after {
+          @include fa('\f099', 1.2rem, 1, false);
+        }
+
+        &.linkedin::after {
+          @include fa('\f08c', 1.2rem, 1, false);
+        }
+
+        &.youtube::after{
+          @include fa('\f16a', 1.2rem, 1, false);
+        }
+
+        &.blogs::after {
+          @include fa('\f044', 1.2rem, 1, false);
+        }
+      }
+
+      &:hover,
+      &:focus,
+      &.ui-state-active {
+        background-color: $secondary-color;
+        margin-bottom: 0; // Override ui-tabs default
+        padding-bottom: 0; // Override ui-tabs default
+
+        .ui-tabs-anchor {
+          color: $white;
+
+          &.all::after {
+            background-image: url('../../dist/image/current-all-icon--white.svg');
+          }
+        }
       }
     }
   }
 
-  .quicktabs-tab-block-kada-liftups-feature-delta-current-combined {
-    &::after {
-      background: url('../../dist/image/current-all-icon.svg') no-repeat center center transparent;
-      background-size: auto 100%;
-      content: "";
-      height: 1.25rem;
-      width: 1.25rem;
-
-      @media screen and (min-width: $tablet-landscape) {
-        background-image: url('../../dist/image/current-all-icon--red.svg');
-      }
-    }
-
-    &:hover,
-    &:focus,
-    &.active {
-      &::after {
-        background-image: url('../../dist/image/current-all-icon--white.svg');
-      }
-    }
-  }
-
-  .quicktabs-tab-view-kada-current-promoted--tab-news::after {
-    @include fa('\f073', 1.2rem, 1, false);
-  }
-
-  .quicktabs-tab-view-kada-current-promoted--tab-nearby::after {
-    @include fa('\f041', 1.2rem, 1, false);
-  }
-
-  .quicktabs-tab-view-kada-current-promoted--tab-facebook::after {
-    @include fa('\f230', 1.2rem, 1, false);
-  }
-
-  .quicktabs-tab-view-kada-current-promoted--tab-instagram::after {
-    @include fa('\f16d', 1.2rem, 1, false);
-  }
-
-  .quicktabs-tab-view-kada-current-promoted--tab-twitter::after {
-    @include fa('\f099', 1.2rem, 1, false);
-  }
-
-  .quicktabs-tab-view-kada-current-promoted--tab-linkedin::after {
-    @include fa('\f08c', 1.2rem, 1, false);
-  }
-
-  .quicktabs-tab-view-kada-current-promoted--tab-youtube::after{
-    @include fa('\f16a', 1.2rem, 1, false);
-  }
-
-  .quicktabs-tab-view-kada-current-promoted--tab-blogs::after {
-    @include fa('\f044', 1.2rem, 1, false);
+  .ui-tabs-panel {
+    clear: both;
+    padding: 0;
   }
 
   .quicktabs_main {

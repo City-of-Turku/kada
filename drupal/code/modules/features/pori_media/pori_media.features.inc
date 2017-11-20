@@ -51,32 +51,6 @@ function pori_media_flexslider_default_presets_alter(&$data) {
  * Implements hook_image_styles_alter().
  */
 function pori_media_image_styles_alter(&$data) {
-  if (isset($data['current'])) {
-
-  if (!isset($data['current']['storage']) || $data['current']['storage'] == IMAGE_STORAGE_DEFAULT) {
-    $data['current']['effects'] = array_values($data['current']['effects']);
-    $data['current']['effects'][0]['data']['height'] = 245;
-  }
-
-  if (!isset($data['current']['storage']) || $data['current']['storage'] == IMAGE_STORAGE_DEFAULT) {
-    $data['current']['effects'] = array_values($data['current']['effects']);
-    $data['current']['effects'][0]['data']['width'] = 435;
-  }
-
-  if (!isset($data['current']['storage']) || $data['current']['storage'] == IMAGE_STORAGE_DEFAULT) {
-    $data['current']['effects'] = array_values($data['current']['effects']);
-    $data['current']['effects'][0]['name'] = 'image_scale_and_crop';
-  }
-
-  if (!isset($data['current']['storage']) || $data['current']['storage'] == IMAGE_STORAGE_DEFAULT) {
-    $data['current']['effects'] = array_values($data['current']['effects']);
-    $data['current']['effects'][0]['weight'] = 1;
-  }
-
-  if (!isset($data['current']['storage']) || $data['current']['storage'] == IMAGE_STORAGE_DEFAULT) {
-    unset($data['current']['effects'][0]['data']['upscale']);
-  }
-  }
   if (isset($data['topics'])) {
 
   if (!isset($data['topics']['storage']) || $data['topics']['storage'] == IMAGE_STORAGE_DEFAULT) {

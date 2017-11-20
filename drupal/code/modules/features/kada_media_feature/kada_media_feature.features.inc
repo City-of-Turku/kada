@@ -421,10 +421,10 @@ function kada_media_feature_image_default_styles() {
     'label' => 'Current',
     'effects' => array(
       2 => array(
-        'name' => 'image_scale',
+        'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 315,
-          'height' => '',
+          'width' => 435,
+          'height' => '245',
           'upscale' => 0,
         ),
         'weight' => 2,
