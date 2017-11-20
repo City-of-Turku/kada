@@ -5,6 +5,36 @@
  */
 
 /**
+ * Implements hook_field_default_field_instances_alter().
+ */
+function pori_media_field_default_field_instances_alter(&$data) {
+  if (isset($data['scald_atom-file-scald_authors'])) {
+    $data['scald_atom-file-scald_authors']['required'] = 1; /* WAS: FALSE */
+    $data['scald_atom-file-scald_authors']['widget']['active'] = 0; /* WAS: '' */
+  }
+  if (isset($data['scald_atom-file-scald_tags'])) {
+    $data['scald_atom-file-scald_tags']['required'] = 1; /* WAS: FALSE */
+    $data['scald_atom-file-scald_tags']['widget']['active'] = 0; /* WAS: '' */
+  }
+  if (isset($data['scald_atom-image-scald_authors'])) {
+    $data['scald_atom-image-scald_authors']['required'] = 1; /* WAS: FALSE */
+    $data['scald_atom-image-scald_authors']['widget']['active'] = 0; /* WAS: '' */
+  }
+  if (isset($data['scald_atom-image-scald_tags'])) {
+    $data['scald_atom-image-scald_tags']['required'] = 1; /* WAS: FALSE */
+    $data['scald_atom-image-scald_tags']['widget']['active'] = 0; /* WAS: '' */
+  }
+  if (isset($data['scald_atom-video-scald_authors'])) {
+    $data['scald_atom-video-scald_authors']['required'] = 1; /* WAS: FALSE */
+    $data['scald_atom-video-scald_authors']['widget']['active'] = 0; /* WAS: '' */
+  }
+  if (isset($data['scald_atom-video-scald_tags'])) {
+    $data['scald_atom-video-scald_tags']['required'] = 1; /* WAS: FALSE */
+    $data['scald_atom-video-scald_tags']['widget']['active'] = 0; /* WAS: '' */
+  }
+}
+
+/**
  * Implements hook_flexslider_default_presets_alter().
  */
 function pori_media_flexslider_default_presets_alter(&$data) {
@@ -93,5 +123,24 @@ function pori_media_openlayers_maps_alter(&$data) {
 function pori_media_openlayers_styles_alter(&$data) {
   if (isset($data['default'])) {
     $data['default']->disabled = FALSE; /* WAS: '' */
+  }
+}
+
+/**
+ * Implements hook_views_default_views_alter().
+ */
+function pori_media_views_default_views_alter(&$data) {
+  if (isset($data['kada_scald_atoms'])) {
+    $data['kada_scald_atoms']->display['default']->display_options['fields']['scald_thumbnail'] = array(
+      'id' => 'scald_thumbnail',
+      'table' => 'field_data_scald_thumbnail',
+      'field' => 'scald_thumbnail',
+      'click_sort_column' => 'fid',
+      'settings' => array(
+        'image_style' => 'large',
+        'image_link' => 'file',
+      ),
+    ); /* WAS: '' */
+    unset($data['kada_scald_atoms']->display['default']->display_options['fields']['representation']);
   }
 }

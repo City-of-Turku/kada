@@ -132,10 +132,14 @@
 
   @media screen and (min-width: $tablet-portrait) {
     background-color: $white;
-    left: 3rem;
+    left: $container-gutter;
     position: absolute;
     padding: 3rem 5rem 3.5rem 5rem;
     width: 74.167%;
+  }
+
+  @media screen and (min-width: $tablet-portrait) and (max-width: $desktop) {
+    left: $container-gutter * 2;
   }
 
   @media screen and (min-width: $desktop) {
@@ -240,7 +244,7 @@
   padding: 0;
   height: 20px;
   margin: 0;
-  width: 100%;
+  width: 80%;
   z-index: 5;
 
   @media screen and (min-width: $tablet-portrait) {

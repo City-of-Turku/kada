@@ -14,7 +14,7 @@ function pori_front_page_liftups_quicktabs_default_quicktabs() {
   $quicktabs->disabled = FALSE; /* Edit this to true to make a default quicktabs disabled initially */
   $quicktabs->api_version = 1;
   $quicktabs->machine_name = 'feed_tabs_frontpage_promoted_con';
-  $quicktabs->ajax = 0;
+  $quicktabs->ajax = 1;
   $quicktabs->hide_empty_tabs = FALSE;
   $quicktabs->default_tab = 0;
   $quicktabs->title = 'Feed tabs (frontpage promoted content)';
@@ -99,9 +99,11 @@ function pori_front_page_liftups_quicktabs_default_quicktabs() {
       'type' => 'view',
     ),
   );
-  $quicktabs->renderer = 'quicktabs';
+  $quicktabs->renderer = 'ui_tabs';
   $quicktabs->style = 'nostyle';
-  $quicktabs->options = array();
+  $quicktabs->options = array(
+    'history' => 0,
+  );
 
   // Translatables
   // Included for use with string extractors like potx.

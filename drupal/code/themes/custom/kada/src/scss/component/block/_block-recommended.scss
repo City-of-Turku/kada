@@ -65,7 +65,7 @@
 }
 
 .block--views-recommended-block--is-hidden {
-  @media screen and (max-width: $desktop-narrow - .0625em) {
+  @media screen and (max-width: $desktop-narrow - .0625rem) {
     display: none;
   }
 }
