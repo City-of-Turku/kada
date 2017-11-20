@@ -35,7 +35,8 @@
     }
   }
 
-  .field--name-title {
+  .field--name-title,
+  .field--name-field-link-to-content {
     @include font-size-responsive(1.125rem);
     margin-bottom: .5rem;
     font-weight: bold;
@@ -54,6 +55,21 @@
   .field--name-field-image {
     line-height: 0;
     margin: 0;
+  }
+
+  .flag-wrapper a {
+    background-color: $secondary-color;
+    color: $white;
+    display: inline-block;
+    font-size: 1rem;
+    margin-top: 1.875rem;
+    padding: .313rem 1.25rem;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+      background-color: $primary-color;
+    }
   }
 }
 
@@ -351,7 +367,8 @@
     border-top: .938rem solid $primary-color;
   }
 
-  .field--name-title {
+  .field--name-title,
+  .field--name-field-link-to-content {
     @include font-size-responsive($font-size-heading-4);
     line-height: 1.5;
     margin-bottom: 1.5rem;
