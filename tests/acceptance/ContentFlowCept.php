@@ -1,10 +1,11 @@
 <?php
-$I = new AcceptanceTester($scenario);
+$I = new WebGuy($scenario);
 $I->wantTo('Find content');
+$I->maximizeWindow();
 
 $I->amOnPage('/');
 
-$I->click('Asuminen ja ympäristö', '.liftup-box-list');
+$I->click('Asuminen ja ympäristö', '#block-menu-block-2');
 
 $I->amOnPage('/asuminen-ja-ymp%C3%A4rist%C3%B6');
 $I->see('Asuminen ja ympäristö', 'h1');
