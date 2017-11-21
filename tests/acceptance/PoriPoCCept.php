@@ -1,10 +1,12 @@
-<?php 
+<?php
+/*
+// @TODO: refactor to lookup navigation link texts (like in the PoriFooterCept.php)
+
 $I = new WebGuy($scenario);	
 $I->wantTo("Confirm that links exist");
 $I->maximizeWindow();
 $I->amOnPage('');
-$I->seeInTitle("Beta.pori.fi");
-$I->see('Uutinen');
+$I->seeInTitle("Pori.fi");
 
 //Look for Logo
 print "\nTest 1: Look for the Logo.\n\n";
@@ -236,4 +238,5 @@ $I->seeElement('//*[@id="block-menu-block-2"]/div/div/ul/li[5]/ul/li[6]/a');				
 print "\n";
 
 $I->makeScreenshot('Initial Navigation');
-?>
+
+*/

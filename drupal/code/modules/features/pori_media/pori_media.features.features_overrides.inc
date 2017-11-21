@@ -24,6 +24,7 @@ function pori_media_features_override_default_overrides() {
   $overrides["field_instance.scald_atom-video-scald_authors.widget|active"] = 0;
   $overrides["field_instance.scald_atom-video-scald_tags.required"] = 1;
   $overrides["field_instance.scald_atom-video-scald_tags.widget|active"] = 0;
+
   // Exported overrides for: flexslider_optionset
   $overrides["flexslider_optionset.default.export_type"]["DELETED"] = TRUE;
   $overrides["flexslider_optionset.default.type"]["DELETED"] = TRUE;
@@ -45,6 +46,19 @@ function pori_media_features_override_default_overrides() {
 
   // Exported overrides for: openlayers_styles
   $overrides["openlayers_styles.default.disabled"] = FALSE;
+
+  // Exported overrides for: views_view
+  $overrides["views_view.kada_scald_atoms.display|default|display_options|fields|representation"]["DELETED"] = TRUE;
+  $overrides["views_view.kada_scald_atoms.display|default|display_options|fields|scald_thumbnail"] = array(
+    'id' => 'scald_thumbnail',
+    'table' => 'field_data_scald_thumbnail',
+    'field' => 'scald_thumbnail',
+    'click_sort_column' => 'fid',
+    'settings' => array(
+      'image_style' => 'large',
+      'image_link' => 'file',
+    ),
+  );
 
  return $overrides;
 }
