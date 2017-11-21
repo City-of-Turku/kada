@@ -151,3 +151,16 @@ function kadaprofile_update_7110()
 
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Disables Pori pages feature
+ */
+function kadaprofile_update_7111() {
+  $modules = array('pori_pages');
+  $enable_dependencies = TRUE;
+
+  module_disable($modules, $enable_dependencies);
+  drupal_uninstall_modules($modules);
+}
