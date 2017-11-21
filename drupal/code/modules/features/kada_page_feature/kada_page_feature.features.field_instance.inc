@@ -146,14 +146,9 @@ function kada_page_feature_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => 0,
-          'use_content_language' => 1,
-          'view_mode' => 'teaser',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 6,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -309,10 +304,9 @@ function kada_page_feature_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -739,7 +733,7 @@ function kada_page_feature_field_default_field_instances() {
           'view_mode' => 'only_title',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'only_title' => array(
         'label' => 'hidden',
@@ -954,7 +948,7 @@ function kada_page_feature_field_default_field_instances() {
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 8,
+        'weight' => 6,
       ),
       'only_title' => array(
         'label' => 'hidden',

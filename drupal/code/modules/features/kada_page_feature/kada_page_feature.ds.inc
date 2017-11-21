@@ -18,7 +18,7 @@ function kada_page_feature_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
     'places_for_services' => array(
-      'weight' => '7',
+      'weight' => '5',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -115,13 +115,11 @@ function kada_page_feature_ds_layout_settings_info() {
       ),
       'sidebar' => array(
         3 => 'field_keywords',
-        4 => 'field_info_box_bottom',
-        5 => 'field_subpage',
-        6 => 'field_contact_information',
-        7 => 'places_for_services',
+        4 => 'field_subpage',
+        5 => 'places_for_services',
       ),
       'after_content' => array(
-        8 => 'field_topic',
+        6 => 'field_topic',
       ),
     ),
     'fields' => array(
@@ -129,9 +127,7 @@ function kada_page_feature_ds_layout_settings_info() {
       'field_lead_paragraph' => 'main_content',
       'body' => 'main_content',
       'field_keywords' => 'sidebar',
-      'field_info_box_bottom' => 'sidebar',
       'field_subpage' => 'sidebar',
-      'field_contact_information' => 'sidebar',
       'places_for_services' => 'sidebar',
       'field_topic' => 'after_content',
     ),
