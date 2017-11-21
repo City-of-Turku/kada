@@ -5,8 +5,6 @@
 }
 
 .quicktabs-wrapper {
-  margin: 40px 0;
-
   .quicktabs-tabs {
     margin: 10px 1%;
     padding-left: 0;
@@ -53,20 +51,14 @@
   }
 }
 
-.quicktabs-tabpage  {
-  .liftup-box-list {
-    margin: 0;
-  }
-}
-
-.quicktabs-hide {
-  // quicktabs are hidden this way because of a bug with maps
-  position: absolute;
-  top: -10000px;
-  display: block;
-  left: 0;
-  right: 0;
-}
+// This causes horizontal scrollbar. If this fix is still required we need to figure out how to tackle the issue.
+//.quicktabs-hide {
+//  // quicktabs are hidden this way because of a bug with maps
+//  position: absolute;
+//  top: -10000px;
+//  left: 0;
+//  right: 0;
+//}
 
 // News archive link
 .quicktabs-news-archive-link {

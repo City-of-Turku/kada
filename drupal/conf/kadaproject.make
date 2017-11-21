@@ -465,6 +465,8 @@ projects[publishcontent][subdir] = contrib
 
 projects[quicktabs][version] = 3.8
 projects[quicktabs][subdir] = contrib
+; Adds class for quicktabs tabs when rendered with ui-tabs
+projects[quicktabs][patch][] = "https://www.drupal.org/files/issues/quicktabs-tab-title-class-quicktab-ui-tabs-accordion-2640174-9.patch"
 
 projects[radioactivity][version] = 2.10
 projects[radioactivity][subdir] = contrib
