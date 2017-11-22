@@ -13,6 +13,7 @@ test/composer.lock
 test/vendor
 test/bin
 VERSION
+tests/_output/*
 
 # Ignore paths that contain user-generated content.
 
