@@ -5,6 +5,7 @@ drupal/web
 drupal/builds
 drupal/.make_cache
 drupal/drupal.sqlite
+drupal/web_bak_*
 .idea
 ansible
 local.*
