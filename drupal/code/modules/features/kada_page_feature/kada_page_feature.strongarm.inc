@@ -183,32 +183,35 @@ function kada_page_feature_strongarm() {
       'event_mosaic_item' => array(
         'custom_settings' => FALSE,
       ),
+      'event_search_result' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '7',
+          'weight' => '11',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '9',
         ),
         'redirect' => array(
-          'weight' => '8',
+          'weight' => '10',
         ),
         'language' => array(
-          'weight' => '5',
+          'weight' => '10',
         ),
         'domain' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
         'metatags' => array(
-          'weight' => '9',
+          'weight' => '8',
         ),
       ),
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '36',
+            'weight' => '35',
             'visible' => FALSE,
           ),
           'teaser' => array(

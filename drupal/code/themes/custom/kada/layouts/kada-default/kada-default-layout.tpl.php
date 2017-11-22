@@ -99,7 +99,6 @@
     <a id="main-content" tabindex="-1"></a>
     <div class="l-breadcrumb">
       <div class="container l-breadcrumb__container">
-        <?php print render($page['highlighted']); ?>
         <?php if($breadcrumb): ?>
           <?php print $breadcrumb; ?>
         <?php endif; ?>

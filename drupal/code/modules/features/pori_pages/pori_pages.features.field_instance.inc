@@ -10,6 +10,61 @@
 function pori_pages_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-page-field_file_attachment'.
+  $field_instances['node-page-field_file_attachment'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'atom_reference',
+        'settings' => array(
+          'link' => 0,
+          'override' => 0,
+        ),
+        'type' => 'title',
+        'weight' => 36,
+      ),
+      'only_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_file_attachment',
+    'label' => 'File attachment',
+    'required' => 0,
+    'settings' => array(
+      'allow_override' => 0,
+      'entity_translation_sync' => FALSE,
+      'referencable_types' => array(
+        'file' => 'file',
+        'image' => 0,
+        'video' => 0,
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'atom_reference',
+      'settings' => array(
+        'context' => 'sdl_editor_representation',
+      ),
+      'type' => 'atom_reference_textfield',
+      'weight' => 17,
+    ),
+  );
+
   // Exported field_instance: 'node-page-field_lead_paragraph'.
   $field_instances['node-page-field_lead_paragraph'] = array(
     'bundle' => 'page',
@@ -19,10 +74,9 @@ function pori_pages_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 24,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -94,6 +148,7 @@ function pori_pages_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('File attachment');
   t('Lead paragraph');
 
   return $field_instances;

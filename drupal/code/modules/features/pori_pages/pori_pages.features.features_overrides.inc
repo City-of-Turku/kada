@@ -17,8 +17,54 @@ function pori_pages_features_override_default_overrides() {
   $overrides["context.page.reactions|block|blocks|views-kada_pages-top_image"]["DELETED"] = TRUE;
   $overrides["context.page_menus.disabled"] = TRUE;
 
+  // Exported overrides for: ds_field_settings
+  $overrides["ds_field_settings.node|page|default.settings|description_page|weight"] = 5;
+  $overrides["ds_field_settings.node|page|default.settings|duplicate_info_box_bottom|weight"] = 2;
+  $overrides["ds_field_settings.node|page|default.settings|field_contact_information"]["DELETED"] = TRUE;
+  $overrides["ds_field_settings.node|page|default.settings|places_for_services|weight"] = 8;
+
+  // Exported overrides for: ds_layout_settings
+  $overrides["ds_layout_settings.node|page|default.layout"] = 'page_layout';
+  $overrides["ds_layout_settings.node|page|default.settings|fields|body"] = 'main_content';
+  $overrides["ds_layout_settings.node|page|default.settings|fields|description_page"] = 'main_content';
+  $overrides["ds_layout_settings.node|page|default.settings|fields|domain"] = 'main_content';
+  $overrides["ds_layout_settings.node|page|default.settings|fields|duplicate_info_box_bottom"] = 'main_content';
+  $overrides["ds_layout_settings.node|page|default.settings|fields|field_contact_information"] = 'main_content';
+  $overrides["ds_layout_settings.node|page|default.settings|fields|field_district"] = 'main_content';
+  $overrides["ds_layout_settings.node|page|default.settings|fields|field_info_box"]["DELETED"] = TRUE;
+  $overrides["ds_layout_settings.node|page|default.settings|fields|field_info_box_bottom"] = 'main_content';
+  $overrides["ds_layout_settings.node|page|default.settings|fields|field_keywords"] = 'sidebar';
+  $overrides["ds_layout_settings.node|page|default.settings|fields|field_subpage"] = 'main_content';
+  $overrides["ds_layout_settings.node|page|default.settings|fields|field_topic"] = 'main_content';
+  $overrides["ds_layout_settings.node|page|default.settings|fields|places_for_services"] = 'main_content';
+  $overrides["ds_layout_settings.node|page|default.settings|layout_disable_css"] = FALSE;
+  $overrides["ds_layout_settings.node|page|default.settings|regions|ds_content"]["DELETED"] = TRUE;
+  $overrides["ds_layout_settings.node|page|default.settings|regions|main_content"] = array(
+    0 => 'domain',
+    1 => 'field_topic',
+    2 => 'duplicate_info_box_bottom',
+    3 => 'field_contact_information',
+    4 => 'description_page',
+    5 => 'body',
+    6 => 'field_info_box_bottom',
+    7 => 'places_for_services',
+    9 => 'field_district',
+    10 => 'field_subpage',
+  );
+  $overrides["ds_layout_settings.node|page|default.settings|regions|sidebar"] = array(
+    8 => 'field_keywords',
+  );
+  $overrides["ds_layout_settings.node|page|default.settings|wrappers|ds_content"]["DELETED"] = TRUE;
+  $overrides["ds_layout_settings.node|page|default.settings|wrappers|main_content"] = 'div';
+  $overrides["ds_layout_settings.node|page|default.settings|wrappers|sidebar"] = 'div';
+
+  // Exported overrides for: field_group
+  $overrides["field_group.group_content|node|page|form.group_content|node|page|form"]["DELETED"] = TRUE;
+
   // Exported overrides for: field_instance
   $overrides["field_instance.node-page-field_info_box.node-page-field_info_box"]["DELETED"] = TRUE;
+  $overrides["field_instance.node-page-field_keywords.display|default|label"] = 'hidden';
+  $overrides["field_instance.node-page-field_main_image.display|default|weight"] = 29;
   $overrides["field_instance.node-page-field_main_image.label"] = 'Liftup image';
   $overrides["field_instance.node-page-field_main_image.settings|allow_override"] = 0;
 
