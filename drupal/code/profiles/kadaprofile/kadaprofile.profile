@@ -164,3 +164,16 @@ function kadaprofile_update_7111() {
   module_disable($modules, $enable_dependencies);
   drupal_uninstall_modules($modules);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Disables pori domains
+ */
+function kadaprofile_update_7112() {
+  $modules = array('pori_media');
+  $enable_dependencies = TRUE;
+
+  module_disable($modules, $enable_dependencies);
+  drupal_uninstall_modules($modules);
+}
