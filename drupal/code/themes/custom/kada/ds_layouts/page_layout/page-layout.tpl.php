@@ -23,8 +23,10 @@ if (!empty($sidebar || $additional_information)) {
   <<?php print $sidebar_wrapper ?> class="page__sidebar <?php print $sidebar_classes; ?>">
     <?php print $sidebar; ?>
     <?php if (!empty($additional_information)): ?>
-      <h3><?php print t('Additional information'); ?></h3>
-      <?php print $additional_information ?>
+      <div class="page__additional-information">
+        <h3 class="page__additional-information__header"><?php print t('Additional information') . ':'; ?></h3>
+        <?php print $additional_information ?>
+      </div>
     <?php endif; ?>
   </<?php print $sidebar_wrapper ?>>
 <?php endif; ?>
