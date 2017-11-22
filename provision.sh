@@ -198,6 +198,11 @@ if [ ! $SKIP_REQUIREMENTS ] ; then
   fi
 fi
 
+# Install ansible-galaxy roles
+if [ -f $ROOT/conf/requirements.yml ]; then
+  ansible-galaxy install -r $ROOT/conf/requirements.yml
+fi
+
 # Setup&Use WunderSecrets if the additional config file exists
 if [ -f $wundersecrets_path/ansible.yml ]; then
   WUNDER_SECRETS="--extra-vars=@$wundersecrets_path/ansible.yml"
@@ -212,10 +217,9 @@ fi
 
 if [ $FIRST_RUN ]; then
   if [ -z $MYSQL_ROOT_PASS ]; then
-    echo "Mysql root password missing. You need to provide password using -m flag."
-    exit 1
+    ansible-playbook $EXTRA_OPTS $PLAYBOOKPATH $WUNDER_SECRETS -c ssh -i $INVENTORY -e "@$EXTRA_VARS"  -e "first_run=True" --vault-password-file=$VAULT_FILE $ANSIBLE_TAGS
   else
-    ansible-playbook $EXTRA_OPTS $PLAYBOOKPATH $WUNDER_SECRETS -c ssh -i $INVENTORY -e "@$EXTRA_VARS"  -e "change_db_root_password=True mariadb_root_password=$MYSQL_ROOT_PASS first_run=True" --ask-pass --vault-password-file=$VAULT_FILE $ANSIBLE_TAGS
+    ansible-playbook $EXTRA_OPTS $PLAYBOOKPATH $WUNDER_SECRETS -c ssh -i $INVENTORY -e "@$EXTRA_VARS"  -e "change_db_root_password=True mariadb_root_password=$MYSQL_ROOT_PASS first_run=True" --vault-password-file=$VAULT_FILE $ANSIBLE_TAGS
   fi
 else
   if [ $ANSIBLE_TAGS ]; then
