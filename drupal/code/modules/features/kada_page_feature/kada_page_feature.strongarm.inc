@@ -193,25 +193,25 @@ function kada_page_feature_strongarm() {
           'weight' => '11',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '10',
         ),
         'redirect' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'language' => array(
           'weight' => '10',
         ),
         'domain' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
         'metatags' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
       ),
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '35',
+            'weight' => '37',
             'visible' => FALSE,
           ),
           'teaser' => array(

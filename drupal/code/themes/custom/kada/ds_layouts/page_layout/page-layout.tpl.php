@@ -5,7 +5,7 @@
  * Page layout template
  */
 
-if (!empty($sidebar)) {
+if (!empty($sidebar || $additional_information)) {
     $additional_classes="page--has-sidebar";
 }
 ?>
@@ -19,10 +19,16 @@ if (!empty($sidebar)) {
     <?php print $main_content; ?>
 </<?php print $main_content_wrapper ?>>
 
-<?php if (!empty($sidebar)): ?>
-    <<?php print $sidebar_wrapper ?> class="page__sidebar <?php print $sidebar_classes; ?>">
-        <?php print $sidebar; ?>
-    </<?php print $sidebar_wrapper ?>>
+<?php if (!empty($sidebar || $additional_information)): ?>
+  <<?php print $sidebar_wrapper ?> class="page__sidebar <?php print $sidebar_classes; ?>">
+    <?php print $sidebar; ?>
+    <?php if (!empty($additional_information)): ?>
+      <div class="page__additional-information">
+        <h3 class="page__additional-information__header"><?php print t('Additional information') . ':'; ?></h3>
+        <?php print $additional_information ?>
+      </div>
+    <?php endif; ?>
+  </<?php print $sidebar_wrapper ?>>
 <?php endif; ?>
 
 </<?php print $layout_wrapper ?>>
