@@ -35,3 +35,25 @@ function pori_attraction_feature_update_7004(&$sandbox) {
     field_delete_instance($instance);
   }
 }
+
+/**
+ * Add terms to attraction category vocabulary.
+ */
+function pori_attraction_feature_update_7005(&$sandbox) {
+  $voc = taxonomy_vocabulary_machine_name_load('attraction_category');
+  $term_labels = array(
+    'See & Experience',
+    'Eat & Drink',
+    'Accommodation',
+    'Events',
+    'For Groups',
+    'Shop Online',
+  );
+
+  foreach ($term_labels as $label) {
+    $term = new stdClass();
+    $term->name = $label;
+    $term->vid = $voc->vid;
+    taxonomy_term_save($term);
+  }
+}
