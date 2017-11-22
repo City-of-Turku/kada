@@ -12,18 +12,31 @@
   flex-wrap: wrap;
   margin-top: 2.5rem;
 
+  @media screen and (min-width: $mobile-landscape-wide) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: $tablet-landscape) {
+    width: 33.333333%;
+  }
+
+  @media screen and (min-width: $container) {
+    width: 25%;
+  }
+
   .field--name-post-date {
+    color: $gray;
     font-family: $bergen-mono;
     font-size: .875rem;
     margin-bottom: 1rem;
-    text-align: right;
 
     @media screen and (min-width: $tablet-portrait) {
       font-size: 1rem;
     }
   }
 
-  .field--name-title {
+  .field--name-title,
+  .field--name-field-link-to-content {
     @include font-size-responsive(1.125rem);
     margin-bottom: .5rem;
     font-weight: bold;
@@ -39,27 +52,32 @@
     }
   }
 
-  @media screen and (min-width: $mobile-landscape-wide) {
-    width: 50%;
+  .field--name-field-image {
+    line-height: 0;
+    margin: 0;
   }
 
-  @media screen and (min-width: $tablet-landscape) {
-    width: 33.333333%;
-  }
+  .flag-wrapper a {
+    background-color: $secondary-color;
+    color: $white;
+    display: inline-block;
+    font-size: 1rem;
+    margin-top: 1.875rem;
+    padding: .313rem 1.25rem;
+    text-transform: uppercase;
 
-  @media screen and (min-width: $container) {
-    width: 25%;
+    &:hover,
+    &:focus {
+      background-color: $primary-color;
+    }
   }
 }
 
 .liftup-box__inner {
-  border: 1px solid $default-color-lighter;
-  padding: 1.25rem;
   width: 100%;
 }
 
 .liftup-box__header {
-  margin-bottom: 1rem;
 }
 
 .liftup-box-list  {
@@ -201,11 +219,6 @@
     }
   }
 
-  .field--name-post-date {
-    color: $gray;
-    text-align: left;
-  }
-
   .field--name-field-visible-title h2 {
     @media screen and (min-width: $tablet-landscape) {
       margin-bottom: 1.25rem;
@@ -302,5 +315,144 @@
 
   @media screen and (min-width: $mobile-landscape-wide) {
     margin: 0;
+  }
+}
+
+.liftup-box-list--current {
+  @media screen and (min-width: $mobile-landscape-wide) {
+    margin: 0 -.5%;
+  }
+
+  .liftup-box-list__content {
+    display: block;
+    margin: 0;
+    width: 100%;
+  }
+
+  .liftup-box {
+    margin-top: 3rem;
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      margin-top: 2rem;
+      padding: .5%;
+      width: 49.999%;
+    }
+
+    @media screen and (min-width: $tablet-landscape) {
+      width: 33.222%;
+    }
+
+    @media screen and (min-width: $container) {
+      width: 24.999%;
+    }
+
+    &:first-child {
+      margin-top: 0;
+
+      @media screen and (min-width: $mobile-landscape-wide) {
+        margin-top: 2rem;
+      }
+    }
+
+    .field--name-post-date {
+      margin: 1.25rem 0 .313rem;
+
+      @media screen and (min-width: $tablet-landscape) {
+        margin-top: 2rem;
+      }
+    }
+  }
+
+  .liftup-box__header {
+    border-top: .938rem solid $primary-color;
+  }
+
+  .field--name-title,
+  .field--name-field-link-to-content {
+    @include font-size-responsive($font-size-heading-4);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+
+    a {
+      color: $primary-color;
+
+      &:hover,
+      &:focus {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .field--name-field-quote {
+    margin: .625rem 0 0;
+    padding: .625rem 0 .625rem 3.5rem;
+    position: relative;
+
+    &:before {
+      color: $primary-color;
+      content: "”";
+      font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+      font-size: 6.25rem;
+      font-weight: bold;
+      left: -.375rem;
+      line-height: 6.25rem;
+      position: absolute;
+      top: 0;
+    }
+
+    a {
+      @include font-size-responsive($font-size-heading-4);
+      color: $primary-color;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+  }
+
+  .field--name-field-blog {
+    margin-left: 3.5rem;
+
+    a {
+      color: $gray;
+    }
+  }
+}
+
+
+.liftup-box--social {
+  .field--name-field-image-url,
+  .field--name-field-share-caption,
+  .field--name-field-share-description {
+    display: none; // Not quite sure what these are used for but hiding them for now.
+  }
+}
+
+
+.liftup-box--social.node--facebook {
+  .liftup-box__header {
+    border-color: $facebook-color;
+  }
+}
+
+.liftup-box--social.node--instagram {
+  .liftup-box__header {
+    border-color: $instagram-color;
+  }
+}
+
+.liftup-box--social.node--linkedin {
+  .liftup-box__header {
+    border-color: $linkedin-color;
+  }
+}
+
+.liftup-box--social.node--twitter {
+  .liftup-box__header {
+    border-color: $twitter-color;
+  }
+}
+
+.liftup-box--social.node--youtube {
+  .liftup-box__header {
+    border-color: $youtube-color;
   }
 }

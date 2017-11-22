@@ -382,7 +382,7 @@ function kada_ds_pre_render_alter(&$layout_render_array, $context, &$variables) 
 
     if ($variables['type'] == 'social_media_update') {
       $hide_link = FALSE;
-
+      
       // Add SoMe type to node classes
       if (!empty($variables['field_some_type']['und'][0]['value'])) {
         $variables['classes_array'][] = 'node--' . $variables['field_some_type']['und'][0]['value'];

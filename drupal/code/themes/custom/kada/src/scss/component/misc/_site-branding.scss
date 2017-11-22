@@ -19,11 +19,16 @@
 
 .site-branding--header__link {
   background: url('../../logo_minimal.svg') no-repeat 0 0 transparent;
-  height: 2.188rem;
-  width: 2.375rem;
+  height: 1.75rem;
+  width: 1.875rem;
 
   @media screen and (min-width: $tablet-portrait-narrow) {
     background-image: url('../../logo_full.svg');
+    height: 1.75rem;
+    width: 6.625rem;
+  }
+
+  @media screen and (min-width: $mobile-menu-breakpoint) {
     height: 2.5rem;
     width: 9.875rem;
   }
@@ -40,9 +45,9 @@
   }
 
   .site-branding__name {
+    @include responsive-whitespace;
     height: auto;
     line-height: 0;
-    padding: 0 1.25rem;
 
     @media screen and (min-width: $mobile-footer-breakpoint) {
       padding: 0;
