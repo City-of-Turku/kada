@@ -13,6 +13,34 @@ function kada_page_feature_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_additional_information|node|page|form';
+  $field_group->group_name = 'group_additional_information';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'page';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Additional information',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_file_attachment',
+      1 => 'field_additional_info_link',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-additional-information field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_additional_information|node|page|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_content|node|page|form';
   $field_group->group_name = 'group_content';
   $field_group->entity_type = 'node';
@@ -56,7 +84,7 @@ function kada_page_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Recommended links',
-    'weight' => '5',
+    'weight' => '6',
     'children' => array(
       0 => 'field_link_to_content_multiple',
     ),
@@ -83,7 +111,7 @@ function kada_page_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Section',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'og_group_ref',
     ),
@@ -100,7 +128,7 @@ function kada_page_feature_field_group_info() {
   $field_groups['group_section|node|page|form'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_subpages|node|page|form';
   $field_group->group_name = 'group_subpages';
@@ -165,13 +193,14 @@ function kada_page_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Unused',
-    'weight' => '6',
+    'weight' => '7',
     'children' => array(
       0 => 'field_contact_information',
       1 => 'field_district',
       2 => 'field_info_box_bottom',
       3 => 'field_related_content',
-      4 => 'field_tweet_embed',
+      4 => 'field_subpage',
+      5 => 'field_tweet_embed',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -196,7 +225,7 @@ function kada_page_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Widgets',
-    'weight' => '4',
+    'weight' => '5',
     'children' => array(
       0 => 'field_feed_tabs',
       1 => 'field_theme_main_page',
@@ -216,6 +245,7 @@ function kada_page_feature_field_group_info() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Additional information');
   t('Content');
   t('Recommended links');
   t('Section');
