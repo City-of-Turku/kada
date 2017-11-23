@@ -11,7 +11,13 @@ matrix:
   allow_failures:
   - php: nightly
 
+cache:
+  directories:
+  - $HOME/.composer/cache
+
 before_install:
+  - composer self-update
+
   # Install Drush.
   - composer global require drush/drush:~8.1.5
   # DEBUG: Confirm Drush is installed.
