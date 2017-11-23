@@ -10,21 +10,13 @@
 function pori_attraction_feature_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_ac_ad_zoneid'
+  // Exported field_base: 'field_ac_ad_zoneid'.
   $field_bases['field_ac_ad_zoneid'] = array(
     'active' => 1,
     'cardinality' => 4,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_ac_ad_zoneid',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -40,21 +32,13 @@ function pori_attraction_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_attraction_category'
+  // Exported field_base: 'field_attraction_category'.
   $field_bases['field_attraction_category'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_attraction_category',
-    'foreign keys' => array(
-      'tid' => array(
-        'columns' => array(
-          'tid' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -76,21 +60,13 @@ function pori_attraction_feature_field_default_field_bases() {
     'type' => 'taxonomy_term_reference',
   );
 
-  // Exported field_base: 'field_attraction_info_box'
+  // Exported field_base: 'field_attraction_info_box'.
   $field_bases['field_attraction_info_box'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_attraction_info_box',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -105,21 +81,13 @@ function pori_attraction_feature_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_attraction_related_content'
+  // Exported field_base: 'field_attraction_related_content'.
   $field_bases['field_attraction_related_content'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_attraction_related_content',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',

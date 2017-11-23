@@ -10,7 +10,7 @@
 function pori_attraction_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-attraction_card-field_ac_ad_zoneid'
+  // Exported field_instance: 'node-attraction_card-field_ac_ad_zoneid'.
   $field_instances['node-attraction_card-field_ac_ad_zoneid'] = array(
     'bundle' => 'attraction_card',
     'default_value' => NULL,
@@ -116,7 +116,7 @@ function pori_attraction_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-field_address_visiting'
+  // Exported field_instance: 'node-attraction_card-field_address_visiting'.
   $field_instances['node-attraction_card-field_address_visiting'] = array(
     'bundle' => 'attraction_card',
     'default_value' => NULL,
@@ -193,7 +193,7 @@ function pori_attraction_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-field_attraction_category'
+  // Exported field_instance: 'node-attraction_card-field_attraction_category'.
   $field_instances['node-attraction_card-field_attraction_category'] = array(
     'bundle' => 'attraction_card',
     'default_value' => NULL,
@@ -256,7 +256,7 @@ function pori_attraction_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-field_attraction_info_box'
+  // Exported field_instance: 'node-attraction_card-field_attraction_info_box'.
   $field_instances['node-attraction_card-field_attraction_info_box'] = array(
     'bundle' => 'attraction_card',
     'default_value' => NULL,
@@ -365,120 +365,8 @@ function pori_attraction_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-field_attraction_product_desc'
-  $field_instances['node-attraction_card-field_attraction_product_desc'] = array(
-    'bundle' => 'attraction_card',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'attraction_card_mosaic_item' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'default' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_plain',
-        'weight' => 36,
-      ),
-      'full' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 7,
-      ),
-      'only_title' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'search_result' => array(
-        'label' => 'hidden',
-        'module' => 'text',
-        'settings' => array(
-          'trim_length' => 800,
-        ),
-        'type' => 'text_trimmed',
-        'weight' => 4,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_attraction_product_desc',
-    'label' => 'Product package description',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'ds_code' => 'ds_code',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-          'wysiwyg' => 'wysiwyg',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'ds_code' => array(
-              'weight' => 12,
-            ),
-            'filtered_html' => array(
-              'weight' => 0,
-            ),
-            'full_html' => array(
-              'weight' => 0,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'wysiwyg' => array(
-              'weight' => 0,
-            ),
-          ),
-        ),
-      ),
-      'context' => 'title',
-      'context_default' => 'content_full',
-      'dnd_enabled' => 1,
-      'entity_translation_sync' => FALSE,
-      'linkit' => array(
-        'button_text' => 'Etsi',
-        'enable' => 0,
-        'profile' => '',
-      ),
-      'mee_enabled' => 1,
-      'text_processing' => 1,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => '',
-        'maxlength_js_enforce' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'maxlength_js_truncate_html' => 0,
-        'rows' => 5,
-      ),
-      'type' => 'text_textarea',
-      'weight' => 25,
-    ),
-  );
-
-  // Exported field_instance: 'node-attraction_card-field_attraction_related_content'
+  // Exported field_instance:
+  // 'node-attraction_card-field_attraction_related_content'.
   $field_instances['node-attraction_card-field_attraction_related_content'] = array(
     'bundle' => 'attraction_card',
     'default_value' => NULL,
@@ -550,7 +438,7 @@ function pori_attraction_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-field_description'
+  // Exported field_instance: 'node-attraction_card-field_description'.
   $field_instances['node-attraction_card-field_description'] = array(
     'bundle' => 'attraction_card',
     'default_value' => NULL,
@@ -659,7 +547,7 @@ function pori_attraction_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-field_image'
+  // Exported field_instance: 'node-attraction_card-field_image'.
   $field_instances['node-attraction_card-field_image'] = array(
     'bundle' => 'attraction_card',
     'deleted' => 0,
@@ -748,7 +636,7 @@ function pori_attraction_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-field_keywords_et'
+  // Exported field_instance: 'node-attraction_card-field_keywords_et'.
   $field_instances['node-attraction_card-field_keywords_et'] = array(
     'bundle' => 'attraction_card',
     'default_value' => NULL,
@@ -816,7 +704,7 @@ function pori_attraction_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-field_lead_paragraph_et'
+  // Exported field_instance: 'node-attraction_card-field_lead_paragraph_et'.
   $field_instances['node-attraction_card-field_lead_paragraph_et'] = array(
     'bundle' => 'attraction_card',
     'default_value' => NULL,
@@ -926,7 +814,7 @@ function pori_attraction_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-field_location'
+  // Exported field_instance: 'node-attraction_card-field_location'.
   $field_instances['node-attraction_card-field_location'] = array(
     'bundle' => 'attraction_card',
     'default_value' => NULL,
@@ -1014,7 +902,7 @@ You can place multiple single point selections.',
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-field_location_name'
+  // Exported field_instance: 'node-attraction_card-field_location_name'.
   $field_instances['node-attraction_card-field_location_name'] = array(
     'bundle' => 'attraction_card',
     'default_value' => NULL,
@@ -1120,7 +1008,7 @@ You can place multiple single point selections.',
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-field_phone'
+  // Exported field_instance: 'node-attraction_card-field_phone'.
   $field_instances['node-attraction_card-field_phone'] = array(
     'bundle' => 'attraction_card',
     'default_value' => NULL,
@@ -1226,84 +1114,7 @@ You can place multiple single point selections.',
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-field_product_liftup'
-  $field_instances['node-attraction_card-field_product_liftup'] = array(
-    'bundle' => 'attraction_card',
-    'default_value' => NULL,
-    'default_value_function' => '',
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'attraction_card_mosaic_item' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 41,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 35,
-      ),
-      'full' => array(
-        'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => 0,
-          'use_content_language' => 0,
-          'view_mode' => 'product',
-        ),
-        'type' => 'entityreference_entity_view',
-        'weight' => 8,
-      ),
-      'only_title' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'search_result' => array(
-        'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_product_liftup',
-    'label' => 'Product liftup',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'prepopulate' => array(
-          'status' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'entityreference',
-      'settings' => array(
-        'match_operator' => 'CONTAINS',
-        'path' => '',
-        'size' => 60,
-      ),
-      'type' => 'entityreference_autocomplete',
-      'weight' => 31,
-    ),
-  );
-
-  // Exported field_instance: 'node-attraction_card-field_provided_at'
+  // Exported field_instance: 'node-attraction_card-field_provided_at'.
   $field_instances['node-attraction_card-field_provided_at'] = array(
     'bundle' => 'attraction_card',
     'deleted' => 0,
@@ -1377,113 +1188,7 @@ You can place multiple single point selections.',
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-field_social_media_facebook'
-  $field_instances['node-attraction_card-field_social_media_facebook'] = array(
-    'bundle' => 'attraction_card',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Add only Facebook id, ie. for Turun Kaupunki, which full address is facebook.com/<b>turunkaupunki</b>/ use only <b>turunkaupunki</b>',
-    'display' => array(
-      'attraction_card_mosaic_item' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 36,
-      ),
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 28,
-      ),
-      'full' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 31,
-      ),
-      'only_title' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'search_result' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 34,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'ds_extras_field_template' => '',
-    'entity_type' => 'node',
-    'field_name' => 'field_social_media_facebook',
-    'label' => 'Social media - Facebook',
-    'required' => 0,
-    'settings' => array(
-      'better_formats' => array(
-        'allowed_formats' => array(
-          'ds_code' => 'ds_code',
-          'filtered_html' => 'filtered_html',
-          'full_html' => 'full_html',
-          'plain_text' => 'plain_text',
-          'wysiwyg' => 'wysiwyg',
-        ),
-        'allowed_formats_toggle' => 0,
-        'default_order_toggle' => 0,
-        'default_order_wrapper' => array(
-          'formats' => array(
-            'ds_code' => array(
-              'weight' => 12,
-            ),
-            'filtered_html' => array(
-              'weight' => 0,
-            ),
-            'full_html' => array(
-              'weight' => 0,
-            ),
-            'plain_text' => array(
-              'weight' => 10,
-            ),
-            'wysiwyg' => array(
-              'weight' => 0,
-            ),
-          ),
-        ),
-      ),
-      'context' => 'title',
-      'context_default' => 'sdl_editor_representation',
-      'dnd_enabled' => 0,
-      'entity_translation_sync' => FALSE,
-      'linkit' => array(
-        'button_text' => 'Search',
-        'enable' => 0,
-        'profile' => '',
-      ),
-      'mee_enabled' => 0,
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'maxlength_js' => 0,
-        'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => 28,
-    ),
-  );
-
-  // Exported field_instance: 'node-attraction_card-field_target_audience'
+  // Exported field_instance: 'node-attraction_card-field_target_audience'.
   $field_instances['node-attraction_card-field_target_audience'] = array(
     'bundle' => 'attraction_card',
     'default_value' => NULL,
@@ -1545,7 +1250,7 @@ You can place multiple single point selections.',
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-field_tweet_embed'
+  // Exported field_instance: 'node-attraction_card-field_tweet_embed'.
   $field_instances['node-attraction_card-field_tweet_embed'] = array(
     'bundle' => 'attraction_card',
     'default_value' => NULL,
@@ -1672,7 +1377,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-og_group_ref'
+  // Exported field_instance: 'node-attraction_card-og_group_ref'.
   $field_instances['node-attraction_card-og_group_ref'] = array(
     'bundle' => 'attraction_card',
     'default_value' => NULL,
@@ -1750,7 +1455,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-title_field'
+  // Exported field_instance: 'node-attraction_card-title_field'.
   $field_instances['node-attraction_card-title_field'] = array(
     'bundle' => 'attraction_card',
     'default_value' => NULL,
@@ -1883,7 +1588,6 @@ Video: https://monosnap.com/file/5ZftcLwU9jsMZxz72jbh7HryDV7PUq
 <br />
 Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1');
   t('Ad zoneID');
-  t('Add only Facebook id, ie. for Turun Kaupunki, which full address is facebook.com/<b>turunkaupunki</b>/ use only <b>turunkaupunki</b>');
   t('Attraction place');
   t('Category');
   t('Description');
@@ -1896,10 +1600,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1');
   t('Location');
   t('Location name');
   t('Phone');
-  t('Product liftup');
-  t('Product package description');
   t('Related content');
-  t('Social media - Facebook');
   t('Target audience');
   t('This value overrides any values given in section (sivusto) settings in this attraction card.');
   t('Title');

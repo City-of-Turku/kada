@@ -18,7 +18,6 @@ function pori_attraction_feature_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 1,
-      'base_type' => 'taxonomy_vocabulary',
     ),
   );
 }
