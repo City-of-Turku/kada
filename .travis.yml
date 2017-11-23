@@ -13,4 +13,4 @@ matrix:
 
 before_install:
   # Build the application.
-  - ./build.sd new
+  - ./build.sh new
