@@ -12,5 +12,8 @@ matrix:
   - php: nightly
 
 before_install:
+  # Install Drush.
+  - composer global require drush/drush:~8.1.5
+
   # Build the application.
   - ./build.sh new
