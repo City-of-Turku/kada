@@ -14,6 +14,8 @@ matrix:
 before_install:
   # Install Drush.
   - composer global require drush/drush:~8.1.5
+  # DEBUG: Confirm Drush is installed.
+  - drush version
 
   # Build the application.
   - ./build.sh new
