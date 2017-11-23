@@ -41,23 +41,23 @@ function kada_landing_page_feature_context_default_contexts() {
           'region' => 'header',
           'weight' => '-88',
         ),
+        'quicktabs-feed_tabs' => array(
+          'module' => 'quicktabs',
+          'delta' => 'feed_tabs',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+        'kada_export_feature-kada_rss_feed_for_landing_page' => array(
+          'module' => 'kada_export_feature',
+          'delta' => 'kada_rss_feed_for_landing_page',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
         'kada_widget_feature-widget_before_content' => array(
           'module' => 'kada_widget_feature',
           'delta' => 'widget_before_content',
           'region' => 'before_content',
           'weight' => '-10',
-        ),
-        'quicktabs-feed_tabs' => array(
-          'module' => 'quicktabs',
-          'delta' => 'feed_tabs',
-          'region' => 'before_content',
-          'weight' => '-9',
-        ),
-        'kada_export_feature-kada_rss_feed_for_landing_page' => array(
-          'module' => 'kada_export_feature',
-          'delta' => 'kada_rss_feed_for_landing_page',
-          'region' => 'before_content',
-          'weight' => '-8',
         ),
         'views-kada_project_liftups-block' => array(
           'module' => 'views',
