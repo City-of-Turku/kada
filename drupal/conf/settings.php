@@ -63,25 +63,28 @@ switch ($env) {
     case 'production':
       $conf['simple_environment_indicator'] = '#d4000f Production';
       $conf['file_private_path'] = '/var/www/pori.prod.wunder.io/private_files';
-      $conf['file_temporary_path'] = '/var/www/pori.stage.wunder.io/tmp';
+      $conf['file_temporary_path'] = '/var/www/pori.prod.wunder.io/tmp';
     break;
 
     case 'stage':
       $conf['simple_environment_indicator'] = '#e56716 Stage';
       $conf['file_private_path'] = '/var/www/pori.stage.wunder.io/private_files';
       $conf['file_temporary_path'] = '/var/www/pori.stage.wunder.io/tmp';
+      $conf['googleanalytics_account'] = ''; // Make sure the GA isn't enabled in this env
     break;
 
     case 'dev':
       $conf['simple_environment_indicator'] = '#004984 Development';
       $conf['file_private_path'] = '/var/www/pori.dev.wunder.io/private_files';
-      $conf['file_temporary_path'] = '/var/www/pori.stage.wunder.io/tmp';
+      $conf['file_temporary_path'] = '/var/www/pori.dev.wunder.io/tmp';
+      $conf['googleanalytics_account'] = ''; // Make sure the GA isn't enabled in this env
     break;
 
     case 'local':
       $conf['simple_environment_indicator'] = '#88b700 Local';
       $conf['preprocess_css'] = false;
       $conf['preprocess_js'] = false;
+      $conf['googleanalytics_account'] = ''; // Make sure the GA isn't enabled in this env
     break;
 }
 

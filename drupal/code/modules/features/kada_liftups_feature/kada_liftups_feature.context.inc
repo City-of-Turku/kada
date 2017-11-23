@@ -62,14 +62,14 @@ function kada_liftups_feature_context_default_contexts() {
         'quicktabs-feed_tabs' => array(
           'module' => 'quicktabs',
           'delta' => 'feed_tabs',
-          'region' => 'before_content',
-          'weight' => '-9',
+          'region' => 'content',
+          'weight' => '-10',
         ),
         'kada_export_feature-kada_rss_feed_for_theme' => array(
           'module' => 'kada_export_feature',
           'delta' => 'kada_rss_feed_for_theme',
-          'region' => 'before_content',
-          'weight' => '-8',
+          'region' => 'content',
+          'weight' => '-9',
         ),
         'views-kada_project_liftups-block' => array(
           'module' => 'views',
