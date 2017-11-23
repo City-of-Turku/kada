@@ -29,17 +29,6 @@ function kada_preprocess_page(&$variables) {
       }
     }
 
-    if ($node->type == 'landing_page') {
-      $variables['page']['before_content']['title'] = array(
-        '#type' => 'html_tag',
-        '#tag' => 'h1',
-        '#attributes' => array('class' => array('landing-page-title')),
-        '#value' => $node->title,
-        '#weight' => -99,
-      );
-      $variables['page']['before_content']['#sorted'] = FALSE;
-    }
-
     // Set section wrapper if node type matches.
     if ($node->type == 'section') {
       $section_wrapper = $node_wrapper;

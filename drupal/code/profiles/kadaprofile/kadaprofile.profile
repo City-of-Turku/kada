@@ -168,10 +168,22 @@ function kadaprofile_update_7111() {
 /**
  * Implements hook_update().
  *
+ * Disables pori domains
+ */
+function kadaprofile_update_7112() {
+  $modules = array('pori_media');
+  $enable_dependencies = TRUE;
+
+  module_disable($modules, $enable_dependencies);
+  drupal_uninstall_modules($modules);
+}
+
+/**
+ * Implements hook_update().
+ *
  * Enables Google Analytics
  */
-function kadaprofile_update_7112()
-{
+function kadaprofile_update_7113() {
   $modules = array('googleanalytics');
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
