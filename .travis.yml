@@ -21,3 +21,6 @@ before_install:
   - composer global require drush/drush:~8.1.5
 
   - ./build.sh new
+
+script:
+  - echo "There are no tests yet, but the build passed."
