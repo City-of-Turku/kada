@@ -16,12 +16,8 @@ cache:
   - $HOME/.composer/cache
 
 before_install:
-  - composer self-update
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
 
-  # Install Drush.
   - composer global require drush/drush:~8.1.5
-  # DEBUG: Confirm Drush is installed.
-  - drush version
 
-  # Build the application.
   - ./build.sh new
