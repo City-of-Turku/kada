@@ -41,6 +41,13 @@ function pori_attraction_feature_update_7004(&$sandbox) {
  */
 function pori_attraction_feature_update_7005(&$sandbox) {
   $voc = taxonomy_vocabulary_machine_name_load('attraction_category');
+  $current_terms = entity_load('taxonomy_term', FALSE, array('vid' => $voc->vid));
+
+  // Verify that the vocabulary is empty
+  if (!empty($current_terms)) {
+    return;
+  }
+
   $term_labels = array(
     'See & Experience',
     'Eat & Drink',
@@ -50,6 +57,74 @@ function pori_attraction_feature_update_7005(&$sandbox) {
     'Shop Online',
   );
 
+  // Store terms into the vocabulary
+  foreach ($term_labels as $label) {
+    $term = new stdClass();
+    $term->name = $label;
+    $term->vid = $voc->vid;
+    taxonomy_term_save($term);
+  }
+}
+
+/**
+ * Add terms to accessibility category vocabulary.
+ */
+function pori_attraction_feature_update_7006(&$sandbox) {
+  $voc = taxonomy_vocabulary_machine_name_load('accessibility');
+  $current_terms = entity_load('taxonomy_term', FALSE, array('vid' => $voc->vid));
+
+  // Verify that the vocabulary is empty
+  if (!empty($current_terms)) {
+    return;
+  }
+
+  $term_labels = array(
+    'Disabled access',
+    'Induction loop',
+    'No disabled access',
+    'No induction loop',
+    'No visually disabled access',
+    'Visually disabled access',
+  );
+
+  // Store terms into the vocabulary
+  foreach ($term_labels as $label) {
+    $term = new stdClass();
+    $term->name = $label;
+    $term->vid = $voc->vid;
+    taxonomy_term_save($term);
+  }
+}
+
+/**
+ * Add terms to attraction category vocabulary.
+ */
+function pori_attraction_feature_update_7007(&$sandbox) {
+  $voc = taxonomy_vocabulary_machine_name_load('bus_lines');
+  $current_terms = entity_load('taxonomy_term', FALSE, array('vid' => $voc->vid));
+
+  // Verify that the vocabulary is empty
+  if (!empty($current_terms)) {
+    return;
+  }
+
+  $term_labels = array(
+    '1',
+    '2',
+    '3',
+    '3M',
+    '5',
+    '6',
+    '6K',
+    '6Y',
+    '7',
+    '10',
+    '12',
+    '27',
+    '99',
+  );
+
+  // Store terms into the vocabulary
   foreach ($term_labels as $label) {
     $term = new stdClass();
     $term->name = $label;

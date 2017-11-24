@@ -191,7 +191,7 @@ function pori_attraction_feature_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '34',
+            'weight' => '19',
             'visible' => FALSE,
           ),
           'attraction_card_mosaic_item' => array(

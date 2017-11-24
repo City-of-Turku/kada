@@ -22,10 +22,7 @@ function pori_attraction_feature_field_group_info() {
   $field_group->data = array(
     'label' => 'Products',
     'weight' => '45',
-    'children' => array(
-      0 => 'field_product_liftup',
-      1 => 'field_attraction_product_desc',
-    ),
+    'children' => array(),
     'format_type' => 'accordion-item',
     'format_settings' => array(
       'label' => 'Products',
@@ -49,9 +46,7 @@ function pori_attraction_feature_field_group_info() {
   $field_group->data = array(
     'label' => 'Map',
     'weight' => '43',
-    'children' => array(
-      0 => 'map_attraction',
-    ),
+    'children' => array(),
     'format_type' => 'accordion-item',
     'format_settings' => array(
       'label' => 'Map',
@@ -74,7 +69,7 @@ function pori_attraction_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Accordion',
-    'weight' => '36',
+    'weight' => '8',
     'children' => array(
       0 => 'group_accordion_item_2nd',
       1 => 'group_accordion_item',
@@ -132,17 +127,14 @@ function pori_attraction_feature_field_group_info() {
     'label' => 'Content',
     'weight' => '0',
     'children' => array(
-      0 => 'field_image',
-      1 => 'field_social_media_facebook',
+      0 => 'field_attraction_info_box',
+      1 => 'field_attraction_related_content',
       2 => 'field_description',
-      3 => 'field_lead_paragraph_et',
-      4 => 'title_field',
+      3 => 'field_image',
+      4 => 'field_lead_paragraph_et',
       5 => 'field_tweet_embed',
-      6 => 'field_attraction_info_box',
-      7 => 'field_attraction_related_content',
-      8 => 'field_product_liftup',
-      9 => 'field_attraction_product_desc',
-      10 => 'language',
+      6 => 'title_field',
+      7 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -156,6 +148,43 @@ function pori_attraction_feature_field_group_info() {
     ),
   );
   $field_groups['group_content|node|attraction_card|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_infobox|node|attraction_card|full';
+  $field_group->group_name = 'group_infobox';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'attraction_card';
+  $field_group->mode = 'full';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Info',
+    'weight' => '4',
+    'children' => array(
+      0 => 'field_address_visiting',
+      1 => 'field_phone',
+      2 => 'field_website_et',
+      3 => 'field_email',
+      4 => 'field_public_transportation',
+      5 => 'field_accessibility_ref',
+    ),
+    'format_type' => 'html-element',
+    'format_settings' => array(
+      'label' => 'Info',
+      'instance_settings' => array(
+        'id' => '',
+        'classes' => 'contact-info',
+        'element' => 'div',
+        'show_label' => '0',
+        'label_element' => 'div',
+        'attributes' => '',
+        'required_fields' => 1,
+      ),
+      'formatter' => '',
+    ),
+  );
+  $field_groups[''] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -175,6 +204,9 @@ function pori_attraction_feature_field_group_info() {
       2 => 'field_location_name',
       3 => 'field_phone',
       4 => 'field_provided_at',
+      5 => 'field_website_et',
+      6 => 'field_email',
+      7 => 'field_public_transportation',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -229,9 +261,10 @@ function pori_attraction_feature_field_group_info() {
     'label' => 'Taxonomy',
     'weight' => '2',
     'children' => array(
-      0 => 'field_keywords_et',
-      1 => 'field_attraction_category',
+      0 => 'field_attraction_category',
+      1 => 'field_keywords_et',
       2 => 'field_target_audience',
+      3 => 'field_accessibility_ref',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -250,6 +283,7 @@ function pori_attraction_feature_field_group_info() {
   t('Accordion');
   t('Ads');
   t('Content');
+  t('Info');
   t('Location');
   t('Map');
   t('Products');

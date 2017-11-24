@@ -32,6 +32,34 @@ function pori_attraction_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
+  // Exported field_base: 'field_accessibility_ref'.
+  $field_bases['field_accessibility_ref'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_accessibility_ref',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'accessibility',
+          'parent' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
   // Exported field_base: 'field_attraction_category'.
   $field_bases['field_attraction_category'] = array(
     'active' => 1,
@@ -97,7 +125,7 @@ function pori_attraction_feature_field_default_field_bases() {
     'module' => 'entityreference',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'handler' => 'views',
+      'handler' => 'base',
       'handler_settings' => array(
         'behaviors' => array(
           'entityqueue' => array(
@@ -107,16 +135,50 @@ function pori_attraction_feature_field_default_field_bases() {
             'status' => 0,
           ),
         ),
-        'view' => array(
-          'args' => array(),
-          'display_name' => 'entityreference_1',
-          'view_name' => 'driveturku_liftups',
+        'sort' => array(
+          'direction' => 'ASC',
+          'property' => 'title',
+          'type' => 'property',
+        ),
+        'target_bundles' => array(
+          'attraction_card' => 'attraction_card',
+          'landing_page' => 'landing_page',
+          'page' => 'page',
+          'place' => 'place',
         ),
       ),
       'target_type' => 'node',
     ),
     'translatable' => 1,
     'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_public_transportation'.
+  $field_bases['field_public_transportation'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_public_transportation',
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'bus_lines',
+          'parent' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'options_list_callback' => 'i18n_taxonomy_allowed_values',
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
   );
 
   return $field_bases;
