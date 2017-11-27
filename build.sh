@@ -433,6 +433,10 @@ class Maker:
 
 	# Ensure directories exist
 	def _precheck(self):
+		# Most of the time a files directory will already exist, but primarily for initial builds, it won't.
+		if not os.path.isdir('files'):
+			os.mkdir('files')
+
 		# Remove old build it if exists
 		if os.path.isdir(self.temp_build_dir):
 			shutil.rmtree(self.temp_build_dir)
