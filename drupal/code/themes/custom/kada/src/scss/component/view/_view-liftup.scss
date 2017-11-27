@@ -163,6 +163,58 @@
   }
 }
 
+.view-kada-related-content .view-content {
+  //margin: 0 -1rem;
+
+  @media screen and (min-width: $mobile-landscape-wide) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .liftup-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 1.25em 0;
+    width: 100%;
+
+
+    @media screen and (min-width: $tablet-portrait) {
+      margin: 1.25em 1% 1.25rem 0;
+      width: 49.5%;
+    }
+
+    @media screen and (min-width: $container) {
+      margin: 1.875em 1% 1.875rem 0;
+      width: 32.66%;
+    }
+
+    &:nth-child(2n) {
+      @media screen and (min-width: $tablet-portrait) {
+        margin-right: 0;
+      }
+
+      @media screen and (min-width: $container) {
+        margin-right: 1%;
+      }
+    }
+
+    &:nth-child(3n) {
+      @media screen and (min-width: $container) {
+        margin-right: 0;
+      }
+    }
+
+    .liftup-box__content {
+      padding-top: 1rem;
+
+      @media screen and (min-width: $tablet-portrait) {
+        padding-top: 1.2rem;
+      }
+    }
+  }
+}
+
 .liftup-box__caption {
   color: $body-font-color;
   margin-top: 1.150rem;
