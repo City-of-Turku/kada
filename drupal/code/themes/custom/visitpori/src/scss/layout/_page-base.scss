@@ -1,0 +1,27 @@
+.container {
+  @include responsive-whitespace;
+  margin: 0 auto;
+  max-width: $container-width;
+}
+
+.has-two-sidebars {
+  @media screen and (min-width: $tablet-portrait) {
+    .sidebar--first {
+    }
+
+    .section--content {
+    }
+  }
+
+  @media screen and (min-width: $desktop-narrow) {
+    .sidebar--first,
+    .sidebar--second {
+    }
+
+    .sidebar--second {
+    }
+
+    .section--content {
+    }
+  }
+}
