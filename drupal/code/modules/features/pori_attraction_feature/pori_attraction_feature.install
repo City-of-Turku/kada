@@ -1,6 +1,17 @@
 <?php
 
 /**
+ * Implements hook_install().
+ */
+function pori_attraction_feature_install() {
+  $sandbox = NULL;
+  pori_attraction_feature_update_7005($sandbox);
+  pori_attraction_feature_update_7006($sandbox);
+  pori_attraction_feature_update_7007($sandbox);
+}
+
+
+/**
  * Delete body field instance.
  */
 function pori_attraction_feature_update_7001(&$sandbox) {
