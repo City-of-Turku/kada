@@ -1,0 +1,66 @@
+//
+// @file
+// This file includes all variables related to typography
+//
+
+@font-face {
+  font-family: BergenMono;
+  font-style: normal;
+  font-weight: 300;
+  src: url('../../dist/fonts/bergen-mono.otf');
+}
+
+@font-face {
+  font-family: BergenMono;
+  font-style: bold;
+  font-weight: 600;
+  src: url('../../dist/fonts/bergen-mono-bold.otf');
+}
+
+@font-face {
+  font-family: BergenText;
+  font-style: normal;
+  font-weight: 300;
+  src: url('../../dist/fonts/bergen-text.otf');
+}
+
+@font-face {
+  font-family: BergenText;
+  font-style: bold;
+  font-weight: 600;
+  src: url('../../dist/fonts/bergen-text-bold.otf');
+}
+
+// Font sizes
+$rembase: 16;
+$base-font-size: 16px; // Leave at 16px for correct container width
+$base-font-size-rem: 1.125rem;
+$base-line-height: 1.556; // 24px absolute line-height. For relative line-height (1.5), see http://cssleading.com/
+
+// Font families
+$helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$open-sans: 'Open Sans', sans-serif;
+$bergen-mono: 'BergenMono', "Lucida Console", Monaco, monospace;
+$bergen-text: 'BergenText', Helvetica, Arial, sans-serif;
+
+$text-font-family: $bergen-text;
+$heading-font-family: $bergen-mono;
+$navigation-first-level-family: $bergen-mono;
+$navigation-second-level-family: $bergen-mono;
+$navigation-third-level-family: $bergen-text;
+$navigation-e-service-family: $bergen-text;
+$navigation-top-family: $bergen-mono;
+
+$font-size-heading-1: 3.75rem;
+$font-size-heading-2: 2.25rem;
+$font-size-heading-3: 1.5rem;
+$font-size-heading-4: 1.5rem;
+$font-size-heading-5: 1.125rem;
+
+$font-size-heading-intro: 2.25rem;
+$font-size-intro-text: 1.25rem;
+
+// Vertical Rythm
+$rhythm-unit: 'rem';
+$rem-with-px-fallback: false;
+$round-to-nearest-half-line: true;
