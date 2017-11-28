@@ -73,7 +73,7 @@ function kada_news_feature_ds_field_settings_info() {
       'format' => 'ds_post_date_kada_date_only',
     ),
     'service_links_displays_group' => array(
-      'weight' => '7',
+      'weight' => '8',
       'label' => 'hidden',
       'format' => 'sld_group_text',
     ),
@@ -214,7 +214,7 @@ function kada_news_feature_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'teaser';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '2',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -233,7 +233,7 @@ function kada_news_feature_ds_field_settings_info() {
       ),
     ),
     'post_date' => array(
-      'weight' => '3',
+      'weight' => '2',
       'label' => 'hidden',
       'format' => 'ds_post_date_kada_date_only',
       'formatter_settings' => array(
@@ -242,45 +242,6 @@ function kada_news_feature_ds_field_settings_info() {
           'fi' => TRUE,
           'fi-el' => 'div',
           'fi-cl' => 'liftup-box__date',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
-      ),
-    ),
-    'field_content_image' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'liftup-box__image',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
-      ),
-    ),
-    'field_lead_paragraph_long_text' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'p',
-          'fi-cl' => '',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-        ),
-      ),
-    ),
-    'field_vignette' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'liftup-box__caption',
           'fi-at' => '',
           'fi-def-at' => FALSE,
           'fi-odd-even' => FALSE,
@@ -382,35 +343,40 @@ function kada_news_feature_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'news_item';
   $ds_layout->view_mode = 'full';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'page_layout';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
+      'main_content' => array(
         0 => 'post_date',
         1 => 'domain',
         2 => 'field_lead_paragraph_long_text',
         3 => 'field_content_image',
         4 => 'field_info_box',
         5 => 'body',
-        6 => 'service_links_displays_group',
+        6 => 'field_district',
+      ),
+      'sidebar' => array(
         7 => 'field_keywords',
-        8 => 'field_district',
+        8 => 'service_links_displays_group',
       ),
     ),
     'fields' => array(
-      'post_date' => 'ds_content',
-      'domain' => 'ds_content',
-      'field_lead_paragraph_long_text' => 'ds_content',
-      'field_content_image' => 'ds_content',
-      'field_info_box' => 'ds_content',
-      'body' => 'ds_content',
-      'service_links_displays_group' => 'ds_content',
-      'field_keywords' => 'ds_content',
-      'field_district' => 'ds_content',
+      'post_date' => 'main_content',
+      'domain' => 'main_content',
+      'field_lead_paragraph_long_text' => 'main_content',
+      'field_content_image' => 'main_content',
+      'field_info_box' => 'main_content',
+      'body' => 'main_content',
+      'field_district' => 'main_content',
+      'field_keywords' => 'sidebar',
+      'service_links_displays_group' => 'sidebar',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'main_content' => 'div',
+      'sidebar' => 'div',
+      'additional_information' => 'div',
+      'after_content' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
@@ -548,17 +514,15 @@ function kada_news_feature_ds_layout_settings_info() {
     'regions' => array(
       'header' => array(
         0 => 'field_content_image',
-        1 => 'field_vignette',
       ),
       'main' => array(
-        2 => 'title',
-        3 => 'post_date',
-        4 => 'field_lead_paragraph_long_text',
+        1 => 'title',
+        2 => 'post_date',
+        3 => 'field_lead_paragraph_long_text',
       ),
     ),
     'fields' => array(
       'field_content_image' => 'header',
-      'field_vignette' => 'header',
       'title' => 'main',
       'post_date' => 'main',
       'field_lead_paragraph_long_text' => 'main',
@@ -573,6 +537,7 @@ function kada_news_feature_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|news_item|teaser'] = $ds_layout;
 

@@ -1,0 +1,10 @@
+.block--kada-news-feature-news-archive-link {
+  padding-bottom: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $inner-container-width;
+
+  @media (min-width: $tablet-portrait) {
+    padding-bottom: 1.25rem;
+  }
+}

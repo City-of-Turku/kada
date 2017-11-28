@@ -61,17 +61,17 @@ function kada_news_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'kada_news_feature-news_archive_link' => array(
-          'module' => 'kada_news_feature',
-          'delta' => 'news_archive_link',
-          'region' => 'header',
-          'weight' => '-10',
-        ),
         'views-kada_news-top_image' => array(
           'module' => 'views',
           'delta' => 'kada_news-top_image',
           'region' => 'header',
-          'weight' => '-9',
+          'weight' => '-99',
+        ),
+        'kada_news_feature-news_archive_link' => array(
+          'module' => 'kada_news_feature',
+          'delta' => 'news_archive_link',
+          'region' => 'help',
+          'weight' => '-10',
         ),
         'views-8800832114b919bcfa2b166f3ecc0aeb' => array(
           'module' => 'views',
