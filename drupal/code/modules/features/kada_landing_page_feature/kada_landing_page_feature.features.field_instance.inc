@@ -10,7 +10,7 @@
 function kada_landing_page_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_landing_page-comment_body'
+  // Exported field_instance: 'comment-comment_node_landing_page-comment_body'.
   $field_instances['comment-comment_node_landing_page-comment_body'] = array(
     'bundle' => 'comment_node_landing_page',
     'default_value' => NULL,
@@ -47,7 +47,7 @@ function kada_landing_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_district'
+  // Exported field_instance: 'node-landing_page-field_district'.
   $field_instances['node-landing_page-field_district'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,
@@ -85,7 +85,7 @@ function kada_landing_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_feed_tabs'
+  // Exported field_instance: 'node-landing_page-field_feed_tabs'.
   $field_instances['node-landing_page-field_feed_tabs'] = array(
     'bundle' => 'landing_page',
     'default_value' => array(
@@ -127,7 +127,7 @@ function kada_landing_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_keywords'
+  // Exported field_instance: 'node-landing_page-field_keywords'.
   $field_instances['node-landing_page-field_keywords'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,
@@ -168,7 +168,8 @@ function kada_landing_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_link_to_content_multiple'
+  // Exported field_instance:
+  // 'node-landing_page-field_link_to_content_multiple'.
   $field_instances['node-landing_page-field_link_to_content_multiple'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,
@@ -231,7 +232,7 @@ function kada_landing_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_main_image'
+  // Exported field_instance: 'node-landing_page-field_main_image'.
   $field_instances['node-landing_page-field_main_image'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,
@@ -276,7 +277,7 @@ function kada_landing_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_related_content'
+  // Exported field_instance: 'node-landing_page-field_related_content'.
   $field_instances['node-landing_page-field_related_content'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,
@@ -324,7 +325,7 @@ function kada_landing_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_target_audience'
+  // Exported field_instance: 'node-landing_page-field_target_audience'.
   $field_instances['node-landing_page-field_target_audience'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,
@@ -362,7 +363,7 @@ function kada_landing_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_topic'
+  // Exported field_instance: 'node-landing_page-field_topic'.
   $field_instances['node-landing_page-field_topic'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,
@@ -415,7 +416,7 @@ function kada_landing_page_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-landing_page-field_widget_before_content'
+  // Exported field_instance: 'node-landing_page-field_widget_before_content'.
   $field_instances['node-landing_page-field_widget_before_content'] = array(
     'bundle' => 'landing_page',
     'default_value' => NULL,

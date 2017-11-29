@@ -29,17 +29,17 @@ function kada_landing_page_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-kada_top_carousel-block_2' => array(
+          'module' => 'views',
+          'delta' => 'kada_top_carousel-block_2',
+          'region' => 'header',
+          'weight' => '-100',
+        ),
         'views-kada_recommended-block' => array(
           'module' => 'views',
           'delta' => 'kada_recommended-block',
           'region' => 'header',
-          'weight' => '-89',
-        ),
-        'views-kada_pages-top_image' => array(
-          'module' => 'views',
-          'delta' => 'kada_pages-top_image',
-          'region' => 'header',
-          'weight' => '-88',
+          'weight' => '-99',
         ),
         'quicktabs-feed_tabs' => array(
           'module' => 'quicktabs',
