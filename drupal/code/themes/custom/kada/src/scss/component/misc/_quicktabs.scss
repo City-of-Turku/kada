@@ -73,7 +73,8 @@
           }
         }
 
-        &.all {
+        &.all,
+        &.kaikki {
           &::after {
             background: url('../../dist/image/current-all-icon.svg') no-repeat center center transparent;
             background-size: auto 100%;
@@ -87,11 +88,13 @@
           }
         }
 
-        &.news::after {
+        &.news::after,
+        &.uutiset::after {
           @include fa('\f073', 1.2rem, 1, false);
         }
 
-        &.nearby::after {
+        &.nearby::after,
+        &.lähellä::after {
           @include fa('\f041', 1.2rem, 1, false);
         }
 
@@ -115,7 +118,8 @@
           @include fa('\f16a', 1.2rem, 1, false);
         }
 
-        &.blogs::after {
+        &.blogs::after,
+        &.blogit::after {
           @include fa('\f044', 1.2rem, 1, false);
         }
       }
