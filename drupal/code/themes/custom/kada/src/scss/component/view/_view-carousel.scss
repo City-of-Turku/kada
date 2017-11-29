@@ -1,5 +1,5 @@
-.flexslider {
-  background: $default-color-lightest;
+.l-header .flexslider {
+  background: $white;
 
   li {
     margin-top: 0;
@@ -7,58 +7,6 @@
     @media screen and (min-width: $tablet-portrait) {
       position: relative;
     }
-  }
-}
-
-.flexslider__controls {
-  position: absolute;
-  bottom: 1.5rem;
-  width: 100%;
-  z-index: 5;
-
-  .flex-control-nav {
-    display: flex;
-    justify-content: center;
-    margin: 0 -.25rem;
-  }
-
-  li {
-    display: inline-block;
-    margin: 0;
-    padding: 0 .25rem;
-  }
-
-  a {
-    border: 1px solid $white;
-    border-radius: 50%;
-    display: block;
-    height: .75rem;
-    width: .75rem;
-    background: transparent;
-    color: transparent;
-    font-size: 0;
-
-    &:hover,
-    &:focus {
-      background: $white;
-      cursor: pointer;
-    }
-
-    @media screen and (max-width: $tablet-portrait - $max-width-deduction) {
-      border-color: $black;
-
-      &:hover,
-      &:focus {
-        background: $black;
-      }
-    }
-  }
-
-  .flex-active,
-  .flex-active:hover,
-  .flex-active:focus {
-    border-color: $primary-color;
-    background: $primary-color;
   }
 }
 
@@ -77,6 +25,7 @@
   }
 }
 
+.flex-control-wrapper,
 .flex-caption-wrapper,
 .flex-controls {
   @media screen and (min-width: $tablet-portrait) {
@@ -86,11 +35,11 @@
     z-index: 5;
   }
 }
-
+.flex-control-wrapper,
 .flex-caption-wrapper {
   @media screen and (max-width: $tablet-portrait - $max-width-deduction) {
     padding-top: 1.5rem;
-    padding-bottom: 3.5rem;
+    padding-bottom: 2.5rem;
   }
 
   @media screen and (min-width: $tablet-portrait) {
@@ -98,33 +47,8 @@
   }
 }
 
-.flex-caption,
-.flex-caption__title a {
-  color: $black;
-
-  @media screen and (min-width: $tablet-portrait) {
-    color: $white;
-  }
-}
-
-.flex-caption {
-  padding: 0 1.75rem;
-  line-height: normal;
-
-  @media screen and (min-width: $tablet-portrait) {
-    width: span(9);
-  }
-
-  @media screen and (min-width: $desktop-narrow) {
-    width: span(7.5);
-  }
-
-  @media screen and (min-width: $container) {
-    width: span(6);
-  }
-}
-
 .flex-caption__title {
+  color: $black;
   margin-bottom: 1rem;
   font-size: 1.5rem;
   font-weight: 800;
@@ -152,6 +76,7 @@
 
 .flex-caption__body {
   @include font-size-responsive(1.125rem);
+  line-height: 1.8em;
 
   @media screen and (min-width: $tablet-portrait) and (max-width: 819px) {
     font-size: 1rem;
@@ -171,3 +96,356 @@
     font-size: 1.25rem;
   }
 }
+
+.flex-caption__target-group {
+  color:  $link-color-hover;
+  font-family: $bergen-mono;
+  margin-bottom: .875rem;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $tablet-portrait) {
+    margin-bottom: 1.875rem;
+  }
+
+  .flex-caption__target-group__item:last-child::before {
+    content:", ";
+  }
+
+  .flex-caption__target-group__item:first-child::before {
+    content:"";
+  }
+}
+
+.flex-caption {
+  background-color: $white;
+  bottom: 0;
+  color: $black;
+  left: 0;
+  line-height: normal;
+  padding: 0 0 1rem 0;
+  position: relative;
+  width: 100%;
+
+  @media screen and (min-width: $mobile-landscape-wide) {
+    padding: 1rem 0;
+  }
+
+  @media screen and (min-width: $tablet-portrait) {
+    background-color: $white;
+    left: $container-gutter;
+    position: absolute;
+    padding: 3rem 5rem 3.5rem 5rem;
+    width: 74.167%;
+  }
+
+  @media screen and (min-width: $tablet-portrait) and (max-width: $desktop) {
+    left: $container-gutter * 2;
+  }
+
+  @media screen and (min-width: $desktop) {
+    //margin-left: $distance-from-items-large-desk;
+    width: 55%;
+  }
+
+  > a {
+    color: $primary-color;
+  }
+
+  .flex-caption__image {
+    margin: 0 auto;
+    max-width: 160px;
+    padding-bottom: 1em;
+
+    @media screen and (min-width: $mobile-portrait) {
+      clear: none;
+      float: left;
+      max-width: none;
+      padding: 0;
+      width: 33.33%;
+    }
+
+    & + .flex-caption__content {
+      @media screen and (min-width: $mobile-portrait) {
+        clear: none;
+        float: right;
+        padding-left: 1em;
+        width: 66.67%;
+      }
+
+      @media screen and (min-width: $tablet-portrait) {
+        padding-left: 2em;
+      }
+    }
+  }
+
+  .flex-caption__title {
+    font-size: .95em;
+    font-family: $bergen-mono;
+    text-transform: uppercase;
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      font-size: 1em;
+    }
+
+    a {
+      color: $link-color;
+    }
+  }
+
+  .flex-caption__body {
+    font-family: $bergen-text;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1.5;
+
+    @media screen and (min-width: $tablet-portrait) {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .flex-caption__read-more {
+    color: $white;
+  }
+}
+
+.flex-control-wrapper,
+.flex-caption-wrapper {
+  @media screen and (min-width: $tablet-portrait) {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 110rem;
+    position: absolute;
+    width: 100%;
+  }
+}
+
+.flex-control-wrapper {
+  bottom: 2.5rem;
+  height: 20px;
+  position: relative;
+  padding: 0;
+  top: auto;
+
+  @media screen and (min-width: $tablet-portrait) {
+    position: absolute;
+  }
+}
+
+.flexslider__controls {
+  position: absolute;
+  bottom: 0;
+  padding: 0;
+  height: 20px;
+  margin: 0;
+  width: 80%;
+  z-index: 5;
+
+  @media screen and (min-width: $tablet-portrait) {
+    left: 2rem;
+    width: 74.167%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 55%;
+  }
+
+  .flex-control-nav {
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0 -.25rem;
+
+    @media screen and (min-width: $tablet-portrait) {
+      padding: 0 5rem;
+    }
+  }
+
+  li {
+    display: inline-block;
+    margin: 0;
+    padding: 0 .25rem;
+  }
+
+  a {
+    border: 1.5px solid $black;
+    border-radius: 100%;
+    display: block;
+    height: .75rem;
+    width: .75rem;
+    background: transparent;
+    color: transparent;
+    font-size: 0;
+
+    &:hover,
+    &:focus {
+      background: $white;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: $tablet-portrait - $max-width-deduction) {
+      border-color: $black;
+
+      &:hover,
+      &:focus {
+        background: $black;
+      }
+    }
+  }
+
+  .flex-control-paging {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: 3;
+
+    @media screen and (min-width: $tablet-portrait) {
+      bottom: 0;
+      left: 1rem;
+      padding-bottom: 3px;
+      text-align: left;
+    }
+
+
+    > li {
+      display: inline-block;
+      vertical-align: bottom;
+    }
+  }
+
+  .flex-active,
+  .flex-active:hover,
+  .flex-active:focus {
+    border-color: $primary-color;
+    background: $primary-color;
+  }
+
+  //.flex-pauseplay {
+  //  bottom: 0;
+  //  display: inline-block;
+  //  right: 5rem;
+  //  margin: 0;
+  //  position: absolute;
+  //  padding: 0;
+  //
+  //  @media screen and (min-width: $tablet-portrait) {
+  //    right: 8rem;
+  //  }
+  //
+  //  .flex-play {
+  //    background-color: $black;
+  //    height: 1.75rem;
+  //    width: 1.75rem;
+  //
+  //    &:before {
+  //      border-width: 8px 0 8px 10px;
+  //      border-style: solid;
+  //      border-color: transparent transparent transparent $white;
+  //      box-sizing: border-box;
+  //      content: "";
+  //      height: .9rem;
+  //      position: absolute;
+  //      right: -0.125rem;
+  //      top: 50%;
+  //      transform: translate(-100%, -50%);
+  //      width: 0;
+  //    }
+  //  }
+  //
+  //  .flex-pause {
+  //    background-color: $black;
+  //    height: 1.75rem;
+  //    width: 1.75rem;
+  //
+  //    &:before {
+  //      border-style: double;
+  //      border-width: 0px 0px 0px 10.5px;
+  //      border-color: $white;
+  //      content: "";
+  //      height: .9rem;
+  //      position: absolute;
+  //      right: -0.063rem;
+  //      top: 50%;
+  //      transform: translate(-100%, -50%);
+  //      width: 0;
+  //    }
+  //  }
+  //}
+
+  //.flex-direction-nav {
+  //  bottom: 0;
+  //  display: inline-block;
+  //  right: 3rem;
+  //  margin: 0;
+  //  position: absolute;
+  //  padding: 0;
+  //
+  //  @media screen and (min-width: $tablet-portrait) {
+  //    right: 6rem;
+  //  }
+  //
+  //  li {
+  //    display: inline-block;
+  //    list-style: none;
+  //    margin: 0 2rem .2rem 0;
+  //    vertical-align: bottom;
+  //
+  //    @media screen and (min-width: $tablet-portrait) {
+  //      display: inline-block;
+  //      float: none;
+  //    }
+  //
+  //    &:last-child {
+  //      margin-right: 0;
+  //    }
+  //
+  //    a {
+  //      display: block;
+  //      border: 0;
+  //      font-size: 0;
+  //      height: 10px;
+  //      text-align: center;
+  //      width: 10px;
+  //
+  //      &:hover {
+  //        text-decoration: none;
+  //      }
+  //
+  //      &.flex-next {
+  //        background: url(../../dist/image/icon_arrow-right.svg) no-repeat center center transparent;
+  //        background-size: auto 25px;
+  //        height: 1.4rem;
+  //        width: 1.4rem;
+  //      }
+  //
+  //      &.flex-prev {
+  //        background: url(../../dist/image/icon_arrow-left.svg) no-repeat center center transparent;
+  //        background-size: auto 25px;
+  //        height: 1.4rem;
+  //        width: 1.4rem;
+  //      }
+  //
+  //      //&.flex-next,
+  //      //&.flex-prev {
+  //      //  &:before {
+  //      //    color: #FFFFFF;
+  //      //    font-size: 25px;
+  //      //    line-height: 30px;
+  //      //
+  //      //    &:hover {
+  //      //      text-decoration: none;
+  //      //    }
+  //      //  }
+  //      //}
+  //    }
+  //  }
+  //}
+}
+
+

@@ -1,0 +1,38 @@
+.content__header,
+.node--page--full,
+.node--news-item--full {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $inner-container-width;
+}
+
+.theme-main-page {
+  .content__header,
+  .node--page--full {
+    margin: 0;
+    max-width: 100%;
+  }
+}
+
+.page--has-sidebar {
+  @include clearfix;
+
+  .page__content {
+    @media screen and (min-width: $desktop) {
+      float: left;
+      padding-right: 10%;
+      width: 70%;
+    }
+  }
+
+  .page__sidebar {
+    @media screen and (min-width: $desktop) {
+      float: left;
+      width: 30%;
+    }
+  }
+}
+
+.page__after-content {
+  margin-top: 6.25rem - 1.875rem; // Reducing the margin of the element inside after-content.
+}

@@ -1,7 +1,5 @@
 <?php
 /**
  * @file
- * Code for the Pori domains feature.
+ * Drupal needs this blank file.
  */
-
-include_once 'pori_domains.features.inc';

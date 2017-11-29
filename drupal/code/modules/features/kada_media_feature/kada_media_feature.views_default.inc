@@ -106,10 +106,20 @@ function kada_media_feature_views_default_views() {
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'scald_atoms';
   $handler->display->display_options['fields']['type']['field'] = 'type';
-  /* Field: Atom: Representation */
-  $handler->display->display_options['fields']['representation']['id'] = 'representation';
-  $handler->display->display_options['fields']['representation']['table'] = 'scald_atoms';
-  $handler->display->display_options['fields']['representation']['field'] = 'representation';
+  /* Field: Atom: Thumbnail */
+  $handler->display->display_options['fields']['scald_thumbnail']['id'] = 'scald_thumbnail';
+  $handler->display->display_options['fields']['scald_thumbnail']['table'] = 'field_data_scald_thumbnail';
+  $handler->display->display_options['fields']['scald_thumbnail']['field'] = 'scald_thumbnail';
+  $handler->display->display_options['fields']['scald_thumbnail']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['scald_thumbnail']['settings'] = array(
+    'image_style' => 'large',
+    'image_link' => 'file',
+  );
+  /* Field: Atom: Actions */
+  $handler->display->display_options['fields']['actions']['id'] = 'actions';
+  $handler->display->display_options['fields']['actions']['table'] = 'scald_atoms';
+  $handler->display->display_options['fields']['actions']['field'] = 'actions';
+  $handler->display->display_options['fields']['actions']['end_user_links'] = 1;
   /* Sort criterion: Atom: Updated date */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'scald_atoms';
@@ -328,7 +338,8 @@ function kada_media_feature_views_default_views() {
     t('Title text'),
     t('File name / source'),
     t('Type'),
-    t('Representation'),
+    t('Thumbnail'),
+    t('Actions'),
     t('Search by filename (image, file, local video) or source id (video youtube/vimeo)'),
     t('Authors'),
     t('Tags'),
@@ -336,6 +347,7 @@ function kada_media_feature_views_default_views() {
     t('<ul class="action-links"><li><a href="/atom/add">Add atom</a></li></ul>'),
     t('My Atoms Block'),
     t('My Media'),
+    t('Representation'),
     t('All'),
   );
   $export['kada_scald_atoms'] = $view;

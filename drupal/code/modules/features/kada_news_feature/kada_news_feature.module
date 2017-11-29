@@ -5,3 +5,29 @@
  */
 
 include_once 'kada_news_feature.features.inc';
+
+function kada_news_feature_block_info() {
+  return array(
+    'news_archive_link' => array(
+      'info' => t('Link to news archive'),
+      'cache' => DRUPAL_CACHE_GLOBAL,
+    ),
+  );
+}
+
+function kada_news_feature_block_view($delta = '') {
+  $block = array();
+  if ($delta == 'news_archive_link') {
+    global $language;
+    if ($language->language == 'fi') {
+      $block['content'] = l(t('News archive'), 'uutisarkisto');
+    }
+    elseif ($language->language == 'en' ) {
+      $block['content'] = l(t('News archive'), 'news-archive');
+    }
+    elseif ($language->language == 'sv' ) {
+      $block['content'] = l(t('News archive'), 'nyhetsarkiv');
+    }
+  }
+  return $block;
+}

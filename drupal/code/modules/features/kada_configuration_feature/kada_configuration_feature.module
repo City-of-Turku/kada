@@ -277,3 +277,15 @@ function kada_configuration_feature_form_alter(&$form, &$form_state, $form_id) {
     $form['menu']['link']['parent']['#default_value'] = 'label_0';
   }
 }
+
+/**
+ * Implements hook_language_switch_links_alter().
+ */
+function kada_language_switch_links_alter(array &$links, $type, $path) {
+  // Alter English language switcher to the old site until the new /en is
+  // up and running.
+  if (isset($links['en']['href'])) {
+    $links['en']['href'] = 'https://www.pori.fi/en/index.html';
+  }
+  return;
+}

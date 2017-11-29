@@ -183,23 +183,26 @@ function kada_page_feature_strongarm() {
       'event_mosaic_item' => array(
         'custom_settings' => FALSE,
       ),
+      'event_search_result' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '7',
+          'weight' => '11',
         ),
         'path' => array(
-          'weight' => '7',
+          'weight' => '10',
         ),
         'redirect' => array(
-          'weight' => '8',
+          'weight' => '11',
         ),
         'language' => array(
-          'weight' => '5',
+          'weight' => '10',
         ),
         'domain' => array(
-          'weight' => '6',
+          'weight' => '8',
         ),
         'metatags' => array(
           'weight' => '9',
@@ -208,7 +211,7 @@ function kada_page_feature_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '36',
+            'weight' => '37',
             'visible' => FALSE,
           ),
           'teaser' => array(
