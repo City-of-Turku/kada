@@ -427,6 +427,15 @@
         margin-top: 2rem;
       }
     }
+
+    // Set theme colored borders.
+    @each $theme-color, $color in $theme-colors {
+      &.theme-color-#{$theme-color} {
+        .liftup-box__header {
+          border-top: .938rem solid $color;
+        }
+      }
+    }
   }
 
   .liftup-box__header {
