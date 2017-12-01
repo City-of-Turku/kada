@@ -33,7 +33,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 9,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -138,13 +138,9 @@ function pori_attraction_feature_field_default_field_instances() {
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => TRUE,
-          'use_content_language' => TRUE,
-          'view_mode' => 'default',
-        ),
-        'type' => 'entityreference_entity_view',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 11,
       ),
       'only_title' => array(
@@ -283,7 +279,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 10,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -462,7 +458,7 @@ function pori_attraction_feature_field_default_field_instances() {
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 9,
+        'weight' => 6,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -615,7 +611,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 24,
+      'weight' => 25,
     ),
   );
 
@@ -674,61 +670,47 @@ function pori_attraction_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 22,
+      'weight' => 21,
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-field_image'.
-  $field_instances['node-attraction_card-field_image'] = array(
+  // Exported field_instance: 'node-attraction_card-field_images'.
+  $field_instances['node-attraction_card-field_images'] = array(
     'bundle' => 'attraction_card',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'attraction_card_mosaic_item' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => 'event_list_image',
-        ),
-        'type' => 'image',
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'hidden',
-        'module' => 'image',
+        'label' => 'above',
+        'module' => 'atom_reference',
         'settings' => array(
-          'image_link' => 'content',
-          'image_style' => 'event_list_image',
+          'link' => 0,
+          'override' => 0,
         ),
-        'type' => 'image',
-        'weight' => 0,
+        'type' => 'title',
+        'weight' => 42,
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'flexslider_fields',
+        'module' => 'atom_reference',
         'settings' => array(
-          'caption' => 0,
-          'image_style' => 'top_carousel',
-          'optionset' => 'top_carousel',
+          'link' => 0,
+          'override' => 0,
         ),
-        'type' => 'flexslider',
+        'type' => 'carousel',
         'weight' => 0,
       ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'search_result' => array(
-        'label' => 'hidden',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => 'content',
-          'image_style' => 'search_result',
-        ),
-        'type' => 'image',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -738,32 +720,28 @@ function pori_attraction_feature_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
-    'ds_extras_field_template' => '',
     'entity_type' => 'node',
-    'field_name' => 'field_image',
-    'label' => 'Image Carousel',
+    'field_name' => 'field_images',
+    'label' => 'Images',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 1,
-      'default_image' => 0,
+      'allow_override' => 0,
       'entity_translation_sync' => FALSE,
-      'file_directory' => 'images/attraction_cards',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 1,
+      'referencable_types' => array(
+        'file' => 0,
+        'image' => 'image',
+        'video' => 'video',
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'atom_reference',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
+        'context' => 'sdl_editor_representation',
       ),
-      'type' => 'image_image',
-      'weight' => 30,
+      'type' => 'atom_reference_textfield',
+      'weight' => 23,
     ),
   );
 
@@ -941,7 +919,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 23,
+      'weight' => 24,
     ),
   );
 
@@ -969,7 +947,7 @@ You can place multiple single point selections.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 15,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1056,7 +1034,7 @@ You can place multiple single point selections.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 11,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1268,7 +1246,7 @@ You can place multiple single point selections.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 14,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1343,13 +1321,9 @@ You can place multiple single point selections.',
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => TRUE,
-          'use_content_language' => TRUE,
-          'view_mode' => 'default',
-        ),
-        'type' => 'entityreference_entity_view',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_plain',
         'weight' => 10,
       ),
       'only_title' => array(
@@ -1378,7 +1352,7 @@ You can place multiple single point selections.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 23,
+      'weight' => 22,
     ),
   );
 
@@ -1405,7 +1379,7 @@ You can place multiple single point selections.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 8,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1486,7 +1460,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 7,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1567,7 +1541,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'rows' => 2,
       ),
       'type' => 'text_textarea',
-      'weight' => 29,
+      'weight' => 28,
     ),
   );
 
@@ -1677,7 +1651,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 12,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1754,7 +1728,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 13,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1870,7 +1844,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1');
   t('Description');
   t('Email');
   t('Groups audience');
-  t('Image Carousel');
+  t('Images');
   t('Info box (bottom)');
   t('Keywords');
   t('Lead paragraph');

@@ -153,6 +153,27 @@ function pori_attraction_feature_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_images'.
+  $field_bases['field_images'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_images',
+    'indexes' => array(
+      'sid' => array(
+        0 => 'sid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'atom_reference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'atom_reference',
+  );
+
   // Exported field_base: 'field_public_transportation'.
   $field_bases['field_public_transportation'] = array(
     'active' => 1,

@@ -157,16 +157,16 @@ function pori_attraction_feature_strongarm() {
           'weight' => '4',
         ),
         'metatags' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
         'title' => array(
           'weight' => '6',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
         'redirect' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
         'language' => array(
           'weight' => '21',
@@ -191,7 +191,7 @@ function pori_attraction_feature_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '19',
+            'weight' => '16',
             'visible' => FALSE,
           ),
           'attraction_card_mosaic_item' => array(
