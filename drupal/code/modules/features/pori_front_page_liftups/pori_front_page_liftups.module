@@ -41,6 +41,10 @@ function pori_front_page_liftups_quicktabs_alter(&$quicktabs) {
           unset($quicktabs->tabs[$i]);
         }
       }
+      // Make quicktabs titles translatable.
+      foreach ($quicktabs->tabs as $key => $tab) {
+        $quicktabs->tabs[$key]['title'] = t($quicktabs->tabs[$key]['title']);
+      }
     }
   }
 }
