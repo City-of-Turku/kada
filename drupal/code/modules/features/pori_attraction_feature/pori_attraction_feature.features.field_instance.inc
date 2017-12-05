@@ -33,7 +33,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 14,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -112,7 +112,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 24,
+      'weight' => 22,
     ),
   );
 
@@ -141,7 +141,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 11,
+        'weight' => 10,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -169,7 +169,7 @@ function pori_attraction_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -202,7 +202,7 @@ function pori_attraction_feature_field_default_field_instances() {
           'use_widget_handlers' => 1,
         ),
         'type' => 'addressfield_default',
-        'weight' => 6,
+        'weight' => 5,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -252,7 +252,7 @@ function pori_attraction_feature_field_default_field_instances() {
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 18,
+      'weight' => 13,
     ),
   );
 
@@ -279,7 +279,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 15,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -424,7 +424,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 27,
+      'weight' => 25,
     ),
   );
 
@@ -502,7 +502,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 26,
+      'weight' => 24,
     ),
   );
 
@@ -611,7 +611,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 25,
+      'weight' => 23,
     ),
   );
 
@@ -670,7 +670,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 21,
+      'weight' => 16,
     ),
   );
 
@@ -741,7 +741,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'context' => 'sdl_editor_representation',
       ),
       'type' => 'atom_reference_textfield',
-      'weight' => 23,
+      'weight' => 20,
     ),
   );
 
@@ -771,7 +771,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 5,
+        'weight' => 4,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -919,7 +919,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 24,
+      'weight' => 21,
     ),
   );
 
@@ -947,7 +947,7 @@ You can place multiple single point selections.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 20,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1007,7 +1007,7 @@ You can place multiple single point selections.',
         'use_geocoder' => 1,
       ),
       'type' => 'geofield_openlayers',
-      'weight' => 20,
+      'weight' => 15,
     ),
   );
 
@@ -1034,7 +1034,7 @@ You can place multiple single point selections.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 16,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1113,7 +1113,7 @@ You can place multiple single point selections.',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 17,
+      'weight' => 12,
     ),
   );
 
@@ -1220,7 +1220,7 @@ You can place multiple single point selections.',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 19,
+      'weight' => 14,
     ),
   );
 
@@ -1246,7 +1246,7 @@ You can place multiple single point selections.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 19,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1294,7 +1294,7 @@ You can place multiple single point selections.',
         'relation_endpoint_search_by_id' => 0,
       ),
       'type' => 'relation_add',
-      'weight' => 16,
+      'weight' => 11,
     ),
   );
 
@@ -1324,7 +1324,7 @@ You can place multiple single point selections.',
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 10,
+        'weight' => 9,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1352,7 +1352,7 @@ You can place multiple single point selections.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 22,
+      'weight' => 18,
     ),
   );
 
@@ -1379,7 +1379,7 @@ You can place multiple single point selections.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 13,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1414,7 +1414,7 @@ You can place multiple single point selections.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -1460,7 +1460,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 7,
+        'weight' => 12,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1541,12 +1541,12 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'rows' => 2,
       ),
       'type' => 'text_textarea',
-      'weight' => 28,
+      'weight' => 26,
     ),
   );
 
-  // Exported field_instance: 'node-attraction_card-field_website_et'.
-  $field_instances['node-attraction_card-field_website_et'] = array(
+  // Exported field_instance: 'node-attraction_card-field_websites'.
+  $field_instances['node-attraction_card-field_websites'] = array(
     'bundle' => 'attraction_card',
     'default_value' => NULL,
     'deleted' => 0,
@@ -1563,14 +1563,14 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 38,
+        'weight' => 43,
       ),
       'full' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 9,
+        'weight' => 11,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1586,8 +1586,8 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_website_et',
-    'label' => 'Website',
+    'field_name' => 'field_websites',
+    'label' => 'Websites',
     'required' => 0,
     'settings' => array(
       'absolute_url' => 1,
@@ -1623,7 +1623,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -1651,7 +1651,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 17,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1701,7 +1701,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 3,
+      'weight' => 5,
     ),
   );
 
@@ -1728,7 +1728,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 13,
+        'weight' => 18,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1811,7 +1811,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 22,
+      'weight' => 19,
     ),
   );
 
@@ -1859,7 +1859,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1');
   t('Title');
   t('Tweet embed');
   t('Visiting address');
-  t('Website');
+  t('Websites');
   t('When using area select double click at the end point to end selecting.
 You can place multiple single point selections.');
 

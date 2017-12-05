@@ -154,22 +154,22 @@ function pori_attraction_feature_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'domain' => array(
-          'weight' => '4',
+          'weight' => '6',
         ),
         'metatags' => array(
-          'weight' => '8',
+          'weight' => '10',
         ),
         'title' => array(
           'weight' => '6',
         ),
         'path' => array(
-          'weight' => '6',
+          'weight' => '8',
         ),
         'redirect' => array(
-          'weight' => '7',
+          'weight' => '9',
         ),
         'language' => array(
-          'weight' => '21',
+          'weight' => '17',
         ),
       ),
       'display' => array(
@@ -191,7 +191,7 @@ function pori_attraction_feature_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '16',
+            'weight' => '21',
             'visible' => FALSE,
           ),
           'attraction_card_mosaic_item' => array(
