@@ -14,10 +14,16 @@ function kada_preprocess_block(&$variables) {
     // Getting color for those liftups which have a theme with a color set
 
     foreach ($node_wrapper->field_theme->getIterator() as $delta => $term_wrapper) {
-      $color = $term_wrapper->field_color_name->value();
-      if (!empty($color)) {
-        $variables['title_attributes_array']['class'][] = 'theme-color-' . $color;
+      try {
+        $color = $term_wrapper->field_color_name->value();
+        if (!empty($color)) {
+          $variables['title_attributes_array']['class'][] = 'theme-color-' . $color;
+        }
       }
+      catch (EntityMetadataWrapperException $e) {
+        watchdog('kada_theme', 'EntityMetadataWrapperException with message %message', array('%message' => $e->getMessage()), WATCHDOG_ERROR);
+      }
+
     }
   }
 

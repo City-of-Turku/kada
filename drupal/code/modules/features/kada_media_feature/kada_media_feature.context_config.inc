@@ -690,7 +690,7 @@ function kada_media_feature_default_scald_context_config() {
   $context_config->context = 'sdl_library_item';
   $context_config->transcoder = array(
     'image' => array(
-      '*' => 'style-Library',
+      '*' => 'style-library',
     ),
     'video' => array(
       '*' => 'passthrough',

@@ -1,0 +1,205 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function pori_attraction_feature_install() {
+  $sandbox = NULL;
+  pori_attraction_feature_update_7005($sandbox);
+  pori_attraction_feature_update_7006($sandbox);
+  pori_attraction_feature_update_7007($sandbox);
+  pori_attraction_feature_update_7008($sandbox);
+}
+
+
+/**
+ * Delete body field instance.
+ */
+function pori_attraction_feature_update_7001(&$sandbox) {
+  if ($instance = field_info_instance('node', 'body', 'attraction_card')) {
+    field_delete_instance($instance);
+  }
+}
+
+/**
+ * Delete info box bottom and related content field instances from attraction card.
+ */
+function pori_attraction_feature_update_7002(&$sandbox) {
+  foreach (array('field_info_box_bottom', 'field_related_content') as $field) {
+    if ($instance = field_info_instance('node', $field, 'attraction_card')) {
+      field_delete_instance($instance);
+    }
+  }
+}
+
+/**
+ * Enable the product module.
+ */
+function pori_attraction_feature_update_7003(&$sandbox) {
+  module_enable(array('pori_product'));
+}
+
+/**
+ * Delete attraction category instance from the field collection.
+ */
+function pori_attraction_feature_update_7004(&$sandbox) {
+  if ($instance = field_info_instance('field_collection_item', 'field_attraction_category', 'field_ad_mappings')) {
+    field_delete_instance($instance);
+  }
+}
+
+/**
+ * Add terms to attraction category vocabulary.
+ */
+function pori_attraction_feature_update_7005(&$sandbox) {
+  $voc = taxonomy_vocabulary_machine_name_load('attraction_category');
+
+  // Create the vocabulary if it doesn't exist yet.
+  if (empty($voc)) {
+    $new_vocab = (object) array(
+      'name' => 'Attraction category',
+      'description' => '',
+      'machine_name' => 'attraction_category',
+      'i18n_mode' => 1,
+    );
+    taxonomy_vocabulary_save($new_vocab);
+    $voc = taxonomy_vocabulary_machine_name_load('attraction_category');
+  }
+  else {
+    $current_terms = entity_load('taxonomy_term', FALSE, array('vid' => $voc->vid));
+
+    // Don't add any terms when the vocabulary is not empty
+    if (!empty($current_terms)) {
+      return;
+    }
+  }
+
+
+  $term_labels = array(
+    'See & Experience',
+    'Eat & Drink',
+    'Accommodation',
+    'Events',
+    'For Groups',
+    'Shop Online',
+  );
+
+  // Store terms into the vocabulary
+  foreach ($term_labels as $label) {
+    $term = new stdClass();
+    $term->name = $label;
+    $term->vid = $voc->vid;
+    taxonomy_term_save($term);
+  }
+}
+
+/**
+ * Add terms to accessibility category vocabulary.
+ */
+function pori_attraction_feature_update_7006(&$sandbox) {
+  $voc = taxonomy_vocabulary_machine_name_load('accessibility');
+
+  // Create the vocabulary if it doesn't exist yet.
+  if (empty($voc)) {
+    $new_vocab = (object) array(
+      'name' => 'Accessibility',
+      'description' => '',
+      'machine_name' => 'accessibility',
+      'i18n_mode' => 1,
+    );
+    taxonomy_vocabulary_save($new_vocab);
+    $voc = taxonomy_vocabulary_machine_name_load('accessibility');
+  }
+  else {
+    $current_terms = entity_load('taxonomy_term', FALSE, array('vid' => $voc->vid));
+
+    // Don't add any terms when the vocabulary is not empty
+    if (!empty($current_terms)) {
+      return;
+    }
+  }
+
+  $term_labels = array(
+    'Disabled access',
+    'Induction loop',
+    'No disabled access',
+    'No induction loop',
+    'No visually disabled access',
+    'Visually disabled access',
+  );
+
+  // Store terms into the vocabulary
+  foreach ($term_labels as $label) {
+    $term = new stdClass();
+    $term->name = $label;
+    $term->vid = $voc->vid;
+    taxonomy_term_save($term);
+  }
+}
+
+/**
+ * Add terms to attraction category vocabulary.
+ */
+function pori_attraction_feature_update_7007(&$sandbox) {
+  $voc = taxonomy_vocabulary_machine_name_load('bus_lines');
+
+  // Create the vocabulary if it doesn't exist yet.
+  if (empty($voc)) {
+    $new_vocab = (object) array(
+      'name' => 'Bus lines',
+      'description' => '',
+      'machine_name' => 'bus_lines',
+      'i18n_mode' => 1,
+    );
+    taxonomy_vocabulary_save($new_vocab);
+    $voc = taxonomy_vocabulary_machine_name_load('bus_lines');
+  }
+  else {
+    $current_terms = entity_load('taxonomy_term', FALSE, array('vid' => $voc->vid));
+
+    // Don't add any terms when the vocabulary is not empty
+    if (!empty($current_terms)) {
+      return;
+    }
+  }
+
+  $term_labels = array(
+    '1',
+    '2',
+    '3',
+    '3M',
+    '5',
+    '6',
+    '6K',
+    '6Y',
+    '7',
+    '10',
+    '12',
+    '27',
+    '99',
+  );
+
+  // Store terms into the vocabulary
+  foreach ($term_labels as $label) {
+    $term = new stdClass();
+    $term->name = $label;
+    $term->vid = $voc->vid;
+    taxonomy_term_save($term);
+  }
+}
+
+/**
+ * Set i18n_mode to Attraction category, Accessibility and Bus lines vocabularies.
+ */
+/*
+ // THIS UPDATE HOOK WILL WAIT UNTIL THE PRODUCTION SITE HAS THIS MODULE ENABLED.
+ // SETTING THE i18n_mode AT THE SAME TIME WHEN CREATING THE VOCABULARY DOESN'T WORK FOR SOME REASON.
+function pori_attraction_feature_update_7008(&$sandbox) {
+  $voc_machine_names = array('attraction_category', 'accessibility', 'bus_lines');
+  foreach ($voc_machine_names as $machine_name) {
+    $voc = taxonomy_vocabulary_machine_name_load($machine_name);
+    $voc->i18n_mode = 1;
+    taxonomy_vocabulary_save($voc);
+  }
+}
+*/

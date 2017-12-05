@@ -91,7 +91,7 @@ function kadaprofile_update_7105() {
 /**
  * Implements hook_update().
  *
- * Enables more Pori features
+ * Disables pori domains
  */
 function kadaprofile_update_7106() {
   $modules = array('pori_domains');
@@ -99,4 +99,103 @@ function kadaprofile_update_7106() {
 
   module_disable($modules, $enable_dependencies);
   drupal_uninstall_modules($modules);
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Enables more Pori features
+ */
+function kadaprofile_update_7107() {
+  $modules = array('pori_liftups');
+  $enable_dependencies = TRUE;
+
+  module_enable($modules, $enable_dependencies);
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Enables more Pori features
+ */
+function kadaprofile_update_7108()
+{
+  $modules = array('pori_news');
+  $enable_dependencies = TRUE;
+
+  module_enable($modules, $enable_dependencies);
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Enables more Pori features
+ */
+function kadaprofile_update_7109()
+{
+  $modules = array('pori_blog');
+  $enable_dependencies = TRUE;
+
+  module_enable($modules, $enable_dependencies);
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Enables more Pori features
+ */
+function kadaprofile_update_7110()
+{
+  $modules = array('pori_some_content');
+  $enable_dependencies = TRUE;
+
+  module_enable($modules, $enable_dependencies);
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Disables Pori pages feature
+ */
+function kadaprofile_update_7111() {
+  $modules = array('pori_pages');
+  $enable_dependencies = TRUE;
+
+  module_disable($modules, $enable_dependencies);
+  drupal_uninstall_modules($modules);
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Disables pori domains
+ */
+function kadaprofile_update_7112() {
+  $modules = array('pori_media');
+  $enable_dependencies = TRUE;
+
+  module_disable($modules, $enable_dependencies);
+  drupal_uninstall_modules($modules);
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Enables Google Analytics
+ */
+function kadaprofile_update_7113() {
+  $modules = array('googleanalytics');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Enables Pori Attraction feature
+ */
+function kadaprofile_update_7114() {
+  $modules = array('pori_attraction_feature');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
 }

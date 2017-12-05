@@ -11,7 +11,7 @@
 
   // Block configuration
   .block {
-    padding: 0 1.25rem;
+    @include responsive-whitespace;
 
     @media screen and (min-width: $mobile-footer-breakpoint) {
       padding: 7rem 0 0 0; // Amount of the Pori logo.
@@ -112,6 +112,10 @@
     margin: 0;
     padding: 0;
 
+    @media screen and (min-width: $mobile-footer-breakpoint) {
+      margin: 0;
+    }
+
     a {
       display: block;
 
@@ -125,14 +129,20 @@
   .menu__item--has-first-level {
     border-bottom: 1px solid $gray;
     font-family: $bergen-mono;
+    margin: 0 $container-gutter;
     text-transform: uppercase;
     position: relative;
+
+    @media screen and (min-width: $mobile-landscape-wide) and (max-width: $desktop - $max-width-deduction) {
+      margin: 0 $container-gutter * 2;
+    }
 
     @media screen and (min-width: $mobile-footer-breakpoint) {
       border-bottom: 0 none;
       font-family: $bergen-text;
       font-size: 1.2rem;
       font-weight: bold;
+      margin: 0;
       text-transform: none;
       width: 20%;
     }
@@ -156,9 +166,11 @@
 
       > a {
         color: $white;
+        padding-left: $container-gutter;
 
         @media screen and (min-width: $mobile-footer-breakpoint) {
           color: $primary-color;
+          padding-left: 0;
         }
       }
     }
@@ -203,7 +215,7 @@
     }
 
     > a {
-      padding: .938rem 1.25rem;
+      padding: .938rem 0;
 
       @media screen and (min-width: $mobile-footer-breakpoint) {
         margin-bottom: 1.5rem;

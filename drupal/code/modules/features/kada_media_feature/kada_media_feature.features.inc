@@ -421,10 +421,10 @@ function kada_media_feature_image_default_styles() {
     'label' => 'Current',
     'effects' => array(
       2 => array(
-        'name' => 'image_scale',
+        'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 315,
-          'height' => '',
+          'width' => 435,
+          'height' => 245,
           'upscale' => 0,
         ),
         'weight' => 2,
@@ -1438,11 +1438,11 @@ function kada_media_feature_image_default_styles() {
   $styles['topics'] = array(
     'label' => 'Topics',
     'effects' => array(
-      1 => array(
+      0 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 425,
-          'height' => 319,
+          'width' => 457,
+          'height' => 257,
         ),
         'weight' => 1,
       ),
@@ -1453,11 +1453,11 @@ function kada_media_feature_image_default_styles() {
   $styles['topics_breakpoints_theme_kada_mobile_1x'] = array(
     'label' => 'topics_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
-      16 => array(
+      0 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 277,
-          'height' => 208,
+          'width' => 280,
+          'height' => 158,
         ),
         'weight' => 1,
       ),
@@ -1468,11 +1468,11 @@ function kada_media_feature_image_default_styles() {
   $styles['topics_breakpoints_theme_kada_phablet_1x'] = array(
     'label' => 'topics_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
-      15 => array(
+      0 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
           'width' => 497,
-          'height' => 373,
+          'height' => 280,
         ),
         'weight' => 1,
       ),
@@ -1483,11 +1483,11 @@ function kada_media_feature_image_default_styles() {
   $styles['topics_breakpoints_theme_kada_smalldesktop_1x'] = array(
     'label' => 'topics_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
-      13 => array(
+      0 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 479,
-          'height' => 359,
+          'width' => 649,
+          'height' => 365,
         ),
         'weight' => 1,
       ),
@@ -1498,11 +1498,11 @@ function kada_media_feature_image_default_styles() {
   $styles['topics_breakpoints_theme_kada_tablet_1x'] = array(
     'label' => 'topics_breakpoints_theme_kada_tablet_1x',
     'effects' => array(
-      14 => array(
+      0 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 360,
-          'height' => 270,
+          'width' => 687,
+          'height' => 386,
         ),
         'weight' => 1,
       ),
