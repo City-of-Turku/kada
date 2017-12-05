@@ -42,7 +42,7 @@ function kada_preprocess_node(&$variables) {
 
   // Add theme color classes to main news liftups
   if ($variables['type'] == 'news_item') {
-    if ($variables['view_mode'] == 'main_news' || $variables['view_mode'] == 'main_news_wide') {
+    if ($variables['view_mode'] == 'main_news' || $variables['view_mode'] == 'main_news_wide' || $variables['view_mode'] == 'current') {
       $node_wrapper = entity_metadata_wrapper('node', $node);
       foreach ($node_wrapper->field_theme->getIterator() as $delta => $term_wrapper) {
         try {

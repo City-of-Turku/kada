@@ -1,0 +1,539 @@
+.liftup-box-list__content {
+  margin: 0 -1rem;
+
+  @media screen and (min-width: $mobile-landscape-wide) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.liftup-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+
+  @media screen and (min-width: $mobile-landscape-wide) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: $tablet-landscape) {
+    width: 33.333333%;
+  }
+
+  @media screen and (min-width: $container) {
+    width: 25%;
+  }
+
+  .field--name-post-date {
+    color: $gray;
+    font-family: $bergen-mono;
+    font-size: .875rem;
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: $tablet-portrait) {
+      font-size: 1rem;
+    }
+  }
+
+  .field--name-title,
+  .field--name-field-link-to-content {
+    @include font-size-responsive(1.125rem);
+    margin-bottom: .5rem;
+    font-weight: bold;
+
+    a {
+      color: $link-color;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: $link-color-hover;
+      }
+    }
+  }
+
+  .field--name-field-image {
+    line-height: 0;
+    margin: 0;
+  }
+
+  .flag-wrapper a {
+    background-color: $secondary-color;
+    color: $white;
+    display: inline-block;
+    font-size: 1rem;
+    margin-top: 1.875rem;
+    padding: .313rem 1.25rem;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+      background-color: $primary-color;
+    }
+  }
+}
+
+.liftup-box__inner {
+  width: 100%;
+}
+
+.liftup-box__header {
+}
+
+.liftup-box-list  {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  @media screen and (min-width: $tablet-portrait) {
+    flex-direction: row;
+  }
+}
+
+.liftup-box--topic {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 1.25em 0;
+  width: 100%;
+
+
+  @media screen and (min-width: $tablet-portrait) {
+    margin: 1.25em 1% 1.25rem 0;
+    width: 49.5%;
+  }
+
+  @media screen and (min-width: $container) {
+    margin: 1.875em 1% 1.875rem 0;
+    width: 32.66%;
+  }
+
+  &:nth-child(2n) {
+    @media screen and (min-width: $tablet-portrait) {
+      margin-right: 0;
+    }
+
+    @media screen and (min-width: $container) {
+      margin-right: 1%;
+    }
+  }
+
+  &:nth-child(3n) {
+    @media screen and (min-width: $container) {
+      margin-right: 0;
+    }
+  }
+
+  .liftup-box--topic__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+  }
+
+  // Set theme colored borders.
+  @each $theme-color, $color in $theme-colors {
+    &.theme-color-#{$theme-color} {
+      .liftup-box__image {
+        border-top: 12px solid $color !important;
+      }
+    }
+  }
+
+  .liftup-box__image {
+    border-top: 12px solid $turku-black;
+    position: relative;
+
+    // Image placeholder
+    &::after {
+      background-color: $gray-light;
+      content: '';
+      display: block;
+      padding-top: 56.25%; // 16:9 aspect-ratio
+    }
+
+    &::before {
+      @include fa('\f05e', 1.5rem, 1, false);
+      color: $gray;
+      font-size: 10rem;
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      text-align: center;
+      width: 100%;
+    }
+
+    > * {
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+  }
+}
+
+.view-kada-related-content .view-content {
+  @media screen and (min-width: $mobile-landscape-wide) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .liftup-box {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin: 1.25em 0;
+    width: 100%;
+
+
+    @media screen and (min-width: $tablet-portrait) {
+      margin: 1.25em 1% 1.25rem 0;
+      width: 49.5%;
+    }
+
+    @media screen and (min-width: $container) {
+      margin: 1.875em 1% 1.875rem 0;
+      width: 32.66%;
+    }
+
+    &:nth-child(2n) {
+      @media screen and (min-width: $tablet-portrait) {
+        margin-right: 0;
+      }
+
+      @media screen and (min-width: $container) {
+        margin-right: 1%;
+      }
+    }
+
+    &:nth-child(3n) {
+      @media screen and (min-width: $container) {
+        margin-right: 0;
+      }
+    }
+
+    .liftup-box__content {
+      padding-top: 1rem;
+
+      @media screen and (min-width: $tablet-portrait) {
+        padding-top: 1.2rem;
+      }
+    }
+  }
+}
+
+.liftup-box__caption {
+  color: $body-font-color;
+  margin-top: 1.150rem;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  word-break: break-word;
+
+  @media screen and (min-width: $container) {
+    margin-top: 1.250rem;
+    margin-bottom: 0;
+  }
+}
+
+.liftup-box.liftup-box--wide  {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  width: 100%;
+}
+
+.liftup-box--wide {
+  background-color: $white;
+  border: 0;
+  color: $black;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+
+  .node--liftup {
+    align-items: flex-start;
+    border-top: .938rem solid $primary-color;
+    background-color: rgba($primary-color, .2);
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 0 auto;
+    width: 100%;
+
+    // Set theme colored borders.
+    @each $theme-color, $color in $theme-colors {
+      &.theme-color-#{$theme-color} {
+        background-color: rgba($color, .2);
+        border-top: .938rem solid $color;
+
+        .field--name-field-visible-title h2 {
+          color: $color;
+        }
+      }
+    }
+
+    @media screen and (min-width: $tablet-landscape) {
+      flex-direction: row-reverse;
+    }
+
+    @media screen and (min-width: $desktop) {
+      align-items: center;
+    }
+  }
+
+  &:nth-child(2) {
+    .node--liftup {
+      flex-direction: column-reverse;
+
+      @media screen and (min-width: $tablet-landscape) {
+        flex-direction: row;
+      }
+    }
+  }
+
+  .field--name-field-visible-title h2 {
+    @media screen and (min-width: $tablet-landscape) {
+      margin-bottom: 1.25rem;
+    }
+  }
+
+  .field--name-field-link-to-content a {
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    display: inline-block;
+    margin-top: 2rem;
+    padding: .65rem 1.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+
+    @media screen and (min-width: $tablet-landscape) {
+      margin-top: 1.5rem;
+      padding: .95rem 2.25rem;
+      width: auto;
+    }
+
+    @media screen and (min-width: $container) {
+      margin-top: 2.5rem;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $primary-color;
+      color: $white;
+    }
+  }
+
+  .field--name-body {
+    background-color: transparent;
+    bottom: 20px;
+    color: $black;
+    font-size: 1rem;
+    width: auto;
+
+    @media screen and (min-width: $tablet-landscape) {
+      left: auto;
+      right: 0;
+    }
+  }
+
+  .liftup-box__group-right {
+    position: relative;
+    width: 100%;
+
+    @media screen and (min-width: $tablet-landscape) {
+      width: 50%;
+    }
+  }
+
+  .liftup-box__group-left {
+    float: none;
+    padding: 1.5em $container-gutter 0;
+    width: 100%;
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      padding: 1.5em 0 0;
+    }
+
+    @media screen and (min-width: $tablet-landscape) {
+      padding: 1rem 1.5rem 0;
+      width: 50%;
+    }
+
+    @media screen and (min-width: $container) {
+      padding: 2rem 3.5rem 0;
+    }
+  }
+
+  &:nth-child(2) {
+    .liftup-box__group-right {
+      @media screen and (min-width: 1400px) {
+        margin-left: 0;
+      }
+    }
+
+    .liftup-box__group-left {
+
+      @media screen and (min-width: 1400px) {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// Project liftup mobile spesific styles
+.view-kada-project-liftups {
+  margin: 0 -1.25rem;
+
+  @media screen and (min-width: $mobile-landscape-wide) {
+    margin: 0;
+  }
+}
+
+.liftup-box-list--current {
+  @media screen and (min-width: $mobile-landscape-wide) {
+    margin: 0 -.5%;
+  }
+
+  .liftup-box-list__content {
+    display: block;
+    margin: 0;
+    width: 100%;
+  }
+
+  .liftup-box {
+    margin-top: 3rem;
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      margin-top: 2rem;
+      padding: .5%;
+      width: 49.999%;
+    }
+
+    @media screen and (min-width: $tablet-landscape) {
+      width: 33.222%;
+    }
+
+    @media screen and (min-width: $container) {
+      width: 24.999%;
+    }
+
+    &:first-child {
+      margin-top: 0;
+
+      @media screen and (min-width: $mobile-landscape-wide) {
+        margin-top: 2rem;
+      }
+    }
+
+    .field--name-post-date {
+      margin: 1.25rem 0 .313rem;
+
+      @media screen and (min-width: $tablet-landscape) {
+        margin-top: 2rem;
+      }
+    }
+
+    // Set theme colored borders.
+    @each $theme-color, $color in $theme-colors {
+      &.theme-color-#{$theme-color} {
+        .liftup-box__header {
+          border-top: .938rem solid $color;
+        }
+      }
+    }
+  }
+
+  .liftup-box__header {
+    border-top: .938rem solid $primary-color;
+  }
+
+  .field--name-title,
+  .field--name-field-link-to-content {
+    @include font-size-responsive($font-size-heading-4);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+
+    a {
+      color: $primary-color;
+
+      &:hover,
+      &:focus {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .field--name-field-quote {
+    margin: .625rem 0 0;
+    padding: .625rem 0 .625rem 3.5rem;
+    position: relative;
+
+    &:before {
+      color: $primary-color;
+      content: "”";
+      font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+      font-size: 6.25rem;
+      font-weight: bold;
+      left: -.375rem;
+      line-height: 6.25rem;
+      position: absolute;
+      top: 0;
+    }
+
+    a {
+      @include font-size-responsive($font-size-heading-4);
+      color: $primary-color;
+      font-weight: bold;
+      line-height: 1.5;
+    }
+  }
+
+  .field--name-field-blog {
+    margin-left: 3.5rem;
+
+    a {
+      color: $gray;
+    }
+  }
+}
+
+
+.liftup-box--social {
+  .field--name-field-image-url,
+  .field--name-field-share-caption,
+  .field--name-field-share-description {
+    display: none; // Not quite sure what these are used for but hiding them for now.
+  }
+}
+
+
+.liftup-box--social.node--facebook {
+  .liftup-box__header {
+    border-color: $facebook-color;
+  }
+}
+
+.liftup-box--social.node--instagram {
+  .liftup-box__header {
+    border-color: $instagram-color;
+  }
+}
+
+.liftup-box--social.node--linkedin {
+  .liftup-box__header {
+    border-color: $linkedin-color;
+  }
+}
+
+.liftup-box--social.node--twitter {
+  .liftup-box__header {
+    border-color: $twitter-color;
+  }
+}
+
+.liftup-box--social.node--youtube {
+  .liftup-box__header {
+    border-color: $youtube-color;
+  }
+}

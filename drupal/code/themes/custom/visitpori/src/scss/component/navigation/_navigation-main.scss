@@ -46,7 +46,7 @@
       }
 
       // Loop through each Visitpori color and set colors.
-      $colors: $red-light, $orange, $green-light, $green, $blue;
+      $colors: $red-light, $orange, $green, $green-dark, $blue;
 
       @each $color in $colors {
         $i: index($colors, $color);

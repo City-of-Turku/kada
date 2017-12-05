@@ -1,0 +1,142 @@
+$main-liftup-box-list-background: $darker-gray;
+$main-liftup-separator-color: darken($main-liftup-box-list-background, 5%);
+$main-liftups-background: $white;
+$main-liftup-title-color: $body-font-color;
+
+$main-liftup-content-padding: 20px;
+
+
+.main-liftups {
+  margin: 0 -1.25rem;
+
+  @media screen and (min-width: $mobile-landscape-wide) {
+    margin: 3% 0 2%;
+  }
+}
+
+.main-liftups .view-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+  }
+}
+
+
+.main-liftup-row {
+  border: 0;
+  width: 100%;
+
+  @media screen and (min-width: $desktop) {
+    width: 49%;
+  }
+}
+
+.main-liftup-box {
+  background-color: rgba($primary-color, .2);;
+  border-top: .938rem solid $primary-color;
+  padding-bottom: .5rem;
+  position: relative;
+
+  // Set theme colored borders and hover.
+  @each $theme-color, $color in $theme-colors {
+    &.theme-color-#{$theme-color} {
+      border-top: .938rem solid $color;
+      background-color: rgba($color, .2);
+
+      .field--name-title h3 {
+        color: $color;
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.main-liftup-box__media {
+  background: $main-liftups-background;
+  height: auto;
+  position: relative;
+  width: 100%;
+
+  @media screen and (min-width: $tablet-portrait) {
+    width: 50%;
+  }
+
+  figure {
+    line-height: 0;
+    margin: 0;
+  }
+}
+
+.main-liftup-box__content {
+  background: transparent;
+  padding: 0 $container-gutter;
+  width: 100%;
+
+  @media screen and (min-width: $mobile-landscape-wide) {
+    padding: 0;
+  }
+
+  @media screen and (min-width: $tablet-portrait) {
+    padding: 0 2rem;
+    width: 50%;
+  }
+}
+
+.field--name-title h3 {
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.main-liftup-box__text {
+  line-height: 1.6;
+}
+
+.field--name-field-lead-paragraph-long-text {
+  background-color: transparent;
+  bottom: 1.250rem;
+  color: $black;
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+.field--name-post-date {
+  color: $gray;
+  text-align: left;
+  margin: 1rem 0 1rem 0;
+  @media screen and (min-width: $tablet-portrait) {
+    margin: 0 0 1rem 0;
+  }
+}
+
+.main-liftup-box-4 {
+  clear: both;
+
+  .main-liftup-box__content {
+    width: 100%;
+
+    @media screen and (min-width: $desktop) {
+      padding: 1.875rem;
+      width: 50%;
+    }
+  }
+}
+
+.main-liftup-box-2 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 0 1.75rem 0;
+
+  @media screen and (min-width: $tablet-portrait) {
+    flex-direction: row;
+    padding: 2rem 0;
+  }
+}
