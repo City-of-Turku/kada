@@ -68,8 +68,23 @@ function pori_domains_domain_alias_default_aliases() {
     ),
   );
   $domain_aliases['visitpori_fi'] = array(
-    'local.kada.fi' => array(
-      'pattern' => 'local.kada.fi',
+    'local.visitpori.fi' => array(
+      'pattern' => 'local.visitpori.fi',
+      'redirect' => 0,
+      'machine_name' => 'visitpori_fi',
+    ),
+    'visitpori.dev.wunder.io' => array(
+      'pattern' => 'visitpori.dev.wunder.io',
+      'redirect' => 0,
+      'machine_name' => 'visitpori_fi',
+    ),
+    'visitpori.stage.wunder.io' => array(
+      'pattern' => 'visitpori.stage.wunder.io',
+      'redirect' => 0,
+      'machine_name' => 'visitpori_fi',
+    ),
+    'beta.visitpori.fi' => array(
+      'pattern' => 'beta.visitpori.fi',
       'redirect' => 0,
       'machine_name' => 'visitpori_fi',
     ),

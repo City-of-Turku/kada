@@ -10,7 +10,7 @@ include_once 'kada_domains_feature.features.inc';
  * Implements hook_init()
  * Handle domain redirects for viewing nodes
  */
-function kada_domains_feature_init() {
+function kada_domains_feature_init_DISABLED() {
   // Make sure we react only on node pages
   if (arg(0) != 'node') return;
   // React only on node view
