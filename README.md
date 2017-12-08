@@ -287,3 +287,4 @@ Feature revert is ran twice as we have notices that for some reason features mig
 - Feature specific custom code can be inserted into *.module instead of creating custom modules
 - Fill out changes and other important notes into README.txt file in the feature directory (if you need template, look at tkufi_page_feature)
 - ALWAYS RECREATE FEATURES AND SAVE VIEWS IN ENGLISH!!! (make sure there is /en prefix in the path, otherwise all views translations and such will be exported to code in Finnish)
+

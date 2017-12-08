@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Pori media feature.
- */
-
-include_once 'pori_media.features.inc';

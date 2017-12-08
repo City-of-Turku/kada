@@ -69,8 +69,8 @@ function kada_domains_feature_domain_alias_default_aliases() {
   );
   $domain_aliases['tapahtumat_pori_fi'] = array();
   $domain_aliases['visitpori_fi'] = array(
-    'local.kada.fi' => array(
-      'pattern' => 'local.kada.fi',
+    'local.visitpori.fi' => array(
+      'pattern' => 'local.visitpori.fi',
       'redirect' => 0,
       'machine_name' => 'visitpori_fi',
     ),
