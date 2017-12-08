@@ -286,6 +286,17 @@
         .field--name-field-visible-title h2 {
           color: $color;
         }
+
+        .field--name-field-link-to-content a {
+          border: 1px solid $color;
+          color: $color;
+
+          &:hover,
+          &:focus {
+            background-color: $color;
+            color: $white;
+          }
+        }
       }
     }
 
