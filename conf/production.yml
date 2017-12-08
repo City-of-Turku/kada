@@ -24,6 +24,7 @@
         user: drupal
         # defined in prod-vars.yml
         pass: "{{ drupal_db_password }}"
+        host: "{{ db_ip }}"
         hosts:
           - "127.0.0.1"
           - "::1"
