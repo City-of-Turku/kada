@@ -1,8 +1,0 @@
-name = Pori domains
-description = Overrides default Kada domain configuration
-core = 7.x
-package = KADA
-version = 7.x-1.0
-dependencies[] = kada_domains_feature
-features[features_api][] = api:2
-

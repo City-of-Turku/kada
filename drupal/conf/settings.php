@@ -120,8 +120,8 @@ $conf['menu_override_parent_selector'] = true;
 $conf['file_temporary_path'] = "/tmp";
 
 // Set "domain space" that is necessary to handle redirects between domains
-define('DOMAIN_SPACE', 'pori-kada-development.druid.fi');
+//define('DOMAIN_SPACE', 'pori-kada-development.druid.fi');
 
 // HACK - REMOVE WHEN DOMAIN URLS FOR DIFFERENT ENVS CAN BE DONE PROPERLY
-define('KADACALENDAR_BASE_URL', 'http://calendar.pori-kada-development.druid.fi/');
+//define('KADACALENDAR_BASE_URL', 'http://calendar.pori-kada-development.druid.fi/');
 
