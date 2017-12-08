@@ -8,6 +8,7 @@
 
     .responsive-menus > .menu {
       width: 100%;
+      max-width: 100%;
     }
 
     .menu__item {
@@ -18,7 +19,6 @@
       width: 100%;
 
       a {
-        //border-top: 1px solid $gray-light;
         color: $white;
         display: block;
         font-size: 1rem;
@@ -31,31 +31,21 @@
       display: none;
     }
 
-    .menu__item--has-first-level {
-      > a {
-        border-top: 0 none;
-        color: $white;
-        padding: .75rem 1.91rem;
-
-        &:hover,
-        &:focus {
-          text-decoration: underline;
-          background-color: transparent;
-        }
-      }
-
-      // Loop through each Visitpori color and set colors.
-      $colors: $red-light, $orange, $green-light, $green, $blue;
-
-      @each $color in $colors {
-        $i: index($colors, $color);
-        &:nth-child(#{$i}) { 
+    // Set theme colored menu.
+    @each $theme-color, $color in $theme-colors {
+      .visitpori-theme-color-#{$theme-color} {
+        &.menu__item--has-first-level {
           background-color: $color;
+
+          > a {
+            color: $white;
+          }
 
           > .menu {
             border-bottom: 4px solid $color;
             border-top: 0;
           }
+
           .menu__item--has-second-level {
             &:hover {
               background-color: $color;
@@ -69,6 +59,20 @@
               a { color: $white; }
             }
           }
+        }
+      }
+    }
+
+    .menu__item--has-first-level {
+      > a {
+        border-top: 0 none;
+        color: $black;
+        padding: .75rem 1.91rem;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+          background-color: transparent;
         }
       }
 
@@ -95,10 +99,6 @@
           }
         }
       }
-
-      //&.is-active-trail {
-      //  background-color: $secondary-color;
-      //}
 
       > .menu__item--expanded-toggle {
         display: none;
