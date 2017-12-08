@@ -113,7 +113,6 @@ $menu-padding: 1.25rem;
     }
 
     .menu__item {
-      //background-color: $primary-color;
       margin-top: 0;
       padding: 0;
       position: relative;
@@ -129,26 +128,6 @@ $menu-padding: 1.25rem;
 
     .menu__item--has-first-level {
       border-bottom: 1px solid $white;
-
-      //// Loop through each Visitpori color and color menu items.
-      //$colors: $red-light, $orange, $green, $green-dark, $blue;
-      //
-      //@each $color in $colors {
-      //  $i: index($colors, $color);
-      //  &:nth-child(#{$i}) {
-      //    background-color: $color;
-      //
-      //    .menu__item--has-second-level {
-      //      > a {
-      //        color: $color;
-      //      }
-      //      &.is-active-trail {
-      //        background-color: $color;
-      //        a { color: $white; }
-      //      }
-      //    }
-      //  }
-      //}
 
       &.is-expanded,
       &:last-child {
