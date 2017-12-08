@@ -126,17 +126,34 @@
   }
 
   .liftup-box--topic__container {
+    background-color: rgba($primary-color, .2);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     height: 100%;
   }
 
+  .liftup-box__caption {
+    color: $primary-color;
+    font-weight: 400;
+    margin: 1.25rem;
+  }
+
   // Set theme colored borders.
   @each $theme-color, $color in $theme-colors {
     &.theme-color-#{$theme-color} {
+      .liftup-box--topic__container {
+        background-color: rgba($color, .2);
+      }
+
       .liftup-box__image {
         border-top: 12px solid $color !important;
+      }
+
+      .liftup-box__caption {
+        color: $color;
+        font-weight: 400;
+        margin: 1.25rem;
       }
     }
   }
@@ -439,6 +456,13 @@
       &.theme-color-#{$theme-color} {
         .liftup-box__header {
           border-top: .938rem solid $color;
+        }
+
+        .field--name-title,
+        .field--name-field-link-to-content {
+          a {
+            color: $color;
+          }
         }
       }
     }
