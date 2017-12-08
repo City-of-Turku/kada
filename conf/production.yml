@@ -43,6 +43,7 @@
       set_fact:
         domain1_name: "pori.prod.wunder.io"
         domain2_name: "pori.fi"
+        domain3_name: "visitpori.fi"
         wkv_site_env: "prod"
         databases: "{{ database }}"
       tags: ['common']
