@@ -33,8 +33,13 @@
       .theme-color-#{$theme-color} {
         &.menu__item--has-first-level {
           > a {
+
             &:hover,
             &:focus {
+              @if $color == $yellow {
+                color: $primary-color;
+              }
+
               background-color: $color !important;
             }
           }
@@ -46,15 +51,33 @@
 
           &.is-active-trail {
             background-color: $color !important;
+
+            > a {
+              @if $color == $yellow {
+                color: $primary-color;
+              }
+            }
           }
 
           .menu__item--has-second-level,
           .menu__item--has-third-level {
             &:hover {
               background-color: $color !important;
+
+              > a {
+                @if $color == $yellow {
+                  color: $primary-color;
+                }
+              }
             }
             &.is-active-trail {
               background-color: $color !important;
+
+              > a {
+                @if $color == $yellow {
+                  color: $primary-color;
+                }
+              }
             }
           }
         }

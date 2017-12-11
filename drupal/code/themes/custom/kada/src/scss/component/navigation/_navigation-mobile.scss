@@ -85,9 +85,18 @@ $menu-padding: 1.25rem;
     @each $theme-color, $color in $theme-colors {
       .theme-color-#{$theme-color} {
         &.menu__item--has-first-level {
+          &:focus,
+          &:hover {
+            background-color: $color !important;
+          }
+
           > a {
             &:hover,
             &:focus {
+              @if $color == $yellow {
+                color: $primary-color;
+              }
+
               background-color: $color !important;
             }
           }
@@ -98,6 +107,12 @@ $menu-padding: 1.25rem;
           }
 
           &.is-active-trail {
+            > a {
+              @if $color == $yellow {
+                color: $primary-color;
+              }
+            }
+
             background-color: $color !important;
           }
 
