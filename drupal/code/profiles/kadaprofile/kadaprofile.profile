@@ -188,3 +188,14 @@ function kadaprofile_update_7113() {
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables Pori Attraction feature
+ */
+function kadaprofile_update_7114() {
+  $modules = array('pori_attraction_feature');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}

@@ -8,6 +8,7 @@ function pori_attraction_feature_install() {
   pori_attraction_feature_update_7005($sandbox);
   pori_attraction_feature_update_7006($sandbox);
   pori_attraction_feature_update_7007($sandbox);
+  pori_attraction_feature_update_7008($sandbox);
 }
 
 
@@ -52,12 +53,27 @@ function pori_attraction_feature_update_7004(&$sandbox) {
  */
 function pori_attraction_feature_update_7005(&$sandbox) {
   $voc = taxonomy_vocabulary_machine_name_load('attraction_category');
-  $current_terms = entity_load('taxonomy_term', FALSE, array('vid' => $voc->vid));
 
-  // Verify that the vocabulary is empty
-  if (!empty($current_terms)) {
-    return;
+  // Create the vocabulary if it doesn't exist yet.
+  if (empty($voc)) {
+    $new_vocab = (object) array(
+      'name' => 'Attraction category',
+      'description' => '',
+      'machine_name' => 'attraction_category',
+      'i18n_mode' => 1,
+    );
+    taxonomy_vocabulary_save($new_vocab);
+    $voc = taxonomy_vocabulary_machine_name_load('attraction_category');
   }
+  else {
+    $current_terms = entity_load('taxonomy_term', FALSE, array('vid' => $voc->vid));
+
+    // Don't add any terms when the vocabulary is not empty
+    if (!empty($current_terms)) {
+      return;
+    }
+  }
+
 
   $term_labels = array(
     'See & Experience',
@@ -82,11 +98,25 @@ function pori_attraction_feature_update_7005(&$sandbox) {
  */
 function pori_attraction_feature_update_7006(&$sandbox) {
   $voc = taxonomy_vocabulary_machine_name_load('accessibility');
-  $current_terms = entity_load('taxonomy_term', FALSE, array('vid' => $voc->vid));
 
-  // Verify that the vocabulary is empty
-  if (!empty($current_terms)) {
-    return;
+  // Create the vocabulary if it doesn't exist yet.
+  if (empty($voc)) {
+    $new_vocab = (object) array(
+      'name' => 'Accessibility',
+      'description' => '',
+      'machine_name' => 'accessibility',
+      'i18n_mode' => 1,
+    );
+    taxonomy_vocabulary_save($new_vocab);
+    $voc = taxonomy_vocabulary_machine_name_load('accessibility');
+  }
+  else {
+    $current_terms = entity_load('taxonomy_term', FALSE, array('vid' => $voc->vid));
+
+    // Don't add any terms when the vocabulary is not empty
+    if (!empty($current_terms)) {
+      return;
+    }
   }
 
   $term_labels = array(
@@ -112,11 +142,25 @@ function pori_attraction_feature_update_7006(&$sandbox) {
  */
 function pori_attraction_feature_update_7007(&$sandbox) {
   $voc = taxonomy_vocabulary_machine_name_load('bus_lines');
-  $current_terms = entity_load('taxonomy_term', FALSE, array('vid' => $voc->vid));
 
-  // Verify that the vocabulary is empty
-  if (!empty($current_terms)) {
-    return;
+  // Create the vocabulary if it doesn't exist yet.
+  if (empty($voc)) {
+    $new_vocab = (object) array(
+      'name' => 'Bus lines',
+      'description' => '',
+      'machine_name' => 'bus_lines',
+      'i18n_mode' => 1,
+    );
+    taxonomy_vocabulary_save($new_vocab);
+    $voc = taxonomy_vocabulary_machine_name_load('bus_lines');
+  }
+  else {
+    $current_terms = entity_load('taxonomy_term', FALSE, array('vid' => $voc->vid));
+
+    // Don't add any terms when the vocabulary is not empty
+    if (!empty($current_terms)) {
+      return;
+    }
   }
 
   $term_labels = array(
@@ -143,3 +187,19 @@ function pori_attraction_feature_update_7007(&$sandbox) {
     taxonomy_term_save($term);
   }
 }
+
+/**
+ * Set i18n_mode to Attraction category, Accessibility and Bus lines vocabularies.
+ */
+/*
+ // THIS UPDATE HOOK WILL WAIT UNTIL THE PRODUCTION SITE HAS THIS MODULE ENABLED.
+ // SETTING THE i18n_mode AT THE SAME TIME WHEN CREATING THE VOCABULARY DOESN'T WORK FOR SOME REASON.
+function pori_attraction_feature_update_7008(&$sandbox) {
+  $voc_machine_names = array('attraction_category', 'accessibility', 'bus_lines');
+  foreach ($voc_machine_names as $machine_name) {
+    $voc = taxonomy_vocabulary_machine_name_load($machine_name);
+    $voc->i18n_mode = 1;
+    taxonomy_vocabulary_save($voc);
+  }
+}
+*/
