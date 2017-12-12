@@ -246,9 +246,8 @@ function kada_ptv_reader_import_service_channel($guid, $langcode = 'fi') {
     $link = array(
       'url' => kada_ptv_reader_get_value_from($data->webPages, ['language' => $langcode], 'url'),
       'title' => kada_ptv_reader_get_value_from($data->webPages, ['language' => $langcode], 'value'),
-      'attributes' => []
     );
-    $ewrapper->field_website_et->set($link);
+    //$ewrapper->field_website_et->set($link);
   }
 
   $phone_prefix = kada_ptv_reader_get_value_from($data->phoneNumbers, ['language' => $langcode], 'prefixNumber');
@@ -316,7 +315,12 @@ function kada_ptv_reader_import_service_channel($guid, $langcode = 'fi') {
     $ewrapper->field_availability->set(['value' => $availability_text, 'format' => 'plain_text']);
   }
 
-  $ewrapper->save();
+  try {
+    $ewrapper->save();
+  }
+  catch (\Exception $e) {
+    print $e->getMessage();
+  }
   // Return the node id:
   return $ewrapper->getIdentifier();
 }
