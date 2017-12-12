@@ -3,21 +3,21 @@
 /**
  * Implements hook_preprocess_node().
  */
-function kada_preprocess_node(&$variables) {
+function visitpori_preprocess_node(&$variables) {
   $node = $variables['node'];
 
   if ($variables['type'] == 'liftup' || $variables['type'] == 'page') {
     // Getting color for those liftups which have a theme with a color set
     $node_wrapper = entity_metadata_wrapper('node', $node);
-    foreach ($node_wrapper->field_theme->getIterator() as $delta => $term_wrapper) {
+    foreach ($node_wrapper->field_visitpori_theme->getIterator() as $delta => $term_wrapper) {
       try {
-        $color = $term_wrapper->field_color_name->value();
+        $color = $term_wrapper->field_visitpori_color_name->value();
         if (!empty($color)) {
           $variables['classes_array'][] = 'theme-color-' . $color;
         }
       }
       catch (EntityMetadataWrapperException $e) {
-        watchdog('kada_theme', 'EntityMetadataWrapperException with message %message', array('%message' => $e->getMessage()), WATCHDOG_ERROR);
+        watchdog('visitpori_theme', 'EntityMetadataWrapperException with message %message', array('%message' => $e->getMessage()), WATCHDOG_ERROR);
       }
     }
   }
@@ -44,15 +44,15 @@ function kada_preprocess_node(&$variables) {
   if ($variables['type'] == 'news_item') {
     if ($variables['view_mode'] == 'main_news' || $variables['view_mode'] == 'main_news_wide' || $variables['view_mode'] == 'current') {
       $node_wrapper = entity_metadata_wrapper('node', $node);
-      foreach ($node_wrapper->field_theme->getIterator() as $delta => $term_wrapper) {
+      foreach ($node_wrapper->field_visitpori_theme->getIterator() as $delta => $term_wrapper) {
         try {
-          $color = $term_wrapper->field_color_name->value();
+          $color = $term_wrapper->field_visitpori_color_name->value();
           if (!empty($color)) {
             $variables['classes_array'][] = 'theme-color-' . $color;
           }
         }
         catch (EntityMetadataWrapperException $e) {
-          watchdog('kada_theme', 'EntityMetadataWrapperException with message %message', array('%message' => $e->getMessage()), WATCHDOG_ERROR);
+          watchdog('visitpori_theme', 'EntityMetadataWrapperException with message %message', array('%message' => $e->getMessage()), WATCHDOG_ERROR);
         }
 
       }

@@ -23,8 +23,8 @@ function kada_page_feature_field_group_info() {
     'label' => 'Additional information',
     'weight' => '2',
     'children' => array(
-      0 => 'field_file_attachment',
-      1 => 'field_additional_info_link',
+      0 => 'field_additional_info_link',
+      1 => 'field_file_attachment',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -53,12 +53,13 @@ function kada_page_feature_field_group_info() {
     'children' => array(
       0 => 'body',
       1 => 'field_keywords',
-      2 => 'field_target_audience',
-      3 => 'field_theme',
-      4 => 'field_lead_paragraph',
-      5 => 'field_main_image',
-      6 => 'language',
-      7 => 'title',
+      2 => 'field_main_image',
+      3 => 'field_target_audience',
+      4 => 'field_theme',
+      5 => 'field_lead_paragraph',
+      6 => 'field_visitpori_theme',
+      7 => 'language',
+      8 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

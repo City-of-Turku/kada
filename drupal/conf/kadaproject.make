@@ -291,8 +291,11 @@ projects[feeds_oauth][version] = 1.0-beta3
 projects[feeds_oauth][subdir] = contrib
 projects[feeds_oauth][patch][] = "../patches/feeds_oauth_library_404_fix.patch"
 
-projects[feeds_tamper][version] = 1.1
+projects[feeds_tamper][type] = "module"
 projects[feeds_tamper][subdir] = contrib
+projects[feeds_tamper][download][type] = "git"
+projects[feeds_tamper][download][url] = "http://git.drupal.org/project/feeds_tamper.git"
+projects[feeds_tamper][download][revision] = "db26e1b5158009c23e4be2a5819e79616958ae48"
 projects[feeds_tamper][patch][] = "https://www.drupal.org/files/issues/easyconfigimport_1946222_0.patch"
 
 projects[feeds_tamper_conditional][version] = 1.0-beta2

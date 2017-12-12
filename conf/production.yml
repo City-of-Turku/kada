@@ -24,6 +24,7 @@
         user: drupal
         # defined in prod-vars.yml
         pass: "{{ drupal_db_password }}"
+        host: "{{ db_ip }}"
         hosts:
           - "127.0.0.1"
           - "::1"
@@ -42,6 +43,7 @@
       set_fact:
         domain1_name: "pori.prod.wunder.io"
         domain2_name: "pori.fi"
+        domain3_name: "visitpori.fi"
         wkv_site_env: "prod"
         databases: "{{ database }}"
       tags: ['common']
