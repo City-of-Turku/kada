@@ -243,11 +243,16 @@ function kada_ptv_reader_import_service_channel($guid, $langcode = 'fi') {
   $ewrapper->field_email->set([$email]);
 
   if (!empty($data->webPages)) {
-    $link = array(
-      'url' => kada_ptv_reader_get_value_from($data->webPages, ['language' => $langcode], 'url'),
-      'title' => kada_ptv_reader_get_value_from($data->webPages, ['language' => $langcode], 'value'),
-    );
-    //$ewrapper->field_website_et->set($link);
+    for ($i = 0; $i < count($data->webPages); $i++) {
+      $link = array(
+        'url' => $data->webPages[$i]->url,
+        'title' => $data->webPages[$i]->value,
+      );
+      if (is_null($link['title']) || is_array($link['title'])) {
+        $link['title'] = $link['url'];
+      }
+      $ewrapper->field_website_et->set($link);
+    }
   }
 
   $phone_prefix = kada_ptv_reader_get_value_from($data->phoneNumbers, ['language' => $langcode], 'prefixNumber');
