@@ -419,6 +419,95 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-page-field_info_box'.
+  $field_instances['node-page-field_info_box'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'This info box will be displayed next to the main content on the top of the page.',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'only_title' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+      'search_result' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_info_box',
+    'label' => 'Info box (top)',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 0,
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'wysiwyg' => 'wysiwyg',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'full_html' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'wysiwyg' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'debug',
+      'context_default' => 'content_full',
+      'dnd_enabled' => 1,
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 1,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 12,
+    ),
+  );
+
   // Exported field_instance: 'node-page-field_info_box_bottom'.
   $field_instances['node-page-field_info_box_bottom'] = array(
     'bundle' => 'page',
@@ -941,7 +1030,7 @@ function kada_page_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -1201,6 +1290,50 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-page-field_visitpori_theme'.
+  $field_instances['node-page-field_visitpori_theme'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 37,
+      ),
+      'only_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_visitpori_theme',
+    'label' => 'Visitpori theme',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 17,
+    ),
+  );
+
   // Exported field_instance: 'node-page-field_widget_before_content'.
   $field_instances['node-page-field_widget_before_content'] = array(
     'bundle' => 'page',
@@ -1347,6 +1480,39 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'taxonomy_term-visitpori_theme-field_visitpori_color_name'.
+  $field_instances['taxonomy_term-visitpori_theme-field_visitpori_color_name'] = array(
+    'bundle' => 'visitpori_theme',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_visitpori_color_name',
+    'label' => 'Visitpori color name',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 41,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('A comma separated list of keywords. Choose the correct keyword from the suggestions or add a new one. <strong>These are not translated</strong>, so each language needs different keywords.');
@@ -1362,6 +1528,7 @@ function kada_page_feature_field_default_field_instances() {
   t('Go to Twitter and do search for hashtags or keywords you want to get to the KADA site. Then create embed out of the search results, see the tutorial video: <a href="http://monosnap.com/file/5uPXucQCVsialYbdGSlVvlKw3pyq6a" target="_blank">http://monosnap.com/file/5uPXucQCVsialYbdGSlVvlKw3pyq6a</a>');
   t('Groups audience');
   t('Info box (bottom)');
+  t('Info box (top)');
   t('Keywords');
   t('Lead paragraph');
   t('Liftup image');
@@ -1374,10 +1541,13 @@ function kada_page_feature_field_default_field_instances() {
   t('Theme');
   t('Theme main page');
   t('This info box is at the bottom of the page when viewed in mobile devices but on the top-right corner when on larger devices');
+  t('This info box will be displayed next to the main content on the top of the page.');
   t('This value is selected for the main site theme main pages and usually there is no need to change it.');
   t('Topic');
   t('Tweet embed');
   t('Use the City-theme for footer pages');
+  t('Visitpori color name');
+  t('Visitpori theme');
   t('Widgets before content');
 
   return $field_instances;
