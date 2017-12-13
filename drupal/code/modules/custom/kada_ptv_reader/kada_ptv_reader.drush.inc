@@ -239,15 +239,24 @@ function kada_ptv_reader_import_service_channel($guid, $langcode = 'fi') {
   // $ewrapper->field_person_responsible->set($person_responsible);
   // $ewrapper->field_main_image->set(['value' => $desc]);
 
-  $email = kada_ptv_reader_get_value_from($data->emails, ['language' => $langcode], 'value');
-  $ewrapper->field_email->set([$email]);
-
+  if (!empty($data->emails)) {
+    $emails = [];
+    // Collect emails in an array before saving
+    for ($i = 0; $i < count($data->emails); $i++) {
+      $emails[] = $data->emails[$i]->value;
+    }
+    $ewrapper->field_email->set($emails);
+  }
+  
   if (!empty($data->webPages)) {
+    // Use the first web site address from the list. Attraction card website field is single-value field.
     $link = array(
-      'url' => kada_ptv_reader_get_value_from($data->webPages, ['language' => $langcode], 'url'),
-      'title' => kada_ptv_reader_get_value_from($data->webPages, ['language' => $langcode], 'value'),
-      'attributes' => []
+      'url' => $data->webPages[0]->url,
+      'title' => $data->webPages[0]->value,
     );
+    if (is_null($link['title']) || is_array($link['title'])) {
+      $link['title'] = $link['url'];
+    }
     $ewrapper->field_website_et->set($link);
   }
 
@@ -316,7 +325,12 @@ function kada_ptv_reader_import_service_channel($guid, $langcode = 'fi') {
     $ewrapper->field_availability->set(['value' => $availability_text, 'format' => 'plain_text']);
   }
 
-  $ewrapper->save();
+  try {
+    $ewrapper->save();
+  }
+  catch (\Exception $e) {
+    print $e->getMessage();
+  }
   // Return the node id:
   return $ewrapper->getIdentifier();
 }

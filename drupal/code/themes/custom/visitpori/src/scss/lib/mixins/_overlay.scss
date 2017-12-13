@@ -1,0 +1,44 @@
+@mixin overlay-transparent {
+  background: transparent;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: background-color 300ms linear;
+  width: 100%;
+  z-index: 1;
+}
+
+@mixin overlay-dark($color) {
+  background-color: rgba($color, .2);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: background-color 300ms linear;
+  width: 100%;
+}
+
+@mixin overlay-dark-hover($color) {
+  background-color: rgba($color, .5);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: background-color 300ms linear;
+  width: 100%;
+}
+
+@mixin overlay-light-hover($color) {
+  background-color: rgba($color, .02);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: background-color 300ms linear;
+  width: 100%;
+}

@@ -79,6 +79,7 @@ features[field_instance][] = node-liftup-field_target_audience
 features[field_instance][] = node-liftup-field_theme
 features[field_instance][] = node-liftup-field_vignette
 features[field_instance][] = node-liftup-field_visible_title
+features[field_instance][] = node-liftup-field_visitpori_theme
 features[field_instance][] = node-liftup-og_group_ref
 features[node][] = liftup
 features[quicktabs][] = feed_tabs

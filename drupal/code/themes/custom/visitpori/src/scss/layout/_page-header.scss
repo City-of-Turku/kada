@@ -45,6 +45,7 @@
 
   .l-navigation__container {
     width: 100%;
+    max-width: 100%;
 
     @media screen and (min-width: $mobile-menu-breakpoint) {
       position: relative;

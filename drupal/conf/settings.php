@@ -51,7 +51,7 @@ $conf['varnish_cache_clear'] = "2";
 // Control terminal host with port
 $conf['varnish_control_terminal'] = "localhost:6082";
 // Secret if used, look for /etc/varnish/secret
-$conf['varnish_control_key'] = "";
+$conf['varnish_control_key'] = getenv("VARNISH_CONTROL_KEY");
 // Flush caches on cron run
 $conf['varnish_flush_cron'] = "0";
 // Varnish version
