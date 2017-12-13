@@ -2,7 +2,7 @@
   align-items: center;
   display: flex;
   height: 3.125rem;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 // Hide the logo image since we use backgrounds but leave it for the screen readers to find.
@@ -24,7 +24,7 @@
 
   @media screen and (min-width: $tablet-portrait-narrow) {
     background-image: url('../../visitpori-logo-full.svg');
-    height: 5.625rem;
+    height: 4.625rem;
     width: 23.125rem;
   }
 }
@@ -56,7 +56,7 @@
   width: 100%;
 
   @media screen and (min-width: $mobile-footer-breakpoint) {
-    background-image: url('../../visitpori-footer-logo.svg');
+    background-image: url('../../visitpori-logo-small.svg');
     height: 6.188rem;
     width: 12.625rem;
   }

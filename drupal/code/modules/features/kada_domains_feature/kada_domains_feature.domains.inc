@@ -74,6 +74,21 @@ function kada_domains_feature_domain_alias_default_aliases() {
       'redirect' => 0,
       'machine_name' => 'visitpori_fi',
     ),
+    'visitpori.dev.wunder.io' => array(
+      'pattern' => 'visitpori.dev.wunder.io',
+      'redirect' => 0,
+      'machine_name' => 'visitpori_fi',
+    ),
+    'visitpori.stage.wunder.io' => array(
+      'pattern' => 'visitpori.stage.wunder.io',
+      'redirect' => 0,
+      'machine_name' => 'visitpori_fi',
+    ),
+    'beta.visitpori.fi' => array(
+      'pattern' => 'beta.visitpori.fi',
+      'redirect' => 0,
+      'machine_name' => 'visitpori_fi',
+    ),
   );
 
   return $domain_aliases;

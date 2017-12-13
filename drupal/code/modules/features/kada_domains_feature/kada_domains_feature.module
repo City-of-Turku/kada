@@ -4,6 +4,7 @@
  * Code for the KADA Domains feature.
  */
 
+define('ADMIN_ROLE_MACHINE_NAME', 'admin');
 include_once 'kada_domains_feature.features.inc';
 
 /**
@@ -138,5 +139,29 @@ function kada_domains_feature_rules_action_node_domain_copy($source_node, $targe
     $target_node->domains = $source_node->domains;
     $target_node->domain_source = $source_node->domain_source;
     $target_node->domain_site = $source_node->domain_site;
+  }
+}
+
+
+function kada_domains_feature_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  $is_admin = in_array(ADMIN_ROLE_MACHINE_NAME, array_values($user->roles));
+
+  // All the node forms which have the domain selection option enabled:
+  if (isset($form['domain']['domain_site'])) {
+
+    // Administrators:
+    if ($is_admin) {
+      // Set the default value to false (do not publish to all domains.
+      $form['domain']['domain_site']['#default_value'] = FALSE;
+    }
+    // "Normal" content editors:
+    else {
+      // Hide the checkbox "Send to all affiliates" (content published to all domains)
+      // and set the value to false.
+      $form['domain']['domain_site'] = array('#type' => 'value', '#value' => FALSE);
+
+    }
+
   }
 }
