@@ -1,0 +1,16 @@
+name = Visitpori configurations
+core = 7.x
+package = Pori
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = menu
+dependencies[] = menu_block
+features[context][] = visitpori_domain
+features[context][] = visitpori_footer_menu
+features[context][] = visitpori_top_menu
+features[ctools][] = context:context:3
+features[features_api][] = api:2
+features[menu_custom][] = menu-visitpori-footer-menu-fi
+features[menu_custom][] = menu-visitpori-main-menu
+features[menu_custom][] = menu-visitpori-top-menu-fi
