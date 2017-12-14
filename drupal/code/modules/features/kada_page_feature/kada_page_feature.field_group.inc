@@ -129,33 +129,6 @@ function kada_page_feature_field_group_info() {
   $field_groups['group_section|node|page|form'] = $field_group;
 
   $field_group = new stdClass();
-  $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
-  $field_group->identifier = 'group_subpages|node|page|form';
-  $field_group->group_name = 'group_subpages';
-  $field_group->entity_type = 'node';
-  $field_group->bundle = 'page';
-  $field_group->mode = 'form';
-  $field_group->parent_name = '';
-  $field_group->data = array(
-    'label' => 'Subpages',
-    'weight' => '2',
-    'children' => array(
-      0 => 'field_subpage',
-    ),
-    'format_type' => 'tab',
-    'format_settings' => array(
-      'formatter' => 'closed',
-      'instance_settings' => array(
-        'description' => '',
-        'classes' => 'group-subpages field-group-tab',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $field_groups['group_subpages|node|page|form'] = $field_group;
-
-  $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_topics|node|page|form';
@@ -250,7 +223,6 @@ function kada_page_feature_field_group_info() {
   t('Content');
   t('Recommended links');
   t('Section');
-  t('Subpages');
   t('Topics');
   t('Unused');
   t('Widgets');

@@ -268,6 +268,7 @@
   margin: 0;
   padding: 0;
 
+  .node--page,
   .node--liftup {
     align-items: flex-start;
     border-top: .938rem solid $primary-color;
@@ -283,10 +284,12 @@
         background-color: rgba($color, .2);
         border-top: .938rem solid $color;
 
+        .field--name-title h2,
         .field--name-field-visible-title h2 {
           color: $color;
         }
 
+        .field--name-duplicate-title a,
         .field--name-field-link-to-content a {
           border: 1px solid $color;
           color: $color;
@@ -310,6 +313,7 @@
   }
 
   &:nth-child(2) {
+    .node--page,
     .node--liftup {
       flex-direction: column-reverse;
 
@@ -319,12 +323,14 @@
     }
   }
 
+  .field--name-title h2,
   .field--name-field-visible-title h2 {
     @media screen and (min-width: $tablet-landscape) {
       margin-bottom: 1.25rem;
     }
   }
 
+  .field--name-duplicate-title a,
   .field--name-field-link-to-content a {
     border: 1px solid $primary-color;
     color: $primary-color;
