@@ -7,7 +7,7 @@ index 4325179..2874717 100644
  
  libraries[php-proauth][download][type] = "git"
 -libraries[php-proauth][download][url] = "https://github.com/infojunkie/php-proauth.git"
-+libraries[php-proauth][download][url] = "https://github.com/RobLoach/php-proauth.git"
++libraries[php-proauth][download][url] = "https://github.com/jhuang0427/php-proauth"
  libraries[php-proauth][directory_name] = php-proauth
 -libraries[php-proauth][destination] = libraries
 \ No newline at end of file

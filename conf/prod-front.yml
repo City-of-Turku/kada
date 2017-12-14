@@ -59,11 +59,11 @@
       - server_name: "{{ domain1_name }}"
         http_port: 8080
         docroot: "/var/www/{{ domain1_name }}/current/web"
-      #- server_name: "www.{{ domain2_name }}"
-        #server_aliases: "{{ domain2_name }}"
-        #server_forwards: "{{ domain2_name }}"  # we redirect to www subdomain
-        #http_port: 8080
-        #docroot: "/var/www/{{ domain1_name }}/current/web"
+      - server_name: "beta.{{ domain2_name }}"
+        server_aliases: "{{ domain2_name }} beta.{{ domain3_name }}"
+        server_forwards: "{{ domain2_name }}"  # we redirect to beta subdomain
+        http_port: 8080
+        docroot: "/var/www/{{ domain1_name }}/current/web"
 
     # You can also define aliases with app_dir_aliases, see ansible/playbook/roles/nginx/templates/all_apps.conf.j2
 
@@ -164,7 +164,8 @@
     certbot_email: fi.support@wunder.io
     certbot_domains:
       - "{{ domain1_name }}"
-      #- "{{ domain2_name }}"
+      - "beta.{{ domain2_name }}"
+      - "beta.{{ domain3_name }}"
       #- "www.{{ domain2_name }}"
     certbot_renewal_docroot: /var/www/letsencrypt-auto
     #certbot_commands: allows yo uto customize the command to run, see ansible/playbook/roles/certbot/defaults/main.yml
@@ -204,12 +205,18 @@
             - name: prod1_http1
               address: "{{ front1_ip }}"
               port: 8080
-        #- name: prod2
-          #host: "www.{{ domain2_name }}"
-          #backends:
-            #- name: prod2_http1
-              #address: "{{ front1_ip }}"
-              #port: 8080
+        - name: prod2
+          host: "beta.{{ domain2_name }}"
+          backends:
+            - name: prod2_http1
+              address: "{{ front1_ip }}"
+              port: 8080
+        - name: prod3
+          host: "beta.{{ domain3_name }}"
+          backends:
+            - name: prod3_http1
+              address: "{{ front1_ip }}"
+              port: 8080
 
     # There is more customization options for hashes, cookies etc. see ansible/playbook/roles/varnish/templates/default.vcl.j2 for reference
 
@@ -231,20 +238,28 @@
         use_dhparam: True
         backends:
           - 127.0.0.1:8081
-      #- server_name: "www.{{ domain2_name }}"
-        #server_forwards: "{{ domain2_name }}"  # we redirect to www subdomain
-        #ssl_certificate: "/etc/letsencrypt/live/{{ domain1_name }}/fullchain.pem"
-        #ssl_certificate_key: "/etc/letsencrypt/live/{{ domain1_name}}/privkey.pem"
-        #use_dhparam: True
-        #backends:
-          #- 127.0.0.1:8081
+      - server_name: "beta.{{ domain2_name }}"
+        server_forwards: "{{ domain2_name }} {{ domain1_name }}"  # we redirect to www subdomain
+        ssl_certificate: "/etc/letsencrypt/live/{{ domain1_name }}/fullchain.pem"
+        ssl_certificate_key: "/etc/letsencrypt/live/{{ domain1_name}}/privkey.pem"
+        use_dhparam: True
+        backends:
+          - 127.0.0.1:8081
+      - server_name: "beta.{{ domain3_name }}"
+        ssl_certificate: "/etc/letsencrypt/live/beta.{{ domain3_name }}/fullchain.pem"
+        ssl_certificate_key: "/etc/letsencrypt/live/beta.{{ domain3_name}}/privkey.pem"
+        use_dhparam: True
+        backends:
+          - 127.0.0.1:8081
 
     # Forward to www and https.
     httpforwards:
       - server_name: "{{ domain1_name }}"
         forwarded_domains: "{{ domain1_name}}"
-      #- server_name: "www.{{ domain2_name }}"
-        #forwarded_domains: "{{ domain2_name}} www.{{ domain2_name }} {{ domain1_name }}"
+      - server_name: "beta.{{ domain2_name }}"
+        forwarded_domains: "{{ domain2_name}} beta.{{ domain2_name }} {{ domain1_name }}"
+      - server_name: "beta.{{ domain3_name }}"
+        forwarded_domains: "{{ domain3_name}} beta.{{ domain3_name }}"
     # You can also use extra_forwards and httpextraforwards to define additional domains to listen & forward
     # See ansible/playbook/roles/sslterminator/templates/ssl_terminators.conf.j2 for reference.
 
