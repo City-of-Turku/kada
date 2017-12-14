@@ -6,6 +6,19 @@
   max-width: $inner-container-width;
 }
 
+.page-node {
+  // Set theme colored headers for page.
+  @each $theme-color, $color in $theme-colors {
+    .theme-color-#{$theme-color} {
+      .page-main__container {
+        .content-header__title {
+          color: $color;
+        }
+      }
+    }
+  }
+}
+
 .theme-main-page {
   .content__header,
   .node--page--full {
