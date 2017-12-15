@@ -48,17 +48,17 @@ function visitpori_configurations_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'menu_block-23' => array(
-          'module' => 'menu_block',
-          'delta' => '23',
+        'menu-menu-visitpori-footer-menu-en' => array(
+          'module' => 'menu',
+          'delta' => 'menu-visitpori-footer-menu-en',
           'region' => 'footer',
-          'weight' => '4',
+          'weight' => '-10',
         ),
-        'menu_block-26' => array(
-          'module' => 'menu_block',
-          'delta' => '26',
+        'menu-menu-visitpori-footer-menu-fi' => array(
+          'module' => 'menu',
+          'delta' => 'menu-visitpori-footer-menu-fi',
           'region' => 'footer',
-          'weight' => '5',
+          'weight' => '-9',
         ),
       ),
     ),
@@ -87,29 +87,29 @@ function visitpori_configurations_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'menu_block-25' => array(
-          'module' => 'menu_block',
-          'delta' => '25',
+        'menu-menu-visitpori-top-menu-en' => array(
+          'module' => 'menu',
+          'delta' => 'menu-visitpori-top-menu-en',
           'region' => 'navigation_top',
-          'weight' => '-6',
+          'weight' => '-10',
         ),
-        'menu_block-28' => array(
-          'module' => 'menu_block',
-          'delta' => '28',
+        'menu-menu-visitpori-top-menu-fi' => array(
+          'module' => 'menu',
+          'delta' => 'menu-visitpori-top-menu-fi',
           'region' => 'navigation_top',
-          'weight' => '-5',
+          'weight' => '-9',
         ),
-        'menu_block-24' => array(
-          'module' => 'menu_block',
-          'delta' => '24',
+        'menu-menu-visitpori-main-navigation' => array(
+          'module' => 'menu',
+          'delta' => 'menu-visitpori-main-navigation',
           'region' => 'navigation',
-          'weight' => '-7',
+          'weight' => '-10',
         ),
-        'menu_block-27' => array(
-          'module' => 'menu_block',
-          'delta' => '27',
+        'menu-menu-visitpori-main-menu' => array(
+          'module' => 'menu',
+          'delta' => 'menu-visitpori-main-menu',
           'region' => 'navigation',
-          'weight' => '-6',
+          'weight' => '-9',
         ),
       ),
     ),
