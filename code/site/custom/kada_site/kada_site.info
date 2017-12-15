@@ -1,0 +1,4 @@
+name = KADA site-specific module
+description = KADA module used to act as a site-specific profile-like central module.
+core = 7.x
+package = KADA
