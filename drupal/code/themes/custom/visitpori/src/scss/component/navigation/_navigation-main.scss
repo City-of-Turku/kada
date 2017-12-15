@@ -1,6 +1,10 @@
 @media screen and (min-width: $mobile-menu-breakpoint) {
   .menu-name-main-menu,
-  .menu-name-menu-main-menu-en {
+  .menu-name-menu-main-menu-en,
+  .menu-name-menu-visitpori-main-menu,
+  .menu-name-menu-visitpori-main-menu-fi,
+  .menu-name-menu-visitpori-main-menu-en,
+  .menu-name-menu-visitpori-main-menu-de {
     .responsive-menus .menu {
       display: flex;
       justify-content: space-between;
