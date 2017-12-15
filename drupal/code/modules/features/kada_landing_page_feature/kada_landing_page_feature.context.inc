@@ -17,6 +17,11 @@ function kada_landing_page_feature_context_default_contexts() {
   $context->description = 'Liftups per landing page';
   $context->tag = 'sections';
   $context->conditions = array(
+    'domain' => array(
+      'values' => array(
+        'pori_fi' => 'pori_fi',
+      ),
+    ),
     'node' => array(
       'values' => array(
         'landing_page' => 'landing_page',
