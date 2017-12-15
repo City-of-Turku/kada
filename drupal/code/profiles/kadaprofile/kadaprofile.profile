@@ -199,3 +199,14 @@ function kadaprofile_update_7114() {
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables Visitpori Configurations feature
+ */
+function kadaprofile_update_7115() {
+  $modules = array('visitpori_configurations');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}

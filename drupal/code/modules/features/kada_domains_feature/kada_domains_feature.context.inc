@@ -111,6 +111,11 @@ function kada_domains_feature_context_default_contexts() {
         '~kadacalendar' => '~kadacalendar',
       ),
     ),
+    'domain' => array(
+      'values' => array(
+        'pori_fi' => 'pori_fi',
+      ),
+    ),
     'entity_field' => array(
       'values' => array(
         'entity_type' => 'a:1:{s:4:"node";s:4:"node";}',

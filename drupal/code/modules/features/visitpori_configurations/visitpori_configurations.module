@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Visitpori configurations feature.
+ */
+
+include_once 'visitpori_configurations.features.inc';
