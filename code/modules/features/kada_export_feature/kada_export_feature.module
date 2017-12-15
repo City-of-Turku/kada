@@ -1,0 +1,128 @@
+<?php
+/**
+ * @file
+ * Code for the KADA Export feature.
+ */
+
+include_once 'kada_export_feature.features.inc';
+
+/**
+ * Implementation of hook_views_pre_render()
+ */
+function kada_export_feature_views_pre_render(&$view) {
+  if ($view->name == 'kada_feeds') {
+    global $language;
+    // Alter feeds that cannot be done with the Views UI
+    foreach ($view->result as $result) {
+      // Copy news image field to liftup image field so that it gets used in Views RSS <enclosure>
+      if (empty($result->field_scald_thumbnail) && !empty($result->field_scald_thumbnail_1)) {
+        $result->field_scald_thumbnail = $result->field_scald_thumbnail_1;
+      }
+    }
+    // Alter RSS feed title based on View current display and contextual filter
+    $title = $view->build_info['title'];
+    $site_name = variable_get('site_name');
+    switch ($view->current_display) {
+      case 'section_rss':
+      case 'section_rss_full':
+        if (is_numeric(arg(1))) {
+          $node = node_load(arg(1));
+          $title = $node->title;
+        }
+        break;
+      case 'term_rss':
+        if (is_numeric(arg(1))) {
+          $i18n_object = i18n_get_object('taxonomy_term', arg(1));
+          $title = $i18n_object->localize($language->language)->name . ' | ' . $site_name;
+        }
+        break;
+      case 'frontpage_rss':
+        $title = t('Latest News') . ' | ' . $site_name;
+        break;
+      case 'news_rss':
+        $title = t('News Archive') . ' | ' . $site_name;
+    }
+    $view->build_info['title'] = $title;
+  }
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function kada_export_feature_block_info() {
+  $block['kada_rss_feed_for_section'] = array(
+    'info' => t('RSS feed link: Section'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+  $block['kada_rss_feed_for_landing_page'] = array(
+    'info' => t('RSS feed link: Landing page'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+  $block['kada_rss_feed_for_theme'] = array(
+    'info' => t('RSS feed link: Theme'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+  $block['kada_rss_feed_for_news_archive'] = array(
+    'info' => t('RSS feed link: News Archive'),
+    'cache' => DRUPAL_CACHE_PER_PAGE,
+  );
+  return $block;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function kada_export_feature_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'kada_rss_feed_for_section':
+      if (arg(0) == 'node' && is_numeric(arg(1))) {
+        $node = menu_get_object();
+        if ($node->type == 'section') {
+          $url = "section/$node->nid/rss.xml";
+        }
+      }
+      break;
+    case 'kada_rss_feed_for_landing_page':
+      if (arg(0) == 'node' && is_numeric(arg(1))) {
+        $node = menu_get_object();
+        if ($node->type == 'landing_page') {
+          // Landing pages for Target Audience
+          if (!empty($node->field_target_audience)) {
+            $tid = $node->field_target_audience[LANGUAGE_NONE][0]['tid'];
+            $url = "term/$tid/rss.xml";
+          }
+          // Landing pages for District
+          else if (!empty($node->field_district)) {
+            $tid = $node->field_district[LANGUAGE_NONE][0]['tid'];
+            $url = "term/$tid/rss.xml";
+          }
+          // Landing pages for Keyword
+          else if (!empty($node->field_keywords)) {
+            $tid = $node->field_keywords[LANGUAGE_NONE][0]['tid'];
+            $url = "term/$tid/rss.xml";
+          }
+        }
+      }
+      break;
+    case 'kada_rss_feed_for_theme':
+      if (arg(0) == 'node' && is_numeric(arg(1))) {
+        $node = menu_get_object();
+        if (!empty($node->field_theme)) {
+          $tid = $node->field_theme[LANGUAGE_NONE][0]['tid'];
+          $url = "term/$tid/rss.xml";
+        }
+      }
+      break;
+    case 'kada_rss_feed_for_news_archive':
+        $url = 'news/rss.xml';
+      break;
+  }
+  if (isset($url)) {
+    $block['content'] = array(
+      '#theme' => 'feed_icon',
+      '#url' => $url,
+    );
+  }
+  return $block;
+}

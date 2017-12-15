@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Code for the TKUFI Editorial Tools feature.
+ * Code for the KADA Editorial Tools feature.
  */
 
 include_once 'kada_editorial_tools_feature.features.inc';

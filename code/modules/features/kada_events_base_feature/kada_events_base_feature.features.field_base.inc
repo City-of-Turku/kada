@@ -10,7 +10,7 @@
 function kada_events_base_feature_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'eq_node'
+  // Exported field_base: 'eq_node'.
   $field_bases['eq_node'] = array(
     'active' => 1,
     'cardinality' => -1,
@@ -19,14 +19,6 @@ function kada_events_base_feature_field_default_field_bases() {
       0 => 'entityqueue_subqueue',
     ),
     'field_name' => 'eq_node',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -49,7 +41,7 @@ function kada_events_base_feature_field_default_field_bases() {
         'view' => array(
           'args' => array(),
           'display_name' => 'entityreference_1',
-          'view_name' => 'driveturku_eventcalendar_er',
+          'view_name' => 'kada_eventcalendar_er',
         ),
       ),
       'target_type' => 'node',
@@ -58,14 +50,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_contact_email'
+  // Exported field_base: 'field_contact_email'.
   $field_bases['field_contact_email'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_contact_email',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'email',
@@ -76,21 +67,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'email',
   );
 
-  // Exported field_base: 'field_contact_phone_number'
+  // Exported field_base: 'field_contact_phone_number'.
   $field_bases['field_contact_phone_number'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_contact_phone_number',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -106,14 +89,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_date_repeat'
+  // Exported field_base: 'field_date_repeat'.
   $field_bases['field_date_repeat'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_date_repeat',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -138,14 +120,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_date_repeat_extra'
+  // Exported field_base: 'field_date_repeat_extra'.
   $field_bases['field_date_repeat_extra'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_date_repeat_extra',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -170,14 +151,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_date_type'
+  // Exported field_base: 'field_date_type'.
   $field_bases['field_date_type'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_date_type',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -198,14 +178,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'list_text',
   );
 
-  // Exported field_base: 'field_event_date'
+  // Exported field_base: 'field_event_date'.
   $field_bases['field_event_date'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event_date',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -230,14 +209,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_event_facebook_page_et'
+  // Exported field_base: 'field_event_facebook_page_et'.
   $field_bases['field_event_facebook_page_et'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event_facebook_page_et',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -261,14 +239,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_event_free_admission'
+  // Exported field_base: 'field_event_free_admission'.
   $field_bases['field_event_free_admission'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event_free_admission',
-    'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
         0 => 'value',
@@ -288,21 +265,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
-  // Exported field_base: 'field_event_import_id'
+  // Exported field_base: 'field_event_import_id'.
   $field_bases['field_event_import_id'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event_import_id',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -318,21 +287,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_event_organizer_et'
+  // Exported field_base: 'field_event_organizer_et'.
   $field_bases['field_event_organizer_et'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event_organizer_et',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -348,21 +309,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_event_price_et'
+  // Exported field_base: 'field_event_price_et'.
   $field_bases['field_event_price_et'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event_price_et',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -377,14 +330,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_event_signup_url_et'
+  // Exported field_base: 'field_event_signup_url_et'.
   $field_bases['field_event_signup_url_et'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event_signup_url_et',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -408,14 +360,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_event_tickets_url_et'
+  // Exported field_base: 'field_event_tickets_url_et'.
   $field_bases['field_event_tickets_url_et'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event_tickets_url_et',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -439,21 +390,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_event_turnout'
+  // Exported field_base: 'field_event_turnout'.
   $field_bases['field_event_turnout'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event_turnout',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -469,14 +412,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_event_twitter_page_et'
+  // Exported field_base: 'field_event_twitter_page_et'.
   $field_bases['field_event_twitter_page_et'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_event_twitter_page_et',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'link',
@@ -500,14 +442,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_last_day_to_sign_up'
+  // Exported field_base: 'field_last_day_to_sign_up'.
   $field_bases['field_last_day_to_sign_up'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_last_day_to_sign_up',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'date',
@@ -532,21 +473,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_person_in_charge'
+  // Exported field_base: 'field_person_in_charge'.
   $field_bases['field_person_in_charge'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_person_in_charge',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -562,14 +495,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_super_event'
+  // Exported field_base: 'field_super_event'.
   $field_bases['field_super_event'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_super_event',
-    'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'relation_add',
@@ -580,21 +512,13 @@ function kada_events_base_feature_field_default_field_bases() {
     'type' => 'relation_add',
   );
 
-  // Exported field_base: 'field_url_keyword'
+  // Exported field_base: 'field_url_keyword'.
   $field_bases['field_url_keyword'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_url_keyword',
-    'foreign keys' => array(
-      'format' => array(
-        'columns' => array(
-          'format' => 'format',
-        ),
-        'table' => 'filter_format',
-      ),
-    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',

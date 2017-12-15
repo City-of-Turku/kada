@@ -51,9 +51,9 @@ function kada_events_base_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-ad3d53b4b97c88c9aa4b6b0551bae730' => array(
+        'views-bae7ddd4c1b987e362b055aa9b225bae' => array(
           'module' => 'views',
-          'delta' => 'ad3d53b4b97c88c9aa4b6b0551bae730',
+          'delta' => 'bae7ddd4c1b987e362b055aa9b225bae',
           'region' => 'content',
           'weight' => '-10',
         ),
@@ -140,9 +140,9 @@ function kada_events_base_feature_context_default_contexts() {
           'region' => 'navigation',
           'weight' => '-10',
         ),
-        'views-0a0d9387bc0aa482d252922194524b92' => array(
+        'views-kada_section_footer-block_1' => array(
           'module' => 'views',
-          'delta' => '0a0d9387bc0aa482d252922194524b92',
+          'delta' => 'kada_section_footer-block_1',
           'region' => 'footer',
           'weight' => '-10',
         ),
@@ -309,21 +309,21 @@ function kada_events_base_feature_context_default_contexts() {
           'region' => 'top_tabs',
           'weight' => '-10',
         ),
-        'views-855c1bad3d5c5ee15677eccee610e3bc' => array(
+        'views-kada_section_footer-block_2' => array(
           'module' => 'views',
-          'delta' => '855c1bad3d5c5ee15677eccee610e3bc',
+          'delta' => 'kada_section_footer-block_2',
           'region' => 'footer',
           'weight' => '-10',
         ),
-        'views-df485ba9325bf8f9ee84b94548d0d032' => array(
+        'views-e7af9740b175ac8f449ae4e7d545add5' => array(
           'module' => 'views',
-          'delta' => 'df485ba9325bf8f9ee84b94548d0d032',
+          'delta' => 'e7af9740b175ac8f449ae4e7d545add5',
           'region' => 'event_list',
           'weight' => '-10',
         ),
-        'views-755466bc22e6a0798ee432f65fb54f97' => array(
+        'views-3f4afdac568f462e6c3c03c3fad675ee' => array(
           'module' => 'views',
-          'delta' => '755466bc22e6a0798ee432f65fb54f97',
+          'delta' => '3f4afdac568f462e6c3c03c3fad675ee',
           'region' => 'event_map',
           'weight' => '-10',
         ),
@@ -385,9 +385,9 @@ function kada_events_base_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-driveturku_top_carousel-section' => array(
+        'views-kada_top_carousel-section' => array(
           'module' => 'views',
-          'delta' => 'driveturku_top_carousel-section',
+          'delta' => 'kada_top_carousel-section',
           'region' => 'header',
           'weight' => '-10',
         ),
@@ -430,15 +430,15 @@ function kada_events_base_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-ed7c5328d70a35ebe374d7ead4e29921' => array(
+        'views-kada_top_carousel-turkukalenteri_en' => array(
           'module' => 'views',
-          'delta' => 'ed7c5328d70a35ebe374d7ead4e29921',
+          'delta' => 'kada_top_carousel-turkukalenteri_en',
           'region' => 'top_carousel',
           'weight' => '-10',
         ),
-        'views-f5dc96a94931775165116c081ad3f343' => array(
+        'views-kada_event_list-event_grid_en' => array(
           'module' => 'views',
-          'delta' => 'f5dc96a94931775165116c081ad3f343',
+          'delta' => 'kada_event_list-event_grid_en',
           'region' => 'event_mosaic',
           'weight' => '-10',
         ),
@@ -481,15 +481,15 @@ function kada_events_base_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-b23677cc742580029c5ba81fd68cfa8e' => array(
+        'views-kada_top_carousel-kadacalendar' => array(
           'module' => 'views',
-          'delta' => 'b23677cc742580029c5ba81fd68cfa8e',
+          'delta' => 'kada_top_carousel-kadacalendar',
           'region' => 'top_carousel',
           'weight' => '-10',
         ),
-        'views-464eea9ac2fe610dc3592f80641828a5' => array(
+        'views-kada_event_list-event_grid' => array(
           'module' => 'views',
-          'delta' => '464eea9ac2fe610dc3592f80641828a5',
+          'delta' => 'kada_event_list-event_grid',
           'region' => 'event_mosaic',
           'weight' => '-10',
         ),
@@ -532,15 +532,15 @@ function kada_events_base_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-daa371b73c95270311db3c5124072ee9' => array(
+        'views-kada_top_carousel-kadacalendar_ru' => array(
           'module' => 'views',
-          'delta' => 'daa371b73c95270311db3c5124072ee9',
+          'delta' => 'kada_top_carousel-kadacalendar_ru',
           'region' => 'top_carousel',
           'weight' => '-10',
         ),
-        'views-3a826694cdaca4a4206c3205dcf85574' => array(
+        'views-kada_event_list-event_grid_ru' => array(
           'module' => 'views',
-          'delta' => '3a826694cdaca4a4206c3205dcf85574',
+          'delta' => 'kada_event_list-event_grid_ru',
           'region' => 'event_mosaic',
           'weight' => '-10',
         ),
@@ -583,15 +583,15 @@ function kada_events_base_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-c455f978383b84f68d0c3e95627e1ca6' => array(
+        'views-kada_top_carousel-kadacalendar_sv' => array(
           'module' => 'views',
-          'delta' => 'c455f978383b84f68d0c3e95627e1ca6',
+          'delta' => 'kada_top_carousel-kadacalendar_sv',
           'region' => 'top_carousel',
           'weight' => '-10',
         ),
-        'views-55704b776b70c7fc287954ce82e2eefd' => array(
+        'views-kada_event_list-event_grid_sv' => array(
           'module' => 'views',
-          'delta' => '55704b776b70c7fc287954ce82e2eefd',
+          'delta' => 'kada_event_list-event_grid_sv',
           'region' => 'event_mosaic',
           'weight' => '-10',
         ),
@@ -629,9 +629,9 @@ function kada_events_base_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-edbc1cb287c9ce16b634bfd74dfa9bdf' => array(
+        'views-e2b74bbc24740379f9f28979bd0d8a5f' => array(
           'module' => 'views',
-          'delta' => 'edbc1cb287c9ce16b634bfd74dfa9bdf',
+          'delta' => 'e2b74bbc24740379f9f28979bd0d8a5f',
           'region' => 'header',
           'weight' => '-10',
         ),
@@ -674,21 +674,21 @@ function kada_events_base_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-edbc1cb287c9ce16b634bfd74dfa9bdf' => array(
+        'views-e2b74bbc24740379f9f28979bd0d8a5f' => array(
           'module' => 'views',
-          'delta' => 'edbc1cb287c9ce16b634bfd74dfa9bdf',
+          'delta' => 'e2b74bbc24740379f9f28979bd0d8a5f',
           'region' => 'header',
           'weight' => '-10',
         ),
-        'views-23fe5d3656233abaf50c47d0082830ba' => array(
+        'views-198ee601399648f605a5a54c648fd563' => array(
           'module' => 'views',
-          'delta' => '23fe5d3656233abaf50c47d0082830ba',
+          'delta' => '198ee601399648f605a5a54c648fd563',
           'region' => 'top_carousel',
           'weight' => '-9',
         ),
-        'views-59e986c2e6658ad95fc6cd1de28bbeb3' => array(
+        'views-kada_event_list-hobby_grid_en' => array(
           'module' => 'views',
-          'delta' => '59e986c2e6658ad95fc6cd1de28bbeb3',
+          'delta' => 'kada_event_list-hobby_grid_en',
           'region' => 'event_mosaic',
           'weight' => '-9',
         ),
@@ -731,21 +731,21 @@ function kada_events_base_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-edbc1cb287c9ce16b634bfd74dfa9bdf' => array(
+        'views-e2b74bbc24740379f9f28979bd0d8a5f' => array(
           'module' => 'views',
-          'delta' => 'edbc1cb287c9ce16b634bfd74dfa9bdf',
+          'delta' => 'e2b74bbc24740379f9f28979bd0d8a5f',
           'region' => 'header',
           'weight' => '-10',
         ),
-        'views-677210aee22535b8c810779404f4d632' => array(
+        'views-2b3acf5844aef9bdb37a05bc773d9660' => array(
           'module' => 'views',
-          'delta' => '677210aee22535b8c810779404f4d632',
+          'delta' => '2b3acf5844aef9bdb37a05bc773d9660',
           'region' => 'top_carousel',
           'weight' => '-10',
         ),
-        'views-54e3e1bd7c4fdbbeadc86c4ff7f09483' => array(
+        'views-kada_event_list-hobby_grid' => array(
           'module' => 'views',
-          'delta' => '54e3e1bd7c4fdbbeadc86c4ff7f09483',
+          'delta' => 'kada_event_list-hobby_grid',
           'region' => 'event_mosaic',
           'weight' => '-10',
         ),
@@ -788,21 +788,21 @@ function kada_events_base_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-edbc1cb287c9ce16b634bfd74dfa9bdf' => array(
+        'views-e2b74bbc24740379f9f28979bd0d8a5f' => array(
           'module' => 'views',
-          'delta' => 'edbc1cb287c9ce16b634bfd74dfa9bdf',
+          'delta' => 'e2b74bbc24740379f9f28979bd0d8a5f',
           'region' => 'header',
           'weight' => '-10',
         ),
-        'views-22cf6d9a730f4c3d1fa097600709293c' => array(
+        'views-6a8ac8b4141c6664f393f1da668139e7' => array(
           'module' => 'views',
-          'delta' => '22cf6d9a730f4c3d1fa097600709293c',
+          'delta' => '6a8ac8b4141c6664f393f1da668139e7',
           'region' => 'top_carousel',
           'weight' => '-9',
         ),
-        'views-eb4d4af740fb28a68d0a9c9886a39cfe' => array(
+        'views-kada_event_list-hobby_grid_ru' => array(
           'module' => 'views',
-          'delta' => 'eb4d4af740fb28a68d0a9c9886a39cfe',
+          'delta' => 'kada_event_list-hobby_grid_ru',
           'region' => 'event_mosaic',
           'weight' => '-9',
         ),
@@ -845,21 +845,21 @@ function kada_events_base_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-edbc1cb287c9ce16b634bfd74dfa9bdf' => array(
+        'views-e2b74bbc24740379f9f28979bd0d8a5f' => array(
           'module' => 'views',
-          'delta' => 'edbc1cb287c9ce16b634bfd74dfa9bdf',
+          'delta' => 'e2b74bbc24740379f9f28979bd0d8a5f',
           'region' => 'header',
           'weight' => '-10',
         ),
-        'views-9bd31838df270d33313afb09c4f78dec' => array(
+        'views-5c137c0ff008956a166e78a126416ec5' => array(
           'module' => 'views',
-          'delta' => '9bd31838df270d33313afb09c4f78dec',
+          'delta' => '5c137c0ff008956a166e78a126416ec5',
           'region' => 'top_carousel',
           'weight' => '-9',
         ),
-        'views-b60a7711a807a9f8d64b5966e422cfa8' => array(
+        'views-kada_event_list-hobby_grid_sv' => array(
           'module' => 'views',
-          'delta' => 'b60a7711a807a9f8d64b5966e422cfa8',
+          'delta' => 'kada_event_list-hobby_grid_sv',
           'region' => 'event_mosaic',
           'weight' => '-9',
         ),

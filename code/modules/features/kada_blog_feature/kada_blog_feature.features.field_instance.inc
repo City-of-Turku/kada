@@ -10,7 +10,7 @@
 function kada_blog_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_blog-comment_body'
+  // Exported field_instance: 'comment-comment_node_blog-comment_body'.
   $field_instances['comment-comment_node_blog-comment_body'] = array(
     'bundle' => 'comment_node_blog',
     'default_value' => NULL,
@@ -47,7 +47,7 @@ function kada_blog_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'comment-comment_node_blog_post-comment_body'
+  // Exported field_instance: 'comment-comment_node_blog_post-comment_body'.
   $field_instances['comment-comment_node_blog_post-comment_body'] = array(
     'bundle' => 'comment_node_blog_post',
     'default_value' => NULL,
@@ -84,7 +84,7 @@ function kada_blog_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog-body'
+  // Exported field_instance: 'node-blog-body'.
   $field_instances['node-blog-body'] = array(
     'bundle' => 'blog',
     'default_value' => NULL,
@@ -174,7 +174,7 @@ function kada_blog_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog-field_blog_tags'
+  // Exported field_instance: 'node-blog-field_blog_tags'.
   $field_instances['node-blog-field_blog_tags'] = array(
     'bundle' => 'blog',
     'default_value' => NULL,
@@ -224,7 +224,7 @@ function kada_blog_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog-field_lead_paragraph_et'
+  // Exported field_instance: 'node-blog-field_lead_paragraph_et'.
   $field_instances['node-blog-field_lead_paragraph_et'] = array(
     'bundle' => 'blog',
     'default_value' => NULL,
@@ -312,7 +312,7 @@ function kada_blog_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog-field_main_image'
+  // Exported field_instance: 'node-blog-field_main_image'.
   $field_instances['node-blog-field_main_image'] = array(
     'bundle' => 'blog',
     'default_value' => NULL,
@@ -367,7 +367,7 @@ function kada_blog_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog-og_group_ref'
+  // Exported field_instance: 'node-blog-og_group_ref'.
   $field_instances['node-blog-og_group_ref'] = array(
     'bundle' => 'blog',
     'default_value' => NULL,
@@ -430,7 +430,7 @@ function kada_blog_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog_post-body'
+  // Exported field_instance: 'node-blog_post-body'.
   $field_instances['node-blog_post-body'] = array(
     'bundle' => 'blog_post',
     'default_value' => NULL,
@@ -535,7 +535,7 @@ function kada_blog_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog_post-field_blog'
+  // Exported field_instance: 'node-blog_post-field_blog'.
   $field_instances['node-blog_post-field_blog'] = array(
     'bundle' => 'blog_post',
     'default_value' => NULL,
@@ -609,7 +609,7 @@ function kada_blog_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog_post-field_blog_tags'
+  // Exported field_instance: 'node-blog_post-field_blog_tags'.
   $field_instances['node-blog_post-field_blog_tags'] = array(
     'bundle' => 'blog_post',
     'default_value' => NULL,
@@ -673,7 +673,7 @@ function kada_blog_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog_post-field_main_image'
+  // Exported field_instance: 'node-blog_post-field_main_image'.
   $field_instances['node-blog_post-field_main_image'] = array(
     'bundle' => 'blog_post',
     'default_value' => NULL,
@@ -756,7 +756,7 @@ function kada_blog_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog_post-field_quote'
+  // Exported field_instance: 'node-blog_post-field_quote'.
   $field_instances['node-blog_post-field_quote'] = array(
     'bundle' => 'blog_post',
     'default_value' => NULL,
@@ -860,7 +860,7 @@ function kada_blog_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog_post-field_theme'
+  // Exported field_instance: 'node-blog_post-field_theme'.
   $field_instances['node-blog_post-field_theme'] = array(
     'bundle' => 'blog_post',
     'default_value' => NULL,
@@ -918,7 +918,7 @@ function kada_blog_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog_post-og_group_ref'
+  // Exported field_instance: 'node-blog_post-og_group_ref'.
   $field_instances['node-blog_post-og_group_ref'] = array(
     'bundle' => 'blog_post',
     'default_value' => NULL,

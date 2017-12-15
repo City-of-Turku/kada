@@ -36,8 +36,8 @@ function kada_domains_feature_init() {
 
       // Find out all group nids - if node is an event with 2 or mode sections potentially
       // in different languages.
-      if (module_exists('tkufi_sections_feature')) {
-        $section_in_current_language = tkufi_sections_feature_get_section_based_on_language($node, 2);
+      if (module_exists('kada_sections_feature')) {
+        $section_in_current_language = kada_sections_feature_get_section_based_on_language($node, 2);
 
         // Get the only section and check if it has other than default domain set
         $section = node_load($node->og_group_ref['und']['0']['target_id']);

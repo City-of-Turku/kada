@@ -98,10 +98,10 @@ function driveturku_preprocess_page(&$variables) {
         ) + $variables['page']['navigation'];
       }
 
-      if (!empty($variables['page']['before_header']['tkufi_search_feature_quicksearch'])) {
+      if (!empty($variables['page']['before_header']['kada_search_feature_quicksearch'])) {
         // Duplicate the quick search block.
         // Note that navigation_top_extra is not a real region
-        $variables['page']['navigation_top_extra'][] = $variables['page']['before_header']['tkufi_search_feature_quicksearch'];
+        $variables['page']['navigation_top_extra'][] = $variables['page']['before_header']['kada_search_feature_quicksearch'];
       }
     }
   }
@@ -122,13 +122,13 @@ function driveturku_preprocess_page(&$variables) {
   // Color palette
   // TO-DO: This is rather hackish, but I wanted to avoid section override code duplication.
   if (!empty($color_palette)) {
-    $tkufi_page_classes = &drupal_static('tkufi_page_classes');
-    $tkufi_page_classes .= ' color-palette--' . $color_palette;
+    $kada_page_classes = &drupal_static('kada_page_classes');
+    $kada_page_classes .= ' color-palette--' . $color_palette;
   }
 
   // Help text on search page.
   if (isset($variables['page']['#views_contextual_links_info']) &&
-    $variables['page']['#views_contextual_links_info']['views_ui']['view_name'] == 'driveturku_sarnia_search') {
+    $variables['page']['#views_contextual_links_info']['views_ui']['view_name'] == 'kada_sarnia_search') {
     $help_item = theme_html_tag(array(
       'element' => array(
         '#tag' => 'div',

@@ -1,0 +1,432 @@
+<?php
+/**
+ * @file
+ * Code for the KADA Widget feature.
+ */
+
+include_once 'kada_widget_feature.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function kada_widget_feature_menu() {
+  // Menu items to point into widget add pages.
+  $items['admin/content/widget/add'] = array(
+    'title' => 'Add widget',
+    'page callback' => 'drupal_goto',
+    'page arguments' => array('admin/structure/entity-type/widget/add'),
+    'access callback' => 'kada_widget_feature_widget_access',
+    'access arguments' => array('add', 'event_carousel'),
+  );
+  // Get widget bundles and add those also.
+  $result = db_query("SELECT name, label FROM {eck_bundle} WHERE entity_type = 'widget'");
+  foreach ($result as $bundle) {
+    $items['admin/content/widget/add/' . $bundle->name] = array(
+      'title' => $bundle->label,
+      'page callback' => 'drupal_goto',
+      'page arguments' => array('admin/structure/entity-type/widget/' . $bundle->name . '/add'),
+      'access callback' => 'kada_widget_feature_widget_access',
+      'access arguments' => array('add', $bundle->name),
+    );
+  }
+  return $items;
+}
+
+/**
+ * Checks if user has widget permissions for operation.
+ * This is done because for some reason eck permission checking doesn't work in menu hook.
+ */
+function kada_widget_feature_widget_access($op, $bundle) {
+  global $user;
+  return eck__entity_access($op, $bundle, $user, 'widget');
+}
+
+/**
+ * Implements hook_theme().
+ */
+function kada_widget_feature_theme() {
+  return array(
+    'widget_event_calendar' => array(
+      'variables' => array('wid' => NULL),
+      'template' => 'widget-event-calendar',
+      'path' => drupal_get_path('module', 'kada_widget_feature') . '/templates',
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function kada_widget_feature_block_info() {
+  return array(
+    'widget_before_content' => array(
+      'info' => t('Widgets: Before content'),
+      'content_callback' => 'kada_widget_feature_block_before_content',
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function kada_widget_feature_block_view($delta = '') {
+  $blocks = kada_widget_feature_block_info();
+  $block = array();
+  if (isset($blocks[$delta])) {
+    $block['content'] = $blocks[$delta]['content_callback']();
+  }
+  return $block;
+}
+
+/**
+ * Implements hook_ds_fields_info().
+ * Add fields that are needed for widget rendering.
+ */
+function kada_widget_feature_ds_fields_info($entity_type) {
+  $fields = array();
+  // Widgets: Event carousel
+  $fields['widget']['widget_carousel_view'] = array(
+    'title' => t('Carousel view'),
+    'ui_limit' => array('event_carousel|*'),
+    'field_type' => DS_FIELD_TYPE_PREPROCESS,
+  );
+  // Widgets: Event mosaic
+  $fields['widget']['widget_event_mosaic_view'] = array(
+    'title' => t('Event mosaic view'),
+    'ui_limit' => array('event_mosaic|*'),
+    'field_type' => DS_FIELD_TYPE_PREPROCESS,
+  );
+  // Widgets Misc: Event calendar
+  $fields['widget']['widget_event_calendar'] = array(
+    'title' => t('Event calendar'),
+    'ui_limit' => array(
+      'event_carousel|*',
+      'event_mosaic|*'
+    ),
+    'field_type' => DS_FIELD_TYPE_PREPROCESS,
+  );
+  if (isset($fields[$entity_type])) {
+    return array($entity_type => $fields[$entity_type]);
+  }
+  return;
+}
+
+/**
+ * Implements hook_entity_view().
+ */
+function kada_widget_feature_entity_view($entity, $type, $view_mode, $langcode) {
+  // Handle only widgets.
+  if ($type != 'widget'
+    || !($build_function = "kada_widget_feature_build_" . $entity->type)
+    || !function_exists($build_function)) {
+    return;
+  }
+  // Build content for the widget in its own function to keep things in order.
+  $build_function($entity, $view_mode, $langcode);
+}
+
+/**
+ * Implements hook_views_query_alter().
+ */
+function kada_widget_feature_views_query_alter(&$view, &$query) {
+  // Add tag for super event relation view displays to be used in hook_query_TAG_alter.
+  if (($view->name == 'kada_widget_event_carousel' && $view->current_display == 'carousel_series')
+    || ($view->name == 'kada_widget_event_mosaic' && $view->current_display == 'mosaic_series')) {
+    $query->add_tag('widget_event_series');
+  }
+}
+
+/**
+ * Implements hook_query_TAG_alter().
+ *
+ * Alter views queries with tag 'widget_event_series' to include GROUP BY for
+ * super event relation.
+ *
+ * http://majorursa.net/content/adding-group-clause-view
+ */
+function kada_widget_feature_query_widget_event_series_alter(QueryAlterableInterface $query) {
+  $query->groupBy('field_data_endpoints2.endpoints_entity_id');
+}
+
+
+/**
+ * WIDGET ENTITY CONTENT.
+ */
+
+/**
+ * Build content for event carousel widget.
+ */
+function kada_widget_feature_build_event_carousel(&$entity, $view_mode, $langcode) {
+  $widget = entity_metadata_wrapper('widget', $entity);
+  // Parse view args and search params from widget.
+  list($view_args, $search_params) = kada_widget_feature_parse_event_args($widget);
+  // Create single event view.
+  $view = views_get_view('kada_widget_event_carousel');
+  $view->set_display('carousel');
+  // Set arguments.
+  $view->set_arguments($view_args);
+  $view->pre_execute();
+  $view->execute();
+  // Create series event view.
+  $view2 = views_get_view('kada_widget_event_carousel');
+  $view2->set_display('carousel_series');
+  // Set arguments.
+  $view2->set_arguments($view_args);
+  $view2->pre_execute();
+  $view2->execute();
+  // Combine view results by keying with start date.
+  $combined_result = array();
+  foreach (array($view->result, $view2->result) as $view_result) {
+    if (!is_array($view_result)) {
+      continue;
+    }
+    foreach ($view_result as $row) {
+      /*
+        Check if we are in series and need to do image fallback to super event.
+
+        This is done in here because we render display fields that are not part
+        of the actual view.
+       */
+      if (empty($row->field_field_content_image_et) && empty($row->field_field_content_image_ext)
+        && isset($row->field_field_content_image_et_1, $row->field_field_content_image_ext_1)) {
+        $row->field_field_content_image_et = $row->field_field_content_image_et_1;
+        $row->field_field_content_image_ext = $row->field_field_content_image_ext_1;
+      }
+      // Create key.
+      $sort_key = $row->field_data_field_event_date_field_event_date_value . $row->nid;
+      $combined_result[$sort_key] = $row;
+    }
+  }
+  // Sort results with date key.
+  ksort($combined_result);
+  $view->result = array_slice($combined_result, 0, $view->query->limit);
+  // Set search link into footer if it can be created.
+  $search_url = kada_widget_feature_get_event_search_url($search_params);
+  if ($search_url) {
+    $view->footer['area']->options['content'] = l(t('See matching events'), $search_url, array(
+      'attributes' => array('class' => 'calendar__more-link button button--arrow')
+    ));
+  }
+  // Render view
+  $view_content = $view->render();
+  // Populate carousel view fields content.
+  $entity->content['widget_carousel_view'] = array('#markup' => $view_content);
+  // Populate calendar if view has content.
+  if (!empty($view->result)) {
+    $calendar_content = kada_widget_feature_event_calendar($widget, $view_args, $search_url);
+    $entity->content['widget_event_calendar'] = array('#markup' => $calendar_content);
+  }
+}
+
+/**
+ * Build content for event mosaic widget.
+ */
+function kada_widget_feature_build_event_mosaic(&$entity, $view_mode, $langcode) {
+  $widget = entity_metadata_wrapper('widget', $entity);
+
+  // Parse view args and search params from widget.
+  list($view_args, $search_params) = kada_widget_feature_parse_event_args($widget);
+  // Create single event view.
+  $view = views_get_view('kada_widget_event_mosaic');
+
+  $view->set_display('mosaic');
+  // Set arguments.
+  $view->set_arguments($view_args);
+  $view->pre_execute();
+  $view->execute();
+  // Create series event view.
+  $view2 = views_get_view('kada_widget_event_mosaic');
+
+  $view2->set_display('mosaic_series');
+  // Set arguments.
+  $view2->set_arguments($view_args);
+  $view2->pre_execute();
+  $view2->execute();
+
+  // Combine view results by keying with start date.
+  $combined_result = array();
+  foreach (array($view->result, $view2->result) as $view_result) {
+    if (!is_array($view_result)) {
+      continue;
+    }
+
+    foreach ($view_result as $row) {
+      // Create key.
+      $sort_key = $row->field_data_field_event_date_field_event_date_value . $row->nid;
+      $combined_result[$sort_key] = $row;
+    }
+  }
+
+  // Sort results with date key.
+  ksort($combined_result);
+  $view->result = array_slice($combined_result, 0, $view->query->limit);
+
+  // Set search link into footer if it can be created.
+  $search_url = kada_widget_feature_get_event_search_url($search_params);
+  if ($search_url) {
+    $view->footer['area']->options['content'] = l(t('See matching events'), $search_url, array(
+      'attributes' => array('class' => 'mosaic__more-link button button--arrow'),
+    ));
+  }
+  // Render view
+  $view_content = $view->render();
+  // Populate carousel view fields content.
+  $entity->content['widget_event_mosaic_view'] = array('#markup' => $view_content);
+  // Populate calendar if view has content.
+  if (!empty($view->result)) {
+    $calendar_content = kada_widget_feature_event_calendar($widget, $view_args, $search_url);
+    $entity->content['widget_event_calendar'] = array('#markup' => $calendar_content);
+  }
+}
+
+
+/**
+ * WIDGET BLOCK CONTENT.
+ */
+
+/**
+ * Build content for widget_before_content block.
+ */
+function kada_widget_feature_block_before_content() {
+  $content = array();
+  $node = menu_get_object();
+  // Get widgets from field_widget_before_content and render those.
+  if (!empty($node->field_widget_before_content[LANGUAGE_NONE])) {
+    foreach ($node->field_widget_before_content[LANGUAGE_NONE] as $field_item) {
+      if (!empty($field_item['target_id'])) {
+        $widget = eckentity_load(array($field_item['target_id']), 'widget');
+        $content[] = entity_view('widget', array($widget));
+      }
+    }
+  }
+  return $content;
+}
+
+
+/**
+ * HELPERS.
+ */
+
+/**
+ * Parse args from widget to be used in event filtering.
+ */
+function kada_widget_feature_parse_event_args($widget) {
+  // Available filters.
+  $filters = array(
+    'field_keywords_et' => array(
+      'value_in' => 'tid',
+      'multiple_operator' => '+',
+      'prettypath' => 'keywords',
+    ),
+    'field_target_audience' => array(
+      'value_in' => 'tid',
+      'multiple_operator' => '+',
+      'prettypath' => 'audience',
+    ),
+    'field_event_types' => array(
+      'value_in' => 'tid',
+      'multiple_operator' => '+',
+      'prettypath' => 'type',
+    ),
+    'og_group_ref' => array(
+      'value_in' => 'nid',
+      'multiple_operator' => '+',
+      'prettypath' => 'section',
+    ),
+  );
+  // Args to pass to view.
+  $view_args = array();
+  // Params to pass to see more link.
+  $search_params = array();
+  // Go through filters and gather view filter args.
+  foreach ($filters as $field => $filter_conf) {
+    $values = array();
+    foreach ($widget->$field as $delta => $field_item) {
+      $value = $field_item->value()->$filter_conf['value_in'];
+      $values[] = $value;
+      // Add search params for linking.
+      $search_params[] = $filter_conf['prettypath'] . '/' . $value;
+    }
+    // Use 'all' if no filter were found.
+    if (empty($values)) {
+      $view_args[] = 'all';
+    }
+    // Or join the values with defined operator.
+    else {
+      $view_args[] = implode($filter_conf['multiple_operator'], $values);
+    }
+  }
+  return array($view_args, $search_params);
+}
+
+/**
+ * Creates event search link for given params.
+ */
+function kada_widget_feature_get_event_search_url($search_params) {
+  // Set link to event search page into footer.
+  global $language;
+  $language_prefix = !empty($language->prefix) ? $language->prefix . '/': '';
+  $search_url = KADACALENDAR_BASE_URL . $language_prefix . 'events/event-search/';
+  return $search_url . implode('/', $search_params);
+}
+
+/**
+ * Creates event calendar for given event view args and search params.
+ */
+function kada_widget_feature_event_calendar($widget, $view_args, $search_url) {
+  $view = views_get_view('kada_widget_misc_event_calendar');
+  $view->set_display('calendar');
+
+  // Set arguments.
+  $view->set_arguments($view_args);
+  $view->pre_execute();
+  $view->execute();
+  // Go through the results and generate all the dates for ranges.
+  $dates = array();
+  // We have to use UTC for solr.
+  if (!empty($view->result)) {
+    foreach ($view->result as $row) {
+      // Get date values from result row.
+      $from = new DateTime($row->field_field_event_date[0]['raw']['value']);
+      $from->setTime(0, 0, 0);
+      $to = new DateTime($row->field_field_event_date[0]['raw']['value2']);
+      $to->setTime(0, 0, 0);
+      // Single dates.
+      if($from->format('Y-m-d') == $to->format('Y-m-d')) {
+        $dates[$from->format('j-n-Y')] = $from->getTimestamp();
+      }
+      // Date ranges.
+      else {
+        // The end date would be ignored by default PHP behavior, if date its
+        // the first second of the day (as set above). We can avoid the problem
+        // by increasing the end date.
+        // More info:
+        //  http://stackoverflow.com/questions/21282322/php-dateperiod-does-not-return-2-days-as-expected
+        //  http://php.net/manual/en/class.dateperiod.php
+        $to->setTime(23,59,59);
+        $date_range = new DatePeriod($from, new DateInterval('P1D'), $to);
+        foreach ($date_range as $date) {
+          $dates[$date->format('j-n-Y')] = $date->getTimestamp();
+        }
+      }
+    }
+  }
+  // Sort for funs and maybe for easier debugging.
+  ksort($dates);
+
+  // Return wrapper for calendar if dates are present.
+  if (!empty($dates)) {
+    // Add dates and search url into javascript settings - no need to render these.
+    $settings = array(
+      $widget->getIdentifier() => array(
+        'searchUrl' => $search_url,
+        'dates' => $dates,
+      ),
+    );
+    drupal_add_library('system', 'ui.datepicker');
+    drupal_add_js(array('kadaWidgetFeature' => array('eventCalendar' => $settings)), 'setting');
+    // Return wrapper for calendar.
+    return theme('widget_event_calendar', array('wid' => $widget->getIdentifier()));
+  }
+  return '';
+}

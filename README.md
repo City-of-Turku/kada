@@ -52,20 +52,54 @@ is free to join for all.
 
 ## REPORTING SECURITY ISSUES
 
-We kindly ask you to report security issues in a responsible manner: Report your security concerns first to juha.niemi@wunder.io who will collaborate with you on reporting the issue to the KADA-project while also ensuring that the existing production systems are not compromised. 
+We kindly ask you to report security issues in a responsible manner: Report your security concerns first to juha.niemi@wunder.io who will collaborate with you on reporting the issue to the KADA-project while also ensuring that the existing production systems are not compromised.
 
 ## PROJECT README
 
-Some instructions which are not related to the vagrant nor ansible
-setup.
+### INSTALLING
+
+You need to have a Drupal-compatible development environment, such as the ones in https://github.com/CitrusSolutions/docker-php/tree/stable or
+https://github.com/wunderkraut/WunderTools.
+
+1. Build Drupal from the make file
+   ```
+   $ cd kada
+   $ ./build.sh new
+   ```
+2. Do a site-install at http://local.kada.fi/install.php?profile=kadaprofile (try with port 8080 if varnish is preventing install).
+  - Choose some features to enable during install
+  - Events base feature is not yet working with the site-install
+  - Domains will give notice during install, can be ignored
+  - If you get timeouts, just refresh the page and batch process will continue
+3. When install is finished, visit the site at http://local.kada.fi
+  - The cache has to be rebuilt and features reverted, probably a couple of times before things start working
+  - If some database error occurs due to missing module, add the module to correct feature's .info file.
+4. Enable User feature and revert it
+  - drush en tkufi_user_feature -y; drush fr tkufi_user_feature -y
+  - You can login with editor:secretpass to see what a content editor has access to
+
+Alternate procedure:
+
+1. Build as above.
+2. Comment out the domain include row from conf/vagrant.settings.php
+3. Run site install:
+   ```
+   $ drush site-install kadaprofile
+   ```
+4. Log in to the site as admin, navigate to Domain access management and save the default domain (no actual changes necessary.)
+5. Uncomment the domain include row from conf/vagrant.settings.php
+6. Enable some features, for example:
+   ```
+   $ drush en kada_page_feature kada_news_feature
+   ```
 
 ### PROJECT STRUCTURE
 
 ```<root>
-	builds
-		- Contains built codebases, preserves history
-	code
-		site
+builds
+	- Contains built codebases, preserves history
+code
+  site
 			- IMPORTANT: Use site_ or other custom prefix with custom and feature modules.
 			custom
 				- Site-specific custom modules directory
@@ -73,92 +107,58 @@ setup.
 			features
 				- Site-specific features directory
 				- Symlinked from current codebase build when in development
-		modules
+	modules
 			- IMPORTANT: Use kada_ prefix with custom and feature modules
 			- Is maintained upstream, handle with care to preserve compatibility!
-			custom
-				- Custom modules directory
+		custom
+			- Custom modules directory
+			- Symlinked from current codebase build when in development
+		features
+			- Features directory
+			- Symlinked from current codebase build when in development
+	profiles
+		kadaprofile
+			- KADA Drupal install profile
+			- Symlinked from current codebase build when in development
+	themes
+		custom
+			driveturku
+				- DriveTurku theme
 				- Symlinked from current codebase build when in development
-			features
-				- Features directory
-				- Symlinked from current codebase build when in development
-		profiles
-			kadaprofile
-				- KADA Drupal install profile
-				- Symlinked from current codebase build when in development
-		themes
-			custom
-				driveturku
-					- DriveTurku theme
-					- Symlinked from current codebase build when in development
-	conf
-		_ping.php
-			- Is copied to Drupal root during build
-		dev.settings.php
-			- Settings for develop environment
-		kadaproject.make
-			- Drush make file that defines what drupal core, contrib modules / themes and libraries are used in the project
-			- Each additional dependency must be set into this file as contrib code is not in version control
-		robots.txt
-			- Prevents indexing of set paths
-		site.yml
-			- Configures custom build.sh behaviour for each environment
-		vagrant.settings.php
-			- Settings for local environment
-	current
-		- Current build code
-	files
-		- Actual location for sites/default/files
-	patches
-		- Local patches that are not in any drupal.org issue queue
-	build.sh
-		- Custom project build script
-		- Use when checking out code that has new contrib dependencies
-		- Behaviour of this script depends on conf/site.yml
-	kada.aliases.drushrc.php
-		- Project drush aliases
-	kada_devsync.sh
-		- Syncs sql and files from development
-	drush.sh
-		- Is supposed to be used when running build outside vagrant box (not tested, better to login to vagrant and build there for now)
+conf
+	_ping.php
+		- Is copied to Drupal root during build
+	dev.settings.php
+		- Settings for develop environment
+	kadaproject.make
+		- Drush make file that defines what drupal core, contrib modules / themes and libraries are used in the project
+	- Each additional dependency must be set into this file as contrib code is not in version control
+	robots.txt
+		- Prevents indexing of set paths
+	site.yml
+		- Configures custom build.sh behaviour for each environment
+	vagrant.settings.php
+		- Settings for local environment
+current
+	- Current build code
+files
+	- Actual location for sites/default/files
+patches
+	- Local patches that are not in any drupal.org issue queue
+build.sh
+	- Custom project build script
+	- Use when checking out code that has new contrib dependencies
+	- Behaviour of this script depends on conf/site.yml
+kada.aliases.drushrc.php
+	- Project drush aliases
+kada_devsync.sh
+	- Syncs sql and files from development
+drush.sh
+	- Is supposed to be used when running build outside vagrant box (not tested, better to login to vagrant and build there for now)
 ```
-
-### QUICK MANUAL SETUP
-
-Note, this assumes you already did a successful "vagrant up".
-
-1. Go to inside the box
-   ```
-   $ vagrant ssh
-   ```
-2. Build Drupal from the make file
-   ```
-   $ cd /vagrant/drupal
-   $ ./build.sh new
-   ```
-3. Do a site-install at http://local.kada.fi/install.php?profile=kadaprofile (try with port 8080 if varnish is preventing install).
-  - Choose some features to enable during install
-  - Events base feature is not yet working with the site-install
-  - Domains will give notice during install, can be ignored
-  - If you get timeouts, just refresh the page and batch process will continue
-4. When install is finished, visit the site at http://local.kada.fi
-  - The cache has to be rebuilt and features reverted, probably a couple of times before things start working
-  - If some database error occurs due to missing module, add the module to correct feature's .info file.
-5. Enable User feature and revert it
-  - drush en tkufi_user_feature -y; drush fr tkufi_user_feature -y
-  - You can login with editor:secretpass to see what a content editor has access to
 
 ### SYNCING FROM DEVELOPMENT/PRODUCTION
 
-#### PREPARING (optional)
-
-Copy your own SSH public key to Vagrant's authorized keys (to make it easy to connect with Sequel Pro for example)
-
-```
-$ pbcopy < ~/.ssh/id_rsa.pub (copies the public key to clipboard)
-$ vagrant ssh
-$ vi ~/.ssh/authorized_keys (paste the contents of your publickey to the end of this file)
-```
 #### RUNNING SYNC SCRIPTS
 
 There is a script for syncing database + files from development.
@@ -171,14 +171,6 @@ $ ./drupal/kada_devsync.sh
 After syncing database and files, syncscript runs additional commands, like downloads+enables Devel module.
 
 ### DEVELOPMENT
-
-#### ENVIRONMENT
-
-All the tools required for managing the development environment are built into the vagrant box and means that all of these commands mentioned below should be run inside the vagrant box. You can access the vagrant box with:
-
-```
-$ vagrant ssh
-```
 
 #### BUILD / BRANCH CHECKOUT
 

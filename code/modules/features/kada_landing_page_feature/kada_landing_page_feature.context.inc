@@ -29,20 +29,20 @@ function kada_landing_page_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-driveturku_recommended-block' => array(
+        'views-kada_recommended-block' => array(
           'module' => 'views',
-          'delta' => 'driveturku_recommended-block',
+          'delta' => 'kada_recommended-block',
           'region' => 'header',
           'weight' => '-89',
         ),
-        'views-driveturku_pages-top_image' => array(
+        'views-kada_pages-top_image' => array(
           'module' => 'views',
-          'delta' => 'driveturku_pages-top_image',
+          'delta' => 'kada_pages-top_image',
           'region' => 'header',
           'weight' => '-88',
         ),
-        'tkufi_widget_feature-widget_before_content' => array(
-          'module' => 'tkufi_widget_feature',
+        'kada_widget_feature-widget_before_content' => array(
+          'module' => 'kada_widget_feature',
           'delta' => 'widget_before_content',
           'region' => 'before_content',
           'weight' => '-10',
@@ -53,15 +53,15 @@ function kada_landing_page_feature_context_default_contexts() {
           'region' => 'before_content',
           'weight' => '-9',
         ),
-        'tkufi_export_feature-kada_rss_feed_for_landing_page' => array(
-          'module' => 'tkufi_export_feature',
+        'kada_export_feature-kada_rss_feed_for_landing_page' => array(
+          'module' => 'kada_export_feature',
           'delta' => 'kada_rss_feed_for_landing_page',
           'region' => 'before_content',
           'weight' => '-8',
         ),
-        'views-5f19412c456ca29977366d02fe15c93e' => array(
+        'views-kada_project_liftups-block' => array(
           'module' => 'views',
-          'delta' => '5f19412c456ca29977366d02fe15c93e',
+          'delta' => 'kada_project_liftups-block',
           'region' => 'before_footer',
           'weight' => '-10',
         ),

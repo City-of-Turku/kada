@@ -1,0 +1,15 @@
+<?php
+/**
+ * Implementation of hook_install()
+ */
+function kada_sections_feature_install() {
+  /**
+   * Set kada_sections_feature module weight to -10 so it runs before og,
+   * allowing us to manipulate og_context(), settings correct lang group as
+   * context.
+   */
+  db_update('system')
+  ->fields(array('weight' => -10))
+  ->condition('name', 'kada_sections_feature', '=')
+  ->execute();
+}

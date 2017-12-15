@@ -1,0 +1,9 @@
+name = KADA Facets
+description = Custom facets for KADA
+package = KADA
+core = 7.x
+
+dependencies[] = facetapi
+
+; Facet API plugins
+files[] = plugins/facetapi/widget_facetapi_calendar_links.inc

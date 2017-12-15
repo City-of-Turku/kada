@@ -40,9 +40,29 @@ function kada_domains_feature_user_default_permissions() {
     'module' => 'domain',
   );
 
+  // Exported permission: 'create social_media_update content on assigned domains'.
+  $permissions['create social_media_update content on assigned domains'] = array(
+    'name' => 'create social_media_update content on assigned domains',
+    'roles' => array(
+      'admin' => 'admin',
+      'web journalist' => 'web journalist',
+    ),
+    'module' => 'domain',
+  );
+
   // Exported permission: 'delete domain content'.
   $permissions['delete domain content'] = array(
     'name' => 'delete domain content',
+    'roles' => array(
+      'admin' => 'admin',
+      'web journalist' => 'web journalist',
+    ),
+    'module' => 'domain',
+  );
+
+  // Exported permission: 'delete social_media_update content on assigned domains'.
+  $permissions['delete social_media_update content on assigned domains'] = array(
+    'name' => 'delete social_media_update content on assigned domains',
     'roles' => array(
       'admin' => 'admin',
       'web journalist' => 'web journalist',
@@ -93,6 +113,16 @@ function kada_domains_feature_user_default_permissions() {
   // Exported permission: 'set domain access'.
   $permissions['set domain access'] = array(
     'name' => 'set domain access',
+    'roles' => array(
+      'admin' => 'admin',
+      'web journalist' => 'web journalist',
+    ),
+    'module' => 'domain',
+  );
+
+  // Exported permission: 'update social_media_update content on assigned domains'.
+  $permissions['update social_media_update content on assigned domains'] = array(
+    'name' => 'update social_media_update content on assigned domains',
     'roles' => array(
       'admin' => 'admin',
       'web journalist' => 'web journalist',
