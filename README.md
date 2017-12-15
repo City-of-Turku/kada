@@ -52,9 +52,46 @@ is free to join for all.
 
 ## REPORTING SECURITY ISSUES
 
-We kindly ask you to report security issues in a responsible manner: Report your security concerns first to juha.niemi@wunder.io who will collaborate with you on reporting the issue to the KADA-project while also ensuring that the existing production systems are not compromised. 
+We kindly ask you to report security issues in a responsible manner: Report your security concerns first to juha.niemi@wunder.io who will collaborate with you on reporting the issue to the KADA-project while also ensuring that the existing production systems are not compromised.
 
 ## PROJECT README
+
+### INSTALLING
+
+You need to have a Drupal-compatible development environment, such as the ones in https://github.com/CitrusSolutions/docker-php/tree/stable or
+https://github.com/wunderkraut/WunderTools.
+
+1. Build Drupal from the make file
+   ```
+   $ cd kada
+   $ ./build.sh new
+   ```
+2. Do a site-install at http://local.kada.fi/install.php?profile=kadaprofile (try with port 8080 if varnish is preventing install).
+  - Choose some features to enable during install
+  - Events base feature is not yet working with the site-install
+  - Domains will give notice during install, can be ignored
+  - If you get timeouts, just refresh the page and batch process will continue
+3. When install is finished, visit the site at http://local.kada.fi
+  - The cache has to be rebuilt and features reverted, probably a couple of times before things start working
+  - If some database error occurs due to missing module, add the module to correct feature's .info file.
+4. Enable User feature and revert it
+  - drush en tkufi_user_feature -y; drush fr tkufi_user_feature -y
+  - You can login with editor:secretpass to see what a content editor has access to
+
+Alternate procedure:
+
+1. Build as above.
+2. Comment out the domain include row from conf/vagrant.settings.php
+3. Run site install:
+   ```
+   $ drush site-install kadaprofile
+   ```
+4. Log in to the site as admin, navigate to Domain access management and save the default domain (no actual changes necessary.)
+5. Uncomment the domain include row from conf/vagrant.settings.php
+6. Enable some features, for example:
+   ```
+   $ drush en kada_page_feature kada_news_feature
+   ```
 
 ### PROJECT STRUCTURE
 
@@ -110,28 +147,6 @@ kada_devsync.sh
 drush.sh
 	- Is supposed to be used when running build outside vagrant box (not tested, better to login to vagrant and build there for now)
 ```
-
-### INSTALLING
-
-You need to have a Drupal-compatible development environment, such as the ones in https://github.com/CitrusSolutions/docker-php/tree/stable or
-https://github.com/wunderkraut/WunderTools.
-
-1. Build Drupal from the make file
-   ```
-   $ cd kada
-   $ ./build.sh new
-   ```
-2. Do a site-install at http://local.kada.fi/install.php?profile=kadaprofile (try with port 8080 if varnish is preventing install).
-  - Choose some features to enable during install
-  - Events base feature is not yet working with the site-install
-  - Domains will give notice during install, can be ignored
-  - If you get timeouts, just refresh the page and batch process will continue
-3. When install is finished, visit the site at http://local.kada.fi
-  - The cache has to be rebuilt and features reverted, probably a couple of times before things start working
-  - If some database error occurs due to missing module, add the module to correct feature's .info file.
-4. Enable User feature and revert it
-  - drush en tkufi_user_feature -y; drush fr tkufi_user_feature -y
-  - You can login with editor:secretpass to see what a content editor has access to
 
 ### SYNCING FROM DEVELOPMENT/PRODUCTION
 
