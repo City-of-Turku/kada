@@ -1,0 +1,43 @@
+.attraction__content-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $inner-container-width;
+
+  @media screen and (min-width: $desktop-narrow) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.attraction__content {
+  margin-bottom: 1.25rem;
+  order: 2;
+
+  @media screen and (min-width: $desktop-narrow) {
+    order: 1;
+    width: 55%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 65%;
+  }
+}
+
+.attraction__sidebar {
+  order: 1;
+
+  @media screen and (min-width: $desktop-narrow) {
+    order: 2;
+    width: 35%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 25%;
+  }
+
+  > * {
+    margin-bottom: 1.25rem;
+  }
+}
