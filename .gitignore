@@ -33,6 +33,8 @@ sites/*/private
 /public/
 /vendor/
 public
+drupal/SYNCDIR
+drupal/syncdb/*
 
 # Ignore ansible retry files
 conf/*.retry
