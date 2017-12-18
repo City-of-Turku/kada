@@ -46,7 +46,7 @@ function pori_attraction_feature_ds_fields_info($entity_type) {
     // Widgets: Attraction card list.
     $fields['widget']['widget_attraction_list_view'] = array(
       'title' => t('Attraction list view'),
-#      'ui_limit' => array('attraction_list|*'),
+      'ui_limit' => array('attraction_list|*'),
       'field_type' => DS_FIELD_TYPE_PREPROCESS,
     );
     return $fields;
