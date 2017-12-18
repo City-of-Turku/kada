@@ -34,3 +34,82 @@ function pori_attraction_feature_preprocess_node(&$vars) {
     }
   }
 }
+
+/**
+ * Implements hook_ds_fields_info().
+ *
+ * Add fields that are needed for widget rendering.
+ */
+function pori_attraction_feature_ds_fields_info($entity_type) {
+  if ($entity_type == 'widget') {
+    $fields = array();
+    // Widgets: Attraction card list.
+    $fields['widget']['widget_attraction_list_view'] = array(
+      'title' => t('Attraction list view'),
+#      'ui_limit' => array('attraction_list|*'),
+      'field_type' => DS_FIELD_TYPE_PREPROCESS,
+    );
+    return $fields;
+  }
+}
+
+/**
+ * Parse args from widget to be used in event filtering.
+ */
+function pori_attraction_feature_parse_event_args($widget) {
+  // Available filters.
+  $filters = array(
+    'field_attraction_category' => array(
+      'value_in' => 'tid',
+      'multiple_operator' => '+',
+      'prettypath' => 'type',
+    ),
+  );
+  // Args to pass to view.
+  $view_args = array();
+  // Params to pass to see more link.
+  $search_params = array();
+  // Go through filters and gather view filter args.
+  foreach ($filters as $field => $filter_conf) {
+    $values = array();
+    foreach ($widget->$field as $delta => $field_item) {
+      $value = $field_item->value()->$filter_conf['value_in'];
+      $values[] = $value;
+      // Add search params for linking.
+      $search_params[] = $filter_conf['prettypath'] . '/' . $value;
+    }
+    // Use 'all' if no filter were found.
+    if (empty($values)) {
+      $view_args[] = 'all';
+    }
+    // Or join the values with defined operator.
+    else {
+      $view_args[] = implode($filter_conf['multiple_operator'], $values);
+    }
+  }
+  return array($view_args, $search_params);
+}
+
+/**
+ * Build content for event mosaic widget.
+ *
+ * NOTE: This has to be named with the kada_widget_feature prefix because it is
+ * hard-coded in kada_widget_feature_entity_view().
+ */
+function kada_widget_feature_build_attraction_list(&$entity, $view_mode, $langcode) {
+  $widget = entity_metadata_wrapper('widget', $entity);
+
+  // Parse view args and search params from widget.
+  list($view_args, $search_params) = pori_attraction_feature_parse_event_args($widget);
+  // Create the view.
+  $view = views_get_view('attraction_card_widget');
+  $view->set_display('list');
+  // Set arguments.
+  $view->set_arguments($view_args);
+  $view->pre_execute();
+  $view->execute();
+  // Render view
+  $view_content = $view->render();
+  // Populate field.
+  $entity->content['widget_attraction_list_view'] = array('#markup' => $view_content);
+}
