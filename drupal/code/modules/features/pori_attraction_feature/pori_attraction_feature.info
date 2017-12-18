@@ -88,6 +88,7 @@ features[field_instance][] = node-attraction_card-field_websites
 features[field_instance][] = node-attraction_card-og_group_ref
 features[field_instance][] = node-attraction_card-title_field
 features[field_instance][] = widget-attraction_list-field_attraction_category
+features[field_instance][] = widget-attraction_list-field_keywords_et
 features[node][] = attraction_card
 features[taxonomy][] = attraction_category
 features[taxonomy][] = bus_lines

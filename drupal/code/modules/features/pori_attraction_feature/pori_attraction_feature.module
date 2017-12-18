@@ -62,7 +62,12 @@ function pori_attraction_feature_parse_event_args($widget) {
     'field_attraction_category' => array(
       'value_in' => 'tid',
       'multiple_operator' => '+',
-      'prettypath' => 'type',
+      'prettypath' => 'category',
+    ),
+    'field_keywords_et' => array(
+      'value_in' => 'tid',
+      'multiple_operator' => '+',
+      'prettypath' => 'keywords',
     ),
   );
   // Args to pass to view.
