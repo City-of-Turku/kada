@@ -51,11 +51,11 @@ function kada_editorial_tools_feature_wysiwyg_default_profiles() {
           'Table' => 1,
           'Find' => 1,
         ),
-        'dnd' => array(
-          'dnd' => 1,
-        ),
         'linkit' => array(
           'linkit' => 1,
+        ),
+        'picture_ckeditor' => array(
+          'picture_ckeditor' => 1,
         ),
         'drupal_path' => array(
           'Link' => 1,
@@ -120,11 +120,14 @@ function kada_editorial_tools_feature_wysiwyg_default_profiles() {
           'Table' => 1,
           'Find' => 1,
         ),
-        'dnd' => array(
-          'dnd' => 1,
-        ),
         'linkit' => array(
           'linkit' => 1,
+        ),
+        'dndck4' => array(
+          'dndck4' => 1,
+        ),
+        'picture_ckeditor' => array(
+          'picture_ckeditor' => 1,
         ),
         'drupal_path' => array(
           'Link' => 1,
