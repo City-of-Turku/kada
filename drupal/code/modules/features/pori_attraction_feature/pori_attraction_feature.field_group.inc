@@ -36,7 +36,7 @@ function pori_attraction_feature_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_websites|node|attraction_card|form'] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.
