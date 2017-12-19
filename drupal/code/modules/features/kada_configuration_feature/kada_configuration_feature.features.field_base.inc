@@ -75,13 +75,11 @@ function kada_configuration_feature_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'lime' => 'Lime',
-        'mint' => 'Mint',
+        'red' => 'Red',
         'orange' => 'Orange',
-        'pink' => 'Pink',
-        'gray' => 'Gray',
-        'blue' => 'Blue',
         'yellow' => 'Yellow',
+        'green' => 'Green',
+        'greenDark' => 'GreenDark',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,

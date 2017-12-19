@@ -81,6 +81,54 @@ $menu-padding: 1.25rem;
       background-image: url('../../dist/image/minus-icon.svg');
     }
 
+    // Set theme colored menu.
+    @each $theme-color, $color in $theme-colors {
+      .theme-color-#{$theme-color} {
+        &.menu__item--has-first-level {
+          &:focus,
+          &:hover {
+            background-color: $color !important;
+          }
+
+          > a {
+            &:hover,
+            &:focus {
+              @if $color == $yellow {
+                color: $primary-color;
+              }
+
+              background-color: $color !important;
+            }
+          }
+
+          > .menu {
+            border-bottom: 4px solid $color !important;
+            border-top: 4px solid $color !important;
+          }
+
+          &.is-active-trail {
+            > a {
+              @if $color == $yellow {
+                color: $primary-color;
+              }
+            }
+
+            background-color: $color !important;
+          }
+
+          .menu__item--has-second-level,
+          .menu__item--has-third-level {
+            &:hover {
+              background-color: $color !important;
+            }
+            &.is-active-trail {
+              background-color: $color !important;
+            }
+          }
+        }
+      }
+    }
+
     .menu__item {
       background-color: $primary-color;
       margin-top: 0;
