@@ -11,6 +11,149 @@ function pori_attraction_feature_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'attraction_card_widget';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Attraction card widget';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Widgetti';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Hae';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Palauta oletusarvoihin';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Järjestele';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Nou';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Las';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Content: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['required'] = TRUE;
+  /* Field: Content: Images */
+  $handler->display->display_options['fields']['field_images']['id'] = 'field_images';
+  $handler->display->display_options['fields']['field_images']['table'] = 'field_data_field_images';
+  $handler->display->display_options['fields']['field_images']['field'] = 'field_images';
+  $handler->display->display_options['fields']['field_images']['label'] = '';
+  $handler->display->display_options['fields']['field_images']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_images']['click_sort_column'] = 'sid';
+  $handler->display->display_options['fields']['field_images']['type'] = 'grid_item';
+  $handler->display->display_options['fields']['field_images']['settings'] = array(
+    'link' => '1',
+  );
+  $handler->display->display_options['fields']['field_images']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_images']['delta_offset'] = '0';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Field: Keywords */
+  $handler->display->display_options['fields']['field_keywords_et']['id'] = 'field_keywords_et';
+  $handler->display->display_options['fields']['field_keywords_et']['table'] = 'field_data_field_keywords_et';
+  $handler->display->display_options['fields']['field_keywords_et']['field'] = 'field_keywords_et';
+  $handler->display->display_options['fields']['field_keywords_et']['label'] = '';
+  $handler->display->display_options['fields']['field_keywords_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_keywords_et']['delta_offset'] = '0';
+  /* Sort criterion: Content: Post date */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Field: Category (field_attraction_category) */
+  $handler->display->display_options['arguments']['field_attraction_category_tid']['id'] = 'field_attraction_category_tid';
+  $handler->display->display_options['arguments']['field_attraction_category_tid']['table'] = 'field_data_field_attraction_category';
+  $handler->display->display_options['arguments']['field_attraction_category_tid']['field'] = 'field_attraction_category_tid';
+  $handler->display->display_options['arguments']['field_attraction_category_tid']['exception']['title'] = 'Kaikki';
+  $handler->display->display_options['arguments']['field_attraction_category_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_attraction_category_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_attraction_category_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_attraction_category_tid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Field: Keywords (field_keywords_et) */
+  $handler->display->display_options['arguments']['field_keywords_et_tid']['id'] = 'field_keywords_et_tid';
+  $handler->display->display_options['arguments']['field_keywords_et_tid']['table'] = 'field_data_field_keywords_et';
+  $handler->display->display_options['arguments']['field_keywords_et_tid']['field'] = 'field_keywords_et_tid';
+  $handler->display->display_options['arguments']['field_keywords_et_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_keywords_et_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_keywords_et_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_keywords_et_tid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'attraction_card' => 'attraction_card',
+  );
+  /* Filter criterion: Content: Title (title_field:language) */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'field_data_title_field';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Field: Keywords (field_keywords_et) */
+  $handler->display->display_options['filters']['field_keywords_et_tid']['id'] = 'field_keywords_et_tid';
+  $handler->display->display_options['filters']['field_keywords_et_tid']['table'] = 'field_data_field_keywords_et';
+  $handler->display->display_options['filters']['field_keywords_et_tid']['field'] = 'field_keywords_et_tid';
+  $handler->display->display_options['filters']['field_keywords_et_tid']['operator'] = 'and';
+  $handler->display->display_options['filters']['field_keywords_et_tid']['value'] = '';
+  $handler->display->display_options['filters']['field_keywords_et_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_keywords_et_tid']['expose']['operator_id'] = 'field_keywords_et_tid_op';
+  $handler->display->display_options['filters']['field_keywords_et_tid']['expose']['operator'] = 'field_keywords_et_tid_op';
+  $handler->display->display_options['filters']['field_keywords_et_tid']['expose']['identifier'] = 'field_keywords_et_tid';
+  $handler->display->display_options['filters']['field_keywords_et_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_keywords_et_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    8 => 0,
+    3 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_keywords_et_tid']['vocabulary'] = 'keywords';
+
+  /* Display: List widget */
+  $handler = $view->new_display('block', 'List widget', 'list');
+  $translatables['attraction_card_widget'] = array(
+    t('Master'),
+    t('Widgetti'),
+    t('more'),
+    t('Hae'),
+    t('Palauta oletusarvoihin'),
+    t('Järjestele'),
+    t('Nou'),
+    t('Las'),
+    t('Translations'),
+    t('Kaikki'),
+    t('All'),
+    t('List widget'),
+  );
+  $export['attraction_card_widget'] = $view;
+
+  $view = new view();
   $view->name = 'attraction_map';
   $view->description = '';
   $view->tag = 'default';
