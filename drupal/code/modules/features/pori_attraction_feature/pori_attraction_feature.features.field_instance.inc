@@ -706,7 +706,7 @@ function pori_attraction_feature_field_default_field_instances() {
           'link' => 0,
           'override' => 0,
         ),
-        'type' => 'content_full',
+        'type' => 'carousel',
         'weight' => 0,
       ),
       'full' => array(

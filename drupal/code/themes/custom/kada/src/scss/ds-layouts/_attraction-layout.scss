@@ -1,3 +1,7 @@
+.attraction__image-container  {
+  margin-bottom: 3rem;
+}
+
 .attraction__content-container {
   display: flex;
   flex-direction: column;
@@ -39,5 +43,9 @@
 
   > * {
     margin-bottom: 1.25rem;
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 3rem;
+    }
   }
 }
