@@ -3276,7 +3276,7 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
     'entity_type' => 'node',
     'field_name' => 'field_keywords_et',
     'label' => 'Keywords',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,

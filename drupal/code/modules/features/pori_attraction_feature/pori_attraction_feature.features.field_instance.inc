@@ -796,7 +796,7 @@ function pori_attraction_feature_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_keywords_et',
     'label' => 'Keywords',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -1877,7 +1877,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
     'entity_type' => 'widget',
     'field_name' => 'field_keywords_et',
     'label' => 'Keywords',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
