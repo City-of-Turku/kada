@@ -42,6 +42,7 @@
   .field {
     border-bottom: 1px solid $default-color-light;
     font-family: $bergen-mono;
+    font-size: .9rem;
     padding: 1.25rem 0.5rem 1.25rem 3.75rem;
     position: relative;
     text-align: right;
@@ -67,18 +68,31 @@
   }
 
   .field--type-addressfield {
-    .field__item,
     .street-block {
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
     }
 
-    .street-block::after,
+    .field__item {
+      @media screen and (min-width: $desktop + 8.75rem) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+    }
+
     .postal-code::after,
     .street-block > *::after {
       content: ",";
       margin-right: .313rem;
+    }
+
+    .street-block::after {
+      @media screen and (min-width: $desktop + 8.75rem) {
+        content: ",";
+        margin-right: .313rem;
+      }
     }
 
     .street-block > *:last-child::after {
