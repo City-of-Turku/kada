@@ -70,6 +70,7 @@
     .field__item,
     .street-block {
       display: flex;
+      flex-wrap: wrap;
       justify-content: flex-end;
     }
 
