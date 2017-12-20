@@ -80,6 +80,17 @@
               }
             }
           }
+
+          .e-service-wrapper {
+            background-color: lighten($color, 40%);
+            @if $color == $yellow {
+              color: $primary-color;
+            }
+
+            > a {
+              background-color: $color;
+            }
+          }
         }
       }
     }
