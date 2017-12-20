@@ -326,41 +326,61 @@ function pori_attraction_feature_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'attraction_card';
   $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'liftup_mosaic_layout';
+  $ds_layout->layout = 'attraction_layout';
   $ds_layout->settings = array(
     'regions' => array(
-      'top_content' => array(
-        0 => 'field_image',
+      'image_container' => array(
+        0 => 'field_images',
       ),
-      'right_content_top' => array(
-        1 => 'field_keywords_et',
+      'main_content' => array(
+        1 => 'field_lead_paragraph_et',
+        2 => 'field_description',
       ),
-      'bottom_content' => array(
-        2 => 'title',
-        3 => 'field_attraction_product_desc',
+      'sidebar' => array(
+        3 => 'field_keywords_et',
+      ),
+      'contact_details' => array(
+        4 => 'field_address_visiting',
+        5 => 'field_phone',
+        6 => 'field_email',
+        7 => 'field_websites',
+        8 => 'field_public_transportation',
+        9 => 'field_accessibility_ref',
+      ),
+      'after_content' => array(
+        10 => 'field_attraction_related_content',
       ),
     ),
     'fields' => array(
-      'field_image' => 'top_content',
-      'field_keywords_et' => 'right_content_top',
-      'title' => 'bottom_content',
-      'field_attraction_product_desc' => 'bottom_content',
+      'field_images' => 'image_container',
+      'field_lead_paragraph_et' => 'main_content',
+      'field_description' => 'main_content',
+      'field_keywords_et' => 'sidebar',
+      'field_address_visiting' => 'contact_details',
+      'field_phone' => 'contact_details',
+      'field_email' => 'contact_details',
+      'field_websites' => 'contact_details',
+      'field_public_transportation' => 'contact_details',
+      'field_accessibility_ref' => 'contact_details',
+      'field_attraction_related_content' => 'after_content',
     ),
     'limit' => array(
-      'field_image' => '1',
-      'field_keywords_et' => '1',
+      'field_images' => '1',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'top_content' => 'div',
-      'right_content_top' => 'div',
-      'bottom_content' => 'div',
+      'image_container' => 'div',
+      'main_content' => 'div',
+      'sidebar' => 'div',
+      'contact_details' => 'div',
+      'after_content' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|attraction_card|default'] = $ds_layout;
 
