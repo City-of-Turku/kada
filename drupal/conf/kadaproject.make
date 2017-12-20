@@ -290,7 +290,7 @@ projects[features_extra][subdir] = contrib
 projects[field_collection][version] = 1.0-beta12
 projects[field_collection][subdir] = contrib
 
-projects[field_group][version] = 1.5
+projects[field_group][version] = 1.6
 projects[field_group][subdir] = contrib
 
 projects[feeds][version] = "2.0-beta3"
