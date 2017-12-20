@@ -292,6 +292,7 @@ projects[field_collection][subdir] = contrib
 
 projects[field_group][version] = 1.5
 projects[field_group][subdir] = contrib
+projects[field_group][patch][] = "https://www.drupal.org/files/issues/php7_uniform_variable-2649648-5.patch"
 
 projects[feeds][version] = "2.0-beta3"
 projects[feeds][subdir] = "contrib"
