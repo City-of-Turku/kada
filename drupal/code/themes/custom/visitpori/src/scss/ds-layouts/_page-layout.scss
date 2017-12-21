@@ -6,10 +6,24 @@
   max-width: $inner-container-width;
 }
 
+.page-node {
+  // Set theme colored headers for page.
+  @each $theme-color, $color in $theme-colors {
+    .theme-color-#{$theme-color} {
+      .page-main__container {
+        .content-header__title {
+          color: $color;
+        }
+      }
+    }
+  }
+}
+
 // Hide title on landing-page. TODO: Find better way to hide title.
 .landing-page__visitpori {
   .content__header .content-header__title {
     display: none;
+
   }
 }
 
@@ -18,6 +32,17 @@
   .node--page--full {
     margin: 0;
     max-width: 100%;
+  }
+
+  // Set theme colored headers for page.
+  @each $theme-color, $color in $theme-colors {
+    .theme-color-#{$theme-color} {
+      .page-main__container {
+        .content-header__title {
+          color: $color;
+        }
+      }
+    }
   }
 }
 
