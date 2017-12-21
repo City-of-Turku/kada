@@ -48,17 +48,17 @@ function visitpori_configurations_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'menu-menu-visitpori-footer-menu-en' => array(
-          'module' => 'menu',
-          'delta' => 'menu-visitpori-footer-menu-en',
+        'menu_block-27' => array(
+          'module' => 'menu_block',
+          'delta' => '27',
           'region' => 'footer',
-          'weight' => '-10',
+          'weight' => '0',
         ),
-        'menu-menu-visitpori-footer-menu-fi' => array(
-          'module' => 'menu',
-          'delta' => 'menu-visitpori-footer-menu-fi',
+        'menu_block-25' => array(
+          'module' => 'menu_block',
+          'delta' => '25',
           'region' => 'footer',
-          'weight' => '-9',
+          'weight' => '1',
         ),
       ),
     ),
@@ -70,6 +70,104 @@ function visitpori_configurations_context_default_contexts() {
   t('Displays the footer menu');
   t('menus');
   $export['visitpori_footer_menu'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'visitpori_sitewide_en';
+  $context->description = 'This sitewide context is triggered when using page in English';
+  $context->tag = 'section';
+  $context->conditions = array(
+    'context' => array(
+      'values' => array(
+        '~section' => '~section',
+        '~section_front' => '~section_front',
+      ),
+    ),
+    'context_all' => array(
+      'values' => array(
+        'visitpori_domain' => 'visitpori_domain',
+      ),
+    ),
+    'language' => array(
+      'values' => array(
+        'en' => 'en',
+      ),
+    ),
+    'sitewide' => array(
+      'values' => array(
+        1 => 1,
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'block-5' => array(
+          'module' => 'block',
+          'delta' => '5',
+          'region' => 'footer',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('This sitewide context is triggered when using page in English');
+  t('section');
+  $export['visitpori_sitewide_en'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'visitpori_sitewide_fi';
+  $context->description = 'This sitewide context is triggered when using page in Finnish';
+  $context->tag = 'section';
+  $context->conditions = array(
+    'context' => array(
+      'values' => array(
+        '~section' => '~section',
+        '~section_front' => '~section_front',
+      ),
+    ),
+    'context_all' => array(
+      'values' => array(
+        'visitpori_domain' => 'visitpori_domain',
+      ),
+    ),
+    'language' => array(
+      'values' => array(
+        'fi' => 'fi',
+      ),
+    ),
+    'sitewide' => array(
+      'values' => array(
+        1 => 1,
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'block-4' => array(
+          'module' => 'block',
+          'delta' => '4',
+          'region' => 'footer',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('This sitewide context is triggered when using page in Finnish');
+  t('section');
+  $export['visitpori_sitewide_fi'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
@@ -99,15 +197,15 @@ function visitpori_configurations_context_default_contexts() {
           'region' => 'navigation_top',
           'weight' => '-9',
         ),
-        'menu-menu-visitpori-main-navigation' => array(
-          'module' => 'menu',
-          'delta' => 'menu-visitpori-main-navigation',
+        'menu_block-26' => array(
+          'module' => 'menu_block',
+          'delta' => '26',
           'region' => 'navigation',
           'weight' => '-10',
         ),
-        'menu-menu-visitpori-main-menu' => array(
-          'module' => 'menu',
-          'delta' => 'menu-visitpori-main-menu',
+        'menu_block-24' => array(
+          'module' => 'menu_block',
+          'delta' => '24',
           'region' => 'navigation',
           'weight' => '-9',
         ),

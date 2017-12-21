@@ -145,7 +145,7 @@ function kada_page_feature_strongarm() {
         'custom_settings' => FALSE,
       ),
       'project' => array(
-        'custom_settings' => FALSE,
+        'custom_settings' => TRUE,
       ),
       'main_news' => array(
         'custom_settings' => FALSE,
@@ -186,6 +186,12 @@ function kada_page_feature_strongarm() {
       'event_search_result' => array(
         'custom_settings' => FALSE,
       ),
+      'attraction_card_mosaic_item' => array(
+        'custom_settings' => FALSE,
+      ),
+      'product' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -211,7 +217,7 @@ function kada_page_feature_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '37',
+            'weight' => '38',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -224,6 +230,10 @@ function kada_page_feature_strongarm() {
           ),
           'search_result' => array(
             'weight' => '32',
+            'visible' => FALSE,
+          ),
+          'project' => array(
+            'weight' => '37',
             'visible' => FALSE,
           ),
         ),
@@ -243,6 +253,10 @@ function kada_page_feature_strongarm() {
           'search_result' => array(
             'weight' => '4',
             'visible' => FALSE,
+          ),
+          'project' => array(
+            'weight' => '0',
+            'visible' => TRUE,
           ),
         ),
       ),

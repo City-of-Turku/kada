@@ -1,3 +1,10 @@
 .l-breadcrumb {
   padding: 2rem 0;
 }
+
+// Hide breadcrumb on landing-page. TODO: Find a better way to do this.
+.landing-page__visitpori {
+  .l-breadcrumb {
+    display: none;
+  }
+}
