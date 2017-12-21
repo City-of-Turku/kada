@@ -2406,6 +2406,10 @@ example.org';
     18 => 20,
     19 => 21,
     20 => 22,
+    21 => 24,
+    22 => 25,
+    23 => 26,
+    24 => 27,
   );
   $export['menu_block_ids'] = $strongarm;
 
@@ -2419,6 +2423,10 @@ example.org';
     'og-menu-single' => '',
     'menu-main-menu-en' => '',
     'menu-main-menu-sv' => '',
+    'menu-visitpori-main-navigation' => '',
+    'menu-visitpori-main-menu' => '',
+    'menu-visitpori-footer-menu-en' => '',
+    'menu-visitpori-footer-menu-fi' => '',
   );
   $export['menu_block_menu_order'] = $strongarm;
 
@@ -3056,8 +3064,8 @@ example.org';
   $strongarm->api_version = 1;
   $strongarm->name = 'responsive_menus_css_selectors';
   $strongarm->value = '.l-navigation .menu-block-wrapper > .menu
-.l-navigation .block--og-menu-single .block__content > .menu
-.l-navigation .menu--language-switcher';
+            .l-navigation .block--og-menu-single .block__content > .menu
+            .l-branding .menu--language-switcher';
   $export['responsive_menus_css_selectors'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -3082,14 +3090,14 @@ example.org';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'responsive_menus_media_size';
-  $strongarm->value = '59.94';
+  $strongarm->value = 1025;
   $export['responsive_menus_media_size'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'responsive_menus_media_unit';
-  $strongarm->value = 'em';
+  $strongarm->value = 'px';
   $export['responsive_menus_media_unit'] = $strongarm;
 
   $strongarm = new stdClass();

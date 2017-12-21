@@ -210,3 +210,14 @@ function kadaprofile_update_7115() {
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables Visitpori landing-page feature
+ */
+function kadaprofile_update_7116() {
+  $modules = array('visitpori_landing_page');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}

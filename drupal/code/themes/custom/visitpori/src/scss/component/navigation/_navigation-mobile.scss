@@ -20,8 +20,8 @@ $menu-padding: 1.25rem;
 }
 
 @media screen and (max-width: $mobile-menu-breakpoint-max) {
-  .menu-name-main-menu,
-  [class*="menu-name-menu-main-menu"] {
+  .menu-name-menu-visitpori-main-menu,
+  [class*="menu-name-menu-visitpori-main-menu"] {
     .toggler {
       color: transparent;
       font-size: 0;
