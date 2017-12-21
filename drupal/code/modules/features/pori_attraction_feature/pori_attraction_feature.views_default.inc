@@ -83,6 +83,7 @@ function pori_attraction_feature_views_default_views() {
   $handler->display->display_options['arguments']['field_attraction_category_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_attraction_category_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_attraction_category_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_attraction_category_tid']['break_phrase'] = TRUE;
   /* Contextual filter: Field: Keywords (field_keywords_et) */
   $handler->display->display_options['arguments']['field_keywords_et_tid']['id'] = 'field_keywords_et_tid';
   $handler->display->display_options['arguments']['field_keywords_et_tid']['table'] = 'field_data_field_keywords_et';
@@ -91,6 +92,7 @@ function pori_attraction_feature_views_default_views() {
   $handler->display->display_options['arguments']['field_keywords_et_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_keywords_et_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_keywords_et_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_keywords_et_tid']['break_phrase'] = TRUE;
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
