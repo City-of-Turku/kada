@@ -19,6 +19,14 @@
   }
 }
 
+// Hide title on landing-page. TODO: Find better way to hide title.
+.landing-page__visitpori {
+  .content__header .content-header__title {
+    display: none;
+
+  }
+}
+
 .theme-main-page {
   .content__header,
   .node--page--full {
