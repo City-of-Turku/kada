@@ -22,3 +22,45 @@ function kada_page_feature_views_post_execute(&$view) {
     }
   }
 }
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function kada_page_feature_field_formatter_info() {
+  return array(
+    'kada_page_service_offering_formatter' => array( //Machine name of the formatter
+      'label' => t('Service offering'),
+      'field types' => array('entityreference'), //This will only be available to entity reference fields
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function kada_page_feature_field_formatter_view($entity_type, $node, $field, $instance, $langcode, $items, $display) {
+  $result = array();
+
+  foreach ($items as $delta => $item) {
+    // Protect ourselves from recursive rendering.
+    static $depth = 0;
+    $depth++;
+    if ($depth > 20) {
+      throw new Exception(t('Recursive rendering detected when rendering entity @entity_type(@entity_id). Aborting rendering.', array('@entity_type' => $entity_type, '@entity_id' => $item['target_id'])));
+    }
+
+    $node = node_load($item['target_id']);
+    if (isset($node->field_provided_at)) {
+      foreach($node->field_provided_at as $p) {
+        foreach($p as $item) {
+          $location_node = entity_revision_load('node', $item['vid']);
+          $result[$delta][] = node_view($location_node, 'teaser', $langcode);
+        }
+      }
+    }
+
+    $depth = 0;
+  }
+
+  return $result;
+}

@@ -1023,13 +1023,9 @@ function kada_page_feature_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'entityreference',
-        'settings' => array(
-          'links' => 0,
-          'use_content_language' => 1,
-          'view_mode' => 'teaser',
-        ),
-        'type' => 'entityreference_entity_view',
+        'module' => 'kada_page_feature',
+        'settings' => array(),
+        'type' => 'kada_page_service_offering_formatter',
         'weight' => 3,
       ),
       'only_title' => array(
