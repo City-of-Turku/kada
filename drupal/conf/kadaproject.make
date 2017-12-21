@@ -85,6 +85,18 @@ libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archi
 libraries[openlayers][download][type] = get
 libraries[openlayers][download][url] = https://github.com/openlayers/openlayers/archive/v2.13.1.zip
 
+; Widget library
+libraries[ckeditor_widget][type] = libraries
+libraries[ckeditor_widget][download][type] = file
+libraries[ckeditor_widget][directory_name] = ckeditor/plugins/widget
+libraries[ckeditor_widget][download][url] = http://download.ckeditor.com/widget/releases/widget_4.4.8.zip
+
+; Line Utils library
+libraries[ckeditor_lineutils][type] = libraries
+libraries[ckeditor_lineutils][download][type] = file
+libraries[ckeditor_lineutils][directory_name] = ckeditor/plugins/lineutils
+libraries[ckeditor_lineutils][download][url] = http://download.ckeditor.com/lineutils/releases/lineutils_4.4.8.zip
+
 ; Contrib modules
 ; ------------
 
@@ -278,7 +290,7 @@ projects[features_extra][subdir] = contrib
 projects[field_collection][version] = 1.0-beta12
 projects[field_collection][subdir] = contrib
 
-projects[field_group][version] = 1.5
+projects[field_group][version] = 1.6
 projects[field_group][subdir] = contrib
 
 projects[feeds][version] = "2.0-beta3"

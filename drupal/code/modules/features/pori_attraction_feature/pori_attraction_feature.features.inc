@@ -33,6 +33,31 @@ function pori_attraction_feature_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_eck_bundle_info().
+ */
+function pori_attraction_feature_eck_bundle_info() {
+  $items = array(
+    'widget_attraction_list' => array(
+      'machine_name' => 'widget_attraction_list',
+      'entity_type' => 'widget',
+      'name' => 'attraction_list',
+      'label' => 'Attraction list',
+      'config' => array(
+        'managed_properties' => array(
+          'title' => 0,
+          'uid' => 0,
+          'created' => 0,
+          'changed' => 0,
+          'language' => 0,
+        ),
+        'multilingual' => 1,
+      ),
+    ),
+  );
+  return $items;
+}
+
+/**
  * Implements hook_node_info().
  */
 function pori_attraction_feature_node_info() {

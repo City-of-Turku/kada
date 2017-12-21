@@ -1,0 +1,121 @@
+.attraction .page__contact_details {
+  .page__contact_details__header {
+    background-color: $secondary-color;
+    color: $white;
+    margin: 0;
+    padding: 1.25rem 0.5rem;
+    text-align: center;
+    font-weight: normal;
+  }
+
+  .field--type-addressfield {
+    &::before {
+      @include fa('\f041', 2rem, 3.125rem, false);
+    }
+  }
+
+  .field--name-field-phone {
+    &::before {
+      @include fa('\f095', 2rem, 3.125rem, false);
+    }
+  }
+
+
+  .field--name-field-email {
+    &::before {
+      @include fa('\f0e0', 2rem, 3.125rem, false);
+    }
+  }
+
+  .field--name-field-websites {
+    &::before {
+      @include fa('\f015', 2rem, 3.125rem, false);
+    }
+  }
+
+  .field--name-field-public-transportation {
+    &::before {
+      @include fa('\f207', 2rem, 3.125rem, false);
+    }
+  }
+
+  .field {
+    border-bottom: 1px solid $default-color-light;
+    font-family: $bergen-mono;
+    font-size: .9rem;
+    padding: 1.25rem 0.5rem 1.25rem 3.75rem;
+    position: relative;
+    text-align: right;
+    text-transform: uppercase;
+
+    &:last-child {
+      border-bottom: 0 none;
+    }
+
+    &::before {
+      color: $default-color-medium;
+      left: 1.25rem;
+      text-align: center;
+      top: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+      width: 1.875rem;
+    }
+
+    a {
+      color: $primary-color;
+    }
+  }
+
+  .field--type-addressfield {
+    .street-block {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .field__item {
+      @media screen and (min-width: $desktop + 8.75rem) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+    }
+
+    .postal-code::after,
+    .street-block > *::after {
+      content: ",";
+      margin-right: .313rem;
+    }
+
+    .street-block::after {
+      @media screen and (min-width: $desktop + 8.75rem) {
+        content: ",";
+        margin-right: .313rem;
+      }
+    }
+
+    .street-block > *:last-child::after {
+      content: "";
+      margin-right: 0;
+    }
+  }
+
+  .field--name-field-public-transportation {
+    .field__items {
+      justify-content: flex-end;
+    }
+
+    .field__item {
+      background: $default-color-light;
+      border-radius: 100%;
+      line-height: 2.5rem;
+      min-width: 2.5rem;
+      text-align: center;
+    }
+  }
+
+  .field--name-field-accessibility-ref {
+    padding-left: 1.25rem;
+  }
+}

@@ -27,7 +27,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 39,
       ),
       'full' => array(
         'label' => 'above',
@@ -112,7 +112,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 22,
+      'weight' => 10,
     ),
   );
 
@@ -130,11 +130,11 @@ function pori_attraction_feature_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 41,
+        'weight' => 9,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -169,7 +169,7 @@ function pori_attraction_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 18,
     ),
   );
 
@@ -188,9 +188,15 @@ function pori_attraction_feature_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 26,
+        'module' => 'addressfield',
+        'settings' => array(
+          'format_handlers' => array(
+            0 => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -252,7 +258,7 @@ function pori_attraction_feature_field_default_field_instances() {
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 13,
+      'weight' => 12,
     ),
   );
 
@@ -273,7 +279,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 36,
       ),
       'full' => array(
         'label' => 'above',
@@ -315,7 +321,7 @@ function pori_attraction_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 1,
+      'weight' => 21,
     ),
   );
 
@@ -336,7 +342,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 31,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -424,7 +430,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 25,
+      'weight' => 12,
     ),
   );
 
@@ -445,9 +451,14 @@ function pori_attraction_feature_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'use_content_language' => 0,
+          'view_mode' => 'teaser',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 10,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -502,7 +513,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 24,
+      'weight' => 10,
     ),
   );
 
@@ -521,9 +532,10 @@ function pori_attraction_feature_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 23,
+        'type' => 'text_default',
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -611,7 +623,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 23,
+      'weight' => 24,
     ),
   );
 
@@ -629,11 +641,11 @@ function pori_attraction_feature_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 39,
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -670,7 +682,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 16,
+      'weight' => 15,
     ),
   );
 
@@ -688,14 +700,14 @@ function pori_attraction_feature_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'atom_reference',
         'settings' => array(
           'link' => 0,
           'override' => 0,
         ),
-        'type' => 'title',
-        'weight' => 42,
+        'type' => 'carousel',
+        'weight' => 0,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -741,7 +753,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'context' => 'sdl_editor_representation',
       ),
       'type' => 'atom_reference_textfield',
-      'weight' => 20,
+      'weight' => 8,
     ),
   );
 
@@ -761,10 +773,10 @@ function pori_attraction_feature_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
-        'module' => 'hs_taxonomy',
+        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'hs_taxonomy_term_reference_hierarchical_text',
-        'weight' => 1,
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -809,7 +821,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 0,
+      'weight' => 25,
     ),
   );
 
@@ -828,9 +840,10 @@ function pori_attraction_feature_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 31,
+        'type' => 'text_default',
+        'weight' => 1,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -919,7 +932,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 21,
+      'weight' => 23,
     ),
   );
 
@@ -941,7 +954,7 @@ You can place multiple single point selections.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 29,
       ),
       'full' => array(
         'label' => 'above',
@@ -1007,7 +1020,7 @@ You can place multiple single point selections.',
         'use_geocoder' => 1,
       ),
       'type' => 'geofield_openlayers',
-      'weight' => 15,
+      'weight' => 13,
     ),
   );
 
@@ -1028,7 +1041,7 @@ You can place multiple single point selections.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 30,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -1113,7 +1126,7 @@ You can place multiple single point selections.',
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 11,
     ),
   );
 
@@ -1132,9 +1145,14 @@ You can place multiple single point selections.',
       ),
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 22,
+        'module' => 'title',
+        'settings' => array(
+          'title_class' => '',
+          'title_link' => '',
+          'title_style' => '',
+        ),
+        'type' => 'title_linked',
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -1240,7 +1258,7 @@ You can place multiple single point selections.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 32,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -1294,7 +1312,7 @@ You can place multiple single point selections.',
         'relation_endpoint_search_by_id' => 0,
       ),
       'type' => 'relation_add',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -1313,11 +1331,11 @@ You can place multiple single point selections.',
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 40,
+        'type' => 'i18n_taxonomy_term_reference_plain',
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -1352,7 +1370,7 @@ You can place multiple single point selections.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 18,
+      'weight' => 17,
     ),
   );
 
@@ -1373,7 +1391,7 @@ You can place multiple single point selections.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 38,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -1414,7 +1432,7 @@ You can place multiple single point selections.',
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 3,
+      'weight' => 22,
     ),
   );
 
@@ -1454,7 +1472,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 37,
       ),
       'full' => array(
         'label' => 'above',
@@ -1541,7 +1559,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'rows' => 2,
       ),
       'type' => 'text_textarea',
-      'weight' => 26,
+      'weight' => 11,
     ),
   );
 
@@ -1559,11 +1577,11 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 43,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'above',
@@ -1623,7 +1641,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 22,
+      'weight' => 16,
     ),
   );
 
@@ -1645,7 +1663,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 35,
       ),
       'full' => array(
         'label' => 'above',
@@ -1701,7 +1719,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -1722,7 +1740,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 34,
       ),
       'full' => array(
         'label' => 'above',
@@ -1812,6 +1830,85 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
       ),
       'type' => 'text_textfield',
       'weight' => 19,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'widget-attraction_list-field_attraction_category'.
+  $field_instances['widget-attraction_list-field_attraction_category'] = array(
+    'bundle' => 'attraction_list',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'widget',
+    'field_name' => 'field_attraction_category',
+    'label' => 'Category',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'widget-attraction_list-field_keywords_et'.
+  $field_instances['widget-attraction_list-field_keywords_et'] = array(
+    'bundle' => 'attraction_list',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'widget',
+    'field_name' => 'field_keywords_et',
+    'label' => 'Keywords',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'taxonomy',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'taxonomy_autocomplete',
+      'weight' => 2,
     ),
   );
 

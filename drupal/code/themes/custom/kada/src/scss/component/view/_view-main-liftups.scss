@@ -27,7 +27,6 @@ $main-liftup-content-padding: 20px;
 
 
 .main-liftup-row {
-  border-top: .938rem solid $primary-color;
   width: 100%;
 
   @media screen and (min-width: $desktop) {
@@ -37,8 +36,22 @@ $main-liftup-content-padding: 20px;
 
 .main-liftup-box {
   background-color: $main-liftups-background;
+  border-top: .938rem solid $primary-color;
   padding-bottom: .5rem;
   position: relative;
+
+  // Set theme colored borders and hover.
+  @each $theme-color, $color in $theme-colors {
+    &.theme-color-#{$theme-color} {
+      border-top: .938rem solid $color;
+
+      &:hover {
+        :after {
+          @include overlay-light-hover($color);
+        }
+      }
+    }
+  }
 
   &:after {
     @include overlay-transparent;
