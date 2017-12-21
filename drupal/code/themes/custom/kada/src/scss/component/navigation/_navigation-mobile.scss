@@ -125,6 +125,14 @@ $menu-padding: 1.25rem;
               background-color: $color !important;
             }
           }
+
+          .e-service-wrapper {
+            background-color: lighten($color, 40%);
+
+            > a {
+              background-color: $color;
+            }
+          }
         }
       }
     }
