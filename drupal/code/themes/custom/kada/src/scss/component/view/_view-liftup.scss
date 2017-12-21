@@ -132,6 +132,15 @@
     height: 100%;
   }
 
+  // Set theme colored borders.
+  @each $theme-color, $color in $theme-colors {
+    &.theme-color-#{$theme-color} {
+      .liftup-box__image {
+        border-top: 12px solid $color !important;
+      }
+    }
+  }
+
   .liftup-box__image {
     border-top: 12px solid $turku-black;
     position: relative;
@@ -237,7 +246,6 @@
 .liftup-box--wide {
   background-color: $white;
   border-bottom: none;
-  border-top: .938rem solid $primary-color;
   color: $black;
   cursor: pointer;
   margin: 0;
@@ -245,10 +253,18 @@
 
   .node--liftup {
     align-items: flex-start;
+    border-top: .938rem solid $primary-color;
     display: flex;
     flex-direction: column-reverse;
     margin: 0 auto;
     width: 100%;
+
+    // Set theme colored borders.
+    @each $theme-color, $color in $theme-colors {
+      &.theme-color-#{$theme-color} {
+        border-top: .938rem solid $color;
+      }
+    }
 
     @media screen and (min-width: $tablet-landscape) {
       flex-direction: row-reverse;
@@ -409,6 +425,15 @@
 
       @media screen and (min-width: $tablet-landscape) {
         margin-top: 2rem;
+      }
+    }
+
+    // Set theme colored borders.
+    @each $theme-color, $color in $theme-colors {
+      &.theme-color-#{$theme-color} {
+        .liftup-box__header {
+          border-top: .938rem solid $color;
+        }
       }
     }
   }

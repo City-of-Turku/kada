@@ -153,3 +153,9 @@
 
     yum_extra_packages:
       - php71u-pecl-memcached
+
+    php_env_vars:
+      - key: "twitter_consumer_key"
+        value: "{{ twitter_consumer_key }}"
+      - key: "twitter_consumer_secret"
+        value: "{{ twitter_consumer_secret }}"

@@ -82,7 +82,7 @@ function pori_attraction_feature_strongarm() {
         'custom_settings' => TRUE,
       ),
       'full' => array(
-        'custom_settings' => TRUE,
+        'custom_settings' => FALSE,
       ),
       'rss' => array(
         'custom_settings' => FALSE,
@@ -154,7 +154,7 @@ function pori_attraction_feature_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'domain' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
         'metatags' => array(
           'weight' => '10',
@@ -169,13 +169,13 @@ function pori_attraction_feature_strongarm() {
           'weight' => '9',
         ),
         'language' => array(
-          'weight' => '17',
+          'weight' => '20',
         ),
       ),
       'display' => array(
         'domain' => array(
           'default' => array(
-            'weight' => '27',
+            'weight' => '33',
             'visible' => FALSE,
           ),
           'search_result' => array(
@@ -203,6 +203,36 @@ function pori_attraction_feature_strongarm() {
     ),
   );
   $export['field_bundle_settings_node__attraction_card'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'field_bundle_settings_widget__attraction_list';
+  $strongarm->value = array(
+    'view_modes' => array(
+      'teaser' => array(
+        'custom_settings' => TRUE,
+      ),
+      'full' => array(
+        'custom_settings' => FALSE,
+      ),
+      'diff_standard' => array(
+        'custom_settings' => FALSE,
+      ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
+    ),
+    'extra_fields' => array(
+      'form' => array(
+        'redirect' => array(
+          'weight' => '30',
+        ),
+      ),
+      'display' => array(),
+    ),
+  );
+  $export['field_bundle_settings_widget__attraction_list'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

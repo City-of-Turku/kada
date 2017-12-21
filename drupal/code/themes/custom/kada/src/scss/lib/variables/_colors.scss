@@ -8,7 +8,6 @@ $white: #fff;
 $gray: #bcbcbc;
 $gray-light: #ddd;
 $gray-lighter: #f8f8f8;
-$yellow: #ffcd00;
 
 // Messages colors
 $error-dark: #b43b4b;
@@ -64,3 +63,19 @@ $instagram-color: #c50091;
 $linkedin-color: #0077B5;
 $twitter-color: #55acee;
 $youtube-color: #FF0000;
+
+// Theme colors
+$red-light: #E44E34;
+$red: #EC1C24;
+$yellow: #FFCD00;
+$orange: #FF8200;
+$green-dark: #007A33;
+$green: #00AF66;
+
+$theme-colors: (
+  'red': $red-light,
+  'yellow': $yellow,
+  'orange': $orange,
+  'greenDark': $green-dark,
+  'green': $green,
+);
