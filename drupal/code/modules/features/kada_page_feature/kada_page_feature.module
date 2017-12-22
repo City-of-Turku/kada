@@ -69,7 +69,7 @@ function kada_page_feature_field_formatter_settings_summary($field, $instance, $
   $settings = $display['settings'];
   $summary = t('Use @view_mode to display @content_type items', array(
     '@view_mode' => $settings['view_mode'],
-    '@content_type' => 'location',
+    '@content_type' => 'place',
   ));
   return $summary;
 }
@@ -96,8 +96,8 @@ function kada_page_feature_field_formatter_view($entity_type, $node, $field, $in
     if (isset($node->field_provided_at)) {
       foreach($node->field_provided_at as $p) {
         foreach($p as $item) {
-          $location_node = entity_revision_load('node', $item['vid']);
-          $result[$delta][] = node_view($location_node, $view_mode, $langcode);
+          $place_node = entity_revision_load('node', $item['vid']);
+          $result[$delta][] = node_view($place_node, $view_mode, $langcode);
         }
       }
     }
