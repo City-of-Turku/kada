@@ -1024,7 +1024,9 @@ function kada_page_feature_field_default_field_instances() {
       'default' => array(
         'label' => 'hidden',
         'module' => 'kada_page_feature',
-        'settings' => array(),
+        'settings' => array(
+          'view_mode' => 'teaser',
+        ),
         'type' => 'kada_page_service_offering_formatter',
         'weight' => 3,
       ),
