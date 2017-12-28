@@ -26,6 +26,7 @@ dependencies[] = openlayers
 dependencies[] = openlayers_views
 dependencies[] = options
 dependencies[] = picture
+dependencies[] = pori_visitpori_override_feature
 dependencies[] = relation_add
 dependencies[] = restrict_node_page_view
 dependencies[] = service_links
