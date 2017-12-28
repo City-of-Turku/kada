@@ -1,0 +1,11 @@
+name = VisitPori override feature
+core = 7.x
+package = Pori
+version = 7.x-1.0-dev
+features[features_api][] = api:2
+features[features_overrides][] = variable.menu_options_page.value|10
+features[features_overrides][] = variable.menu_options_page.value|11
+features[features_overrides][] = variable.menu_options_page.value|12
+features[features_overrides][] = variable.menu_options_page.value|13
+features[features_overrides][] = variable.menu_options_page.value|14
+features[features_overrides][] = variable.menu_options_page.value|15

@@ -189,12 +189,21 @@ function pori_attraction_feature_update_7007(&$sandbox) {
 }
 
 /**
+ * Enable the override module.
+ */
+function pori_attraction_feature_update_7008(&$sandbox) {
+  module_enable(array('pori_visitpori_override_feature'));
+}
+
+/**
+ * Delete attraction category instance from the field collection.
+/**
  * Set i18n_mode to Attraction category, Accessibility and Bus lines vocabularies.
  */
 /*
  // THIS UPDATE HOOK WILL WAIT UNTIL THE PRODUCTION SITE HAS THIS MODULE ENABLED.
  // SETTING THE i18n_mode AT THE SAME TIME WHEN CREATING THE VOCABULARY DOESN'T WORK FOR SOME REASON.
-function pori_attraction_feature_update_7008(&$sandbox) {
+function pori_attraction_feature_update_7009(&$sandbox) {
   $voc_machine_names = array('attraction_category', 'accessibility', 'bus_lines');
   foreach ($voc_machine_names as $machine_name) {
     $voc = taxonomy_vocabulary_machine_name_load($machine_name);
