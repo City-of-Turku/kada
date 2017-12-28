@@ -45,12 +45,12 @@ print "\nFind Ota Yhteyttä Elements\n\n";
 // Menu
 $selector = '//*[@id="block-menu-block-8"]/div/ul/li[4]';
 $I->see('Anna palautetta', $selector);
-$I->see('Asioi verkossa (eKunta)', $selector);
-$I->see('Laskutus ja maksaminen', $selector);
-$I->see('Neuvonta', $selector);
-$I->see('Vuokrattavat tilat', $selector);
+$I->see('Asiakaspalvelupisteet', $selector);
 $I->see('Yhteystiedot', $selector);
 $I->see('Viestintä', $selector);
+$I->see('Myytävät kiinteistöt', $selector);
+$I->see('Vuokrattavat tilat', $selector);
+$I->see('Sähköinen asiointi', $selector);
 
 // Pori-Tieto
 print "\nFind Pori-tieto Elements\n\n";
