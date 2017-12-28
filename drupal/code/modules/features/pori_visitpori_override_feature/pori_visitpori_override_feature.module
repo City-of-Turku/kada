@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the VisitPori override feature feature.
+ */
+
+include_once 'pori_visitpori_override_feature.features.inc';
