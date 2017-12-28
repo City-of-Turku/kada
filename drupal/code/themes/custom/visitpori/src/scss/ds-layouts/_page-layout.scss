@@ -1,0 +1,70 @@
+.content__header,
+.node--page--full,
+.node--news-item--full {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: $inner-container-width;
+}
+
+.page-node {
+  // Set theme colored headers for page.
+  @each $theme-color, $color in $theme-colors {
+    .theme-color-#{$theme-color} {
+      .page-main__container {
+        .content-header__title {
+          color: $color;
+        }
+      }
+    }
+  }
+}
+
+// Hide title on landing-page. TODO: Find better way to hide title.
+.landing-page__visitpori {
+  .content__header .content-header__title {
+    display: none;
+
+  }
+}
+
+.theme-main-page {
+  .content__header,
+  .node--page--full {
+    margin: 0;
+    max-width: 100%;
+  }
+
+  // Set theme colored headers for page.
+  @each $theme-color, $color in $theme-colors {
+    .theme-color-#{$theme-color} {
+      .page-main__container {
+        .content-header__title {
+          color: $color;
+        }
+      }
+    }
+  }
+}
+
+.page--has-sidebar {
+  @include clearfix;
+
+  .page__content {
+    @media screen and (min-width: $desktop) {
+      float: left;
+      padding-right: 10%;
+      width: 70%;
+    }
+  }
+
+  .page__sidebar {
+    @media screen and (min-width: $desktop) {
+      float: left;
+      width: 30%;
+    }
+  }
+}
+
+.page__after-content {
+  margin-top: 6.25rem - 1.875rem; // Reducing the margin of the element inside after-content.
+}

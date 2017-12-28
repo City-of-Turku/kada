@@ -67,6 +67,15 @@ function kada_page_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 4,
       ),
+      'project' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(
+          'trim_length' => 330,
+        ),
+        'type' => 'text_trimmed',
+        'weight' => 2,
+      ),
       'search_result' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -156,6 +165,12 @@ function kada_page_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'project' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -217,13 +232,19 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 25,
       ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 26,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -276,13 +297,19 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 27,
       ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 5,
+      ),
+      'project' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 28,
       ),
       'search_result' => array(
         'label' => 'inline',
@@ -325,13 +352,19 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 31,
       ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 10,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 32,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -387,6 +420,12 @@ function kada_page_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'project' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 24,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -428,16 +467,21 @@ function kada_page_feature_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 24,
       ),
       'only_title' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 1,
+      ),
+      'project' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 25,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -504,7 +548,7 @@ function kada_page_feature_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 12,
+      'weight' => 15,
     ),
   );
 
@@ -519,13 +563,19 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 26,
       ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 27,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -616,6 +666,12 @@ function kada_page_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 2,
       ),
+      'project' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
+      ),
       'search_result' => array(
         'label' => 'hidden',
         'module' => 'i18n_taxonomy',
@@ -633,7 +689,7 @@ function kada_page_feature_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_keywords',
     'label' => 'Keywords',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
@@ -646,7 +702,7 @@ function kada_page_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -669,6 +725,12 @@ function kada_page_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -743,13 +805,19 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 37,
       ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -818,13 +886,23 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 32,
       ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 11,
+      ),
+      'project' => array(
+        'label' => 'hidden',
+        'module' => 'atom_reference',
+        'settings' => array(
+          'link' => 0,
+          'override' => 0,
+        ),
+        'type' => 'project',
+        'weight' => 4,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -884,13 +962,19 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 34,
       ),
       'only_title' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 12,
+      ),
+      'project' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 34,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -939,8 +1023,13 @@ function kada_page_feature_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'use_content_language' => 1,
+          'view_mode' => 'project',
+        ),
+        'type' => 'entityreference_entity_view',
         'weight' => 8,
       ),
       'only_title' => array(
@@ -948,6 +1037,12 @@ function kada_page_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 7,
+      ),
+      'project' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -995,13 +1090,19 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 29,
       ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 8,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 30,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -1030,7 +1131,7 @@ function kada_page_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -1045,13 +1146,19 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 35,
       ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 13,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 35,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -1080,7 +1187,7 @@ function kada_page_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -1099,13 +1206,19 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 28,
       ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 6,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 29,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -1164,6 +1277,12 @@ function kada_page_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 3,
       ),
+      'project' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
+      ),
       'search_result' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -1209,13 +1328,19 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 33,
       ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 33,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -1299,16 +1424,21 @@ function kada_page_feature_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 37,
+        'type' => 'hidden',
+        'weight' => 39,
       ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 38,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1330,7 +1460,7 @@ function kada_page_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -1346,13 +1476,19 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 36,
       ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 36,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -1406,13 +1542,19 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 30,
       ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 9,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
       ),
       'search_result' => array(
         'label' => 'above',
