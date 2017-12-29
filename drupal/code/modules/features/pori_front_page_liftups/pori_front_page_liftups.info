@@ -1,7 +1,7 @@
 name = Pori front page liftups
 description = Changes front page liftups to use the "Promote to front page" attribute instead of a separate theme tag
 core = 7.x
-package = KADA
+package = Pori
 version = 7.x-1.0
 dependencies[] = ds
 dependencies[] = features_override
