@@ -48,17 +48,17 @@ function visitpori_configurations_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'menu_block-27' => array(
+        'menu_block-26' => array(
           'module' => 'menu_block',
-          'delta' => '27',
+          'delta' => '26',
           'region' => 'footer',
-          'weight' => '0',
+          'weight' => '-10',
         ),
-        'menu_block-25' => array(
+        'menu_block-23' => array(
           'module' => 'menu_block',
-          'delta' => '25',
+          'delta' => '23',
           'region' => 'footer',
-          'weight' => '1',
+          'weight' => '-9',
         ),
       ),
     ),
@@ -185,27 +185,27 @@ function visitpori_configurations_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'menu-menu-visitpori-top-menu-en' => array(
-          'module' => 'menu',
-          'delta' => 'menu-visitpori-top-menu-en',
+        'menu_block-25' => array(
+          'module' => 'menu_block',
+          'delta' => '25',
           'region' => 'navigation_top',
           'weight' => '-10',
         ),
-        'menu-menu-visitpori-top-menu-fi' => array(
-          'module' => 'menu',
-          'delta' => 'menu-visitpori-top-menu-fi',
+        'menu_block-28' => array(
+          'module' => 'menu_block',
+          'delta' => '28',
           'region' => 'navigation_top',
           'weight' => '-9',
-        ),
-        'menu_block-26' => array(
-          'module' => 'menu_block',
-          'delta' => '26',
-          'region' => 'navigation',
-          'weight' => '-10',
         ),
         'menu_block-24' => array(
           'module' => 'menu_block',
           'delta' => '24',
+          'region' => 'navigation',
+          'weight' => '-10',
+        ),
+        'menu_block-27' => array(
+          'module' => 'menu_block',
+          'delta' => '27',
           'region' => 'navigation',
           'weight' => '-9',
         ),

@@ -12,213 +12,15 @@ function visitpori_configurations_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['menu-menu-visitpori-footer-menu-en'] = array(
+  $export['menu_block-23'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'menu-visitpori-footer-menu-en',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
-    'module' => 'menu',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'kada' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'kada',
-        'weight' => 0,
-      ),
-      'omega' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'omega',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'visitpori' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'visitpori',
-        'weight' => 0,
-      ),
+    'delta' => 23,
+    'i18n_block_language' => array(
+      0 => 'fi',
     ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['menu-menu-visitpori-footer-menu-fi'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 'menu-visitpori-footer-menu-fi',
-    'i18n_block_language' => array(),
     'i18n_mode' => 0,
-    'module' => 'menu',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'kada' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'kada',
-        'weight' => 0,
-      ),
-      'omega' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'omega',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'visitpori' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'visitpori',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['menu-menu-visitpori-main-menu'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 'menu-visitpori-main-menu',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
-    'module' => 'menu',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'kada' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'kada',
-        'weight' => 0,
-      ),
-      'omega' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'omega',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'visitpori' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'visitpori',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['menu-menu-visitpori-main-navigation'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 'menu-visitpori-main-navigation',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
-    'module' => 'menu',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'kada' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'kada',
-        'weight' => 0,
-      ),
-      'omega' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'omega',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'visitpori' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'visitpori',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['menu-menu-visitpori-top-menu-en'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 'menu-visitpori-top-menu-en',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
-    'module' => 'menu',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'kada' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'kada',
-        'weight' => 0,
-      ),
-      'omega' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'omega',
-        'weight' => 0,
-      ),
-      'seven' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'seven',
-        'weight' => 0,
-      ),
-      'visitpori' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'visitpori',
-        'weight' => 0,
-      ),
-    ),
-    'title' => '',
-    'visibility' => 0,
-  );
-
-  $export['menu-menu-visitpori-top-menu-fi'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 'menu-visitpori-top-menu-fi',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 0,
-    'module' => 'menu',
+    'module' => 'menu_block',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
@@ -409,6 +211,48 @@ function visitpori_configurations_default_fe_block_settings() {
       ),
     ),
     'title' => 'Visitpori footer menu EN',
+    'visibility' => 0,
+  );
+
+  $export['menu_block-28'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 28,
+    'i18n_block_language' => array(
+      0 => 'en',
+    ),
+    'i18n_mode' => 0,
+    'module' => 'menu_block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'kada' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'visitpori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'visitpori',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
     'visibility' => 0,
   );
 

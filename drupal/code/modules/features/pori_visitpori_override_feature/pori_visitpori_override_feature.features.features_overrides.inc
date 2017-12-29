@@ -12,6 +12,8 @@ function pori_visitpori_override_feature_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: variable
+  $overrides["variable.menu_block_ids.value|25"] = 23;
+  $overrides["variable.menu_block_ids.value|26"] = 28;
   $overrides["variable.menu_options_page.value|10"] = 'menu-visitpori-footer-menu-en';
   $overrides["variable.menu_options_page.value|11"] = 'menu-visitpori-footer-menu-fi';
   $overrides["variable.menu_options_page.value|12"] = 'menu-visitpori-main-navigation';
