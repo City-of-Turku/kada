@@ -228,7 +228,7 @@ function kadaprofile_update_7116() {
  * Enables search related modules
  */
 function kadaprofile_update_7117() {
-  $modules = array('search_api_solr', 'search_api_live_results', 'search_api_views');
+  $modules = array('search_api_solr', 'search_api_live_results', 'search_api_views', 'pori_search');
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
