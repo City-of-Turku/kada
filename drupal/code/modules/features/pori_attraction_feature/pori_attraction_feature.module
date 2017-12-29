@@ -78,7 +78,7 @@ function pori_attraction_feature_parse_event_args($widget) {
   foreach ($filters as $field => $filter_conf) {
     $values = array();
     foreach ($widget->$field as $delta => $field_item) {
-      $value = $field_item->value()->$filter_conf['value_in'];
+      $value = $field_item->value()->{$filter_conf['value_in']};
       $values[] = $value;
       // Add search params for linking.
       $search_params[] = $filter_conf['prettypath'] . '/' . $value;
