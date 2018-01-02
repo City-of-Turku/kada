@@ -24,7 +24,7 @@
    - { role: sslterminator, tags: [ 'sslterminator' ] }
    # For search. If you need project specific custom settings you need to copy this role from
    # ansible/playbook/roles/solr to local_ansible_roles/{project]_solr and do the modifications there (under files/)
-   # - { role: solr, tags: [ 'solr' ] }
+   - { role: solr, tags: [ 'solr' ] }
    # Of course Elasticsearch as search backend is more modern
    # - { role: elasticsearch, tags: [ 'elasticsearch' ] }
    # Devtools, uncomment to enable xdebug and blackfire
@@ -159,3 +159,15 @@
 
     # Set a low heap allocation for Elasticsearch on vagrant.
     elasticsearch_heap_size: 200m
+    solr_drupal_files:
+      - conf/solr/elevate.xml
+      - conf/solr/mapping-ISOLatin1Accent.txt
+      - conf/solr/protwords.txt
+      - conf/solr/schema_extra_fields.xml
+      - conf/solr/schema_extra_types.xml
+      - conf/solr/schema.xml
+      - conf/solr/solrconfig_extra.xml
+      - conf/solr/solrconfig.xml
+      - conf/solr/solrcore.properties
+      - conf/solr/stopwords.txt
+      - conf/solr/synonyms.txt
