@@ -169,6 +169,7 @@
           add enablePositionIncrements=true in both the index and query
           analyzers to leave a 'gap' for more accurate phrase queries.
         -->
+        <filter class="solr.EdgeNGramFilterFactory" minGramSize="3" maxGramSize="30"/>
         <filter class="solr.StopFilterFactory"
                 ignoreCase="true"
                 words="stopwords.txt"
