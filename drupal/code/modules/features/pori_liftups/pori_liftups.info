@@ -1,7 +1,7 @@
 name = Pori liftups
 description = Liftups feature overrides
 core = 7.x
-package = KADA
+package = Pori
 version = 7.x-1.0
 dependencies[] = kada_liftups_feature
 dependencies[] = kada_news_feature

@@ -1,7 +1,7 @@
 name = Pori user permissions
 description = Removes "administer content" and "administer vocabularies and terms" permissions from content editor and web journalist
 core = 7.x
-package = KADA
+package = Pori
 version = 7.x-1.0
 dependencies[] = features_override
 dependencies[] = kada_user_feature

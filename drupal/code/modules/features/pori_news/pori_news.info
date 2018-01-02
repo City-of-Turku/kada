@@ -1,7 +1,7 @@
 name = Pori news
 description = News feature overrides
 core = 7.x
-package = KADA
+package = Pori
 version = 7.x-1.0
 dependencies[] = kada_news_feature
 features[features_api][] = api:2

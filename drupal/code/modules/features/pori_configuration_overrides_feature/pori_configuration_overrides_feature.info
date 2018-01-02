@@ -1,0 +1,7 @@
+name = Pori configuration overrides
+core = 7.x
+package = Pori
+version = 7.x-1.0-dev
+features[features_api][] = api:2
+features[features_overrides][] = context.sitewide_en.reactions|block|blocks|block-1|weight
+features[features_overrides][] = context.sitewide_fi.reactions|block|blocks|block-2|weight
