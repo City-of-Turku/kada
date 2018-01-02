@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Enable the overrides module.
+ */
+function pori_configuration_update_7100(&$sandbox) {
+  module_enable(array('pori_configuration_overrides_feature'));
+}
