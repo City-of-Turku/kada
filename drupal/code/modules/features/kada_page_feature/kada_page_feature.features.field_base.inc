@@ -103,6 +103,47 @@ function kada_page_feature_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_service_offering'.
+  $field_bases['field_service_offering'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_service_offering',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'entityqueue' => array(
+            'status' => 0,
+          ),
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'direction' => 'ASC',
+          'property' => 'title',
+          'type' => 'property',
+        ),
+        'target_bundles' => array(
+          'service_offer' => 'service_offer',
+        ),
+      ),
+      'target_type' => 'node',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'field_visitpori_color_name'.
   $field_bases['field_visitpori_color_name'] = array(
     'active' => 1,

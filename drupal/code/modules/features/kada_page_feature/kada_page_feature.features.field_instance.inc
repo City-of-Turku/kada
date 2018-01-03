@@ -157,7 +157,7 @@ function kada_page_feature_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -232,7 +232,7 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 26,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -297,7 +297,7 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 28,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -352,7 +352,7 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 32,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -412,7 +412,7 @@ function kada_page_feature_field_default_field_instances() {
           'override' => 0,
         ),
         'type' => 'file_linked_title',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -469,7 +469,7 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 25,
       ),
       'only_title' => array(
         'label' => 'hidden',
@@ -563,7 +563,7 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 27,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -658,7 +658,7 @@ function kada_page_feature_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -805,7 +805,7 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 38,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -886,7 +886,7 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 33,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -962,7 +962,7 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 35,
       ),
       'only_title' => array(
         'label' => 'hidden',
@@ -1014,6 +1014,58 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-page-field_service_offering'.
+  $field_instances['node-page-field_service_offering'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'kada_page_feature',
+        'settings' => array(
+          'view_mode' => 'teaser',
+        ),
+        'type' => 'kada_page_service_offering_formatter',
+        'weight' => 3,
+      ),
+      'only_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_service_offering',
+    'label' => 'Related service offering',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 20,
+    ),
+  );
+
   // Exported field_instance: 'node-page-field_subpage'.
   $field_instances['node-page-field_subpage'] = array(
     'bundle' => 'page',
@@ -1030,7 +1082,7 @@ function kada_page_feature_field_default_field_instances() {
           'view_mode' => 'project',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'only_title' => array(
         'label' => 'hidden',
@@ -1090,7 +1142,7 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 30,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1146,7 +1198,7 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 36,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1206,7 +1258,7 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 29,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1269,7 +1321,7 @@ function kada_page_feature_field_default_field_instances() {
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'only_title' => array(
         'label' => 'hidden',
@@ -1328,7 +1380,7 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 34,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1426,7 +1478,7 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 40,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1476,7 +1528,7 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 37,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1542,7 +1594,7 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 31,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -1676,6 +1728,7 @@ function kada_page_feature_field_default_field_instances() {
   t('Liftup image');
   t('Link to content multiple');
   t('Related content');
+  t('Related service offering');
   t('Search for widget by administrative title. These widgets will be rendered before actual page content.');
   t('Select which tabs will be shown in feed.');
   t('Subpage');

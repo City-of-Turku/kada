@@ -59,8 +59,9 @@ function kada_page_feature_field_group_info() {
       5 => 'field_main_image',
       6 => 'field_info_box',
       7 => 'field_visitpori_theme',
-      8 => 'language',
-      9 => 'title',
+      8 => 'field_service_offering',
+      9 => 'language',
+      10 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -86,7 +87,7 @@ function kada_page_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Recommended links',
-    'weight' => '6',
+    'weight' => '5',
     'children' => array(
       0 => 'field_link_to_content_multiple',
     ),
@@ -113,7 +114,7 @@ function kada_page_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Section',
-    'weight' => '4',
+    'weight' => '3',
     'children' => array(
       0 => 'og_group_ref',
     ),
@@ -200,7 +201,7 @@ function kada_page_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Widgets',
-    'weight' => '5',
+    'weight' => '4',
     'children' => array(
       0 => 'field_feed_tabs',
       1 => 'field_theme_main_page',
