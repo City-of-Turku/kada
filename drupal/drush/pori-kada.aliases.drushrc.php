@@ -111,7 +111,7 @@ $aliases['stage'] = array(
 
 
 $aliases['prod'] = array(
-  'uri' => 'https://pori.prod.wunder.io',
+  'uri' => 'https://beta.pori.fi',
   'remote-user' => 'www-admin',
   'remote-host' => 'pori.prod.wunder.io',
   'root' => '/var/www/pori.prod.wunder.io/current/web',
