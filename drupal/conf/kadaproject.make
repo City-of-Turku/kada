@@ -394,7 +394,7 @@ projects[linkchecker][subdir] = contrib
 projects[linkit][version] = 3.5
 projects[linkit][subdir] = "contrib"
 ; Entity translation support
-projects[linkit][patch][] = "https://www.drupal.org/files/issues/entity_translation-2280441-31.patch"
+;projects[linkit][patch][] = "https://www.drupal.org/files/issues/entity_translation-2280441-31.patch"
 
 projects[maxlength][version] = 3.2
 projects[maxlength][subdir] = contrib
