@@ -97,13 +97,17 @@ function kada_page_feature_field_formatter_view($entity_type, $node, $field, $in
       foreach($node->field_provided_at as $p) {
         foreach($p as $item) {
           $place_node = entity_revision_load('node', $item['vid']);
-          $result[$delta][] = node_view($place_node, $view_mode, $langcode);
+          if ($place_node->type == 'place') {
+            $result[$delta][] = node_view($place_node, $view_mode, $langcode);
+          }
         }
       }
     }
 
     $depth = 0;
   }
+
+  drupal_add_library('system', 'ui.accordion');
 
   return $result;
 }

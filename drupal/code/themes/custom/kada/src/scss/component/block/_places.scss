@@ -1,0 +1,17 @@
+.places {
+  margin-top: 3.15rem;
+}
+
+.places__header {
+  background-color: $secondary-color;
+  color: $white;
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0;
+  padding: .938rem;
+
+  @media screen and (min-width: $mobile-menu-breakpoint) {
+    font-size: 1.5rem;
+    padding: 1.5rem 2.5rem;
+  }
+}

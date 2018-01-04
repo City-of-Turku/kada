@@ -329,6 +329,15 @@
     }
   };
 
+  Drupal.behaviors.kadaPlacesAccordion = {
+    attach: function () {
+      $('.places').accordion({
+        header: ".place__header",
+        heightStyle: "content"
+      });
+    }
+  };
+
   Drupal.behaviors.kadaRecommendedToggle = {
     attach: function () {
       $('.recommended-button, .recommended-block__close').once('recommended-toggle', function () {
