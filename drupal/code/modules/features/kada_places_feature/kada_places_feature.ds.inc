@@ -110,7 +110,7 @@ function kada_places_feature_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '5',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -306,15 +306,17 @@ function kada_places_feature_ds_layout_settings_info() {
         0 => 'title',
       ),
       'main_content' => array(
-        1 => 'field_address_visiting',
-        2 => 'field_phone',
-        3 => 'field_email',
-        4 => 'field_availability',
-        5 => 'node_link',
+        1 => 'field_description',
+        2 => 'field_address_visiting',
+        3 => 'field_phone',
+        4 => 'field_email',
+        5 => 'field_availability',
+        6 => 'node_link',
       ),
     ),
     'fields' => array(
       'title' => 'header',
+      'field_description' => 'main_content',
       'field_address_visiting' => 'main_content',
       'field_phone' => 'main_content',
       'field_email' => 'main_content',
