@@ -103,7 +103,6 @@
       &::before {
         @media screen and (max-width: $mobile-footer-breakpoint-max) {
           @include fa('\f068', .9rem, 1, false);
-          height: 1.563rem;
           line-height: 1.563rem;
         }
       }
@@ -121,7 +120,6 @@
           @media screen and (max-width: $mobile-footer-breakpoint-max) {
             @include fa('\f068', .9rem, 1, false);
             color: $secondary-color;
-            height: 1.563rem;
             line-height: 1.563rem;
           }
         }
