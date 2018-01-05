@@ -333,7 +333,9 @@
     attach: function () {
       $('.places').accordion({
         header: ".place__header",
-        heightStyle: "content"
+        heightStyle: "content",
+        collapsible: true,
+        active: "none"
       });
     }
   };

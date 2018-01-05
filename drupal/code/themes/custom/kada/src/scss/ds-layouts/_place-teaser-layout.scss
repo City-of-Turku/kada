@@ -20,6 +20,8 @@
     &::before {
       @include fa('\f067', .9rem, 1, false);
       color: $white;
+      height: 1.563rem;
+      line-height: 1.563rem;
       position: absolute;
       right: .875rem;
       text-align: center;
@@ -70,6 +72,8 @@
     &::before {
       @include fa('\f068', .9rem, 1, false);
       color: lighten($secondary-color, 10%);
+      height: 1.563rem;
+      line-height: 1.563rem;
 
       @media screen and (min-width: $mobile-menu-breakpoint) {
         font-size: 1.3rem;
