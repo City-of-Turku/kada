@@ -215,6 +215,12 @@ projects[domain_variable][patch][] = "https://www.drupal.org/files/issues/domain
 
 projects[domain_feeds][version] = 1.4
 
+projects[domain_views][type] = "module"
+projects[domain_views][subdir] = "contrib"
+projects[domain_views][download][type] = "git"
+projects[domain_views][download][url] = "http://git.drupal.org/project/domain_views.git"
+projects[domain_views][download][revision] = 074a167b82b0db9c19a3a9dddfb0f8e77e6ee068
+
 projects[ds][version] = 2.14
 projects[ds][subdir] = contrib
 
