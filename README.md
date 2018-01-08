@@ -49,16 +49,16 @@ Folder structure
 │   ├── files               Drupal files.
 │   ├── scripts             Scripts for handling integrations with 3rd party systems.
 │   ├── translations        Exported translations.
-│   ├── web                 Current build.
-├── dummy-integrations      Dummy rest server for integration testing.                  
+│   ├── web                 Current build.                  
+├── current                 Link to the latest build directory.
 ├── local_ansible_roles     Custom ansible roles.
 ├── provision.sh            Utility script for handling provision of different enviroments.
-├── README.txt
-├── run-tests.sh            Behavior test init script.
-├── secrets                 (Cloned) Encrypted passwords and API keys for ansible playbooks.  
+├── README.md               Generic readme file (this file)
+├── DEPLOYMENTS.md          Instructions about deployments.  
+├── secrets                 Encrypted passwords and API keys for ansible playbooks.  
 ├── syncdb_local.sh         Helper script included in the main sync script.
 ├── syncdb.sh               Database sync script.
-├── tests                   Tests (outdated)
+├── tests                   Tests
 ├── Vagrantfile             Vagrant environt entry point.
 └── VERSION                 File specifying the current Wundertools version in use.
 ```
