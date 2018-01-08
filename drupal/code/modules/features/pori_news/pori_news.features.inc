@@ -5,6 +5,13 @@
  */
 
 /**
+ * Implements hook_views_api().
+ */
+function pori_news_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
  * Implements hook_ds_field_settings_info_alter().
  */
 function pori_news_ds_field_settings_info_alter(&$data) {
