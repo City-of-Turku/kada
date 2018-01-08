@@ -15,6 +15,7 @@ stylesheets[all][] = dist/css/styles.css
 ; Scripts
 ; ========================================
 scripts[] = dist/js/kada.behaviors.min.js
+scripts[] = js_libraries/slick/slick.min.js
 
 ; ========================================
 ; Regions
