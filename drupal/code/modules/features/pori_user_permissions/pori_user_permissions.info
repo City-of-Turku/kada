@@ -1,8 +1,9 @@
 name = Pori user permissions
-description = Removes "administer content" and "administer vocabularies and terms" permissions from content editor and web journalist
 core = 7.x
 package = Pori
-version = 7.x-1.0
+version = 7.x-1.0-dev
+dependencies[] = content_lock
+dependencies[] = features
 dependencies[] = features_override
 dependencies[] = kada_user_feature
 features[features_api][] = api:2
@@ -11,3 +12,4 @@ features[features_override_items][] = user_permission.administer taxonomy
 features[features_overrides][] = user_permission.administer nodes.roles|content editor
 features[features_overrides][] = user_permission.administer nodes.roles|web journalist
 features[features_overrides][] = user_permission.administer taxonomy.roles|web journalist
+features[user_permission][] = check out documents

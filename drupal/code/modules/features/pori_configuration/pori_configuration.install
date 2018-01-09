@@ -13,3 +13,10 @@ function pori_configuration_update_7100(&$sandbox) {
 function pori_configuration_update_7101(&$sandbox) {
   module_enable(array('domain_views'));
 }
+
+/**
+ * Enable content_lock module.
+ */
+function pori_configuration_update_7102(&$sandbox) {
+  module_enable(array('content_lock'));
+}

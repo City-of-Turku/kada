@@ -13,6 +13,81 @@ function pori_configuration_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'content_lock_admin_cancelbutton';
+  $strongarm->value = 1;
+  $export['content_lock_admin_cancelbutton'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'content_lock_admin_verbose';
+  $strongarm->value = 1;
+  $export['content_lock_admin_verbose'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'content_lock_allowed_formats';
+  $strongarm->value = array(
+    'wysiwyg' => 0,
+    'full_html' => 0,
+    'plain_text' => 0,
+    'ds_code' => 0,
+  );
+  $export['content_lock_allowed_formats'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'content_lock_allowed_node_types';
+  $strongarm->value = array(
+    'section' => 0,
+    'blog' => 0,
+    'blog_post' => 0,
+    'webform' => 0,
+    'event' => 0,
+    'landing_page' => 0,
+    'liftup' => 0,
+    'news_item' => 0,
+    'page' => 0,
+    'place' => 0,
+    'service' => 0,
+    'service_offer' => 0,
+    'feed_import_facebook' => 0,
+    'feed_import_instagram' => 0,
+    'feed_import_twitter' => 0,
+    'feed_import_youtube_channel' => 0,
+    'social_media_update' => 0,
+    'attraction_card' => 0,
+    'person' => 0,
+    'position_of_trust' => 0,
+  );
+  $export['content_lock_allowed_node_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'content_lock_unload_js';
+  $strongarm->value = 1;
+  $export['content_lock_unload_js'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'content_lock_unload_js_message';
+  $strongarm->value = 'If you proceed, ALL of your changes will be lost.';
+  $export['content_lock_unload_js_message'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'content_lock_unload_js_message_enable';
+  $strongarm->value = 1;
+  $export['content_lock_unload_js_message_enable'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'googleanalytics_account';
   $strongarm->value = 'UA-76043723-2';
   $export['googleanalytics_account'] = $strongarm;
