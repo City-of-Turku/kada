@@ -119,6 +119,7 @@ stage:
     update:
       - update
       - cleanup
+      - drush: omega-revert kada
       - drush: en devel -y
       - drush: fra -y
       - drush: cc drush
@@ -153,6 +154,7 @@ prod:
     update:
       - update
       - cleanup
+      - drush: omega-revert kada
       - drush: dis devel -y
       - drush: fra -y
       - drush: cc drush
