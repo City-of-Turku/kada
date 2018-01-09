@@ -222,8 +222,8 @@ function kada_places_feature_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '0',
-            'visible' => TRUE,
+            'weight' => '19',
+            'visible' => FALSE,
           ),
           'accordion' => array(
             'weight' => '14',

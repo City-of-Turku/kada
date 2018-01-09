@@ -61,14 +61,29 @@ $menu-padding: 1.25rem;
     .is-collapsed,
     .is-expanded {
       > .menu__item--expanded-toggle {
-        background: url('../../dist/image/plus-icon.svg') no-repeat center center $white;
-        background-size: auto .7rem;
+        background-color: $black;
         border-radius: 100%;
+        content: "";
+        display: block;
         height: 1.563rem;
         position: absolute;
         right: 1.25rem;
         top: 1.063rem;
         width: 1.563rem;
+        z-index: 1;
+
+        &::before {
+          @include fa('\f067', .9rem, 1, false);
+          color: $white;
+          display: block;
+          height: 1.563rem;
+          line-height: 1.6rem;
+          right: 1.25rem;
+          text-align: center;
+          top: 1.063rem;
+          width: 1.563rem;
+          z-index: 2;
+        }
 
         &:hover,
         &:focus {
@@ -77,20 +92,29 @@ $menu-padding: 1.25rem;
       }
     }
 
-    .is-expanded .menu__item--expanded-toggle {
-      background-image: url('../../dist/image/minus-icon.svg');
+    .is-expanded > .menu__item--expanded-toggle::before{
+      @include fa('\f068', .9rem, 1, false);
+      color: $white;
+      line-height: 1.6rem;
     }
 
     // Set theme colored menu.
     @each $theme-color, $color in $theme-colors {
       .theme-color-#{$theme-color} {
         &.menu__item--has-first-level {
+          background-color: $color !important;
+
           &:focus,
           &:hover {
             background-color: $color !important;
           }
 
           > a {
+            @if $color == $yellow {
+              color: $primary-color;
+            }
+
+
             &:hover,
             &:focus {
               @if $color == $yellow {
@@ -182,12 +206,7 @@ $menu-padding: 1.25rem;
       &.is-expanded {
         .menu__item--expanded-toggle {
           background-color: $primary-color;
-          background-image: url('../../dist/image/plus-icon--white.svg');
         }
-      }
-
-      &.is-expanded .menu__item--expanded-toggle {
-        background-image: url('../../dist/image/minus-icon--white.svg');
       }
 
       &.is-active-trail {

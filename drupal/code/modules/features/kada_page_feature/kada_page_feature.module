@@ -91,19 +91,24 @@ function kada_page_feature_field_formatter_view($entity_type, $node, $field, $in
       throw new Exception(t('Recursive rendering detected when rendering entity @entity_type(@entity_id). Aborting rendering.', array('@entity_type' => $entity_type, '@entity_id' => $item['target_id'])));
     }
 
-    $node = node_load($item['target_id']);
-    // 'field_provided_at' is available in the 'page' content type
-    if (isset($node->field_provided_at)) {
-      foreach($node->field_provided_at as $p) {
-        foreach($p as $item) {
-          $place_node = entity_revision_load('node', $item['vid']);
-          $result[$delta][] = node_view($place_node, $view_mode, $langcode);
+    $service_offer_node = node_load($item['target_id']);
+    // 'field_provided_at' is available in the 'service_offer' content type
+    if (isset($service_offer_node->field_provided_at)) {
+      foreach($service_offer_node->field_provided_at as $relations) {
+        foreach ($relations as $relation_data) {
+          if ($relation_data['relation_type'] == 'place_service') {
+            $place_nid = $relation_data['endpoints'][LANGUAGE_NONE][0]['entity_id'];
+            $place_node = node_load($place_nid);
+            $result[$delta][] = node_view($place_node, $view_mode, $langcode);
+          }
         }
       }
     }
 
     $depth = 0;
   }
+
+  drupal_add_library('system', 'ui.accordion');
 
   return $result;
 }

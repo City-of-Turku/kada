@@ -329,6 +329,17 @@
     }
   };
 
+  Drupal.behaviors.kadaPlacesAccordion = {
+    attach: function () {
+      $('.places').accordion({
+        header: ".place__header",
+        heightStyle: "content",
+        collapsible: true,
+        active: "none"
+      });
+    }
+  };
+
   Drupal.behaviors.kadaRecommendedToggle = {
     attach: function () {
       $('.recommended-button, .recommended-block__close').once('recommended-toggle', function () {
@@ -1128,6 +1139,28 @@
             });
           });
         });
+      });
+    }
+  };
+
+  Drupal.behaviors.slick = {
+    attach : function(context) {
+      // Slideshow item settings
+      $('.slide-container__content', context).once('slick').slick({
+        autoplay: true,
+        autoplaySpeed: 6000,
+        pauseOnHover: true,
+        infinite: true,
+        slidesToShow: 1,
+        customPaging: function (slick, index) {
+          return '<a>' + index + '</a>';
+        },
+        dots: true,
+        dotsClass: 'slick-dots',
+        prevArrow: '<a data-role="none" class="slide__arrow-prev" ></a>',
+        nextArrow: '<a data-role="none" class="slide__arrow-next" ></a>',
+        appendArrows: $('.slide-container__arrows'),
+        appendDots: $('.slide-container__dots')
       });
     }
   };

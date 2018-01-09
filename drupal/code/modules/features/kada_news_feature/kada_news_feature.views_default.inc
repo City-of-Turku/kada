@@ -365,6 +365,11 @@ function kada_news_feature_views_default_views() {
   );
   $handler->display->display_options['filters']['field_keywords_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_keywords_tid']['vocabulary'] = 'keywords';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Archive page */
   $handler = $view->new_display('page', 'Archive page', 'page');
@@ -471,6 +476,11 @@ function kada_news_feature_views_default_views() {
     'news_item' => 'news_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Emergency message */
   $handler = $view->new_display('block', 'Emergency message', 'emergency_message');
@@ -563,6 +573,11 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
   $handler->display->display_options['block_description'] = 'KADA News Emergency message';
 
   /* Display: Front main block */
@@ -660,6 +675,11 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['filters']['language']['expose']['label'] = 'Kieli';
   $handler->display->display_options['filters']['language']['expose']['operator'] = 'language_op';
   $handler->display->display_options['filters']['language']['expose']['identifier'] = 'language';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Section Main News */
   $handler = $view->new_display('block', 'Section Main News', 'section_main');
@@ -756,6 +776,11 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['filters']['language']['expose']['label'] = 'Kieli';
   $handler->display->display_options['filters']['language']['expose']['operator'] = 'language_op';
   $handler->display->display_options['filters']['language']['expose']['identifier'] = 'language';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Front main block (promoted) */
   $handler = $view->new_display('block', 'Front main block (promoted)', 'block_1');
@@ -842,6 +867,11 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
   $translatables['kada_news'] = array(
     t('Master'),
     t('KADA News'),

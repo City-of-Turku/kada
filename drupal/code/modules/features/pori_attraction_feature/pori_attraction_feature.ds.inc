@@ -364,9 +364,6 @@ function pori_attraction_feature_ds_layout_settings_info() {
       'field_accessibility_ref' => 'contact_details',
       'field_attraction_related_content' => 'after_content',
     ),
-    'limit' => array(
-      'field_images' => '1',
-    ),
     'classes' => array(),
     'wrappers' => array(
       'image_container' => 'div',
