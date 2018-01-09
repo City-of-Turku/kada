@@ -44,7 +44,7 @@ function kada_ptv_reader_drush_help($section) {
  */
 function drush_kada_ptv_reader_import_service_data($max = 9999999) {
   $source_url = 'https://api.palvelutietovaranto.suomi.fi/api/v7/GeneralDescription';
-  print "Read from $source_url\n";
+  print "Read from $source_url" . PHP_EOL;
   $json = file_get_contents($source_url);
   $data = json_decode($json);
 
@@ -69,12 +69,16 @@ function drush_kada_ptv_reader_import_organizations_service_offers($guid, $max =
   }
 
   $source_url = 'https://api.palvelutietovaranto.suomi.fi/api/v7/Organization/' . $guid;
-  print "Read from $source_url\n";
+  print "Organization $source_url" . PHP_EOL;
   $json = file_get_contents($source_url);
   $data = json_decode($json);
 
   $count = 0;
   foreach ($data->services as $service_offer) {
+    $service_name = $service_offer->service->name;
+    if (kada_ptv_reader_service_offer_exists($service_name)) {
+      continue;
+    }
     kada_ptv_reader_import_service_offer($service_offer->service->id);
     if (++$count == $max) {
       return;
@@ -136,7 +140,7 @@ function kada_ptv_reader_create_term_if_not_exist($vocabulary_name, $term_name, 
 
 function kada_ptv_reader_import_service($guid, $langcode = 'fi') {
   $source_url = 'https://api.palvelutietovaranto.suomi.fi/api/v7/GeneralDescription/' . $guid;
-  print "Read from $source_url\n";
+  print "General service description $source_url" . PHP_EOL;
   $json = file_get_contents($source_url);
   $data = json_decode($json);
 
@@ -175,9 +179,32 @@ function kada_ptv_reader_import_service($guid, $langcode = 'fi') {
 
 function kada_ptv_reader_import_service_offer($guid, $langcode = 'fi') {
   $source_url = 'https://api.palvelutietovaranto.suomi.fi/api/v7/Service/' . $guid;
-  print "Read from $source_url\n";
+  print "Service offer $source_url" . PHP_EOL;
   $json = file_get_contents($source_url);
   $data = json_decode($json);
+  $general_description_text = '';
+
+  // Service offer refers to a generic service which we can use to pull in some additional information
+  if (!empty($data->statutoryServiceGeneralDescriptionId)) {
+    $general_service_description_url = 'https://api.palvelutietovaranto.suomi.fi/api/v7/GeneralDescription/' . $data->statutoryServiceGeneralDescriptionId;
+    $general_service_description_data = json_decode(file_get_contents($general_service_description_url));
+    if (!empty($general_service_description_data->descriptions)) {
+      $generic_description = kada_ptv_reader_get_value_from($general_service_description_data->descriptions, ['language' => 'fi', 'type' => 'Description'], 'value');
+      $short_generic_description = kada_ptv_reader_get_value_from($general_service_description_data->descriptions, ['language' => 'fi', 'type' => 'ShortDescription'], 'value');
+      $background_generic_description = kada_ptv_reader_get_value_from($general_service_description_data->descriptions, ['language' => 'fi', 'type' => 'BackgroundDescription'], 'value');
+
+      // Default to the lengthiest description and fallback to the shortest:
+      if (!empty($background_generic_description)) {
+        $general_description_text = $background_generic_description;
+      }
+      elseif (!empty($generic_description)) {
+        $general_description_text = $generic_description;
+      }
+      elseif (!empty($short_generic_description)) {
+        $general_description_text = $short_generic_description;
+      }
+    }
+  }
 
   $values = [
     'type' => 'service_offer',
@@ -193,6 +220,10 @@ function kada_ptv_reader_import_service_offer($guid, $langcode = 'fi') {
   $ewrapper->title->set(kada_ptv_reader_get_value_from($data->serviceNames, ['language' => $langcode, 'type' => 'Name'], 'value'));
 
   $desc = kada_ptv_reader_get_value_from($data->serviceDescriptions, ['language' => $langcode, 'type' => 'Description'], 'value');
+  // Add the generic description from the general service offering data:
+  if (!empty($general_description_text)) {
+    $desc = $desc . PHP_EOL . PHP_EOL . $general_description_text;
+  }
   $ewrapper->field_description->set(['value' => $desc]);
 
   $ewrapper->save();
@@ -215,9 +246,18 @@ function kada_ptv_reader_import_service_offer($guid, $langcode = 'fi') {
 
 function kada_ptv_reader_import_service_channel($guid, $langcode = 'fi') {
   $source_url = 'https://api.palvelutietovaranto.suomi.fi/api/v7/ServiceChannel/' . $guid;
-  print "Read from $source_url\n";
+  print "Service channel $source_url" . PHP_EOL;
   $json = file_get_contents($source_url);
   $data = json_decode($json);
+
+  $title = kada_ptv_reader_get_value_from($data->serviceChannelNames, ['language' => $langcode, 'type' => 'Name'], 'value');
+  // Let's see if existing place node (imported by an another service offering already) exists.
+  $existing_place_nid = kada_ptv_reader_get_place_nid($title);
+
+  if (!empty($existing_place_nid)) {
+    print "Existing place found with nid $existing_place_nid" . PHP_EOL;
+    return $existing_place_nid;
+  }
 
   $values = [
     'type' => NODE_TYPE_SERVICE_CHANNEL,
@@ -230,7 +270,6 @@ function kada_ptv_reader_import_service_channel($guid, $langcode = 'fi') {
   $entity = entity_create('node', $values);
 
   $ewrapper = entity_metadata_wrapper('node', $entity);
-  $title = kada_ptv_reader_get_value_from($data->serviceChannelNames, ['language' => $langcode, 'type' => 'Name'], 'value');
   $ewrapper->title->set($title);
 
   $desc = kada_ptv_reader_get_value_from($data->serviceChannelDescriptions, ['language' => $langcode, 'type' => 'Description'], 'value');
@@ -333,4 +372,24 @@ function kada_ptv_reader_import_service_channel($guid, $langcode = 'fi') {
   }
   // Return the node id:
   return $ewrapper->getIdentifier();
+}
+
+/**
+ * Check is service offering with the given name already exists.
+ *
+ * @param string $service_name
+ * @return bool
+ */
+function kada_ptv_reader_service_offer_exists($service_name) {
+  return (bool) db_query('SELECT COUNT(*) FROM {node} WHERE type = :type AND title = :title', [':type' => 'service_offer', ':title' => $service_name])->fetchField();
+}
+
+/**
+ * Return the node ID of the place node with the given name.
+ *
+ * @param string $place_name
+ * @return int
+ */
+function kada_ptv_reader_get_place_nid($place_name) {
+  return db_query('SELECT nid FROM {node} WHERE type = :type AND title = :title', [':type' => 'place', ':title' => $place_name])->fetchField();
 }
