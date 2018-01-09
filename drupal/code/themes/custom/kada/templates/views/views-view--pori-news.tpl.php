@@ -34,13 +34,13 @@
   <?php endif; ?>
   <?php print render($title_suffix); ?>
   <?php if ($header): ?>
-    <div class="view-header liftup-box-list__header">
+    <div class="view-header">
       <?php print $header; ?>
     </div>
   <?php endif; ?>
 
   <?php if ($exposed): ?>
-    <div class="view-filters liftup-box-list__filters">
+    <div class="view-filters news-archive__filters">
       <?php print $exposed; ?>
     </div>
   <?php endif; ?>
@@ -52,8 +52,10 @@
   <?php endif; ?>
 
   <?php if ($rows): ?>
-    <div class="view-content liftup-box-list__content">
-      <?php print $rows; ?>
+    <div class="liftup-box-list liftup-box-list--current">
+      <div class="view-content liftup-box-list__content">
+        <?php print $rows; ?>
+      </div>
     </div>
   <?php elseif ($empty): ?>
     <div class="view-empty">
