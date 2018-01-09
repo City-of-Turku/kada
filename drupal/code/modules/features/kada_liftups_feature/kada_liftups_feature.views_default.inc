@@ -1437,6 +1437,11 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Projects */
   $handler = $view->new_display('block', 'Projects', 'block');
@@ -1496,6 +1501,11 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Projects | Promoted */
   $handler = $view->new_display('block', 'Projects | Promoted', 'block_1');
@@ -1535,6 +1545,11 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
   $translatables['kada_project_liftups'] = array(
     t('Master'),
     t('more'),
@@ -1864,6 +1879,11 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['filters']['flagged']['relationship'] = 'flag_content_rel';
   $handler->display->display_options['filters']['flagged']['value'] = '1';
   $handler->display->display_options['filters']['flagged']['group'] = 1;
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: FlexSlider */
   $handler = $view->new_display('block', 'FlexSlider', 'slider');
@@ -3430,6 +3450,11 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: FlexSlider | Target audience */
   $handler = $view->new_display('block', 'FlexSlider | Target audience', 'block_2');

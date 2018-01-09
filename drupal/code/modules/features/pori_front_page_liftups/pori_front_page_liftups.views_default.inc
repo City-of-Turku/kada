@@ -140,6 +140,11 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Current */
   $handler = $view->new_display('block', 'Current', 'block');
@@ -191,6 +196,11 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Tab | All */
   $handler = $view->new_display('block', 'Tab | All', 'tab_new');
@@ -219,6 +229,11 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Tab | News */
   $handler = $view->new_display('block', 'Tab | News', 'tab_news');
@@ -265,6 +280,11 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Tab | Facebook */
   $handler = $view->new_display('block', 'Tab | Facebook', 'tab_facebook');
@@ -310,6 +330,11 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Tab | Twitter */
   $handler = $view->new_display('block', 'Tab | Twitter', 'tab_twitter');
@@ -355,6 +380,11 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Tab | All | Section */
   $handler = $view->new_display('block', 'Tab | All | Section', 'tab_section_new');
@@ -451,6 +481,11 @@ function pori_front_page_liftups_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language_1']['group'] = 2;
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Tab | Facebook | Section */
   $handler = $view->new_display('block', 'Tab | Facebook | Section', 'tab_section_facebook');
@@ -502,6 +537,11 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['filters']['field_some_type_value']['value'] = array(
     'facebook' => 'facebook',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Tab | Twitter | Section */
   $handler = $view->new_display('block', 'Tab | Twitter | Section', 'tab_section_twitter');
@@ -553,6 +593,11 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['filters']['field_some_type_value']['value'] = array(
     'twitter' => 'twitter',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Tab | Nearby */
   $handler = $view->new_display('block', 'Tab | Nearby', 'tab_nearby');
@@ -737,6 +782,11 @@ function pori_front_page_liftups_views_default_views() {
   );
   $handler->display->display_options['filters']['field_geofield_distance']['geofield_proximity_entity_url_field'] = 'field_location';
   $handler->display->display_options['filters']['field_geofield_distance']['geofield_proximity_current_user_field'] = 'field_location';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Tab | Instagram */
   $handler = $view->new_display('block', 'Tab | Instagram', 'tab_instagram');
@@ -782,6 +832,11 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Tab | Instagram | Section */
   $handler = $view->new_display('block', 'Tab | Instagram | Section', 'tab_section_instagram');
@@ -833,6 +888,11 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['filters']['field_some_type_value']['value'] = array(
     'instagram' => 'instagram',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Tab | LinkedIn */
   $handler = $view->new_display('block', 'Tab | LinkedIn', 'tab_linkedin');
@@ -878,6 +938,11 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Tab | LinkedIn | Section */
   $handler = $view->new_display('block', 'Tab | LinkedIn | Section', 'tab_section_linkedin');
@@ -929,6 +994,11 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['filters']['field_some_type_value']['value'] = array(
     'linkedin' => 'linkedin',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Tab | Blogs */
   $handler = $view->new_display('block', 'Tab | Blogs', 'tab_blogs');
@@ -982,6 +1052,11 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Tab | Blogs | Section */
   $handler = $view->new_display('block', 'Tab | Blogs | Section', 'tab_section_blogs');
@@ -1038,6 +1113,11 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Tab | Youtube */
   $handler = $view->new_display('block', 'Tab | Youtube', 'tab_youtube');
@@ -1083,6 +1163,11 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
   $handler->display->display_options['filters']['promote']['value'] = '1';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
   /* Display: Tab | Youtube | Section */
   $handler = $view->new_display('block', 'Tab | Youtube | Section', 'tab_section_youtube');
@@ -1134,6 +1219,11 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['filters']['field_some_type_value']['value'] = array(
     'youtube' => 'youtube',
   );
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
   $translatables['kada_current_promoted_'] = array(
     t('Master'),
     t('more'),
