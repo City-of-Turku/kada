@@ -112,32 +112,3 @@ function kada_page_feature_field_formatter_view($entity_type, $node, $field, $in
 
   return $result;
 }
-
-/**
- * Implements hook_block_info().
- */
-function kada_page_feature_block_info() {
-  return array(
-    'related_service_offers' => array(
-      'info' => t('Related service offers'),
-    ),
-  );
-}
-
-/**
- * Implements hook_block_view().
- */
-function kada_page_feature_block_view($delta = '') {
-  if ($delta == 'related_service_offers') {
-    $node = menu_get_object();
-    $content = array();
-    if (!empty($node->field_service_offering)) {
-      foreach ($node->field_service_offering[LANGUAGE_NONE] as $ref) {
-        $content[] = node_view(node_load($ref['target_id']));
-      }
-    }
-    return array(
-      'content' => $content,
-    );
-  }
-}
