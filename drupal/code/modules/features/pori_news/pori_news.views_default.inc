@@ -200,18 +200,17 @@ function pori_news_views_default_views() {
     'title' => 'title',
     'body' => 'body',
   );
-  /* Filter criterion: Content: Post date */
-  $handler->display->display_options['filters']['created']['id'] = 'created';
-  $handler->display->display_options['filters']['created']['table'] = 'node';
-  $handler->display->display_options['filters']['created']['field'] = 'created';
-  $handler->display->display_options['filters']['created']['operator'] = 'between';
-  $handler->display->display_options['filters']['created']['group'] = 1;
-  $handler->display->display_options['filters']['created']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['created']['expose']['operator_id'] = 'created_op';
-  $handler->display->display_options['filters']['created']['expose']['label'] = 'Post date';
-  $handler->display->display_options['filters']['created']['expose']['operator'] = 'created_op';
-  $handler->display->display_options['filters']['created']['expose']['identifier'] = 'created';
-  $handler->display->display_options['filters']['created']['expose']['remember_roles'] = array(
+  /* Filter criterion: Date: Date (node) */
+  $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
+  $handler->display->display_options['filters']['date_filter']['table'] = 'node';
+  $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
+  $handler->display->display_options['filters']['date_filter']['group'] = 1;
+  $handler->display->display_options['filters']['date_filter']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['date_filter']['expose']['operator_id'] = 'date_filter_op';
+  $handler->display->display_options['filters']['date_filter']['expose']['label'] = 'Date';
+  $handler->display->display_options['filters']['date_filter']['expose']['operator'] = 'date_filter_op';
+  $handler->display->display_options['filters']['date_filter']['expose']['identifier'] = 'date_filter';
+  $handler->display->display_options['filters']['date_filter']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     4 => 0,
@@ -220,6 +219,11 @@ function pori_news_views_default_views() {
     7 => 0,
     5 => 0,
     6 => 0,
+  );
+  $handler->display->display_options['filters']['date_filter']['granularity'] = 'month';
+  $handler->display->display_options['filters']['date_filter']['year_range'] = '-3:+0';
+  $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
+    'node.created' => 'node.created',
   );
   /* Filter criterion: Content: Theme (field_theme) */
   $handler->display->display_options['filters']['field_theme_tid']['id'] = 'field_theme_tid';
@@ -288,7 +292,7 @@ function pori_news_views_default_views() {
     t('seuraava ›'),
     t('viimeinen »'),
     t('Search'),
-    t('Post date'),
+    t('Date'),
     t('Theme'),
     t('Target audience'),
     t('Page'),
