@@ -25,6 +25,8 @@ files/*
 private_files/*
 sites/*/private
 /bin/
+drupal/files_private
+drupal/tmp
 /current/
 /builds/
 /tmp
