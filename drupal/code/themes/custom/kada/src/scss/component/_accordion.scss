@@ -9,6 +9,14 @@
     }
   }
 
+  .ui-accordion-header {
+    margin-top: 0;
+  }
+
+  .ui-accordion-icons {
+    padding: 0;
+  }
+
   &.ui-widget {
     font-family: $bergen-text;
   }
