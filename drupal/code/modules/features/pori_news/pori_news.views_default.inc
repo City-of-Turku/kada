@@ -27,12 +27,97 @@ function pori_news_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Hae';
-  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Palauta oletusarvoihin';
-  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Järjestele';
-  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Nou';
-  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Las';
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => 'wysiwyg',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'secondary_collapse_override' => '0',
+    ),
+    'field_target_audience_tid' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'body_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'created' => array(
+      'bef_format' => 'bef_datepicker',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+        'datepicker_options' => '',
+      ),
+    ),
+    'field_theme_tid' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Tuloksia sivulla';
@@ -70,37 +155,18 @@ function pori_news_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'news_item' => 'news_item',
   );
-  /* Filter criterion: Field: Target audience (field_target_audience) */
-  $handler->display->display_options['filters']['field_target_audience_tid']['id'] = 'field_target_audience_tid';
-  $handler->display->display_options['filters']['field_target_audience_tid']['table'] = 'field_data_field_target_audience';
-  $handler->display->display_options['filters']['field_target_audience_tid']['field'] = 'field_target_audience_tid';
-  $handler->display->display_options['filters']['field_target_audience_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['operator_id'] = 'field_target_audience_tid_op';
-  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['operator'] = 'field_target_audience_tid_op';
-  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['identifier'] = 'field_target_audience_tid';
-  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    4 => 0,
-    8 => 0,
-    3 => 0,
-    7 => 0,
-    5 => 0,
-    6 => 0,
-  );
-  $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
-  /* Filter criterion: Content: Body (body) */
-  $handler->display->display_options['filters']['body_value']['id'] = 'body_value';
-  $handler->display->display_options['filters']['body_value']['table'] = 'field_data_body';
-  $handler->display->display_options['filters']['body_value']['field'] = 'body_value';
-  $handler->display->display_options['filters']['body_value']['operator'] = 'allwords';
-  $handler->display->display_options['filters']['body_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['body_value']['expose']['operator_id'] = 'body_value_op';
-  $handler->display->display_options['filters']['body_value']['expose']['label'] = 'Etsi uutisarkistosta';
-  $handler->display->display_options['filters']['body_value']['expose']['operator'] = 'body_value_op';
-  $handler->display->display_options['filters']['body_value']['expose']['identifier'] = 'body_value';
-  $handler->display->display_options['filters']['body_value']['expose']['remember_roles'] = array(
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Global: Combine fields filter */
+  $handler->display->display_options['filters']['combine']['id'] = 'combine';
+  $handler->display->display_options['filters']['combine']['table'] = 'views';
+  $handler->display->display_options['filters']['combine']['field'] = 'combine';
+  $handler->display->display_options['filters']['combine']['group'] = 1;
+  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'text';
+  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     4 => 0,
@@ -115,6 +181,7 @@ function pori_news_views_default_views() {
   $handler->display->display_options['filters']['created']['table'] = 'node';
   $handler->display->display_options['filters']['created']['field'] = 'created';
   $handler->display->display_options['filters']['created']['operator'] = 'between';
+  $handler->display->display_options['filters']['created']['group'] = 1;
   $handler->display->display_options['filters']['created']['exposed'] = TRUE;
   $handler->display->display_options['filters']['created']['expose']['operator_id'] = 'created_op';
   $handler->display->display_options['filters']['created']['expose']['label'] = 'Post date';
@@ -134,8 +201,10 @@ function pori_news_views_default_views() {
   $handler->display->display_options['filters']['field_theme_tid']['id'] = 'field_theme_tid';
   $handler->display->display_options['filters']['field_theme_tid']['table'] = 'field_data_field_theme';
   $handler->display->display_options['filters']['field_theme_tid']['field'] = 'field_theme_tid';
+  $handler->display->display_options['filters']['field_theme_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_theme_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_theme_tid']['expose']['operator_id'] = 'field_theme_tid_op';
+  $handler->display->display_options['filters']['field_theme_tid']['expose']['label'] = 'Theme';
   $handler->display->display_options['filters']['field_theme_tid']['expose']['operator'] = 'field_theme_tid_op';
   $handler->display->display_options['filters']['field_theme_tid']['expose']['identifier'] = 'field_theme_tid';
   $handler->display->display_options['filters']['field_theme_tid']['expose']['remember_roles'] = array(
@@ -150,6 +219,28 @@ function pori_news_views_default_views() {
   );
   $handler->display->display_options['filters']['field_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_theme_tid']['vocabulary'] = 'theme';
+  /* Filter criterion: Field: Target audience (field_target_audience) */
+  $handler->display->display_options['filters']['field_target_audience_tid']['id'] = 'field_target_audience_tid';
+  $handler->display->display_options['filters']['field_target_audience_tid']['table'] = 'field_data_field_target_audience';
+  $handler->display->display_options['filters']['field_target_audience_tid']['field'] = 'field_target_audience_tid';
+  $handler->display->display_options['filters']['field_target_audience_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_target_audience_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['operator_id'] = 'field_target_audience_tid_op';
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['label'] = 'Target audience';
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['operator'] = 'field_target_audience_tid_op';
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['identifier'] = 'field_target_audience_tid';
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    8 => 0,
+    3 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -158,11 +249,13 @@ function pori_news_views_default_views() {
     t('Master'),
     t('News archive'),
     t('more'),
-    t('Hae'),
-    t('Palauta oletusarvoihin'),
-    t('Järjestele'),
-    t('Nou'),
-    t('Las'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Select any filter and click on Apply to see results'),
+    t('Advanced options'),
     t('Tuloksia sivulla'),
     t('- All -'),
     t('Offset'),
@@ -170,8 +263,10 @@ function pori_news_views_default_views() {
     t('‹ edellinen'),
     t('seuraava ›'),
     t('viimeinen »'),
-    t('Etsi uutisarkistosta'),
+    t('Search'),
     t('Post date'),
+    t('Theme'),
+    t('Target audience'),
     t('Page'),
   );
   $export['pori_news'] = $view;
