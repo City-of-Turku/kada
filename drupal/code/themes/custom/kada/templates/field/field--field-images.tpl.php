@@ -43,8 +43,9 @@
  *
  * @ingroup themeable
  */
+
 ?>
-<?php if ($element['#object']->type === 'attraction_card'): ?>
+<?php if ($element['#object']->type === 'attraction_card' && $element['#view_mode'] === 'full'): ?>
   <div class="slider-container">
     <div class="slide-container__content"<?php print $attributes; ?>>
       <?php foreach ($items as $delta => $item): ?>
