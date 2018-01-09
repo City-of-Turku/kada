@@ -16,5 +16,8 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["context.sitewide_en.reactions|block|blocks|block-1|weight"] = -40;
   $overrides["context.sitewide_fi.reactions|block|blocks|block-2|weight"] = -40;
 
+  // Exported overrides for: variable
+  $overrides["variable.menu_block_8_depth.value"] = 2;
+
  return $overrides;
 }
