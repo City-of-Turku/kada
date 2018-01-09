@@ -105,6 +105,7 @@ settings[omega_internet_explorer_support] = ""
 settings[omega_toggle_extension_assets] = 1
 settings[omega_css_exclude][] = sites/all/libraries/flexslider/flexslider.css
 settings[omega_css_exclude][] = sites/all/modules/contrib/responsive_menus/styles/responsive_menus_simple/css/responsive_menus_simple.css
+settings[omega_css_exclude][] = sites/all/modules/contrib/jquery_update/replace/ui/themes/base/minified/jquery.ui.accordion.min.css
 settings[omega_libraries][selectivizr][status] = 0
 settings[omega_libraries][selectivizr][variant] = _default
 settings[omega_libraries][respond][status] = 0

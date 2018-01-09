@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Display Suite minimal layout configuration.
+ * Page layout configuration.
  */
 
 function ds_page_layout() {
