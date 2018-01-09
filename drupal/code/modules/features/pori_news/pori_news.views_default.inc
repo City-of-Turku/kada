@@ -22,7 +22,7 @@ function pori_news_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Pori news';
+  $handler->display->display_options['title'] = 'News archive';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -154,7 +154,7 @@ function pori_news_views_default_views() {
   $handler->display->display_options['path'] = 'news-archive';
   $translatables['pori_news'] = array(
     t('Master'),
-    t('Pori news'),
+    t('News archive'),
     t('more'),
     t('Hae'),
     t('Palauta oletusarvoihin'),
