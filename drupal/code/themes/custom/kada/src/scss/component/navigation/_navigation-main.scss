@@ -94,7 +94,12 @@
           }
 
           .e-service-wrapper {
-            background-color: lighten($color, 40%);
+            background-color: lighten($color, 45%);
+
+            @if $color == $green {
+              background-color: lighten($color, 60%);
+            }
+
             @if $color == $yellow {
               color: $primary-color;
             }
