@@ -20,6 +20,7 @@
    - { role: php-fpm, tags: [ 'php-fpm' ] }
    - { role: drush, tags: [ 'drush' ] }
    - { role: drupal-log, tags: [ 'drupal-log' ] }
+   - { role: solr, tags: [ 'solr' ] }
 
   vars_files:
   - stage-vars.yml
