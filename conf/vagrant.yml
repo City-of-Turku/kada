@@ -159,6 +159,19 @@
 
     # Set a low heap allocation for Elasticsearch on vagrant.
     elasticsearch_heap_size: 200m
-    solr_drupal_files:
-      - conf/solr/schema.xml
 
+    # Project-specific config for search_api_solr 
+    solr_drupal_files:
+      # Standard stuff, inherited from WunderMachina
+      - elevate.xml
+      - mapping-ISOLatin1Accent.txt
+      - protwords.txt
+      - schema_extra_fields.xml
+      - schema_extra_types.xml
+      - solrconfig_extra.xml
+      - solrconfig.xml
+      - solrcore.properties
+      - stopwords.txt
+      - synonyms.txt
+      # Customized 
+      - solr/schema.xml
