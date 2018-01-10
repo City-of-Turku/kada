@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Pori search feature.
+ */
+
+include_once 'pori_search.features.inc';
