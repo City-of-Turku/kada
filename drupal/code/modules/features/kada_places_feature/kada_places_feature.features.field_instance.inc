@@ -10,7 +10,7 @@
 function kada_places_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_place-comment_body'
+  // Exported field_instance: 'comment-comment_node_place-comment_body'.
   $field_instances['comment-comment_node_place-comment_body'] = array(
     'bundle' => 'comment_node_place',
     'default_value' => NULL,
@@ -47,7 +47,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_accessibility'
+  // Exported field_instance: 'node-place-field_accessibility'.
   $field_instances['node-place-field_accessibility'] = array(
     'bundle' => 'place',
     'default_value' => array(),
@@ -82,7 +82,7 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 25,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -103,7 +103,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_address_postal'
+  // Exported field_instance: 'node-place-field_address_postal'.
   $field_instances['node-place-field_address_postal'] = array(
     'bundle' => 'place',
     'default_value' => NULL,
@@ -144,7 +144,7 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 21,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -180,7 +180,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_address_street'
+  // Exported field_instance: 'node-place-field_address_street'.
   $field_instances['node-place-field_address_street'] = array(
     'bundle' => 'place',
     'default_value' => NULL,
@@ -221,7 +221,7 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 24,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -257,7 +257,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_address_visiting'
+  // Exported field_instance: 'node-place-field_address_visiting'.
   $field_instances['node-place-field_address_visiting'] = array(
     'bundle' => 'place',
     'default_value' => NULL,
@@ -295,10 +295,16 @@ function kada_places_feature_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'label' => 'inline',
+        'module' => 'addressfield',
+        'settings' => array(
+          'format_handlers' => array(
+            0 => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 2,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -334,7 +340,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_availability'
+  // Exported field_instance: 'node-place-field_availability'.
   $field_instances['node-place-field_availability'] = array(
     'bundle' => 'place',
     'default_value' => NULL,
@@ -370,7 +376,7 @@ function kada_places_feature_field_default_field_instances() {
         'weight' => 2,
       ),
       'teaser' => array(
-        'label' => 'inline',
+        'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -433,7 +439,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_billing_address'
+  // Exported field_instance: 'node-place-field_billing_address'.
   $field_instances['node-place-field_billing_address'] = array(
     'bundle' => 'place',
     'default_value' => NULL,
@@ -469,7 +475,7 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 33,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -528,7 +534,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_description'
+  // Exported field_instance: 'node-place-field_description'.
   $field_instances['node-place-field_description'] = array(
     'bundle' => 'place',
     'default_value' => NULL,
@@ -564,10 +570,11 @@ function kada_places_feature_field_default_field_instances() {
         'weight' => 1,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
+        'module' => 'text',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 34,
+        'type' => 'text_default',
+        'weight' => 1,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -626,7 +633,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_district'
+  // Exported field_instance: 'node-place-field_district'.
   $field_instances['node-place-field_district'] = array(
     'bundle' => 'place',
     'default_value' => NULL,
@@ -661,7 +668,7 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 23,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -682,7 +689,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_email'
+  // Exported field_instance: 'node-place-field_email'.
   $field_instances['node-place-field_email'] = array(
     'bundle' => 'place',
     'default_value' => NULL,
@@ -720,7 +727,7 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'email',
         'settings' => array(),
-        'type' => 'email_plain',
+        'type' => 'email_default',
         'weight' => 4,
       ),
     ),
@@ -744,7 +751,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_fax_number'
+  // Exported field_instance: 'node-place-field_fax_number'.
   $field_instances['node-place-field_fax_number'] = array(
     'bundle' => 'place',
     'default_value' => NULL,
@@ -780,7 +787,7 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 34,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -839,7 +846,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_location'
+  // Exported field_instance: 'node-place-field_location'.
   $field_instances['node-place-field_location'] = array(
     'bundle' => 'place',
     'default_value' => NULL,
@@ -874,7 +881,7 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 32,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -920,7 +927,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_main_image'
+  // Exported field_instance: 'node-place-field_main_image'.
   $field_instances['node-place-field_main_image'] = array(
     'bundle' => 'place',
     'default_value' => NULL,
@@ -959,7 +966,7 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 25,
+        'weight' => 27,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -988,7 +995,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_municipality_term'
+  // Exported field_instance: 'node-place-field_municipality_term'.
   $field_instances['node-place-field_municipality_term'] = array(
     'bundle' => 'place',
     'default_value' => NULL,
@@ -1023,7 +1030,7 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 22,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1044,7 +1051,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_person_responsible'
+  // Exported field_instance: 'node-place-field_person_responsible'.
   $field_instances['node-place-field_person_responsible'] = array(
     'bundle' => 'place',
     'default_value' => NULL,
@@ -1080,7 +1087,7 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 29,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1139,7 +1146,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_phone'
+  // Exported field_instance: 'node-place-field_phone'.
   $field_instances['node-place-field_phone'] = array(
     'bundle' => 'place',
     'default_value' => NULL,
@@ -1237,7 +1244,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_phone_switch'
+  // Exported field_instance: 'node-place-field_phone_switch'.
   $field_instances['node-place-field_phone_switch'] = array(
     'bundle' => 'place',
     'default_value' => NULL,
@@ -1279,7 +1286,7 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 26,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1338,7 +1345,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_service_offer'
+  // Exported field_instance: 'node-place-field_service_offer'.
   $field_instances['node-place-field_service_offer'] = array(
     'bundle' => 'place',
     'deleted' => 0,
@@ -1372,7 +1379,7 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 31,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1406,7 +1413,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-field_website_et'
+  // Exported field_instance: 'node-place-field_website_et'.
   $field_instances['node-place-field_website_et'] = array(
     'bundle' => 'place',
     'default_value' => NULL,
@@ -1445,7 +1452,7 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 28,
       ),
     ),
     'ds_extras_field_template' => '',
@@ -1491,7 +1498,7 @@ function kada_places_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-place-title_field'
+  // Exported field_instance: 'node-place-title_field'.
   $field_instances['node-place-title_field'] = array(
     'bundle' => 'place',
     'default_value' => NULL,
@@ -1526,7 +1533,7 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 30,
       ),
     ),
     'ds_extras_field_template' => '',

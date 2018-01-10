@@ -221,3 +221,14 @@ function kadaprofile_update_7116() {
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables Transliteration module
+ */
+function kadaprofile_update_7117() {
+  $modules = array('transliteration');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}
