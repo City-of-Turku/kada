@@ -110,5 +110,7 @@ function kada_page_feature_field_formatter_view($entity_type, $node, $field, $in
     $depth = 0;
   }
 
+  drupal_add_library('system', 'ui.accordion');
+
   return $result;
 }
