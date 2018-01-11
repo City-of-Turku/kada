@@ -103,12 +103,12 @@ function kada_page_feature_field_formatter_view($entity_type, $node, $field, $in
           }
         }
       }
+
+      drupal_add_js(drupal_get_path('module', 'kada_page_feature') . '/js/accordion_config.js');
     }
 
     $depth = 0;
   }
-
-  drupal_add_library('system', 'ui.accordion');
 
   return $result;
 }
