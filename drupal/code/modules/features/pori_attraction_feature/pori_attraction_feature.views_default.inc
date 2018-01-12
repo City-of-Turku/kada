@@ -36,6 +36,9 @@ function pori_attraction_feature_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Las';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'liftup-box liftup-box--attraction-item';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Relationship: Content: Entity translation: translations */
   $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
@@ -47,27 +50,41 @@ function pori_attraction_feature_views_default_views() {
   $handler->display->display_options['fields']['field_images']['table'] = 'field_data_field_images';
   $handler->display->display_options['fields']['field_images']['field'] = 'field_images';
   $handler->display->display_options['fields']['field_images']['label'] = '';
+  $handler->display->display_options['fields']['field_images']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_images']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_images']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_images']['click_sort_column'] = 'sid';
-  $handler->display->display_options['fields']['field_images']['type'] = 'grid_item';
+  $handler->display->display_options['fields']['field_images']['type'] = 'topics';
   $handler->display->display_options['fields']['field_images']['settings'] = array(
     'link' => '1',
   );
   $handler->display->display_options['fields']['field_images']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_images']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_images']['field_api_classes'] = TRUE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   /* Field: Field: Keywords */
   $handler->display->display_options['fields']['field_keywords_et']['id'] = 'field_keywords_et';
   $handler->display->display_options['fields']['field_keywords_et']['table'] = 'field_data_field_keywords_et';
   $handler->display->display_options['fields']['field_keywords_et']['field'] = 'field_keywords_et';
   $handler->display->display_options['fields']['field_keywords_et']['label'] = '';
+  $handler->display->display_options['fields']['field_keywords_et']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_keywords_et']['alter']['text'] = '<div class="attraction-list--item__container">
+<div class=" liftup-box__image attraction-list--item__image">[field_images]</div>
+<div class="liftup-box__caption">
+<h3 class="attraction-list--item__title">[title]</h3>
+<div class="attraction-list--item__keywords"> [field_keywords_et]</div>
+</div>
+</div>';
   $handler->display->display_options['fields']['field_keywords_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_keywords_et']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_keywords_et']['delta_offset'] = '0';
   /* Sort criterion: Global: Random */
   $handler->display->display_options['sorts']['random']['id'] = 'random';
@@ -148,6 +165,13 @@ function pori_attraction_feature_views_default_views() {
     t('Nou'),
     t('Las'),
     t('Translations'),
+    t('<div class="attraction-list--item__container">
+<div class=" liftup-box__image attraction-list--item__image">[field_images]</div>
+<div class="liftup-box__caption">
+<h3 class="attraction-list--item__title">[title]</h3>
+<div class="attraction-list--item__keywords"> [field_keywords_et]</div>
+</div>
+</div>'),
     t('Kaikki'),
     t('All'),
     t('List widget'),

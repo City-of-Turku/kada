@@ -80,6 +80,7 @@ function kada_configuration_feature_field_default_field_bases() {
         'yellow' => 'Yellow',
         'green' => 'Green',
         'greenDark' => 'GreenDark',
+        'lightBlue' => 'LightBlue',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,

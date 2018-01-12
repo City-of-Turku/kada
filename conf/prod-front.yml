@@ -138,6 +138,7 @@
     papertrail_conf: "/etc/log_files.yml"
     papertrail_logs:
       - /var/log/secure
+      - /var/log/maillog
 
     # papertrail host and port defined in prod-vars.yml
 

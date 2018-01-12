@@ -77,12 +77,29 @@
                 @if $color == $yellow {
                   color: $primary-color;
                 }
+
+                &::before {
+                  color: $color !important;
+                }
+              }
+            }
+
+            &.is-expanded {
+              &:hover {
+                > a::before {
+                  color: $color !important;
+                }
               }
             }
           }
 
           .e-service-wrapper {
-            background-color: lighten($color, 40%);
+            background-color: lighten($color, 45%);
+
+            @if $color == $green {
+              background-color: lighten($color, 60%);
+            }
+
             @if $color == $yellow {
               color: $primary-color;
             }
@@ -185,8 +202,20 @@
 
       &.is-expanded {
         > a::before {
-          background: url('../../dist/image/plus-icon--white.svg') no-repeat center center $black;
-          background-size: auto .7rem;
+          @include fa('\f067', .9rem, 1, false);
+          color: $white;
+          height: 1.563rem;
+          line-height: 1.6rem;
+          position: absolute;
+          right: 1.875rem;
+          text-align: center;
+          top: 1.188rem;
+          width: 1.563rem;
+          z-index: 2;
+        }
+
+        > a::after {
+          background-color: $black;
           border-radius: 100%;
           content: "";
           display: block;
@@ -195,12 +224,14 @@
           right: 1.875rem;
           top: 1.188rem;
           width: 1.563rem;
+          z-index: 1;
         }
 
         &:hover {
           > a::before {
-            background-color: $white;
-            background-image: url('../../dist/image/minus-icon.svg');
+            @include fa('\f068', .9rem, 1, false);
+            color: $white;
+            line-height: 1.6rem;
           }
         }
       }
@@ -212,8 +243,9 @@
           color: $white;
 
           &::before {
-            background-color: $white;
-            background-image: url('../../dist/image/minus-icon.svg');
+            @include fa('\f068', .9rem, 1, false);
+            color: $white;
+            line-height: 1.6rem;
           }
         }
 

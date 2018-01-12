@@ -215,6 +215,12 @@ projects[domain_variable][patch][] = "https://www.drupal.org/files/issues/domain
 
 projects[domain_feeds][version] = 1.4
 
+projects[domain_views][type] = "module"
+projects[domain_views][subdir] = "contrib"
+projects[domain_views][download][type] = "git"
+projects[domain_views][download][url] = "http://git.drupal.org/project/domain_views.git"
+projects[domain_views][download][revision] = 074a167b82b0db9c19a3a9dddfb0f8e77e6ee068
+
 projects[ds][version] = 2.14
 projects[ds][subdir] = contrib
 
@@ -394,7 +400,7 @@ projects[linkchecker][subdir] = contrib
 projects[linkit][version] = 3.5
 projects[linkit][subdir] = "contrib"
 ; Entity translation support
-projects[linkit][patch][] = "https://www.drupal.org/files/issues/entity_translation-2280441-31.patch"
+;projects[linkit][patch][] = "https://www.drupal.org/files/issues/entity_translation-2280441-31.patch"
 
 projects[maxlength][version] = 3.2
 projects[maxlength][subdir] = contrib
@@ -552,12 +558,14 @@ projects[search_api][subdir] = contrib
 projects[search_api_ajax][version] = 1.2
 projects[search_api_ajax][subdir] = "contrib"
 
+projects[search_api_live_results][version] = 1.0
+projects[search_api_live_results][subdir] = contrib
+projects[search_api_live_results][patch][] = "https://www.drupal.org/files/views-integration-1392650.patch"
+projects[search_api_live_results][patch][] = "../patches/search_api_live_results.patch"
+
 ; Only dev-version is available
-projects[search_api_et][type] = "module"
+projects[search_api_et][version] = "2.0-alpha7"
 projects[search_api_et][subdir] = "contrib"
-projects[search_api_et][download][type] = "git"
-projects[search_api_et][download][url] = "http://git.drupal.org/project/search_api_et.git"
-projects[search_api_et][download][revision] = "a56f5273bc4cef18ebac797a9f04410224601d2f"
 
 projects[search_api_override][version] = 1.0-rc1
 projects[search_api_override][subdir] = contrib
