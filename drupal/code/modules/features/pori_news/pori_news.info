@@ -3,6 +3,7 @@ description = News feature overrides
 core = 7.x
 package = Pori
 version = 7.x-1.0-dev
+dependencies[] = better_exposed_filters
 dependencies[] = ctools
 dependencies[] = kada_configuration_feature
 dependencies[] = kada_news_feature
