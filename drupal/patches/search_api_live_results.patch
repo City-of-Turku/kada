@@ -1,0 +1,13 @@
+diff --git a/search_api_live_results.search_api_views.inc b/search_api_live_results.search_api_views.inc
+index b61b39e..9bc1dc1 100644
+--- a/search_api_live_results.search_api_views.inc
++++ b/search_api_live_results.search_api_views.inc
+@@ -84,7 +84,7 @@ function search_api_live_results_views_searches(SearchApiIndex $index) {
+  *   The query that would normally be executed when only $complete was entered
+  *   as the search keys for the given search.
+  */
+-function search_api_live_results_views_query(SearchApiLiveResultsSearch $search, $complete, $incomplete) {
++function search_api_live_results_views_query(SearchApiLiveResultsSearch $search, $complete) {
+   $views_id = substr($search->machine_name, 17);
+   $view = views_get_view($views_id);
+   // @todo Let users select display

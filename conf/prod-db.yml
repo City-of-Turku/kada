@@ -12,6 +12,7 @@
     - { role: papertrail, tags: [ 'papertrail' ] }
     - { role: newrelic-infra, tags: [ 'newrelic-infra' ] }
     - { role: newrelic-sysmon, tags: [ 'newrelic-sysmon' ] }
+    - { role: solr, tags: [ 'solr' ] }
 
   vars_files:
   - prod-vars.yml
@@ -121,4 +122,19 @@
     newrelic_infra_enabled: True
     # newrelic_license_key defined in prod_vars.yml
 
+    # Project-specific config for search_api_solr 
+    solr_drupal_files:
+      # Standard stuff, inherited from WunderMachina
+      - elevate.xml
+      - mapping-ISOLatin1Accent.txt
+      - protwords.txt
+      - schema_extra_fields.xml
+      - schema_extra_types.xml
+      - solrconfig_extra.xml
+      - solrconfig.xml
+      - solrcore.properties
+      - stopwords.txt
+      - synonyms.txt
+      # Customized 
+      - solr/schema.xml
 
