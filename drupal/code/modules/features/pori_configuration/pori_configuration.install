@@ -13,3 +13,10 @@ function pori_configuration_update_7100(&$sandbox) {
 function pori_configuration_update_7101(&$sandbox) {
   module_enable(array('domain_views'));
 }
+
+/**
+ * Enable contact information feature.
+ */
+function pori_configuration_update_7103(&$sandbox) {
+  module_enable(array('pori_contact_information_feature'));
+}
