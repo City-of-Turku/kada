@@ -77,54 +77,48 @@ function pori_contact_information_feature_feeds_importer_default() {
           5 => array(
             'source' => '2',
             'target' => 'field_employee_title',
-            'field_language' => 'sv',
-            'language' => 'und',
-          ),
-          6 => array(
-            'source' => '2',
-            'target' => 'field_employee_title',
             'field_language' => 'en',
             'language' => 'en',
           ),
-          7 => array(
+          6 => array(
             'source' => '9',
             'target' => 'field_email_single',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          8 => array(
+          7 => array(
             'source' => '8',
             'target' => 'field_mobile_phone_work',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          9 => array(
+          8 => array(
             'source' => '7',
             'target' => 'field_phone',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          10 => array(
+          9 => array(
             'source' => '6',
             'target' => 'field_visiting_address',
             'field_language' => 'fi',
             'language' => 'fi',
           ),
-          11 => array(
-            'source' => '6',
-            'target' => 'field_visiting_address',
-            'field_language' => 'sv',
-            'language' => 'und',
-          ),
-          12 => array(
+          10 => array(
             'source' => '6',
             'target' => 'field_visiting_address',
             'field_language' => 'en',
             'language' => 'en',
           ),
-          13 => array(
+          11 => array(
             'source' => 'person_type',
             'target' => 'field_person_type',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          12 => array(
+            'source' => '10',
+            'target' => 'field_fax_number',
             'unique' => FALSE,
             'language' => 'und',
           ),
