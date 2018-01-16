@@ -5,6 +5,34 @@
  */
 
 /**
+ * Implements hook_views_api().
+ */
+function pori_news_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
+}
+
+/**
+ * Implements hook_context_default_contexts_alter().
+ */
+function pori_news_context_default_contexts_alter(&$data) {
+  if (isset($data['footer_menu'])) {
+    $data['footer_menu']->conditions['context']['values']['news_list'] = 'news_list'; /* WAS: '' */
+  }
+  if (isset($data['main_menu'])) {
+    $data['main_menu']->conditions['context']['values']['news_list'] = 'news_list'; /* WAS: '' */
+  }
+  if (isset($data['news_list'])) {
+    $data['news_list']->conditions['path']['values']['news-archive'] = 'news-archive'; /* WAS: '' */
+    $data['news_list']->description = 'News archive'; /* WAS: 'News archive/list' */
+    unset($data['news_list']->conditions['path']['values']['news']);
+    unset($data['news_list']->reactions['block']);
+  }
+  if (isset($data['top_menu'])) {
+    $data['top_menu']->conditions['context']['values']['news_list'] = 'news_list'; /* WAS: '' */
+  }
+}
+
+/**
  * Implements hook_ds_field_settings_info_alter().
  */
 function pori_news_ds_field_settings_info_alter(&$data) {
