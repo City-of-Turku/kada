@@ -1154,4 +1154,19 @@
     }
   };
 
+  // News archive filters mobile toggle
+  Drupal.behaviors.poriNewsArchiveFilters = {
+    attach: function (context) {
+      $('.news-archive__filters', context).once('news-archive-filters', function () {
+        $(this).find('.views-exposed-widget > label').click(function () {
+          $(this).parent().toggleClass('open');
+        });
+
+        // Add placeholder for the news archive free text search
+        var placeholder=Drupal.t('Search from news archive');
+        $(this).find('.views-widget-filter-combine input').attr('placeholder', placeholder);
+      });
+    }
+  };
+
 })(jQuery);

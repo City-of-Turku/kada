@@ -151,6 +151,9 @@ projects[colorbox][subdir] = contrib
 projects[conditional_fields][version] = 3.0-alpha2
 projects[conditional_fields][subdir] = contrib
 
+projects[content_lock][version] = 3.0-beta1
+projects[content_lock][subdir] = contrib
+
 projects[context][version] = 3.7
 projects[context][subdir] = contrib
 ; Fixes context ui performance issues

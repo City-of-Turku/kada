@@ -15,6 +15,13 @@ function pori_configuration_update_7101(&$sandbox) {
 }
 
 /**
+ * Enable content_lock module.
+ */
+function pori_configuration_update_7102(&$sandbox) {
+  module_enable(array('content_lock'));
+}
+
+/**
  * Enable contact information feature.
  */
 function pori_configuration_update_7103(&$sandbox) {
