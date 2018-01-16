@@ -12,6 +12,7 @@ function pori_user_permissions_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: user_permission
+  $overrides["user_permission.access contextual links.roles|authenticated user"] = 'authenticated user';
   $overrides["user_permission.administer nodes.roles|content editor"]["DELETED"] = TRUE;
   $overrides["user_permission.administer nodes.roles|web journalist"]["DELETED"] = TRUE;
   $overrides["user_permission.administer taxonomy.roles|web journalist"]["DELETED"] = TRUE;
