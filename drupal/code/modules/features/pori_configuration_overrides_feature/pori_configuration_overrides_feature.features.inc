@@ -11,6 +11,10 @@ function pori_configuration_overrides_feature_context_default_contexts_alter(&$d
   if (isset($data['footer_navigation'])) {
     unset($data['footer_navigation']->reactions['block']);
   }
+  if (isset($data['language_switcher'])) {
+    $data['language_switcher']->reactions['block']['blocks']['locale-language']['region'] = 'branding'; /* WAS: 'navigation' */
+    $data['language_switcher']->reactions['block']['blocks']['locale-language']['weight'] = -10; /* WAS: -50 */
+  }
   if (isset($data['sitewide_en'])) {
     $data['sitewide_en']->reactions['block']['blocks']['block-1']['weight'] = -40; /* WAS: -10 */
   }
