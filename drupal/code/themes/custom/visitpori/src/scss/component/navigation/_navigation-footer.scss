@@ -50,9 +50,9 @@
       display: none;
 
       @media screen and (max-width: $mobile-footer-breakpoint-max) {
-        background: url('../../dist/image/plus-icon.svg') no-repeat center center $white;
-        background-size: auto .7rem;
+        background-color: $white;
         border-radius: 100%;
+        color: $secondary-color;
         display: block;
         height: 1.563rem;
         position: absolute;
@@ -74,7 +74,6 @@
     &.is-active-trail {
       > .menu__item--expanded-toggle {
         @media screen and (max-width: $mobile-footer-breakpoint-max) {
-          background-image: url('../../dist/image/plus-icon--white.svg');
           background-color: $black;
         }
       }
@@ -84,7 +83,11 @@
   .is-collapsed {
     > .menu__item--expanded-toggle {
       @media screen and (max-width: $mobile-footer-breakpoint-max) {
-        background-image: url('../../dist/image/minus-icon.svg');
+        background-color: $black;
+      }
+
+      &::before {
+        color: $gray-light;
       }
     }
 
@@ -93,8 +96,11 @@
     &.is-active-trail {
       > .menu__item--expanded-toggle {
         @media screen and (max-width: $mobile-footer-breakpoint-max) {
-          background-image: url('../../dist/image/minus-icon--white.svg');
           background-color: $black;
+        }
+
+        &::before {
+          color: $gray-light;
         }
       }
     }
@@ -182,7 +188,6 @@
 
         @media screen and (min-width: $mobile-footer-breakpoint) {
           background-color: transparent;
-          color: $primary-color;
         }
 
         &::after {
@@ -201,6 +206,12 @@
             height: .313rem;
           }
         }
+      }
+    }
+
+    &.is-active-trail {
+      > a {
+
       }
     }
 
