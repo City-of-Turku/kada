@@ -16,6 +16,5 @@ features[context][] = visitpori_landing_page
 features[ctools][] = context:context:3
 features[ctools][] = ds:ds:1
 features[ctools][] = strongarm:strongarm:1
-features[ds_field_settings][] = node|page|project
 features[ds_layout_settings][] = node|page|project
 features[features_api][] = api:2
