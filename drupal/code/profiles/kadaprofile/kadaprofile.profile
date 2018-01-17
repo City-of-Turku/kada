@@ -232,3 +232,14 @@ function kadaprofile_update_7117() {
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables search related modules
+ */
+function kadaprofile_update_7118() {
+  $modules = array('search_api_solr', 'search_api_live_results', 'search_api_views', 'pori_search');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}

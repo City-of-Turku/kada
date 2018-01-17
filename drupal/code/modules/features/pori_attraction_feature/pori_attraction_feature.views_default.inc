@@ -86,12 +86,10 @@ function pori_attraction_feature_views_default_views() {
   $handler->display->display_options['fields']['field_keywords_et']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_keywords_et']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_keywords_et']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_keywords_et']['field_api_classes'] = TRUE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Global: Random */
+  $handler->display->display_options['sorts']['random']['id'] = 'random';
+  $handler->display->display_options['sorts']['random']['table'] = 'views';
+  $handler->display->display_options['sorts']['random']['field'] = 'random';
   /* Contextual filter: Field: Category (field_attraction_category) */
   $handler->display->display_options['arguments']['field_attraction_category_tid']['id'] = 'field_attraction_category_tid';
   $handler->display->display_options['arguments']['field_attraction_category_tid']['table'] = 'field_data_field_attraction_category';

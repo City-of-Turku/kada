@@ -151,6 +151,9 @@ projects[colorbox][subdir] = contrib
 projects[conditional_fields][version] = 3.0-alpha2
 projects[conditional_fields][subdir] = contrib
 
+projects[content_lock][version] = 3.0-beta1
+projects[content_lock][subdir] = contrib
+
 projects[context][version] = 3.7
 projects[context][subdir] = contrib
 ; Fixes context ui performance issues
@@ -558,12 +561,14 @@ projects[search_api][subdir] = contrib
 projects[search_api_ajax][version] = 1.2
 projects[search_api_ajax][subdir] = "contrib"
 
+projects[search_api_live_results][version] = 1.0
+projects[search_api_live_results][subdir] = contrib
+projects[search_api_live_results][patch][] = "https://www.drupal.org/files/views-integration-1392650.patch"
+projects[search_api_live_results][patch][] = "../patches/search_api_live_results.patch"
+
 ; Only dev-version is available
-projects[search_api_et][type] = "module"
+projects[search_api_et][version] = "2.0-alpha7"
 projects[search_api_et][subdir] = "contrib"
-projects[search_api_et][download][type] = "git"
-projects[search_api_et][download][url] = "http://git.drupal.org/project/search_api_et.git"
-projects[search_api_et][download][revision] = "a56f5273bc4cef18ebac797a9f04410224601d2f"
 
 projects[search_api_override][version] = 1.0-rc1
 projects[search_api_override][subdir] = contrib

@@ -8,6 +8,9 @@
  * Implements hook_user_default_permissions_alter().
  */
 function pori_user_permissions_user_default_permissions_alter(&$data) {
+  if (isset($data['access contextual links'])) {
+    $data['access contextual links']['roles']['authenticated user'] = 'authenticated user'; /* WAS: '' */
+  }
   if (isset($data['administer nodes'])) {
     unset($data['administer nodes']['roles']['content editor']);
     unset($data['administer nodes']['roles']['web journalist']);

@@ -3570,6 +3570,7 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['arguments']['field_target_audience_tid']['default_argument_type'] = 'taxonomy_tid';
   $handler->display->display_options['arguments']['field_target_audience_tid']['default_argument_options']['term_page'] = FALSE;
   $handler->display->display_options['arguments']['field_target_audience_tid']['default_argument_options']['node'] = TRUE;
+  $handler->display->display_options['arguments']['field_target_audience_tid']['default_argument_options']['limit'] = TRUE;
   $handler->display->display_options['arguments']['field_target_audience_tid']['default_argument_options']['vocabularies'] = array(
     'target_audience' => 'target_audience',
   );

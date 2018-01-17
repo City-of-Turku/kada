@@ -9,6 +9,7 @@ dependencies[] = ds
 dependencies[] = features
 dependencies[] = kada_export_feature
 dependencies[] = kada_landing_page_feature
+dependencies[] = pori_visitpori_override_feature
 dependencies[] = quicktabs
 dependencies[] = strongarm
 dependencies[] = views

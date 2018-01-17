@@ -329,17 +329,6 @@
     }
   };
 
-  Drupal.behaviors.kadaPlacesAccordion = {
-    attach: function () {
-      $('.places').accordion({
-        header: ".place__header",
-        heightStyle: "content",
-        collapsible: true,
-        active: "none"
-      });
-    }
-  };
-
   Drupal.behaviors.kadaRecommendedToggle = {
     attach: function () {
       $('.recommended-button, .recommended-block__close').once('recommended-toggle', function () {
@@ -1161,6 +1150,21 @@
         nextArrow: '<a data-role="none" class="slide__arrow-next" ></a>',
         appendArrows: $('.slide-container__arrows'),
         appendDots: $('.slide-container__dots')
+      });
+    }
+  };
+
+  // News archive filters mobile toggle
+  Drupal.behaviors.poriNewsArchiveFilters = {
+    attach: function (context) {
+      $('.news-archive__filters', context).once('news-archive-filters', function () {
+        $(this).find('.views-exposed-widget > label').click(function () {
+          $(this).parent().toggleClass('open');
+        });
+
+        // Add placeholder for the news archive free text search
+        var placeholder=Drupal.t('Search from news archive');
+        $(this).find('.views-widget-filter-combine input').attr('placeholder', placeholder);
       });
     }
   };
