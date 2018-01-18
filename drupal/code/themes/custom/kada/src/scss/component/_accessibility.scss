@@ -1,0 +1,123 @@
+.accessibility {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 .5rem;
+
+  .accessibility__item--disabled-access::after {
+    @include fa('\f193', false);
+  }
+
+  .accessibility__item--no-disabled-access {
+    &::before {
+      @include fa('\f05e', false);
+    }
+    &::after {
+      @include fa('\f193', false);
+    }
+  }
+
+  .accessibility__item--induction-loop::after {
+    @include fa('\f2a4', false);
+  }
+
+  .accessibility__item--no-induction-loop {
+    &::before {
+      @include fa('\f05e', false);
+    }
+    &::after {
+      @include fa('\f2a4', false);
+    }
+  }
+
+  .accessibility__item--visually-disabled-access::after {
+    @include fa('\f2a8', false);
+  }
+
+  .accessibility__item--no-visually-disabled-access {
+    &::before {
+      @include fa('\f05e', false);
+    }
+    &::after {
+      @include fa('\f2a8', false);
+    }
+  }
+
+  .accessibility__item--free-wifi::after {
+    @include fa('\f1eb', false);
+  }
+  .accessibility__item--free-parking::after {
+    @include fa('\f288', false);
+  }
+  .accessibility__item--pets-allowed::after {
+    @include fa('\f1b0', false);
+  }
+  .accessibility__item--allergy-friendly::after {
+    @include fa('\f004', false);
+  }
+
+  .accessibility__item {
+    height: 3.5rem;
+    margin: 0 .3rem;
+    position: relative;
+    text-indent: -9999px;
+    width: 2.95rem;
+
+    &::before {
+      color: $secondary-color;
+      font-size: 3.3rem;
+      left: 50%;
+      line-height: 3.3rem;
+      opacity: 0.3;
+      position: absolute;
+      text-indent: 0;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    &::after {
+      color: $default-color-medium;
+      font-size: 2rem;
+      left: 50%;
+      line-height: 2rem;
+      position: absolute;
+      text-indent: 0;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+
+    &.accessibility__item--has-description:hover {
+      cursor: pointer;
+
+      .description:hover {
+        cursor: pointer;
+      }
+    }
+
+    &.accessibility__item--show-description {
+      .description {
+        align-items: center;
+        background-color: rgba($white, .9);
+        border: 1px solid #9e9e9e;
+        border-radius: .25rem;
+        bottom: 0;
+        box-shadow: 0 0 .625rem $default-color-medium;
+        cursor: default;
+        display: flex;
+        font-size: 0.8rem;
+        height: 6.25rem;
+        justify-content: center;
+        left: 50%;
+        padding: 1rem;
+        position: absolute;
+        text-align: center;
+        text-indent: 0;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        width: 6.25rem;
+        z-index: 3;
+      }
+    }
+  }
+}
