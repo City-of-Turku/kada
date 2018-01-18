@@ -252,6 +252,14 @@ projects[entityqueue][subdir] = contrib
 ; Adds export for entityqueue subqueues
 projects[entityqueue][patch][] = "../patches/entityqueue_subqueue_export.patch"
 
+projects[entity_action_log][type] = module
+projects[entity_action_log][subdir] = contrib
+projects[entity_action_log][download][type] = git
+projects[entity_action_log][download][url] = https://git.drupal.org/project/entity_action_log.git
+projects[entity_action_log][download][revision] = b9199e2fb823a7f5d6b62f2ca17ea06fcf0a0c97
+projects[entity_action_log][patch][] = https://www.drupal.org/files/issues/2937822-3_views.patch
+projects[entity_action_log][patch][] = https://www.drupal.org/files/issues/2937831-2_fix_editing.patch
+
 ; Only dev version is available for entity_base_type module.
 projects[entity_base_type][type] = module
 projects[entity_base_type][subdir] = contrib

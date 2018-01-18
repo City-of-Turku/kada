@@ -20,3 +20,10 @@ function pori_configuration_update_7101(&$sandbox) {
 function pori_configuration_update_7102(&$sandbox) {
   module_enable(array('content_lock'));
 }
+
+/**
+ * Enable the entity_action_log module.
+ */
+function pori_configuration_update_7103(&$sandbox) {
+  module_enable(array('entity_action_log'));
+}
