@@ -5,7 +5,7 @@
  * Page layout template
  */
 
-if (!empty($sidebar || $additional_information)) {
+if (!empty($sidebar || $additional_information) && $variables['is_front'] != true) {
     $additional_classes="page--has-sidebar";
 }
 ?>
@@ -19,7 +19,7 @@ if (!empty($sidebar || $additional_information)) {
     <?php print $main_content; ?>
 </<?php print $main_content_wrapper ?>>
 
-<?php if (!empty($sidebar || $additional_information)): ?>
+<?php if (!empty($sidebar || $additional_information) && $variables['is_front'] != true): ?>
   <<?php print $sidebar_wrapper ?> class="page__sidebar <?php print $sidebar_classes; ?>">
     <?php print $sidebar; ?>
     <?php if (!empty($additional_information)): ?>
