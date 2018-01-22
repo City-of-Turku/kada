@@ -9,6 +9,12 @@ if (!empty($sidebar || $additional_information)) {
   $additional_classes="attraction";
 }
 ?>
+<?php if (!empty($before_content)): ?>
+    <<?php print $before_content_wrapper ?> class="attraction__before-content <?php print $before_content_classes; ?>">
+  <?php print $before_content; ?>
+    </<?php print $before_content_wrapper ?>>
+<?php endif; ?>
+
 <<?php print $layout_wrapper; print $layout_attributes; ?> class="<?php print $classes;?> <?php print $additional_classes;?>">
 
   <?php if (isset($title_suffix['contextual_links'])): ?>

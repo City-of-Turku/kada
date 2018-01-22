@@ -16,7 +16,6 @@ features[features_override_items][] = context.news_list
 features[features_override_items][] = context.top_menu
 features[features_override_items][] = ds_field_settings.node|news_item|current
 features[features_override_items][] = ds_layout_settings.node|news_item|current
-features[features_override_items][] = field_group.group_liftup_header|node|news_item|current
 features[features_overrides][] = context.footer_menu.conditions|context|values|news_list
 features[features_overrides][] = context.main_menu.conditions|context|values|news_list
 features[features_overrides][] = context.news_list.conditions|path|values|news

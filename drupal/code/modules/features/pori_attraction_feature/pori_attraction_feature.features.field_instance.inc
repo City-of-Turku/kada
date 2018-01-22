@@ -27,7 +27,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 39,
+        'weight' => 41,
       ),
       'full' => array(
         'label' => 'above',
@@ -200,7 +200,7 @@ function pori_attraction_feature_field_default_field_instances() {
           'use_widget_handlers' => 1,
         ),
         'type' => 'addressfield_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -283,7 +283,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 38,
       ),
       'full' => array(
         'label' => 'above',
@@ -346,7 +346,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 33,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -462,7 +462,7 @@ function pori_attraction_feature_field_default_field_instances() {
           'view_mode' => 'teaser',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 10,
+        'weight' => 12,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -539,7 +539,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -649,7 +649,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'module' => 'email',
         'settings' => array(),
         'type' => 'email_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -711,7 +711,7 @@ function pori_attraction_feature_field_default_field_instances() {
           'override' => 0,
         ),
         'type' => 'carousel',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -780,7 +780,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -847,7 +847,7 @@ function pori_attraction_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -958,7 +958,7 @@ You can place multiple single point selections.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 31,
       ),
       'full' => array(
         'label' => 'above',
@@ -1045,7 +1045,7 @@ You can place multiple single point selections.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 32,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -1134,6 +1134,81 @@ You can place multiple single point selections.',
     ),
   );
 
+  // Exported field_instance: 'node-attraction_card-field_online_shop'.
+  $field_instances['node-attraction_card-field_online_shop'] = array(
+    'bundle' => 'attraction_card',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'attraction_card_mosaic_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 0,
+      ),
+      'only_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_online_shop',
+    'label' => 'Online shop',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => '_blank',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'rel_remove' => 'default',
+      'title' => 'value',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => 'Go to online shop',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 26,
+    ),
+  );
+
   // Exported field_instance: 'node-attraction_card-field_phone'.
   $field_instances['node-attraction_card-field_phone'] = array(
     'bundle' => 'attraction_card',
@@ -1156,7 +1231,7 @@ You can place multiple single point selections.',
           'title_style' => '',
         ),
         'type' => 'title_linked',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -1262,7 +1337,7 @@ You can place multiple single point selections.',
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 34,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -1339,7 +1414,7 @@ You can place multiple single point selections.',
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -1395,7 +1470,7 @@ You can place multiple single point selections.',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 40,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -1476,7 +1551,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 39,
       ),
       'full' => array(
         'label' => 'above',
@@ -1585,7 +1660,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'full' => array(
         'label' => 'above',
@@ -1667,7 +1742,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 37,
       ),
       'full' => array(
         'label' => 'above',
@@ -1744,7 +1819,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1',
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 36,
       ),
       'full' => array(
         'label' => 'above',
@@ -1952,6 +2027,7 @@ Video: https://monosnap.com/file/Ff8evfwf8YrUyZt6nGQ8xeaF3o1Ne1');
   t('Link place to attraction card');
   t('Location');
   t('Location name');
+  t('Online shop');
   t('Phone');
   t('Public transportation');
   t('Related content');

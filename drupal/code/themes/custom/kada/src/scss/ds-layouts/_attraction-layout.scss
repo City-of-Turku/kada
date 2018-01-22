@@ -1,3 +1,47 @@
+.node-type-attraction-card .content__header {
+  @media screen and (min-width: $desktop-narrow) {
+    float: left;
+    width: 65%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 70%;
+  }
+
+  .content-header__title {
+    @media screen and (min-width: $desktop-narrow) {
+      margin-top: .563rem;
+    }
+
+    @media screen and (min-width: $tablet-landscape) {
+      margin-top: 0;
+    }
+  }
+}
+
+.attraction__before-content {
+  display: none;
+
+  @media screen and (min-width: $desktop-narrow) {
+    display: block;
+    float: right;
+    margin: 0;
+    width: 35%;
+  }
+
+  @media screen and (min-width: $tablet-landscape) {
+    margin: .188rem 0 0;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 30%;
+  }
+}
+
+.node--attraction-card--full {
+  clear: both;
+}
+
 .attraction__image-container  {
   margin-bottom: 3rem;
 }
