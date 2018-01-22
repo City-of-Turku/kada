@@ -1169,4 +1169,27 @@
     }
   };
 
+  // Accessibility description toggle
+  Drupal.behaviors.accessibilityDescriptionToggle = {
+    attach: function (context) {
+      $('.accessibility', context).once('accessibility', function () {
+        $(this).find('.accessibility__item--has-description').click(function (e) {
+          if ($(this).hasClass('accessibility__item--show-description')) {
+            $(this).removeClass('accessibility__item--show-description');
+          } else {
+            $(this).parent().find('.accessibility__item--show-description').removeClass('accessibility__item--show-description');
+            $(this).toggleClass('accessibility__item--show-description');
+          }
+          e.stopPropagation()
+        });
+
+        $(document).click(function(e) {
+          if ($(e.target).is('.accessibility__item--has-description') === false) {
+            $('.accessibility__item--has-description').removeClass('accessibility__item--show-description');
+          }
+        });
+      });
+    }
+  };
+
 })(jQuery);
