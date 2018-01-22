@@ -82,6 +82,7 @@ switch ($env) {
 
     case 'local':
       $conf['simple_environment_indicator'] = '#88b700 Local';
+      $conf['file_temporary_path'] = "/tmp";
       $conf['preprocess_css'] = false;
       $conf['preprocess_js'] = false;
       $conf['googleanalytics_account'] = ''; // Make sure the GA isn't enabled in this env
@@ -117,7 +118,6 @@ if (!defined('IS_BE_PROBE') || !IS_BE_PROBE) {
 }
 
 $conf['menu_override_parent_selector'] = true;
-$conf['file_temporary_path'] = "/tmp";
 
 // Set "domain space" that is necessary to handle redirects between domains
 //define('DOMAIN_SPACE', 'pori-kada-development.druid.fi');
