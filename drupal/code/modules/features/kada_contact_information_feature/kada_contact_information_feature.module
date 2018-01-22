@@ -80,7 +80,7 @@ function _kada_contact_information_feature_ds_person_full_name($field) {
   if (!empty($field['entity']->field_surname['und'][0]['safe_value'])) {
     $output[] = $field['entity']->field_surname['und'][0]['safe_value'];
   }
-  return l(implode(' ', $output), 'node/' . $field['entity']->nid);
+  return implode(' ', $output);
 }
 
 function _kada_contact_information_feature_ds_positions_trust_search($field) {

@@ -175,7 +175,7 @@ function pori_attraction_feature_strongarm() {
       'display' => array(
         'domain' => array(
           'default' => array(
-            'weight' => '33',
+            'weight' => '35',
             'visible' => FALSE,
           ),
           'search_result' => array(

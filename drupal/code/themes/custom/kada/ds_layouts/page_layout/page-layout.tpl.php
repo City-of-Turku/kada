@@ -28,6 +28,12 @@ if (!empty($sidebar || $additional_information) && $variables['is_front'] != tru
         <?php print $additional_information ?>
       </div>
     <?php endif; ?>
+    <?php if (!empty($contact_information)): ?>
+      <div class="page__contact-information">
+          <h3 class="page__contact-information__header"><?php print t('Contact us') . ':'; ?></h3>
+        <?php print $contact_information ?>
+      </div>
+    <?php endif; ?>
   </<?php print $sidebar_wrapper ?>>
 <?php endif; ?>
 
