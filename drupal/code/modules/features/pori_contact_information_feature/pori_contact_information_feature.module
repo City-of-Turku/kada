@@ -1,0 +1,70 @@
+<?php
+/**
+ * @file
+ * Code for the Pori Contact information feature.
+ */
+
+include_once 'pori_contact_information_feature.features.inc';
+
+/**
+ * Implements hook_feeds_presave().
+ */
+function pori_contact_information_feature_feeds_presave($source, $entity, $item, $entity_id) {
+  if ($source->id == 'phone_csv') {
+    // Prevent publishing of the whole row.
+    if (!empty($item[14])) {
+      $entity->feeds_item->skip = TRUE;
+      return;
+    }
+
+    // Replace comma followed by a post code with newline and the post code.
+    // Newlines don't work in Feeds Tamper.
+    foreach ($entity->field_visiting_address as $lang => &$addr_item) {
+      $addr_item[0]['value'] = preg_replace('/,\W*([0-9]{5})/', "\n\\1", $addr_item[0]['value']);
+    }
+
+    // Prevent publishing of the mobile phone number.
+    if (!empty($item[13])) {
+      $entity->field_mobile_phone_work = array();
+    }
+    // Prevent publishing of the phone number.
+    if (!empty($item[12])) {
+      $entity->field_phone = array();
+    }
+  }
+}
+
+/**
+ * Implements hook_cron().
+ *
+ * Contact information Feeds importers need to be run in a controlled order.
+ * This is done by adding them to hook_cron and managing the order manually,
+ * instead of relying on default Feeds cron implementation.
+ */
+function pori_contact_information_feature_cron() {
+  $importers = array(
+    'phone_csv' => 'private://transfer/PORIKAexport2.csv',
+  );
+  watchdog('pori_contact_information', 'Running contact information feed importers...');
+  $incomplete = FALSE;
+
+  foreach ($importers as $id => $source_url) {
+    if (!$incomplete) {
+      $source = feeds_source($id);
+      if ($source->imported + 21600 < time()) {
+        watchdog('pori_contact_information', "Starting import $id at " . round($source->progressImporting() * 100) . "%");
+        $config = $source->getConfig();
+        $config['FeedsFileFetcher']['source'] = $source_url;
+        $source->setConfig($config);
+        $source->save();
+        $source->import();
+        watchdog('pori_contact_information', "Ended import $id at " . round($source->progressImporting() * 100) . "%");
+        // If we didn't reach 100%, abort foreach loop to prevent extending to
+        // next importer.
+        if ($source->progressImporting() !== 1) {
+          $incomplete = TRUE;
+        }
+      }
+    }
+  }
+}
