@@ -142,11 +142,6 @@
           display: block;
         }
       }
-      //&:hover {
-      //  > .menu {
-      //    display: block;
-      //  }
-      //}
 
       &.is-active-trail {
         background-color: $secondary-color;
@@ -197,19 +192,6 @@
         }
       }
 
-      //&:hover {
-      //  background-color: $secondary-color;
-      //
-      //  > a {
-      //    color: $white;
-      //  }
-      //
-      //  > .menu {
-      //    display: block;//
-      //    z-index: 102;
-      //  }
-      //}
-
       &.is-expanded {
         > a::before {
           @include fa('\f067', .9rem, 1, false);
@@ -244,14 +226,6 @@
             line-height: 1.6rem;
           }
         }
-
-        //&:hover {
-        //  > a::before {
-        //    @include fa('\f068', .9rem, 1, false);
-        //    color: $white;
-        //    line-height: 1.6rem;
-        //  }
-        //}
       }
 
       &.is-active-trail {
@@ -293,14 +267,6 @@
           color: $white;
         }
       }
-
-      //&:hover {
-      //  background-color: $secondary-color;
-      //
-      //  > a {
-      //    color: $white;
-      //  }
-      //}
 
       &.is-active-trail {
         background-color: $secondary-color;
