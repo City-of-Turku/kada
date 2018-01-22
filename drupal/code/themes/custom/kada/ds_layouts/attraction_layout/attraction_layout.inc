@@ -9,6 +9,7 @@ function ds_attraction_layout() {
   return array(
     'label' => t('Attraction layout'),
     'regions' => array(
+      'before_content' => t('Before content'),
       'image_container' => t('Image container'),
       'main_content' => t('Content'),
       'sidebar' => t('Sidebar'),
