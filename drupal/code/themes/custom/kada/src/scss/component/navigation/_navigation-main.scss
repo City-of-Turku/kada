@@ -137,19 +137,16 @@
         z-index: 100;
       }
 
-      &:hover {
+      &.menu__item--hover {
         > .menu {
           display: block;
         }
       }
-
-      &.is-expanded {
-        > a {
-          &:hover,
-          &:focus {
-          }
-        }
-      }
+      //&:hover {
+      //  > .menu {
+      //    display: block;
+      //  }
+      //}
 
       &.is-active-trail {
         background-color: $secondary-color;
@@ -187,7 +184,7 @@
         }
       }
 
-      &:hover {
+      &.menu__item--hover {
         background-color: $secondary-color;
 
         > a {
@@ -195,10 +192,23 @@
         }
 
         > .menu {
-          display: block;
+          display: block;//
           z-index: 102;
         }
       }
+
+      //&:hover {
+      //  background-color: $secondary-color;
+      //
+      //  > a {
+      //    color: $white;
+      //  }
+      //
+      //  > .menu {
+      //    display: block;//
+      //    z-index: 102;
+      //  }
+      //}
 
       &.is-expanded {
         > a::before {
@@ -227,13 +237,21 @@
           z-index: 1;
         }
 
-        &:hover {
+        &.menu__item--hover {
           > a::before {
             @include fa('\f068', .9rem, 1, false);
             color: $white;
             line-height: 1.6rem;
           }
         }
+
+        //&:hover {
+        //  > a::before {
+        //    @include fa('\f068', .9rem, 1, false);
+        //    color: $white;
+        //    line-height: 1.6rem;
+        //  }
+        //}
       }
 
       &.is-active-trail {
@@ -268,13 +286,21 @@
         }
       }
 
-      &:hover {
+      &.menu__item--hover {
         background-color: $secondary-color;
 
         > a {
           color: $white;
         }
       }
+
+      //&:hover {
+      //  background-color: $secondary-color;
+      //
+      //  > a {
+      //    color: $white;
+      //  }
+      //}
 
       &.is-active-trail {
         background-color: $secondary-color;

@@ -180,6 +180,18 @@
     }
   };
 
+  Drupal.behaviors.poriMainMenuHover = {
+    attach: function (context) {
+      $('.l-navigation .menu .menu__item', context).once('main-menu-hover', function () {
+        $(this).hoverIntent(
+          function() {
+            $(this).toggleClass('menu__item--hover');
+          }
+        );
+      });
+    }
+  };
+
   Drupal.behaviors.kadaFooterMenuBehavior = {
     attach: function (context) {
       $('.l-region--footer .menu__item--expanded-toggle').click(
