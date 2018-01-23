@@ -4,6 +4,7 @@ core = 7.x
 package = Pori
 version = 7.x-1.0-dev
 dependencies[] = better_exposed_filters
+dependencies[] = context
 dependencies[] = ctools
 dependencies[] = ds
 dependencies[] = entity
