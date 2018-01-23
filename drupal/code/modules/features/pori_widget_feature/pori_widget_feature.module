@@ -1,0 +1,47 @@
+<?php
+/**
+ * @file
+ * Drupal needs this blank file.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function pori_widget_feature_block_info() {
+  return array(
+    'widget_after_content' => array(
+      'info' => t('Widgets: After content'),
+      'content_callback' => 'pori_widget_feature_block_after_content',
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function pori_widget_feature_block_view($delta = '') {
+  $blocks = pori_widget_feature_block_info();
+  $block = array();
+  if (isset($blocks[$delta])) {
+    $block['content'] = $blocks[$delta]['content_callback']();
+  }
+  return $block;
+}
+
+/**
+ * Build content for widget_after_content block.
+ */
+function pori_widget_feature_block_after_content() {
+  $content = array();
+  $node = menu_get_object();
+  // Get widgets from field_widget_after_content and render those.
+  if (!empty($node->field_widgets_after_content[LANGUAGE_NONE])) {
+    foreach ($node->field_widgets_after_content[LANGUAGE_NONE] as $field_item) {
+      if (!empty($field_item['target_id'])) {
+        $widget = eckentity_load(array($field_item['target_id']), 'widget');
+        $content[] = entity_view('widget', array($widget));
+      }
+    }
+  }
+  return $content;
+}
