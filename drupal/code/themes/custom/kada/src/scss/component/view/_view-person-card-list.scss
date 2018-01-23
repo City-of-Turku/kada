@@ -1,7 +1,106 @@
 .person-card-list {
+  // Filters
+  .person-card-list__filters {
+    margin: 0 -1.25rem;
+    position: relative;
+    overflow: hidden;
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      margin: 0;
+    }
+
+    .views-exposed-widgets {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+    }
+
+    .views-widget-filter-combine {
+      background-color: $gray-lighter;
+      float: none;
+      order: 1;
+      padding: 1.25rem 0;
+      width: 100%;
+
+      @media screen and (min-width: $mobile-menu-breakpoint) {
+        order: 10;
+        margin: 0 0 2.125rem;
+      }
+
+      .views-widget {
+        margin: 0 0 0 1.25rem;
+        position: relative;
+        width: 60%;
+      }
+
+      label {
+        display: none;
+      }
+
+      .views-widget {
+        display: block;
+      }
+
+      input {
+        border: .063rem solid $gray-light;
+        padding: .625rem;
+        width: 100%;
+      }
+    }
+
+    .views-widget-filter-secondary {
+      float: none;
+      order: 2;
+      padding: 1.25rem 1.25rem (1.25rem - .313rem) 1.25rem;
+      width: 100%;
+
+      fieldset {
+        border: 0 none;
+        margin: 0;
+        padding: 0;
+      }
+
+      legend {
+        display: none;
+      }
+    }
+
+    .views-submit-button {
+      float: none;
+      padding: 0;
+      position: absolute;
+      right: 1.25rem;
+      top: 1.25rem;
+      width: 25%;
+      z-index: 2;
+
+      input {
+        background-color: $link-color;
+        border: 0 none;
+        color: $white;
+        height: 2.438rem;
+        margin: 0;
+        padding: 0;
+        text-indent: -9999px;
+        width: 100%;
+      }
+      &::after {
+        @include fa('\f002', 1.3rem, 1, false);
+        color: $white;
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%);
+      }
+    }
+  }
+
+  // Content
   .person-card-list__content {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 -.313rem;
+    overflow: hidden;
   }
 
   .person-card {
