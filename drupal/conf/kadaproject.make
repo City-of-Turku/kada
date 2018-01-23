@@ -202,6 +202,9 @@ projects[diff][subdir] = contrib
 projects[domain][version] = 3.13
 projects[domain][subdir] = contrib
 
+projects[domain_analytics][version] = 1.0-alpha2
+projects[domain_analytics][subdir] = contrib
+
 projects[domaincontext][version] = 1.0-alpha1
 projects[domaincontext][subdir] = contrib
 ; Fix to use machine names instead of ids

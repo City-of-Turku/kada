@@ -118,7 +118,8 @@ function pori_attraction_feature_field_group_info() {
       3 => 'field_lead_paragraph_et',
       4 => 'field_target_audience',
       5 => 'title_field',
-      6 => 'language',
+      6 => 'field_online_shop',
+      7 => 'language',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
