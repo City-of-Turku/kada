@@ -1,0 +1,26 @@
+.person-card-list {
+  .person-card-list__content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .person-card {
+    display: flex;
+    padding: .313rem;
+    width: 100%;
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: $tablet-landscape) {
+      width: 33.333333%;
+    }
+
+    .person-card__inner {
+      background-color: $gray-lighter;
+      border-top: .938rem solid $secondary-color;
+      width: 100%;
+    }
+  }
+}

@@ -34,13 +34,13 @@
   <?php endif; ?>
   <?php print render($title_suffix); ?>
   <?php if ($header): ?>
-    <div class="view-header liftup-box-list__header">
+    <div class="person-card-list__header">
       <?php print $header; ?>
     </div>
   <?php endif; ?>
 
   <?php if ($exposed): ?>
-    <div class="view-filters liftup-box-list__filters">
+    <div class="person-card-list__filters">
       <?php print $exposed; ?>
     </div>
   <?php endif; ?>
@@ -52,11 +52,11 @@
   <?php endif; ?>
 
   <?php if ($rows): ?>
-    <div class="view-content liftup-box-list__content">
+    <div class="person-card-list__content">
       <?php print $rows; ?>
     </div>
   <?php elseif ($empty): ?>
-    <div class="view-empty">
+    <div class="person-card-list__empty">
       <?php print $empty; ?>
     </div>
   <?php endif; ?>
@@ -76,7 +76,7 @@
   <?php endif; ?>
 
   <?php if ($footer): ?>
-    <div class="view-footer liftup-box-list__footer">
+    <div class="person-card-list__footer">
       <?php print $footer; ?>
     </div>
   <?php endif; ?>

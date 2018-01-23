@@ -8,19 +8,33 @@
  * Implements hook_context_default_contexts_alter().
  */
 function pori_configuration_overrides_feature_context_default_contexts_alter(&$data) {
+  if (isset($data['footer_menu'])) {
+    $data['footer_menu']->conditions['context']['values']['news_list'] = 'news_list'; /* WAS: '' */
+    $data['footer_menu']->conditions['context']['values']['person_list'] = 'person_list'; /* WAS: '' */
+  }
   if (isset($data['footer_navigation'])) {
     unset($data['footer_navigation']->reactions['block']);
   }
   if (isset($data['language_switcher'])) {
+    $data['language_switcher']->conditions['context']['values']['news_list'] = 'news_list'; /* WAS: '' */
+    $data['language_switcher']->conditions['context']['values']['person_list'] = 'person_list'; /* WAS: '' */
     $data['language_switcher']->conditions['context']['values']['visitpori_domain'] = 'visitpori_domain'; /* WAS: '' */
     $data['language_switcher']->reactions['block']['blocks']['locale-language']['region'] = 'branding'; /* WAS: 'navigation' */
     $data['language_switcher']->reactions['block']['blocks']['locale-language']['weight'] = -10; /* WAS: -50 */
+  }
+  if (isset($data['main_menu'])) {
+    $data['main_menu']->conditions['context']['values']['news_list'] = 'news_list'; /* WAS: '' */
+    $data['main_menu']->conditions['context']['values']['person_list'] = 'person_list'; /* WAS: '' */
   }
   if (isset($data['sitewide_en'])) {
     $data['sitewide_en']->reactions['block']['blocks']['block-1']['weight'] = -40; /* WAS: -10 */
   }
   if (isset($data['sitewide_fi'])) {
     $data['sitewide_fi']->reactions['block']['blocks']['block-2']['weight'] = -40; /* WAS: -10 */
+  }
+  if (isset($data['top_menu'])) {
+    $data['top_menu']->conditions['context']['values']['news_list'] = 'news_list'; /* WAS: '' */
+    $data['top_menu']->conditions['context']['values']['person_list'] = 'person_list'; /* WAS: '' */
   }
 }
 
@@ -59,16 +73,6 @@ function pori_configuration_overrides_feature_ds_layout_settings_info_alter(&$da
 }
 
 /**
- * Implements hook_field_group_info_alter().
- */
-function pori_configuration_overrides_feature_field_group_info_alter(&$data)
-{
-  if (isset($data['group_additional_information|node|page|form'])) {
-    $data['group_additional_information|node|page|form']->data['children'][2] = 'field_contact_person'; /* WAS: '' */
-  }
-}
-
-/**
  * Implements hook_field_default_field_bases_alter().
  */
 function pori_configuration_overrides_feature_field_default_field_bases_alter(&$data) {
@@ -77,6 +81,15 @@ function pori_configuration_overrides_feature_field_default_field_bases_alter(&$
   }
   if (isset($data['field_icon'])) {
     unset($data['field_icon']);
+  }
+}
+
+/**
+ * Implements hook_field_group_info_alter().
+ */
+function pori_configuration_overrides_feature_field_group_info_alter(&$data) {
+  if (isset($data['group_additional_information|node|page|form'])) {
+    $data['group_additional_information|node|page|form']->data['children'][2] = 'field_contact_person'; /* WAS: '' */
   }
 }
 
@@ -93,8 +106,13 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_account_name']['display']['person_card'] = array(
       'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
+      'module' => 'title',
+      'settings' => array(
+        'title_class' => '',
+        'title_link' => '',
+        'title_style' => '',
+      ),
+      'type' => 'title_linked',
       'weight' => 11,
     ); /* WAS: '' */
   }
@@ -108,8 +126,12 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_assistant']['display']['person_card'] = array(
       'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
+      'module' => 'entityreference',
+      'settings' => array(
+        'bypass_access' => FALSE,
+        'link' => FALSE,
+      ),
+      'type' => 'entityreference_label',
       'weight' => 26,
     ); /* WAS: '' */
   }
@@ -167,8 +189,13 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_first_name']['display']['person_card'] = array(
       'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
+      'module' => 'title',
+      'settings' => array(
+        'title_class' => '',
+        'title_link' => '',
+        'title_style' => '',
+      ),
+      'type' => 'title_linked',
       'weight' => 38,
     ); /* WAS: '' */
   }
@@ -211,8 +238,13 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_municipality']['display']['person_card'] = array(
       'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
+      'module' => 'title',
+      'settings' => array(
+        'title_class' => '',
+        'title_link' => '',
+        'title_style' => '',
+      ),
+      'type' => 'title_linked',
       'weight' => 37,
     ); /* WAS: '' */
   }
@@ -240,8 +272,12 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_person_image']['display']['person_card'] = array(
       'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
+      'module' => 'atom_reference',
+      'settings' => array(
+        'link' => 0,
+        'override' => 0,
+      ),
+      'type' => 'title',
       'weight' => 36,
     ); /* WAS: '' */
   }
@@ -254,8 +290,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_person_type']['display']['person_card'] = array(
       'label' => 'above',
+      'module' => 'i18n_field',
       'settings' => array(),
-      'type' => 'hidden',
+      'type' => 'i18n_list_default',
       'weight' => 35,
     ); /* WAS: '' */
   }
@@ -300,8 +337,12 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_political_party']['display']['person_card'] = array(
       'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
+      'module' => 'entityreference',
+      'settings' => array(
+        'bypass_access' => FALSE,
+        'link' => FALSE,
+      ),
+      'type' => 'entityreference_label',
       'weight' => 34,
     ); /* WAS: '' */
     $data['node-person-field_political_party']['display']['teaser']['settings']['bypass_access'] = FALSE; /* WAS: '' */
@@ -315,8 +356,13 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_postal_code']['display']['person_card'] = array(
       'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
+      'module' => 'title',
+      'settings' => array(
+        'title_class' => '',
+        'title_link' => '',
+        'title_style' => '',
+      ),
+      'type' => 'title_linked',
       'weight' => 33,
     ); /* WAS: '' */
   }
@@ -344,8 +390,13 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_street_address']['display']['person_card'] = array(
       'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
+      'module' => 'title',
+      'settings' => array(
+        'title_class' => '',
+        'title_link' => '',
+        'title_style' => '',
+      ),
+      'type' => 'title_linked',
       'weight' => 32,
     ); /* WAS: '' */
   }
@@ -359,8 +410,12 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_superior']['display']['person_card'] = array(
       'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
+      'module' => 'entityreference',
+      'settings' => array(
+        'bypass_access' => FALSE,
+        'link' => FALSE,
+      ),
+      'type' => 'entityreference_label',
       'weight' => 31,
     ); /* WAS: '' */
   }
@@ -373,8 +428,13 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_surname']['display']['person_card'] = array(
       'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
+      'module' => 'title',
+      'settings' => array(
+        'title_class' => '',
+        'title_link' => '',
+        'title_style' => '',
+      ),
+      'type' => 'title_linked',
       'weight' => 30,
     ); /* WAS: '' */
   }
@@ -387,8 +447,13 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_task_description']['display']['person_card'] = array(
       'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
+      'module' => 'title',
+      'settings' => array(
+        'title_class' => '',
+        'title_link' => '',
+        'title_style' => '',
+      ),
+      'type' => 'title_linked',
       'weight' => 29,
     ); /* WAS: '' */
   }
@@ -416,8 +481,13 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-title_field']['display']['person_card'] = array(
       'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
+      'module' => 'title',
+      'settings' => array(
+        'title_class' => '',
+        'title_link' => '',
+        'title_style' => '',
+      ),
+      'type' => 'title_linked',
       'weight' => 28,
     ); /* WAS: '' */
   }
@@ -468,7 +538,7 @@ function pori_configuration_overrides_feature_strongarm_alter(&$data) {
   if (isset($data['field_bundle_settings_node__person'])) {
     $data['field_bundle_settings_node__person']->value['extra_fields']['display']['domain']['person_card'] = array(
       'weight' => 40,
-      'visible' => FALSE,
+      'visible' => TRUE,
     ); /* WAS: '' */
     $data['field_bundle_settings_node__person']->value['view_modes']['attraction_card_mosaic_item'] = array(
       'custom_settings' => FALSE,
