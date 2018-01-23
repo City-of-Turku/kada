@@ -254,3 +254,14 @@ function kadaprofile_update_7119() {
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables domain configuration module
+ */
+function kadaprofile_update_7120() {
+  $modules = array('domain_conf');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}
