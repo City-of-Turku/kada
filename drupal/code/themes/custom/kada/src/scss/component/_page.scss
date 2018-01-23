@@ -18,15 +18,6 @@
   overflow: auto;
 }
 
-// First sidebar needs to be hidden on majority of pages when browsing on mobile
-.l-region--sidebar-first {
-  display: none;
-
-  @media screen and (min-width: $tablet-portrait) {
-    display: block;
-  }
-}
-
 .l-content__wrapper {
   overflow: hidden;
 }

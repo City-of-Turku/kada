@@ -1181,6 +1181,17 @@
     }
   };
 
+  // Person card list filters mobile toggle
+  Drupal.behaviors.poriPhoneBookFilters = {
+    attach: function (context) {
+      $('.person-card-list__filters .views-widget-filter-secondary', context).once('phone-book-filters', function () {
+        $(this).find('.form-item > label').click(function () {
+          $(this).parent().toggleClass('open');
+        });
+      });
+    }
+  };
+
   // Accessibility description toggle
   Drupal.behaviors.accessibilityDescriptionToggle = {
     attach: function (context) {
