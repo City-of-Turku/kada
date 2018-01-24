@@ -16,6 +16,7 @@ stylesheets[all][] = dist/css/styles.css
 ; ========================================
 scripts[] = dist/js/kada.behaviors.min.js
 scripts[] = js_libraries/slick/slick.min.js
+scripts[] = bower_components/jquery-hoverintent/jquery.hoverIntent.js
 
 ; ========================================
 ; Regions

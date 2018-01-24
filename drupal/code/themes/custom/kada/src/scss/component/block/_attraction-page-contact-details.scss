@@ -40,7 +40,7 @@
   }
 
   .field {
-    border-bottom: 1px solid $default-color-light;
+    border-top: 1px solid $default-color-light;
     font-family: $bergen-mono;
     font-size: .9rem;
     padding: 1.25rem 0.5rem 1.25rem 3.75rem;
@@ -48,8 +48,8 @@
     text-align: right;
     text-transform: uppercase;
 
-    &:last-child {
-      border-bottom: 0 none;
+    &:first-of-type {
+      border-top: 0 none;
     }
 
     &::before {
@@ -117,5 +117,26 @@
 
   .field--name-field-accessibility-ref {
     padding-left: 1.25rem;
+  }
+
+  .field--type-ds {
+    border-top: 0 none;
+    padding: 1.25rem 0;
+    text-align: left;
+
+    @media screen and (min-width: $desktop-narrow) {
+      padding: 1.25rem 0 0;
+    }
+
+    a {
+      color: $secondary-color;
+      font-family: $bergen-mono;
+      font-size: 1.125rem;
+
+      &:hover {
+        background-color: $secondary-color;
+        color: $white;
+      }
+    }
   }
 }

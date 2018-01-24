@@ -1,0 +1,64 @@
+.page__contact-information {
+  background-color: $gray-lighter;
+  margin: 3.15rem 0 0;
+  padding: 0;
+
+  @media screen and (min-width: $desktop) {
+    margin: 0;
+  }
+
+  > .field {
+    margin: 0;
+    padding: 1.25rem 1.875rem;
+
+    .field__item {
+      margin-bottom:  2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .field {
+      margin-bottom: .8rem;
+    }
+
+    .field--name-person-full-name {
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+
+    .field--name-field-visiting-address,
+    .field--name-field-email-single,
+    .field--name-field-mobile-phone-work,
+    .field--name-field-phone,
+    .field--name-field-phone-switch,
+    .field--name-field-fax-number {
+      margin-bottom: 0;
+    }
+  }
+
+  .field--label-inline {
+    .field__label {
+      font-weight: normal;
+      margin: 0;
+      padding: 0;
+      width: auto;
+    }
+
+    .field__items {
+      margin: 0;
+    }
+  }
+}
+
+.page__contact-information__header {
+  background-color: $yellow;
+  font-weight: normal;
+  margin: 0;
+  padding: 1.25rem;
+
+  @media screen and (min-width: $desktop) {
+    padding: 1.25rem 1.875rem;
+  }
+}
