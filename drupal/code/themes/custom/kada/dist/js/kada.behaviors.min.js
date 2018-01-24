@@ -1204,4 +1204,51 @@
     }
   };
 
+  Drupal.behaviors.headerSearchFieldToggle = {
+    attach: function (context) {
+      $('.l-region--branding .block--views-exp-main-search-page', context).once('searchToggle', function () {
+        var $searchField = $(this).find('.main-search__search-field');
+        var $searchButton = $(this).find('.main-search__search-button');
+        var $searchFieldInput = $searchField.find('input[name="search_api_views_fulltext"]');
+        var $searchToggler = $(this).find('.main-search__search-button--toggler');
+
+        $searchFieldInput.attr('placeholder', Drupal.t('Search'));
+
+        var toggleVisibility = function (element) {
+          if (element.hasClass('is-active')) {
+            element.removeClass('is-active');
+          } else {
+            element.addClass('is-active');
+          }
+        };
+
+        $searchToggler.on('click', function(e) {
+          e.stopPropagation();
+          toggleVisibility($searchField);
+          toggleVisibility($searchButton);
+          toggleVisibility($searchToggler);
+        });
+
+        $searchField.click(function (e) {
+          e.stopPropagation();
+        });
+        
+        $searchButton.click(function (e) {
+          e.stopPropagation();
+        });
+
+        $('html').click(function () {
+          if ($searchField.hasClass('is-active')) {
+            $searchField.removeClass('is-active');
+          }
+          if ($searchButton.hasClass('is-active')) {
+            $searchButton.removeClass('is-active');
+            $searchToggler.addClass('is-active');
+          }
+        });
+
+      });
+    }
+  };
+
 })(jQuery);

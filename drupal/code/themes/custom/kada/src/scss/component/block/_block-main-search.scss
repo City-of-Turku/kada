@@ -1,0 +1,138 @@
+.main-search {
+  display: flex;
+  position: relative;
+
+  @media screen and (max-width: $mobile-landscape-narrow) {
+    border-left: 1px solid $gray-light;
+    font-size: 1.1rem;
+    line-height: 3.125rem;
+    padding-left: 1.675rem;
+    height: 3.125rem;
+    width: 4.075rem;
+  }
+
+  .views-exposed-widgets {
+    align-items: center;
+    display: flex;
+    margin: 0;
+  }
+}
+
+.views-exposed-form .views-exposed-widget.main-search--wrapper {
+  @media screen and (max-width: $tablet-portrait-narrow) {
+    padding: 0;
+  }
+}
+
+.main-search--wrapper {
+  @media screen and (max-width: $tablet-portrait-narrow) {
+    background: white;
+    left: -50%;
+    top: 48px;
+    padding: 0;
+    position: relative;
+    width: 100vw;
+    z-index: 999;
+  }
+}
+
+.main-search__search-field {
+  display: none;
+
+  &.is-active {
+    display: block;
+  }
+
+  .form-text {
+    background: none;
+    border: 1px solid $gray;
+    line-height: 1.95rem;
+    padding-left: .25rem;
+  }
+}
+
+.views-exposed-widget.main-search__search-button {
+  background-color: transparent;
+  border: 0;
+  content: "";
+  display: none;
+  font-size: 0;
+  height: 1.863rem;
+  margin: 0;
+  position: absolute;
+  right: 1.288rem;
+  top: .825rem;
+  width: 1.863rem;
+  z-index: 1;
+
+  &.is-active {
+    display: block;
+  }
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+
+  &::before {
+    @include fa('\f002', 1.1rem, 1, false);
+    color: $black;
+    display: block;
+    height: 1.863rem;
+    line-height: 1.65rem;
+    right: 1.288rem;
+    text-align: center;
+    top: 0.825rem;
+    width: 1.863rem;
+    z-index: 2;
+  }
+
+  .form-autocomplete,
+  .form-submit {
+    background: transparent;
+    border: 0;
+    height: 1.863rem;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1.863rem;
+  }
+}
+
+.main-search__search-button--toggler {
+  background-color: transparent;
+  border: 0;
+  content: "";
+  display: none;
+  font-size: 0;
+  height: 1.863rem;
+  margin: 0;
+  position: absolute;
+  right: 1.288rem;
+  top: .825rem;
+  width: 1.863rem;
+  z-index: 1;
+  
+  &.is-active {
+    display: block;
+  }
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+
+  &::before {
+    @include fa('\f002', 1.1rem, 1, false);
+    color: $black;
+    display: block;
+    height: 1.863rem;
+    line-height: 1.65rem;
+    right: 1.288rem;
+    text-align: center;
+    top: 0.825rem;
+    width: 1.863rem;
+    z-index: 2;
+  }
+}
