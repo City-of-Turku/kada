@@ -1204,6 +1204,17 @@
     }
   };
 
+  Drupal.behaviors.searchFieldPlaceholder = {
+    attach: function (context) {
+      $('.block--views-exp-main-search-page', context).once('searchFieldPlaceholder', function () {
+        var $searchField = $(this).find('.main-search__search-field');
+        var $searchFieldInput = $searchField.find('input[name="search_api_views_fulltext"]');
+
+        $searchFieldInput.attr('placeholder', Drupal.t('Search'));
+      });
+    }
+  };
+
   Drupal.behaviors.headerSearchFieldToggle = {
     attach: function (context) {
       $('.l-region--branding .block--views-exp-main-search-page', context).once('searchToggle', function () {
@@ -1232,7 +1243,7 @@
         $searchField.click(function (e) {
           e.stopPropagation();
         });
-        
+
         $searchButton.click(function (e) {
           e.stopPropagation();
         });

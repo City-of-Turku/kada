@@ -43,6 +43,6 @@
     <div class="views-exposed-widget views-submit-button main-search__search-button">
       <?php print $button; ?>
     </div>
-    <span class="main-search__search-button--toggler is-active">Toggle</span>
+    <span class="main-search__search-button--toggler is-active"></span>
   </div>
 </div>

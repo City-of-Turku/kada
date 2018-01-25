@@ -12,7 +12,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides = array();
 
   // Exported overrides for: context
+  $overrides["context.footer_menu.conditions|context|values|search_page"] = 'search_page';
   $overrides["context.footer_navigation.reactions|block"]["DELETED"] = TRUE;
+  $overrides["context.language_switcher.conditions|context|values|search_page"] = 'search_page';
   $overrides["context.language_switcher.conditions|context|values|visitpori_domain"] = 'visitpori_domain';
   $overrides["context.language_switcher.reactions|block|blocks|locale-language|region"] = 'branding';
   $overrides["context.language_switcher.reactions|block|blocks|locale-language|weight"] = -9;
@@ -22,8 +24,10 @@ function pori_configuration_overrides_feature_features_override_default_override
     'region' => 'branding',
     'weight' => -10,
   );
+  $overrides["context.main_menu.conditions|context|values|search_page"] = 'search_page';
   $overrides["context.sitewide_en.reactions|block|blocks|block-1|weight"] = -40;
   $overrides["context.sitewide_fi.reactions|block|blocks|block-2|weight"] = -40;
+  $overrides["context.top_menu.conditions|context|values|search_page"] = 'search_page';
 
   // Exported overrides for: ds_field_settings
   $overrides["ds_field_settings.node|page|default.settings|places_for_services|weight"] = 5;

@@ -1,12 +1,16 @@
 name = Pori search
 description = Provides solr search server, index and view
 core = 7.x
-package = Features
+package = Pori
 version = 7.x-1.0
 dependencies[] = better_exposed_filters
+dependencies[] = context
 dependencies[] = search_api_live_results
 dependencies[] = search_api_solr
 dependencies[] = search_api_views
+features[context][] = search_page
+features[context][] = search_page_visitpori
+features[ctools][] = context:context:3
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[search_api_index][] = pori_search_index

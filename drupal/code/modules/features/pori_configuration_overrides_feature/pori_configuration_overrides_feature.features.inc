@@ -8,10 +8,14 @@
  * Implements hook_context_default_contexts_alter().
  */
 function pori_configuration_overrides_feature_context_default_contexts_alter(&$data) {
+  if (isset($data['footer_menu'])) {
+    $data['footer_menu']->conditions['context']['values']['search_page'] = 'search_page'; /* WAS: '' */
+  }
   if (isset($data['footer_navigation'])) {
     unset($data['footer_navigation']->reactions['block']);
   }
   if (isset($data['language_switcher'])) {
+    $data['language_switcher']->conditions['context']['values']['search_page'] = 'search_page'; /* WAS: '' */
     $data['language_switcher']->conditions['context']['values']['visitpori_domain'] = 'visitpori_domain'; /* WAS: '' */
     $data['language_switcher']->reactions['block']['blocks']['locale-language']['region'] = 'branding'; /* WAS: 'navigation' */
     $data['language_switcher']->reactions['block']['blocks']['locale-language']['weight'] = -9; /* WAS: -50 */
@@ -22,11 +26,17 @@ function pori_configuration_overrides_feature_context_default_contexts_alter(&$d
       'weight' => -10,
     ); /* WAS: '' */
   }
+  if (isset($data['main_menu'])) {
+    $data['main_menu']->conditions['context']['values']['search_page'] = 'search_page'; /* WAS: '' */
+  }
   if (isset($data['sitewide_en'])) {
     $data['sitewide_en']->reactions['block']['blocks']['block-1']['weight'] = -40; /* WAS: -10 */
   }
   if (isset($data['sitewide_fi'])) {
     $data['sitewide_fi']->reactions['block']['blocks']['block-2']['weight'] = -40; /* WAS: -10 */
+  }
+  if (isset($data['top_menu'])) {
+    $data['top_menu']->conditions['context']['values']['search_page'] = 'search_page'; /* WAS: '' */
   }
 }
 
