@@ -12,28 +12,6 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['facetapi-cMwsPXznsAZ7VDZZpoaIr9vsWZizbGQr'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 'cMwsPXznsAZ7VDZZpoaIr9vsWZizbGQr',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 1,
-    'module' => 'facetapi',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'driveturku' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'driveturku',
-        'weight' => 0,
-      ),
-    ),
-    'title' => 'Target audience',
-    'visibility' => 0,
-  );
-
   $export['facetapi-0lEuNux6M1oXX3pdFry4zLKh063yqBpi'] = array(
     'cache' => -1,
     'custom' => 0,
@@ -78,10 +56,10 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['facetapi-UpCC8TVrmAOs2e6sNmpTxPNZ5bzi1jH0'] = array(
+  $export['facetapi-2AmdxOeSX0L5N16qTKENjaTbN0ySOZuv'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'UpCC8TVrmAOs2e6sNmpTxPNZ5bzi1jH0',
+    'delta' => '2AmdxOeSX0L5N16qTKENjaTbN0ySOZuv',
     'i18n_block_language' => array(),
     'i18n_mode' => 1,
     'module' => 'facetapi',
@@ -96,29 +74,7 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Trust unit',
-    'visibility' => 0,
-  );
-
-  $export['facetapi-xQRvOUXBEEVXc3KpSNceDfMoo00PGDgZ'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 'xQRvOUXBEEVXc3KpSNceDfMoo00PGDgZ',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 1,
-    'module' => 'facetapi',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'driveturku' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'driveturku',
-        'weight' => 0,
-      ),
-    ),
-    'title' => 'Theme',
+    'title' => 'Content type',
     'visibility' => 0,
   );
 
@@ -144,10 +100,10 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['facetapi-t84YRB8UFR7abmT4tr9D99hD3xtR48d7'] = array(
+  $export['facetapi-OuCL4ccSIk7lHpstP6zp1Vtxj1A1uEDX'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 't84YRB8UFR7abmT4tr9D99hD3xtR48d7',
+    'delta' => 'OuCL4ccSIk7lHpstP6zp1Vtxj1A1uEDX',
     'i18n_block_language' => array(),
     'i18n_mode' => 1,
     'module' => 'facetapi',
@@ -162,7 +118,51 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Trustee role',
+    'title' => 'District',
+    'visibility' => 0,
+  );
+
+  $export['facetapi-UpCC8TVrmAOs2e6sNmpTxPNZ5bzi1jH0'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'UpCC8TVrmAOs2e6sNmpTxPNZ5bzi1jH0',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 1,
+    'module' => 'facetapi',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'driveturku' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'driveturku',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Trust unit',
+    'visibility' => 0,
+  );
+
+  $export['facetapi-Z0IqJyWDd1CrBjjMlhK9eUjBEPiMjp12'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'Z0IqJyWDd1CrBjjMlhK9eUjBEPiMjp12',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 1,
+    'module' => 'facetapi',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'driveturku' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'driveturku',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Office',
     'visibility' => 0,
   );
 
@@ -210,10 +210,10 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['facetapi-Z0IqJyWDd1CrBjjMlhK9eUjBEPiMjp12'] = array(
+  $export['facetapi-cMwsPXznsAZ7VDZZpoaIr9vsWZizbGQr'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'Z0IqJyWDd1CrBjjMlhK9eUjBEPiMjp12',
+    'delta' => 'cMwsPXznsAZ7VDZZpoaIr9vsWZizbGQr',
     'i18n_block_language' => array(),
     'i18n_mode' => 1,
     'module' => 'facetapi',
@@ -228,29 +228,7 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Office',
-    'visibility' => 0,
-  );
-
-  $export['facetapi-2AmdxOeSX0L5N16qTKENjaTbN0ySOZuv'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => '2AmdxOeSX0L5N16qTKENjaTbN0ySOZuv',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 1,
-    'module' => 'facetapi',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'driveturku' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'driveturku',
-        'weight' => 0,
-      ),
-    ),
-    'title' => 'Content type',
+    'title' => 'Target audience',
     'visibility' => 0,
   );
 
@@ -276,10 +254,10 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['facetapi-OuCL4ccSIk7lHpstP6zp1Vtxj1A1uEDX'] = array(
+  $export['facetapi-t84YRB8UFR7abmT4tr9D99hD3xtR48d7'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'OuCL4ccSIk7lHpstP6zp1Vtxj1A1uEDX',
+    'delta' => 't84YRB8UFR7abmT4tr9D99hD3xtR48d7',
     'i18n_block_language' => array(),
     'i18n_mode' => 1,
     'module' => 'facetapi',
@@ -294,7 +272,29 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'District',
+    'title' => 'Trustee role',
+    'visibility' => 0,
+  );
+
+  $export['facetapi-xQRvOUXBEEVXc3KpSNceDfMoo00PGDgZ'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'xQRvOUXBEEVXc3KpSNceDfMoo00PGDgZ',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 1,
+    'module' => 'facetapi',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'driveturku' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'driveturku',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Theme',
     'visibility' => 0,
   );
 
