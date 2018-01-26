@@ -34,10 +34,10 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['facetapi-0t0SuUKYizFIfts1wXrfb6KqmIlp0M0M'] = array(
+  $export['facetapi-0lEuNux6M1oXX3pdFry4zLKh063yqBpi'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => '0t0SuUKYizFIfts1wXrfb6KqmIlp0M0M',
+    'delta' => '0lEuNux6M1oXX3pdFry4zLKh063yqBpi',
     'i18n_block_language' => array(),
     'i18n_mode' => 1,
     'module' => 'facetapi',
