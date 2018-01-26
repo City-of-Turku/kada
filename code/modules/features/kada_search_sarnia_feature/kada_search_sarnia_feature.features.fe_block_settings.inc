@@ -232,10 +232,10 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['facetapi-gCaNxOpBvu1IWZDOYz4uirEY8a3baT5g'] = array(
+  $export['facetapi-2AmdxOeSX0L5N16qTKENjaTbN0ySOZuv'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'gCaNxOpBvu1IWZDOYz4uirEY8a3baT5g',
+    'delta' => '2AmdxOeSX0L5N16qTKENjaTbN0ySOZuv',
     'i18n_block_language' => array(),
     'i18n_mode' => 1,
     'module' => 'facetapi',
