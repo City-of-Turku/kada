@@ -12,32 +12,10 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
 
   $export['version'] = '2.0';
 
-  $export['facetapi-0AdjKserTTHurZtXj6amCOBCi5pVjcWF'] = array(
+  $export['facetapi-0lEuNux6M1oXX3pdFry4zLKh063yqBpi'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => '0AdjKserTTHurZtXj6amCOBCi5pVjcWF',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 1,
-    'module' => 'facetapi',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'driveturku' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'driveturku',
-        'weight' => 0,
-      ),
-    ),
-    'title' => 'Target audience',
-    'visibility' => 0,
-  );
-
-  $export['facetapi-0t0SuUKYizFIfts1wXrfb6KqmIlp0M0M'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => '0t0SuUKYizFIfts1wXrfb6KqmIlp0M0M',
+    'delta' => '0lEuNux6M1oXX3pdFry4zLKh063yqBpi',
     'i18n_block_language' => array(),
     'i18n_mode' => 1,
     'module' => 'facetapi',
@@ -78,10 +56,10 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['facetapi-ASqkJdjFiClTBQ07KghIjDnaoUYibq2M'] = array(
+  $export['facetapi-2AmdxOeSX0L5N16qTKENjaTbN0ySOZuv'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'ASqkJdjFiClTBQ07KghIjDnaoUYibq2M',
+    'delta' => '2AmdxOeSX0L5N16qTKENjaTbN0ySOZuv',
     'i18n_block_language' => array(),
     'i18n_mode' => 1,
     'module' => 'facetapi',
@@ -96,36 +74,14 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Trust unit',
+    'title' => 'Content type',
     'visibility' => 0,
   );
 
-  $export['facetapi-FLIUonjzGb4Cz0rP9GrLAGm131JfWNL4'] = array(
+  $export['facetapi-4NAghk57O0P66Ye2hIHX2SJLyb6tQIGc'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'FLIUonjzGb4Cz0rP9GrLAGm131JfWNL4',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 1,
-    'module' => 'facetapi',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'driveturku' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'driveturku',
-        'weight' => 0,
-      ),
-    ),
-    'title' => 'Theme',
-    'visibility' => 0,
-  );
-
-  $export['facetapi-Ndg0Igw4DFDJFmxarh3ljMkIfi3yhP1S'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 'Ndg0Igw4DFDJFmxarh3ljMkIfi3yhP1S',
+    'delta' => '4NAghk57O0P66Ye2hIHX2SJLyb6tQIGc',
     'i18n_block_language' => array(),
     'i18n_mode' => 1,
     'module' => 'facetapi',
@@ -144,10 +100,10 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['facetapi-XYzZrD919J04ICfxOPB4I1dKxVzxNdVL'] = array(
+  $export['facetapi-OuCL4ccSIk7lHpstP6zp1Vtxj1A1uEDX'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'XYzZrD919J04ICfxOPB4I1dKxVzxNdVL',
+    'delta' => 'OuCL4ccSIk7lHpstP6zp1Vtxj1A1uEDX',
     'i18n_block_language' => array(),
     'i18n_mode' => 1,
     'module' => 'facetapi',
@@ -162,14 +118,14 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Trustee role',
+    'title' => 'District',
     'visibility' => 0,
   );
 
-  $export['facetapi-bpnqf31FRfM0esndl5eXGgEDO7s0rWmH'] = array(
+  $export['facetapi-UpCC8TVrmAOs2e6sNmpTxPNZ5bzi1jH0'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'bpnqf31FRfM0esndl5eXGgEDO7s0rWmH',
+    'delta' => 'UpCC8TVrmAOs2e6sNmpTxPNZ5bzi1jH0',
     'i18n_block_language' => array(),
     'i18n_mode' => 1,
     'module' => 'facetapi',
@@ -184,36 +140,14 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Person type',
+    'title' => 'Trust unit',
     'visibility' => 0,
   );
 
-  $export['facetapi-cop7LpTV281IEUEE0NELoolZFPYyVt1z'] = array(
+  $export['facetapi-Z0IqJyWDd1CrBjjMlhK9eUjBEPiMjp12'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'cop7LpTV281IEUEE0NELoolZFPYyVt1z',
-    'i18n_block_language' => array(),
-    'i18n_mode' => 1,
-    'module' => 'facetapi',
-    'node_types' => array(),
-    'pages' => '',
-    'roles' => array(),
-    'themes' => array(
-      'driveturku' => array(
-        'region' => '',
-        'status' => 0,
-        'theme' => 'driveturku',
-        'weight' => 0,
-      ),
-    ),
-    'title' => 'Service classification',
-    'visibility' => 0,
-  );
-
-  $export['facetapi-epXmZsYsgIG9bD71dFoJJ9oawhJuy0DO'] = array(
-    'cache' => -1,
-    'custom' => 0,
-    'delta' => 'epXmZsYsgIG9bD71dFoJJ9oawhJuy0DO',
+    'delta' => 'Z0IqJyWDd1CrBjjMlhK9eUjBEPiMjp12',
     'i18n_block_language' => array(),
     'i18n_mode' => 1,
     'module' => 'facetapi',
@@ -232,10 +166,10 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['facetapi-gCaNxOpBvu1IWZDOYz4uirEY8a3baT5g'] = array(
+  $export['facetapi-asBdHYN0cOdtQdzq6gQpc927NjR9hsv9'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'gCaNxOpBvu1IWZDOYz4uirEY8a3baT5g',
+    'delta' => 'asBdHYN0cOdtQdzq6gQpc927NjR9hsv9',
     'i18n_block_language' => array(),
     'i18n_mode' => 1,
     'module' => 'facetapi',
@@ -250,7 +184,51 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Content type',
+    'title' => 'Person type',
+    'visibility' => 0,
+  );
+
+  $export['facetapi-bWSgWc57tbijlPv0Cry02JyPmhOf6VsP'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'bWSgWc57tbijlPv0Cry02JyPmhOf6VsP',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 1,
+    'module' => 'facetapi',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'driveturku' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'driveturku',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Service classification',
+    'visibility' => 0,
+  );
+
+  $export['facetapi-cMwsPXznsAZ7VDZZpoaIr9vsWZizbGQr'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'cMwsPXznsAZ7VDZZpoaIr9vsWZizbGQr',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 1,
+    'module' => 'facetapi',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'driveturku' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'driveturku',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Target audience',
     'visibility' => 0,
   );
 
@@ -276,10 +254,10 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['facetapi-mVpXCCwxR7I4QhgoBlHUpAIf1rNeXEbf'] = array(
+  $export['facetapi-t84YRB8UFR7abmT4tr9D99hD3xtR48d7'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 'mVpXCCwxR7I4QhgoBlHUpAIf1rNeXEbf',
+    'delta' => 't84YRB8UFR7abmT4tr9D99hD3xtR48d7',
     'i18n_block_language' => array(),
     'i18n_mode' => 1,
     'module' => 'facetapi',
@@ -294,7 +272,29 @@ function kada_search_sarnia_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'District',
+    'title' => 'Trustee role',
+    'visibility' => 0,
+  );
+
+  $export['facetapi-xQRvOUXBEEVXc3KpSNceDfMoo00PGDgZ'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'xQRvOUXBEEVXc3KpSNceDfMoo00PGDgZ',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 1,
+    'module' => 'facetapi',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'driveturku' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'driveturku',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Theme',
     'visibility' => 0,
   );
 
