@@ -99,9 +99,9 @@ function kada_search_sarnia_feature_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '0',
         ),
-        'facetapi-Ndg0Igw4DFDJFmxarh3ljMkIfi3yhP1S' => array(
+        'facetapi-4NAghk57O0P66Ye2hIHX2SJLyb6tQIGc' => array(
           'module' => 'facetapi',
-          'delta' => 'Ndg0Igw4DFDJFmxarh3ljMkIfi3yhP1S',
+          'delta' => '4NAghk57O0P66Ye2hIHX2SJLyb6tQIGc',
           'region' => 'sidebar_first',
           'weight' => '1',
         ),
