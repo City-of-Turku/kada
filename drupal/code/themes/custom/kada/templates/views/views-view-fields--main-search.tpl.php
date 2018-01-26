@@ -23,9 +23,10 @@
  *
  * @ingroup views_templates
  */
-//var_dump($fields);
 ?>
-<div class="search-result--container">
+<div class="search-result--container search-result--<?php print $row->_entity_properties['#attributes']['class']['page']; ?>
+      theme-color-<?php print $row->_entity_properties['#attributes']['class']['theme']; ?>
+      theme-visit-color-<?php print $row->_entity_properties['#attributes']['class']['visit_theme']; ?>">
   <div class="search-result__information">
     <?php print $fields['created']->content; ?>
     <span class="search-result__information__divider">|</span>

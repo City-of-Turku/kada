@@ -23,6 +23,7 @@ function pori_search_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['css_class'] = 'search-results-page';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -113,6 +114,28 @@ function pori_search_views_default_views() {
   $handler->display->display_options['fields']['field_lead_paragraph_et']['settings'] = array(
     'trim_length' => '400',
   );
+  /* Field: Indexed Node: Visitpori theme */
+  $handler->display->display_options['fields']['field_visitpori_theme']['id'] = 'field_visitpori_theme';
+  $handler->display->display_options['fields']['field_visitpori_theme']['table'] = 'search_api_index_pori_search_index';
+  $handler->display->display_options['fields']['field_visitpori_theme']['field'] = 'field_visitpori_theme';
+  $handler->display->display_options['fields']['field_visitpori_theme']['label'] = '';
+  $handler->display->display_options['fields']['field_visitpori_theme']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_visitpori_theme']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_visitpori_theme']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_visitpori_theme']['display'] = 'view';
+  $handler->display->display_options['fields']['field_visitpori_theme']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_visitpori_theme']['bypass_access'] = 0;
+  /* Field: Indexed Node: Theme */
+  $handler->display->display_options['fields']['field_theme']['id'] = 'field_theme';
+  $handler->display->display_options['fields']['field_theme']['table'] = 'search_api_index_pori_search_index';
+  $handler->display->display_options['fields']['field_theme']['field'] = 'field_theme';
+  $handler->display->display_options['fields']['field_theme']['label'] = '';
+  $handler->display->display_options['fields']['field_theme']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_theme']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_theme']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_theme']['display'] = 'view';
+  $handler->display->display_options['fields']['field_theme']['view_mode'] = 'token';
+  $handler->display->display_options['fields']['field_theme']['bypass_access'] = 0;
   /* Filter criterion: Search: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_pori_search_index';
