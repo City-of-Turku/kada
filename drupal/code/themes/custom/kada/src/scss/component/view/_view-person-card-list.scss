@@ -159,7 +159,7 @@
       width: 3.125rem;
       z-index: 2;
 
-      @media screen and (min-width: $mobile-landscape-wide) {
+      @media screen and (min-width: $mobile-menu-breakpoint) {
         top: 2.5rem + .063rem;
       }
 
@@ -185,7 +185,7 @@
         background-color: transparent;
         border: 0 none;
         color: $white;
-        height: 2.625rem;
+        height: 2.6rem;
         margin: 0;
         padding: 0;
         position: relative;
