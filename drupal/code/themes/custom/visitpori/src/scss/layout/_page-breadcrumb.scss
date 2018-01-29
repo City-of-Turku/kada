@@ -1,5 +1,7 @@
 .l-breadcrumb {
-  padding: 2rem 0;
+  @include responsive-whitespace;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
 }
 
 // Hide breadcrumb on landing-page. TODO: Find a better way to do this.
