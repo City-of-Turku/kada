@@ -126,6 +126,14 @@
           <div class="content__wrapper content-wrapper">
         <?php endif; ?>
 
+        <?php if ($title && !$is_front): ?>
+          <?php print render($title_prefix); ?>
+            <header class="content__header content-header">
+                <h1 class="content-header__title"><?php print $title; ?></h1>
+            </header>
+          <?php print render($title_suffix); ?>
+        <?php endif; ?>
+
         <?php if($page['sidebar_first']): ?>
           <aside id="sidebar-first" class="sidebar sidebar--first">
             <?php print render($page['sidebar_first']); ?>
@@ -141,13 +149,6 @@
         <?php endif;  ?>
 
         <section class="section section--content">
-          <?php if ($title && !$is_front): ?>
-            <?php print render($title_prefix); ?>
-            <header class="content__header content-header">
-              <h1 class="content-header__title"><?php print $title; ?></h1>
-            </header>
-            <?php print render($title_suffix); ?>
-          <?php endif; ?>
           <?php print render($page['content']); ?>
           <?php print $feed_icons; ?>
         </section>
