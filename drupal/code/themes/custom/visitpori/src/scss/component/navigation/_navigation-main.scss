@@ -85,7 +85,7 @@
         z-index: 100;
       }
 
-      &:hover {
+      &.menu__item--hover {
         > .menu {
           display: block;
         }
@@ -132,7 +132,7 @@
         }
       }
 
-      &:hover {
+      &.menu__item--hover {
 
         > a {
           color: $white;
@@ -158,7 +158,7 @@
           width: 1.563rem;
         }
 
-        &:hover {
+        &.menu__item--hover {
           > a::before {
             background-color: $white;
             background-image: url('../../dist/image/minus-icon.svg');
