@@ -282,7 +282,7 @@
       $('.l-navigation-top ul.menu', context).once('top-menu-mobile', function () {
         $(this).find('.menu__item').each(function () {
           var $thisMenuItem = $(this);
-          $thisMenuItem.clone().addClass('theme-color-white menu__item--top-menu').appendTo('.responsive-menus-0-0 > ul.menu');
+          $thisMenuItem.clone().addClass('theme-color-white visitpori-theme-color-white menu__item--top-menu').appendTo('.responsive-menus-0-0 > ul.menu');
         });
       });
     }

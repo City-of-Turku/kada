@@ -1,5 +1,7 @@
 .l-breadcrumb {
-  border-top: .313rem solid $primary-color;
+  @media screen and (max-width: $mobile-menu-breakpoint-max) {
+    border-top: .313rem solid $primary-color;
+  }
 }
 
 .container.l-breadcrumb__container {
