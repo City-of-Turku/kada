@@ -8,19 +8,35 @@
  * Implements hook_context_default_contexts_alter().
  */
 function pori_configuration_overrides_feature_context_default_contexts_alter(&$data) {
+  if (isset($data['footer_menu'])) {
+    $data['footer_menu']->conditions['context']['values']['search_page'] = 'search_page'; /* WAS: '' */
+  }
   if (isset($data['footer_navigation'])) {
     unset($data['footer_navigation']->reactions['block']);
   }
   if (isset($data['language_switcher'])) {
+    $data['language_switcher']->conditions['context']['values']['search_page'] = 'search_page'; /* WAS: '' */
     $data['language_switcher']->conditions['context']['values']['visitpori_domain'] = 'visitpori_domain'; /* WAS: '' */
     $data['language_switcher']->reactions['block']['blocks']['locale-language']['region'] = 'branding'; /* WAS: 'navigation' */
-    $data['language_switcher']->reactions['block']['blocks']['locale-language']['weight'] = -10; /* WAS: -50 */
+    $data['language_switcher']->reactions['block']['blocks']['locale-language']['weight'] = -9; /* WAS: -50 */
+    $data['language_switcher']->reactions['block']['blocks']['views--exp-main_search-page'] = array(
+      'module' => 'views',
+      'delta' => '-exp-main_search-page',
+      'region' => 'branding',
+      'weight' => -10,
+    ); /* WAS: '' */
+  }
+  if (isset($data['main_menu'])) {
+    $data['main_menu']->conditions['context']['values']['search_page'] = 'search_page'; /* WAS: '' */
   }
   if (isset($data['sitewide_en'])) {
     $data['sitewide_en']->reactions['block']['blocks']['block-1']['weight'] = -40; /* WAS: -10 */
   }
   if (isset($data['sitewide_fi'])) {
     $data['sitewide_fi']->reactions['block']['blocks']['block-2']['weight'] = -40; /* WAS: -10 */
+  }
+  if (isset($data['top_menu'])) {
+    $data['top_menu']->conditions['context']['values']['search_page'] = 'search_page'; /* WAS: '' */
   }
 }
 
@@ -59,24 +75,20 @@ function pori_configuration_overrides_feature_ds_layout_settings_info_alter(&$da
 }
 
 /**
- * Implements hook_field_group_info_alter().
- */
-function pori_configuration_overrides_feature_field_group_info_alter(&$data)
-{
-  if (isset($data['group_additional_information|node|page|form'])) {
-    $data['group_additional_information|node|page|form']->data['children'][2] = 'field_contact_person'; /* WAS: '' */
-  }
-}
-
-/**
  * Implements hook_field_default_field_bases_alter().
  */
 function pori_configuration_overrides_feature_field_default_field_bases_alter(&$data) {
   if (isset($data['field_accessibility'])) {
     $data['field_accessibility']['settings']['hide_initial_item'] = FALSE; /* WAS: '' */
   }
-  if (isset($data['field_icon'])) {
-    unset($data['field_icon']);
+}
+
+/**
+ * Implements hook_field_group_info_alter().
+ */
+function pori_configuration_overrides_feature_field_group_info_alter(&$data) {
+  if (isset($data['group_additional_information|node|page|form'])) {
+    $data['group_additional_information|node|page|form']->data['children'][2] = 'field_contact_person'; /* WAS: '' */
   }
 }
 
@@ -439,9 +451,6 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     unset($data['taxonomy_term-accessibility-description_field']['widget']['settings']['maxlength_js_label_summary']);
     unset($data['taxonomy_term-accessibility-description_field']['widget']['settings']['maxlength_js_summary']);
     unset($data['taxonomy_term-accessibility-description_field']['widget']['settings']['maxlength_js_truncate_html']);
-  }
-  if (isset($data['taxonomy_term-accessibility-field_icon'])) {
-    unset($data['taxonomy_term-accessibility-field_icon']);
   }
   if (isset($data['taxonomy_term-accessibility-field_mds_code'])) {
     $data['taxonomy_term-accessibility-field_mds_code']['display']['default']['type'] = 'hidden'; /* WAS: 'number_integer' */

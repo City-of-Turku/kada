@@ -12,12 +12,22 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides = array();
 
   // Exported overrides for: context
+  $overrides["context.footer_menu.conditions|context|values|search_page"] = 'search_page';
   $overrides["context.footer_navigation.reactions|block"]["DELETED"] = TRUE;
+  $overrides["context.language_switcher.conditions|context|values|search_page"] = 'search_page';
   $overrides["context.language_switcher.conditions|context|values|visitpori_domain"] = 'visitpori_domain';
   $overrides["context.language_switcher.reactions|block|blocks|locale-language|region"] = 'branding';
-  $overrides["context.language_switcher.reactions|block|blocks|locale-language|weight"] = -10;
+  $overrides["context.language_switcher.reactions|block|blocks|locale-language|weight"] = -9;
+  $overrides["context.language_switcher.reactions|block|blocks|views--exp-main_search-page"] = array(
+    'module' => 'views',
+    'delta' => '-exp-main_search-page',
+    'region' => 'branding',
+    'weight' => -10,
+  );
+  $overrides["context.main_menu.conditions|context|values|search_page"] = 'search_page';
   $overrides["context.sitewide_en.reactions|block|blocks|block-1|weight"] = -40;
   $overrides["context.sitewide_fi.reactions|block|blocks|block-2|weight"] = -40;
+  $overrides["context.top_menu.conditions|context|values|search_page"] = 'search_page';
 
   // Exported overrides for: ds_field_settings
   $overrides["ds_field_settings.node|page|default.settings|places_for_services|weight"] = 5;
@@ -39,12 +49,11 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["ds_layout_settings.taxonomy_term|accessibility|default.settings|wrappers|ds_content"]["DELETED"] = TRUE;
   $overrides["ds_layout_settings.taxonomy_term|accessibility|default.settings|wrappers|main_content"] = 'div';
 
-  // Exported overrides for: field_group
-  $overrides["field_group.group_additional_information|node|page|form.data|children|2"] = 'field_contact_person';
-
   // Exported overrides for: field_base
   $overrides["field_base.field_accessibility.settings|hide_initial_item"] = FALSE;
-  $overrides["field_base.field_icon.field_icon"]["DELETED"] = TRUE;
+
+  // Exported overrides for: field_group
+  $overrides["field_group.group_additional_information|node|page|form.data|children|2"] = 'field_contact_person';
 
   // Exported overrides for: field_instance
   $overrides["field_instance.node-person-field_account_name.display|live_results_search"] = array(
@@ -355,7 +364,6 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["field_instance.taxonomy_term-accessibility-description_field.widget|settings|maxlength_js_summary"]["DELETED"] = TRUE;
   $overrides["field_instance.taxonomy_term-accessibility-description_field.widget|settings|maxlength_js_truncate_html"]["DELETED"] = TRUE;
   $overrides["field_instance.taxonomy_term-accessibility-description_field.widget|settings|rows"] = 4;
-  $overrides["field_instance.taxonomy_term-accessibility-field_icon.taxonomy_term-accessibility-field_icon"]["DELETED"] = TRUE;
   $overrides["field_instance.taxonomy_term-accessibility-field_mds_code.display|default|module"]["DELETED"] = TRUE;
   $overrides["field_instance.taxonomy_term-accessibility-field_mds_code.display|default|settings|decimal_separator"]["DELETED"] = TRUE;
   $overrides["field_instance.taxonomy_term-accessibility-field_mds_code.display|default|settings|prefix_suffix"]["DELETED"] = TRUE;

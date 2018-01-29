@@ -1,0 +1,96 @@
+<?php
+/**
+ * @file
+ * pori_search.context.inc
+ */
+
+/**
+ * Implements hook_context_default_contexts().
+ */
+function pori_search_context_default_contexts() {
+  $export = array();
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'search_page';
+  $context->description = 'Context for search page pori.fi';
+  $context->tag = 'views';
+  $context->conditions = array(
+    'domain' => array(
+      'values' => array(
+        'pori_fi' => 'pori_fi',
+      ),
+    ),
+    'views' => array(
+      'values' => array(
+        'main_search:page' => 'main_search:page',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views--exp-main_search-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-main_search-page',
+          'region' => 'before_content',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+    'theme_html' => array(
+      'class' => 'search-page',
+    ),
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Context for search page pori.fi');
+  t('views');
+  $export['search_page'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'search_page_visitpori';
+  $context->description = 'Context for search page pori.fi';
+  $context->tag = 'views';
+  $context->conditions = array(
+    'domain' => array(
+      'values' => array(
+        'visitpori_fi' => 'visitpori_fi',
+      ),
+    ),
+    'views' => array(
+      'values' => array(
+        'main_search:page' => 'main_search:page',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views--exp-main_search-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-main_search-page',
+          'region' => 'before_content',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+    'theme_html' => array(
+      'class' => 'search-page',
+    ),
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Context for search page pori.fi');
+  t('views');
+  $export['search_page_visitpori'] = $context;
+
+  return $export;
+}

@@ -15,6 +15,7 @@ function pori_attraction_feature_user_default_permissions() {
     'name' => 'create attraction_card content',
     'roles' => array(
       'admin' => 'admin',
+      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -60,6 +61,7 @@ function pori_attraction_feature_user_default_permissions() {
     'name' => 'edit any attraction_card content',
     'roles' => array(
       'admin' => 'admin',
+      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -69,6 +71,7 @@ function pori_attraction_feature_user_default_permissions() {
     'name' => 'edit own attraction_card content',
     'roles' => array(
       'admin' => 'admin',
+      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
