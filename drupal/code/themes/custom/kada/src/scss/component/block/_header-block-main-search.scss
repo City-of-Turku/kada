@@ -1,0 +1,173 @@
+.l-region--branding {
+  .main-search {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    @media screen and (max-width: $mobile-menu-breakpoint) {
+      border-left: 1px solid $gray-light;
+      font-size: 1.1rem;
+      line-height: 3.125rem;
+      padding-left: 1.675rem;
+      height: 3.125rem;
+      width: 4.075rem;
+    }
+
+    .views-exposed-widgets {
+      align-items: center;
+      display: flex;
+      margin: 0;
+    }
+  }
+
+  .views-exposed-form .views-exposed-widget.main-search--wrapper {
+    background: $white;
+    padding: .5em .5em 0 0;
+    position: absolute;
+    right: 0;
+    top: -8px;
+    width: 15rem;
+
+    @media screen and (max-width: $mobile-landscape-narrow) {
+      width: 10.85rem;
+    }
+
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      position: relative;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  .main-search--wrapper {
+    //@media screen and (max-width: $tablet-portrait-narrow) {
+    //  background: white;
+    //  left: -50%;
+    //  top: 48px;
+    //  padding: 0;
+    //  position: relative;
+    //  width: 100vw;
+    //  z-index: 999;
+    //}
+  }
+
+  .main-search__search-field {
+    display: none;
+
+    &.is-active {
+      display: block;
+    }
+
+    .form-autocomplete,
+    .form-text {
+      background: none;
+      border: 1px solid $gray;
+      font-size: 1rem;
+      line-height: 1.95rem;
+      padding-left: .25rem;
+    }
+  }
+
+  .views-exposed-widget.main-search__search-button {
+    background-color: transparent;
+    border: 0;
+    content: "";
+    display: none;
+    font-size: 0;
+    height: 1.863rem;
+    margin: 0;
+    position: absolute;
+    right: .88rem;
+    top: .825rem;
+    width: 1.863rem;
+    z-index: 1;
+
+    @media screen and (max-width: $mobile-landscape-narrow) {
+      right: .988rem;
+    }
+
+    &.is-active {
+      display: block;
+    }
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
+
+    &::before {
+      @include fa('\f002', 1.1rem, 1, false);
+      color: $black;
+      display: block;
+      height: 1.863rem;
+      line-height: 1.65rem;
+      right: .88rem;
+      text-align: center;
+      top: 0.825rem;
+      width: 1.863rem;
+      z-index: 2;
+
+      @media screen and (max-width: $mobile-landscape-narrow) {
+        right: .988rem;
+      }
+    }
+
+    .form-autocomplete,
+    .form-submit {
+      background: transparent;
+      border: 0;
+      height: 1.863rem;
+      margin: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 1.863rem;
+    }
+  }
+
+  .main-search__search-button--toggler {
+    background-color: transparent;
+    border: 0;
+    content: "";
+    display: none;
+    font-size: 0;
+    height: 1.863rem;
+    margin: 0;
+    position: absolute;
+    right: .88rem;
+    top: .750rem;
+    width: 1.863rem;
+    z-index: 1;
+
+    @media screen and (max-width: $mobile-landscape-narrow) {
+      right: 1.288rem;
+    }
+
+    &.is-active {
+      display: block;
+    }
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+    }
+
+    &::before {
+      @include fa('\f002', 1.55rem, 1, false);
+      color: $black;
+      display: block;
+      height: 1.863rem;
+      line-height: 1.65rem;
+      right: .88rem;
+      text-align: center;
+      top: .750rem;
+      width: 1.863rem;
+      z-index: 2;
+
+      @media screen and (max-width: $mobile-landscape-narrow) {
+        right: 1.288rem;
+      }
+    }
+  }
+}
