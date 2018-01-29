@@ -86,8 +86,30 @@ $menu-padding: 1.25rem;
         &.menu__item--has-first-level {
           background-color: $color;
 
+          @if $color == $white {
+            border-bottom: 1px solid $gray;
+          }
+
+          &:hover,
+          &:focus,
+          &.is-active-trail{
+            @if $color == $white {
+              background-color: $black;
+            }
+
+            > a {
+              @if $color == $white {
+                color: $white;
+              }
+            }
+          }
+
           > a {
             color: $white;
+
+            @if $color == $white {
+              color: $black;
+            }
           }
 
           > .menu {
@@ -98,14 +120,22 @@ $menu-padding: 1.25rem;
           .menu__item--has-second-level {
             &:hover {
               background-color: $color;
-              a { color: $white; }
+
+              a {
+                color: $white;
+              }
             }
+
             a {
               color: $color;
             }
+
             &.is-active-trail {
               background-color: $color;
-              a { color: $white; }
+
+              a {
+                color: $white;
+              }
             }
           }
         }
@@ -127,8 +157,6 @@ $menu-padding: 1.25rem;
     }
 
     .menu__item--has-first-level {
-      border-bottom: 1px solid $white;
-
       &.is-expanded,
       &:last-child {
         border-bottom: 0 none;
