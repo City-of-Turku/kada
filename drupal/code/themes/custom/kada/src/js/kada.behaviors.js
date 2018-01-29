@@ -279,7 +279,18 @@
   //Include top menu to mobile menu
   Drupal.behaviors.kadaTopMenuMobile = {
     attach: function (context) {
-      $('.responsive-menus-0-0 > ul.menu', context).once('top-menu-mobile', function () {
+      $('.l-navigation-top ul.menu', context).once('top-menu-mobile', function () {
+        $(this).find('.menu__item').each(function () {
+          var $thisMenuItem = $(this);
+          $thisMenuItem.clone().addClass('theme-color-white menu__item--top-menu').appendTo('.responsive-menus-0-0 > ul.menu');
+        });
+      });
+    }
+  };
+
+  Drupal.behaviors.poriEserviceLinks = {
+    attach: function (context) {
+      $('.responsive-menus-0-0 > ul.menu', context).once('pori-eservice-links', function () {
         // E-service links
         $(this).find('.menu__item--has-first-level > ul.menu').each(function () {
           var $thisMenu = $(this);
@@ -289,7 +300,7 @@
           if ($eServiceLink.length) {
             var $title = $('<a href="javascript:;" aria-label="' + (Drupal.t('E-services')) + '">' + Drupal.t('E-services') + ':</a>');
             var $list = $('<ul class="menu"></ul>');
-             $eServiceLink.each(function (i, link) {
+            $eServiceLink.each(function (i, link) {
               $list.append($('<li class="menu__item"></li>').append(link));
             });
             var $wrapper = $('<li class="e-service-wrapper"></li>').append([$title, $list]);
