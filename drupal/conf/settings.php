@@ -86,6 +86,7 @@ switch ($env) {
       $conf['preprocess_css'] = false;
       $conf['preprocess_js'] = false;
       $conf['googleanalytics_account'] = ''; // Make sure the GA isn't enabled in this env
+      $conf['stage_file_proxy_origin'] = 'http://beta.pori.fi';
     break;
 }
 
@@ -94,12 +95,12 @@ if ($env != 'production') {
   // Override search API server settings fetched from default configuration.
   $conf['search_api_override_mode'] = 'load';
   $conf['search_api_override_servers'] = array(
-    'kada' => array(
-      'name' => 'KADA',
+    'pori_search_server' => array(
+      'name' => 'Pori search server',
       'options' => array(
         'host' => 'localhost',
         'port' => '8983',
-        'path' => '/solr/kada',
+        'path' => '/solr',
         'http_user' => '',
         'http_pass' => '',
         'excerpt' => 1,
