@@ -1,8 +1,10 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Pori widget feature feature.
  */
+
+include_once 'pori_widget_feature.features.inc';
 
 /**
  * Implements hook_block_info().
