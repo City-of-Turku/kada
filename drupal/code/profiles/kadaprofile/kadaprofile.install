@@ -426,3 +426,14 @@ function kadaprofile_install_finished(&$install_state) {
 function _kadaprofile_filter_dependencies($dependency) {
   return !module_exists($dependency);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables content taxonomy module
+ */
+function kadaprofile_update_7121() {
+  $modules = array('content_taxonomy', 'content_taxonomy_autocomplete', 'content_taxonomy_et');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}
