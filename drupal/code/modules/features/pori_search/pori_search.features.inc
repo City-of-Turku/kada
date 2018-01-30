@@ -90,7 +90,7 @@ function pori_search_default_search_api_server() {
       "clean_ids" : true,
       "site_hash" : true,
       "scheme" : "http",
-      "host" : "localhost",
+      "host" : "10.1.13.65",
       "port" : "8983",
       "path" : "\\/solr",
       "http_user" : "",
