@@ -49,16 +49,23 @@ function pori_contact_information_feature_cron() {
   $incomplete = FALSE;
 
   foreach ($importers as $id => $source_url) {
+    // Check that the source file isn't empty.
+    $path = drupal_realpath($source_url);
+    $content = file_get_contents($path);
+    if (empty($content)) {
+      watchdog('pori_contact_information', 'Skipping importer !importer because of empty source file in path !path...', array('!importer' => $id, '!path' => $path));
+      continue;
+    }
     if (!$incomplete) {
       $source = feeds_source($id);
       if ($source->imported + 21600 < time()) {
-        watchdog('pori_contact_information', "Starting import $id at " . round($source->progressImporting() * 100) . "%");
+        watchdog('pori_contact_information', "Starting import !id at !progress%", array('!id' => $id, '!progress' => round($source->progressImporting() * 100)));
         $config = $source->getConfig();
         $config['FeedsFileFetcher']['source'] = $source_url;
         $source->setConfig($config);
         $source->save();
         $source->import();
-        watchdog('pori_contact_information', "Ended import $id at " . round($source->progressImporting() * 100) . "%");
+        watchdog('pori_contact_information', "Ended import !id at !progress%", array('!id' => $id, '!progress' => round($source->progressImporting() * 100)));
         // If we didn't reach 100%, abort foreach loop to prevent extending to
         // next importer.
         if ($source->progressImporting() !== 1) {
