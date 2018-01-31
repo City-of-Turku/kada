@@ -26,7 +26,9 @@
       }
     }
 
-    .menu__item--expanded-toggle {
+    // Hide mobile menu specific stuff
+    .menu__item--expanded-toggle,
+    .menu__item--top-menu {
       display: none;
     }
 
@@ -38,6 +40,7 @@
 
           > a {
             color: $white;
+
           }
 
           > .menu {
@@ -48,14 +51,22 @@
           .menu__item--has-second-level {
             &:hover {
               background-color: $color;
-              a { color: $white; }
+
+              a {
+                color: $white;
+              }
             }
+
             a {
               color: $color;
             }
+
             &.is-active-trail {
               background-color: $color;
-              a { color: $white; }
+
+              a {
+                color: $white;
+              }
             }
           }
         }
@@ -85,17 +96,9 @@
         z-index: 100;
       }
 
-      &:hover {
+      &.menu__item--hover {
         > .menu {
           display: block;
-        }
-      }
-
-      &.is-expanded {
-        > a {
-          &:hover,
-          &:focus {
-          }
         }
       }
 
@@ -132,7 +135,7 @@
         }
       }
 
-      &:hover {
+      &.menu__item--hover {
 
         > a {
           color: $white;
@@ -158,7 +161,7 @@
           width: 1.563rem;
         }
 
-        &:hover {
+        &.menu__item--hover {
           > a::before {
             background-color: $white;
             background-image: url('../../dist/image/minus-icon.svg');

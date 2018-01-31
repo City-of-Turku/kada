@@ -40,8 +40,18 @@ function pori_contact_information_feature_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'person';
   $ds_layout->view_mode = 'person_card';
-  $ds_layout->layout = 'minimal_layout';
+  $ds_layout->layout = 'person_card_layout';
   $ds_layout->settings = array(
+    'classes' => array(),
+    'wrappers' => array(
+      'main_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
     'regions' => array(
       'main_content' => array(
         0 => 'person_full_name',
@@ -60,26 +70,16 @@ function pori_contact_information_feature_ds_layout_settings_info() {
     'fields' => array(
       'person_full_name' => 'main_content',
       'field_employee_title' => 'main_content',
-      'field_office_tr' => 'main_content',
       'field_profession' => 'main_content',
+      'field_office_tr' => 'main_content',
       'field_visiting_address' => 'main_content',
       'field_email_single' => 'main_content',
       'field_mobile_phone' => 'main_content',
-      'field_mobile_phone_work' => 'main_content',
       'field_phone' => 'main_content',
+      'field_mobile_phone_work' => 'main_content',
       'field_phone_switch' => 'main_content',
       'field_fax_number' => 'main_content',
     ),
-    'classes' => array(),
-    'wrappers' => array(
-      'main_content' => 'div',
-    ),
-    'layout_wrapper' => 'div',
-    'layout_attributes' => '',
-    'layout_attributes_merge' => 1,
-    'layout_link_attribute' => '',
-    'layout_link_custom' => '',
-    'layout_disable_css' => FALSE,
   );
   $export['node|person|person_card'] = $ds_layout;
 

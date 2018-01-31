@@ -12,13 +12,11 @@ function pori_news_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: context
-  $overrides["context.footer_menu.conditions|context|values|news_list"] = 'news_list';
-  $overrides["context.main_menu.conditions|context|values|news_list"] = 'news_list';
   $overrides["context.news_list.conditions|path|values|news"]["DELETED"] = TRUE;
   $overrides["context.news_list.conditions|path|values|news-archive"] = 'news-archive';
+  $overrides["context.news_list.conditions|path|values|news-archive/*"] = 'news-archive/*';
   $overrides["context.news_list.description"] = 'News archive';
   $overrides["context.news_list.reactions|block"]["DELETED"] = TRUE;
-  $overrides["context.top_menu.conditions|context|values|news_list"] = 'news_list';
 
   // Exported overrides for: ds_field_settings
   $overrides["ds_field_settings.node|news_item|current.settings|links|weight"] = 4;

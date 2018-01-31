@@ -69,6 +69,15 @@
 }
 
 .l-region--branding {
+  .block--views-exp-main-search-page {
+    // Mobile
+    @media screen and (max-width: $mobile-menu-breakpoint-max) {
+      position: absolute;
+      right: 7.85rem;
+      top: 0;
+    }
+  }
+
   .block--locale-language {
     // Mobile
     @media screen and (max-width: $mobile-menu-breakpoint-max) {

@@ -5,6 +5,15 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function pori_search_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
+}
+
+/**
  * Implements hook_views_api().
  */
 function pori_search_views_api($module = NULL, $api = NULL) {
@@ -40,6 +49,7 @@ function pori_search_default_search_api_index() {
       "index_directly" : 0,
       "cron_limit" : "50",
       "fields" : {
+        "created" : { "type" : "date" },
         "search_api_language" : { "type" : "string" },
         "title" : { "type" : "text", "boost" : "5.0" }
       }
@@ -80,7 +90,7 @@ function pori_search_default_search_api_server() {
       "clean_ids" : true,
       "site_hash" : true,
       "scheme" : "http",
-      "host" : "localhost",
+      "host" : "10.1.13.65",
       "port" : "8983",
       "path" : "\\/solr",
       "http_user" : "",
