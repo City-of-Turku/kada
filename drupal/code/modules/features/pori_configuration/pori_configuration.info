@@ -11,6 +11,7 @@ dependencies[] = locale
 dependencies[] = options
 dependencies[] = pori_configuration_overrides_feature
 dependencies[] = pori_contact_information_feature
+dependencies[] = pori_widget_feature
 features[ctools][] = strongarm:strongarm:1
 features[domain_conf][] = pori_fi
 features[features_api][] = api:2
