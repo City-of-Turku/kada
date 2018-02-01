@@ -148,7 +148,7 @@
         $('.l-region--navigation .menu__item--has-first-level', context).hover(function(event) {
           if ($(window).width() >= '1025') {
             adjustHeight($(this).children('.menu'));
-            adjustWidth($(this));
+            //adjustWidth($(this));
             if (event.type === 'mouseleave') {
               $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
             }

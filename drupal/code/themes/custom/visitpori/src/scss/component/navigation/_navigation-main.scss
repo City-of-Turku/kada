@@ -74,6 +74,8 @@
     }
 
     .menu__item--has-first-level {
+      position: relative;
+
       > a {
         border-top: 0 none;
         color: $black;
@@ -90,8 +92,9 @@
         background-color: $gray-lighter;
         box-sizing: content-box;
         display: none;
-        left: auto;
+        left: 0;
         position: absolute;
+        right: 0;
         top: 100%;
         z-index: 100;
       }
