@@ -34,3 +34,10 @@ function pori_configuration_update_7103(&$sandbox) {
 function pori_configuration_update_7104() {
   module_enable(array('domain_conf'));
 }
+
+/**
+ * Enable widget feature.
+ */
+function pori_configuration_update_7105(&$sandbox) {
+  module_enable(array('pori_widget_feature'));
+}
