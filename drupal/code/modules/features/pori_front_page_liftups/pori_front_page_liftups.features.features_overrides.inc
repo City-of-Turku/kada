@@ -12,6 +12,11 @@ function pori_front_page_liftups_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: context
+  $overrides["context.front_page.conditions|context"] = array(
+    'values' => array(
+      '~visitpori_domain' => '~visitpori_domain',
+    ),
+  );
   $overrides["context.front_page.reactions|block|blocks|quicktabs-feed_tabs_frontpage_promoted_con"] = array(
     'module' => 'quicktabs',
     'delta' => 'feed_tabs_frontpage_promoted_con',

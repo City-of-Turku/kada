@@ -63,9 +63,6 @@ function pori_configuration_overrides_feature_features_override_default_override
   // Exported overrides for: field_group
   $overrides["field_group.group_additional_information|node|page|form.data|children|2"] = 'field_contact_person';
 
-  // Exported overrides for: field_group
-  $overrides["field_group.group_additional_information|node|page|form.data|children|2"] = 'field_contact_person';
-
   // Exported overrides for: field_instance
   $overrides["field_instance.node-person-field_account_name.display|live_results_search"] = array(
     'label' => 'above',
@@ -469,6 +466,10 @@ function pori_configuration_overrides_feature_features_override_default_override
     'custom_settings' => FALSE,
   );
   $overrides["variable.menu_block_8_depth.value"] = 2;
+  $overrides["variable.variable_realm_list_domain.value|0"] = 'googleanalytics_account';
+  $overrides["variable.variable_realm_list_domain.value|1"] = 'piwik_site_id';
+  $overrides["variable.variable_realm_list_domain.value|2"] = 'site_name';
+  $overrides["variable.variable_realm_list_domain.value|3"] = 'site_frontpage';
 
  return $overrides;
 }

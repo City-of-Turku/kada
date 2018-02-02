@@ -5,7 +5,6 @@ version = 7.x-1.0-dev
 dependencies[] = kada_configuration_feature
 dependencies[] = kada_landing_page_feature
 features[features_api][] = api:2
-features[features_override_items][] = context.front_page
 features[features_override_items][] = variable.menu_block_ids
 features[features_override_items][] = variable.menu_options_landing_page
 features[features_overrides][] = context.front_page.conditions|context

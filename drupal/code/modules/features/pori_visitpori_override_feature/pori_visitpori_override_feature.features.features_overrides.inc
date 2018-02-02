@@ -11,13 +11,6 @@ function pori_visitpori_override_feature_features_override_default_overrides() {
   // This code is only used for UI in features. Exported alters hooks do the magic.
   $overrides = array();
 
-  // Exported overrides for: context
-  $overrides["context.front_page.conditions|context"] = array(
-    'values' => array(
-      '~visitpori_domain' => '~visitpori_domain',
-    ),
-  );
-
   // Exported overrides for: variable
   $overrides["variable.menu_block_ids.value|25"] = 23;
   $overrides["variable.menu_block_ids.value|26"] = 28;
