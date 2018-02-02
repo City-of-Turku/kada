@@ -74,6 +74,76 @@ function visitpori_configurations_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'visitpori_front_page';
+  $context->description = 'This context is triggered on the visitpori front page';
+  $context->tag = 'front page';
+  $context->conditions = array(
+    'context_all' => array(
+      'values' => array(
+        'visitpori_domain' => 'visitpori_domain',
+      ),
+    ),
+    'node' => array(
+      'values' => array(
+        'page' => 'page',
+      ),
+      'options' => array(
+        'node_form' => '1',
+      ),
+    ),
+    'path' => array(
+      'values' => array(
+        '<front>' => '<front>',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-kada_top_carousel-block_1' => array(
+          'module' => 'views',
+          'delta' => 'kada_top_carousel-block_1',
+          'region' => 'header',
+          'weight' => '-10',
+        ),
+        'views-kada_news-block_1' => array(
+          'module' => 'views',
+          'delta' => 'kada_news-block_1',
+          'region' => 'highlighted',
+          'weight' => '-10',
+        ),
+        'views-kada_project_liftups-block_1' => array(
+          'module' => 'views',
+          'delta' => 'kada_project_liftups-block_1',
+          'region' => 'before_content',
+          'weight' => '-10',
+        ),
+        'kada_widget_feature-widget_before_content' => array(
+          'module' => 'kada_widget_feature',
+          'delta' => 'widget_before_content',
+          'region' => 'after_content',
+          'weight' => '-10',
+        ),
+        'quicktabs-feed_tabs_frontpage_promoted_con' => array(
+          'module' => 'quicktabs',
+          'delta' => 'feed_tabs_frontpage_promoted_con',
+          'region' => 'after_content',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('This context is triggered on the visitpori front page');
+  t('front page');
+  $export['visitpori_front_page'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'visitpori_sitewide_en';
   $context->description = 'This sitewide context is triggered when using page in English';
   $context->tag = 'section';

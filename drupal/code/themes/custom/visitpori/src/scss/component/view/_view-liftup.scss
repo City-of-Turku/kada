@@ -256,8 +256,12 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-top: 2.5rem;
+  margin: 1.25rem 0 2.5rem;
   width: 100%;
+
+  @media screen and (min-width: $container) {
+    margin-bottom: 1.875rem + 1.25rem;
+  }
 }
 
 .liftup-box--wide {
@@ -382,11 +386,11 @@
 
   .liftup-box__group-left {
     float: none;
-    padding: 1.5em $container-gutter 0;
+    padding: 1.5em $container-gutter 1rem;
     width: 100%;
 
     @media screen and (min-width: $mobile-landscape-wide) {
-      padding: 1.5em 0 0;
+      padding: 1.5em $container-gutter * 2 2rem;
     }
 
     @media screen and (min-width: $tablet-landscape) {
@@ -420,6 +424,10 @@
   margin: 0 -1.25rem;
 
   @media screen and (min-width: $mobile-landscape-wide) {
+    margin: 0 -2.5rem;
+  }
+
+  @media screen and (min-width:$tablet-landscape) {
     margin: 0;
   }
 }

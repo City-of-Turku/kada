@@ -33,15 +33,6 @@
   }
 }
 
-// After content behavior
-.l-region--after-content {
-  .block {
-    @media screen and (min-width: $tablet-portrait) {
-      margin: 0 1em;
-    }
-  }
-}
-
 
 // Block from ip_geoloc for proximity demo
 #block-ip-geoloc-geocode-address {
