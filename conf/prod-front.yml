@@ -266,7 +266,7 @@
       - server_name: "beta.{{ domain2_name }}"
         forwarded_domains: "{{ domain2_name}} {{ domain1_name }}"
       - server_name: "www.{{ domain3_name }}"
-        forwarded_domains: "{{ domain3_name}} beta.{{ domain3_name }} {{ domain4_name}} www.{{ domain4_name }}"
+        forwarded_domains: "{{ domain3_name}} www.{{ domain3_name }} beta.{{ domain3_name }} {{ domain4_name}} www.{{ domain4_name }}"
     # You can also use extra_forwards and httpextraforwards to define additional domains to listen & forward
     # See ansible/playbook/roles/sslterminator/templates/ssl_terminators.conf.j2 for reference.
 
