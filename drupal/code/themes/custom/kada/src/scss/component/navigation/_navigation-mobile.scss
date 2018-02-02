@@ -61,7 +61,7 @@ $menu-padding: 1.25rem;
     .is-collapsed,
     .is-expanded {
       > .menu__item--expanded-toggle {
-        background-color: $black;
+        background-color: $white;
         border-radius: 100%;
         content: "";
         display: block;
@@ -74,7 +74,7 @@ $menu-padding: 1.25rem;
 
         &::before {
           @include fa('\f067', .9rem, 1, false);
-          color: $white;
+          color: $black;
           display: block;
           height: 1.563rem;
           line-height: 1.6rem;
@@ -94,7 +94,7 @@ $menu-padding: 1.25rem;
 
     .is-expanded > .menu__item--expanded-toggle::before{
       @include fa('\f068', .9rem, 1, false);
-      color: $white;
+      color: $black;
       line-height: 1.6rem;
     }
 
@@ -104,13 +104,25 @@ $menu-padding: 1.25rem;
         &.menu__item--has-first-level {
           background-color: $color !important;
 
+          @if $color == $white {
+            border-bottom: 1px solid $gray;
+          }
+
           &:focus,
           &:hover {
             background-color: $color !important;
+
+            @if $color == $white {
+              background-color: $primary-color !important;
+            }
           }
 
           > a {
             @if $color == $yellow {
+              color: $primary-color;
+            }
+
+            @if $color == $white {
               color: $primary-color;
             }
 
@@ -121,7 +133,16 @@ $menu-padding: 1.25rem;
                 color: $primary-color;
               }
 
-              background-color: $color !important;
+              @if $color == $white {
+                color: $white;
+              }
+            }
+          }
+
+          &.is-collapsed,
+          &.is-expanded {
+            > .menu__item--expanded-toggle::before {
+              color: $color;
             }
           }
 
@@ -131,22 +152,78 @@ $menu-padding: 1.25rem;
           }
 
           &.is-active-trail {
+            background-color: $color !important;
+
+            @if $color == $white {
+              background-color: $primary-color !important;
+            }
+
             > a {
               @if $color == $yellow {
                 color: $primary-color;
               }
-            }
 
-            background-color: $color !important;
+              @if $color == $white {
+                color: $white;
+              }
+            }
           }
 
           .menu__item--has-second-level,
           .menu__item--has-third-level {
-            &:hover {
+            &:hover,
+            &:focus {
               background-color: $color !important;
+
+              &.is-collapsed,
+              &.is-expanded {
+                > .menu__item--expanded-toggle::before {
+                  color: $color;
+                }
+              }
+
+              > a {
+                color: $white;
+
+                @if $color == $yellow {
+                  color: $primary-color;
+                }
+
+                @if $color == $white {
+                  color: $primary-color;
+                }
+              }
             }
+
             &.is-active-trail {
               background-color: $color !important;
+            }
+
+            > a {
+              &:hover,
+              &:focus {
+                color: $white;
+
+                @if $color == $yellow {
+                  color: $primary-color;
+                }
+
+                @if $color == $white {
+                  color: $primary-color;
+                }
+              }
+
+              &.active-trail {
+                color: $white;
+
+                @if $color == $yellow {
+                  color: $primary-color;
+                }
+
+                @if $color == $white {
+                  color: $primary-color;
+                }
+              }
             }
           }
 
@@ -177,8 +254,6 @@ $menu-padding: 1.25rem;
     }
 
     .menu__item--has-first-level {
-      border-bottom: 1px solid $white;
-
       &.is-expanded,
       &:last-child {
         border-bottom: 0 none;
@@ -206,6 +281,21 @@ $menu-padding: 1.25rem;
       &.is-expanded {
         .menu__item--expanded-toggle {
           background-color: $primary-color;
+
+          &::before {
+            color: $white;
+          }
+        }
+
+        &:hover,
+        &focus {
+          .menu__item--expanded-toggle {
+            background-color: $white;
+
+            &::before {
+              color: $black;
+            }
+          }
         }
       }
 
@@ -259,8 +349,9 @@ $menu-padding: 1.25rem;
             background-size: .938rem auto;
             border-bottom: 0 none;
             color: $primary-color;
-            display: inline-block;
+            display: block;
             font-weight: bold;
+            margin: 0;
             padding: 1.25rem 1.875rem 1.25rem 0;
             text-transform: none;
           }
