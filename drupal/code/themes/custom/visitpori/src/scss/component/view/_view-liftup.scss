@@ -316,7 +316,7 @@
     }
   }
 
-  &:nth-child(2) {
+  &:nth-child(even) {
     .node--page,
     .node--liftup {
       flex-direction: column-reverse;
@@ -403,7 +403,7 @@
     }
   }
 
-  &:nth-child(2) {
+  &:nth-child(even) {
     .liftup-box__group-right {
       @media screen and (min-width: 1400px) {
         margin-left: 0;

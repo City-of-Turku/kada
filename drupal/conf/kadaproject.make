@@ -255,6 +255,9 @@ projects[entityqueue][subdir] = contrib
 ; Adds export for entityqueue subqueues
 projects[entityqueue][patch][] = "../patches/entityqueue_subqueue_export.patch"
 
+projects[entity_action_log][version] = 1.0-beta1
+projects[entity_action_log][subdir] = contrib
+
 ; Only dev version is available for entity_base_type module.
 projects[entity_base_type][type] = module
 projects[entity_base_type][subdir] = contrib
