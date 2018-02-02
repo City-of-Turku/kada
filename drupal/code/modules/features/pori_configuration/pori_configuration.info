@@ -4,6 +4,7 @@ package = Pori
 version = 7.x-1.0-dev
 dependencies[] = content_lock
 dependencies[] = domain_conf
+dependencies[] = entity_action_log
 dependencies[] = features
 dependencies[] = kada_configuration_feature
 dependencies[] = list
