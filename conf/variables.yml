@@ -27,6 +27,10 @@ php_package: "php71u"
 
 php_env_vars_include_db: True
 
+project_additional_ssh_firewall_rules:
+  - comment: Druid VPN
+    ip: 52.57.115.245
+
 # Variables to create/update UpCloud Servers
 upcloud_project_name: "{{ project_name }}"
 

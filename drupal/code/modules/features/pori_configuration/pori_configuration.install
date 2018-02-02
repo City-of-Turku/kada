@@ -27,3 +27,17 @@ function pori_configuration_update_7102(&$sandbox) {
 function pori_configuration_update_7103(&$sandbox) {
   module_enable(array('pori_contact_information_feature'));
 }
+
+/**
+ * Enables domain configuration module
+ */
+function pori_configuration_update_7104() {
+  module_enable(array('domain_conf'));
+}
+
+/**
+ * Enable widget feature.
+ */
+function pori_configuration_update_7105(&$sandbox) {
+  module_enable(array('pori_widget_feature'));
+}
