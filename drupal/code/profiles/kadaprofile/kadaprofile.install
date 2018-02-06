@@ -654,3 +654,14 @@ function kadaprofile_update_7119() {
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables content taxonomy module
+ */
+function kadaprofile_update_7121() {
+  $modules = array('content_taxonomy', 'content_taxonomy_autocomplete', 'content_taxonomy_et');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}
