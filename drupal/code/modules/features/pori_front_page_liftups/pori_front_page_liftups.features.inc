@@ -25,6 +25,11 @@ function pori_front_page_liftups_views_api($module = NULL, $api = NULL) {
  */
 function pori_front_page_liftups_context_default_contexts_alter(&$data) {
   if (isset($data['front_page'])) {
+    $data['front_page']->conditions['context'] = array(
+      'values' => array(
+        '~visitpori_domain' => '~visitpori_domain',
+      ),
+    ); /* WAS: '' */
     $data['front_page']->reactions['block']['blocks']['quicktabs-feed_tabs_frontpage_promoted_con'] = array(
       'module' => 'quicktabs',
       'delta' => 'feed_tabs_frontpage_promoted_con',

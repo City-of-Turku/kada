@@ -799,4 +799,10 @@ function pori_configuration_overrides_feature_strongarm_alter(&$data) {
   if (isset($data['menu_block_8_depth'])) {
     $data['menu_block_8_depth']->value = 2; /* WAS: 0 */
   }
+  if (isset($data['variable_realm_list_domain'])) {
+    $data['variable_realm_list_domain']->value[0] = 'googleanalytics_account'; /* WAS: 'piwik_site_id' */
+    $data['variable_realm_list_domain']->value[1] = 'piwik_site_id'; /* WAS: 'site_name' */
+    $data['variable_realm_list_domain']->value[2] = 'site_name'; /* WAS: 'site_frontpage' */
+    $data['variable_realm_list_domain']->value[3] = 'site_frontpage'; /* WAS: '' */
+  }
 }
