@@ -1,13 +1,13 @@
 .info-box {
   background-color: $sub-page-highlighted-bg;
   font-size: 0.786em;
-  margin-bottom: 1em;
-  padding: 1em;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
 
   @media screen and (min-width: $tablet-portrait) {
     clear: both;
     float: right;
-    margin: 0 0 1em 1em;
+    margin: 0 0 1rem 1rem;
     width: 45%;
   }
 

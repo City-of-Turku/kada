@@ -154,6 +154,9 @@ projects[conditional_fields][subdir] = contrib
 projects[content_lock][version] = 3.0-beta1
 projects[content_lock][subdir] = contrib
 
+projects[content_taxonomy][version] = 1.0-rc1
+projects[content_taxonomy][subdir] = contrib
+
 projects[context][version] = 3.7
 projects[context][subdir] = contrib
 ; Fixes context ui performance issues
@@ -254,6 +257,9 @@ projects[entityqueue][version] = 1.1
 projects[entityqueue][subdir] = contrib
 ; Adds export for entityqueue subqueues
 projects[entityqueue][patch][] = "../patches/entityqueue_subqueue_export.patch"
+
+projects[entity_action_log][version] = 1.0-beta1
+projects[entity_action_log][subdir] = contrib
 
 ; Only dev version is available for entity_base_type module.
 projects[entity_base_type][type] = module

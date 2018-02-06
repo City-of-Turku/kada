@@ -68,3 +68,10 @@
 .page__after-content {
   margin-top: 6.25rem - 1.875rem; // Reducing the margin of the element inside after-content.
 }
+
+.front,
+.theme-main-page {
+  .page__after-content {
+    margin-top: 0;
+  }
+}
