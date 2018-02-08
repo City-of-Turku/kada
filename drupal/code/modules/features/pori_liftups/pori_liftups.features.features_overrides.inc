@@ -29,9 +29,6 @@ function pori_liftups_features_override_default_overrides() {
   $overrides["ds_layout_settings.node|liftup|current.settings|regions|main|4"] = 'links';
   $overrides["ds_layout_settings.node|liftup|current.settings|regions|main|5"]["DELETED"] = TRUE;
 
-  // Exported overrides for: field_group
-  $overrides["field_group.group_liftup_header|node|news_item|current.group_liftup_header|node|news_item|current"]["DELETED"] = TRUE;
-
   // Exported overrides for: views_view
   $overrides["views_view.kada_current.display|default|display_options|css_class"] = 'liftup-box-list liftup-box-list--current';
   $overrides["views_view.kada_current_promoted_.display|default|display_options|css_class"] = 'liftup-box-list liftup-box-list--current';

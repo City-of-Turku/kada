@@ -107,6 +107,7 @@ features[features_overrides][] = field_group.group_content|node|news_item|form.d
 features[features_overrides][] = field_group.group_content|node|news_item|form.data|children|7
 features[features_overrides][] = field_group.group_content|node|news_item|form.data|children|8
 features[features_overrides][] = field_group.group_content|node|news_item|form.data|children|9
+features[features_overrides][] = field_group.group_liftup_header|node|news_item|current.group_liftup_header|node|news_item|current
 features[features_overrides][] = field_group.group_section|node|news_item|form.data|weight
 features[features_overrides][] = field_instance.node-news_item-body.display|full|weight
 features[features_overrides][] = field_instance.node-news_item-body.display|live_results_search

@@ -5,33 +5,35 @@ $ingress-font-size: 1.286em;
 
 $line-height: 1.6;
 
+.dnd-widget-wrapper {
+  margin-bottom: 2rem;
 
-.scald-atom {
-  &.view-mode-main_content {
-    margin: 1em 0;
+  &.context-content_half {
+    height: auto;
+    line-height: 0;
 
-    img {
-      width: auto;
+    @media screen and (min-width: $mobile-landscape-wide) {
+      width: 50%;
     }
   }
 
-  &.view-mode-content_full {
-    margin: 1em 0;
+  &.atom-align-right {
+    @media screen and (max-width: $mobile-landscape-wide) {
+      float: none;
+    }
 
-    img {
-      height: auto;
-      width: 100%;
+    @media screen and (min-width: $mobile-landscape-wide) {
+      margin-left: 2rem;
     }
   }
 
-  &.view-mode-content_half {
-    margin: 1em 0;
+  &.atom-align-left {
+    @media screen and (max-width: $mobile-landscape-wide) {
+      float: none;
+    }
 
-    img {
-      @media screen and (min-width: $desktop-narrow) {
-        height: auto;
-        width: 50%;
-      }
+    @media screen and (min-width: $mobile-landscape-wide) {
+      margin-right: 2rem;
     }
   }
 }
@@ -67,59 +69,6 @@ $line-height: 1.6;
     }
   }
 }
-
-// Content-half image alignment
-// .node--news-item--full {
-//   .context-content_half {
-//     width: 50%;
-
-//     .scald-atom {
-//       margin: 0;
-//     }
-
-//     img {
-//       width: 100%;
-//     }
-//   }
-
-//   .atom-align-left {
-//     float: left;
-//     margin: 0.5em 1em 0 0;
-//   }
-
-//   .atom-align-right {
-//     float: right;
-//     margin: 0.5em 0 0 1em;
-//   }
-
-//   .scald-atom > a {
-//     display: block;
-//   }
-// }
-
-// .node--news-item--full {
-//   .field--name-post-date {
-//     color: $post-date-color;
-//     font-size: $ingress-font-size;
-//     margin-top: 16px;
-//   }
-
-//   .field--title {
-//     margin-bottom: 18px;
-//     margin-top: 0;
-
-//     a {
-//       color: $title-link-color;
-//       font-weight: 700;
-//     }
-//   }
-
-//   .field--name-field-lead-paragraph-long-text {
-//     font-size: $ingress-font-size;
-//     font-weight: 600;
-//     line-height: $line-height;
-//   }
-// }
 
 .node-type-place {
   .field--name-field-description {
