@@ -111,7 +111,6 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'type' => 'hidden',
       'weight' => 0,
     ); /* WAS: '' */
-    $data['node-event-field_keywords_et']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
   if (isset($data['node-event-field_related_content_et'])) {
     $data['node-event-field_related_content_et']['display']['live_results_search'] = array(
@@ -204,21 +203,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     $data['node-liftup-field_keywords']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
   if (isset($data['node-news_item-field_keywords'])) {
-    $data['node-news_item-field_keywords']['display']['live_results_search'] = array(
-      'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
-      'weight' => 0,
-    ); /* WAS: '' */
     $data['node-news_item-field_keywords']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
   if (isset($data['node-news_item-field_related_content'])) {
-    $data['node-news_item-field_related_content']['display']['live_results_search'] = array(
-      'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
-      'weight' => 0,
-    ); /* WAS: '' */
     $data['node-news_item-field_related_content']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
   if (isset($data['node-page-field_contact_information'])) {
@@ -716,15 +703,6 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-service-field_described_by_er_et']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
-  if (isset($data['node-social_media_update-field_keywords'])) {
-    $data['node-social_media_update-field_keywords']['display']['live_results_search'] = array(
-      'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
-      'weight' => 0,
-    ); /* WAS: '' */
-    $data['node-social_media_update-field_keywords']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
-  }
   if (isset($data['taxonomy_term-accessibility-description_field'])) {
     $data['taxonomy_term-accessibility-description_field']['description'] = 'Write here a really short description of the accessibility feature in question if you want. Please notice that there is very little space for the description so it needs to be just a few words.'; /* WAS: '' */
     $data['taxonomy_term-accessibility-description_field']['display']['default']['label'] = 'hidden'; /* WAS: 'above' */
@@ -798,6 +776,16 @@ function pori_configuration_overrides_feature_strongarm_alter(&$data) {
   }
   if (isset($data['menu_block_8_depth'])) {
     $data['menu_block_8_depth']->value = 2; /* WAS: 0 */
+  }
+  if (isset($data['scald_custom_contexts'])) {
+    $data['scald_custom_contexts']->value['content_250_wide'] = array(
+      'name' => 'content_250_wide',
+      'title' => 'Content 250 wide',
+      'description' => '',
+      'render_language' => 'XHTML',
+      'parseable' => TRUE,
+      'formats' => array(),
+    ); /* WAS: '' */
   }
   if (isset($data['variable_realm_list_domain'])) {
     $data['variable_realm_list_domain']->value[0] = 'googleanalytics_account'; /* WAS: 'piwik_site_id' */

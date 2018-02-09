@@ -70,7 +70,6 @@ function pori_configuration_overrides_feature_features_override_default_override
     'type' => 'hidden',
     'weight' => 0,
   );
-  $overrides["field_instance.node-event-field_keywords_et.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.node-event-field_related_content_et.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -141,19 +140,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => 0,
   );
   $overrides["field_instance.node-liftup-field_keywords.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
-  $overrides["field_instance.node-news_item-field_keywords.display|live_results_search"] = array(
-    'label' => 'above',
-    'settings' => array(),
-    'type' => 'hidden',
-    'weight' => 0,
-  );
   $overrides["field_instance.node-news_item-field_keywords.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
-  $overrides["field_instance.node-news_item-field_related_content.display|live_results_search"] = array(
-    'label' => 'above',
-    'settings' => array(),
-    'type' => 'hidden',
-    'weight' => 0,
-  );
   $overrides["field_instance.node-news_item-field_related_content.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.node-page-field_contact_information.display|live_results_search"] = array(
     'label' => 'above',
@@ -582,13 +569,6 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => 0,
   );
   $overrides["field_instance.node-service-field_described_by_er_et.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
-  $overrides["field_instance.node-social_media_update-field_keywords.display|live_results_search"] = array(
-    'label' => 'above',
-    'settings' => array(),
-    'type' => 'hidden',
-    'weight' => 0,
-  );
-  $overrides["field_instance.node-social_media_update-field_keywords.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.taxonomy_term-accessibility-description_field.description"] = 'Write here a really short description of the accessibility feature in question if you want. Please notice that there is very little space for the description so it needs to be just a few words.';
   $overrides["field_instance.taxonomy_term-accessibility-description_field.display|default|label"] = 'hidden';
   $overrides["field_instance.taxonomy_term-accessibility-description_field.display|default|weight"] = 1;
@@ -645,6 +625,14 @@ function pori_configuration_overrides_feature_features_override_default_override
     'custom_settings' => FALSE,
   );
   $overrides["variable.menu_block_8_depth.value"] = 2;
+  $overrides["variable.scald_custom_contexts.value|content_250_wide"] = array(
+    'name' => 'content_250_wide',
+    'title' => 'Content 250 wide',
+    'description' => '',
+    'render_language' => 'XHTML',
+    'parseable' => TRUE,
+    'formats' => array(),
+  );
   $overrides["variable.variable_realm_list_domain.value|0"] = 'googleanalytics_account';
   $overrides["variable.variable_realm_list_domain.value|1"] = 'piwik_site_id';
   $overrides["variable.variable_realm_list_domain.value|2"] = 'site_name';

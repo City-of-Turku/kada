@@ -79,6 +79,7 @@ function pori_news_features_override_default_overrides() {
   $overrides["field_group.group_content|node|news_item|form.data|children|7"] = 'field_target_audience';
   $overrides["field_group.group_content|node|news_item|form.data|children|8"] = 'field_theme';
   $overrides["field_group.group_content|node|news_item|form.data|children|9"] = 'field_vignette';
+  $overrides["field_group.group_liftup_header|node|news_item|current.group_liftup_header|node|news_item|current"]["DELETED"] = TRUE;
   $overrides["field_group.group_section|node|news_item|form.data|weight"] = 2;
 
   // Exported overrides for: field_instance

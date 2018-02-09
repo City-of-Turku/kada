@@ -120,6 +120,9 @@ function pori_news_field_group_info_alter(&$data) {
     unset($data['group_content|node|news_item|form']->data['children'][18]);
     unset($data['group_content|node|news_item|form']->data['children'][19]);
   }
+  if (isset($data['group_liftup_header|node|news_item|current'])) {
+    unset($data['group_liftup_header|node|news_item|current']);
+  }
   if (isset($data['group_section|node|news_item|form'])) {
     $data['group_section|node|news_item|form']->data['weight'] = 2; /* WAS: 1 */
   }
