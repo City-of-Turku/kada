@@ -82,9 +82,9 @@ function pori_news_field_default_field_instances() {
       'enable_tokens' => 1,
       'entity_translation_sync' => FALSE,
       'linkit' => array(
-        'button_text' => 'Search',
-        'enable' => 0,
-        'profile' => '',
+        'button_text' => 'Search internal content',
+        'enable' => 1,
+        'profile' => 'fields',
       ),
       'rel_remove' => 'default',
       'title' => 'optional',
