@@ -493,12 +493,23 @@
   }
 }
 
-
-.liftup-box--social {
+.liftup-box-list--current .liftup-box--social {
   .field--name-field-image-url,
   .field--name-field-share-caption,
   .field--name-field-share-description {
     display: none; // Not quite sure what these are used for but hiding them for now.
+  }
+
+  .liftup-box__header {
+    position: relative;
+  }
+
+  .liftup-box__content {
+    overflow: hidden;
+  }
+
+  .field--name-post-date {
+    margin: 1.25rem 0 1.25rem 3rem;
   }
 }
 
