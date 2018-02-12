@@ -45,6 +45,16 @@
         user: nginx
       tags: ['cron']
       when: drupal_web_root is defined
+    - name: "Download file from http://83.102.35.72/PORIKAexport2.csv"
+      cron:
+        name: "Download import data"
+        minute: "0"
+        hour: "6"
+        job: "wget -O /var/www/pori.stage.wunder.io/private_files/transfer/PORIKAexport2.csv http://83.102.35.72/PORIKAexport2.csv"
+        state: "present"
+        user: www-admin
+      tags: ['cron']
+
 
   vars:
     wkv_site_env: stage

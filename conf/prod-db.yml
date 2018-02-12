@@ -33,7 +33,7 @@
         name: "Download import data"
         minute: "0"
         hour: "6"
-        job: "wget -O /nfs-files/private_files/PORIKAexport2.csv http://83.102.35.72/PORIKAexport2.csv"
+        job: "wget -O /nfs-files/private_files/transfer/PORIKAexport2.csv http://83.102.35.72/PORIKAexport2.csv"
         state: "present"
         user: www-admin
       tags: ['cron']
