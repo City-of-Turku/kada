@@ -106,6 +106,9 @@ function pori_configuration_overrides_feature_field_group_info_alter(&$data) {
   if (isset($data['group_additional_information|node|page|form'])) {
     $data['group_additional_information|node|page|form']->data['children'][2] = 'field_contact_person'; /* WAS: '' */
   }
+  if (isset($data['group_content|node|place|form'])) {
+    $data['group_content|node|place|form']->data['children'][11] = 'field_read_more'; /* WAS: 'language' */
+  }
 }
 
 /**
