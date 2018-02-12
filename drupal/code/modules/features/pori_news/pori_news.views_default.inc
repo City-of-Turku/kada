@@ -251,6 +251,15 @@ function pori_news_views_default_views() {
   $handler->display->display_options['filters']['field_target_audience_tid']['id'] = 'field_target_audience_tid';
   $handler->display->display_options['filters']['field_target_audience_tid']['table'] = 'field_data_field_target_audience';
   $handler->display->display_options['filters']['field_target_audience_tid']['field'] = 'field_target_audience_tid';
+  $handler->display->display_options['filters']['field_target_audience_tid']['value'] = array(
+    54 => '54',
+    55 => '55',
+    56 => '56',
+    57 => '57',
+    58 => '58',
+    60 => '60',
+    59 => '59',
+  );
   $handler->display->display_options['filters']['field_target_audience_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_target_audience_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_target_audience_tid']['expose']['operator_id'] = 'field_target_audience_tid_op';
@@ -267,6 +276,7 @@ function pori_news_views_default_views() {
     5 => 0,
     6 => 0,
   );
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
 

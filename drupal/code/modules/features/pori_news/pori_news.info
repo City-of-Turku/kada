@@ -15,7 +15,6 @@ dependencies[] = kada_news_feature
 dependencies[] = kada_page_feature
 dependencies[] = link
 dependencies[] = pori_contact_information_feature
-dependencies[] = pori_news
 dependencies[] = views
 features[ctools][] = ds:ds:1
 features[ctools][] = field_group:field_group:1
