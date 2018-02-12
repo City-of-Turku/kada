@@ -17,6 +17,27 @@
   vars_files:
   - prod-vars.yml
 
+  tasks:
+    # Disable email from cron
+    - name: "Disable emails from failed cronjobs for nginx user"
+      cron:
+        name: "MAILTO"
+        env: yes
+        value: ""
+        state: "present"
+        user: www-admin
+      tags: ['cron']
+
+    - name: "Download file from http://83.102.35.72/PORIKAexport2.csv"
+      cron:
+        name: "Download import data"
+        minute: "0"
+        hour: "6"
+        job: "wget -O /nfs-files/private_files/transfer/PORIKAexport2.csv http://83.102.35.72/PORIKAexport2.csv"
+        state: "present"
+        user: www-admin
+      tags: ['cron']
+
   vars:
     ## Base ##
 

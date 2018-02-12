@@ -39,6 +39,7 @@ function pori_configuration_overrides_feature_features_override_default_override
 
   // Exported overrides for: ds_field_settings
   $overrides["ds_field_settings.node|page|default.settings|places_for_services|weight"] = 5;
+  $overrides["ds_field_settings.node|place|teaser.settings|node_link"]["DELETED"] = TRUE;
 
   // Exported overrides for: ds_layout_settings
   $overrides["ds_layout_settings.node|page|default.settings|fields|field_contact_person"] = 'contact_information';
@@ -49,6 +50,9 @@ function pori_configuration_overrides_feature_features_override_default_override
     8 => 'field_contact_person',
   );
   $overrides["ds_layout_settings.node|page|default.settings|wrappers|contact_information"] = 'div';
+  $overrides["ds_layout_settings.node|place|teaser.settings|fields|field_read_more"] = 'main_content';
+  $overrides["ds_layout_settings.node|place|teaser.settings|fields|node_link"]["DELETED"] = TRUE;
+  $overrides["ds_layout_settings.node|place|teaser.settings|regions|main_content|6"] = 'field_read_more';
   $overrides["ds_layout_settings.taxonomy_term|accessibility|default.layout"] = 'accessibility_layout';
   $overrides["ds_layout_settings.taxonomy_term|accessibility|default.settings|fields|description_field"] = 'main_content';
   $overrides["ds_layout_settings.taxonomy_term|accessibility|default.settings|fields|field_icon"]["DELETED"] = TRUE;
@@ -62,6 +66,7 @@ function pori_configuration_overrides_feature_features_override_default_override
 
   // Exported overrides for: field_group
   $overrides["field_group.group_additional_information|node|page|form.data|children|2"] = 'field_contact_person';
+  $overrides["field_group.group_content|node|place|form.data|children|11"] = 'field_read_more';
 
   // Exported overrides for: field_instance
   $overrides["field_instance.node-event-field_keywords_et.display|live_results_search"] = array(
@@ -70,7 +75,6 @@ function pori_configuration_overrides_feature_features_override_default_override
     'type' => 'hidden',
     'weight' => 0,
   );
-  $overrides["field_instance.node-event-field_keywords_et.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.node-event-field_related_content_et.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -141,19 +145,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => 0,
   );
   $overrides["field_instance.node-liftup-field_keywords.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
-  $overrides["field_instance.node-news_item-field_keywords.display|live_results_search"] = array(
-    'label' => 'above',
-    'settings' => array(),
-    'type' => 'hidden',
-    'weight' => 0,
-  );
   $overrides["field_instance.node-news_item-field_keywords.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
-  $overrides["field_instance.node-news_item-field_related_content.display|live_results_search"] = array(
-    'label' => 'above',
-    'settings' => array(),
-    'type' => 'hidden',
-    'weight' => 0,
-  );
   $overrides["field_instance.node-news_item-field_related_content.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.node-page-field_contact_information.display|live_results_search"] = array(
     'label' => 'above',
@@ -553,6 +545,134 @@ function pori_configuration_overrides_feature_features_override_default_override
     'type' => 'title_linked',
     'weight' => 28,
   );
+  $overrides["field_instance.node-place-field_accessibility.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_accessibility.display|teaser|weight"] = 28;
+  $overrides["field_instance.node-place-field_address_postal.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_address_postal.display|teaser|weight"] = 24;
+  $overrides["field_instance.node-place-field_address_street.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_address_street.display|teaser|weight"] = 27;
+  $overrides["field_instance.node-place-field_address_visiting.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_availability.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_billing_address.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_billing_address.display|teaser|weight"] = 36;
+  $overrides["field_instance.node-place-field_description.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_district.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_district.display|teaser|weight"] = 26;
+  $overrides["field_instance.node-place-field_email.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_fax_number.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_fax_number.display|teaser|weight"] = 37;
+  $overrides["field_instance.node-place-field_location.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_location.display|teaser|weight"] = 35;
+  $overrides["field_instance.node-place-field_main_image.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_main_image.display|teaser|weight"] = 30;
+  $overrides["field_instance.node-place-field_municipality_term.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_municipality_term.display|teaser|weight"] = 25;
+  $overrides["field_instance.node-place-field_person_responsible.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_person_responsible.display|teaser|weight"] = 32;
+  $overrides["field_instance.node-place-field_phone.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_phone_switch.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_phone_switch.display|teaser|weight"] = 29;
+  $overrides["field_instance.node-place-field_service_offer.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_service_offer.display|teaser|weight"] = 34;
+  $overrides["field_instance.node-place-field_website_et.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-field_website_et.display|teaser|weight"] = 31;
+  $overrides["field_instance.node-place-title_field.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-place-title_field.display|teaser|weight"] = 33;
   $overrides["field_instance.node-position_of_trust-field_deputy_member.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -582,13 +702,6 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => 0,
   );
   $overrides["field_instance.node-service-field_described_by_er_et.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
-  $overrides["field_instance.node-social_media_update-field_keywords.display|live_results_search"] = array(
-    'label' => 'above',
-    'settings' => array(),
-    'type' => 'hidden',
-    'weight' => 0,
-  );
-  $overrides["field_instance.node-social_media_update-field_keywords.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.taxonomy_term-accessibility-description_field.description"] = 'Write here a really short description of the accessibility feature in question if you want. Please notice that there is very little space for the description so it needs to be just a few words.';
   $overrides["field_instance.taxonomy_term-accessibility-description_field.display|default|label"] = 'hidden';
   $overrides["field_instance.taxonomy_term-accessibility-description_field.display|default|weight"] = 1;
@@ -644,7 +757,16 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["variable.field_bundle_settings_node__person.value|view_modes|product"] = array(
     'custom_settings' => FALSE,
   );
+  $overrides["variable.field_bundle_settings_node__place.value|extra_fields|display|domain|teaser|weight"] = 23;
   $overrides["variable.menu_block_8_depth.value"] = 2;
+  $overrides["variable.scald_custom_contexts.value|content_250_wide"] = array(
+    'name' => 'content_250_wide',
+    'title' => 'Content 250 wide',
+    'description' => '',
+    'render_language' => 'XHTML',
+    'parseable' => TRUE,
+    'formats' => array(),
+  );
   $overrides["variable.variable_realm_list_domain.value|0"] = 'googleanalytics_account';
   $overrides["variable.variable_realm_list_domain.value|1"] = 'piwik_site_id';
   $overrides["variable.variable_realm_list_domain.value|2"] = 'site_name';

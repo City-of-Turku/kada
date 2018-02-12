@@ -186,4 +186,11 @@ function pori_user_permissions_user_default_permissions_alter(&$data) {
   if (isset($data['edit own attraction_card content'])) {
     $data['edit own attraction_card content']['roles']['web journalist'] = 'web journalist'; /* WAS: '' */
   }
+  if (isset($data['view any node place page'])) {
+    $data['view any node place page']['roles']['admin'] = 'admin'; /* WAS: '' */
+    $data['view any node place page']['roles']['content editor'] = 'content editor'; /* WAS: '' */
+    $data['view any node place page']['roles']['web journalist'] = 'web journalist'; /* WAS: '' */
+    unset($data['view any node place page']['roles']['anonymous user']);
+    unset($data['view any node place page']['roles']['authenticated user']);
+  }
 }

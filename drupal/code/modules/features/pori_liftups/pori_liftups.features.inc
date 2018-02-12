@@ -35,15 +35,6 @@ function pori_liftups_ds_layout_settings_info_alter(&$data) {
 }
 
 /**
- * Implements hook_field_group_info_alter().
- */
-function pori_liftups_field_group_info_alter(&$data) {
-  if (isset($data['group_liftup_header|node|news_item|current'])) {
-    unset($data['group_liftup_header|node|news_item|current']);
-  }
-}
-
-/**
  * Implements hook_views_default_views_alter().
  */
 function pori_liftups_views_default_views_alter(&$data) {
