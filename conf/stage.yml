@@ -45,6 +45,16 @@
         user: nginx
       tags: ['cron']
       when: drupal_web_root is defined
+    - name: "Download file from http://83.102.35.72/PORIKAexport2.csv"
+      cron:
+        name: "Download import data"
+        minute: "0"
+        hour: "6"
+        job: "wget -O /var/www/pori.stage.wunder.io/private_files/transfer/PORIKAexport2.csv http://83.102.35.72/PORIKAexport2.csv"
+        state: "present"
+        user: www-admin
+      tags: ['cron']
+
 
   vars:
     wkv_site_env: stage
@@ -63,7 +73,7 @@
     # How to assign memory for each role and set the correct
     # memory_app and memory_db define how much total system memory is allocated to each.
     # On dedicated DB server memory_db should max be around 80% of total memory and would ideally fit the whole db + some more.
-    memory_db: 1024 # In MB
+    memory_db: 512 # In MB
     memory_app: 1024 # In MB
 
     # NOTE: memory_app needs to be at least 2x php_memory_limit
@@ -158,6 +168,7 @@
       - key: "twitter_consumer_secret"
         value: "{{ twitter_consumer_secret }}"
 
+    solr_memory: 512m
     # Project-specific config for search_api_solr 
     solr_drupal_files:
       # Standard stuff, inherited from WunderMachina
