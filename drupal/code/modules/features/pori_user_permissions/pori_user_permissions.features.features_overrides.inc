@@ -72,6 +72,11 @@ function pori_user_permissions_features_override_default_overrides() {
   $overrides["user_permission.delete social_media_update content on assigned domains.roles|web journalist"]["DELETED"] = TRUE;
   $overrides["user_permission.edit any attraction_card content.roles|web journalist"] = 'web journalist';
   $overrides["user_permission.edit own attraction_card content.roles|web journalist"] = 'web journalist';
+  $overrides["user_permission.view any node place page.roles|admin"] = 'admin';
+  $overrides["user_permission.view any node place page.roles|anonymous user"]["DELETED"] = TRUE;
+  $overrides["user_permission.view any node place page.roles|authenticated user"]["DELETED"] = TRUE;
+  $overrides["user_permission.view any node place page.roles|content editor"] = 'content editor';
+  $overrides["user_permission.view any node place page.roles|web journalist"] = 'web journalist';
 
  return $overrides;
 }
