@@ -129,6 +129,7 @@ features[features_overrides][] = context.sitewide_fi.reactions|block|blocks|bloc
 features[features_overrides][] = context.top_menu.conditions|context|values|news_list
 features[features_overrides][] = context.top_menu.conditions|context|values|person_list
 features[features_overrides][] = context.top_menu.conditions|context|values|search_page
+features[features_overrides][] = context.top_menu.conditions|domain
 features[features_overrides][] = ds_field_settings.node|page|default.settings|places_for_services|weight
 features[features_overrides][] = ds_field_settings.node|place|teaser.settings|node_link
 features[features_overrides][] = ds_layout_settings.node|page|default.settings|fields|field_contact_person
