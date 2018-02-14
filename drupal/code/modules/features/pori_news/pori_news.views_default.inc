@@ -279,10 +279,147 @@ function pori_news_views_default_views() {
   $handler->display->display_options['filters']['field_target_audience_tid']['expose']['reduce'] = TRUE;
   $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page');
+  /* Display: General archive */
+  $handler = $view->new_display('page', 'General archive', 'page');
   $handler->display->display_options['path'] = 'news-archive';
+
+  /* Display: Visitpori archive */
+  $handler = $view->new_display('page', 'Visitpori archive', 'page_1');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'news_item' => 'news_item',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Global: Combine fields filter */
+  $handler->display->display_options['filters']['combine']['id'] = 'combine';
+  $handler->display->display_options['filters']['combine']['table'] = 'views';
+  $handler->display->display_options['filters']['combine']['field'] = 'combine';
+  $handler->display->display_options['filters']['combine']['operator'] = 'allwords';
+  $handler->display->display_options['filters']['combine']['group'] = 1;
+  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'text';
+  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    8 => 0,
+    3 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['combine']['fields'] = array(
+    'title' => 'title',
+    'body' => 'body',
+  );
+  /* Filter criterion: Date: Date (node) */
+  $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
+  $handler->display->display_options['filters']['date_filter']['table'] = 'node';
+  $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
+  $handler->display->display_options['filters']['date_filter']['group'] = 1;
+  $handler->display->display_options['filters']['date_filter']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['date_filter']['expose']['operator_id'] = 'date_filter_op';
+  $handler->display->display_options['filters']['date_filter']['expose']['label'] = 'Date';
+  $handler->display->display_options['filters']['date_filter']['expose']['operator'] = 'date_filter_op';
+  $handler->display->display_options['filters']['date_filter']['expose']['identifier'] = 'date_filter';
+  $handler->display->display_options['filters']['date_filter']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    8 => 0,
+    3 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['date_filter']['granularity'] = 'month';
+  $handler->display->display_options['filters']['date_filter']['year_range'] = '-3:+0';
+  $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
+    'node.created' => 'node.created',
+  );
+  /* Filter criterion: Content: Theme (field_theme) */
+  $handler->display->display_options['filters']['field_theme_tid']['id'] = 'field_theme_tid';
+  $handler->display->display_options['filters']['field_theme_tid']['table'] = 'field_data_field_theme';
+  $handler->display->display_options['filters']['field_theme_tid']['field'] = 'field_theme_tid';
+  $handler->display->display_options['filters']['field_theme_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_theme_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_theme_tid']['expose']['operator_id'] = 'field_theme_tid_op';
+  $handler->display->display_options['filters']['field_theme_tid']['expose']['label'] = 'Theme';
+  $handler->display->display_options['filters']['field_theme_tid']['expose']['operator'] = 'field_theme_tid_op';
+  $handler->display->display_options['filters']['field_theme_tid']['expose']['identifier'] = 'field_theme_tid';
+  $handler->display->display_options['filters']['field_theme_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    8 => 0,
+    3 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_theme_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_theme_tid']['vocabulary'] = 'theme';
+  /* Filter criterion: Field: Target audience (field_target_audience) */
+  $handler->display->display_options['filters']['field_target_audience_tid']['id'] = 'field_target_audience_tid';
+  $handler->display->display_options['filters']['field_target_audience_tid']['table'] = 'field_data_field_target_audience';
+  $handler->display->display_options['filters']['field_target_audience_tid']['field'] = 'field_target_audience_tid';
+  $handler->display->display_options['filters']['field_target_audience_tid']['value'] = array(
+    1550 => '1550',
+    1551 => '1551',
+    1552 => '1552',
+    1294 => '1294',
+    1295 => '1295',
+    1553 => '1553',
+    1554 => '1554',
+    1299 => '1299',
+    1499 => '1499',
+  );
+  $handler->display->display_options['filters']['field_target_audience_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_target_audience_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['operator_id'] = 'field_target_audience_tid_op';
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['label'] = 'Target audience';
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['operator'] = 'field_target_audience_tid_op';
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['identifier'] = 'field_target_audience_tid';
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    8 => 0,
+    3 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
+  );
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['reduce'] = TRUE;
+  $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
+  /* Filter criterion: Domain Access: Available on current domain */
+  $handler->display->display_options['filters']['current_all']['id'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
+  $handler->display->display_options['filters']['current_all']['value'] = '1';
+  $handler->display->display_options['path'] = 'visitpori-news-archive';
   $translatables['pori_news'] = array(
     t('Master'),
     t('News archive'),
@@ -305,7 +442,8 @@ function pori_news_views_default_views() {
     t('Date'),
     t('Theme'),
     t('Target audience'),
-    t('Page'),
+    t('General archive'),
+    t('Visitpori archive'),
   );
   $export['pori_news'] = $view;
 
