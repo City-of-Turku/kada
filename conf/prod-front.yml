@@ -13,7 +13,7 @@
    - { role: memcached, tags: [ 'memcached' ] }
    - { role: drush, tags: [ 'drush' ] }
    - { role: drupal-log, tags: [ 'drupal-log' ] }
-   - { role: external-smtp, tags: [ 'external-smtp' ] }
+   #- { role: external-smtp, tags: [ 'external-smtp' ] }
    - { role: nfs_client, tags: [ 'nfs_client' ] }
    - { role: monit, tags: [ 'monit' ] }
    - { role: newrelic, tags: [ 'newrelic' ] }
@@ -59,8 +59,8 @@
       - server_name: "{{ domain1_name }}"
         http_port: 8080
         docroot: "/var/www/{{ domain1_name }}/current/web"
-      - server_name: "beta.{{ domain2_name }}"
-        server_forwards: "{{ domain2_name }}"  # we redirect to beta subdomain
+      - server_name: "www.{{ domain2_name }}"
+        server_forwards: "{{ domain2_name }} beta.{{ domain2_name }} {{ domain1_name }}"  # we redirect to beta subdomain
         http_port: 8080
         docroot: "/var/www/{{ domain1_name }}/current/web"
       - server_name: "www.{{ domain3_name }}"
@@ -123,7 +123,7 @@
     ## Monit ##
     monit_enabled: True
     monit_alert_email_service_name: "{{ project_name }} front {{ ansible_nodename }}"
-    monit_alert_email_from: "alert@wundertools.com"
+    monit_alert_email_from: "fi.support@wunder.io"
     monit_alert_email_to: alert@wunder.io
     monit_allow:
       - localhost
@@ -170,11 +170,11 @@
     certbot_domains:
       - "{{ domain1_name }}"
       - "beta.{{ domain2_name }}"
-      #- "www.{{ domain2_name }}"
+      - "www.{{ domain2_name }}"
       - "{{ domain3_name }}"
       - "www.{{ domain3_name }}"
-        #- "{{ domain4_name }}"
-        #- "www.{{ domain4_name }}"
+      - "{{ domain4_name }}"
+      - "www.{{ domain4_name }}"
     certbot_renewal_docroot: /var/www/letsencrypt-auto
     #certbot_commands: allows yo uto customize the command to run, see ansible/playbook/roles/certbot/defaults/main.yml
 
@@ -214,7 +214,7 @@
               address: "{{ front1_ip }}"
               port: 8080
         - name: prod2
-          host: "beta.{{ domain2_name }}"
+          host: "www.{{ domain2_name }}"
           backends:
             - name: prod2_http1
               address: "{{ front1_ip }}"
@@ -246,8 +246,8 @@
         use_dhparam: True
         backends:
           - 127.0.0.1:8081
-      - server_name: "beta.{{ domain2_name }}"
-        server_forwards: "{{ domain2_name }} {{ domain1_name }}"  # we redirect to www subdomain
+      - server_name: "www.{{ domain2_name }}"
+        server_forwards: "{{ domain2_name }} beta.{{ domain2_name }} {{ domain1_name }}"  # we redirect to www subdomain
         ssl_certificate: "/etc/letsencrypt/live/{{ domain1_name }}/fullchain.pem"
         ssl_certificate_key: "/etc/letsencrypt/live/{{ domain1_name}}/privkey.pem"
         use_dhparam: True
@@ -263,8 +263,8 @@
 
     # Forward to www and https.
     httpforwards:
-      - server_name: "beta.{{ domain2_name }}"
-        forwarded_domains: "{{ domain2_name}} {{ domain1_name }}"
+      - server_name: "www.{{ domain2_name }}"
+        forwarded_domains: "beta.{{ domain2_name}} www.{{ domain2_name }} {{ domain2_name}} {{ domain1_name }}"
       - server_name: "www.{{ domain3_name }}"
         forwarded_domains: "{{ domain3_name}} www.{{ domain3_name }} beta.{{ domain3_name }} {{ domain4_name}} www.{{ domain4_name }}"
     # You can also use extra_forwards and httpextraforwards to define additional domains to listen & forward
