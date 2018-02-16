@@ -18,11 +18,20 @@ function kada_search_feature_menu() {
     'type' => MENU_NORMAL_ITEM,
   );
 
-  $items['admin/config/search/exclude_content'] = array(
-    'title' => 'Exclude from search',
-    'description' => 'Exclude and hide content/groups from being shown in search results and search engines.',
+  $items['admin/config/search/kada_search'] = array(
+    'title' => 'KADA search settings',
+    'description' => 'Custom settings for KADA search.',
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('kada_search_feature_exclude_content_settings_form'),
+    'page arguments' => array('kada_search_feature_settings_form'),
+    'access arguments' => array('administer search_api'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  $items['admin/config/search/domain_based_search'] = array(
+    'title' => 'Domain Based Search',
+    'description' => 'Configure the domains where domain based searching will be enabled. Domain based search will only show domain related contents in search results',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('kada_search_feature_domain_based_search_settings_form'),
     'access arguments' => array('administer search_api'),
     'type' => MENU_NORMAL_ITEM,
   );
@@ -45,9 +54,9 @@ function kada_search_feature_boost_settings_form($form, &$form_state) {
 }
 
 /**
- * Admin settings for excluding content from search.
+ * Admin settings for search.
  */
-function kada_search_feature_exclude_content_settings_form($form, &$form_state) {
+function kada_search_feature_settings_form($form, &$form_state) {
   $group_options = array();
   $bundles = og_get_all_group_bundle();
 
@@ -68,6 +77,69 @@ function kada_search_feature_exclude_content_settings_form($form, &$form_state) 
     '#description' => t('Select the organic group that will be excluded from search results'),
     '#options' => $group_options,
     '#default_value' => variable_get('kada_search_feature_exclude_groups', array()),
+  );
+
+  $form['kada_search_feature_alphabetical_sort_types'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Types to sort alphabetically'),
+    '#description' => t('Select the types that will trigger alphabetical sorting, when filtered.'),
+    '#options' => node_type_get_names(),
+    '#default_value' => variable_get('kada_search_feature_alphabetical_sort_types', array()),
+  );
+
+  $form['kada_search_feature_date_sort_types'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Types to sort by date'),
+    '#description' => t('Select the types that will use date sorting, when filtered.'),
+    '#options' => node_type_get_names(),
+    '#default_value' => variable_get('kada_search_feature_date_sort_types', array()),
+  );
+
+  // Build non-drupal content types for timebased sorting.
+  $content_types['proceeding'] = t('Proceeding');
+  $form['kada_search_feature_date_sort_types_nd'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Non-Drupal types to sort by date'),
+    '#description' => t('Select the types that will use date sorting, when filtered.'),
+    '#options' => $content_types,
+    '#default_value' => variable_get('kada_search_feature_date_sort_types_nd', array()),
+  );
+
+  $form['kada_search_feature_sort_event_date_label'] = array(
+    '#type' => 'markup',
+    '#prefix' => '<label>',
+    '#markup' => t('Extra options for events'),
+    '#suffix' => '</label>',
+  );
+
+  $form['kada_search_feature_sort_event_date'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Sort events by date'),
+    '#description' => t('Select to have events ordered most current ones first (Published events with earliest start time come first). This selection overrides any other sort selections on page for events. '),
+    '#default_value' => variable_get('kada_search_feature_sort_event_date', array()),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Admin settings for configuring domain based search.
+ */
+function kada_search_feature_domain_based_search_settings_form($form, &$form_state) {
+  $domains = domain_domains();
+
+  $domain_options = array();
+
+  foreach ($domains as $domain) {
+    $domain_options[$domain['domain_id']] = $domain['sitename'] . ' (' . $domain['subdomain'] . ')';
+  }
+
+  $form['kada_search_feature_domain_search'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Enable domain based search for the selected domains:'),
+    '#description' => t('Limit the search results of selected domains to domain related content only'),
+    '#options' => $domain_options,
+    '#default_value' => variable_get('kada_search_feature_domain_search', array()),
   );
 
   return system_settings_form($form);
@@ -269,6 +341,45 @@ function kada_search_feature_search_api_solr_documents_alter(&$documents, $index
  * Alters the query sent to SOLR to add boost query parameters
  */
 function kada_search_feature_search_api_solr_query_alter(array &$call_args, SearchApiQueryInterface $query) {
+  $alphabetical_types = variable_get('kada_search_feature_alphabetical_sort_types', array());
+  $date_types = variable_get('kada_search_feature_date_sort_types', array());
+  $date_types_nd = variable_get('kada_search_feature_date_sort_types_nd', array());
+  $event_sort = variable_get('kada_search_feature_sort_event_date', array());
+
+  foreach($date_types as $date_type => $key) {
+    if($key !== $date_type) {
+      unset($date_types[$date_type]);
+    }
+  }
+  foreach($date_types_nd as $date_type_nd => $key) {
+    if($key !== $date_type_nd) {
+      unset($date_types_nd[$date_type_nd]);
+    }
+  }
+  foreach($alphabetical_types as $alphabetical_type => $key) {
+    if($key !== $alphabetical_type ) {
+      unset($alphabetical_types[$alphabetical_type]);
+    }
+  }
+
+  foreach ($call_args['params']['fq'] as $fq) {
+    // If a type filter defined for alphabetical sort set, change the sort.
+    if (preg_match('/\(ss_type:"([^"]+)"\)/', $fq, $matches) && in_array($matches[1], $alphabetical_types)) {
+      $call_args['params']['sort'] = array('ss_title_field asc');
+    }
+    // If a type filter defined for date sort set, change the sort.
+    if (preg_match('/\(ss_type:"([^"]+)"\)/', $fq, $matches) && in_array($matches[1], $date_types)) {
+      $call_args['params']['sort'] = 'ds_created desc';
+    }
+    // If a type filter defined for non-drupal date sort set, change the sort.
+    if (preg_match('/\(ss_type:"([^"]+)"\)/', $fq, $matches) && in_array($matches[1], $date_types_nd)) {
+      $call_args['params']['sort'] = 'value_date desc';
+    }
+    // If event and sorted by most current first.
+    if (preg_match('/\(ss_type:"([^"]+)"\)/', $fq, $matches) && in_array($matches[1], array('event')) && $event_sort == 1) {
+      $call_args['params']['sort'] = 'ds_field_event_date$value asc';
+    }
+  }
   // Boost types defined in /admin/config/search/boost
   $boost_types = variable_get('kada_search_feature_boost_types', 'page|50');
   $boost_types = explode("\n", $boost_types);
@@ -277,10 +388,36 @@ function kada_search_feature_search_api_solr_query_alter(array &$call_args, Sear
     $call_args['params']['bq'][$boost_type[0]] = "ss_type:\"$boost_type[0]\"^$boost_type[1]";
   }
 
-  // Filter out excluded groups.
-  $excluded_groups = array_filter(variable_get('kada_search_feature_exclude_groups', array()));
-  foreach ($excluded_groups as $gid) {
-    $call_args['params']['fq'][] = "-im_og_group_ref:$gid OR -is_nid:$gid";
+  // Filter the excluded sections out only outside the Search API admin;
+  // it should show the unmodified index figures to avoid confusion.
+  if (!(arg(0) == 'admin' && arg(1) == 'config' && arg(2) == 'search' && arg(3) == 'search_api')) {
+    // Filter out excluded groups.
+    $excluded_groups = array_filter(variable_get('kada_search_feature_exclude_groups', array()));
+    foreach ($excluded_groups as $gid) {
+      $call_args['params']['fq'][] = "-im_og_group_ref:$gid OR -is_nid:$gid";
+    }
+  }
+
+  kada_search_feature_add_domain_filter_to_solr_query($call_args);
+}
+
+/**
+ * #4817: Adds a domain filter to Solr query arguments if the current domain is
+ * configured to use domain based search. The domain comparison uses domain
+ * IDs rather than domain machine names, since the machine names can
+ * potentially change.
+ *
+ * @todo Add domain ID to indexes after this feature has been deployed, then
+ * enable the domain based search to specific domains from the configuration.
+ *
+ * @param array $call_args See hook_search_api_solr_query_alter().
+ */
+function kada_search_feature_add_domain_filter_to_solr_query(array &$call_args) {
+  $enabled_domains = array_filter(variable_get('kada_search_feature_domain_search', array()), 'intval');
+  $domain = domain_get_domain();
+  $current_domain_id = $domain['domain_id'];
+  if (in_array($current_domain_id, $enabled_domains)) {
+    $call_args['params']['fq'][] = "im_domain_domain_id:$current_domain_id";
   }
 }
 
@@ -333,7 +470,11 @@ function kada_search_feature_search_api_index_items_alter(&$items, $index) {
       if ($node->type == 'event') {
         $wrapper = entity_metadata_wrapper('node', $node);
         // Make sure this sub event has a parent/master event reference
-        if ($wrapper->field_date_type->value() == 'sub' && !empty($node->field_super_event)) {
+
+        // Issue #5759: An error occured in one entity with empty super event
+        // reference, because the field $node->field_super_event had a value array('und' => array()).
+        // So now we check if the actual entity_id is set.
+        if ($wrapper->field_date_type->value() == 'sub' && !empty($node->field_super_event['und'][0]['endpoints']['und'][1]['entity_id']) && intval($node->field_super_event['und'][0]['endpoints']['und'][1]['entity_id'])) {
           // Let's find the super event and index values from there
           // Relation field doesn't seem to work with wrapper, doing it the
           // old-skool way
@@ -356,6 +497,37 @@ function kada_search_feature_search_api_index_items_alter(&$items, $index) {
           unset($items[$key]);
         }
       }
+    }
+  }
+}
+
+/**
+ * Implements hook_action_info
+ */
+function kada_search_feature_action_info() {
+  // Defines an array of actions to be performed on nodes
+  return array(
+    '_kada_search_feature_reindex' => array(
+      'type' => 'node',
+      'label' => t('Reindex node'),
+      'behavior' => array('changes_property'),
+      'configurable' => FALSE,
+      'vbo_configurable' => FALSE,
+      'triggers' => array('any'),
+    ),
+  );
+}
+
+/**
+ * @param $node
+ * @param $context
+ * Custom function to trigger forced node reindexing.
+ */
+function _kada_search_feature_reindex(&$node, $context) {
+  $indexes = search_api_index_load_multiple(FALSE);
+  foreach ($indexes as $index) {
+    if ($index->enabled) {
+      search_api_index_specific_items($index, array($node->nid));
     }
   }
 }
