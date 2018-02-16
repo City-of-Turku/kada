@@ -48,3 +48,10 @@ function pori_configuration_update_7105(&$sandbox) {
 function pori_configuration_update_7106(&$sandbox) {
   module_enable(array('entity_action_log'));
 }
+
+/*
+ * Enable the bigmenu module.
+ */
+function pori_configuration_update_7107(&$sandbox) {
+  module_enable(array('bigmenu'));
+}
