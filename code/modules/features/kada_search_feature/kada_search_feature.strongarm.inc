@@ -112,5 +112,79 @@ function kada_search_feature_strongarm() {
   );
   $export['search_api_facets_search_ids'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'kada_search_feature_alphabetical_sort_types';
+  $strongarm->value = array(
+    'attraction_card' => 'attraction_card',
+    'blog' => 0,
+    'blog_post' => 0,
+    'feed_import_facebook' => 0,
+    'feed_import_instagram' => 0,
+    'feed_import_twitter' => 0,
+    'feed_import_youtube_channel' => 0,
+    'person' => 0,
+    'landing_page' => 0,
+    'position_of_trust' => 0,
+    'liftup' => 0,
+    'service' => 0,
+    'service_offer' => 0,
+    'affiliate' => 0,
+    'page' => 0,
+    'section' => 0,
+    'social_media_update' => 0,
+    'event' => 0,
+    'place' => 0,
+    'news_item' => 0,
+    'webform' => 0,
+  );
+  $export['kada_search_feature_alphabetical_sort_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'kada_search_feature_date_sort_types';
+  $strongarm->value = array(
+    'blog_post' => 'blog_post',
+    'news_item' => 'news_item',
+    'blog' => 0,
+    'feed_import_facebook' => 0,
+    'feed_import_instagram' => 0,
+    'feed_import_twitter' => 0,
+    'feed_import_youtube_channel' => 0,
+    'person' => 0,
+    'attraction_card' => 0,
+    'landing_page' => 0,
+    'position_of_trust' => 0,
+    'liftup' => 0,
+    'service' => 0,
+    'service_offer' => 0,
+    'affiliate' => 0,
+    'page' => 0,
+    'section' => 0,
+    'social_media_update' => 0,
+    'event' => 0,
+    'place' => 0,
+    'webform' => 0,
+  );
+  $export['kada_search_feature_date_sort_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'kada_search_feature_date_sort_types_nd';
+  $strongarm->value = array(
+    'proceeding' => 'proceeding',
+  );
+  $export['kada_search_feature_date_sort_types_nd'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'kada_search_feature_sort_event_date';
+  $strongarm->value = 1;
+  $export['kada_search_feature_sort_event_date'] = $strongarm;
+
   return $export;
 }

@@ -42,7 +42,7 @@ function kada_search_feature_default_search_api_index() {
     "item_type" : "node",
     "options" : {
       "index_directly" : 0,
-      "cron_limit" : "250",
+      "cron_limit" : "50",
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
           "status" : 1,
@@ -179,6 +179,7 @@ function kada_search_feature_default_search_api_index() {
         "body:value" : { "type" : "text", "boost" : "2.0" },
         "changed" : { "type" : "date" },
         "created" : { "type" : "date" },
+        "domain_domain_id" : { "type" : "list\\u003Cinteger\\u003E" },
         "field_address" : { "type" : "text", "boost" : "3.0" },
         "field_contact_information:field_availability:value" : { "type" : "list\\u003Ctext\\u003E", "boost" : "2.0" },
         "field_district" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
@@ -210,7 +211,8 @@ function kada_search_feature_default_search_api_index() {
       }
     },
     "enabled" : "1",
-    "read_only" : "0"
+    "read_only" : "0",
+    "base_type" : "search_api_index"
   }');
   $items['kada_content'] = entity_import('search_api_index', '{
     "name" : "KADA entity translated",
@@ -220,14 +222,16 @@ function kada_search_feature_default_search_api_index() {
     "item_type" : "search_api_et_node",
     "options" : {
       "index_directly" : 0,
-      "cron_limit" : "200",
+      "cron_limit" : "50",
       "search_api_et" : { "include" : "incomplete", "fallback language" : "" },
       "fields" : {
         "body:value" : { "type" : "text", "boost" : "2.0" },
         "changed" : { "type" : "date" },
         "created" : { "type" : "date" },
+        "domain_domain_id" : { "type" : "list\\u003Cinteger\\u003E" },
         "field_address" : { "type" : "text", "boost" : "3.0" },
         "field_alternative_name" : { "type" : "list\\u003Ctext\\u003E", "boost" : "5.0" },
+        "field_attraction_category" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_availability:value" : { "type" : "text", "boost" : "2.0" },
         "field_classification" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_district" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
@@ -258,6 +262,7 @@ function kada_search_feature_default_search_api_index() {
         "field_keywords" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_keywords:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_keywords_et" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_lead_paragraph_et" : { "type" : "text", "boost" : "2.0" },
         "field_location:geom" : { "type" : "string" },
         "field_location_name" : { "type" : "text", "boost" : "3.0" },
         "field_municipality" : { "type" : "text", "boost" : "3.0" },
@@ -306,6 +311,7 @@ function kada_search_feature_default_search_api_index() {
           "settings" : {
             "default" : "0",
             "bundles" : {
+              "attraction_card" : "attraction_card",
               "person" : "person",
               "service" : "service",
               "event" : "event",
@@ -389,7 +395,8 @@ function kada_search_feature_default_search_api_index() {
       }
     },
     "enabled" : "1",
-    "read_only" : "0"
+    "read_only" : "0",
+    "base_type" : "search_api_index"
   }');
   return $items;
 }
@@ -420,7 +427,8 @@ function kada_search_feature_default_search_api_server() {
       "solr_version" : "",
       "http_method" : "AUTO"
     },
-    "enabled" : "1"
+    "enabled" : "1",
+    "base_type" : "search_api_server"
   }');
   return $items;
 }
