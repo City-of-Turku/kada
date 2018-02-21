@@ -298,9 +298,10 @@ forum/%t';
   $strongarm->api_version = 1;
   $strongarm->name = 'variable_realm_list_domain';
   $strongarm->value = array(
-    0 => 'piwik_site_id',
-    1 => 'site_name',
-    2 => 'site_frontpage',
+    0 => 'googleanalytics_account',
+    1 => 'piwik_site_id',
+    2 => 'site_name',
+    3 => 'site_frontpage',
   );
   $export['variable_realm_list_domain'] = $strongarm;
 
