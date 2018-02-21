@@ -17,9 +17,12 @@ function pori_widget_feature_context_default_contexts() {
   $context->description = '';
   $context->tag = 'pori';
   $context->conditions = array(
-    'context' => array(
+    'node' => array(
       'values' => array(
         'page' => 'page',
+      ),
+      'options' => array(
+        'node_form' => '1',
       ),
     ),
   );
