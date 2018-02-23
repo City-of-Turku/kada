@@ -50,6 +50,29 @@ $cache_tables = array(
   'sessions',
 );
 
+$aliases['docker'] = array(
+  'uri' => 'http://localhost:8095',
+  'remote-host' => 'docker',
+  'remote-user' => 'root',
+  'root' => '/wwwroot/current',
+  'ssh-options' => '-p 2235 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no',
+  'path-aliases' => array(
+#    '%files' => '/wwwroot/current/sites/default/files',
+#    '%dump-dir' => '/home/vagrant',
+#    '%drush-script' => '/usr/lib/composer/vendor/bin/drush',
+  ),
+  'command-specific' => array(
+    'sql-sync' => array(
+      'no-cache' => TRUE,
+      'no-ordered-dump' => TRUE,
+      'structure-tables' => array(
+        'custom' => $cache_tables,
+      ),
+    ),
+  ),
+);
+$aliases['v.docker'] = $aliases['docker'];
+$aliases['v.docker']['uri'] = 'http://local.visitpori.fi:8095';
 
 $aliases['local'] = array(
   'parent' => '@parent',
@@ -109,6 +132,8 @@ $aliases['stage'] = array(
   ),
 );
 
+$aliases['v.stage'] = $aliases['stage'];
+$aliases['v.stage']['uri'] = 'https://visitpori.stage.wunder.io';
 
 $aliases['prod'] = array(
   'uri' => 'https://beta.pori.fi',
@@ -128,3 +153,5 @@ $aliases['prod'] = array(
   ),
 );
 
+$aliases['v.prod'] = $aliases['stage'];
+$aliases['v.prod']['uri'] = 'https://www.visitpori.fi';
