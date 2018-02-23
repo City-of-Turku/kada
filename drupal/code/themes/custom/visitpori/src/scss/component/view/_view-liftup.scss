@@ -468,14 +468,6 @@
       }
     }
 
-    .field--name-post-date {
-      margin: 1.25rem 0 .313rem;
-
-      @media screen and (min-width: $tablet-landscape) {
-        margin-top: 2rem;
-      }
-    }
-
     // Set theme colored borders.
     @each $theme-color, $color in $theme-colors {
       &.theme-color-#{$theme-color} {
