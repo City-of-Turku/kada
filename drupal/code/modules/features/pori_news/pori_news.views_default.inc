@@ -42,27 +42,7 @@ function pori_news_views_default_views() {
       'secondary_label' => 'Advanced options',
       'secondary_collapse_override' => '0',
     ),
-    'field_target_audience_tid' => array(
-      'bef_format' => 'bef_links',
-      'more_options' => array(
-        'bef_select_all_none' => FALSE,
-        'bef_collapsible' => 0,
-        'autosubmit' => 0,
-        'is_secondary' => 0,
-        'any_label' => '',
-        'bef_filter_description' => '',
-        'tokens' => array(
-          'available' => array(
-            0 => 'global_types',
-            1 => 'vocabulary',
-          ),
-        ),
-        'rewrite' => array(
-          'filter_rewrite_values' => '',
-        ),
-      ),
-    ),
-    'body_value' => array(
+    'combine' => array(
       'bef_format' => 'default',
       'more_options' => array(
         'autosubmit' => 0,
@@ -79,8 +59,8 @@ function pori_news_views_default_views() {
         ),
       ),
     ),
-    'created' => array(
-      'bef_format' => 'bef_datepicker',
+    'date_filter' => array(
+      'bef_format' => 'default',
       'more_options' => array(
         'autosubmit' => 0,
         'is_secondary' => 0,
@@ -117,14 +97,34 @@ function pori_news_views_default_views() {
         ),
       ),
     ),
+    'field_target_audience_tid' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
   );
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Tuloksia sivulla';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« ensimmäinen';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ edellinen';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'seuraava ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'viimeinen »';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Results per page';
+  $handler->display->display_options['pager']['options']['tags']['first'] = '« first';
+  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ previous';
+  $handler->display->display_options['pager']['options']['tags']['next'] = 'next ›';
+  $handler->display->display_options['pager']['options']['tags']['last'] = 'last »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
@@ -291,6 +291,103 @@ function pori_news_views_default_views() {
 
   /* Display: Visitpori archive */
   $handler = $view->new_display('page', 'Visitpori archive', 'page_1');
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Apply';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Return to defaults';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Organize';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Asc';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Desc';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'input_required' => 0,
+      'text_input_required' => array(
+        'text_input_required' => array(
+          'value' => 'Select any filter and click on Apply to see results',
+          'format' => 'wysiwyg',
+        ),
+      ),
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'secondary_collapse_override' => '0',
+    ),
+    'combine' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'date_filter' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+        'datepicker_options' => '',
+      ),
+    ),
+    'field_visitpori_theme_tid' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+    'field_target_audience_tid' => array(
+      'bef_format' => 'bef_links',
+      'more_options' => array(
+        'bef_select_all_none' => FALSE,
+        'bef_collapsible' => 0,
+        'autosubmit' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -358,17 +455,17 @@ function pori_news_views_default_views() {
   $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
     'node.created' => 'node.created',
   );
-  /* Filter criterion: Content: Theme (field_theme) */
-  $handler->display->display_options['filters']['field_theme_tid']['id'] = 'field_theme_tid';
-  $handler->display->display_options['filters']['field_theme_tid']['table'] = 'field_data_field_theme';
-  $handler->display->display_options['filters']['field_theme_tid']['field'] = 'field_theme_tid';
-  $handler->display->display_options['filters']['field_theme_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_theme_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_theme_tid']['expose']['operator_id'] = 'field_theme_tid_op';
-  $handler->display->display_options['filters']['field_theme_tid']['expose']['label'] = 'Theme';
-  $handler->display->display_options['filters']['field_theme_tid']['expose']['operator'] = 'field_theme_tid_op';
-  $handler->display->display_options['filters']['field_theme_tid']['expose']['identifier'] = 'field_theme_tid';
-  $handler->display->display_options['filters']['field_theme_tid']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Visitpori theme (field_visitpori_theme) */
+  $handler->display->display_options['filters']['field_visitpori_theme_tid']['id'] = 'field_visitpori_theme_tid';
+  $handler->display->display_options['filters']['field_visitpori_theme_tid']['table'] = 'field_data_field_visitpori_theme';
+  $handler->display->display_options['filters']['field_visitpori_theme_tid']['field'] = 'field_visitpori_theme_tid';
+  $handler->display->display_options['filters']['field_visitpori_theme_tid']['group'] = 1;
+  $handler->display->display_options['filters']['field_visitpori_theme_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_visitpori_theme_tid']['expose']['operator_id'] = 'field_visitpori_theme_tid_op';
+  $handler->display->display_options['filters']['field_visitpori_theme_tid']['expose']['label'] = 'Visitpori theme (field_visitpori_theme)';
+  $handler->display->display_options['filters']['field_visitpori_theme_tid']['expose']['operator'] = 'field_visitpori_theme_tid_op';
+  $handler->display->display_options['filters']['field_visitpori_theme_tid']['expose']['identifier'] = 'field_visitpori_theme_tid';
+  $handler->display->display_options['filters']['field_visitpori_theme_tid']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
     4 => 0,
@@ -378,8 +475,8 @@ function pori_news_views_default_views() {
     5 => 0,
     6 => 0,
   );
-  $handler->display->display_options['filters']['field_theme_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_theme_tid']['vocabulary'] = 'theme';
+  $handler->display->display_options['filters']['field_visitpori_theme_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_visitpori_theme_tid']['vocabulary'] = 'visitpori_theme';
   /* Filter criterion: Field: Target audience (field_target_audience) */
   $handler->display->display_options['filters']['field_target_audience_tid']['id'] = 'field_target_audience_tid';
   $handler->display->display_options['filters']['field_target_audience_tid']['table'] = 'field_data_field_target_audience';
@@ -419,6 +516,7 @@ function pori_news_views_default_views() {
   $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
   $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['value'] = '1';
+  $handler->display->display_options['filters']['current_all']['group'] = 1;
   $handler->display->display_options['path'] = 'visitpori-news-archive';
   $translatables['pori_news'] = array(
     t('Master'),
@@ -431,19 +529,20 @@ function pori_news_views_default_views() {
     t('Desc'),
     t('Select any filter and click on Apply to see results'),
     t('Advanced options'),
-    t('Tuloksia sivulla'),
+    t('Results per page'),
     t('- All -'),
     t('Offset'),
-    t('« ensimmäinen'),
-    t('‹ edellinen'),
-    t('seuraava ›'),
-    t('viimeinen »'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
     t('Search'),
     t('Date'),
     t('Theme'),
     t('Target audience'),
     t('General archive'),
     t('Visitpori archive'),
+    t('Visitpori theme (field_visitpori_theme)'),
   );
   $export['pori_news'] = $view;
 
