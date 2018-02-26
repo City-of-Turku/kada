@@ -116,6 +116,11 @@ $label-color: #bbb;
       }
     }
 
+    .active {
+      background-color: $black;
+      color: $white;
+    }
+
     &:first-child {
       margin-right: .5rem;
     }
