@@ -211,4 +211,64 @@
     }
   };
 
+  var duubli = function() {
+    const activeFilters = [];
+    const liftups = $('.liftup-box--attraction-item');
+    const filters = $('.field--name-field-keywords');
+
+    const updateLiftups = function () {
+      liftups.hide();
+
+      const matchingLiftups = liftups.filter(function (index, liftup) {
+        const keywords = $('.field__item', liftup)
+          .filter(function (index, keyword) {
+            const text = $(keyword).text().toUpperCase().trim();
+
+            return activeFilters.includes(text);
+          });
+
+        return keywords.size() === activeFilters.length;
+      });
+
+      matchingLiftups.show();
+    };
+
+    const clickHandler = function (event) {
+      event.preventDefault();
+
+      const filter = event.srcElement.innerText.toUpperCase().trim();
+
+      if (activeFilters.includes(filter)) {
+        const index = activeFilters.findIndex(function (activeFilter) {
+          return activeFilter === filter;
+        });
+
+        activeFilters.splice(index, 1);
+      } else {
+        activeFilters.push(filter);
+      }
+
+      $(event.srcElement).toggleClass('active');
+
+      updateLiftups();
+    };
+
+    const attachClickListeners = function() {
+      filters.each(function (index, filter) {
+        $('.field__item', filter).click(clickHandler);
+      });
+
+      // Enables liftups to filter through their keyword lists.
+      // liftups.each(function (index, liftup) {
+      //   $('.field__item', liftup).click(clickHandler);
+      // });
+    };
+
+    attachClickListeners();
+  };
+
+  Drupal.behaviors.asd = {
+    attach: duubli
+  }
+
 })(jQuery);
