@@ -95,6 +95,48 @@ function kada_preprocess_page(&$variables) {
     }
   }
 
+  // If section is present, process overrides.
+  if (isset($section_wrapper)) {
+    $section_node = $section_wrapper->value();
+    // Look for original section node if current one is translation.
+    if (!empty($section_node->source)) {
+      if ($section_wrapper->source->value()->nid != $section_wrapper->nid) {
+        $section_source_wrapper = $section_wrapper->source;
+      }
+    }
+
+    // Frontpage link on sections that are in the main domain.
+    // Used by theme in logo and site name linking.
+    if (!empty($section_node->domains) && in_array(5, $section_node->domains)) {
+      // Only react on domain id 5 == main Pori.fi domain
+      $variables['front_page'] = url('node/' . $section_node->nid);
+    }
+
+    // Logo override.
+    // If page logo is set for section, override the one from theme.
+    $site_logo_atom = $section_wrapper->field_site_logo->value();
+    // Try getting logo from original section if current translation doesn't
+    // contain it.
+    if (empty($site_logo_atom) && isset($section_source_wrapper)) {
+      $site_logo_atom = $section_source_wrapper->field_site_logo->value();
+    }
+    // If atom is present, use logo uri from it as path.
+    if (isset($site_logo_atom->scald_thumbnail[LANGUAGE_NONE][0]['uri'])) {
+
+      $site_logo_uri = $site_logo_atom->scald_thumbnail[LANGUAGE_NONE][0]['uri'];
+      $site_logo_path = image_style_url('site_logo', $site_logo_uri);
+    }
+
+    // Color palette.
+    // Try to get color palette.
+    $color_palette = $section_wrapper->field_color_palette->value();
+    // Try getting color palette from original section if current translation
+    // doesn't contain it.
+    if (empty($color_palette) && isset($section_source_wrapper)) {
+      $color_palette = $section_source_wrapper->field_color_palette->value();
+    }
+  }
+
   // Page logo.
   // If page logo is not set, use default from theme.
   if (empty($site_logo_path)) {
