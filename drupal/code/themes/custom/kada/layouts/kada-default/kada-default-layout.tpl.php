@@ -133,7 +133,6 @@
             </header>
           <?php print render($title_suffix); ?>
         <?php endif; ?>
-
         <?php if($page['sidebar_first']): ?>
           <aside id="sidebar-first" class="sidebar sidebar--first">
             <?php print render($page['sidebar_first']); ?>

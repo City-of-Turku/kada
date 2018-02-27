@@ -212,77 +212,85 @@
   };
 
   Drupal.behaviors.attractionCardFilters = {
-    attach: function() {
-      const activeFilters = [];
-      const liftups = $('.liftup-box--attraction-item', '.widget-attraction-list');
-      const filters = (function () {
-        const filterContainer = $('.field--name-field-keywords .field__items');
+    attach: function(context) {
+      $('.widget-attraction-list', context).once('attraction-card-filters', function () {
+        const activeFilters = [];
+        const liftups = $('.liftup-box--attraction-item', '.widget-attraction-list');
+        const filters = (function () {
+          const attractionListContainer = $('.widget-attraction-list');
+          const filterContainer = $('<div class="attraction-list__filters-wrapper"><div class="attraction-list__filters"></div></div>');
 
-        $('.field__item a', liftups)
-          .toArray()
-          .map(function (keyword) {
-            return $(keyword).text().toUpperCase().trim();
-          })
-          .filter(function (keyword, index, self) {
-            return self.indexOf(keyword) === index;
-          })
-          .forEach(function (keyword) {
-            const keywordElement = $(`<div class="field__item"><a href="#">${keyword}</a></div>`);
+          attractionListContainer.prepend(filterContainer);
 
-            filterContainer.append(keywordElement);
+          $('.field__item a', liftups)
+            .toArray()
+            .map(function (keyword) {
+              return $(keyword).text().toUpperCase().trim();
+            })
+            .filter(function (keyword, index, self) {
+              return self.indexOf(keyword) === index;
+            })
+            .sort(function (first, second) {
+              return first.localeCompare(second);
+            })
+            .forEach(function (keyword) {
+              const keywordElement = $(`<div class="attraction-list__filter"><a href="#">${keyword}</a></div>`);
+
+              filterContainer.children().first().append(keywordElement);
+            });
+
+          return $('.attraction-list__filter a', filterContainer);
+        })();
+
+        const updateLiftups = function () {
+          liftups.hide();
+
+          const matchingLiftups = liftups.filter(function (index, liftup) {
+            const liftupKeywords = $('.field__item a', liftup);
+            const activeKeywords = liftupKeywords.filter(function (index, keyword) {
+              const text = $(keyword).text().toUpperCase().trim();
+
+              return activeFilters.includes(text);
+            });
+
+            liftupKeywords.removeClass('active');
+            activeKeywords.addClass('active');
+
+            return activeKeywords.size() === activeFilters.length;
           });
 
-        return $('.field__item a', filterContainer);
-      })();
+          matchingLiftups.show();
+        };
 
-      const updateLiftups = function () {
-        liftups.hide();
+        const updateFilters = function (clickedFilter) {
+          const filterText = clickedFilter.text().toUpperCase().trim();
 
-        const matchingLiftups = liftups.filter(function (index, liftup) {
-          const liftupKeywords = $('.field__item a', liftup);
-          const activeKeywords = liftupKeywords.filter(function (index, keyword) {
-            const text = $(keyword).text().toUpperCase().trim();
+          if (activeFilters.includes(filterText)) {
+            const index = activeFilters.findIndex(function (activeFilter) {
+              return activeFilter === filterText;
+            });
 
-            return activeFilters.includes(text);
-          });
+            activeFilters.splice(index, 1);
+          } else {
+            activeFilters.push(filterText);
+          }
 
-          liftupKeywords.removeClass('active');
-          activeKeywords.addClass('active');
+          clickedFilter.toggleClass('active');
+        };
 
-          return activeKeywords.size() === activeFilters.length;
-        });
+        const clickHandler = function (event) {
+          event.preventDefault();
 
-        matchingLiftups.show();
-      };
+          updateFilters($(event.srcElement));
+          updateLiftups();
+        };
 
-      const updateFilters = function (clickedFilter) {
-        const filterText = clickedFilter.text().toUpperCase().trim();
+        const attachClickListeners = function () {
+          filters.click(clickHandler);
+        };
 
-        if (activeFilters.includes(filterText)) {
-          const index = activeFilters.findIndex(function (activeFilter) {
-            return activeFilter === filterText;
-          });
-
-          activeFilters.splice(index, 1);
-        } else {
-          activeFilters.push(filterText);
-        }
-
-        clickedFilter.toggleClass('active');
-      };
-
-      const clickHandler = function (event) {
-        event.preventDefault();
-
-        updateFilters($(event.srcElement));
-        updateLiftups();
-      };
-
-      const attachClickListeners = function () {
-        filters.click(clickHandler);
-      };
-
-      attachClickListeners();
+        attachClickListeners();
+      });
     }
   }
 
