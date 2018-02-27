@@ -957,6 +957,15 @@ function pori_configuration_overrides_feature_strongarm_alter(&$data) {
   if (isset($data['menu_block_8_depth'])) {
     $data['menu_block_8_depth']->value = 2; /* WAS: 0 */
   }
+  if (isset($data['node_options_attraction_card'])) {
+    $data['node_options_attraction_card']->value[1] = 'revision'; /* WAS: '' */
+  }
+  if (isset($data['node_options_landing_page'])) {
+    $data['node_options_landing_page']->value[1] = 'revision'; /* WAS: '' */
+  }
+  if (isset($data['node_options_page'])) {
+    $data['node_options_page']->value[1] = 'revision'; /* WAS: '' */
+  }
   if (isset($data['scald_custom_contexts'])) {
     $data['scald_custom_contexts']->value['content_250_wide'] = array(
       'name' => 'content_250_wide',
