@@ -49,9 +49,12 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => -8,
   );
   $overrides["context.section_menus.reactions|block|blocks|menu_block-4"]["DELETED"] = TRUE;
+  $overrides["context.sitewide_en.conditions|context"]["DELETED"] = TRUE;
   $overrides["context.sitewide_en.reactions|block|blocks|block-1|weight"] = -40;
   $overrides["context.sitewide_fi.conditions|context"]["DELETED"] = TRUE;
   $overrides["context.sitewide_fi.reactions|block|blocks|block-2|weight"] = -40;
+  $overrides["context.sitewide_sv.conditions|context"]["DELETED"] = TRUE;
+  $overrides["context.sitewide_sv.conditions|language"]["DELETED"] = TRUE;
   $overrides["context.top_menu.conditions|context|values|news_list"] = 'news_list';
   $overrides["context.top_menu.conditions|context|values|person_list"] = 'person_list';
   $overrides["context.top_menu.conditions|context|values|search_page"] = 'search_page';

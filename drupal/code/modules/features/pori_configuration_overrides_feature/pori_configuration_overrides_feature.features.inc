@@ -59,10 +59,15 @@ function pori_configuration_overrides_feature_context_default_contexts_alter(&$d
   }
   if (isset($data['sitewide_en'])) {
     $data['sitewide_en']->reactions['block']['blocks']['block-1']['weight'] = -40; /* WAS: -10 */
+    unset($data['sitewide_en']->conditions['context']);
   }
   if (isset($data['sitewide_fi'])) {
     $data['sitewide_fi']->reactions['block']['blocks']['block-2']['weight'] = -40; /* WAS: -10 */
     unset($data['sitewide_fi']->conditions['context']);
+  }
+  if (isset($data['sitewide_sv'])) {
+    unset($data['sitewide_sv']->conditions['context']);
+    unset($data['sitewide_sv']->conditions['language']);
   }
   if (isset($data['top_menu'])) {
     $data['top_menu']->conditions['context']['values']['news_list'] = 'news_list'; /* WAS: '' */
