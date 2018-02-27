@@ -787,6 +787,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["variable.field_bundle_settings_node__place.value|extra_fields|display|domain|teaser|weight"] = 23;
   $overrides["variable.menu_block_8_depth.value"] = 2;
+  $overrides["variable.node_options_attraction_card.value|1"] = 'revision';
+  $overrides["variable.node_options_landing_page.value|1"] = 'revision';
+  $overrides["variable.node_options_page.value|1"] = 'revision';
   $overrides["variable.scald_custom_contexts.value|content_250_wide"] = array(
     'name' => 'content_250_wide',
     'title' => 'Content 250 wide',
