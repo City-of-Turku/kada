@@ -211,64 +211,62 @@
     }
   };
 
-  var duubli = function() {
-    const activeFilters = [];
-    const liftups = $('.liftup-box--attraction-item');
-    const filters = $('.field--name-field-keywords');
+  Drupal.behaviors.attractionCardFilters = {
+    attach: function() {
+      const activeFilters = [];
+      const liftups = $('.liftup-box--attraction-item');
+      const filters = $('.field--name-field-keywords');
 
-    const updateLiftups = function () {
-      liftups.hide();
+      const updateLiftups = function () {
+        liftups.hide();
 
-      const matchingLiftups = liftups.filter(function (index, liftup) {
-        const keywords = $('.field__item', liftup)
-          .filter(function (index, keyword) {
-            const text = $(keyword).text().toUpperCase().trim();
+        const matchingLiftups = liftups.filter(function (index, liftup) {
+          const keywords = $('.field__item', liftup)
+            .filter(function (index, keyword) {
+              const text = $(keyword).text().toUpperCase().trim();
 
-            return activeFilters.includes(text);
-          });
+              return activeFilters.includes(text);
+            });
 
-        return keywords.size() === activeFilters.length;
-      });
-
-      matchingLiftups.show();
-    };
-
-    const clickHandler = function (event) {
-      event.preventDefault();
-
-      const filter = event.srcElement.innerText.toUpperCase().trim();
-
-      if (activeFilters.includes(filter)) {
-        const index = activeFilters.findIndex(function (activeFilter) {
-          return activeFilter === filter;
+          return keywords.size() === activeFilters.length;
         });
 
-        activeFilters.splice(index, 1);
-      } else {
-        activeFilters.push(filter);
-      }
+        matchingLiftups.show();
+      };
 
-      $(event.srcElement).toggleClass('active');
+      const clickHandler = function (event) {
+        event.preventDefault();
 
-      updateLiftups();
-    };
+        const filter = event.srcElement.innerText.toUpperCase().trim();
 
-    const attachClickListeners = function() {
-      filters.each(function (index, filter) {
-        $('.field__item', filter).click(clickHandler);
-      });
+        if (activeFilters.includes(filter)) {
+          const index = activeFilters.findIndex(function (activeFilter) {
+            return activeFilter === filter;
+          });
 
-      // Enables liftups to filter through their keyword lists.
-      // liftups.each(function (index, liftup) {
-      //   $('.field__item', liftup).click(clickHandler);
-      // });
-    };
+          activeFilters.splice(index, 1);
+        } else {
+          activeFilters.push(filter);
+        }
 
-    attachClickListeners();
-  };
+        $(event.srcElement).toggleClass('active');
 
-  Drupal.behaviors.asd = {
-    attach: duubli
+        updateLiftups();
+      };
+
+      const attachClickListeners = function() {
+        filters.each(function (index, filter) {
+          $('.field__item', filter).click(clickHandler);
+        });
+
+        // Enables liftups to filter through their keyword lists. Needs work.
+        // liftups.each(function (index, liftup) {
+        //   $('.field__item', liftup).click(clickHandler);
+        // });
+      };
+
+      attachClickListeners();
+    }
   }
 
 })(jQuery);
