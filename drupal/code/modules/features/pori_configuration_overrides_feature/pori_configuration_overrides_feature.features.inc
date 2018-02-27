@@ -36,27 +36,6 @@ function pori_configuration_overrides_feature_context_default_contexts_alter(&$d
     $data['main_menu']->conditions['context']['values']['person_list'] = 'person_list'; /* WAS: '' */
     $data['main_menu']->conditions['context']['values']['search_page'] = 'search_page'; /* WAS: '' */
   }
-  if (isset($data['section_header'])) {
-    $data['section_header']->reactions['block']['blocks']['views--exp-main_search-page'] = array(
-      'module' => 'views',
-      'delta' => '-exp-main_search-page',
-      'region' => 'branding',
-      'weight' => -9,
-    ); /* WAS: '' */
-    $data['section_header']->reactions['block']['blocks']['views-kada_section_header-block_1']['region'] = 'branding'; /* WAS: 'header_top' */
-    $data['section_header']->reactions['theme_html'] = array(
-      'class' => 'section-context',
-    ); /* WAS: '' */
-  }
-  if (isset($data['section_menus'])) {
-    $data['section_menus']->reactions['block']['blocks']['locale-language'] = array(
-      'module' => 'locale',
-      'delta' => 'language',
-      'region' => 'branding',
-      'weight' => -8,
-    ); /* WAS: '' */
-    unset($data['section_menus']->reactions['block']['blocks']['menu_block-4']);
-  }
   if (isset($data['sitewide_en'])) {
     $data['sitewide_en']->reactions['block']['blocks']['block-1']['weight'] = -40; /* WAS: -10 */
     unset($data['sitewide_en']->conditions['context']);
