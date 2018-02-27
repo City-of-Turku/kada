@@ -62,3 +62,13 @@ function pori_configuration_update_7107(&$sandbox) {
 function pori_configuration_update_7108(&$sandbox) {
   module_enable(array('pori_section_override_feature'));
 }
+
+/*
+ * Remove Radioactivity.
+ */
+function pori_configuration_update_7109(&$sandbox) {
+  field_delete_field('field_radioactivity');
+  field_purge_batch(50);
+  module_disable(array('radioactivity'));
+  drupal_uninstall_modules(array('radioactivity'));
+}
