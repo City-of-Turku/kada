@@ -142,6 +142,7 @@ features[features_overrides][] = context.sitewide_fi.conditions|context
 features[features_overrides][] = context.sitewide_fi.reactions|block|blocks|block-2|weight
 features[features_overrides][] = context.sitewide_sv.conditions|context
 features[features_overrides][] = context.sitewide_sv.conditions|language
+features[features_overrides][] = context.sitewide_sv.disabled
 features[features_overrides][] = context.top_menu.conditions|context|values|news_list
 features[features_overrides][] = context.top_menu.conditions|context|values|person_list
 features[features_overrides][] = context.top_menu.conditions|context|values|search_page

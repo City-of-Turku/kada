@@ -66,6 +66,7 @@ function pori_configuration_overrides_feature_context_default_contexts_alter(&$d
     unset($data['sitewide_fi']->conditions['context']);
   }
   if (isset($data['sitewide_sv'])) {
+    $data['sitewide_sv']->disabled = TRUE; /* WAS: FALSE */
     unset($data['sitewide_sv']->conditions['context']);
     unset($data['sitewide_sv']->conditions['language']);
   }
