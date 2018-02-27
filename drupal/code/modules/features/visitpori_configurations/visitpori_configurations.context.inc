@@ -148,12 +148,6 @@ function visitpori_configurations_context_default_contexts() {
   $context->description = 'This sitewide context is triggered when using page in English';
   $context->tag = 'section';
   $context->conditions = array(
-    'context' => array(
-      'values' => array(
-        '~section' => '~section',
-        '~section_front' => '~section_front',
-      ),
-    ),
     'context_all' => array(
       'values' => array(
         'visitpori_domain' => 'visitpori_domain',
@@ -197,12 +191,6 @@ function visitpori_configurations_context_default_contexts() {
   $context->description = 'This sitewide context is triggered when using page in Finnish';
   $context->tag = 'section';
   $context->conditions = array(
-    'context' => array(
-      'values' => array(
-        '~section' => '~section',
-        '~section_front' => '~section_front',
-      ),
-    ),
     'context_all' => array(
       'values' => array(
         'visitpori_domain' => 'visitpori_domain',

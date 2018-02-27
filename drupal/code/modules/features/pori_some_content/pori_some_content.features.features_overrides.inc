@@ -18,7 +18,7 @@ function pori_some_content_features_override_default_overrides() {
   $overrides["ds_field_settings.node|social_media_update|current.settings|field_share_caption"]["DELETED"] = TRUE;
   $overrides["ds_field_settings.node|social_media_update|current.settings|field_share_description"]["DELETED"] = TRUE;
   $overrides["ds_field_settings.node|social_media_update|current.settings|field_some_id"]["DELETED"] = TRUE;
-  $overrides["ds_field_settings.node|social_media_update|current.settings|post_date|weight"] = 2;
+  $overrides["ds_field_settings.node|social_media_update|current.settings|post_date|weight"] = 1;
 
   // Exported overrides for: ds_layout_settings
   $overrides["ds_layout_settings.node|social_media_update|current.layout"] = 'liftup_current_layout';
@@ -35,8 +35,8 @@ function pori_some_content_features_override_default_overrides() {
   $overrides["ds_layout_settings.node|social_media_update|current.settings|regions|ds_content"]["DELETED"] = TRUE;
   $overrides["ds_layout_settings.node|social_media_update|current.settings|regions|header"] = array(
     0 => 'field_some_id',
-    1 => 'field_image',
-    2 => 'post_date',
+    1 => 'post_date',
+    2 => 'field_image',
   );
   $overrides["ds_layout_settings.node|social_media_update|current.settings|regions|main"] = array(
     3 => 'body',

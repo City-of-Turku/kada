@@ -91,7 +91,7 @@ switch ($env) {
 }
 
 
-if ($env != 'prod') {
+if (!empty($env) && $env != 'prod') {
   // Override search API server settings fetched from default configuration.
   $conf['search_api_override_mode'] = 'load';
   $conf['search_api_override_servers'] = array(

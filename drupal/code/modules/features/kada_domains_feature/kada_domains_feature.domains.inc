@@ -89,6 +89,11 @@ function kada_domains_feature_domain_alias_default_aliases() {
       'redirect' => 0,
       'machine_name' => 'visitpori_fi',
     ),
+    'www.visitpori.fi' => array(
+      'pattern' => 'www.visitpori.fi',
+      'redirect' => 0,
+      'machine_name' => 'visitpori_fi',
+    ),
   );
 
   return $domain_aliases;
