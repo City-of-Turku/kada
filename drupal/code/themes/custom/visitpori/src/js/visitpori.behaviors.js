@@ -214,55 +214,72 @@
   Drupal.behaviors.attractionCardFilters = {
     attach: function() {
       const activeFilters = [];
-      const liftups = $('.liftup-box--attraction-item');
-      const filters = $('.field--name-field-keywords');
+      const liftups = $('.liftup-box--attraction-item', '.widget-attraction-list');
+      const filters = (function () {
+        const filterContainer = $('.field--name-field-keywords .field__items');
+
+        $('.field__item a', liftups)
+          .toArray()
+          .map(function (keyword) {
+            return $(keyword).text().toUpperCase().trim();
+          })
+          .filter(function (keyword, index, self) {
+            return self.indexOf(keyword) === index;
+          })
+          .forEach(function (keyword) {
+            const keywordElement = $(`<div class="field__item"><a href="#">${keyword}</a></div>`);
+
+            filterContainer.append(keywordElement);
+          });
+
+        return $('.field__item a', filterContainer);
+      })();
 
       const updateLiftups = function () {
         liftups.hide();
 
         const matchingLiftups = liftups.filter(function (index, liftup) {
-          const keywords = $('.field__item', liftup)
-            .filter(function (index, keyword) {
-              const text = $(keyword).text().toUpperCase().trim();
+          const liftupKeywords = $('.field__item a', liftup);
+          const activeKeywords = liftupKeywords.filter(function (index, keyword) {
+            const text = $(keyword).text().toUpperCase().trim();
 
-              return activeFilters.includes(text);
-            });
+            return activeFilters.includes(text);
+          });
 
-          return keywords.size() === activeFilters.length;
+          liftupKeywords.removeClass('active');
+          activeKeywords.addClass('active');
+
+          return activeKeywords.size() === activeFilters.length;
         });
 
         matchingLiftups.show();
       };
 
-      const clickHandler = function (event) {
-        event.preventDefault();
+      const updateFilters = function (clickedFilter) {
+        const filterText = clickedFilter.text().toUpperCase().trim();
 
-        const filter = event.srcElement.innerText.toUpperCase().trim();
-
-        if (activeFilters.includes(filter)) {
+        if (activeFilters.includes(filterText)) {
           const index = activeFilters.findIndex(function (activeFilter) {
-            return activeFilter === filter;
+            return activeFilter === filterText;
           });
 
           activeFilters.splice(index, 1);
         } else {
-          activeFilters.push(filter);
+          activeFilters.push(filterText);
         }
 
-        $(event.srcElement).toggleClass('active');
+        clickedFilter.toggleClass('active');
+      };
 
+      const clickHandler = function (event) {
+        event.preventDefault();
+
+        updateFilters($(event.srcElement));
         updateLiftups();
       };
 
-      const attachClickListeners = function() {
-        filters.each(function (index, filter) {
-          $('.field__item', filter).click(clickHandler);
-        });
-
-        // Enables liftups to filter through their keyword lists. Needs work.
-        // liftups.each(function (index, liftup) {
-        //   $('.field__item', liftup).click(clickHandler);
-        // });
+      const attachClickListeners = function () {
+        filters.click(clickHandler);
       };
 
       attachClickListeners();
