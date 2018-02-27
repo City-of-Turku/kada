@@ -52,12 +52,145 @@ function pori_search_default_search_api_index() {
         "body:summary" : { "type" : "text" },
         "body:value" : { "type" : "text" },
         "created" : { "type" : "date" },
+        "domain_domain_id" : { "type" : "list\\u003Cinteger\\u003E" },
         "field_alternative_name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_lead_paragraph" : { "type" : "text" },
         "field_lead_paragraph_et" : { "type" : "text" },
+        "og_group_ref" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
         "search_api_language" : { "type" : "string" },
         "title" : { "type" : "text", "boost" : "5.0" },
         "title_field" : { "type" : "text" }
+      },
+      "data_alter_callbacks" : {
+        "search_api_alter_bundle_filter" : {
+          "status" : 1,
+          "weight" : "-10",
+          "settings" : { "default" : "1", "bundles" : { "place" : "place" } }
+        },
+        "search_api_metatag_alter_callback" : { "status" : 0, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
+        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
+        "search_api_alter_language_control" : {
+          "status" : 0,
+          "weight" : "0",
+          "settings" : { "lang_field" : "", "languages" : [] }
+        },
+        "search_api_alter_node_access" : { "status" : 0, "weight" : "0", "settings" : [] },
+        "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] }
+      },
+      "processors" : {
+        "content_taxonomy_autocomplete_moderated_terms" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
+        "search_api_case_ignore" : {
+          "status" : 0,
+          "weight" : "0",
+          "settings" : { "fields" : {
+              "title" : true,
+              "field_lead_paragraph_et" : true,
+              "field_lead_paragraph" : true,
+              "title_field" : true,
+              "field_alternative_name" : true,
+              "body:value" : true,
+              "body:summary" : true
+            }
+          }
+        },
+        "search_api_html_filter" : {
+          "status" : 0,
+          "weight" : "10",
+          "settings" : {
+            "fields" : {
+              "title" : true,
+              "field_lead_paragraph_et" : true,
+              "field_lead_paragraph" : true,
+              "title_field" : true,
+              "field_alternative_name" : true,
+              "body:value" : true,
+              "body:summary" : true
+            },
+            "title" : 0,
+            "alt" : 1,
+            "tags" : "h1 = 5\\r\\nh2 = 3\\r\\nh3 = 2\\r\\nstrong = 2\\r\\nb = 2\\r\\nem = 1.5\\r\\nu = 1.5"
+          }
+        },
+        "search_api_transliteration" : {
+          "status" : 0,
+          "weight" : "15",
+          "settings" : { "fields" : {
+              "title" : true,
+              "field_lead_paragraph_et" : true,
+              "field_lead_paragraph" : true,
+              "title_field" : true,
+              "field_alternative_name" : true,
+              "body:value" : true,
+              "body:summary" : true
+            }
+          }
+        },
+        "search_api_tokenizer" : {
+          "status" : 0,
+          "weight" : "20",
+          "settings" : {
+            "fields" : {
+              "title" : true,
+              "field_lead_paragraph_et" : true,
+              "field_lead_paragraph" : true,
+              "title_field" : true,
+              "field_alternative_name" : true,
+              "body:value" : true,
+              "body:summary" : true
+            },
+            "spaces" : "[^[:alnum:]]",
+            "ignorable" : "[\\u0027]"
+          }
+        },
+        "search_api_stopwords" : {
+          "status" : 0,
+          "weight" : "30",
+          "settings" : {
+            "fields" : {
+              "title" : true,
+              "field_lead_paragraph_et" : true,
+              "field_lead_paragraph" : true,
+              "title_field" : true,
+              "field_alternative_name" : true,
+              "body:value" : true,
+              "body:summary" : true
+            },
+            "file" : "",
+            "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
+          }
+        },
+        "search_api_porter_stemmer" : {
+          "status" : 0,
+          "weight" : "35",
+          "settings" : {
+            "fields" : {
+              "title" : true,
+              "field_lead_paragraph_et" : true,
+              "field_lead_paragraph" : true,
+              "title_field" : true,
+              "field_alternative_name" : true,
+              "body:value" : true,
+              "body:summary" : true
+            },
+            "exceptions" : "texan=texa"
+          }
+        },
+        "search_api_highlighting" : {
+          "status" : 0,
+          "weight" : "40",
+          "settings" : {
+            "prefix" : "\\u003Cstrong\\u003E",
+            "suffix" : "\\u003C\\/strong\\u003E",
+            "excerpt" : 1,
+            "excerpt_length" : "256",
+            "exclude_fields" : [],
+            "highlight" : "always",
+            "highlight_partial" : 0
+          }
+        }
       }
     },
     "enabled" : "1",
