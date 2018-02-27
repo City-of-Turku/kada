@@ -17,10 +17,9 @@ function pori_contact_information_feature_context_default_contexts() {
   $context->description = 'Phone book of people';
   $context->tag = 'views';
   $context->conditions = array(
-    'path' => array(
+    'views' => array(
       'values' => array(
-        'phone-book' => 'phone-book',
-        'phone-book/*' => 'phone-book/*',
+        'pori_phone_book:page' => 'pori_phone_book:page',
       ),
     ),
   );
