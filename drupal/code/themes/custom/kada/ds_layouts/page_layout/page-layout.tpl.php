@@ -7,14 +7,8 @@
 
 $no_sidebar = false;
 
-// If the sidebar or additional information blocks are empty and the site is front page
-// there shouldn't be sidebar.
-if (empty($sidebar || $additional_information) && $variables['is_front'] != true) {
-  $no_sidebar = true;
-}
-
-// If the page is theme main page there shouldn't be sidebar.
-if ($field_theme_main_page['und'][0]['value'] == 1) {
+// If the sidebar or additional information blocks are empty there shouldn't be sidebar
+if ((empty($sidebar || $additional_information)) || ($is_front == true) || ($field_theme_main_page['und'][0]['value'] == 1)) {
   $no_sidebar = true;
 }
 
