@@ -51,7 +51,7 @@ function pori_attraction_feature_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
     'duplicate_online_shop' => array(
-      'weight' => '11',
+      'weight' => '12',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -335,21 +335,22 @@ function pori_attraction_feature_ds_layout_settings_info() {
       'main_content' => array(
         2 => 'field_lead_paragraph_et',
         3 => 'field_description',
+        4 => 'field_video_url',
       ),
       'sidebar' => array(
-        4 => 'field_keywords_et',
+        5 => 'field_keywords_et',
       ),
       'contact_details' => array(
-        5 => 'field_address_visiting',
-        6 => 'field_phone',
-        7 => 'field_email',
-        8 => 'field_websites',
-        9 => 'field_public_transportation',
+        6 => 'field_address_visiting',
+        7 => 'field_phone',
+        8 => 'field_email',
+        9 => 'field_websites',
         10 => 'field_accessibility_ref',
-        11 => 'duplicate_online_shop',
+        11 => 'field_public_transportation',
+        12 => 'duplicate_online_shop',
       ),
       'after_content' => array(
-        12 => 'field_attraction_related_content',
+        13 => 'field_attraction_related_content',
       ),
     ),
     'fields' => array(
@@ -357,13 +358,14 @@ function pori_attraction_feature_ds_layout_settings_info() {
       'field_images' => 'image_container',
       'field_lead_paragraph_et' => 'main_content',
       'field_description' => 'main_content',
+      'field_video_url' => 'main_content',
       'field_keywords_et' => 'sidebar',
       'field_address_visiting' => 'contact_details',
       'field_phone' => 'contact_details',
       'field_email' => 'contact_details',
       'field_websites' => 'contact_details',
-      'field_public_transportation' => 'contact_details',
       'field_accessibility_ref' => 'contact_details',
+      'field_public_transportation' => 'contact_details',
       'duplicate_online_shop' => 'contact_details',
       'field_attraction_related_content' => 'after_content',
     ),
