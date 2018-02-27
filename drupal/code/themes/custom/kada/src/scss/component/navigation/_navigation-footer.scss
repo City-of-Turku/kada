@@ -341,3 +341,32 @@
     }
   }
 }
+
+.section-footer {
+  @include responsive-whitespace;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .section-footer--item {
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 0;
+      width: 20%;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .field-content p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
