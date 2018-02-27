@@ -182,6 +182,10 @@ function pori_contact_information_feature_views_default_views() {
   $handler->display->display_options['sorts']['field_surname_value']['id'] = 'field_surname_value';
   $handler->display->display_options['sorts']['field_surname_value']['table'] = 'field_data_field_surname';
   $handler->display->display_options['sorts']['field_surname_value']['field'] = 'field_surname_value';
+  /* Sort criterion: Content: First name (field_first_name) */
+  $handler->display->display_options['sorts']['field_first_name_value']['id'] = 'field_first_name_value';
+  $handler->display->display_options['sorts']['field_first_name_value']['table'] = 'field_data_field_first_name';
+  $handler->display->display_options['sorts']['field_first_name_value']['field'] = 'field_first_name_value';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -197,28 +201,6 @@ function pori_contact_information_feature_views_default_views() {
     'person' => 'person',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Office (field_office_tr) */
-  $handler->display->display_options['filters']['field_office_tr_tid']['id'] = 'field_office_tr_tid';
-  $handler->display->display_options['filters']['field_office_tr_tid']['table'] = 'field_data_field_office_tr';
-  $handler->display->display_options['filters']['field_office_tr_tid']['field'] = 'field_office_tr_tid';
-  $handler->display->display_options['filters']['field_office_tr_tid']['group'] = 1;
-  $handler->display->display_options['filters']['field_office_tr_tid']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_office_tr_tid']['expose']['operator_id'] = 'field_office_tr_tid_op';
-  $handler->display->display_options['filters']['field_office_tr_tid']['expose']['label'] = 'Office';
-  $handler->display->display_options['filters']['field_office_tr_tid']['expose']['operator'] = 'field_office_tr_tid_op';
-  $handler->display->display_options['filters']['field_office_tr_tid']['expose']['identifier'] = 'field_office_tr_tid';
-  $handler->display->display_options['filters']['field_office_tr_tid']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    4 => 0,
-    8 => 0,
-    3 => 0,
-    7 => 0,
-    5 => 0,
-    6 => 0,
-  );
-  $handler->display->display_options['filters']['field_office_tr_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_office_tr_tid']['vocabulary'] = 'office';
   /* Filter criterion: Global: Combine fields filter */
   $handler->display->display_options['filters']['combine']['id'] = 'combine';
   $handler->display->display_options['filters']['combine']['table'] = 'views';
@@ -266,7 +248,6 @@ function pori_contact_information_feature_views_default_views() {
     t('Desc'),
     t('Choose from taxonomies and/or from target groups the one you want and click "Use".'),
     t('Advanced search'),
-    t('Any'),
     t('Items per page'),
     t('- All -'),
     t('Offset'),
@@ -274,7 +255,6 @@ function pori_contact_information_feature_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Office'),
     t('Page'),
   );
   $export['pori_phone_book'] = $view;

@@ -375,4 +375,7 @@ function pori_news_strongarm_alter(&$data) {
       'custom_settings' => FALSE,
     ); /* WAS: '' */
   }
+  if (isset($data['node_options_news_item'])) {
+    $data['node_options_news_item']->value[1] = 'revision'; /* WAS: '' */
+  }
 }

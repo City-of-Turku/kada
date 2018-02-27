@@ -49,9 +49,15 @@ function pori_search_default_search_api_index() {
       "index_directly" : 0,
       "cron_limit" : "50",
       "fields" : {
+        "body:summary" : { "type" : "text" },
+        "body:value" : { "type" : "text" },
         "created" : { "type" : "date" },
+        "field_alternative_name" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_lead_paragraph" : { "type" : "text" },
+        "field_lead_paragraph_et" : { "type" : "text" },
         "search_api_language" : { "type" : "string" },
-        "title" : { "type" : "text", "boost" : "5.0" }
+        "title" : { "type" : "text", "boost" : "5.0" },
+        "title_field" : { "type" : "text" }
       }
     },
     "enabled" : "1",

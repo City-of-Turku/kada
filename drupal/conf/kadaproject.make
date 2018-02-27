@@ -131,6 +131,12 @@ projects[better_exposed_filters][subdir] = contrib
 projects[better_formats][version] = 1.0-beta2
 projects[better_formats][subdir] = contrib
 
+projects[bigmenu][type] = "module"
+projects[bigmenu][subdir] = "contrib"
+projects[bigmenu][download][type] = "git"
+projects[bigmenu][download][url] = "http://git.drupal.org/project/bigmenu.git"
+projects[bigmenu][download][revision] = "ab3bc0592234a36df4a36746909e54350565785a"
+
 ; 1.3. may have caused some trouble when enabling/disabling theme,
 ; updated to 1.4.
 projects[breakpoints][version] = 1.4
@@ -258,7 +264,7 @@ projects[entityqueue][subdir] = contrib
 ; Adds export for entityqueue subqueues
 projects[entityqueue][patch][] = "../patches/entityqueue_subqueue_export.patch"
 
-projects[entity_action_log][version] = 1.0-beta1
+projects[entity_action_log][version] = 1.0-beta2
 projects[entity_action_log][subdir] = contrib
 
 ; Only dev version is available for entity_base_type module.

@@ -284,6 +284,7 @@ function pori_news_features_override_default_overrides() {
   $overrides["variable.field_bundle_settings_node__news_item.value|view_modes|product"] = array(
     'custom_settings' => FALSE,
   );
+  $overrides["variable.node_options_news_item.value|1"] = 'revision';
 
  return $overrides;
 }
