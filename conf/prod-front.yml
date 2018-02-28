@@ -270,7 +270,7 @@
     # You can also use extra_forwards and httpextraforwards to define additional domains to listen & forward
     # See ansible/playbook/roles/sslterminator/templates/ssl_terminators.conf.j2 for reference.
 
-    php_env_vars:
+    php_extra_env_vars:
       - key: "twitter_consumer_key"
         value: "{{ twitter_consumer_key }}"
       - key: "twitter_consumer_secret"
