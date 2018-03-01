@@ -190,6 +190,33 @@ function pori_attraction_feature_field_group_info() {
   $field_groups['group_related_content|node|attraction_card|form'] = $field_group;
 
   $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
+  $field_group->identifier = 'group_video|node|attraction_card|form';
+  $field_group->group_name = 'group_video';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'attraction_card';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Video',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_video_url',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-video field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_video|node|attraction_card|form'] = $field_group;
+
+  $field_group = new stdClass();
   $field_group->disabled = TRUE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
   $field_group->identifier = 'group_websites|node|attraction_card|form';
@@ -225,6 +252,7 @@ function pori_attraction_feature_field_group_info() {
   t('Main content');
   t('Misc');
   t('Related content');
+  t('Video');
   t('Websites');
 
   return $field_groups;

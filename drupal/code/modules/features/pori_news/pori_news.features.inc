@@ -28,10 +28,13 @@ function pori_news_views_api($module = NULL, $api = NULL) {
  */
 function pori_news_context_default_contexts_alter(&$data) {
   if (isset($data['news_list'])) {
-    $data['news_list']->conditions['path']['values']['news-archive'] = 'news-archive'; /* WAS: '' */
-    $data['news_list']->conditions['path']['values']['news-archive/*'] = 'news-archive/*'; /* WAS: '' */
+    $data['news_list']->conditions['views'] = array(
+      'values' => array(
+        'pori_news:page' => 'pori_news:page',
+      ),
+    ); /* WAS: '' */
     $data['news_list']->description = 'News archive'; /* WAS: 'News archive/list' */
-    unset($data['news_list']->conditions['path']['values']['news']);
+    unset($data['news_list']->conditions['path']);
     unset($data['news_list']->reactions['block']);
   }
 }

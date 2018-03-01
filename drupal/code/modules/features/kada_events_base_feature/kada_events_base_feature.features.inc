@@ -32,9 +32,6 @@ function kada_events_base_feature_ctools_plugin_api($module = NULL, $api = NULL)
   if ($module == "quicktabs" && $api == "quicktabs") {
     return array("version" => "1");
   }
-  if ($module == "radioactivity" && $api == "radioactivity_decay_profile") {
-    return array("version" => "1");
-  }
   if ($module == "relation" && $api == "relation_type_default") {
     return array("version" => "1");
   }

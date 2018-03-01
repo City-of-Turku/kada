@@ -150,6 +150,12 @@ function pori_attraction_feature_strongarm() {
       'attraction_card_mosaic_item' => array(
         'custom_settings' => TRUE,
       ),
+      'live_results_search' => array(
+        'custom_settings' => TRUE,
+      ),
+      'person_card' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -175,7 +181,7 @@ function pori_attraction_feature_strongarm() {
       'display' => array(
         'domain' => array(
           'default' => array(
-            'weight' => '35',
+            'weight' => '37',
             'visible' => FALSE,
           ),
           'search_result' => array(
@@ -282,6 +288,7 @@ function pori_attraction_feature_strongarm() {
   $strongarm->name = 'node_options_attraction_card';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_attraction_card'] = $strongarm;
 

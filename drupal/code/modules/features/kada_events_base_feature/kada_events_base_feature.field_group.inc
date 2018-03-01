@@ -245,7 +245,6 @@ function kada_events_base_feature_field_group_info() {
     'weight' => '7',
     'children' => array(
       0 => 'field_event_import_id',
-      1 => 'field_radioactivity',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

@@ -12,9 +12,12 @@ function pori_news_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: context
-  $overrides["context.news_list.conditions|path|values|news"]["DELETED"] = TRUE;
-  $overrides["context.news_list.conditions|path|values|news-archive"] = 'news-archive';
-  $overrides["context.news_list.conditions|path|values|news-archive/*"] = 'news-archive/*';
+  $overrides["context.news_list.conditions|path"]["DELETED"] = TRUE;
+  $overrides["context.news_list.conditions|views"] = array(
+    'values' => array(
+      'pori_news:page' => 'pori_news:page',
+    ),
+  );
   $overrides["context.news_list.description"] = 'News archive';
   $overrides["context.news_list.reactions|block"]["DELETED"] = TRUE;
 
