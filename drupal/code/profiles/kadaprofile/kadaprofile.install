@@ -665,3 +665,14 @@ function kadaprofile_update_7121() {
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables video embed field module
+ */
+function kadaprofile_update_7123() {
+  $modules = array('video_embed_field');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}
