@@ -36,6 +36,11 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["context.top_menu.conditions|context|values|news_list"] = 'news_list';
   $overrides["context.top_menu.conditions|context|values|person_list"] = 'person_list';
   $overrides["context.top_menu.conditions|context|values|search_page"] = 'search_page';
+  $overrides["context.top_menu.conditions|domain"] = array(
+    'values' => array(
+      'pori_fi' => 'pori_fi',
+    ),
+  );
 
   // Exported overrides for: ds_field_settings
   $overrides["ds_field_settings.node|page|default.settings|places_for_services|weight"] = 5;
