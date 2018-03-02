@@ -653,6 +653,9 @@ projects[variable][subdir] = contrib
 projects[varnish][version] = 1.4
 projects[varnish][subdir] = contrib
 
+projects[video_embed_field][version] = 2.0-beta11
+projects[video_embed_field][subdir] = contrib
+
 projects[view_unpublished][version] = 1.2
 projects[view_unpublished][subdir] = contrib
 

@@ -517,7 +517,7 @@ function pori_news_views_default_views() {
   $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['value'] = '1';
   $handler->display->display_options['filters']['current_all']['group'] = 1;
-  $handler->display->display_options['path'] = 'visitpori-news-archive';
+  $handler->display->display_options['path'] = 'visitpori/news-archive';
   $translatables['pori_news'] = array(
     t('Master'),
     t('News archive'),

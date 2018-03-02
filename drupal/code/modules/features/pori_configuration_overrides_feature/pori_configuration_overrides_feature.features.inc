@@ -53,6 +53,11 @@ function pori_configuration_overrides_feature_context_default_contexts_alter(&$d
     $data['top_menu']->conditions['context']['values']['news_list'] = 'news_list'; /* WAS: '' */
     $data['top_menu']->conditions['context']['values']['person_list'] = 'person_list'; /* WAS: '' */
     $data['top_menu']->conditions['context']['values']['search_page'] = 'search_page'; /* WAS: '' */
+    $data['top_menu']->conditions['domain'] = array(
+      'values' => array(
+        'pori_fi' => 'pori_fi',
+      ),
+    ); /* WAS: '' */
   }
 }
 
