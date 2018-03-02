@@ -929,6 +929,15 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
 }
 
 /**
+ * Implements hook_default_scald_context_config_alter().
+ */
+function pori_configuration_overrides_feature_default_scald_context_config_alter(&$data) {
+  if (isset($data['full'])) {
+    $data['full']->transcoder['image']['*'] = 'group-responsive_content_full'; /* WAS: 'passthrough' */
+  }
+}
+
+/**
  * Implements hook_strongarm_alter().
  */
 function pori_configuration_overrides_feature_strongarm_alter(&$data) {
