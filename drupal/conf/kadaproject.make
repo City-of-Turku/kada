@@ -181,6 +181,9 @@ projects[context_entity_field][download][revision] = "97170bcfb397c947034e581781
 ; Patch makes the view mode work better when there might be multiple entities
 projects[context_entity_field][patch][] = "https://www.drupal.org/files/issues/context_entity_field-view_mode-2022197-4.patch"
 
+projects[context_error][version] = 1.0
+projects[context_error][subdir] = contrib
+
 projects[context_omega][version] = 1.1
 projects[context_omega][subdir] = contrib
 projects[context_omega][patch][] = "https://www.drupal.org/files/i2115997-3.patch"
