@@ -920,102 +920,6 @@ function driveturku_select_as_checkboxes($vars) {
   return '<div' . drupal_attributes($attributes) . ">$description$output</div>";
 }
 
-
-
-/**
- * Alter phone numbers for rendering
- */
-function _driveturku_phonenumber_format($number, $lang) {
-  $formatters = array(
-    5 => '### ##',
-    6 => '### ###',
-    7 => '### ####',
-    8 => '#### ####',
-    9 => '### ### ###',
-    10 => '### ### ####',
-  );
-
-  // Remove all whitespace
-  $number = trim(preg_replace('/\s-\(\)/', '', $number));
-
-  // Separate multiple numbers with , or /
-  $numbers = explode(', ', $number);
-  if (count($numbers) <= 1) {
-    $numbers = explode(' / ', $number);
-  }
-
-  if (!is_array($numbers)) {
-    $numbers = array($number);
-  }
-
-  $output = array();
-  // Loop through the number(s)
-  foreach ($numbers as $number) {
-    // Change the international code to a zero
-    $number = preg_replace('/^\+?358\s*/', '0', $number);
-
-    // Remove everything except digits
-    $number = trim(preg_replace('/[^0-9]/', '', $number));
-
-    // Number doesn't contain prefix
-    if (substr($number, 0, 1) != '0') {
-      // Number is long enough for prefix (shortest one is 050 12345 = 7 digits)
-      if (strlen($number) >= 7) {
-        $number = '0' . $number;
-      }
-      // Turku landlines (without prefix)
-      elseif (in_array(substr($number, 0, 3), array('262', '266'))) {
-        $number = '02' . $number;
-      }
-    }
-
-    // Too short, probably a local number or something
-    if (strlen($number) < 8) {
-      continue;
-    }
-
-    // Separate the prefix (03, 019, 041, 044, 045, 050, 0400, 0800)
-    preg_match('/^(0\d(?:1|4|5|9|0{0,2}))(\d+)/', $number, $matches);
-
-    $prefix = $matches[1];
-
-    // Add intl prefix if necessary
-    if ($lang == 'en') {
-      $prefix = '+358 ' . substr($prefix, 1);
-    }
-    // Add parentheses if necessary (optional prefix) – either two digits or 019
-    elseif (substr($prefix, 2, 0) === FALSE || substr($prefix, 2, 0) == '9') {
-      $prefix = '(' . $prefix . ')';
-    }
-
-    // Prefix
-    $formatted = $prefix . ' ';
-
-    $local = $matches[2];
-
-    $len = strlen($local);
-    if (!isset($formatters[$len])) {
-      watchdog('turkufi', t('Missing phone number formatter for length %len'), array('%len' => $len), WATCHDOG_WARNING);
-      continue;
-    }
-    $formatter = $formatters[$len];
-
-    $char_i = 0;
-    foreach (str_split($formatter, 1) as $i => $tpl) {
-      if ($tpl == ' ') {
-        $formatted .= ' ';
-      }
-      else {
-        $formatted .= substr($local, $char_i++, 1);
-      }
-    }
-
-    $output[] = $formatted;
-  }
-
-  return $output;
-}
-
 function driveturku_preprocess_field(&$variables) {
   global $language;
 
@@ -1027,7 +931,11 @@ function driveturku_preprocess_field(&$variables) {
       global $language;
       $current_language = $language->language;
       $numbers = $variables['items'][0]['#markup'];
-      $numbers = _driveturku_phonenumber_format($numbers, $current_language);
+      // FIXME: If we had the module enabled we wouldn't need this.
+      module_load_include('module', 'kada_telephone_numbers_feature');
+      if (function_exists('_kada_telephone_numbers_feature_phonenumber_format')) {
+        $numbers = _kada_telephone_numbers_feature_phonenumber_format($numbers, $current_language);
+      }
       $numbers_formated = '';
       foreach ($numbers as $number) {
         $numbers_formated .= $number . ', ';
