@@ -7,7 +7,7 @@
 # Default environment is Vagrant:
 default:
 
-  makefile: conf/kadaproject.make
+  makefile: conf/site.make
   temporary: _build
   final: current
   previous: builds
@@ -22,6 +22,7 @@ default:
     - files: sites/default/files
     - code/modules/custom: sites/all/modules/custom
     - code/modules/features: sites/all/modules/features
+    - code/site: sites/all/modules/site
     - code/themes/custom: sites/all/themes/custom
     - code/profiles/kadaprofile: profiles/kadaprofile
     - conf/vagrant.settings.php: sites/default/settings.php
@@ -54,6 +55,7 @@ local:
   link:
     - files: sites/default/files
     - code/modules/custom: sites/all/modules/custom
+    - code/site: sites/all/modules/site
     - code/modules/features: sites/all/modules/features
     - code/themes/custom: sites/all/themes/custom
     - code/profiles/kadaprofile: profiles/kadaprofile
@@ -73,6 +75,7 @@ test:
   # Other files are copied, note settings.php
   copy:
     - code/modules/custom: sites/all/modules/custom
+    - code/site: sites/all/modules/site
     - code/modules/features: sites/all/modules/features
     - code/themes/custom: sites/all/themes/custom
     - code/profiles/kadaprofile: profiles/kadaprofile

@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * @file
+ * KADA site-specific module to act as a site ”profile”. Enabled by the profile.
+ *
+ * Use this as a normal profile – enable your own custom features and modules
+ * etc. Remember to use this only as a feature; create further modules and
+ * features for any actual functionality and alters. Or not – this module
+ * shouldn't change upstream and therefore shouldn't cause merge conflicts,
+ * whatever way you use it.
+ */
