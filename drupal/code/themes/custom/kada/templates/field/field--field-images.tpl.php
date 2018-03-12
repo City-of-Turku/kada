@@ -53,7 +53,7 @@
       <?php endforeach; ?>
     </div>
   </div>
-<?php elseif ($element['#object']->type === 'attraction_card' && $element['#view_mode'] === '_custom_display') : ?>
+<?php elseif ($element['#object']->type === 'attraction_card' && $element['#view_mode'] === '_custom_display' && $element['#formatter'] === 'current') : ?>
   <?php foreach ($items as $delta => $item): ?>
     <div class="slick-slide slide-navigation__item">
       <?php print render($item); ?>

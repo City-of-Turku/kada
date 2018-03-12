@@ -26,15 +26,20 @@ function pori_attraction_feature_default_scald_context_config() {
     ),
   );
   $context_config->player = array(
-    'file' => array(
-      '*' => 'default',
-    ),
     'image' => array(
-      '*' => 'default',
-      'settings' => array(),
+      '*' => 'image_figure',
+      'settings' => array(
+        'classes' => '',
+        'caption' => '',
+      ),
     ),
     'video' => array(
       '*' => 'default',
+      'settings' => array(),
+    ),
+    'file' => array(
+      '*' => 'default',
+      'settings' => array(),
     ),
   );
   $context_config->data = array(

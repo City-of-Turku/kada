@@ -775,6 +775,14 @@ function pori_configuration_overrides_feature_features_override_default_override
     'parseable' => TRUE,
     'formats' => array(),
   );
+  $overrides["variable.scald_custom_contexts.value|page_carousel"] = array(
+    'name' => 'page_carousel',
+    'title' => 'Page carousel',
+    'description' => '',
+    'render_language' => 'XHTML',
+    'parseable' => TRUE,
+    'formats' => array(),
+  );
   $overrides["variable.variable_realm_list_domain.value|0"] = 'googleanalytics_account';
   $overrides["variable.variable_realm_list_domain.value|1"] = 'piwik_site_id';
   $overrides["variable.variable_realm_list_domain.value|2"] = 'site_name';
