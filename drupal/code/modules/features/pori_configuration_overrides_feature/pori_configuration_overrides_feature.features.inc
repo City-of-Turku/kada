@@ -933,6 +933,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
  */
 function pori_configuration_overrides_feature_default_scald_context_config_alter(&$data) {
   if (isset($data['full'])) {
+    $data['full']->player['image']['*'] = 'image_figure'; /* WAS: 'default' */
+    $data['full']->player['image']['settings']['caption'] = '[atom:title], by [atom:author]'; /* WAS: '' */
+    $data['full']->player['image']['settings']['classes'] = ''; /* WAS: '' */
     $data['full']->transcoder['image']['*'] = 'group-responsive_content_full'; /* WAS: 'passthrough' */
   }
 }

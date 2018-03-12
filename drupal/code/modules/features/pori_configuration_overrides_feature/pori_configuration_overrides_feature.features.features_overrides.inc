@@ -740,6 +740,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["field_instance.widget-event_mosaic-field_keywords_et.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
 
   // Exported overrides for: scald_context_config
+  $overrides["scald_context_config.full.player|image|*"] = 'image_figure';
+  $overrides["scald_context_config.full.player|image|settings|caption"] = '[atom:title], by [atom:author]';
+  $overrides["scald_context_config.full.player|image|settings|classes"] = '';
   $overrides["scald_context_config.full.transcoder|image|*"] = 'group-responsive_content_full';
 
   // Exported overrides for: variable
