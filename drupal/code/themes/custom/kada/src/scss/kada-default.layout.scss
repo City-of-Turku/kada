@@ -9,12 +9,6 @@
 @import 'lib/variables/*';
 @import 'lib/mixins/*';
 
-// .l-main-wrapper {
-//   background: url('../../../images/bg_pattern.png') repeat 0 0 $after-content-bg;
-//   clear: both;
-//   overflow: visible;
-// }
-
 .l-before-content,
 .l-after-content {
   background: none 0 0 $darker-gray;
@@ -25,107 +19,8 @@
   background-color: $after-content-bg;
 }
 
-// .l-region,
-// .l-content {
-//   margin: 0 $gutters * 2;
-
-//   @media screen and (min-width: $tablet-portrait) {
-//     margin: 0;
-//   }
-// }
-
-.l-content .l-region--before-content {
-  margin: 0;
-}
-
-// .l-main,
-// .l-footer .l-region {
-//   @media screen and (min-width: $tablet-portrait) {
-//     float: none;
-//     margin: 0 auto;
-//     max-width: 1320px;
-//   }
-// }
-
-// .l-region--sidebar-first {
-//   @media screen and (min-width: $tablet-portrait) {
-//     @include span(4);
-//     padding-left: $gutters * 2;
-//   }
-
-//   @media screen and (min-width: $desktop-narrow) {
-//     @include span(3);
-//     padding-left: $gutters * 2;
-//   }
-// }
-
-// .l-region--sidebar-second {
-//   @media screen and (min-width: $tablet-portrait) {
-//     @include span(last 3);
-//     padding-right: $gutters * 2;
-//   }
-// }
-
-// .l-content {
-//   @media screen and (min-width: $tablet-portrait) {
-//     @include span(12);
-//     padding: 0 $gutters * 2;
-//   }
-// }
-
-// .l-page {
-//   &.has-one-sidebar.has-sidebar-first {
-//     .l-content {
-//       @media screen and (min-width: $tablet-portrait) {
-//         @include span(last 8);
-//         padding: 0 $gutters * 2 0 0;
-//       }
-
-//       @media screen and (min-width: $desktop-narrow) {
-//         @include span(last 9);
-//         padding: 0 $gutters * 2 0 0;
-//       }
-//     }
-//   }
-//   &.has-one-sidebar.has-sidebar-second {
-//     .l-content {
-//       @media screen and (min-width: $tablet-portrait) {
-//         @include span(9);
-//         padding: 0 0 0 $gutters * 2;
-//       }
-//     }
-//   }
-//   &.has-two-sidebars {
-//     .l-content {
-//       @media screen and (min-width: $tablet-portrait) {
-//         @include span(5);
-//         padding: 0;
-//       }
-
-//       @media screen and (min-width: $desktop-narrow) {
-//         @include span(6);
-//         padding: 0;
-//       }
-//     }
-//   }
-// }
-
 // Main container goes over the header image on content pages
 .has-main-image {
-  // .l-branding,
-  // .l-navigation {
-  //   @include in-front-of-header;
-  //   left: 0;
-  //   position: relative;
-  //   top: 0;
-
-  //   @media screen and (min-width: $desktop-narrow) {
-  //     left: auto;
-  //     position: relative;
-  //     top: auto;
-  //   }
-  // }
-
   .l-before-header {
     @include in-front-of-header;
     position: relative;
@@ -134,30 +29,4 @@
   .l-branding {
     @include branding-in-front-of-header;
   }
-
-  // .l-navigation {
-  //   background-color: $header-overlay-bg;
-  //   padding: 13px 0;
-  //   width: 100%;
-
-  //   @media screen and (min-width: $desktop-narrow) {
-  //     background-color: $navigation-bg;
-  //     padding: 0;
-  //   }
-  // }
-
-  // .l-main {
-  //   padding-bottom: 2em;
-
-  //   @media screen and (min-width: $tablet-portrait) {
-  //     @include content-in-front-of-header;
-  //     margin-top: 15%;
-  //     position: relative;
-  //   }
-  // }
 }
-
-// // Highlighted area works as the container for breadcrumb etc on sub-pages so the background color is different here
-// .l-highlighted {
-//   background-color: $sub-page-highlighted-bg;
-// }

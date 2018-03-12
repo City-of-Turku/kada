@@ -14,6 +14,7 @@ features[features_api][] = api:2
 features[features_override_items][] = context.front_page
 features[features_override_items][] = quicktabs.feed_tabs
 features[features_override_items][] = views_view.kada_news
+features[features_overrides][] = context.front_page.reactions|block|blocks|kada_news_feature-news_archive_link
 features[features_overrides][] = context.front_page.reactions|block|blocks|quicktabs-feed_tabs_frontpage_promoted_con
 features[features_overrides][] = context.front_page.reactions|block|blocks|views-kada_news-block_1
 features[features_overrides][] = context.front_page.reactions|block|blocks|views-kada_news-front_block

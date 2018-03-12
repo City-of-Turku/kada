@@ -130,6 +130,12 @@ function visitpori_configurations_context_default_contexts() {
           'region' => 'after_content',
           'weight' => '-9',
         ),
+        'kada_news_feature-news_archive_link' => array(
+          'module' => 'kada_news_feature',
+          'delta' => 'news_archive_link',
+          'region' => 'after_content',
+          'weight' => '-8',
+        ),
       ),
     ),
   );
