@@ -55,7 +55,7 @@
   @media screen and (min-width: $tablet-portrait) {
     background-color: $white;
     position: absolute;
-    padding: 2rem 3rem 3.7rem;
+    padding: 3rem 3rem 4.3rem;
   }
 
   > a {
@@ -82,6 +82,7 @@
 
       @media screen and (min-width: $tablet-landscape) {
         font-size: 1.6rem;
+        margin-bottom: 1.5rem;
       }
     }
 
@@ -120,7 +121,7 @@
   z-index: 6;
 
   @media screen and (min-width: $tablet-portrait) {
-    bottom: 1.5rem;
+    bottom: 1.7rem;
     left: 0;
     margin: 0;
     max-width: ($container-width - ($container-gutter * 2)) * 0.6;
