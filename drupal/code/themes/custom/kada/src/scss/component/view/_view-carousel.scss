@@ -1,5 +1,6 @@
 .l-header .flexslider {
   background: $white;
+  overflow: visible !important; // To avoid flickering of the right and left side of the slideshow when slides change.
 
   li {
     margin-top: 0;
@@ -54,10 +55,11 @@
   @media screen and (min-width: $tablet-portrait) {
     background-color: $white;
     position: absolute;
-    padding: 2rem 3rem 3.5rem;
+    padding: 2rem 3rem 3.7rem;
   }
 
   > a {
+    color: $primary-color;
     display: block;
   }
 
@@ -72,11 +74,15 @@
     }
 
     @media screen and (min-width: $tablet-landscape) {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
 
     h3 {
       margin-bottom: 1rem;
+
+      @media screen and (min-width: $tablet-landscape) {
+        font-size: 1.6rem;
+      }
     }
 
     p:last-child {
@@ -114,6 +120,7 @@
   z-index: 6;
 
   @media screen and (min-width: $tablet-portrait) {
+    bottom: 1.5rem;
     left: 0;
     margin: 0;
     max-width: ($container-width - ($container-gutter * 2)) * 0.6;

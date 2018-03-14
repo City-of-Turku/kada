@@ -39,10 +39,6 @@
   }
 }
 
-.recommended-block-wrapper {
-
-}
-
 .recommended-block {
   overflow: hidden;
 }
@@ -52,13 +48,13 @@
   padding: 1.25rem 0.625rem;
   position: relative;
 
-  @media screen and (min-width: $mobile-menu-breakpoint) {
+  @media screen and (min-width: $tablet-portrait) {
     padding: 1.25rem;
   }
 }
 
 .recommended-block__content {
-  background-color: $white;
+  background-color: $gray-lighter;
   padding: 0;
 }
 
@@ -85,9 +81,13 @@
   a {
     color: $primary-color;
     display: block;
-    padding: .5rem;
+    padding: 1.25rem 0.625rem;
     text-decoration: none;
     text-transform: uppercase;
+
+    @media screen and (min-width: $tablet-portrait) {
+      padding: 1.25rem;
+    }
 
     &:hover,
     &:focus,

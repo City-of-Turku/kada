@@ -48,12 +48,7 @@ function pori_front_page_liftups_context_default_contexts_alter(&$data) {
       'region' => 'before_footer',
       'weight' => -10,
     ); /* WAS: '' */
-    $data['front_page']->reactions['block']['blocks']['views-kada_recommended-block_1'] = array(
-      'module' => 'views',
-      'delta' => 'kada_recommended-block_1',
-      'region' => 'header',
-      'weight' => -8,
-    ); /* WAS: '' */
+    $data['front_page']->reactions['block']['blocks']['views-kada_recommended-block']['weight'] = -9; /* WAS: -10 */
     $data['front_page']->reactions['block']['blocks']['views-kada_top_carousel-block_1'] = array(
       'module' => 'views',
       'delta' => 'kada_top_carousel-block_1',
@@ -61,7 +56,6 @@ function pori_front_page_liftups_context_default_contexts_alter(&$data) {
       'weight' => -10,
     ); /* WAS: '' */
     unset($data['front_page']->reactions['block']['blocks']['views-kada_news-front_block']);
-    unset($data['front_page']->reactions['block']['blocks']['views-kada_recommended-block']);
   }
 }
 

@@ -36,13 +36,7 @@ function pori_front_page_liftups_features_override_default_overrides() {
     'region' => 'before_footer',
     'weight' => -10,
   );
-  $overrides["context.front_page.reactions|block|blocks|views-kada_recommended-block"]["DELETED"] = TRUE;
-  $overrides["context.front_page.reactions|block|blocks|views-kada_recommended-block_1"] = array(
-    'module' => 'views',
-    'delta' => 'kada_recommended-block_1',
-    'region' => 'header',
-    'weight' => -8,
-  );
+  $overrides["context.front_page.reactions|block|blocks|views-kada_recommended-block|weight"] = -9;
   $overrides["context.front_page.reactions|block|blocks|views-kada_top_carousel-block_1"] = array(
     'module' => 'views',
     'delta' => 'kada_top_carousel-block_1',
