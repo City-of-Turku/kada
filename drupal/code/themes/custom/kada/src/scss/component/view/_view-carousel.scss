@@ -127,6 +127,13 @@
     max-width: ($container-width - ($container-gutter * 2)) * 0.6;
     width: 60%;
   }
+
+  // After the max width of the container is met the items need to be centered based on their left and right edge.
+  @media screen and (min-width: $container-width) {
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: -(($container-width - ($container-gutter * 2)) * 0.4) / 2;
+  }
 }
 
 .flexslider__controls {
