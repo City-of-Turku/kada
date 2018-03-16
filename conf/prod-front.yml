@@ -49,7 +49,7 @@
 
     partition_var_log: False
 
-    memory_app: 4096 # In MB should be atleast 4x php_memory_limit
+    memory_app: 6144 # In MB should be atleast 4x php_memory_limit
 
 
     ## Nginx ##
@@ -184,7 +184,7 @@
     # This server also acts as a load balancer
     varnish:
       port: 8081
-      memory: 1G
+      memory: 8G
       # Basic configuration for error pages
       #error_header_cache_control: "no-cache, max-age: 0, must-revalidate"
       error_header_x_site_name: "{{ project_name }}"
