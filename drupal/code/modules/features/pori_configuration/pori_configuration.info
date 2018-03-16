@@ -18,6 +18,7 @@ dependencies[] = locale
 dependencies[] = options
 dependencies[] = pori_attraction_feature
 dependencies[] = pori_configuration_overrides_feature
+dependencies[] = pori_error_pages
 dependencies[] = pori_section_override_feature
 dependencies[] = pori_widget_feature
 dependencies[] = scald

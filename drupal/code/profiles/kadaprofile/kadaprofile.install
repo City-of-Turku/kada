@@ -676,25 +676,3 @@ function kadaprofile_update_7123() {
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
-
-/**
- * Implements hook_update().
- *
- * Enables context error module
- */
-function kadaprofile_update_7124() {
-  $modules = array('context_error');
-  $enable_dependencies = TRUE;
-  module_enable($modules, $enable_dependencies);
-}
-
-/**
- * Implements hook_update().
- *
- * Enables Pori error pages feature
- */
-function kadaprofile_update_7125() {
-  $modules = array('pori_error_pages');
-  $enable_dependencies = TRUE;
-  module_enable($modules, $enable_dependencies);
-}
