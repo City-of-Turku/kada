@@ -106,6 +106,12 @@ function visitpori_configurations_context_default_contexts() {
           'region' => 'header',
           'weight' => '-10',
         ),
+        'views-kada_recommended-block' => array(
+          'module' => 'views',
+          'delta' => 'kada_recommended-block',
+          'region' => 'header',
+          'weight' => '-9',
+        ),
         'views-kada_news-block_1' => array(
           'module' => 'views',
           'delta' => 'kada_news-block_1',

@@ -73,6 +73,10 @@ $menu-padding: 1.25rem;
         width: 1.563rem;
         z-index: 1;
 
+        @media screen and (min-width: $tablet-portrait-narrow) {
+          top: 1.25rem;
+        }
+
         &::before {
           @include fa('\f067', .9rem, 1, false);
           color: $black;
