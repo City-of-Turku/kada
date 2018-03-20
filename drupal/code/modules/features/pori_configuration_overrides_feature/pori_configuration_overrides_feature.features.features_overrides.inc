@@ -739,6 +739,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["field_instance.widget-event_carousel-field_keywords_et.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.widget-event_mosaic-field_keywords_et.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
 
+  // Exported overrides for: flexslider_optionset
+  $overrides["flexslider_optionset.top_carousel.options|smoothHeight"] = 0;
+
   // Exported overrides for: variable
   $overrides["variable.field_bundle_settings_node__person.value|extra_fields|display|domain|person_card"] = array(
     'weight' => 40,

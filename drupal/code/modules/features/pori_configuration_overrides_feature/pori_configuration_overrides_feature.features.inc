@@ -929,6 +929,15 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
 }
 
 /**
+ * Implements hook_flexslider_default_presets_alter().
+ */
+function pori_configuration_overrides_feature_flexslider_default_presets_alter(&$data) {
+  if (isset($data['top_carousel'])) {
+    $data['top_carousel']->options['smoothHeight'] = 0; /* WAS: 1 */
+  }
+}
+
+/**
  * Implements hook_strongarm_alter().
  */
 function pori_configuration_overrides_feature_strongarm_alter(&$data) {
