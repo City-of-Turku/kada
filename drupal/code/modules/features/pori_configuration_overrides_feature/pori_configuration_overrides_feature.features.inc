@@ -942,13 +942,14 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
  * Implements hook_image_styles_alter().
  */
 function pori_configuration_overrides_feature_image_styles_alter(&$data) {
-  if (isset($data['site_logo'])) {
+
 
   if (!isset($data['site_logo']['storage']) || $data['site_logo']['storage'] == IMAGE_STORAGE_DEFAULT) {
     $data['site_logo']['effects'] = array_values($data['site_logo']['effects']);
     $data['site_logo']['effects'][0]['data']['height'] = 50;
   }
 }
+
 /**
  * Implements hook_flexslider_default_presets_alter().
  */
