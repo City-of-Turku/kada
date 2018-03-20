@@ -19,6 +19,7 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["context.language_switcher.conditions|context|values|news_list"] = 'news_list';
   $overrides["context.language_switcher.conditions|context|values|person_list"] = 'person_list';
   $overrides["context.language_switcher.conditions|context|values|search_page"] = 'search_page';
+  $overrides["context.language_switcher.conditions|context|values|section_menus"]["DELETED"] = TRUE;
   $overrides["context.language_switcher.conditions|context|values|visitpori_domain"] = 'visitpori_domain';
   $overrides["context.language_switcher.reactions|block|blocks|locale-language|region"] = 'branding';
   $overrides["context.language_switcher.reactions|block|blocks|locale-language|weight"] = -9;
@@ -31,8 +32,13 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["context.main_menu.conditions|context|values|news_list"] = 'news_list';
   $overrides["context.main_menu.conditions|context|values|person_list"] = 'person_list';
   $overrides["context.main_menu.conditions|context|values|search_page"] = 'search_page';
+  $overrides["context.sitewide_en.conditions|context"]["DELETED"] = TRUE;
   $overrides["context.sitewide_en.reactions|block|blocks|block-1|weight"] = -40;
+  $overrides["context.sitewide_fi.conditions|context"]["DELETED"] = TRUE;
   $overrides["context.sitewide_fi.reactions|block|blocks|block-2|weight"] = -40;
+  $overrides["context.sitewide_sv.conditions|context"]["DELETED"] = TRUE;
+  $overrides["context.sitewide_sv.conditions|language"]["DELETED"] = TRUE;
+  $overrides["context.sitewide_sv.disabled"] = TRUE;
   $overrides["context.top_menu.conditions|context|values|news_list"] = 'news_list';
   $overrides["context.top_menu.conditions|context|values|person_list"] = 'person_list';
   $overrides["context.top_menu.conditions|context|values|search_page"] = 'search_page';
@@ -80,6 +86,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'type' => 'hidden',
     'weight' => 0,
   );
+  $overrides["field_instance.node-event-field_keywords_et.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'allow';
   $overrides["field_instance.node-event-field_related_content_et.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -637,6 +644,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => 0,
   );
   $overrides["field_instance.node-place-field_municipality_term.display|teaser|weight"] = 25;
+  $overrides["field_instance.node-place-field_municipality_term.widget|settings|content_taxonomy_opt_groups"] = FALSE;
   $overrides["field_instance.node-place-field_person_responsible.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -739,8 +747,13 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["field_instance.widget-event_carousel-field_keywords_et.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.widget-event_mosaic-field_keywords_et.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
 
+
+  // Exported overrides for: image
+  $overrides["image.site_logo.effects|0|data|height"] = 50;
+
   // Exported overrides for: flexslider_optionset
   $overrides["flexslider_optionset.top_carousel.options|smoothHeight"] = 0;
+
 
   // Exported overrides for: variable
   $overrides["variable.field_bundle_settings_node__person.value|extra_fields|display|domain|person_card"] = array(

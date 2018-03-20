@@ -1,6 +1,7 @@
 @media screen and (min-width: $mobile-menu-breakpoint) {
   .menu-name-main-menu,
-  .menu-name-menu-main-menu-en {
+  .menu-name-menu-main-menu-en,
+  .menu-name-og-menu-single {
     .responsive-menus .menu {
       display: flex;
       justify-content: space-between;
@@ -244,12 +245,6 @@
 
         > a {
           color: $white;
-
-          &::before {
-            @include fa('\f068', .9rem, 1, false);
-            color: $white;
-            line-height: 1.6rem;
-          }
         }
 
         > .menu {
