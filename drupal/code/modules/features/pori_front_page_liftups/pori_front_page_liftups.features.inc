@@ -30,17 +30,24 @@ function pori_front_page_liftups_context_default_contexts_alter(&$data) {
         '~visitpori_domain' => '~visitpori_domain',
       ),
     ); /* WAS: '' */
+
     $data['front_page']->reactions['block']['blocks']['kada_export_feature-kada_rss_feed_for_news_archive'] = array(
       'module' => 'kada_export_feature',
       'delta' => 'kada_rss_feed_for_news_archive',
       'region' => 'before_content',
       'weight' => -9,
     ); /* WAS: '' */
+    $data['front_page']->reactions['block']['blocks']['kada_news_feature-news_archive_link'] = array(
+      'module' => 'kada_news_feature',
+      'delta' => 'news_archive_link',
+      'region' => 'before_content',
+      'weight' => -8,
+    ); /* WAS: '' */
     $data['front_page']->reactions['block']['blocks']['quicktabs-feed_tabs_frontpage_promoted_con'] = array(
       'module' => 'quicktabs',
       'delta' => 'feed_tabs_frontpage_promoted_con',
       'region' => 'before_content',
-      'weight' => -10,
+      'weight' => -9,
     ); /* WAS: '' */
     $data['front_page']->reactions['block']['blocks']['views-kada_news-block_1'] = array(
       'module' => 'views',
