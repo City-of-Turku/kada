@@ -20,16 +20,18 @@ function pori_contact_information_feature_feeds_presave($source, $entity, $item,
     // Replace comma followed by a post code with newline and the post code.
     // Newlines don't work in Feeds Tamper.
     foreach ($entity->field_visiting_address as $lang => &$addr_item) {
-      $addr_item[0]['value'] = preg_replace('/,\W*([0-9]{5})/', "\n\\1", $addr_item[0]['value']);
+      if (isset($addr_item[0]['value'])) {
+        $addr_item[0]['value'] = preg_replace('/,\W*([0-9]{5})/', "\n\\1", $addr_item[0]['value']);
+      }
     }
 
-    // Prevent publishing of the mobile phone number.
-    if (!empty($item[13])) {
-      $entity->field_mobile_phone_work = array();
-    }
     // Prevent publishing of the phone number.
     if (!empty($item[12])) {
       $entity->field_phone = array();
+    }
+    // Prevent publishing of the mobile phone number.
+    if (!empty($item[13])) {
+      $entity->field_mobile_phone_work = array();
     }
   }
 }

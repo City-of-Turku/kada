@@ -266,6 +266,7 @@ projects[entityqueue][patch][] = "../patches/entityqueue_subqueue_export.patch"
 
 projects[entity_action_log][version] = 1.0-beta2
 projects[entity_action_log][subdir] = contrib
+projects[entity_action_log][patch][] = "https://www.drupal.org/files/issues/2018-03-23/2955606-2_fix_notice.patch"
 
 ; Only dev version is available for entity_base_type module.
 projects[entity_base_type][type] = module
