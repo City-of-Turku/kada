@@ -84,6 +84,18 @@ function pori_configuration_overrides_feature_ds_layout_settings_info_alter(&$da
     $data['node|place|teaser']->settings['regions']['main_content'][6] = 'field_read_more'; /* WAS: 'node_link' */
     unset($data['node|place|teaser']->settings['fields']['node_link']);
   }
+  if (isset($data['scald_atom|image|content_full'])) {
+    $data['scald_atom|image|content_full']->settings['fields']['atom'] = 'main'; /* WAS: '' */
+    $data['scald_atom|image|content_full']->settings['layout_disable_css'] = FALSE; /* WAS: '' */
+    $data['scald_atom|image|content_full']->settings['regions']['main'][0] = 'atom'; /* WAS: 'scald_thumbnail' */
+    unset($data['scald_atom|image|content_full']->settings['fields']['scald_thumbnail']);
+  }
+  if (isset($data['scald_atom|image|content_half'])) {
+    $data['scald_atom|image|content_half']->settings['fields']['atom'] = 'main'; /* WAS: '' */
+    $data['scald_atom|image|content_half']->settings['layout_disable_css'] = FALSE; /* WAS: '' */
+    $data['scald_atom|image|content_half']->settings['regions']['main'][0] = 'atom'; /* WAS: 'scald_thumbnail' */
+    unset($data['scald_atom|image|content_half']->settings['fields']['scald_thumbnail']);
+  }
   if (isset($data['taxonomy_term|accessibility|default'])) {
     $data['taxonomy_term|accessibility|default']->layout = 'accessibility_layout'; /* WAS: 'minimal_layout' */
     $data['taxonomy_term|accessibility|default']->settings['fields']['description_field'] = 'main_content'; /* WAS: '' */
@@ -925,6 +937,18 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
   }
   if (isset($data['widget-event_mosaic-field_keywords_et'])) {
     $data['widget-event_mosaic-field_keywords_et']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
+  }
+}
+
+/**
+ * Implements hook_default_scald_context_config_alter().
+ */
+function pori_configuration_overrides_feature_default_scald_context_config_alter(&$data) {
+  if (isset($data['content_full'])) {
+    $data['content_full']->player['image']['settings']['caption'] = ''; /* WAS: '[atom:title_text]' */
+  }
+  if (isset($data['content_half'])) {
+    $data['content_half']->player['image']['settings']['caption'] = ''; /* WAS: '[atom:title_text]' */
   }
 }
 
