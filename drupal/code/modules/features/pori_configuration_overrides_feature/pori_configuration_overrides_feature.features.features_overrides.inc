@@ -775,6 +775,13 @@ function pori_configuration_overrides_feature_features_override_default_override
     'custom_settings' => FALSE,
   );
   $overrides["variable.field_bundle_settings_node__place.value|extra_fields|display|domain|teaser|weight"] = 23;
+  $overrides["variable.field_bundle_settings_scald_atom__image.value|extra_fields|display|atom|content_full|visible"] = TRUE;
+  $overrides["variable.field_bundle_settings_scald_atom__image.value|extra_fields|display|atom|content_full|weight"] = 0;
+  $overrides["variable.field_bundle_settings_scald_atom__image.value|extra_fields|display|atom|content_half|visible"] = TRUE;
+  $overrides["variable.field_bundle_settings_scald_atom__image.value|extra_fields|display|atom|content_half|weight"] = 0;
+  $overrides["variable.field_bundle_settings_scald_atom__image.value|view_modes|content_250_wide"] = array(
+    'custom_settings' => FALSE,
+  );
   $overrides["variable.menu_block_8_depth.value"] = 2;
   $overrides["variable.node_options_attraction_card.value|1"] = 'revision';
   $overrides["variable.node_options_landing_page.value|1"] = 'revision';

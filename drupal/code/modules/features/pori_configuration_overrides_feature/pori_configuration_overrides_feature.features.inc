@@ -983,6 +983,15 @@ function pori_configuration_overrides_feature_strongarm_alter(&$data) {
   if (isset($data['field_bundle_settings_node__place'])) {
     $data['field_bundle_settings_node__place']->value['extra_fields']['display']['domain']['teaser']['weight'] = 23; /* WAS: 19 */
   }
+  if (isset($data['field_bundle_settings_scald_atom__image'])) {
+    $data['field_bundle_settings_scald_atom__image']->value['extra_fields']['display']['atom']['content_full']['visible'] = TRUE; /* WAS: FALSE */
+    $data['field_bundle_settings_scald_atom__image']->value['extra_fields']['display']['atom']['content_full']['weight'] = 0; /* WAS: 1 */
+    $data['field_bundle_settings_scald_atom__image']->value['extra_fields']['display']['atom']['content_half']['visible'] = TRUE; /* WAS: FALSE */
+    $data['field_bundle_settings_scald_atom__image']->value['extra_fields']['display']['atom']['content_half']['weight'] = 0; /* WAS: 1 */
+    $data['field_bundle_settings_scald_atom__image']->value['view_modes']['content_250_wide'] = array(
+      'custom_settings' => FALSE,
+    ); /* WAS: '' */
+  }
   if (isset($data['menu_block_8_depth'])) {
     $data['menu_block_8_depth']->value = 2; /* WAS: 0 */
   }
