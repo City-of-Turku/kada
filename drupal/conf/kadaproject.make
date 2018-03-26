@@ -674,6 +674,16 @@ projects[views_accordion][subdir] = contrib
 projects[views_data_export][version] = 3.2
 projects[views_data_export][subdir] = contrib
 
+;projects[views_datasource][version] = 1.0-alpha2
+projects[views_datasource][type] = module
+projects[views_datasource][download][type] = git
+projects[views_datasource][download][url] = "https://git.drupal.org/project/views_datasource.git"
+projects[views_datasource][download][revision] = d048d8125a334e00ff8b05c9ec0feafdc20163b3
+projects[views_datasource][subdir] = contrib
+projects[views_datasource][patch][] = "https://www.drupal.org/files/issues/views_datasource-1881670-16-multiple-fields-render.patch"
+projects[views_datasource][patch][] = "https://www.drupal.org/files/issues/2018-03-26/2955990-2_fix_keys.patch"
+projects[views_datasource][patch][] = "https://www.drupal.org/files/issues/2018-03-26/2956000-2_link_scald_support.patch"
+
 projects[views_bulk_operations][version] = 3.4
 projects[views_bulk_operations][subdir] = contrib
 
