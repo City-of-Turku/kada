@@ -1,0 +1,9 @@
+.recommended-block__header {
+  background-color: $secondary-color;
+
+  .fa-icon--close {
+    &::before {
+      color: $secondary-color;
+    }
+  }
+}

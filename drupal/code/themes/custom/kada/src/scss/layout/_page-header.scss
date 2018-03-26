@@ -73,7 +73,7 @@
     // Mobile
     @media screen and (max-width: $mobile-menu-breakpoint-max) {
       position: absolute;
-      right: 7.85rem;
+      right: 8rem;
       top: 0;
     }
   }
@@ -98,12 +98,6 @@
     justify-content: space-between;
   }
 
-  .block--recommended-button {
-    @media screen and (max-width: $mobile-menu-breakpoint-max) {
-      right: 3.75rem + 4.375rem; // Menu toggler + language switcher
-    }
-  }
-
   .block--menu-block {
     width: 100%;
 
@@ -121,6 +115,25 @@
 }
 
 .l-region--header {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   position: relative;
+
+  @media screen and (min-width: $tablet-portrait) {
+    margin: 0 $container-gutter;
+    overflow: visible;
+  }
+
+  @media screen and (min-width: $tablet-portrait) and (max-width: $desktop) {
+    margin: 0 $container-gutter * 2;
+  }
+
+  .block {
+    order: 2;
+
+    &.block--views-kada-recommended-block {
+      order: 1;
+    }
+  }
 }

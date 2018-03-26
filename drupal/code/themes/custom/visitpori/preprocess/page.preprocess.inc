@@ -91,16 +91,6 @@ function visitpori_preprocess_page(&$variables) {
     }
 
     if ($node->type == 'page' || $node->type == 'landing_page' || $node->type == 'section') {
-      // Recommended button for mobile navigation
-      if (!empty($node->field_link_to_content_multiple)) {
-        $variables['page']['navigation'] = array(
-          'recommended_button' => array(
-            '#markup' => '<div id="block-recommended-button" class="block block--recommended-button"><button class="recommended-button"><i class="fa-icon fa-icon--star" aria-hidden="true"></i><span class="recommended-button__inner">'. t('Recommended') .'</span></button></div>',
-            '#weight' => 0,
-          ),
-        ) + $variables['page']['navigation'];
-      }
-
       if (!empty($variables['page']['before_header']['kada_search_feature_quicksearch'])) {
         // Duplicate the quick search block.
         // Note that navigation_top_extra is not a real region

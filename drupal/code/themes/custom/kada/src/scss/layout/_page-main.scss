@@ -1,5 +1,10 @@
 .page-main__container,
 .content-top {
-  padding-top: 3.125rem;
   padding-bottom: 3.125rem;
+  padding-top: 3.125rem;
+
+  .content-top {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
 }

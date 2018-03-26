@@ -29,6 +29,7 @@ function pori_configuration_overrides_feature_context_default_contexts_alter(&$d
       'region' => 'branding',
       'weight' => -10,
     ); /* WAS: '' */
+    unset($data['language_switcher']->conditions['context']['values']['section_menus']);
   }
   if (isset($data['main_menu'])) {
     $data['main_menu']->conditions['context']['values']['news_list'] = 'news_list'; /* WAS: '' */
@@ -37,9 +38,16 @@ function pori_configuration_overrides_feature_context_default_contexts_alter(&$d
   }
   if (isset($data['sitewide_en'])) {
     $data['sitewide_en']->reactions['block']['blocks']['block-1']['weight'] = -40; /* WAS: -10 */
+    unset($data['sitewide_en']->conditions['context']);
   }
   if (isset($data['sitewide_fi'])) {
     $data['sitewide_fi']->reactions['block']['blocks']['block-2']['weight'] = -40; /* WAS: -10 */
+    unset($data['sitewide_fi']->conditions['context']);
+  }
+  if (isset($data['sitewide_sv'])) {
+    $data['sitewide_sv']->disabled = TRUE; /* WAS: FALSE */
+    unset($data['sitewide_sv']->conditions['context']);
+    unset($data['sitewide_sv']->conditions['language']);
   }
   if (isset($data['top_menu'])) {
     $data['top_menu']->conditions['context']['values']['news_list'] = 'news_list'; /* WAS: '' */
@@ -139,6 +147,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'type' => 'hidden',
       'weight' => 0,
     ); /* WAS: '' */
+    $data['node-event-field_keywords_et']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'allow'; /* WAS: '' */
   }
   if (isset($data['node-event-field_related_content_et'])) {
     $data['node-event-field_related_content_et']['display']['live_results_search'] = array(
@@ -806,6 +815,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-place-field_municipality_term']['display']['teaser']['weight'] = 25; /* WAS: 22 */
+    $data['node-place-field_municipality_term']['widget']['settings']['content_taxonomy_opt_groups'] = FALSE; /* WAS: '' */
   }
   if (isset($data['node-place-field_person_responsible'])) {
     $data['node-place-field_person_responsible']['display']['live_results_search'] = array(
@@ -943,12 +953,34 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
 /**
  * Implements hook_default_scald_context_config_alter().
  */
-function pori_configuration_overrides_feature_default_scald_context_config_alter(&$data) {
+function pori_configuration_overrides_feature_default_scald_context_config_alter(&$data)
+{
   if (isset($data['content_full'])) {
     $data['content_full']->player['image']['settings']['caption'] = ''; /* WAS: '[atom:title_text]' */
   }
   if (isset($data['content_half'])) {
     $data['content_half']->player['image']['settings']['caption'] = ''; /* WAS: '[atom:title_text]' */
+  }
+}
+
+/**
+ * Implements hook_image_styles_alter().
+ */
+function pori_configuration_overrides_feature_image_styles_alter(&$data) {
+
+
+  if (!isset($data['site_logo']['storage']) || $data['site_logo']['storage'] == IMAGE_STORAGE_DEFAULT) {
+    $data['site_logo']['effects'] = array_values($data['site_logo']['effects']);
+    $data['site_logo']['effects'][0]['data']['height'] = 50;
+  }
+}
+
+/**
+ * Implements hook_flexslider_default_presets_alter().
+ */
+function pori_configuration_overrides_feature_flexslider_default_presets_alter(&$data) {
+  if (isset($data['top_carousel'])) {
+    $data['top_carousel']->options['smoothHeight'] = 0; /* WAS: 1 */
   }
 }
 
