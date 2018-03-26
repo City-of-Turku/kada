@@ -46,7 +46,6 @@ function pori_contact_information_feature_cron() {
     'phone_csv' => 'private://transfer/PORIKAexport2.csv',
   );
   watchdog('pori_contact_information', 'Running contact information feed importers...');
-  $incomplete = FALSE;
 
   foreach ($importers as $id => $source_url) {
     // Check that the source file isn't empty.
@@ -56,7 +55,10 @@ function pori_contact_information_feature_cron() {
       watchdog('pori_contact_information', 'Skipping importer !importer because of empty source file in path !path...', array('!importer' => $id, '!path' => $path));
       continue;
     }
-    if (!$incomplete) {
+
+    while (!isset($incomplete) || $incomplete) {
+      // Reset the continue trigger.
+      $incomplete = FALSE;
       $source = feeds_source($id);
       if ($source->imported + 21600 < time()) {
         watchdog('pori_contact_information', "Starting import !id at !progress%", array('!id' => $id, '!progress' => round($source->progressImporting() * 100)));

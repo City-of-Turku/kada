@@ -7,6 +7,7 @@ dependencies[] = ctools
 dependencies[] = domain_variable
 dependencies[] = fe_block
 dependencies[] = features
+dependencies[] = kada_news_feature
 dependencies[] = kada_widget_feature
 dependencies[] = menu
 dependencies[] = menu_block

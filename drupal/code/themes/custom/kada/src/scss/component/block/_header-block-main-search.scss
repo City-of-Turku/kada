@@ -9,7 +9,6 @@
       border-left: 1px solid $gray-light;
       font-size: 1.1rem;
       line-height: 3.125rem;
-      padding-left: 1.675rem;
       height: 3.125rem;
       width: 4.075rem;
     }
@@ -22,11 +21,10 @@
   }
 
   .views-exposed-form .views-exposed-widget.main-search--wrapper {
-    background: $white;
-    padding: .5em .5em 0 0;
+    height: 3.125rem;
     position: absolute;
     right: 0;
-    top: -8px;
+    top: 0;
     width: 15rem;
 
     @media screen and (max-width: $mobile-landscape-narrow) {
@@ -40,32 +38,37 @@
     }
   }
 
-  .main-search--wrapper {
-    //@media screen and (max-width: $tablet-portrait-narrow) {
-    //  background: white;
-    //  left: -50%;
-    //  top: 48px;
-    //  padding: 0;
-    //  position: relative;
-    //  width: 100vw;
-    //  z-index: 999;
-    //}
-  }
-
   .main-search__search-field {
     display: none;
 
     &.is-active {
+      background: $white;
+      border-left: 1px solid $gray-light;
       display: block;
+      padding: 0 .5rem;
+
+      @media screen and (min-width: $mobile-menu-breakpoint) {
+        border-left: 0;
+        padding: .5rem .5rem 0 .5rem;
+      }
     }
 
     .form-autocomplete,
     .form-text {
       background: none;
-      border: 1px solid $gray;
+      border-bottom: 2px solid $black;
+      border-left: 0;
+      border-right: 0;
+      border-top: 0;
       font-size: 1rem;
       line-height: 1.95rem;
       padding-left: .25rem;
+      padding-right: 1.875rem;
+      width: 100%;
+
+      @media screen and (min-width: $mobile-menu-breakpoint) {
+        width: 15.625rem;
+      }
     }
   }
 
@@ -76,15 +79,21 @@
     display: none;
     font-size: 0;
     height: 1.863rem;
-    margin: 0;
+    margin: 0 (-1.863rem / 2) 0 0;
     position: absolute;
-    right: .88rem;
-    top: .825rem;
+    right: 50%;
+    top: .67rem;
     width: 1.863rem;
     z-index: 1;
 
     @media screen and (max-width: $mobile-landscape-narrow) {
       right: .988rem;
+    }
+
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      margin: (-1.863rem / 2) 0 0 0;
+      right: .5rem;
+      top: 50%;
     }
 
     &.is-active {
@@ -97,14 +106,12 @@
     }
 
     &::before {
-      @include fa('\f002', 1.1rem, 1, false);
+      @include fa('\f002', 1.55rem, 1, false);
       color: $black;
       display: block;
       height: 1.863rem;
       line-height: 1.65rem;
-      right: .88rem;
       text-align: center;
-      top: 0.825rem;
       width: 1.863rem;
       z-index: 2;
 
@@ -133,15 +140,16 @@
     display: none;
     font-size: 0;
     height: 1.863rem;
-    margin: 0;
+    margin: 0 (-1.863rem / 2) 0 0;
     position: absolute;
-    right: .88rem;
-    top: .750rem;
+    right: 50%;
+    top: .67rem;
     width: 1.863rem;
     z-index: 1;
 
-    @media screen and (max-width: $mobile-landscape-narrow) {
-      right: 1.288rem;
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      top: 50%;
+      margin: (-1.863rem / 2) .5rem 0 0;
     }
 
     &.is-active {
@@ -159,9 +167,7 @@
       display: block;
       height: 1.863rem;
       line-height: 1.65rem;
-      right: .88rem;
       text-align: center;
-      top: .750rem;
       width: 1.863rem;
       z-index: 2;
 

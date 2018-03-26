@@ -1,11 +1,23 @@
 .l-header .flexslider {
   background: $white;
+  overflow: visible !important; // To avoid flickering of the right and left side of the slideshow when slides change.
 
   li {
     margin-top: 0;
 
     @media screen and (min-width: $tablet-portrait) {
       position: relative;
+    }
+
+    figure {
+      // Negate margin set in page header for region header
+      @media screen and (min-width: $tablet-portrait) {
+        margin: 0 (-$container-gutter);
+      }
+
+      @media screen and (min-width: $tablet-portrait) and (max-width: $desktop) {
+        margin: 0 (-$container-gutter * 2);
+      }
     }
   }
 }
@@ -25,95 +37,9 @@
   }
 }
 
-.flex-control-wrapper,
-.flex-caption-wrapper,
-.flex-controls {
-  @media screen and (min-width: $tablet-portrait) {
-    left: 0;
-    position: absolute;
-    right: 0;
-    z-index: 5;
-  }
-}
-.flex-control-wrapper,
-.flex-caption-wrapper {
-  @media screen and (max-width: $tablet-portrait - $max-width-deduction) {
-    padding-top: 1.5rem;
-    padding-bottom: 2.5rem;
-  }
-
-  @media screen and (min-width: $tablet-portrait) {
-    top: 2rem;
-  }
-}
-
-.flex-caption__title {
-  color: $black;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  font-weight: 800;
-
-  @media screen and (min-width: $tablet-portrait) {
-    font-size: 1.75rem;
-    //line-height: normal;
-  }
-
-  @media screen and (min-width: $desktop-narrow) {
-    font-size: 2.25rem;
-  }
-
-  @media screen and (min-width: $desktop) {
-    font-size: 2.75rem;
-  }
-
-  a {
-    &:hover,
-    &:focus {
-      text-decoration: underline;
-    }
-  }
-}
-
-.flex-caption__body {
-  @include font-size-responsive(1.125rem);
-  line-height: 1.8em;
-
-  @media screen and (min-width: $tablet-portrait) and (max-width: 819px) {
-    font-size: 1rem;
-  }
-
-  @media screen and (min-width: $tablet-portrait) {
-    + .flex-caption__read-more {
-      margin-top: 1.5rem;
-    }
-  }
-
-  @media screen and (min-width: $desktop-narrow) {
-    font-size: 1.125rem;
-  }
-
-  @media screen and (min-width: $container) {
-    font-size: 1.25rem;
-  }
-}
-
+// TODO: Remove from dom
 .flex-caption__target-group {
-  color:  $link-color-hover;
-  font-family: $bergen-mono;
-  margin-bottom: .875rem;
-  text-transform: uppercase;
-
-  @media screen and (min-width: $tablet-portrait) {
-    margin-bottom: 1.875rem;
-  }
-
-  .flex-caption__target-group__item:last-child::before {
-    content:", ";
-  }
-
-  .flex-caption__target-group__item:first-child::before {
-    content:"";
-  }
+  display: none;
 }
 
 .flex-caption {
@@ -122,148 +48,111 @@
   color: $black;
   left: 0;
   line-height: normal;
-  padding: 0 0 1rem 0;
+  padding: 1.5rem 1.25rem 3.5rem;
   position: relative;
   width: 100%;
 
-  @media screen and (min-width: $mobile-landscape-wide) {
-    padding: 1rem 0;
-  }
-
   @media screen and (min-width: $tablet-portrait) {
     background-color: $white;
-    left: $container-gutter;
     position: absolute;
-    padding: 3rem 5rem 3.5rem 5rem;
-    width: 74.167%;
-  }
-
-  @media screen and (min-width: $tablet-portrait) and (max-width: $desktop) {
-    left: $container-gutter * 2;
-  }
-
-  @media screen and (min-width: $desktop) {
-    //margin-left: $distance-from-items-large-desk;
-    width: 55%;
+    padding: 3rem 3rem 4.3rem;
   }
 
   > a {
     color: $primary-color;
-  }
-
-  .flex-caption__image {
-    margin: 0 auto;
-    max-width: 160px;
-    padding-bottom: 1em;
-
-    @media screen and (min-width: $mobile-portrait) {
-      clear: none;
-      float: left;
-      max-width: none;
-      padding: 0;
-      width: 33.33%;
-    }
-
-    & + .flex-caption__content {
-      @media screen and (min-width: $mobile-portrait) {
-        clear: none;
-        float: right;
-        padding-left: 1em;
-        width: 66.67%;
-      }
-
-      @media screen and (min-width: $tablet-portrait) {
-        padding-left: 2em;
-      }
-    }
-  }
-
-  .flex-caption__title {
-    font-size: .95em;
-    font-family: $bergen-mono;
-    text-transform: uppercase;
-
-    @media screen and (min-width: $mobile-landscape-wide) {
-      font-size: 1em;
-    }
-
-    a {
-      color: $link-color;
-    }
+    display: block;
   }
 
   .flex-caption__body {
     font-family: $bergen-text;
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: .9rem;
+    font-weight: normal;
     line-height: 1.5;
 
     @media screen and (min-width: $tablet-portrait) {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    @media screen and (min-width: $tablet-landscape) {
+      font-size: 1.4rem;
+    }
+
+    h3 {
+      margin-bottom: 1rem;
+
+      @media screen and (min-width: $tablet-landscape) {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+      }
     }
 
     p:last-child {
       margin-bottom: 0;
     }
   }
-
-  .flex-caption__read-more {
-    color: $white;
-  }
 }
 
-.flex-control-wrapper,
-.flex-caption-wrapper {
+.container.flex-caption-wrapper {
+  padding: 0;
+
   @media screen and (min-width: $tablet-portrait) {
     bottom: 0;
     left: 0;
-    right: 0;
-    margin: 0 auto;
-    max-width: 110rem;
+    margin: 0;
+    max-width: ($container-width - ($container-gutter * 2)) * 0.6;
     position: absolute;
-    width: 100%;
+    width: 60%;
+  }
+
+  // After the max width of the container is met the items need to be centered based on their left and right edge.
+  @media screen and (min-width: $container-width) {
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: -(($container-width - ($container-gutter * 2)) * 0.4) / 2;
   }
 }
 
-.flex-control-wrapper {
-  bottom: 2.5rem;
-  height: 20px;
-  position: relative;
+.container.flex-control-wrapper {
+  bottom: 1.25rem;
+  height: 1.25rem;
   padding: 0;
-  top: auto;
+  position: absolute;
+  width: 100%;
+  z-index: 6;
 
   @media screen and (min-width: $tablet-portrait) {
-    position: absolute;
+    bottom: 1.7rem;
+    left: 0;
+    margin: 0;
+    max-width: ($container-width - ($container-gutter * 2)) * 0.6;
+    width: 60%;
+  }
+
+  // After the max width of the container is met the items need to be centered based on their left and right edge.
+  @media screen and (min-width: $container-width) {
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: -(($container-width - ($container-gutter * 2)) * 0.4) / 2;
   }
 }
 
 .flexslider__controls {
-  position: absolute;
-  bottom: 0;
   padding: 0;
-  height: 20px;
+  height: 1.25rem;
   margin: 0;
-  width: 80%;
-  z-index: 5;
-
-  @media screen and (min-width: $tablet-portrait) {
-    left: 2rem;
-    width: 74.167%;
-  }
-
-  @media screen and (min-width: $desktop) {
-    width: 55%;
-  }
+  width: 100%;
 
   .flex-control-nav {
+    align-items: center;
     display: flex;
-    justify-content: flex-start;
+    height: 1.25rem;
+    justify-content: center;
+    margin: 0;
     padding: 0;
-    margin: 0 -.25rem;
 
     @media screen and (min-width: $tablet-portrait) {
-      padding: 0 5rem;
+      justify-content: flex-start;
+      padding: 0 (3rem - .25rem); // Remove the first li elements padding from the wrappers paddings
     }
   }
 
@@ -300,19 +189,6 @@
   }
 
   .flex-control-paging {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    z-index: 3;
-
-    @media screen and (min-width: $tablet-portrait) {
-      bottom: 0;
-      left: 1rem;
-      padding-bottom: 3px;
-      text-align: left;
-    }
-
-
     > li {
       display: inline-block;
       vertical-align: bottom;
@@ -325,127 +201,6 @@
     border-color: $primary-color;
     background: $primary-color;
   }
-
-  //.flex-pauseplay {
-  //  bottom: 0;
-  //  display: inline-block;
-  //  right: 5rem;
-  //  margin: 0;
-  //  position: absolute;
-  //  padding: 0;
-  //
-  //  @media screen and (min-width: $tablet-portrait) {
-  //    right: 8rem;
-  //  }
-  //
-  //  .flex-play {
-  //    background-color: $black;
-  //    height: 1.75rem;
-  //    width: 1.75rem;
-  //
-  //    &:before {
-  //      border-width: 8px 0 8px 10px;
-  //      border-style: solid;
-  //      border-color: transparent transparent transparent $white;
-  //      box-sizing: border-box;
-  //      content: "";
-  //      height: .9rem;
-  //      position: absolute;
-  //      right: -0.125rem;
-  //      top: 50%;
-  //      transform: translate(-100%, -50%);
-  //      width: 0;
-  //    }
-  //  }
-  //
-  //  .flex-pause {
-  //    background-color: $black;
-  //    height: 1.75rem;
-  //    width: 1.75rem;
-  //
-  //    &:before {
-  //      border-style: double;
-  //      border-width: 0px 0px 0px 10.5px;
-  //      border-color: $white;
-  //      content: "";
-  //      height: .9rem;
-  //      position: absolute;
-  //      right: -0.063rem;
-  //      top: 50%;
-  //      transform: translate(-100%, -50%);
-  //      width: 0;
-  //    }
-  //  }
-  //}
-
-  //.flex-direction-nav {
-  //  bottom: 0;
-  //  display: inline-block;
-  //  right: 3rem;
-  //  margin: 0;
-  //  position: absolute;
-  //  padding: 0;
-  //
-  //  @media screen and (min-width: $tablet-portrait) {
-  //    right: 6rem;
-  //  }
-  //
-  //  li {
-  //    display: inline-block;
-  //    list-style: none;
-  //    margin: 0 2rem .2rem 0;
-  //    vertical-align: bottom;
-  //
-  //    @media screen and (min-width: $tablet-portrait) {
-  //      display: inline-block;
-  //      float: none;
-  //    }
-  //
-  //    &:last-child {
-  //      margin-right: 0;
-  //    }
-  //
-  //    a {
-  //      display: block;
-  //      border: 0;
-  //      font-size: 0;
-  //      height: 10px;
-  //      text-align: center;
-  //      width: 10px;
-  //
-  //      &:hover {
-  //        text-decoration: none;
-  //      }
-  //
-  //      &.flex-next {
-  //        background: url(../../dist/image/icon_arrow-right.svg) no-repeat center center transparent;
-  //        background-size: auto 25px;
-  //        height: 1.4rem;
-  //        width: 1.4rem;
-  //      }
-  //
-  //      &.flex-prev {
-  //        background: url(../../dist/image/icon_arrow-left.svg) no-repeat center center transparent;
-  //        background-size: auto 25px;
-  //        height: 1.4rem;
-  //        width: 1.4rem;
-  //      }
-  //
-  //      //&.flex-next,
-  //      //&.flex-prev {
-  //      //  &:before {
-  //      //    color: #FFFFFF;
-  //      //    font-size: 25px;
-  //      //    line-height: 30px;
-  //      //
-  //      //    &:hover {
-  //      //      text-decoration: none;
-  //      //    }
-  //      //  }
-  //      //}
-  //    }
-  //  }
-  //}
 }
 
 
