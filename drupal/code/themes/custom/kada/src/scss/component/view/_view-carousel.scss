@@ -1,23 +1,25 @@
-.l-header .flexslider {
-  background: $white;
-  overflow: visible !important; // To avoid flickering of the right and left side of the slideshow when slides change.
+.l-header .view-kada-top-carousel {
+  .flexslider {
+    background: $white;
+    overflow: visible !important; // To avoid flickering of the right and left side of the slideshow when slides change.
 
-  li {
-    margin-top: 0;
+    li {
+      margin-top: 0;
 
+      @media screen and (min-width: $tablet-portrait) {
+        position: relative;
+      }
+    }
+  }
+
+  figure {
+    // Negate margin set in page header for region header
     @media screen and (min-width: $tablet-portrait) {
-      position: relative;
+      margin: 0 (-$container-gutter);
     }
 
-    figure {
-      // Negate margin set in page header for region header
-      @media screen and (min-width: $tablet-portrait) {
-        margin: 0 (-$container-gutter);
-      }
-
-      @media screen and (min-width: $tablet-portrait) and (max-width: $desktop) {
-        margin: 0 (-$container-gutter * 2);
-      }
+    @media screen and (min-width: $tablet-portrait) and (max-width: $desktop) {
+      margin: 0 (-$container-gutter * 2);
     }
   }
 }
