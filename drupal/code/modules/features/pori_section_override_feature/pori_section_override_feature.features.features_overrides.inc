@@ -13,6 +13,7 @@ function pori_section_override_feature_features_override_default_overrides() {
 
   // Exported overrides for: context
   $overrides["context.default_section.conditions|context|values|~visitpori_domain"] = '~visitpori_domain';
+  $overrides["context.section.reactions|block|blocks|views-kada_pages-top_image"]["DELETED"] = TRUE;
   $overrides["context.section_front.reactions|block|blocks|kada_export_feature-kada_rss_feed_for_section|weight"] = -7;
   $overrides["context.section_front.reactions|block|blocks|kada_news_feature-news_archive_link"] = array(
     'module' => 'kada_news_feature',
