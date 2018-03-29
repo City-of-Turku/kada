@@ -34,14 +34,14 @@
               <h1 class="site-name site-branding__name site-branding--header__name">
                 <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__link site-branding--header__link">
                   <span class="element-invisible"><?php print $site_name; ?></span>
-                  <img src="/<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
+                  <img src="<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
                 </a>
               </h1>
             <?php else: ?>
               <h2 class="site-name site-branding__name site-branding--header__name">
                 <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__link site-branding--header__link">
                   <span class="element-invisible"><?php print $site_name; ?></span>
-                  <img src="/<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
+                  <img src="<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
                 </a>
               </h2>
             <?php endif; ?>
@@ -52,14 +52,6 @@
         </div>
         <?php endif; ?>
         <?php print render($page['branding']); ?>
-        <!-- <div class="accessibility-font-increase">
-          <span class="accessibility-font-increase__text"><?php print t('Text size'); ?><span class="accessibility-font-increase__toggle"><span class="accessibility-font-increase__toggle--small">A</span><span class="accessibility-font-increase__toggle--large">A</span></span>
-            <div class="accessibility-font-increase__options accessibility-font-increase__options--is-hidden font-increase">
-            <a href="#font-increase-default" class="font-increase__item font-increase__item--default font-increase__item--is-active"><?php print t('Normal'); ?></a>
-            <a href="#font-increase-medium" class="font-increase__item font-increase__item--medium"><?php print t('Medium'); ?></a>
-            <a href="#font-increase-large" class="font-increase__item font-increase__item--large"><?php print t('Large'); ?></a>
-          </div>
-        </div> -->
       </div>
     </div>
 
@@ -133,7 +125,6 @@
             </header>
           <?php print render($title_suffix); ?>
         <?php endif; ?>
-
         <?php if($page['sidebar_first']): ?>
           <aside id="sidebar-first" class="sidebar sidebar--first">
             <?php print render($page['sidebar_first']); ?>

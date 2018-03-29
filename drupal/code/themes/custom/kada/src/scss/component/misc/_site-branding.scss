@@ -11,10 +11,21 @@
   visibility: hidden;
 }
 
+// On sections we use the section logo field so this needs to be visible.
+.section-context .site-branding--header__visual {
+  opacity: 1;
+  visibility: visible;
+}
+
 .site-branding__link {
   display: block;
   overflow: hidden;
   text-indent: -9999px;
+}
+
+// On section context we need to show the actual logo image.
+.section-context .site-branding__link {
+  text-indent: 0;
 }
 
 .site-branding--header__link {
@@ -32,6 +43,14 @@
     height: 2.5rem;
     width: 9.875rem;
   }
+}
+
+// On section context we need to show the actual logo image.
+.section-context .site-branding--header__link {
+  background: none;
+  height: auto;
+  line-height: 0;
+  width: auto;
 }
 
 .site-branding--footer {
@@ -69,4 +88,24 @@
 
 .l-region--branding {
   display: flex;
+  align-items: center;
+}
+
+.section-title {
+  display: none;
+
+  @media screen and (min-width: $mobile-menu-breakpoint) {
+    align-items: center;
+    display: flex;
+    height: 6.25rem;
+    margin: 0;
+    position: absolute;
+    right: 23rem;
+    top: 0;
+  }
+}
+
+// Stupid contextual links ruining everything
+.section-context .l-region--branding .contextual-links-region {
+  position: static;
 }
