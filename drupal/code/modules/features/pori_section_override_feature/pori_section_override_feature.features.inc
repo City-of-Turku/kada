@@ -11,6 +11,18 @@ function pori_section_override_feature_context_default_contexts_alter(&$data) {
   if (isset($data['default_section'])) {
     $data['default_section']->conditions['context']['values']['~visitpori_domain'] = '~visitpori_domain'; /* WAS: '' */
   }
+  if (isset($data['section'])) {
+    unset($data['section']->reactions['block']['blocks']['views-kada_pages-top_image']);
+  }
+  if (isset($data['section_front'])) {
+    $data['section_front']->reactions['block']['blocks']['kada_export_feature-kada_rss_feed_for_section']['weight'] = -7; /* WAS: -8 */
+    $data['section_front']->reactions['block']['blocks']['kada_news_feature-news_archive_link'] = array(
+      'module' => 'kada_news_feature',
+      'delta' => 'news_archive_link',
+      'region' => 'before_content',
+      'weight' => -8,
+    ); /* WAS: '' */
+  }
   if (isset($data['section_header'])) {
     $data['section_header']->reactions['block']['blocks']['locale-language'] = array(
       'module' => 'locale',

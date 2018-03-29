@@ -1,4 +1,20 @@
 .block--kada-news-feature-news-archive-link {
+  .block__content {
+    display: flex;
+  }
+
+  a {
+    color: $gray;
+    display: block;
+    font-family: $bergen-mono;
+    height: auto;
+    line-height: 1.3;
+    text-transform: uppercase;
+    width: auto;
+  }
+}
+
+.l-region--before-content .block--kada-news-feature-news-archive-link {
   margin-top: 3.125rem;
 
   @media screen and (min-width: $container) {
@@ -9,7 +25,6 @@
   }
 
   .block__content {
-    display: flex;
     justify-content: center;
 
     @media screen and (min-width: $container) {
@@ -19,20 +34,35 @@
 
   a {
     border: .063rem solid $gray;
-    color: $gray;
-    display: block;
-    font-family: $bergen-mono;
     font-size: 1.125rem;
-    height: auto;
-    line-height: 1.3;
     padding: .625rem 1.563rem;
-    text-transform: uppercase;
-    width: auto;
 
     &:hover,
     &:focus {
       background-color: $gray;
       color: $white;
+    }
+  }
+}
+
+.l-region--help .block--kada-news-feature-news-archive-link {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 90rem;
+  padding-bottom: 1.25rem;
+
+  .block__content {
+    @media screen and (min-width: $container) {
+      justify-content: flex-start;
+    }
+  }
+
+  a {
+    font-size: .9rem;
+
+    &:hover,
+    &:focus {
+      color: $black;
     }
   }
 }

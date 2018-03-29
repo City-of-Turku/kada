@@ -98,7 +98,8 @@
     justify-content: space-between;
   }
 
-  .block--menu-block {
+  .block--menu-block,
+  .block--og-menu-single {
     width: 100%;
 
     @media screen and (max-width: $mobile-menu-breakpoint-max) {
