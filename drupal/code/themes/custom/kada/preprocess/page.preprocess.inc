@@ -77,21 +77,53 @@ function kada_preprocess_page(&$variables) {
     }
 
     if ($node->type == 'page' || $node->type == 'landing_page' || $node->type == 'section') {
-      // Recommended button for mobile navigation
-      if (!empty($node->field_link_to_content_multiple)) {
-        $variables['page']['navigation'] = array(
-          'recommended_button' => array(
-            '#markup' => '<div id="block-recommended-button" class="block block--recommended-button"><button class="recommended-button"><i class="fa-icon fa-icon--star" aria-hidden="true"></i><span class="recommended-button__inner">'. t('Recommended') .'</span></button></div>',
-            '#weight' => 0,
-          ),
-        ) + $variables['page']['navigation'];
-      }
-
       if (!empty($variables['page']['before_header']['kada_search_feature_quicksearch'])) {
         // Duplicate the quick search block.
         // Note that navigation_top_extra is not a real region
         $variables['page']['navigation_top_extra'][] = $variables['page']['before_header']['kada_search_feature_quicksearch'];
       }
+    }
+  }
+
+  // If section is present, process overrides.
+  if (isset($section_wrapper)) {
+    $section_node = $section_wrapper->value();
+    // Look for original section node if current one is translation.
+    if (!empty($section_node->source)) {
+      if ($section_wrapper->source->value()->nid != $section_wrapper->nid) {
+        $section_source_wrapper = $section_wrapper->source;
+      }
+    }
+
+    // Frontpage link on sections that are in the main domain.
+    // Used by theme in logo and site name linking.
+    if (!empty($section_node->domains) && in_array(5, $section_node->domains)) {
+      // Only react on domain id 5 == main Pori.fi domain
+      $variables['front_page'] = url('node/' . $section_node->nid);
+    }
+
+    // Logo override.
+    // If page logo is set for section, override the one from theme.
+    $site_logo_atom = $section_wrapper->field_site_logo->value();
+    // Try getting logo from original section if current translation doesn't
+    // contain it.
+    if (empty($site_logo_atom) && isset($section_source_wrapper)) {
+      $site_logo_atom = $section_source_wrapper->field_site_logo->value();
+    }
+    // If atom is present, use logo uri from it as path.
+    if (isset($site_logo_atom->scald_thumbnail[LANGUAGE_NONE][0]['uri'])) {
+
+      $site_logo_uri = $site_logo_atom->scald_thumbnail[LANGUAGE_NONE][0]['uri'];
+      $site_logo_path = image_style_url('site_logo', $site_logo_uri);
+    }
+
+    // Color palette.
+    // Try to get color palette.
+    $color_palette = $section_wrapper->field_color_palette->value();
+    // Try getting color palette from original section if current translation
+    // doesn't contain it.
+    if (empty($color_palette) && isset($section_source_wrapper)) {
+      $color_palette = $section_source_wrapper->field_color_palette->value();
     }
   }
 

@@ -134,7 +134,8 @@
         .ui-tabs-anchor {
           color: $white;
 
-          &.all::after {
+          &.all::after,
+          &.kaikki::after {
             background-image: url('../../dist/image/current-all-icon--white.svg');
           }
         }

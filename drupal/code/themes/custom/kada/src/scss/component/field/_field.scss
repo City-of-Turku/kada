@@ -73,7 +73,8 @@ $label-color: #bbb;
 .field.field--read-more,
 .field.field-name-field-classification,
 .field.field--name-field-classification,
-.field.field--type-taxonomy-term-reference:not(.field--name-field-office-tr) {
+.field.field--type-taxonomy-term-reference:not(.field--name-field-office-tr),
+.attraction-list__filters-wrapper {
 
   .field-label,
   .field__label {
@@ -87,7 +88,8 @@ $label-color: #bbb;
   }
 
   .field-items,
-  .field__items {
+  .field__items,
+  .attraction-list__filters {
     display: flex;
     flex-wrap: wrap;
     line-height: 1.688rem;
@@ -98,7 +100,8 @@ $label-color: #bbb;
   }
 
   .field-item,
-  .field__item {
+  .field__item,
+  .attraction-list__filter {
     margin-bottom: .5rem;
 
     a {
@@ -116,12 +119,18 @@ $label-color: #bbb;
       }
     }
 
+    .active {
+      background-color: $black;
+      color: $white;
+    }
+
     &:first-child {
       margin-right: .5rem;
     }
 
     + .field-item,
-    + .field__item {
+    + .field__item,
+    + .attraction-list__filter {
       margin-right: .5rem;
     }
   }
