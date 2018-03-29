@@ -106,6 +106,12 @@ function visitpori_configurations_context_default_contexts() {
           'region' => 'header',
           'weight' => '-10',
         ),
+        'views-kada_recommended-block' => array(
+          'module' => 'views',
+          'delta' => 'kada_recommended-block',
+          'region' => 'header',
+          'weight' => '-9',
+        ),
         'views-kada_news-block_1' => array(
           'module' => 'views',
           'delta' => 'kada_news-block_1',
@@ -129,6 +135,12 @@ function visitpori_configurations_context_default_contexts() {
           'delta' => 'feed_tabs_frontpage_promoted_con',
           'region' => 'after_content',
           'weight' => '-9',
+        ),
+        'kada_news_feature-news_archive_link' => array(
+          'module' => 'kada_news_feature',
+          'delta' => 'news_archive_link',
+          'region' => 'after_content',
+          'weight' => '-8',
         ),
       ),
     ),

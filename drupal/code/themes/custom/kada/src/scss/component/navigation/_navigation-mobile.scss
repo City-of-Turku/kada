@@ -22,6 +22,7 @@ $menu-padding: 1.25rem;
 
 @media screen and (max-width: $mobile-menu-breakpoint-max) {
   .menu-name-main-menu,
+  .menu-name-og-menu-single,
   [class*="menu-name-menu-main-menu"] {
     .toggler {
       color: transparent;
@@ -71,6 +72,10 @@ $menu-padding: 1.25rem;
         top: 1.063rem;
         width: 1.563rem;
         z-index: 1;
+
+        @media screen and (min-width: $tablet-portrait-narrow) {
+          top: 1.25rem;
+        }
 
         &::before {
           @include fa('\f067', .9rem, 1, false);
