@@ -281,7 +281,7 @@
         const clickHandler = function (event) {
           event.preventDefault();
 
-          updateFilters($(event.srcElement));
+          updateFilters($(this))
           updateLiftups();
         };
 

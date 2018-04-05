@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Pori API feature.
+ */
+
+include_once 'pori_api_feature.features.inc';

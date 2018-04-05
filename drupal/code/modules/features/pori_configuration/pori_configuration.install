@@ -72,3 +72,10 @@ function pori_configuration_update_7109(&$sandbox) {
   module_disable(array('radioactivity'));
   drupal_uninstall_modules(array('radioactivity'));
 }
+
+/*
+ * Enable the API feature.
+ */
+function pori_configuration_update_7110(&$sandbox) {
+  module_enable(array('pori_api_feature'));
+}
