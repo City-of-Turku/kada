@@ -1,6 +1,8 @@
 @media screen and (min-width: $mobile-menu-breakpoint) {
   .menu-name-main-menu,
-  .menu-name-menu-main-menu-en {
+  .menu-name-menu-main-menu-en,
+  .menu-name-og-menu-single,
+  .block--og-menu-single-menu {
     .responsive-menus .menu {
       display: flex;
       justify-content: space-between;
@@ -108,6 +110,15 @@
 
             > a {
               background-color: $color;
+            }
+
+            > .menu {
+              .menu__item {
+                &:hover,
+                &:focus {
+                  background-color: lighten($color, 30%);
+                }
+              }
             }
           }
         }
@@ -235,12 +246,6 @@
 
         > a {
           color: $white;
-
-          &::before {
-            @include fa('\f068', .9rem, 1, false);
-            color: $white;
-            line-height: 1.6rem;
-          }
         }
 
         > .menu {
@@ -300,16 +305,22 @@
         display: block;
         list-style-type: none;
         margin: 0;
-        padding: 0 1.875rem;
 
         .menu__item {
           border-bottom: 1px solid $primary-color;
           margin: 0;
+          padding: 0 1.875rem;
+
+          &:hover,
+          &:focus {
+            background-color: $secondary-color-medium-dark;
+          }
 
           a {
             background: url('../../dist/image/arrow-right-icon.svg') no-repeat right center transparent;
             background-size: .938rem auto;
             border-bottom: 0 none;
+            border-top: 0 none;
             display: inline-block;
             font-weight: bold;
             padding: 1.25rem 1.875rem 1.25rem 0;

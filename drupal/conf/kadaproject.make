@@ -269,6 +269,7 @@ projects[entityqueue][patch][] = "../patches/entityqueue_subqueue_export.patch"
 
 projects[entity_action_log][version] = 1.0-beta2
 projects[entity_action_log][subdir] = contrib
+projects[entity_action_log][patch][] = "https://www.drupal.org/files/issues/2018-03-23/2955606-2_fix_notice.patch"
 
 ; Only dev version is available for entity_base_type module.
 projects[entity_base_type][type] = module
@@ -677,11 +678,24 @@ projects[views_accordion][subdir] = contrib
 projects[views_data_export][version] = 3.2
 projects[views_data_export][subdir] = contrib
 
+;projects[views_datasource][version] = 1.0-alpha2
+projects[views_datasource][type] = module
+projects[views_datasource][download][type] = git
+projects[views_datasource][download][url] = "https://git.drupal.org/project/views_datasource.git"
+projects[views_datasource][download][revision] = d048d8125a334e00ff8b05c9ec0feafdc20163b3
+projects[views_datasource][subdir] = contrib
+projects[views_datasource][patch][] = "https://www.drupal.org/files/issues/views_datasource-1881670-16-multiple-fields-render.patch"
+projects[views_datasource][patch][] = "https://www.drupal.org/files/issues/2018-03-26/2955990-2_fix_keys.patch"
+projects[views_datasource][patch][] = "https://www.drupal.org/files/issues/2018-03-26/2956000-2_link_scald_support.patch"
+
 projects[views_bulk_operations][version] = 3.4
 projects[views_bulk_operations][subdir] = contrib
 
 projects[views_default_view_override][version] = 2.0
 projects[views_default_view_override][subdir] = contrib
+
+projects[views_distinct][version] = 1.0
+projects[views_distinct][subdir] = contrib
 
 projects[views_rss][version] = 2.0-rc4
 projects[views_rss][subdir] = contrib

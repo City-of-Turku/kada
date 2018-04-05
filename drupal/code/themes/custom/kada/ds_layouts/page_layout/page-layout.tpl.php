@@ -5,8 +5,15 @@
  * Page layout template
  */
 
-if (!empty($sidebar || $additional_information) && $variables['is_front'] != true) {
-    $additional_classes="page--has-sidebar";
+$no_sidebar = false;
+
+// If the sidebar or additional information blocks are empty there shouldn't be sidebar
+if ((empty($sidebar || $additional_information)) || ($is_front == true) || ($field_theme_main_page['und'][0]['value'] == 1)) {
+  $no_sidebar = true;
+}
+
+if ($no_sidebar == false) {
+  $additional_classes="page--has-sidebar";
 }
 ?>
 <<?php print $layout_wrapper; print $layout_attributes; ?> class="<?php print $classes;?> <?php print $additional_classes;?>">
@@ -19,7 +26,7 @@ if (!empty($sidebar || $additional_information) && $variables['is_front'] != tru
     <?php print $main_content; ?>
 </<?php print $main_content_wrapper ?>>
 
-<?php if (!empty($sidebar || $additional_information) && $variables['is_front'] != true): ?>
+<?php if ($no_sidebar == false): ?>
   <<?php print $sidebar_wrapper ?> class="page__sidebar <?php print $sidebar_classes; ?>">
     <?php print $sidebar; ?>
     <?php if (!empty($additional_information)): ?>
