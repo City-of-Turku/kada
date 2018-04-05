@@ -118,7 +118,7 @@
           <div class="content__wrapper content-wrapper">
         <?php endif; ?>
 
-        <?php if ($title && !$is_front): ?>
+        <?php if ($title && !$is_front && !$node->type == 'section'): ?>
           <?php print render($title_prefix); ?>
             <header class="content__header content-header">
                 <h1 class="content-header__title"><?php print $title; ?></h1>

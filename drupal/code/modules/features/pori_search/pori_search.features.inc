@@ -53,7 +53,9 @@ function pori_search_default_search_api_index() {
         "body:value" : { "type" : "text" },
         "created" : { "type" : "date" },
         "domain_domain_id" : { "type" : "list\\u003Cinteger\\u003E" },
+        "field_additional_info_link:title" : { "type" : "list\\u003Ctext\\u003E" },
         "field_alternative_name" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_keywords" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_lead_paragraph" : { "type" : "text" },
         "field_lead_paragraph_et" : { "type" : "text" },
         "og_group_ref" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
@@ -65,7 +67,10 @@ function pori_search_default_search_api_index() {
         "search_api_alter_bundle_filter" : {
           "status" : 1,
           "weight" : "-10",
-          "settings" : { "default" : "1", "bundles" : { "place" : "place" } }
+          "settings" : {
+            "default" : "1",
+            "bundles" : { "place" : "place", "news_item" : "news_item" }
+          }
         },
         "search_api_metatag_alter_callback" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },

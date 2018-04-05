@@ -5,3 +5,13 @@
  */
 
 include_once 'pori_visitpori_override_feature.features.inc';
+
+function pori_visitpori_override_feature_language_switch_links_alter(&$result, $type, $path) {
+  $current_domain = domain_get_domain();
+  $en_forbidden_domains = array('visitpori_fi');
+
+  // Remove English if the current domain is in the forbidden list
+  if (in_array($current_domain['machine_name'], $en_forbidden_domains)) {
+    unset($result['en']);
+  }
+}
