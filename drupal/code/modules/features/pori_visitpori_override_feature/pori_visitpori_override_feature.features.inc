@@ -5,6 +5,19 @@
  */
 
 /**
+ * Implements hook_context_default_contexts_alter().
+ */
+function pori_visitpori_override_feature_context_default_contexts_alter(&$data) {
+  if (isset($data['non_content_special_page'])) {
+    $data['non_content_special_page']->conditions['context_all'] = array(
+      'values' => array(
+        '~visitpori_domain' => '~visitpori_domain',
+      ),
+    ); /* WAS: '' */
+  }
+}
+
+/**
  * Implements hook_strongarm_alter().
  */
 function pori_visitpori_override_feature_strongarm_alter(&$data) {
