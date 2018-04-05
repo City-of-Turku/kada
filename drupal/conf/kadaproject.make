@@ -691,6 +691,9 @@ projects[views_bulk_operations][subdir] = contrib
 projects[views_default_view_override][version] = 2.0
 projects[views_default_view_override][subdir] = contrib
 
+projects[views_distinct][version] = 1.0
+projects[views_distinct][subdir] = contrib
+
 projects[views_rss][version] = 2.0-rc4
 projects[views_rss][subdir] = contrib
 
