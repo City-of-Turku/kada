@@ -306,5 +306,20 @@ function pori_attraction_feature_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_attraction_card'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'views_distinct:attraction_card_widget';
+  $strongarm->value = array(
+    'default' => array(
+      'title' => array(
+        'post_render' => 1,
+        'action' => 'filter_repeats',
+        'aggregate_separator' => ', ',
+      ),
+    ),
+  );
+  $export['views_distinct:attraction_card_widget'] = $strongarm;
+
   return $export;
 }
