@@ -1,0 +1,14 @@
+name = Pori error pages
+description = Error page related configuration
+core = 7.x
+package = Pori
+version = 7.x-1.0
+dependencies[] = context
+dependencies[] = context_error
+dependencies[] = locale
+dependencies[] = menu_block
+dependencies[] = views
+features[context][] = error_page
+features[context][] = visitpori_error_page
+features[ctools][] = context:context:3
+features[features_api][] = api:2
