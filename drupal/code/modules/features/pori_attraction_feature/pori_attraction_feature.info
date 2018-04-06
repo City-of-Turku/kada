@@ -39,6 +39,7 @@ dependencies[] = view_unpublished
 dependencies[] = views
 dependencies[] = views_content_cache
 features[context][] = attraction_card
+dependencies[] = views_distinct
 features[ctools][] = context:context:3
 features[ctools][] = ds:ds:1
 features[ctools][] = field_group:field_group:1

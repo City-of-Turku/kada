@@ -1,0 +1,11 @@
+name = Pori API
+core = 7.x
+package = Pori
+version = 7.x-1.0-dev
+dependencies[] = views
+dependencies[] = views_json
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = attraction_card_feed
+features[views_view][] = attraction_categories_feed
+features_exclude[dependencies][ctools] = ctools
