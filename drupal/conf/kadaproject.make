@@ -696,6 +696,7 @@ projects[views_default_view_override][subdir] = contrib
 
 projects[views_distinct][version] = 1.0
 projects[views_distinct][subdir] = contrib
+projects[views_distinct][patch][] = "https://www.drupal.org/files/issues/2018-04-06/views_distinct-use_variables_as_storage-2098557-15.patch"
 
 projects[views_rss][version] = 2.0-rc4
 projects[views_rss][subdir] = contrib
