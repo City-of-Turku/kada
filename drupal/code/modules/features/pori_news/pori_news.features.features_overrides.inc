@@ -115,7 +115,7 @@ function pori_news_features_override_default_overrides() {
   );
   $overrides["field_instance.node-news_item-field_contact_information.widget|weight"] = 16;
   $overrides["field_instance.node-news_item-field_content_image.display|default|weight"] = 2;
-  $overrides["field_instance.node-news_item-field_content_image.display|full|type"] = 'full';
+  $overrides["field_instance.node-news_item-field_content_image.display|full|type"] = 'content_full';
   $overrides["field_instance.node-news_item-field_content_image.display|full|weight"] = 2;
   $overrides["field_instance.node-news_item-field_content_image.display|live_results_search"] = array(
     'label' => 'above',
