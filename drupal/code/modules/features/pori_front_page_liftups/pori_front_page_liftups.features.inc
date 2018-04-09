@@ -84,5 +84,6 @@ function pori_front_page_liftups_views_default_views_alter(&$data) {
   if (isset($data['kada_news'])) {
     unset($data['kada_news']->display['block_1']->display_options['defaults']['query']);
     unset($data['kada_news']->display['block_1']->display_options['query']['options']['distinct']);
+    $data['kada_news']->display['section_main']->display_options['style_options']['row_class'] = 'main-liftup-row'; /* WAS: '' */
   }
 }
