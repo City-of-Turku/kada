@@ -46,9 +46,9 @@ function pori_news_ds_layout_settings_info() {
       'main_content' => array(
         0 => 'post_date',
         1 => 'field_lead_paragraph_long_text',
-        2 => 'field_content_image',
-        3 => 'field_info_box',
-        4 => 'body',
+        2 => 'field_info_box',
+        3 => 'body',
+        4 => 'field_content_image',
       ),
       'sidebar' => array(
         5 => 'field_keywords',
@@ -64,9 +64,9 @@ function pori_news_ds_layout_settings_info() {
     'fields' => array(
       'post_date' => 'main_content',
       'field_lead_paragraph_long_text' => 'main_content',
-      'field_content_image' => 'main_content',
       'field_info_box' => 'main_content',
       'body' => 'main_content',
+      'field_content_image' => 'main_content',
       'field_keywords' => 'sidebar',
       'field_additional_info_link' => 'additional_information',
       'field_file_attachment' => 'additional_information',

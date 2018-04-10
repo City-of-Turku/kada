@@ -181,6 +181,9 @@ projects[context_entity_field][download][revision] = "97170bcfb397c947034e581781
 ; Patch makes the view mode work better when there might be multiple entities
 projects[context_entity_field][patch][] = "https://www.drupal.org/files/issues/context_entity_field-view_mode-2022197-4.patch"
 
+projects[context_error][version] = 1.0
+projects[context_error][subdir] = contrib
+
 projects[context_omega][version] = 1.1
 projects[context_omega][subdir] = contrib
 projects[context_omega][patch][] = "https://www.drupal.org/files/i2115997-3.patch"
@@ -693,6 +696,7 @@ projects[views_default_view_override][subdir] = contrib
 
 projects[views_distinct][version] = 1.0
 projects[views_distinct][subdir] = contrib
+projects[views_distinct][patch][] = "https://www.drupal.org/files/issues/2018-04-06/views_distinct-use_variables_as_storage-2098557-15.patch"
 
 projects[views_rss][version] = 2.0-rc4
 projects[views_rss][subdir] = contrib
