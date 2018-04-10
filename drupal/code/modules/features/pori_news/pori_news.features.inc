@@ -67,6 +67,11 @@ function pori_news_ds_layout_settings_info_alter(&$data) {
     unset($data['node|news_item|current']->settings['regions']['header'][2]);
     unset($data['node|news_item|current']->settings['regions']['main'][5]);
   }
+  if (isset($data['node|news_item|default'])) {
+    $data['node|news_item|default']->settings['regions']['main_content'][2] = 'field_info_box'; /* WAS: 'field_content_image' */
+    $data['node|news_item|default']->settings['regions']['main_content'][3] = 'body'; /* WAS: 'field_info_box' */
+    $data['node|news_item|default']->settings['regions']['main_content'][4] = 'field_content_image'; /* WAS: 'body' */
+  }
   if (isset($data['node|news_item|full'])) {
     $data['node|news_item|full']->settings['fields']['field_additional_info_link'] = 'additional_information'; /* WAS: '' */
     $data['node|news_item|full']->settings['fields']['field_contact_person'] = 'contact_information'; /* WAS: '' */
@@ -79,9 +84,9 @@ function pori_news_ds_layout_settings_info_alter(&$data) {
       8 => 'field_contact_person',
     ); /* WAS: '' */
     $data['node|news_item|full']->settings['regions']['main_content'][1] = 'field_lead_paragraph_long_text'; /* WAS: 'domain' */
-    $data['node|news_item|full']->settings['regions']['main_content'][2] = 'field_content_image'; /* WAS: 'field_lead_paragraph_long_text' */
-    $data['node|news_item|full']->settings['regions']['main_content'][3] = 'field_info_box'; /* WAS: 'field_content_image' */
-    $data['node|news_item|full']->settings['regions']['main_content'][4] = 'body'; /* WAS: 'field_info_box' */
+    $data['node|news_item|full']->settings['regions']['main_content'][2] = 'field_info_box'; /* WAS: 'field_lead_paragraph_long_text' */
+    $data['node|news_item|full']->settings['regions']['main_content'][3] = 'body'; /* WAS: 'field_content_image' */
+    $data['node|news_item|full']->settings['regions']['main_content'][4] = 'field_content_image'; /* WAS: 'field_info_box' */
     $data['node|news_item|full']->settings['regions']['sidebar'][5] = 'field_keywords'; /* WAS: '' */
     $data['node|news_item|full']->settings['wrappers']['contact_information'] = 'div'; /* WAS: '' */
     unset($data['node|news_item|full']->settings['fields']['domain']);
@@ -136,7 +141,8 @@ function pori_news_field_group_info_alter(&$data) {
  */
 function pori_news_field_default_field_instances_alter(&$data) {
   if (isset($data['node-news_item-body'])) {
-    $data['node-news_item-body']['display']['full']['weight'] = 4; /* WAS: 5 */
+    $data['node-news_item-body']['display']['default']['weight'] = 3; /* WAS: 4 */
+    $data['node-news_item-body']['display']['full']['weight'] = 3; /* WAS: 5 */
     $data['node-news_item-body']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -145,8 +151,8 @@ function pori_news_field_default_field_instances_alter(&$data) {
     ); /* WAS: '' */
   }
   if (isset($data['node-news_item-field_address'])) {
-    $data['node-news_item-field_address']['display']['default']['weight'] = 36; /* WAS: 13 */
-    $data['node-news_item-field_address']['display']['full']['weight'] = 36; /* WAS: 31 */
+    $data['node-news_item-field_address']['display']['default']['weight'] = 37; /* WAS: 13 */
+    $data['node-news_item-field_address']['display']['full']['weight'] = 37; /* WAS: 31 */
     $data['node-news_item-field_address']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -156,8 +162,8 @@ function pori_news_field_default_field_instances_alter(&$data) {
   }
   if (isset($data['node-news_item-field_contact_information'])) {
     $data['node-news_item-field_contact_information']['display']['default']['type'] = 'hidden'; /* WAS: 'entityreference_label' */
-    $data['node-news_item-field_contact_information']['display']['default']['weight'] = 25; /* WAS: 16 */
-    $data['node-news_item-field_contact_information']['display']['full']['weight'] = 26; /* WAS: 21 */
+    $data['node-news_item-field_contact_information']['display']['default']['weight'] = 28; /* WAS: 16 */
+    $data['node-news_item-field_contact_information']['display']['full']['weight'] = 28; /* WAS: 21 */
     $data['node-news_item-field_contact_information']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -183,9 +189,9 @@ function pori_news_field_default_field_instances_alter(&$data) {
   }
   if (isset($data['node-news_item-field_district'])) {
     $data['node-news_item-field_district']['display']['default']['type'] = 'hidden'; /* WAS: 'i18n_taxonomy_term_reference_link' */
-    $data['node-news_item-field_district']['display']['default']['weight'] = 28; /* WAS: 7 */
+    $data['node-news_item-field_district']['display']['default']['weight'] = 31; /* WAS: 7 */
     $data['node-news_item-field_district']['display']['full']['type'] = 'hidden'; /* WAS: 'i18n_taxonomy_term_reference_link' */
-    $data['node-news_item-field_district']['display']['full']['weight'] = 24; /* WAS: 6 */
+    $data['node-news_item-field_district']['display']['full']['weight'] = 25; /* WAS: 6 */
     $data['node-news_item-field_district']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -196,8 +202,8 @@ function pori_news_field_default_field_instances_alter(&$data) {
     unset($data['node-news_item-field_district']['display']['full']['module']);
   }
   if (isset($data['node-news_item-field_info_box'])) {
-    $data['node-news_item-field_info_box']['display']['default']['weight'] = 3; /* WAS: 5 */
-    $data['node-news_item-field_info_box']['display']['full']['weight'] = 3; /* WAS: 4 */
+    $data['node-news_item-field_info_box']['display']['default']['weight'] = 2; /* WAS: 5 */
+    $data['node-news_item-field_info_box']['display']['full']['weight'] = 2; /* WAS: 4 */
     $data['node-news_item-field_info_box']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -228,8 +234,8 @@ function pori_news_field_default_field_instances_alter(&$data) {
     ); /* WAS: '' */
   }
   if (isset($data['node-news_item-field_liftup_width'])) {
-    $data['node-news_item-field_liftup_width']['display']['default']['weight'] = 32; /* WAS: 8 */
-    $data['node-news_item-field_liftup_width']['display']['full']['weight'] = 29; /* WAS: 24 */
+    $data['node-news_item-field_liftup_width']['display']['default']['weight'] = 33; /* WAS: 8 */
+    $data['node-news_item-field_liftup_width']['display']['full']['weight'] = 31; /* WAS: 24 */
     $data['node-news_item-field_liftup_width']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -239,8 +245,8 @@ function pori_news_field_default_field_instances_alter(&$data) {
     $data['node-news_item-field_liftup_width']['widget']['weight'] = 11; /* WAS: 16 */
   }
   if (isset($data['node-news_item-field_location'])) {
-    $data['node-news_item-field_location']['display']['default']['weight'] = 35; /* WAS: 12 */
-    $data['node-news_item-field_location']['display']['full']['weight'] = 35; /* WAS: 30 */
+    $data['node-news_item-field_location']['display']['default']['weight'] = 36; /* WAS: 12 */
+    $data['node-news_item-field_location']['display']['full']['weight'] = 36; /* WAS: 30 */
     $data['node-news_item-field_location']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -249,8 +255,8 @@ function pori_news_field_default_field_instances_alter(&$data) {
     ); /* WAS: '' */
   }
   if (isset($data['node-news_item-field_order_time'])) {
-    $data['node-news_item-field_order_time']['display']['default']['weight'] = 31; /* WAS: 7 */
-    $data['node-news_item-field_order_time']['display']['full']['weight'] = 32; /* WAS: 26 */
+    $data['node-news_item-field_order_time']['display']['default']['weight'] = 32; /* WAS: 7 */
+    $data['node-news_item-field_order_time']['display']['full']['weight'] = 33; /* WAS: 26 */
     $data['node-news_item-field_order_time']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -260,8 +266,8 @@ function pori_news_field_default_field_instances_alter(&$data) {
     $data['node-news_item-field_order_time']['widget']['weight'] = 13; /* WAS: 15 */
   }
   if (isset($data['node-news_item-field_related_content'])) {
-    $data['node-news_item-field_related_content']['display']['default']['weight'] = 34; /* WAS: 11 */
-    $data['node-news_item-field_related_content']['display']['full']['weight'] = 34; /* WAS: 29 */
+    $data['node-news_item-field_related_content']['display']['default']['weight'] = 35; /* WAS: 11 */
+    $data['node-news_item-field_related_content']['display']['full']['weight'] = 35; /* WAS: 29 */
     $data['node-news_item-field_related_content']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -272,8 +278,8 @@ function pori_news_field_default_field_instances_alter(&$data) {
   }
   if (isset($data['node-news_item-field_target_audience'])) {
     $data['node-news_item-field_target_audience']['display']['default']['type'] = 'hidden'; /* WAS: 'i18n_taxonomy_term_reference_link' */
-    $data['node-news_item-field_target_audience']['display']['default']['weight'] = 27; /* WAS: 8 */
-    $data['node-news_item-field_target_audience']['display']['full']['weight'] = 33; /* WAS: 28 */
+    $data['node-news_item-field_target_audience']['display']['default']['weight'] = 30; /* WAS: 8 */
+    $data['node-news_item-field_target_audience']['display']['full']['weight'] = 34; /* WAS: 28 */
     $data['node-news_item-field_target_audience']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -284,8 +290,8 @@ function pori_news_field_default_field_instances_alter(&$data) {
     unset($data['node-news_item-field_target_audience']['display']['default']['module']);
   }
   if (isset($data['node-news_item-field_theme'])) {
-    $data['node-news_item-field_theme']['display']['default']['weight'] = 37; /* WAS: 14 */
-    $data['node-news_item-field_theme']['display']['full']['weight'] = 37; /* WAS: 32 */
+    $data['node-news_item-field_theme']['display']['default']['weight'] = 38; /* WAS: 14 */
+    $data['node-news_item-field_theme']['display']['full']['weight'] = 38; /* WAS: 32 */
     $data['node-news_item-field_theme']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -296,8 +302,8 @@ function pori_news_field_default_field_instances_alter(&$data) {
   }
   if (isset($data['node-news_item-field_tweet_embed'])) {
     $data['node-news_item-field_tweet_embed']['display']['default']['type'] = 'hidden'; /* WAS: 'text_default' */
-    $data['node-news_item-field_tweet_embed']['display']['default']['weight'] = 23; /* WAS: 15 */
-    $data['node-news_item-field_tweet_embed']['display']['full']['weight'] = 27; /* WAS: 22 */
+    $data['node-news_item-field_tweet_embed']['display']['default']['weight'] = 26; /* WAS: 15 */
+    $data['node-news_item-field_tweet_embed']['display']['full']['weight'] = 29; /* WAS: 22 */
     $data['node-news_item-field_tweet_embed']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -309,8 +315,8 @@ function pori_news_field_default_field_instances_alter(&$data) {
   }
   if (isset($data['node-news_item-field_vignette'])) {
     $data['node-news_item-field_vignette']['display']['default']['type'] = 'hidden'; /* WAS: 'text_default' */
-    $data['node-news_item-field_vignette']['display']['default']['weight'] = 26; /* WAS: 9 */
-    $data['node-news_item-field_vignette']['display']['full']['weight'] = 31; /* WAS: 25 */
+    $data['node-news_item-field_vignette']['display']['default']['weight'] = 29; /* WAS: 9 */
+    $data['node-news_item-field_vignette']['display']['full']['weight'] = 32; /* WAS: 25 */
     $data['node-news_item-field_vignette']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -322,8 +328,8 @@ function pori_news_field_default_field_instances_alter(&$data) {
   }
   if (isset($data['node-news_item-field_visitpori_theme'])) {
     $data['node-news_item-field_visitpori_theme']['display']['default']['type'] = 'hidden'; /* WAS: 'i18n_taxonomy_term_reference_link' */
-    $data['node-news_item-field_visitpori_theme']['display']['default']['weight'] = 24; /* WAS: 17 */
-    $data['node-news_item-field_visitpori_theme']['display']['full']['weight'] = 25; /* WAS: 0 */
+    $data['node-news_item-field_visitpori_theme']['display']['default']['weight'] = 27; /* WAS: 17 */
+    $data['node-news_item-field_visitpori_theme']['display']['full']['weight'] = 27; /* WAS: 0 */
     $data['node-news_item-field_visitpori_theme']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -334,8 +340,8 @@ function pori_news_field_default_field_instances_alter(&$data) {
     unset($data['node-news_item-field_visitpori_theme']['display']['default']['module']);
   }
   if (isset($data['node-news_item-og_group_ref'])) {
-    $data['node-news_item-og_group_ref']['display']['default']['weight'] = 33; /* WAS: 10 */
-    $data['node-news_item-og_group_ref']['display']['full']['weight'] = 28; /* WAS: 23 */
+    $data['node-news_item-og_group_ref']['display']['default']['weight'] = 34; /* WAS: 10 */
+    $data['node-news_item-og_group_ref']['display']['full']['weight'] = 30; /* WAS: 23 */
     $data['node-news_item-og_group_ref']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -351,7 +357,12 @@ function pori_news_field_default_field_instances_alter(&$data) {
 function pori_news_strongarm_alter(&$data) {
   if (isset($data['field_bundle_settings_node__news_item'])) {
     $data['field_bundle_settings_node__news_item']->value['extra_fields']['display']['domain']['default']['visible'] = FALSE; /* WAS: TRUE */
+    $data['field_bundle_settings_node__news_item']->value['extra_fields']['display']['domain']['default']['weight'] = 23; /* WAS: 1 */
+    $data['field_bundle_settings_node__news_item']->value['extra_fields']['display']['domain']['full']['visible'] = FALSE; /* WAS: TRUE */
+    $data['field_bundle_settings_node__news_item']->value['extra_fields']['display']['domain']['full']['weight'] = 24; /* WAS: 2 */
     $data['field_bundle_settings_node__news_item']->value['extra_fields']['display']['language']['default']['visible'] = FALSE; /* WAS: TRUE */
+    $data['field_bundle_settings_node__news_item']->value['extra_fields']['display']['language']['default']['weight'] = 24; /* WAS: 2 */
+    $data['field_bundle_settings_node__news_item']->value['extra_fields']['display']['language']['full']['weight'] = 26; /* WAS: 24 */
     $data['field_bundle_settings_node__news_item']->value['extra_fields']['form']['domain']['weight'] = 4; /* WAS: 1 */
     $data['field_bundle_settings_node__news_item']->value['extra_fields']['form']['metatags']['weight'] = 5; /* WAS: 40 */
     $data['field_bundle_settings_node__news_item']->value['extra_fields']['form']['path']['weight'] = 6; /* WAS: 2 */
