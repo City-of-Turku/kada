@@ -326,6 +326,29 @@ function kada_preprocess_views_view_fields(&$vars) {
     // Remade field content
     $vars['fields']['title_field']->content = $content;
   }
+
+  if ($vars['view']->name == 'main_search') {
+
+    foreach ($vars['view']->result as $result) {
+
+      // Set pori.fi theme-color.
+      $theme_raw = $result->_entity_properties['field_theme'][0];
+      $theme_term = taxonomy_term_load($theme_raw);
+      $theme = $theme_term->field_color_name['und']['0']['value'];
+      $result->_entity_properties['#attributes']['class']['theme'] = $theme;
+
+      // Content-type of result.
+      $page = $result->_entity_properties['type'];
+      $result->_entity_properties['#attributes']['class']['page'] = $page;
+
+      // Set visitpori theme-color.
+      $theme_visit_raw = $result->_entity_properties['field_visitpori_theme'][0];
+      $theme_visit_term = taxonomy_term_load($theme_visit_raw);
+      $theme_visit = $theme_visit_term->field_visitpori_color_name['und']['0']['value'];
+      $result->_entity_properties['#attributes']['class']['visit_theme'] = $theme_visit;
+
+    }
+  }
 }
 
 /**

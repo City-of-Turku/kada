@@ -20,6 +20,7 @@
    - { role: php-fpm, tags: [ 'php-fpm' ] }
    - { role: drush, tags: [ 'drush' ] }
    - { role: drupal-log, tags: [ 'drupal-log' ] }
+   - { role: solr, tags: [ 'solr' ] }
 
   vars_files:
   - dev-vars.yml
@@ -62,7 +63,7 @@
     # How to assign memory for each role and set the correct
     # memory_app and memory_db define how much total system memory is allocated to each.
     # On dedicated DB server memory_db should max be around 80% of total memory and would ideally fit the whole db + some more.
-    memory_db: 1024 # In MB
+    memory_db: 512 # In MB
     memory_app: 1024 # In MB
 
     # NOTE: memory_app needs to be at least 2x php_memory_limit
@@ -153,3 +154,27 @@
 
     yum_extra_packages:
       - php71u-pecl-memcached
+
+    php_extra_env_vars:
+      - key: "twitter_consumer_key"
+        value: "{{ twitter_consumer_key }}"
+      - key: "twitter_consumer_secret"
+        value: "{{ twitter_consumer_secret }}"
+
+    solr_memory: 512m
+    # Project-specific config for search_api_solr 
+    solr_drupal_files:
+      # Standard stuff, inherited from WunderMachina
+      - elevate.xml
+      - mapping-ISOLatin1Accent.txt
+      - protwords.txt
+      - schema_extra_fields.xml
+      - schema_extra_types.xml
+      - solrconfig_extra.xml
+      - solrconfig.xml
+      - solrcore.properties
+      - stopwords.txt
+      - synonyms.txt
+      # Customized 
+      - solr/schema.xml
+

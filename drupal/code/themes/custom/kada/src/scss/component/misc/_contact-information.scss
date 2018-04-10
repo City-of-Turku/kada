@@ -1,0 +1,30 @@
+.page__contact-information {
+  background-color: $gray-lighter;
+  margin: 3.15rem 0 0;
+  padding: 0;
+
+  @media screen and (min-width: $desktop) {
+    margin: 0;
+  }
+
+  > .field {
+    .field__item {
+      margin-bottom: 2rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.page__contact-information__header {
+  background-color: $yellow;
+  font-weight: normal;
+  margin: 0;
+  padding: 1.25rem;
+
+  @media screen and (min-width: $desktop) {
+    padding: 1.25rem 1.875rem;
+  }
+}

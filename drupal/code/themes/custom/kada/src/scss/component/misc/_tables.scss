@@ -140,9 +140,6 @@ table {
     }
 
     p {
-      // Some content might be written inside a paragraph so we should reset the paragraph styles
-      @include font-size(12.6px);
-      line-height: normal;
       margin-top: 0;
 
       &:last-child {

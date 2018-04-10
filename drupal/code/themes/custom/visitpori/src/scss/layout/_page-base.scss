@@ -4,24 +4,9 @@
   max-width: $container-width;
 }
 
-.has-two-sidebars {
-  @media screen and (min-width: $tablet-portrait) {
-    .sidebar--first {
-    }
-
-    .section--content {
-    }
-  }
-
-  @media screen and (min-width: $desktop-narrow) {
-    .sidebar--first,
-    .sidebar--second {
-    }
-
-    .sidebar--second {
-    }
-
-    .section--content {
-    }
+// Front page before content region needs to be relative so that the news archive button can be placed correctly.
+.front .l-content .l-region--after-content {
+  @media screen and (min-width: $container) {
+    position: relative;
   }
 }

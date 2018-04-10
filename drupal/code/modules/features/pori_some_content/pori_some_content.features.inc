@@ -9,7 +9,7 @@
  */
 function pori_some_content_ds_field_settings_info_alter(&$data) {
   if (isset($data['node|social_media_update|current'])) {
-    $data['node|social_media_update|current']->settings['post_date']['weight'] = 2; /* WAS: 17 */
+    $data['node|social_media_update|current']->settings['post_date']['weight'] = 1; /* WAS: 17 */
     unset($data['node|social_media_update|current']->settings['body']);
     unset($data['node|social_media_update|current']->settings['field_image']);
     unset($data['node|social_media_update|current']->settings['field_link']);
@@ -36,8 +36,8 @@ function pori_some_content_ds_layout_settings_info_alter(&$data) {
     $data['node|social_media_update|current']->settings['layout_disable_css'] = FALSE; /* WAS: '' */
     $data['node|social_media_update|current']->settings['regions']['header'] = array(
       0 => 'field_some_id',
-      1 => 'field_image',
-      2 => 'post_date',
+      1 => 'post_date',
+      2 => 'field_image',
     ); /* WAS: '' */
     $data['node|social_media_update|current']->settings['regions']['main'] = array(
       3 => 'body',

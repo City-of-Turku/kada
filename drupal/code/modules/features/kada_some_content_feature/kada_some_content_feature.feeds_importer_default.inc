@@ -306,7 +306,7 @@ function kada_some_content_feature_feeds_importer_default() {
           ),
           'image' => array(
             'name' => 'Image',
-            'value' => 'images.standard_resolution',
+            'value' => 'images.standard_resolution.url',
             'debug' => 0,
             'weight' => '6',
           ),

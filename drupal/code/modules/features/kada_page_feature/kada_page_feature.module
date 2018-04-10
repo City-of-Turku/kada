@@ -22,3 +22,95 @@ function kada_page_feature_views_post_execute(&$view) {
     }
   }
 }
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function kada_page_feature_field_formatter_info() {
+  return array(
+    'kada_page_service_offering_formatter' => array( //Machine name of the formatter
+      'label' => t('Service offering'),
+      'field types' => array('entityreference'), //This will only be available to entity reference fields
+      'settings' => array(
+        'view_mode' => 'teaser', // Default is 'teaser'
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+function kada_page_feature_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  // Get the list of display modes for the content type 'page'
+  $view_mode_settings = field_view_mode_settings($instance['entity_type'], $instance['bundle']);
+  $view_mode_names = array_keys($view_mode_settings);
+  // Create an associated array where key and value are the same:
+  $options = array_combine($view_mode_names, $view_mode_names);
+
+  $element = array();
+  $element['view_mode'] = array(
+    '#type' => 'select',
+    '#title' => t('View mode'),
+    '#default_value' => $settings['view_mode'],
+    '#options' => $options,
+  );
+  return $element;
+}
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ */
+function kada_page_feature_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+  $summary = t('Use @view_mode to display @content_type items', array(
+    '@view_mode' => $settings['view_mode'],
+    '@content_type' => 'place',
+  ));
+  return $summary;
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function kada_page_feature_field_formatter_view($entity_type, $node, $field, $instance, $langcode, $items, $display) {
+  $result = array();
+
+  $settings = $display['settings'];
+  $view_mode = $settings['view_mode'];
+
+  foreach ($items as $delta => $item) {
+    // Protect ourselves from recursive rendering.
+    static $depth = 0;
+    $depth++;
+    if ($depth > 20) {
+      throw new Exception(t('Recursive rendering detected when rendering entity @entity_type(@entity_id). Aborting rendering.', array('@entity_type' => $entity_type, '@entity_id' => $item['target_id'])));
+    }
+
+    $service_offer_node = node_load($item['target_id']);
+    // 'field_provided_at' is available in the 'service_offer' content type
+    if (isset($service_offer_node->field_provided_at)) {
+      foreach($service_offer_node->field_provided_at as $relations) {
+        foreach ($relations as $relation_data) {
+          if ($relation_data['relation_type'] == 'place_service') {
+            $place_nid = $relation_data['endpoints'][LANGUAGE_NONE][0]['entity_id'];
+            $place_node = node_load($place_nid);
+            $result[$delta][] = node_view($place_node, $view_mode, $langcode);
+          }
+        }
+      }
+
+      drupal_add_js(drupal_get_path('module', 'kada_page_feature') . '/js/accordion_config.js');
+    }
+
+    $depth = 0;
+  }
+
+  drupal_add_library('system', 'ui.accordion');
+
+  return $result;
+}

@@ -1,4 +1,9 @@
-.field--name-field-lead-paragraph {
+.field--name-field-lead-paragraph,
+.field--name-field-lead-paragraph-long-text {
   font-weight: bold;
-  margin-bottom: 3.15rem;
+  margin-bottom: 1.5rem;
+
+  @media screen and (min-width: $mobile-menu-breakpoint) {
+    margin-bottom: 3.15rem;
+  }
 }

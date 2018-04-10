@@ -25,11 +25,24 @@ function pori_front_page_liftups_views_api($module = NULL, $api = NULL) {
  */
 function pori_front_page_liftups_context_default_contexts_alter(&$data) {
   if (isset($data['front_page'])) {
+    $data['front_page']->conditions['context'] = array(
+      'values' => array(
+        '~visitpori_domain' => '~visitpori_domain',
+      ),
+    ); /* WAS: '' */
+
+
+    $data['front_page']->reactions['block']['blocks']['kada_news_feature-news_archive_link'] = array(
+      'module' => 'kada_news_feature',
+      'delta' => 'news_archive_link',
+      'region' => 'before_content',
+      'weight' => -8,
+    ); /* WAS: '' */
     $data['front_page']->reactions['block']['blocks']['quicktabs-feed_tabs_frontpage_promoted_con'] = array(
       'module' => 'quicktabs',
       'delta' => 'feed_tabs_frontpage_promoted_con',
       'region' => 'before_content',
-      'weight' => -10,
+      'weight' => -9,
     ); /* WAS: '' */
     $data['front_page']->reactions['block']['blocks']['views-kada_news-block_1'] = array(
       'module' => 'views',
@@ -43,12 +56,7 @@ function pori_front_page_liftups_context_default_contexts_alter(&$data) {
       'region' => 'before_footer',
       'weight' => -10,
     ); /* WAS: '' */
-    $data['front_page']->reactions['block']['blocks']['views-kada_recommended-block_1'] = array(
-      'module' => 'views',
-      'delta' => 'kada_recommended-block_1',
-      'region' => 'header',
-      'weight' => -8,
-    ); /* WAS: '' */
+    $data['front_page']->reactions['block']['blocks']['views-kada_recommended-block']['weight'] = -9; /* WAS: -10 */
     $data['front_page']->reactions['block']['blocks']['views-kada_top_carousel-block_1'] = array(
       'module' => 'views',
       'delta' => 'kada_top_carousel-block_1',
@@ -56,7 +64,6 @@ function pori_front_page_liftups_context_default_contexts_alter(&$data) {
       'weight' => -10,
     ); /* WAS: '' */
     unset($data['front_page']->reactions['block']['blocks']['views-kada_news-front_block']);
-    unset($data['front_page']->reactions['block']['blocks']['views-kada_recommended-block']);
   }
 }
 

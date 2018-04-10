@@ -91,6 +91,7 @@
   }
 }
 
+.liftup-box--attraction-item,
 .liftup-box--topic {
   display: flex;
   flex-direction: column;
@@ -125,11 +126,21 @@
     }
   }
 
+  .attraction-list--item__container,
   .liftup-box--topic__container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     height: 100%;
+  }
+
+  // Set theme colored borders.
+  @each $theme-color, $color in $theme-colors {
+    &.theme-color-#{$theme-color} {
+      .liftup-box__image {
+        border-top: 12px solid $color !important;
+      }
+    }
   }
 
   .liftup-box__image {
@@ -237,18 +248,24 @@
 .liftup-box--wide {
   background-color: $white;
   border-bottom: none;
-  border-top: .938rem solid $primary-color;
   color: $black;
-  cursor: pointer;
   margin: 0;
   padding: 0;
 
   .node--liftup {
     align-items: flex-start;
+    border-top: .938rem solid $primary-color;
     display: flex;
     flex-direction: column-reverse;
     margin: 0 auto;
     width: 100%;
+
+    // Set theme colored borders.
+    @each $theme-color, $color in $theme-colors {
+      &.theme-color-#{$theme-color} {
+        border-top: .938rem solid $color;
+      }
+    }
 
     @media screen and (min-width: $tablet-landscape) {
       flex-direction: row-reverse;
@@ -259,7 +276,7 @@
     }
   }
 
-  &:nth-child(2) {
+  &:nth-child(even) {
     .node--liftup {
       flex-direction: column-reverse;
 
@@ -343,7 +360,7 @@
     }
   }
 
-  &:nth-child(2) {
+  &:nth-child(even) {
     .liftup-box__group-right {
       @media screen and (min-width: 1400px) {
         margin-left: 0;
@@ -411,6 +428,15 @@
         margin-top: 2rem;
       }
     }
+
+    // Set theme colored borders.
+    @each $theme-color, $color in $theme-colors {
+      &.theme-color-#{$theme-color} {
+        .liftup-box__header {
+          border-top: .938rem solid $color;
+        }
+      }
+    }
   }
 
   .liftup-box__header {
@@ -467,12 +493,23 @@
   }
 }
 
-
-.liftup-box--social {
+.liftup-box-list--current .liftup-box--social {
   .field--name-field-image-url,
   .field--name-field-share-caption,
   .field--name-field-share-description {
     display: none; // Not quite sure what these are used for but hiding them for now.
+  }
+
+  .liftup-box__header {
+    position: relative;
+  }
+
+  .liftup-box__content {
+    overflow: hidden;
+  }
+
+  .field--name-post-date {
+    margin: 1.25rem 0 1.25rem 3rem;
   }
 }
 

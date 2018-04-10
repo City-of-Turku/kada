@@ -1,0 +1,226 @@
+.person-card-list {
+  // Filters
+  .person-card-list__filters {
+    margin: 0 -1.25rem;
+    position: relative;
+    overflow: hidden;
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      margin: 0;
+    }
+
+    .views-exposed-widgets {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+    }
+
+    .views-widget-filter-combine {
+      background-color: $gray-lighter;
+      float: none;
+      order: 1;
+      padding: 1.25rem 0;
+      width: 100%;
+
+      @media screen and (min-width: $mobile-menu-breakpoint) {
+        padding: 2.5rem 0;
+      }
+
+      .views-widget {
+        margin: 0 1.25rem;
+        position: relative;
+      }
+
+      label {
+        display: none;
+      }
+
+      .views-widget {
+        display: block;
+      }
+
+      input {
+        border: .063rem solid $gray-light;
+        font-size: 1.125rem;
+        padding: .625rem 3.125rem .625rem .625rem;
+        width: 100%;
+      }
+    }
+
+    .views-widget-filter-secondary {
+      float: none;
+      order: 2;
+      padding: 1.25rem 1.25rem (1.25rem - .313rem) 1.25rem;
+      width: 100%;
+
+      @media screen and (min-width: $mobile-landscape-wide) {
+        padding: 1.25rem 0 (1.25rem - .313rem);
+      }
+
+      fieldset {
+        border: 0 none;
+        margin: 0;
+        padding: 0;
+      }
+
+      legend {
+        display: none;
+      }
+
+      .form-item {
+        label {
+          background-color: $link-color-hover;
+          color: $white;
+          display: block;
+          padding: .625rem .938rem;
+          position: relative;
+          text-transform: uppercase;
+
+          &::before {
+            @include fa('\f067', .9rem, 1, false);
+            color: $link-color-hover;
+            height: 1.563rem;
+            line-height: 1.6rem;
+            position: absolute;
+            right: .938rem;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.563rem;
+            z-index: 2;
+          }
+
+          &::after {
+            background-color: $white;
+            border-radius: 100%;
+            content: "";
+            display: block;
+            height: 1.563rem;
+            position: absolute;
+            right: .938rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1.563rem;
+            z-index: 1;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .bef-select-as-links {
+          display: none;
+        }
+
+        &.open {
+          label::before {
+            @include fa('\f068', .9rem, 1, false);
+            color: $link-color-hover;
+            line-height: 1.6rem;
+          }
+
+          .bef-select-as-links {
+            display: block;
+          }
+        }
+      }
+
+      .form-type-select {
+        .form-type-bef-link {
+          a {
+            border-bottom: .063rem solid $gray;
+            color: $black;
+            display: block;
+            padding: .625rem 0;
+            text-transform: uppercase;
+
+            &.active,
+            &:hover {
+              color: $link-color-hover;
+              padding: .625rem .938rem;
+            }
+          }
+
+          &:last-child a {
+            border-bottom: 0 none;
+          }
+        }
+      }
+    }
+
+    .views-submit-button {
+      background-color: $gray-lighter;
+      float: none;
+      padding: 0;
+      position: absolute;
+      right: 1.25rem + .063rem;
+      top: 1.25rem + .063rem;
+      width: 3.125rem;
+      z-index: 2;
+
+      @media screen and (min-width: $mobile-menu-breakpoint) {
+        top: 2.5rem + .063rem;
+      }
+
+      &::after {
+        @include fa('\f002', 1rem, 1, false);
+        color: $black;
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%);
+        z-index: 3;
+      }
+
+      &:hover {
+        background-color: $black;
+
+        &::after {
+          color: $white;
+        }
+      }
+
+      input {
+        background-color: transparent;
+        border: 0 none;
+        color: $white;
+        height: 2.6rem;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        text-indent: -9999px;
+        width: 100%;
+        z-index: 4;
+      }
+    }
+  }
+
+  // Content
+  .person-card-list__content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -.313rem;
+    overflow: hidden;
+  }
+
+  .person-card {
+    display: flex;
+    padding: .313rem;
+    width: 100%;
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      width: 50%;
+    }
+
+    @media screen and (min-width: $tablet-landscape) {
+      width: 33.333333%;
+    }
+
+    .person-card__inner {
+      background-color: $gray-lighter;
+      border-top: .938rem solid $secondary-color;
+      width: 100%;
+    }
+  }
+}

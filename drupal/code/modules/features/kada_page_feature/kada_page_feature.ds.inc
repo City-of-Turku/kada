@@ -25,6 +25,32 @@ function kada_page_feature_ds_field_settings_info() {
   );
   $export['node|page|default'] = $ds_fieldsetting;
 
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|page|project';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'page';
+  $ds_fieldsetting->view_mode = 'project';
+  $ds_fieldsetting->settings = array(
+    'duplicate_title' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => 'a',
+        'ctools' => 'a:3:{s:4:"conf";a:8:{s:4:"link";i:1;s:6:"markup";s:4:"none";s:2:"id";s:0:"";s:5:"class";s:12:"link-to-node";s:7:"context";s:25:"argument_entity_id:node_1";s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:10:"node_title";s:7:"subtype";s:10:"node_title";}',
+        'load_terms' => 0,
+      ),
+    ),
+    'title' => array(
+      'weight' => '1',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['node|page|project'] = $ds_fieldsetting;
+
   return $export;
 }
 
@@ -112,28 +138,32 @@ function kada_page_feature_ds_layout_settings_info() {
         0 => 'domain',
         1 => 'field_lead_paragraph',
         2 => 'body',
+        3 => 'field_service_offering',
       ),
       'sidebar' => array(
-        3 => 'field_keywords',
-        4 => 'places_for_services',
+        4 => 'field_keywords',
+        5 => 'places_for_services',
       ),
       'additional_information' => array(
-        5 => 'field_additional_info_link',
-        6 => 'field_file_attachment',
+        6 => 'field_additional_info_link',
+        7 => 'field_file_attachment',
       ),
       'after_content' => array(
-        7 => 'field_topic',
+        8 => 'field_topic',
+        9 => 'field_subpage',
       ),
     ),
     'fields' => array(
       'domain' => 'main_content',
       'field_lead_paragraph' => 'main_content',
       'body' => 'main_content',
+      'field_service_offering' => 'main_content',
       'field_keywords' => 'sidebar',
       'places_for_services' => 'sidebar',
       'field_additional_info_link' => 'additional_information',
       'field_file_attachment' => 'additional_information',
       'field_topic' => 'after_content',
+      'field_subpage' => 'after_content',
     ),
     'classes' => array(),
     'wrappers' => array(
