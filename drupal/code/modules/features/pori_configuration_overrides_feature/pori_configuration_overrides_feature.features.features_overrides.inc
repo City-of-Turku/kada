@@ -747,13 +747,17 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["field_instance.widget-event_carousel-field_keywords_et.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.widget-event_mosaic-field_keywords_et.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
 
+  // Exported overrides for: scald_context_config
+  $overrides["scald_context_config.full.player|image|*"] = 'image_figure';
+  $overrides["scald_context_config.full.player|image|settings|caption"] = '[atom:title], by [atom:author]';
+  $overrides["scald_context_config.full.player|image|settings|classes"] = '';
+  $overrides["scald_context_config.full.transcoder|image|*"] = 'group-responsive_content_full';
 
   // Exported overrides for: image
   $overrides["image.site_logo.effects|0|data|height"] = 50;
 
   // Exported overrides for: flexslider_optionset
   $overrides["flexslider_optionset.top_carousel.options|smoothHeight"] = 0;
-
 
   // Exported overrides for: variable
   $overrides["variable.field_bundle_settings_node__person.value|extra_fields|display|domain|person_card"] = array(
@@ -779,6 +783,11 @@ function pori_configuration_overrides_feature_features_override_default_override
     'custom_settings' => FALSE,
   );
   $overrides["variable.field_bundle_settings_node__place.value|extra_fields|display|domain|teaser|weight"] = 23;
+  $overrides["variable.menu_block_20_expanded.value"] = 1;
+  $overrides["variable.menu_block_21_expanded.value"] = 1;
+  $overrides["variable.menu_block_22_expanded.value"] = 1;
+  $overrides["variable.menu_block_25_expanded.value"] = 1;
+  $overrides["variable.menu_block_28_expanded.value"] = 1;
   $overrides["variable.menu_block_8_depth.value"] = 2;
   $overrides["variable.node_options_attraction_card.value|1"] = 'revision';
   $overrides["variable.node_options_landing_page.value|1"] = 'revision';
