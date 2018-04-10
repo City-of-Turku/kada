@@ -5,11 +5,13 @@
 
 @charset 'UTF-8';
 
-@import 'lib/normalize/*';
 @import 'lib/variables/*';
 @import 'lib/mixins/*';
 
 @import 'base/*';
 @import 'component/**/*';
+@import 'ds-layouts/*';
 @import 'layout/*';
+@import 'ds-layouts/*';
 // @import 'state/*';
+

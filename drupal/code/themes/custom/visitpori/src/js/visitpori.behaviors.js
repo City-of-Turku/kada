@@ -148,7 +148,7 @@
         $('.l-region--navigation .menu__item--has-first-level', context).hover(function(event) {
           if ($(window).width() >= '1025') {
             adjustHeight($(this).children('.menu'));
-            adjustWidth($(this));
+            //adjustWidth($(this));
             if (event.type === 'mouseleave') {
               $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
             }
@@ -210,5 +210,88 @@
       });
     }
   };
+
+  Drupal.behaviors.attractionCardFilters = {
+    attach: function(context) {
+      $('.widget-attraction-list', context).once('attraction-card-filters', function () {
+        const activeFilters = [];
+        const liftups = $('.liftup-box--attraction-item', '.widget-attraction-list');
+        const filters = (function () {
+          const attractionListContainer = $('.widget-attraction-list');
+          const filterContainer = $('<div class="attraction-list__filters-wrapper"><div class="attraction-list__filters"></div></div>');
+
+          attractionListContainer.prepend(filterContainer);
+
+          $('.field__item a', liftups)
+            .toArray()
+            .map(function (keyword) {
+              return $(keyword).text().toUpperCase().trim();
+            })
+            .filter(function (keyword, index, self) {
+              return self.indexOf(keyword) === index;
+            })
+            .sort(function (first, second) {
+              return first.localeCompare(second);
+            })
+            .forEach(function (keyword) {
+              const keywordElement = $(`<div class="attraction-list__filter"><a href="#">${keyword}</a></div>`);
+
+              filterContainer.children().first().append(keywordElement);
+            });
+
+          return $('.attraction-list__filter a', filterContainer);
+        })();
+
+        const updateLiftups = function () {
+          liftups.hide();
+
+          const matchingLiftups = liftups.filter(function (index, liftup) {
+            const liftupKeywords = $('.field__item a', liftup);
+            const activeKeywords = liftupKeywords.filter(function (index, keyword) {
+              const text = $(keyword).text().toUpperCase().trim();
+
+              return activeFilters.includes(text);
+            });
+
+            liftupKeywords.removeClass('active');
+            activeKeywords.addClass('active');
+
+            return activeKeywords.size() === activeFilters.length;
+          });
+
+          matchingLiftups.show();
+        };
+
+        const updateFilters = function (clickedFilter) {
+          const filterText = clickedFilter.text().toUpperCase().trim();
+
+          if (activeFilters.includes(filterText)) {
+            const index = activeFilters.findIndex(function (activeFilter) {
+              return activeFilter === filterText;
+            });
+
+            activeFilters.splice(index, 1);
+          } else {
+            activeFilters.push(filterText);
+          }
+
+          clickedFilter.toggleClass('active');
+        };
+
+        const clickHandler = function (event) {
+          event.preventDefault();
+
+          updateFilters($(this))
+          updateLiftups();
+        };
+
+        const attachClickListeners = function () {
+          filters.click(clickHandler);
+        };
+
+        attachClickListeners();
+      });
+    }
+  }
 
 })(jQuery);

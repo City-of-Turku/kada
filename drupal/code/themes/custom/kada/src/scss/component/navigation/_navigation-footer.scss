@@ -23,6 +23,7 @@
       width: 16.66666%;
     }
 
+    &.block--views,
     &.block--menu-block {
       padding: .875rem 0 0 0;
 
@@ -50,15 +51,27 @@
       display: none;
 
       @media screen and (max-width: $mobile-footer-breakpoint-max) {
-        background: url('../../dist/image/plus-icon--white.svg') no-repeat center center $black;
-        background-size: auto .7rem;
         border-radius: 100%;
+        background-color: $black;
+        color: $white;
         display: block;
         height: 1.563rem;
         position: absolute;
         right: 1.25rem;
         top: .813rem;
         width: 1.563rem;
+
+        &::before {
+          @include fa('\f067', .9rem, 1, false);
+          height: 1.563rem;
+          line-height: 1.563rem;
+          position: absolute;
+          right: 0;
+          text-align: center;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1.563rem;
+        }
       }
 
       &:hover,
@@ -74,8 +87,13 @@
     &.is-active-trail {
       > .menu__item--expanded-toggle {
         @media screen and (max-width: $mobile-footer-breakpoint-max) {
-          background-image: url('../../dist/image/plus-icon.svg');
           background-color: $white;
+        }
+
+        &::before {
+          @media screen and (max-width: $mobile-footer-breakpoint-max) {
+            color: $secondary-color;
+          }
         }
       }
     }
@@ -83,8 +101,11 @@
 
   .is-collapsed {
     > .menu__item--expanded-toggle {
-      @media screen and (max-width: $mobile-footer-breakpoint-max) {
-        background-image: url('../../dist/image/minus-icon--white.svg');
+      &::before {
+        @media screen and (max-width: $mobile-footer-breakpoint-max) {
+          @include fa('\f068', .9rem, 1, false);
+          line-height: 1.563rem;
+        }
       }
     }
 
@@ -93,8 +114,15 @@
     &.is-active-trail {
       > .menu__item--expanded-toggle {
         @media screen and (max-width: $mobile-footer-breakpoint-max) {
-          background-image: url('../../dist/image/minus-icon.svg');
           background-color: $white;
+        }
+
+        &::before {
+          @media screen and (max-width: $mobile-footer-breakpoint-max) {
+            @include fa('\f068', .9rem, 1, false);
+            color: $secondary-color;
+            line-height: 1.563rem;
+          }
         }
       }
     }
@@ -310,6 +338,35 @@
           }
         }
       }
+    }
+  }
+}
+
+.section-footer {
+  @include responsive-whitespace;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    padding: 0;
+  }
+
+  .section-footer--item {
+    margin-bottom: 1rem;
+
+    @media screen and (min-width: $desktop) {
+      margin-bottom: 0;
+      width: 20%;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    .field-content p:last-child {
+      margin-bottom: 0;
     }
   }
 }

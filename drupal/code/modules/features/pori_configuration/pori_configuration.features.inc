@@ -8,41 +8,104 @@
  * Implements hook_ctools_plugin_api().
  */
 function pori_configuration_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "elysia_cron" && $api == "default_elysia_cron_rules") {
+    return array("version" => "1");
+  }
+  if ($module == "scald" && $api == "context_config") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
+  if ($module == "video_embed_field" && $api == "default_video_embed_styles") {
     return array("version" => "1");
   }
 }
 
 /**
- * Implements hook_context_default_contexts_alter().
+ * Implements hook_image_default_styles().
  */
-function pori_configuration_context_default_contexts_alter(&$data) {
-  if (isset($data['footer_menu'])) {
-    $data['footer_menu']->reactions['block']['blocks']['menu_block-10']['weight'] = 2; /* WAS: -8 */
-    $data['footer_menu']->reactions['block']['blocks']['menu_block-8']['weight'] = 0; /* WAS: -10 */
-    $data['footer_menu']->reactions['block']['blocks']['menu_block-9']['weight'] = 1; /* WAS: -9 */
-  }
-  if (isset($data['language_switcher'])) {
-    $data['language_switcher']->reactions['block']['blocks']['locale-language']['region'] = 'branding'; /* WAS: 'navigation' */
-    $data['language_switcher']->reactions['block']['blocks']['locale-language']['weight'] = -10; /* WAS: -50 */
-  }
+function pori_configuration_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: content_250_wide.
+  $styles['content_250_wide'] = array(
+    'label' => 'Content 250 wide',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 250,
+          'height' => '',
+          'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
 }
 
 /**
- * Implements hook_strongarm_alter().
+ * Implements hook_scald_default_context_types().
  */
-function pori_configuration_strongarm_alter(&$data) {
-  if (isset($data['responsive_menus_css_selectors'])) {
-    $data['responsive_menus_css_selectors']->value = '.l-navigation .menu-block-wrapper > .menu
-            .l-navigation .block--og-menu-single .block__content > .menu
-            .l-branding .menu--language-switcher'; /* WAS: '.l-navigation .menu-block-wrapper > .menu
-    .l-navigation .block--og-menu-single .block__content > .menu
-    .l-navigation .menu--language-switcher' */
-  }
-  if (isset($data['responsive_menus_media_size'])) {
-    $data['responsive_menus_media_size']->value = 1025; /* WAS: 59.94 */
-  }
-  if (isset($data['responsive_menus_media_unit'])) {
-    $data['responsive_menus_media_unit']->value = 'px'; /* WAS: 'em' */
-  }
+function pori_configuration_scald_default_context_types() {
+  $contexts = array();
+  $contexts['content_250_wide-file'] = array(
+    'player' => array(
+      'file' => array(
+        '*' => 'default',
+      ),
+    ),
+    'transcoder' => array(
+      'file' => array(
+        '*' => 'passthrough',
+      ),
+    ),
+    'data' => array(
+      'file' => array(
+        'width' => '',
+        'height' => '',
+      ),
+    ),
+  );
+  $contexts['content_250_wide-image'] = array(
+    'player' => array(
+      'image' => array(
+        '*' => 'default',
+        'settings' => array(),
+      ),
+    ),
+    'transcoder' => array(
+      'image' => array(
+        '*' => 'style-content_250_wide',
+      ),
+    ),
+    'data' => array(
+      'image' => array(
+        'width' => '',
+        'height' => '',
+      ),
+    ),
+  );
+  $contexts['content_250_wide-video'] = array(
+    'player' => array(
+      'video' => array(
+        '*' => 'default',
+      ),
+    ),
+    'transcoder' => array(
+      'video' => array(
+        '*' => 'passthrough',
+      ),
+    ),
+    'data' => array(
+      'video' => array(
+        'width' => '',
+        'height' => '',
+      ),
+    ),
+  );
+  return $contexts;
 }

@@ -12,9 +12,31 @@
     - { role: papertrail, tags: [ 'papertrail' ] }
     - { role: newrelic-infra, tags: [ 'newrelic-infra' ] }
     - { role: newrelic-sysmon, tags: [ 'newrelic-sysmon' ] }
+    - { role: solr, tags: [ 'solr' ] }
 
   vars_files:
   - prod-vars.yml
+
+  tasks:
+    # Disable email from cron
+    - name: "Disable emails from failed cronjobs for nginx user"
+      cron:
+        name: "MAILTO"
+        env: yes
+        value: ""
+        state: "present"
+        user: www-admin
+      tags: ['cron']
+
+    - name: "Download file from http://83.102.35.72/PORIKAexport2.csv"
+      cron:
+        name: "Download import data"
+        minute: "0"
+        hour: "6"
+        job: "wget -O /nfs-files/private_files/transfer/PORIKAexport2.csv http://83.102.35.72/PORIKAexport2.csv"
+        state: "present"
+        user: www-admin
+      tags: ['cron']
 
   vars:
     ## Base ##
@@ -121,4 +143,19 @@
     newrelic_infra_enabled: True
     # newrelic_license_key defined in prod_vars.yml
 
+    # Project-specific config for search_api_solr 
+    solr_drupal_files:
+      # Standard stuff, inherited from WunderMachina
+      - elevate.xml
+      - mapping-ISOLatin1Accent.txt
+      - protwords.txt
+      - schema_extra_fields.xml
+      - schema_extra_types.xml
+      - solrconfig_extra.xml
+      - solrconfig.xml
+      - solrcore.properties
+      - stopwords.txt
+      - synonyms.txt
+      # Customized 
+      - solr/schema.xml
 

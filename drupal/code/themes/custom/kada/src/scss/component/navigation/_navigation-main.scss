@@ -1,6 +1,8 @@
 @media screen and (min-width: $mobile-menu-breakpoint) {
   .menu-name-main-menu,
-  .menu-name-menu-main-menu-en {
+  .menu-name-menu-main-menu-en,
+  .menu-name-og-menu-single,
+  .block--og-menu-single-menu {
     .responsive-menus .menu {
       display: flex;
       justify-content: space-between;
@@ -24,8 +26,103 @@
       }
     }
 
-    .menu__item--expanded-toggle {
+    // Hide mobile menu specific stuff
+    .menu__item--expanded-toggle,
+    .menu__item--top-menu {
       display: none;
+    }
+
+    // Set theme colored menu.
+    @each $theme-color, $color in $theme-colors {
+      .theme-color-#{$theme-color} {
+        &.menu__item--has-first-level {
+          > a {
+
+            &:hover,
+            &:focus {
+              @if $color == $yellow {
+                color: $primary-color;
+              }
+
+              background-color: $color !important;
+            }
+          }
+
+          > .menu {
+            border-bottom: 4px solid $color !important;
+            border-top: 4px solid $color !important;
+          }
+
+          &.is-active-trail {
+            background-color: $color !important;
+
+            > a {
+              @if $color == $yellow {
+                color: $primary-color;
+              }
+            }
+          }
+
+          .menu__item--has-second-level,
+          .menu__item--has-third-level {
+            &:hover {
+              background-color: $color !important;
+
+              > a {
+                @if $color == $yellow {
+                  color: $primary-color;
+                }
+              }
+            }
+            &.is-active-trail {
+              background-color: $color !important;
+
+              > a {
+                @if $color == $yellow {
+                  color: $primary-color;
+                }
+
+                &::before {
+                  color: $color !important;
+                }
+              }
+            }
+
+            &.is-expanded {
+              &:hover {
+                > a::before {
+                  color: $color !important;
+                }
+              }
+            }
+          }
+
+          .e-service-wrapper {
+            background-color: lighten($color, 45%);
+
+            @if $color == $green {
+              background-color: lighten($color, 60%);
+            }
+
+            @if $color == $yellow {
+              color: $primary-color;
+            }
+
+            > a {
+              background-color: $color;
+            }
+
+            > .menu {
+              .menu__item {
+                &:hover,
+                &:focus {
+                  background-color: lighten($color, 30%);
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
     .menu__item--has-first-level {
@@ -53,17 +150,9 @@
         z-index: 100;
       }
 
-      &:hover {
+      &.menu__item--hover {
         > .menu {
           display: block;
-        }
-      }
-
-      &.is-expanded {
-        > a {
-          &:hover,
-          &:focus {
-          }
         }
       }
 
@@ -103,7 +192,7 @@
         }
       }
 
-      &:hover {
+      &.menu__item--hover {
         background-color: $secondary-color;
 
         > a {
@@ -111,15 +200,27 @@
         }
 
         > .menu {
-          display: block;
+          display: block;//
           z-index: 102;
         }
       }
 
       &.is-expanded {
         > a::before {
-          background: url('../../dist/image/plus-icon--white.svg') no-repeat center center $black;
-          background-size: auto .7rem;
+          @include fa('\f067', .9rem, 1, false);
+          color: $white;
+          height: 1.563rem;
+          line-height: 1.6rem;
+          position: absolute;
+          right: 1.875rem;
+          text-align: center;
+          top: 1.188rem;
+          width: 1.563rem;
+          z-index: 2;
+        }
+
+        > a::after {
+          background-color: $black;
           border-radius: 100%;
           content: "";
           display: block;
@@ -128,12 +229,14 @@
           right: 1.875rem;
           top: 1.188rem;
           width: 1.563rem;
+          z-index: 1;
         }
 
-        &:hover {
+        &.menu__item--hover {
           > a::before {
-            background-color: $white;
-            background-image: url('../../dist/image/minus-icon.svg');
+            @include fa('\f068', .9rem, 1, false);
+            color: $white;
+            line-height: 1.6rem;
           }
         }
       }
@@ -143,11 +246,6 @@
 
         > a {
           color: $white;
-
-          &::before {
-            background-color: $white;
-            background-image: url('../../dist/image/minus-icon.svg');
-          }
         }
 
         > .menu {
@@ -169,7 +267,7 @@
         }
       }
 
-      &:hover {
+      &.menu__item--hover {
         background-color: $secondary-color;
 
         > a {
@@ -207,16 +305,22 @@
         display: block;
         list-style-type: none;
         margin: 0;
-        padding: 0 1.875rem;
 
         .menu__item {
           border-bottom: 1px solid $primary-color;
           margin: 0;
+          padding: 0 1.875rem;
+
+          &:hover,
+          &:focus {
+            background-color: $secondary-color-medium-dark;
+          }
 
           a {
             background: url('../../dist/image/arrow-right-icon.svg') no-repeat right center transparent;
             background-size: .938rem auto;
             border-bottom: 0 none;
+            border-top: 0 none;
             display: inline-block;
             font-weight: bold;
             padding: 1.25rem 1.875rem 1.25rem 0;

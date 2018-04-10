@@ -22,6 +22,7 @@ $menu-padding: 1.25rem;
 
 @media screen and (max-width: $mobile-menu-breakpoint-max) {
   .menu-name-main-menu,
+  .menu-name-og-menu-single,
   [class*="menu-name-menu-main-menu"] {
     .toggler {
       color: transparent;
@@ -61,14 +62,33 @@ $menu-padding: 1.25rem;
     .is-collapsed,
     .is-expanded {
       > .menu__item--expanded-toggle {
-        background: url('../../dist/image/plus-icon.svg') no-repeat center center $white;
-        background-size: auto .7rem;
+        background-color: $white;
         border-radius: 100%;
+        content: "";
+        display: block;
         height: 1.563rem;
         position: absolute;
         right: 1.25rem;
         top: 1.063rem;
         width: 1.563rem;
+        z-index: 1;
+
+        @media screen and (min-width: $tablet-portrait-narrow) {
+          top: 1.25rem;
+        }
+
+        &::before {
+          @include fa('\f067', .9rem, 1, false);
+          color: $black;
+          display: block;
+          height: 1.563rem;
+          line-height: 1.6rem;
+          right: 1.25rem;
+          text-align: center;
+          top: 1.063rem;
+          width: 1.563rem;
+          z-index: 2;
+        }
 
         &:hover,
         &:focus {
@@ -77,8 +97,150 @@ $menu-padding: 1.25rem;
       }
     }
 
-    .is-expanded .menu__item--expanded-toggle {
-      background-image: url('../../dist/image/minus-icon.svg');
+    .is-expanded > .menu__item--expanded-toggle::before{
+      @include fa('\f068', .9rem, 1, false);
+      color: $black;
+      line-height: 1.6rem;
+    }
+
+    // Set theme colored menu.
+    @each $theme-color, $color in $theme-colors {
+      .theme-color-#{$theme-color} {
+        &.menu__item--has-first-level {
+          background-color: $color !important;
+
+          @if $color == $white {
+            border-bottom: 1px solid $gray;
+          }
+
+          &:focus,
+          &:hover {
+            background-color: $color !important;
+
+            @if $color == $white {
+              background-color: $primary-color !important;
+            }
+          }
+
+          > a {
+            @if $color == $yellow {
+              color: $primary-color;
+            }
+
+            @if $color == $white {
+              color: $primary-color;
+            }
+
+
+            &:hover,
+            &:focus {
+              @if $color == $yellow {
+                color: $primary-color;
+              }
+
+              @if $color == $white {
+                color: $white;
+              }
+            }
+          }
+
+          &.is-collapsed,
+          &.is-expanded {
+            > .menu__item--expanded-toggle::before {
+              color: $color;
+            }
+          }
+
+          > .menu {
+            border-bottom: 4px solid $color !important;
+            border-top: 4px solid $color !important;
+          }
+
+          &.is-active-trail {
+            background-color: $color !important;
+
+            @if $color == $white {
+              background-color: $primary-color !important;
+            }
+
+            > a {
+              @if $color == $yellow {
+                color: $primary-color;
+              }
+
+              @if $color == $white {
+                color: $white;
+              }
+            }
+          }
+
+          .menu__item--has-second-level,
+          .menu__item--has-third-level {
+            &:hover,
+            &:focus {
+              background-color: $color !important;
+
+              &.is-collapsed,
+              &.is-expanded {
+                > .menu__item--expanded-toggle::before {
+                  color: $color;
+                }
+              }
+
+              > a {
+                color: $white;
+
+                @if $color == $yellow {
+                  color: $primary-color;
+                }
+
+                @if $color == $white {
+                  color: $primary-color;
+                }
+              }
+            }
+
+            &.is-active-trail {
+              background-color: $color !important;
+            }
+
+            > a {
+              &:hover,
+              &:focus {
+                color: $white;
+
+                @if $color == $yellow {
+                  color: $primary-color;
+                }
+
+                @if $color == $white {
+                  color: $primary-color;
+                }
+              }
+
+              &.active-trail {
+                color: $white;
+
+                @if $color == $yellow {
+                  color: $primary-color;
+                }
+
+                @if $color == $white {
+                  color: $primary-color;
+                }
+              }
+            }
+          }
+
+          .e-service-wrapper {
+            background-color: lighten($color, 40%);
+
+            > a {
+              background-color: $color;
+            }
+          }
+        }
+      }
     }
 
     .menu__item {
@@ -97,8 +259,6 @@ $menu-padding: 1.25rem;
     }
 
     .menu__item--has-first-level {
-      border-bottom: 1px solid $white;
-
       &.is-expanded,
       &:last-child {
         border-bottom: 0 none;
@@ -126,12 +286,22 @@ $menu-padding: 1.25rem;
       &.is-expanded {
         .menu__item--expanded-toggle {
           background-color: $primary-color;
-          background-image: url('../../dist/image/plus-icon--white.svg');
-        }
-      }
 
-      &.is-expanded .menu__item--expanded-toggle {
-        background-image: url('../../dist/image/minus-icon--white.svg');
+          &::before {
+            color: $white;
+          }
+        }
+
+        &:hover,
+        &focus {
+          .menu__item--expanded-toggle {
+            background-color: $white;
+
+            &::before {
+              color: $black;
+            }
+          }
+        }
       }
 
       &.is-active-trail {
@@ -184,8 +354,9 @@ $menu-padding: 1.25rem;
             background-size: .938rem auto;
             border-bottom: 0 none;
             color: $primary-color;
-            display: inline-block;
+            display: block;
             font-weight: bold;
+            margin: 0;
             padding: 1.25rem 1.875rem 1.25rem 0;
             text-transform: none;
           }

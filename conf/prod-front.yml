@@ -13,7 +13,7 @@
    - { role: memcached, tags: [ 'memcached' ] }
    - { role: drush, tags: [ 'drush' ] }
    - { role: drupal-log, tags: [ 'drupal-log' ] }
-   - { role: external-smtp, tags: [ 'external-smtp' ] }
+   #- { role: external-smtp, tags: [ 'external-smtp' ] }
    - { role: nfs_client, tags: [ 'nfs_client' ] }
    - { role: monit, tags: [ 'monit' ] }
    - { role: newrelic, tags: [ 'newrelic' ] }
@@ -49,7 +49,7 @@
 
     partition_var_log: False
 
-    memory_app: 4096 # In MB should be atleast 4x php_memory_limit
+    memory_app: 6144 # In MB should be atleast 4x php_memory_limit
 
 
     ## Nginx ##
@@ -59,11 +59,15 @@
       - server_name: "{{ domain1_name }}"
         http_port: 8080
         docroot: "/var/www/{{ domain1_name }}/current/web"
-      - server_name: "beta.{{ domain2_name }}"
-        server_aliases: "{{ domain2_name }} beta.{{ domain3_name }}"
-        server_forwards: "{{ domain2_name }}"  # we redirect to beta subdomain
+      - server_name: "www.{{ domain2_name }}"
+        server_forwards: "{{ domain2_name }} beta.{{ domain2_name }} {{ domain1_name }}"  # we redirect to beta subdomain
         http_port: 8080
         docroot: "/var/www/{{ domain1_name }}/current/web"
+      - server_name: "www.{{ domain3_name }}"
+        server_forwards: "beta.{{ domain3_name }} {{ domain3_name }} {{ domain4_name }} www.{{ domain4_name }}"
+        http_port: 8080
+        docroot: "/var/www/{{ domain1_name }}/current/web"
+
 
     # You can also define aliases with app_dir_aliases, see ansible/playbook/roles/nginx/templates/all_apps.conf.j2
 
@@ -119,7 +123,7 @@
     ## Monit ##
     monit_enabled: True
     monit_alert_email_service_name: "{{ project_name }} front {{ ansible_nodename }}"
-    monit_alert_email_from: "alert@wundertools.com"
+    monit_alert_email_from: "fi.support@wunder.io"
     monit_alert_email_to: alert@wunder.io
     monit_allow:
       - localhost
@@ -138,6 +142,7 @@
     papertrail_conf: "/etc/log_files.yml"
     papertrail_logs:
       - /var/log/secure
+      - /var/log/maillog
 
     # papertrail host and port defined in prod-vars.yml
 
@@ -165,8 +170,11 @@
     certbot_domains:
       - "{{ domain1_name }}"
       - "beta.{{ domain2_name }}"
-      - "beta.{{ domain3_name }}"
-      #- "www.{{ domain2_name }}"
+      - "www.{{ domain2_name }}"
+      - "{{ domain3_name }}"
+      - "www.{{ domain3_name }}"
+      - "{{ domain4_name }}"
+      - "www.{{ domain4_name }}"
     certbot_renewal_docroot: /var/www/letsencrypt-auto
     #certbot_commands: allows yo uto customize the command to run, see ansible/playbook/roles/certbot/defaults/main.yml
 
@@ -176,7 +184,7 @@
     # This server also acts as a load balancer
     varnish:
       port: 8081
-      memory: 1G
+      memory: 8G
       # Basic configuration for error pages
       #error_header_cache_control: "no-cache, max-age: 0, must-revalidate"
       error_header_x_site_name: "{{ project_name }}"
@@ -206,13 +214,13 @@
               address: "{{ front1_ip }}"
               port: 8080
         - name: prod2
-          host: "beta.{{ domain2_name }}"
+          host: "www.{{ domain2_name }}"
           backends:
             - name: prod2_http1
               address: "{{ front1_ip }}"
               port: 8080
         - name: prod3
-          host: "beta.{{ domain3_name }}"
+          host: "www.{{ domain3_name }}"
           backends:
             - name: prod3_http1
               address: "{{ front1_ip }}"
@@ -238,31 +246,35 @@
         use_dhparam: True
         backends:
           - 127.0.0.1:8081
-      - server_name: "beta.{{ domain2_name }}"
-        server_forwards: "{{ domain2_name }} {{ domain1_name }}"  # we redirect to www subdomain
+      - server_name: "www.{{ domain2_name }}"
+        server_forwards: "{{ domain2_name }} beta.{{ domain2_name }} {{ domain1_name }}"  # we redirect to www subdomain
         ssl_certificate: "/etc/letsencrypt/live/{{ domain1_name }}/fullchain.pem"
         ssl_certificate_key: "/etc/letsencrypt/live/{{ domain1_name}}/privkey.pem"
         use_dhparam: True
         backends:
           - 127.0.0.1:8081
-      - server_name: "beta.{{ domain3_name }}"
-        ssl_certificate: "/etc/letsencrypt/live/beta.{{ domain3_name }}/fullchain.pem"
-        ssl_certificate_key: "/etc/letsencrypt/live/beta.{{ domain3_name}}/privkey.pem"
+      - server_name: "www.{{ domain3_name }}"
+        server_forwards: "beta.{{ domain3_name }} {{ domain3_name }} {{ domain4_name }} www.{{ domain4_name }}"
+        ssl_certificate: "/etc/letsencrypt/live/{{ domain1_name }}/fullchain.pem"
+        ssl_certificate_key: "/etc/letsencrypt/live/{{ domain1_name}}/privkey.pem"
         use_dhparam: True
         backends:
           - 127.0.0.1:8081
 
     # Forward to www and https.
     httpforwards:
-      - server_name: "{{ domain1_name }}"
-        forwarded_domains: "{{ domain1_name}}"
-      - server_name: "beta.{{ domain2_name }}"
-        forwarded_domains: "{{ domain2_name}} beta.{{ domain2_name }} {{ domain1_name }}"
-      - server_name: "beta.{{ domain3_name }}"
-        forwarded_domains: "{{ domain3_name}} beta.{{ domain3_name }}"
+      - server_name: "www.{{ domain2_name }}"
+        forwarded_domains: "beta.{{ domain2_name}} www.{{ domain2_name }} {{ domain2_name}} {{ domain1_name }}"
+      - server_name: "www.{{ domain3_name }}"
+        forwarded_domains: "{{ domain3_name}} www.{{ domain3_name }} beta.{{ domain3_name }} {{ domain4_name}} www.{{ domain4_name }}"
     # You can also use extra_forwards and httpextraforwards to define additional domains to listen & forward
     # See ansible/playbook/roles/sslterminator/templates/ssl_terminators.conf.j2 for reference.
 
+    php_extra_env_vars:
+      - key: "twitter_consumer_key"
+        value: "{{ twitter_consumer_key }}"
+      - key: "twitter_consumer_secret"
+        value: "{{ twitter_consumer_secret }}"
     
 
 

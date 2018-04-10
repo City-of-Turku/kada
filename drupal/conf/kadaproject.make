@@ -85,6 +85,18 @@ libraries[colorbox][download][url] = https://github.com/jackmoore/colorbox/archi
 libraries[openlayers][download][type] = get
 libraries[openlayers][download][url] = https://github.com/openlayers/openlayers/archive/v2.13.1.zip
 
+; Widget library
+libraries[ckeditor_widget][type] = libraries
+libraries[ckeditor_widget][download][type] = file
+libraries[ckeditor_widget][directory_name] = ckeditor/plugins/widget
+libraries[ckeditor_widget][download][url] = http://download.ckeditor.com/widget/releases/widget_4.4.8.zip
+
+; Line Utils library
+libraries[ckeditor_lineutils][type] = libraries
+libraries[ckeditor_lineutils][download][type] = file
+libraries[ckeditor_lineutils][directory_name] = ckeditor/plugins/lineutils
+libraries[ckeditor_lineutils][download][url] = http://download.ckeditor.com/lineutils/releases/lineutils_4.4.8.zip
+
 ; Contrib modules
 ; ------------
 
@@ -119,6 +131,12 @@ projects[better_exposed_filters][subdir] = contrib
 projects[better_formats][version] = 1.0-beta2
 projects[better_formats][subdir] = contrib
 
+projects[bigmenu][type] = "module"
+projects[bigmenu][subdir] = "contrib"
+projects[bigmenu][download][type] = "git"
+projects[bigmenu][download][url] = "http://git.drupal.org/project/bigmenu.git"
+projects[bigmenu][download][revision] = "ab3bc0592234a36df4a36746909e54350565785a"
+
 ; 1.3. may have caused some trouble when enabling/disabling theme,
 ; updated to 1.4.
 projects[breakpoints][version] = 1.4
@@ -139,6 +157,12 @@ projects[colorbox][subdir] = contrib
 projects[conditional_fields][version] = 3.0-alpha2
 projects[conditional_fields][subdir] = contrib
 
+projects[content_lock][version] = 3.0-beta1
+projects[content_lock][subdir] = contrib
+
+projects[content_taxonomy][version] = 1.0-rc1
+projects[content_taxonomy][subdir] = contrib
+
 projects[context][version] = 3.7
 projects[context][subdir] = contrib
 ; Fixes context ui performance issues
@@ -156,6 +180,9 @@ projects[context_entity_field][download][url] = "http://git.drupal.org/project/c
 projects[context_entity_field][download][revision] = "97170bcfb397c947034e5817814bb3eaac458e5f"
 ; Patch makes the view mode work better when there might be multiple entities
 projects[context_entity_field][patch][] = "https://www.drupal.org/files/issues/context_entity_field-view_mode-2022197-4.patch"
+
+projects[context_error][version] = 1.0
+projects[context_error][subdir] = contrib
 
 projects[context_omega][version] = 1.1
 projects[context_omega][subdir] = contrib
@@ -187,6 +214,9 @@ projects[diff][subdir] = contrib
 projects[domain][version] = 3.13
 projects[domain][subdir] = contrib
 
+projects[domain_analytics][version] = 1.0-alpha2
+projects[domain_analytics][subdir] = contrib
+
 projects[domaincontext][version] = 1.0-alpha1
 projects[domaincontext][subdir] = contrib
 ; Fix to use machine names instead of ids
@@ -202,6 +232,12 @@ projects[domain_variable][subdir] = contrib
 projects[domain_variable][patch][] = "https://www.drupal.org/files/issues/domain_variable_i18n_fixes-2308283-4.patch"
 
 projects[domain_feeds][version] = 1.4
+
+projects[domain_views][type] = "module"
+projects[domain_views][subdir] = "contrib"
+projects[domain_views][download][type] = "git"
+projects[domain_views][download][url] = "http://git.drupal.org/project/domain_views.git"
+projects[domain_views][download][revision] = 074a167b82b0db9c19a3a9dddfb0f8e77e6ee068
 
 projects[ds][version] = 2.14
 projects[ds][subdir] = contrib
@@ -230,6 +266,10 @@ projects[entityqueue][version] = 1.1
 projects[entityqueue][subdir] = contrib
 ; Adds export for entityqueue subqueues
 projects[entityqueue][patch][] = "../patches/entityqueue_subqueue_export.patch"
+
+projects[entity_action_log][version] = 1.0-beta2
+projects[entity_action_log][subdir] = contrib
+projects[entity_action_log][patch][] = "https://www.drupal.org/files/issues/2018-03-23/2955606-2_fix_notice.patch"
 
 ; Only dev version is available for entity_base_type module.
 projects[entity_base_type][type] = module
@@ -278,7 +318,7 @@ projects[features_extra][subdir] = contrib
 projects[field_collection][version] = 1.0-beta12
 projects[field_collection][subdir] = contrib
 
-projects[field_group][version] = 1.5
+projects[field_group][version] = 1.6
 projects[field_group][subdir] = contrib
 
 projects[feeds][version] = "2.0-beta3"
@@ -382,7 +422,7 @@ projects[linkchecker][subdir] = contrib
 projects[linkit][version] = 3.5
 projects[linkit][subdir] = "contrib"
 ; Entity translation support
-projects[linkit][patch][] = "https://www.drupal.org/files/issues/entity_translation-2280441-31.patch"
+;projects[linkit][patch][] = "https://www.drupal.org/files/issues/entity_translation-2280441-31.patch"
 
 projects[maxlength][version] = 3.2
 projects[maxlength][subdir] = contrib
@@ -540,12 +580,14 @@ projects[search_api][subdir] = contrib
 projects[search_api_ajax][version] = 1.2
 projects[search_api_ajax][subdir] = "contrib"
 
+projects[search_api_live_results][version] = 1.0
+projects[search_api_live_results][subdir] = contrib
+projects[search_api_live_results][patch][] = "https://www.drupal.org/files/views-integration-1392650.patch"
+projects[search_api_live_results][patch][] = "../patches/search_api_live_results.patch"
+
 ; Only dev-version is available
-projects[search_api_et][type] = "module"
+projects[search_api_et][version] = "2.0-alpha7"
 projects[search_api_et][subdir] = "contrib"
-projects[search_api_et][download][type] = "git"
-projects[search_api_et][download][url] = "http://git.drupal.org/project/search_api_et.git"
-projects[search_api_et][download][revision] = "a56f5273bc4cef18ebac797a9f04410224601d2f"
 
 projects[search_api_override][version] = 1.0-rc1
 projects[search_api_override][subdir] = contrib
@@ -615,6 +657,9 @@ projects[variable][subdir] = contrib
 projects[varnish][version] = 1.4
 projects[varnish][subdir] = contrib
 
+projects[video_embed_field][version] = 2.0-beta11
+projects[video_embed_field][subdir] = contrib
+
 projects[view_unpublished][version] = 1.2
 projects[view_unpublished][subdir] = contrib
 
@@ -633,11 +678,25 @@ projects[views_accordion][subdir] = contrib
 projects[views_data_export][version] = 3.2
 projects[views_data_export][subdir] = contrib
 
+;projects[views_datasource][version] = 1.0-alpha2
+projects[views_datasource][type] = module
+projects[views_datasource][download][type] = git
+projects[views_datasource][download][url] = "https://git.drupal.org/project/views_datasource.git"
+projects[views_datasource][download][revision] = d048d8125a334e00ff8b05c9ec0feafdc20163b3
+projects[views_datasource][subdir] = contrib
+projects[views_datasource][patch][] = "https://www.drupal.org/files/issues/views_datasource-1881670-16-multiple-fields-render.patch"
+projects[views_datasource][patch][] = "https://www.drupal.org/files/issues/2018-03-26/2955990-2_fix_keys.patch"
+projects[views_datasource][patch][] = "https://www.drupal.org/files/issues/2018-03-26/2956000-2_link_scald_support.patch"
+
 projects[views_bulk_operations][version] = 3.4
 projects[views_bulk_operations][subdir] = contrib
 
 projects[views_default_view_override][version] = 2.0
 projects[views_default_view_override][subdir] = contrib
+
+projects[views_distinct][version] = 1.0
+projects[views_distinct][subdir] = contrib
+projects[views_distinct][patch][] = "https://www.drupal.org/files/issues/2018-04-06/views_distinct-use_variables_as_storage-2098557-15.patch"
 
 projects[views_rss][version] = 2.0-rc4
 projects[views_rss][subdir] = contrib

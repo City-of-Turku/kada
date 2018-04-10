@@ -180,6 +180,18 @@
     }
   };
 
+  Drupal.behaviors.poriMainMenuHover = {
+    attach: function (context) {
+      $('.l-navigation .menu .menu__item', context).once('main-menu-hover', function () {
+        $(this).hoverIntent(
+          function() {
+            $(this).toggleClass('menu__item--hover');
+          }
+        );
+      });
+    }
+  };
+
   Drupal.behaviors.kadaFooterMenuBehavior = {
     attach: function (context) {
       $('.l-region--footer .menu__item--expanded-toggle').click(
@@ -267,7 +279,18 @@
   //Include top menu to mobile menu
   Drupal.behaviors.kadaTopMenuMobile = {
     attach: function (context) {
-      $('.responsive-menus-0-0 > ul.menu', context).once('top-menu-mobile', function () {
+      $('.l-navigation-top ul.menu', context).once('top-menu-mobile', function () {
+        $(this).find('.menu__item').each(function () {
+          var $thisMenuItem = $(this);
+          $thisMenuItem.clone().addClass('theme-color-white visitpori-theme-color-white menu__item--top-menu').appendTo('.responsive-menus-0-0 > ul.menu');
+        });
+      });
+    }
+  };
+
+  Drupal.behaviors.poriEserviceLinks = {
+    attach: function (context) {
+      $('.responsive-menus-0-0 > ul.menu', context).once('pori-eservice-links', function () {
         // E-service links
         $(this).find('.menu__item--has-first-level > ul.menu').each(function () {
           var $thisMenu = $(this);
@@ -277,7 +300,7 @@
           if ($eServiceLink.length) {
             var $title = $('<a href="javascript:;" aria-label="' + (Drupal.t('E-services')) + '">' + Drupal.t('E-services') + ':</a>');
             var $list = $('<ul class="menu"></ul>');
-             $eServiceLink.each(function (i, link) {
+            $eServiceLink.each(function (i, link) {
               $list.append($('<li class="menu__item"></li>').append(link));
             });
             var $wrapper = $('<li class="e-service-wrapper"></li>').append([$title, $list]);
@@ -1128,6 +1151,135 @@
             });
           });
         });
+      });
+    }
+  };
+
+  Drupal.behaviors.slick = {
+    attach : function(context) {
+      // Slideshow item settings
+      $('.slide-container__content', context).once('slick').slick({
+        autoplay: true,
+        autoplaySpeed: 6000,
+        pauseOnHover: true,
+        infinite: true,
+        slidesToShow: 1,
+        customPaging: function (slick, index) {
+          return '<a>' + index + '</a>';
+        },
+        dots: true,
+        dotsClass: 'slick-dots',
+        prevArrow: '<a data-role="none" class="slide__arrow-prev" ></a>',
+        nextArrow: '<a data-role="none" class="slide__arrow-next" ></a>',
+        appendArrows: $('.slide-container__arrows'),
+        appendDots: $('.slide-container__dots')
+      });
+    }
+  };
+
+  // News archive filters mobile toggle
+  Drupal.behaviors.poriNewsArchiveFilters = {
+    attach: function (context) {
+      $('.news-archive__filters', context).once('news-archive-filters', function () {
+        $(this).find('.views-exposed-widget > label').click(function () {
+          $(this).parent().toggleClass('open');
+        });
+
+        // Add placeholder for the news archive free text search
+        var placeholder=Drupal.t('Search from news archive');
+        $(this).find('.views-widget-filter-combine input').attr('placeholder', placeholder);
+      });
+    }
+  };
+
+  // Person card list filters mobile toggle
+  Drupal.behaviors.poriPhoneBookFilters = {
+    attach: function (context) {
+      $('.person-card-list__filters .views-widget-filter-secondary', context).once('phone-book-filters', function () {
+        $(this).find('.form-item > label').click(function () {
+          $(this).parent().toggleClass('open');
+        });
+      });
+    }
+  };
+
+  // Accessibility description toggle
+  Drupal.behaviors.accessibilityDescriptionToggle = {
+    attach: function (context) {
+      $('.accessibility', context).once('accessibility', function () {
+        $(this).find('.accessibility__item--has-description').click(function (e) {
+          if ($(this).hasClass('accessibility__item--show-description')) {
+            $(this).removeClass('accessibility__item--show-description');
+          } else {
+            $(this).parent().find('.accessibility__item--show-description').removeClass('accessibility__item--show-description');
+            $(this).toggleClass('accessibility__item--show-description');
+          }
+          e.stopPropagation()
+        });
+
+        $(document).click(function(e) {
+          if ($(e.target).is('.accessibility__item--has-description') === false) {
+            $('.accessibility__item--has-description').removeClass('accessibility__item--show-description');
+          }
+        });
+      });
+    }
+  };
+
+  Drupal.behaviors.searchFieldPlaceholder = {
+    attach: function (context) {
+      $('.block--views-exp-main-search-page', context).once('searchFieldPlaceholder', function () {
+        var $searchField = $(this).find('.main-search__search-field');
+        var $searchFieldInput = $searchField.find('input[name="search_api_views_fulltext"]');
+
+        $searchFieldInput.attr('placeholder', Drupal.t('Search'));
+      });
+    }
+  };
+
+  Drupal.behaviors.headerSearchFieldToggle = {
+    attach: function (context) {
+      $('.l-region--branding .block--views-exp-main-search-page', context).once('searchToggle', function () {
+        var $searchField = $(this).find('.main-search__search-field');
+        var $searchButton = $(this).find('.main-search__search-button');
+        var $searchFieldInput = $searchField.find('input[name="search_api_views_fulltext"]');
+        var $searchToggler = $(this).find('.main-search__search-button--toggler');
+
+        $searchFieldInput.attr('placeholder', Drupal.t('Search'));
+
+        var toggleVisibility = function (element) {
+          if (element.hasClass('is-active')) {
+            element.removeClass('is-active');
+          } else {
+            element.addClass('is-active');
+          }
+        };
+
+        $searchToggler.on('click', function(e) {
+          e.stopPropagation();
+          toggleVisibility($searchField);
+          toggleVisibility($searchButton);
+          toggleVisibility($searchToggler);
+        });
+
+        $searchField.click(function (e) {
+          e.stopPropagation();
+        });
+
+        $searchButton.click(function (e) {
+          e.stopPropagation();
+        });
+
+        $('html').click(function () {
+          if ($searchField.hasClass('is-active')) {
+            $searchField.removeClass('is-active');
+          }
+          if ($searchButton.hasClass('is-active')) {
+            $searchButton.removeClass('is-active');
+            $searchToggler.addClass('is-active');
+          }
+        });
+
       });
     }
   };

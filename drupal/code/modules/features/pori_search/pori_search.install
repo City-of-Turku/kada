@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the pori_search module.
+ */
+
+/**
+ * Enable the Solr override module.
+ */
+function pori_search_update_7100(&$sandbox) {
+  module_enable(array('search_api_override'));
+}

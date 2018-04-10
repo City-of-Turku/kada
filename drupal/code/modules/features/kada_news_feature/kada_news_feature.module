@@ -18,16 +18,20 @@ function kada_news_feature_block_info() {
 function kada_news_feature_block_view($delta = '') {
   $block = array();
   if ($delta == 'news_archive_link') {
-    global $language;
+    global $language, $_domain;
     if ($language->language == 'fi') {
-      $block['content'] = l(t('News archive'), 'uutisarkisto');
+      $url = 'uutisarkisto';
     }
     elseif ($language->language == 'en' ) {
-      $block['content'] = l(t('News archive'), 'news-archive');
+      $url = 'news-archive';
     }
     elseif ($language->language == 'sv' ) {
-      $block['content'] = l(t('News archive'), 'nyhetsarkiv');
+      $url = 'nyhetsarkiv';
     }
+    if ($_domain['machine_name'] == 'visitpori_fi') {
+      $url = 'visitpori/' . $url;
+    }
+    $block['content'] = l(t('News archive'), $url);
   }
   return $block;
 }

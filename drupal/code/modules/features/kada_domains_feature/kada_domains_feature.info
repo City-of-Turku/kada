@@ -10,6 +10,7 @@ dependencies[] = domain
 dependencies[] = domain_alias
 dependencies[] = domain_variable
 dependencies[] = domain_variable_i18n
+dependencies[] = domain_views
 dependencies[] = domaincontext
 dependencies[] = features
 dependencies[] = strongarm

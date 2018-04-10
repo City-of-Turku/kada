@@ -60,7 +60,7 @@ $conf['varnish_version'] = "4";
 
 $env = getenv('WKV_SITE_ENV');
 switch ($env) {
-    case 'production':
+    case 'prod':
       $conf['simple_environment_indicator'] = '#d4000f Production';
       $conf['file_private_path'] = '/var/www/pori.prod.wunder.io/private_files';
       $conf['file_temporary_path'] = '/var/www/pori.prod.wunder.io/tmp';
@@ -82,23 +82,25 @@ switch ($env) {
 
     case 'local':
       $conf['simple_environment_indicator'] = '#88b700 Local';
+      $conf['file_temporary_path'] = "/tmp";
       $conf['preprocess_css'] = false;
       $conf['preprocess_js'] = false;
       $conf['googleanalytics_account'] = ''; // Make sure the GA isn't enabled in this env
+      $conf['stage_file_proxy_origin'] = 'http://beta.pori.fi';
     break;
 }
 
 
-if ($env != 'production') {
+if (!empty($env) && $env != 'prod') {
   // Override search API server settings fetched from default configuration.
   $conf['search_api_override_mode'] = 'load';
   $conf['search_api_override_servers'] = array(
-    'kada' => array(
-      'name' => 'KADA',
+    'pori_search_server' => array(
+      'name' => 'Pori search server',
       'options' => array(
         'host' => 'localhost',
         'port' => '8983',
-        'path' => '/solr/kada',
+        'path' => '/solr',
         'http_user' => '',
         'http_pass' => '',
         'excerpt' => 1,
@@ -117,7 +119,6 @@ if (!defined('IS_BE_PROBE') || !IS_BE_PROBE) {
 }
 
 $conf['menu_override_parent_selector'] = true;
-$conf['file_temporary_path'] = "/tmp";
 
 // Set "domain space" that is necessary to handle redirects between domains
 //define('DOMAIN_SPACE', 'pori-kada-development.druid.fi');

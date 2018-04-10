@@ -35,7 +35,7 @@ function visitpori_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_23_expanded';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['menu_block_23_expanded'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -84,7 +84,7 @@ function visitpori_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_24_depth';
-  $strongarm->value = '1';
+  $strongarm->value = '3';
   $export['menu_block_24_depth'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -98,7 +98,7 @@ function visitpori_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_24_expanded';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['menu_block_24_expanded'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -224,7 +224,7 @@ function visitpori_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_26_expanded';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['menu_block_26_expanded'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -273,7 +273,7 @@ function visitpori_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_27_depth';
-  $strongarm->value = '1';
+  $strongarm->value = '3';
   $export['menu_block_27_depth'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -287,7 +287,7 @@ function visitpori_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_27_expanded';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['menu_block_27_expanded'] = $strongarm;
 
   $strongarm = new stdClass();

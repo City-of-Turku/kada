@@ -75,13 +75,12 @@ function kada_configuration_feature_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'lime' => 'Lime',
-        'mint' => 'Mint',
+        'red' => 'Red',
         'orange' => 'Orange',
-        'pink' => 'Pink',
-        'gray' => 'Gray',
-        'blue' => 'Blue',
         'yellow' => 'Yellow',
+        'green' => 'Green',
+        'greenDark' => 'GreenDark',
+        'lightBlue' => 'LightBlue',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
@@ -161,27 +160,6 @@ function kada_configuration_feature_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'number_integer',
-  );
-
-  // Exported field_base: 'field_radioactivity'.
-  $field_bases['field_radioactivity'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_radioactivity',
-    'indexes' => array(
-      'energy' => array(
-        0 => 'radioactivity_energy',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'radioactivity',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-    ),
-    'translatable' => 0,
-    'type' => 'radioactivity',
   );
 
   // Exported field_base: 'field_target_audience'.

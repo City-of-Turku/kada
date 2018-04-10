@@ -256,8 +256,12 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  margin-top: 2.5rem;
+  margin: 1.25rem 0 2.5rem;
   width: 100%;
+
+  @media screen and (min-width: $container) {
+    margin-bottom: 1.875rem + 1.25rem;
+  }
 }
 
 .liftup-box--wide {
@@ -268,6 +272,7 @@
   margin: 0;
   padding: 0;
 
+  .node--page,
   .node--liftup {
     align-items: flex-start;
     border-top: .938rem solid $primary-color;
@@ -283,10 +288,12 @@
         background-color: rgba($color, .2);
         border-top: .938rem solid $color;
 
+        .field--name-title h2,
         .field--name-field-visible-title h2 {
           color: $color;
         }
 
+        .field--name-duplicate-title a,
         .field--name-field-link-to-content a {
           border: 1px solid $color;
           color: $color;
@@ -309,7 +316,8 @@
     }
   }
 
-  &:nth-child(2) {
+  &:nth-child(even) {
+    .node--page,
     .node--liftup {
       flex-direction: column-reverse;
 
@@ -319,12 +327,14 @@
     }
   }
 
+  .field--name-title h2,
   .field--name-field-visible-title h2 {
     @media screen and (min-width: $tablet-landscape) {
       margin-bottom: 1.25rem;
     }
   }
 
+  .field--name-duplicate-title a,
   .field--name-field-link-to-content a {
     border: 1px solid $primary-color;
     color: $primary-color;
@@ -376,11 +386,11 @@
 
   .liftup-box__group-left {
     float: none;
-    padding: 1.5em $container-gutter 0;
+    padding: 1.5em $container-gutter 1rem;
     width: 100%;
 
     @media screen and (min-width: $mobile-landscape-wide) {
-      padding: 1.5em 0 0;
+      padding: 1.5em $container-gutter * 2 2rem;
     }
 
     @media screen and (min-width: $tablet-landscape) {
@@ -393,7 +403,7 @@
     }
   }
 
-  &:nth-child(2) {
+  &:nth-child(even) {
     .liftup-box__group-right {
       @media screen and (min-width: 1400px) {
         margin-left: 0;
@@ -414,6 +424,10 @@
   margin: 0 -1.25rem;
 
   @media screen and (min-width: $mobile-landscape-wide) {
+    margin: 0 -2.5rem;
+  }
+
+  @media screen and (min-width:$tablet-landscape) {
     margin: 0;
   }
 }
@@ -450,14 +464,6 @@
       margin-top: 0;
 
       @media screen and (min-width: $mobile-landscape-wide) {
-        margin-top: 2rem;
-      }
-    }
-
-    .field--name-post-date {
-      margin: 1.25rem 0 .313rem;
-
-      @media screen and (min-width: $tablet-landscape) {
         margin-top: 2rem;
       }
     }

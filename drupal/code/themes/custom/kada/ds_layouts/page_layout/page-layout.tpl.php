@@ -5,8 +5,15 @@
  * Page layout template
  */
 
-if (!empty($sidebar || $additional_information)) {
-    $additional_classes="page--has-sidebar";
+$no_sidebar = false;
+
+// If the sidebar or additional information blocks are empty there shouldn't be sidebar
+if ((empty($sidebar || $additional_information)) || ($is_front == true) || ($field_theme_main_page['und'][0]['value'] == 1)) {
+  $no_sidebar = true;
+}
+
+if ($no_sidebar == false) {
+  $additional_classes="page--has-sidebar";
 }
 ?>
 <<?php print $layout_wrapper; print $layout_attributes; ?> class="<?php print $classes;?> <?php print $additional_classes;?>">
@@ -19,13 +26,19 @@ if (!empty($sidebar || $additional_information)) {
     <?php print $main_content; ?>
 </<?php print $main_content_wrapper ?>>
 
-<?php if (!empty($sidebar || $additional_information)): ?>
+<?php if ($no_sidebar == false): ?>
   <<?php print $sidebar_wrapper ?> class="page__sidebar <?php print $sidebar_classes; ?>">
     <?php print $sidebar; ?>
     <?php if (!empty($additional_information)): ?>
       <div class="page__additional-information">
         <h3 class="page__additional-information__header"><?php print t('Additional information') . ':'; ?></h3>
         <?php print $additional_information ?>
+      </div>
+    <?php endif; ?>
+    <?php if (!empty($contact_information)): ?>
+      <div class="page__contact-information">
+          <h3 class="page__contact-information__header"><?php print t('Contact us') . ':'; ?></h3>
+        <?php print $contact_information ?>
       </div>
     <?php endif; ?>
   </<?php print $sidebar_wrapper ?>>

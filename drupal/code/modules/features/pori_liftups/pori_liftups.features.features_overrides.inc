@@ -29,12 +29,29 @@ function pori_liftups_features_override_default_overrides() {
   $overrides["ds_layout_settings.node|liftup|current.settings|regions|main|4"] = 'links';
   $overrides["ds_layout_settings.node|liftup|current.settings|regions|main|5"]["DELETED"] = TRUE;
 
-  // Exported overrides for: field_group
-  $overrides["field_group.group_liftup_header|node|news_item|current.group_liftup_header|node|news_item|current"]["DELETED"] = TRUE;
-
   // Exported overrides for: views_view
   $overrides["views_view.kada_current.display|default|display_options|css_class"] = 'liftup-box-list liftup-box-list--current';
   $overrides["views_view.kada_current_promoted_.display|default|display_options|css_class"] = 'liftup-box-list liftup-box-list--current';
+  $overrides["views_view.kada_top_carousel.display|block_1|display_options|fields|field_link_to_content|alter|text"] = '<div class="flex-caption__target-group">[field_theme]</div>
+              <div class="flex-caption__body">[body]</div>';
+  $overrides["views_view.kada_top_carousel.display|block_1|display_options|fields|field_link_to_content|empty"] = '<div class="flex-caption__target-group">[field_theme]</div>
+              <div class="flex-caption__body">[body]</div>';
+  $overrides["views_view.kada_top_carousel.display|block_1|display_options|fields|field_target_audience"]["DELETED"] = TRUE;
+  $overrides["views_view.kada_top_carousel.display|block_2|display_options|fields|field_link_to_content|alter|text"] = '<div class="flex-caption__target-group">[field_theme]</div>
+          <div class="flex-caption__body">[body]</div>';
+  $overrides["views_view.kada_top_carousel.display|block_2|display_options|fields|field_link_to_content|empty"] = '<div class="flex-caption__target-group">[field_theme]</div>
+          <div class="flex-caption__body">[body]</div>';
+  $overrides["views_view.kada_top_carousel.display|block_2|display_options|fields|field_target_audience"]["DELETED"] = TRUE;
+  $overrides["views_view.kada_top_carousel.display|section|display_options|fields|field_link_to_content|alter|text"] = '<div class="flex-caption__target-group">[field_theme]</div>
+              <div class="flex-caption__body">[body]</div>';
+  $overrides["views_view.kada_top_carousel.display|section|display_options|fields|field_link_to_content|empty"] = '<div class="flex-caption__target-group">[field_theme]</div>
+              <div class="flex-caption__body">[body]</div>';
+  $overrides["views_view.kada_top_carousel.display|section|display_options|fields|field_target_audience"]["DELETED"] = TRUE;
+  $overrides["views_view.kada_top_carousel.display|slider|display_options|fields|field_link_to_content|alter|text"] = '<div class="flex-caption__target-group">[field_theme]</div>
+              <div class="flex-caption__body">[body]</div>';
+  $overrides["views_view.kada_top_carousel.display|slider|display_options|fields|field_link_to_content|empty"] = '<div class="flex-caption__target-group">[field_theme]</div>
+              <div class="flex-caption__body">[body]</div>';
+  $overrides["views_view.kada_top_carousel.display|slider|display_options|fields|field_target_audience"]["DELETED"] = TRUE;
 
  return $overrides;
 }

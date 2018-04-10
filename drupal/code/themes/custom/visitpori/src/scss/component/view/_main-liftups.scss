@@ -10,6 +10,10 @@ $main-liftup-content-padding: 20px;
   margin: 0 -1.25rem;
 
   @media screen and (min-width: $mobile-landscape-wide) {
+    margin: 3% -2.5rem 2%;
+  }
+
+  @media screen and (min-width: $tablet-portrait) {
     margin: 3% 0 2%;
   }
 }
@@ -30,8 +34,11 @@ $main-liftup-content-padding: 20px;
   border: 0;
   width: 100%;
 
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: $tablet-portrait) {
     margin-bottom: .85rem;
+  }
+
+  @media screen and (min-width: $desktop) {
     width: 49.5%;
   }
 }
@@ -81,7 +88,7 @@ $main-liftup-content-padding: 20px;
   width: 100%;
 
   @media screen and (min-width: $mobile-landscape-wide) {
-    padding: 0;
+    padding: 0 $container-gutter * 2;
   }
 
   @media screen and (min-width: $tablet-portrait) {
