@@ -28,6 +28,13 @@ function pori_liftups_features_override_default_overrides() {
   $overrides["ds_layout_settings.node|liftup|current.settings|regions|main|3"] = 'body';
   $overrides["ds_layout_settings.node|liftup|current.settings|regions|main|4"] = 'links';
   $overrides["ds_layout_settings.node|liftup|current.settings|regions|main|5"]["DELETED"] = TRUE;
+  $overrides["ds_layout_settings.node|liftup|project.settings|fields|post_date"]["DELETED"] = TRUE;
+  $overrides["ds_layout_settings.node|liftup|project.settings|regions|left|0"] = 'field_visible_title';
+  $overrides["ds_layout_settings.node|liftup|project.settings|regions|left|1"] = 'body';
+  $overrides["ds_layout_settings.node|liftup|project.settings|regions|left|2"] = 'field_link_to_content';
+  $overrides["ds_layout_settings.node|liftup|project.settings|regions|left|3"]["DELETED"] = TRUE;
+  $overrides["ds_layout_settings.node|liftup|project.settings|regions|right|3"] = 'field_main_image';
+  $overrides["ds_layout_settings.node|liftup|project.settings|regions|right|4"]["DELETED"] = TRUE;
 
   // Exported overrides for: views_view
   $overrides["views_view.kada_current.display|default|display_options|css_class"] = 'liftup-box-list liftup-box-list--current';
