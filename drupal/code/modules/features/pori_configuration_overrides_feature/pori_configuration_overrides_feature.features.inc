@@ -225,6 +225,12 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'type' => 'hidden',
       'weight' => 0,
     ); /* WAS: '' */
+    $data['node-liftup-field_keywords']['display']['small_liftup_banner'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 30,
+    ); /* WAS: '' */
     $data['node-liftup-field_keywords']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
   if (isset($data['node-news_item-field_keywords'])) {
@@ -939,29 +945,6 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
 }
 
 /**
- * Implements hook_default_scald_context_config_alter().
- */
-function pori_configuration_overrides_feature_default_scald_context_config_alter(&$data)
-{
-  if (isset($data['full'])) {
-    $data['full']->player['image']['*'] = 'image_figure'; /* WAS: 'default' */
-    $data['full']->player['image']['settings']['caption'] = '[atom:title], by [atom:author]'; /* WAS: '' */
-    $data['full']->player['image']['settings']['classes'] = ''; /* WAS: '' */
-    $data['full']->transcoder['image']['*'] = 'group-responsive_content_full'; /* WAS: 'passthrough' */
-  }
-}
-
-/**
- * Implements hook_image_styles_alter().
- */
-function pori_configuration_overrides_feature_image_styles_alter(&$data) {
-  if (!isset($data['site_logo']['storage']) || $data['site_logo']['storage'] == IMAGE_STORAGE_DEFAULT) {
-    $data['site_logo']['effects'] = array_values($data['site_logo']['effects']);
-    $data['site_logo']['effects'][0]['data']['height'] = 50;
-  }
-}
-
-/**
  * Implements hook_flexslider_default_presets_alter().
  */
 function pori_configuration_overrides_feature_flexslider_default_presets_alter(&$data) {
@@ -971,9 +954,62 @@ function pori_configuration_overrides_feature_flexslider_default_presets_alter(&
 }
 
 /**
+ * Implements hook_image_styles_alter().
+ */
+function pori_configuration_overrides_feature_image_styles_alter(&$data) {
+  if (isset($data['site_logo'])) {
+
+  if (!isset($data['site_logo']['storage']) || $data['site_logo']['storage'] == IMAGE_STORAGE_DEFAULT) {
+    $data['site_logo']['effects'] = array_values($data['site_logo']['effects']);
+    $data['site_logo']['effects'][0]['data']['height'] = 50;
+  }
+  }
+}
+
+/**
+ * Implements hook_default_scald_context_config_alter().
+ */
+function pori_configuration_overrides_feature_default_scald_context_config_alter(&$data) {
+  if (isset($data['full'])) {
+    $data['full']->player['image']['*'] = 'image_figure'; /* WAS: 'default' */
+    $data['full']->player['image']['settings']['caption'] = '[atom:title], by [atom:author]'; /* WAS: '' */
+    $data['full']->player['image']['settings']['classes'] = ''; /* WAS: '' */
+    $data['full']->transcoder['image']['*'] = 'group-responsive_content_full'; /* WAS: 'passthrough' */
+  }
+}
+
+/**
  * Implements hook_strongarm_alter().
  */
 function pori_configuration_overrides_feature_strongarm_alter(&$data) {
+  if (isset($data['field_bundle_settings_node__liftup'])) {
+    $data['field_bundle_settings_node__liftup']->value['extra_fields']['display']['domain']['small_liftup_banner'] = array(
+      'weight' => 29,
+      'visible' => FALSE,
+    ); /* WAS: '' */
+    $data['field_bundle_settings_node__liftup']->value['extra_fields']['display']['language']['small_liftup_banner'] = array(
+      'weight' => 28,
+      'visible' => FALSE,
+    ); /* WAS: '' */
+    $data['field_bundle_settings_node__liftup']->value['view_modes']['attraction_card_mosaic_item'] = array(
+      'custom_settings' => FALSE,
+    ); /* WAS: '' */
+    $data['field_bundle_settings_node__liftup']->value['view_modes']['event_search_result'] = array(
+      'custom_settings' => FALSE,
+    ); /* WAS: '' */
+    $data['field_bundle_settings_node__liftup']->value['view_modes']['live_results_search'] = array(
+      'custom_settings' => TRUE,
+    ); /* WAS: '' */
+    $data['field_bundle_settings_node__liftup']->value['view_modes']['person_card'] = array(
+      'custom_settings' => FALSE,
+    ); /* WAS: '' */
+    $data['field_bundle_settings_node__liftup']->value['view_modes']['product'] = array(
+      'custom_settings' => FALSE,
+    ); /* WAS: '' */
+    $data['field_bundle_settings_node__liftup']->value['view_modes']['small_liftup_banner'] = array(
+      'custom_settings' => TRUE,
+    ); /* WAS: '' */
+  }
   if (isset($data['field_bundle_settings_node__person'])) {
     $data['field_bundle_settings_node__person']->value['extra_fields']['display']['domain']['person_card'] = array(
       'weight' => 40,
@@ -1000,6 +1036,15 @@ function pori_configuration_overrides_feature_strongarm_alter(&$data) {
   }
   if (isset($data['field_bundle_settings_node__place'])) {
     $data['field_bundle_settings_node__place']->value['extra_fields']['display']['domain']['teaser']['weight'] = 23; /* WAS: 19 */
+  }
+  if (isset($data['field_bundle_settings_scald_atom__image'])) {
+    $data['field_bundle_settings_scald_atom__image']->value['extra_fields']['display']['atom']['small_liftup_banner'] = array(
+      'weight' => 0,
+      'visible' => TRUE,
+    ); /* WAS: '' */
+    $data['field_bundle_settings_scald_atom__image']->value['view_modes']['small_liftup_banner'] = array(
+      'custom_settings' => TRUE,
+    ); /* WAS: '' */
   }
   if (isset($data['menu_block_20_expanded'])) {
     $data['menu_block_20_expanded']->value = 1; /* WAS: 0 */
@@ -1032,6 +1077,14 @@ function pori_configuration_overrides_feature_strongarm_alter(&$data) {
     $data['scald_custom_contexts']->value['content_250_wide'] = array(
       'name' => 'content_250_wide',
       'title' => 'Content 250 wide',
+      'description' => '',
+      'render_language' => 'XHTML',
+      'parseable' => TRUE,
+      'formats' => array(),
+    ); /* WAS: '' */
+    $data['scald_custom_contexts']->value['small_liftup_banner'] = array(
+      'name' => 'small_liftup_banner',
+      'title' => 'Small liftup banner',
       'description' => '',
       'render_language' => 'XHTML',
       'parseable' => TRUE,
