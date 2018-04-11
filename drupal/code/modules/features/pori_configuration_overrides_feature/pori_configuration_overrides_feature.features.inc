@@ -1037,6 +1037,14 @@ function pori_configuration_overrides_feature_strongarm_alter(&$data) {
       'parseable' => TRUE,
       'formats' => array(),
     ); /* WAS: '' */
+    $data['scald_custom_contexts']->value['page_carousel'] = array(
+      'name' => 'page_carousel',
+      'title' => 'Page carousel',
+      'description' => '',
+      'render_language' => 'XHTML',
+      'parseable' => TRUE,
+      'formats' => array(),
+    ); /* WAS: '' */
   }
   if (isset($data['variable_realm_list_domain'])) {
     $data['variable_realm_list_domain']->value[0] = 'googleanalytics_account'; /* WAS: 'piwik_site_id' */
