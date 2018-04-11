@@ -43,7 +43,7 @@ default:
       - drush: cc drush
       # - drush: composer-json-rebuild -y
       # - drush: composer-manager update -y
-      - shell: systemctl restart nginx php-fpm varnish memcached
+      - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 
     # Running command "./build.sh update" without environment or with "vagrant" as environment "./build.sh update vagrant" will also make sure that stage_file_proxy is enabled.
@@ -57,7 +57,7 @@ default:
       - drush: cc drush
       # - drush: composer-json-rebuild -y
       # - drush: composer-manager update -y
-      - shell: systemctl restart nginx php-fpm varnish memcached
+      - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 # Test environment:
 develop:
