@@ -92,6 +92,18 @@ function pori_configuration_overrides_feature_ds_layout_settings_info_alter(&$da
     $data['node|place|teaser']->settings['regions']['main_content'][6] = 'field_read_more'; /* WAS: 'node_link' */
     unset($data['node|place|teaser']->settings['fields']['node_link']);
   }
+  if (isset($data['scald_atom|image|content_full'])) {
+    $data['scald_atom|image|content_full']->settings['fields']['atom'] = 'main'; /* WAS: '' */
+    $data['scald_atom|image|content_full']->settings['layout_disable_css'] = FALSE; /* WAS: '' */
+    $data['scald_atom|image|content_full']->settings['regions']['main'][0] = 'atom'; /* WAS: 'scald_thumbnail' */
+    unset($data['scald_atom|image|content_full']->settings['fields']['scald_thumbnail']);
+  }
+  if (isset($data['scald_atom|image|content_half'])) {
+    $data['scald_atom|image|content_half']->settings['fields']['atom'] = 'main'; /* WAS: '' */
+    $data['scald_atom|image|content_half']->settings['layout_disable_css'] = FALSE; /* WAS: '' */
+    $data['scald_atom|image|content_half']->settings['regions']['main'][0] = 'atom'; /* WAS: 'scald_thumbnail' */
+    unset($data['scald_atom|image|content_half']->settings['fields']['scald_thumbnail']);
+  }
   if (isset($data['taxonomy_term|accessibility|default'])) {
     $data['taxonomy_term|accessibility|default']->layout = 'accessibility_layout'; /* WAS: 'minimal_layout' */
     $data['taxonomy_term|accessibility|default']->settings['fields']['description_field'] = 'main_content'; /* WAS: '' */
@@ -939,11 +951,28 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
 }
 
 /**
+ * Implements hook_default_scald_context_config_alter().
+ */
+function pori_configuration_overrides_feature_default_scald_context_config_alter(&$data)
+{
+  if (isset($data['content_full'])) {
+    $data['content_full']->player['image']['settings']['caption'] = ''; /* WAS: '[atom:title_text]' */
+  }
+  if (isset($data['content_half'])) {
+    $data['content_half']->player['image']['settings']['caption'] = ''; /* WAS: '[atom:title_text]' */
+  }
+  if (isset($data['full'])) {
+    $data['full']->player['image']['*'] = 'image_figure'; /* WAS: 'default' */
+    $data['full']->player['image']['settings']['caption'] = '[atom:title], by [atom:author]'; /* WAS: '' */
+    $data['full']->player['image']['settings']['classes'] = ''; /* WAS: '' */
+    $data['full']->transcoder['image']['*'] = 'group-responsive_content_full'; /* WAS: 'passthrough' */
+  }
+}
+
+/**
  * Implements hook_image_styles_alter().
  */
 function pori_configuration_overrides_feature_image_styles_alter(&$data) {
-
-
   if (!isset($data['site_logo']['storage']) || $data['site_logo']['storage'] == IMAGE_STORAGE_DEFAULT) {
     $data['site_logo']['effects'] = array_values($data['site_logo']['effects']);
     $data['site_logo']['effects'][0]['data']['height'] = 50;
@@ -990,6 +1019,15 @@ function pori_configuration_overrides_feature_strongarm_alter(&$data) {
   if (isset($data['field_bundle_settings_node__place'])) {
     $data['field_bundle_settings_node__place']->value['extra_fields']['display']['domain']['teaser']['weight'] = 23; /* WAS: 19 */
   }
+  if (isset($data['field_bundle_settings_scald_atom__image'])) {
+    $data['field_bundle_settings_scald_atom__image']->value['extra_fields']['display']['atom']['content_full']['visible'] = TRUE; /* WAS: FALSE */
+    $data['field_bundle_settings_scald_atom__image']->value['extra_fields']['display']['atom']['content_full']['weight'] = 0; /* WAS: 1 */
+    $data['field_bundle_settings_scald_atom__image']->value['extra_fields']['display']['atom']['content_half']['visible'] = TRUE; /* WAS: FALSE */
+    $data['field_bundle_settings_scald_atom__image']->value['extra_fields']['display']['atom']['content_half']['weight'] = 0; /* WAS: 1 */
+    $data['field_bundle_settings_scald_atom__image']->value['view_modes']['content_250_wide'] = array(
+      'custom_settings' => FALSE,
+    ); /* WAS: '' */
+  }
   if (isset($data['menu_block_20_expanded'])) {
     $data['menu_block_20_expanded']->value = 1; /* WAS: 0 */
   }
@@ -1021,6 +1059,14 @@ function pori_configuration_overrides_feature_strongarm_alter(&$data) {
     $data['scald_custom_contexts']->value['content_250_wide'] = array(
       'name' => 'content_250_wide',
       'title' => 'Content 250 wide',
+      'description' => '',
+      'render_language' => 'XHTML',
+      'parseable' => TRUE,
+      'formats' => array(),
+    ); /* WAS: '' */
+    $data['scald_custom_contexts']->value['page_carousel'] = array(
+      'name' => 'page_carousel',
+      'title' => 'Page carousel',
       'description' => '',
       'render_language' => 'XHTML',
       'parseable' => TRUE,

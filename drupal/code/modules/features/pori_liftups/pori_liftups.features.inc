@@ -32,6 +32,15 @@ function pori_liftups_ds_layout_settings_info_alter(&$data) {
     unset($data['node|liftup|current']->settings['regions']['header'][1]);
     unset($data['node|liftup|current']->settings['regions']['main'][5]);
   }
+  if (isset($data['node|liftup|project'])) {
+    $data['node|liftup|project']->settings['regions']['left'][0] = 'field_visible_title'; /* WAS: 'post_date' */
+    $data['node|liftup|project']->settings['regions']['left'][1] = 'body'; /* WAS: 'field_visible_title' */
+    $data['node|liftup|project']->settings['regions']['left'][2] = 'field_link_to_content'; /* WAS: 'body' */
+    $data['node|liftup|project']->settings['regions']['right'][3] = 'field_main_image'; /* WAS: '' */
+    unset($data['node|liftup|project']->settings['fields']['post_date']);
+    unset($data['node|liftup|project']->settings['regions']['left'][3]);
+    unset($data['node|liftup|project']->settings['regions']['right'][4]);
+  }
 }
 
 /**
