@@ -43,27 +43,9 @@
  *
  * @ingroup themeable
  */
-
 ?>
-<?php if ($element['#object']->type === 'attraction_card' && $element['#view_mode'] === 'full'): ?>
-  <div class="slider-container">
-    <div class="slide-container__content"<?php print $attributes; ?>>
-      <?php foreach ($items as $delta => $item): ?>
-        <?php print render($item); ?>
-      <?php endforeach; ?>
-    </div>
-  </div>
-<?php elseif ($element['#object']->type === 'attraction_card' && $element['#view_mode'] === '_custom_display' && $element['#formatter'] === 'current') : ?>
+<div class="slide-navigation">
   <?php foreach ($items as $delta => $item): ?>
-    <div class="slick-slide slide-navigation__item">
-      <?php print render($item); ?>
-    </div>
+    <?php print render($item); ?>
   <?php endforeach; ?>
-<?php else: ?>
-  <div class="<?php print $classes ?>"<?php print $attributes; ?>>
-    <?php foreach ($items as $delta => $item): ?>
-      <?php print render($item); ?>
-    <?php endforeach; ?>
-  </div>
-<?php endif ?>
-
+</div>
