@@ -676,3 +676,14 @@ function kadaprofile_update_7123() {
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables pori scald image module
+ */
+function kadaprofile_update_7124() {
+  $modules = array('pori_scald_image');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}
