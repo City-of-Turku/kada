@@ -333,37 +333,6 @@ function kada_media_feature_token_info_alter(&$data) {
 }
 
 /**
-* Implements hook_tokens().
-*/
-function kada_media_feature_tokens($type, $tokens, array $data = array(), array $options = array()) {
-  $replacements = array();
-  if ($type == 'atom' && !empty($data['atom'])) {
-    $atom = $data['atom'];
-    $sanitize = !empty($options['sanitize']);
-    foreach ($tokens as $name => $original) {
-      switch ($name) {
-        case 'title_text':
-          $replacements[$original] = $atom->field_title_text[$atom->language][0]['safe_value'];
-          break;
-
-        case 'alt_text':
-          $replacements[$original] = $atom->field_alt_text[$atom->language][0]['safe_value'];
-          break;
-
-        default:
-          if (substr($name, 0, 6) == 'field_') {
-            $language = $atom->language;
-            $replacements[$original] = $sanitize ?
-             $atom->{$name}[$language][0]['safe_value'] :
-             $atom->{$name}[$language][0]['value'];
-          }
-      }
-    }
-  }
-  return $replacements;
-}
-
-/**
  * Implements hook_form_alter().
  */
 function kada_media_feature_form_alter(&$form, &$form_state, $form_id) {
@@ -394,37 +363,6 @@ function kada_media_feature_mee_form_alter(&$form, &$form_state, $form_id){
 function kada_media_feature_mee_submit_handler($form, &$form_state) {
   $context = $form_state['values']['instance']['settings']['context'];
   variable_set('dnd_context_default', $context);
-}
-
-/**
-* Implements hook_field_attach_preprocess_alter().
-*/
-function kada_media_feature_field_attach_preprocess_alter(&$variables, $context) {
-  global $language;
-  // Set scald_thumbnail fields alt and title texts properly, quite hackish.
-  if($context['entity_type'] == 'scald_atom') {
-    if(isset($variables['content']['scald_thumbnail'][0])) {
-      $atom = $variables['atom'];
-      if(isset($atom->field_title_text[$language->language][0]['value'])) {
-        $title_text = $atom->field_title_text[$language->language][0]['value'];
-      }
-      else if(isset($atom->field_title_text[$atom->language][0]['value'])) {
-        $title_text = $atom->field_title_text[$atom->language][0]['value'];
-      }
-      if(isset($title_text)) {
-        $variables['content']['scald_thumbnail'][0]['#item']['title'] = $title_text;
-      }
-      if(isset($atom->field_alt_text[$language->language][0]['value'])) {
-        $alt_text = $atom->field_alt_text[$language->language][0]['value'];
-      }
-      else if(isset($atom->field_alt_text[$atom->language][0]['value'])) {
-        $alt_text = $atom->field_alt_text[$atom->language][0]['value'];
-      }
-      if(isset($alt_text)) {
-        $variables['content']['scald_thumbnail'][0]['#item']['alt'] = $alt_text;
-      }
-    }
-  }
 }
 
 /**
