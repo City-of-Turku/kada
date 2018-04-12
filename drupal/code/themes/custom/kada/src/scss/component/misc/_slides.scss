@@ -120,6 +120,7 @@
   left: 1rem;
   list-style-type: none;
   position: absolute;
+  padding: 0;
 
   @media (min-width: $tablet-portrait) {
     bottom: 2.5rem;
@@ -134,6 +135,11 @@
     height: .75rem;
     margin: 0 4px;
     width: .75rem;
+    
+    button {
+      background: transparent;
+      border: 0 none;
+    }
   }
 
   .slick-active {

@@ -20,6 +20,12 @@ function pori_attraction_feature_ctools_plugin_api($module = NULL, $api = NULL) 
   if ($module == "openlayers" && $api == "openlayers_maps") {
     return array("version" => "1");
   }
+  if ($module == "picture" && $api == "default_picture_mapping") {
+    return array("version" => "2");
+  }
+  if ($module == "scald" && $api == "context_config") {
+    return array("version" => "1");
+  }
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -55,6 +61,105 @@ function pori_attraction_feature_eck_bundle_info() {
     ),
   );
   return $items;
+}
+
+/**
+ * Implements hook_image_default_styles().
+ */
+function pori_attraction_feature_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: page_carousel.
+  $styles['page_carousel'] = array(
+    'label' => 'Page carousel',
+    'effects' => array(
+      1 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 1080,
+          'height' => 527,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: page_carousel_breakpoints_theme_pori_desktop_1x.
+  $styles['page_carousel_breakpoints_theme_pori_desktop_1x'] = array(
+    'label' => 'page_carousel_breakpoints_theme_pori_desktop_1x',
+    'effects' => array(
+      2 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 1080,
+          'height' => 527,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: page_carousel_breakpoints_theme_pori_mobile_1x.
+  $styles['page_carousel_breakpoints_theme_pori_mobile_1x'] = array(
+    'label' => 'page_carousel_breakpoints_theme_pori_mobile_1x',
+    'effects' => array(
+      6 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 480,
+          'height' => 234,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: page_carousel_breakpoints_theme_pori_phablet_1x.
+  $styles['page_carousel_breakpoints_theme_pori_phablet_1x'] = array(
+    'label' => 'page_carousel_breakpoints_theme_pori_phablet_1x',
+    'effects' => array(
+      5 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 688,
+          'height' => 336,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: page_carousel_breakpoints_theme_pori_smalldesktop_1x.
+  $styles['page_carousel_breakpoints_theme_pori_smalldesktop_1x'] = array(
+    'label' => 'page_carousel_breakpoints_theme_pori_smalldesktop_1x',
+    'effects' => array(
+      3 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 715,
+          'height' => 349,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: page_carousel_breakpoints_theme_pori_tablet_1x.
+  $styles['page_carousel_breakpoints_theme_pori_tablet_1x'] = array(
+    'label' => 'page_carousel_breakpoints_theme_pori_tablet_1x',
+    'effects' => array(
+      4 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 880,
+          'height' => 429,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
 }
 
 /**

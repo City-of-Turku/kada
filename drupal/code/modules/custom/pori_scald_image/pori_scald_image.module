@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * Implements hook_entity_load().
+ */
+function pori_scald_image_entity_load($entities, $type) {
+  if ($type == 'scald_atom') {
+    global $language;
+
+    foreach ($entities as $atom) {
+      $atom_fields = &drupal_static(__FUNCTION__ . $atom->type);
+      if (!isset($atom_fields)) {
+        $atom_fields = field_read_fields(array('entity_type' => $type, 'bundle' => $atom->type));
+      }
+
+      // Check every field that is of type image
+      foreach ($atom_fields as $key => $field) {
+        if ($field['type'] == 'image') {
+          $alt_field_key = 'field_alt_text';
+          $title_field_key = 'field_title_text';
+          if (isset($atom->{$key}[LANGUAGE_NONE][0])) {
+            // Trying to find related alternative text field for scald-image.
+            if (isset($atom->{$alt_field_key}[$language->language][0]['safe_value'])) {
+              $alt_text = $atom->{$alt_field_key}[$language->language][0]['safe_value'];
+            }
+            else if (isset($atom->{$alt_field_key}[$atom->language][0]['safe_value'])) {
+              $alt_text = $atom->{$alt_field_key}[$atom->language][0]['safe_value'];
+            }
+            if (isset($atom->{$title_field_key}[$language->language][0]['safe_value'])) {
+              $title_text = $atom->{$title_field_key}[$language->language][0]['safe_value'];
+            }
+            else if (isset($atom->{$title_field_key}[$atom->language][0]['safe_value'])) {
+              $title_text = $atom->{$title_field_key}[$atom->language][0]['safe_value'];
+            }
+            if (isset($alt_text)) {
+              $atom->{$key}[LANGUAGE_NONE][0]['alt'] = $alt_text;
+              $atom->{$key}[LANGUAGE_NONE][0]['title'] = $title_text;
+            } else {
+              $atom->{$key}[LANGUAGE_NONE][0]['alt'] = '';
+              $atom->{$key}[LANGUAGE_NONE][0]['title'] = '';
+            }
+          }
+        }
+      }
+    }
+  }
+}
