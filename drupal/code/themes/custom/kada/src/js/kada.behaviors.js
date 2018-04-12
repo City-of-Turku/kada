@@ -1164,15 +1164,29 @@
         pauseOnHover: true,
         infinite: true,
         slidesToShow: 1,
-        customPaging: function (slick, index) {
-          return '<a>' + index + '</a>';
-        },
-        dots: true,
-        dotsClass: 'slick-dots',
-        prevArrow: '<a data-role="none" class="slide__arrow-prev" ></a>',
-        nextArrow: '<a data-role="none" class="slide__arrow-next" ></a>',
-        appendArrows: $('.slide-container__arrows'),
-        appendDots: $('.slide-container__dots')
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slide-navigation',
+        responsive: [
+          {
+            breakpoint: 1024,
+            settings: {
+              asNavFor: null,
+              dots: true
+            }
+          }
+        ]
+      });
+
+      $('.slide-navigation', context).once('slick').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        asNavFor: '.slide-container__content',
+        dots: false,
+        centerMode: true,
+        focusOnSelect: true,
+        vertical: true
       });
     }
   };

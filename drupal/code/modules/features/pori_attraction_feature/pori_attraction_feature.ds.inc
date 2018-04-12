@@ -50,8 +50,19 @@ function pori_attraction_feature_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'attraction_card';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'duplicate_images' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:10:{s:5:"label";s:6:"hidden";s:9:"formatter";s:7:"current";s:11:"delta_limit";s:1:"0";s:12:"delta_offset";s:1:"0";s:14:"delta_reversed";i:0;s:18:"formatter_settings";a:1:{s:4:"link";s:1:"0";}s:7:"context";s:25:"argument_entity_id:node_1";s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:12:"entity_field";s:7:"subtype";s:17:"node:field_images";}',
+        'load_terms' => 0,
+      ),
+    ),
     'duplicate_online_shop' => array(
-      'weight' => '12',
+      'weight' => '13',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -201,6 +212,32 @@ function pori_attraction_feature_ds_custom_fields_info() {
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
+  $ds_field->field = 'duplicate_images';
+  $ds_field->label = 'Duplicate images';
+  $ds_field->field_type = 7;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'attraction_card|*';
+  $ds_field->properties = array(
+    'default' => array(),
+    'settings' => array(
+      'show_title' => array(
+        'type' => 'checkbox',
+      ),
+      'title_wrapper' => array(
+        'type' => 'textfield',
+        'description' => 'Eg: h1, h2, p',
+      ),
+      'ctools' => array(
+        'type' => 'ctools',
+      ),
+    ),
+  );
+  $export['duplicate_images'] = $ds_field;
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
   $ds_field->field = 'duplicate_online_shop';
   $ds_field->label = 'Duplicate online shop';
   $ds_field->field_type = 7;
@@ -331,31 +368,33 @@ function pori_attraction_feature_ds_layout_settings_info() {
       ),
       'image_container' => array(
         1 => 'field_images',
+        2 => 'duplicate_images',
       ),
       'main_content' => array(
-        2 => 'field_lead_paragraph_et',
-        3 => 'field_description',
-        4 => 'field_video_url',
+        3 => 'field_lead_paragraph_et',
+        4 => 'field_description',
+        5 => 'field_video_url',
       ),
       'sidebar' => array(
-        5 => 'field_keywords_et',
+        6 => 'field_keywords_et',
       ),
       'contact_details' => array(
-        6 => 'field_address_visiting',
-        7 => 'field_phone',
-        8 => 'field_email',
-        9 => 'field_websites',
-        10 => 'field_accessibility_ref',
-        11 => 'field_public_transportation',
-        12 => 'duplicate_online_shop',
+        7 => 'field_address_visiting',
+        8 => 'field_phone',
+        9 => 'field_email',
+        10 => 'field_websites',
+        11 => 'field_accessibility_ref',
+        12 => 'field_public_transportation',
+        13 => 'duplicate_online_shop',
       ),
       'after_content' => array(
-        13 => 'field_attraction_related_content',
+        14 => 'field_attraction_related_content',
       ),
     ),
     'fields' => array(
       'field_online_shop' => 'before_content',
       'field_images' => 'image_container',
+      'duplicate_images' => 'image_container',
       'field_lead_paragraph_et' => 'main_content',
       'field_description' => 'main_content',
       'field_video_url' => 'main_content',
