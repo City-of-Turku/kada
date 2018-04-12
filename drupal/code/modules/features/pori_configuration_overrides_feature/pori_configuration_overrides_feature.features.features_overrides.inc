@@ -185,7 +185,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'label' => 'hidden',
     'module' => 'link',
     'settings' => array(),
-    'type' => 'link_default',
+    'type' => 'link_title_plain',
     'weight' => 1,
   );
   $overrides["field_instance.node-liftup-field_location.display|small_liftup_banner"] = array(

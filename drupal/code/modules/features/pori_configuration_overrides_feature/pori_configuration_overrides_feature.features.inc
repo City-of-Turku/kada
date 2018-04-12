@@ -262,7 +262,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'label' => 'hidden',
       'module' => 'link',
       'settings' => array(),
-      'type' => 'link_default',
+      'type' => 'link_title_plain',
       'weight' => 1,
     ); /* WAS: '' */
   }

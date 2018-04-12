@@ -16,21 +16,21 @@ function pori_liftups_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'liftup';
   $ds_layout->view_mode = 'small_liftup_banner';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'small_liftup_banner_layout';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
+      'main' => array(
         0 => 'field_main_image',
         1 => 'field_link_to_content',
       ),
     ),
     'fields' => array(
-      'field_main_image' => 'ds_content',
-      'field_link_to_content' => 'ds_content',
+      'field_main_image' => 'main',
+      'field_link_to_content' => 'main',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'main' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',

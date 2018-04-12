@@ -51,56 +51,61 @@
     }
   }
 
+  // Link button styles
+  .field--name-field-link-to-content {
+    background-color: $link-color;
+    color: $white;
+    display: block;
+    font-family: $bergen-mono;
+    font-size: .8rem;
+    left: 50%;
+    padding: .625rem;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    @media screen and (min-width: $mobile-landscape-narrow) {
+      font-size: 1.1rem;
+    }
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      font-size: .8rem;
+    }
+
+    @media screen and (min-width: $tablet-portrait) {
+      font-size: 1rem;
+    }
+
+    @media screen and (min-width: $tablet-landscape) {
+      font-size: 1.1rem;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-size: .85rem;
+    }
+
+    @media screen and (min-width: $full) {
+      font-size: 1.1rem;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $link-color-hover;
+    }
+  }
+
   // Image styles
   .field--name-field-main-image {
     line-height: 0;
     margin: 0;
-  }
 
-  // Link button styles
-  .field--name-field-link-to-content {
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-
-    a {
-      background-color: $link-color;
-      color: $white;
-      display: block;
-      font-family: $bergen-mono;
-      font-size: .8rem;
-      padding: .625rem;
-      text-align: center;
-      text-transform: uppercase;
-
-      @media screen and (min-width: $mobile-landscape-narrow) {
-        font-size: 1.1rem;
-      }
-
-      @media screen and (min-width: $mobile-landscape-wide) {
-        font-size: .8rem;
-      }
-
-      @media screen and (min-width: $tablet-portrait) {
-        font-size: 1rem;
-      }
-
-      @media screen and (min-width: $tablet-landscape) {
-        font-size: 1.1rem;
-      }
-
-      @media screen and (min-width: $desktop) {
-        font-size: .85rem;
-      }
-
-      @media screen and (min-width: $full) {
-        font-size: 1.1rem;
-      }
-
-      &:hover,
-      &:active,
-      &:focus {
+    &:hover,
+    &:active,
+    &:focus {
+      + .field--name-field-link-to-content {
         background-color: $link-color-hover;
       }
     }
