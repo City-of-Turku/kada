@@ -25,6 +25,9 @@ function pori_search_facetapi_default_facet_settings() {
       'facets' => array(),
       'force_deactivation' => TRUE,
       'regex' => FALSE,
+      'roles' => array(),
+      'bundle' => 'none',
+      'bundle_selected' => array(),
     ),
     'facet_mincount' => '1',
     'facet_missing' => '0',
@@ -35,7 +38,7 @@ function pori_search_facetapi_default_facet_settings() {
     'default_true' => TRUE,
     'facet_search_ids' => array(),
     'exclude' => 0,
-    'pretty_paths_alias' => 'field_keywords',
+    'pretty_paths_alias' => 'keyword',
     'pretty_paths_taxonomy_pathauto' => 0,
     'pretty_paths_taxonomy_pathauto_vocabulary' => 'keywords',
   );

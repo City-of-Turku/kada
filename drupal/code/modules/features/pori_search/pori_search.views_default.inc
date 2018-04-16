@@ -85,6 +85,16 @@ function pori_search_views_default_views() {
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['type']['format_name'] = 1;
+  /* Field: Indexed Node: Keywords */
+  $handler->display->display_options['fields']['field_keywords_et']['id'] = 'field_keywords_et';
+  $handler->display->display_options['fields']['field_keywords_et']['table'] = 'search_api_index_pori_search_index';
+  $handler->display->display_options['fields']['field_keywords_et']['field'] = 'field_keywords_et';
+  $handler->display->display_options['fields']['field_keywords_et']['label'] = '';
+  $handler->display->display_options['fields']['field_keywords_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_keywords_et']['list']['mode'] = 'list';
+  $handler->display->display_options['fields']['field_keywords_et']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_keywords_et']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_keywords_et']['bypass_access'] = 0;
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_pori_search_index';
