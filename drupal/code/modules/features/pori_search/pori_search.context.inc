@@ -31,6 +31,12 @@ function pori_search_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'facetapi-LDiK3bsqDgJ3l5dan8vi7Upa0GW1K6Og' => array(
+          'module' => 'facetapi',
+          'delta' => 'LDiK3bsqDgJ3l5dan8vi7Upa0GW1K6Og',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
         'views--exp-main_search-page' => array(
           'module' => 'views',
           'delta' => '-exp-main_search-page',
