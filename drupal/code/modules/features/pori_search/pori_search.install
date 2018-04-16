@@ -11,3 +11,10 @@
 function pori_search_update_7100(&$sandbox) {
   module_enable(array('search_api_override'));
 }
+
+/**
+ * Enable Facet modules.
+ */
+function pori_search_update_7101(&$sandbox) {
+  module_enable(array('search_api_facetapi', 'facetapi_collapsible', 'facetapi_pretty_paths', 'facetapi_bonus'));
+}
