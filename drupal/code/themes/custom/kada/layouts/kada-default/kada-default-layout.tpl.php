@@ -164,7 +164,7 @@
     </div>
   </main>
 
-  <?php if($page['footer'] OR $page['before_footer'] OR $page['after_footer']): ?>
+  <?php if($page['footer'] OR $page['before_footer'] OR $page['above_footer'] OR $page['after_footer']): ?>
     <footer class="footer-wrapper">
       <?php if($page['before_footer']): ?>
         <div id="footer-top" class="page-footer-top l-before-footer">
@@ -172,6 +172,14 @@
             <?php print render($page['before_footer']); ?>
           </div>
         </div>
+      <?php endif; ?>
+
+      <?php if($page['above_footer']): ?>
+          <div id="footer-above" class="page-footer-above l-above-footer-wrapper">
+              <div class="container page-footer-above__container">
+                <?php print render($page['above_footer']); ?>
+              </div>
+          </div>
       <?php endif; ?>
 
       <?php if($page['footer']): ?>
