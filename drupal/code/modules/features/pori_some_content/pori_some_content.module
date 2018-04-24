@@ -14,11 +14,13 @@ function pori_some_content_entity_presave($entity, $type) {
     return;
   }
   if (isset($entity->feeds_item->feed_nid)) {
-    // If the importer has "promote to front page" set (not actually shown
-    // anywhere, promote the imported node to be actually
+    // If the importer has promote set, promote the imported node instead.
     $importer = node_load($entity->feeds_item->feed_nid);
     if ($importer->promote) {
       $entity->promote = 1;
+    }
+    if (!empty($importer->domains)) {
+      $entity->domains = $importer->domains;
     }
   }
   return;
