@@ -545,6 +545,12 @@ function pori_configuration_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),

@@ -142,6 +142,7 @@ features[features_overrides][] = user_permission.view any node place page.roles|
 features[features_overrides][] = user_permission.view any node place page.roles|authenticated user
 features[features_overrides][] = user_permission.view any node place page.roles|content editor
 features[features_overrides][] = user_permission.view any node place page.roles|web journalist
+features[user_permission][] = access language de
 features[user_permission][] = check out documents
 features_exclude[dependencies][kada_blog_feature] = kada_blog_feature
 features_exclude[dependencies][kada_events_base_feature] = kada_events_base_feature

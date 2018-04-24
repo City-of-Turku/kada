@@ -101,29 +101,13 @@
 
 
   @media screen and (min-width: $tablet-portrait) {
-    margin: 1.25em 1% 1.25rem 0;
+    margin: 1.25em 0 1.25rem;
     width: 49.5%;
   }
 
   @media screen and (min-width: $container) {
-    margin: 1.875em 1% 1.875rem 0;
+    margin: 1.875em 0 1.875rem;
     width: 32.66%;
-  }
-
-  &:nth-child(2n) {
-    @media screen and (min-width: $tablet-portrait) {
-      margin-right: 0;
-    }
-
-    @media screen and (min-width: $container) {
-      margin-right: 1%;
-    }
-  }
-
-  &:nth-child(3n) {
-    @media screen and (min-width: $container) {
-      margin-right: 0;
-    }
   }
 
   .attraction-list--item__container,
