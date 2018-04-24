@@ -1,5 +1,17 @@
 .liftup-box-list.liftup-box-list--attraction-card-list {
-  justify-content: space-between;
+  justify-content: flex-start;
+
+  @media screen and (min-width: $tablet-portrait) {
+    margin: 0 -.5%;
+  }
+
+  @media screen and (min-width: $tablet-landscape) {
+    margin: 0 -.33333333%;
+  }
+
+  @media screen and (min-width: $container) {
+    margin: 0 -.5%;
+  }
 }
 
 .liftup-box.liftup-box--attraction-item {
@@ -12,18 +24,18 @@
   width: 100%;
 
   @media screen and (min-width: $tablet-portrait) {
-    margin: 1.25rem 0;
-    width: 49.5%;
+    margin: 1.25rem .5%;
+    width: 49%;
   }
 
   @media screen and (min-width: $tablet-landscape) {
-    margin: 1.475rem 0;
+    margin: 1.475rem .33333333%;
     width: 32.66%;
   }
 
   @media screen and (min-width: $container) {
-    margin: 1.875rem 0;
-    width: 24.26%;
+    margin: 1.875rem .5%;
+    width: 24%;
   }
 
   .liftup-box__caption {
