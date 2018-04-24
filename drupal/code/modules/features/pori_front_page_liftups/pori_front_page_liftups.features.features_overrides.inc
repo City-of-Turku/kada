@@ -56,6 +56,12 @@ function pori_front_page_liftups_features_override_default_overrides() {
     'region' => 'header',
     'weight' => -10,
   );
+  $overrides["context.front_page.reactions|block|blocks|views-pori_small_liftup_banner-block"] = array(
+    'module' => 'views',
+    'delta' => 'pori_small_liftup_banner-block',
+    'region' => 'above_footer',
+    'weight' => -10,
+  );
 
   // Exported overrides for: quicktabs
   $overrides["quicktabs.feed_tabs.ajax"] = 1;
