@@ -63,6 +63,12 @@ function pori_front_page_liftups_context_default_contexts_alter(&$data) {
       'region' => 'header',
       'weight' => -10,
     ); /* WAS: '' */
+    $data['front_page']->reactions['block']['blocks']['views-pori_small_liftup_banner-block'] = array(
+      'module' => 'views',
+      'delta' => 'pori_small_liftup_banner-block',
+      'region' => 'above_footer',
+      'weight' => -10,
+    ); /* WAS: '' */
     unset($data['front_page']->reactions['block']['blocks']['views-kada_news-front_block']);
   }
 }
