@@ -67,5 +67,8 @@ function pori_front_page_liftups_features_override_default_overrides() {
   $overrides["quicktabs.feed_tabs.ajax"] = 1;
   $overrides["quicktabs.feed_tabs.renderer"] = 'ui_tabs';
 
+  // Exported overrides for: views_view
+  $overrides["views_view.kada_news.display|section_main|display_options|style_options|row_class"] = 'main-liftup-row';
+
  return $overrides;
 }
