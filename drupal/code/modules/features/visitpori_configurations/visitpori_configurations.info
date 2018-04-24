@@ -9,6 +9,7 @@ dependencies[] = fe_block
 dependencies[] = features
 dependencies[] = kada_export_feature
 dependencies[] = kada_news_feature
+dependencies[] = kada_sections_feature
 dependencies[] = kada_widget_feature
 dependencies[] = menu
 dependencies[] = menu_block
