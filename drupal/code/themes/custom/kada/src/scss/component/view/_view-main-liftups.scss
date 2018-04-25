@@ -46,21 +46,21 @@ $main-liftup-content-padding: 20px;
       border-top: .938rem solid $color;
 
       &:hover {
-        :after {
+        &::after {
           @include overlay-light-hover($color);
         }
       }
     }
   }
 
-  &:after {
+  &::after {
     @include overlay-transparent;
   }
 
   &:hover {
     cursor: pointer;
 
-    :after {
+    &::after {
       @include overlay-light-hover($primary-color);
     }
   }
