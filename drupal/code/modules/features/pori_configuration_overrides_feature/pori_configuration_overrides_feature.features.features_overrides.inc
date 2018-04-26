@@ -931,6 +931,15 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["variable.menu_block_25_expanded.value"] = 1;
   $overrides["variable.menu_block_28_expanded.value"] = 1;
   $overrides["variable.menu_block_8_depth.value"] = 2;
+  $overrides["variable.menu_block_ids.value|27"] = 29;
+  $overrides["variable.menu_block_ids.value|28"] = 30;
+  $overrides["variable.menu_block_ids.value|29"] = 31;
+  $overrides["variable.menu_block_ids.value|30"] = 32;
+  $overrides["variable.menu_block_ids.value|31"] = 33;
+  $overrides["variable.menu_block_ids.value|32"] = 34;
+  $overrides["variable.menu_block_ids.value|33"] = 35;
+  $overrides["variable.menu_block_ids.value|34"] = 36;
+  $overrides["variable.menu_block_ids.value|35"] = 37;
   $overrides["variable.node_options_attraction_card.value|1"] = 'revision';
   $overrides["variable.node_options_landing_page.value|1"] = 'revision';
   $overrides["variable.node_options_page.value|1"] = 'revision';
