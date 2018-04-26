@@ -26,6 +26,7 @@ features[features_overrides][] = context.front_page.reactions|block|blocks|views
 features[features_overrides][] = quicktabs.feed_tabs.ajax
 features[features_overrides][] = quicktabs.feed_tabs.renderer
 features[features_overrides][] = views_view.kada_news.display|block_1
+features[features_overrides][] = views_view.kada_news.display|section_main|display_options|style_options|row_class
 features[quicktabs][] = feed_tabs_frontpage_promoted_con
 features[views_view][] = kada_current_promoted_
 features_exclude[dependencies][ctools] = ctools
