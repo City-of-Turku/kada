@@ -15,6 +15,12 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["context.footer_menu.conditions|context|values|news_list"] = 'news_list';
   $overrides["context.footer_menu.conditions|context|values|person_list"] = 'person_list';
   $overrides["context.footer_menu.conditions|context|values|search_page"] = 'search_page';
+  $overrides["context.footer_menu.reactions|block|blocks|menu_block-29"] = array(
+    'module' => 'menu_block',
+    'delta' => 29,
+    'region' => 'footer',
+    'weight' => -7,
+  );
   $overrides["context.footer_navigation.reactions|block"]["DELETED"] = TRUE;
   $overrides["context.language_switcher.conditions|context|values|news_list"] = 'news_list';
   $overrides["context.language_switcher.conditions|context|values|person_list"] = 'person_list';
@@ -32,13 +38,17 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["context.main_menu.conditions|context|values|news_list"] = 'news_list';
   $overrides["context.main_menu.conditions|context|values|person_list"] = 'person_list';
   $overrides["context.main_menu.conditions|context|values|search_page"] = 'search_page';
+  $overrides["context.main_menu.reactions|block|blocks|menu_block-30"] = array(
+    'module' => 'menu_block',
+    'delta' => 30,
+    'region' => 'navigation',
+    'weight' => -7,
+  );
   $overrides["context.sitewide_en.conditions|context"]["DELETED"] = TRUE;
   $overrides["context.sitewide_en.reactions|block|blocks|block-1|weight"] = -40;
   $overrides["context.sitewide_fi.conditions|context"]["DELETED"] = TRUE;
   $overrides["context.sitewide_fi.reactions|block|blocks|block-2|weight"] = -40;
   $overrides["context.sitewide_sv.conditions|context"]["DELETED"] = TRUE;
-  $overrides["context.sitewide_sv.conditions|language"]["DELETED"] = TRUE;
-  $overrides["context.sitewide_sv.disabled"] = TRUE;
   $overrides["context.top_menu.conditions|context|values|news_list"] = 'news_list';
   $overrides["context.top_menu.conditions|context|values|person_list"] = 'person_list';
   $overrides["context.top_menu.conditions|context|values|search_page"] = 'search_page';
@@ -46,6 +56,12 @@ function pori_configuration_overrides_feature_features_override_default_override
     'values' => array(
       'pori_fi' => 'pori_fi',
     ),
+  );
+  $overrides["context.top_menu.reactions|block|blocks|menu_block-31"] = array(
+    'module' => 'menu_block',
+    'delta' => 31,
+    'region' => 'navigation_top',
+    'weight' => -7,
   );
 
   // Exported overrides for: ds_field_settings
@@ -850,6 +866,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   // Exported overrides for: image
   $overrides["image.site_logo.effects|0|data|height"] = 50;
 
+  // Exported overrides for: language
+  $overrides["language.sv.enabled"] = 1;
+
   // Exported overrides for: scald_context_config
   $overrides["scald_context_config.content_full.player|image|settings|caption"] = '';
   $overrides["scald_context_config.content_half.player|image|settings|caption"] = '';
@@ -928,6 +947,17 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["variable.menu_block_25_expanded.value"] = 1;
   $overrides["variable.menu_block_28_expanded.value"] = 1;
   $overrides["variable.menu_block_8_depth.value"] = 2;
+  $overrides["variable.menu_block_ids.value|25"] = 23;
+  $overrides["variable.menu_block_ids.value|26"] = 28;
+  $overrides["variable.menu_block_ids.value|27"] = 29;
+  $overrides["variable.menu_block_ids.value|28"] = 30;
+  $overrides["variable.menu_block_ids.value|29"] = 31;
+  $overrides["variable.menu_block_ids.value|30"] = 32;
+  $overrides["variable.menu_block_ids.value|31"] = 33;
+  $overrides["variable.menu_block_ids.value|32"] = 34;
+  $overrides["variable.menu_block_ids.value|33"] = 35;
+  $overrides["variable.menu_block_ids.value|34"] = 36;
+  $overrides["variable.menu_block_ids.value|35"] = 37;
   $overrides["variable.node_options_attraction_card.value|1"] = 'revision';
   $overrides["variable.node_options_landing_page.value|1"] = 'revision';
   $overrides["variable.node_options_page.value|1"] = 'revision';
