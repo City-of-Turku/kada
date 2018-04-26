@@ -9,27 +9,24 @@ include_once 'pori_visitpori_override_feature.features.inc';
 function pori_visitpori_override_feature_language_switch_links_alter(&$result, $type, $path) {
   $current_domain = domain_get_domain();
   $first_path_argument = arg(0);
-  $en_forbidden_domains = array('visitpori_fi');
-  $de_forbidden_domains = array('pori_fi', 'visitpori_fi');
-  $sv_forbidden_domains = array('pori_fi', 'visitpori_fi');
+  $excluded_domains = array(
+    'en' => array('visitpori_fi'),
+    'de' => array('pori_fi', 'visitpori_fi'),
+    'sv' => array('pori_fi', 'visitpori_fi'),
+  );
 
-  if($first_path_argument == 'node') {
+  if ($first_path_argument == 'node') {
     $current_node = node_load(arg(1));
     $node_type = $current_node->type;
+    // Show all language selections in attraction cards.
+    if ($node_type == 'attraction_card') {
+      return;
+    }
   }
 
-  // Remove English if the current domain is in the forbidden list and the node type is not attraction card
-  if (in_array($current_domain['machine_name'], $en_forbidden_domains) && $node_type != 'attraction_card') {
-    unset($result['en']);
-  }
-
-  // Remove German if the current domain is in the forbidden list and the node type is not attraction card
-  if (in_array($current_domain['machine_name'], $de_forbidden_domains) && $node_type != 'attraction_card') {
-    unset($result['de']);
-  }
-
-  // Remove Swedish if the current domain is in the forbidden list and the node type is not attraction card
-  if (in_array($current_domain['machine_name'], $sv_forbidden_domains) && $node_type != 'attraction_card') {
-    unset($result['sv']);
+  foreach ($excluded_domains as $lang => $domains) {
+    if (in_array($current_domain['machine_name'], $domains)) {
+      unset($result[$lang]);
+    }
   }
 }
