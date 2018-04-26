@@ -124,15 +124,10 @@ features[features_override_items][] = field_instance.taxonomy_term-accessibility
 features[features_override_items][] = field_instance.taxonomy_term-accessibility-name_field
 features[features_override_items][] = field_instance.widget-event_carousel-field_keywords_et
 features[features_override_items][] = field_instance.widget-event_mosaic-field_keywords_et
-<<<<<<< HEAD
-=======
-features[features_override_items][] = scald_context_config.content_full
-features[features_override_items][] = scald_context_config.content_half
-features[features_override_items][] = scald_context_config.full
-features[features_override_items][] = image.site_logo
->>>>>>> 59fefbb3d9fa3a0a8bd849edb5ddceee5e81cce2
 features[features_override_items][] = flexslider_optionset.top_carousel
 features[features_override_items][] = image.site_logo
+features[features_override_items][] = scald_context_config.content_full
+features[features_override_items][] = scald_context_config.content_half
 features[features_override_items][] = scald_context_config.full
 features[features_override_items][] = variable.field_bundle_settings_node__liftup
 features[features_override_items][] = variable.field_bundle_settings_node__person
