@@ -15,6 +15,12 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["context.footer_menu.conditions|context|values|news_list"] = 'news_list';
   $overrides["context.footer_menu.conditions|context|values|person_list"] = 'person_list';
   $overrides["context.footer_menu.conditions|context|values|search_page"] = 'search_page';
+  $overrides["context.footer_menu.reactions|block|blocks|menu_block-29"] = array(
+    'module' => 'menu_block',
+    'delta' => 29,
+    'region' => 'footer',
+    'weight' => -7,
+  );
   $overrides["context.footer_navigation.reactions|block"]["DELETED"] = TRUE;
   $overrides["context.language_switcher.conditions|context|values|news_list"] = 'news_list';
   $overrides["context.language_switcher.conditions|context|values|person_list"] = 'person_list';
@@ -32,6 +38,12 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["context.main_menu.conditions|context|values|news_list"] = 'news_list';
   $overrides["context.main_menu.conditions|context|values|person_list"] = 'person_list';
   $overrides["context.main_menu.conditions|context|values|search_page"] = 'search_page';
+  $overrides["context.main_menu.reactions|block|blocks|menu_block-30"] = array(
+    'module' => 'menu_block',
+    'delta' => 30,
+    'region' => 'navigation',
+    'weight' => -7,
+  );
   $overrides["context.sitewide_en.conditions|context"]["DELETED"] = TRUE;
   $overrides["context.sitewide_en.reactions|block|blocks|block-1|weight"] = -40;
   $overrides["context.sitewide_fi.conditions|context"]["DELETED"] = TRUE;
@@ -46,6 +58,12 @@ function pori_configuration_overrides_feature_features_override_default_override
     'values' => array(
       'pori_fi' => 'pori_fi',
     ),
+  );
+  $overrides["context.top_menu.reactions|block|blocks|menu_block-31"] = array(
+    'module' => 'menu_block',
+    'delta' => 31,
+    'region' => 'navigation_top',
+    'weight' => -7,
   );
 
   // Exported overrides for: ds_field_settings
@@ -931,6 +949,8 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["variable.menu_block_25_expanded.value"] = 1;
   $overrides["variable.menu_block_28_expanded.value"] = 1;
   $overrides["variable.menu_block_8_depth.value"] = 2;
+  $overrides["variable.menu_block_ids.value|25"] = 23;
+  $overrides["variable.menu_block_ids.value|26"] = 28;
   $overrides["variable.menu_block_ids.value|27"] = 29;
   $overrides["variable.menu_block_ids.value|28"] = 30;
   $overrides["variable.menu_block_ids.value|29"] = 31;

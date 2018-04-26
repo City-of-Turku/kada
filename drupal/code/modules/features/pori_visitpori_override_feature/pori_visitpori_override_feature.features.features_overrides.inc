@@ -17,10 +17,44 @@ function pori_visitpori_override_feature_features_override_default_overrides() {
       '~visitpori_domain' => '~visitpori_domain',
     ),
   );
+  $overrides["context.visitpori_footer_menu.reactions|block|blocks|menu_block-32"] = array(
+    'module' => 'menu_block',
+    'delta' => 32,
+    'region' => 'footer',
+    'weight' => -8,
+  );
+  $overrides["context.visitpori_footer_menu.reactions|block|blocks|menu_block-33"] = array(
+    'module' => 'menu_block',
+    'delta' => 33,
+    'region' => 'footer',
+    'weight' => -7,
+  );
+  $overrides["context.visitpori_top_menu.reactions|block|blocks|menu_block-34"] = array(
+    'module' => 'menu_block',
+    'delta' => 34,
+    'region' => 'navigation',
+    'weight' => -8,
+  );
+  $overrides["context.visitpori_top_menu.reactions|block|blocks|menu_block-35"] = array(
+    'module' => 'menu_block',
+    'delta' => 35,
+    'region' => 'navigation',
+    'weight' => -7,
+  );
+  $overrides["context.visitpori_top_menu.reactions|block|blocks|menu_block-36"] = array(
+    'module' => 'menu_block',
+    'delta' => 36,
+    'region' => 'navigation_top',
+    'weight' => -8,
+  );
+  $overrides["context.visitpori_top_menu.reactions|block|blocks|menu_block-37"] = array(
+    'module' => 'menu_block',
+    'delta' => 37,
+    'region' => 'navigation_top',
+    'weight' => -7,
+  );
 
   // Exported overrides for: variable
-  $overrides["variable.menu_block_ids.value|25"] = 23;
-  $overrides["variable.menu_block_ids.value|26"] = 28;
   $overrides["variable.menu_options_landing_page.value|0"] = 'menu-footer-fi';
   $overrides["variable.menu_options_landing_page.value|1"] = 'menu-footer-en';
   $overrides["variable.menu_options_landing_page.value|10"] = 'menu-visitpori-footer-menu-fi';
