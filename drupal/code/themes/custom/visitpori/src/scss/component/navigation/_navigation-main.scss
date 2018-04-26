@@ -1,7 +1,9 @@
 @media screen and (min-width: $mobile-menu-breakpoint) {
   // For some reason the English menu is main-navigation as for Finnish it is main-menu
   .menu-name-menu-visitpori-main-menu,
-  .menu-name-menu-visitpori-main-navigation {
+  .menu-name-menu-visitpori-main-navigation,
+  .menu-name-menu-visitpori-main-menu-sv,
+  .menu-name-menu-visitpori-main-menu-de {
     .responsive-menus .menu {
       display: flex;
       justify-content: space-between;
