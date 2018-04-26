@@ -850,6 +850,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   // Exported overrides for: image
   $overrides["image.site_logo.effects|0|data|height"] = 50;
 
+  // Exported overrides for: language
+  $overrides["language.sv.enabled"] = 1;
+
   // Exported overrides for: scald_context_config
   $overrides["scald_context_config.content_full.player|image|settings|caption"] = '';
   $overrides["scald_context_config.content_half.player|image|settings|caption"] = '';

@@ -1088,6 +1088,15 @@ function pori_configuration_overrides_feature_image_styles_alter(&$data) {
 }
 
 /**
+ * Implements hook_locale_default_languages_alter().
+ */
+function pori_configuration_overrides_feature_locale_default_languages_alter(&$data) {
+  if (isset($data['sv'])) {
+    $data['sv']['enabled'] = 1; /* WAS: 0 */
+  }
+}
+
+/**
  * Implements hook_default_scald_context_config_alter().
  */
 function pori_configuration_overrides_feature_default_scald_context_config_alter(&$data) {
