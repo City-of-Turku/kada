@@ -12,6 +12,12 @@ function pori_configuration_overrides_feature_context_default_contexts_alter(&$d
     $data['footer_menu']->conditions['context']['values']['news_list'] = 'news_list'; /* WAS: '' */
     $data['footer_menu']->conditions['context']['values']['person_list'] = 'person_list'; /* WAS: '' */
     $data['footer_menu']->conditions['context']['values']['search_page'] = 'search_page'; /* WAS: '' */
+    $data['footer_menu']->reactions['block']['blocks']['menu_block-29'] = array(
+      'module' => 'menu_block',
+      'delta' => 29,
+      'region' => 'footer',
+      'weight' => -7,
+    ); /* WAS: '' */
   }
   if (isset($data['footer_navigation'])) {
     unset($data['footer_navigation']->reactions['block']);
@@ -35,6 +41,12 @@ function pori_configuration_overrides_feature_context_default_contexts_alter(&$d
     $data['main_menu']->conditions['context']['values']['news_list'] = 'news_list'; /* WAS: '' */
     $data['main_menu']->conditions['context']['values']['person_list'] = 'person_list'; /* WAS: '' */
     $data['main_menu']->conditions['context']['values']['search_page'] = 'search_page'; /* WAS: '' */
+    $data['main_menu']->reactions['block']['blocks']['menu_block-30'] = array(
+      'module' => 'menu_block',
+      'delta' => 30,
+      'region' => 'navigation',
+      'weight' => -7,
+    ); /* WAS: '' */
   }
   if (isset($data['sitewide_en'])) {
     $data['sitewide_en']->reactions['block']['blocks']['block-1']['weight'] = -40; /* WAS: -10 */
@@ -45,9 +57,7 @@ function pori_configuration_overrides_feature_context_default_contexts_alter(&$d
     unset($data['sitewide_fi']->conditions['context']);
   }
   if (isset($data['sitewide_sv'])) {
-    $data['sitewide_sv']->disabled = TRUE; /* WAS: FALSE */
     unset($data['sitewide_sv']->conditions['context']);
-    unset($data['sitewide_sv']->conditions['language']);
   }
   if (isset($data['top_menu'])) {
     $data['top_menu']->conditions['context']['values']['news_list'] = 'news_list'; /* WAS: '' */
@@ -57,6 +67,12 @@ function pori_configuration_overrides_feature_context_default_contexts_alter(&$d
       'values' => array(
         'pori_fi' => 'pori_fi',
       ),
+    ); /* WAS: '' */
+    $data['top_menu']->reactions['block']['blocks']['menu_block-31'] = array(
+      'module' => 'menu_block',
+      'delta' => 31,
+      'region' => 'navigation_top',
+      'weight' => -7,
     ); /* WAS: '' */
   }
 }
@@ -1088,6 +1104,15 @@ function pori_configuration_overrides_feature_image_styles_alter(&$data) {
 }
 
 /**
+ * Implements hook_locale_default_languages_alter().
+ */
+function pori_configuration_overrides_feature_locale_default_languages_alter(&$data) {
+  if (isset($data['sv'])) {
+    $data['sv']['enabled'] = 1; /* WAS: 0 */
+  }
+}
+
+/**
  * Implements hook_default_scald_context_config_alter().
  */
 function pori_configuration_overrides_feature_default_scald_context_config_alter(&$data) {
@@ -1200,6 +1225,19 @@ function pori_configuration_overrides_feature_strongarm_alter(&$data) {
   }
   if (isset($data['node_options_attraction_card'])) {
     $data['node_options_attraction_card']->value[1] = 'revision'; /* WAS: '' */
+  }
+  if (isset($data['menu_block_ids'])) {
+    $data['menu_block_ids']->value[25] = 23; /* WAS: '' */
+    $data['menu_block_ids']->value[26] = 28; /* WAS: '' */
+    $data['menu_block_ids']->value[27] = 29; /* WAS: '' */
+    $data['menu_block_ids']->value[28] = 30; /* WAS: '' */
+    $data['menu_block_ids']->value[29] = 31; /* WAS: '' */
+    $data['menu_block_ids']->value[30] = 32; /* WAS: '' */
+    $data['menu_block_ids']->value[31] = 33; /* WAS: '' */
+    $data['menu_block_ids']->value[32] = 34; /* WAS: '' */
+    $data['menu_block_ids']->value[33] = 35; /* WAS: '' */
+    $data['menu_block_ids']->value[34] = 36; /* WAS: '' */
+    $data['menu_block_ids']->value[35] = 37; /* WAS: '' */
   }
   if (isset($data['node_options_landing_page'])) {
     $data['node_options_landing_page']->value[1] = 'revision'; /* WAS: '' */
