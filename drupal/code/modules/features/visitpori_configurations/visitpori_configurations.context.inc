@@ -97,7 +97,7 @@ function visitpori_configurations_context_default_contexts() {
     ),
     'node' => array(
       'values' => array(
-        'page' => 'page',
+        'section' => 'section',
       ),
       'options' => array(
         'node_form' => '1',
@@ -153,6 +153,12 @@ function visitpori_configurations_context_default_contexts() {
           'delta' => 'news_archive_link',
           'region' => 'after_content',
           'weight' => '-8',
+        ),
+        'kada_export_feature-kada_rss_feed_for_section' => array(
+          'module' => 'kada_export_feature',
+          'delta' => 'kada_rss_feed_for_section',
+          'region' => 'after_content',
+          'weight' => '-7',
         ),
       ),
     ),
