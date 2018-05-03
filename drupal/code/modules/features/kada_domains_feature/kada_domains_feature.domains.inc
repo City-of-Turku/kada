@@ -29,7 +29,7 @@ function kada_domains_feature_domain_default_domains() {
   );
   $domains['visitpori_fi'] = array(
     'subdomain' => 'visitpori.fi',
-    'sitename' => 'Visitpori',
+    'sitename' => 'Visit Pori',
     'scheme' => 'http',
     'valid' => 1,
     'weight' => -2,
@@ -91,6 +91,11 @@ function kada_domains_feature_domain_alias_default_aliases() {
     ),
     'www.visitpori.fi' => array(
       'pattern' => 'www.visitpori.fi',
+      'redirect' => 0,
+      'machine_name' => 'visitpori_fi',
+    ),
+    'local.visitpori.fi:8095' => array(
+      'pattern' => 'local.visitpori.fi:8095',
       'redirect' => 0,
       'machine_name' => 'visitpori_fi',
     ),

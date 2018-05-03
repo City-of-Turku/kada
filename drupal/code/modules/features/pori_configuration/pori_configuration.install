@@ -86,3 +86,10 @@ function pori_configuration_update_7110(&$sandbox) {
 function pori_configuration_update_7111(&$sandbox) {
   module_enable(array('pori_error_pages'));
 }
+
+/**
+ * Enable the Domains Metatag module.
+ */
+function pori_configuration_update_7112(&$sandbox) {
+  module_enable(array('domains_metatag'));
+}
