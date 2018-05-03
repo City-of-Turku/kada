@@ -186,8 +186,43 @@
         $(this).hoverIntent(
           function() {
             $(this).toggleClass('menu__item--hover');
+            adjustHeight();
           }
         );
+
+        function adjustHeight() {
+          if ($(window).width() >= '1025') {
+            // Variable for the tallest menu
+            var tallest = 0;
+
+            // Get all menus under the main menu that are visible
+            var menus = $('.l-region--navigation .menu .menu:visible');
+
+            // Reset previous height alterations
+            menus.css('height', '');
+
+            // Iterate through each menu and check which menu is the tallest.
+            menus.each(function(){
+              var menuHeight = $(this).innerHeight();
+
+              if (menuHeight >= tallest) {
+                tallest = menuHeight;
+              }
+            });
+
+            // Assign the hight of the tallest menu to each menu under main menu
+            menus.css('height', tallest);
+
+            // The e-service menu has a header so the height of the header needs to be
+            // subtracted from the e-service menus height.
+            if (menus.hasClass('e-service-menu')) {
+              var eserviceHeight = tallest - 64;
+              $('.l-region--navigation .menu .e-service-menu:visible').css('height', eserviceHeight);
+            }
+
+            switchMainMenuBehavior(context);
+          }
+        }
       });
     }
   };
@@ -214,7 +249,6 @@
         $('.l-region--navigation .e-service-wrapper', context).children('.menu').addClass('e-service-menu');
         $('.l-region--navigation .menu__item--has-first-level', context).hover(function(event) {
           if ($(window).width() >= '1025') {
-            adjustHeight($(this).children('.menu'));
             if (event.type === 'mouseleave') {
               $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
             }
@@ -222,45 +256,11 @@
         });
         $('.l-region--navigation .menu__item--has-second-level', context).hover(function() {
           if ($(window).width() >= '1025') {
-            $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
-            $('.menu__item--has-second-level').not(this).children('ul').addClass('is-hidden');
-            adjustHeight($(this).parent('.menu'));
+            var secondLevelItem = $('.menu__item--has-second-level');
+            secondLevelItem.children('ul').removeClass('is-hidden');
+            secondLevelItem.not(this).children('ul').addClass('is-hidden');
           }
         });
-
-        function adjustHeight(elem) {
-          if ($(window).width() >= '1025') {
-            // Get the heights of the second level (on the left), the third level (in the middle)
-            // and the optional e-services list (on the right if it exists)
-
-            // Reset previous height alterations
-            $(elem).css('height', '');
-
-            var leftHeight = $(elem).innerHeight();
-            var middleHeight = getHighest($(elem).find('.menu:visible'));
-            var rightHeight = getHighest($(elem).children('.e-service-wrapper'));
-            var highest = leftHeight;
-            if (middleHeight > highest) {
-              highest = middleHeight;
-            }
-            if (rightHeight > highest) {
-              highest = rightHeight;
-            }
-            $(elem).css('height', highest);
-            $(elem).find('.menu:visible').not('.e-service-menu').css('height', highest);
-            switchMainMenuBehavior(context);
-          }
-        }
-        function getHighest(elems) {
-          var highest = 0;
-          for (var i = 0; i < $(elems).length; i++) {
-            var height = $(elems[i]).outerHeight();
-            if (height > highest) {
-              highest = height;
-            }
-          }
-          return highest;
-        }
       });
     }
   };
