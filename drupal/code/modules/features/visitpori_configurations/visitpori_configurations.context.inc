@@ -60,6 +60,18 @@ function visitpori_configurations_context_default_contexts() {
           'region' => 'footer',
           'weight' => '-9',
         ),
+        'menu_block-32' => array(
+          'module' => 'menu_block',
+          'delta' => '32',
+          'region' => 'footer',
+          'weight' => '-8',
+        ),
+        'menu_block-33' => array(
+          'module' => 'menu_block',
+          'delta' => '33',
+          'region' => 'footer',
+          'weight' => '-7',
+        ),
       ),
     ),
   );
@@ -85,7 +97,7 @@ function visitpori_configurations_context_default_contexts() {
     ),
     'node' => array(
       'values' => array(
-        'page' => 'page',
+        'section' => 'section',
       ),
       'options' => array(
         'node_form' => '1',
@@ -142,6 +154,12 @@ function visitpori_configurations_context_default_contexts() {
           'region' => 'after_content',
           'weight' => '-8',
         ),
+        'kada_export_feature-kada_rss_feed_for_section' => array(
+          'module' => 'kada_export_feature',
+          'delta' => 'kada_rss_feed_for_section',
+          'region' => 'after_content',
+          'weight' => '-7',
+        ),
       ),
     ),
   );
@@ -152,6 +170,49 @@ function visitpori_configurations_context_default_contexts() {
   t('This context is triggered on the visitpori front page');
   t('front page');
   $export['visitpori_front_page'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'visitpori_sitewide_de';
+  $context->description = 'This sitewide context is triggered when using page in German';
+  $context->tag = 'section';
+  $context->conditions = array(
+    'context_all' => array(
+      'values' => array(
+        'visitpori_domain' => 'visitpori_domain',
+      ),
+    ),
+    'language' => array(
+      'values' => array(
+        'de' => 'de',
+      ),
+    ),
+    'sitewide' => array(
+      'values' => array(
+        1 => 1,
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'block-7' => array(
+          'module' => 'block',
+          'delta' => '7',
+          'region' => 'footer',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('This sitewide context is triggered when using page in German');
+  t('section');
+  $export['visitpori_sitewide_de'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
@@ -238,6 +299,49 @@ function visitpori_configurations_context_default_contexts() {
   t('This sitewide context is triggered when using page in Finnish');
   t('section');
   $export['visitpori_sitewide_fi'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'visitpori_sitewide_sv';
+  $context->description = 'This sitewide context is triggered when using page in Swedish';
+  $context->tag = 'section';
+  $context->conditions = array(
+    'context_all' => array(
+      'values' => array(
+        'visitpori_domain' => 'visitpori_domain',
+      ),
+    ),
+    'language' => array(
+      'values' => array(
+        'sv' => 'sv',
+      ),
+    ),
+    'sitewide' => array(
+      'values' => array(
+        1 => 1,
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'block-6' => array(
+          'module' => 'block',
+          'delta' => '6',
+          'region' => 'footer',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('This sitewide context is triggered when using page in Swedish');
+  t('section');
+  $export['visitpori_sitewide_sv'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
@@ -406,6 +510,18 @@ function visitpori_configurations_context_default_contexts() {
           'region' => 'navigation_top',
           'weight' => '-9',
         ),
+        'menu_block-36' => array(
+          'module' => 'menu_block',
+          'delta' => '36',
+          'region' => 'navigation_top',
+          'weight' => '-8',
+        ),
+        'menu_block-37' => array(
+          'module' => 'menu_block',
+          'delta' => '37',
+          'region' => 'navigation_top',
+          'weight' => '-7',
+        ),
         'menu_block-24' => array(
           'module' => 'menu_block',
           'delta' => '24',
@@ -417,6 +533,18 @@ function visitpori_configurations_context_default_contexts() {
           'delta' => '27',
           'region' => 'navigation',
           'weight' => '-9',
+        ),
+        'menu_block-34' => array(
+          'module' => 'menu_block',
+          'delta' => '34',
+          'region' => 'navigation',
+          'weight' => '-8',
+        ),
+        'menu_block-35' => array(
+          'module' => 'menu_block',
+          'delta' => '35',
+          'region' => 'navigation',
+          'weight' => '-7',
         ),
       ),
     ),

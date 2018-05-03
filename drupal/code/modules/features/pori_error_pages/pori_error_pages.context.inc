@@ -62,6 +62,12 @@ function pori_error_pages_context_default_contexts() {
           'region' => 'navigation_top',
           'weight' => '-8',
         ),
+        'menu_block-31' => array(
+          'module' => 'menu_block',
+          'delta' => '31',
+          'region' => 'navigation_top',
+          'weight' => '-7',
+        ),
         'menu_block-2' => array(
           'module' => 'menu_block',
           'delta' => '2',
@@ -80,6 +86,12 @@ function pori_error_pages_context_default_contexts() {
           'region' => 'navigation',
           'weight' => '-8',
         ),
+        'menu_block-30' => array(
+          'module' => 'menu_block',
+          'delta' => '30',
+          'region' => 'navigation',
+          'weight' => '-7',
+        ),
         'menu_block-8' => array(
           'module' => 'menu_block',
           'delta' => '8',
@@ -97,6 +109,12 @@ function pori_error_pages_context_default_contexts() {
           'delta' => '10',
           'region' => 'footer',
           'weight' => '-8',
+        ),
+        'menu_block-29' => array(
+          'module' => 'menu_block',
+          'delta' => '29',
+          'region' => 'footer',
+          'weight' => '-7',
         ),
       ),
     ),
@@ -155,6 +173,18 @@ function pori_error_pages_context_default_contexts() {
           'region' => 'navigation_top',
           'weight' => '-9',
         ),
+        'menu_block-36' => array(
+          'module' => 'menu_block',
+          'delta' => '36',
+          'region' => 'navigation_top',
+          'weight' => '-8',
+        ),
+        'menu_block-37' => array(
+          'module' => 'menu_block',
+          'delta' => '37',
+          'region' => 'navigation_top',
+          'weight' => '-7',
+        ),
         'menu_block-2' => array(
           'module' => 'menu_block',
           'delta' => '2',
@@ -173,23 +203,35 @@ function pori_error_pages_context_default_contexts() {
           'region' => 'navigation',
           'weight' => '-8',
         ),
-        'menu_block-8' => array(
+        'menu_block-30' => array(
           'module' => 'menu_block',
-          'delta' => '8',
+          'delta' => '30',
+          'region' => 'navigation',
+          'weight' => '-7',
+        ),
+        'menu_block-26' => array(
+          'module' => 'menu_block',
+          'delta' => '26',
           'region' => 'footer',
           'weight' => '-10',
         ),
-        'menu_block-9' => array(
+        'menu_block-32' => array(
           'module' => 'menu_block',
-          'delta' => '9',
+          'delta' => '32',
           'region' => 'footer',
           'weight' => '-9',
         ),
-        'menu_block-10' => array(
+        'menu_block-33' => array(
           'module' => 'menu_block',
-          'delta' => '10',
+          'delta' => '33',
           'region' => 'footer',
           'weight' => '-8',
+        ),
+        'menu_block-23' => array(
+          'module' => 'menu_block',
+          'delta' => '23',
+          'region' => 'footer',
+          'weight' => '-7',
         ),
       ),
     ),

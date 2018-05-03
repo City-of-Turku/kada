@@ -20,6 +20,7 @@ regions[sidebar_first]      = Sidebar first
 regions[sidebar_second]     = Sidebar second
 regions[after_content]      = After content
 regions[before_footer]      = Before footer
+regions[above_footer]       = Above footer
 regions[footer]             = Footer
 regions[after_footer]       = After footer
 
