@@ -12,8 +12,12 @@ if ((empty($sidebar || $additional_information)) || ($is_front == true) || ($fie
   $no_sidebar = true;
 }
 
-if ($no_sidebar == false) {
+if (!empty($main_content) && $no_sidebar == false) {
   $additional_classes="page--has-sidebar";
+}
+
+if (empty($main_content)) {
+  $additional_classes="page--no-main-content";
 }
 ?>
 <<?php print $layout_wrapper; print $layout_attributes; ?> class="<?php print $classes;?> <?php print $additional_classes;?>">
@@ -22,11 +26,13 @@ if ($no_sidebar == false) {
   <?php print render($title_suffix['contextual_links']); ?>
 <?php endif; ?>
 
-<<?php print $main_content_wrapper ?> class="page__content <?php print $main_content_classes; ?>">
-    <?php print $main_content; ?>
-</<?php print $main_content_wrapper ?>>
+<?php if (!empty($main_content)): ?>
+    <<?php print $main_content_wrapper ?> class="page__content <?php print $main_content_classes; ?>">
+        <?php print $main_content; ?>
+    </<?php print $main_content_wrapper ?>>
+<?php endif; ?>
 
-<?php if ($no_sidebar == false): ?>
+<?php if (!empty($main_content) && $no_sidebar == false): ?>
   <<?php print $sidebar_wrapper ?> class="page__sidebar <?php print $sidebar_classes; ?>">
     <?php print $sidebar; ?>
     <?php if (!empty($additional_information)): ?>
