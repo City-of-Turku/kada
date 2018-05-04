@@ -46,6 +46,20 @@ function pori_configuration_image_default_styles() {
       ),
     ),
   );
+  // Exported image style: person_breakpoints_theme_kada_desktopwide_1x.
+  $styles['person_breakpoints_theme_kada_desktopwide_1x'] = array(
+    'label' => 'person_breakpoints_theme_kada_desktopwide_1x',
+    'effects' => array(
+      6 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 112,
+          'height' => 149,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
 
   return $styles;
 }
