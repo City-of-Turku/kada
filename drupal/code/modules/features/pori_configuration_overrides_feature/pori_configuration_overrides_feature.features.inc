@@ -150,6 +150,12 @@ function pori_configuration_overrides_feature_field_group_info_alter(&$data) {
   if (isset($data['group_content|node|place|form'])) {
     $data['group_content|node|place|form']->data['children'][11] = 'field_read_more'; /* WAS: 'language' */
   }
+  if (isset($data['group_content|node|place|form'])) {
+    $data['group_content|node|place|form']->data['children'][17] = 'field_sorting_point'; /* WAS: '' */
+  }
+  if (isset($data['group_content|node|place|form'])) {
+    $data['group_content|node|place|form']->data['children'][18] = 'field_responsibility'; /* WAS: '' */
+  }
 }
 
 /**

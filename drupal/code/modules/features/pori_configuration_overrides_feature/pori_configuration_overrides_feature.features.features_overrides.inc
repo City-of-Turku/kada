@@ -102,6 +102,8 @@ function pori_configuration_overrides_feature_features_override_default_override
   // Exported overrides for: field_group
   $overrides["field_group.group_additional_information|node|page|form.data|children|2"] = 'field_contact_person';
   $overrides["field_group.group_content|node|place|form.data|children|11"] = 'field_read_more';
+  $overrides["field_group.group_content|node|place|form.data|children|17"] = 'field_sorting_point';
+  $overrides["field_group.group_content|node|place|form.data|children|18"] = 'field_responsibility';
 
   // Exported overrides for: field_instance
   $overrides["field_instance.node-event-field_keywords_et.display|live_results_search"] = array(
