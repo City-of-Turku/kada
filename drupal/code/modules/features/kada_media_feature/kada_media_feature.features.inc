@@ -1135,11 +1135,10 @@ function kada_media_feature_image_default_styles() {
     'label' => 'person_breakpoints_theme_kada_mobile_1x',
     'effects' => array(
       9 => array(
-        'name' => 'image_scale',
+        'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 500,
-          'height' => '',
-          'upscale' => 0,
+          'width' => 320,
+          'height' => 427,
         ),
         'weight' => 1,
       ),
@@ -1151,11 +1150,10 @@ function kada_media_feature_image_default_styles() {
     'label' => 'person_breakpoints_theme_kada_phablet_1x',
     'effects' => array(
       8 => array(
-        'name' => 'image_scale',
+        'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 400,
-          'height' => '',
-          'upscale' => 0,
+          'width' => 380,
+          'height' => 507,
         ),
         'weight' => 1,
       ),
@@ -1167,11 +1165,10 @@ function kada_media_feature_image_default_styles() {
     'label' => 'person_breakpoints_theme_kada_smalldesktop_1x',
     'effects' => array(
       7 => array(
-        'name' => 'image_scale',
+        'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 225,
-          'height' => '',
-          'upscale' => 0,
+          'width' => 317,
+          'height' => 423,
         ),
         'weight' => 1,
       ),

@@ -9,10 +9,10 @@
 
   > .field {
     .field__item {
-      margin-bottom: 2rem;
+      border-bottom: 1px solid $yellow;
 
       &:last-child {
-        margin-bottom: 0;
+        border-bottom: 0 none;
       }
     }
   }
