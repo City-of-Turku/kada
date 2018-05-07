@@ -42,7 +42,7 @@ function pori_configuration_views_default_views() {
   $handler->display->display_options['fields']['field_main_image']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_main_image']['empty_zero'] = TRUE;
   $handler->display->display_options['fields']['field_main_image']['click_sort_column'] = 'sid';
-  $handler->display->display_options['fields']['field_main_image']['type'] = 'main_liftup_wide';
+  $handler->display->display_options['fields']['field_main_image']['type'] = 'carousel';
   $handler->display->display_options['fields']['field_main_image']['settings'] = array(
     'link' => '0',
   );
