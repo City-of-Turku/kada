@@ -5,3 +5,252 @@
  */
 
 include_once 'pori_waste_search.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function pori_waste_search_menu() {
+  $items = [];
+
+  $items['waste/search'] = [
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['pori_waste_search_page_callback'],
+    'access arguments' => ['access content'],
+    'type' => MENU_CALLBACK,
+  ];
+
+//  $items['ajax/waste-search-views'] = array(
+//    'page callback' => 'pori_search_update_views',
+//    'access arguments' => array('access content'),
+//    'type' => MENU_CALLBACK,
+//  );
+
+  return $items;
+}
+
+/**
+ * Callback to update views by AJAX.
+ *
+ * @param string $type
+ *   Determines the way to render the output.
+ * @param string $options
+ *   Serialized data to be processed.
+ */
+function pori_search_update_views($type, $options) {
+  $output = _pori_search_load_views($options);
+
+  if ($type == 'ajax' && !empty($output)) {
+    $commands = array();
+    $commands[] = ajax_command_replace(
+      '#theme-tag-views',
+      '<div id="theme-tag-views">' . $output . '</div>'
+    );
+    $page = array(
+      '#type' => 'ajax',
+      '#commands' => $commands,
+    );
+    ajax_deliver($page);
+  }
+}
+
+
+/**
+ * Render view with overridden options.
+ *
+ * @param string $view_id
+ *   Machine name of the view.
+ * @param string $display_id
+ *   Display name of the view.
+ * @param array $arguments
+ *   Arguments in array to be used in the view.
+ *
+ * @return string
+ *   Return rendered view.
+ */
+function _pori_waste_search_render_view($view_id, $display_id, array $arguments) {
+  // Override options.
+  $args = explode('|', $arguments['value']);
+  if (is_array($args)) {
+    $type = $args[0];
+    $id = $args[1];
+  }
+
+  // If type is place, skip the whole view.
+  if (isset($type) && $type == 'place') {
+    return '<div id="waste-search-ajax">' . 'tartteis näyttää kartta' . '</div>';
+  }
+
+  $view = views_get_view($view_id);
+
+  if (!isset($view) || !is_object($view)) {
+    return FALSE;
+  }
+
+  $view->set_display($display_id);
+  $view->set_use_ajax(TRUE);
+
+  // Set arguments.
+  if (isset($type) && isset($id)) {
+    $view->set_arguments([$id]);
+  }
+
+  if (isset($limit) && !empty($limit)) {
+    $view->set_items_per_page($limit);
+  }
+
+  $view->pre_execute();
+  $view->execute();
+  $rendered_view = $view->render();
+  return '<div id="waste-search-ajax">' . $rendered_view . '</div>';
+}
+
+
+
+/**
+ * Page callback for pori_waste_search_page_callback.
+ */
+function pori_waste_search_page_callback($form, &$form_state) {
+
+  $values = _pori_waste_search_load_filter_values();
+
+  $form['type'] = [
+    '#type' => 'select',
+    '#options' => $values,
+    '#attributes' => [
+      'class' => [ 'chosen-select' ],
+      'multiple' => '',
+      'data-placeholder' => t('Search from waste search...'),
+    ],
+  ];
+
+  $form['submit'] = [
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+    '#ajax' => [
+      'callback' => 'pori_waste_search_form_ajax_handler',
+      'wrapper'  => 'waste-search-ajax',
+      'effect' => 'fade',
+    ],
+  ];
+
+  $form['wrapper'] = [
+    '#markup' => '<div id="waste-search-ajax"></div>',
+  ];
+
+
+  // Load Chosen jQuery library.
+  $chosen = pori_waste_search_load_chosen_library();
+  if ($chosen) {
+    drupal_add_js(
+      $chosen,
+      [
+        'group' => JS_LIBRARY,
+        'scope' => 'footer',
+        'weight' => -100,
+      ]
+    );
+  }
+
+  // Load custom chosen js.
+  drupal_add_js(drupal_get_path('module', 'pori_waste_search') . '/js/chosen.js', [
+    'group' => JS_LIBRARY,
+    'scope' => 'footer',
+    'weight' => 0,
+  ]);
+
+  drupal_add_css(drupal_get_path('module', 'pori_waste_search') . '/css/chosen.css');
+
+  return $form;
+}
+
+function pori_waste_search_form_ajax_handler(&$form, &$form_state) {
+  return _pori_waste_search_render_view('pori_waste_search', 'block', ['value' => $form_state["values"]["type"]]);
+}
+
+
+function pori_waste_search_form_submit(&$form, &$form_state) {
+  // Run when validation logic is ok.
+}
+
+function pori_waste_search_form_validate(&$form, &$form_state) {
+  // Validation logic. (invalidate using form_set_error() or form_error())
+}
+
+/**
+ * Load filter values for Pori waste search form.
+ *
+ * @return array
+ */
+function _pori_waste_search_load_filter_values() {
+  global $language;
+
+  $items = [];
+
+  // Load all terms and shits to filter the view.
+  foreach (['waste', 'waste_type'] as $type) {
+    $vocabulary = taxonomy_vocabulary_machine_name_load($type);
+    foreach (entity_load('taxonomy_term', FALSE, ['vid' => $vocabulary->vid]) as $key => $values) {
+      $items[$type . '|' . $key] = isset($values->name_field[$language->language]) ? $values->name_field[$language->language][0]["safe_value"] : $values->name;
+    }
+  }
+
+  $query = new EntityFieldQuery();
+  $query
+    ->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'place')
+    ->fieldCondition('field_sorting_point', 'value', TRUE);
+
+  $result = $query->execute();
+  $nids = array_keys($result['node']);
+  $nodes = entity_load('node', $nids);
+
+  foreach ($nodes as $nid => $values) {
+    $items['place|' . $nid] = isset($values->title_field[$language->language]) ? $values->title_field[$language->language][0]["safe_value"] : $values->title;
+  }
+
+  return $items;
+}
+
+
+/**
+ * Implements hook_theme().
+ */
+function pori_waste_search_theme() {
+  return [
+    'pori_waste_search_filter' => [
+      'variables' => [
+        'item' => NULL,
+      ],
+      'path' => drupal_get_path('module', 'pori_waste_search') . '/templates',
+      'template' => 'pori_waste_search_filter',
+    ],
+  ];
+}
+
+/**
+ * Returns the JavaScript file of the Chosen library.
+ *
+ * Uses a cached filename until the file gets deleted or the cache gets cleared.
+ */
+function pori_waste_search_load_chosen_library() {
+  $cache = cache_get('chosen_library');
+  if (($cache !== FALSE) && file_exists($cache->data)) {
+    return $cache->data;
+  }
+
+  // Search for the library.
+  $libpath = libraries_get_path('chosen');
+
+  // Search for minimized files first.
+  $js = glob($libpath . '/chosen.jquery.min.js');
+
+  if (count($js) > 0) {
+    rsort($js);
+    cache_set('chosen_library', $js[0]);
+    return $js[0];
+  }
+  else {
+    // Could not find the library.
+    return FALSE;
+  }
+}
