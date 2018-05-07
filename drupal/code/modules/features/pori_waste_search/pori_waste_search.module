@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Pori waste search feature.
+ */
+
+include_once 'pori_waste_search.features.inc';
