@@ -383,6 +383,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
   if (isset($data['node-news_item-field_related_content'])) {
     $data['node-news_item-field_related_content']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
+  if (isset($data['node-page-body'])) {
+    $data['node-page-body']['widget']['weight'] = 15; /* WAS: 14 */
+  }
   if (isset($data['node-page-field_contact_information'])) {
     $data['node-page-field_contact_information']['display']['live_results_search'] = array(
       'label' => 'above',
@@ -395,6 +398,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
   if (isset($data['node-page-field_contact_person'])) {
     $data['node-page-field_contact_person']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
+  if (isset($data['node-page-field_info_box'])) {
+    $data['node-page-field_info_box']['widget']['weight'] = 16; /* WAS: 15 */
+  }
   if (isset($data['node-page-field_keywords'])) {
     $data['node-page-field_keywords']['display']['live_results_search'] = array(
       'label' => 'above',
@@ -404,6 +410,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-page-field_keywords']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
     $data['node-page-field_keywords']['widget']['weight'] = 17; /* WAS: 16 */
+  }
+  if (isset($data['node-page-field_lead_paragraph'])) {
+    $data['node-page-field_lead_paragraph']['widget']['weight'] = 14; /* WAS: 13 */
   }
   if (isset($data['node-page-field_related_content'])) {
     $data['node-page-field_related_content']['display']['live_results_search'] = array(
@@ -418,6 +427,10 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     unset($data['node-page-field_related_content']['widget']['settings']['references_dialog_search']);
     unset($data['node-page-field_related_content']['widget']['settings']['references_dialog_search_view']);
   }
+  if (isset($data['node-page-field_service_offering'])) {
+    $data['node-page-field_service_offering']['widget']['settings']['content_taxonomy_opt_groups'] = FALSE; /* WAS: '' */
+    $data['node-page-field_service_offering']['widget']['weight'] = 21; /* WAS: 20 */
+  }
   if (isset($data['node-page-field_subpage'])) {
     $data['node-page-field_subpage']['display']['live_results_search'] = array(
       'label' => 'above',
@@ -427,6 +440,12 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-page-field_subpage']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
+  if (isset($data['node-page-field_target_audience'])) {
+    $data['node-page-field_target_audience']['widget']['weight'] = 20; /* WAS: 19 */
+  }
+  if (isset($data['node-page-field_theme'])) {
+    $data['node-page-field_theme']['widget']['weight'] = 18; /* WAS: 17 */
+  }
   if (isset($data['node-page-field_topic'])) {
     $data['node-page-field_topic']['display']['live_results_search'] = array(
       'label' => 'above',
@@ -435,6 +454,12 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-page-field_topic']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
+  }
+  if (isset($data['node-page-field_visitpori_theme'])) {
+    $data['node-page-field_visitpori_theme']['widget']['weight'] = 19; /* WAS: 18 */
+  }
+  if (isset($data['node-page-field_widgets_after_content'])) {
+    $data['node-page-field_widgets_after_content']['widget']['weight'] = 22; /* WAS: 12 */
   }
   if (isset($data['node-page-field_widget_before_content'])) {
     $data['node-page-field_widget_before_content']['display']['live_results_search'] = array(

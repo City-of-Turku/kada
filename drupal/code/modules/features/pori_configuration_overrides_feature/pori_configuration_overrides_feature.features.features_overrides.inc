@@ -277,6 +277,7 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-news_item-field_keywords.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.node-news_item-field_related_content.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
+  $overrides["field_instance.node-page-body.widget|weight"] = 15;
   $overrides["field_instance.node-page-field_contact_information.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -285,6 +286,7 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-page-field_contact_information.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.node-page-field_contact_person.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
+  $overrides["field_instance.node-page-field_info_box.widget|weight"] = 16;
   $overrides["field_instance.node-page-field_keywords.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -293,6 +295,7 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-page-field_keywords.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.node-page-field_keywords.widget|weight"] = 17;
+  $overrides["field_instance.node-page-field_lead_paragraph.widget|weight"] = 14;
   $overrides["field_instance.node-page-field_related_content.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -304,6 +307,7 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["field_instance.node-page-field_related_content.widget|settings|references_dialog_edit"]["DELETED"] = TRUE;
   $overrides["field_instance.node-page-field_related_content.widget|settings|references_dialog_search"]["DELETED"] = TRUE;
   $overrides["field_instance.node-page-field_related_content.widget|settings|references_dialog_search_view"]["DELETED"] = TRUE;
+  $overrides["field_instance.node-page-field_service_offering.widget|weight"] = 21;
   $overrides["field_instance.node-page-field_subpage.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -311,6 +315,8 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => 0,
   );
   $overrides["field_instance.node-page-field_subpage.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
+  $overrides["field_instance.node-page-field_target_audience.widget|weight"] = 20;
+  $overrides["field_instance.node-page-field_theme.widget|weight"] = 18;
   $overrides["field_instance.node-page-field_topic.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -318,6 +324,8 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => 0,
   );
   $overrides["field_instance.node-page-field_topic.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
+  $overrides["field_instance.node-page-field_visitpori_theme.widget|weight"] = 19;
+  $overrides["field_instance.node-page-field_widgets_after_content.widget|weight"] = 22;
   $overrides["field_instance.node-page-field_widget_before_content.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
