@@ -101,6 +101,11 @@ function pori_configuration_overrides_feature_features_override_default_override
 
   // Exported overrides for: field_group
   $overrides["field_group.group_additional_information|node|page|form.data|children|2"] = 'field_contact_person';
+  $overrides["field_group.group_content|node|page|form.data|children|10"] = 'field_responsibility';
+  $overrides["field_group.group_content|node|page|form.data|children|11"] = 'field_show_main_image';
+  $overrides["field_group.group_content|node|page|form.data|children|12"] = 'language';
+  $overrides["field_group.group_content|node|page|form.data|children|13"] = 'title';
+  $overrides["field_group.group_content|node|page|form.data|children|9"] = 'field_widgets_after_content';
   $overrides["field_group.group_content|node|place|form.data|children|11"] = 'field_read_more';
 
   // Exported overrides for: field_instance
@@ -287,6 +292,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => 0,
   );
   $overrides["field_instance.node-page-field_keywords.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
+  $overrides["field_instance.node-page-field_keywords.widget|weight"] = 17;
   $overrides["field_instance.node-page-field_related_content.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
