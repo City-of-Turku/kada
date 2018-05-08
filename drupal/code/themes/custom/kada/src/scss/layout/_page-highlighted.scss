@@ -72,7 +72,7 @@
       }
 
       .content__header,
-      .section--content {
+      .section--content .node--page--full {
         @media screen and (min-width: $mobile-menu-breakpoint) {
           background-color: $white;
           padding: 0 4rem;
