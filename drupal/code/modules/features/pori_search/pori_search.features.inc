@@ -61,6 +61,7 @@ function pori_search_default_search_api_index() {
         "domain_domain_id" : { "type" : "list\\u003Cinteger\\u003E" },
         "field_additional_info_link:title" : { "type" : "list\\u003Ctext\\u003E" },
         "field_alternative_name" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_file_attachment" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "scald_atom" },
         "field_keywords" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_lead_paragraph" : { "type" : "text" },
         "field_lead_paragraph_et" : { "type" : "text" },
