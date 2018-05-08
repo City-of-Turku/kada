@@ -139,9 +139,7 @@
 
           <?php if($page['before_content']): ?>
             <div id="content-top" class="content-top">
-              <!-- <div class="container page-main__container content-top__container"> -->
-                <?php print render($page['before_content']); ?>
-              <!-- </div> -->
+              <?php print render($page['before_content']); ?>
             </div>
           <?php endif; ?>
 
@@ -156,9 +154,7 @@
 
         <?php if($page['after_content']): ?>
           <div id="content-bottom" class="content-bottom">
-            <!-- <div class="container page-main__container content-bottom__container"> -->
-              <?php print render($page['after_content']); ?>
-            <!-- </div> -->
+            <?php print render($page['after_content']); ?>
           </div>
         <?php endif; ?>
 
