@@ -75,6 +75,7 @@
       .section--content .node--page--full {
         @media screen and (min-width: $mobile-menu-breakpoint) {
           background-color: $white;
+          margin: 0;
           padding: 0 4rem;
           width: 60%;
         }
@@ -86,6 +87,32 @@
     @media screen and (min-width: $mobile-menu-breakpoint) {
       margin-top: -230px;
       min-height: 230px;
+    }
+  }
+
+  .page--has-sidebar {
+    .page__content,
+    .page__sidebar {
+      float: none;
+      padding-right: 0;
+      width: 100%;
+
+      @media screen and (min-width: $full) {
+        float: left;
+      }
+    }
+
+    .page__content {
+      @media screen and (min-width: $full) {
+        padding-right: 10%;
+        width: 70%;
+      }
+    }
+
+    .page__sidebar {
+      @media screen and (min-width: $full) {
+        width: 30%;
+      }
     }
   }
 }
