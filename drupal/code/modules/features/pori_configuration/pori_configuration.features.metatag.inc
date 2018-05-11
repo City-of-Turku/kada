@@ -19,19 +19,19 @@ function pori_configuration_metatag_export_default() {
         'value' => '[site:name]',
       ),
       'description' => array(
-        'value' => 'Porin kaupungin verkkosivuilta saa tietoa kaupungin palveluista ja ajankohtaisista asioista.
-PL 121, 28101 PORI
-vaihde 02 621 1100
+        'value' => 'City of Pori web site has information on the city\'s services and current affairs.
+PO Box 121, 28101 PORI
+phone exchange 02 621 1100
 kirjaamo@pori.fi, etunimi.sukunimi@pori.fi',
       ),
       'dcterms.description' => array(
-        'value' => 'Porin kaupungin verkkosivuilta saa tietoa kaupungin palveluista ja ajankohtaisista asioista. PL 121, 28101 PORI vaihde 02 621 1100 kirjaamo@pori.fi, etunimi.sukunimi@pori.fi',
+        'value' => 'City of Pori web site has information on the city\'s services and current affairs. PO Box 121, 28101 PORI phone exchange 02 621 1100 kirjaamo@pori.fi, etunimi.sukunimi@pori.fi',
       ),
       'og:description' => array(
-        'value' => 'Porin kaupungin verkkosivuilta saa tietoa kaupungin palveluista ja ajankohtaisista asioista. PL 121, 28101 PORI vaihde 02 621 1100 kirjaamo@pori.fi, etunimi.sukunimi@pori.fi',
+        'value' => 'City of Pori web site has information on the city\'s services and current affairs. PO Box 121, 28101 PORI phone exchange 02 621 1100 kirjaamo@pori.fi, etunimi.sukunimi@pori.fi',
       ),
       'twitter:description' => array(
-        'value' => 'Porin kaupungin verkkosivuilta saa tietoa kaupungin palveluista ja ajankohtaisista asioista. PL 121, 28101 PORI vaihde 02 621 1100 kirjaamo@pori.fi, etunimi.sukunimi@pori.fi',
+        'value' => 'City of Pori web site has information on the city\'s services and current affairs. PO Box 121, 28101 PORI phone exchange 02 621 1100 kirjaamo@pori.fi, etunimi.sukunimi@pori.fi',
       ),
     ),
   );
@@ -45,16 +45,16 @@ kirjaamo@pori.fi, etunimi.sukunimi@pori.fi',
         'value' => '[site:name]',
       ),
       'description' => array(
-        'value' => 'Porin matkailuneuvonta',
+        'value' => 'Pori area travel information',
       ),
       'dcterms.description' => array(
-        'value' => 'Porin matkailuneuvonta',
+        'value' => 'Pori area travel information',
       ),
       'og:description' => array(
-        'value' => 'Porin matkailuneuvonta',
+        'value' => 'Pori area travel information',
       ),
       'twitter:description' => array(
-        'value' => 'Porin matkailuneuvonta',
+        'value' => 'Pori area travel information',
       ),
     ),
   );
