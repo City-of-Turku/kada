@@ -183,10 +183,12 @@
   Drupal.behaviors.poriMainMenuHover = {
     attach: function (context) {
       $('.l-navigation .menu .menu__item', context).once('main-menu-hover', function () {
-        $(this).hoverIntent(
-          function() {
-            $(this).toggleClass('menu__item--hover');
-            adjustHeight();
+        $(this).hoverIntent({
+            over: function() {
+              $(this).toggleClass('menu__item--hover');
+              adjustHeight();
+            },
+            timeout: 200
           }
         );
 
