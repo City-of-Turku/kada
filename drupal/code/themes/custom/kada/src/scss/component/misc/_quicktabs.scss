@@ -41,7 +41,6 @@
       width: 2.917rem;
 
       @media screen and (min-width: $tablet-landscape) {
-        border: .063rem solid $secondary-color;
         height: auto;
         margin-right: .625rem;
         text-indent: 0;
@@ -50,6 +49,7 @@
       }
 
       .ui-tabs-anchor {
+        border: .063rem solid $secondary-color;
         color: $primary-color;
         display: block;
         float: none;
@@ -98,24 +98,84 @@
           @include fa('\f041', 1.2rem, 1, false);
         }
 
-        &.facebook::after {
-          @include fa('\f230', 1.2rem, 1, false);
+        &.facebook {
+          border-color: $facebook-color;
+          color: $facebook-color;
+
+          &::after {
+            @include fa('\f230', 1.2rem, 1, false);
+            color: $facebook-color;
+          }
+
+          &:hover,
+          &:focus,
+          &.ui-state-active {
+            background-color: $facebook-color;
+          }
         }
 
-        &.instagram::after {
-          @include fa('\f16d', 1.2rem, 1, false);
+        &.instagram {
+          border-color: $instagram-color;
+          color: $instagram-color;
+
+          &::after {
+            @include fa('\f16d', 1.2rem, 1, false);
+            color: $instagram-color;
+          }
+
+          &:hover,
+          &:focus,
+          &.ui-state-active {
+            background-color: $instagram-color;
+          }
         }
 
-        &.twitter::after {
-          @include fa('\f099', 1.2rem, 1, false);
+        &.twitter {
+          border-color: $twitter-color;
+          color: $twitter-color;
+
+          &::after {
+            @include fa('\f099', 1.2rem, 1, false);
+            color: $twitter-color;
+          }
+
+          &:hover,
+          &:focus,
+          &.ui-state-active {
+            background-color: $twitter-color;
+          }
         }
 
-        &.linkedin::after {
-          @include fa('\f08c', 1.2rem, 1, false);
+        &.linkedin {
+          border-color: $linkedin-color;
+          color: $linkedin-color;
+
+          &::after {
+            @include fa('\f08c', 1.2rem, 1, false);
+            color: $linkedin-color;
+          }
+
+          &:hover,
+          &:focus,
+          &.ui-state-active {
+            background-color: $linkedin-color;
+          }
         }
 
-        &.youtube::after{
-          @include fa('\f16a', 1.2rem, 1, false);
+        &.youtube {
+          border-color: $youtube-color;
+          color: $youtube-color;
+
+          &::after{
+            @include fa('\f16a', 1.2rem, 1, false);
+            color: $youtube-color;
+          }
+
+          &:hover,
+          &:focus,
+          &.ui-state-active {
+            background-color: $youtube-color;
+          }
         }
 
         &.blogs::after,
@@ -133,6 +193,10 @@
 
         .ui-tabs-anchor {
           color: $white;
+
+          &::after {
+            color: $white;
+          }
 
           &.all::after,
           &.kaikki::after {
