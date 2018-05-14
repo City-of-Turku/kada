@@ -22,11 +22,21 @@
           });
         }
 
+        $('#pori-waste-search-map-form input[type=submit]').on('click', function(event) {
+          event.stopPropagation();
+          map_view.removeClass('is-hidden');
+        });
+
+        $('.chosen-select').change(function(event) {
+          event.stopPropagation();
+          map_view.addClass('is-hidden');
+        });
+
         $('.chosen-select').once('pori_waste_search_label', function () {
           // Chosenize each select list.
           chosen = $(this).chosen({
             width: '50%'
-          }).change(function(){
+          }).change(function() {
             $('form.pori-waste-search-page-callback input[type=submit]').mousedown();
           });
         });

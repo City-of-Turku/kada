@@ -19,7 +19,38 @@ function pori_waste_search_menu() {
     'type' => MENU_CALLBACK,
   ];
 
+  $items['ajax/waste/waste-types-map'] = [
+    'page callback' => 'pori_waste_search_update_views',
+    'access arguments' => ['access content'],
+    'type' => MENU_CALLBACK,
+  ];
+
   return $items;
+}
+
+/**
+ * Callback to update views by AJAX.
+ *
+ * @param string $type
+ *   Determines the way to render the output.
+ * @param string $options
+ *   Serialized data to be processed.
+ */
+function pori_waste_search_update_views($type, $options) {
+  $output = _pori_waste_search_render_map_view('pori_waste_search_map', 'block', ['value' => $options]);
+
+  if ($type == 'ajax' && !empty($output)) {
+    $commands = array();
+    $commands[] = ajax_command_replace(
+      '#waste-search-map-ajax',
+      '<div id="waste-search-map-ajax">' . $output . '</div>'
+    );
+    $page = array(
+      '#type' => 'ajax',
+      '#commands' => $commands,
+    );
+    ajax_deliver($page);
+  }
 }
 
 /**
@@ -61,9 +92,10 @@ function pori_waste_search_page_callback($form, &$form_state) {
     '#suffix' => '</div>',
   ];
 
+  // Pre load the ip_geoloc javascripts.
   $form['waste_search_map_wrapper'] = [
     '#prefix' => '<div id="waste-search-map-ajax" class="is-hidden">',
-    '#markup' => _pori_waste_search_render_map_view('pori_waste_search_map', 'block', []),
+    '#markup' => ip_geoloc_output_map(0,0, $div_id = 'waste-search-map-ajax'),
     '#suffix' => '</div>',
   ];
 
@@ -105,23 +137,17 @@ function pori_waste_search_map_form() {
 
 /**
  * Handler for waste search and waste search map forms.
+ *
+ * @param array $form
+ *   pori_waste_search_map_form.
+ * @param array $form_state
+ *   pori_waste_search_map_form state.
+ * @return array
+ *   Return markup for ajax.
  */
 function pori_waste_search_form_ajax_handler(&$form, &$form_state) {
-  $cid = 'pori_waste_search_places';
-  $places = &drupal_static($cid);
-
-  if ($form['#token'] == 'pori_waste_search_map_form') {
-    if ($cache = cache_get($cid)) {
-      $places = $cache->data;
-    }
-    cache_set($cid, '', 'cache', CACHE_TEMPORARY);
-    $form['waste_search_map_wrapper']['#markup'] = _pori_waste_search_render_map_view('pori_waste_search_map', 'block', ['value' => $places]);
-    return $form['waste_search_map_wrapper'];
-  } else {
-    cache_set($cid, $form_state["values"]["type"], 'cache', CACHE_TEMPORARY);
-    $form['waste_search_wrapper']['#markup'] = _pori_waste_search_render_view('pori_waste_search', 'block', ['value' => $form_state["values"]["type"]]);
-    return $form['waste_search_wrapper'];
-  }
+  $form['waste_search_wrapper']['#markup'] = _pori_waste_search_render_view('pori_waste_search', 'block', ['value' => $form_state["values"]["type"]]);
+  return $form['waste_search_wrapper'];
 }
 
 /**
@@ -163,10 +189,11 @@ function _pori_waste_search_render_view($view_id, $display_id, array $arguments)
   $view->execute();
   $rendered_view = $view->render();
 
-  if (!empty($rendered_view) && !empty($id) && $type !== 'place') {
-    $form = drupal_get_form('pori_waste_search_map_form');
-    $markup = $rendered_view . render($form);
-  } elseif ($type == 'place') {
+  if (!empty($rendered_view) && !empty($id) && isset($type) && $type !== 'place') {
+    global $base_url;
+    $link = '<div class="link-wrapper"><a class="button button--primary use-ajax" name="show-locations" href="' . $base_url . '/ajax/waste/waste-types-map/nojs/' .  $arguments['value'] . '">'. t('Show waste drop locations') . '</a></div>';
+    $markup = $rendered_view . $link;
+  } elseif (isset($type) && $type == 'place') {
     $markup = $rendered_view . _pori_waste_search_render_map_view('pori_waste_search_map', 'block', $arguments);
   } else {
     $markup = $rendered_view;
@@ -201,27 +228,39 @@ function _pori_waste_search_render_map_view($view_id, $display_id, array $argume
     switch ($type) {
       case 'waste':
         // Get the field value
-        $waste = taxonomy_term_load($id);
-        $waste_types = field_get_items('taxonomy_term', $waste, 'field_waste_type');
-        foreach ($waste_types as $type) {
-          $waste_type = taxonomy_term_load($type['target_id']);
-          $refs = field_get_items('taxonomy_term', $waste_type, 'field_waste_type_place');
-          foreach ($refs as $reference) {
-            $places[] = $reference['target_id'];
+        if (isset($id)) {
+          $waste = taxonomy_term_load($id);
+          $waste_types = field_get_items('taxonomy_term', $waste, 'field_waste_type');
+          if (isset($waste_types) && is_array($waste_types)) {
+            foreach ($waste_types as $type) {
+              $waste_type = taxonomy_term_load($type['target_id']);
+              $refs = field_get_items('taxonomy_term', $waste_type, 'field_waste_type_place');
+              if (isset($refs) && is_array($refs)) {
+                foreach ($refs as $reference) {
+                  $places[] = $reference['target_id'];
+                }
+              }
+            }
           }
         }
         break;
       case 'waste_type':
         // Get the field value
-        $waste_type = taxonomy_term_load($id);
-        $refs = field_get_items('taxonomy_term', $waste_type, 'field_waste_type_place');
-        foreach ($refs as $reference) {
-          $places[] = $reference['target_id'];
+        if (isset($id)) {
+          $waste_type = taxonomy_term_load($id);
+          $refs = field_get_items('taxonomy_term', $waste_type, 'field_waste_type_place');
+          if (isset($refs) && is_array($refs)) {
+            foreach ($refs as $reference) {
+              $places[] = $reference['target_id'];
+            }
+          }
         }
         break;
       case 'place':
         // Get the field value
-        $places[] = $id;
+        if (isset($id)) {
+          $places[] = $id;
+        }
         break;
     }
   }
