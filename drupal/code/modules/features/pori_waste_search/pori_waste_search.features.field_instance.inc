@@ -60,7 +60,7 @@ function pori_waste_search_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
           'bypass_access' => FALSE,
@@ -221,6 +221,42 @@ function pori_waste_search_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-waste_type-field_waste_type_place'.
+  $field_instances['taxonomy_term-waste_type-field_waste_type_place'] = array(
+    'bundle' => 'waste_type',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_waste_type_place',
+    'label' => 'Place',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 41,
+    ),
+  );
+
   // Exported field_instance:
   // 'taxonomy_term-waste_type-field_waste_type_short_desc'.
   $field_instances['taxonomy_term-waste_type-field_waste_type_short_desc'] = array(
@@ -233,7 +269,7 @@ function pori_waste_search_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 3,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'taxonomy_term',
@@ -308,6 +344,7 @@ function pori_waste_search_field_default_field_instances() {
   t('Description');
   t('Images');
   t('Name');
+  t('Place');
   t('Short description');
   t('Waste type');
 
