@@ -77,7 +77,6 @@ function pori_waste_search_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_waste_type_taxonomy_term']['id'] = 'reverse_field_waste_type_taxonomy_term';
   $handler->display->display_options['relationships']['reverse_field_waste_type_taxonomy_term']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['relationships']['reverse_field_waste_type_taxonomy_term']['field'] = 'reverse_field_waste_type_taxonomy_term';
-  $handler->display->display_options['relationships']['reverse_field_waste_type_taxonomy_term']['label'] = 'Taxonomy term referencing Taxonomy term from field_waste_type';
   $handler->display->display_options['relationships']['reverse_field_waste_type_taxonomy_term']['required'] = TRUE;
   $handler->display->display_options['displays'] = array(
     'block' => 'block',
