@@ -19,43 +19,113 @@ function pori_waste_search_menu() {
     'type' => MENU_CALLBACK,
   ];
 
-//  $items['ajax/waste-search-views'] = array(
-//    'page callback' => 'pori_search_update_views',
-//    'access arguments' => array('access content'),
-//    'type' => MENU_CALLBACK,
-//  );
-
   return $items;
 }
 
 /**
- * Callback to update views by AJAX.
+ * Page callback for waste/search.
  *
- * @param string $type
- *   Determines the way to render the output.
- * @param string $options
- *   Serialized data to be processed.
+ * @inheritdoc
  */
-function pori_search_update_views($type, $options) {
-  $output = _pori_search_load_views($options);
+function pori_waste_search_page_callback($form, &$form_state) {
+  $values = _pori_waste_search_load_filter_values();
 
-  if ($type == 'ajax' && !empty($output)) {
-    $commands = array();
-    $commands[] = ajax_command_replace(
-      '#theme-tag-views',
-      '<div id="theme-tag-views">' . $output . '</div>'
-    );
-    $page = array(
-      '#type' => 'ajax',
-      '#commands' => $commands,
-    );
-    ajax_deliver($page);
+  $form['type'] = [
+    '#type' => 'select',
+    '#options' => $values,
+    '#attributes' => [
+      'class' => [
+        'chosen-select'
+      ],
+      'data-placeholder' => t('Search from waste search...'),
+    ],
+  ];
+
+  $form['submit'] = [
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+    '#ajax' => [
+      'callback' => 'pori_waste_search_form_ajax_handler',
+      'wrapper'  => 'waste-search-ajax',
+      'effect' => 'fade',
+    ],
+    '#attributes' => [
+      'class' => [
+        'is-hidden'
+      ]
+    ]
+  ];
+
+  $form['waste_search_wrapper'] = [
+    '#prefix' => '<div id="waste-search-ajax">',
+    '#suffix' => '</div>',
+  ];
+
+  $form['waste_search_map_wrapper'] = [
+    '#prefix' => '<div id="waste-search-map-ajax" class="is-hidden">',
+    '#markup' => _pori_waste_search_render_map_view('pori_waste_search_map', 'block', []),
+    '#suffix' => '</div>',
+  ];
+
+  // Load Chosen jQuery library.
+  if ($chosen = pori_waste_search_load_chosen_library()) {
+    $form['#attached']['js'][] = $chosen;
+  }
+
+  // Load custom chosen js.
+  $form['#attached']['js'][] = drupal_get_path('module', 'pori_waste_search') . '/js/chosen.js';
+
+  // Add css to the form.
+  $form['#attached']['css'][] = drupal_get_path('module', 'pori_waste_search') . '/css/chosen.css';
+
+  return $form;
+}
+
+/**
+ * Build a form for Drop locations button.
+ */
+function pori_waste_search_map_form() {
+  $form = [];
+
+  $form['submit'] = [
+    '#type' => 'submit',
+    '#value' => t('Show waste drop locations'),
+    '#ajax' => [
+      'callback' => 'pori_waste_search_form_ajax_handler',
+      'wrapper'  => 'waste-search-map-ajax',
+      'effect' => 'fade',
+    ],
+    '#attributes' => [
+      'class' => [ 'button', 'button--primary'],
+    ],
+  ];
+
+  return $form;
+}
+
+/**
+ * Handler for waste search and waste search map forms.
+ */
+function pori_waste_search_form_ajax_handler(&$form, &$form_state) {
+  $cid = 'pori_waste_search_places';
+  $places = &drupal_static($cid);
+
+  if ($form['#token'] == 'pori_waste_search_map_form') {
+    if ($cache = cache_get($cid)) {
+      $places = $cache->data;
+    }
+    cache_set($cid, '', 'cache', CACHE_TEMPORARY);
+    $form['waste_search_map_wrapper']['#markup'] = _pori_waste_search_render_map_view('pori_waste_search_map', 'block', ['value' => $places]);
+    return $form['waste_search_map_wrapper'];
+  } else {
+    cache_set($cid, $form_state["values"]["type"], 'cache', CACHE_TEMPORARY);
+    $form['waste_search_wrapper']['#markup'] = _pori_waste_search_render_view('pori_waste_search', 'block', ['value' => $form_state["values"]["type"]]);
+    return $form['waste_search_wrapper'];
   }
 }
 
-
 /**
- * Render view with overridden options.
+ * Render waste search view.
  *
  * @param string $view_id
  *   Machine name of the view.
@@ -70,14 +140,9 @@ function pori_search_update_views($type, $options) {
 function _pori_waste_search_render_view($view_id, $display_id, array $arguments) {
   // Override options.
   $args = explode('|', $arguments['value']);
-  if (is_array($args)) {
+  if (is_array($args) && !empty($arguments['value'])) {
     $type = $args[0];
     $id = $args[1];
-  }
-
-  // If type is place, skip the whole view.
-  if (isset($type) && $type == 'place') {
-    return '<div id="waste-search-ajax">' . 'tartteis näyttää kartta' . '</div>';
   }
 
   $view = views_get_view($view_id);
@@ -94,86 +159,91 @@ function _pori_waste_search_render_view($view_id, $display_id, array $arguments)
     $view->set_arguments([$id]);
   }
 
-  if (isset($limit) && !empty($limit)) {
-    $view->set_items_per_page($limit);
+  $view->pre_execute();
+  $view->execute();
+  $rendered_view = $view->render();
+
+  if (!empty($rendered_view) && !empty($id) && $type !== 'place') {
+    $form = drupal_get_form('pori_waste_search_map_form');
+    $markup = $rendered_view . render($form);
+  } elseif ($type == 'place') {
+    $markup = $rendered_view . _pori_waste_search_render_map_view('pori_waste_search_map', 'block', $arguments);
+  } else {
+    $markup = $rendered_view;
+  }
+
+  return $markup;
+}
+
+/**
+ * Render waste search map view.
+ *
+ * @param string $view_id
+ *   Machine name of the view.
+ * @param string $display_id
+ *   Display name of the view.
+ * @param array $arguments
+ *   Arguments in array to be used in the view.
+ *
+ * @return string
+ *   Return rendered view.
+ */
+function _pori_waste_search_render_map_view($view_id, $display_id, array $arguments) {
+  // Override options.
+  $args = explode('|', $arguments['value']);
+  if (is_array($args) && !empty($arguments['value'])) {
+    $type = $args[0];
+    $id = $args[1];
+  }
+  $places = [];
+
+  if (isset($type)) {
+    switch ($type) {
+      case 'waste':
+        // Get the field value
+        $waste = taxonomy_term_load($id);
+        $waste_types = field_get_items('taxonomy_term', $waste, 'field_waste_type');
+        foreach ($waste_types as $type) {
+          $waste_type = taxonomy_term_load($type['target_id']);
+          $refs = field_get_items('taxonomy_term', $waste_type, 'field_waste_type_place');
+          foreach ($refs as $reference) {
+            $places[] = $reference['target_id'];
+          }
+        }
+        break;
+      case 'waste_type':
+        // Get the field value
+        $waste_type = taxonomy_term_load($id);
+        $refs = field_get_items('taxonomy_term', $waste_type, 'field_waste_type_place');
+        foreach ($refs as $reference) {
+          $places[] = $reference['target_id'];
+        }
+        break;
+      case 'place':
+        // Get the field value
+        $places[] = $id;
+        break;
+    }
+  }
+
+  // If type is place, skip the whole view.
+  $view = views_get_view($view_id);
+  $view->set_display($display_id);
+  $view->set_use_ajax(TRUE);
+
+  // Set arguments.
+  if (isset($places) && !empty($places)) {
+    $view->set_arguments([implode('+', $places)]);
   }
 
   $view->pre_execute();
   $view->execute();
-  $rendered_view = $view->render();
-  return '<div id="waste-search-ajax">' . $rendered_view . '</div>';
-}
+  $rendered_map_view = $view->render();
 
-
-
-/**
- * Page callback for pori_waste_search_page_callback.
- */
-function pori_waste_search_page_callback($form, &$form_state) {
-
-  $values = _pori_waste_search_load_filter_values();
-
-  $form['type'] = [
-    '#type' => 'select',
-    '#options' => $values,
-    '#attributes' => [
-      'class' => [ 'chosen-select' ],
-      'multiple' => '',
-      'data-placeholder' => t('Search from waste search...'),
-    ],
-  ];
-
-  $form['submit'] = [
-    '#type' => 'submit',
-    '#value' => t('Submit'),
-    '#ajax' => [
-      'callback' => 'pori_waste_search_form_ajax_handler',
-      'wrapper'  => 'waste-search-ajax',
-      'effect' => 'fade',
-    ],
-  ];
-
-  $form['wrapper'] = [
-    '#markup' => '<div id="waste-search-ajax"></div>',
-  ];
-
-
-  // Load Chosen jQuery library.
-  $chosen = pori_waste_search_load_chosen_library();
-  if ($chosen) {
-    drupal_add_js(
-      $chosen,
-      [
-        'group' => JS_LIBRARY,
-        'scope' => 'footer',
-        'weight' => -100,
-      ]
-    );
+  if (isset($rendered_map_view) && !empty($rendered_map_view)) {
+    return $rendered_map_view;
   }
-
-  // Load custom chosen js.
-  drupal_add_js(drupal_get_path('module', 'pori_waste_search') . '/js/chosen.js', [
-    'group' => JS_LIBRARY,
-    'scope' => 'footer',
-    'weight' => 0,
-  ]);
-
-  drupal_add_css(drupal_get_path('module', 'pori_waste_search') . '/css/chosen.css');
-
-  return $form;
-}
-
-function pori_waste_search_form_ajax_handler(&$form, &$form_state) {
-  return _pori_waste_search_render_view('pori_waste_search', 'block', ['value' => $form_state["values"]["type"]]);
-}
-
-
-function pori_waste_search_form_submit(&$form, &$form_state) {
-  // Run when validation logic is ok.
-}
-
-function pori_waste_search_form_validate(&$form, &$form_state) {
-  // Validation logic. (invalidate using form_set_error() or form_error())
+  return '';
 }
 
 /**
@@ -184,7 +254,7 @@ function pori_waste_search_form_validate(&$form, &$form_state) {
 function _pori_waste_search_load_filter_values() {
   global $language;
 
-  $items = [];
+  $items = ['0' => ''];
 
   // Load all terms and shits to filter the view.
   foreach (['waste', 'waste_type'] as $type) {
@@ -209,22 +279,6 @@ function _pori_waste_search_load_filter_values() {
   }
 
   return $items;
-}
-
-
-/**
- * Implements hook_theme().
- */
-function pori_waste_search_theme() {
-  return [
-    'pori_waste_search_filter' => [
-      'variables' => [
-        'item' => NULL,
-      ],
-      'path' => drupal_get_path('module', 'pori_waste_search') . '/templates',
-      'template' => 'pori_waste_search_filter',
-    ],
-  ];
 }
 
 /**
