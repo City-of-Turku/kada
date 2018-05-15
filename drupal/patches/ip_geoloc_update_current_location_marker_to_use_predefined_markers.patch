@@ -1,17 +1,86 @@
+diff --git a/ip_geoloc_api.inc b/ip_geoloc_api.inc
+index f27891c..0bfa62d 100644
+--- a/ip_geoloc_api.inc
++++ b/ip_geoloc_api.inc
+@@ -249,8 +249,9 @@ function ip_geoloc_output_map_multi_visitor($locations, $div_id = 'ip-geoloc-map
+  *   map placeholder div
+  */
+ function ip_geoloc_output_map_multi_location($locations, $div_id = 'ip-geoloc-map-multi-locations',
+-    $map_options = NULL, $map_style = NULL, $marker_color = NULL, $visitor_marker = TRUE,
+-    $center_option = 0, $center_latlng = array(0, 0), $visitor_location_gps = TRUE) {
++  $map_options = NULL, $map_style = NULL, $marker_color = NULL, $visitor_marker = TRUE,
++  $center_option = 0, $center_latlng = array(0, 0), $visitor_location_gps = TRUE,
++  $geofield_origin_coords = NULL, $geofield_origin = NULL) {
+ 
+   drupal_add_js(IP_GEOLOC_GOOGLE_MAPS, array('type' => 'external', 'group' => JS_LIBRARY));
+   drupal_add_js(drupal_get_path('module', 'ip_geoloc') . '/js/ip_geoloc_gmap_multi_loc.js');
+@@ -335,6 +336,8 @@ function ip_geoloc_output_map_multi_location($locations, $div_id = 'ip-geoloc-ma
+     'ip_geoloc_multi_location_marker_height' => (int)$marker_height,
+     'ip_geoloc_multi_location_marker_anchor' => (int)$marker_anchor,
+     'ip_geoloc_multi_location_marker_default_color' => $marker_color,
++    'ip_geoloc_multi_location_exposed_origin' => $geofield_origin,
++    'ip_geoloc_multi_location_exposed_origin_latlng' => $geofield_origin_coords,
+   );
+   drupal_add_js(array($settings), 'setting');
+ 
+@@ -813,4 +816,4 @@ function ip_geoloc_add_random_displacement(&$location, $radius_km) {
+  */
+ function ip_geoloc_random($min = 0, $max = 1) {
+     return $min + mt_rand() / mt_getrandmax() * ($max - $min);
+-}
+\ No newline at end of file
++}
 diff --git a/js/ip_geoloc_gmap_multi_loc.js b/js/ip_geoloc_gmap_multi_loc.js
-index 98c299f..f84dc3b 100644
+index 98c299f..27961fa 100644
 --- a/js/ip_geoloc_gmap_multi_loc.js
 +++ b/js/ip_geoloc_gmap_multi_loc.js
-@@ -51,7 +51,7 @@
+@@ -51,7 +51,9 @@
          var markerHeight  = settings[m].ip_geoloc_multi_location_marker_height;
          var markerAnchor  = settings[m].ip_geoloc_multi_location_marker_anchor;
          var markerColor   = settings[m].ip_geoloc_multi_location_marker_default_color;
 -        
++        var geofieldOrigin = settings[m].ip_geoloc_multi_location_exposed_origin;
++        var geofieldOriginLatLng = settings[m].ip_geoloc_multi_location_exposed_origin_latlng;
 +
          var defaultPinImage = !markerColor ? null : new google.maps.MarkerImage(
            markerDirname + '/' + markerColor + imageExt,
            new google.maps.Size(markerWidth, markerHeight),
-@@ -171,8 +171,25 @@
+@@ -127,6 +129,11 @@
+             }
+           }
+         }
++
++        if (geofieldOrigin !== undefined && geofieldOriginLatLng !== undefined) {
++          var exposedPosition = new google.maps.LatLng(geofieldOriginLatLng.lat, geofieldOriginLatLng.lon);
++          showExposedMarker(m, exposedPosition, geofieldOrigin + "\n");
++        }
+        }
+       });
+ 
+@@ -151,6 +158,13 @@
+             mapBounds[m].extend(visitorPosition);
+             maps[m].fitBounds(mapBounds[m]);
+           }
++          if (settings[m].ip_geoloc_multi_location_exposed_origin_latlng !== undefined) {
++            var geofieldOrigin = settings[m].ip_geoloc_multi_location_exposed_origin;
++            var geofieldOriginLatLng = settings[m].ip_geoloc_multi_location_exposed_origin_latlng;
++            var exposedPosition = new google.maps.LatLng(geofieldOriginLatLng.lat, geofieldOriginLatLng.lon);
++            showExposedMarker(m, exposedPosition, geofieldOrigin + "\n");
++          }
++
+         }
+       }
+ 
+@@ -162,7 +176,7 @@
+           infoWindow.setOptions({
+             content: infoText,
+             // See [#1777664].
+-            maxWidth: 200
++            maxWidth: 400
+           });
+           infoWindow.open(map, marker);
+         });
+@@ -171,8 +185,25 @@
        function showSpecialMarker(m, position, mouseOverText) {
          var specialMarker;
          var visitorMarker = settings[m].ip_geoloc_multi_location_visitor_marker;
@@ -39,7 +108,7 @@ index 98c299f..f84dc3b 100644
          }
          else {
            // Interpret value of visitorMarker as the marker RGB color, for
-@@ -190,7 +207,7 @@
+@@ -190,13 +221,35 @@
              position: position,
              zIndex: 9999,
              title: mouseOverText,
@@ -48,8 +117,51 @@ index 98c299f..f84dc3b 100644
            //shadow: shadowImage
            });
          }
+         addMarkerBalloon(maps[m], specialMarker, mouseOverText);
+       }
+ 
++      function showExposedMarker(m, position, mouseOverText) {
++        var exposedMarker;
++
++        var markerDirname = settings[m].ip_geoloc_multi_location_marker_directory;
++        var markerWidth   = settings[m].ip_geoloc_multi_location_marker_width;
++        var markerHeight  = settings[m].ip_geoloc_multi_location_marker_height;
++        var markerAnchor  = settings[m].ip_geoloc_multi_location_marker_anchor;
++
++        var icon = {
++          url: markerDirname + '/red-brick' + imageExt, // url
++          scaledSize: new google.maps.Size(markerWidth, markerHeight), // scaled size
++          origin: new google.maps.Point(0,0), // origin
++          anchor: new google.maps.Point((markerWidth / 2), markerAnchor) // anchor
++        };
++
++        exposedMarker = new google.maps.Marker({
++          map: maps[m], icon: icon, position: position, title: mouseOverText, optimized: false
++        });
++
++        addMarkerBalloon(maps[m], exposedMarker, mouseOverText);
++      }
++
+       // Fall back on IP address lookup, for instance when user declined to share location.
+       function handlePositionError(error) {
+         var latLng = settings[0].ip_geoloc_multi_location_center_latlng;
+diff --git a/views/ip-geoloc-map.tpl.php b/views/ip-geoloc-map.tpl.php
+index a198734..9ed268a 100644
+--- a/views/ip-geoloc-map.tpl.php
++++ b/views/ip-geoloc-map.tpl.php
+@@ -33,7 +33,8 @@
+  */
+ ?>
+ <div class="ip-geoloc-map view-based-map">
+-  <?php echo ip_geoloc_output_map_multi_location($locations, $div_id, $map_options,
+-          $map_style, $marker_color, $visitor_marker, $center_option, $center_latlng, $visitor_location_gps);
++  <?php
++  echo ip_geoloc_output_map_multi_location($locations, $div_id, $map_options,
++          $map_style, $marker_color, $visitor_marker, $center_option, $center_latlng, $visitor_location_gps, $geofield_origin_coords, $geofield_origin);
+   ?>
+ </div>
 diff --git a/views/ip_geoloc_plugin_style_map.inc b/views/ip_geoloc_plugin_style_map.inc
-index f58409b..e3a473a 100644
+index f58409b..6c49c78 100644
 --- a/views/ip_geoloc_plugin_style_map.inc
 +++ b/views/ip_geoloc_plugin_style_map.inc
 @@ -83,13 +83,15 @@ class ip_geoloc_plugin_style_map extends views_plugin_style {
@@ -81,3 +193,26 @@ index f58409b..e3a473a 100644
      $open_balloon_nos = array();
      $t_last = '<' . t('last') . '>';
      foreach (explode(',', $this->options['open_balloons']) as $no) {
+@@ -207,7 +209,12 @@ class ip_geoloc_plugin_style_map extends views_plugin_style {
+     global $user;
+     $gps_roles = empty($this->options['gps_roles']) ? array(DRUPAL_ANONYMOUS_RID, DRUPAL_AUTHENTICATED_RID) : $this->options['gps_roles'];
+     $gps_roles_applicable = array_intersect($gps_roles, array_keys($user->roles));
+-
++    $geofield_origin = $this->view->exposed_raw_input["field_geofield_distance"]["origin"];
++    $geofield_origin_raw = geocoder('google', $geofield_origin);
++    $geofield_origin_coords = array(
++      'lon' => $geofield_origin_raw->coords[0],
++      'lat' => $geofield_origin_raw->coords[1],
++    );
+     $output = theme(array('ip_geoloc_map'), array(
+       'view' => $this->view,
+       'locations' => $locations,
+@@ -218,6 +225,8 @@ class ip_geoloc_plugin_style_map extends views_plugin_style {
+       'visitor_marker' => $visitor_marker,
+       'center_option' => $center_option,
+       'center_latlng' => $center_latlng,
++      'geofield_origin' => $geofield_origin,
++      'geofield_origin_coords' => $geofield_origin_coords,
+       'visitor_location_gps' => !empty($gps_roles_applicable),
+     ));
+     ip_geoloc_debug(t('-- Google map preparation time: %sec s', array('%sec' => number_format(microtime(TRUE) - $render_start, 2))));
