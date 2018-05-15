@@ -19,19 +19,16 @@ function pori_configuration_metatag_export_default() {
         'value' => '[site:name]',
       ),
       'description' => array(
-        'value' => 'City of Pori web site has information on the city\'s services and current affairs.
-PO Box 121, 28101 PORI
-phone exchange 02 621 1100
-kirjaamo@pori.fi, etunimi.sukunimi@pori.fi',
+        'value' => 'City of Pori web site has information on the city\'s services and current affairs. PO Box 121, 28101 PORI phone exchange 02 621 1100 kirjaamo@pori.fi, firstname.lastname@pori.fi',
       ),
       'dcterms.description' => array(
-        'value' => 'City of Pori web site has information on the city\'s services and current affairs. PO Box 121, 28101 PORI phone exchange 02 621 1100 kirjaamo@pori.fi, etunimi.sukunimi@pori.fi',
+        'value' => 'City of Pori web site has information on the city\'s services and current affairs. PO Box 121, 28101 PORI phone exchange 02 621 1100 kirjaamo@pori.fi, firstname.lastname@pori.fi',
       ),
       'og:description' => array(
-        'value' => 'City of Pori web site has information on the city\'s services and current affairs. PO Box 121, 28101 PORI phone exchange 02 621 1100 kirjaamo@pori.fi, etunimi.sukunimi@pori.fi',
+        'value' => 'City of Pori web site has information on the city\'s services and current affairs. PO Box 121, 28101 PORI phone exchange 02 621 1100 kirjaamo@pori.fi, firstname.lastname@pori.fi',
       ),
       'twitter:description' => array(
-        'value' => 'City of Pori web site has information on the city\'s services and current affairs. PO Box 121, 28101 PORI phone exchange 02 621 1100 kirjaamo@pori.fi, etunimi.sukunimi@pori.fi',
+        'value' => 'City of Pori web site has information on the city\'s services and current affairs. PO Box 121, 28101 PORI phone exchange 02 621 1100 kirjaamo@pori.fi, firstname.lastname@pori.fi',
       ),
     ),
   );
