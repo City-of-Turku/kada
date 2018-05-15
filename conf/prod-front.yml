@@ -173,8 +173,8 @@
       - "www.{{ domain2_name }}"
       - "{{ domain3_name }}"
       - "www.{{ domain3_name }}"
-      - "{{ domain4_name }}"
-      - "www.{{ domain4_name }}"
+        #- "{{ domain4_name }}"
+        #- "www.{{ domain4_name }}"
     certbot_renewal_docroot: /var/www/letsencrypt-auto
     #certbot_commands: allows yo uto customize the command to run, see ansible/playbook/roles/certbot/defaults/main.yml
 
@@ -241,22 +241,22 @@
     # we only use https for this host
     sslterminators:
       - server_name: "{{ domain1_name }}"
-        ssl_certificate: "/etc/letsencrypt/live/{{ domain1_name }}/fullchain.pem"
-        ssl_certificate_key: "/etc/letsencrypt/live/{{ domain1_name}}/privkey.pem"
+        ssl_certificate: "/etc/letsencrypt/live/{{ domain2_name }}/fullchain.pem"
+        ssl_certificate_key: "/etc/letsencrypt/live/{{ domain2_name}}/privkey.pem"
         use_dhparam: True
         backends:
           - 127.0.0.1:8081
       - server_name: "www.{{ domain2_name }}"
         server_forwards: "{{ domain2_name }} beta.{{ domain2_name }} {{ domain1_name }}"  # we redirect to www subdomain
-        ssl_certificate: "/etc/letsencrypt/live/{{ domain1_name }}/fullchain.pem"
-        ssl_certificate_key: "/etc/letsencrypt/live/{{ domain1_name}}/privkey.pem"
+        ssl_certificate: "/etc/letsencrypt/live/{{ domain2_name }}/fullchain.pem"
+        ssl_certificate_key: "/etc/letsencrypt/live/{{ domain2_name}}/privkey.pem"
         use_dhparam: True
         backends:
           - 127.0.0.1:8081
       - server_name: "www.{{ domain3_name }}"
         server_forwards: "beta.{{ domain3_name }} {{ domain3_name }} {{ domain4_name }} www.{{ domain4_name }}"
-        ssl_certificate: "/etc/letsencrypt/live/{{ domain1_name }}/fullchain.pem"
-        ssl_certificate_key: "/etc/letsencrypt/live/{{ domain1_name}}/privkey.pem"
+        ssl_certificate: "/etc/letsencrypt/live/{{ domain2_name }}/fullchain.pem"
+        ssl_certificate_key: "/etc/letsencrypt/live/{{ domain2_name}}/privkey.pem"
         use_dhparam: True
         backends:
           - 127.0.0.1:8081
