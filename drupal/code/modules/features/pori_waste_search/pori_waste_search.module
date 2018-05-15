@@ -13,6 +13,7 @@ function pori_waste_search_menu() {
   $items = [];
 
   $items['waste/search'] = [
+    'title' => 'Waste search',
     'page callback' => 'drupal_get_form',
     'page arguments' => ['pori_waste_search_page_callback'],
     'access arguments' => ['access content'],
