@@ -1,0 +1,83 @@
+diff --git a/js/ip_geoloc_gmap_multi_loc.js b/js/ip_geoloc_gmap_multi_loc.js
+index 98c299f..f84dc3b 100644
+--- a/js/ip_geoloc_gmap_multi_loc.js
++++ b/js/ip_geoloc_gmap_multi_loc.js
+@@ -51,7 +51,7 @@
+         var markerHeight  = settings[m].ip_geoloc_multi_location_marker_height;
+         var markerAnchor  = settings[m].ip_geoloc_multi_location_marker_anchor;
+         var markerColor   = settings[m].ip_geoloc_multi_location_marker_default_color;
+-        
++
+         var defaultPinImage = !markerColor ? null : new google.maps.MarkerImage(
+           markerDirname + '/' + markerColor + imageExt,
+           new google.maps.Size(markerWidth, markerHeight),
+@@ -171,8 +171,25 @@
+       function showSpecialMarker(m, position, mouseOverText) {
+         var specialMarker;
+         var visitorMarker = settings[m].ip_geoloc_multi_location_visitor_marker;
+-        if (visitorMarker === true) {
+-          specialMarker = new google.maps.Marker({ map: maps[m], position: position, title: mouseOverText });
++        if (visitorMarker !== undefined) {
++          var markerDirname = settings[m].ip_geoloc_multi_location_marker_directory;
++          var markerWidth   = settings[m].ip_geoloc_multi_location_marker_width;
++          var markerHeight  = settings[m].ip_geoloc_multi_location_marker_height;
++          var markerAnchor  = settings[m].ip_geoloc_multi_location_marker_anchor;
++
++          var pinImage = !visitorMarker ? null : new google.maps.MarkerImage(
++            markerDirname + '/' + visitorMarker + imageExt,
++            new google.maps.Size(markerWidth, markerHeight),
++            // Origin
++            new google.maps.Point(0, 0),
++            // Anchor
++            new google.maps.Point((markerWidth / 2), markerAnchor),
++            // scaledSize
++            new google.maps.Size(markerWidth, markerHeight));
++
++          specialMarker = new google.maps.Marker({
++            map: maps[m], icon: pinImage, position: position, title: mouseOverText, optimized: false
++          });
+         }
+         else {
+           // Interpret value of visitorMarker as the marker RGB color, for
+@@ -190,7 +207,7 @@
+             position: position,
+             zIndex: 9999,
+             title: mouseOverText,
+-            icon: pinImage 
++            icon: pinImage
+           //shadow: shadowImage
+           });
+         }
+diff --git a/views/ip_geoloc_plugin_style_map.inc b/views/ip_geoloc_plugin_style_map.inc
+index f58409b..e3a473a 100644
+--- a/views/ip_geoloc_plugin_style_map.inc
++++ b/views/ip_geoloc_plugin_style_map.inc
+@@ -83,13 +83,15 @@ class ip_geoloc_plugin_style_map extends views_plugin_style {
+       '#weight' => 37,
+     );
+ 
++    $is_openlayers = $form_state['renderer'] == 'openlayers';
+     $form['visitor_marker'] = array(
+       '#title' => t('Visitor marker color'),
+-      '#type' => 'textfield',
+-      '#size' => 6,
++      '#type' => 'select',
+       '#default_value' => $this->options['visitor_marker'],
+-      '#description' => t("Show visitor marker in the color specified. %color_code is bright green. Note that an additional web service call will be made to retrieve the marker image, unless this field is left blank, which will result in a standard red marker. Enter <em>&lt;none&gt;</em> if you do not wish to display the visitor's current location.",
+-        array('%color_code' => '00FF00')),
++      '#options' => $is_openlayers ? ip_geoloc_openlayers_marker_layers() : ip_geoloc_marker_colors(),
++      '#description' => t('Select an image to use for visitor location marker.'),
++      '#attributes' => array(
++        'class' => $is_openlayers ? array('marker-color-ol') : array('marker-color')),
+       '#weight' => 90,
+     );
+ 
+@@ -132,7 +134,7 @@ class ip_geoloc_plugin_style_map extends views_plugin_style {
+ 
+     ip_geoloc_plugin_style_render_fields($this);
+     $locations = ip_geoloc_plugin_style_extract_locations($this);
+-    
++
+     $open_balloon_nos = array();
+     $t_last = '<' . t('last') . '>';
+     foreach (explode(',', $this->options['open_balloons']) as $no) {

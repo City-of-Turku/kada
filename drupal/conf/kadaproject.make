@@ -360,6 +360,7 @@ projects[flexslider][patch][] = "https://www.drupal.org/files/issues/0001-Issue-
 
 projects[geocoder][version] = 1.3
 projects[geocoder][subdir] = contrib
+projects[geocoder][patch][] = "../patches/geocoder_proximity_cache_record_fix.patch"
 
 ; Only dev-version is available
 projects[geocoder_rules][type] = "module"
