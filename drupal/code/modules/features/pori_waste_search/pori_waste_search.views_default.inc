@@ -35,6 +35,10 @@ function pori_waste_search_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'ds';
+  $handler->display->display_options['row_options']['view_mode'] = 'waste_search';
+  $handler->display->display_options['row_options']['advanced'] = 0;
+  $handler->display->display_options['row_options']['delta_fieldset']['delta_fields'] = array();
+  $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'waste_search';
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -129,7 +133,7 @@ function pori_waste_search_views_default_views() {
   $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
-  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'teaser';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'waste_search';
   $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
   /* Field: Field: Location (field_location) - proximity */
   $handler->display->display_options['fields']['field_geofield_distance']['id'] = 'field_geofield_distance';
@@ -284,6 +288,49 @@ function pori_waste_search_views_default_views() {
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Rendered Node */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'waste_map';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  /* Field: Field: Location (field_location) - proximity */
+  $handler->display->display_options['fields']['field_geofield_distance']['id'] = 'field_geofield_distance';
+  $handler->display->display_options['fields']['field_geofield_distance']['table'] = 'field_data_field_location';
+  $handler->display->display_options['fields']['field_geofield_distance']['field'] = 'field_geofield_distance';
+  $handler->display->display_options['fields']['field_geofield_distance']['label'] = 'Distance';
+  $handler->display->display_options['fields']['field_geofield_distance']['set_precision'] = TRUE;
+  $handler->display->display_options['fields']['field_geofield_distance']['precision'] = '1';
+  $handler->display->display_options['fields']['field_geofield_distance']['decimal'] = ',';
+  $handler->display->display_options['fields']['field_geofield_distance']['separator'] = '';
+  $handler->display->display_options['fields']['field_geofield_distance']['suffix'] = 'km';
+  $handler->display->display_options['fields']['field_geofield_distance']['source'] = 'exposed_geofield_filter';
+  $handler->display->display_options['fields']['field_geofield_distance']['geofield_proximity_manual'] = array(
+    'lat' => '',
+    'lon' => '',
+  );
+  $handler->display->display_options['fields']['field_geofield_distance']['geofield_proximity_entity_url_field'] = 'field_location';
+  $handler->display->display_options['fields']['field_geofield_distance']['geofield_proximity_current_user_field'] = 'field_location';
+  $handler->display->display_options['fields']['field_geofield_distance']['radius_of_earth'] = '6371';
+  /* Field: Field: Location */
+  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
+  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['label'] = '';
+  $handler->display->display_options['fields']['field_location']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_location']['click_sort_column'] = 'geom';
+  $handler->display->display_options['fields']['field_location']['type'] = 'geofield_latlon';
+  $handler->display->display_options['fields']['field_location']['settings'] = array(
+    'data' => 'full',
+    'format' => 'decimal_degrees',
+    'labels' => 0,
+  );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
