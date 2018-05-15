@@ -5,6 +5,30 @@
  */
 
 /**
+ * Implements hook_ds_field_settings_info().
+ */
+function pori_waste_search_ds_field_settings_info() {
+  $export = array();
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'taxonomy_term|waste_type|waste_search';
+  $ds_fieldsetting->entity_type = 'taxonomy_term';
+  $ds_fieldsetting->bundle = 'waste_type';
+  $ds_fieldsetting->view_mode = 'waste_search';
+  $ds_fieldsetting->settings = array(
+    'more_link' => array(
+      'weight' => '2',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
+  );
+  $export['taxonomy_term|waste_type|waste_search'] = $ds_fieldsetting;
+
+  return $export;
+}
+
+/**
  * Implements hook_ds_layout_settings_info().
  */
 function pori_waste_search_ds_layout_settings_info() {
@@ -90,6 +114,68 @@ function pori_waste_search_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|waste_type|default';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'waste_type';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_waste_type_images',
+        1 => 'description_field',
+      ),
+    ),
+    'fields' => array(
+      'field_waste_type_images' => 'ds_content',
+      'description_field' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['taxonomy_term|waste_type|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|waste_type|full';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'waste_type';
+  $ds_layout->view_mode = 'full';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_waste_type_images',
+        1 => 'description_field',
+      ),
+    ),
+    'fields' => array(
+      'field_waste_type_images' => 'ds_content',
+      'description_field' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['taxonomy_term|waste_type|full'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'taxonomy_term|waste_type|waste_search';
   $ds_layout->entity_type = 'taxonomy_term';
   $ds_layout->bundle = 'waste_type';
@@ -100,18 +186,22 @@ function pori_waste_search_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'name_field',
         1 => 'field_waste_type_short_desc',
+        2 => 'more_link',
       ),
     ),
     'fields' => array(
       'name_field' => 'ds_content',
       'field_waste_type_short_desc' => 'ds_content',
+      'more_link' => 'ds_content',
     ),
     'classes' => array(),
-    'wrappers' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
-    'layout_attributes_merge' => TRUE,
-    'layout_link_attribute' => FALSE,
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
     'layout_link_custom' => '',
     'layout_disable_css' => FALSE,
   );
@@ -136,11 +226,13 @@ function pori_waste_search_ds_layout_settings_info() {
       'description_field' => 'ds_content',
     ),
     'classes' => array(),
-    'wrappers' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
-    'layout_attributes_merge' => TRUE,
-    'layout_link_attribute' => FALSE,
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
     'layout_link_custom' => '',
     'layout_disable_css' => FALSE,
   );

@@ -17,6 +17,9 @@ function pori_waste_search_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
+  if ($module == "taxonomy_display" && $api == "taxonomy_display") {
+    return array("version" => "1");
+  }
 }
 
 /**

@@ -766,14 +766,14 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => 0,
   );
   $overrides["field_instance.node-place-field_availability.display|waste_map"] = array(
-    'label' => 'hidden',
+    'label' => 'above',
     'module' => 'text',
     'settings' => array(),
     'type' => 'text_default',
     'weight' => 4,
   );
   $overrides["field_instance.node-place-field_availability.display|waste_search"] = array(
-    'label' => 'hidden',
+    'label' => 'above',
     'module' => 'text',
     'settings' => array(),
     'type' => 'text_default',
@@ -1069,7 +1069,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'label' => 'hidden',
     'module' => 'link',
     'settings' => array(),
-    'type' => 'link_default',
+    'type' => 'link_label',
     'weight' => 6,
   );
   $overrides["field_instance.node-place-title_field.display|live_results_search"] = array(
@@ -1081,16 +1081,24 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["field_instance.node-place-title_field.display|teaser|weight"] = 33;
   $overrides["field_instance.node-place-title_field.display|waste_map"] = array(
     'label' => 'hidden',
-    'module' => 'text',
-    'settings' => array(),
-    'type' => 'text_plain',
+    'module' => 'title',
+    'settings' => array(
+      'title_class' => '',
+      'title_link' => '',
+      'title_style' => 'h3',
+    ),
+    'type' => 'title_linked',
     'weight' => 0,
   );
   $overrides["field_instance.node-place-title_field.display|waste_search"] = array(
     'label' => 'hidden',
-    'module' => 'text',
-    'settings' => array(),
-    'type' => 'text_plain',
+    'module' => 'title',
+    'settings' => array(
+      'title_class' => '',
+      'title_link' => '',
+      'title_style' => 'h3',
+    ),
+    'type' => 'title_linked',
     'weight' => 0,
   );
   $overrides["field_instance.node-position_of_trust-field_deputy_member.display|live_results_search"] = array(

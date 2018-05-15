@@ -149,11 +149,7 @@ function pori_configuration_overrides_feature_field_group_info_alter(&$data) {
   }
   if (isset($data['group_content|node|place|form'])) {
     $data['group_content|node|place|form']->data['children'][11] = 'field_read_more'; /* WAS: 'language' */
-  }
-  if (isset($data['group_content|node|place|form'])) {
     $data['group_content|node|place|form']->data['children'][17] = 'field_sorting_point'; /* WAS: '' */
-  }
-  if (isset($data['group_content|node|place|form'])) {
     $data['group_content|node|place|form']->data['children'][18] = 'field_responsibility'; /* WAS: '' */
   }
 }
@@ -943,14 +939,14 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-place-field_availability']['display']['waste_map'] = array(
-      'label' => 'hidden',
+      'label' => 'above',
       'module' => 'text',
       'settings' => array(),
       'type' => 'text_default',
       'weight' => 4,
     ); /* WAS: '' */
     $data['node-place-field_availability']['display']['waste_search'] = array(
-      'label' => 'hidden',
+      'label' => 'above',
       'module' => 'text',
       'settings' => array(),
       'type' => 'text_default',
@@ -1278,7 +1274,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'label' => 'hidden',
       'module' => 'link',
       'settings' => array(),
-      'type' => 'link_default',
+      'type' => 'link_label',
       'weight' => 6,
     ); /* WAS: '' */
   }
@@ -1292,16 +1288,24 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     $data['node-place-title_field']['display']['teaser']['weight'] = 33; /* WAS: 30 */
     $data['node-place-title_field']['display']['waste_map'] = array(
       'label' => 'hidden',
-      'module' => 'text',
-      'settings' => array(),
-      'type' => 'text_plain',
+      'module' => 'title',
+      'settings' => array(
+        'title_class' => '',
+        'title_link' => '',
+        'title_style' => 'h3',
+      ),
+      'type' => 'title_linked',
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-place-title_field']['display']['waste_search'] = array(
       'label' => 'hidden',
-      'module' => 'text',
-      'settings' => array(),
-      'type' => 'text_plain',
+      'module' => 'title',
+      'settings' => array(
+        'title_class' => '',
+        'title_link' => '',
+        'title_style' => 'h3',
+      ),
+      'type' => 'title_linked',
       'weight' => 0,
     ); /* WAS: '' */
   }
