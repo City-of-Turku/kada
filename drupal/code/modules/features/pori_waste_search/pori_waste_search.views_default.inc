@@ -223,7 +223,7 @@ function pori_waste_search_views_default_views() {
     'distance' => '100',
     'distance2' => 200,
     'unit' => '6371',
-    'origin' => '',
+    'origin' => 'Pori',
   );
   $handler->display->display_options['filters']['field_geofield_distance']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_geofield_distance']['expose']['operator_id'] = 'field_geofield_distance_op';
@@ -280,6 +280,7 @@ function pori_waste_search_views_default_views() {
   );
   $handler->display->display_options['style_options']['map_options'] = '{"mapTypeId":"roadmap", "disableDefaultUI":true, "maxZoom":16, "zoom":12, "zoomControl":true, "scaleControl":true}';
   $handler->display->display_options['style_options']['map_div_style'] = 'height:600px';
+  $handler->display->display_options['style_options']['empty_map_center'] = '61.485139,21.797418';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
