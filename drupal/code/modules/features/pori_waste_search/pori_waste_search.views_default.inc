@@ -267,7 +267,7 @@ function pori_waste_search_views_default_views() {
   $handler->display->display_options['style_options']['ip_geoloc_views_plugin_longitude'] = '';
   $handler->display->display_options['style_options']['default_marker_color'] = 'green';
   $handler->display->display_options['style_options']['center_option'] = '1';
-  $handler->display->display_options['style_options']['visitor_marker'] = 'red-brick';
+  $handler->display->display_options['style_options']['visitor_marker'] = 'blue';
   $handler->display->display_options['style_options']['gps_roles'] = array(
     1 => '1',
     2 => '2',
