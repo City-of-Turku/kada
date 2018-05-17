@@ -77,10 +77,10 @@ function pori_waste_search_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'place';
   $ds_layout->view_mode = 'waste_search';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'waste_layout';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
+      'main_content' => array(
         0 => 'title_field',
         1 => 'field_address_visiting',
         2 => 'field_phone',
@@ -91,17 +91,17 @@ function pori_waste_search_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'title_field' => 'ds_content',
-      'field_address_visiting' => 'ds_content',
-      'field_phone' => 'ds_content',
-      'field_email' => 'ds_content',
-      'field_availability' => 'ds_content',
-      'field_description' => 'ds_content',
-      'field_website_et' => 'ds_content',
+      'title_field' => 'main_content',
+      'field_address_visiting' => 'main_content',
+      'field_phone' => 'main_content',
+      'field_email' => 'main_content',
+      'field_availability' => 'main_content',
+      'field_description' => 'main_content',
+      'field_website_et' => 'main_content',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'main_content' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
