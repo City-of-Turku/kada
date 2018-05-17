@@ -5,16 +5,16 @@
         var wrapper = $('.pori-waste-search-page-callback');
 
         if (wrapper.length !== 0) {
-          var map = $('#waste-search-map-ajax');
+          var map = $('.waste-search-map-ajax-wrapper');
           var button = $('a[name="show-locations"]');
           var chosen = $('.chosen-select');
 
           button.once('waste-search-button', function() {
             $(this).bind('click', function(e) {
               e.stopPropagation();
-              button.removeClass('is-active');
-              $(this).addClass('is-active');
-              map.removeClass('is-hidden');
+              $(this).toggleClass('is-active');
+              $(this).toggleClass('use-ajax');
+              map.toggleClass('is-hidden');
             });
           });
 

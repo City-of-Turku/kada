@@ -14,6 +14,13 @@
   margin-top: 15px;
   text-align: center;
   width: 40px;
+
+  @media screen and (min-width: $mobile-menu-breakpoint) {
+    left: 4rem;
+    margin-top: 3rem;
+    position: absolute;
+    top: 0;
+  }
 }
 
 .waste-search {
@@ -35,15 +42,16 @@
       display: flex;
       flex-wrap: wrap;
       margin: 0 -1.25rem 10px;
-      max-width: 57.5rem;
       padding: 0 1.25rem 1rem;
 
       @media screen and (min-width: $mobile-landscape-wide) {
-        margin: 0;
+        margin-left: 0;
+        margin-right: 0;
+        position: relative;
       }
 
       @media screen and (min-width: $mobile-menu-breakpoint) {
-        padding: 3rem 2rem;
+        padding: 3.5rem 10rem 3rem;
       }
 
       &::before {
@@ -133,7 +141,12 @@
 
   .waste-search-ajax-container {
     display: none;
-    margin: 0 -1.25rem 10px;
+    margin: 0 -1.25rem 0;
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      margin-left: 0;
+      margin-right: 0;
+    }
 
     > .view-pori-waste-search {
       .views-row {
@@ -141,42 +154,135 @@
         margin-bottom: 10px;
         padding: 0 1.25rem 1rem;
 
-        @media screen and (min-width: $mobile-landscape-wide) {
-          margin: 0;
-        }
-
         @media screen and (min-width: $mobile-menu-breakpoint) {
-          padding: 3rem 2rem;
+          padding: 0 0 3rem;
+        }
+      }
+
+      .attachment .view-content {
+        @media screen and (min-width: $mobile-menu-breakpoint) {
+          display: flex;
+          justify-content: space-between;
         }
 
-        h2 {
+        .views-row {
+          @media screen and (min-width: $mobile-menu-breakpoint) {
+            padding: 0 0 1rem;
+            width: 50%;
+          }
 
+          &:nth-child(even) {
+            @media screen and (min-width: $mobile-menu-breakpoint) {
+              margin-left: 5px;
+            }
+          }
+
+          &:nth-child(odd) {
+            @media screen and (min-width: $mobile-menu-breakpoint) {
+              margin-right: 5px;
+            }
+          }
         }
       }
     }
 
-    > .view-pori-waste-search-map::before {
-      @include numbering();
+    > .view-pori-waste-search-map {
+      background-color: $gray-lighter;
+      padding: 1.25rem 1.25rem 0;
+
+      &::before {
+        @include numbering();
+        margin-top: 0;
+      }
+
+      > .view-content {
+        @media screen and (min-width: $mobile-menu-breakpoint) {
+          display: flex;
+          justify-content: center;
+        }
+
+        .views-row {
+          padding-bottom: 3rem;
+
+          @media screen and (min-width: $mobile-menu-breakpoint) {
+            max-width: 300px;
+          }
+        }
+      }
     }
   }
 
-  // Sorry for the ID but ajax strips all classes out of this div
-  #waste-search-map-ajax > .view-pori-waste-search-map::before {
-    @include numbering();
+  .waste-search-map-ajax-wrapper {
+    background-color: $gray-lighter;
+    margin: 0 -1.25rem 10px;
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    > * > .view-pori-waste-search-map {
+      background-color: $gray-lighter;
+      margin: 0;
+      padding: 1rem 1.25rem 0;
+
+      @media screen and (min-width: $mobile-menu-breakpoint) {
+        padding: 3.5rem 10rem 0;
+        position: relative;
+      }
+
+      &::before {
+        @include numbering();
+        margin-top: 0;
+      }
+
+      > .view-content {
+        @media screen and (min-width: $mobile-menu-breakpoint) {
+          display: flex;
+          justify-content: center;
+        }
+
+        .views-row {
+          padding-bottom: 3rem;
+
+          @media screen and (min-width: $mobile-menu-breakpoint) {
+            margin: 0 10px;
+            max-width: 300px;
+          }
+        }
+      }
+    }
   }
 
   .vocabulary-waste {
     overflow: hidden;
 
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      padding-left: 10rem;
+      padding-top: 3rem;
+      position: relative;
+    }
+
     &::before {
       @include numbering();
+    }
+
+    .description {
+      p:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
   .vocabulary-waste-type {
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      padding: 0 1.25rem 0;
+    }
+
     h2 {
       background-color: $default-color-dark;
       color: $white;
+      font-size: 1.125rem;
       font-weight: 200;
       line-height: 1.556;
       margin: 0 -1.25rem 1.5rem;
@@ -242,8 +348,20 @@
   }
 
   .views-widget-filter-field_geofield_distance {
+    display: flex;
+    flex-direction: column;
     float: none;
     padding: 0;
+    width: 100%;
+
+    .views-widget {
+      order: 2;
+    }
+
+    .description {
+      margin: 0 0 .625rem;
+      order: 1;
+    }
 
     // Hide the stuff the user doesn't need to see
     label,
@@ -276,8 +394,13 @@
 
   // Address input above the map and a submit button
   .views-exposed-form-pori-waste-search-map-block .views-exposed-widgets {
+    align-items: flex-end;
     display: flex;
     margin-bottom: 1.25rem;
+
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      margin-bottom: 3rem;
+    }
 
     .views-submit-button {
       background-color: $waste-green;
@@ -313,15 +436,15 @@
 
   // Container that includes the map
   .view-based-map {
-    margin: 0 -1.25rem 1.25rem;
-  }
+    margin: 0 -1.25rem 3rem;
 
-  .view-pori-waste-search-map {
-    .view-content .views-row {
-      margin-bottom: 3rem;
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      margin-left: -10rem;
+      margin-right: -10rem;
     }
   }
 
+  // Places under the map
   .node--place--waste-search {
     border-top: 10px solid $waste-green;
     display: flex;
@@ -338,35 +461,52 @@
     }
 
     .views-field-field-geofield-distance {
+      margin-bottom: 1rem;
       order: 2;
     }
 
-    .field--name-title-field h3 {
-      font-family: $bergen-text;
-      text-transform: none;
+    .field__label {
+      font-weight: normal;
     }
 
-    .field,
+    .field .field__item > *,
+    .field--name-field-phone,
     p {
       margin-bottom: 1rem;
     }
 
-    > a {
-      background-color: $waste-green;
-      color: $white;
-      font-family: $bergen-mono;
-      display: inline-block;
-      margin-bottom: 1rem;
-      padding: 10px 40px 10px 15px;
-      position: relative;
-      text-transform: uppercase;
+    .field--name-title-field {
+      h3 {
+        font-family: $bergen-text;
+        text-transform: none;
+      }
+    }
 
-      &::after {
-        @include fa('\f061', 1rem, 1, false);
-        position: absolute;
-        right: 15px;
-        top: 50%;
-        transform: translateY(-50%);
+    .field--name-field-address-visiting {
+      margin-bottom: 1rem;
+
+      .field__item > * {
+        margin-bottom: 0;
+      }
+    }
+
+    .field--name-field-website-et {
+      a {
+        background-color: $waste-green;
+        color: $white;
+        font-family: $bergen-mono;
+        display: inline-block;
+        padding: 10px 40px 10px 15px;
+        position: relative;
+        text-transform: uppercase;
+
+        &::after {
+          @include fa('\f35d', .8rem, 1, false);
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
       }
     }
   }

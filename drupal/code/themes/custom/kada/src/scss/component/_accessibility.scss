@@ -4,55 +4,55 @@
   margin: 0 .5rem;
 
   .accessibility__item--disabled-access::after {
-    @include fa('\f193', false);
+    @include fa('\f193', 1rem);
   }
 
   .accessibility__item--no-disabled-access {
     &::before {
-      @include fa('\f05e', false);
+      @include fa('\f05e', 1rem);
     }
     &::after {
-      @include fa('\f193', false);
+      @include fa('\f193', 1rem);
     }
   }
 
   .accessibility__item--induction-loop::after {
-    @include fa('\f2a4', false);
+    @include fa('\f2a4', 1rem);
   }
 
   .accessibility__item--no-induction-loop {
     &::before {
-      @include fa('\f05e', false);
+      @include fa('\f05e', 1rem);
     }
     &::after {
-      @include fa('\f2a4', false);
+      @include fa('\f2a4', 1rem);
     }
   }
 
   .accessibility__item--visually-disabled-access::after {
-    @include fa('\f2a8', false);
+    @include fa('\f2a8', 1rem);
   }
 
   .accessibility__item--no-visually-disabled-access {
     &::before {
-      @include fa('\f05e', false);
+      @include fa('\f05e', 1rem);
     }
     &::after {
-      @include fa('\f2a8', false);
+      @include fa('\f2a8', 1rem);
     }
   }
 
   .accessibility__item--free-wifi::after {
-    @include fa('\f1eb', false);
+    @include fa('\f1eb', 1rem);
   }
   .accessibility__item--free-parking::after {
-    @include fa('\f288', false);
+    @include fa('\f288', 1rem);
   }
   .accessibility__item--pets-allowed::after {
-    @include fa('\f1b0', false);
+    @include fa('\f1b0', 1rem);
   }
   .accessibility__item--allergy-friendly::after {
-    @include fa('\f004', false);
+    @include fa('\f004', 1rem);
   }
 
   .accessibility__item {

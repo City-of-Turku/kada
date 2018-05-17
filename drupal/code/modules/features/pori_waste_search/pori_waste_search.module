@@ -96,9 +96,9 @@ function pori_waste_search_page_callback($form, &$form_state) {
 
   // Pre load the ip_geoloc javascripts.
   $form['waste_search_map_wrapper'] = [
-    '#prefix' => '<div id="waste-search-map-ajax" class="is-hidden">',
+    '#prefix' => '<div class="waste-search-map-ajax-wrapper is-hidden"><div id="waste-search-map-ajax">',
     '#markup' => ip_geoloc_output_map(0,0, $div_id = 'waste-search-map-ajax'),
-    '#suffix' => '</div>',
+    '#suffix' => '</div></div>',
   ];
 
   // Load Chosen jQuery library.
