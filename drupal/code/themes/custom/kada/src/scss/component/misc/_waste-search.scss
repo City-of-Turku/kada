@@ -190,6 +190,11 @@
       background-color: $gray-lighter;
       padding: 1.25rem 1.25rem 0;
 
+      @media screen and (min-width: $mobile-menu-breakpoint) {
+        padding: 3.5rem 10rem 0;
+        position: relative;
+      }
+
       &::before {
         @include numbering();
         margin-top: 0;
