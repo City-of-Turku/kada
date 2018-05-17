@@ -65,6 +65,7 @@ function pori_waste_search_page_callback($form, &$form_state) {
   $form['type'] = [
     '#type' => 'select',
     '#options' => $values,
+    '#description' => t('Start by typing to search field the waste/waste type that you are sorting or the recycling center that you are looking for.'),
     '#attributes' => [
       'class' => [
         'chosen-select'
@@ -89,7 +90,7 @@ function pori_waste_search_page_callback($form, &$form_state) {
   ];
 
   $form['waste_search_wrapper'] = [
-    '#prefix' => '<div id="waste-search-ajax">',
+    '#prefix' => '<div id="waste-search-ajax" class="waste-search-ajax-container">',
     '#suffix' => '</div>',
   ];
 
@@ -129,7 +130,7 @@ function pori_waste_search_map_form() {
       'effect' => 'fade',
     ],
     '#attributes' => [
-      'class' => [ 'button', 'button--primary'],
+      'class' => [ 'button'],
     ],
   ];
 
@@ -192,7 +193,7 @@ function _pori_waste_search_render_view($view_id, $display_id, array $arguments)
 
   if (!empty($rendered_view) && !empty($id) && isset($type) && $type !== 'place') {
     global $base_url;
-    $link = '<div class="link-wrapper"><a class="button button--primary use-ajax" name="show-locations" href="' . $base_url . '/ajax/waste/waste-types-map/nojs/' .  $arguments['value'] . '">'. t('Show waste drop locations') . '</a></div>';
+    $link = '<div class="waste-locations-wrapper"><a class="button use-ajax" name="show-locations" href="' . $base_url . '/ajax/waste/waste-types-map/nojs/' .  $arguments['value'] . '">'. t('Show waste drop locations') . '</a></div>';
     $markup = $rendered_view . $link;
   } elseif (isset($type) && $type == 'place') {
     $markup = $rendered_view . _pori_waste_search_render_map_view('pori_waste_search_map', 'block', $arguments);

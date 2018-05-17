@@ -1,0 +1,373 @@
+@mixin numbering() {
+  background-color: $waste-green;
+  border-radius: 100%;
+  color: $white;
+  content: counter(section);
+  counter-increment: section;
+  display: block;
+  font-family: $bergen-mono;
+  font-size: 1.3rem;
+  font-weight: 600;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  text-align: center;
+  width: 40px;
+}
+
+.waste-search {
+  counter-reset: section;
+
+  // On waste search the breadcrumb should be hidden. The .l-breadcrumb wrapper has border styles however so hiding
+  // only container.
+  .container.l-breadcrumb__container {
+    display: none;
+  }
+
+  .content__header {
+    max-width: 110rem;
+  }
+
+  .section--content > form {
+    > div > .form-type-select {
+      background-color: $gray-lighter;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -1.25rem 10px;
+      max-width: 57.5rem;
+      padding: 0 1.25rem 1rem;
+
+      @media screen and (min-width: $mobile-landscape-wide) {
+        margin: 0;
+      }
+
+      @media screen and (min-width: $mobile-menu-breakpoint) {
+        padding: 3rem 2rem;
+      }
+
+      &::before {
+        @include numbering();
+      }
+
+      .chosen-container {
+        order: 2;
+        width: 100%;
+      }
+
+      .description {
+        font-size: 1rem;
+        margin: 0 0 10px;
+        order: 1;
+        width: 100%;
+      }
+    }
+  }
+
+  .chosen-single,
+  .chosen-container-active.chosen-with-drop .chosen-single {
+    background: $white;
+    border: 1px solid $gray;
+    border-radius: 0;
+    box-shadow: none;
+    color: $black;
+    font-size: 1.2rem;
+    height: 60px;
+    padding: 15px 40px 15px 15px;
+
+    &::after {
+      @include fa('\f002', 1.3rem, 1, false);
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .chosen-container .chosen-drop {
+    border: 1px solid $gray;
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 0;
+    top: 0;
+
+    .chosen-search {
+      border-bottom: 1px solid $gray;
+      height: 59px;
+      padding: 0;
+
+      &::after {
+        @include fa('\f002', 1.3rem, 1, false);
+        margin-top: -1px;
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      input {
+        background: transparent;
+        border: 0 none;
+        font-size: 1.2rem;
+        height: 60px;
+        padding: 15px 40px 15px 15px;
+        width: 100%;
+      }
+    }
+
+    .chosen-results {
+      margin: 0 0 10px 0;
+      padding: 10px 0 0 0;
+
+      li {
+        font-size: 1rem;
+        padding: 10px 15px;
+
+        &.highlighted {
+          background: $waste-green;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .waste-search-ajax-container {
+    display: none;
+    margin: 0 -1.25rem 10px;
+
+    > .view-pori-waste-search {
+      .views-row {
+        background-color: $gray-lighter;
+        margin-bottom: 10px;
+        padding: 0 1.25rem 1rem;
+
+        @media screen and (min-width: $mobile-landscape-wide) {
+          margin: 0;
+        }
+
+        @media screen and (min-width: $mobile-menu-breakpoint) {
+          padding: 3rem 2rem;
+        }
+
+        h2 {
+
+        }
+      }
+    }
+
+    > .view-pori-waste-search-map::before {
+      @include numbering();
+    }
+  }
+
+  // Sorry for the ID but ajax strips all classes out of this div
+  #waste-search-map-ajax > .view-pori-waste-search-map::before {
+    @include numbering();
+  }
+
+  .vocabulary-waste {
+    overflow: hidden;
+
+    &::before {
+      @include numbering();
+    }
+  }
+
+  .vocabulary-waste-type {
+    h2 {
+      background-color: $default-color-dark;
+      color: $white;
+      font-weight: 200;
+      line-height: 1.556;
+      margin: 0 -1.25rem 1.5rem;
+      padding: 1.25rem;
+      position: relative;
+
+      &::after {
+        @include fa('\f058', 1.5rem, 1, false);
+        position: absolute;
+        right: 1.25rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .field--name-more-link a {
+      border: 1px solid $waste-green;
+      color: $waste-green;
+      display: inline-block;
+      font-family: $bergen-mono;
+      margin: 15px 0 5px;
+      text-transform: uppercase;
+      padding: 10px 15px;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $waste-green;
+        color: $white;
+      }
+    }
+  }
+
+  .waste-locations-wrapper {
+    margin-top: -10px;
+  }
+
+  .button {
+    background-color: $waste-green;
+    border: 0 none;
+    border-radius: 0;
+    font-family: $bergen-mono;
+    font-weight: 200;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 1.25rem;
+    position: relative;
+    width: 100%;
+
+    &::after {
+      @include fa('\f078', .8rem, 1, false);
+      position: absolute;
+      right: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &.is-active {
+      &::after {
+        @include fa('\f077', .8rem, 1, false);
+      }
+    }
+  }
+
+  .views-widget-filter-field_geofield_distance {
+    float: none;
+    padding: 0;
+
+    // Hide the stuff the user doesn't need to see
+    label,
+    .form-item-field-geofield-distance-distance,
+    .form-item-field-geofield-distance-unit,
+    .geofield-proximity-origin-from {
+      display: none;
+    }
+
+    .geofield-proximity-field-wrapper .form-item {
+      float: none;
+      margin: 0;
+      width: 100%;
+
+      .form-item-field-geofield-distance-origin {
+        background-color: $white;
+        position: relative;
+      }
+
+      input {
+        border: 1px solid $gray;
+        color: $black;
+        font-size: 1.2rem;
+        height: 60px;
+        padding: 15px;
+        width: 100%;
+      }
+    }
+  }
+
+  // Address input above the map and a submit button
+  .views-exposed-form-pori-waste-search-map-block .views-exposed-widgets {
+    display: flex;
+    margin-bottom: 1.25rem;
+
+    .views-submit-button {
+      background-color: $waste-green;
+      height: 60px;
+      padding: 0;
+      position: relative;
+      width: 60px;
+
+      &::before {
+        @include fa('\f002', 1.3rem, 1, false);
+        color: $white;
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%);
+        z-index: 1;
+      }
+
+      input {
+        background: transparent;
+        border: 0;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        text-indent: -9999px;
+        width: 100%;
+        z-index: 2;
+      }
+    }
+  }
+
+  // Container that includes the map
+  .view-based-map {
+    margin: 0 -1.25rem 1.25rem;
+  }
+
+  .view-pori-waste-search-map {
+    .view-content .views-row {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .node--place--waste-search {
+    border-top: 10px solid $waste-green;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 15px;
+
+    .field {
+      order: 1;
+
+      &.field--name-field-website-et {
+        order: 3;
+      }
+    }
+
+    .views-field-field-geofield-distance {
+      order: 2;
+    }
+
+    .field--name-title-field h3 {
+      font-family: $bergen-text;
+      text-transform: none;
+    }
+
+    .field,
+    p {
+      margin-bottom: 1rem;
+    }
+
+    > a {
+      background-color: $waste-green;
+      color: $white;
+      font-family: $bergen-mono;
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 10px 40px 10px 15px;
+      position: relative;
+      text-transform: uppercase;
+
+      &::after {
+        @include fa('\f061', 1rem, 1, false);
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
