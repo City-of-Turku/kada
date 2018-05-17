@@ -1160,9 +1160,13 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-place-field_phone']['display']['waste_search'] = array(
       'label' => 'hidden',
-      'module' => 'text',
-      'settings' => array(),
-      'type' => 'text_default',
+      'module' => 'title',
+      'settings' => array(
+        'title_class' => 'waste-unit-detail',
+        'title_link' => '',
+        'title_style' => 'div',
+      ),
+      'type' => 'title_linked',
       'weight' => 2,
     ); /* WAS: '' */
   }

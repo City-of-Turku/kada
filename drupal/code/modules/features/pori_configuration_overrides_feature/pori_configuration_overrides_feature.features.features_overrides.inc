@@ -967,9 +967,13 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-place-field_phone.display|waste_search"] = array(
     'label' => 'hidden',
-    'module' => 'text',
-    'settings' => array(),
-    'type' => 'text_default',
+    'module' => 'title',
+    'settings' => array(
+      'title_class' => 'waste-unit-detail',
+      'title_link' => '',
+      'title_style' => 'div',
+    ),
+    'type' => 'title_linked',
     'weight' => 2,
   );
   $overrides["field_instance.node-place-field_phone_switch.display|live_results_search"] = array(
