@@ -76,6 +76,15 @@ function kada_preprocess_page(&$variables) {
       }
     }
 
+    if ($node->type == 'page') {
+      $show_main_image = $node_wrapper->field_show_main_image->value();
+      $main_image = $node_wrapper->field_main_image->value();
+      if ($show_main_image == true && !empty($main_image)) {
+        $kada_page_classes = &drupal_static('kada_page_classes');
+        $kada_page_classes .= ' page--highlight-image';
+      }
+    }
+
     if ($node->type == 'page' || $node->type == 'landing_page' || $node->type == 'section') {
       if (!empty($variables['page']['before_header']['kada_search_feature_quicksearch'])) {
         // Duplicate the quick search block.

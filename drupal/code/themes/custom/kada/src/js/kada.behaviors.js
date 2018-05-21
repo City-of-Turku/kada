@@ -183,10 +183,12 @@
   Drupal.behaviors.poriMainMenuHover = {
     attach: function (context) {
       $('.l-navigation .menu .menu__item', context).once('main-menu-hover', function () {
-        $(this).hoverIntent(
-          function() {
-            $(this).toggleClass('menu__item--hover');
-            adjustHeight();
+        $(this).hoverIntent({
+            over: function() {
+              $(this).toggleClass('menu__item--hover');
+              adjustHeight();
+            },
+            timeout: 200
           }
         );
 
@@ -215,9 +217,9 @@
 
             // The e-service menu has a header so the height of the header needs to be
             // subtracted from the e-service menus height.
-            if (menus.hasClass('e-service-menu')) {
+            if (menus.parent('e-service-wrapper')) {
               var eserviceHeight = tallest - 64;
-              $('.l-region--navigation .menu .e-service-menu:visible').css('height', eserviceHeight);
+              $('.l-region--navigation .e-service-wrapper .menu:visible').css('height', eserviceHeight);
             }
 
             switchMainMenuBehavior(context);
@@ -234,34 +236,6 @@
           $('.menu', $(this).parent()).toggleClass('is-hidden');
         }
       );
-    }
-  };
-
-  Drupal.behaviors.kadaEqualHeightsBehavior = {
-    attach: function (context) {
-      $(window).load(function () {
-        var resizeOk = true;
-
-        setInterval(function () {
-          resizeOk = true;
-        }, 33);
-
-        $('.l-region--navigation .e-service-wrapper', context).children('.menu').addClass('e-service-menu');
-        $('.l-region--navigation .menu__item--has-first-level', context).hover(function(event) {
-          if ($(window).width() >= '1025') {
-            if (event.type === 'mouseleave') {
-              $('.menu__item--has-second-level').children('ul').removeClass('is-hidden');
-            }
-          }
-        });
-        $('.l-region--navigation .menu__item--has-second-level', context).hover(function() {
-          if ($(window).width() >= '1025') {
-            var secondLevelItem = $('.menu__item--has-second-level');
-            secondLevelItem.children('ul').removeClass('is-hidden');
-            secondLevelItem.not(this).children('ul').addClass('is-hidden');
-          }
-        });
-      });
     }
   };
 

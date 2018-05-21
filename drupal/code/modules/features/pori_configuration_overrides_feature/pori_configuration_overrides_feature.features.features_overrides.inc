@@ -44,6 +44,13 @@ function pori_configuration_overrides_feature_features_override_default_override
     'region' => 'navigation',
     'weight' => -7,
   );
+  $overrides["context.page.conditions|entity_field|values|view_mode"] = 'a:46:{s:4:"full";s:4:"full";s:6:"teaser";i:0;s:3:"rss";i:0;s:13:"diff_standard";i:0;s:19:"live_results_search";i:0;s:5:"token";i:0;s:9:"accordion";i:0;s:8:"carousel";i:0;s:7:"current";i:0;s:7:"project";i:0;s:15:"event_grid_item";i:0;s:15:"event_list_item";i:0;s:14:"event_map_item";i:0;s:17:"event_mosaic_item";i:0;s:19:"event_search_result";i:0;s:19:"event_tab_list_item";i:0;s:18:"event_top_carousel";i:0;s:9:"main_news";i:0;s:14:"main_news_wide";i:0;s:10:"only_title";i:0;s:3:"map";i:0;s:27:"attraction_card_mosaic_item";i:0;s:7:"product";i:0;s:11:"person_card";i:0;s:19:"small_liftup_banner";i:0;s:8:"revision";i:0;s:10:"label_icon";i:0;s:9:"term_name";i:0;s:5:"title";i:0;s:12:"content_full";i:0;s:12:"content_half";i:0;s:6:"topics";i:0;s:16:"main_liftup_wide";i:0;s:11:"main_liftup";i:0;s:12:"main_content";i:0;s:10:"full_modal";i:0;s:10:"event_list";i:0;s:9:"grid_item";i:0;s:10:"event_node";i:0;s:14:"event_tab_item";i:0;s:6:"person";i:0;s:17:"file_linked_title";i:0;s:13:"search_result";i:0;s:9:"opengraph";i:0;s:16:"content_250_wide";i:0;s:13:"page_carousel";i:0;}';
+  $overrides["context.page.reactions|block|blocks|views-pori_main_image_for_page-block"] = array(
+    'module' => 'views',
+    'delta' => 'pori_main_image_for_page-block',
+    'region' => 'highlighted',
+    'weight' => -10,
+  );
   $overrides["context.sitewide_en.conditions|context"]["DELETED"] = TRUE;
   $overrides["context.sitewide_en.reactions|block|blocks|block-1|weight"] = -40;
   $overrides["context.sitewide_fi.conditions|context"]["DELETED"] = TRUE;
@@ -101,6 +108,11 @@ function pori_configuration_overrides_feature_features_override_default_override
 
   // Exported overrides for: field_group
   $overrides["field_group.group_additional_information|node|page|form.data|children|2"] = 'field_contact_person';
+  $overrides["field_group.group_content|node|page|form.data|children|10"] = 'field_responsibility';
+  $overrides["field_group.group_content|node|page|form.data|children|11"] = 'field_show_main_image';
+  $overrides["field_group.group_content|node|page|form.data|children|12"] = 'language';
+  $overrides["field_group.group_content|node|page|form.data|children|13"] = 'title';
+  $overrides["field_group.group_content|node|page|form.data|children|9"] = 'field_widgets_after_content';
   $overrides["field_group.group_content|node|place|form.data|children|11"] = 'field_read_more';
   $overrides["field_group.group_content|node|place|form.data|children|17"] = 'field_sorting_point';
   $overrides["field_group.group_content|node|place|form.data|children|18"] = 'field_responsibility';
@@ -274,6 +286,7 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-news_item-field_keywords.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.node-news_item-field_related_content.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
+  $overrides["field_instance.node-page-body.widget|weight"] = 15;
   $overrides["field_instance.node-page-field_contact_information.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -282,6 +295,7 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-page-field_contact_information.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.node-page-field_contact_person.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
+  $overrides["field_instance.node-page-field_info_box.widget|weight"] = 16;
   $overrides["field_instance.node-page-field_keywords.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -289,6 +303,8 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => 0,
   );
   $overrides["field_instance.node-page-field_keywords.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
+  $overrides["field_instance.node-page-field_keywords.widget|weight"] = 17;
+  $overrides["field_instance.node-page-field_lead_paragraph.widget|weight"] = 14;
   $overrides["field_instance.node-page-field_related_content.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -300,6 +316,7 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["field_instance.node-page-field_related_content.widget|settings|references_dialog_edit"]["DELETED"] = TRUE;
   $overrides["field_instance.node-page-field_related_content.widget|settings|references_dialog_search"]["DELETED"] = TRUE;
   $overrides["field_instance.node-page-field_related_content.widget|settings|references_dialog_search_view"]["DELETED"] = TRUE;
+  $overrides["field_instance.node-page-field_service_offering.widget|weight"] = 21;
   $overrides["field_instance.node-page-field_subpage.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -307,6 +324,8 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => 0,
   );
   $overrides["field_instance.node-page-field_subpage.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
+  $overrides["field_instance.node-page-field_target_audience.widget|weight"] = 20;
+  $overrides["field_instance.node-page-field_theme.widget|weight"] = 18;
   $overrides["field_instance.node-page-field_topic.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -314,6 +333,8 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => 0,
   );
   $overrides["field_instance.node-page-field_topic.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
+  $overrides["field_instance.node-page-field_visitpori_theme.widget|weight"] = 19;
+  $overrides["field_instance.node-page-field_widgets_after_content.widget|weight"] = 22;
   $overrides["field_instance.node-page-field_widget_before_content.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),

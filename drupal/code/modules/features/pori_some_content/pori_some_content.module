@@ -10,15 +10,19 @@ include_once 'pori_some_content.features.inc';
  * Implements hook_entity_presave().
  */
 function pori_some_content_entity_presave($entity, $type) {
-  if ($entity->type != 'social_media_update') {
+  if (empty($entity->type) || $entity->type != 'social_media_update') {
     return;
   }
   if (isset($entity->feeds_item->feed_nid)) {
-    // If the importer has "promote to front page" set (not actually shown
-    // anywhere, promote the imported node to be actually
+    // If the importer has promote set, promote the imported node instead.
     $importer = node_load($entity->feeds_item->feed_nid);
     if ($importer->promote) {
       $entity->promote = 1;
+    }
+    if (!empty($importer->domains)) {
+      $entity->domains = $importer->domains;
+      $entity->domain_source = $importer->domain_source;
+      $entity->domain_site = $importer->domain_site;
     }
   }
   return;
