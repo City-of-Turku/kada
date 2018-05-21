@@ -158,6 +158,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => 0,
   );
   $overrides["field_instance.node-feed_import_youtube_channel-field_keywords.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
+  $overrides["field_instance.node-landing_page-field_keywords.display|default|weight"] = 5;
   $overrides["field_instance.node-landing_page-field_keywords.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -165,6 +166,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => 0,
   );
   $overrides["field_instance.node-landing_page-field_keywords.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
+  $overrides["field_instance.node-landing_page-field_related_content.display|default|weight"] = 8;
   $overrides["field_instance.node-landing_page-field_related_content.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -179,6 +181,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => 0,
   );
   $overrides["field_instance.node-landing_page-field_topic.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
+  $overrides["field_instance.node-landing_page-field_widget_before_content.display|default|weight"] = 3;
   $overrides["field_instance.node-landing_page-field_widget_before_content.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),

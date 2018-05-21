@@ -5,6 +5,15 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function pori_configuration_overrides_feature_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
+}
+
+/**
  * Implements hook_context_default_contexts_alter().
  */
 function pori_configuration_overrides_feature_context_default_contexts_alter(&$data) {
@@ -227,6 +236,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     $data['node-feed_import_youtube_channel-field_keywords']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
   if (isset($data['node-landing_page-field_keywords'])) {
+    $data['node-landing_page-field_keywords']['display']['default']['weight'] = 5; /* WAS: 4 */
     $data['node-landing_page-field_keywords']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -236,6 +246,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     $data['node-landing_page-field_keywords']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
   if (isset($data['node-landing_page-field_related_content'])) {
+    $data['node-landing_page-field_related_content']['display']['default']['weight'] = 8; /* WAS: 6 */
     $data['node-landing_page-field_related_content']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -254,6 +265,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     $data['node-landing_page-field_topic']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
   if (isset($data['node-landing_page-field_widget_before_content'])) {
+    $data['node-landing_page-field_widget_before_content']['display']['default']['weight'] = 3; /* WAS: 2 */
     $data['node-landing_page-field_widget_before_content']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
