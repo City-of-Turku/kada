@@ -77,10 +77,10 @@ function pori_waste_search_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'place';
   $ds_layout->view_mode = 'waste_search';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'waste_layout';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
+      'main_content' => array(
         0 => 'title_field',
         1 => 'field_address_visiting',
         2 => 'field_phone',
@@ -91,17 +91,17 @@ function pori_waste_search_ds_layout_settings_info() {
       ),
     ),
     'fields' => array(
-      'title_field' => 'ds_content',
-      'field_address_visiting' => 'ds_content',
-      'field_phone' => 'ds_content',
-      'field_email' => 'ds_content',
-      'field_availability' => 'ds_content',
-      'field_description' => 'ds_content',
-      'field_website_et' => 'ds_content',
+      'title_field' => 'main_content',
+      'field_address_visiting' => 'main_content',
+      'field_phone' => 'main_content',
+      'field_email' => 'main_content',
+      'field_availability' => 'main_content',
+      'field_description' => 'main_content',
+      'field_website_et' => 'main_content',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'main_content' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
@@ -151,16 +151,6 @@ function pori_waste_search_ds_layout_settings_info() {
   $ds_layout->view_mode = 'full';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
-    'regions' => array(
-      'ds_content' => array(
-        0 => 'field_waste_type_images',
-        1 => 'description_field',
-      ),
-    ),
-    'fields' => array(
-      'field_waste_type_images' => 'ds_content',
-      'description_field' => 'ds_content',
-    ),
     'classes' => array(),
     'wrappers' => array(
       'ds_content' => 'div',
@@ -171,6 +161,16 @@ function pori_waste_search_ds_layout_settings_info() {
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
     'layout_disable_css' => FALSE,
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_waste_type_images',
+        1 => 'description_field',
+      ),
+    ),
+    'fields' => array(
+      'field_waste_type_images' => 'ds_content',
+      'description_field' => 'ds_content',
+    ),
   );
   $export['taxonomy_term|waste_type|full'] = $ds_layout;
 
@@ -182,6 +182,16 @@ function pori_waste_search_ds_layout_settings_info() {
   $ds_layout->view_mode = 'waste_search';
   $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
     'regions' => array(
       'ds_content' => array(
         0 => 'name_field',
@@ -194,6 +204,17 @@ function pori_waste_search_ds_layout_settings_info() {
       'field_waste_type_short_desc' => 'ds_content',
       'more_link' => 'ds_content',
     ),
+  );
+  $export['taxonomy_term|waste_type|waste_search'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|waste|default';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'waste';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
     'classes' => array(),
     'wrappers' => array(
       'ds_content' => 'div',
@@ -204,17 +225,6 @@ function pori_waste_search_ds_layout_settings_info() {
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
     'layout_disable_css' => FALSE,
-  );
-  $export['taxonomy_term|waste_type|waste_search'] = $ds_layout;
-
-  $ds_layout = new stdClass();
-  $ds_layout->api_version = 1;
-  $ds_layout->id = 'taxonomy_term|waste|waste_search';
-  $ds_layout->entity_type = 'taxonomy_term';
-  $ds_layout->bundle = 'waste';
-  $ds_layout->view_mode = 'waste_search';
-  $ds_layout->layout = 'ds_1col';
-  $ds_layout->settings = array(
     'regions' => array(
       'ds_content' => array(
         0 => 'name_field',
@@ -225,6 +235,17 @@ function pori_waste_search_ds_layout_settings_info() {
       'name_field' => 'ds_content',
       'description_field' => 'ds_content',
     ),
+  );
+  $export['taxonomy_term|waste|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'taxonomy_term|waste|waste_search';
+  $ds_layout->entity_type = 'taxonomy_term';
+  $ds_layout->bundle = 'waste';
+  $ds_layout->view_mode = 'waste_search';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
     'classes' => array(),
     'wrappers' => array(
       'ds_content' => 'div',
@@ -235,6 +256,16 @@ function pori_waste_search_ds_layout_settings_info() {
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
     'layout_disable_css' => FALSE,
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'name_field',
+        1 => 'description_field',
+      ),
+    ),
+    'fields' => array(
+      'name_field' => 'ds_content',
+      'description_field' => 'ds_content',
+    ),
   );
   $export['taxonomy_term|waste|waste_search'] = $ds_layout;
 

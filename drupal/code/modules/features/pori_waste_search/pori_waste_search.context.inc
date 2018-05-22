@@ -112,6 +112,9 @@ function pori_waste_search_context_default_contexts() {
         ),
       ),
     ),
+    'theme_html' => array(
+      'class' => 'waste-search',
+    ),
   );
   $context->condition_mode = 1;
 
