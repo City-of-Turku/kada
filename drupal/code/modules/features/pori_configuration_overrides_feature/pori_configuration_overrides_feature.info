@@ -478,6 +478,7 @@ features[features_overrides][] = variable.variable_realm_list_domain.value|0
 features[features_overrides][] = variable.variable_realm_list_domain.value|1
 features[features_overrides][] = variable.variable_realm_list_domain.value|2
 features[features_overrides][] = variable.variable_realm_list_domain.value|3
+features[field_instance][] = node-landing-page-og_group_ref
 features_exclude[features_overrides][field_group.group_billing_address|node|place|form.data|weight] = field_group.group_billing_address|node|place|form.data|weight
 features_exclude[features_overrides][field_group.group_content|node|place|form.data|children|0] = field_group.group_content|node|place|form.data|children|0
 features_exclude[features_overrides][field_group.group_content|node|place|form.data|children|1] = field_group.group_content|node|place|form.data|children|1
