@@ -35,21 +35,50 @@ function pori_waste_search_field_default_field_instances() {
     'entity_type' => 'taxonomy_term',
     'field_name' => 'description_field',
     'label' => 'Description',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'context' => '',
-      'display_summary' => 0,
-      'dnd_enabled' => 0,
-      'entity_translation_sync' => FALSE,
-      'hide_label' => array(
-        'entity' => FALSE,
-        'page' => FALSE,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'wysiwyg' => 'wysiwyg',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'full_html' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'wysiwyg' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
       ),
-      'mee_enabled' => 0,
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'display_summary' => 0,
+      'dnd_enabled' => 1,
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Etsi',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
@@ -194,21 +223,50 @@ function pori_waste_search_field_default_field_instances() {
     'entity_type' => 'taxonomy_term',
     'field_name' => 'description_field',
     'label' => 'Description',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'context' => '',
-      'display_summary' => 0,
-      'dnd_enabled' => 0,
-      'entity_translation_sync' => FALSE,
-      'hide_label' => array(
-        'entity' => FALSE,
-        'page' => FALSE,
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'wysiwyg' => 'wysiwyg',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'full_html' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'wysiwyg' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
       ),
-      'mee_enabled' => 0,
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'display_summary' => 0,
+      'dnd_enabled' => 1,
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Etsi',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 1,
       'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 20,
