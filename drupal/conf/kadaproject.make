@@ -91,6 +91,12 @@ libraries[ckeditor_widget][download][type] = file
 libraries[ckeditor_widget][directory_name] = ckeditor/plugins/widget
 libraries[ckeditor_widget][download][url] = http://download.ckeditor.com/widget/releases/widget_4.4.8.zip
 
+; Chosen library
+libraries[chosen][type] = libraries
+libraries[chosen][download][type] = file
+libraries[chosen][directory_name] = chosen
+libraries[chosen][download][url] = https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.5/chosen.jquery.min.js
+
 ; Line Utils library
 libraries[ckeditor_lineutils][type] = libraries
 libraries[ckeditor_lineutils][download][type] = file
@@ -358,6 +364,7 @@ projects[flexslider][patch][] = "https://www.drupal.org/files/issues/0001-Issue-
 
 projects[geocoder][version] = 1.3
 projects[geocoder][subdir] = contrib
+projects[geocoder][patch][] = "../patches/geocoder_proximity_cache_record_fix.patch"
 
 ; Only dev-version is available
 projects[geocoder_rules][type] = "module"
@@ -403,6 +410,8 @@ projects[imagecache_token][patch][] = "https://www.drupal.org/files/issues/image
 
 projects[ip_geoloc][version] = 1.30
 projects[ip_geoloc][subdir] = contrib
+projects[ip_geoloc][patch][] = "../patches/ip_geoloc_google_maps_version_bump.patch"
+projects[ip_geoloc][patch][] = "../patches/ip_geoloc_update_current_location_marker_to_use_predefined_markers.patch"
 
 projects[job_scheduler][version] = 2.0-alpha3
 projects[job_scheduler][subdir] = contrib

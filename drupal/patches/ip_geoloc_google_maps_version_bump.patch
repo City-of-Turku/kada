@@ -1,0 +1,13 @@
+diff --git a/ip_geoloc.module b/ip_geoloc.module
+index bfd8f53..6f520ab 100644
+--- a/ip_geoloc.module
++++ b/ip_geoloc.module
+@@ -1016,7 +1016,7 @@ function ip_geoloc_build_google_api_url() {
+   // Add query params to API url.
+   if (!empty($query)) {
+     // Include version number as it's required for Premium plans.
+-    $query['v'] = '3.26';
++    $query['v'] = '3.30';
+     $google_api_url .= '?' . drupal_http_build_query($query);
+   }
+   return $google_api_url;
