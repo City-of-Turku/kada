@@ -20,7 +20,7 @@ api = 2
 ; Core project
 ; ------------
 projects[drupal][type] = core
-projects[drupal][version] = "7.58"
+projects[drupal][version] = "7.59"
 
 ; Use vocabulary machine name for permissions (https://www.drupal.org/node/995156)
 projects[drupal][patch][995156] = https://www.drupal.org/files/issues/995156-5_portable_taxonomy_permissions.patch
@@ -217,10 +217,8 @@ projects[domain][subdir] = contrib
 projects[domain_analytics][version] = 1.0-alpha2
 projects[domain_analytics][subdir] = contrib
 
-projects[domaincontext][version] = 1.0-alpha1
-projects[domaincontext][subdir] = contrib
-; Fix to use machine names instead of ids
-projects[domaincontext][patch][] = "https://www.drupal.org/files/1542406-5-domain-machine-names.patch"
+projects[domain_feeds][subdir] = contrib
+projects[domain_feeds][version] = 1.4
 
 ; Provides some additional rules / views options
 projects[domain_integration][version] = 1.1
@@ -231,13 +229,19 @@ projects[domain_variable][subdir] = contrib
 ; Fix for the UI of domain_variable + i18n
 projects[domain_variable][patch][] = "https://www.drupal.org/files/issues/domain_variable_i18n_fixes-2308283-4.patch"
 
-projects[domain_feeds][version] = 1.4
-
 projects[domain_views][type] = "module"
 projects[domain_views][subdir] = "contrib"
 projects[domain_views][download][type] = "git"
 projects[domain_views][download][url] = "http://git.drupal.org/project/domain_views.git"
 projects[domain_views][download][revision] = 074a167b82b0db9c19a3a9dddfb0f8e77e6ee068
+
+projects[domaincontext][version] = 1.0-alpha1
+projects[domaincontext][subdir] = contrib
+; Fix to use machine names instead of ids
+projects[domaincontext][patch][] = "https://www.drupal.org/files/1542406-5-domain-machine-names.patch"
+
+projects[domains_metatag][subdir] = contrib
+projects[domains_metatag][version] = 1.1
 
 projects[ds][version] = 2.14
 projects[ds][subdir] = contrib
