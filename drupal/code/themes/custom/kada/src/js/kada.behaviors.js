@@ -209,7 +209,7 @@
             // Iterate through each menu and check which menu is the tallest.
             menus.each(function(){
               var menuHeight = 0;
-              
+
               if ($(this).parent('.e-service-wrapper').length) {
                 menuHeight = $(this).parent().outerHeight();
               } else {

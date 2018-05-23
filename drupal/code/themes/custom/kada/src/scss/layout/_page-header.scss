@@ -17,6 +17,7 @@
     // Mobile
     @media screen and (max-width: $mobile-menu-breakpoint-max) {
       background-color: $white;
+      border-bottom: 1px solid $gray-light;
       width: 100%;
       z-index: 100;
     }
