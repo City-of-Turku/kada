@@ -5,3 +5,19 @@
  */
 
 include_once 'pori_configuration.features.inc';
+
+/**
+ * Implements hook_language_switch_links_alter().
+ */
+function pori_configuration_language_switch_links_alter(&$links, $type, $path) {
+  global $language;
+  $current_domain = domain_get_domain();
+  // Change language switcher behavior so that it links always to front page.
+  if ($type == LANGUAGE_TYPE_INTERFACE && isset($links[$language->language]) && $current_domain['machine_name'] == 'pori_fi') {
+    foreach ($links as $langcode => &$link) {
+      if ($link['language']->language != $language->language ) {
+        $link['href'] = '<front>';
+      }
+    }
+  }
+}
