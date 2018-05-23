@@ -60,8 +60,8 @@ function pori_configuration_image_default_styles() {
       6 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 112,
-          'height' => 149,
+          'width' => 152,
+          'height' => 203,
         ),
         'weight' => 1,
       ),
