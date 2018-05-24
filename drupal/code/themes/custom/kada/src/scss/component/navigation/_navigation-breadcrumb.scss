@@ -25,6 +25,14 @@
   }
 }
 
+.page--highlight-image {
+  .breadcrumb {
+    @media screen and (min-width: $desktop) {
+      padding-top: 3.125rem;
+    }
+  }
+}
+
 .breadcrumb__item {
   @include font-size-responsive(0.9375rem);
   display: inline-block;

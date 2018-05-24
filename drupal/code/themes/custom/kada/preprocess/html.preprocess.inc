@@ -45,7 +45,6 @@ function kada_preprocess_html(&$variables) {
     $variables['classes_array'][] = $classes;
   }
 
-
   $node = menu_get_object();
 
   if ($node->field_theme_main_page['und'][0]['value'] == 1) {

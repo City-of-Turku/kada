@@ -48,6 +48,15 @@ function pori_configuration_overrides_feature_context_default_contexts_alter(&$d
       'weight' => -7,
     ); /* WAS: '' */
   }
+  if (isset($data['page'])) {
+    $data['page']->conditions['entity_field']['values']['view_mode'] = 'a:46:{s:4:"full";s:4:"full";s:6:"teaser";i:0;s:3:"rss";i:0;s:13:"diff_standard";i:0;s:19:"live_results_search";i:0;s:5:"token";i:0;s:9:"accordion";i:0;s:8:"carousel";i:0;s:7:"current";i:0;s:7:"project";i:0;s:15:"event_grid_item";i:0;s:15:"event_list_item";i:0;s:14:"event_map_item";i:0;s:17:"event_mosaic_item";i:0;s:19:"event_search_result";i:0;s:19:"event_tab_list_item";i:0;s:18:"event_top_carousel";i:0;s:9:"main_news";i:0;s:14:"main_news_wide";i:0;s:10:"only_title";i:0;s:3:"map";i:0;s:27:"attraction_card_mosaic_item";i:0;s:7:"product";i:0;s:11:"person_card";i:0;s:19:"small_liftup_banner";i:0;s:8:"revision";i:0;s:10:"label_icon";i:0;s:9:"term_name";i:0;s:5:"title";i:0;s:12:"content_full";i:0;s:12:"content_half";i:0;s:6:"topics";i:0;s:16:"main_liftup_wide";i:0;s:11:"main_liftup";i:0;s:12:"main_content";i:0;s:10:"full_modal";i:0;s:10:"event_list";i:0;s:9:"grid_item";i:0;s:10:"event_node";i:0;s:14:"event_tab_item";i:0;s:6:"person";i:0;s:17:"file_linked_title";i:0;s:13:"search_result";i:0;s:9:"opengraph";i:0;s:16:"content_250_wide";i:0;s:13:"page_carousel";i:0;}'; /* WAS: 'a:39:{s:4:"full";s:4:"full";s:6:"teaser";i:0;s:3:"rss";i:0;s:13:"diff_standard";i:0;s:5:"token";i:0;s:9:"accordion";i:0;s:8:"carousel";i:0;s:7:"current";i:0;s:7:"project";i:0;s:15:"event_grid_item";i:0;s:15:"event_list_item";i:0;s:14:"event_map_item";i:0;s:17:"event_mosaic_item";i:0;s:19:"event_search_result";i:0;s:19:"event_tab_list_item";i:0;s:18:"event_top_carousel";i:0;s:9:"main_news";i:0;s:14:"main_news_wide";i:0;s:10:"only_title";i:0;s:3:"map";i:0;s:8:"revision";i:0;s:10:"label_icon";i:0;s:9:"term_name";i:0;s:5:"title";i:0;s:12:"content_full";i:0;s:12:"content_half";i:0;s:6:"topics";i:0;s:16:"main_liftup_wide";i:0;s:11:"main_liftup";i:0;s:12:"main_content";i:0;s:10:"full_modal";i:0;s:10:"event_list";i:0;s:9:"grid_item";i:0;s:10:"event_node";i:0;s:14:"event_tab_item";i:0;s:6:"person";i:0;s:17:"file_linked_title";i:0;s:13:"search_result";i:0;s:9:"opengraph";i:0;}' */
+    $data['page']->reactions['block']['blocks']['views-pori_main_image_for_page-block'] = array(
+      'module' => 'views',
+      'delta' => 'pori_main_image_for_page-block',
+      'region' => 'highlighted',
+      'weight' => -10,
+    ); /* WAS: '' */
+  }
   if (isset($data['sitewide_en'])) {
     $data['sitewide_en']->reactions['block']['blocks']['block-1']['weight'] = -40; /* WAS: -10 */
     unset($data['sitewide_en']->conditions['context']);
@@ -146,6 +155,13 @@ function pori_configuration_overrides_feature_field_default_field_bases_alter(&$
 function pori_configuration_overrides_feature_field_group_info_alter(&$data) {
   if (isset($data['group_additional_information|node|page|form'])) {
     $data['group_additional_information|node|page|form']->data['children'][2] = 'field_contact_person'; /* WAS: '' */
+  }
+  if (isset($data['group_content|node|page|form'])) {
+    $data['group_content|node|page|form']->data['children'][10] = 'field_responsibility'; /* WAS: 'title' */
+    $data['group_content|node|page|form']->data['children'][11] = 'field_show_main_image'; /* WAS: '' */
+    $data['group_content|node|page|form']->data['children'][12] = 'language'; /* WAS: '' */
+    $data['group_content|node|page|form']->data['children'][13] = 'title'; /* WAS: '' */
+    $data['group_content|node|page|form']->data['children'][9] = 'field_widgets_after_content'; /* WAS: 'language' */
   }
   if (isset($data['group_content|node|place|form'])) {
     $data['group_content|node|place|form']->data['children'][11] = 'field_read_more'; /* WAS: 'language' */
@@ -376,6 +392,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
   if (isset($data['node-news_item-field_related_content'])) {
     $data['node-news_item-field_related_content']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
+  if (isset($data['node-page-body'])) {
+    $data['node-page-body']['widget']['weight'] = 15; /* WAS: 14 */
+  }
   if (isset($data['node-page-field_contact_information'])) {
     $data['node-page-field_contact_information']['display']['live_results_search'] = array(
       'label' => 'above',
@@ -388,6 +407,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
   if (isset($data['node-page-field_contact_person'])) {
     $data['node-page-field_contact_person']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
+  if (isset($data['node-page-field_info_box'])) {
+    $data['node-page-field_info_box']['widget']['weight'] = 16; /* WAS: 15 */
+  }
   if (isset($data['node-page-field_keywords'])) {
     $data['node-page-field_keywords']['display']['live_results_search'] = array(
       'label' => 'above',
@@ -396,6 +418,10 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-page-field_keywords']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
+    $data['node-page-field_keywords']['widget']['weight'] = 17; /* WAS: 16 */
+  }
+  if (isset($data['node-page-field_lead_paragraph'])) {
+    $data['node-page-field_lead_paragraph']['widget']['weight'] = 14; /* WAS: 13 */
   }
   if (isset($data['node-page-field_related_content'])) {
     $data['node-page-field_related_content']['display']['live_results_search'] = array(
@@ -410,6 +436,10 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     unset($data['node-page-field_related_content']['widget']['settings']['references_dialog_search']);
     unset($data['node-page-field_related_content']['widget']['settings']['references_dialog_search_view']);
   }
+  if (isset($data['node-page-field_service_offering'])) {
+    $data['node-page-field_service_offering']['widget']['settings']['content_taxonomy_opt_groups'] = FALSE; /* WAS: '' */
+    $data['node-page-field_service_offering']['widget']['weight'] = 21; /* WAS: 20 */
+  }
   if (isset($data['node-page-field_subpage'])) {
     $data['node-page-field_subpage']['display']['live_results_search'] = array(
       'label' => 'above',
@@ -419,6 +449,12 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-page-field_subpage']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
+  if (isset($data['node-page-field_target_audience'])) {
+    $data['node-page-field_target_audience']['widget']['weight'] = 20; /* WAS: 19 */
+  }
+  if (isset($data['node-page-field_theme'])) {
+    $data['node-page-field_theme']['widget']['weight'] = 18; /* WAS: 17 */
+  }
   if (isset($data['node-page-field_topic'])) {
     $data['node-page-field_topic']['display']['live_results_search'] = array(
       'label' => 'above',
@@ -427,6 +463,12 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-page-field_topic']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
+  }
+  if (isset($data['node-page-field_visitpori_theme'])) {
+    $data['node-page-field_visitpori_theme']['widget']['weight'] = 19; /* WAS: 18 */
+  }
+  if (isset($data['node-page-field_widgets_after_content'])) {
+    $data['node-page-field_widgets_after_content']['widget']['weight'] = 22; /* WAS: 12 */
   }
   if (isset($data['node-page-field_widget_before_content'])) {
     $data['node-page-field_widget_before_content']['display']['live_results_search'] = array(
@@ -446,14 +488,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_account_name']['display']['person_card'] = array(
       'label' => 'above',
-      'module' => 'title',
-      'settings' => array(
-        'title_class' => '',
-        'title_link' => '',
-        'title_style' => '',
-      ),
-      'type' => 'title_linked',
-      'weight' => 11,
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 28,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_assistant'])) {
@@ -466,13 +503,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_assistant']['display']['person_card'] = array(
       'label' => 'above',
-      'module' => 'entityreference',
-      'settings' => array(
-        'bypass_access' => FALSE,
-        'link' => FALSE,
-      ),
-      'type' => 'entityreference_label',
-      'weight' => 26,
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 29,
     ); /* WAS: '' */
     $data['node-person-field_assistant']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
@@ -488,7 +521,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'module' => 'email',
       'settings' => array(),
       'type' => 'email_default',
-      'weight' => 5,
+      'weight' => 6,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_employee_title'])) {
@@ -503,7 +536,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'module' => 'text',
       'settings' => array(),
       'type' => 'text_default',
-      'weight' => 1,
+      'weight' => 2,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_fax_number'])) {
@@ -518,7 +551,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'module' => 'text',
       'settings' => array(),
       'type' => 'text_default',
-      'weight' => 10,
+      'weight' => 11,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_first_name'])) {
@@ -530,14 +563,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_first_name']['display']['person_card'] = array(
       'label' => 'above',
-      'module' => 'title',
-      'settings' => array(
-        'title_class' => '',
-        'title_link' => '',
-        'title_style' => '',
-      ),
-      'type' => 'title_linked',
-      'weight' => 38,
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 39,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_mobile_phone'])) {
@@ -552,7 +580,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'module' => 'text',
       'settings' => array(),
       'type' => 'text_default',
-      'weight' => 6,
+      'weight' => 7,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_mobile_phone_work'])) {
@@ -567,7 +595,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'module' => 'text',
       'settings' => array(),
       'type' => 'text_default',
-      'weight' => 8,
+      'weight' => 9,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_municipality'])) {
@@ -579,14 +607,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_municipality']['display']['person_card'] = array(
       'label' => 'above',
-      'module' => 'title',
-      'settings' => array(
-        'title_class' => '',
-        'title_link' => '',
-        'title_style' => '',
-      ),
-      'type' => 'title_linked',
-      'weight' => 37,
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 38,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_office_tr'])) {
@@ -601,7 +624,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'module' => 'i18n_taxonomy',
       'settings' => array(),
       'type' => 'i18n_taxonomy_term_reference_plain',
-      'weight' => 3,
+      'weight' => 4,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_person_image'])) {
@@ -612,14 +635,14 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-person-field_person_image']['display']['person_card'] = array(
-      'label' => 'above',
+      'label' => 'hidden',
       'module' => 'atom_reference',
       'settings' => array(
         'link' => 0,
         'override' => 0,
       ),
-      'type' => 'title',
-      'weight' => 36,
+      'type' => 'person',
+      'weight' => 0,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_person_type'])) {
@@ -631,10 +654,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_person_type']['display']['person_card'] = array(
       'label' => 'above',
-      'module' => 'i18n_field',
       'settings' => array(),
-      'type' => 'i18n_list_default',
-      'weight' => 35,
+      'type' => 'hidden',
+      'weight' => 37,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_phone'])) {
@@ -649,7 +671,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'module' => 'text',
       'settings' => array(),
       'type' => 'text_default',
-      'weight' => 7,
+      'weight' => 8,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_phone_switch'])) {
@@ -664,7 +686,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'module' => 'text',
       'settings' => array(),
       'type' => 'text_default',
-      'weight' => 9,
+      'weight' => 10,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_political_party'])) {
@@ -678,13 +700,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_political_party']['display']['person_card'] = array(
       'label' => 'above',
-      'module' => 'entityreference',
-      'settings' => array(
-        'bypass_access' => FALSE,
-        'link' => FALSE,
-      ),
-      'type' => 'entityreference_label',
-      'weight' => 34,
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 36,
     ); /* WAS: '' */
     $data['node-person-field_political_party']['display']['teaser']['settings']['bypass_access'] = FALSE; /* WAS: '' */
     $data['node-person-field_political_party']['widget']['settings']['content_taxonomy_opt_groups'] = FALSE; /* WAS: '' */
@@ -698,14 +716,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_postal_code']['display']['person_card'] = array(
       'label' => 'above',
-      'module' => 'title',
-      'settings' => array(
-        'title_class' => '',
-        'title_link' => '',
-        'title_style' => '',
-      ),
-      'type' => 'title_linked',
-      'weight' => 33,
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 35,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_profession'])) {
@@ -720,7 +733,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'module' => 'text',
       'settings' => array(),
       'type' => 'text_default',
-      'weight' => 2,
+      'weight' => 3,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_street_address'])) {
@@ -732,14 +745,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_street_address']['display']['person_card'] = array(
       'label' => 'above',
-      'module' => 'title',
-      'settings' => array(
-        'title_class' => '',
-        'title_link' => '',
-        'title_style' => '',
-      ),
-      'type' => 'title_linked',
-      'weight' => 32,
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 34,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_superior'])) {
@@ -752,13 +760,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_superior']['display']['person_card'] = array(
       'label' => 'above',
-      'module' => 'entityreference',
-      'settings' => array(
-        'bypass_access' => FALSE,
-        'link' => FALSE,
-      ),
-      'type' => 'entityreference_label',
-      'weight' => 31,
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 33,
     ); /* WAS: '' */
     $data['node-person-field_superior']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
@@ -771,14 +775,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_surname']['display']['person_card'] = array(
       'label' => 'above',
-      'module' => 'title',
-      'settings' => array(
-        'title_class' => '',
-        'title_link' => '',
-        'title_style' => '',
-      ),
-      'type' => 'title_linked',
-      'weight' => 30,
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 32,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_task_description'])) {
@@ -790,14 +789,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-field_task_description']['display']['person_card'] = array(
       'label' => 'above',
-      'module' => 'title',
-      'settings' => array(
-        'title_class' => '',
-        'title_link' => '',
-        'title_style' => '',
-      ),
-      'type' => 'title_linked',
-      'weight' => 29,
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 31,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-field_visiting_address'])) {
@@ -812,7 +806,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'module' => 'text',
       'settings' => array(),
       'type' => 'text_default',
-      'weight' => 4,
+      'weight' => 5,
     ); /* WAS: '' */
   }
   if (isset($data['node-person-title_field'])) {
@@ -824,14 +818,9 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     ); /* WAS: '' */
     $data['node-person-title_field']['display']['person_card'] = array(
       'label' => 'above',
-      'module' => 'title',
-      'settings' => array(
-        'title_class' => '',
-        'title_link' => '',
-        'title_style' => '',
-      ),
-      'type' => 'title_linked',
-      'weight' => 28,
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 30,
     ); /* WAS: '' */
   }
   if (isset($data['node-place-field_accessibility'])) {
@@ -1165,7 +1154,7 @@ function pori_configuration_overrides_feature_strongarm_alter(&$data) {
   if (isset($data['field_bundle_settings_node__person'])) {
     $data['field_bundle_settings_node__person']->value['extra_fields']['display']['domain']['person_card'] = array(
       'weight' => 40,
-      'visible' => TRUE,
+      'visible' => FALSE,
     ); /* WAS: '' */
     $data['field_bundle_settings_node__person']->value['view_modes']['attraction_card_mosaic_item'] = array(
       'custom_settings' => FALSE,
