@@ -1074,6 +1074,26 @@ function pori_configuration_overrides_feature_features_override_default_override
     'separator' => '',
     'empty_column' => 0,
   );
+  $overrides["views_view.kada_scald_atoms.display|default|display_options|filters|domain_id"] = array(
+    'id' => 'domain_id',
+    'table' => 'domain_editor',
+    'field' => 'domain_id',
+    'relationship' => 'publisher',
+    'value' => array(
+      '***CURRENT_DOMAIN***' => '***CURRENT_DOMAIN***',
+    ),
+    'group' => 1,
+  );
+  $overrides["views_view.kada_scald_library.display|default|display_options|filters|domain_id"] = array(
+    'id' => 'domain_id',
+    'table' => 'domain_editor',
+    'field' => 'domain_id',
+    'relationship' => 'publisher',
+    'value' => array(
+      '***CURRENT_DOMAIN***' => '***CURRENT_DOMAIN***',
+    ),
+    'group' => 1,
+  );
 
  return $overrides;
 }

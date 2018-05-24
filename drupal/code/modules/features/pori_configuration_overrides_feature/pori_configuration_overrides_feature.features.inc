@@ -1390,4 +1390,28 @@ function pori_configuration_overrides_feature_views_default_views_alter(&$data) 
     unset($data['kada_admin_content']->display['default']->display_options['style_options']['info']['delete_node']);
     unset($data['kada_admin_content']->display['default']->display_options['style_options']['info']['edit_node']);
   }
+  if (isset($data['kada_scald_atoms'])) {
+    $data['kada_scald_atoms']->display['default']->display_options['filters']['domain_id'] = array(
+      'id' => 'domain_id',
+      'table' => 'domain_editor',
+      'field' => 'domain_id',
+      'relationship' => 'publisher',
+      'value' => array(
+        '***CURRENT_DOMAIN***' => '***CURRENT_DOMAIN***',
+      ),
+      'group' => 1,
+    ); /* WAS: '' */
+  }
+  if (isset($data['kada_scald_library'])) {
+    $data['kada_scald_library']->display['default']->display_options['filters']['domain_id'] = array(
+      'id' => 'domain_id',
+      'table' => 'domain_editor',
+      'field' => 'domain_id',
+      'relationship' => 'publisher',
+      'value' => array(
+        '***CURRENT_DOMAIN***' => '***CURRENT_DOMAIN***',
+      ),
+      'group' => 1,
+    ); /* WAS: '' */
+  }
 }
