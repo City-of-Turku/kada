@@ -93,6 +93,12 @@ function pori_contact_information_feature_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['content'] = 'Telephone exchange of the City of Pori: <a href="tel:(02) 621 1100">(02) 621 1100</a><br>
+<a href="mailto:kirjaamo@pori.fi">kirjaamo@pori.fi</a>';
   /* Field: Content: First name */
   $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
   $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
@@ -254,6 +260,8 @@ function pori_contact_information_feature_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Telephone exchange of the City of Pori: <a href="tel:(02) 621 1100">(02) 621 1100</a><br>
+<a href="mailto:kirjaamo@pori.fi">kirjaamo@pori.fi</a>'),
     t('Page'),
   );
   $export['pori_phone_book'] = $view;
