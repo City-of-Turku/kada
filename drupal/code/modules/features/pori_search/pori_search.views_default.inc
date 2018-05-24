@@ -68,6 +68,12 @@ function pori_search_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Header: Global: Unfiltered text */
+  $handler->display->display_options['header']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['header']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['header']['area_text_custom']['content'] = 'Didn\'t find what you are looking for? Try <a href="/en/news-archive">searching from the news archive.</a>';
   /* Field: Indexed Node: Date created */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'search_api_index_pori_search_index';
@@ -183,6 +189,7 @@ function pori_search_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Didn\'t find what you are looking for? Try <a href="/en/news-archive">searching from the news archive.</a>'),
     t('[body]'),
     t('Search'),
     t('Page'),

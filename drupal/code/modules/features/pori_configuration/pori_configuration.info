@@ -67,6 +67,7 @@ features[field_instance][] = node-service_offer-field_responsibility
 features[field_instance][] = node-webform-field_responsibility
 features[field_instance][] = taxonomy_term-accessibility-field_class
 features[image][] = content_250_wide
+features[image][] = person_breakpoints_theme_kada_desktopwide_1x
 features[language][] = de
 features[metatag][] = global:pori_fi frontpage
 features[metatag][] = global:visitpori_fi frontpage

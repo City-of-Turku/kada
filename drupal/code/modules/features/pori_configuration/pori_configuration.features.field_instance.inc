@@ -910,7 +910,7 @@ function pori_configuration_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 25,
       ),
     ),
     'entity_type' => 'node',
