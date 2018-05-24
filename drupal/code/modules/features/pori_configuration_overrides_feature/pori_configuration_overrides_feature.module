@@ -5,3 +5,24 @@
  */
 
 include_once 'pori_configuration_overrides_feature.features.inc';
+
+/**
+ * Implements hook_form_alter().
+ */
+function pori_configuration_overrides_feature_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+
+  $logged_in_user = user_load($user->uid);
+  $user_domains = $logged_in_user->domain_user;
+
+  // Based on the logged in users domain, pick the default domain filter on /admin/content.
+  // If there is more than one domain on the users profile use the "All" option that is default on the view.
+  if(count($user_domains) === 1 && $form['#id'] == 'views-exposed-form-kada-admin-content-page') {
+    $user_domain = reset($user_domains);
+
+    if (empty($_GET['gid']))  {
+      $form_state['input']['gid'] = $user_domain;
+    }
+  }
+
+}
