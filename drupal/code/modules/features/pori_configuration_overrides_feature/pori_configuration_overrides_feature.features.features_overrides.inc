@@ -837,6 +837,34 @@ function pori_configuration_overrides_feature_features_override_default_override
   // Exported overrides for: language
   $overrides["language.sv.enabled"] = 1;
 
+  // Exported overrides for: openlayers_maps
+  $overrides["openlayers_maps.kada_location_input.data|center|initial|centerpoint"] = '21.7974179, 61.4851393';
+  $overrides["openlayers_maps.kada_location_input.data|center|initial|zoom"] = 11;
+  $overrides["openlayers_maps.kada_location_input.data|layer_activated|attraction_map_attraction_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_activated|kada_events_indexed_map_indexed"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_activated|kada_events_map_event_data"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_activated|kada_events_map_event_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_select|attraction_map_attraction_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_select|kada_events_indexed_map_indexed"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_select|kada_events_map_event_data"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_select|kada_events_map_event_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_temporary|attraction_map_attraction_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_temporary|kada_events_indexed_map_indexed"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_temporary|kada_events_map_event_data"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_temporary|kada_events_map_event_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles|attraction_map_attraction_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles|kada_events_indexed_map_indexed"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles|kada_events_map_event_data"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles|kada_events_map_event_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_switcher|attraction_map_attraction_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_switcher|kada_events_indexed_map_indexed"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_switcher|kada_events_map_event_data"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_switcher|kada_events_map_event_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_weight|attraction_map_attraction_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_weight|kada_events_indexed_map_indexed"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_weight|kada_events_map_event_data"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_weight|kada_events_map_event_data_single"] = 0;
+
   // Exported overrides for: scald_context_config
   $overrides["scald_context_config.content_full.player|image|settings|caption"] = '';
   $overrides["scald_context_config.content_half.player|image|settings|caption"] = '';

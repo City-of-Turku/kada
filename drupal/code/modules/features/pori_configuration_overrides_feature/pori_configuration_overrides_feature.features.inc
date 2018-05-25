@@ -1102,6 +1102,40 @@ function pori_configuration_overrides_feature_locale_default_languages_alter(&$d
 }
 
 /**
+ * Implements hook_openlayers_maps_alter().
+ */
+function pori_configuration_overrides_feature_openlayers_maps_alter(&$data) {
+  if (isset($data['kada_location_input'])) {
+    $data['kada_location_input']->data['center']['initial']['centerpoint'] = '21.7974179, 61.4851393'; /* WAS: '22.270831921235335, 60.451800341324734' */
+    $data['kada_location_input']->data['center']['initial']['zoom'] = 11; /* WAS: 10 */
+    $data['kada_location_input']->data['layer_activated']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_activated']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_activated']['kada_events_map_event_data'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_activated']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_select']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_select']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_select']['kada_events_map_event_data'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_select']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_temporary']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_temporary']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_temporary']['kada_events_map_event_data'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_temporary']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles']['kada_events_map_event_data'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_switcher']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_switcher']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_switcher']['kada_events_map_event_data'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_switcher']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_weight']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_weight']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_weight']['kada_events_map_event_data'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_weight']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
+  }
+}
+
+/**
  * Implements hook_default_scald_context_config_alter().
  */
 function pori_configuration_overrides_feature_default_scald_context_config_alter(&$data) {
