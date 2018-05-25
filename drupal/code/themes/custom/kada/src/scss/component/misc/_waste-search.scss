@@ -26,6 +26,73 @@
 .waste-search {
   counter-reset: section;
 
+  .section--content {
+    @media screen and (min-width: $desktop) {
+      float: left;
+      margin-top: 14px; // Stupid fix to level the waste crow and this block
+      width: 70%;
+    }
+  }
+
+  .sidebar--second {
+    background: url(../image/waste_crow.png) no-repeat top right transparent;
+    margin-top: 40px;
+    padding-top: 120px;
+
+    @media screen and (min-width: $desktop) {
+      margin-left: 70%;
+      margin-top: 0;
+      padding-left: 5%;
+      width: 30%;
+    }
+
+    .block:first-child {
+      margin-top: 0;
+    }
+
+    .block:last-child {
+      margin-bottom: 0;
+    }
+
+    .block__title {
+      background-color: $waste-green;
+      border: 0 none;
+      border-radius: 0;
+      color: $white;
+      display: block;
+      font-family: $bergen-mono;
+      font-weight: 200;
+      margin: 0;
+      padding: 1.25rem;
+      position: relative;
+      text-align: left;
+      text-transform: uppercase;
+      width: 100%;
+
+      &::after {
+        content: ":";
+      }
+    }
+
+    .menu .menu__item a {
+      border-bottom: 1px solid $gray;
+      color: $black;
+      display: block;
+      font-size: 1rem;
+      padding: 20px 0;
+      text-transform: uppercase;
+
+      @media screen and (min-width: $mobile-landscape-wide) {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+
+      &:hover {
+        background-color: $gray-lighter;
+      }
+    }
+  }
+
   // On waste search the breadcrumb should be hidden. The .l-breadcrumb wrapper has border styles however so hiding
   // only container.
   .container.l-breadcrumb__container {
@@ -34,6 +101,12 @@
 
   .content__header {
     max-width: 110rem;
+    width: 100%;
+
+    @media screen and (min-width: $desktop) {
+      float: left;
+      width: 70%;
+    }
   }
 
   .section--content > form {
@@ -331,10 +404,10 @@
     border-radius: 0;
     font-family: $bergen-mono;
     font-weight: 200;
-    text-align: left;
-    text-transform: uppercase;
     padding: 1.25rem;
     position: relative;
+    text-align: left;
+    text-transform: uppercase;
     width: 100%;
 
     &::after {
