@@ -350,14 +350,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-person-field_account_name.display|person_card"] = array(
     'label' => 'above',
-    'module' => 'title',
-    'settings' => array(
-      'title_class' => '',
-      'title_link' => '',
-      'title_style' => '',
-    ),
-    'type' => 'title_linked',
-    'weight' => 11,
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 28,
   );
   $overrides["field_instance.node-person-field_assistant.display|default|settings|bypass_access"] = FALSE;
   $overrides["field_instance.node-person-field_assistant.display|live_results_search"] = array(
@@ -368,13 +363,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-person-field_assistant.display|person_card"] = array(
     'label' => 'above',
-    'module' => 'entityreference',
-    'settings' => array(
-      'bypass_access' => FALSE,
-      'link' => FALSE,
-    ),
-    'type' => 'entityreference_label',
-    'weight' => 26,
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 29,
   );
   $overrides["field_instance.node-person-field_assistant.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.node-person-field_email_single.display|live_results_search"] = array(
@@ -388,7 +379,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'module' => 'email',
     'settings' => array(),
     'type' => 'email_default',
-    'weight' => 5,
+    'weight' => 6,
   );
   $overrides["field_instance.node-person-field_employee_title.display|live_results_search"] = array(
     'label' => 'above',
@@ -401,7 +392,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'module' => 'text',
     'settings' => array(),
     'type' => 'text_default',
-    'weight' => 1,
+    'weight' => 2,
   );
   $overrides["field_instance.node-person-field_fax_number.display|live_results_search"] = array(
     'label' => 'above',
@@ -414,7 +405,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'module' => 'text',
     'settings' => array(),
     'type' => 'text_default',
-    'weight' => 10,
+    'weight' => 11,
   );
   $overrides["field_instance.node-person-field_first_name.display|live_results_search"] = array(
     'label' => 'above',
@@ -424,14 +415,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-person-field_first_name.display|person_card"] = array(
     'label' => 'above',
-    'module' => 'title',
-    'settings' => array(
-      'title_class' => '',
-      'title_link' => '',
-      'title_style' => '',
-    ),
-    'type' => 'title_linked',
-    'weight' => 38,
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 39,
   );
   $overrides["field_instance.node-person-field_mobile_phone.display|live_results_search"] = array(
     'label' => 'above',
@@ -444,7 +430,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'module' => 'text',
     'settings' => array(),
     'type' => 'text_default',
-    'weight' => 6,
+    'weight' => 7,
   );
   $overrides["field_instance.node-person-field_mobile_phone_work.display|live_results_search"] = array(
     'label' => 'above',
@@ -457,7 +443,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'module' => 'text',
     'settings' => array(),
     'type' => 'text_default',
-    'weight' => 8,
+    'weight' => 9,
   );
   $overrides["field_instance.node-person-field_municipality.display|live_results_search"] = array(
     'label' => 'above',
@@ -467,14 +453,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-person-field_municipality.display|person_card"] = array(
     'label' => 'above',
-    'module' => 'title',
-    'settings' => array(
-      'title_class' => '',
-      'title_link' => '',
-      'title_style' => '',
-    ),
-    'type' => 'title_linked',
-    'weight' => 37,
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 38,
   );
   $overrides["field_instance.node-person-field_office_tr.display|live_results_search"] = array(
     'label' => 'above',
@@ -487,7 +468,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'module' => 'i18n_taxonomy',
     'settings' => array(),
     'type' => 'i18n_taxonomy_term_reference_plain',
-    'weight' => 3,
+    'weight' => 4,
   );
   $overrides["field_instance.node-person-field_person_image.display|live_results_search"] = array(
     'label' => 'above',
@@ -496,14 +477,14 @@ function pori_configuration_overrides_feature_features_override_default_override
     'weight' => 0,
   );
   $overrides["field_instance.node-person-field_person_image.display|person_card"] = array(
-    'label' => 'above',
+    'label' => 'hidden',
     'module' => 'atom_reference',
     'settings' => array(
       'link' => 0,
       'override' => 0,
     ),
-    'type' => 'title',
-    'weight' => 36,
+    'type' => 'person',
+    'weight' => 0,
   );
   $overrides["field_instance.node-person-field_person_type.display|live_results_search"] = array(
     'label' => 'above',
@@ -513,10 +494,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-person-field_person_type.display|person_card"] = array(
     'label' => 'above',
-    'module' => 'i18n_field',
     'settings' => array(),
-    'type' => 'i18n_list_default',
-    'weight' => 35,
+    'type' => 'hidden',
+    'weight' => 37,
   );
   $overrides["field_instance.node-person-field_phone.display|live_results_search"] = array(
     'label' => 'above',
@@ -529,7 +509,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'module' => 'text',
     'settings' => array(),
     'type' => 'text_default',
-    'weight' => 7,
+    'weight' => 8,
   );
   $overrides["field_instance.node-person-field_phone_switch.display|live_results_search"] = array(
     'label' => 'above',
@@ -542,7 +522,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'module' => 'text',
     'settings' => array(),
     'type' => 'text_default',
-    'weight' => 9,
+    'weight' => 10,
   );
   $overrides["field_instance.node-person-field_political_party.display|default|settings|bypass_access"] = FALSE;
   $overrides["field_instance.node-person-field_political_party.display|full|settings|bypass_access"] = FALSE;
@@ -554,13 +534,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-person-field_political_party.display|person_card"] = array(
     'label' => 'above',
-    'module' => 'entityreference',
-    'settings' => array(
-      'bypass_access' => FALSE,
-      'link' => FALSE,
-    ),
-    'type' => 'entityreference_label',
-    'weight' => 34,
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 36,
   );
   $overrides["field_instance.node-person-field_political_party.display|teaser|settings|bypass_access"] = FALSE;
   $overrides["field_instance.node-person-field_political_party.widget|settings|content_taxonomy_opt_groups"] = FALSE;
@@ -572,14 +548,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-person-field_postal_code.display|person_card"] = array(
     'label' => 'above',
-    'module' => 'title',
-    'settings' => array(
-      'title_class' => '',
-      'title_link' => '',
-      'title_style' => '',
-    ),
-    'type' => 'title_linked',
-    'weight' => 33,
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 35,
   );
   $overrides["field_instance.node-person-field_profession.display|live_results_search"] = array(
     'label' => 'above',
@@ -592,7 +563,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'module' => 'text',
     'settings' => array(),
     'type' => 'text_default',
-    'weight' => 2,
+    'weight' => 3,
   );
   $overrides["field_instance.node-person-field_street_address.display|live_results_search"] = array(
     'label' => 'above',
@@ -602,14 +573,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-person-field_street_address.display|person_card"] = array(
     'label' => 'above',
-    'module' => 'title',
-    'settings' => array(
-      'title_class' => '',
-      'title_link' => '',
-      'title_style' => '',
-    ),
-    'type' => 'title_linked',
-    'weight' => 32,
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 34,
   );
   $overrides["field_instance.node-person-field_superior.display|default|settings|bypass_access"] = FALSE;
   $overrides["field_instance.node-person-field_superior.display|live_results_search"] = array(
@@ -620,13 +586,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-person-field_superior.display|person_card"] = array(
     'label' => 'above',
-    'module' => 'entityreference',
-    'settings' => array(
-      'bypass_access' => FALSE,
-      'link' => FALSE,
-    ),
-    'type' => 'entityreference_label',
-    'weight' => 31,
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 33,
   );
   $overrides["field_instance.node-person-field_superior.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.node-person-field_surname.display|live_results_search"] = array(
@@ -637,14 +599,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-person-field_surname.display|person_card"] = array(
     'label' => 'above',
-    'module' => 'title',
-    'settings' => array(
-      'title_class' => '',
-      'title_link' => '',
-      'title_style' => '',
-    ),
-    'type' => 'title_linked',
-    'weight' => 30,
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 32,
   );
   $overrides["field_instance.node-person-field_task_description.display|live_results_search"] = array(
     'label' => 'above',
@@ -654,14 +611,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-person-field_task_description.display|person_card"] = array(
     'label' => 'above',
-    'module' => 'title',
-    'settings' => array(
-      'title_class' => '',
-      'title_link' => '',
-      'title_style' => '',
-    ),
-    'type' => 'title_linked',
-    'weight' => 29,
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 31,
   );
   $overrides["field_instance.node-person-field_visiting_address.display|live_results_search"] = array(
     'label' => 'above',
@@ -674,7 +626,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'module' => 'text',
     'settings' => array(),
     'type' => 'text_default',
-    'weight' => 4,
+    'weight' => 5,
   );
   $overrides["field_instance.node-person-title_field.display|live_results_search"] = array(
     'label' => 'above',
@@ -684,14 +636,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["field_instance.node-person-title_field.display|person_card"] = array(
     'label' => 'above',
-    'module' => 'title',
-    'settings' => array(
-      'title_class' => '',
-      'title_link' => '',
-      'title_style' => '',
-    ),
-    'type' => 'title_linked',
-    'weight' => 28,
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 30,
   );
   $overrides["field_instance.node-place-field_accessibility.display|live_results_search"] = array(
     'label' => 'above',
@@ -1233,7 +1180,7 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
   $overrides["variable.field_bundle_settings_node__person.value|extra_fields|display|domain|person_card"] = array(
     'weight' => 40,
-    'visible' => TRUE,
+    'visible' => FALSE,
   );
   $overrides["variable.field_bundle_settings_node__person.value|view_modes|attraction_card_mosaic_item"] = array(
     'custom_settings' => FALSE,
