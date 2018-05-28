@@ -123,7 +123,7 @@ function pori_waste_search_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_waste_type_pattern';
-  $strongarm->value = 'waste/type/[term:name]';
+  $strongarm->value = '[term:i18n-vocabulary]/[term:name]';
   $export['pathauto_taxonomy_term_waste_type_pattern'] = $strongarm;
 
   return $export;

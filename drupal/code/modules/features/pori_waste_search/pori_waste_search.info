@@ -28,6 +28,7 @@ features[context][] = waste_search
 features[context][] = waste_type
 features[ctools][] = context:context:3
 features[ctools][] = ds:ds:1
+features[ctools][] = field_group:field_group:1
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = taxonomy_display:taxonomy_display:1
 features[ctools][] = views:views_default:3.0
