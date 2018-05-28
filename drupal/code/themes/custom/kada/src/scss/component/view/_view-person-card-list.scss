@@ -1,4 +1,9 @@
 .person-card-list {
+  // Header
+  .person-card-list__header {
+    margin: 0 auto 30px;
+    max-width: 90rem;
+  }
   // Filters
   .person-card-list__filters {
     margin: 0 -1.25rem;

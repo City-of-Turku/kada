@@ -18,7 +18,7 @@ function pori_contact_information_feature_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'person_card';
   $ds_fieldsetting->settings = array(
     'person_full_name' => array(
-      'weight' => '0',
+      'weight' => '1',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -42,32 +42,24 @@ function pori_contact_information_feature_ds_layout_settings_info() {
   $ds_layout->view_mode = 'person_card';
   $ds_layout->layout = 'person_card_layout';
   $ds_layout->settings = array(
-    'classes' => array(),
-    'wrappers' => array(
-      'main_content' => 'div',
-    ),
-    'layout_wrapper' => 'div',
-    'layout_attributes' => '',
-    'layout_attributes_merge' => 1,
-    'layout_link_attribute' => '',
-    'layout_link_custom' => '',
-    'layout_disable_css' => FALSE,
     'regions' => array(
       'main_content' => array(
-        0 => 'person_full_name',
-        1 => 'field_employee_title',
-        2 => 'field_profession',
-        3 => 'field_office_tr',
-        4 => 'field_visiting_address',
-        5 => 'field_email_single',
-        6 => 'field_mobile_phone',
-        7 => 'field_phone',
-        8 => 'field_mobile_phone_work',
-        9 => 'field_phone_switch',
-        10 => 'field_fax_number',
+        0 => 'field_person_image',
+        1 => 'person_full_name',
+        2 => 'field_employee_title',
+        3 => 'field_profession',
+        4 => 'field_office_tr',
+        5 => 'field_visiting_address',
+        6 => 'field_email_single',
+        7 => 'field_mobile_phone',
+        8 => 'field_phone',
+        9 => 'field_mobile_phone_work',
+        10 => 'field_phone_switch',
+        11 => 'field_fax_number',
       ),
     ),
     'fields' => array(
+      'field_person_image' => 'main_content',
       'person_full_name' => 'main_content',
       'field_employee_title' => 'main_content',
       'field_profession' => 'main_content',
@@ -80,6 +72,16 @@ function pori_contact_information_feature_ds_layout_settings_info() {
       'field_phone_switch' => 'main_content',
       'field_fax_number' => 'main_content',
     ),
+    'classes' => array(),
+    'wrappers' => array(
+      'main_content' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|person|person_card'] = $ds_layout;
 
