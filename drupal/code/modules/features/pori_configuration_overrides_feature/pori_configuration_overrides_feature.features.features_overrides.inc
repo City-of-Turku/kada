@@ -1041,7 +1041,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'label' => 'hidden',
     'module' => 'link',
     'settings' => array(),
-    'type' => 'link_label',
+    'type' => 'link_default',
     'weight' => 6,
   );
   $overrides["field_instance.node-place-title_field.display|live_results_search"] = array(
