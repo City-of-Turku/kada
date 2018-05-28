@@ -34,4 +34,26 @@
       }
     }
   }
+
+  .person-card__inner--has-image {
+    overflow: hidden;
+
+    .field {
+      @media screen and (min-width: $mobile-landscape-narrow) {
+        margin-left: 33%;
+        width: 67%;
+      }
+
+      &.field--name-field-person-image {
+        @media screen and (min-width: $mobile-landscape-narrow) {
+          float: left;
+          margin-bottom: 0;
+          margin-left: 0;
+          margin-right: -100%;
+          width: 30%;
+        }
+
+      }
+    }
+  }
 }
