@@ -1102,6 +1102,55 @@ function pori_configuration_overrides_feature_locale_default_languages_alter(&$d
 }
 
 /**
+ * Implements hook_openlayers_maps_alter().
+ */
+function pori_configuration_overrides_feature_openlayers_maps_alter(&$data) {
+  if (isset($data['kada_location_input'])) {
+    $data['kada_location_input']->data['behaviors']['openlayers_behavior_zoomtolayer']['zoomtolayer']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['center']['initial']['centerpoint'] = '21.6649,61.535'; /* WAS: '22.270831921235335, 60.451800341324734' */
+    $data['kada_location_input']->data['center']['initial']['zoom'] = 11; /* WAS: 10 */
+    $data['kada_location_input']->data['layer_activated']['pori_arcgis'] = 'pori_arcgis'; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_select']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles_temporary']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_styles']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layer_switcher']['pori_arcgis'] = 'pori_arcgis'; /* WAS: '' */
+    $data['kada_location_input']->data['layer_weight']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layers']['pori_arcgis'] = 'pori_arcgis'; /* WAS: '' */
+  }
+  if (isset($data['kada_place_map'])) {
+    $data['kada_place_map']->data['behaviors']['openlayers_behavior_zoomtolayer']['zoomtolayer']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_place_map']->data['center']['initial']['centerpoint'] = '21.74,61.49'; /* WAS: '22.26413716347558, 60.45391664873799' */
+    $data['kada_place_map']->data['layer_activated']['pori_arcgis'] = 'pori_arcgis'; /* WAS: '' */
+    $data['kada_place_map']->data['layer_styles_select']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_place_map']->data['layer_styles_temporary']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_place_map']->data['layer_styles']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_place_map']->data['layer_switcher']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_place_map']->data['layer_weight']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_place_map']->data['layers']['pori_arcgis'] = 'pori_arcgis'; /* WAS: '' */
+  }
+  if (isset($data['kada_place_map_service'])) {
+    $data['kada_place_map_service']->data['center']['initial']['centerpoint'] = '21.74,61.49'; /* WAS: '22.26413716347558, 60.45391664873799' */
+    $data['kada_place_map_service']->data['layer_activated']['pori_arcgis'] = 'pori_arcgis'; /* WAS: '' */
+    $data['kada_place_map_service']->data['layer_styles_select']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_place_map_service']->data['layer_styles_temporary']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_place_map_service']->data['layer_styles']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_place_map_service']->data['layer_switcher']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_place_map_service']->data['layer_weight']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_place_map_service']->data['layers']['pori_arcgis'] = 'pori_arcgis'; /* WAS: '' */
+  }
+  if (isset($data['kada_service_map'])) {
+    $data['kada_service_map']->data['center']['initial']['centerpoint'] = '21.74,61.49'; /* WAS: '22.26413716347558, 60.45391664873799' */
+    $data['kada_service_map']->data['layer_activated']['pori_arcgis'] = 'pori_arcgis'; /* WAS: '' */
+    $data['kada_service_map']->data['layer_styles_select']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_service_map']->data['layer_styles_temporary']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_service_map']->data['layer_styles']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_service_map']->data['layer_switcher']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_service_map']->data['layer_weight']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_service_map']->data['layers']['pori_arcgis'] = 'pori_arcgis'; /* WAS: '' */
+  }
+}
+
+/**
  * Implements hook_default_scald_context_config_alter().
  */
 function pori_configuration_overrides_feature_default_scald_context_config_alter(&$data) {

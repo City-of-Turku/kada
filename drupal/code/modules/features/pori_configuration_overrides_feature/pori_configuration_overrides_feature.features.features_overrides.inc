@@ -837,6 +837,43 @@ function pori_configuration_overrides_feature_features_override_default_override
   // Exported overrides for: language
   $overrides["language.sv.enabled"] = 1;
 
+  // Exported overrides for: openlayers_maps
+  $overrides["openlayers_maps.kada_location_input.data|behaviors|openlayers_behavior_zoomtolayer|zoomtolayer|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|center|initial|centerpoint"] = '21.6649,61.535';
+  $overrides["openlayers_maps.kada_location_input.data|center|initial|zoom"] = 11;
+  $overrides["openlayers_maps.kada_location_input.data|layer_activated|pori_arcgis"] = 'pori_arcgis';
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_select|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles_temporary|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_styles|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layer_switcher|pori_arcgis"] = 'pori_arcgis';
+  $overrides["openlayers_maps.kada_location_input.data|layer_weight|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layers|pori_arcgis"] = 'pori_arcgis';
+  $overrides["openlayers_maps.kada_place_map.data|behaviors|openlayers_behavior_zoomtolayer|zoomtolayer|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_place_map.data|center|initial|centerpoint"] = '21.74,61.49';
+  $overrides["openlayers_maps.kada_place_map.data|layer_activated|pori_arcgis"] = 'pori_arcgis';
+  $overrides["openlayers_maps.kada_place_map.data|layer_styles_select|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_place_map.data|layer_styles_temporary|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_place_map.data|layer_styles|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_place_map.data|layer_switcher|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_place_map.data|layer_weight|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_place_map.data|layers|pori_arcgis"] = 'pori_arcgis';
+  $overrides["openlayers_maps.kada_place_map_service.data|center|initial|centerpoint"] = '21.74,61.49';
+  $overrides["openlayers_maps.kada_place_map_service.data|layer_activated|pori_arcgis"] = 'pori_arcgis';
+  $overrides["openlayers_maps.kada_place_map_service.data|layer_styles_select|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_place_map_service.data|layer_styles_temporary|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_place_map_service.data|layer_styles|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_place_map_service.data|layer_switcher|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_place_map_service.data|layer_weight|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_place_map_service.data|layers|pori_arcgis"] = 'pori_arcgis';
+  $overrides["openlayers_maps.kada_service_map.data|center|initial|centerpoint"] = '21.74,61.49';
+  $overrides["openlayers_maps.kada_service_map.data|layer_activated|pori_arcgis"] = 'pori_arcgis';
+  $overrides["openlayers_maps.kada_service_map.data|layer_styles_select|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_service_map.data|layer_styles_temporary|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_service_map.data|layer_styles|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_service_map.data|layer_switcher|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_service_map.data|layer_weight|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_service_map.data|layers|pori_arcgis"] = 'pori_arcgis';
+
   // Exported overrides for: scald_context_config
   $overrides["scald_context_config.content_full.player|image|settings|caption"] = '';
   $overrides["scald_context_config.content_half.player|image|settings|caption"] = '';

@@ -14,6 +14,9 @@ function pori_configuration_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "elysia_cron" && $api == "default_elysia_cron_rules") {
     return array("version" => "1");
   }
+  if ($module == "openlayers" && $api == "openlayers_layers") {
+    return array("version" => "1");
+  }
   if ($module == "scald" && $api == "context_config") {
     return array("version" => "1");
   }
@@ -53,6 +56,7 @@ function pori_configuration_image_default_styles() {
       ),
     ),
   );
+
   // Exported image style: person_breakpoints_theme_kada_desktopwide_1x.
   $styles['person_breakpoints_theme_kada_desktopwide_1x'] = array(
     'label' => 'person_breakpoints_theme_kada_desktopwide_1x',
