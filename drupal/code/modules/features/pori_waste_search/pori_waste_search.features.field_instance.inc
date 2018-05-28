@@ -437,16 +437,49 @@ function pori_waste_search_field_default_field_instances() {
     'entity_type' => 'taxonomy_term',
     'field_name' => 'field_waste_type_short_desc',
     'label' => 'Short description',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'context' => '',
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 0,
+          'full_html' => 0,
+          'plain_text' => 'plain_text',
+          'wysiwyg' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'full_html' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'wysiwyg' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
       'dnd_enabled' => 0,
       'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Etsi',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'mee_enabled' => 0,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 5,
