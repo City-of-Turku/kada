@@ -203,7 +203,7 @@ function pori_waste_search_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -273,79 +273,66 @@ function pori_waste_search_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
-  // Exported field_instance:
-  // 'taxonomy_term-waste_type-field_waste_type_images'.
-  $field_instances['taxonomy_term-waste_type-field_waste_type_images'] = array(
+  // Exported field_instance: 'taxonomy_term-waste_type-field_images'.
+  $field_instances['taxonomy_term-waste_type-field_images'] = array(
     'bundle' => 'waste_type',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'atom_reference',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => 'large',
+          'link' => 0,
+          'override' => 0,
         ),
-        'type' => 'image',
+        'type' => 'page_carousel',
         'weight' => 0,
       ),
       'full' => array(
         'label' => 'hidden',
-        'module' => 'image',
+        'module' => 'atom_reference',
         'settings' => array(
-          'image_link' => '',
-          'image_style' => 'large',
+          'link' => 0,
+          'override' => 0,
         ),
-        'type' => 'image',
-        'weight' => 0,
+        'type' => 'page_carousel',
+        'weight' => 3,
       ),
       'waste_search' => array(
-        'label' => 'hidden',
-        'module' => 'colorbox',
-        'settings' => array(
-          'colorbox_caption' => 'auto',
-          'colorbox_caption_custom' => '',
-          'colorbox_gallery' => 'post',
-          'colorbox_gallery_custom' => '',
-          'colorbox_image_style' => '',
-          'colorbox_multivalue_index' => NULL,
-          'colorbox_node_style' => '',
-          'colorbox_node_style_first' => '',
-        ),
-        'type' => 'colorbox',
-        'weight' => 5,
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'taxonomy_term',
-    'field_name' => 'field_waste_type_images',
+    'field_name' => 'field_images',
     'label' => 'Images',
     'required' => 0,
     'settings' => array(
-      'alt_field' => 0,
-      'default_image' => 0,
+      'allow_override' => 0,
       'entity_translation_sync' => FALSE,
-      'file_directory' => '',
-      'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '',
-      'max_resolution' => '',
-      'min_resolution' => '',
-      'title_field' => 0,
+      'referencable_types' => array(
+        'file' => 0,
+        'image' => 'image',
+        'video' => 0,
+      ),
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'atom_reference',
       'settings' => array(
-        'preview_image_style' => 'thumbnail',
-        'progress_indicator' => 'throbber',
+        'context' => 'sdl_editor_representation',
       ),
-      'type' => 'image_image',
-      'weight' => 3,
+      'type' => 'atom_reference_textfield',
+      'weight' => 4,
     ),
   );
 
@@ -358,19 +345,19 @@ function pori_waste_search_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 5,
-      ),
-      'full' => array(
-        'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
           'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 5,
+        'weight' => 7,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'waste_search' => array(
         'label' => 'above',
@@ -401,7 +388,7 @@ function pori_waste_search_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 41,
+      'weight' => 8,
     ),
   );
 
@@ -415,16 +402,16 @@ function pori_waste_search_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 6,
-      ),
-      'full' => array(
-        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 6,
+        'weight' => 8,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'waste_search' => array(
         'label' => 'hidden',
@@ -437,22 +424,55 @@ function pori_waste_search_field_default_field_instances() {
     'entity_type' => 'taxonomy_term',
     'field_name' => 'field_waste_type_short_desc',
     'label' => 'Short description',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
-      'context' => '',
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 0,
+          'full_html' => 0,
+          'plain_text' => 'plain_text',
+          'wysiwyg' => 0,
+        ),
+        'allowed_formats_toggle' => 1,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'full_html' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'wysiwyg' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
       'dnd_enabled' => 0,
       'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Etsi',
+        'enable' => 0,
+        'profile' => '',
+      ),
       'mee_enabled' => 0,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'text',
       'settings' => array(
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -465,12 +485,6 @@ function pori_waste_search_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 2,
-      ),
-      'full' => array(
-        'label' => 'hidden',
         'module' => 'title',
         'settings' => array(
           'title_class' => '',
@@ -478,7 +492,13 @@ function pori_waste_search_field_default_field_instances() {
           'title_style' => '',
         ),
         'type' => 'title_linked',
-        'weight' => 2,
+        'weight' => 6,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'waste_search' => array(
         'label' => 'hidden',

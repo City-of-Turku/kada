@@ -68,8 +68,32 @@ function pori_waste_search_strongarm() {
       ),
     ),
     'extra_fields' => array(
-      'form' => array(),
-      'display' => array(),
+      'form' => array(
+        'metatags' => array(
+          'weight' => '7',
+        ),
+        'path' => array(
+          'weight' => '5',
+        ),
+        'redirect' => array(
+          'weight' => '6',
+        ),
+        'language' => array(
+          'weight' => '1',
+        ),
+      ),
+      'display' => array(
+        'language' => array(
+          'default' => array(
+            'weight' => '5',
+            'visible' => TRUE,
+          ),
+          'full' => array(
+            'weight' => '5',
+            'visible' => FALSE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_taxonomy_term__waste_type'] = $strongarm;
@@ -99,7 +123,7 @@ function pori_waste_search_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_taxonomy_term_waste_type_pattern';
-  $strongarm->value = 'waste/type/[term:name]';
+  $strongarm->value = '[term:i18n-vocabulary]/[term:name]';
   $export['pathauto_taxonomy_term_waste_type_pattern'] = $strongarm;
 
   return $export;

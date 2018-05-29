@@ -44,8 +44,24 @@
  * @ingroup themeable
  */
 
+if (($element['#object']->type === 'attraction_card' && $element['#view_mode'] === 'full')
+  || ($element['#entity_type'] === 'taxonomy_term' && $element['#object']->vocabulary_machine_name === 'waste_type' && $element['#formatter'] === 'page_carousel')
+) {
+  $slick_slider = true;
+} else {
+  $slick_slider = false;
+}
+
+if (($element['#object']->type === 'attraction_card' && $element['#view_mode'] === '_custom_display' && $element['#formatter'] === 'current')
+  || ($element['#object']->vocabulary_machine_name === 'waste_type' && $element['#formatter'] === 'current')
+) {
+  $slick_navigation = true;
+} else {
+  $slick_navigation = false;
+}
+
 ?>
-<?php if ($element['#object']->type === 'attraction_card' && $element['#view_mode'] === 'full'): ?>
+<?php if ($slick_slider): ?>
   <div class="slider-container">
     <div class="slide-container__content"<?php print $attributes; ?>>
       <?php foreach ($items as $delta => $item): ?>
@@ -53,13 +69,17 @@
       <?php endforeach; ?>
     </div>
   </div>
-<?php elseif ($element['#object']->type === 'attraction_card' && $element['#view_mode'] === '_custom_display' && $element['#formatter'] === 'current') : ?>
+<?php endif ?>
+
+<?php if ($slick_navigation) : ?>
   <?php foreach ($items as $delta => $item): ?>
     <div class="slick-slide slide-navigation__item">
       <?php print render($item); ?>
     </div>
   <?php endforeach; ?>
-<?php else: ?>
+<?php endif ?>
+
+<?php if (!$slick_slider && !$slick_navigation): ?>
   <div class="<?php print $classes ?>"<?php print $attributes; ?>>
     <?php foreach ($items as $delta => $item): ?>
       <?php print render($item); ?>
