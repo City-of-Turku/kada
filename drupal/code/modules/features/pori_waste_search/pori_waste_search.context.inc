@@ -86,6 +86,30 @@ function pori_waste_search_context_default_contexts() {
           'region' => 'navigation',
           'weight' => '-7',
         ),
+        'menu_block-38' => array(
+          'module' => 'menu_block',
+          'delta' => '38',
+          'region' => 'sidebar_second',
+          'weight' => '-10',
+        ),
+        'menu_block-39' => array(
+          'module' => 'menu_block',
+          'delta' => '39',
+          'region' => 'sidebar_second',
+          'weight' => '-9',
+        ),
+        'menu_block-40' => array(
+          'module' => 'menu_block',
+          'delta' => '40',
+          'region' => 'sidebar_second',
+          'weight' => '-8',
+        ),
+        'menu_block-41' => array(
+          'module' => 'menu_block',
+          'delta' => '41',
+          'region' => 'sidebar_second',
+          'weight' => '-7',
+        ),
         'menu_block-8' => array(
           'module' => 'menu_block',
           'delta' => '8',
