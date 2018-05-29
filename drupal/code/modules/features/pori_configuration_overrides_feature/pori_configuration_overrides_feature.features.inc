@@ -161,6 +161,7 @@ function pori_configuration_overrides_feature_field_group_info_alter(&$data) {
     $data['group_content|node|page|form']->data['children'][11] = 'field_show_main_image'; /* WAS: '' */
     $data['group_content|node|page|form']->data['children'][12] = 'language'; /* WAS: '' */
     $data['group_content|node|page|form']->data['children'][13] = 'title'; /* WAS: '' */
+    $data['group_content|node|page|form']->data['children'][14] = 'field_person_reference'; /* WAS: '' */
     $data['group_content|node|page|form']->data['children'][9] = 'field_widgets_after_content'; /* WAS: 'language' */
   }
   if (isset($data['group_content|node|place|form'])) {
@@ -396,6 +397,7 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     $data['node-page-body']['widget']['weight'] = 15; /* WAS: 14 */
   }
   if (isset($data['node-page-field_contact_information'])) {
+    $data['node-page-field_contact_information']['display']['default']['weight'] = 29; /* WAS: 26 */
     $data['node-page-field_contact_information']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -405,12 +407,15 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     $data['node-page-field_contact_information']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
   if (isset($data['node-page-field_contact_person'])) {
+    $data['node-page-field_contact_person']['display']['default']['weight'] = 9; /* WAS: 8 */
     $data['node-page-field_contact_person']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
   if (isset($data['node-page-field_info_box'])) {
-    $data['node-page-field_info_box']['widget']['weight'] = 16; /* WAS: 15 */
+    $data['node-page-field_info_box']['display']['default']['weight'] = 28; /* WAS: 25 */
+    $data['node-page-field_info_box']['widget']['weight'] = 17; /* WAS: 15 */
   }
   if (isset($data['node-page-field_keywords'])) {
+    $data['node-page-field_keywords']['display']['default']['weight'] = 5; /* WAS: 4 */
     $data['node-page-field_keywords']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -418,12 +423,13 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-page-field_keywords']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
-    $data['node-page-field_keywords']['widget']['weight'] = 17; /* WAS: 16 */
+    $data['node-page-field_keywords']['widget']['weight'] = 18; /* WAS: 16 */
   }
   if (isset($data['node-page-field_lead_paragraph'])) {
     $data['node-page-field_lead_paragraph']['widget']['weight'] = 14; /* WAS: 13 */
   }
   if (isset($data['node-page-field_related_content'])) {
+    $data['node-page-field_related_content']['display']['default']['weight'] = 38; /* WAS: 35 */
     $data['node-page-field_related_content']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -437,10 +443,12 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     unset($data['node-page-field_related_content']['widget']['settings']['references_dialog_search_view']);
   }
   if (isset($data['node-page-field_service_offering'])) {
+    $data['node-page-field_service_offering']['display']['default']['weight'] = 4; /* WAS: 3 */
     $data['node-page-field_service_offering']['widget']['settings']['content_taxonomy_opt_groups'] = FALSE; /* WAS: '' */
-    $data['node-page-field_service_offering']['widget']['weight'] = 21; /* WAS: 20 */
+    $data['node-page-field_service_offering']['widget']['weight'] = 22; /* WAS: 20 */
   }
   if (isset($data['node-page-field_subpage'])) {
+    $data['node-page-field_subpage']['display']['default']['weight'] = 11; /* WAS: 9 */
     $data['node-page-field_subpage']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -450,12 +458,15 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     $data['node-page-field_subpage']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
   if (isset($data['node-page-field_target_audience'])) {
-    $data['node-page-field_target_audience']['widget']['weight'] = 20; /* WAS: 19 */
+    $data['node-page-field_target_audience']['display']['default']['weight'] = 33; /* WAS: 30 */
+    $data['node-page-field_target_audience']['widget']['weight'] = 21; /* WAS: 19 */
   }
   if (isset($data['node-page-field_theme'])) {
-    $data['node-page-field_theme']['widget']['weight'] = 18; /* WAS: 17 */
+    $data['node-page-field_theme']['display']['default']['weight'] = 39; /* WAS: 36 */
+    $data['node-page-field_theme']['widget']['weight'] = 19; /* WAS: 17 */
   }
   if (isset($data['node-page-field_topic'])) {
+    $data['node-page-field_topic']['display']['default']['weight'] = 10; /* WAS: 8 */
     $data['node-page-field_topic']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -465,12 +476,11 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
     $data['node-page-field_topic']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
   if (isset($data['node-page-field_visitpori_theme'])) {
-    $data['node-page-field_visitpori_theme']['widget']['weight'] = 19; /* WAS: 18 */
-  }
-  if (isset($data['node-page-field_widgets_after_content'])) {
-    $data['node-page-field_widgets_after_content']['widget']['weight'] = 22; /* WAS: 12 */
+    $data['node-page-field_visitpori_theme']['display']['default']['weight'] = 43; /* WAS: 40 */
+    $data['node-page-field_visitpori_theme']['widget']['weight'] = 20; /* WAS: 18 */
   }
   if (isset($data['node-page-field_widget_before_content'])) {
+    $data['node-page-field_widget_before_content']['display']['default']['weight'] = 40; /* WAS: 37 */
     $data['node-page-field_widget_before_content']['display']['live_results_search'] = array(
       'label' => 'above',
       'settings' => array(),
@@ -478,6 +488,10 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'weight' => 0,
     ); /* WAS: '' */
     $data['node-page-field_widget_before_content']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
+  }
+  if (isset($data['node-page-field_widgets_after_content'])) {
+    $data['node-page-field_widgets_after_content']['display']['default']['weight'] = 44; /* WAS: 41 */
+    $data['node-page-field_widgets_after_content']['widget']['weight'] = 23; /* WAS: 12 */
   }
   if (isset($data['node-person-field_account_name'])) {
     $data['node-person-field_account_name']['display']['live_results_search'] = array(
