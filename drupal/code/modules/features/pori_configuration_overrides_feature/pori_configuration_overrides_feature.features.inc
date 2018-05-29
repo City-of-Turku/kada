@@ -91,7 +91,7 @@ function pori_configuration_overrides_feature_context_default_contexts_alter(&$d
  */
 function pori_configuration_overrides_feature_ds_field_settings_info_alter(&$data) {
   if (isset($data['node|page|default'])) {
-    $data['node|page|default']->settings['places_for_services']['weight'] = 5; /* WAS: 4 */
+    $data['node|page|default']->settings['places_for_services']['weight'] = 6; /* WAS: 4 */
   }
   if (isset($data['node|place|teaser'])) {
     unset($data['node|place|teaser']->settings['node_link']);
@@ -104,13 +104,23 @@ function pori_configuration_overrides_feature_ds_field_settings_info_alter(&$dat
 function pori_configuration_overrides_feature_ds_layout_settings_info_alter(&$data) {
   if (isset($data['node|page|default'])) {
     $data['node|page|default']->settings['fields']['field_contact_person'] = 'contact_information'; /* WAS: '' */
-    $data['node|page|default']->settings['regions']['after_content'][10] = 'field_subpage'; /* WAS: '' */
-    $data['node|page|default']->settings['regions']['after_content'][9] = 'field_topic'; /* WAS: 'field_subpage' */
+    $data['node|page|default']->settings['fields']['field_person_reference'] = 'main_content'; /* WAS: '' */
+    $data['node|page|default']->settings['regions']['additional_information'][7] = 'field_additional_info_link'; /* WAS: 'field_file_attachment' */
+    $data['node|page|default']->settings['regions']['additional_information'][8] = 'field_file_attachment'; /* WAS: '' */
+    $data['node|page|default']->settings['regions']['after_content'][10] = 'field_topic'; /* WAS: '' */
+    $data['node|page|default']->settings['regions']['after_content'][11] = 'field_subpage'; /* WAS: '' */
     $data['node|page|default']->settings['regions']['contact_information'] = array(
-      8 => 'field_contact_person',
+      9 => 'field_contact_person',
     ); /* WAS: '' */
+    $data['node|page|default']->settings['regions']['main_content'][3] = 'field_person_reference'; /* WAS: 'field_service_offering' */
+    $data['node|page|default']->settings['regions']['main_content'][4] = 'field_service_offering'; /* WAS: '' */
+    $data['node|page|default']->settings['regions']['sidebar'][5] = 'field_keywords'; /* WAS: 'places_for_services' */
+    $data['node|page|default']->settings['regions']['sidebar'][6] = 'places_for_services'; /* WAS: '' */
     $data['node|page|default']->settings['wrappers']['contact_information'] = 'div'; /* WAS: '' */
+    unset($data['node|page|default']->settings['regions']['additional_information'][6]);
     unset($data['node|page|default']->settings['regions']['after_content'][8]);
+    unset($data['node|page|default']->settings['regions']['after_content'][9]);
+    unset($data['node|page|default']->settings['regions']['sidebar'][4]);
   }
   if (isset($data['node|place|teaser'])) {
     $data['node|place|teaser']->settings['fields']['field_read_more'] = 'main_content'; /* WAS: '' */

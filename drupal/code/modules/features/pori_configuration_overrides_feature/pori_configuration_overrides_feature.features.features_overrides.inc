@@ -72,17 +72,27 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
 
   // Exported overrides for: ds_field_settings
-  $overrides["ds_field_settings.node|page|default.settings|places_for_services|weight"] = 5;
+  $overrides["ds_field_settings.node|page|default.settings|places_for_services|weight"] = 6;
   $overrides["ds_field_settings.node|place|teaser.settings|node_link"]["DELETED"] = TRUE;
 
   // Exported overrides for: ds_layout_settings
   $overrides["ds_layout_settings.node|page|default.settings|fields|field_contact_person"] = 'contact_information';
-  $overrides["ds_layout_settings.node|page|default.settings|regions|after_content|10"] = 'field_subpage';
+  $overrides["ds_layout_settings.node|page|default.settings|fields|field_person_reference"] = 'main_content';
+  $overrides["ds_layout_settings.node|page|default.settings|regions|additional_information|6"]["DELETED"] = TRUE;
+  $overrides["ds_layout_settings.node|page|default.settings|regions|additional_information|7"] = 'field_additional_info_link';
+  $overrides["ds_layout_settings.node|page|default.settings|regions|additional_information|8"] = 'field_file_attachment';
+  $overrides["ds_layout_settings.node|page|default.settings|regions|after_content|10"] = 'field_topic';
+  $overrides["ds_layout_settings.node|page|default.settings|regions|after_content|11"] = 'field_subpage';
   $overrides["ds_layout_settings.node|page|default.settings|regions|after_content|8"]["DELETED"] = TRUE;
-  $overrides["ds_layout_settings.node|page|default.settings|regions|after_content|9"] = 'field_topic';
+  $overrides["ds_layout_settings.node|page|default.settings|regions|after_content|9"]["DELETED"] = TRUE;
   $overrides["ds_layout_settings.node|page|default.settings|regions|contact_information"] = array(
-    8 => 'field_contact_person',
+    9 => 'field_contact_person',
   );
+  $overrides["ds_layout_settings.node|page|default.settings|regions|main_content|3"] = 'field_person_reference';
+  $overrides["ds_layout_settings.node|page|default.settings|regions|main_content|4"] = 'field_service_offering';
+  $overrides["ds_layout_settings.node|page|default.settings|regions|sidebar|4"]["DELETED"] = TRUE;
+  $overrides["ds_layout_settings.node|page|default.settings|regions|sidebar|5"] = 'field_keywords';
+  $overrides["ds_layout_settings.node|page|default.settings|regions|sidebar|6"] = 'places_for_services';
   $overrides["ds_layout_settings.node|page|default.settings|wrappers|contact_information"] = 'div';
   $overrides["ds_layout_settings.node|place|teaser.settings|fields|field_read_more"] = 'main_content';
   $overrides["ds_layout_settings.node|place|teaser.settings|fields|node_link"]["DELETED"] = TRUE;
