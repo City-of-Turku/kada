@@ -1,4 +1,5 @@
-.attraction__image-container {
+.slick-slider-container {
+  margin-bottom: 3rem;
   margin-left: -$container-gutter;
   margin-right: -$container-gutter;
 
@@ -6,7 +7,7 @@
     margin-left: 0;
     margin-right: 0;
   }
-  
+
   @media screen and (min-width: $mobile-menu-breakpoint) {
     align-items: center;
     background-color: $gray-light;
@@ -18,7 +19,7 @@
   .slider-container {
     margin: 0;
     width: 100%;
-    
+
     @media screen and (min-width: $mobile-menu-breakpoint) {
       width: 65%;
     }
@@ -35,7 +36,7 @@
     .slick-slide {
       margin: 0 0 .938rem 0;
       opacity: 0.2;
-      
+
       &.slick-active {
         opacity: 1;
       }

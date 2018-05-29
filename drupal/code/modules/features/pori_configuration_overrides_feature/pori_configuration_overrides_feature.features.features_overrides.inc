@@ -1044,7 +1044,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'label' => 'hidden',
     'module' => 'link',
     'settings' => array(),
-    'type' => 'link_label',
+    'type' => 'link_default',
     'weight' => 6,
   );
   $overrides["field_instance.node-place-title_field.display|live_results_search"] = array(
@@ -1277,6 +1277,10 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["variable.menu_block_ids.value|33"] = 35;
   $overrides["variable.menu_block_ids.value|34"] = 36;
   $overrides["variable.menu_block_ids.value|35"] = 37;
+  $overrides["variable.menu_block_ids.value|36"] = 38;
+  $overrides["variable.menu_block_ids.value|37"] = 39;
+  $overrides["variable.menu_block_ids.value|38"] = 40;
+  $overrides["variable.menu_block_ids.value|39"] = 41;
   $overrides["variable.node_options_attraction_card.value|1"] = 'revision';
   $overrides["variable.node_options_landing_page.value|1"] = 'revision';
   $overrides["variable.node_options_page.value|1"] = 'revision';

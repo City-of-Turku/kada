@@ -193,6 +193,11 @@ function _pori_waste_search_render_view($view_id, $display_id, array $arguments)
 
   if (!empty($rendered_view) && !empty($id) && isset($type) && $type !== 'place') {
     global $base_url;
+    global $language;
+    $base_language = 'fi';
+    if ($language->language !== $base_language)  {
+      $base_url .= '/' . $language->language;
+    }
     $link = '<div class="waste-locations-wrapper"><a class="button use-ajax" name="show-locations" href="' . $base_url . '/ajax/waste/waste-types-map/nojs/' .  $arguments['value'] . '">'. t('Show waste drop locations') . '</a></div>';
     $markup = $rendered_view . $link;
   } elseif (isset($type) && $type == 'place') {
@@ -301,7 +306,9 @@ function _pori_waste_search_load_filter_values() {
   foreach (['waste', 'waste_type'] as $type) {
     $vocabulary = taxonomy_vocabulary_machine_name_load($type);
     foreach (entity_load('taxonomy_term', FALSE, ['vid' => $vocabulary->vid]) as $key => $values) {
-      $items[$type . '|' . $key] = isset($values->name_field[$language->language]) ? $values->name_field[$language->language][0]["safe_value"] : $values->name;
+      if(isset($values->name_field[$language->language]) && $language->language == $values->language) {
+        $items[$type . '|' . $key] = $values->name_field[$language->language][0]["safe_value"];
+      }
     }
   }
 

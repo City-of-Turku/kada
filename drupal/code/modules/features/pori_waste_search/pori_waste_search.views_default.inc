@@ -32,8 +32,6 @@ function pori_waste_search_views_default_views() {
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Return to defaults';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sort';
-  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Asc';
-  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Desc';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['autosubmit_hide'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
@@ -58,7 +56,6 @@ function pori_waste_search_views_default_views() {
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
   $handler->display->display_options['arguments']['tid']['relationship'] = 'reverse_field_waste_type_taxonomy_term';
   $handler->display->display_options['arguments']['tid']['default_action'] = 'not found';
-  $handler->display->display_options['arguments']['tid']['exception']['title'] = 'All';
   $handler->display->display_options['arguments']['tid']['default_argument_type'] = 'node';
   $handler->display->display_options['arguments']['tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['tid']['summary']['format'] = 'default_summary';
@@ -127,15 +124,19 @@ function pori_waste_search_views_default_views() {
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Return to defaults';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sort';
-  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Asc';
-  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Desc';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Content: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['required'] = TRUE;
   /* Field: Content: Rendered Node */
   $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
@@ -198,7 +199,6 @@ function pori_waste_search_views_default_views() {
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'empty';
-  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'All';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
@@ -267,6 +267,11 @@ function pori_waste_search_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Entity translation: translations */
+  $handler->display->display_options['relationships']['entity_translations']['id'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
+  $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
+  $handler->display->display_options['relationships']['entity_translations']['required'] = TRUE;
 
   /* Display: Map */
   $handler = $view->new_display('attachment', 'Map', 'map');
@@ -353,7 +358,6 @@ function pori_waste_search_views_default_views() {
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'empty';
-  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'All';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
@@ -373,6 +377,7 @@ function pori_waste_search_views_default_views() {
     t('Sort'),
     t('Asc'),
     t('Desc'),
+    t('Translations'),
     t('Distance'),
     t(','),
     t('km'),
