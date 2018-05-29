@@ -718,6 +718,71 @@ function pori_configuration_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-page-field_person_reference'.
+  $field_instances['node-page-field_person_reference'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'links' => 0,
+          'use_content_language' => 1,
+          'view_mode' => 'person_card',
+        ),
+        'type' => 'entityreference_entity_view',
+        'weight' => 3,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'only_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_person_reference',
+    'label' => 'Person reference',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'entityreference',
+      'settings' => array(
+        'content_taxonomy_autocomplete_new_terms' => 'deny',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 16,
+    ),
+  );
+
   // Exported field_instance: 'node-page-field_responsibility'.
   $field_instances['node-page-field_responsibility'] = array(
     'bundle' => 'page',
@@ -1582,6 +1647,7 @@ function pori_configuration_field_default_field_instances() {
   t('If you choose this checkbox the main image will be displayed on the node page.');
   t('If you check this box, this place will be shown on the waste search at /jatehaku');
   t('Meta information only available to content administrators.');
+  t('Person reference');
   t('Read more');
   t('Show main image on the page');
   t('This link is used on listing of places on pages. The text displayed will always be "Read more".');
