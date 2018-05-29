@@ -4,6 +4,7 @@ core = 7.x
 package = Pori
 version = 7.x-1.0
 dependencies[] = ds
+dependencies[] = features
 dependencies[] = flag
 dependencies[] = kada_liftups_feature
 dependencies[] = kada_news_feature
