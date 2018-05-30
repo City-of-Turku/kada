@@ -5,3 +5,354 @@
  */
 
 include_once 'pori_waste_search.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function pori_waste_search_menu() {
+  $items = [];
+
+  $items['waste/search'] = [
+    'title' => 'Waste search',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['pori_waste_search_page_callback'],
+    'access arguments' => ['access content'],
+    'type' => MENU_CALLBACK,
+  ];
+
+  $items['ajax/waste/waste-types-map'] = [
+    'page callback' => 'pori_waste_search_update_views',
+    'access arguments' => ['access content'],
+    'type' => MENU_CALLBACK,
+  ];
+
+  return $items;
+}
+
+/**
+ * Callback to update views by AJAX.
+ *
+ * @param string $type
+ *   Determines the way to render the output.
+ * @param string $options
+ *   Serialized data to be processed.
+ */
+function pori_waste_search_update_views($type, $options) {
+  $output = _pori_waste_search_render_map_view('pori_waste_search_map', 'block', ['value' => $options]);
+
+  if ($type == 'ajax' && !empty($output)) {
+    $commands = array();
+    $commands[] = ajax_command_replace(
+      '#waste-search-map-ajax',
+      '<div id="waste-search-map-ajax">' . $output . '</div>'
+    );
+    $page = array(
+      '#type' => 'ajax',
+      '#commands' => $commands,
+    );
+    ajax_deliver($page);
+  }
+}
+
+/**
+ * Page callback for waste/search.
+ *
+ * @inheritdoc
+ */
+function pori_waste_search_page_callback($form, &$form_state) {
+  $values = _pori_waste_search_load_filter_values();
+
+  $form['type'] = [
+    '#type' => 'select',
+    '#options' => $values,
+    '#description' => t('Start by typing to search field the waste/waste type that you are sorting or the recycling center that you are looking for.'),
+    '#attributes' => [
+      'class' => [
+        'select2-select'
+      ],
+      'data-placeholder' => t('Search from waste search...'),
+    ],
+  ];
+
+  $form['submit'] = [
+    '#type' => 'submit',
+    '#value' => t('Submit'),
+    '#ajax' => [
+      'callback' => 'pori_waste_search_form_ajax_handler',
+      'wrapper'  => 'waste-search-ajax',
+      'effect' => 'fade',
+    ],
+    '#attributes' => [
+      'class' => [
+        'is-hidden'
+      ]
+    ]
+  ];
+
+  $form['waste_search_wrapper'] = [
+    '#prefix' => '<div id="waste-search-ajax" class="waste-search-ajax-container">',
+    '#suffix' => '</div>',
+  ];
+
+  // Pre load the ip_geoloc javascripts.
+  $form['waste_search_map_wrapper'] = [
+    '#prefix' => '<div class="waste-search-map-ajax-wrapper is-hidden"><div id="waste-search-map-ajax">',
+    '#markup' => ip_geoloc_output_map(0,0, $div_id = 'waste-search-map-ajax'),
+    '#suffix' => '</div></div>',
+  ];
+
+  // Load Chosen jQuery library.
+  if ($select2 = pori_waste_search_load_select2_library()) {
+    $form['#attached']['js'][] = $select2;
+  }
+
+  // Load custom Select2 js.
+  $form['#attached']['js'][] = drupal_get_path('module', 'pori_waste_search') . '/js/select2.js';
+
+  // Add css to the form.
+  $form['#attached']['css'][] = drupal_get_path('module', 'pori_waste_search') . '/css/select2.css';
+
+  return $form;
+}
+
+/**
+ * Build a form for Drop locations button.
+ */
+function pori_waste_search_map_form() {
+  $form = [];
+
+  $form['submit'] = [
+    '#type' => 'submit',
+    '#value' => t('Show waste drop locations'),
+    '#ajax' => [
+      'callback' => 'pori_waste_search_form_ajax_handler',
+      'wrapper'  => 'waste-search-map-ajax',
+      'effect' => 'fade',
+    ],
+    '#attributes' => [
+      'class' => [ 'button'],
+    ],
+  ];
+
+  return $form;
+}
+
+/**
+ * Handler for waste search and waste search map forms.
+ *
+ * @param array $form
+ *   pori_waste_search_map_form.
+ * @param array $form_state
+ *   pori_waste_search_map_form state.
+ * @return array
+ *   Return markup for ajax.
+ */
+function pori_waste_search_form_ajax_handler(&$form, &$form_state) {
+  $form['waste_search_wrapper']['#markup'] = _pori_waste_search_render_view('pori_waste_search', 'block', ['value' => $form_state["values"]["type"]]);
+  return $form['waste_search_wrapper'];
+}
+
+/**
+ * Render waste search view.
+ *
+ * @param string $view_id
+ *   Machine name of the view.
+ * @param string $display_id
+ *   Display name of the view.
+ * @param array $arguments
+ *   Arguments in array to be used in the view.
+ *
+ * @return string
+ *   Return rendered view.
+ */
+function _pori_waste_search_render_view($view_id, $display_id, array $arguments) {
+  // Override options.
+  $args = explode('|', $arguments['value']);
+  if (is_array($args) && !empty($arguments['value'])) {
+    $type = $args[0];
+    $id = $args[1];
+  }
+
+  $view = views_get_view($view_id);
+
+  if (!isset($view) || !is_object($view)) {
+    return FALSE;
+  }
+
+  $view->set_display($display_id);
+  $view->set_use_ajax(TRUE);
+
+  // Set arguments.
+  if (isset($type) && isset($id)) {
+    $view->set_arguments([$id]);
+  }
+
+  $view->pre_execute();
+  $view->execute();
+  $rendered_view = $view->render();
+
+  if (!empty($rendered_view) && !empty($id) && isset($type) && $type !== 'place') {
+    global $base_url;
+    global $language;
+    $base_language = 'fi';
+    if ($language->language !== $base_language)  {
+      $base_url .= '/' . $language->language;
+    }
+    $link = '<div class="waste-locations-wrapper"><a class="button use-ajax" name="show-locations" href="' . $base_url . '/ajax/waste/waste-types-map/nojs/' .  $arguments['value'] . '">'. t('Show waste drop locations') . '</a></div>';
+    $markup = $rendered_view . $link;
+  } elseif (isset($type) && $type == 'place') {
+    $markup = $rendered_view . _pori_waste_search_render_map_view('pori_waste_search_map', 'block', $arguments);
+  } else {
+    $markup = $rendered_view;
+  }
+
+  return $markup;
+}
+
+/**
+ * Render waste search map view.
+ *
+ * @param string $view_id
+ *   Machine name of the view.
+ * @param string $display_id
+ *   Display name of the view.
+ * @param array $arguments
+ *   Arguments in array to be used in the view.
+ *
+ * @return string
+ *   Return rendered view.
+ */
+function _pori_waste_search_render_map_view($view_id, $display_id, array $arguments) {
+  // Override options.
+  $args = explode('|', $arguments['value']);
+  if (is_array($args) && !empty($arguments['value'])) {
+    $type = $args[0];
+    $id = $args[1];
+  }
+  $places = [];
+
+  if (isset($type)) {
+    switch ($type) {
+      case 'waste':
+        // Get the field value
+        if (isset($id)) {
+          $waste = taxonomy_term_load($id);
+          $waste_types = field_get_items('taxonomy_term', $waste, 'field_waste_type');
+          if (isset($waste_types) && is_array($waste_types)) {
+            foreach ($waste_types as $type) {
+              $waste_type = taxonomy_term_load($type['target_id']);
+              $refs = field_get_items('taxonomy_term', $waste_type, 'field_waste_type_place');
+              if (isset($refs) && is_array($refs)) {
+                foreach ($refs as $reference) {
+                  $places[] = $reference['target_id'];
+                }
+              }
+            }
+          }
+        }
+        break;
+      case 'waste_type':
+        // Get the field value
+        if (isset($id)) {
+          $waste_type = taxonomy_term_load($id);
+          $refs = field_get_items('taxonomy_term', $waste_type, 'field_waste_type_place');
+          if (isset($refs) && is_array($refs)) {
+            foreach ($refs as $reference) {
+              $places[] = $reference['target_id'];
+            }
+          }
+        }
+        break;
+      case 'place':
+        // Get the field value
+        if (isset($id)) {
+          $places[] = $id;
+        }
+        break;
+    }
+  }
+
+  // If type is place, skip the whole view.
+  $view = views_get_view($view_id);
+  $view->set_display($display_id);
+  $view->set_use_ajax(TRUE);
+
+  // Set arguments.
+  if (isset($places) && !empty($places)) {
+    $view->set_arguments([implode('+', $places)]);
+  }
+
+  $view->pre_execute();
+  $view->execute();
+  $rendered_map_view = $view->render();
+
+  if (isset($rendered_map_view) && !empty($rendered_map_view)) {
+    return $rendered_map_view;
+  }
+  return '';
+}
+
+/**
+ * Load filter values for Pori waste search form.
+ *
+ * @return array
+ */
+function _pori_waste_search_load_filter_values() {
+  global $language;
+
+  $items = ['0' => ''];
+
+  // Load all terms and shits to filter the view.
+  foreach (['waste', 'waste_type'] as $type) {
+    $vocabulary = taxonomy_vocabulary_machine_name_load($type);
+    foreach (entity_load('taxonomy_term', FALSE, ['vid' => $vocabulary->vid]) as $key => $values) {
+      if(isset($values->name_field[$language->language]) && $language->language == $values->language) {
+        $items[$type . '|' . $key] = $values->name_field[$language->language][0]["safe_value"];
+      }
+    }
+  }
+
+  $query = new EntityFieldQuery();
+  $query
+    ->entityCondition('entity_type', 'node')
+    ->entityCondition('bundle', 'place')
+    ->fieldCondition('field_sorting_point', 'value', TRUE);
+
+  $result = $query->execute();
+  $nids = array_keys($result['node']);
+  $nodes = entity_load('node', $nids);
+
+  foreach ($nodes as $nid => $values) {
+    $items['place|' . $nid] = isset($values->title_field[$language->language]) ? $values->title_field[$language->language][0]["safe_value"] : $values->title;
+  }
+
+  return $items;
+}
+
+/**
+ * Returns the JavaScript file of the Select2 library.
+ *
+ * Uses a cached filename until the file gets deleted or the cache gets cleared.
+ */
+function pori_waste_search_load_select2_library() {
+  $cache = cache_get('select2_library');
+  if (($cache !== FALSE) && file_exists($cache->data)) {
+    return $cache->data;
+  }
+
+  // Search for the library.
+  $libpath = libraries_get_path('select2');
+
+  // Search for minimized files first.
+  $js = glob($libpath . '/select2.min.js');
+
+  if (count($js) > 0) {
+    rsort($js);
+    cache_set('select2_library', $js[0]);
+    return $js[0];
+  }
+  else {
+    // Could not find the library.
+    return FALSE;
+  }
+}

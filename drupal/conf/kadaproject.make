@@ -91,6 +91,12 @@ libraries[ckeditor_widget][download][type] = file
 libraries[ckeditor_widget][directory_name] = ckeditor/plugins/widget
 libraries[ckeditor_widget][download][url] = http://download.ckeditor.com/widget/releases/widget_4.4.8.zip
 
+; Select2 library
+libraries[select2][type] = libraries
+libraries[select2][download][type] = file
+libraries[select2][directory_name] = select2
+libraries[select2][download][url] = https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js
+
 ; Line Utils library
 libraries[ckeditor_lineutils][type] = libraries
 libraries[ckeditor_lineutils][download][type] = file
