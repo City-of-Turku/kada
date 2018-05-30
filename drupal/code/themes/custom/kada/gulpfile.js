@@ -51,9 +51,7 @@ var path = {
   sourcemaps: {
     dev: !!gutil.env.development,
     prod: !gutil.env.production
-  },
-  bower: 'bower_components/',
-  fontAwesome: 'font-awesome/scss/'
+  }
 }
 
 var changeEvent = function(evt) {
@@ -79,7 +77,6 @@ gulp.task('sass', function(minify) {
     .pipe(sassGlob())
     .pipe(sass({
       includePaths: [
-        path.bower + path.fontAwesome,
         './'
       ],
       outputStyle: 'expanded'

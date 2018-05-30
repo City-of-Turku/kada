@@ -1,15 +1,19 @@
 diff --git a/openlayers.module b/openlayers.module
-index e51e145..ab34aff 100644
+index e51e145..154f730 100644
 --- a/openlayers.module
 +++ b/openlayers.module
-@@ -1525,6 +1525,13 @@ function openlayers_libraries_info() {
-       'js' => array('OpenLayers.js'),
+@@ -1522,9 +1522,16 @@ function openlayers_libraries_info() {
+       'lines' => 1000,
+     ),
+     'files' => array(
+-      'js' => array('OpenLayers.js'),
++      'js' => array('lib/OpenLayers.js'),
      ),
      'variants' => array(
 +      'original' => array(
 +        'files' => array(
 +          'js' => array(
-+            'OpenLayers.js'
++            'lib/OpenLayers.js'
 +          ),
 +        ),
 +      ),

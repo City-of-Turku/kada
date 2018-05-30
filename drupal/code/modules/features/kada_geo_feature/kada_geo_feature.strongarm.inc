@@ -100,7 +100,7 @@ lahella/kartta';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'ip_geoloc_marker_directory';
-  $strongarm->value = 'sites/all/modules/contrib/ip_geoloc/markers';
+  $strongarm->value = 'sites/all/modules/contrib/ip_geoloc/amarkers';
   $export['ip_geoloc_marker_directory'] = $strongarm;
 
   $strongarm = new stdClass();

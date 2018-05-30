@@ -49,29 +49,43 @@ function pori_waste_search_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_waste_type_images'.
-  $field_bases['field_waste_type_images'] = array(
+  // Exported field_base: 'field_waste_type_place'.
+  $field_bases['field_waste_type_place'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_waste_type_images',
+    'field_name' => 'field_waste_type_place',
     'indexes' => array(
-      'fid' => array(
-        0 => 'fid',
+      'target_id' => array(
+        0 => 'target_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'image',
+    'module' => 'entityreference',
     'settings' => array(
-      'default_image' => 0,
-      'entity_translation_sync' => array(
-        0 => 'fid',
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'entityqueue' => array(
+            'status' => 0,
+          ),
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'place' => 'place',
+        ),
       ),
-      'uri_scheme' => 'public',
+      'target_type' => 'node',
     ),
     'translatable' => 0,
-    'type' => 'image',
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_waste_type_short_desc'.

@@ -6,6 +6,9 @@
 
 include_once 'pori_visitpori_override_feature.features.inc';
 
+/**
+ * Implements hook_language_switch_links_alter().
+ */
 function pori_visitpori_override_feature_language_switch_links_alter(&$result, $type, $path) {
   $current_domain = domain_get_domain();
   $first_path_argument = arg(0);
