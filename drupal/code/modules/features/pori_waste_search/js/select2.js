@@ -26,8 +26,9 @@
           select2.once('pori_waste_search_label', function () {
             // Chosenize each select list.
             select2 = $(this).select2({
-              width: '100%',
-              search_contains: true
+              dropdownParent: $('.select-container .form-type-select'),
+              search_contains: true,
+              width: '100%'
             }).change(function() {
               $('form.pori-waste-search-page-callback input[type=submit]').mousedown();
             });
