@@ -62,13 +62,22 @@ function pori_waste_search_update_views($type, $options) {
 function pori_waste_search_page_callback($form, &$form_state) {
   $values = _pori_waste_search_load_filter_values();
 
-  $form['type'] = [
+  $form['type-wrapper'] = [
+    '#type' => 'container',
+    '#attributes' => array(
+      'class' => array(
+        'select-container',
+      ),
+    ),
+  ];
+
+  $form['type-wrapper']['type'] = [
     '#type' => 'select',
     '#options' => $values,
     '#description' => t('Start by typing to search field the waste/waste type that you are sorting or the recycling center that you are looking for.'),
     '#attributes' => [
       'class' => [
-        'chosen-select'
+        'select2-select'
       ],
       'data-placeholder' => t('Search from waste search...'),
     ],
@@ -102,15 +111,16 @@ function pori_waste_search_page_callback($form, &$form_state) {
   ];
 
   // Load Chosen jQuery library.
-  if ($chosen = pori_waste_search_load_chosen_library()) {
-    $form['#attached']['js'][] = $chosen;
+  if ($select2 = pori_waste_search_load_select2_library()) {
+    $form['#attached']['js'][] = $select2;
   }
 
-  // Load custom chosen js.
-  $form['#attached']['js'][] = drupal_get_path('module', 'pori_waste_search') . '/js/chosen.js';
+  // Load custom Select2 js.
+  $form['#attached']['js'][] = drupal_get_path('module', 'pori_waste_search') . '/js/select2.js';
+  $form['#attached']['js'][] = drupal_get_path('module', 'pori_waste_search') . '/js/fi.js';
 
   // Add css to the form.
-  $form['#attached']['css'][] = drupal_get_path('module', 'pori_waste_search') . '/css/chosen.css';
+  $form['#attached']['css'][] = drupal_get_path('module', 'pori_waste_search') . '/css/select2.css';
 
   return $form;
 }
@@ -300,7 +310,7 @@ function _pori_waste_search_render_map_view($view_id, $display_id, array $argume
 function _pori_waste_search_load_filter_values() {
   global $language;
 
-  $items = ['0' => ''];
+  $items = ['' => ''];
 
   // Load all terms and shits to filter the view.
   foreach (['waste', 'waste_type'] as $type) {
@@ -330,25 +340,25 @@ function _pori_waste_search_load_filter_values() {
 }
 
 /**
- * Returns the JavaScript file of the Chosen library.
+ * Returns the JavaScript file of the Select2 library.
  *
  * Uses a cached filename until the file gets deleted or the cache gets cleared.
  */
-function pori_waste_search_load_chosen_library() {
-  $cache = cache_get('chosen_library');
+function pori_waste_search_load_select2_library() {
+  $cache = cache_get('select2_library');
   if (($cache !== FALSE) && file_exists($cache->data)) {
     return $cache->data;
   }
 
   // Search for the library.
-  $libpath = libraries_get_path('chosen');
+  $libpath = libraries_get_path('select2');
 
   // Search for minimized files first.
-  $js = glob($libpath . '/chosen.jquery.min.js');
+  $js = glob($libpath . '/select2.min.js');
 
   if (count($js) > 0) {
     rsort($js);
-    cache_set('chosen_library', $js[0]);
+    cache_set('select2_library', $js[0]);
     return $js[0];
   }
   else {
