@@ -84,12 +84,8 @@ $main-liftup-content-padding: 20px;
 
 .main-liftup-box__content {
   background: $main-liftups-background;
-  padding: 0 $container-gutter;
+  padding: 0 $container-gutter * 2;
   width: 100%;
-
-  @media screen and (min-width: $mobile-landscape-wide) {
-    padding: 0;
-  }
 
   @media screen and (min-width: $tablet-portrait) {
     padding: 0 2rem;

@@ -3,7 +3,6 @@
     // We might need to move this to FontAwesome, now using separate icon.
     background: url(../../dist/image/language-icon.svg) no-repeat 10px center transparent;
     background-size: auto 25px;
-    border: 1px solid transparent;
     color: $black;
     font-size: 1.1rem;
     line-height: 3.125rem;
@@ -12,6 +11,7 @@
 
     // Show language toggler always
     @media screen and (min-width: $mobile-menu-breakpoint) {
+      border-color: transparent;
       display: block;
     }
 

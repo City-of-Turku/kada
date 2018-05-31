@@ -25,40 +25,42 @@
       </div>
     <?php endif; ?>
 
-    <div class="l-branding">
-      <div class="l-branding__container l-branding-inner">
-        <?php if($site_name OR $site_slogan): ?>
-        <div class="site-branding site-branding--header l-region l-region--logo">
-          <?php if($site_name): ?>
-            <?php if($is_front): ?>
-              <h1 class="site-name site-branding__name site-branding--header__name">
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__link site-branding--header__link">
-                  <span class="element-invisible"><?php print $site_name; ?></span>
-                  <img src="<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
-                </a>
-              </h1>
-            <?php else: ?>
-              <h2 class="site-name site-branding__name site-branding--header__name">
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__link site-branding--header__link">
-                  <span class="element-invisible"><?php print $site_name; ?></span>
-                  <img src="<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
-                </a>
-              </h2>
+    <div class="l-brand-navigation-container">
+        <div class="l-branding">
+          <div class="l-branding__container l-branding-inner">
+            <?php if($site_name OR $site_slogan): ?>
+            <div class="site-branding site-branding--header l-region l-region--logo">
+              <?php if($site_name): ?>
+                <?php if($is_front): ?>
+                  <h1 class="site-name site-branding__name site-branding--header__name">
+                    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__link site-branding--header__link">
+                      <span class="element-invisible"><?php print $site_name; ?></span>
+                      <img src="<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
+                    </a>
+                  </h1>
+                <?php else: ?>
+                  <h2 class="site-name site-branding__name site-branding--header__name">
+                    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__link site-branding--header__link">
+                      <span class="element-invisible"><?php print $site_name; ?></span>
+                      <img src="<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
+                    </a>
+                  </h2>
+                <?php endif; ?>
+              <?php endif; ?>
+              <?php if ($site_slogan): ?>
+                <p class="site-branding__slogan site-branding--header__slogan"><?php print $site_slogan; ?></p>
+              <?php endif; ?>
+            </div>
             <?php endif; ?>
-          <?php endif; ?>
-          <?php if ($site_slogan): ?>
-            <p class="site-branding__slogan site-branding--header__slogan"><?php print $site_slogan; ?></p>
-          <?php endif; ?>
+            <?php print render($page['branding']); ?>
+          </div>
         </div>
-        <?php endif; ?>
-        <?php print render($page['branding']); ?>
-      </div>
-    </div>
 
-    <div class="l-navigation">
-      <div class="l-navigation__container l-navigation-inner">
-        <?php print render($page['navigation']); ?>
-      </div>
+        <div class="l-navigation">
+          <div class="l-navigation__container l-navigation-inner">
+            <?php print render($page['navigation']); ?>
+          </div>
+        </div>
     </div>
 
     <?php if ($page['header_top']): ?>

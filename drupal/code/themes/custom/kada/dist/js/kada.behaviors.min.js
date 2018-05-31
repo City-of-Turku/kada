@@ -1,4 +1,18 @@
 (function ($) {
+
+  // Headroom.js
+  $(document).ready(function(){
+    $('.l-brand-navigation-container').headroom({
+      "offset": 70,
+      "tolerance": 0,
+      "classes": {
+        "initial": "headroom",
+        "pinned": "headroom--pinned",
+        "unpinned": "headroom--unpinned"
+      },
+    });
+  });
+
   /**
    * The recommended way for producing HTML markup through JavaScript is to write
    * theming functions. These are similiar to the theming functions that you might
@@ -71,17 +85,6 @@
       });
     }
   };
-
-  //Drupal.behaviors.kadaQuicktabs = {
-  //  attach: function () {
-  //    $('.quicktabs-wrapper').once('quicktabs-behavior', function () {
-  //      var $tabs = $(this).find('.quicktabs-tabs > li:not(.qt-hidden)');
-  //      if ($tabs.length === 0) {
-  //        $(this).addClass('quicktabs-empty');
-  //      }
-  //    });
-  //  }
-  //};
 
   var mobileMenuBehavior = function () {
     if (!$(this).data('mobile-menu-initialized')) {
@@ -205,7 +208,13 @@
 
             // Iterate through each menu and check which menu is the tallest.
             menus.each(function(){
-              var menuHeight = $(this).innerHeight();
+              var menuHeight = 0;
+
+              if ($(this).parent('.e-service-wrapper').length) {
+                menuHeight = $(this).parent().outerHeight();
+              } else {
+                menuHeight = $(this).innerHeight();
+              }
 
               if (menuHeight >= tallest) {
                 tallest = menuHeight;
@@ -218,7 +227,7 @@
             // The e-service menu has a header so the height of the header needs to be
             // subtracted from the e-service menus height.
             if (menus.parent('e-service-wrapper')) {
-              var eserviceHeight = tallest - 64;
+              var eserviceHeight = tallest - 65;
               $('.l-region--navigation .e-service-wrapper .menu:visible').css('height', eserviceHeight);
             }
 
@@ -339,18 +348,6 @@
       });
     }
   };
-
-  // Text size toggle disabled for the time being.
-  // Drupal.behaviors.kadaTextSizeToggle = {
-  //   attach: function () {
-  //     $('.accessibility-font-increase__toggle').once('accessibility-font-increase__toggle', function () {
-  //       $(this).click(function () {
-  //         $(this).toggleClass('accessibility-font-increase__toggle--active');
-  //         $('.accessibility-font-increase__options').toggleClass('accessibility-font-increase__options--is-visible accessibility-font-increase__options--is-hidden');
-  //       });
-  //     });
-  //   }
-  // };
 
   // Mobile tables
   Drupal.behaviors.kadaTableMobilize = {
