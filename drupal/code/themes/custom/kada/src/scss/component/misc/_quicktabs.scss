@@ -49,10 +49,13 @@
       }
 
       .ui-tabs-anchor {
-        border: .063rem solid $secondary-color;
+        border-left: .063rem solid $secondary-color;
+        border-right: .063rem solid $secondary-color;
+        border-top: .063rem solid $secondary-color;
         color: $primary-color;
         display: block;
         float: none;
+        height: 2.917rem;
         padding: 0;
 
         @media screen and (min-width: $tablet-landscape) {
