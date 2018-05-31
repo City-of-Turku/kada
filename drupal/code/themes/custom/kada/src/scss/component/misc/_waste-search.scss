@@ -114,7 +114,7 @@
   }
 
   .section--content > form {
-    > div > .form-type-select {
+    .select-container .form-type-select {
       background-color: $gray-lighter;
       display: flex;
       flex-wrap: wrap;
@@ -135,7 +135,8 @@
         @include numbering();
       }
 
-      .chosen-container {
+      .select2-container {
+        display: block;
         order: 2;
         width: 100%;
       }
@@ -149,8 +150,7 @@
     }
   }
 
-  .chosen-single,
-  .chosen-container-active.chosen-with-drop .chosen-single {
+  .select2-container .selection .select2-selection--single {
     background: $white;
     border: 1px solid $gray;
     border-radius: 0;
@@ -169,23 +169,27 @@
     }
   }
 
-  .chosen-container .chosen-drop {
+  .select2-selection__arrow {
+    display: none;
+  }
+
+  .select2-container .select2-dropdown {
     border: 1px solid $gray;
     border-radius: 0;
     box-shadow: none;
-    margin-top: 0;
+    margin-top: -60px;
     top: 0;
 
-    .chosen-search {
+    .select2-search {
       border-bottom: 1px solid $gray;
       height: 59px;
       padding: 0;
+      position: relative;
 
       &::after {
         @include fa('\f002', 1.3rem, 1, false);
-        margin-top: -1px;
         position: absolute;
-        right: 15px;
+        right: 14px;
         top: 50%;
         transform: translateY(-50%);
       }
@@ -200,7 +204,7 @@
       }
     }
 
-    .chosen-results {
+    .select2-results {
       margin: 0 0 10px 0;
       padding: 10px 0 0 0;
 
@@ -208,7 +212,7 @@
         font-size: 1rem;
         padding: 10px 15px;
 
-        &.highlighted {
+        &.select2-results__option--highlighted {
           background: $waste-green;
           color: $white;
         }
