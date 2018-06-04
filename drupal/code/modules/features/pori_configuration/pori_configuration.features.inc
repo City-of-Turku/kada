@@ -11,10 +11,16 @@ function pori_configuration_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
+  if ($module == "ds" && $api == "ds") {
+    return array("version" => "1");
+  }
   if ($module == "elysia_cron" && $api == "default_elysia_cron_rules") {
     return array("version" => "1");
   }
   if ($module == "openlayers" && $api == "openlayers_layers") {
+    return array("version" => "1");
+  }
+  if ($module == "openlayers" && $api == "openlayers_maps") {
     return array("version" => "1");
   }
   if ($module == "scald" && $api == "context_config") {

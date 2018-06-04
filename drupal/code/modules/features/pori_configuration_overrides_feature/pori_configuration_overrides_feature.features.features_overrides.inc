@@ -72,12 +72,24 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
 
   // Exported overrides for: ds_field_settings
-  $overrides["ds_field_settings.node|page|default.settings|places_for_services|weight"] = 5;
+  $overrides["ds_field_settings.node|page|default.settings|page_places"] = array(
+    'weight' => 3,
+    'label' => 'hidden',
+    'format' => 'default',
+    'formatter_settings' => array(
+      'show_title' => 0,
+      'title_wrapper' => '',
+      'ctools' => 'a:3:{s:4:"conf";a:3:{s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:14:"openlayers_map";s:7:"subtype";s:21:"pori_page_service_map";}',
+      'load_terms' => 0,
+    ),
+  );
+  $overrides["ds_field_settings.node|page|default.settings|places_for_services|weight"] = 6;
   $overrides["ds_field_settings.node|place|teaser.settings|node_link"]["DELETED"] = TRUE;
 
   // Exported overrides for: ds_layout_settings
   $overrides["ds_layout_settings.node|page|default.settings|fields|field_contact_person"] = 'contact_information';
   $overrides["ds_layout_settings.node|page|default.settings|regions|after_content|10"] = 'field_subpage';
+  $overrides["ds_layout_settings.node|page|default.settings|fields|page_places"] = 'main_content';
   $overrides["ds_layout_settings.node|page|default.settings|regions|after_content|8"]["DELETED"] = TRUE;
   $overrides["ds_layout_settings.node|page|default.settings|regions|after_content|9"] = 'field_topic';
   $overrides["ds_layout_settings.node|page|default.settings|regions|contact_information"] = array(
