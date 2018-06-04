@@ -597,3 +597,20 @@
     }
   }
 }
+
+a.button--waste {
+  border: 1px solid $waste-green;
+  color: $waste-green;
+  display: inline-block;
+  font-family: $bergen-mono;
+  margin: 15px 0 5px;
+  text-transform: uppercase;
+  padding: 10px 15px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $waste-green;
+    color: $white;
+  }
+}
