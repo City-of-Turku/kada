@@ -1,10 +1,25 @@
 .page-header {
+  // Mobile, height of the mobile header since the mobile header is fixed.
+  @media screen and (max-width: $mobile-menu-breakpoint-max) {
+    padding-top: 3.125rem;
+  }
+
   .l-navigation-top {
     display: none;
 
     @media screen and (min-width: $mobile-menu-breakpoint) {
       background-color: $gray-lighter;
       display: block;
+    }
+  }
+
+  .l-brand-navigation-container {
+    // Mobile
+    @media screen and (max-width: $mobile-menu-breakpoint-max) {
+      background-color: $white;
+      border-bottom: 1px solid $gray-light;
+      width: 100%;
+      z-index: 100;
     }
   }
 
@@ -30,9 +45,14 @@
   .l-branding__container {
     align-items: center;
     display: flex;
-    height: 100%;
+    height: auto;
     justify-content: space-between;
     padding: 0 $container-gutter;
+    width: 100%;
+
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      height: 100%;
+    }
   }
 
   .l-navigation__container {
