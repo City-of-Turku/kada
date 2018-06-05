@@ -1303,3 +1303,97 @@ function pori_configuration_overrides_feature_strongarm_alter(&$data) {
     $data['variable_realm_list_domain']->value[3] = 'site_frontpage'; /* WAS: '' */
   }
 }
+
+/**
+ * Implements hook_views_default_views_alter().
+ */
+function pori_configuration_overrides_feature_views_default_views_alter(&$data) {
+  if (isset($data['kada_admin_content'])) {
+    $data['kada_admin_content']->display['default']->display_options['fields']['gid'] = array(
+      'id' => 'gid',
+      'table' => 'domain_access',
+      'field' => 'gid',
+      'label' => 'Domain',
+      'display_method' => 'sitename',
+    ); /* WAS: '' */
+    $data['kada_admin_content']->display['default']->display_options['filters']['gid'] = array(
+      'id' => 'gid',
+      'table' => 'domain_access',
+      'field' => 'gid',
+      'value' => array(
+        5 => 5,
+        7 => 7,
+      ),
+      'exposed' => TRUE,
+      'expose' => array(
+        'operator_id' => 'gid_op',
+        'label' => 'Domain',
+        'operator' => 'gid_op',
+        'identifier' => 'gid',
+        'remember_roles' => array(
+          2 => 2,
+          1 => 0,
+          4 => 0,
+          8 => 0,
+          3 => 0,
+          7 => 0,
+          5 => 0,
+          6 => 0,
+        ),
+        'reduce' => TRUE,
+      ),
+    ); /* WAS: '' */
+    $data['kada_admin_content']->display['default']->display_options['style_options']['columns']['field_date_type'] = 'field_date_type'; /* WAS: '' */
+    $data['kada_admin_content']->display['default']->display_options['style_options']['columns']['gid'] = 'gid'; /* WAS: '' */
+    $data['kada_admin_content']->display['default']->display_options['style_options']['columns']['nid'] = 'nid'; /* WAS: '' */
+    $data['kada_admin_content']->display['default']->display_options['style_options']['info']['field_date_type'] = array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ); /* WAS: '' */
+    $data['kada_admin_content']->display['default']->display_options['style_options']['info']['gid'] = array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ); /* WAS: '' */
+    $data['kada_admin_content']->display['default']->display_options['style_options']['info']['nid'] = array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ); /* WAS: '' */
+    unset($data['kada_admin_content']->display['default']->display_options['style_options']['columns']['delete_node']);
+    unset($data['kada_admin_content']->display['default']->display_options['style_options']['columns']['edit_node']);
+    unset($data['kada_admin_content']->display['default']->display_options['style_options']['info']['delete_node']);
+    unset($data['kada_admin_content']->display['default']->display_options['style_options']['info']['edit_node']);
+  }
+  if (isset($data['kada_scald_atoms'])) {
+    $data['kada_scald_atoms']->display['default']->display_options['filters']['domain_id'] = array(
+      'id' => 'domain_id',
+      'table' => 'domain_editor',
+      'field' => 'domain_id',
+      'relationship' => 'publisher',
+      'value' => array(
+        '***CURRENT_DOMAIN***' => '***CURRENT_DOMAIN***',
+      ),
+      'group' => 1,
+    ); /* WAS: '' */
+  }
+  if (isset($data['kada_scald_library'])) {
+    $data['kada_scald_library']->display['default']->display_options['filters']['domain_id'] = array(
+      'id' => 'domain_id',
+      'table' => 'domain_editor',
+      'field' => 'domain_id',
+      'relationship' => 'publisher',
+      'value' => array(
+        '***CURRENT_DOMAIN***' => '***CURRENT_DOMAIN***',
+      ),
+      'group' => 1,
+    ); /* WAS: '' */
+  }
+}
