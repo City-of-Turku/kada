@@ -1504,8 +1504,7 @@ function pori_configuration_overrides_feature_default_scald_context_config_alter
 /**
  * Implements hook_strongarm_alter().
  */
-function pori_configuration_overrides_feature_strongarm_alter(&$data)
-{
+function pori_configuration_overrides_feature_strongarm_alter(&$data) {
   if (isset($data['field_bundle_settings_node__liftup'])) {
     $data['field_bundle_settings_node__liftup']->value['extra_fields']['display']['domain']['small_liftup_banner'] = array(
       'weight' => 30,
