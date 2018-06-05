@@ -53,9 +53,6 @@ function pori_configuration_metatag_export_default() {
       'og:site_name' => array(
         'value' => 'Visit Pori | Pori area travel information',
       ),
-      'og:type' => array(
-        'value' => 'website',
-      ),
       'og:description' => array(
         'value' => 'Pori area travel information',
       ),
