@@ -73,7 +73,7 @@ function pori_configuration_overrides_feature_features_override_default_override
 
   // Exported overrides for: ds_field_settings
   $overrides["ds_field_settings.node|page|default.settings|page_places"] = array(
-    'weight' => 3,
+    'weight' => 4,
     'label' => 'hidden',
     'format' => 'default',
     'formatter_settings' => array(
@@ -101,7 +101,8 @@ function pori_configuration_overrides_feature_features_override_default_override
     9 => 'field_contact_person',
   );
   $overrides["ds_layout_settings.node|page|default.settings|regions|main_content|3"] = 'field_person_reference';
-  $overrides["ds_layout_settings.node|page|default.settings|regions|main_content|4"] = 'field_service_offering';
+  $overrides["ds_layout_settings.node|page|default.settings|regions|main_content|4"] = 'page_places';
+  $overrides["ds_layout_settings.node|page|default.settings|regions|main_content|5"] = 'field_service_offering';
   $overrides["ds_layout_settings.node|page|default.settings|regions|sidebar|4"]["DELETED"] = TRUE;
   $overrides["ds_layout_settings.node|page|default.settings|regions|sidebar|5"] = 'field_keywords';
   $overrides["ds_layout_settings.node|page|default.settings|regions|sidebar|6"] = 'places_for_services';

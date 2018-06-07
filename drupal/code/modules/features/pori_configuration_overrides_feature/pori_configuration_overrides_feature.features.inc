@@ -101,7 +101,7 @@ function pori_configuration_overrides_feature_context_default_contexts_alter(&$d
 function pori_configuration_overrides_feature_ds_field_settings_info_alter(&$data) {
   if (isset($data['node|page|default'])) {
     $data['node|page|default']->settings['page_places'] = array(
-      'weight' => 3,
+      'weight' => 4,
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -134,9 +134,10 @@ function pori_configuration_overrides_feature_ds_layout_settings_info_alter(&$da
       9 => 'field_contact_person',
     ); /* WAS: '' */
     $data['node|page|default']->settings['regions']['main_content'][3] = 'field_person_reference'; /* WAS: 'field_service_offering' */
-    $data['node|page|default']->settings['regions']['main_content'][4] = 'field_service_offering'; /* WAS: '' */
-    $data['node|page|default']->settings['regions']['sidebar'][5] = 'field_keywords'; /* WAS: 'places_for_services' */
-    $data['node|page|default']->settings['regions']['sidebar'][6] = 'places_for_services'; /* WAS: '' */
+    $data['node|page|default']->settings['regions']['main_content'][4] = 'page_places'; /* WAS: '' */
+    $data['node|page|default']->settings['regions']['main_content'][5] = 'field_service_offering'; /* WAS: '' */
+    $data['node|page|default']->settings['regions']['sidebar'][6] = 'field_keywords'; /* WAS: '' */
+    $data['node|page|default']->settings['regions']['sidebar'][7] = 'places_for_services'; /* WAS: '' */
     $data['node|page|default']->settings['wrappers']['contact_information'] = 'div'; /* WAS: '' */
     unset($data['node|page|default']->settings['regions']['additional_information'][6]);
     unset($data['node|page|default']->settings['regions']['after_content'][8]);

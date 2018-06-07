@@ -211,6 +211,7 @@ features[features_overrides][] = ds_layout_settings.node|page|default.settings|r
 features[features_overrides][] = ds_layout_settings.node|page|default.settings|regions|contact_information
 features[features_overrides][] = ds_layout_settings.node|page|default.settings|regions|main_content|3
 features[features_overrides][] = ds_layout_settings.node|page|default.settings|regions|main_content|4
+features[features_overrides][] = ds_layout_settings.node|page|default.settings|regions|main_content|5
 features[features_overrides][] = ds_layout_settings.node|page|default.settings|regions|sidebar|4
 features[features_overrides][] = ds_layout_settings.node|page|default.settings|regions|sidebar|5
 features[features_overrides][] = ds_layout_settings.node|page|default.settings|regions|sidebar|6
