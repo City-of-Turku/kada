@@ -22,11 +22,11 @@ function pori_configuration_openlayers_maps() {
     'image_path' => '/sites/all/themes/custom/driveturku/images/map-graphics/',
     'css_path' => '/sites/all/themes/custom/driveturku/css/turku-map-styles.css',
     'proxy_host' => '',
-    'hide_empty_map' => 1,
+    'hide_empty_map' => 0,
     'center' => array(
       'initial' => array(
-        'centerpoint' => '21.664899985625226, 61.53500000685139',
-        'zoom' => '12',
+        'centerpoint' => '21.6649,61.535',
+        'zoom' => '11',
       ),
       'restrict' => array(
         'restrictextent' => 0,
@@ -72,6 +72,7 @@ pointRadius|10',
         'zoomtolayer' => array(
           'pori_place_map_place_data' => 'pori_place_map_place_data',
           'osm_mapnik' => 0,
+          'pori_arcgis' => 0,
         ),
         'point_zoom_level' => '10',
         'zoomtolayer_scale' => '1',
@@ -81,6 +82,7 @@ pointRadius|10',
     'layers' => array(
       'osm_mapnik' => 'osm_mapnik',
       'pori_place_map_place_data' => 'pori_place_map_place_data',
+      'pori_arcgis' => 'pori_arcgis',
     ),
     'layer_weight' => array(
       'pori_place_map_place_data' => '-10',

@@ -18,7 +18,7 @@ function pori_configuration_ds_custom_fields_info() {
   $ds_field->entities = array(
     'node' => 'node',
   );
-  $ds_field->ui_limit = '*|*';
+  $ds_field->ui_limit = 'page|*';
   $ds_field->properties = array(
     'default' => array(),
     'settings' => array(

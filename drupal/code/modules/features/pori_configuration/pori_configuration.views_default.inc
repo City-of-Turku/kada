@@ -237,6 +237,12 @@ function pori_configuration_views_default_views() {
   $handler->display->display_options['filters']['type_1']['value'] = array(
     'place' => 'place',
   );
+  /* Filter criterion: Field: Location (field_location:geohash) */
+  $handler->display->display_options['filters']['field_location_geohash']['id'] = 'field_location_geohash';
+  $handler->display->display_options['filters']['field_location_geohash']['table'] = 'field_data_field_location';
+  $handler->display->display_options['filters']['field_location_geohash']['field'] = 'field_location_geohash';
+  $handler->display->display_options['filters']['field_location_geohash']['relationship'] = 'relation_place_service_node';
+  $handler->display->display_options['filters']['field_location_geohash']['operator'] = 'not empty';
 
   /* Display: OpenLayers Data Overlay */
   $handler = $view->new_display('openlayers', 'OpenLayers Data Overlay', 'place_data');
@@ -269,7 +275,7 @@ function pori_configuration_views_default_views() {
   $handler->display->display_options['display_description'] = 'Map per place';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'openlayers_map';
-  $handler->display->display_options['style_options']['map'] = 'kada_place_map';
+  $handler->display->display_options['style_options']['map'] = 'pori_page_service_map';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
