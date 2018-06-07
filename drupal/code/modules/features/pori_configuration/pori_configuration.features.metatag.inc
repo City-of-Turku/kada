@@ -39,13 +39,19 @@ function pori_configuration_metatag_export_default() {
     'disabled' => FALSE,
     'config' => array(
       'title' => array(
-        'value' => '[site:name]',
+        'value' => 'Visit Pori | Pori area travel information',
       ),
       'description' => array(
         'value' => 'Pori area travel information',
       ),
+      'dcterms.title' => array(
+        'value' => 'Visit Pori | Pori area travel information',
+      ),
       'dcterms.description' => array(
         'value' => 'Pori area travel information',
+      ),
+      'og:site_name' => array(
+        'value' => 'Visit Pori | Pori area travel information',
       ),
       'og:description' => array(
         'value' => 'Pori area travel information',
