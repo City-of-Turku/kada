@@ -1,10 +1,7 @@
 <?php
 
 function kada_preprocess_taxonomy_term(&$variables) {
-  if (
-    $variables['vocabulary_machine_name'] !== 'waste_type' &&
-    $variables['view_mode'] !== 'full'
-  ) {
+  if ($variables['vocabulary_machine_name'] !== 'waste_type' && $variables['view_mode'] !== 'full') {
     return;
   }
 
