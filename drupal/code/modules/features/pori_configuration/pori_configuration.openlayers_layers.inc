@@ -71,7 +71,7 @@ function pori_configuration_openlayers_layers() {
     'projection' => array(
       0 => 'EPSG:3857',
     ),
-    'isBaseLayer' => 0,
+    'isBaseLayer' => 1,
     'layer_type' => 'openlayers_layer_type_osm',
     'layer_handler' => 'osm',
     'type' => 'png',
