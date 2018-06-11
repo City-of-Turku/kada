@@ -4,6 +4,18 @@
 //
 
 @font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../../bower_components/font-awesome/web-fonts-with-css/webfonts/fa-solid-900.eot');
+  src: url('../../bower_components/font-awesome/web-fonts-with-css/webfonts/fa-solid-900.eot?#iefix') format('embedded-opentype'),
+  url('../../bower_components/font-awesome/web-fonts-with-css/webfonts/fa-solid-900.woff2') format('woff2'),
+  url('../../bower_components/font-awesome/web-fonts-with-css/webfonts/fa-solid-900.woff') format('woff'),
+  url('../../bower_components/font-awesome/web-fonts-with-css/webfonts/fa-solid-900.ttf') format('truetype'),
+  url('../../bower_components/font-awesome/web-fonts-with-css/webfonts/fa-solid-900.svg#fontawesome') format('svg');
+}
+
+@font-face {
   font-family: BergenMono;
   font-style: normal;
   font-weight: 300;

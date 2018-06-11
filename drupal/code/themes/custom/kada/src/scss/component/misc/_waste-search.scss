@@ -1,0 +1,618 @@
+@mixin numbering() {
+  background-color: $waste-green;
+  border-radius: 100%;
+  color: $white;
+  content: counter(section);
+  counter-increment: section;
+  display: block;
+  font-family: $bergen-mono;
+  font-size: 1.3rem;
+  font-weight: 600;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  text-align: center;
+  width: 40px;
+
+  @media screen and (min-width: $mobile-menu-breakpoint) {
+    left: 4rem;
+    margin-top: 3rem;
+    position: absolute;
+    top: 0;
+  }
+}
+
+.waste-search {
+  counter-reset: section;
+
+  .has-sidebar-second {
+    .section--content {
+      @media screen and (min-width: $desktop) {
+        float: left;
+        margin-top: 14px; // Stupid fix to level the waste crow and this block
+        width: 70%;
+      }
+    }
+
+    .sidebar--second {
+      background: url(../image/waste_crow.png) no-repeat top right transparent;
+      margin-top: 40px;
+      padding-top: 120px;
+
+      @media screen and (min-width: $desktop) {
+        margin-left: 70%;
+        margin-top: 0;
+        padding-left: 5%;
+        width: 30%;
+      }
+
+      .block:first-child {
+        margin-top: 0;
+      }
+
+      .block:last-child {
+        margin-bottom: 0;
+      }
+
+      .block__title {
+        background-color: $waste-green;
+        border: 0 none;
+        border-radius: 0;
+        color: $white;
+        display: block;
+        font-family: $bergen-mono;
+        font-weight: 200;
+        margin: 0;
+        padding: 1.25rem;
+        position: relative;
+        text-align: left;
+        text-transform: uppercase;
+        width: 100%;
+
+        &::after {
+          content: ":";
+        }
+      }
+
+      .menu .menu__item a {
+        border-bottom: 1px solid $gray;
+        color: $black;
+        display: block;
+        font-size: 1rem;
+        padding: 20px 0;
+        text-transform: uppercase;
+
+        @media screen and (min-width: $mobile-landscape-wide) {
+          padding-left: 1.25rem;
+          padding-right: 1.25rem;
+        }
+
+        &:hover {
+          background-color: $gray-lighter;
+        }
+      }
+    }
+
+    .content__header {
+      @media screen and (min-width: $desktop) {
+        float: left;
+        width: 70%;
+      }
+    }
+  }
+
+  // On waste search the breadcrumb should be hidden. The .l-breadcrumb wrapper has border styles however so hiding
+  // only container.
+  .container.l-breadcrumb__container {
+    display: none;
+  }
+
+  .content__header {
+    max-width: 110rem;
+    width: 100%;
+  }
+
+  .section--content > form {
+    .select-container .form-type-select {
+      background-color: $gray-lighter;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -1.25rem 10px;
+      padding: 0 1.25rem 1rem;
+
+      @media screen and (min-width: $mobile-landscape-wide) {
+        margin-left: 0;
+        margin-right: 0;
+        position: relative;
+      }
+
+      @media screen and (min-width: $mobile-menu-breakpoint) {
+        padding: 3.5rem 10rem 3rem;
+      }
+
+      &::before {
+        @include numbering();
+      }
+
+      .select2-container {
+        display: block;
+        order: 2;
+        width: 100%;
+      }
+
+      .description {
+        font-size: 1rem;
+        margin: 0 0 10px;
+        order: 1;
+        width: 100%;
+      }
+    }
+  }
+
+  .select2-container .selection .select2-selection--single {
+    background: $white;
+    border: 1px solid $gray;
+    border-radius: 0;
+    box-shadow: none;
+    color: $black;
+    font-size: 1.2rem;
+    height: 60px;
+    padding: 15px 40px 15px 15px;
+
+    &::after {
+      @include fa('\f002', 1.3rem, 1, false);
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  .select2-selection__arrow {
+    display: none;
+  }
+
+  .select2-container .select2-dropdown {
+    border: 1px solid $gray;
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: -60px;
+    top: 0;
+
+    .select2-search {
+      border-bottom: 1px solid $gray;
+      height: 59px;
+      padding: 0;
+      position: relative;
+
+      &::after {
+        @include fa('\f002', 1.3rem, 1, false);
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      input {
+        background: transparent;
+        border: 0 none;
+        font-size: 1.2rem;
+        height: 60px;
+        padding: 15px 40px 15px 15px;
+        width: 100%;
+      }
+    }
+
+    .select2-results {
+      margin: 0 0 10px 0;
+      padding: 10px 0 0 0;
+
+      li {
+        font-size: 1rem;
+        padding: 10px 15px;
+
+        &.select2-results__option--highlighted {
+          background: $waste-green;
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .waste-search-ajax-container {
+    display: none;
+    margin: 0 -1.25rem 0;
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    > .view-pori-waste-search {
+      .views-row {
+        background-color: $gray-lighter;
+        margin-bottom: 10px;
+        padding: 0 1.25rem 1rem;
+
+        @media screen and (min-width: $mobile-menu-breakpoint) {
+          padding: 0 0 3rem;
+        }
+      }
+
+      .attachment .view-content {
+        @media screen and (min-width: $mobile-menu-breakpoint) {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .views-row {
+          @media screen and (min-width: $mobile-menu-breakpoint) {
+            padding: 0 0 1rem;
+            width: 50%;
+          }
+
+          &:nth-child(even) {
+            @media screen and (min-width: $mobile-menu-breakpoint) {
+              margin-left: 5px;
+            }
+          }
+
+          &:nth-child(odd) {
+            @media screen and (min-width: $mobile-menu-breakpoint) {
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    > .view-pori-waste-search-map {
+      background-color: $gray-lighter;
+      padding: 1.25rem 1.25rem 0;
+
+      @media screen and (min-width: $mobile-menu-breakpoint) {
+        padding: 3.5rem 10rem 0;
+        position: relative;
+      }
+
+      &::before {
+        @include numbering();
+        margin-top: 0;
+      }
+
+      > .view-content {
+        @media screen and (min-width: $mobile-menu-breakpoint) {
+          display: flex;
+          justify-content: center;
+        }
+
+        .views-row {
+          padding-bottom: 3rem;
+
+          @media screen and (min-width: $mobile-menu-breakpoint) {
+            max-width: 300px;
+          }
+        }
+      }
+    }
+  }
+
+  .waste-search-map-ajax-wrapper {
+    background-color: $gray-lighter;
+    margin: 0 -1.25rem 10px;
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    > * > .view-pori-waste-search-map {
+      background-color: $gray-lighter;
+      margin: 0;
+      padding: 1rem 1.25rem 0;
+
+      @media screen and (min-width: $mobile-menu-breakpoint) {
+        padding: 3.5rem 10rem 0;
+        position: relative;
+      }
+
+      &::before {
+        @include numbering();
+        margin-top: 0;
+      }
+
+      > .view-content {
+        @media screen and (min-width: $mobile-menu-breakpoint) {
+          display: flex;
+          justify-content: center;
+        }
+
+        .views-row {
+          padding-bottom: 3rem;
+
+          @media screen and (min-width: $mobile-menu-breakpoint) {
+            margin: 0 10px;
+            max-width: 300px;
+          }
+        }
+      }
+    }
+  }
+
+  .vocabulary-waste {
+    overflow: hidden;
+
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      padding-left: 10rem;
+      padding-top: 3rem;
+      position: relative;
+    }
+
+    &::before {
+      @include numbering();
+    }
+
+    .description {
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .vocabulary-waste-type {
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      padding: 0 1.25rem 0;
+    }
+
+    h2 {
+      background-color: $default-color-dark;
+      color: $white;
+      font-size: 1.125rem;
+      font-weight: 200;
+      line-height: 1.556;
+      margin: 0 -1.25rem 1.5rem;
+      padding: 1.25rem;
+      position: relative;
+
+      &::after {
+        @include fa('\f058', 1.5rem, 1, false);
+        position: absolute;
+        right: 1.25rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .field--name-more-link a {
+      border: 1px solid $waste-green;
+      color: $waste-green;
+      display: inline-block;
+      font-family: $bergen-mono;
+      margin: 15px 0 5px;
+      text-transform: uppercase;
+      padding: 10px 15px;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $waste-green;
+        color: $white;
+      }
+    }
+  }
+
+  .waste-locations-wrapper {
+    margin-top: -10px;
+  }
+
+  .button {
+    background-color: $waste-green;
+    border: 0 none;
+    border-radius: 0;
+    font-family: $bergen-mono;
+    font-weight: 200;
+    padding: 1.25rem;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+    width: 100%;
+
+    &::after {
+      @include fa('\f078', .8rem, 1, false);
+      position: absolute;
+      right: 1.25rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &.is-active {
+      &::after {
+        @include fa('\f077', .8rem, 1, false);
+      }
+    }
+  }
+
+  .views-widget-filter-field_geofield_distance {
+    display: flex;
+    flex-direction: column;
+    float: none;
+    padding: 0;
+    width: 100%;
+
+    .views-widget {
+      order: 2;
+    }
+
+    .description {
+      margin: 0 0 .625rem;
+      order: 1;
+    }
+
+    // Hide the stuff the user doesn't need to see
+    label,
+    .form-item-field-geofield-distance-distance,
+    .form-item-field-geofield-distance-unit,
+    .geofield-proximity-origin-from {
+      display: none;
+    }
+
+    .geofield-proximity-field-wrapper .form-item {
+      float: none;
+      margin: 0;
+      width: 100%;
+
+      .form-item-field-geofield-distance-origin {
+        background-color: $white;
+        position: relative;
+      }
+
+      input {
+        border: 1px solid $gray;
+        color: $black;
+        font-size: 1.2rem;
+        height: 60px;
+        padding: 15px;
+        width: 100%;
+      }
+    }
+  }
+
+  // Address input above the map and a submit button
+  .views-exposed-form-pori-waste-search-map-block .views-exposed-widgets {
+    align-items: flex-end;
+    display: flex;
+    margin-bottom: 1.25rem;
+
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      margin-bottom: 3rem;
+    }
+
+    .views-submit-button {
+      background-color: $waste-green;
+      height: 60px;
+      padding: 0;
+      position: relative;
+      width: 60px;
+
+      &::before {
+        @include fa('\f002', 1.3rem, 1, false);
+        color: $white;
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%);
+        z-index: 1;
+      }
+
+      input {
+        background: transparent;
+        border: 0;
+        height: 100%;
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+        text-indent: -9999px;
+        width: 100%;
+        z-index: 2;
+      }
+    }
+  }
+
+  // Container that includes the map
+  .view-based-map {
+    margin: 0 -1.25rem 3rem;
+
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      margin-left: -10rem;
+      margin-right: -10rem;
+    }
+  }
+
+  // Places under the map
+  .node--place--waste-search {
+    border-top: 10px solid $waste-green;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 15px;
+
+    .field {
+      order: 1;
+
+      &.field--name-field-website-et {
+        order: 3;
+      }
+    }
+
+    .views-field-field-geofield-distance {
+      margin-bottom: 1rem;
+      order: 2;
+    }
+
+    .field__label {
+      font-weight: normal;
+    }
+
+    .field .field__item > *,
+    .field--name-field-phone,
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .field--name-title-field {
+      h3 {
+        font-family: $bergen-text;
+        text-transform: none;
+      }
+    }
+
+    .field--name-field-address-visiting {
+      margin-bottom: 1rem;
+
+      .field__item > * {
+        margin-bottom: 0;
+      }
+    }
+
+    .field--name-field-website-et {
+      a {
+        background-color: $waste-green;
+        color: $white;
+        font-family: $bergen-mono;
+        display: inline-block;
+        padding: 10px 40px 10px 15px;
+        position: relative;
+        text-transform: uppercase;
+
+        &::after {
+          @include fa('\f35d', .8rem, 1, false);
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+}
+
+a {
+  &.button--waste {
+    border: 1px solid $waste-green;
+    color: $waste-green;
+    display: inline-block;
+    font-family: $bergen-mono;
+    margin: 15px 0 5px;
+    text-transform: uppercase;
+    padding: 10px 15px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $waste-green;
+      color: $white;
+    }
+  }
+}

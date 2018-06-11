@@ -1130,7 +1130,7 @@
     attach : function(context) {
       // Slideshow item settings
       $('.slide-container__content', context).once('slick').slick({
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 6000,
         pauseOnHover: true,
         infinite: true,

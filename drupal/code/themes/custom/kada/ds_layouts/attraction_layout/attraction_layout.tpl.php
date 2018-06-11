@@ -22,7 +22,7 @@ if (!empty($sidebar || $additional_information)) {
   <?php endif; ?>
 
   <?php if (!empty($image_container)): ?>
-    <<?php print $image_container_wrapper ?> class="attraction__image-container <?php print $image_container_classes; ?>">
+    <<?php print $image_container_wrapper ?> class="attraction__image-container slick-slider-container <?php print $image_container_classes; ?>">
     <?php print $image_container; ?>
     </<?php print $image_container_wrapper ?>>
   <?php endif; ?>
