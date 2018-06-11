@@ -25,40 +25,42 @@
       </div>
     <?php endif; ?>
 
-    <div class="l-branding">
-      <div class="l-branding__container l-branding-inner">
-        <?php if($site_name OR $site_slogan): ?>
-        <div class="site-branding site-branding--header l-region l-region--logo">
-          <?php if($site_name): ?>
-            <?php if($is_front): ?>
-              <h1 class="site-name site-branding__name site-branding--header__name">
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__link site-branding--header__link">
-                  <span class="element-invisible"><?php print $site_name; ?></span>
-                  <img src="<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
-                </a>
-              </h1>
-            <?php else: ?>
-              <h2 class="site-name site-branding__name site-branding--header__name">
-                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__link site-branding--header__link">
-                  <span class="element-invisible"><?php print $site_name; ?></span>
-                  <img src="<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
-                </a>
-              </h2>
+    <div class="l-brand-navigation-container">
+        <div class="l-branding">
+          <div class="l-branding__container l-branding-inner">
+            <?php if($site_name OR $site_slogan): ?>
+            <div class="site-branding site-branding--header l-region l-region--logo">
+              <?php if($site_name): ?>
+                <?php if($is_front): ?>
+                  <h1 class="site-name site-branding__name site-branding--header__name">
+                    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__link site-branding--header__link">
+                      <span class="element-invisible"><?php print $site_name; ?></span>
+                      <img src="<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
+                    </a>
+                  </h1>
+                <?php else: ?>
+                  <h2 class="site-name site-branding__name site-branding--header__name">
+                    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="site-branding__link site-branding--header__link">
+                      <span class="element-invisible"><?php print $site_name; ?></span>
+                      <img src="<?php print $site_logo_path; ?>" alt="<?php print t('Home'); ?>" class="site-branding__visual site-branding--header__visual">
+                    </a>
+                  </h2>
+                <?php endif; ?>
+              <?php endif; ?>
+              <?php if ($site_slogan): ?>
+                <p class="site-branding__slogan site-branding--header__slogan"><?php print $site_slogan; ?></p>
+              <?php endif; ?>
+            </div>
             <?php endif; ?>
-          <?php endif; ?>
-          <?php if ($site_slogan): ?>
-            <p class="site-branding__slogan site-branding--header__slogan"><?php print $site_slogan; ?></p>
-          <?php endif; ?>
+            <?php print render($page['branding']); ?>
+          </div>
         </div>
-        <?php endif; ?>
-        <?php print render($page['branding']); ?>
-      </div>
-    </div>
 
-    <div class="l-navigation">
-      <div class="l-navigation__container l-navigation-inner">
-        <?php print render($page['navigation']); ?>
-      </div>
+        <div class="l-navigation">
+          <div class="l-navigation__container l-navigation-inner">
+            <?php print render($page['navigation']); ?>
+          </div>
+        </div>
     </div>
 
     <?php if ($page['header_top']): ?>
@@ -98,56 +100,63 @@
     </div>
     <div id="content" class="content l-content">
       <div class="container page-main__container content__container">
-        <?php if ($messages): ?>
-          <div class="drupal-messages">
-            <?php print $messages; ?>
-          </div>
+
+        <?php if ($page['highlighted']): ?>
+          <div class="highlight-overlay-container">
         <?php endif; ?>
 
-        <?php if ($tabs): ?>
-          <nav class="tabs"><?php print render($tabs); ?></nav>
-        <?php endif; ?>
+          <?php if ($messages): ?>
+            <div class="drupal-messages">
+              <?php print $messages; ?>
+            </div>
+          <?php endif; ?>
 
-        <?php print render($page['help']); ?>
+          <?php if ($tabs): ?>
+            <nav class="tabs"><?php print render($tabs); ?></nav>
+          <?php endif; ?>
 
-        <?php if ($action_links): ?>
-          <ul class="action-links"><?php print render($action_links); ?></ul>
-        <?php endif; ?>
+          <?php print render($page['help']); ?>
 
-        <?php if($page['sidebar_first'] OR $page['sidebar_second']): ?>
-          <div class="content__wrapper content-wrapper">
-        <?php endif; ?>
-        <?php if ($title && !$is_front && $node->type != 'section'): ?>
-          <?php print render($title_prefix); ?>
-            <header class="content__header content-header">
-                <h1 class="content-header__title"><?php print $title; ?></h1>
-            </header>
-          <?php print render($title_suffix); ?>
-        <?php endif; ?>
-        <?php if($page['sidebar_first']): ?>
-          <aside id="sidebar-first" class="sidebar sidebar--first">
-            <?php print render($page['sidebar_first']); ?>
-          </aside>
-        <?php endif;?>
+          <?php if ($action_links): ?>
+            <ul class="action-links"><?php print render($action_links); ?></ul>
+          <?php endif; ?>
 
-        <?php if($page['before_content']): ?>
-          <div id="content-top" class="content-top">
-            <!-- <div class="container page-main__container content-top__container"> -->
+          <?php if($page['sidebar_first'] OR $page['sidebar_second']): ?>
+            <div class="content__wrapper content-wrapper">
+          <?php endif; ?>
+
+          <?php if ($title && !$is_front && $node->type != 'section'): ?>
+            <?php print render($title_prefix); ?>
+              <header class="content__header content-header">
+                  <h1 class="content-header__title"><?php print $title; ?></h1>
+              </header>
+            <?php print render($title_suffix); ?>
+          <?php endif; ?>
+
+          <?php if($page['sidebar_first']): ?>
+            <aside id="sidebar-first" class="sidebar sidebar--first">
+              <?php print render($page['sidebar_first']); ?>
+            </aside>
+          <?php endif;?>
+
+          <?php if($page['before_content']): ?>
+            <div id="content-top" class="content-top">
               <?php print render($page['before_content']); ?>
-            <!-- </div> -->
-          </div>
-        <?php endif;  ?>
+            </div>
+          <?php endif; ?>
 
-        <section class="section section--content">
-          <?php print render($page['content']); ?>
-          <?php print $feed_icons; ?>
-        </section>
+          <section class="section section--content">
+            <?php print render($page['content']); ?>
+            <?php print $feed_icons; ?>
+          </section>
+
+        <?php if ($page['highlighted']): ?>
+          </div>
+        <?php endif; ?>
 
         <?php if($page['after_content']): ?>
           <div id="content-bottom" class="content-bottom">
-            <!-- <div class="container page-main__container content-bottom__container"> -->
-              <?php print render($page['after_content']); ?>
-            <!-- </div> -->
+            <?php print render($page['after_content']); ?>
           </div>
         <?php endif; ?>
 
@@ -164,7 +173,7 @@
     </div>
   </main>
 
-  <?php if($page['footer'] OR $page['before_footer'] OR $page['after_footer']): ?>
+  <?php if($page['footer'] OR $page['before_footer'] OR $page['above_footer'] OR $page['after_footer']): ?>
     <footer class="footer-wrapper">
       <?php if($page['before_footer']): ?>
         <div id="footer-top" class="page-footer-top l-before-footer">
@@ -172,6 +181,14 @@
             <?php print render($page['before_footer']); ?>
           </div>
         </div>
+      <?php endif; ?>
+
+      <?php if($page['above_footer']): ?>
+          <div id="footer-above" class="page-footer-above l-above-footer-wrapper">
+              <div class="container page-footer-above__container">
+                <?php print render($page['above_footer']); ?>
+              </div>
+          </div>
       <?php endif; ?>
 
       <?php if($page['footer']): ?>

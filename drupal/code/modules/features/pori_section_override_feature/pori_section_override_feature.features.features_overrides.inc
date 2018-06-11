@@ -21,6 +21,12 @@ function pori_section_override_feature_features_override_default_overrides() {
     'region' => 'before_content',
     'weight' => -8,
   );
+  $overrides["context.section_front.reactions|block|blocks|views-4e860b19463e3f674732c95e074be424"] = array(
+    'module' => 'views',
+    'delta' => '4e860b19463e3f674732c95e074be424',
+    'region' => 'above_footer',
+    'weight' => -10,
+  );
   $overrides["context.section_header.reactions|block|blocks|locale-language"] = array(
     'module' => 'locale',
     'delta' => 'language',

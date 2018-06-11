@@ -14,6 +14,8 @@ stylesheets[all][] = dist/css/styles.css
 ; ========================================
 ; Scripts
 ; ========================================
+scripts[] = js_libraries/headroom/headroom.min.js
+scripts[] = js_libraries/headroom/jQuery.headroom.js
 scripts[] = dist/js/kada.behaviors.min.js
 scripts[] = js_libraries/slick/slick.min.js
 scripts[] = bower_components/jquery-hoverintent/jquery.hoverIntent.js
@@ -39,6 +41,7 @@ regions[sidebar_second] = Sidebar second
 regions[before_content] = Before content
 regions[after_content] = After content
 regions[before_footer] = Before footer
+regions[above_footer] = Above footer
 regions[footer] = Footer
 regions[after_footer] = After footer
 regions[event_mosaic] = Turkucalendar event mosaic

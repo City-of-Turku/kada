@@ -22,6 +22,12 @@ function pori_section_override_feature_context_default_contexts_alter(&$data) {
       'region' => 'before_content',
       'weight' => -8,
     ); /* WAS: '' */
+    $data['section_front']->reactions['block']['blocks']['views-4e860b19463e3f674732c95e074be424'] = array(
+      'module' => 'views',
+      'delta' => '4e860b19463e3f674732c95e074be424',
+      'region' => 'above_footer',
+      'weight' => -10,
+    ); /* WAS: '' */
   }
   if (isset($data['section_header'])) {
     $data['section_header']->reactions['block']['blocks']['locale-language'] = array(

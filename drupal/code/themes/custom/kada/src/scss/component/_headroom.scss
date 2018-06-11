@@ -1,0 +1,26 @@
+.headroom {
+  @media screen and (max-width: $mobile-menu-breakpoint-max) {
+    will-change: transform;
+    transition: transform 200ms linear;
+    position: fixed;
+    top: 0;
+  }
+}
+
+.headroom--pinned {
+  @media screen and (max-width: $mobile-menu-breakpoint-max) {
+    transform: translateY(0%);
+  }
+}
+
+.headroom--unpinned {
+  @media screen and (max-width: $mobile-menu-breakpoint-max) {
+    transform: translateY(-100%);
+  }
+}
+
+.headroom--top {
+  @media screen and (max-width: $mobile-menu-breakpoint-max) {
+    top: 0;
+  }
+}

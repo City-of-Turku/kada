@@ -4,6 +4,15 @@
   background: $default-color-lightest;
 }
 
+.page-footer-above {
+  background-color: $gray-light;
+
+  .page-footer-above__container {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+}
+
 .page-footer,
 .page-footer a {
   color: $black;

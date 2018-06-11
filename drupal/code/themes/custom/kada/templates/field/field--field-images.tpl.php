@@ -52,8 +52,13 @@
         <?php print render($item); ?>
       <?php endforeach; ?>
     </div>
-    <div class="slide-container__dots"></div>
   </div>
+<?php elseif ($element['#object']->type === 'attraction_card' && $element['#view_mode'] === '_custom_display' && $element['#formatter'] === 'current') : ?>
+  <?php foreach ($items as $delta => $item): ?>
+    <div class="slick-slide slide-navigation__item">
+      <?php print render($item); ?>
+    </div>
+  <?php endforeach; ?>
 <?php else: ?>
   <div class="<?php print $classes ?>"<?php print $attributes; ?>>
     <?php foreach ($items as $delta => $item): ?>

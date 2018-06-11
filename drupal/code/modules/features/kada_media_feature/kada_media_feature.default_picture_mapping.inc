@@ -509,32 +509,43 @@ function kada_media_feature_default_picture_mapping() {
   $picture_mapping->machine_name = 'responsive_person';
   $picture_mapping->breakpoint_group = 'kada';
   $picture_mapping->mapping = array(
-    'breakpoints.theme.kada.desktop' => array(
-      '1x' => array(
-        'mapping_type' => '_none',
-      ),
-    ),
-    'breakpoints.theme.kada.smalldesktop' => array(
+    'breakpoints.theme.kada.mbl_prtrt' => array(
       '1x' => array(
         'mapping_type' => 'image_style',
-        'image_style' => 'person_breakpoints_theme_kada_smalldesktop_1x',
+        'image_style' => 'person_breakpoints_theme_kada_mobile_1x',
       ),
     ),
-    'breakpoints.theme.kada.tablet' => array(
-      '1x' => array(
-        'mapping_type' => '_none',
-      ),
-    ),
-    'breakpoints.theme.kada.phablet' => array(
+    'breakpoints.theme.kada.mbl' => array(
       '1x' => array(
         'mapping_type' => 'image_style',
         'image_style' => 'person_breakpoints_theme_kada_phablet_1x',
       ),
     ),
-    'breakpoints.theme.kada.mobile' => array(
+    'breakpoints.theme.kada.mbl_nrw' => array(
+      '1x' => array(
+        'mapping_type' => '_none',
+      ),
+    ),
+    'breakpoints.theme.kada.mbl_wide' => array(
+      '1x' => array(
+        'mapping_type' => '_none',
+      ),
+    ),
+    'breakpoints.theme.kada.tbl' => array(
+      '1x' => array(
+        'mapping_type' => '_none',
+      ),
+    ),
+    'breakpoints.theme.kada.dsktp_nrw' => array(
       '1x' => array(
         'mapping_type' => 'image_style',
-        'image_style' => 'person_breakpoints_theme_kada_mobile_1x',
+        'image_style' => 'person_breakpoints_theme_kada_smalldesktop_1x',
+      ),
+    ),
+    'breakpoints.theme.kada.dsktp_wide' => array(
+      '1x' => array(
+        'mapping_type' => 'image_style',
+        'image_style' => 'person_breakpoints_theme_kada_desktopwide_1x',
       ),
     ),
   );

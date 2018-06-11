@@ -56,10 +56,19 @@ function pori_front_page_liftups_features_override_default_overrides() {
     'region' => 'header',
     'weight' => -10,
   );
+  $overrides["context.front_page.reactions|block|blocks|views-pori_small_liftup_banner-block"] = array(
+    'module' => 'views',
+    'delta' => 'pori_small_liftup_banner-block',
+    'region' => 'above_footer',
+    'weight' => -10,
+  );
 
   // Exported overrides for: quicktabs
   $overrides["quicktabs.feed_tabs.ajax"] = 1;
   $overrides["quicktabs.feed_tabs.renderer"] = 'ui_tabs';
+
+  // Exported overrides for: views_view
+  $overrides["views_view.kada_news.display|section_main|display_options|style_options|row_class"] = 'main-liftup-row';
 
  return $overrides;
 }

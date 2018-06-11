@@ -8,6 +8,9 @@
  * Implements hook_ctools_plugin_api().
  */
 function pori_configuration_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "context" && $api == "context") {
+    return array("version" => "3");
+  }
   if ($module == "elysia_cron" && $api == "default_elysia_cron_rules") {
     return array("version" => "1");
   }
@@ -20,6 +23,13 @@ function pori_configuration_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "video_embed_field" && $api == "default_video_embed_styles") {
     return array("version" => "1");
   }
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function pori_configuration_views_api($module = NULL, $api = NULL) {
+  return array("api" => "3.0");
 }
 
 /**
@@ -38,6 +48,20 @@ function pori_configuration_image_default_styles() {
           'width' => 250,
           'height' => '',
           'upscale' => 0,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+  // Exported image style: person_breakpoints_theme_kada_desktopwide_1x.
+  $styles['person_breakpoints_theme_kada_desktopwide_1x'] = array(
+    'label' => 'person_breakpoints_theme_kada_desktopwide_1x',
+    'effects' => array(
+      6 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 152,
+          'height' => 203,
         ),
         'weight' => 1,
       ),
