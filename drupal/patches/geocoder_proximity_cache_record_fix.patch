@@ -1,0 +1,13 @@
+diff --git a/geocoder.module b/geocoder.module
+index a3ceba3..ea5802e 100644
+--- a/geocoder.module
++++ b/geocoder.module
+@@ -52,7 +52,7 @@ function geocoder($handler, $data, $options = array(), $cache_type = 'DEPRECATED
+   $geometry = $cache_reset ? NULL : geocoder_cache_get($handler, $data, $options);
+ 
+   // No cache record, so fetch live.
+-  if ($geometry === NULL) {
++  if ($geometry === NULL || $geometry === FALSE) {
+     try {
+       // Load the file.
+       geocoder_get_handler($handler);

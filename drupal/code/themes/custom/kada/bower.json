@@ -9,7 +9,7 @@
   "homepage": "",
   "private": true,
   "dependencies": {
-    "font-awesome": "^4.7.0",
+    "font-awesome": "5.0.13",
     "jquery-hoverintent": "1.9.0"
   },
   "overrides": {
