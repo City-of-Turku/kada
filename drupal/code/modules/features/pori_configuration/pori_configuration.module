@@ -21,3 +21,25 @@ function pori_configuration_language_switch_links_alter(&$links, $type, $path) {
     }
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function pori_configuration_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  if ($form['#id'] == 'views-exposed-form-kada-admin-content-page') {
+    global $user;
+    $logged_in_user = user_load($user->uid);
+    $user_domains = $logged_in_user->domain_user;
+
+    // Based on the logged in users domain, pick the default domain filter on
+    // admin/content. If there is more than one domain on the user's profile,
+    // use the "All" option that is default on the view.
+    if (count($user_domains) == 1) {
+      $user_domain = reset($user_domains);
+
+      if (empty($_GET['gid'])) {
+        $form_state['input']['gid'] = $user_domain;
+      }
+    }
+  }
+}

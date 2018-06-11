@@ -1111,7 +1111,7 @@ function pori_configuration_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -1205,7 +1205,69 @@ function pori_configuration_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 19,
+      'weight' => 21,
+    ),
+  );
+
+  // Exported field_instance: 'node-place-field_sorting_point'.
+  $field_instances['node-place-field_sorting_point'] = array(
+    'bundle' => 'place',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'If you check this box, this place will be shown on the waste search at /jatehaku',
+    'display' => array(
+      'accordion' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 37,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'map' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_sorting_point',
+    'label' => 'This place should be visible on the waste search',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 20,
     ),
   );
 
@@ -1583,11 +1645,13 @@ function pori_configuration_field_default_field_instances() {
   t('Class');
   t('Content responsibility');
   t('If you choose this checkbox the main image will be displayed on the node page.');
+  t('If you check this box, this place will be shown on the waste search at /jatehaku');
   t('Meta information only available to content administrators.');
   t('Person reference');
   t('Read more');
   t('Show main image on the page');
   t('This link is used on listing of places on pages. The text displayed will always be "Read more".');
+  t('This place should be visible on the waste search');
 
   return $field_instances;
 }

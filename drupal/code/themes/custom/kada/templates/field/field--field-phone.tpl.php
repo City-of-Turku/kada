@@ -45,13 +45,14 @@
  */
 
 ?>
+
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php if (!$label_hidden): ?>
-      <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
+    <div class="field-label"<?php print $title_attributes; ?>><?php print $label ?>:&nbsp;</div>
   <?php endif; ?>
-    <div class="field-items"<?php print $content_attributes; ?>>
-        <?php foreach ($items as $delta => $item): ?>
-            <a href="tel:<?php print $element['#items'][$delta]['safe_value']; ?>"><?php print render($item); ?></a>
-        <?php endforeach; ?>
-    </div>
+  <div class="field-items"<?php print $content_attributes; ?>>
+    <?php foreach ($items as $delta => $item): ?>
+      <a href="tel:<?php print $element['#items'][$delta]['safe_value']; ?>"><?php print render($item); ?></a>
+    <?php endforeach; ?>
+  </div>
 </div>

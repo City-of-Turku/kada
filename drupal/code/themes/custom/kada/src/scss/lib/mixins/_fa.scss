@@ -5,13 +5,8 @@
   @include fontsmoothing();
   color: inherit;
   content: $content;
-  font-family: FontAwesome;
-  @if $responsive {
-    @include font-size-responsive($font-size);
-  }
-  @else {
-    font-size: $font-size;
-  }
+  font-family: 'Font Awesome 5 Free';
+  font-size: $font-size;
 
   line-height: $line-height;
   speak: none;

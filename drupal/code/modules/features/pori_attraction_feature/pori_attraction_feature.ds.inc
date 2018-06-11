@@ -217,8 +217,10 @@ function pori_attraction_feature_ds_custom_fields_info() {
   $ds_field->field_type = 7;
   $ds_field->entities = array(
     'node' => 'node',
+    'taxonomy_term' => 'taxonomy_term',
   );
-  $ds_field->ui_limit = 'attraction_card|*';
+  $ds_field->ui_limit = 'attraction_card|*
+waste_type|*';
   $ds_field->properties = array(
     'default' => array(),
     'settings' => array(
