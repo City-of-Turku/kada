@@ -106,7 +106,7 @@
           color: $facebook-color;
 
           &::after {
-            @include fa('\f230', 1.2rem, 1, false);
+            @include fa('\f09a', 1.2rem, 1, false);
             color: $facebook-color;
           }
 
@@ -170,7 +170,7 @@
           color: $youtube-color;
 
           &::after{
-            @include fa('\f16a', 1.2rem, 1, false);
+            @include fa('\f167', 1.2rem, 1, false);
             color: $youtube-color;
           }
 
