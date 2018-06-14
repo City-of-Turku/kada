@@ -28,15 +28,16 @@
         user: www-admin
       tags: ['cron']
 
-    - name: "Download file from http://83.102.35.72/PORIKAexport2.csv"
+    - name: "Download import data"
       cron:
         name: "Download import data"
         minute: "0"
         hour: "6"
-        job: "wget -O /nfs-files/private_files/transfer/PORIKAexport2.csv http://83.102.35.72/PORIKAexport2.csv"
+        job: "sftp m0000208@193.143.87.126:/xfer/dna_pori_ad/Directory_Entries_26841_295309_.csv /nfs-files/private_files/transfer/"
         state: "present"
         user: www-admin
       tags: ['cron']
+
 
   vars:
     ## Base ##
