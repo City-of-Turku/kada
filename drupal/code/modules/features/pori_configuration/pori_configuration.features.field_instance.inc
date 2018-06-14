@@ -1644,8 +1644,8 @@ function pori_configuration_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Class');
   t('Content responsibility');
-  t('If you choose this checkbox the main image will be displayed on the node page.');
   t('If you check this box, this place will be shown on the waste search at /jatehaku');
+  t('If you choose this checkbox the main image will be displayed on the node page.');
   t('Meta information only available to content administrators.');
   t('Person reference');
   t('Read more');
