@@ -278,37 +278,12 @@ function pori_waste_search_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
-  $handler->display->display_options['style_plugin'] = 'ip_geoloc_map';
-  $handler->display->display_options['style_options']['grouping'] = array(
-    0 => array(
-      'field' => '',
-      'rendered' => 1,
-      'rendered_strip' => 0,
-    ),
-  );
-  $handler->display->display_options['style_options']['ip_geoloc_views_plugin_latitude'] = array(
-    'field_location' => 'field_location',
-  );
-  $handler->display->display_options['style_options']['ip_geoloc_views_plugin_longitude'] = '';
-  $handler->display->display_options['style_options']['default_marker_color'] = 'green';
-  $handler->display->display_options['style_options']['center_option'] = '1';
-  $handler->display->display_options['style_options']['visitor_marker'] = 'blue';
-  $handler->display->display_options['style_options']['gps_roles'] = array(
-    1 => '1',
-    2 => '2',
-    4 => 0,
-    8 => 0,
-    3 => 0,
-    7 => 0,
-    5 => 0,
-    6 => 0,
-  );
-  $handler->display->display_options['style_options']['map_options'] = '{"mapTypeId":"roadmap", "disableDefaultUI":true, "maxZoom":16, "zoom":12, "zoomControl":true, "scaleControl":true}';
-  $handler->display->display_options['style_options']['map_div_style'] = 'height:600px';
-  $handler->display->display_options['style_options']['empty_map_center'] = '61.485139,21.797418';
+  $handler->display->display_options['style_plugin'] = 'openlayers_map';
+  $handler->display->display_options['style_options']['map'] = 'pori_waste_search';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Rendered Node */
   $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
@@ -352,22 +327,77 @@ function pori_waste_search_views_default_views() {
     'format' => 'decimal_degrees',
     'labels' => 0,
   );
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
-  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['table'] = 'node';
-  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
-  $handler->display->display_options['arguments']['nid']['default_action'] = 'empty';
-  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
-  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['displays'] = array(
     'block' => 'block',
     'default' => 0,
   );
   $handler->display->display_options['inherit_exposed_filters'] = TRUE;
+
+  /* Display: OpenLayers Data Overlay */
+  $handler = $view->new_display('openlayers', 'OpenLayers Data Overlay', 'openlayers_1');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'openlayers_data';
+  $handler->display->display_options['style_options']['data_source'] = array(
+    'value' => 'wkt',
+    'other_lat' => 'rendered_entity',
+    'other_lon' => 'rendered_entity',
+    'wkt' => 'field_location',
+    'other_top' => 'rendered_entity',
+    'other_right' => 'rendered_entity',
+    'other_bottom' => 'rendered_entity',
+    'other_left' => 'rendered_entity',
+    'name_field' => '',
+    'description_field' => 'rendered_entity',
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Rendered Node */
+  $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['rendered_entity']['field'] = 'rendered_entity';
+  $handler->display->display_options['fields']['rendered_entity']['label'] = '';
+  $handler->display->display_options['fields']['rendered_entity']['element_type'] = '0';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_type'] = '0';
+  $handler->display->display_options['fields']['rendered_entity']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['element_wrapper_type'] = '0';
+  $handler->display->display_options['fields']['rendered_entity']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['rendered_entity']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['rendered_entity']['display'] = 'view';
+  $handler->display->display_options['fields']['rendered_entity']['view_mode'] = 'waste_search';
+  $handler->display->display_options['fields']['rendered_entity']['bypass_access'] = 0;
+  /* Field: Field: Location (field_location) - proximity */
+  $handler->display->display_options['fields']['field_geofield_distance']['id'] = 'field_geofield_distance';
+  $handler->display->display_options['fields']['field_geofield_distance']['table'] = 'field_data_field_location';
+  $handler->display->display_options['fields']['field_geofield_distance']['field'] = 'field_geofield_distance';
+  $handler->display->display_options['fields']['field_geofield_distance']['label'] = 'Distance';
+  $handler->display->display_options['fields']['field_geofield_distance']['set_precision'] = TRUE;
+  $handler->display->display_options['fields']['field_geofield_distance']['precision'] = '1';
+  $handler->display->display_options['fields']['field_geofield_distance']['decimal'] = ',';
+  $handler->display->display_options['fields']['field_geofield_distance']['separator'] = '';
+  $handler->display->display_options['fields']['field_geofield_distance']['suffix'] = 'km';
+  $handler->display->display_options['fields']['field_geofield_distance']['source'] = 'exposed_geofield_filter';
+  $handler->display->display_options['fields']['field_geofield_distance']['geofield_proximity_manual'] = array(
+    'lat' => '',
+    'lon' => '',
+  );
+  $handler->display->display_options['fields']['field_geofield_distance']['geofield_proximity_entity_url_field'] = 'field_location';
+  $handler->display->display_options['fields']['field_geofield_distance']['geofield_proximity_current_user_field'] = 'field_location';
+  $handler->display->display_options['fields']['field_geofield_distance']['radius_of_earth'] = '6371';
+  /* Field: Field: Location */
+  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
+  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['label'] = '';
+  $handler->display->display_options['fields']['field_location']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_location']['click_sort_column'] = 'geom';
+  $handler->display->display_options['fields']['field_location']['settings'] = array(
+    'data' => 'full',
+  );
   $translatables['pori_waste_search_map'] = array(
     t('Master'),
     t('Pori - Waste search map'),
@@ -385,6 +415,7 @@ function pori_waste_search_views_default_views() {
     t('Give your location or choose the closest waste sorting point.'),
     t('Block'),
     t('Map'),
+    t('OpenLayers Data Overlay'),
   );
   $export['pori_waste_search_map'] = $view;
 

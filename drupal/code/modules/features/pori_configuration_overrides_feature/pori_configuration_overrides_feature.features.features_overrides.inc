@@ -72,12 +72,24 @@ function pori_configuration_overrides_feature_features_override_default_override
   );
 
   // Exported overrides for: ds_field_settings
+  $overrides["ds_field_settings.node|page|default.settings|page_places"] = array(
+    'weight' => 4,
+    'label' => 'hidden',
+    'format' => 'default',
+    'formatter_settings' => array(
+      'show_title' => 0,
+      'title_wrapper' => '',
+      'ctools' => 'a:3:{s:4:"conf";a:3:{s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:14:"openlayers_map";s:7:"subtype";s:21:"pori_page_service_map";}',
+      'load_terms' => 0,
+    ),
+  );
   $overrides["ds_field_settings.node|page|default.settings|places_for_services|weight"] = 6;
   $overrides["ds_field_settings.node|place|teaser.settings|node_link"]["DELETED"] = TRUE;
 
   // Exported overrides for: ds_layout_settings
   $overrides["ds_layout_settings.node|page|default.settings|fields|field_contact_person"] = 'contact_information';
   $overrides["ds_layout_settings.node|page|default.settings|fields|field_person_reference"] = 'main_content';
+  $overrides["ds_layout_settings.node|page|default.settings|fields|page_places"] = 'main_content';
   $overrides["ds_layout_settings.node|page|default.settings|regions|additional_information|6"]["DELETED"] = TRUE;
   $overrides["ds_layout_settings.node|page|default.settings|regions|additional_information|7"] = 'field_additional_info_link';
   $overrides["ds_layout_settings.node|page|default.settings|regions|additional_information|8"] = 'field_file_attachment';
@@ -89,7 +101,8 @@ function pori_configuration_overrides_feature_features_override_default_override
     9 => 'field_contact_person',
   );
   $overrides["ds_layout_settings.node|page|default.settings|regions|main_content|3"] = 'field_person_reference';
-  $overrides["ds_layout_settings.node|page|default.settings|regions|main_content|4"] = 'field_service_offering';
+  $overrides["ds_layout_settings.node|page|default.settings|regions|main_content|4"] = 'page_places';
+  $overrides["ds_layout_settings.node|page|default.settings|regions|main_content|5"] = 'field_service_offering';
   $overrides["ds_layout_settings.node|page|default.settings|regions|sidebar|4"]["DELETED"] = TRUE;
   $overrides["ds_layout_settings.node|page|default.settings|regions|sidebar|5"] = 'field_keywords';
   $overrides["ds_layout_settings.node|page|default.settings|regions|sidebar|6"] = 'places_for_services';
@@ -1171,32 +1184,21 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["language.sv.enabled"] = 1;
 
   // Exported overrides for: openlayers_maps
-  $overrides["openlayers_maps.kada_location_input.data|center|initial|centerpoint"] = '21.7974179, 61.4851393';
+  $overrides["openlayers_maps.kada_location_input.data|behaviors|openlayers_behavior_zoomtolayer|zoomtolayer|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|center|initial|centerpoint"] = '21.6649,61.535';
   $overrides["openlayers_maps.kada_location_input.data|center|initial|zoom"] = 11;
-  $overrides["openlayers_maps.kada_location_input.data|layer_activated|attraction_map_attraction_data_single"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_activated|kada_events_indexed_map_indexed"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_activated|kada_events_map_event_data"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_activated|kada_events_map_event_data_single"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_styles_select|attraction_map_attraction_data_single"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_styles_select|kada_events_indexed_map_indexed"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_styles_select|kada_events_map_event_data"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_styles_select|kada_events_map_event_data_single"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_styles_temporary|attraction_map_attraction_data_single"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_styles_temporary|kada_events_indexed_map_indexed"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_styles_temporary|kada_events_map_event_data"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_styles_temporary|kada_events_map_event_data_single"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_styles|attraction_map_attraction_data_single"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_styles|kada_events_indexed_map_indexed"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_styles|kada_events_map_event_data"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_styles|kada_events_map_event_data_single"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_switcher|attraction_map_attraction_data_single"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_switcher|kada_events_indexed_map_indexed"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_switcher|kada_events_map_event_data"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_switcher|kada_events_map_event_data_single"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_weight|attraction_map_attraction_data_single"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_weight|kada_events_indexed_map_indexed"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_weight|kada_events_map_event_data"] = 0;
-  $overrides["openlayers_maps.kada_location_input.data|layer_weight|kada_events_map_event_data_single"] = 0;
+  $overrides["openlayers_maps.kada_location_input.data|layers|osm_mapnik"]["DELETED"] = TRUE;
+  $overrides["openlayers_maps.kada_location_input.data|layers|pori_arcgis"] = 'pori_arcgis';
+  $overrides["openlayers_maps.kada_place_map.data|behaviors|openlayers_behavior_zoomtolayer|zoomtolayer|pori_arcgis"] = 0;
+  $overrides["openlayers_maps.kada_place_map.data|center|initial|centerpoint"] = '21.74,61.49';
+  $overrides["openlayers_maps.kada_place_map.data|layers|osm_mapnik"]["DELETED"] = TRUE;
+  $overrides["openlayers_maps.kada_place_map.data|layers|pori_arcgis"] = 'pori_arcgis';
+  $overrides["openlayers_maps.kada_place_map_service.data|center|initial|centerpoint"] = '21.74,61.49';
+  $overrides["openlayers_maps.kada_place_map_service.data|layers|osm_mapnik"]["DELETED"] = TRUE;
+  $overrides["openlayers_maps.kada_place_map_service.data|layers|pori_arcgis"] = 'pori_arcgis';
+  $overrides["openlayers_maps.kada_service_map.data|center|initial|centerpoint"] = '21.74,61.49';
+  $overrides["openlayers_maps.kada_service_map.data|layers|osm_mapnik"]["DELETED"] = TRUE;
+  $overrides["openlayers_maps.kada_service_map.data|layers|pori_arcgis"] = 'pori_arcgis';
 
   // Exported overrides for: scald_context_config
   $overrides["scald_context_config.content_full.player|image|settings|caption"] = '';

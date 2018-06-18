@@ -100,6 +100,17 @@ function pori_configuration_overrides_feature_context_default_contexts_alter(&$d
  */
 function pori_configuration_overrides_feature_ds_field_settings_info_alter(&$data) {
   if (isset($data['node|page|default'])) {
+    $data['node|page|default']->settings['page_places'] = array(
+      'weight' => 4,
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:3:{s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:14:"openlayers_map";s:7:"subtype";s:21:"pori_page_service_map";}',
+        'load_terms' => 0,
+      ),
+    ); /* WAS: '' */
     $data['node|page|default']->settings['places_for_services']['weight'] = 6; /* WAS: 4 */
   }
   if (isset($data['node|place|teaser'])) {
@@ -114,6 +125,7 @@ function pori_configuration_overrides_feature_ds_layout_settings_info_alter(&$da
   if (isset($data['node|page|default'])) {
     $data['node|page|default']->settings['fields']['field_contact_person'] = 'contact_information'; /* WAS: '' */
     $data['node|page|default']->settings['fields']['field_person_reference'] = 'main_content'; /* WAS: '' */
+    $data['node|page|default']->settings['fields']['page_places'] = 'main_content'; /* WAS: '' */
     $data['node|page|default']->settings['regions']['additional_information'][7] = 'field_additional_info_link'; /* WAS: 'field_file_attachment' */
     $data['node|page|default']->settings['regions']['additional_information'][8] = 'field_file_attachment'; /* WAS: '' */
     $data['node|page|default']->settings['regions']['after_content'][10] = 'field_topic'; /* WAS: '' */
@@ -122,9 +134,10 @@ function pori_configuration_overrides_feature_ds_layout_settings_info_alter(&$da
       9 => 'field_contact_person',
     ); /* WAS: '' */
     $data['node|page|default']->settings['regions']['main_content'][3] = 'field_person_reference'; /* WAS: 'field_service_offering' */
-    $data['node|page|default']->settings['regions']['main_content'][4] = 'field_service_offering'; /* WAS: '' */
-    $data['node|page|default']->settings['regions']['sidebar'][5] = 'field_keywords'; /* WAS: 'places_for_services' */
-    $data['node|page|default']->settings['regions']['sidebar'][6] = 'places_for_services'; /* WAS: '' */
+    $data['node|page|default']->settings['regions']['main_content'][4] = 'page_places'; /* WAS: '' */
+    $data['node|page|default']->settings['regions']['main_content'][5] = 'field_service_offering'; /* WAS: '' */
+    $data['node|page|default']->settings['regions']['sidebar'][6] = 'field_keywords'; /* WAS: '' */
+    $data['node|page|default']->settings['regions']['sidebar'][7] = 'places_for_services'; /* WAS: '' */
     $data['node|page|default']->settings['wrappers']['contact_information'] = 'div'; /* WAS: '' */
     unset($data['node|page|default']->settings['regions']['additional_information'][6]);
     unset($data['node|page|default']->settings['regions']['after_content'][8]);
@@ -1454,32 +1467,27 @@ function pori_configuration_overrides_feature_locale_default_languages_alter(&$d
  */
 function pori_configuration_overrides_feature_openlayers_maps_alter(&$data) {
   if (isset($data['kada_location_input'])) {
-    $data['kada_location_input']->data['center']['initial']['centerpoint'] = '21.7974179, 61.4851393'; /* WAS: '22.270831921235335, 60.451800341324734' */
+    $data['kada_location_input']->data['behaviors']['openlayers_behavior_zoomtolayer']['zoomtolayer']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['center']['initial']['centerpoint'] = '21.6649,61.535'; /* WAS: '22.270831921235335, 60.451800341324734' */
     $data['kada_location_input']->data['center']['initial']['zoom'] = 11; /* WAS: 10 */
-    $data['kada_location_input']->data['layer_activated']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_activated']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_activated']['kada_events_map_event_data'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_activated']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_styles_select']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_styles_select']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_styles_select']['kada_events_map_event_data'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_styles_select']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_styles_temporary']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_styles_temporary']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_styles_temporary']['kada_events_map_event_data'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_styles_temporary']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_styles']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_styles']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_styles']['kada_events_map_event_data'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_styles']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_switcher']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_switcher']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_switcher']['kada_events_map_event_data'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_switcher']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_weight']['attraction_map_attraction_data_single'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_weight']['kada_events_indexed_map_indexed'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_weight']['kada_events_map_event_data'] = 0; /* WAS: '' */
-    $data['kada_location_input']->data['layer_weight']['kada_events_map_event_data_single'] = 0; /* WAS: '' */
+    $data['kada_location_input']->data['layers']['pori_arcgis'] = 'pori_arcgis'; /* WAS: '' */
+    unset($data['kada_location_input']->data['layers']['osm_mapnik']);
+  }
+  if (isset($data['kada_place_map'])) {
+    $data['kada_place_map']->data['behaviors']['openlayers_behavior_zoomtolayer']['zoomtolayer']['pori_arcgis'] = 0; /* WAS: '' */
+    $data['kada_place_map']->data['center']['initial']['centerpoint'] = '21.74,61.49'; /* WAS: '22.26413716347558, 60.45391664873799' */
+    $data['kada_place_map']->data['layers']['pori_arcgis'] = 'pori_arcgis'; /* WAS: '' */
+    unset($data['kada_place_map']->data['layers']['osm_mapnik']);
+  }
+  if (isset($data['kada_place_map_service'])) {
+    $data['kada_place_map_service']->data['center']['initial']['centerpoint'] = '21.74,61.49'; /* WAS: '22.26413716347558, 60.45391664873799' */
+    $data['kada_place_map_service']->data['layers']['pori_arcgis'] = 'pori_arcgis'; /* WAS: '' */
+    unset($data['kada_place_map_service']->data['layers']['osm_mapnik']);
+  }
+  if (isset($data['kada_service_map'])) {
+    $data['kada_service_map']->data['center']['initial']['centerpoint'] = '21.74,61.49'; /* WAS: '22.26413716347558, 60.45391664873799' */
+    $data['kada_service_map']->data['layers']['pori_arcgis'] = 'pori_arcgis'; /* WAS: '' */
+    unset($data['kada_service_map']->data['layers']['osm_mapnik']);
   }
 }
 
