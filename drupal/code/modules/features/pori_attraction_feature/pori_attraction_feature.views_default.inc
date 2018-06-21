@@ -74,16 +74,19 @@ function pori_attraction_feature_views_default_views() {
   $handler->display->display_options['fields']['field_keywords_et']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_keywords_et']['separator'] = '  ';
   $handler->display->display_options['fields']['field_keywords_et']['field_api_classes'] = TRUE;
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['hide_empty'] = TRUE;
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['label'] = '';
+  $handler->display->display_options['fields']['title_field_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_et']['type'] = 'title_linked';
+  $handler->display->display_options['fields']['title_field_et']['settings'] = array(
+    'title_style' => '_none',
+    'title_link' => 'content',
+    'title_class' => '',
+  );
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -92,7 +95,7 @@ function pori_attraction_feature_views_default_views() {
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="attraction-list--item__container">
 <div class=" liftup-box__image attraction-list--item__image">[field_images]</div>
 <div class="liftup-box__caption">
-<h3 class="attraction-list--item__title">[title]</h3>
+<h3 class="attraction-list--item__title">[title_field_et]</h3>
 <div class="attraction-list--item__keywords"> [field_keywords_et]</div>
 </div>
 </div>';
@@ -160,11 +163,10 @@ function pori_attraction_feature_views_default_views() {
     t('Järjestele'),
     t('Nou'),
     t('Las'),
-    t('Translations'),
     t('<div class="attraction-list--item__container">
 <div class=" liftup-box__image attraction-list--item__image">[field_images]</div>
 <div class="liftup-box__caption">
-<h3 class="attraction-list--item__title">[title]</h3>
+<h3 class="attraction-list--item__title">[title_field_et]</h3>
 <div class="attraction-list--item__keywords"> [field_keywords_et]</div>
 </div>
 </div>'),
