@@ -110,7 +110,7 @@ gulp.task('watch', ['sass', 'browserSync'], function() {
 // Uglify task
 gulp.task('scripts', function() {
   gulp.src(path.scripts.src + '/*.js')
-    .pipe(path.env.prod === true ? uglify() : gutil.noop())
+    //.pipe(path.env.prod === true ? uglify() : gutil.noop())
     .pipe(rename({
       suffix: '.min'
     }))
