@@ -64,19 +64,31 @@ function pori_visitpori_override_feature_strongarm_alter(&$data) {
   if (isset($data['menu_options_landing_page'])) {
     $data['menu_options_landing_page']->value[0] = 'menu-footer-fi'; /* WAS: 'menu-footer-en' */
     $data['menu_options_landing_page']->value[1] = 'menu-footer-en'; /* WAS: 'menu-footer-fi' */
-    $data['menu_options_landing_page']->value[10] = 'menu-visitpori-footer-menu-fi'; /* WAS: '' */
-    $data['menu_options_landing_page']->value[11] = 'menu-visitpori-main-navigation'; /* WAS: '' */
-    $data['menu_options_landing_page']->value[12] = 'menu-visitpori-main-menu'; /* WAS: '' */
-    $data['menu_options_landing_page']->value[13] = 'menu-visitpori-top-menu-en'; /* WAS: '' */
-    $data['menu_options_landing_page']->value[14] = 'menu-visitpori-top-menu-fi'; /* WAS: '' */
-    $data['menu_options_landing_page']->value[9] = 'menu-visitpori-footer-menu-en'; /* WAS: '' */
+    $data['menu_options_landing_page']->value[10] = 'menu-visitpori-footer-menu-en'; /* WAS: '' */
+    $data['menu_options_landing_page']->value[11] = 'menu-visitpori-footer-menu-fi'; /* WAS: '' */
+    $data['menu_options_landing_page']->value[12] = 'menu-visitpori-footer-menu-sv'; /* WAS: '' */
+    $data['menu_options_landing_page']->value[13] = 'menu-visitpori-main-menu-de'; /* WAS: '' */
+    $data['menu_options_landing_page']->value[14] = 'menu-visitpori-main-navigation'; /* WAS: '' */
+    $data['menu_options_landing_page']->value[15] = 'menu-visitpori-main-menu-sv'; /* WAS: '' */
+    $data['menu_options_landing_page']->value[16] = 'menu-visitpori-main-menu'; /* WAS: '' */
+    $data['menu_options_landing_page']->value[17] = 'menu-visitpori-top-menu-de'; /* WAS: '' */
+    $data['menu_options_landing_page']->value[18] = 'menu-visitpori-top-menu-en'; /* WAS: '' */
+    $data['menu_options_landing_page']->value[19] = 'menu-visitpori-top-menu-fi'; /* WAS: '' */
+    $data['menu_options_landing_page']->value[20] = 'menu-visitpori-top-menu-sv'; /* WAS: '' */
+    $data['menu_options_landing_page']->value[9] = 'menu-visitpori-footer-menu-de'; /* WAS: '' */
   }
   if (isset($data['menu_options_page'])) {
-    $data['menu_options_page']->value[10] = 'menu-visitpori-footer-menu-en'; /* WAS: '' */
-    $data['menu_options_page']->value[11] = 'menu-visitpori-footer-menu-fi'; /* WAS: '' */
-    $data['menu_options_page']->value[12] = 'menu-visitpori-main-navigation'; /* WAS: '' */
-    $data['menu_options_page']->value[13] = 'menu-visitpori-main-menu'; /* WAS: '' */
-    $data['menu_options_page']->value[14] = 'menu-visitpori-top-menu-en'; /* WAS: '' */
-    $data['menu_options_page']->value[15] = 'menu-visitpori-top-menu-fi'; /* WAS: '' */
+    $data['menu_options_page']->value[10] = 'menu-visitpori-footer-menu-de'; /* WAS: '' */
+    $data['menu_options_page']->value[11] = 'menu-visitpori-footer-menu-en'; /* WAS: '' */
+    $data['menu_options_page']->value[12] = 'menu-visitpori-footer-menu-fi'; /* WAS: '' */
+    $data['menu_options_page']->value[13] = 'menu-visitpori-footer-menu-sv'; /* WAS: '' */
+    $data['menu_options_page']->value[14] = 'menu-visitpori-main-menu-de'; /* WAS: '' */
+    $data['menu_options_page']->value[15] = 'menu-visitpori-main-navigation'; /* WAS: '' */
+    $data['menu_options_page']->value[16] = 'menu-visitpori-main-menu-sv'; /* WAS: '' */
+    $data['menu_options_page']->value[17] = 'menu-visitpori-main-menu'; /* WAS: '' */
+    $data['menu_options_page']->value[18] = 'menu-visitpori-top-menu-de'; /* WAS: '' */
+    $data['menu_options_page']->value[19] = 'menu-visitpori-top-menu-en'; /* WAS: '' */
+    $data['menu_options_page']->value[20] = 'menu-visitpori-top-menu-fi'; /* WAS: '' */
+    $data['menu_options_page']->value[21] = 'menu-visitpori-top-menu-sv'; /* WAS: '' */
   }
 }
