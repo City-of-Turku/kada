@@ -11,12 +11,6 @@ include_once 'pori_contact_information_feature.features.inc';
  */
 function pori_contact_information_feature_feeds_presave($source, $entity, $item, $entity_id) {
   if ($source->id == 'phone_csv') {
-    // Prevent publishing of the whole row.
-    if (empty($item[2]) || !empty($item[50]) || strtolower($item[26]) == 'salainen') {
-      $entity->feeds_item->skip = TRUE;
-      return;
-    }
-
     // Replace comma followed by a post code with newline and the post code.
     // Newlines don't work in Feeds Tamper.
     foreach ($entity->field_visiting_address as $lang => &$addr_item) {
