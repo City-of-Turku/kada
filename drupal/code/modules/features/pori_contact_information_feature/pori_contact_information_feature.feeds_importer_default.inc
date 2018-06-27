@@ -111,18 +111,12 @@ function pori_contact_information_feature_feeds_importer_default() {
             'language' => 'und',
           ),
           11 => array(
-            'source' => 'Kulva',
-            'target' => 'Temporary target 1',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          12 => array(
             'source' => 'Label 1',
             'target' => 'Temporary target 1',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          13 => array(
+          12 => array(
             'source' => 'Company Contact',
             'target' => 'field_person_type',
             'unique' => FALSE,
