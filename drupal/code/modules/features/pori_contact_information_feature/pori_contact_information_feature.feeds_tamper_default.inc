@@ -28,36 +28,6 @@ function pori_contact_information_feature_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'phone_csv-kulva-required';
-  $feeds_tamper->importer = 'phone_csv';
-  $feeds_tamper->source = 'Kulva';
-  $feeds_tamper->plugin_id = 'required';
-  $feeds_tamper->settings = array(
-    'invert' => 0,
-    'log' => 1,
-  );
-  $feeds_tamper->weight = 2;
-  $feeds_tamper->description = 'Pakollinen kenttä';
-  $export['phone_csv-kulva-required'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'phone_csv-kulva-trim';
-  $feeds_tamper->importer = 'phone_csv';
-  $feeds_tamper->source = 'Kulva';
-  $feeds_tamper->plugin_id = 'trim';
-  $feeds_tamper->settings = array(
-    'mask' => '',
-    'side' => 'trim',
-  );
-  $feeds_tamper->weight = 1;
-  $feeds_tamper->description = 'Trim';
-  $export['phone_csv-kulva-trim'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'phone_csv-label_1-keyword_filter';
   $feeds_tamper->importer = 'phone_csv';
   $feeds_tamper->source = 'Label 1';
