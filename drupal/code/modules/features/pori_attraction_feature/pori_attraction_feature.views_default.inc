@@ -81,6 +81,12 @@ function pori_attraction_feature_views_default_views() {
   $handler->display->display_options['fields']['title_field_et']['label'] = '';
   $handler->display->display_options['fields']['title_field_et']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title_field_et']['type'] = 'title_linked';
+  $handler->display->display_options['fields']['title_field_et']['settings'] = array(
+    'title_style' => '_none',
+    'title_link' => 'content',
+    'title_class' => '',
+  );
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';

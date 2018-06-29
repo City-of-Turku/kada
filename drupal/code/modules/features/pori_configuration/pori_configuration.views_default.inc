@@ -180,6 +180,31 @@ function pori_configuration_views_default_views() {
   $handler->display->display_options['relationships']['relation_place_service_node']['r_index'] = '1';
   $handler->display->display_options['relationships']['relation_place_service_node']['entity_deduplication_left'] = 0;
   $handler->display->display_options['relationships']['relation_place_service_node']['entity_deduplication_right'] = 0;
+  /* Field: Content: Read more */
+  $handler->display->display_options['fields']['field_read_more']['id'] = 'field_read_more';
+  $handler->display->display_options['fields']['field_read_more']['table'] = 'field_data_field_read_more';
+  $handler->display->display_options['fields']['field_read_more']['field'] = 'field_read_more';
+  $handler->display->display_options['fields']['field_read_more']['relationship'] = 'relation_place_service_node';
+  $handler->display->display_options['fields']['field_read_more']['label'] = '';
+  $handler->display->display_options['fields']['field_read_more']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_read_more']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_read_more']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_read_more']['type'] = 'link_plain';
+  /* Field: Entity translation: Visiting address: translated */
+  $handler->display->display_options['fields']['field_address_visiting_et']['id'] = 'field_address_visiting_et';
+  $handler->display->display_options['fields']['field_address_visiting_et']['table'] = 'field_data_field_address_visiting';
+  $handler->display->display_options['fields']['field_address_visiting_et']['field'] = 'field_address_visiting_et';
+  $handler->display->display_options['fields']['field_address_visiting_et']['relationship'] = 'relation_place_service_node';
+  $handler->display->display_options['fields']['field_address_visiting_et']['label'] = '';
+  $handler->display->display_options['fields']['field_address_visiting_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_address_visiting_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_address_visiting_et']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_address_visiting_et']['settings'] = array(
+    'use_widget_handlers' => 1,
+    'format_handlers' => array(
+      'address' => 'address',
+    ),
+  );
   /* Field: Field: Location */
   $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
   $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
@@ -196,15 +221,22 @@ function pori_configuration_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['relationship'] = 'relation_place_service_node';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['title']['alter']['path'] = '[field_read_more]';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Description */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
   $handler->display->display_options['fields']['field_description']['field'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['relationship'] = 'relation_place_service_node';
   $handler->display->display_options['fields']['field_description']['label'] = '';
+  $handler->display->display_options['fields']['field_description']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_description']['alter']['text'] = '[field_description]
+
+[field_address_visiting_et]';
   $handler->display->display_options['fields']['field_description']['element_label_colon'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -290,6 +322,9 @@ function pori_configuration_views_default_views() {
     t('Service offering referenced from field_service_offering'),
     t('Provided services'),
     t('Sijainti'),
+    t('[field_description]
+
+[field_address_visiting_et]'),
     t('All'),
     t('OpenLayers Data Overlay'),
     t('Map | Place'),

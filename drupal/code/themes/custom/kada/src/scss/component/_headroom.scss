@@ -4,23 +4,35 @@
     transition: transform 200ms linear;
     position: fixed;
     top: 0;
+    body.mobile-menu-open & {
+      position: absolute;
+    }
   }
 }
 
-.headroom--pinned {
+body:not(.mobile-menu-open) .headroom--pinned {
   @media screen and (max-width: $mobile-menu-breakpoint-max) {
     transform: translateY(0%);
   }
 }
 
-.headroom--unpinned {
+body:not(.mobile-menu-open) .headroom--unpinned {
   @media screen and (max-width: $mobile-menu-breakpoint-max) {
     transform: translateY(-100%);
   }
 }
 
-.headroom--top {
+body:not(.mobile-menu-open) .headroom--top {
   @media screen and (max-width: $mobile-menu-breakpoint-max) {
     top: 0;
+  }
+}
+
+// hide other content while headroom menu open
+body.mobile-menu-open {
+  @media screen and (max-width: $mobile-menu-breakpoint-max) {
+    #highlight, #main, footer {
+      display: none;
+    }
   }
 }
