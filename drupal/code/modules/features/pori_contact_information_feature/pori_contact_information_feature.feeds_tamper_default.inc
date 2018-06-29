@@ -13,199 +13,61 @@ function pori_contact_information_feature_feeds_tamper_default() {
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'phone_csv-10-fax_5_digit';
+  $feeds_tamper->id = 'phone_csv-company_contact-default_value';
   $feeds_tamper->importer = 'phone_csv';
-  $feeds_tamper->source = '10';
-  $feeds_tamper->plugin_id = 'find_replace_regex';
-  $feeds_tamper->settings = array(
-    'find' => '/^\\W*([0-9]{5})\\W*$/',
-    'replace' => '02 62 \\1',
-    'limit' => '',
-    'real_limit' => -1,
-  );
-  $feeds_tamper->weight = 1;
-  $feeds_tamper->description = 'Fax 5-digit numbers';
-  $export['phone_csv-10-fax_5_digit'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'phone_csv-10-fax_6_prefixes';
-  $feeds_tamper->importer = 'phone_csv';
-  $feeds_tamper->source = '10';
-  $feeds_tamper->plugin_id = 'find_replace_regex';
-  $feeds_tamper->settings = array(
-    'find' => '/^\\W*6\\W*([0-9 \\-]*)\\W*$/',
-    'replace' => '026 \\1',
-    'limit' => '',
-    'real_limit' => -1,
-  );
-  $feeds_tamper->weight = 0;
-  $feeds_tamper->description = 'Fax 6 prefixes';
-  $export['phone_csv-10-fax_6_prefixes'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'phone_csv-10-fax_801_prefix';
-  $feeds_tamper->importer = 'phone_csv';
-  $feeds_tamper->source = '10';
-  $feeds_tamper->plugin_id = 'find_replace_regex';
-  $feeds_tamper->settings = array(
-    'find' => '/^\\W*801\\W*([0-9 \\-]*)\\W*$/',
-    'replace' => '044 701 \\1',
-    'limit' => '',
-    'real_limit' => -1,
-  );
-  $feeds_tamper->weight = 2;
-  $feeds_tamper->description = 'Fax 801 prefix';
-  $export['phone_csv-10-fax_801_prefix'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'phone_csv-18-required';
-  $feeds_tamper->importer = 'phone_csv';
-  $feeds_tamper->source = '18';
-  $feeds_tamper->plugin_id = 'required';
-  $feeds_tamper->settings = array(
-    'invert' => 0,
-    'log' => 1,
-  );
-  $feeds_tamper->weight = 2;
-  $feeds_tamper->description = 'Pakollinen kenttä';
-  $export['phone_csv-18-required'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'phone_csv-18-trim';
-  $feeds_tamper->importer = 'phone_csv';
-  $feeds_tamper->source = '18';
-  $feeds_tamper->plugin_id = 'trim';
-  $feeds_tamper->settings = array(
-    'mask' => '',
-    'side' => 'trim',
-  );
-  $feeds_tamper->weight = 1;
-  $feeds_tamper->description = 'Trim';
-  $export['phone_csv-18-trim'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'phone_csv-7-phone_06_prefixes';
-  $feeds_tamper->importer = 'phone_csv';
-  $feeds_tamper->source = '7';
-  $feeds_tamper->plugin_id = 'find_replace_regex';
-  $feeds_tamper->settings = array(
-    'find' => '/^\\W*6\\W*([0-9 \\-]*)\\W*$/',
-    'replace' => '026 \\1',
-    'limit' => '',
-    'real_limit' => -1,
-  );
-  $feeds_tamper->weight = 2;
-  $feeds_tamper->description = 'Phone 6 prefixes';
-  $export['phone_csv-7-phone_06_prefixes'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'phone_csv-7-phone_5_digit';
-  $feeds_tamper->importer = 'phone_csv';
-  $feeds_tamper->source = '7';
-  $feeds_tamper->plugin_id = 'find_replace_regex';
-  $feeds_tamper->settings = array(
-    'find' => '/^\\W*([0-9]{5})\\W*$/',
-    'replace' => '02 62 \\1',
-    'limit' => '',
-    'real_limit' => -1,
-  );
-  $feeds_tamper->weight = 1;
-  $feeds_tamper->description = 'Phone 5-digit numbers';
-  $export['phone_csv-7-phone_5_digit'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'phone_csv-7-phone_801_prefix';
-  $feeds_tamper->importer = 'phone_csv';
-  $feeds_tamper->source = '7';
-  $feeds_tamper->plugin_id = 'find_replace_regex';
-  $feeds_tamper->settings = array(
-    'find' => '/^\\W*801\\W*([0-9 \\-]*)\\W*$/',
-    'replace' => '044 701 \\1',
-    'limit' => '',
-    'real_limit' => -1,
-  );
-  $feeds_tamper->weight = 0;
-  $feeds_tamper->description = 'Phone 801 prefix';
-  $export['phone_csv-7-phone_801_prefix'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'phone_csv-8-mobile_phone_5_digit';
-  $feeds_tamper->importer = 'phone_csv';
-  $feeds_tamper->source = '8';
-  $feeds_tamper->plugin_id = 'find_replace_regex';
-  $feeds_tamper->settings = array(
-    'find' => '/^\\W*([0-9]{5})\\W*$/',
-    'replace' => '02 62 \\1',
-    'limit' => '',
-    'real_limit' => -1,
-  );
-  $feeds_tamper->weight = 1;
-  $feeds_tamper->description = 'Phone 5-digit numbers';
-  $export['phone_csv-8-mobile_phone_5_digit'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'phone_csv-8-mobile_phone_6_prefixes';
-  $feeds_tamper->importer = 'phone_csv';
-  $feeds_tamper->source = '8';
-  $feeds_tamper->plugin_id = 'find_replace_regex';
-  $feeds_tamper->settings = array(
-    'find' => '/^\\W*6\\W*([0-9 \\-]*)\\W*$/',
-    'replace' => '026 \\1',
-    'limit' => '',
-    'real_limit' => -1,
-  );
-  $feeds_tamper->weight = 2;
-  $feeds_tamper->description = 'Phone 6 prefixes';
-  $export['phone_csv-8-mobile_phone_6_prefixes'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'phone_csv-8-mobile_phone_801_prefix';
-  $feeds_tamper->importer = 'phone_csv';
-  $feeds_tamper->source = '8';
-  $feeds_tamper->plugin_id = 'find_replace_regex';
-  $feeds_tamper->settings = array(
-    'find' => '/^\\W*801\\W*([0-9 \\-]*)\\W*$/',
-    'replace' => '044 701 \\1',
-    'limit' => '',
-    'real_limit' => -1,
-  );
-  $feeds_tamper->weight = 0;
-  $feeds_tamper->description = 'Phone 801 prefix';
-  $export['phone_csv-8-mobile_phone_801_prefix'] = $feeds_tamper;
-
-  $feeds_tamper = new stdClass();
-  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
-  $feeds_tamper->api_version = 2;
-  $feeds_tamper->id = 'phone_csv-person_type-default_value_employee';
-  $feeds_tamper->importer = 'phone_csv';
-  $feeds_tamper->source = 'person_type';
+  $feeds_tamper->source = 'Company Contact';
   $feeds_tamper->plugin_id = 'default_value';
   $feeds_tamper->settings = array(
     'default_value' => 'employee',
+    'only_if_empty' => 0,
   );
   $feeds_tamper->weight = 0;
-  $feeds_tamper->description = 'Default: employee';
-  $export['phone_csv-person_type-default_value_employee'] = $feeds_tamper;
+  $feeds_tamper->description = 'Set as employee';
+  $export['phone_csv-company_contact-default_value'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'phone_csv-label_1-keyword_filter';
+  $feeds_tamper->importer = 'phone_csv';
+  $feeds_tamper->source = 'Label 1';
+  $feeds_tamper->plugin_id = 'keyword_filter';
+  $feeds_tamper->settings = array(
+    'words' => 'salainen',
+    'word_boundaries' => 0,
+    'exact' => 1,
+    'case_sensitive' => 0,
+    'invert' => 1,
+    'word_list' => array(
+      0 => '/^salainen$/ui',
+    ),
+    'regex' => TRUE,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Skip items with salainen';
+  $export['phone_csv-label_1-keyword_filter'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'phone_csv-nettiluetteloesto-keyword_filter';
+  $feeds_tamper->importer = 'phone_csv';
+  $feeds_tamper->source = 'Nettiluetteloesto';
+  $feeds_tamper->plugin_id = 'keyword_filter';
+  $feeds_tamper->settings = array(
+    'words' => 'x',
+    'word_boundaries' => 0,
+    'exact' => 1,
+    'case_sensitive' => 0,
+    'invert' => 1,
+    'word_list' => array(
+      0 => '/^x$/ui',
+    ),
+    'regex' => TRUE,
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Skip items with x';
+  $export['phone_csv-nettiluetteloesto-keyword_filter'] = $feeds_tamper;
 
   return $export;
 }

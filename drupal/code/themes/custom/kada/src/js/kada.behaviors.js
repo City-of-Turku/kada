@@ -115,6 +115,12 @@
         var currentMenu = $(this).parents('.responsive-menus:first');
         allMenus.not(currentMenu).removeClass('responsive-toggled');
         $('.block--views-kada-recommended-block').removeClass('block--views-recommended-block--is-visible').addClass('block--views-recommended-block--is-hidden');
+        // toggle body class if any of the menus are open
+        if ($('div.l-navigation').find('div.responsive-toggled').length) {
+          $('body').addClass('mobile-menu-open');
+        } else {
+          $('body').removeClass('mobile-menu-open');
+        }
       });
 
       // Open and close sub-menu items from toggle button
