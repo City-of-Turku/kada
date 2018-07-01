@@ -146,6 +146,52 @@ function pori_search_domain_based_search_settings_form($form, &$form_state) {
 }
 
 /**
+ * Implements hook_entity_property_info_alter().
+ */
+function pori_search_entity_property_info_alter(&$info) {
+  // Adding a "Rendered entity" property for nodes, so that they can be indexed
+  // to Solr and displayed in views.
+  $info['node']['properties']['kada_rendered_entity'] = array(
+    'type' => 'text',
+    'label' => t('Rendered entity'),
+    'computed' => TRUE,
+    'entity views field' => TRUE,
+    'sanitized' => TRUE,
+    'getter callback' => 'pori_search_rendered_entity_callback',
+    'raw getter callback' => 'pori_search_rendered_entity_callback',
+    'translatable' => TRUE,
+  );
+}
+
+/**
+ * Getter callback for kada_rendered_entity property.
+ */
+function pori_search_rendered_entity_callback($item) {
+  // Force all possible language variables to the item language, before
+  // rendering it to make sure all labels and referenced content is indexed
+  // in correct language.
+  global $language;
+  global $language_content;
+  global $language_url;
+  global $i18n_language_variable;
+  $langs = language_list(); // Note: No argument.
+  $language = $language_content = $language_url = $i18n_language_variable = $langs[$item->language];
+
+  // Then load the entity and create display html to be indexed
+  // to Solr.
+  $entities = entity_load('node', array($item->nid), array(), TRUE);
+  $render_array = entity_view('node', $entities, 'full', $item->language, TRUE);
+  $rendered_html = render($render_array);
+
+  // Replacing any embedded link protocol, because by default they will
+  // point to https during indexing.
+  $rendered_html = str_replace('https://', 'http://', $rendered_html);
+  $formatted_html = check_markup($rendered_html, 'full_html');
+
+  return $formatted_html;
+}
+
+/**
  * Implements hook_search_api_solr_query_alter().
  *
  * Alters the query sent to SOLR to add boost query parameters
