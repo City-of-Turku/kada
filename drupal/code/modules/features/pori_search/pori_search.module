@@ -151,7 +151,7 @@ function pori_search_domain_based_search_settings_form($form, &$form_state) {
 function pori_search_entity_property_info_alter(&$info) {
   // Adding a "Rendered entity" property for nodes, so that they can be indexed
   // to Solr and displayed in views.
-  $info['node']['properties']['kada_rendered_entity'] = array(
+  $info['node']['properties']['pori_rendered_entity'] = array(
     'type' => 'text',
     'label' => t('Rendered entity'),
     'computed' => TRUE,

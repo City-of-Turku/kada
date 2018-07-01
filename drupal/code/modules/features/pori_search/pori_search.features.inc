@@ -60,6 +60,7 @@ function pori_search_default_search_api_index() {
         "field_lead_paragraph" : { "type" : "text" },
         "field_lead_paragraph_et" : { "type" : "text" },
         "og_group_ref" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
+        "pori_rendered_entity" : { "type" : "text" },
         "search_api_language" : { "type" : "string" },
         "title" : { "type" : "text", "boost" : "5.0" },
         "title_field" : { "type" : "text" }
