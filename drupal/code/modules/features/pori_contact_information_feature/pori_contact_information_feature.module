@@ -30,7 +30,7 @@ function pori_contact_information_feature_feeds_presave($source, $entity, $item,
  */
 function pori_contact_information_feature_cron() {
   $importers = array(
-    'phone_csv' => 'private://transfer/PORIKAexport2.csv',
+    'phone_csv' => 'private://transfer/Directory_Entries_26841_295309_.csv',
   );
   watchdog('pori_contact_information', 'Running contact information feed importers...');
 
