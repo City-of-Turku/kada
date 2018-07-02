@@ -161,6 +161,16 @@ function pori_search_entity_property_info_alter(&$info) {
     'raw getter callback' => 'pori_search_rendered_entity_callback',
     'translatable' => TRUE,
   );
+  $info['node']['properties']['pori_related_places'] = array(
+    'type' => 'text',
+    'label' => t('Related places'),
+    'computed' => TRUE,
+    'entity views field' => TRUE,
+    'sanitized' => TRUE,
+    'getter callback' => 'pori_search_related_places_callback',
+    'raw getter callback' => 'pori_search_related_places_callback',
+    'translatable' => TRUE,
+  );
 }
 
 /**
@@ -189,6 +199,29 @@ function pori_search_rendered_entity_callback($item) {
   $formatted_html = check_markup($rendered_html, 'full_html');
 
   return $formatted_html;
+}
+
+/**
+ * Getter callback for kada_related_places property.
+ */
+function pori_search_related_places_callback($item) {
+  if (!empty($item->field_service_offering['und']))  {
+    $targets= array();
+    foreach ($item->field_service_offering['und'] as $service) {
+      $targets[] = $service['target_id'];
+    }
+
+    $q = db_select('node', 'n');
+    $q->join('field_data_endpoints', 'fde_places', 'fde_places.endpoints_entity_id = n.nid AND fde_places.deleted = 0 AND fde_places.bundle = \'place_service\' AND fde_places.endpoints_r_index = 0');
+    $q->join('field_data_endpoints', 'fde_service', 'fde_service.entity_id = fde_places.entity_id AND fde_service.deleted = 0 AND fde_service.bundle = \'place_service\' AND fde_service.endpoints_r_index = 1');
+    $q = $q->fields('n', array('title'))
+      ->condition('fde_service.endpoints_entity_id', $targets, 'IN')
+      ->execute();
+
+    $output = $q->fetchCol(0);
+    return $output;
+  }
+  return NULL;
 }
 
 /**
