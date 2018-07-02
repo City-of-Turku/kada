@@ -64,3 +64,20 @@ function pori_contact_information_feature_cron() {
     }
   }
 }
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function pori_contact_information_feature_preprocess_node(&$vars) {
+  $node = $vars['node'];
+  if (isset($node->field_branch) && isset($node->field_unit)) {
+    $parts = array();
+    if (!empty($node->field_branch)) {
+      $parts[] = reset($node->field_branch['und'])['value'];
+    }
+    if (!empty($node->field_unit)) {
+      $parts[] = reset($node->field_unit['und'])['value'];
+    }
+    $vars['person_organisation'] = implode(' | ', $parts);
+  }
+}
