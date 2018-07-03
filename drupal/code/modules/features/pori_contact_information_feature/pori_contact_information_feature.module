@@ -80,4 +80,7 @@ function pori_contact_information_feature_preprocess_node(&$vars) {
     }
     $vars['person_organisation'] = implode(' | ', $parts);
   }
+  if (!empty($node->field_availability)) {
+    $vars['person_availability'] = t('Available') . ' ' . lcfirst(reset($node->field_availability['und'])['value']) . '.';
+  }
 }
