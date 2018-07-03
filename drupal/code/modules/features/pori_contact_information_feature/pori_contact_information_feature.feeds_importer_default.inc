@@ -33,8 +33,8 @@ function pori_contact_information_feature_feeds_importer_default() {
       'plugin_key' => 'FeedsCSVParser',
       'config' => array(
         'delimiter' => ';',
-        'no_headers' => 1,
-        'encoding' => 'UTF-8',
+        'no_headers' => 0,
+        'encoding' => 'ISO-8859-15',
       ),
     ),
     'processor' => array(
@@ -119,6 +119,24 @@ function pori_contact_information_feature_feeds_importer_default() {
           12 => array(
             'source' => 'Company Contact',
             'target' => 'field_person_type',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          14 => array(
+            'source' => 'Hallintokunta',
+            'target' => 'field_branch',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          15 => array(
+            'source' => 'Department',
+            'target' => 'field_unit',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          16 => array(
+            'source' => 'Location',
+            'target' => 'field_activity_unit',
             'unique' => FALSE,
           ),
         ),

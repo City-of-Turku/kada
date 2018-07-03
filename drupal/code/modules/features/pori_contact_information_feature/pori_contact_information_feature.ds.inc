@@ -17,6 +17,11 @@ function pori_contact_information_feature_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'person';
   $ds_fieldsetting->view_mode = 'person_card';
   $ds_fieldsetting->settings = array(
+    'person_organisation' => array(
+      'weight' => '3',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'person_full_name' => array(
       'weight' => '1',
       'label' => 'hidden',
@@ -24,6 +29,27 @@ function pori_contact_information_feature_ds_field_settings_info() {
     ),
   );
   $export['node|person|person_card'] = $ds_fieldsetting;
+
+  return $export;
+}
+
+/**
+ * Implements hook_ds_custom_fields_info().
+ */
+function pori_contact_information_feature_ds_custom_fields_info() {
+  $export = array();
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'person_organisation';
+  $ds_field->label = 'Person organisation';
+  $ds_field->field_type = 3;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'person|*';
+  $ds_field->properties = array();
+  $export['person_organisation'] = $ds_field;
 
   return $export;
 }
@@ -47,21 +73,23 @@ function pori_contact_information_feature_ds_layout_settings_info() {
         0 => 'field_person_image',
         1 => 'person_full_name',
         2 => 'field_employee_title',
-        3 => 'field_profession',
-        4 => 'field_office_tr',
-        5 => 'field_visiting_address',
-        6 => 'field_email_single',
-        7 => 'field_mobile_phone',
-        8 => 'field_phone',
-        9 => 'field_mobile_phone_work',
-        10 => 'field_phone_switch',
-        11 => 'field_fax_number',
+        3 => 'person_organisation',
+        4 => 'field_profession',
+        5 => 'field_office_tr',
+        6 => 'field_visiting_address',
+        7 => 'field_email_single',
+        8 => 'field_mobile_phone',
+        9 => 'field_phone',
+        10 => 'field_mobile_phone_work',
+        11 => 'field_phone_switch',
+        12 => 'field_fax_number',
       ),
     ),
     'fields' => array(
       'field_person_image' => 'main_content',
       'person_full_name' => 'main_content',
       'field_employee_title' => 'main_content',
+      'person_organisation' => 'main_content',
       'field_profession' => 'main_content',
       'field_office_tr' => 'main_content',
       'field_visiting_address' => 'main_content',
