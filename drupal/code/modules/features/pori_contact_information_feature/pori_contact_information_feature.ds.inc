@@ -17,8 +17,13 @@ function pori_contact_information_feature_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'person';
   $ds_fieldsetting->view_mode = 'person_card';
   $ds_fieldsetting->settings = array(
+    'person_availability' => array(
+      'weight' => '13',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'person_organisation' => array(
-      'weight' => '3',
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
     ),
@@ -38,6 +43,18 @@ function pori_contact_information_feature_ds_field_settings_info() {
  */
 function pori_contact_information_feature_ds_custom_fields_info() {
   $export = array();
+
+  $ds_field = new stdClass();
+  $ds_field->api_version = 1;
+  $ds_field->field = 'person_availability';
+  $ds_field->label = 'Person availability';
+  $ds_field->field_type = 3;
+  $ds_field->entities = array(
+    'node' => 'node',
+  );
+  $ds_field->ui_limit = 'person|*';
+  $ds_field->properties = array();
+  $export['person_availability'] = $ds_field;
 
   $ds_field = new stdClass();
   $ds_field->api_version = 1;
@@ -73,8 +90,8 @@ function pori_contact_information_feature_ds_layout_settings_info() {
         0 => 'field_person_image',
         1 => 'person_full_name',
         2 => 'field_employee_title',
-        3 => 'person_organisation',
-        4 => 'field_profession',
+        3 => 'field_profession',
+        4 => 'person_organisation',
         5 => 'field_office_tr',
         6 => 'field_visiting_address',
         7 => 'field_email_single',
@@ -83,14 +100,15 @@ function pori_contact_information_feature_ds_layout_settings_info() {
         10 => 'field_mobile_phone_work',
         11 => 'field_phone_switch',
         12 => 'field_fax_number',
+        13 => 'person_availability',
       ),
     ),
     'fields' => array(
       'field_person_image' => 'main_content',
       'person_full_name' => 'main_content',
       'field_employee_title' => 'main_content',
-      'person_organisation' => 'main_content',
       'field_profession' => 'main_content',
+      'person_organisation' => 'main_content',
       'field_office_tr' => 'main_content',
       'field_visiting_address' => 'main_content',
       'field_email_single' => 'main_content',
@@ -99,6 +117,7 @@ function pori_contact_information_feature_ds_layout_settings_info() {
       'field_mobile_phone_work' => 'main_content',
       'field_phone_switch' => 'main_content',
       'field_fax_number' => 'main_content',
+      'person_availability' => 'main_content',
     ),
     'classes' => array(),
     'wrappers' => array(

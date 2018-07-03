@@ -138,6 +138,13 @@ function pori_contact_information_feature_feeds_importer_default() {
             'source' => 'Location',
             'target' => 'field_activity_unit',
             'unique' => FALSE,
+            'language' => 'und',
+          ),
+          17 => array(
+            'source' => 'Puhelin-aukioloaika',
+            'target' => 'field_availability',
+            'unique' => FALSE,
+            'language' => 'und',
           ),
         ),
         'update_existing' => '2',
