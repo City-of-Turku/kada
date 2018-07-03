@@ -66,9 +66,12 @@ function pori_search_default_search_api_index() {
         "field_lead_paragraph" : { "type" : "text" },
         "field_lead_paragraph_et" : { "type" : "text" },
         "og_group_ref" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
+        "pori_rendered_entity" : { "type" : "text" },
+        "pori_related_places" : { "type" : "text" },
         "search_api_language" : { "type" : "string" },
         "title" : { "type" : "text", "boost" : "5.0" },
-        "title_field" : { "type" : "text" }
+        "title_field" : { "type" : "text" },
+        "type" : { "type" : "string" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
@@ -76,7 +79,11 @@ function pori_search_default_search_api_index() {
           "weight" : "-10",
           "settings" : {
             "default" : "1",
-            "bundles" : { "place" : "place", "news_item" : "news_item" }
+            "bundles" : {
+              "service_offer" : "service_offer",
+              "place" : "place",
+              "news_item" : "news_item"
+            }
           }
         },
         "search_api_metatag_alter_callback" : { "status" : 0, "weight" : "0", "settings" : [] },
