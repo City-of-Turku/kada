@@ -35,57 +35,6 @@ function visitpori_configurations_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'visitpori_footer_menu';
-  $context->description = 'Displays the footer menu';
-  $context->tag = 'menus';
-  $context->conditions = array(
-    'context' => array(
-      'values' => array(
-        'visitpori_domain' => 'visitpori_domain',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'menu_block-26' => array(
-          'module' => 'menu_block',
-          'delta' => '26',
-          'region' => 'footer',
-          'weight' => '-10',
-        ),
-        'menu_block-23' => array(
-          'module' => 'menu_block',
-          'delta' => '23',
-          'region' => 'footer',
-          'weight' => '-9',
-        ),
-        'menu_block-32' => array(
-          'module' => 'menu_block',
-          'delta' => 32,
-          'region' => 'footer',
-          'weight' => -8,
-        ),
-        'menu_block-33' => array(
-          'module' => 'menu_block',
-          'delta' => 33,
-          'region' => 'footer',
-          'weight' => -7,
-        ),
-      ),
-    ),
-  );
-  $context->condition_mode = 0;
-
-  // Translatables
-  // Included for use with string extractors like potx.
-  t('Displays the footer menu');
-  t('menus');
-  $export['visitpori_footer_menu'] = $context;
-
-  $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
   $context->name = 'visitpori_front_page';
   $context->description = 'This context is triggered on the visitpori front page';
   $context->tag = 'front page';
@@ -213,7 +162,7 @@ function visitpori_configurations_context_default_contexts() {
           'module' => 'block',
           'delta' => '7',
           'region' => 'footer',
-          'weight' => '-10',
+          'weight' => '-20',
         ),
       ),
     ),
