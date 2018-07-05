@@ -14,6 +14,9 @@ function pori_contact_information_feature_ctools_plugin_api($module = NULL, $api
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
+  if ($module == "facetapi" && $api == "facetapi_defaults") {
+    return array("version" => "1");
+  }
   if ($module == "feeds" && $api == "feeds_importer_default") {
     return array("version" => "1");
   }
@@ -55,7 +58,9 @@ function pori_contact_information_feature_default_search_api_index() {
         "field_unit" : { "type" : "text" },
         "field_visiting_address" : { "type" : "text" },
         "nid" : { "type" : "integer" },
-        "search_api_language" : { "type" : "string" }
+        "search_api_language" : { "type" : "string" },
+        "title" : { "type" : "text" },
+        "title_field" : { "type" : "text" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
