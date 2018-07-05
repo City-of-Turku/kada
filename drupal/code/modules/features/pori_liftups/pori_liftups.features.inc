@@ -74,31 +74,36 @@ function pori_liftups_views_default_views_alter(&$data) {
   }
   if (isset($data['kada_current_promoted_'])) {
     $data['kada_current_promoted_']->display['default']->display_options['css_class'] = 'liftup-box-list liftup-box-list--current'; /* WAS: 'liftup-box-list' */
+    $data['kada_current_promoted_']->display['default']->display_options['pager']['options']['items_per_page'] = 8; /* WAS: 12 */
+    $data['kada_current_promoted_']->display['tab_blogs']->display_options['pager']['options']['items_per_page'] = 8; /* WAS: '' */
+    $data['kada_current_promoted_']->display['tab_blogs']->display_options['pager']['type'] = 'some'; /* WAS: 'none' */
+    $data['kada_current_promoted_']->display['tab_new']->display_options['pager']['options']['items_per_page'] = 8; /* WAS: 18 */
+    $data['kada_current_promoted_']->display['tab_section_new']->display_options['pager']['options']['items_per_page'] = 8; /* WAS: 18 */
   }
   if (isset($data['kada_top_carousel'])) {
     $data['kada_top_carousel']->display['block_1']->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme]</div>
-                <div class="flex-caption__body">[body]</div>'; /* WAS: '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+                    <div class="flex-caption__body">[body]</div>'; /* WAS: '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
             <div class="flex-caption__body">[body]</div>' */
     $data['kada_top_carousel']->display['block_1']->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme]</div>
-                <div class="flex-caption__body">[body]</div>'; /* WAS: '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+                    <div class="flex-caption__body">[body]</div>'; /* WAS: '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
             <div class="flex-caption__body">[body]</div>' */
     $data['kada_top_carousel']->display['block_2']->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme]</div>
-            <div class="flex-caption__body">[body]</div>'; /* WAS: '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+                <div class="flex-caption__body">[body]</div>'; /* WAS: '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
             <div class="flex-caption__body">[body]</div>' */
     $data['kada_top_carousel']->display['block_2']->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme]</div>
-            <div class="flex-caption__body">[body]</div>'; /* WAS: '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+                <div class="flex-caption__body">[body]</div>'; /* WAS: '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
             <div class="flex-caption__body">[body]</div>' */
     $data['kada_top_carousel']->display['section']->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme]</div>
-                <div class="flex-caption__body">[body]</div>'; /* WAS: '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+                    <div class="flex-caption__body">[body]</div>'; /* WAS: '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
             <div class="flex-caption__body">[body]</div>' */
     $data['kada_top_carousel']->display['section']->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme]</div>
-                <div class="flex-caption__body">[body]</div>'; /* WAS: '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+                    <div class="flex-caption__body">[body]</div>'; /* WAS: '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
             <div class="flex-caption__body">[body]</div>' */
     $data['kada_top_carousel']->display['slider']->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme]</div>
-                <div class="flex-caption__body">[body]</div>'; /* WAS: '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+                    <div class="flex-caption__body">[body]</div>'; /* WAS: '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
             <div class="flex-caption__body">[body]</div>' */
     $data['kada_top_carousel']->display['slider']->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme]</div>
-                <div class="flex-caption__body">[body]</div>'; /* WAS: '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
+                    <div class="flex-caption__body">[body]</div>'; /* WAS: '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
             <div class="flex-caption__body">[body]</div>' */
     unset($data['kada_top_carousel']->display['block_1']->display_options['fields']['field_target_audience']);
     unset($data['kada_top_carousel']->display['block_2']->display_options['fields']['field_target_audience']);
