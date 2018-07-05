@@ -213,7 +213,7 @@ function visitpori_configurations_context_default_contexts() {
           'module' => 'block',
           'delta' => '7',
           'region' => 'footer',
-          'weight' => '-9',
+          'weight' => '-10',
         ),
       ),
     ),
