@@ -11,94 +11,85 @@ include_once 'kada_domains_feature.features.inc';
  * Implements hook_init()
  * Handle domain redirects for viewing nodes
  */
-function kada_domains_feature_init_DISABLED() {
-  // Make sure we react only on node pages
-  if (arg(0) != 'node') return;
-  // React only on node view
-  if (arg(2)) return;
+function kada_domains_feature_init() {
+  // Make sure we react only on node view mode.
+  if (arg(0) != 'node' || arg(2)) {
+    return;
+  }
 
   // Get page object
   // TO-DO: this might not be node
   $node = menu_get_object();
+  if (arg(0) != 'node' || arg(2)) {
+    return;
+  }
 
-  // Do actions when page object is quite probably node
-  if (isset($node->type)) {
-    // Check if content is inside a section
-    if (isset($node->og_group_ref['und']['0'])) {
-      // If content belongs to more than one section, don't redirect anywhere
-      // NOTE: This migth not be the best way to handle for example theatre-events,
-      //       Currently we avoid some redirect issues by handling linking to event
-      //       node in a specific (or rather hardcoded) way depending on domain/groups.
-      //       See:  kada_events_division_event_url()
-      //       Solution options:
-      //         a) find out the first section in currently active language
-      //         b) or just use the primary group anyway, the sections should be in the same domain
-      //          --> going with a)
+  // Check if content is inside a section.
+  if (isset($node->og_group_ref['und']['0'])) {
+    // If content belongs to more than one section, don't redirect anywhere.
+    //
+    // NOTE: This might not be the best way to handle for example
+    // theatre-events.
+    // Currently we avoid some redirect issues by handling linking to event
+    // node in a specific (or rather hardcoded) way depending on domain/groups.
+    // See: tkufi_events_division_event_url()
+    // Solution options:
+    // a) find out the first section in currently active language
+    // b) or just use the primary group anyway, the sections should be in the
+    //    same domain
+    //  --> going with a).
 
-      // Find out all group nids - if node is an event with 2 or mode sections potentially
-      // in different languages.
-      if (module_exists('kada_sections_feature')) {
-        $section_in_current_language = kada_sections_feature_get_section_based_on_language($node, 2);
+    // Find the correct language version of the section, if there are multiple.
+    $section_in_current_language = kada_sections_feature_get_section_based_on_language($node, 2);
 
-        // Get the only section and check if it has other than default domain set
-        $section = node_load($node->og_group_ref['und']['0']['target_id']);
-
-        if (empty($section_in_current_language)) {
-          if (count($node->og_group_ref['und']) != 1) {
-            return;
-          }
-        }
-        else {
-          $section = $section_in_current_language;
-        }
-
-        // Make sure we have domain set on the section
-        if (!isset($section->domains) && !is_array($section->domains)) return;
-
-        // Gather variables for domain evaluations
-        global $_domain;
-        $default_domain = domain_lookup(1);
-        $section_domain = domain_get_node_match($section->nid);
-
-        // Redirect rules back to default domain
-        // More than one domain, we need to redirect to default domain
-        if (count($section->domains) > 1 && !$_domain['is_default']) {
-          $domain = 'http://' . rtrim($default_domain['subdomain'], '/');
-          drupal_goto(url(drupal_get_path_alias(), array('absolute' => TRUE, 'base_url' => $domain)));
-        }
-        // Redirect rules to specific domain
-        // Section should have one domain only, check if we are not currently in it
-        if (!isset($section->domains[$_domain['domain_id']])) {
-          $domain = rtrim($section_domain['path'], '/');
-          drupal_goto(url(drupal_get_path_alias(), array('absolute' => TRUE, 'base_url' => $domain)), array(), 301);
-        }
-      }
+    // If we have a section of the current language, let's go with that.
+    if (!empty($section_in_current_language)) {
+      $section = $section_in_current_language;
     }
-    elseif ($node->type == 'event') {
-      // Events without a section should redirect to calendar domain.
-      global $_domain;
-      // Redirect happens only when user is not already in default domain
-      if ($_domain['machine_name'] != 'calendar') {
-        $domains = domain_domains();
-        foreach ($domains as $key => $domain) {
-          if ($domain['machine_name'] == 'calendar') {
-            $domain = rtrim($domain['path'], '/');
-            drupal_goto(url(drupal_get_path_alias(), array('absolute' => TRUE, 'base_url' => $domain)), array(), 301);
-          }
-        }
-      }
+    // Otherwise choose the only section.
+    elseif (count($node->og_group_ref['und']) == 1) {
+      // Get the first section.
+      $section = node_load($node->og_group_ref['und']['0']['target_id']);
     }
-    elseif (!in_array($node->type, array('section', 'event', 'liftup'))) {
-      // Redirect to default domain when content doesn't have a section with
-      // a different domain assigned, or it's not a section itself.
-      // Gather variables for domain evaluations
-      global $_domain;
-      $default_domain = domain_lookup(1);
-      // Redirect happens only when user is not already in default domain
-      if (!$_domain['is_default']) {
-        $domain = 'http://' . rtrim($default_domain['subdomain'], '/');
-        drupal_goto(url(drupal_get_path_alias(), array('absolute' => TRUE, 'base_url' => $domain)), array(), 301);
-      }
+    // And if we don't have a language match and still have multiple choices,
+    // we can't make an educated guess. Bail out.
+    else {
+      return;
+    }
+
+    // Make sure we have domain set on the section.
+    if (!isset($section->domains) || !is_array($section->domains)) {
+      return;
+    }
+
+    // Gather variables for domain evaluations.
+    global $_domain;
+    $default_domain = domain_lookup(1);
+    $section_domain = domain_get_node_match($section->nid);
+
+    // Redirect rules back to default domain
+    // More than one domain, we need to redirect to default domain
+    if (count($section->domains) > 1 && !$_domain['is_default']) {
+      $domain = 'http://' . rtrim($default_domain['subdomain'], '/');
+      drupal_goto(url(drupal_get_path_alias(), array('absolute' => TRUE, 'base_url' => $domain)));
+    }
+    // Redirect rules to specific domain
+    // Section should have one domain only, check if we are not currently in it
+    if (!isset($section->domains[$_domain['domain_id']])) {
+      $domain = rtrim($section_domain['path'], '/');
+      drupal_goto(url(drupal_get_path_alias(), array('absolute' => TRUE, 'base_url' => $domain)), array(), 301);
+    }
+  }
+  elseif (!in_array($node->type, array('section', 'event', 'liftup'))) {
+    // Redirect to default domain when content doesn't have a section with
+    // a different domain assigned, or it's not a section itself.
+    // Gather variables for domain evaluations.
+    global $_domain;
+    $default_domain = domain_lookup(1);
+    // Redirect happens only when user is not already in default domain.
+    if (!$_domain['is_default']) {
+      $domain = 'http://' . rtrim($default_domain['subdomain'], '/');
+      drupal_goto(url(drupal_get_path_alias(), array('absolute' => TRUE, 'base_url' => $domain)), array(), 301);
     }
   }
 }

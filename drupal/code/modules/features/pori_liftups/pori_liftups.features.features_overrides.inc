@@ -39,25 +39,30 @@ function pori_liftups_features_override_default_overrides() {
   // Exported overrides for: views_view
   $overrides["views_view.kada_current.display|default|display_options|css_class"] = 'liftup-box-list liftup-box-list--current';
   $overrides["views_view.kada_current_promoted_.display|default|display_options|css_class"] = 'liftup-box-list liftup-box-list--current';
+  $overrides["views_view.kada_current_promoted_.display|default|display_options|pager|options|items_per_page"] = 8;
+  $overrides["views_view.kada_current_promoted_.display|tab_blogs|display_options|pager|options|items_per_page"] = 8;
+  $overrides["views_view.kada_current_promoted_.display|tab_blogs|display_options|pager|type"] = 'some';
+  $overrides["views_view.kada_current_promoted_.display|tab_new|display_options|pager|options|items_per_page"] = 8;
+  $overrides["views_view.kada_current_promoted_.display|tab_section_new|display_options|pager|options|items_per_page"] = 8;
   $overrides["views_view.kada_top_carousel.display|block_1|display_options|fields|field_link_to_content|alter|text"] = '<div class="flex-caption__target-group">[field_theme]</div>
-              <div class="flex-caption__body">[body]</div>';
+                  <div class="flex-caption__body">[body]</div>';
   $overrides["views_view.kada_top_carousel.display|block_1|display_options|fields|field_link_to_content|empty"] = '<div class="flex-caption__target-group">[field_theme]</div>
-              <div class="flex-caption__body">[body]</div>';
+                  <div class="flex-caption__body">[body]</div>';
   $overrides["views_view.kada_top_carousel.display|block_1|display_options|fields|field_target_audience"]["DELETED"] = TRUE;
   $overrides["views_view.kada_top_carousel.display|block_2|display_options|fields|field_link_to_content|alter|text"] = '<div class="flex-caption__target-group">[field_theme]</div>
-          <div class="flex-caption__body">[body]</div>';
+              <div class="flex-caption__body">[body]</div>';
   $overrides["views_view.kada_top_carousel.display|block_2|display_options|fields|field_link_to_content|empty"] = '<div class="flex-caption__target-group">[field_theme]</div>
-          <div class="flex-caption__body">[body]</div>';
+              <div class="flex-caption__body">[body]</div>';
   $overrides["views_view.kada_top_carousel.display|block_2|display_options|fields|field_target_audience"]["DELETED"] = TRUE;
   $overrides["views_view.kada_top_carousel.display|section|display_options|fields|field_link_to_content|alter|text"] = '<div class="flex-caption__target-group">[field_theme]</div>
-              <div class="flex-caption__body">[body]</div>';
+                  <div class="flex-caption__body">[body]</div>';
   $overrides["views_view.kada_top_carousel.display|section|display_options|fields|field_link_to_content|empty"] = '<div class="flex-caption__target-group">[field_theme]</div>
-              <div class="flex-caption__body">[body]</div>';
+                  <div class="flex-caption__body">[body]</div>';
   $overrides["views_view.kada_top_carousel.display|section|display_options|fields|field_target_audience"]["DELETED"] = TRUE;
   $overrides["views_view.kada_top_carousel.display|slider|display_options|fields|field_link_to_content|alter|text"] = '<div class="flex-caption__target-group">[field_theme]</div>
-              <div class="flex-caption__body">[body]</div>';
+                  <div class="flex-caption__body">[body]</div>';
   $overrides["views_view.kada_top_carousel.display|slider|display_options|fields|field_link_to_content|empty"] = '<div class="flex-caption__target-group">[field_theme]</div>
-              <div class="flex-caption__body">[body]</div>';
+                  <div class="flex-caption__body">[body]</div>';
   $overrides["views_view.kada_top_carousel.display|slider|display_options|fields|field_target_audience"]["DELETED"] = TRUE;
 
  return $overrides;

@@ -55,14 +55,24 @@ function pori_search_default_search_api_index() {
         "domain_domain_id" : { "type" : "list\\u003Cinteger\\u003E" },
         "field_additional_info_link:title" : { "type" : "list\\u003Ctext\\u003E" },
         "field_alternative_name" : { "type" : "list\\u003Ctext\\u003E" },
-        "field_file_attachment" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "scald_atom" },
+        "field_file_attachment:field_alt_text" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_file_attachment:field_title_text" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_file_attachment:scald_tags" : {
+          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "entity_type" : "taxonomy_term"
+        },
+        "field_file_attachment:title" : { "type" : "list\\u003Ctext\\u003E" },
+        "field_file_attachment:url" : { "type" : "list\\u003Curi\\u003E" },
         "field_keywords" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_lead_paragraph" : { "type" : "text" },
         "field_lead_paragraph_et" : { "type" : "text" },
         "og_group_ref" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
+        "pori_related_places" : { "type" : "text" },
+        "pori_rendered_entity" : { "type" : "text" },
         "search_api_language" : { "type" : "string" },
         "title" : { "type" : "text", "boost" : "5.0" },
-        "title_field" : { "type" : "text" }
+        "title_field" : { "type" : "text" },
+        "type" : { "type" : "string" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
@@ -70,7 +80,11 @@ function pori_search_default_search_api_index() {
           "weight" : "-10",
           "settings" : {
             "default" : "1",
-            "bundles" : { "place" : "place", "news_item" : "news_item" }
+            "bundles" : {
+              "service_offer" : "service_offer",
+              "place" : "place",
+              "news_item" : "news_item"
+            }
           }
         },
         "search_api_metatag_alter_callback" : { "status" : 0, "weight" : "0", "settings" : [] },
@@ -103,11 +117,12 @@ function pori_search_default_search_api_index() {
           }
         },
         "search_api_html_filter" : {
-          "status" : 0,
+          "status" : 1,
           "weight" : "10",
           "settings" : {
             "fields" : {
               "title" : true,
+              "pori_rendered_entity" : true,
               "field_lead_paragraph_et" : true,
               "field_lead_paragraph" : true,
               "title_field" : true,

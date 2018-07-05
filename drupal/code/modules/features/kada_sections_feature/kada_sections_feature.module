@@ -38,24 +38,24 @@ function kada_sections_feature_set_og_context(){
 * Helper used to find currently active section based on language.
 */
 function kada_sections_feature_get_section_based_on_language($node, $min_groups = 1, $lang_code = ''){
-  $group = NULL;
-  $group_nids = kada_sections_feature_fetch_group_nids($node);
-
   global $language;
   if (empty($lang_code)) {
     $lang_code = $language->language;
   }
 
+  $group_nids = kada_sections_feature_fetch_group_nids($node);
+
+  // Only try to find the correct section if enough groups exist.
   if (!empty($group_nids) && count($group_nids) >= $min_groups) {
-    foreach($group_nids as $nid){
+    foreach ($group_nids as $nid) {
       $group = node_load($nid);
-      // Set og context from a group node with the same language.
+      // Return the group node if the language matches.
       if (!empty($group) && $group->language == $lang_code) {
         return $group;
       }
     }
   }
-  return $group;
+  return NULL;
 }
 
 /**
