@@ -99,6 +99,13 @@ function pori_contact_information_feature_views_default_views() {
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['content'] = 'Telephone exchange of the City of Pori: <a href="tel:(02) 621 1100">(02) 621 1100</a><br>
 <a href="mailto:kirjaamo@pori.fi">kirjaamo@pori.fi</a>';
+  /* Field: Content: Unit */
+  $handler->display->display_options['fields']['field_unit']['id'] = 'field_unit';
+  $handler->display->display_options['fields']['field_unit']['table'] = 'field_data_field_unit';
+  $handler->display->display_options['fields']['field_unit']['field'] = 'field_unit';
+  $handler->display->display_options['fields']['field_unit']['label'] = '';
+  $handler->display->display_options['fields']['field_unit']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_unit']['element_label_colon'] = FALSE;
   /* Field: Content: First name */
   $handler->display->display_options['fields']['field_first_name']['id'] = 'field_first_name';
   $handler->display->display_options['fields']['field_first_name']['table'] = 'field_data_field_first_name';
@@ -120,6 +127,13 @@ function pori_contact_information_feature_views_default_views() {
   $handler->display->display_options['fields']['field_employee_title']['label'] = '';
   $handler->display->display_options['fields']['field_employee_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_employee_title']['element_label_colon'] = FALSE;
+  /* Field: Content: Branch */
+  $handler->display->display_options['fields']['field_branch']['id'] = 'field_branch';
+  $handler->display->display_options['fields']['field_branch']['table'] = 'field_data_field_branch';
+  $handler->display->display_options['fields']['field_branch']['field'] = 'field_branch';
+  $handler->display->display_options['fields']['field_branch']['label'] = '';
+  $handler->display->display_options['fields']['field_branch']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_branch']['element_label_colon'] = FALSE;
   /* Field: Content: Email */
   $handler->display->display_options['fields']['field_email_single']['id'] = 'field_email_single';
   $handler->display->display_options['fields']['field_email_single']['table'] = 'field_data_field_email_single';
@@ -227,16 +241,18 @@ function pori_contact_information_feature_views_default_views() {
     6 => 0,
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
+    'field_unit' => 'field_unit',
     'field_first_name' => 'field_first_name',
     'field_surname' => 'field_surname',
-    'field_fax_number' => 'field_fax_number',
+    'field_employee_title' => 'field_employee_title',
+    'field_branch' => 'field_branch',
+    'field_email_single' => 'field_email_single',
+    'field_visiting_address' => 'field_visiting_address',
+    'field_phone' => 'field_phone',
     'field_mobile_phone' => 'field_mobile_phone',
     'field_mobile_phone_work' => 'field_mobile_phone_work',
-    'field_phone' => 'field_phone',
     'field_phone_switch' => 'field_phone_switch',
-    'field_employee_title' => 'field_employee_title',
-    'field_visiting_address' => 'field_visiting_address',
-    'field_email_single' => 'field_email_single',
+    'field_fax_number' => 'field_fax_number',
   );
 
   /* Display: Page */
