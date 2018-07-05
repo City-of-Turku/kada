@@ -23,7 +23,24 @@ function pori_contact_information_feature_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array();
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'facetapi-cIe1ii4J1UAtqVemZV00yM9RFOt0vovl' => array(
+          'module' => 'facetapi',
+          'delta' => 'cIe1ii4J1UAtqVemZV00yM9RFOt0vovl',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
+        'facetapi-rE0DEkspoEoPRA4nwBbnkSjc5ld7P5yJ' => array(
+          'module' => 'facetapi',
+          'delta' => 'rE0DEkspoEoPRA4nwBbnkSjc5ld7P5yJ',
+          'region' => 'sidebar_first',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
   $context->condition_mode = 0;
 
   // Translatables
