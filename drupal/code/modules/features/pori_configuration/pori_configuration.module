@@ -52,7 +52,7 @@ function pori_configuration_form_views_exposed_form_alter(&$form, &$form_state, 
  */
 function pori_configuration_form_alter(&$form, &$form_state, $form_id) {
   // Only react to node forms with an empty Group audience field.
-  if ($form['#node_edit_form'] && !empty($form['og_group_ref']) && empty($form['og_group_ref'][LANGUAGE_NONE][0]['default']['#default_value'])) {
+  if (isset($form['#node_edit_form']) && $form['#node_edit_form'] && !empty($form['og_group_ref']) && empty($form['og_group_ref'][LANGUAGE_NONE][0]['default']['#default_value'])) {
     global $user, $language;
 
     // If the user only has one domain defined, we could use that as a default.
