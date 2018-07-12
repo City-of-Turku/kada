@@ -43,3 +43,36 @@ function pori_configuration_form_views_exposed_form_alter(&$form, &$form_state, 
     }
   }
 }
+
+/**
+ * Implements hook_form_alter().
+ *
+ * If the user only has one domain set, default to the corresponding section in
+ * node form.
+ */
+function pori_configuration_form_alter(&$form, &$form_state, $form_id) {
+  // Only react to node forms with an empty Group audience field.
+  if (isset($form['#node_edit_form']) && $form['#node_edit_form'] && !empty($form['og_group_ref']) && empty($form['og_group_ref'][LANGUAGE_NONE][0]['default']['#default_value'])) {
+    global $user, $language;
+
+    // If the user only has one domain defined, we could use that as a default.
+    if (count($user->domain_user) == 1) {
+      // Domain to section tnid mapping.
+      $domain_sections = array(
+        'visitpori_fi' => 3183,
+      );
+
+      $domain_machine_name = domain_load_machine_name(reset($user->domain_user));
+      // Check if there's a tnid mapping for the user's sole domain.
+      if (!empty($tnid = $domain_sections[$domain_machine_name])) {
+        $visitpori_sections = translation_node_get_translations($tnid);
+        // ... and if there is, fetch the current language node of the section.
+        if (!empty($sec_id = $visitpori_sections[$language->language])) {
+          $sec_id = $sec_id->nid;
+          // Set as default.
+          $form['og_group_ref'][LANGUAGE_NONE][0]['default']['#default_value'][$sec_id] = $sec_id;
+        }
+      }
+    }
+  }
+}
