@@ -85,9 +85,10 @@ function kada_domains_feature_init() {
     // a different domain assigned, or it's not a section itself.
     // Gather variables for domain evaluations.
     global $_domain;
-    $default_domain = domain_lookup(1);
-    // Redirect happens only when user is not already in default domain.
-    if (!$_domain['is_default']) {
+    $default_domain = domain_lookup(5);
+    // Redirect happens only when user is not already in default domain and if
+    // we found the default domain.
+    if (!$_domain['is_default'] && $default_domain != -1) {
       $domain = 'http://' . rtrim($default_domain['subdomain'], '/');
       drupal_goto(url(drupal_get_path_alias(), array('absolute' => TRUE, 'base_url' => $domain)), array(), 301);
     }
