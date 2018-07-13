@@ -23,11 +23,13 @@ function pori_contact_information_feature_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Phone book';
+  $handler->display->display_options['css_class'] = 'person-card-list';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Search';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '102';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -51,7 +53,7 @@ function pori_contact_information_feature_views_default_views() {
   $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
-  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -62,17 +64,6 @@ function pori_contact_information_feature_views_default_views() {
     5 => 0,
     6 => 0,
   );
-  $handler->display->display_options['filters']['search_api_views_fulltext']['fields'] = array(
-    'field_activity_unit' => 'field_activity_unit',
-    'field_branch' => 'field_branch',
-    'field_email_single' => 'field_email_single',
-    'field_employee_title' => 'field_employee_title',
-    'field_first_name' => 'field_first_name',
-    'field_mobile_phone_work' => 'field_mobile_phone_work',
-    'field_surname' => 'field_surname',
-    'field_unit' => 'field_unit',
-    'field_visiting_address' => 'field_visiting_address',
-  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -81,7 +72,7 @@ function pori_contact_information_feature_views_default_views() {
     t('Master'),
     t('Phone book'),
     t('more'),
-    t('Apply'),
+    t('Search'),
     t('Reset'),
     t('Sort by'),
     t('Asc'),

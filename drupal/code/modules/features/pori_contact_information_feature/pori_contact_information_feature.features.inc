@@ -45,17 +45,19 @@ function pori_contact_information_feature_default_search_api_index() {
       "index_directly" : 0,
       "cron_limit" : "50",
       "fields" : {
-        "field_activity_unit" : { "type" : "text" },
-        "field_branch" : { "type" : "text" },
+        "field_activity_unit" : { "type" : "string" },
+        "field_branch" : { "type" : "string" },
         "field_email_single" : { "type" : "text" },
         "field_employee_title" : { "type" : "text" },
         "field_first_name" : { "type" : "text" },
         "field_mobile_phone_work" : { "type" : "text" },
         "field_surname" : { "type" : "text" },
-        "field_unit" : { "type" : "text" },
+        "field_unit" : { "type" : "string" },
         "field_visiting_address" : { "type" : "text" },
         "nid" : { "type" : "integer" },
-        "search_api_language" : { "type" : "string" }
+        "search_api_language" : { "type" : "string" },
+        "title" : { "type" : "text" },
+        "title_field" : { "type" : "text" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
@@ -79,9 +81,11 @@ function pori_contact_information_feature_default_search_api_index() {
       "processors" : {
         "content_taxonomy_autocomplete_moderated_terms" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
         "search_api_case_ignore" : {
-          "status" : 0,
+          "status" : 1,
           "weight" : "0",
           "settings" : { "fields" : {
+              "title" : true,
+              "title_field" : true,
               "field_email_single" : true,
               "field_first_name" : true,
               "field_mobile_phone_work" : true,
@@ -140,10 +144,7 @@ function pori_contact_information_feature_default_search_api_index() {
               "field_mobile_phone_work" : true,
               "field_surname" : true,
               "field_employee_title" : true,
-              "field_visiting_address" : true,
-              "field_branch" : true,
-              "field_unit" : true,
-              "field_activity_unit" : true
+              "field_visiting_address" : true
             },
             "spaces" : "[^[:alnum:]]",
             "ignorable" : "[\\u0027]"
