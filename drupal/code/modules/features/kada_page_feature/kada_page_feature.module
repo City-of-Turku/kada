@@ -35,6 +35,10 @@ function kada_page_feature_field_formatter_info() {
         'view_mode' => 'teaser', // Default is 'teaser'
       ),
     ),
+    'link_to_search' => array(
+      'label' => t('Link to search page'),
+      'field types' => array('taxonomy_term_reference'),
+    )   
   );
 }
 
@@ -83,34 +87,44 @@ function kada_page_feature_field_formatter_view($entity_type, $node, $field, $in
   $settings = $display['settings'];
   $view_mode = $settings['view_mode'];
 
-  foreach ($items as $delta => $item) {
-    // Protect ourselves from recursive rendering.
-    static $depth = 0;
-    $depth++;
-    if ($depth > 20) {
-      throw new Exception(t('Recursive rendering detected when rendering entity @entity_type(@entity_id). Aborting rendering.', array('@entity_type' => $entity_type, '@entity_id' => $item['target_id'])));
-    }
-
-    $service_offer_node = node_load($item['target_id']);
-    // 'field_provided_at' is available in the 'service_offer' content type
-    if (isset($service_offer_node->field_provided_at)) {
-      foreach($service_offer_node->field_provided_at as $relations) {
-        foreach ($relations as $relation_data) {
-          if ($relation_data['relation_type'] == 'place_service') {
-            $place_nid = $relation_data['endpoints'][LANGUAGE_NONE][0]['entity_id'];
-            $place_node = node_load($place_nid);
-            $result[$delta][] = node_view($place_node, $view_mode, $langcode);
-          }
-        }
+  if ($display['type'] == 'kada_page_service_offering_formatter') {
+    foreach ($items as $delta => $item) {
+      // Protect ourselves from recursive rendering.
+      static $depth = 0;
+      $depth++;
+      if ($depth > 20) {
+        throw new Exception(t('Recursive rendering detected when rendering entity @entity_type(@entity_id). Aborting rendering.', array('@entity_type' => $entity_type, '@entity_id' => $item['target_id'])));
       }
 
-      drupal_add_js(drupal_get_path('module', 'kada_page_feature') . '/js/accordion_config.js');
+      $service_offer_node = node_load($item['target_id']);
+      // 'field_provided_at' is available in the 'service_offer' content type
+      if (isset($service_offer_node->field_provided_at)) {
+        foreach($service_offer_node->field_provided_at as $relations) {
+          foreach ($relations as $relation_data) {
+            if ($relation_data['relation_type'] == 'place_service') {
+              $place_nid = $relation_data['endpoints'][LANGUAGE_NONE][0]['entity_id'];
+              $place_node = node_load($place_nid);
+              $result[$delta][] = node_view($place_node, $view_mode, $langcode);
+            }
+          }
+        }
+
+        drupal_add_js(drupal_get_path('module', 'kada_page_feature') . '/js/accordion_config.js');
+      }
+
+      $depth = 0;
     }
 
-    $depth = 0;
+    drupal_add_library('system', 'ui.accordion');
   }
 
-  drupal_add_library('system', 'ui.accordion');
-
+  if ($display['type'] == 'link_to_search') {
+    foreach ($items as $delta => $item) {
+      $tid = $item['tid'];
+      $term = taxonomy_term_load($tid);
+      $result[$delta] = array('#markup' => '<a href="' . $base_url . '/search/keyword/' . $tid . '">' . $term->name . '</a>');  
+    }
+  }
+  
   return $result;
 }
