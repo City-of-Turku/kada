@@ -117,21 +117,17 @@
 
           <?php print render($page['help']); ?>
 
-          <?php if ($action_links): ?>
-            <ul class="action-links"><?php print render($action_links); ?></ul>
-          <?php endif; ?>
+        <?php if($page['sidebar_first'] OR $page['sidebar_second']): ?>
+          <div class="content__wrapper content-wrapper <?php if($page['sidebar_first']): ?>content__wrapper--sidebar-first<?php endif; ?>">
+        <?php endif; ?>
 
-          <?php if($page['sidebar_first'] OR $page['sidebar_second']): ?>
-            <div class="content__wrapper content-wrapper">
-          <?php endif; ?>
-
-          <?php if ($title && !$is_front && $node->type != 'section'): ?>
-            <?php print render($title_prefix); ?>
-              <header class="content__header content-header">
-                  <h1 class="content-header__title"><?php print $title; ?></h1>
-              </header>
-            <?php print render($title_suffix); ?>
-          <?php endif; ?>
+        <?php if ($title && !$is_front && $node->type != 'section'): ?>
+          <?php print render($title_prefix); ?>
+            <header class="content__header content-header">
+                <h1 class="content-header__title"><?php print $title; ?></h1>
+            </header>
+          <?php print render($title_suffix); ?>
+        <?php endif; ?>
 
           <?php if($page['sidebar_first']): ?>
             <aside id="sidebar-first" class="sidebar sidebar--first">
@@ -142,13 +138,15 @@
           <?php if($page['before_content']): ?>
             <div id="content-top" class="content-top">
               <?php print render($page['before_content']); ?>
-            </div>
-          <?php endif; ?>
+            <!-- </div> -->
+          </div>
+        <?php endif; ?>
 
-          <section class="section section--content">
-            <?php print render($page['content']); ?>
-            <?php print $feed_icons; ?>
-          </section>
+        <?php if($page['sidebar_first']): ?>
+            <aside id="sidebar-first" class="sidebar sidebar--first">
+              <?php print render($page['sidebar_first']); ?>
+            </aside>
+        <?php endif; ?>
 
         <?php if ($page['highlighted']): ?>
           </div>
