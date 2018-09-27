@@ -94,6 +94,17 @@ function pori_liftups_views_default_views() {
 
   /* Display: Small liftup banner */
   $handler = $view->new_display('block', 'Small liftup banner', 'block');
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Domain Access: Domain ID */
+  $handler->display->display_options['arguments']['gid']['id'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['arguments']['gid']['field'] = 'gid';
+  $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['gid']['exception']['title'] = 'All';
+  $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
+  $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['gid']['summary_options']['items_per_page'] = '25';
 
   /* Display: Small liftup banner - Section */
   $handler = $view->new_display('block', 'Small liftup banner - Section', 'block_1');
@@ -161,6 +172,7 @@ function pori_liftups_views_default_views() {
     t('Desc'),
     t('flag'),
     t('Small liftup banner'),
+    t('All'),
     t('Small liftup banner - Section'),
     t('OG membership from node'),
     t('All'),
