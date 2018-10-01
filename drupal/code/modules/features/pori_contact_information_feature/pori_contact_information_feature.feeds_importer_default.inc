@@ -34,7 +34,7 @@ function pori_contact_information_feature_feeds_importer_default() {
       'config' => array(
         'delimiter' => ';',
         'no_headers' => 0,
-        'encoding' => 'UTF-8',
+        'encoding' => 'ISO-8859-15',
       ),
     ),
     'processor' => array(
@@ -110,13 +110,13 @@ function pori_contact_information_feature_feeds_importer_default() {
             'language' => 'und',
           ),
           11 => array(
-            'source' => 'Yksikk�',
+            'source' => 'Yksikko',
             'target' => 'field_unit',
             'unique' => FALSE,
             'language' => 'und',
           ),
           12 => array(
-            'source' => 'Toimintayksikk�',
+            'source' => 'Toimintayksikko',
             'target' => 'field_activity_unit',
             'unique' => FALSE,
             'language' => 'und',
