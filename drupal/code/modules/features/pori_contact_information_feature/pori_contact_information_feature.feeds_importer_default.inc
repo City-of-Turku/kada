@@ -45,104 +45,79 @@ function pori_contact_information_feature_feeds_importer_default() {
         'authorize' => 0,
         'mappings' => array(
           0 => array(
-            'source' => 'Id',
+            'source' => 'Email - id',
             'target' => 'guid',
             'unique' => 1,
-            'language' => 'und',
           ),
           1 => array(
-            'source' => 'Id',
-            'target' => 'field_account_name',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          2 => array(
-            'source' => 'Last name',
+            'source' => 'Sukunimi',
             'target' => 'field_surname',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          3 => array(
-            'source' => 'First name',
+          2 => array(
+            'source' => 'Etunimi',
             'target' => 'field_first_name',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          4 => array(
-            'source' => 'Title',
+          3 => array(
+            'source' => 'Titteli',
             'target' => 'field_employee_title',
             'field_language' => 'fi',
             'language' => 'fi',
           ),
-          5 => array(
-            'source' => 'Title',
+          4 => array(
+            'source' => 'Titteli',
             'target' => 'field_employee_title',
             'field_language' => 'en',
             'language' => 'en',
           ),
-          6 => array(
-            'source' => 'Email',
+          5 => array(
+            'source' => 'Email - id',
             'target' => 'field_email_single',
-            'unique' => FALSE,
+            'unique' => 1,
             'language' => 'und',
           ),
-          7 => array(
-            'source' => 'Primary Number',
+          6 => array(
+            'source' => 'Puhelinnumero',
             'target' => 'field_mobile_phone_work',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          8 => array(
-            'source' => 'Street Address',
+          7 => array(
+            'source' => 'Katuosoite',
             'target' => 'field_visiting_address',
             'field_language' => 'fi',
             'language' => 'fi',
           ),
-          9 => array(
-            'source' => 'Street Address',
+          8 => array(
+            'source' => 'Katuosoite',
             'target' => 'field_visiting_address',
             'field_language' => 'en',
             'language' => 'en',
           ),
-          10 => array(
-            'source' => 'Nettiluetteloesto',
-            'target' => 'Temporary target 1',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          11 => array(
-            'source' => 'Label 1',
-            'target' => 'Temporary target 1',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          12 => array(
+          9 => array(
             'source' => 'Company Contact',
             'target' => 'field_person_type',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          14 => array(
-            'source' => 'Hallintokunta',
+          10 => array(
+            'source' => 'Toimiala',
             'target' => 'field_branch',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          15 => array(
-            'source' => 'Department',
+          11 => array(
+            'source' => 'Yksikko',
             'target' => 'field_unit',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          16 => array(
-            'source' => 'Location',
+          12 => array(
+            'source' => 'Toimintayksikko',
             'target' => 'field_activity_unit',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          17 => array(
-            'source' => 'Puhelin-aukioloaika',
-            'target' => 'field_availability',
             'unique' => FALSE,
             'language' => 'und',
           ),
