@@ -1,97 +1,76 @@
 .block--facetapi {
-  position: relative;
-}
-
-.block--facetapi,
-.filter__content {
+  background: white;
   ul {
     margin: 0;
     padding-left: 0;
-
     li {
       list-style-type: none;
+      margin-top: 0.5rem;
     }
   }
-
-  .facetapi-facet {
-    > a {
-      background-color: $search-background;
-      display: inline-block;
-      line-height: 1.75;
-      width: 100%;
-
-      &:hover {
-        text-decoration: none;
-
-        .facet__title {
-          text-decoration: underline;
-        }
+  .block__title {
+    font-weight: normal;
+    font-size: 1rem;
+    border: 0;
+    padding: 25px 35px;
+    color: black;
+    position: relative;
+    cursor: pointer;
+    &:after {
+      @include fa('\f067', .9rem, 1, false);
+      color: white;
+      background: black;
+      border-radius: 12px;
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      right: 30px;
+      top: 50%;
+      margin-top: -12px;
+    }
+  }
+  a {
+    color: black;
+  }
+  .block__content {
+    display: none;
+  }
+  &.collapsed {
+    background: $gray-lighter;
+    .block__content {
+      display: block;
+    }
+    .block__title {
+      background: $blue;    
+      color: white;  
+      &:after {
+        @include fa('\f068');
+        background: white;
+        color: $blue;
+        line-height: 24px;
       }
     }
-  }
-
-  .facetapi-limit-link {
-    //@include icon-plus;
-    background-color: $search-background;
-    color: mix($search-background, $turku-blue, 20%);
-    display: block;
-    font-size: 1.5em;
-    padding: 5px;
-    text-align: center;
-    text-decoration: none;
-
-    &:hover {
-      color: $turku-blue;
-    }
-
-    // &.open {
-    //   @include icon-minus;
-    // }
-  }
+  }  
 }
 
-.facet__icon {
-  //@extend .icon;
-  color: $turku-blue;
-  display: table-cell;
-  padding: 0 0.35em;
-
-  &:before {
-    font-size: 1.6em;
-    vertical-align: middle;
-  }
+.facetapi-facet {
+  margin-left: 35px;
 }
 
-.facet__title,
-label.facet__title {
-  cursor: pointer;
-  display: table-cell;
-  font-weight: normal;
-  line-height: 1.3;
-  vertical-align: middle;
-  width: 100%;
-  text-transform: capitalize;
+.facet__title {
+  text-transform: uppercase;
+  font-family: $bergen-mono;
+  font-size: 1rem;
 }
 
 .facet__count {
-  display: table-cell;
-  line-height: 1.5;
-  vertical-align: middle;
-
-  span {
-    background-color: darken($search-background, 2%);
-    color: lighten($body-font-color, 10%);
-    display: inline-block;
-    line-height: 1.5;
-    min-width: 2em;
-    padding: 0 0.25em;
-    text-align: center;
-  }
+  display: none;
 }
 
 .facetapi-active {
   .element-invisible {
-    // TODO remove hiding class
     display: inline !important;
     position: relative !important;
     padding: 0 1em;
@@ -100,110 +79,8 @@ label.facet__title {
   }
 }
 
-// Checkboxes produced by Facet API
-.facetapi-facet {
-
-  > input[type="checkbox"] {
-    display: none;
-  }
-
-  > a {
-    // &.facetapi-active .facet__icon {
-    //   @include icon-check-circle;
-    // }
-
-    // &.facetapi-inactive .facet__icon {
-    //   @include icon-circle-o;
-    // }
-  }
-}
-
-// Collapsible facets (in Service Map, etc)
-.facetapi-collapsible {
-  .item-list {
-    padding-left: 1em;
-  }
-}
-
-.facetapi-collapsible-handle {
-  //@extend .icon;
-  background-color: $turku-blue;
-  color: $turku-white;
-  display: table-cell;
-  font-size: 1.5em;
-  padding: 0 0.35em;
-  //@include icon-plus;
-
-  &:before {
-    vertical-align: middle;
-  }
-
-  // &.expanded {
-  //   @include icon-minus;
-  // }
-}
-
-// Facetlike BEF filters in service map
-.bef-tree.facetapi-collapsible {
-  .item-list {
-    display: none;
-
-    &.expanded {
-      display: block;
-    }
-  }
-
-  .facet__title {
-    padding-right: 0.5em;
-  }
-
-  .facetapi-facet {
-    display: table;
-    margin-bottom: 4px;
-    position: relative;
-  }
-
-  .facetapi-facet > a {
-    display: table-row;
-  }
-}
-
-.bef-tree,
-.bef-select-as-checkboxes {
-  input[type="checkbox"] {
-    display: none;
-  }
-}
-
-.l-region--sidebar-first {
-  .views-exposed-form .views-exposed-widget {
-    float: none;
-    padding: 0;
-
-    &.views-submit-button,
-    &.views-reset-button {
-      display: inline-block;
-      margin-top: 1em;
-    }
-
-    &.views-submit-button {
-      float: right;
-    }
-
-    &.views-reset-button > .form-submit {
-      background-color: $light-gray;
-      color: $body-font-color;
-    }
-
-    .form-submit {
-      margin: 0;
-    }
-  }
-
-  .form-text {
-    height: 2.5em;
-    line-height: 2.5;
-    padding: 0 0.5em;
-    width: 100%;
-  }
+.facetapi-limit-link {
+  display: block;
+  text-align: center;
+  padding: 20px 0;
 }
