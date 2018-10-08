@@ -49,6 +49,7 @@
     domain2_name: local.visitpori.fi
 
     wkv_site_env: local
+    php_env_vars_include_db: True
     base_pubkeys_enable: False
 
     nginx_disable_content_security_policy: True
@@ -110,7 +111,7 @@
     # BUT, we only use https for this host
     sslterminators:
       - server_name: "{{ domain_name }}"
-        ssl_certificate: certificate.crt
+        ssl_certificate: ssl/certificate.crt
         ssl_certificate_key: ssl/certificate.key
         backends:
           - 127.0.0.1:8081
@@ -129,7 +130,7 @@
               proxy_redirect off;
               proxy_buffering off;
       - server_name: "{{ domain2_name }}"
-        ssl_certificate: certificate.crt
+        ssl_certificate: ssl/certificate.crt
         ssl_certificate_key: ssl/certificate.key
         backends:
           - 127.0.0.1:8081 # Pass it to local varnish
@@ -160,7 +161,7 @@
     # Set a low heap allocation for Elasticsearch on vagrant.
     elasticsearch_heap_size: 200m
 
-    # Project-specific config for search_api_solr 
+    # Project-specific config for search_api_solr
     solr_drupal_files:
       # Standard stuff, inherited from WunderMachina
       - elevate.xml
@@ -173,5 +174,5 @@
       - solrcore.properties
       - stopwords.txt
       - synonyms.txt
-      # Customized 
+      # Customized
       - solr/schema.xml

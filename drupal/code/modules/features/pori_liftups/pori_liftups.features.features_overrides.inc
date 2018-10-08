@@ -38,6 +38,7 @@ function pori_liftups_features_override_default_overrides() {
 
   // Exported overrides for: views_view
   $overrides["views_view.kada_current.display|default|display_options|css_class"] = 'liftup-box-list liftup-box-list--current';
+  $overrides["views_view.kada_current.display|default|display_options|pager|options|items_per_page"] = 8;
   $overrides["views_view.kada_current_promoted_.display|default|display_options|css_class"] = 'liftup-box-list liftup-box-list--current';
   $overrides["views_view.kada_current_promoted_.display|default|display_options|pager|options|items_per_page"] = 8;
   $overrides["views_view.kada_current_promoted_.display|tab_blogs|display_options|pager|options|items_per_page"] = 8;
