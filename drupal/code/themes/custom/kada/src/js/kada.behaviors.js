@@ -254,6 +254,18 @@
     }
   };
 
+  // facets accordions
+  Drupal.behaviors.kadaFacetsAccordionBehavior = {
+    attach: function (context) {
+      $('.page-search .block--facetapi').addClass('collapsed');
+      $('.block--facetapi .block__title').click(
+        function () {
+          $(this).parent().toggleClass('collapsed');
+        }
+      );
+    }
+  };  
+
   // Help region toggler
   Drupal.behaviors.kadaToolsToggle = {
     attach: function (context) {
