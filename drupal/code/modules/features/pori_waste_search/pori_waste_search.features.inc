@@ -49,7 +49,7 @@ function pori_waste_search_field_default_field_instances_alter(&$data) {
       'type' => 'hidden',
       'weight' => 0,
     ); /* WAS: '' */
-    $data['node-event-field_location']['widget']['settings']['geocoder_handler'] = 'mapquest_nominatim'; /* WAS: 'google' */
+    $data['node-event-field_location']['widget']['settings']['geocoder_handler'] = 'openstreetmap_nominatim'; /* WAS: 'google' */
     $data['node-event-field_location']['widget']['settings']['handler_settings']['google']['biasing'] = array(
       'bounds' => '',
       'components' => '',
@@ -57,7 +57,8 @@ function pori_waste_search_field_default_field_instances_alter(&$data) {
     ); /* WAS: '' */
   }
   if (isset($data['node-place-field_location'])) {
-    $data['node-place-field_location']['widget']['settings']['geocoder_handler'] = 'mapquest_nominatim'; /* WAS: 'google' */
+    $data['node-place-field_location']['default_value'][0] = '';
+    $data['node-place-field_location']['widget']['settings']['geocoder_handler'] = 'openstreetmap_nominatim'; /* WAS: 'google' */
     $data['node-place-field_location']['widget']['settings']['handler_settings']['google']['biasing'] = array(
       'bounds' => '',
       'components' => '',
