@@ -56,6 +56,7 @@ features[features_overrides][] = field_instance.node-event-field_location.descri
 features[features_overrides][] = field_instance.node-event-field_location.display|live_results_search
 features[features_overrides][] = field_instance.node-event-field_location.widget|settings|geocoder_handler
 features[features_overrides][] = field_instance.node-event-field_location.widget|settings|handler_settings|google|biasing
+features[features_overrides][] = field_instance.node-place-field_location.default_value|0
 features[features_overrides][] = field_instance.node-place-field_location.widget|settings|geocoder_handler
 features[features_overrides][] = field_instance.node-place-field_location.widget|settings|handler_settings|google|biasing
 features[field_base][] = field_waste_type
