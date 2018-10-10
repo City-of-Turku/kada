@@ -26,10 +26,6 @@ function pori_waste_search_features_override_default_overrides() {
     'components' => '',
     'region' => '',
   );
-  $overrides["field_instance.node-place-field_location.default_value|0"] = array(
-    'geom' => 'POINT (21.769270109982 61.543753248824)',
-    'input_format' => 'wkt',
-  );
   $overrides["field_instance.node-place-field_location.widget|settings|geocoder_handler"] = 'openstreetmap_nominatim';
   $overrides["field_instance.node-place-field_location.widget|settings|handler_settings|google|biasing"] = array(
     'bounds' => '',
