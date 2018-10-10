@@ -45,7 +45,7 @@ function pori_contact_information_feature_feeds_importer_default() {
         'authorize' => 0,
         'mappings' => array(
           0 => array(
-            'source' => 'Email - id',
+            'source' => 'Sahkoposti',
             'target' => 'guid',
             'unique' => 1,
           ),
@@ -74,7 +74,7 @@ function pori_contact_information_feature_feeds_importer_default() {
             'language' => 'en',
           ),
           5 => array(
-            'source' => 'Email - id',
+            'source' => 'Sahkoposti',
             'target' => 'field_email_single',
             'unique' => 1,
             'language' => 'und',
