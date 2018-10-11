@@ -12,7 +12,7 @@
 .olControlZoomOutItemInactive,
 .olControlZoomToMaxExtentItemInactive {
   background-color: #FFFFFF;
-  background-image: url('../images/map-graphics/icon-sprite-map.png');
+  background-image: url('../image/map-graphics/icon-sprite-map.png');
   background-repeat: no-repeat;
   box-shadow: #999999 0 0 3px;
   height: 35px;
@@ -68,7 +68,7 @@
 
 .olPopupCloseBox {
   pointer-events: initial;
-  background: url('../images/map-graphics/icon-sprite-map.png') no-repeat center -171px #FFFFFF;
+  background: url('../image/map-graphics/icon-sprite-map.png') no-repeat center -171px #FFFFFF;
 
   &:hover {
     cursor: pointer;
