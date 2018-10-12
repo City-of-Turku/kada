@@ -38,6 +38,12 @@ function pori_contact_information_feature_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-9',
         ),
+        'facetapi-x9e4ZQAT9NwbIYTeoEQr0wBtJrfOde4r' => array(
+          'module' => 'facetapi',
+          'delta' => 'x9e4ZQAT9NwbIYTeoEQr0wBtJrfOde4r',
+          'region' => 'sidebar_first',
+          'weight' => '-8',
+        ),
       ),
     ),
   );
