@@ -39,6 +39,7 @@ features[ds_layout_settings][] = node|person|person_card
 features[ds_view_modes][] = person_card
 features[elysia_cron][] = :contacts
 features[elysia_cron][] = pori_contact_information_feature_cron
+features[facetapi][] = search_api@pori_person_index:block:field_activity_unit
 features[facetapi][] = search_api@pori_person_index:block:field_branch
 features[facetapi][] = search_api@pori_person_index:block:field_unit
 features[fe_block_settings][] = facetapi-cIe1ii4J1UAtqVemZV00yM9RFOt0vovl
