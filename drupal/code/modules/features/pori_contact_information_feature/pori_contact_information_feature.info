@@ -44,6 +44,7 @@ features[facetapi][] = search_api@pori_person_index:block:field_branch
 features[facetapi][] = search_api@pori_person_index:block:field_unit
 features[fe_block_settings][] = facetapi-cIe1ii4J1UAtqVemZV00yM9RFOt0vovl
 features[fe_block_settings][] = facetapi-rE0DEkspoEoPRA4nwBbnkSjc5ld7P5yJ
+features[fe_block_settings][] = facetapi-x9e4ZQAT9NwbIYTeoEQr0wBtJrfOde4r
 features[features_api][] = api:2
 features[feeds_importer][] = phone_csv
 features[feeds_tamper][] = phone_csv-company_contact-default_value
