@@ -80,14 +80,5 @@ function pori_contact_information_feature_preprocess_node(&$vars) {
   if (!empty($node->field_activity_unit)) {
     $parts[] = reset($node->field_activity_unit['und'])['value'];
   }
-  $units = implode('/', $parts);
-
-  $parts = array();
-  if (!empty($node->field_branch)) {
-    $parts[] = reset($node->field_branch['und'])['value'];
-  }
-  if (!empty($units)) {
-    $parts[] = $units;
-  }
-  $vars['person_organisation'] = implode(' | ', $parts);
+  $vars['person_organisation'] = implode(' / ', $parts);
 }
