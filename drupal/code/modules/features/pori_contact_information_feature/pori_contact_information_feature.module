@@ -15,11 +15,11 @@ function pori_contact_information_feature_feeds_presave($source, $entity, $item,
     // Newlines don't work in Feeds Tamper.
     foreach ($entity->field_visiting_address as $lang => &$addr_item) {
       $cityparts = array();
-      if (!empty($item['postinumero'])) {
-        $cityparts[] = $item['postinumero'];
+      if (!empty($item['Postinumero'])) {
+        $cityparts[] = $item['Postinumero'];
       }
-      if (!empty($item['paikkakunta'])) {
-        $cityparts[] = $item['paikkakunta'];
+      if (!empty($item['Paikkakunta'])) {
+        $cityparts[] = $item['Paikkakunta'];
       }
       if (!empty($cityparts)) {
         $addr_item[0]['value'] .= "\n" . implode(' ', $cityparts);
