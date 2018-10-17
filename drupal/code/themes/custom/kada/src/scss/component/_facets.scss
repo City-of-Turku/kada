@@ -72,11 +72,13 @@
 
 .facetapi-active {
   .element-invisible {
-    display: inline !important;
+    display: block !important;
     position: relative !important;
-    padding: 0 1em;
+    padding: 0;
     font-size: 14px;
     color: black;
+    font-style: italic;
+    height: auto;
   }
 }
 
