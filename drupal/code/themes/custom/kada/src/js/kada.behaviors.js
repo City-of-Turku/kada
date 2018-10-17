@@ -258,6 +258,7 @@
   Drupal.behaviors.kadaFacetsAccordionBehavior = {
     attach: function (context) {
       $('.page-search .block--facetapi').addClass('collapsed');
+      $('.page-search .facetapi-active' ).closest( '.block--facetapi' ).addClass( "active" );
       $('.block--facetapi .block__title').click(
         function () {
           $(this).parent().toggleClass('collapsed');

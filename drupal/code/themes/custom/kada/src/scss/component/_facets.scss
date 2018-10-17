@@ -56,6 +56,12 @@
   }  
 }
 
+.block--facetapi.active {
+  .block__content {
+    display: block;
+  }
+}
+
 .facetapi-facet {
   margin-left: 35px;
 }
