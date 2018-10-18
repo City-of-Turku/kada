@@ -48,7 +48,7 @@ function pori_search_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Keywords',
+    'title' => '',
     'visibility' => 0,
   );
 
