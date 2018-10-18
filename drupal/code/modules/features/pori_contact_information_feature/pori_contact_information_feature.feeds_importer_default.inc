@@ -48,6 +48,7 @@ function pori_contact_information_feature_feeds_importer_default() {
             'source' => 'Sahkoposti',
             'target' => 'guid',
             'unique' => 1,
+            'language' => 'und',
           ),
           1 => array(
             'source' => 'Sukunimi',
@@ -120,6 +121,17 @@ function pori_contact_information_feature_feeds_importer_default() {
             'target' => 'field_activity_unit',
             'unique' => FALSE,
             'language' => 'und',
+          ),
+          13 => array(
+            'source' => 'Paikkakunta',
+            'target' => 'Temporary target 1',
+            'unique' => FALSE,
+            'language' => 'und',
+          ),
+          14 => array(
+            'source' => 'Postinumero',
+            'target' => 'Temporary target 1',
+            'unique' => FALSE,
           ),
         ),
         'update_existing' => '2',
