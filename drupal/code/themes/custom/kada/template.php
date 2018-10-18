@@ -255,6 +255,12 @@ function kada_views_pre_render(&$view) {
   }
 }
 
+// Make facet titles translatable
+function kada_facetapi_title($variables) {
+  $variables['title'] = t($variables['title']);
+  return t('@title:', array('@title' => $variables['title']));
+}
+
 /**
  *Load parents of term
  */
