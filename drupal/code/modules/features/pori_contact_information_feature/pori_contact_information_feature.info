@@ -35,6 +35,7 @@ features[ds_fields][] = person_availability
 features[ds_fields][] = person_organisation
 features[ds_layout_settings][] = node|person|person_card
 features[ds_view_modes][] = person_card
+features[facetapi][] = search_api@pori_person_index:block:field_activity_unit
 features[facetapi][] = search_api@pori_person_index:block:field_branch
 features[facetapi][] = search_api@pori_person_index:block:field_unit
 features[fe_block_settings][] = facetapi-cIe1ii4J1UAtqVemZV00yM9RFOt0vovl
