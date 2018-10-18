@@ -92,5 +92,45 @@ function pori_contact_information_feature_default_fe_block_settings() {
     'visibility' => 0,
   );
 
+  $export['facetapi-x9e4ZQAT9NwbIYTeoEQr0wBtJrfOde4r'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 'x9e4ZQAT9NwbIYTeoEQr0wBtJrfOde4r',
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'facetapi',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'kada' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'visitpori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'visitpori',
+        'weight' => 0,
+      ),
+    ),
+    'title' => 'Activity unit',
+    'visibility' => 0,
+  );
+
   return $export;
 }

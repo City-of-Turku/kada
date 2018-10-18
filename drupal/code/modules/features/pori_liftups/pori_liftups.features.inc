@@ -71,6 +71,7 @@ function pori_liftups_ds_layout_settings_info_alter(&$data) {
 function pori_liftups_views_default_views_alter(&$data) {
   if (isset($data['kada_current'])) {
     $data['kada_current']->display['default']->display_options['css_class'] = 'liftup-box-list liftup-box-list--current'; /* WAS: 'liftup-box-list' */
+    $data['kada_current']->display['default']->display_options['pager']['options']['items_per_page'] = 8; /* WAS: 12 */
   }
   if (isset($data['kada_current_promoted_'])) {
     $data['kada_current_promoted_']->display['default']->display_options['css_class'] = 'liftup-box-list liftup-box-list--current'; /* WAS: 'liftup-box-list' */

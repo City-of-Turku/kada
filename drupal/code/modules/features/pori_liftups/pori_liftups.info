@@ -47,6 +47,7 @@ features[features_overrides][] = ds_layout_settings.node|liftup|project.settings
 features[features_overrides][] = ds_layout_settings.node|liftup|project.settings|regions|right|3
 features[features_overrides][] = ds_layout_settings.node|liftup|project.settings|regions|right|4
 features[features_overrides][] = views_view.kada_current.display|default|display_options|css_class
+features[features_overrides][] = views_view.kada_current.display|default|display_options|pager|options|items_per_page
 features[features_overrides][] = views_view.kada_current_promoted_.display|default|display_options|css_class
 features[features_overrides][] = views_view.kada_current_promoted_.display|default|display_options|pager|options|items_per_page
 features[features_overrides][] = views_view.kada_current_promoted_.display|tab_blogs|display_options|pager|options|items_per_page

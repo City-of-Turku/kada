@@ -14,9 +14,19 @@ function pori_contact_information_feature_feeds_presave($source, $entity, $item,
     // Replace comma followed by a post code with newline and the post code.
     // Newlines don't work in Feeds Tamper.
     foreach ($entity->field_visiting_address as $lang => &$addr_item) {
-      if (isset($addr_item[0]['value'])) {
-        $addr_item[0]['value'] = preg_replace('/,\W*([0-9]{5})/', "\n\\1", $addr_item[0]['value']);
+      $cityparts = array();
+      if (!empty($item['postinumero'])) {
+        $cityparts[] = $item['postinumero'];
       }
+      if (!empty($item['paikkakunta'])) {
+        $cityparts[] = $item['paikkakunta'];
+      }
+      if (!empty($cityparts)) {
+        $addr_item[0]['value'] .= "\n" . implode(' ', $cityparts);
+      }
+    }
+    if (!preg_match('/^(0|\+358)/', $entity->field_mobile_phone_work['und'][0]['value'])) {
+      $entity->field_mobile_phone_work['und'][0]['value'] = '0' . $entity->field_mobile_phone_work['und'][0]['value'];
     }
   }
 }
@@ -29,40 +39,33 @@ function pori_contact_information_feature_feeds_presave($source, $entity, $item,
  * instead of relying on default Feeds cron implementation.
  */
 function pori_contact_information_feature_cron() {
-  $importers = array(
-    'phone_csv' => 'private://transfer/Directory_Entries_26841_295309_.csv',
-  );
   watchdog('pori_contact_information', 'Running contact information feed importers...');
 
-  foreach ($importers as $id => $source_url) {
-    // Check that the source file isn't empty.
-    $path = drupal_realpath($source_url);
-    $content = file_get_contents($path);
-    if (empty($content)) {
-      watchdog('pori_contact_information', 'Skipping importer !importer because of empty source file in path !path...', array('!importer' => $id, '!path' => $path));
-      continue;
-    }
+  $path = 'private://transfer/puhelinluettelo.csv';
+  // If reading the file fails or it's empty.
+  if (! ($content = file_get_contents($path)) || empty($content)) {
+    watchdog('pori_contact_information', 'Skipping phone importer because of empty source file in path !path...', array('!path' => $path));
+  }
 
-    while (!isset($incomplete) || $incomplete) {
-      // Reset the continue trigger.
-      $incomplete = FALSE;
-      $source = feeds_source($id);
-      if ($source->imported + 21600 < time()) {
-        watchdog('pori_contact_information', "Starting import !id at !progress%", array('!id' => $id, '!progress' => round($source->progressImporting() * 100)));
-        $config = $source->getConfig();
-        $config['FeedsFileFetcher']['source'] = $source_url;
-        $source->setConfig($config);
-        $source->save();
-        $source->import();
-        watchdog('pori_contact_information', "Ended import !id at !progress%", array('!id' => $id, '!progress' => round($source->progressImporting() * 100)));
-        // If we didn't reach 100%, abort foreach loop to prevent extending to
-        // next importer.
-        if ($source->progressImporting() !== 1) {
-          $incomplete = TRUE;
-        }
+  do {
+    // Reset the continue trigger.
+    $incomplete = FALSE;
+    $source = feeds_source('phone_csv');
+    if ($source->imported + 21600 < time()) {
+      watchdog('pori_contact_information', "Starting import !id at !progress%", array('!id' => $source->id, '!progress' => round($source->progressImporting() * 100)));
+      $config = $source->getConfig();
+      $config['FeedsFileFetcher']['source'] = $path;
+      $source->setConfig($config);
+      $source->save();
+      $source->import();
+      watchdog('pori_contact_information', "Ended import !id at !progress%", array('!id' => $source->id, '!progress' => round($source->progressImporting() * 100)));
+      // If we didn't reach 100%, abort foreach loop to prevent extending to
+      // next importer.
+      if ($source->progressImporting() !== 1) {
+        $incomplete = TRUE;
       }
     }
-  }
+  } while ($incomplete);
 }
 
 /**
@@ -70,17 +73,12 @@ function pori_contact_information_feature_cron() {
  */
 function pori_contact_information_feature_preprocess_node(&$vars) {
   $node = $vars['node'];
-  if (isset($node->field_branch) && isset($node->field_unit)) {
-    $parts = array();
-    if (!empty($node->field_branch)) {
-      $parts[] = reset($node->field_branch['und'])['value'];
-    }
-    if (!empty($node->field_unit)) {
-      $parts[] = reset($node->field_unit['und'])['value'];
-    }
-    $vars['person_organisation'] = implode(' | ', $parts);
+  $parts = array();
+  if (!empty($node->field_unit)) {
+    $parts[] = reset($node->field_unit['und'])['value'];
   }
-  if (!empty($node->field_availability)) {
-    $vars['person_availability'] = t('Available') . ' ' . lcfirst(reset($node->field_availability['und'])['value']) . '.';
+  if (!empty($node->field_activity_unit)) {
+    $parts[] = reset($node->field_activity_unit['und'])['value'];
   }
+  $vars['person_organisation'] = implode(' / ', $parts);
 }
