@@ -20,7 +20,7 @@ api = 2
 ; Core project
 ; ------------
 projects[drupal][type] = core
-projects[drupal][version] = "7.59"
+projects[drupal][version] = "7.60"
 
 ; Use vocabulary machine name for permissions (https://www.drupal.org/node/995156)
 projects[drupal][patch][995156] = https://www.drupal.org/files/issues/995156-5_portable_taxonomy_permissions.patch
@@ -605,7 +605,7 @@ projects[search_api_et][subdir] = "contrib"
 projects[search_api_override][version] = 1.0-rc1
 projects[search_api_override][subdir] = contrib
 
-projects[search_api_solr][version] = 1.12
+projects[search_api_solr][version] = 1.14
 projects[search_api_solr][subdir] = contrib
 
 projects[service_links][version] = 2.3
