@@ -262,10 +262,11 @@
 
   // Second menu item specific styles
   .menu__item--has-second-level {
-    background-color: $white;
+    background-color: transparent;
     font-family: $bergen-text;
     font-weight: normal;
     text-transform: none;
+    padding: 0;
 
     @media screen and (min-width: $mobile-footer-breakpoint) {
       background-color: transparent;
@@ -278,9 +279,7 @@
     }
 
     > a {
-      background-color: $white;
-      color: $primary-color;
-      padding: 1.25rem 1.875rem;
+      padding: 0;
 
       @media screen and (min-width: $mobile-footer-breakpoint) {
         background-color: transparent;
