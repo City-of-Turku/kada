@@ -128,7 +128,7 @@ function pori_contact_information_feature_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => 'Activity unit',
+    'title' => '',
     'visibility' => 0,
   );
 
