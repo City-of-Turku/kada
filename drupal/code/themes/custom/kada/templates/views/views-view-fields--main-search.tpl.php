@@ -30,7 +30,7 @@
   <div class="search-result__information">
     <?php print $fields['created']->content; ?>
     <span class="search-result__information__divider">|</span>
-    <?php print $fields['type']->content; ?>
+    <?php print t($fields['type']->content); ?>
   </div>
   <h3 class="search-result__title"><?php print $fields['title']->content; ?></h3>
   <div class="search-result__content">
