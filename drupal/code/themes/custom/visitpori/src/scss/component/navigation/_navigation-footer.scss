@@ -292,11 +292,7 @@
       &:focus,
       &.active,
       &.active-trail {
-        background-color: $gray-light;
-
-        @media screen and (min-width: $mobile-footer-breakpoint) {
-          background-color: transparent;
-        }
+        background-color: transparent;
 
         &::after {
           @media screen and (min-width: $mobile-footer-breakpoint) {
