@@ -89,8 +89,11 @@
 
     .field--label-inline {
       .field__label,
+      .field-label,
       .field__items,
-      .field__item {
+      .field-items,
+      .field__item,
+      .field-item {
         display: inline;
         float: none;
         margin: 0;
@@ -104,7 +107,8 @@
         overflow: hidden;
       }
 
-      .field__label {
+      .field__label,
+      .field-label {
         @media screen and (min-width: $mobile-menu-breakpoint) {
           float: left;
           margin: 0;
@@ -112,7 +116,8 @@
           width: auto;
         }
       }
-      .field__items {
+      .field__items,
+      .field-items {
         @media screen and (min-width: $mobile-menu-breakpoint) {
           float: left;
         }
