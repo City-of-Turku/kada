@@ -171,6 +171,12 @@ function pori_search_entity_property_info_alter(&$info) {
     'raw getter callback' => 'pori_search_related_places_callback',
     'translatable' => TRUE,
   );
+  $info['node']['properties']['extra_search_strings'] = array(
+    'type'            => 'text',
+    'label'           => t('Extra search strings for fulltext search defined in code'),
+    'sanitized'       => TRUE,
+    'getter callback' => 'pori_search_search_api_property_extras_getter_callback',
+  );
 }
 
 /**
@@ -308,4 +314,65 @@ function pori_search_add_domain_filter_to_solr_query(array &$call_args) {
   if (in_array($current_domain_id, $enabled_domains)) {
     $call_args['params']['fq'][] = "im_domain_domain_id:$current_domain_id";
   }
+}
+
+/**
+ * Alter Solr documents before they are sent to Solr for indexing.
+ *
+ * @param array $documents
+ *   An array of SearchApiSolrDocument objects ready to be indexed, generated
+ *   from $items array.
+ * @param SearchApiIndex $index
+ *   The search index for which items are being indexed.
+ * @param array $items
+ *   An array of items being indexed.
+ */
+function pori_search_search_api_solr_documents_alter(array &$documents, SearchApiIndex $index, array $items) {
+  // Adds more details to search about phone numbers.
+  if($index->machine_name == 'pori_person_index') {
+    foreach ($documents as &$document) {
+      // Improve searchability.
+      $field_mobile = $document->getField('tm_field_mobile_phone_work');
+      if(strlen($field_mobile['value']) == 10) {
+        $split_phone = ' ' . substr($field_mobile['value'], 0, 3) . ' ' . substr($field_mobile['value'], 3, 3) . ' ' . substr($field_mobile['value'], 6, 4);
+      }
+      if(strlen($field_mobile['value']) == 9) {
+        $split_phone = ' ' . substr($field_mobile['value'], 2, 3) . ' ' . substr($field_mobile['value'], 5, 4);
+      }
+      $document->setField('tm_field_mobile_phone_work', $field_mobile['value'] . $split_phone, $field_mobile['boost']);
+    }
+  }
+}
+
+/**
+ * Getter callback for extras properties.
+ */
+function pori_search_search_api_property_extras_getter_callback($item) {
+  $extras = '';
+  $languages = language_list();
+    
+  // Add branch.
+  if(!empty($item->field_branch[LANGUAGE_NONE][0]['safe_value'])) {
+    $extras .= $item->field_branch[LANGUAGE_NONE][0]['safe_value'] . ' ';
+  }
+  // Add unit.
+  if(!empty($item->field_unit[LANGUAGE_NONE][0]['safe_value'])) {
+    $extras .= $item->field_unit[LANGUAGE_NONE][0]['safe_value'] . ' ';
+  }
+  // Add activity unit.
+  if(!empty($item->field_activity_unit[LANGUAGE_NONE][0]['safe_value'])) {
+    $extras .= $item->field_activity_unit[LANGUAGE_NONE][0]['safe_value'] . ' ';
+  }
+  foreach($languages as $lang) {
+    // Add all language versions of visiting address to fulltext search.
+    if(!empty($item->field_visiting_address[$lang->language][0]['safe_value'])) {
+      $extras .= $item->field_visiting_address[$lang->language][0]['safe_value'] . ' ';
+    }
+  }
+  // Debug.
+/*  if($item->nid == 65502) {
+    dsm($extras);
+    dsm($item);
+  }*/
+  return $extras;
 }
