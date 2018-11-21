@@ -51,6 +51,7 @@ function pori_contact_information_feature_default_search_api_index() {
       "index_directly" : 0,
       "cron_limit" : "50",
       "fields" : {
+        "extra_search_strings" : { "type" : "text" },
         "field_activity_unit" : { "type" : "string" },
         "field_branch" : { "type" : "string" },
         "field_email_single" : { "type" : "text" },
@@ -62,6 +63,7 @@ function pori_contact_information_feature_default_search_api_index() {
         "field_visiting_address" : { "type" : "text" },
         "nid" : { "type" : "integer" },
         "search_api_language" : { "type" : "string" },
+        "search_api_viewed" : { "type" : "text" },
         "title" : { "type" : "text" },
         "title_field" : { "type" : "text" }
       },
@@ -74,7 +76,7 @@ function pori_contact_information_feature_default_search_api_index() {
         "search_api_metatag_alter_callback" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
+        "search_api_alter_add_viewed_entity" : { "status" : 1, "weight" : "0", "settings" : { "mode" : "person_card" } },
         "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
         "search_api_alter_language_control" : {
           "status" : 0,
@@ -91,16 +93,17 @@ function pori_contact_information_feature_default_search_api_index() {
           "weight" : "0",
           "settings" : { "fields" : {
               "title" : true,
-              "title_field" : true,
+              "extra_search_strings" : true,
               "field_email_single" : true,
+              "field_employee_title" : true,
               "field_first_name" : true,
               "field_mobile_phone_work" : true,
               "field_surname" : true,
-              "field_employee_title" : true,
               "field_visiting_address" : true,
+              "title_field" : true,
+              "field_activity_unit" : true,
               "field_branch" : true,
-              "field_unit" : true,
-              "field_activity_unit" : true
+              "field_unit" : true
             }
           }
         },
@@ -110,14 +113,14 @@ function pori_contact_information_feature_default_search_api_index() {
           "settings" : {
             "fields" : {
               "field_email_single" : true,
+              "field_employee_title" : true,
               "field_first_name" : true,
               "field_mobile_phone_work" : true,
               "field_surname" : true,
-              "field_employee_title" : true,
               "field_visiting_address" : true,
+              "field_activity_unit" : true,
               "field_branch" : true,
-              "field_unit" : true,
-              "field_activity_unit" : true
+              "field_unit" : true
             },
             "title" : 0,
             "alt" : 1,
@@ -129,14 +132,14 @@ function pori_contact_information_feature_default_search_api_index() {
           "weight" : "15",
           "settings" : { "fields" : {
               "field_email_single" : true,
+              "field_employee_title" : true,
               "field_first_name" : true,
               "field_mobile_phone_work" : true,
               "field_surname" : true,
-              "field_employee_title" : true,
               "field_visiting_address" : true,
+              "field_activity_unit" : true,
               "field_branch" : true,
-              "field_unit" : true,
-              "field_activity_unit" : true
+              "field_unit" : true
             }
           }
         },
@@ -146,10 +149,10 @@ function pori_contact_information_feature_default_search_api_index() {
           "settings" : {
             "fields" : {
               "field_email_single" : true,
+              "field_employee_title" : true,
               "field_first_name" : true,
               "field_mobile_phone_work" : true,
               "field_surname" : true,
-              "field_employee_title" : true,
               "field_visiting_address" : true
             },
             "spaces" : "[^[:alnum:]]",
@@ -162,14 +165,14 @@ function pori_contact_information_feature_default_search_api_index() {
           "settings" : {
             "fields" : {
               "field_email_single" : true,
+              "field_employee_title" : true,
               "field_first_name" : true,
               "field_mobile_phone_work" : true,
               "field_surname" : true,
-              "field_employee_title" : true,
               "field_visiting_address" : true,
+              "field_activity_unit" : true,
               "field_branch" : true,
-              "field_unit" : true,
-              "field_activity_unit" : true
+              "field_unit" : true
             },
             "file" : "",
             "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
@@ -181,14 +184,14 @@ function pori_contact_information_feature_default_search_api_index() {
           "settings" : {
             "fields" : {
               "field_email_single" : true,
+              "field_employee_title" : true,
               "field_first_name" : true,
               "field_mobile_phone_work" : true,
               "field_surname" : true,
-              "field_employee_title" : true,
               "field_visiting_address" : true,
+              "field_activity_unit" : true,
               "field_branch" : true,
-              "field_unit" : true,
-              "field_activity_unit" : true
+              "field_unit" : true
             },
             "exceptions" : "texan=texa"
           }
