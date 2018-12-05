@@ -59,6 +59,7 @@ function pori_search_default_search_api_index() {
         "body:value" : { "type" : "text" },
         "created" : { "type" : "date" },
         "domain_domain_id" : { "type" : "list\\u003Cinteger\\u003E" },
+        "domain_path" : { "type" : "list\\u003Cstring\\u003E" },
         "field_additional_info_link:title" : { "type" : "list\\u003Ctext\\u003E" },
         "field_alternative_name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_file_attachment:field_alt_text" : { "type" : "list\\u003Ctext\\u003E" },
@@ -78,7 +79,8 @@ function pori_search_default_search_api_index() {
         "search_api_language" : { "type" : "string" },
         "title" : { "type" : "text", "boost" : "5.0" },
         "title_field" : { "type" : "text" },
-        "type" : { "type" : "string" }
+        "type" : { "type" : "string" },
+        "url" : { "type" : "uri" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
