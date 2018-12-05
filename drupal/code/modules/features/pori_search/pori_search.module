@@ -171,6 +171,12 @@ function pori_search_entity_property_info_alter(&$info) {
     'raw getter callback' => 'pori_search_related_places_callback',
     'translatable' => TRUE,
   );
+  $info['node']['properties']['extra_search_strings'] = array(
+    'type'            => 'text',
+    'label'           => t('Extra search strings for fulltext search defined in code'),
+    'sanitized'       => TRUE,
+    'getter callback' => 'pori_search_search_api_property_extras_getter_callback',
+  );
 }
 
 /**
@@ -336,4 +342,37 @@ function pori_search_search_api_solr_documents_alter(array &$documents, SearchAp
       $document->setField('tm_field_mobile_phone_work', $field_mobile['value'] . $split_phone, $field_mobile['boost']);
     }
   }
+}
+
+/**
+ * Getter callback for extras properties.
+ */
+function pori_search_search_api_property_extras_getter_callback($item) {
+  $extras = '';
+  $languages = language_list();
+    
+  // Add branch.
+  if(!empty($item->field_branch[LANGUAGE_NONE][0]['safe_value'])) {
+    $extras .= $item->field_branch[LANGUAGE_NONE][0]['safe_value'] . ' ';
+  }
+  // Add unit.
+  if(!empty($item->field_unit[LANGUAGE_NONE][0]['safe_value'])) {
+    $extras .= $item->field_unit[LANGUAGE_NONE][0]['safe_value'] . ' ';
+  }
+  // Add activity unit.
+  if(!empty($item->field_activity_unit[LANGUAGE_NONE][0]['safe_value'])) {
+    $extras .= $item->field_activity_unit[LANGUAGE_NONE][0]['safe_value'] . ' ';
+  }
+  foreach($languages as $lang) {
+    // Add all language versions of visiting address to fulltext search.
+    if(!empty($item->field_visiting_address[$lang->language][0]['safe_value'])) {
+      $extras .= $item->field_visiting_address[$lang->language][0]['safe_value'] . ' ';
+    }
+  }
+  // Debug.
+/*  if($item->nid == 65502) {
+    dsm($extras);
+    dsm($item);
+  }*/
+  return $extras;
 }
