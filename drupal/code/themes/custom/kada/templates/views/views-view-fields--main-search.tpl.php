@@ -23,6 +23,7 @@
  *
  * @ingroup views_templates
  */
+$title = '<a href="' . substr($row->_entity_properties['domain_path'][0], 0, -1) . url("node/$row->entity") . '">' . $row->_entity_properties['title'][0] . '</a>';
 ?>
 <div class="search-result--container search-result--<?php print $row->_entity_properties['#attributes']['class']['page']; ?>
       theme-color-<?php print $row->_entity_properties['#attributes']['class']['theme']; ?>
@@ -32,7 +33,7 @@
     <span class="search-result__information__divider">|</span>
     <?php print t($fields['type']->content); ?>
   </div>
-  <h3 class="search-result__title"><?php print $fields['title']->content; ?></h3>
+  <h3 class="search-result__title"><?php echo $title; ?></h3>
   <div class="search-result__content">
     <?php if (!empty($fields['field_lead_paragraph_et'])): ?>
       <?php print $fields['field_lead_paragraph_et']->content; ?>
