@@ -74,6 +74,23 @@ function pori_search_views_default_views() {
   $handler->display->display_options['header']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['header']['area_text_custom']['empty'] = TRUE;
   $handler->display->display_options['header']['area_text_custom']['content'] = 'Didn\'t find what you are looking for? Try <a href="/en/news-archive">searching from the news archive.</a>';
+  /* Field: Indexed Node: Domain Path */
+  $handler->display->display_options['fields']['domain_path']['id'] = 'domain_path';
+  $handler->display->display_options['fields']['domain_path']['table'] = 'search_api_index_pori_search_index';
+  $handler->display->display_options['fields']['domain_path']['field'] = 'domain_path';
+  $handler->display->display_options['fields']['domain_path']['label'] = '';
+  $handler->display->display_options['fields']['domain_path']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['domain_path']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['domain_path']['list']['mode'] = 'first';
+  $handler->display->display_options['fields']['domain_path']['link_to_entity'] = 0;
+  /* Field: Indexed Node: URL */
+  $handler->display->display_options['fields']['url']['id'] = 'url';
+  $handler->display->display_options['fields']['url']['table'] = 'search_api_index_pori_search_index';
+  $handler->display->display_options['fields']['url']['field'] = 'url';
+  $handler->display->display_options['fields']['url']['label'] = '';
+  $handler->display->display_options['fields']['url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
   /* Field: Indexed Node: Date created */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'search_api_index_pori_search_index';
