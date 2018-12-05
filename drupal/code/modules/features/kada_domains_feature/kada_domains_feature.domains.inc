@@ -10,7 +10,7 @@
 function kada_domains_feature_domain_default_domains() {
   $domains = array();
   $domains['pori_fi'] = array(
-    'subdomain' => 'beta.pori.fi',
+    'subdomain' => 'pori.fi',
     'sitename' => 'Pori.fi',
     'scheme' => 'http',
     'valid' => 1,
