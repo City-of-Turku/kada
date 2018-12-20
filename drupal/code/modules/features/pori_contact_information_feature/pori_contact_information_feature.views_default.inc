@@ -46,6 +46,14 @@ function pori_contact_information_feature_views_default_views() {
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_pori_person_index';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  /* Sort criterion: Indexed Node: Surname */
+  $handler->display->display_options['sorts']['field_surname']['id'] = 'field_surname';
+  $handler->display->display_options['sorts']['field_surname']['table'] = 'search_api_index_pori_person_index';
+  $handler->display->display_options['sorts']['field_surname']['field'] = 'field_surname';
+  /* Sort criterion: Indexed Node: First name */
+  $handler->display->display_options['sorts']['field_first_name']['id'] = 'field_first_name';
+  $handler->display->display_options['sorts']['field_first_name']['table'] = 'search_api_index_pori_person_index';
+  $handler->display->display_options['sorts']['field_first_name']['field'] = 'field_first_name';
   /* Filter criterion: Search: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_pori_person_index';
