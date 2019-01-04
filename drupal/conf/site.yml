@@ -161,6 +161,7 @@ prod:
       # - drush: composer-json-rebuild -y
       # - drush: composer-manager update -y
       - shell: chmod -R a-w web
+      - drush: cc all
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 

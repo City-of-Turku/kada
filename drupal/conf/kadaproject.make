@@ -717,6 +717,9 @@ projects[views_rss][subdir] = contrib
 projects[views_ajax_get][version] = 1.3
 projects[views_ajax_get][subdir] = contrib
 
+projects[warden][version] = 1.0
+projects[warden][subdir] = contrib
+
 projects[webform][version] = 4.16
 projects[webform][subdir] = contrib
 
