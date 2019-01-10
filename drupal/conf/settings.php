@@ -111,6 +111,20 @@ if (!empty($env) && $env != 'prod') {
   );
 }
 
+# Warden settings.
+# Shared secret between the site and Warden server.
+$conf['warden_token'] = 'aCsTnss8YMAPzU6COnaYKFcr7BTiir';
+# Location of your Warden server. No trailing slash.
+$conf['warden_server_host_path'] = 'https://warden.wunder.io';
+# Allow external callbacks to the site. When set to FALSE pressing refresh site data in
+# Warden will not work
+$conf['warden_allow_requests'] = TRUE;
+# Basic HTTP authorization credentials.
+$conf['warden_http_username'] = 'warden';
+$conf['warden_http_password'] = 'wunder';
+# IP address of the Warden server. Only these IP addresses will be allowed to make callback # requests
+$conf['warden_public_allow_ips'] = '83.136.254.41,2a04:3541:1000:500:d456:61ff:fee3:7d8d';
+
 /**
  * Add the domain module setup routine.
  */
@@ -125,17 +139,3 @@ $conf['menu_override_parent_selector'] = true;
 
 // HACK - REMOVE WHEN DOMAIN URLS FOR DIFFERENT ENVS CAN BE DONE PROPERLY
 //define('KADACALENDAR_BASE_URL', 'http://calendar.pori-kada-development.druid.fi/');
-
-# Warden settings.
-# Shared secret between the site and Warden server.
-$conf['warden_token'] = 'aCsTnss8YMAPzU6COnaYKFcr7BTiir';
-# Location of your Warden server. No trailing slash.
-$conf['warden_server_host_path'] = 'https://warden.wunder.io';
-# Allow external callbacks to the site. When set to FALSE pressing refresh site data in
-# Warden will not work
-$conf['warden_allow_requests'] = TRUE;
-# Basic HTTP authorization credentials.
-$conf['warden_http_username'] = 'warden';
-$conf['warden_http_password'] = 'wunder';
-# IP address of the Warden server. Only these IP addresses will be allowed to make callback # requests
-$conf['warden_public_allow_ips'] = '83.136.254.41,2a04:3541:1000:0500:d456:61ff:fee3:7d8d';

@@ -236,6 +236,7 @@
     # For example Cloudflare:
     nginx_real_ip:
       - 127.0.0.1
+      - 10.1.12.103
 
     ## Sslterminator ##
     # we only use https for this host
