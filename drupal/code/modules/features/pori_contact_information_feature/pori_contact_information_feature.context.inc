@@ -26,23 +26,29 @@ function pori_contact_information_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'pori_search-pori_search_reset' => array(
+          'module' => 'pori_search',
+          'delta' => 'pori_search_reset',
+          'region' => 'sidebar_first',
+          'weight' => '-7',
+        ),
         'facetapi-cIe1ii4J1UAtqVemZV00yM9RFOt0vovl' => array(
           'module' => 'facetapi',
           'delta' => 'cIe1ii4J1UAtqVemZV00yM9RFOt0vovl',
           'region' => 'sidebar_first',
-          'weight' => '-10',
+          'weight' => '-6',
         ),
         'facetapi-rE0DEkspoEoPRA4nwBbnkSjc5ld7P5yJ' => array(
           'module' => 'facetapi',
           'delta' => 'rE0DEkspoEoPRA4nwBbnkSjc5ld7P5yJ',
           'region' => 'sidebar_first',
-          'weight' => '-9',
+          'weight' => '-5',
         ),
         'facetapi-x9e4ZQAT9NwbIYTeoEQr0wBtJrfOde4r' => array(
           'module' => 'facetapi',
           'delta' => 'x9e4ZQAT9NwbIYTeoEQr0wBtJrfOde4r',
           'region' => 'sidebar_first',
-          'weight' => '-8',
+          'weight' => '-4',
         ),
       ),
     ),
