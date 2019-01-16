@@ -1,6 +1,6 @@
 .block--facetapi {
   background: white;
-  border-bottom: 1px solid #ddd;  
+  border-bottom: 1px solid #ddd;
   ul {
     margin: 0;
     padding-left: 0;
@@ -45,8 +45,8 @@
       display: block;
     }
     .block__title {
-      background: $blue;    
-      color: white;  
+      background: $blue;
+      color: white;
       &:after {
         @include fa('\f068');
         background: white;
@@ -54,7 +54,7 @@
         line-height: 24px;
       }
     }
-  }  
+  }
 }
 
 .facetapi-facet {
@@ -87,4 +87,9 @@
   display: block;
   text-align: center;
   padding: 20px 0;
+}
+
+.block--pori-search-pori-search-reset {
+  text-align: right;
+  margin: 0 1.25rem 1.25rem;
 }
