@@ -398,7 +398,7 @@ function pori_search_block_view($delta = '') {
   switch ($delta) {
     case 'pori_search_reset':
       if(count($_GET['f']) || isset($_GET['fulltext'])) {
-       $block['content'] = '<span>' . l('Reset facets', current_path()) . '</span></>';
+       $block['content'] = '<span>' . l('Clear out search', current_path()) . '</span></>';
       }
       break;
   }
