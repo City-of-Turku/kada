@@ -42,6 +42,11 @@ function pori_contact_information_feature_views_default_views() {
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = 'Telephone exchange of the City of Pori: <a href="tel:(02) 621 1100">(02) 621 1100</a><br><a href="mailto:kirjaamo@pori.fi">kirjaamo@pori.fi</a>';
   $handler->display->display_options['header']['area']['format'] = 'wysiwyg';
+  /* Header: Global: Block area */
+  $handler->display->display_options['header']['block']['id'] = 'block';
+  $handler->display->display_options['header']['block']['table'] = 'views';
+  $handler->display->display_options['header']['block']['field'] = 'block';
+  $handler->display->display_options['header']['block']['block_to_insert'] = 'pori_search:pori_search_reset';
   /* No results behavior: Global: Unfiltered text */
   $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';

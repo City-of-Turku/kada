@@ -26,12 +26,6 @@ function pori_contact_information_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'pori_search-pori_search_reset' => array(
-          'module' => 'pori_search',
-          'delta' => 'pori_search_reset',
-          'region' => 'sidebar_first',
-          'weight' => '-7',
-        ),
         'facetapi-cIe1ii4J1UAtqVemZV00yM9RFOt0vovl' => array(
           'module' => 'facetapi',
           'delta' => 'cIe1ii4J1UAtqVemZV00yM9RFOt0vovl',
