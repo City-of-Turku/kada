@@ -458,41 +458,13 @@ function kada_some_content_feature_field_formatter_view($entity_type, $entity, $
       $type = $wrapper->field_some_type->value();
       $some_id = $wrapper->field_some_id->value();
 
-      // Because not all social media feeds have a direct link available to
-      // the post, we will generate it from ID or use an image link.
-      switch ($type) {
-        case 'facebook':
-          $splitted_some_id = explode('_', $some_id);
-          $user_id = $splitted_some_id[0];
-          $post_id = $splitted_some_id[1];
-          $path = "http://www.facebook.com/" . $user_id . "/posts/" . $post_id;
-        break;
-        case 'instagram':
-          // Instagram posts have the link to the image in the first link field, so
-          // we can use that.
-          $links = $wrapper->field_link->value();
-          $path = $links[0]['url'];
-        break;
-        case 'linkedin':
-          // @TODO: Importer not working at the moment, need to figure out
-          // syntax for the direct link. Using the profile page until then.
-          $path = 'https://www.linkedin.com/';
-        break;
-        case 'twitter':
-          $path = 'http://twitter.com/statuses/' . $some_id;
-        break;
-        case 'youtube':
-          $path = 'http://www.youtube.com/watch?v=' . $some_id;
-        break;
-      }
-
       $link_title = t('Link to post');
       foreach ($items as $delta => $item) {
         $element[$delta] = array(
           '#theme' => 'kada_some_content_feature_some_link',
           '#link_title' => $link_title,
           '#type' => $type,
-          '#url' => $path,
+          '#url' => kada_some_content_feature_generate_link($type, $some_id, $wrapper),
           '#some_id' => $some_id,
         );
       }
@@ -516,4 +488,42 @@ function kada_some_content_feature_theme() {
       ),
     ),
   );
+}
+
+/**
+ * Generate social network content URI.
+ *
+ * @param $network
+ *   Type of network to generate URL for.
+ * @param $some_id
+ *   Content ID in the given network.
+ * @param $wrapper
+ *   Entity wrapper containing the content ID.
+ *
+ * @return string URL
+ *   Properly formatted URI for the content.
+ */
+function kada_some_content_feature_generate_link($network, $some_id, $wrapper) {
+  switch ($network) {
+    case 'facebook':
+      $splitted_some_id = explode('_', $some_id);
+      $user_id = $splitted_some_id[0];
+      $post_id = $splitted_some_id[1];
+      return "http://www.facebook.com/" . $user_id . "/posts/" . $post_id;
+    case 'instagram':
+      // Instagram posts have the link to the image in the first link field, so
+      // we can use that.
+      $links = $wrapper->field_link->value();
+      return $links[0]['url'];
+    case 'linkedin':
+      // @TODO: Importer not working at the moment, need to figure out
+      // syntax for the direct link. Using the profile page until then.
+      return 'https://www.linkedin.com/';
+    case 'twitter':
+      return 'http://twitter.com/statuses/' . $some_id;
+    case 'youtube':
+      return 'http://www.youtube.com/watch?v=' . $some_id;
+    default:
+      return '';
+  }
 }
