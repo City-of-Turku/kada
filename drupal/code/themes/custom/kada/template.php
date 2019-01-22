@@ -411,7 +411,7 @@ function kada_ds_pre_render_alter(&$layout_render_array, $context, &$variables) 
 
     if ($variables['type'] == 'social_media_update') {
       $hide_link = FALSE;
-      
+
       // Add SoMe type to node classes
       if (!empty($variables['field_some_type']['und'][0]['value'])) {
         $variables['classes_array'][] = 'node--' . $variables['field_some_type']['und'][0]['value'];
@@ -1028,6 +1028,13 @@ function kada_preprocess_field(&$variables) {
       }
     }
   }
+
+  // Social update node templates are a mess so we just override the URL here.
+  if ($variables["element"]["#field_name"] == 'field_image' && $variables["element"]["#bundle"] == 'social_media_update') {
+    $node_wrapper = entity_metadata_wrapper('node', $variables["element"]["#object"]);
+    $variables["items"][0]["#path"]["path"] = kada_some_content_feature_generate_link($node_wrapper->field_some_type->value(), $node_wrapper->field_some_id->value(), $node_wrapper);;
+  }
+
 }
 
 function _kada_search_facet_filter_taxonomy_url(&$item, $field_name, $domain_name) {
