@@ -55,64 +55,153 @@ function pori_some_content_ds_layout_settings_info_alter(&$data) {
 }
 
 /**
- * Implements hook_field_group_info_alter().
- */
-function pori_some_content_field_group_info_alter(&$data) {
-  if (isset($data['group_top|node|social_media_update|current'])) {
-    unset($data['group_top|node|social_media_update|current']);
-  }
-}
-
-/**
  * Implements hook_field_default_field_instances_alter().
  */
 function pori_some_content_field_default_field_instances_alter(&$data) {
   if (isset($data['node-social_media_update-body'])) {
     $data['node-social_media_update-body']['display']['current']['weight'] = 3; /* WAS: 1 */
+    $data['node-social_media_update-body']['display']['live_results_search'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
   }
   if (isset($data['node-social_media_update-field_district'])) {
     $data['node-social_media_update-field_district']['display']['current']['weight'] = 25; /* WAS: 0 */
+    $data['node-social_media_update-field_district']['display']['live_results_search'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
   }
   if (isset($data['node-social_media_update-field_image'])) {
+    $data['node-social_media_update-field_image']['display']['current']['settings']['image_link'] = 'content'; /* WAS: '' */
     $data['node-social_media_update-field_image']['display']['current']['weight'] = 1; /* WAS: 2 */
+    $data['node-social_media_update-field_image']['display']['live_results_search'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
   }
   if (isset($data['node-social_media_update-field_image_url'])) {
     $data['node-social_media_update-field_image_url']['display']['current']['weight'] = 5; /* WAS: 4 */
+    $data['node-social_media_update-field_image_url']['display']['live_results_search'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
   }
   if (isset($data['node-social_media_update-field_keywords'])) {
     $data['node-social_media_update-field_keywords']['display']['current']['weight'] = 20; /* WAS: 0 */
+    $data['node-social_media_update-field_keywords']['display']['live_results_search'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-social_media_update-field_keywords']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'allow'; /* WAS: '' */
   }
   if (isset($data['node-social_media_update-field_link'])) {
     $data['node-social_media_update-field_link']['display']['current']['weight'] = 4; /* WAS: 3 */
+    $data['node-social_media_update-field_link']['display']['live_results_search'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
   }
   if (isset($data['node-social_media_update-field_location'])) {
     $data['node-social_media_update-field_location']['display']['current']['weight'] = 22; /* WAS: 0 */
+    $data['node-social_media_update-field_location']['display']['live_results_search'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
   }
   if (isset($data['node-social_media_update-field_location_name'])) {
     $data['node-social_media_update-field_location_name']['display']['current']['weight'] = 27; /* WAS: 0 */
+    $data['node-social_media_update-field_location_name']['display']['live_results_search'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
   }
   if (isset($data['node-social_media_update-field_object_id'])) {
     $data['node-social_media_update-field_object_id']['display']['current']['weight'] = 32; /* WAS: 15 */
+    $data['node-social_media_update-field_object_id']['display']['live_results_search'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
   }
   if (isset($data['node-social_media_update-field_share_title'])) {
     $data['node-social_media_update-field_share_title']['display']['current']['weight'] = 30; /* WAS: 5 */
+    $data['node-social_media_update-field_share_title']['display']['live_results_search'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
   }
   if (isset($data['node-social_media_update-field_share_type'])) {
     $data['node-social_media_update-field_share_type']['display']['current']['weight'] = 31; /* WAS: 14 */
+    $data['node-social_media_update-field_share_type']['display']['live_results_search'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
   }
   if (isset($data['node-social_media_update-field_some_id'])) {
     $data['node-social_media_update-field_some_id']['display']['current']['weight'] = 0; /* WAS: 16 */
+    $data['node-social_media_update-field_some_id']['display']['live_results_search'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
   }
   if (isset($data['node-social_media_update-field_some_type'])) {
     $data['node-social_media_update-field_some_type']['display']['current']['weight'] = 29; /* WAS: 1 */
+    $data['node-social_media_update-field_some_type']['display']['live_results_search'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
   }
   if (isset($data['node-social_media_update-field_target_audience'])) {
     $data['node-social_media_update-field_target_audience']['display']['current']['weight'] = 24; /* WAS: 0 */
+    $data['node-social_media_update-field_target_audience']['display']['live_results_search'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
   }
   if (isset($data['node-social_media_update-field_theme'])) {
     $data['node-social_media_update-field_theme']['display']['current']['weight'] = 33; /* WAS: 17 */
+    $data['node-social_media_update-field_theme']['display']['live_results_search'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
   }
   if (isset($data['node-social_media_update-og_group_ref'])) {
     $data['node-social_media_update-og_group_ref']['display']['current']['weight'] = 26; /* WAS: 0 */
+    $data['node-social_media_update-og_group_ref']['display']['live_results_search'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
   }
 }
