@@ -420,11 +420,7 @@
     }
 
     .field--name-post-date {
-      margin: 1.25rem 0 .313rem;
-
-      @media screen and (min-width: $tablet-landscape) {
-        margin-top: 2rem;
-      }
+      margin: 1rem 0 .313rem;
     }
 
     // Set theme colored borders.
@@ -504,7 +500,7 @@
 
   .liftup-box__content {
     overflow: hidden;
-    margin-top: 2rem;
+    margin-top: 1rem;
     a {
 
       // Handles issue where long URL don't break on small screens.
