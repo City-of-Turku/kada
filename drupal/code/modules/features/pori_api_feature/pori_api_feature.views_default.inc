@@ -193,6 +193,12 @@ function pori_api_feature_views_default_views() {
       'address' => 'address',
     ),
   );
+  /* Field: Content: Visiting address - Country */
+  $handler->display->display_options['fields']['field_address_visiting_country']['id'] = 'field_address_visiting_country';
+  $handler->display->display_options['fields']['field_address_visiting_country']['table'] = 'field_data_field_address_visiting';
+  $handler->display->display_options['fields']['field_address_visiting_country']['field'] = 'field_address_visiting_country';
+  $handler->display->display_options['fields']['field_address_visiting_country']['label'] = 'address_country';
+  $handler->display->display_options['fields']['field_address_visiting_country']['display_name'] = 1;
   /* Field: Content: Video URL - Video URL */
   $handler->display->display_options['fields']['field_video_url_video_url']['id'] = 'field_video_url_video_url';
   $handler->display->display_options['fields']['field_video_url_video_url']['table'] = 'field_data_field_video_url';
@@ -294,6 +300,7 @@ function pori_api_feature_views_default_views() {
     t('[field_address_visiting_et_2-postal_code]'),
     t('address_locality'),
     t('[field_address_visiting_et_3-locality]'),
+    t('address_country'),
     t('video_url'),
     t('related_content'),
     t('location'),
