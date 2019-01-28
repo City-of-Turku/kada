@@ -1,7 +1,6 @@
 .block--kada-news-feature-news-archive-link {
   margin: 2.125rem auto 0 auto;
   max-width: 90rem;
-  padding-bottom: 1.25rem;
 
   .block__content {
     display: flex;
@@ -32,7 +31,8 @@
       display: flex;
       justify-content: flex-start;
 
-      .l-region--before-content & {
+      .l-region--before-content &,
+      .section--content & {
         justify-content: right;
       }
     }
