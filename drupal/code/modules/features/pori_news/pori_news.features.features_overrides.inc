@@ -12,6 +12,14 @@ function pori_news_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: context
+  $overrides["context.landing_page.reactions|block|blocks|kada_export_feature-kada_rss_feed_for_landing_page|weight"] = -8;
+  $overrides["context.landing_page.reactions|block|blocks|kada_news_feature-news_archive_link"] = array(
+    'module' => 'kada_news_feature',
+    'delta' => 'news_archive_link',
+    'region' => 'content',
+    'weight' => -9,
+  );
+  $overrides["context.news_item.reactions|block|blocks|kada_news_feature-news_archive_link|region"] = 'after_content';
   $overrides["context.news_list.conditions|path"]["DELETED"] = TRUE;
   $overrides["context.news_list.conditions|views"] = array(
     'values' => array(
@@ -36,9 +44,6 @@ function pori_news_features_override_default_overrides() {
   $overrides["ds_layout_settings.node|news_item|current.settings|regions|main|3"] = 'field_lead_paragraph_long_text';
   $overrides["ds_layout_settings.node|news_item|current.settings|regions|main|4"] = 'links';
   $overrides["ds_layout_settings.node|news_item|current.settings|regions|main|5"]["DELETED"] = TRUE;
-  $overrides["ds_layout_settings.node|news_item|default.settings|regions|main_content|2"] = 'field_info_box';
-  $overrides["ds_layout_settings.node|news_item|default.settings|regions|main_content|3"] = 'body';
-  $overrides["ds_layout_settings.node|news_item|default.settings|regions|main_content|4"] = 'field_content_image';
   $overrides["ds_layout_settings.node|news_item|full.settings|fields|domain"]["DELETED"] = TRUE;
   $overrides["ds_layout_settings.node|news_item|full.settings|fields|field_additional_info_link"] = 'additional_information';
   $overrides["ds_layout_settings.node|news_item|full.settings|fields|field_contact_person"] = 'contact_information';
@@ -64,8 +69,6 @@ function pori_news_features_override_default_overrides() {
   $overrides["ds_layout_settings.node|news_item|full.settings|wrappers|contact_information"] = 'div';
 
   // Exported overrides for: field_group
-  $overrides["field_group.group_additional_information|node|news_item|form.data|children|1"] = 'field_contact_person';
-  $overrides["field_group.group_additional_information|node|news_item|form.data|children|2"] = 'field_file_attachment';
   $overrides["field_group.group_content|node|news_item|form.data|children|1"] = 'field_content_image';
   $overrides["field_group.group_content|node|news_item|form.data|children|10"] = 'field_visitpori_theme';
   $overrides["field_group.group_content|node|news_item|form.data|children|11"] = 'flag';
@@ -117,6 +120,7 @@ function pori_news_features_override_default_overrides() {
     'type' => 'hidden',
     'weight' => 0,
   );
+  $overrides["field_instance.node-news_item-field_contact_information.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'allow';
   $overrides["field_instance.node-news_item-field_contact_information.widget|weight"] = 16;
   $overrides["field_instance.node-news_item-field_content_image.display|default|weight"] = 2;
   $overrides["field_instance.node-news_item-field_content_image.display|full|type"] = 'content_full';
@@ -150,6 +154,7 @@ function pori_news_features_override_default_overrides() {
   );
   $overrides["field_instance.node-news_item-field_keywords.display|default|label"] = 'hidden';
   $overrides["field_instance.node-news_item-field_keywords.display|default|weight"] = 5;
+  $overrides["field_instance.node-news_item-field_keywords.display|full|module"] = 'kada_page_feature';
   $overrides["field_instance.node-news_item-field_keywords.display|full|weight"] = 5;
   $overrides["field_instance.node-news_item-field_keywords.display|live_results_search"] = array(
     'label' => 'above',
@@ -174,6 +179,7 @@ function pori_news_features_override_default_overrides() {
     'type' => 'hidden',
     'weight' => 0,
   );
+  $overrides["field_instance.node-news_item-field_liftup_width.widget|settings|content_taxonomy_opt_groups"] = FALSE;
   $overrides["field_instance.node-news_item-field_liftup_width.widget|weight"] = 11;
   $overrides["field_instance.node-news_item-field_location.display|default|weight"] = 36;
   $overrides["field_instance.node-news_item-field_location.display|full|weight"] = 36;
