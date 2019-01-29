@@ -27,6 +27,18 @@ function pori_news_views_api($module = NULL, $api = NULL) {
  * Implements hook_context_default_contexts_alter().
  */
 function pori_news_context_default_contexts_alter(&$data) {
+  if (isset($data['landing_page'])) {
+    $data['landing_page']->reactions['block']['blocks']['kada_export_feature-kada_rss_feed_for_landing_page']['weight'] = -8; /* WAS: -9 */
+    $data['landing_page']->reactions['block']['blocks']['kada_news_feature-news_archive_link'] = array(
+      'module' => 'kada_news_feature',
+      'delta' => 'news_archive_link',
+      'region' => 'content',
+      'weight' => -9,
+    ); /* WAS: '' */
+  }
+  if (isset($data['news_item'])) {
+    $data['news_item']->reactions['block']['blocks']['kada_news_feature-news_archive_link']['region'] = 'after_content'; /* WAS: 'help' */
+  }
   if (isset($data['news_list'])) {
     $data['news_list']->conditions['views'] = array(
       'values' => array(
@@ -67,11 +79,6 @@ function pori_news_ds_layout_settings_info_alter(&$data) {
     unset($data['node|news_item|current']->settings['regions']['header'][2]);
     unset($data['node|news_item|current']->settings['regions']['main'][5]);
   }
-  if (isset($data['node|news_item|default'])) {
-    $data['node|news_item|default']->settings['regions']['main_content'][2] = 'field_info_box'; /* WAS: 'field_content_image' */
-    $data['node|news_item|default']->settings['regions']['main_content'][3] = 'body'; /* WAS: 'field_info_box' */
-    $data['node|news_item|default']->settings['regions']['main_content'][4] = 'field_content_image'; /* WAS: 'body' */
-  }
   if (isset($data['node|news_item|full'])) {
     $data['node|news_item|full']->settings['fields']['field_additional_info_link'] = 'additional_information'; /* WAS: '' */
     $data['node|news_item|full']->settings['fields']['field_contact_person'] = 'contact_information'; /* WAS: '' */
@@ -103,10 +110,6 @@ function pori_news_ds_layout_settings_info_alter(&$data) {
  * Implements hook_field_group_info_alter().
  */
 function pori_news_field_group_info_alter(&$data) {
-  if (isset($data['group_additional_information|node|news_item|form'])) {
-    $data['group_additional_information|node|news_item|form']->data['children'][1] = 'field_contact_person'; /* WAS: 'field_file_attachment' */
-    $data['group_additional_information|node|news_item|form']->data['children'][2] = 'field_file_attachment'; /* WAS: 'field_contact_person' */
-  }
   if (isset($data['group_content|node|news_item|form'])) {
     $data['group_content|node|news_item|form']->data['children'][1] = 'field_content_image'; /* WAS: 'field_address' */
     $data['group_content|node|news_item|form']->data['children'][10] = 'field_visitpori_theme'; /* WAS: 'field_order_time' */
@@ -170,6 +173,7 @@ function pori_news_field_default_field_instances_alter(&$data) {
       'type' => 'hidden',
       'weight' => 0,
     ); /* WAS: '' */
+    $data['node-news_item-field_contact_information']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'allow'; /* WAS: '' */
     $data['node-news_item-field_contact_information']['widget']['weight'] = 16; /* WAS: 18 */
     unset($data['node-news_item-field_contact_information']['display']['default']['module']);
     unset($data['node-news_item-field_contact_information']['display']['default']['settings']['bypass_access']);
@@ -214,6 +218,7 @@ function pori_news_field_default_field_instances_alter(&$data) {
   if (isset($data['node-news_item-field_keywords'])) {
     $data['node-news_item-field_keywords']['display']['default']['label'] = 'hidden'; /* WAS: 'above' */
     $data['node-news_item-field_keywords']['display']['default']['weight'] = 5; /* WAS: 6 */
+    $data['node-news_item-field_keywords']['display']['full']['module'] = 'kada_page_feature'; /* WAS: 'i18n_taxonomy' */
     $data['node-news_item-field_keywords']['display']['full']['weight'] = 5; /* WAS: 7 */
     $data['node-news_item-field_keywords']['display']['live_results_search'] = array(
       'label' => 'above',
@@ -242,6 +247,7 @@ function pori_news_field_default_field_instances_alter(&$data) {
       'type' => 'hidden',
       'weight' => 0,
     ); /* WAS: '' */
+    $data['node-news_item-field_liftup_width']['widget']['settings']['content_taxonomy_opt_groups'] = FALSE; /* WAS: '' */
     $data['node-news_item-field_liftup_width']['widget']['weight'] = 11; /* WAS: 16 */
   }
   if (isset($data['node-news_item-field_location'])) {

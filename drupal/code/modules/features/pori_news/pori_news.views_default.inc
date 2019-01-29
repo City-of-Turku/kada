@@ -121,10 +121,6 @@ function pori_news_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Results per page';
-  $handler->display->display_options['pager']['options']['tags']['first'] = '« first';
-  $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ previous';
-  $handler->display->display_options['pager']['options']['tags']['next'] = 'next ›';
-  $handler->display->display_options['pager']['options']['tags']['last'] = 'last »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
@@ -293,11 +289,8 @@ function pori_news_views_default_views() {
   $handler = $view->new_display('page', 'Visitpori archive', 'page_1');
   $handler->display->display_options['defaults']['exposed_form'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
-  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Apply';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Return to defaults';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Organize';
-  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Asc';
-  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Desc';
   $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['bef'] = array(
     'general' => array(
@@ -542,6 +535,8 @@ function pori_news_views_default_views() {
     t('Target audience'),
     t('General archive'),
     t('Visitpori archive'),
+    t('Return to defaults'),
+    t('Organize'),
     t('Visitpori theme (field_visitpori_theme)'),
   );
   $export['pori_news'] = $view;
