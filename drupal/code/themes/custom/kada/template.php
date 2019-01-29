@@ -62,12 +62,25 @@ function kada_breadcrumb(&$variables) {
   $current_page = drupal_get_title();
 
   if (!empty($breadcrumb)) {
+
+    if (current_path() == 'phone-book') {
+      if (isset($_GET["f"]) || isset($_GET["fulltext"])) {
+        $afterIndex = 0;
+        $newVal= ['<a href="' . drupal_get_normal_path(current_path()) . '">' . t('Phone book') . '</a>'];
+        $breadcrumb = array_merge(array_slice($breadcrumb,0,$afterIndex+1), $newVal,array_slice($breadcrumb,$afterIndex+1));
+      }
+    }
+
     $crumbs = '<ul class="breadcrumb">';
 
     foreach($breadcrumb as $value) {
       $crumbs .= '<li class="breadcrumb__item">' . $value . '</li>';
     }
-    $crumbs .= '<li class="breadcrumb__item"><span class="breadcrumb__current-page">' . $current_page . '</span></li>';
+    if (current_path() == 'phone-book') {
+      if (isset($_GET["f"]) && isset($_GET["fulltext"])) {
+        $crumbs .= '<li class="breadcrumb__item"><span class="breadcrumb__current-page">' . $current_page . '</span></li>';
+      }
+    }
     $crumbs .= '</ul>';
 
     return $crumbs;
