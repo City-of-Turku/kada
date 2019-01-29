@@ -31,7 +31,8 @@
 
     .block__content {
       .l-region--before-content &,
-      .section--content & {
+      .section--content &,
+      .page-node &{
         justify-content: flex-end;
       }
       .l-region--after-content & {
