@@ -31,10 +31,11 @@
 
     .block__content {
       .l-region--before-content &,
-      .section--content & {
+      .section--content &,
+      .domain-visitpori-fi .l-region--after-content & {
         justify-content: flex-end;
       }
-      .l-region--after-content & {
+      .not-front .l-region--after-content & {
         justify-content: flex-start;
       }
     }
