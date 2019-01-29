@@ -28,6 +28,12 @@ function kada_preprocess_node(&$variables) {
     $variables['theme_hook_suggestions'][] = 'node__' . $variables['node']->type . '__' . $variables['view_mode'];
   }
 
+  // Target specifically news item 'current' view modes and set the node URL
+  // manually.
+  if ($variables['node']->type == 'news_item' && $variables['view_mode'] == 'current') {
+    $variables['liftup_link_url'] = $variables['node_url'];
+  }
+
   // Linking content image to the give URL if it has been set
   if ($variables['view_mode'] == 'current' || $variables['node']->type == 'liftup' && $variables['view_mode'] == 'teaser') {
     // Optional Link to content URL can be given to a liftup
