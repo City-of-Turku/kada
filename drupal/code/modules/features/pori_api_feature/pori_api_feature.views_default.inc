@@ -58,16 +58,18 @@ function pori_api_feature_views_default_views() {
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['label'] = 'nid';
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Entity translation: Title: translated */
+  $handler->display->display_options['fields']['title_field_et']['id'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['table'] = 'field_data_title_field';
+  $handler->display->display_options['fields']['title_field_et']['field'] = 'title_field_et';
+  $handler->display->display_options['fields']['title_field_et']['label'] = 'title_field';
+  $handler->display->display_options['fields']['title_field_et']['element_label_colon'] = FALSE;
+  /* Field: Entity translation: Description: translated */
+  $handler->display->display_options['fields']['field_description_et']['id'] = 'field_description_et';
+  $handler->display->display_options['fields']['field_description_et']['table'] = 'field_data_field_description';
+  $handler->display->display_options['fields']['field_description_et']['field'] = 'field_description_et';
+  $handler->display->display_options['fields']['field_description_et']['label'] = 'description';
+  $handler->display->display_options['fields']['field_description_et']['element_label_colon'] = FALSE;
   /* Field: Content: Description */
   $handler->display->display_options['fields']['field_description']['id'] = 'field_description';
   $handler->display->display_options['fields']['field_description']['table'] = 'field_data_field_description';
@@ -78,14 +80,18 @@ function pori_api_feature_views_default_views() {
   $handler->display->display_options['fields']['field_lead_paragraph_et']['table'] = 'field_data_field_lead_paragraph_et';
   $handler->display->display_options['fields']['field_lead_paragraph_et']['field'] = 'field_lead_paragraph_et';
   $handler->display->display_options['fields']['field_lead_paragraph_et']['label'] = 'lead_paragraph';
-  /* Field: Field: Keywords */
-  $handler->display->display_options['fields']['field_keywords_et']['id'] = 'field_keywords_et';
-  $handler->display->display_options['fields']['field_keywords_et']['table'] = 'field_data_field_keywords_et';
-  $handler->display->display_options['fields']['field_keywords_et']['field'] = 'field_keywords_et';
-  $handler->display->display_options['fields']['field_keywords_et']['label'] = 'keywords';
-  $handler->display->display_options['fields']['field_keywords_et']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_keywords_et']['delta_offset'] = '0';
-  $handler->display->display_options['fields']['field_keywords_et']['multi_type'] = 'ul';
+  /* Field: Entity translation: Lead paragraph: translated */
+  $handler->display->display_options['fields']['field_lead_paragraph_et_et']['id'] = 'field_lead_paragraph_et_et';
+  $handler->display->display_options['fields']['field_lead_paragraph_et_et']['table'] = 'field_data_field_lead_paragraph_et';
+  $handler->display->display_options['fields']['field_lead_paragraph_et_et']['field'] = 'field_lead_paragraph_et_et';
+  $handler->display->display_options['fields']['field_lead_paragraph_et_et']['label'] = 'lead_paragraph';
+  /* Field: Entity translation: Keywords: translated */
+  $handler->display->display_options['fields']['field_keywords_et_et']['id'] = 'field_keywords_et_et';
+  $handler->display->display_options['fields']['field_keywords_et_et']['table'] = 'field_data_field_keywords_et';
+  $handler->display->display_options['fields']['field_keywords_et_et']['field'] = 'field_keywords_et_et';
+  $handler->display->display_options['fields']['field_keywords_et_et']['label'] = 'keywords';
+  $handler->display->display_options['fields']['field_keywords_et_et']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_keywords_et_et']['delta_offset'] = '0';
   /* Field: Field: Target audience */
   $handler->display->display_options['fields']['field_target_audience']['id'] = 'field_target_audience';
   $handler->display->display_options['fields']['field_target_audience']['table'] = 'field_data_field_target_audience';
@@ -114,7 +120,7 @@ function pori_api_feature_views_default_views() {
   $handler->display->display_options['fields']['field_online_shop']['label'] = 'online_shop';
   $handler->display->display_options['fields']['field_online_shop']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_online_shop']['type'] = 'link_absolute';
-  /* Field: Content: Images */
+  /* Field: Field: Images */
   $handler->display->display_options['fields']['field_images']['id'] = 'field_images';
   $handler->display->display_options['fields']['field_images']['table'] = 'field_data_field_images';
   $handler->display->display_options['fields']['field_images']['field'] = 'field_images';
@@ -130,47 +136,69 @@ function pori_api_feature_views_default_views() {
   $handler->display->display_options['fields']['field_location_name']['table'] = 'field_data_field_location_name';
   $handler->display->display_options['fields']['field_location_name']['field'] = 'field_location_name';
   $handler->display->display_options['fields']['field_location_name']['label'] = 'location_name';
-  /* Field: Content: Visiting address - Company */
-  $handler->display->display_options['fields']['field_address_visiting_organisation_name']['id'] = 'field_address_visiting_organisation_name';
-  $handler->display->display_options['fields']['field_address_visiting_organisation_name']['table'] = 'field_data_field_address_visiting';
-  $handler->display->display_options['fields']['field_address_visiting_organisation_name']['field'] = 'field_address_visiting_organisation_name';
-  $handler->display->display_options['fields']['field_address_visiting_organisation_name']['label'] = 'address_company';
-  /* Field: Content: Visiting address - Full name */
-  $handler->display->display_options['fields']['field_address_visiting_name_line']['id'] = 'field_address_visiting_name_line';
-  $handler->display->display_options['fields']['field_address_visiting_name_line']['table'] = 'field_data_field_address_visiting';
-  $handler->display->display_options['fields']['field_address_visiting_name_line']['field'] = 'field_address_visiting_name_line';
-  $handler->display->display_options['fields']['field_address_visiting_name_line']['label'] = 'address_name';
-  /* Field: Content: Visiting address - Thoroughfare (i.e. Street address) */
-  $handler->display->display_options['fields']['field_address_visiting_thoroughfare']['id'] = 'field_address_visiting_thoroughfare';
-  $handler->display->display_options['fields']['field_address_visiting_thoroughfare']['table'] = 'field_data_field_address_visiting';
-  $handler->display->display_options['fields']['field_address_visiting_thoroughfare']['field'] = 'field_address_visiting_thoroughfare';
-  $handler->display->display_options['fields']['field_address_visiting_thoroughfare']['label'] = 'address_street';
-  /* Field: Content: Visiting address - First name */
-  $handler->display->display_options['fields']['field_address_visiting_first_name']['id'] = 'field_address_visiting_first_name';
-  $handler->display->display_options['fields']['field_address_visiting_first_name']['table'] = 'field_data_field_address_visiting';
-  $handler->display->display_options['fields']['field_address_visiting_first_name']['field'] = 'field_address_visiting_first_name';
-  $handler->display->display_options['fields']['field_address_visiting_first_name']['label'] = 'address_name';
-  /* Field: Content: Visiting address - Last name */
-  $handler->display->display_options['fields']['field_address_visiting_last_name']['id'] = 'field_address_visiting_last_name';
-  $handler->display->display_options['fields']['field_address_visiting_last_name']['table'] = 'field_data_field_address_visiting';
-  $handler->display->display_options['fields']['field_address_visiting_last_name']['field'] = 'field_address_visiting_last_name';
-  $handler->display->display_options['fields']['field_address_visiting_last_name']['label'] = 'address_lastname';
-  /* Field: Content: Visiting address - Locality (i.e. City) */
-  $handler->display->display_options['fields']['field_address_visiting_locality']['id'] = 'field_address_visiting_locality';
-  $handler->display->display_options['fields']['field_address_visiting_locality']['table'] = 'field_data_field_address_visiting';
-  $handler->display->display_options['fields']['field_address_visiting_locality']['field'] = 'field_address_visiting_locality';
-  $handler->display->display_options['fields']['field_address_visiting_locality']['label'] = 'address_locality';
+  /* Field: Entity translation: Visiting address: translated */
+  $handler->display->display_options['fields']['field_address_visiting_et']['id'] = 'field_address_visiting_et';
+  $handler->display->display_options['fields']['field_address_visiting_et']['table'] = 'field_data_field_address_visiting';
+  $handler->display->display_options['fields']['field_address_visiting_et']['field'] = 'field_address_visiting_et';
+  $handler->display->display_options['fields']['field_address_visiting_et']['label'] = 'address_street_1';
+  $handler->display->display_options['fields']['field_address_visiting_et']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_address_visiting_et']['alter']['text'] = '[field_address_visiting_et-thoroughfare]';
+  $handler->display->display_options['fields']['field_address_visiting_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_address_visiting_et']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_address_visiting_et']['settings'] = array(
+    'use_widget_handlers' => 1,
+    'format_handlers' => array(
+      'address' => 'address',
+    ),
+  );
+  /* Field: Entity translation: Visiting address: translated */
+  $handler->display->display_options['fields']['field_address_visiting_et_1']['id'] = 'field_address_visiting_et_1';
+  $handler->display->display_options['fields']['field_address_visiting_et_1']['table'] = 'field_data_field_address_visiting';
+  $handler->display->display_options['fields']['field_address_visiting_et_1']['field'] = 'field_address_visiting_et';
+  $handler->display->display_options['fields']['field_address_visiting_et_1']['label'] = 'address_street_2';
+  $handler->display->display_options['fields']['field_address_visiting_et_1']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_address_visiting_et_1']['alter']['text'] = '[field_address_visiting_et_1-premise]';
+  $handler->display->display_options['fields']['field_address_visiting_et_1']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_address_visiting_et_1']['settings'] = array(
+    'use_widget_handlers' => 1,
+    'format_handlers' => array(
+      'address' => 'address',
+    ),
+  );
+  /* Field: Entity translation: Visiting address: translated */
+  $handler->display->display_options['fields']['field_address_visiting_et_2']['id'] = 'field_address_visiting_et_2';
+  $handler->display->display_options['fields']['field_address_visiting_et_2']['table'] = 'field_data_field_address_visiting';
+  $handler->display->display_options['fields']['field_address_visiting_et_2']['field'] = 'field_address_visiting_et';
+  $handler->display->display_options['fields']['field_address_visiting_et_2']['label'] = 'address_postcode';
+  $handler->display->display_options['fields']['field_address_visiting_et_2']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_address_visiting_et_2']['alter']['text'] = '[field_address_visiting_et_2-postal_code]';
+  $handler->display->display_options['fields']['field_address_visiting_et_2']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_address_visiting_et_2']['settings'] = array(
+    'use_widget_handlers' => 1,
+    'format_handlers' => array(
+      'address' => 'address',
+    ),
+  );
+  /* Field: Entity translation: Visiting address: translated */
+  $handler->display->display_options['fields']['field_address_visiting_et_3']['id'] = 'field_address_visiting_et_3';
+  $handler->display->display_options['fields']['field_address_visiting_et_3']['table'] = 'field_data_field_address_visiting';
+  $handler->display->display_options['fields']['field_address_visiting_et_3']['field'] = 'field_address_visiting_et';
+  $handler->display->display_options['fields']['field_address_visiting_et_3']['label'] = 'address_locality';
+  $handler->display->display_options['fields']['field_address_visiting_et_3']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_address_visiting_et_3']['alter']['text'] = '[field_address_visiting_et_3-locality]';
+  $handler->display->display_options['fields']['field_address_visiting_et_3']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_address_visiting_et_3']['settings'] = array(
+    'use_widget_handlers' => 1,
+    'format_handlers' => array(
+      'address' => 'address',
+    ),
+  );
   /* Field: Content: Visiting address - Country */
   $handler->display->display_options['fields']['field_address_visiting_country']['id'] = 'field_address_visiting_country';
   $handler->display->display_options['fields']['field_address_visiting_country']['table'] = 'field_data_field_address_visiting';
   $handler->display->display_options['fields']['field_address_visiting_country']['field'] = 'field_address_visiting_country';
   $handler->display->display_options['fields']['field_address_visiting_country']['label'] = 'address_country';
   $handler->display->display_options['fields']['field_address_visiting_country']['display_name'] = 1;
-  /* Field: Content: Visiting address - Postal code */
-  $handler->display->display_options['fields']['field_address_visiting_postal_code']['id'] = 'field_address_visiting_postal_code';
-  $handler->display->display_options['fields']['field_address_visiting_postal_code']['table'] = 'field_data_field_address_visiting';
-  $handler->display->display_options['fields']['field_address_visiting_postal_code']['field'] = 'field_address_visiting_postal_code';
-  $handler->display->display_options['fields']['field_address_visiting_postal_code']['label'] = 'address_postcode';
   /* Field: Content: Video URL - Video URL */
   $handler->display->display_options['fields']['field_video_url_video_url']['id'] = 'field_video_url_video_url';
   $handler->display->display_options['fields']['field_video_url_video_url']['table'] = 'field_data_field_video_url';
@@ -241,7 +269,6 @@ function pori_api_feature_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
-  $handler->display->display_options['field_language'] = 'fi';
   $handler->display->display_options['path'] = 'attraction_cards.json';
   $translatables['attraction_card_feed'] = array(
     t('Master'),
@@ -254,6 +281,7 @@ function pori_api_feature_views_default_views() {
     t('Desc'),
     t('term from field_attraction_category'),
     t('nid'),
+    t('title_field'),
     t('description'),
     t('lead_paragraph'),
     t('keywords'),
@@ -264,13 +292,15 @@ function pori_api_feature_views_default_views() {
     t('online_shop'),
     t('images'),
     t('location_name'),
-    t('address_company'),
-    t('address_name'),
-    t('address_street'),
-    t('address_lastname'),
-    t('address_locality'),
-    t('address_country'),
+    t('address_street_1'),
+    t('[field_address_visiting_et-thoroughfare]'),
+    t('address_street_2'),
+    t('[field_address_visiting_et_1-premise]'),
     t('address_postcode'),
+    t('[field_address_visiting_et_2-postal_code]'),
+    t('address_locality'),
+    t('[field_address_visiting_et_3-locality]'),
+    t('address_country'),
     t('video_url'),
     t('related_content'),
     t('location'),
