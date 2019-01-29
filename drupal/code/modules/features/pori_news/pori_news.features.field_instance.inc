@@ -176,6 +176,7 @@ function pori_news_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
