@@ -60,14 +60,50 @@ function kada_links__locale_block(&$variables) {
 function kada_breadcrumb(&$variables) {
   $breadcrumb = $variables['breadcrumb'];
   $current_page = drupal_get_title();
+  $phone_book = FALSE;
+  $attach_last_element = TRUE;
+  $path = 'phone-book';
+
+  // We need a large part of this silly logic to place the current page link in
+  // the breadcrumb before any search facets. This should only happen on phone book page.
+  if (current_path() == 'phone-book') {
+    $lang = $GLOBALS["language"]->language;
+    $phone_book = TRUE;
+    switch ($lang) {
+      case 'fi':
+        $path = 'puhelinluettelo';
+        break;
+      case 'en':
+        $path = '/en/phone-book';
+    }
+  }
 
   if (!empty($breadcrumb)) {
+    if ($phone_book) {
+      if (isset($_GET["f"]) || isset($_GET["fulltext"])) {
+        $afterIndex = 0;
+        $newVal= ['<a href="' . $path . '">' . t('Phone book') . '</a>'];
+        $breadcrumb = array_merge(array_slice($breadcrumb,0,$afterIndex+1), $newVal,array_slice($breadcrumb,$afterIndex+1));
+      }
+    }
+
     $crumbs = '<ul class="breadcrumb">';
 
     foreach($breadcrumb as $value) {
       $crumbs .= '<li class="breadcrumb__item">' . $value . '</li>';
     }
-    $crumbs .= '<li class="breadcrumb__item"><span class="breadcrumb__current-page">' . $current_page . '</span></li>';
+    if ($phone_book) {
+      if (isset($_GET["f"]) && isset($_GET["fulltext"])) {
+        $attach_last_element = FALSE;
+      }
+      else if (isset($_GET["f"]) || isset($_GET["fulltext"])) {
+        $attach_last_element = FALSE;
+      }
+    }
+
+    if ($attach_last_element) {
+      $crumbs .= '<li class="breadcrumb__item"><span class="breadcrumb__current-page">' . $current_page . '</span></li>';
+    }
     $crumbs .= '</ul>';
 
     return $crumbs;
@@ -411,7 +447,7 @@ function kada_ds_pre_render_alter(&$layout_render_array, $context, &$variables) 
 
     if ($variables['type'] == 'social_media_update') {
       $hide_link = FALSE;
-      
+
       // Add SoMe type to node classes
       if (!empty($variables['field_some_type']['und'][0]['value'])) {
         $variables['classes_array'][] = 'node--' . $variables['field_some_type']['und'][0]['value'];
