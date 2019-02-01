@@ -721,3 +721,13 @@ function kadaprofile_update_7127() {
   module_enable($modules, $enable_dependencies);
 }
 
+/**
+ * Implements hook_update().
+ *
+ * Enables Domain path module.
+ */
+function kadaprofile_update_7128() {
+  $modules = array('domain_path');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}
