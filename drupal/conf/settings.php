@@ -61,7 +61,7 @@ $conf['varnish_version'] = "4";
 $env = getenv('WKV_SITE_ENV');
 switch ($env) {
     case 'prod':
-      $conf['simple_environment_indicator'] = '#d4000f Production';
+      $conf['simple_environment_indicator'] = '#560004 Production';
       $conf['file_private_path'] = '/var/www/pori.prod.wunder.io/private_files';
       $conf['file_temporary_path'] = '/var/www/pori.prod.wunder.io/tmp';
     break;
@@ -81,12 +81,12 @@ switch ($env) {
     break;
 
     case 'local':
-      $conf['simple_environment_indicator'] = '#88b700 Local';
+      $conf['simple_environment_indicator'] = 'DarkGreen Local';
       $conf['file_temporary_path'] = "/tmp";
       $conf['preprocess_css'] = false;
       $conf['preprocess_js'] = false;
       $conf['googleanalytics_account'] = ''; // Make sure the GA isn't enabled in this env
-      $conf['stage_file_proxy_origin'] = 'http://beta.pori.fi';
+      $conf['stage_file_proxy_origin'] = 'https://www.pori.fi';
     break;
 }
 

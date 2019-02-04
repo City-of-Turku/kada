@@ -731,3 +731,14 @@ function kadaprofile_update_7128() {
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables Simple environment indicator..
+ */
+function kadaprofile_update_7129() {
+  $modules = array('simplei');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}
