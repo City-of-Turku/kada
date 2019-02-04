@@ -73,7 +73,7 @@ switch ($env) {
       $conf['googleanalytics_account'] = ''; // Make sure the GA isn't enabled in this env
     break;
 
-    case 'dev':
+    case 'develop':
       $conf['simple_environment_indicator'] = '#004984 Development';
       $conf['file_private_path'] = '/var/www/pori.dev.wunder.io/private_files';
       $conf['file_temporary_path'] = '/var/www/pori.dev.wunder.io/tmp';
