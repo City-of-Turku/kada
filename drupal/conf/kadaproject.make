@@ -619,6 +619,9 @@ projects[shortcutperrole][subdir] = contrib
 projects[shorten][version] = 1.4
 projects[shorten][subdir] = contrib
 
+projects[simplei][version] = 1.1
+projects[simplei][subdir] = contrib
+
 projects[smtp][version] = 1.7
 projects[smtp][subdir] = contrib
 
