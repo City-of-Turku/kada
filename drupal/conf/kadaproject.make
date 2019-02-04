@@ -619,6 +619,9 @@ projects[shortcutperrole][subdir] = contrib
 projects[shorten][version] = 1.4
 projects[shorten][subdir] = contrib
 
+projects[simplei][version] = 1.1
+projects[simplei][subdir] = contrib
+
 projects[smtp][version] = 1.7
 projects[smtp][subdir] = contrib
 
@@ -716,6 +719,9 @@ projects[views_rss][subdir] = contrib
 
 projects[views_ajax_get][version] = 1.3
 projects[views_ajax_get][subdir] = contrib
+
+projects[views_block_area][version] = 1.2
+projects[views_block_area][subdir] = contrib
 
 projects[warden][version] = 1.0
 projects[warden][subdir] = contrib

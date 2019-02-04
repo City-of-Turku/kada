@@ -350,7 +350,7 @@ function pori_search_search_api_solr_documents_alter(array &$documents, SearchAp
 function pori_search_search_api_property_extras_getter_callback($item) {
   $extras = '';
   $languages = language_list();
-    
+
   // Add branch.
   if(!empty($item->field_branch[LANGUAGE_NONE][0]['safe_value'])) {
     $extras .= $item->field_branch[LANGUAGE_NONE][0]['safe_value'] . ' ';
@@ -375,4 +375,32 @@ function pori_search_search_api_property_extras_getter_callback($item) {
     dsm($item);
   }*/
   return $extras;
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function pori_search_block_info() {
+  $blocks = [];
+
+  $blocks['pori_search_reset'] = [
+    'info' => t('Reset facets link.'),
+  ];
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function pori_search_block_view($delta = '') {
+  $block = [];
+  switch ($delta) {
+    case 'pori_search_reset':
+      if(count($_GET['f']) || isset($_GET['fulltext'])) {
+       $block['content'] = '<span>' . l(t('Clear out search'), current_path()) . '</span></>';
+      }
+      break;
+  }
+  return $block;
 }

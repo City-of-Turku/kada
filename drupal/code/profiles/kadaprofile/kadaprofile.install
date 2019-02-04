@@ -710,3 +710,25 @@ function kadaprofile_update_7126() {
   module_enable($modules, $enable_dependencies);
 }
 
+/**
+ * Implements hook_update().
+ *
+ * Enables Views block area.
+ */
+function kadaprofile_update_7127() {
+  $modules = array('views_block_area');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}
+
+
+/**
+ * Implements hook_update().
+ *
+ * Enables Simple environment indicator..
+ */
+function kadaprofile_update_7128() {
+  $modules = array('simplei');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}

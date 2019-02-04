@@ -26,7 +26,7 @@ function pori_contact_information_feature_field_default_field_instances() {
           'view_mode' => 'person_card',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'live_results_search' => array(
         'label' => 'above',
@@ -65,6 +65,7 @@ function pori_contact_information_feature_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'content_taxonomy_autocomplete_new_terms' => 'deny',
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,

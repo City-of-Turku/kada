@@ -420,11 +420,7 @@
     }
 
     .field--name-post-date {
-      margin: 1.25rem 0 .313rem;
-
-      @media screen and (min-width: $tablet-landscape) {
-        margin-top: 2rem;
-      }
+      margin: 1rem 0 .313rem;
     }
 
     // Set theme colored borders.
@@ -504,6 +500,25 @@
 
   .liftup-box__content {
     overflow: hidden;
+    margin-top: 1rem;
+    a {
+
+      // Handles issue where long URL don't break on small screens.
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      -ms-word-break: break-all;
+      word-break: break-all;
+      word-break: break-word;
+      -ms-hyphens: auto;
+      -moz-hyphens: auto;
+      -webkit-hyphens: auto;
+      hyphens: auto;
+
+      color: $link-color;
+      &:hover {
+        color: $link-color-hover;
+      }
+    }
   }
 
   .field--name-post-date {
