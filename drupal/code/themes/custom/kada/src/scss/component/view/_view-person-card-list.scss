@@ -45,7 +45,7 @@
       background-color: $gray-lighter;
       float: none;
       order: 1;
-      padding-bottom: 1.25rem;
+      padding: 0 0 1.25rem 0;
       width: 100%;
 
       @media screen and (min-width: $mobile-menu-breakpoint) {
