@@ -716,7 +716,8 @@ function kadaprofile_update_7126() {
  * Enables Domain path module.
  */
 function kadaprofile_update_7127() {
-  $modules = array('domain_path');
+  $modules = array('domain_path', 'domain_path_rewrite');
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
+

@@ -244,6 +244,9 @@ projects[domain_views][download][revision] = 074a167b82b0db9c19a3a9dddfb0f8e77e6
 projects[domain_path][version] = 1.0-beta4
 projects[domain_path][subdir] = contrib
 
+projects[domain_path_rewrite][version] = 1.0-alpha4
+projects[domain_path_rewrite][subdir] = contrib
+
 projects[domaincontext][version] = 1.0-alpha1
 projects[domaincontext][subdir] = contrib
 ; Fix to use machine names instead of ids
