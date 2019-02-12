@@ -42,6 +42,13 @@ function pori_contact_information_feature_views_default_views() {
   $handler->display->display_options['header']['area']['empty'] = TRUE;
   $handler->display->display_options['header']['area']['content'] = 'Telephone exchange of the City of Pori: <a href="tel:(02) 621 1100">(02) 621 1100</a><br><a href="mailto:kirjaamo@pori.fi">kirjaamo@pori.fi</a>';
   $handler->display->display_options['header']['area']['format'] = 'wysiwyg';
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area_1']['id'] = 'area_1';
+  $handler->display->display_options['header']['area_1']['table'] = 'views';
+  $handler->display->display_options['header']['area_1']['field'] = 'area';
+  $handler->display->display_options['header']['area_1']['empty'] = TRUE;
+  $handler->display->display_options['header']['area_1']['content'] = '<div class="views-header-spacer"></div>';
+  $handler->display->display_options['header']['area_1']['format'] = 'wysiwyg';
   /* Header: Global: Block area */
   $handler->display->display_options['header']['block']['id'] = 'block';
   $handler->display->display_options['header']['block']['table'] = 'views';
@@ -106,6 +113,7 @@ function pori_contact_information_feature_views_default_views() {
     t('next ›'),
     t('last »'),
     t('Telephone exchange of the City of Pori: <a href="tel:(02) 621 1100">(02) 621 1100</a><br><a href="mailto:kirjaamo@pori.fi">kirjaamo@pori.fi</a>'),
+    t('<div class="views-header-spacer"></div>'),
     t('No results message'),
     t('No search results'),
     t('Node ID'),
