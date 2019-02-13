@@ -1,7 +1,7 @@
 .block--kada-news-feature-news-archive-link {
   margin: 2.125rem auto 0 auto;
 
-  .not-front .l-region--after-content & {
+  .node-type-news-item .l-region--after-content & {
     max-width: 90rem;
   }
 
@@ -32,10 +32,12 @@
     .block__content {
       .l-region--before-content &,
       .section--content &,
+      .front .l-region--after-content &,
       .landing-page__visitpori .l-region--after-content & {
         justify-content: flex-end;
       }
-      .domain-pori-fi.not-front .l-region--after-content & {
+      .domain-visitpori-fi.node-type-news-item .l-region--after-content &,
+      .domain-pori-fi.node-type-news-item .l-region--after-content & {
         justify-content: flex-start;
       }
     }
