@@ -32,11 +32,12 @@
     .block__content {
       .l-region--before-content &,
       .section--content &,
-      .domain-visitpori-fi .l-region--after-content &,
-      .domain-visitpori-fi.node-type-landing-page .l-region--after-content &{
+      .front .l-region--after-content &,
+      .landing-page__visitpori .l-region--after-content & {
         justify-content: flex-end;
       }
-      .not-front .l-region--after-content & {
+      .domain-visitpori-fi.node-type-news-item .l-region--after-content &,
+      .domain-pori-fi.node-type-news-item .l-region--after-content & {
         justify-content: flex-start;
       }
     }
