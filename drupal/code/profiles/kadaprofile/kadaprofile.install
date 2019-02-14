@@ -742,3 +742,14 @@ function kadaprofile_update_7129() {
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+* Implements hook_update().
+ *
+ * Enables Pori events base overrides.
+ */
+function kadaprofile_update_7130() {
+  $modules = array('pori_events_base_overrides');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}
