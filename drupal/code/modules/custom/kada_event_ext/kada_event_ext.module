@@ -17,8 +17,9 @@ function kada_event_ext_menu() {
     'title' => 'Create event',
     'page callback' => 'drupal_get_form',
     'page arguments' => array('kada_event_ext_event_translations_form'),
-    'access callback' => TRUE,
-  );
+    'access callback' => 'user_access',
+    'access arguments' => array('access content overview'),
+    );
   return $items;
 }
 
