@@ -1,8 +1,29 @@
 .person-card-list {
   // Header
   .person-card-list__header {
-    margin: 0 auto 30px;
     max-width: 90rem;
+
+    #block-pori-search-pori-search-reset {
+      background-color: #f8f8f8;
+
+      @media screen and (max-width: $mobile-landscape-wide) {
+        margin: 0 -1.25rem;
+      }
+
+      .block__content {
+        padding: 1.25rem 0 0 1.25rem;
+        //@media screen and (max-width: $mobile-landscape-wide) {
+        //  padding: 0;
+        //}
+      }
+
+
+    }
+
+    .views-header-spacer {
+      margin: 0 auto 30px;
+    }
+
   }
   // Filters
   .person-card-list__filters {
@@ -24,7 +45,7 @@
       background-color: $gray-lighter;
       float: none;
       order: 1;
-      padding: 1.25rem 0;
+      padding: 0 0 1.25rem 0;
       width: 100%;
 
       @media screen and (min-width: $mobile-menu-breakpoint) {
@@ -160,7 +181,7 @@
       padding: 0;
       position: absolute;
       right: 1.25rem + .063rem;
-      top: 1.25rem + .063rem;
+      //top: 1.25rem + .063rem;
       width: 3.125rem;
       z-index: 2;
 
@@ -227,5 +248,9 @@
       border-top: .938rem solid $secondary-color;
       width: 100%;
     }
+  }
+
+  .person-card-list__empty {
+    margin: 30px 0 0 0;
   }
 }
