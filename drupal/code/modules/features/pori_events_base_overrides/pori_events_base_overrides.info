@@ -1,0 +1,10 @@
+name = PORI events base overrides
+description = Overrides for feature 'KADA events base'.
+core = 7.x
+package = Pori
+dependencies[] = kada_events_base_feature
+features[features_api][] = api:2
+features[features_override_items][] = user_permission.create event content
+features[features_overrides][] = user_permission.create event content.roles|anonymous user
+features[features_overrides][] = user_permission.create event content.roles|authenticated user
+features[features_overrides][] = user_permission.create event content.roles|content editor
