@@ -84,4 +84,11 @@ function kada_preprocess_block(&$variables) {
       $variables['block']->subject = t($variables['elements']['#settings']->settings['default_option_label']);
     }
   }
+
+  if ($variables["block_html_id"] == 'block-quicktabs-feed-tabs' && $node->type == 'page') {
+    $blockObject = block_load('kada_news_feature', 'news_archive_link');
+    $block = _block_get_renderable_array(_block_render_blocks(array($blockObject)));
+    $variables['read_more_block']  = drupal_render($block);;
+  }
+
 }
