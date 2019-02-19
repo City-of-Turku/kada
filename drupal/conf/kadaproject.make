@@ -622,6 +622,9 @@ projects[shorten][subdir] = contrib
 projects[simplei][version] = 1.1
 projects[simplei][subdir] = contrib
 
+projects[simplesamlphp_auth][version] = "2.0-alpha2"
+projects[simplesamlphp_auth][subdir] = contrib
+
 projects[smtp][version] = 1.7
 projects[smtp][subdir] = contrib
 
