@@ -44,8 +44,8 @@ default:
       - install
       - cleanup
       - drush: cc drush
-      # - drush: composer-json-rebuild -y
-      # - drush: composer-manager update -y
+      - drush: composer-json-rebuild -y
+      - drush: composer-manager update -y
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 
@@ -58,8 +58,8 @@ default:
       - cleanup
       - drush: en devel -y
       - drush: cc drush
-      # - drush: composer-json-rebuild -y
-      # - drush: composer-manager update -y
+      - drush: composer-json-rebuild -y
+      - drush: composer-manager update -y
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 # Test environment:
@@ -170,8 +170,8 @@ prod:
       - drush: dis devel -y
       - drush: fra -y
       - drush: cc drush
-      # - drush: composer-json-rebuild -y
-      # - drush: composer-manager update -y
+      - drush: composer-json-rebuild -y
+      - drush: composer-manager update -y
       - shell: chmod -R a-w web
       - drush: cc all
       - shell: sudo systemctl restart nginx php-fpm varnish memcached

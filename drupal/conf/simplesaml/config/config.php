@@ -4,6 +4,10 @@
  *
  */
 
+if (!ini_get('session.save_handler')) {
+  ini_set('session.save_handler', 'file');
+}
+
 $config = array(
 
     /*******************************
@@ -33,7 +37,7 @@ $config = array(
      * The 'application' configuration array groups a set configuration options
      * relative to an application protected by SimpleSAMLphp.
      */
-    //'application' => array(
+    'application' => array(
         /*
          * The 'baseURL' configuration option allows you to specify a protocol,
          * host and optionally a port that serves as the canonical base for all
@@ -48,8 +52,8 @@ $config = array(
          * need to compute the right URLs yourself and pass them dynamically
          * to SimpleSAMLphp's API.
          */
-        //'baseURL' => 'https://example.com',
-    //),
+        'baseURL' => 'https://' . $_SERVER['HTTP_HOST'],
+    ),
 
     /*
      * The following settings are *filesystem paths* which define where
@@ -73,7 +77,7 @@ $config = array(
      * also as the technical contact in generated metadata.
      */
     'technicalcontact_name' => 'Administrator',
-    'technicalcontact_email' => 'na@example.org',
+    'technicalcontact_email' => 'simplesaml_admin@example.com',
 
     /*
      * The envelope from address for outgoing emails.
@@ -89,7 +93,7 @@ $config = array(
      *
      * See this page for a list of valid timezones: http://php.net/manual/en/timezones.php
      */
-    'timezone' => null,
+    'timezone' => 'Europe/Helsinki',
 
 
 
@@ -105,7 +109,7 @@ $config = array(
      * A possible way to generate a random salt is by running the following command from a unix shell:
      * LC_CTYPE=C tr -c -d '0123456789abcdefghijklmnopqrstuvwxyz' </dev/urandom | dd bs=32 count=1 2>/dev/null;echo
      */
-    'secretsalt' => 'defaultsecretsalt',
+    'secretsalt' => '10zh8o3bjo279wxjtl3rzrtjn3auw22g',
 
     /*
      * This password must be kept secret, and modified from the default value 123.
@@ -113,7 +117,7 @@ $config = array(
      * metadata listing and diagnostics pages.
      * You can also put a hash here; run "bin/pwgen.php" to generate one.
      */
-    'auth.adminpassword' => '123',
+    'auth.adminpassword' => '{SSHA256}nL6CgjTO5xBcPKFzXNLrCpFyY5wEogY5BPUfcIoWwDUaG1mGTWg2FQ==', // REMOVEME: Ex7MRahZ%u3k
 
     /*
      * Set this options to true if you want to require administrator password to access the web interface
@@ -215,7 +219,7 @@ $config = array(
      * empty array.
      */
     'debug' => array(
-        'saml' => false,
+        'saml' => true,
         'backtraces' => true,
         'validatexml' => false,
     ),
@@ -426,7 +430,7 @@ $config = array(
      * one of the functionalities below, but in some cases you could run multiple functionalities.
      * In example when you are setting up a federation bridge.
      */
-    'enable.saml20-idp' => false,
+    'enable.saml20-idp' => true,
     'enable.shib13-idp' => false,
     'enable.adfs-idp' => false,
     'enable.wsfed-sp' => false,
@@ -539,7 +543,7 @@ $config = array(
      */
     'session.phpsession.cookiename' => 'SimpleSAML',
     'session.phpsession.savepath' => null,
-    'session.phpsession.httponly' => true,
+    'session.phpsession.httponly' => false,
 
     /*
      * Option to override the default settings for the auth token cookie
@@ -559,8 +563,8 @@ $config = array(
      * It's advised to use remember me feature with session checking function
      * defined with 'session.check_function' option.
      */
-    'session.rememberme.enable' => false,
-    'session.rememberme.checked' => false,
+    'session.rememberme.enable' => true,
+    'session.rememberme.checked' => true,
     'session.rememberme.lifetime' => (14 * 86400),
 
     /*
@@ -1062,7 +1066,7 @@ $config = array(
      *
      * (This option replaces the old 'session.handler'-option.)
      */
-    'store.type'                    => 'phpsession',
+    'store.type'                    => 'memcache',
 
     /*
      * The DSN the sql datastore should connect to.

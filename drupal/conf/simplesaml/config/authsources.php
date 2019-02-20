@@ -18,11 +18,19 @@ $config = array(
 
         // The entity ID of this SP.
         // Can be NULL/unset, in which case an entity ID is generated based on the metadata URL.
-        'entityID' => null,
+        'entityID' => 'urn:drupal:adfs-saml',
 
         // The entity ID of the IdP this should SP should contact.
         // Can be NULL/unset, in which case the user will be shown a list of available IdPs.
-        'idp' => null,
+        'idp' => "http://fs.pori.fi/adfs/services/trust",
+        'redirect.sign' => true,
+        'assertion.encryption' => true,
+        'sign.logout' => true,
+
+        'privatekey' => 'saml.pem',
+        'certificate' => 'saml.crt',
+
+        'signature.algorithm' => 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha256',
 
         // The URL to the discovery service.
         // Can be NULL/unset, in which case a builtin discovery service will be used.
