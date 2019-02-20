@@ -79,6 +79,18 @@
       - server_name: "{{ domain_name }}"
         http_port: 8080
         docroot: /vagrant/drupal/web
+        extra_locations:
+          - location: "/simplesaml"
+            definition: |
+              alias /vagrant/drupal/web/simplesamlphp/www;
+              location ~ ^(?<prefix>/simplesaml)(?<phpfile>.+?\.php)(?<pathinfo>/.*)?$ {
+                include fastcgi_params;
+                fastcgi_split_path_info ^(.+?}\.php)(/.+)$;
+                fastcgi_pass phpcgi;
+                fastcgi_param SCRIPT_FILENAME $document_root$phpfile;
+                fastcgi_param PATH_INFO $fastcgi_path_info;
+              }
+
       - server_name: "docs.{{ domain_name}}"
         http_port: 8082
         docroot: /vagrant/docs
@@ -107,6 +119,9 @@
             - name: local_example2_http
               address: 127.0.0.1
               port: 8080
+      extra_cookies:
+        - cookie: |
+            elseif (req.http.Cookie ~ "(?i)simplesaml" || req.http.Cookie ~ "NO_CACHE") { return (pass); }
 
     # BUT, we only use https for this host
     sslterminators:
@@ -129,6 +144,7 @@
               proxy_http_version 1.1;
               proxy_redirect off;
               proxy_buffering off;
+
       - server_name: "{{ domain2_name }}"
         ssl_certificate: ssl/certificate.crt
         ssl_certificate_key: ssl/certificate.key
