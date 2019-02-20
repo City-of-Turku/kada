@@ -732,3 +732,10 @@ function kadaprofile_update_7128() {
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Enable simplesamlphp_auth module.
+ */
+function kadaprofile_update_7129() {
+  module_enable(['simplesamlphp_auth']);
+}
