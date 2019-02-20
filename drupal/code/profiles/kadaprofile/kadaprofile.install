@@ -736,6 +736,6 @@ function kadaprofile_update_7128() {
 /**
  * Enable simplesamlphp_auth module.
  */
-function kadaprofile_update_7129() {
+function kadaprofile_update_7131() {
   module_enable(['simplesamlphp_auth']);
 }
