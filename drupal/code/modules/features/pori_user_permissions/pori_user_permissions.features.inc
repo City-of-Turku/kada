@@ -5,6 +5,15 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function pori_user_permissions_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
+}
+
+/**
  * Implements hook_user_default_permissions_alter().
  */
 function pori_user_permissions_user_default_permissions_alter(&$data) {
@@ -17,9 +26,6 @@ function pori_user_permissions_user_default_permissions_alter(&$data) {
   }
   if (isset($data['administer taxonomy'])) {
     unset($data['administer taxonomy']['roles']['web journalist']);
-  }
-  if (isset($data['create attraction_card content'])) {
-    $data['create attraction_card content']['roles']['web journalist'] = 'web journalist'; /* WAS: '' */
   }
   if (isset($data['delete any blog content'])) {
     unset($data['delete any blog content']['roles']['web journalist']);
@@ -179,12 +185,6 @@ function pori_user_permissions_user_default_permissions_alter(&$data) {
   }
   if (isset($data['delete social_media_update content on assigned domains'])) {
     unset($data['delete social_media_update content on assigned domains']['roles']['web journalist']);
-  }
-  if (isset($data['edit any attraction_card content'])) {
-    $data['edit any attraction_card content']['roles']['web journalist'] = 'web journalist'; /* WAS: '' */
-  }
-  if (isset($data['edit own attraction_card content'])) {
-    $data['edit own attraction_card content']['roles']['web journalist'] = 'web journalist'; /* WAS: '' */
   }
   if (isset($data['view any node place page'])) {
     $data['view any node place page']['roles']['admin'] = 'admin'; /* WAS: '' */
