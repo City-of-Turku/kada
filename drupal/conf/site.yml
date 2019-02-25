@@ -28,9 +28,9 @@ default:
     - conf/settings.php: sites/default/settings.php
     - conf/vagrant.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
     - conf/_ping.php: _ping.php
-    - conf/simplesaml/www: simplesamlphp
-    - conf/simplesaml/config/config.php: simplesamlphp/config/config.php
-    - conf/simplesaml/config/authsources.php: simplesamlphp/config/authsources.php
+    - conf/simplesaml: simplesamlphp
+    - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
+    - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
 
   # We can provide local commands or override global ones.
   local_commands:
@@ -78,9 +78,9 @@ develop:
     - conf/settings.php: sites/default/settings.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
     - conf/_ping.php: _ping.php
-    - conf/simplesaml/www: simplesamlphp
-    - conf/simplesaml/config/config.php: simplesamlphp/config/config.php
-    - conf/simplesaml/config/authsources.php: simplesamlphp/config/authsources.php
+    - conf/simplesaml: simplesamlphp
+    - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
+    - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
@@ -115,9 +115,9 @@ stage:
     - conf/settings.php: sites/default/settings.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
     - conf/_ping.php: _ping.php
-    - conf/simplesaml/www: simplesamlphp
-    - conf/simplesaml/config/config.php: simplesamlphp/config/config.php
-    - conf/simplesaml/config/authsources.php: simplesamlphp/config/authsources.php
+    - conf/simplesaml: simplesamlphp
+    - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
+    - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
@@ -153,9 +153,9 @@ prod:
     - conf/settings.php: sites/default/settings.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
     - conf/_ping.php: _ping.php
-    - conf/simplesaml/www: simplesamlphp
-    - conf/simplesaml/config/config.php: simplesamlphp/config/config.php
-    - conf/simplesaml/config/authsources.php: simplesamlphp/config/authsources.php
+    - conf/simplesaml: simplesamlphp
+    - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
+    - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
