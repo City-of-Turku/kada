@@ -100,12 +100,12 @@
           - location: "/simplesaml"
             definition: |
               alias /var/www/pori.dev.wunder.io/current/web/simplesamlphp/www;
-              location ~ ^(?<prefix>/simplesaml)(?<phpfile>.+?\.php)(?<pathinfo>/.*)?$ {
+              location ~ \.php(/|$) {
                 include fastcgi_params;
-                fastcgi_split_path_info ^(.+?}\.php)(/.+)$;
                 fastcgi_pass phpcgi;
-                fastcgi_param SCRIPT_FILENAME $document_root$phpfile;
-                fastcgi_param PATH_INFO $fastcgi_path_info;
+                fastcgi_split_path_info ^((?U).+\.php)(/?.+)$;
+                fastcgi_param SCRIPT_FILENAME $request_filename;
+                fastcgi_param PATH_INFO $fastcgi_path_info if_not_empty;
               }
 
     create_docroot: True
