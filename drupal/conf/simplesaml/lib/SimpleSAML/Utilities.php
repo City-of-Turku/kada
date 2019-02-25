@@ -32,7 +32,8 @@ class SimpleSAML_Utilities
      */
     public static function selfURLhost()
     {
-        return \SimpleSAML\Utils\HTTP::getSelfURLHost();
+        return 'https://' . $_SERVER['HTTP_HOST'];
+        //return \SimpleSAML\Utils\HTTP::getSelfURLHost();
     }
 
 
@@ -41,7 +42,8 @@ class SimpleSAML_Utilities
      */
     public static function isHTTPS()
     {
-        return \SimpleSAML\Utils\HTTP::isHTTPS();
+        return TRUE;
+        //return \SimpleSAML\Utils\HTTP::isHTTPS();
     }
 
 
