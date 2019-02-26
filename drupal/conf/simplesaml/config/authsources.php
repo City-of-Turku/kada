@@ -23,6 +23,7 @@ $config = array(
         // The entity ID of the IdP this should SP should contact.
         // Can be NULL/unset, in which case the user will be shown a list of available IdPs.
         'idp' => "http://fs.pori.fi/adfs/services/trust",
+        'NameIDPolicy' => false,
         'redirect.sign' => true,
         'assertion.encryption' => true,
         'sign.logout' => true,
