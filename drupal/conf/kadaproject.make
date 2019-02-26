@@ -624,6 +624,9 @@ projects[simplei][subdir] = contrib
 
 projects[simplesamlphp_auth][version] = "2.0-alpha2"
 projects[simplesamlphp_auth][subdir] = contrib
+projects[simplesamlphp_auth][download][type] = "git"
+projects[simplesamlphp_auth][download][url] = "http://git.drupal.org/project/simplesamlphp_auth.git"
+projects[simplesamlphp_auth][download][revision] = "a3aa4afb2e014b046684ed40a9e605c08997868a"
 
 projects[smtp][version] = 1.7
 projects[smtp][subdir] = contrib
