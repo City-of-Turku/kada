@@ -1,6 +1,6 @@
 %define name      simplesamlphp
 %define summary   SAML IDP/SP written in PHP
-%define version   1.16.3
+%define version   dev
 %define release   1
 %define license   LGPL 2.1
 %define group     Networking/WWW
@@ -70,7 +70,6 @@ tar cf - . | (cd %{buildroot}%{_prefix}simplesamlphp; tar xfp -)
 /var/lib/simplesamlphp/
 %dir %attr(0750, root,apache) /var/lib/simplesamlphp/config
 %config(noreplace) %attr(0640, root,apache) /var/lib/simplesamlphp/config/acl.php
-%config(noreplace) %attr(0640, root,apache) /var/lib/simplesamlphp/config/authmemcookie.php
 %config(noreplace) %attr(0640, root,apache) /var/lib/simplesamlphp/config/authsources.php
 %config(noreplace) %attr(0640, root,apache) /var/lib/simplesamlphp/config/config.php
 %dir %attr(0750, root,apache) /var/lib/simplesamlphp/metadata
