@@ -105,7 +105,7 @@ function pori_user_permissions_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'simplesamlphp_auth_unique_id';
-  $strongarm->value = 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name';
+  $strongarm->value = 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn';
   $export['simplesamlphp_auth_unique_id'] = $strongarm;
 
   $strongarm = new stdClass();
