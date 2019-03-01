@@ -15,7 +15,7 @@ class MockContainer extends AbstractContainer
     /**
      * @var array
      */
-    private $debugMessages = array();
+    private $debugMessages = [];
 
     /**
      * @var string
@@ -79,7 +79,7 @@ class MockContainer extends AbstractContainer
      * @param array $data
      * @return void
      */
-    public function redirect($url, $data = array())
+    public function redirect($url, $data = [])
     {
         $this->redirectUrl = $url;
         $this->redirectData = $data;
@@ -92,7 +92,7 @@ class MockContainer extends AbstractContainer
      * @param array $data
      * @return void
      */
-    public function postRedirect($url, $data = array())
+    public function postRedirect($url, $data = [])
     {
         $this->postRedirectUrl = $url;
         $this->postRedirectData = $data;

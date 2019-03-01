@@ -8,7 +8,6 @@
 
 namespace SAML2\XML\saml;
 
-
 use SAML2\Constants;
 use SAML2\DOMDocumentFactory;
 
@@ -43,6 +42,11 @@ abstract class BaseIDType
      */
     protected $nodeName;
 
+    /**
+     * @var \DOMElement
+     */
+    protected $element;
+
 
     /**
      * Initialize a saml:BaseID, either from scratch or from an existing \DOMElement.
@@ -58,25 +62,62 @@ abstract class BaseIDType
         $this->element = $xml;
 
         if ($xml->hasAttribute('NameQualifier')) {
-            $this->NameQualifier = $xml->getAttribute('NameQualifier');
+            $this->setNameQualifier($xml->getAttribute('NameQualifier'));
         }
 
         if ($xml->hasAttribute('SPNameQualifier')) {
-            $this->SPNameQualifier = $xml->getAttribute('SPNameQualifier');
+            $this->setSPNameQualifier($xml->getAttribute('SPNameQualifier'));
         }
     }
 
+    /**
+     * Collect the value of the NameQualifier-property
+     * @return string|null
+     */
+    public function getNameQualifier()
+    {
+        return $this->NameQualifier;
+    }
+
+    /**
+     * Set the value of the NameQualifier-property
+     * @param string|null $nameQualifier
+     */
+    public function setNameQualifier($nameQualifier = null)
+    {
+        assert(is_string($nameQualifier) || is_null($nameQualifier));
+        $this->NameQualifier = $nameQualifier;
+    }
+
+    /**
+     * Collect the value of the SPNameQualifier-property
+     * @return string|null
+     */
+    public function getSPNameQualifier()
+    {
+        return $this->SPNameQualifier;
+    }
+
+    /**
+     * Set the value of the SPNameQualifier-property
+     * @param string|null $spNameQualifier
+     */
+    public function setSPNameQualifier($spNameQualifier = null)
+    {
+        assert(is_string($spNameQualifier) || is_null($spNameQualifier));
+        $this->SPNameQualifier = $spNameQualifier;
+    }
 
     /**
      * Convert this BaseID to XML.
      *
-     * @param \DOMElement $element The element we are converting to XML.
+     * @param \DOMElement $parent The element we are converting to XML.
      * @return \DOMElement The XML element after adding the data corresponding to this BaseID.
      */
     public function toXML(\DOMElement $parent = null)
     {
-        assert(is_string($this->NameQualifier) || is_null($this->NameQualifier));
-        assert(is_string($this->SPNameQualifier) || is_null($this->SPNameQualifier));
+        assert(is_string($this->getNameQualifier()) || is_null($this->getNameQualifier()));
+        assert(is_string($this->getSPNameQualifier()) || is_null($this->getSPNameQualifier()));
 
         if ($parent === null) {
             $parent = DOMDocumentFactory::create();
@@ -87,12 +128,12 @@ abstract class BaseIDType
         $element = $doc->createElementNS(Constants::NS_SAML, $this->nodeName);
         $parent->appendChild($element);
 
-        if ($this->NameQualifier !== null) {
-            $element->setAttribute('NameQualifier', $this->NameQualifier);
+        if ($this->getNameQualifier() !== null) {
+            $element->setAttribute('NameQualifier', $this->getNameQualifier());
         }
 
-        if ($this->SPNameQualifier !== null) {
-            $element->setAttribute('SPNameQualifier', $this->SPNameQualifier);
+        if ($this->getSPNameQualifier() !== null) {
+            $element->setAttribute('SPNameQualifier', $this->getSPNameQualifier());
         }
 
         return $element;

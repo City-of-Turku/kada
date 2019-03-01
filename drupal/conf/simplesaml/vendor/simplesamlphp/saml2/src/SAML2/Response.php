@@ -23,7 +23,7 @@ class Response extends StatusResponse
     {
         parent::__construct('Response', $xml);
 
-        $this->assertions = array();
+        $this->assertions = [];
 
         if ($xml === null) {
             return;
@@ -55,7 +55,7 @@ class Response extends StatusResponse
     /**
      * Set the assertions that should be included in this response.
      *
-     * @param \SAML2\Assertion[]|\SAML2\EncryptedAssertion[] The assertions.
+     * @param \SAML2\Assertion[]|\SAML2\EncryptedAssertion[] $assertions The assertions.
      */
     public function setAssertions(array $assertions)
     {

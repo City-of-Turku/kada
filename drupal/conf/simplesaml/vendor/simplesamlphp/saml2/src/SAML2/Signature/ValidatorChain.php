@@ -22,7 +22,7 @@ class ValidatorChain implements ValidatorInterface
     /**
      * @var  \SAML2\Signature\ChainedValidator[]
      */
-    private $validators = array();
+    private $validators = [];
 
     /**
      * @param \Psr\Log\LoggerInterface           $logger
@@ -74,7 +74,7 @@ class ValidatorChain implements ValidatorInterface
 
         throw new MissingConfigurationException(sprintf(
             'No certificates or fingerprints have been configured%s',
-            $configuration->has('entityid') ? ' for "' . $configuration->get('entityid') . '"' : ''
+            $configuration->has('entityid') ? ' for "'.$configuration->get('entityid').'"' : ''
         ));
     }
 }

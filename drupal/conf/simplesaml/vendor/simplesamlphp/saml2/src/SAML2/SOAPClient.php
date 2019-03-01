@@ -4,8 +4,7 @@ namespace SAML2;
 
 use RobRichards\XMLSecLibs\XMLSecurityKey;
 use SAML2\Exception\RuntimeException;
-use SimpleSAML_Configuration;
-use SimpleSAML_Utilities;
+use \SimpleSAML\Configuration;
 
 /**
  * Implementation of the SAML 2.0 SOAP binding.
@@ -22,27 +21,27 @@ class SOAPClient
      * This function sends the SOAP message to the service location and returns SOAP response
      *
      * @param  \SAML2\Message            $msg         The request that should be sent.
-     * @param  \SimpleSAML_Configuration $srcMetadata The metadata of the issuer of the message.
-     * @param  \SimpleSAML_Configuration $dstMetadata The metadata of the destination of the message.
+     * @param  \SimpleSAML\Configuration $srcMetadata The metadata of the issuer of the message.
+     * @param  \SimpleSAML\Configuration $dstMetadata The metadata of the destination of the message.
      * @return \SAML2\Message            The response we received.
      * @throws \Exception
      */
-    public function send(Message $msg, SimpleSAML_Configuration $srcMetadata, SimpleSAML_Configuration $dstMetadata = null)
+    public function send(Message $msg, Configuration $srcMetadata, Configuration $dstMetadata = null)
     {
         $issuer = $msg->getIssuer();
 
-        $ctxOpts = array(
-            'ssl' => array(
+        $ctxOpts = [
+            'ssl' => [
                 'capture_peer_cert' => true,
                 'allow_self_signed' => true
-            ),
-        );
+            ],
+        ];
 
         // Determine if we are going to do a MutualSSL connection between the IdP and SP  - Shoaib
         if ($srcMetadata->hasValue('saml.SOAPClient.certificate')) {
             $cert = $srcMetadata->getValue('saml.SOAPClient.certificate');
             if ($cert !== false) {
-                $ctxOpts['ssl']['local_cert'] = SimpleSAML_Utilities::resolveCert(
+                $ctxOpts['ssl']['local_cert'] = \SimpleSAML\Utils\Config::resolveCert(
                     $srcMetadata->getString('saml.SOAPClient.certificate')
                 );
                 if ($srcMetadata->hasValue('saml.SOAPClient.privatekey_pass')) {
@@ -51,13 +50,13 @@ class SOAPClient
             }
         } else {
             /* Use the SP certificate and privatekey if it is configured. */
-            $privateKey = SimpleSAML_Utilities::loadPrivateKey($srcMetadata);
-            $publicKey = SimpleSAML_Utilities::loadPublicKey($srcMetadata);
+            $privateKey = \SimpleSAML\Utils\Crypto::loadPrivateKey($srcMetadata);
+            $publicKey = \SimpleSAML\Utils\Crypto::loadPublicKey($srcMetadata);
             if ($privateKey !== null && $publicKey !== null && isset($publicKey['PEM'])) {
-                $keyCertData = $privateKey['PEM'] . $publicKey['PEM'];
-                $file = SimpleSAML_Utilities::getTempDir() . '/' . sha1($keyCertData) . '.pem';
+                $keyCertData = $privateKey['PEM'].$publicKey['PEM'];
+                $file = \SimpleSAML\Utils\System::getTempDir().'/'.sha1($keyCertData).'.pem';
                 if (!file_exists($file)) {
-                    SimpleSAML_Utilities::writeFile($file, $keyCertData);
+                    \SimpleSAML\Utils\System::writeFile($file, $keyCertData);
                 }
                 $ctxOpts['ssl']['local_cert'] = $file;
                 if (isset($privateKey['password'])) {
@@ -74,13 +73,13 @@ class SOAPClient
                 if ($key['type'] !== 'X509Certificate') {
                     continue;
                 }
-                $certData .= "-----BEGIN CERTIFICATE-----\n" .
-                    chunk_split($key['X509Certificate'], 64) .
+                $certData .= "-----BEGIN CERTIFICATE-----\n".
+                    chunk_split($key['X509Certificate'], 64).
                     "-----END CERTIFICATE-----\n";
             }
-            $peerCertFile = SimpleSAML_Utilities::getTempDir() . '/' . sha1($certData) . '.pem';
+            $peerCertFile = \SimpleSAML\Utils\System::getTempDir().'/'.sha1($certData).'.pem';
             if (!file_exists($peerCertFile)) {
-                SimpleSAML_Utilities::writeFile($peerCertFile, $certData);
+                \SimpleSAML\Utils\System::writeFile($peerCertFile, $certData);
             }
             // create ssl context
             $ctxOpts['ssl']['verify_peer'] = true;
@@ -97,11 +96,11 @@ class SOAPClient
             throw new \Exception('Unable to create SSL stream context');
         }
 
-        $options = array(
+        $options = [
             'uri' => $issuer,
             'location' => $msg->getDestination(),
             'stream_context' => $context,
-        );
+        ];
 
         if ($srcMetadata->hasValue('saml.SOAPClient.proxyhost')) {
             $options['proxy_host'] = $srcMetadata->getValue('saml.SOAPClient.proxyhost');
@@ -115,12 +114,12 @@ class SOAPClient
 
         // Add soap-envelopes
         $request = $msg->toSignedXML();
-        $request = self::START_SOAP_ENVELOPE . $request->ownerDocument->saveXML($request) . self::END_SOAP_ENVELOPE;
+        $request = self::START_SOAP_ENVELOPE.$request->ownerDocument->saveXML($request).self::END_SOAP_ENVELOPE;
 
         Utils::getContainer()->debugMessage($request, 'out');
 
         $action = 'http://www.oasis-open.org/committees/security';
-        $version = '1.1';
+        $version = SOAP_1_1;
         $destination = $msg->getDestination();
 
         /* Perform SOAP Request over HTTP */
@@ -190,7 +189,7 @@ class SOAPClient
             return;
         }
 
-        $msg->addValidator(array('\SAML2\SOAPClient', 'validateSSL'), $keyInfo['key']);
+        $msg->addValidator(['\SAML2\SOAPClient', 'validateSSL'], $keyInfo['key']);
     }
 
     /**
@@ -225,7 +224,7 @@ class SOAPClient
     /*
      * Extracts the SOAP Fault from SOAP message
      * @param $soapmessage Soap response needs to be type DOMDocument
-     * @return $soapfaultstring string|null
+     * @return string|null $soapfaultstring
      */
     private function getSOAPFault($soapMessage)
     {
@@ -240,7 +239,7 @@ class SOAPClient
         // There is a fault element but we haven't found out what the fault string is
         $soapFaultString = "Unknown fault string found";
         // find out the fault string
-        $faultStringElement =   Utils::xpQuery($soapFaultElement, './soap-env:faultstring') ;
+        $faultStringElement = Utils::xpQuery($soapFaultElement, './soap-env:faultstring');
         if (!empty($faultStringElement)) {
             return $faultStringElement[0]->textContent;
         }

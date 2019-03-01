@@ -38,7 +38,7 @@ class PrivateKeyLoader
         $decryptionKeys = new ArrayCollection();
 
         $senderSharedKey = $identityProvider->getSharedKey();
-        if ($senderSharedKey) {
+        if ($senderSharedKey !== null) {
             $key = new XMLSecurityKey(XMLSecurityKey::AES128_CBC);
             $key->loadKey($senderSharedKey);
             $decryptionKeys->add($key);
@@ -67,7 +67,7 @@ class PrivateKeyLoader
      */
     private function convertPrivateKeyToRsaKey(PrivateKey $privateKey)
     {
-        $key        = new XMLSecurityKey(XMLSecurityKey::RSA_1_5, array('type' => 'private'));
+        $key        = new XMLSecurityKey(XMLSecurityKey::RSA_1_5, ['type' => 'private']);
         $passphrase = $privateKey->getPassphrase();
         if ($passphrase) {
             $key->passphrase = $passphrase;

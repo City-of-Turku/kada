@@ -29,8 +29,8 @@ class KeyLoader
      * Prioritisation order is keys > certData > certificate
      *
      * @param \SAML2\Configuration\CertificateProvider $config
-     * @param null                                    $usage
-     * @param bool                                    $required
+     * @param string|null                              $usage
+     * @param bool                                     $required
      *
      * @return \SAML2\Certificate\KeyCollection
      */
@@ -71,7 +71,7 @@ class KeyLoader
         if ($required && !$this->hasKeys()) {
             throw new NoKeysFoundException(
                 'No keys found in configured metadata, please ensure that either the "keys", "certData" or '
-                . '"certificate" entries is available.'
+                .'"certificate" entries is available.'
             );
         }
 
@@ -83,7 +83,7 @@ class KeyLoader
      * are not configured to be used with the usage given
      *
      * @param array $configuredKeys
-     * @param       $usage
+     * @param string $usage
      */
     public function loadKeys(array $configuredKeys, $usage)
     {

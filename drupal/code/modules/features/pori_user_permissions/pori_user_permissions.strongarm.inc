@@ -63,7 +63,7 @@ function pori_user_permissions_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'simplesamlphp_auth_installdir';
-  $strongarm->value = '/vagrant/drupal/conf/simplesaml';
+  $strongarm->value = '/var/www/pori.dev.wunder.io/current/conf/simplesaml';
   $export['simplesamlphp_auth_installdir'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -91,14 +91,14 @@ function pori_user_permissions_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'simplesamlphp_auth_roleevaleverytime';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['simplesamlphp_auth_roleevaleverytime'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'simplesamlphp_auth_rolepopulation';
-  $strongarm->value = '';
+  $strongarm->value = '3:http://schemas.xmlsoap.org/claims/Group,=,GG_Drupal_Pori_Admin|8:http://schemas.xmlsoap.org/claims/Group,=,GG_Drupal_Pori_WebJournalist|3:http://schemas.xmlsoap.org/claims/Group,=,GG_Drupal_Visit_Admin|8:http://schemas.xmlsoap.org/claims/Group,=,GG_Drupal_Visit_WebJournalist';
   $export['simplesamlphp_auth_rolepopulation'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -112,7 +112,7 @@ function pori_user_permissions_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'simplesamlphp_auth_user_name';
-  $strongarm->value = 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress';
+  $strongarm->value = 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name';
   $export['simplesamlphp_auth_user_name'] = $strongarm;
 
   $strongarm = new stdClass();

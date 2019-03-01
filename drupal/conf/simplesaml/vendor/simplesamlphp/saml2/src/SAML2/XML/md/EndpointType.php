@@ -37,7 +37,7 @@ class EndpointType
      *
      * @var array
      */
-    private $attributes = array();
+    private $attributes = [];
 
     /**
      * Initialize an EndpointType.
@@ -52,29 +52,29 @@ class EndpointType
         }
 
         if (!$xml->hasAttribute('Binding')) {
-            throw new \Exception('Missing Binding on ' . $xml->tagName);
+            throw new \Exception('Missing Binding on '.$xml->tagName);
         }
-        $this->Binding = $xml->getAttribute('Binding');
+        $this->setBinding($xml->getAttribute('Binding'));
 
         if (!$xml->hasAttribute('Location')) {
-            throw new \Exception('Missing Location on ' . $xml->tagName);
+            throw new \Exception('Missing Location on '.$xml->tagName);
         }
-        $this->Location = $xml->getAttribute('Location');
+        $this->setLocation($xml->getAttribute('Location'));
 
         if ($xml->hasAttribute('ResponseLocation')) {
-            $this->ResponseLocation = $xml->getAttribute('ResponseLocation');
+            $this->setResponseLocation($xml->getAttribute('ResponseLocation'));
         }
 
         foreach ($xml->attributes as $a) {
             if ($a->namespaceURI === null) {
                 continue; /* Not namespace-qualified -- skip. */
             }
-            $fullName = '{' . $a->namespaceURI . '}' . $a->localName;
-            $this->attributes[$fullName] = array(
+            $fullName = '{'.$a->namespaceURI.'}'.$a->localName;
+            $this->attributes[$fullName] = [
                 'qualifiedName' => $a->nodeName,
                 'namespaceURI' => $a->namespaceURI,
                 'value' => $a->value,
-            );
+            ];
         }
     }
 
@@ -90,7 +90,7 @@ class EndpointType
         assert(is_string($namespaceURI));
         assert(is_string($localName));
 
-        $fullName = '{' . $namespaceURI . '}' . $localName;
+        $fullName = '{'.$namespaceURI.'}'.$localName;
 
         return isset($this->attributes[$fullName]);
     }
@@ -107,7 +107,7 @@ class EndpointType
         assert(is_string($namespaceURI));
         assert(is_string($localName));
 
-        $fullName = '{' . $namespaceURI . '}' . $localName;
+        $fullName = '{'.$namespaceURI.'}'.$localName;
         if (!isset($this->attributes[$fullName])) {
             return '';
         }
@@ -134,12 +134,12 @@ class EndpointType
         }
         $localName = $name[1];
 
-        $fullName = '{' . $namespaceURI . '}' . $localName;
-        $this->attributes[$fullName] = array(
+        $fullName = '{'.$namespaceURI.'}'.$localName;
+        $this->attributes[$fullName] = [
             'qualifiedName' => $qualifiedName,
             'namespaceURI' => $namespaceURI,
             'value' => $value,
-        );
+        ];
     }
 
     /**
@@ -153,8 +153,65 @@ class EndpointType
         assert(is_string($namespaceURI));
         assert(is_string($localName));
 
-        $fullName = '{' . $namespaceURI . '}' . $localName;
+        $fullName = '{'.$namespaceURI.'}'.$localName;
         unset($this->attributes[$fullName]);
+    }
+
+    /**
+     * Collect the value of the Binding-property
+     * @return string
+     */
+    public function getBinding()
+    {
+        return $this->Binding;
+    }
+
+    /**
+     * Set the value of the Binding-property
+     * @param string $binding
+     */
+    public function setBinding($binding)
+    {
+        assert(is_string($binding));
+        $this->Binding = $binding;
+    }
+
+    /**
+     * Collect the value of the Location-property
+     * @return string|null
+     */
+    public function getLocation()
+    {
+        return $this->Location;
+    }
+
+    /**
+     * Set the value of the Location-property
+     * @param string|null $location
+     */
+    public function setLocation($location)
+    {
+        assert(is_string($location) || is_null($location));
+        $this->Location = $location;
+    }
+
+    /**
+     * Collect the value of the ResponseLocation-property
+     * @return string|null
+     */
+    public function getResponseLocation()
+    {
+        return $this->ResponseLocation;
+    }
+
+    /**
+     * Set the value of the ResponseLocation-property
+     * @param string|null $responseLocation
+     */
+    public function setResponseLocation($responseLocation)
+    {
+        assert(is_string($responseLocation) || is_null($responseLocation));
+        $this->ResponseLocation = $responseLocation;
     }
 
     /**
@@ -167,18 +224,18 @@ class EndpointType
     public function toXML(\DOMElement $parent, $name)
     {
         assert(is_string($name));
-        assert(is_string($this->Binding));
-        assert(is_string($this->Location));
-        assert(is_null($this->ResponseLocation) || is_string($this->ResponseLocation));
+        assert(is_string($this->getBinding()));
+        assert(is_string($this->getLocation()));
+        assert(is_null($this->getResponseLocation()) || is_string($this->getResponseLocation()));
 
         $e = $parent->ownerDocument->createElementNS(Constants::NS_MD, $name);
         $parent->appendChild($e);
 
-        $e->setAttribute('Binding', $this->Binding);
-        $e->setAttribute('Location', $this->Location);
+        $e->setAttribute('Binding', $this->getBinding());
+        $e->setAttribute('Location', $this->getLocation());
 
-        if (isset($this->ResponseLocation)) {
-            $e->setAttribute('ResponseLocation', $this->ResponseLocation);
+        if ($this->getResponseLocation() !== null) {
+            $e->setAttribute('ResponseLocation', $this->getResponseLocation());
         }
 
         foreach ($this->attributes as $a) {
