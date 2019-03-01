@@ -545,7 +545,7 @@ projects[relation_add][version] = 1.6
 projects[relation_add][subdir] = contrib
 projects[relation_add][patch][1993738] = "https://www.drupal.org/files/issues/2019-02-05/7.x-1.6-relation-add-weight-1993738-25.patch"
 
-projects[responsive_menus][version] = 1.6
+projects[responsive_menus][version] = 1.7
 projects[responsive_menus][subdir] = contrib
 
 projects[restrict_node_page_view][version] = 1.2
