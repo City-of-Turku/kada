@@ -169,7 +169,7 @@ projects[content_lock][subdir] = contrib
 projects[content_taxonomy][version] = 1.0-rc1
 projects[content_taxonomy][subdir] = contrib
 
-projects[context][version] = 3.7
+projects[context][version] = 3.10
 projects[context][subdir] = contrib
 ; Fixes context ui performance issues
 projects[context][patch][] = "https://www.drupal.org/files/issues/context-node-taxonomy-performance-autocomplete-873936-47.patch"
