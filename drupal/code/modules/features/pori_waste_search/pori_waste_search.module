@@ -209,7 +209,9 @@ function _pori_waste_search_render_view($view_id, $display_id, array $arguments)
       $base_url .= '/' . $language->language;
     }
     $link = '<div class="waste-locations-wrapper"><a class="button use-ajax" name="show-locations" href="' . $base_url . '/ajax/waste/waste-types-map/nojs/' .  $arguments['value'] . '">'. t('Show waste drop locations') . '</a></div>';
-    $markup = $rendered_view . $link;
+    // Hidden 12.3.2019 per request from Sebastian.
+    //$markup = $rendered_view . $link;
+    $markup = $rendered_view;
   } elseif (isset($type) && $type == 'place') {
     $markup = $rendered_view . _pori_waste_search_render_map_view('pori_waste_search_map', 'block', $arguments);
   } else {
