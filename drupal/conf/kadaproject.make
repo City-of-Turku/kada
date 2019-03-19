@@ -255,7 +255,7 @@ projects[domaincontext][patch][] = "https://www.drupal.org/files/1542406-5-domai
 projects[domains_metatag][subdir] = contrib
 projects[domains_metatag][version] = 1.1
 
-projects[ds][version] = 2.14
+projects[ds][version] = 2.16
 projects[ds][subdir] = contrib
 
 ; Dev-version which includes entity_translation support.
