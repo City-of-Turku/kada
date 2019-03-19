@@ -48,3 +48,4 @@ Repository should have drupal installation directly under the repository root.
 
 1
 Added support for managed version updates for build.sh
+
