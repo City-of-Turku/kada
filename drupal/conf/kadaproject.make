@@ -20,7 +20,7 @@ api = 2
 ; Core project
 ; ------------
 projects[drupal][type] = core
-projects[drupal][version] = "7.63"
+projects[drupal][version] = "7.65"
 
 ; Use vocabulary machine name for permissions (https://www.drupal.org/node/995156)
 projects[drupal][patch][995156] = https://www.drupal.org/files/issues/995156-5_portable_taxonomy_permissions.patch
@@ -686,7 +686,7 @@ projects[views_content_cache][subdir] = contrib
 ; Fixing og compatibility: https://www.drupal.org/node/2054811#comment-9945729
 projects[views_content_cache][patch][og] = "https://www.drupal.org/files/issues/views_content_cache-og-2054811-9.patch"
 
-projects[views][version] = 3.18
+projects[views][version] = 3.21
 projects[views][subdir] = contrib
 
 projects[views_accordion][version] = 1.1
