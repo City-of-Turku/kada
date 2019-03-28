@@ -24,6 +24,9 @@ function pori_configuration_features_override_default_overrides() {
           .l-branding .menu--language-switcher';
   $overrides["variable.responsive_menus_media_size.value"] = 1025;
   $overrides["variable.responsive_menus_media_unit.value"] = 'px';
+  // Exported overrides for: user_permission
+  $overrides["user_permission.access inactive domains.roles|web journalist"]["DELETED"] = TRUE;
+  $overrides["user_permission.administer domains.roles|web journalist"]["DELETED"] = TRUE;
 
  return $overrides;
 }
