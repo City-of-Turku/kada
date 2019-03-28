@@ -727,7 +727,7 @@ projects[views_block_area][subdir] = contrib
 projects[warden][version] = 1.0
 projects[warden][subdir] = contrib
 
-projects[webform][version] = 4.16
+projects[webform][version] = 4.19
 projects[webform][subdir] = contrib
 
 projects[wysiwyg][type] = "module"
