@@ -761,3 +761,47 @@ function kadaprofile_update_7130() {
 function kadaprofile_update_7131() {
   module_enable(['simplesamlphp_auth']);
 }
+
+/**
+ * Populate authmap for all current users.
+ */
+function kadaprofile_update_7132(&$sandbox) {
+  // Batch-update 10 users at a time.
+  // Also make sure that authmap table is empty when we're starting this.
+  if (!isset($sandbox['progress'])) {
+    // Truncate authmap table to make sure we have a fresh start and don't run into issues.
+    db_truncate('authmap')->execute();
+    $sandbox['progress'] = 0;
+    $sandbox['current_uid'] = 0;
+
+    // We'll -1 to disregard the UID 0.
+    $sandbox['max'] = db_query('SELECT COUNT(DISTINCT uid) FROM {users}')
+      ->fetchField() - 1;
+  }
+
+  $users = db_select('users', 'u')
+    ->fields('u', [
+      'uid',
+      'mail',
+    ])
+    ->condition('uid', $sandbox['current_uid'], '>')
+    ->range(0, 10)
+    ->orderBy('uid', 'ASC')
+    ->execute();
+
+  foreach ($users as $user) {
+    if ($user->uid != 1) {
+      db_insert('authmap')
+        ->fields([
+          'uid' => $user->uid,
+          'authname' => $user->mail,
+          'module' => 'simplesamlphp_auth',
+        ])
+        ->execute();
+    }
+    $sandbox['progress']++;
+    $sandbox['current_uid'] = $user->uid;
+  }
+
+  $sandbox['#finished'] = empty($sandbox['max']) ? 1 : $sandbox['progress'] / $sandbox['max'];
+}
