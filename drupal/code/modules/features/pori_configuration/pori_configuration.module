@@ -51,6 +51,18 @@ function pori_configuration_form_views_exposed_form_alter(&$form, &$form_state, 
  * node form.
  */
 function pori_configuration_form_alter(&$form, &$form_state, $form_id) {
+  // Node edit forms.
+  if($form['#node_edit_form'] == TRUE) {
+    global $user;
+    // Web journalist get some additional permission grants.
+    if(in_array('web journalist', $user->roles)) {
+      // Allow access to publishing options.
+      $form['options']['#access'] = TRUE;
+      // Disallow stickying and promoting.
+      $form['options']['promote']['#access'] = FALSE;
+      $form['options']['sticky']['#access'] = FALSE;
+    }
+  }
   // Only react to node forms with an empty Group audience field.
   if (isset($form['#node_edit_form']) && $form['#node_edit_form'] && !empty($form['og_group_ref']) && empty($form['og_group_ref'][LANGUAGE_NONE][0]['default']['#default_value'])) {
     global $user, $language;
