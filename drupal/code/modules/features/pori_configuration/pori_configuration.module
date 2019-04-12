@@ -55,7 +55,7 @@ function pori_configuration_form_alter(&$form, &$form_state, $form_id) {
   if($form['#node_edit_form'] == TRUE) {
     global $user;
     // Web journalist get some additional permission grants.
-    if(in_array('web journalist', $user->roles)) {
+    if(in_array('web journalist', $user->roles) && $form['options']['#access'] == FALSE) {
       // Allow access to publishing options.
       $form['options']['#access'] = TRUE;
       // Disallow stickying and promoting.
