@@ -634,6 +634,7 @@ projects[simplesamlphp_auth][subdir] = contrib
 projects[simplesamlphp_auth][download][type] = "git"
 projects[simplesamlphp_auth][download][url] = "http://git.drupal.org/project/simplesamlphp_auth.git"
 projects[simplesamlphp_auth][download][revision] = "9fadbc45ee6a58e3b91a015eb328a3dbd6681ff1"
+projects[simplesamlphp_auth][patch][2717473] = "https://www.drupal.org/files/issues/init-logout-notice-2717473-5.patch"
 
 projects[smtp][version] = 1.7
 projects[smtp][subdir] = contrib
