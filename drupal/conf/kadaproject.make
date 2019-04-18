@@ -20,7 +20,7 @@ api = 2
 ; Core project
 ; ------------
 projects[drupal][type] = core
-projects[drupal][version] = "7.65"
+projects[drupal][version] = "7.66"
 
 ; Use vocabulary machine name for permissions (https://www.drupal.org/node/995156)
 projects[drupal][patch][995156] = https://www.drupal.org/files/issues/995156-5_portable_taxonomy_permissions.patch
@@ -322,7 +322,7 @@ projects[facetapi_select][download][type] = "git"
 projects[facetapi_select][download][url] = "http://git.drupal.org/project/facetapi_select.git"
 projects[facetapi_select][download][revision] = c960e188fd9ce1cbc21d63cec0e331b0ab70ff5f
 
-projects[features][version] = 2.10
+projects[features][version] = 2.11
 projects[features][subdir] = contrib
 
 projects[features_extra][version] = 1.0
@@ -713,7 +713,7 @@ projects[views_data_export][subdir] = contrib
 ;projects[views_datasource][version] = 1.0-alpha2
 projects[views_datasource][type] = module
 projects[views_datasource][download][type] = git
-projects[views_datasource][download][url] = "https://git.drupal.org/project/views_datasource.git"
+projects[views_datasource][download][url] = "https://git.drupalcode.org/project/views_datasource.git"
 projects[views_datasource][download][revision] = d048d8125a334e00ff8b05c9ec0feafdc20163b3
 projects[views_datasource][subdir] = contrib
 projects[views_datasource][patch][] = "https://www.drupal.org/files/issues/views_datasource-1881670-16-multiple-fields-render.patch"
