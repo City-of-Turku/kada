@@ -33,7 +33,7 @@ $field_link_url = $field_link_to_content[0]['url'];
 
   <?php if(!empty($main)): ?>
     <<?php print $main_wrapper; ?> class="small-liftup-banner__item__content <?php print $main_classes; ?>">
-      <?php if (isset($field_link_url)): ?>
+      <?php if (!empty($field_link_url)): ?>
         <a href="<?php print $field_link_url; ?>" target="_blank">
           <?php print $main; ?>
         </a>
