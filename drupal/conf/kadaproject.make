@@ -337,6 +337,9 @@ projects[field_collection][subdir] = contrib
 projects[field_group][version] = 1.6
 projects[field_group][subdir] = contrib
 
+projects[field_permissions][version] = 1.0
+projects[field_permissions][subdir] = contrib
+
 projects[feeds][version] = "2.0-beta3"
 projects[feeds][subdir] = "contrib"
 
