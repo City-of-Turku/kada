@@ -143,3 +143,6 @@ $conf['menu_override_parent_selector'] = true;
 
 // HACK - REMOVE WHEN DOMAIN URLS FOR DIFFERENT ENVS CAN BE DONE PROPERLY
 //define('KADACALENDAR_BASE_URL', 'http://calendar.pori-kada-development.druid.fi/');
+
+// SimpleSAMLphp_auth Login Path
+$conf['simplesamlphp_auth_login_path'] = 'login';
