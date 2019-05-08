@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_user_permissions.strongarm.inc
@@ -55,6 +56,20 @@ function pori_user_permissions_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'simplesamlphp_auth_autoenablesaml';
+  $strongarm->value = 1;
+  $export['simplesamlphp_auth_autoenablesaml'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'simplesamlphp_auth_debug';
+  $strongarm->value = 1;
+  $export['simplesamlphp_auth_debug'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'simplesamlphp_auth_forcehttps';
   $strongarm->value = 1;
   $export['simplesamlphp_auth_forcehttps'] = $strongarm;
@@ -65,6 +80,20 @@ function pori_user_permissions_strongarm() {
   $strongarm->name = 'simplesamlphp_auth_installdir';
   $strongarm->value = '/var/www/pori.dev.wunder.io/current/conf/simplesaml';
   $export['simplesamlphp_auth_installdir'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'simplesamlphp_auth_login_link_display_name';
+  $strongarm->value = 'Federated Log In';
+  $export['simplesamlphp_auth_login_link_display_name'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'simplesamlphp_auth_login_path';
+  $strongarm->value = 'login';
+  $export['simplesamlphp_auth_login_path'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
