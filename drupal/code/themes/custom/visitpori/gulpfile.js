@@ -101,7 +101,7 @@ gulp.task('sass', function(minify) {
 });
 
 // Watch task
-gulp.task('watch', ['sass', 'browserSync'], function() {
+gulp.task('watch', gulp.series(gulp.parallel('sass', 'browserSync')), function() {
   gulp.watch(path.styles.src + '**/*.scss', ['sass']);
   gulp.watch(path.templates.dist + '**/*.html.twig', browserSync.reload);
   gulp.watch(path.scripts.src + '*.js', ['scripts']).on('change', browserSync.reload);
@@ -125,10 +125,10 @@ gulp.task('imagemin', function() {
 });
 
 // Default tasks
-gulp.task('default', ['sass', 'watch', 'scripts'], function() {
+gulp.task('default', gulp.series(gulp.parallel('sass', 'watch', 'scripts')), function() {
   console.log('Running default tasks');
 });
 
-gulp.task('build', ['sass', 'scripts', 'imagemin'], function() {
+gulp.task('build', gulp.series(gulp.parallel('sass', 'scripts', 'imagemin')), function() {
   console.log('Running build tasks');
 });

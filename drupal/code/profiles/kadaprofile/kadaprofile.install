@@ -744,7 +744,6 @@ function kadaprofile_update_7129() {
 }
 
 /**
-<<<<<<< HEAD
 * Implements hook_update().
  *
  * Enables Pori events base overrides.
