@@ -28,6 +28,9 @@ default:
     - conf/settings.php: sites/default/settings.php
     - conf/vagrant.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
     - conf/_ping.php: _ping.php
+    - conf/simplesaml: simplesamlphp
+    - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
+    - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
 
   # We can provide local commands or override global ones.
   local_commands:
@@ -41,8 +44,8 @@ default:
       - install
       - cleanup
       - drush: cc drush
-      # - drush: composer-json-rebuild -y
-      # - drush: composer-manager update -y
+      #- drush: composer-json-rebuild -y
+      #- drush: composer-manager update -y
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 
@@ -55,8 +58,8 @@ default:
       - cleanup
       - drush: en devel -y
       - drush: cc drush
-      # - drush: composer-json-rebuild -y
-      # - drush: composer-manager update -y
+      #- drush: composer-json-rebuild -y
+      #- drush: composer-manager update -y
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
 # Test environment:
@@ -75,6 +78,9 @@ develop:
     - conf/settings.php: sites/default/settings.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
     - conf/_ping.php: _ping.php
+    - conf/simplesaml: simplesamlphp
+    - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
+    - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
@@ -109,6 +115,9 @@ stage:
     - conf/settings.php: sites/default/settings.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
     - conf/_ping.php: _ping.php
+    - conf/simplesaml: simplesamlphp
+    - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
+    - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
@@ -144,6 +153,9 @@ prod:
     - conf/settings.php: sites/default/settings.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
     - conf/_ping.php: _ping.php
+    - conf/simplesaml: simplesamlphp
+    - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
+    - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
@@ -158,8 +170,8 @@ prod:
       - drush: dis devel -y
       - drush: fra -y
       - drush: cc drush
-      # - drush: composer-json-rebuild -y
-      # - drush: composer-manager update -y
+      #- drush: composer-json-rebuild -y
+      #- drush: composer-manager update -y
       - shell: chmod -R a-w web
       - drush: cc all
       - shell: sudo systemctl restart nginx php-fpm varnish memcached

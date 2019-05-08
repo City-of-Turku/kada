@@ -64,6 +64,7 @@ switch ($env) {
       $conf['simple_environment_indicator'] = '#560004 Production';
       $conf['file_private_path'] = '/var/www/pori.prod.wunder.io/private_files';
       $conf['file_temporary_path'] = '/var/www/pori.prod.wunder.io/tmp';
+      $conf['simplesamlphp_auth_installdir'] = '/var/www/pori.prod.wunder.io/current/conf/simplesaml';
     break;
 
     case 'stage':
@@ -71,6 +72,7 @@ switch ($env) {
       $conf['file_private_path'] = '/var/www/pori.stage.wunder.io/private_files';
       $conf['file_temporary_path'] = '/var/www/pori.stage.wunder.io/tmp';
       $conf['googleanalytics_account'] = ''; // Make sure the GA isn't enabled in this env
+      $conf['simplesamlphp_auth_installdir'] = '/var/www/pori.stage.wunder.io/current/conf/simplesaml';
     break;
 
     case 'develop':
@@ -78,6 +80,7 @@ switch ($env) {
       $conf['file_private_path'] = '/var/www/pori.dev.wunder.io/private_files';
       $conf['file_temporary_path'] = '/var/www/pori.dev.wunder.io/tmp';
       $conf['googleanalytics_account'] = ''; // Make sure the GA isn't enabled in this env
+      $conf['simplesamlphp_auth_installdir'] = '/var/www/pori.dev.wunder.io/current/conf/simplesaml';
     break;
 
     case 'local':
@@ -87,6 +90,7 @@ switch ($env) {
       $conf['preprocess_js'] = false;
       $conf['googleanalytics_account'] = ''; // Make sure the GA isn't enabled in this env
       $conf['stage_file_proxy_origin'] = 'https://www.pori.fi';
+      $conf['simplesamlphp_auth_installdir'] = '/vagrant/drupal/conf/simplesaml';
     break;
 }
 
@@ -139,3 +143,6 @@ $conf['menu_override_parent_selector'] = true;
 
 // HACK - REMOVE WHEN DOMAIN URLS FOR DIFFERENT ENVS CAN BE DONE PROPERLY
 //define('KADACALENDAR_BASE_URL', 'http://calendar.pori-kada-development.druid.fi/');
+
+// SimpleSAMLphp_auth Login Path
+$conf['simplesamlphp_auth_login_path'] = 'login';

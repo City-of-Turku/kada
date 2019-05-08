@@ -5,3 +5,28 @@
  */
 
 include_once 'pori_user_permissions.features.inc';
+
+/**
+ * Implements hook_simplesamlphp_auth_pre_login($attributes, $ext_user).
+ */
+function pori_user_permissions_simplesamlphp_auth_pre_login($attributes, $ext_user) {
+  // Predefine Domain IDs.
+  $pori_id = 5;
+  $visit_id = 7;
+
+  $groups = $attributes['http://schemas.xmlsoap.org/claims/Group'];
+
+  // Check for Pori.fi access.
+  if (in_array('GG_Drupal_Pori_Admin', $groups) || in_array('GG_Drupal_Pori_WebJournalist', $groups)) {
+    $domains[$pori_id] = $pori_id;
+  }
+
+  // Check for VisitPori access.
+  if (in_array('GG_Drupal_Visit_Admin', $groups) || in_array('GG_Drupal_Visit_WebJournalist', $groups)) {
+    $domains[$visit_id] = $visit_id;
+  }
+
+  $ext_user->domain_user = $domains;
+  user_save($ext_user);
+}
+
