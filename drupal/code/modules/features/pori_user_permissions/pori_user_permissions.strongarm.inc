@@ -92,7 +92,7 @@ function pori_user_permissions_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'simplesamlphp_auth_login_path';
-  $strongarm->value = 'login';
+  $strongarm->value = 'login_ad';
   $export['simplesamlphp_auth_login_path'] = $strongarm;
 
   $strongarm = new stdClass();
