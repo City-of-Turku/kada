@@ -103,6 +103,12 @@ libraries[ckeditor_lineutils][download][type] = file
 libraries[ckeditor_lineutils][directory_name] = ckeditor/plugins/lineutils
 libraries[ckeditor_lineutils][download][url] = http://download.ckeditor.com/lineutils/releases/lineutils_4.4.8.zip
 
+libraries[geoPHP][type] = "libraries"
+libraries[geoPHP][download][type] = "git"
+libraries[geoPHP][download][url] = "https://github.com/phayes/geoPHP.git"
+libraries[geoPHP][download][branch] = "master"
+libraries[geoPHP][download][revision] = "685562416ec6d22b9b3927e02ca0ddacf84ca646"
+
 ; Contrib modules
 ; ------------
 
