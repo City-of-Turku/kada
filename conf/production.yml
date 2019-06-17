@@ -45,6 +45,7 @@
         domain2_name: "pori.fi"
         domain3_name: "visitpori.fi"
         domain4_name: "visityyteri.fi"
+        domain5_name: "businesspori.fi"
         wkv_site_env: "prod"
         databases: "{{ database }}"
       tags: ['common']
