@@ -33,9 +33,11 @@
       .l-region--before-content &,
       .section--content &,
       .front .l-region--after-content &,
-      .landing-page__visitpori .l-region--after-content & {
+      .landing-page__visitpori .l-region--after-content &,
+      .landing-page__businesspori .l-region--after-content &{
         justify-content: flex-end;
       }
+      .domain-businesspori-fi.node-type-news-item .l-region--after-content &,
       .domain-visitpori-fi.node-type-news-item .l-region--after-content &,
       .domain-pori-fi.node-type-news-item .l-region--after-content & {
         justify-content: flex-start;

@@ -1,0 +1,316 @@
+.l-region--footer {
+  font-size: .875rem;
+
+  @media screen and (min-width: $mobile-footer-breakpoint) {
+    display: flex;
+  }
+
+  @media screen and (min-width: $full) {
+    font-size: 1.125rem;
+  }
+
+  // Block configuration
+  .block {
+    padding: 0 1.25rem;
+
+    @media screen and (min-width: $mobile-footer-breakpoint) {
+      padding: 7rem 0 0 0; // Amount of the Pori logo.
+      width: 20%;
+    }
+
+    @media screen and (min-width: $full) {
+      padding: 7.5rem 0 0 0; // Amount of the Pori logo.
+      width: 16.66666%;
+    }
+
+    &.block--menu-block {
+      padding: .875rem 0 0 0;
+
+      @media screen and (min-width: $mobile-footer-breakpoint) {
+        padding: 3.75rem 0 0 0;
+        width: 80%;
+      }
+
+      @media screen and (min-width: $full) {
+        padding: 3.438rem 0 0 0;
+        width: 83.33333%;
+      }
+    }
+  }
+
+  // General items
+  p {
+    margin-bottom: .875rem;
+  }
+
+  // Collapse/Expand toggle styles
+  .is-collapsed,
+  .is-expanded {
+    > .menu__item--expanded-toggle {
+      display: none;
+
+      @media screen and (max-width: $mobile-footer-breakpoint-max) {
+        background-color: $white;
+        border-radius: 100%;
+        color: $secondary-color;
+        display: block;
+        height: 1.563rem;
+        position: absolute;
+        right: 1.25rem;
+        top: .813rem;
+        width: 1.563rem;
+      }
+
+      &:hover,
+      &:focus {
+        @media screen and (max-width: $mobile-footer-breakpoint-max) {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &.is-active-trail {
+      > .menu__item--expanded-toggle {
+        @media screen and (max-width: $mobile-footer-breakpoint-max) {
+          background-color: $black;
+        }
+      }
+    }
+  }
+
+  .is-collapsed {
+    > .menu__item--expanded-toggle {
+      @media screen and (max-width: $mobile-footer-breakpoint-max) {
+        background-color: $black;
+      }
+
+      &::before {
+        color: $gray-light;
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &.is-active-trail {
+      > .menu__item--expanded-toggle {
+        @media screen and (max-width: $mobile-footer-breakpoint-max) {
+          background-color: $black;
+        }
+
+        &::before {
+          color: $gray-light;
+        }
+      }
+    }
+  }
+
+  // The wrapping menu
+  .menu-block-wrapper > .menu {
+    @media screen and (min-width: $mobile-footer-breakpoint) {
+      display: flex;
+    }
+  }
+
+  // Base styles for menu items
+  .menu__item {
+    margin: 0;
+    padding: 0;
+
+    a {
+      display: block;
+
+      @media screen and (min-width: $mobile-footer-breakpoint) {
+        display: inline-block;
+      }
+    }
+  }
+
+  // First menu item specific styles
+  .menu__item--has-first-level {
+    border-bottom: 1px solid $gray;
+    font-family: $bergen-mono;
+    text-transform: uppercase;
+    position: relative;
+
+    @media screen and (min-width: $mobile-footer-breakpoint) {
+      border-bottom: 0 none;
+      font-family: $bergen-text;
+      font-size: 1.2rem;
+      font-weight: normal;
+      text-transform: none;
+      width: 20%;
+    }
+
+    @media screen and (min-width: $full) {
+      font-size: 1.5rem;
+    }
+
+    &.is-collapsed {
+      > a {
+        background-color: $gray-light;
+        color: $black;
+        @media screen and (min-width: $mobile-footer-breakpoint) {
+          background-color: $white;
+        }
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &.active,
+    &.is-active-trail {
+      background-color: $secondary-color;
+      border-color: $primary-color;
+      font-weight: normal;
+
+      @media screen and (min-width: $mobile-footer-breakpoint) {
+        background-color: transparent;
+        //border-bottom: 2px solid $black;
+      }
+
+      > a {
+        color: $black;
+
+        @media screen and (min-width: $mobile-footer-breakpoint) {
+          color: $white;
+        }
+      }
+    }
+
+    &.active,
+    &.is-active-trail {
+      > a {
+        background-color: $secondary-color;
+        color: $white;
+        font-weight: normal;
+
+        @media screen and (min-width: $mobile-footer-breakpoint) {
+          background-color: transparent;
+        }
+
+        &::after {
+          @media screen and (min-width: $mobile-footer-breakpoint) {
+            background-color: $primary-color;
+            bottom: -.188rem;
+            content: "";
+            height: .25rem;
+            left: 0;
+            position: absolute;
+            width: 100%;
+          }
+
+          @media screen and (min-width: $full) {
+            bottom: -.25rem;
+            height: .313rem;
+          }
+        }
+      }
+    }
+    
+    &:first-child {
+      border-top: 1px solid $gray;
+
+      @media screen and (min-width: $mobile-footer-breakpoint) {
+        border-top: 0;
+      }
+    }
+
+    > a {
+      padding: .938rem 1.25rem;
+
+      @media screen and (min-width: $mobile-footer-breakpoint) {
+        margin-bottom: 1.5rem;
+        padding: 0;
+        position: relative;
+      }
+
+      @media screen and (min-width: $full) {
+        margin-bottom: 2rem;
+      }
+
+      &:hover,
+      &:focus {
+        &::after {
+          @media screen and (min-width: $mobile-footer-breakpoint) {
+            background-color: $primary-color;
+            bottom: -.188rem;
+            content: "";
+            height: .25rem;
+            left: 0;
+            position: absolute;
+            width: 100%;
+          }
+
+          @media screen and (min-width: $full) {
+            bottom: -.25rem;
+            height: .313rem;
+          }
+        }
+      }
+    }
+
+    .menu {
+      display: none;
+
+      @media screen and (min-width: $mobile-footer-breakpoint) {
+        display: block;
+      }
+    }
+  }
+
+  // Second menu item specific styles
+  .menu__item--has-second-level {
+    background-color: transparent;
+    font-family: $bergen-text;
+    font-weight: normal;
+    text-transform: none;
+    padding: 0;
+
+    @media screen and (min-width: $mobile-footer-breakpoint) {
+      background-color: transparent;
+      font-size: .875rem;
+      margin-bottom: .875rem;
+    }
+
+    @media screen and (min-width: $full) {
+      font-size: 1.125rem;
+    }
+
+    > a {
+      padding: 0;
+
+      @media screen and (min-width: $mobile-footer-breakpoint) {
+        background-color: transparent;
+        color: $white;
+        padding: 0;
+        position: relative;
+      }
+
+      &:hover,
+      &:focus,
+      &.active,
+      &.active-trail {
+        background-color: transparent;
+
+        &::after {
+          @media screen and (min-width: $mobile-footer-breakpoint) {
+            background-color: $primary-color;
+            bottom: -.125rem;
+            content: "";
+            height: .125rem;
+            left: 0;
+            position: absolute;
+            width: 100%;
+          }
+
+          @media screen and (min-width: $full) {
+            bottom: -.25rem;
+            height: .188rem;
+          }
+        }
+      }
+    }
+  }
+}

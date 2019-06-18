@@ -1,0 +1,7 @@
+// Hide breadcrumb on target group & front page. TODO: Find a better way to do this.
+.front,
+.landing-page__businesspori {
+  .l-breadcrumb {
+    display: none;
+  }
+}
