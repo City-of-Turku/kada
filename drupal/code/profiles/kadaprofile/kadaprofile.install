@@ -804,3 +804,14 @@ function kadaprofile_update_7132(&$sandbox) {
 
   $sandbox['#finished'] = empty($sandbox['max']) ? 1 : $sandbox['progress'] / $sandbox['max'];
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables Visitpori Configurations feature
+ */
+function kadaprofile_update_7133() {
+  $modules = array('businesspori_configurations');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}

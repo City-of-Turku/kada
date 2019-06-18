@@ -53,6 +53,7 @@
     # You can use it anywhere after this using " {{ variable_name }}"
     domain_name: pori.dev.wunder.io
     domain2_name: visitpori.dev.wunder.io
+    domain3_name: businesspori.dev.wunder.io
 
     # This is used in cronjob and varnish and nginx configs
     drupal_web_root: "/var/www/{{ domain_name }}/current/web"
@@ -75,6 +76,7 @@
     certbot_domains:
       - "{{ domain_name }}"
       - "{{ domain2_name }}"
+      - "{{ domain3_name }}"
     certbot_renewal_docroot: /var/www/letsencrypt-auto
 
     # On dev and stage it's good idea to protect the site with htauth
@@ -94,6 +96,7 @@
     apps:
       - server_name: "{{ domain_name }}"
         server_aliases: "{{ domain2_name }}"
+        server_aliases: "{{ domain3_name }}"
         http_port: 8080
         docroot: "{{ drupal_web_root }}"
         extra_locations:
@@ -127,6 +130,12 @@
             - name: example2_http
               address: 127.0.0.1
               port: 8080
+        - name: example3
+          host: "{{ domain3_name }}"
+          backends:
+            - name: example3_http
+              address: 127.0.0.1
+              port: 8080
 
 
     # Use https for this host
@@ -141,6 +150,11 @@
         ssl_certificate_key: "/etc/letsencrypt/live/{{ domain_name }}/privkey.pem"
         backends:
           - 127.0.0.1:8081 # Pass it to local varnish
+      - server_name: "{{ domain3_name }}"
+        ssl_certificate: "/etc/letsencrypt/live/{{ domain_name }}/fullchain.pem"
+        ssl_certificate_key: "/etc/letsencrypt/live/{{ domain_name }}/privkey.pem"
+        backends:
+          - 127.0.0.1:8081 # Pass it to local varnish
 
 
 
@@ -151,6 +165,9 @@
         http_port: 80
       - server_name: "{{ domain2_name }}"
         forwarded_domains: "{{ domain2_name }}"
+        http_port: 80
+      - server_name: "{{ domain3_name }}"
+        forwarded_domains: "{{ domain3_name }}"
         http_port: 80
 
     databases:

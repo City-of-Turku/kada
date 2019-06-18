@@ -1,0 +1,63 @@
+.site-branding__name {
+  align-items: center;
+  display: flex;
+  height: 3.125rem;
+  margin: 0;
+}
+
+// Hide the logo image since we use backgrounds but leave it for the screen readers to find.
+.site-branding--header__visual {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.site-branding__link {
+  display: block;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+
+.site-branding--header__link {
+  background: url('../../businesspori-logo-small-black.svg') no-repeat 0 0 transparent;
+  height: 3.125rem;
+  width: 5rem;
+
+  @media screen and (min-width: $tablet-portrait-narrow) {
+    background-image: url('../../businesspori-logo-full.svg');
+    height: 4.625rem;
+    width: 23.125rem;
+  }
+}
+
+.site-branding--footer {
+  margin-bottom: 1.875rem;
+
+  @media screen and (min-width: $mobile-footer-breakpoint) {
+    left: 1.25rem;
+    margin: 0;
+    position: absolute;
+    top: 0;
+  }
+
+  .site-branding__name {
+    height: auto;
+    line-height: 0;
+    padding: 0 1.25rem;
+
+    @media screen and (min-width: $mobile-footer-breakpoint) {
+      padding: 0;
+    }
+  }
+}
+
+.site-branding--footer__link {
+  background: url('../../businesspori-logo-full-white.svg') no-repeat 0 0 transparent;
+  height: 6rem;
+  width: 100%;
+
+  @media screen and (min-width: $mobile-footer-breakpoint) {
+    background-image: url('../../businesspori-logo-small.svg');
+    height: 6.188rem;
+    width: 12.625rem;
+  }
+}

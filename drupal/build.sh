@@ -198,16 +198,20 @@ class Maker:
 	# Allow override to allow dev packages
         if self.site_env != 'default' and self.site_env != 'local' and allow_dev != True:
             params.append('--no-dev')
+            params.append('--no-interaction')
 
         if self.temp_build_dir_name == ".":
-            self._composer([
+            command_status = self._composer([
                 'install'
             ] + params)
         else:
-            self._composer([
-                '-d=' + self.temp_build_dir,
+            command_status = self._composer([
+                '--working-dir=' + self.temp_build_dir,
                 'install'
             ] + params)
+
+        if not command_status:
+            raise BuildError("Composer install failed")
 
     def _drush_make(self):
         global build_sh_disable_cache
@@ -354,7 +358,11 @@ class Maker:
     # Execute a drush command
     def drush_command(self, command):
             drush_command = command.split(' ')
-            return self._drush(drush_command, False)
+
+            command_status = self._drush(drush_command, False)
+
+            if not command_status:
+                raise BuildError("Drush command failed")
 
     def append(self, command):
         files = command.split(">")

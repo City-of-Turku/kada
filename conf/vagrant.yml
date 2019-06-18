@@ -47,6 +47,7 @@
   vars:
     domain_name: local.pori.fi
     domain2_name: local.visitpori.fi
+    domain3_name: local.businesspori.fi
 
     wkv_site_env: local
     php_env_vars_include_db: True
@@ -119,6 +120,12 @@
             - name: local_example2_http
               address: 127.0.0.1
               port: 8080
+        - name: example3
+          host: "{{ domain3_name }}"
+          backends:
+            - name: local_example3_http
+              address: 127.0.0.1
+              port: 8080
       extra_cookies:
         - cookie: |
             elseif (req.http.Cookie ~ "(?i)simplesaml" || req.http.Cookie ~ "NO_CACHE") { return (pass); }
@@ -165,13 +172,34 @@
               proxy_redirect off;
               proxy_buffering off;
 
-
+      - server_name: "{{ domain3_name }}"
+        ssl_certificate: ssl/certificate.crt
+        ssl_certificate_key: ssl/certificate.key
+        backends:
+          - 127.0.0.1:8081 # Pass it to local varnish
+        extra_proxy_locations:
+          - location: "/mailhog"
+            definition: |
+              rewrite /mailhog/(.*) /$1 break;
+              proxy_pass http://0.0.0.0:8025;
+              chunked_transfer_encoding on;
+              proxy_hide_header X-Frame-Options;
+              add_header Content-Security-Policy "default-src https: data: 'unsafe-inline' 'unsafe-eval'; connect-src ws: https:;" always;
+              proxy_set_header X-NginX-Proxy true;
+              proxy_set_header Upgrade $http_upgrade;
+              proxy_set_header Connection "upgrade";
+              proxy_http_version 1.1;
+              proxy_redirect off;
+              proxy_buffering off;
 
     httpforwards:
       - server_name: "{{ domain_name }}"
         forwarded_domains: '"{{ domain_name }}"'
       - server_name: "{{ domain2_name }}"
         forwarded_domains: "{{ domain2_name }}"
+        http_port: 80
+      - server_name: "{{ domain3_name }}"
+        forwarded_domains: "{{ domain3_name }}"
         http_port: 80
 
     # Set a low heap allocation for Elasticsearch on vagrant.

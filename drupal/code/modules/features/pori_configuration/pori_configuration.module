@@ -72,6 +72,7 @@ function pori_configuration_form_alter(&$form, &$form_state, $form_id) {
       // Domain to section tnid mapping.
       $domain_sections = array(
         'visitpori_fi' => 3183,
+        'businesspori_fi' => 84769,
       );
 
       $domain_machine_name = domain_load_machine_name(reset($user->domain_user));
