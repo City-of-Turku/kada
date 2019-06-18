@@ -74,6 +74,17 @@
         server_forwards: "{{ domain2_name }} beta.{{ domain2_name }} {{ domain1_name }}"  # we redirect to beta subdomain
         http_port: 8080
         docroot: "/var/www/{{ domain1_name }}/current/web"
+        extra_locations:
+        - location: "/simplesaml"
+          definition: |
+            alias /var/www/pori.prod.wunder.io/current/web/simplesamlphp/www;
+            location ~ \.php(/|$) {
+              include fastcgi_params;
+              fastcgi_pass phpcgi;
+              fastcgi_split_path_info ^((?U).+\.php)(/?.+)$;
+              fastcgi_param SCRIPT_FILENAME $request_filename;
+              fastcgi_param PATH_INFO $fastcgi_path_info if_not_empty;
+            }
       - server_name: "www.{{ domain3_name }}"
         server_forwards: "beta.{{ domain3_name }} {{ domain3_name }} {{ domain4_name }} www.{{ domain4_name }}"
         http_port: 8080
