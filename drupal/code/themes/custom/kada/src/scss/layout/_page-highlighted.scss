@@ -7,7 +7,8 @@
   }
 }
 
-.domain-visitpori-fi.page--highlight-image {
+.domain-visitpori-fi.page--highlight-image,
+.domain-businesspori-fi.page--highlight-image {
   .l-breadcrumb {
     @media screen and (min-width: $mobile-menu-breakpoint) {
       left: 50%;

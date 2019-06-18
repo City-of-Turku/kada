@@ -389,6 +389,12 @@ function kada_preprocess_views_view_fields(&$vars) {
       $theme_visit = $theme_visit_term->field_visitpori_color_name['und']['0']['value'];
       $result->_entity_properties['#attributes']['class']['visit_theme'] = $theme_visit;
 
+      // Set businesspori theme-color.
+      $theme_business_raw = $result->_entity_properties['field_businesspori_theme'][0];
+      $theme_business_term = taxonomy_term_load($theme_visit_raw);
+      $theme_business = $theme_business_term->field_businesspori_color_name['und']['0']['value'];
+      $result->_entity_properties['#attributes']['class']['business_theme'] = $theme_visit;
+
     }
   }
 }

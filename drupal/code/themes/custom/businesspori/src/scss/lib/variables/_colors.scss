@@ -1,0 +1,85 @@
+//
+// @file
+// This file includes all variables related to colors
+//
+
+$black: #1e1e1e;
+$white: #fff;
+$gray: #bcbcbc;
+$gray-light: #ddd;
+$gray-lighter: #f8f8f8;
+
+// Messages colors
+$error-dark: #b43b4b;
+$error-light: #e98491;
+$status-light: #92c25e;
+$status-dark: #62922d;
+$warning-light: #f6813e;
+$warning-dark: #cf4b00;
+
+// Default = grays
+$default-color: $black;
+$default-color-darkest: lighten($black, 10%);
+$default-color-darker: lighten($black, 20%);
+$default-color-dark: lighten($black, 30%);
+$default-color-medium-dark: lighten($black, 40%);
+$default-color-medium: lighten($black, 50%);
+$default-color-medium-light: lighten($black, 60%);
+$default-color-light: lighten($black, 70%);
+$default-color-lighter: lighten($black, 80%);
+$default-color-lightest: lighten($black, 95%);
+
+// Primary colors
+$primary-color: #1e1e1e;
+
+$primary-color-opacity-80: rgba($primary-color, .8);
+$primary-color-opacity-70: rgba($primary-color, .7);
+$primary-color-opacity-60: rgba($primary-color, .6);
+$primary-color-opacity-50: rgba($primary-color, .5);
+$primary-color-opacity-40: rgba($primary-color, .4);
+$primary-color-opacity-40: rgba($primary-color, .3);
+$primary-color-opacity-20: rgba($primary-color, .2);
+
+// Seconcary colors
+$secondary-color: #ec1c24;
+
+$secondary-color-darkest: lighten($secondary-color, 10%);
+$secondary-color-darker: lighten($secondary-color, 20%);
+$secondary-color-dark: lighten($secondary-color, 30%);
+$secondary-color-medium-dark: lighten($secondary-color, 40%);
+
+// General colors
+$link-color: #009bea;
+$link-color-hover: #005eb8;
+
+$body-color: $primary-color;
+$body-background: $white;
+
+$heading-color: $primary-color;
+
+// Social media colors
+$facebook-color: #3b5998;
+$instagram-color: #c50091;
+$linkedin-color: #0077B5;
+$twitter-color: #55acee;
+$youtube-color: #FF0000;
+
+// businesspori colors
+$red-light: #E44E34;
+$red: #EC1C24;
+$blue: #005EB8;
+$yellow: #FFCD00;
+$orange: #FF8200;
+$green-dark: #007A33;
+$green: #00AF66;
+$blue-light: #009BEA;
+
+$theme-colors: (
+  'red': $red-light,
+  'blue': $blue,
+  'orange': $orange,
+  'greenDark': $green-dark,
+  'green': $green,
+  'white': $white,
+  'blueLight': $blue-light,
+);
