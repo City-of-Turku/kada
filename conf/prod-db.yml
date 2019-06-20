@@ -117,10 +117,6 @@
     monit_alert_email_service_name: "{{ project_name }} db {{ ansible_nodename }}"
     monit_alert_email_from: "alert@wunder.io"
     monit_alert_email_to: fi.support@wunder.io
-    monit_allow:
-      - localhost
-      - user:password
-
     monit_check_sshd: True
     monit_check_remote_syslog: True
     monit_check_cron: True
