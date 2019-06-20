@@ -31,6 +31,9 @@ function kada_news_feature_block_view($delta = '') {
     if ($_domain['machine_name'] == 'visitpori_fi') {
       $url = 'visitpori/' . $url;
     }
+    if ($_domain['machine_name'] == 'businesspori_fi') {
+      $url = 'businesspori/' . $url;
+    }
     $block['content'] = l(t('Read more news'), $url);
   }
   return $block;

@@ -74,11 +74,36 @@
         server_forwards: "{{ domain2_name }} beta.{{ domain2_name }} {{ domain1_name }}"  # we redirect to beta subdomain
         http_port: 8080
         docroot: "/var/www/{{ domain1_name }}/current/web"
+        extra_locations:
+        - location: "/simplesaml"
+          definition: |
+            alias /var/www/pori.prod.wunder.io/current/web/simplesamlphp/www;
+            location ~ \.php(/|$) {
+              include fastcgi_params;
+              fastcgi_pass phpcgi;
+              fastcgi_split_path_info ^((?U).+\.php)(/?.+)$;
+              fastcgi_param SCRIPT_FILENAME $request_filename;
+              fastcgi_param PATH_INFO $fastcgi_path_info if_not_empty;
+            }
       - server_name: "www.{{ domain3_name }}"
         server_forwards: "beta.{{ domain3_name }} {{ domain3_name }} {{ domain4_name }} www.{{ domain4_name }}"
         http_port: 8080
         docroot: "/var/www/{{ domain1_name }}/current/web"
-
+      - server_name: "www.{{ domain5_name }}"
+        server_forwards: "{{ domain5_name }}"
+        http_port: 8080
+        docroot: "/var/www/{{ domain1_name }}/current/web"
+        extra_locations:
+        - location: "/simplesaml"
+          definition: |
+            alias /var/www/pori.prod.wunder.io/current/web/simplesamlphp/www;
+            location ~ \.php(/|$) {
+              include fastcgi_params;
+              fastcgi_pass phpcgi;
+              fastcgi_split_path_info ^((?U).+\.php)(/?.+)$;
+              fastcgi_param SCRIPT_FILENAME $request_filename;
+              fastcgi_param PATH_INFO $fastcgi_path_info if_not_empty;
+            }
 
     # You can also define aliases with app_dir_aliases, see ansible/playbook/roles/nginx/templates/all_apps.conf.j2
 
@@ -135,10 +160,6 @@
     monit_enabled: True
     monit_alert_email_service_name: "{{ project_name }} front {{ ansible_nodename }}"
     monit_alert_email_from: "fi.support@wunder.io"
-    monit_alert_email_to: alert@wunder.io
-    monit_allow:
-      - localhost
-      - user:password
     monit_check_sshd: True
     monit_check_nginx: True
     monit_check_memcached: True
@@ -236,6 +257,12 @@
             - name: prod3_http1
               address: "{{ front1_ip }}"
               port: 8080
+        - name: prod5
+          host: "www.{{ domain5_name }}"
+          backends:
+            - name: prod5_http1
+              address: "{{ front1_ip }}"
+              port: 8080
 
     # There is more customization options for hashes, cookies etc. see ansible/playbook/roles/varnish/templates/default.vcl.j2 for reference
 
@@ -261,14 +288,21 @@
       - server_name: "www.{{ domain2_name }}"
         server_forwards: "{{ domain2_name }} beta.{{ domain2_name }} {{ domain1_name }}"  # we redirect to www subdomain
         ssl_certificate: "/etc/letsencrypt/live/{{ domain2_name }}/fullchain.pem"
-        ssl_certificate_key: "/etc/letsencrypt/live/{{ domain2_name}}/privkey.pem"
+        ssl_certificate_key: "/etc/letsencrypt/live/{{ domain2_name }}/privkey.pem"
         use_dhparam: True
         backends:
           - 127.0.0.1:8081
       - server_name: "www.{{ domain3_name }}"
         server_forwards: "beta.{{ domain3_name }} {{ domain3_name }} {{ domain4_name }} www.{{ domain4_name }}"
         ssl_certificate: "/etc/letsencrypt/live/{{ domain2_name }}/fullchain.pem"
-        ssl_certificate_key: "/etc/letsencrypt/live/{{ domain2_name}}/privkey.pem"
+        ssl_certificate_key: "/etc/letsencrypt/live/{{ domain2_name }}/privkey.pem"
+        use_dhparam: True
+        backends:
+          - 127.0.0.1:8081
+      - server_name: "www.{{ domain5_name }}"
+        server_forwards: "{{ domain5_name }}"
+        ssl_certificate: "/etc/letsencrypt/live/{{ domain2_name }}/fullchain.pem"
+        ssl_certificate_key: "/etc/letsencrypt/live/{{ domain2_name }}/privkey.pem"
         use_dhparam: True
         backends:
           - 127.0.0.1:8081
@@ -276,9 +310,11 @@
     # Forward to www and https.
     httpforwards:
       - server_name: "www.{{ domain2_name }}"
-        forwarded_domains: "beta.{{ domain2_name}} www.{{ domain2_name }} {{ domain2_name}} {{ domain1_name }}"
+        forwarded_domains: "beta.{{ domain2_name }} www.{{ domain2_name }} {{ domain2_name }} {{ domain1_name }}"
       - server_name: "www.{{ domain3_name }}"
-        forwarded_domains: "{{ domain3_name}} www.{{ domain3_name }} beta.{{ domain3_name }} {{ domain4_name}} www.{{ domain4_name }}"
+        forwarded_domains: "{{ domain3_name }} www.{{ domain3_name }} beta.{{ domain3_name }} {{ domain4_name }} www.{{ domain4_name }}"
+      - server_name: "www.{{ domain5_name }}"
+        forwarded_domains: "{{ domain5_name }} www.{{ domain5_name }}"
     # You can also use extra_forwards and httpextraforwards to define additional domains to listen & forward
     # See ansible/playbook/roles/sslterminator/templates/ssl_terminators.conf.j2 for reference.
 

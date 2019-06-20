@@ -113,9 +113,10 @@ function pori_news_field_group_info_alter(&$data) {
   if (isset($data['group_content|node|news_item|form'])) {
     $data['group_content|node|news_item|form']->data['children'][1] = 'field_content_image'; /* WAS: 'field_address' */
     $data['group_content|node|news_item|form']->data['children'][10] = 'field_visitpori_theme'; /* WAS: 'field_order_time' */
-    $data['group_content|node|news_item|form']->data['children'][11] = 'flag'; /* WAS: 'field_related_content' */
-    $data['group_content|node|news_item|form']->data['children'][12] = 'language'; /* WAS: 'field_target_audience' */
-    $data['group_content|node|news_item|form']->data['children'][13] = 'title'; /* WAS: 'field_theme' */
+    $data['group_content|node|news_item|form']->data['children'][11] = 'field_businesspori_theme'; /* WAS: 'field_order_time' */
+    $data['group_content|node|news_item|form']->data['children'][12] = 'flag'; /* WAS: 'field_related_content' */
+    $data['group_content|node|news_item|form']->data['children'][13] = 'language'; /* WAS: 'field_target_audience' */
+    $data['group_content|node|news_item|form']->data['children'][14] = 'title'; /* WAS: 'field_theme' */
     $data['group_content|node|news_item|form']->data['children'][2] = 'field_info_box'; /* WAS: 'field_contact_information' */
     $data['group_content|node|news_item|form']->data['children'][3] = 'field_keywords'; /* WAS: 'field_content_image' */
     $data['group_content|node|news_item|form']->data['children'][4] = 'field_lead_paragraph_long_text'; /* WAS: 'field_district' */
@@ -344,6 +345,19 @@ function pori_news_field_default_field_instances_alter(&$data) {
     ); /* WAS: '' */
     $data['node-news_item-field_visitpori_theme']['widget']['weight'] = 9; /* WAS: 10 */
     unset($data['node-news_item-field_visitpori_theme']['display']['default']['module']);
+  }
+  if (isset($data['node-news_item-field_businesspori_theme'])) {
+    $data['node-news_item-field_businesspori_theme']['display']['default']['type'] = 'hidden'; /* WAS: 'i18n_taxonomy_term_reference_link' */
+    $data['node-news_item-field_businesspori_theme']['display']['default']['weight'] = 27; /* WAS: 17 */
+    $data['node-news_item-field_businesspori_theme']['display']['full']['weight'] = 27; /* WAS: 0 */
+    $data['node-news_item-field_businesspori_theme']['display']['live_results_search'] = array(
+      'label' => 'above',
+      'settings' => array(),
+      'type' => 'hidden',
+      'weight' => 0,
+    ); /* WAS: '' */
+    $data['node-news_item-field_businesspori_theme']['widget']['weight'] = 9; /* WAS: 10 */
+    unset($data['node-news_item-field_businesspori_theme']['display']['default']['module']);
   }
   if (isset($data['node-news_item-og_group_ref'])) {
     $data['node-news_item-og_group_ref']['display']['default']['weight'] = 34; /* WAS: 10 */

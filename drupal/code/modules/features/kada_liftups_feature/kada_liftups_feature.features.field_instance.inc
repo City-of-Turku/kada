@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_liftups_feature.features.field_instance.inc
@@ -89,6 +90,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'project' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -103,6 +110,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -164,7 +177,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -200,6 +213,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'project' => array(
         'label' => 'above',
         'settings' => array(),
@@ -211,6 +230,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 26,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -271,7 +296,81 @@ function kada_liftups_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 15,
+      'weight' => 16,
+    ),
+  );
+
+  // Exported field_instance: 'node-liftup-field_businesspori_theme'.
+  $field_instances['node-liftup-field_businesspori_theme'] = array(
+    'bundle' => 'liftup',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'current' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_link',
+        'weight' => 17,
+      ),
+      'event_top_carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_businesspori_theme',
+    'label' => 'Business Pori theme',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 6,
     ),
   );
 
@@ -307,6 +406,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'project' => array(
         'label' => 'above',
         'settings' => array(),
@@ -318,6 +423,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 24,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 27,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -340,7 +451,7 @@ function kada_liftups_feature_field_default_field_instances() {
       'module' => 'multiple_selects',
       'settings' => array(),
       'type' => 'multiple_selects',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -376,6 +487,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'project' => array(
         'label' => 'above',
         'settings' => array(),
@@ -388,6 +505,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_plain',
         'weight' => 3,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -410,10 +533,11 @@ function kada_liftups_feature_field_default_field_instances() {
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'deny',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -459,6 +583,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'link_default',
         'weight' => 2,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'project' => array(
         'label' => 'hidden',
         'module' => 'link',
@@ -471,6 +601,13 @@ function kada_liftups_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 18,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_title_plain',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -519,7 +656,7 @@ function kada_liftups_feature_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -557,6 +694,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'project' => array(
         'label' => 'above',
         'settings' => array(),
@@ -568,6 +711,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 25,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 26,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -615,7 +764,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'use_geocoder' => 1,
       ),
       'type' => 'geofield_openlayers',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -662,6 +811,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 2,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'project' => array(
         'label' => 'hidden',
         'module' => 'atom_reference',
@@ -680,6 +835,16 @@ function kada_liftups_feature_field_default_field_instances() {
           'override' => 0,
         ),
         'type' => 'search_result',
+        'weight' => 0,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'hidden',
+        'module' => 'atom_reference',
+        'settings' => array(
+          'link' => 0,
+          'override' => 0,
+        ),
+        'type' => 'small_liftup_banner',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -711,7 +876,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'context' => 'sdl_editor_representation',
       ),
       'type' => 'atom_reference_textfield',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -754,6 +919,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'project' => array(
         'label' => 'above',
         'settings' => array(),
@@ -765,6 +936,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 25,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -795,7 +972,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'context' => 'sdl_editor_representation',
       ),
       'type' => 'atom_reference_textfield',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -831,6 +1008,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'project' => array(
         'label' => 'above',
         'settings' => array(),
@@ -842,6 +1025,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 21,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 24,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -864,7 +1053,7 @@ function kada_liftups_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -900,6 +1089,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 3,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'project' => array(
         'label' => 'inline',
         'settings' => array(),
@@ -911,6 +1106,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 19,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 23,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -969,6 +1170,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'project' => array(
         'label' => 'hidden',
         'settings' => array(),
@@ -980,6 +1187,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 28,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1040,7 +1253,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -1083,6 +1296,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'project' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -1095,6 +1314,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 27,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1155,7 +1380,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -1191,11 +1416,23 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'project' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1254,6 +1491,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'project' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1265,6 +1508,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 23,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1330,6 +1579,7 @@ function kada_liftups_feature_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Address');
   t('Body');
+  t('Business Pori theme');
   t('Comment');
   t('District');
   t('Give a link to the content if the liftup is a shortcut to somewhere. In some content types this link is displayed as the title for the liftup, in others it is a separate link after the body text. Use the <em>Search content</em> button if the link is not to a external source.');

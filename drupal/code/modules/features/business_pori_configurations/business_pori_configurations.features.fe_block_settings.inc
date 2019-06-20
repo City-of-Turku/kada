@@ -24,6 +24,12 @@ function business_pori_configurations_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
       'kada' => array(
         'region' => '',
         'status' => 0,
@@ -64,6 +70,12 @@ function business_pori_configurations_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
       'kada' => array(
         'region' => '',
         'status' => 0,
@@ -104,6 +116,12 @@ function business_pori_configurations_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
       'kada' => array(
         'region' => '',
         'status' => 0,
@@ -144,6 +162,12 @@ function business_pori_configurations_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
       'kada' => array(
         'region' => '',
         'status' => 0,
@@ -186,6 +210,12 @@ function business_pori_configurations_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
       'kada' => array(
         'region' => '',
         'status' => 0,
@@ -226,6 +256,12 @@ function business_pori_configurations_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
       'kada' => array(
         'region' => '',
         'status' => 0,
@@ -266,6 +302,12 @@ function business_pori_configurations_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
       'kada' => array(
         'region' => '',
         'status' => 0,

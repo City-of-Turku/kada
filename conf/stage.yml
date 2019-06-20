@@ -21,6 +21,8 @@
    - { role: drush, tags: [ 'drush' ] }
    - { role: drupal-log, tags: [ 'drupal-log' ] }
    - { role: solr, tags: [ 'solr' ] }
+   - { role: monit, tags: [ 'monit' ] }
+
 
   vars_files:
   - stage-vars.yml
@@ -212,3 +214,17 @@
       - synonyms.txt
       # Customized 
       - solr/schema.xml
+
+    ## Monit ##
+    monit_enabled: True
+    monit_alert_email_service_name: "{{ project_name }} front {{ ansible_nodename }}"
+    monit_alert_email_from: "fi.support@wunder.io"
+    monit_check_sshd: True
+    monit_check_nginx: True
+    monit_check_memcached: True
+    monit_check_php_fpm: True
+    monit_check_remote_syslog: True
+    monit_check_cron: True
+    monit_check_varnish: True
+    monit_check_solr: True
+    monit_check_mysql: True

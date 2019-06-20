@@ -71,15 +71,16 @@ function pori_news_features_override_default_overrides() {
   // Exported overrides for: field_group
   $overrides["field_group.group_content|node|news_item|form.data|children|1"] = 'field_content_image';
   $overrides["field_group.group_content|node|news_item|form.data|children|10"] = 'field_visitpori_theme';
-  $overrides["field_group.group_content|node|news_item|form.data|children|11"] = 'flag';
-  $overrides["field_group.group_content|node|news_item|form.data|children|12"] = 'language';
-  $overrides["field_group.group_content|node|news_item|form.data|children|13"] = 'title';
-  $overrides["field_group.group_content|node|news_item|form.data|children|14"]["DELETED"] = TRUE;
+  $overrides["field_group.group_content|node|news_item|form.data|children|11"] = 'field_visitpori_theme';
+  $overrides["field_group.group_content|node|news_item|form.data|children|12"] = 'flag';
+  $overrides["field_group.group_content|node|news_item|form.data|children|13"] = 'language';
+  $overrides["field_group.group_content|node|news_item|form.data|children|14"] = 'title';
   $overrides["field_group.group_content|node|news_item|form.data|children|15"]["DELETED"] = TRUE;
   $overrides["field_group.group_content|node|news_item|form.data|children|16"]["DELETED"] = TRUE;
   $overrides["field_group.group_content|node|news_item|form.data|children|17"]["DELETED"] = TRUE;
   $overrides["field_group.group_content|node|news_item|form.data|children|18"]["DELETED"] = TRUE;
   $overrides["field_group.group_content|node|news_item|form.data|children|19"]["DELETED"] = TRUE;
+  $overrides["field_group.group_content|node|news_item|form.data|children|20"]["DELETED"] = TRUE;
   $overrides["field_group.group_content|node|news_item|form.data|children|2"] = 'field_info_box';
   $overrides["field_group.group_content|node|news_item|form.data|children|3"] = 'field_keywords';
   $overrides["field_group.group_content|node|news_item|form.data|children|4"] = 'field_lead_paragraph_long_text';
@@ -259,7 +260,18 @@ function pori_news_features_override_default_overrides() {
     'type' => 'hidden',
     'weight' => 0,
   );
-  $overrides["field_instance.node-news_item-field_visitpori_theme.widget|weight"] = 9;
+  $overrides["field_instance.node-news_item-field_businesspori_theme.widget|weight"] = 9;
+  $overrides["field_instance.node-news_item-field_businesspori_theme.display|default|module"]["DELETED"] = TRUE;
+  $overrides["field_instance.node-news_item-field_businesspori_theme.display|default|type"] = 'hidden';
+  $overrides["field_instance.node-news_item-field_businesspori_theme.display|default|weight"] = 27;
+  $overrides["field_instance.node-news_item-field_businesspori_theme.display|full|weight"] = 27;
+  $overrides["field_instance.node-news_item-field_businesspori_theme.display|live_results_search"] = array(
+    'label' => 'above',
+    'settings' => array(),
+    'type' => 'hidden',
+    'weight' => 0,
+  );
+  $overrides["field_instance.node-news_item-field_businesspori_theme.widget|weight"] = 9;
   $overrides["field_instance.node-news_item-og_group_ref.display|default|weight"] = 34;
   $overrides["field_instance.node-news_item-og_group_ref.display|full|weight"] = 30;
   $overrides["field_instance.node-news_item-og_group_ref.display|live_results_search"] = array(
