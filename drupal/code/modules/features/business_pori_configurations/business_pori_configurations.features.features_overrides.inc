@@ -13,19 +13,26 @@ function business_pori_configurations_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: context
-  $overrides["context.businesspori_error_page.reactions|block|blocks|menu_block-42"] = array(
+  $overrides["context.businesspori_error_page.reactions|block|blocks|menu_block-42"]["DELETED"] = TRUE;
+  $overrides["context.businesspori_error_page.reactions|block|blocks|menu_block-43"]["DELETED"] = TRUE;
+  $overrides["context.businesspori_error_page.reactions|block|blocks|menu_block-45"] = array(
     'module' => 'menu_block',
-    'delta' => 42,
+    'delta' => 45,
     'region' => 'navigation_top',
-    'weight' => -5,
+    'weight' => -10,
   );
-  $overrides["context.businesspori_error_page.reactions|block|blocks|menu_block-43"] = array(
+  $overrides["context.businesspori_error_page.reactions|block|blocks|menu_block-46"] = array(
     'module' => 'menu_block',
-    'delta' => 43,
+    'delta' => 46,
     'region' => 'footer',
-    'weight' => -9,
+    'weight' => -10,
   );
-  $overrides["context.businesspori_top_menu.reactions|block|blocks|menu_block-43"]["DELETED"] = TRUE;
+  $overrides["context.businesspori_top_menu.reactions|block|blocks|menu_block-45"] = array(
+    'module' => 'menu_block',
+    'delta' => 45,
+    'region' => 'navigation_top',
+    'weight' => -10,
+  );
 
   // Exported overrides for: field_base
   $overrides["field_base.field_businesspori_theme.field_permissions"] = array(
@@ -48,6 +55,7 @@ function business_pori_configurations_features_override_default_overrides() {
 
   // Exported overrides for: variable
   $overrides["variable.menu_block_ids.value|42"] = 44;
+  $overrides["variable.menu_block_ids.value|44"] = 46;
   $overrides["variable.menu_block_menu_order.value|menu-business-pori-footer-menu-f"] = '';
   $overrides["variable.menu_block_menu_order.value|menu-business-pori-p-valikko"] = '';
   $overrides["variable.menu_block_menu_order.value|menu-business-pori-top-menu-fi"] = '';
