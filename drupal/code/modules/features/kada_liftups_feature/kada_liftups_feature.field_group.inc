@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_liftups_feature.field_group.inc
@@ -38,6 +39,7 @@ function kada_liftups_feature_field_group_info() {
       12 => 'field_visitpori_theme',
       13 => 'language',
       14 => 'title',
+      15 => 'field_businesspori_theme',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

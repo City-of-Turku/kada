@@ -158,6 +158,17 @@ function pori_search_views_default_views() {
   $handler->display->display_options['fields']['field_visitpori_theme']['display'] = 'view';
   $handler->display->display_options['fields']['field_visitpori_theme']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_visitpori_theme']['bypass_access'] = 0;
+  /* Field: Indexed Node: Businesspori theme */
+  $handler->display->display_options['fields']['field_businesspori_theme']['id'] = 'field_businesspori_theme';
+  $handler->display->display_options['fields']['field_businesspori_theme']['table'] = 'search_api_index_pori_search_index';
+  $handler->display->display_options['fields']['field_businesspori_theme']['field'] = 'field_businesspori_theme';
+  $handler->display->display_options['fields']['field_businesspori_theme']['label'] = '';
+  $handler->display->display_options['fields']['field_businesspori_theme']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_businesspori_theme']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_businesspori_theme']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_businesspori_theme']['display'] = 'view';
+  $handler->display->display_options['fields']['field_businesspori_theme']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_businesspori_theme']['bypass_access'] = 0;
   /* Field: Indexed Node: Theme */
   $handler->display->display_options['fields']['field_theme']['id'] = 'field_theme';
   $handler->display->display_options['fields']['field_theme']['table'] = 'search_api_index_pori_search_index';

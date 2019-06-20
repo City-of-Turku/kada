@@ -20,7 +20,7 @@ function business_pori_configurations_context_default_contexts() {
   $context->conditions = array(
     'domain' => array(
       'values' => array(
-        'www_businesspori_fi' => 'www_businesspori_fi',
+        'businesspori_fi' => 'businesspori_fi',
       ),
     ),
   );
@@ -42,7 +42,7 @@ function business_pori_configurations_context_default_contexts() {
   $context->conditions = array(
     'domain' => array(
       'values' => array(
-        'www_businesspori_fi' => 'www_businesspori_fi',
+        'businesspori_fi' => 'businesspori_fi',
       ),
     ),
     'error' => array(
@@ -67,11 +67,11 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'branding',
           'weight' => '-9',
         ),
-        'menu-menu-business-pori-top-menu-fi' => array(
-          'module' => 'menu',
-          'delta' => 'menu-business-pori-top-menu-fi',
+        'menu_block-42' => array(
+          'module' => 'menu_block',
+          'delta' => '42',
           'region' => 'navigation_top',
-          'weight' => '-6',
+          'weight' => '-5',
         ),
         'menu_block-2' => array(
           'module' => 'menu_block',
@@ -97,11 +97,11 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'navigation',
           'weight' => '-7',
         ),
-        'menu-menu-business-pori-footer-menu-f' => array(
-          'module' => 'menu',
-          'delta' => 'menu-business-pori-footer-menu-f',
+        'menu_block-43' => array(
+          'module' => 'menu_block',
+          'delta' => '43',
           'region' => 'footer',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
       ),
     ),
@@ -340,7 +340,7 @@ function business_pori_configurations_context_default_contexts() {
   $context->conditions = array(
     'domain' => array(
       'values' => array(
-        'www_businesspori_fi' => 'www_businesspori_fi',
+        'businesspori_fi' => 'businesspori_fi',
       ),
     ),
     'entity_field' => array(
@@ -488,17 +488,17 @@ function business_pori_configurations_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'menu_block-42' => array(
+          'module' => 'menu_block',
+          'delta' => '42',
+          'region' => 'navigation_top',
+          'weight' => '-10',
+        ),
         'menu_block-44' => array(
           'module' => 'menu_block',
           'delta' => '44',
-          'region' => 'navigation_top',
-          'weight' => '-6',
-        ),
-        'menu_block-43' => array(
-          'module' => 'menu_block',
-          'delta' => '43',
           'region' => 'navigation',
-          'weight' => '-6',
+          'weight' => '-10',
         ),
       ),
     ),
@@ -520,7 +520,7 @@ function business_pori_configurations_context_default_contexts() {
   $context->conditions = array(
     'domain' => array(
       'values' => array(
-        'www_businesspori_fi' => 'www_businesspori_fi',
+        'businesspori_fi' => 'businesspori_fi',
       ),
     ),
     'views' => array(

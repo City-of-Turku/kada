@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_domains_feature.context.inc
@@ -145,6 +146,8 @@ function kada_domains_feature_context_default_contexts() {
     'context' => array(
       'values' => array(
         '~kadacalendar' => '~kadacalendar',
+        '~visitpori_domain' => '~visitpori_domain',
+        '~businesspori_domain' => '~businesspori_domain',
       ),
     ),
   );

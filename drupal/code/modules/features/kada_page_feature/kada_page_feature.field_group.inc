@@ -59,9 +59,10 @@ function kada_page_feature_field_group_info() {
       5 => 'field_main_image',
       6 => 'field_info_box',
       7 => 'field_visitpori_theme',
-      8 => 'field_service_offering',
-      9 => 'language',
-      10 => 'title',
+      8 => 'field_visitpori_theme',
+      9 => 'field_service_offering',
+      10 => 'language',
+      11 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

@@ -10,14 +10,14 @@
  */
 function business_pori_configurations_domain_default_domains() {
   $domains = array();
-  $domains['www_businesspori_fi'] = array(
-    'subdomain' => 'www.businesspori.fi',
+  $domains['businesspori_fi'] = array(
+    'subdomain' => 'businesspori.fi',
     'sitename' => 'Business Pori',
     'scheme' => 'http',
     'valid' => 1,
     'weight' => 1,
     'is_default' => 0,
-    'machine_name' => 'www_businesspori_fi',
+    'machine_name' => 'businesspori_fi',
   );
 
   return $domains;
@@ -28,31 +28,31 @@ function business_pori_configurations_domain_default_domains() {
  */
 function business_pori_configurations_domain_alias_default_aliases() {
   $domain_aliases = array();
-  $domain_aliases['www_businesspori_fi'] = array(
+  $domain_aliases['businesspori_fi'] = array(
     'local.businesspori.fi' => array(
       'pattern' => 'local.businesspori.fi',
       'redirect' => 0,
-      'machine_name' => 'www_businesspori_fi',
+      'machine_name' => 'businesspori_fi',
     ),
     'businesspori.dev.wunder.io' => array(
       'pattern' => 'businesspori.dev.wunder.io',
       'redirect' => 0,
-      'machine_name' => 'www_businesspori_fi',
+      'machine_name' => 'businesspori_fi',
     ),
     'businesspori.stage.wunder.io' => array(
       'pattern' => 'businesspori.stage.wunder.io',
       'redirect' => 0,
-      'machine_name' => 'www_businesspori_fi',
+      'machine_name' => 'businesspori_fi',
     ),
-    'businesspori.fi' => array(
-      'pattern' => 'businesspori.fi',
+    'www.businesspori.fi' => array(
+      'pattern' => 'www.businesspori.fi',
       'redirect' => 0,
-      'machine_name' => 'www_businesspori_fi',
+      'machine_name' => 'businesspori_fi',
     ),
     'local.businesspori.fi:8095' => array(
       'pattern' => 'local.businesspori.fi:8095',
       'redirect' => 0,
-      'machine_name' => 'www_businesspori_fi',
+      'machine_name' => 'businesspori_fi',
     ),
   );
 
@@ -64,7 +64,7 @@ function business_pori_configurations_domain_alias_default_aliases() {
  */
 function business_pori_configurations_domain_conf_default_variables() {
   $domain_variables = array();
-  $domain_variables['www_businesspori_fi'] = array(
+  $domain_variables['businesspori_fi'] = array(
     'googleanalytics_account' => 'UA-76043723-2',
     'googleanalytics_domain_mode' => 0,
     'googleanalytics_cross_domains' => '',
@@ -846,9 +846,9 @@ user/*/*',
  */
 function business_pori_configurations_domain_theme_default_themes() {
   $domain_themes = array();
-  $domain_themes['www_businesspori_fi'] = array(
-    'visitpori' => array(
-      'theme' => 'visitpori',
+  $domain_themes['businesspori_fi'] = array(
+    'businesspori' => array(
+      'theme' => 'businesspori',
       'settings' => NULL,
       'status' => 1,
       'filepath' => '',

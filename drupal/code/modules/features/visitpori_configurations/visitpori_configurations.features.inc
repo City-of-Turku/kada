@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * visitpori_configurations.features.inc
