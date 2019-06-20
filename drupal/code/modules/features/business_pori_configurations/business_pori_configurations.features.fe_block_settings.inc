@@ -243,10 +243,10 @@ function business_pori_configurations_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['menu_block-45'] = array(
+  $export['menu_block-46'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 45,
+    'delta' => 46,
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'menu_block',
@@ -289,10 +289,10 @@ function business_pori_configurations_default_fe_block_settings() {
     'visibility' => 0,
   );
 
-  $export['menu_block-46'] = array(
+  $export['menu_block-47'] = array(
     'cache' => -1,
     'custom' => 0,
-    'delta' => 46,
+    'delta' => 47,
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'menu_block',

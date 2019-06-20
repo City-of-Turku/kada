@@ -28,28 +28,22 @@ function business_pori_configurations_ctools_plugin_api($module = NULL, $api = N
  */
 function business_pori_configurations_context_default_contexts_alter(&$data) {
   if (isset($data['businesspori_error_page'])) {
-    $data['businesspori_error_page']->reactions['block']['blocks']['menu_block-45'] = array(
+    $data['businesspori_error_page']->reactions['block']['blocks']['menu_block-47'] = array(
       'module' => 'menu_block',
-      'delta' => 45,
+      'delta' => 47,
       'region' => 'navigation_top',
       'weight' => -10,
     ); /* WAS: '' */
-    $data['businesspori_error_page']->reactions['block']['blocks']['menu_block-46'] = array(
-      'module' => 'menu_block',
-      'delta' => 46,
-      'region' => 'footer',
-      'weight' => -10,
-    ); /* WAS: '' */
-    unset($data['businesspori_error_page']->reactions['block']['blocks']['menu_block-42']);
-    unset($data['businesspori_error_page']->reactions['block']['blocks']['menu_block-43']);
+    unset($data['businesspori_error_page']->reactions['block']['blocks']['menu_block-45']);
   }
   if (isset($data['businesspori_top_menu'])) {
-    $data['businesspori_top_menu']->reactions['block']['blocks']['menu_block-45'] = array(
+    $data['businesspori_top_menu']->reactions['block']['blocks']['menu_block-47'] = array(
       'module' => 'menu_block',
-      'delta' => 45,
+      'delta' => 47,
       'region' => 'navigation_top',
       'weight' => -10,
     ); /* WAS: '' */
+    unset($data['businesspori_top_menu']->reactions['block']['blocks']['menu_block-45']);
   }
 }
 

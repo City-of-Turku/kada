@@ -67,9 +67,9 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'branding',
           'weight' => '-9',
         ),
-        'menu_block-45' => array(
+        'menu_block-47' => array(
           'module' => 'menu_block',
-          'delta' => '45',
+          'delta' => '47',
           'region' => 'navigation_top',
           'weight' => '-10',
         ),
@@ -488,9 +488,9 @@ function business_pori_configurations_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'menu_block-45' => array(
+        'menu_block-47' => array(
           'module' => 'menu_block',
-          'delta' => '45',
+          'delta' => '47',
           'region' => 'navigation_top',
           'weight' => '-10',
         ),

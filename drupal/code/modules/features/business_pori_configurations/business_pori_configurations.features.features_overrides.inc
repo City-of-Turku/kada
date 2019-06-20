@@ -13,23 +13,17 @@ function business_pori_configurations_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: context
-  $overrides["context.businesspori_error_page.reactions|block|blocks|menu_block-42"]["DELETED"] = TRUE;
-  $overrides["context.businesspori_error_page.reactions|block|blocks|menu_block-43"]["DELETED"] = TRUE;
-  $overrides["context.businesspori_error_page.reactions|block|blocks|menu_block-45"] = array(
+  $overrides["context.businesspori_error_page.reactions|block|blocks|menu_block-45"]["DELETED"] = TRUE;
+  $overrides["context.businesspori_error_page.reactions|block|blocks|menu_block-47"] = array(
     'module' => 'menu_block',
-    'delta' => 45,
+    'delta' => 47,
     'region' => 'navigation_top',
     'weight' => -10,
   );
-  $overrides["context.businesspori_error_page.reactions|block|blocks|menu_block-46"] = array(
+  $overrides["context.businesspori_top_menu.reactions|block|blocks|menu_block-45"]["DELETED"] = TRUE;
+  $overrides["context.businesspori_top_menu.reactions|block|blocks|menu_block-47"] = array(
     'module' => 'menu_block',
-    'delta' => 46,
-    'region' => 'footer',
-    'weight' => -10,
-  );
-  $overrides["context.businesspori_top_menu.reactions|block|blocks|menu_block-45"] = array(
-    'module' => 'menu_block',
-    'delta' => 45,
+    'delta' => 47,
     'region' => 'navigation_top',
     'weight' => -10,
   );
