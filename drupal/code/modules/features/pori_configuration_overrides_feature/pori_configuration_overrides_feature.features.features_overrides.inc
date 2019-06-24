@@ -133,9 +133,11 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["field_group.group_additional_information|node|page|form.data|children|2"] = 'field_contact_person';
   $overrides["field_group.group_content|node|page|form.data|children|10"] = 'field_responsibility';
   $overrides["field_group.group_content|node|page|form.data|children|11"] = 'field_show_main_image';
-  $overrides["field_group.group_content|node|page|form.data|children|12"] = 'language';
-  $overrides["field_group.group_content|node|page|form.data|children|13"] = 'title';
-  $overrides["field_group.group_content|node|page|form.data|children|14"] = 'field_person_reference';
+  $overrides["field_group.group_content|node|page|form.data|children|12"] = 'field_person_reference';
+  $overrides["field_group.group_content|node|page|form.data|children|13"] = 'field_businesspori_theme';
+  $overrides["field_group.group_content|node|page|form.data|children|14"] = 'language';
+  $overrides["field_group.group_content|node|page|form.data|children|15"] = 'title';
+  $overrides["field_group.group_content|node|page|form.data|children|8"] = 'field_service_offering';
   $overrides["field_group.group_content|node|page|form.data|children|9"] = 'field_widgets_after_content';
   $overrides["field_group.group_content|node|place|form.data|children|11"] = 'field_read_more';
   $overrides["field_group.group_content|node|place|form.data|children|17"] = 'field_sorting_point';

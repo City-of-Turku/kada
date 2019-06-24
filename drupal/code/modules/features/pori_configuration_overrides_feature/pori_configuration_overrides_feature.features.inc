@@ -189,12 +189,14 @@ function pori_configuration_overrides_feature_field_group_info_alter(&$data) {
     $data['group_additional_information|node|page|form']->data['children'][2] = 'field_contact_person'; /* WAS: '' */
   }
   if (isset($data['group_content|node|page|form'])) {
-    $data['group_content|node|page|form']->data['children'][10] = 'field_responsibility'; /* WAS: 'title' */
-    $data['group_content|node|page|form']->data['children'][11] = 'field_show_main_image'; /* WAS: '' */
-    $data['group_content|node|page|form']->data['children'][12] = 'language'; /* WAS: '' */
-    $data['group_content|node|page|form']->data['children'][13] = 'title'; /* WAS: '' */
-    $data['group_content|node|page|form']->data['children'][14] = 'field_person_reference'; /* WAS: '' */
-    $data['group_content|node|page|form']->data['children'][9] = 'field_widgets_after_content'; /* WAS: 'language' */
+    $data['group_content|node|page|form']->data['children'][10] = 'field_responsibility'; /* WAS: 'language' */
+    $data['group_content|node|page|form']->data['children'][11] = 'field_show_main_image'; /* WAS: 'title' */
+    $data['group_content|node|page|form']->data['children'][12] = 'field_person_reference'; /* WAS: '' */
+    $data['group_content|node|page|form']->data['children'][13] = 'field_businesspori_theme'; /* WAS: '' */
+    $data['group_content|node|page|form']->data['children'][14] = 'language'; /* WAS: '' */
+    $data['group_content|node|page|form']->data['children'][15] = 'title'; /* WAS: '' */
+    $data['group_content|node|page|form']->data['children'][8] = 'field_service_offering'; /* WAS: 'field_visitpori_theme' */
+    $data['group_content|node|page|form']->data['children'][9] = 'field_widgets_after_content'; /* WAS: 'field_service_offering' */
   }
   if (isset($data['group_content|node|place|form'])) {
     $data['group_content|node|place|form']->data['children'][11] = 'field_read_more'; /* WAS: 'language' */
