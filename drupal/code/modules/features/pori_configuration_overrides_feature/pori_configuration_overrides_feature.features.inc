@@ -189,12 +189,14 @@ function pori_configuration_overrides_feature_field_group_info_alter(&$data) {
     $data['group_additional_information|node|page|form']->data['children'][2] = 'field_contact_person'; /* WAS: '' */
   }
   if (isset($data['group_content|node|page|form'])) {
-    $data['group_content|node|page|form']->data['children'][10] = 'field_responsibility'; /* WAS: 'title' */
-    $data['group_content|node|page|form']->data['children'][11] = 'field_show_main_image'; /* WAS: '' */
-    $data['group_content|node|page|form']->data['children'][12] = 'language'; /* WAS: '' */
-    $data['group_content|node|page|form']->data['children'][13] = 'title'; /* WAS: '' */
-    $data['group_content|node|page|form']->data['children'][14] = 'field_person_reference'; /* WAS: '' */
-    $data['group_content|node|page|form']->data['children'][9] = 'field_widgets_after_content'; /* WAS: 'language' */
+    $data['group_content|node|page|form']->data['children'][10] = 'field_responsibility'; /* WAS: 'language' */
+    $data['group_content|node|page|form']->data['children'][11] = 'field_show_main_image'; /* WAS: 'title' */
+    $data['group_content|node|page|form']->data['children'][12] = 'field_person_reference'; /* WAS: '' */
+    $data['group_content|node|page|form']->data['children'][13] = 'field_businesspori_theme'; /* WAS: '' */
+    $data['group_content|node|page|form']->data['children'][14] = 'language'; /* WAS: '' */
+    $data['group_content|node|page|form']->data['children'][15] = 'title'; /* WAS: '' */
+    $data['group_content|node|page|form']->data['children'][8] = 'field_service_offering'; /* WAS: 'field_visitpori_theme' */
+    $data['group_content|node|page|form']->data['children'][9] = 'field_widgets_after_content'; /* WAS: 'field_service_offering' */
   }
   if (isset($data['group_content|node|place|form'])) {
     $data['group_content|node|place|form']->data['children'][11] = 'field_read_more'; /* WAS: 'language' */
@@ -416,14 +418,6 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'weight' => 19,
     ); /* WAS: '' */
   }
-  if (isset($data['node-liftup-field_businesspori_theme'])) {
-    $data['node-liftup-field_businesspori_theme']['display']['small_liftup_banner'] = array(
-      'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
-      'weight' => 19,
-    ); /* WAS: '' */
-  }
   if (isset($data['node-liftup-og_group_ref'])) {
     $data['node-liftup-og_group_ref']['display']['small_liftup_banner'] = array(
       'label' => 'above',
@@ -523,10 +517,6 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
   if (isset($data['node-page-field_visitpori_theme'])) {
     $data['node-page-field_visitpori_theme']['display']['default']['weight'] = 43; /* WAS: 40 */
     $data['node-page-field_visitpori_theme']['widget']['weight'] = 20; /* WAS: 18 */
-  }
-  if (isset($data['node-page-field_businesspori_theme'])) {
-    $data['node-page-field_businesspori_theme']['display']['default']['weight'] = 43; /* WAS: 40 */
-    $data['node-page-field_businesspori_theme']['widget']['weight'] = 20; /* WAS: 18 */
   }
   if (isset($data['node-page-field_widget_before_content'])) {
     $data['node-page-field_widget_before_content']['display']['default']['weight'] = 40; /* WAS: 37 */
@@ -1647,6 +1637,9 @@ function pori_configuration_overrides_feature_strongarm_alter(&$data) {
     $data['menu_block_ids']->value[37] = 39; /* WAS: '' */
     $data['menu_block_ids']->value[38] = 40; /* WAS: '' */
     $data['menu_block_ids']->value[39] = 41; /* WAS: '' */
+    $data['menu_block_ids']->value[40] = 42; /* WAS: '' */
+    $data['menu_block_ids']->value[41] = 43; /* WAS: '' */
+    $data['menu_block_ids']->value[42] = 44; /* WAS: '' */
   }
   if (isset($data['node_options_landing_page'])) {
     $data['node_options_landing_page']->value[1] = 'revision'; /* WAS: '' */
@@ -1707,6 +1700,7 @@ function pori_configuration_overrides_feature_views_default_views_alter(&$data) 
       'value' => array(
         5 => 5,
         7 => 7,
+        10 => 10,
       ),
       'exposed' => TRUE,
       'expose' => array(

@@ -24,36 +24,6 @@ function business_pori_configurations_ctools_plugin_api($module = NULL, $api = N
 }
 
 /**
- * Implements hook_context_default_contexts_alter().
- */
-function business_pori_configurations_context_default_contexts_alter(&$data) {
-  if (isset($data['businesspori_error_page'])) {
-    $data['businesspori_error_page']->reactions['block']['blocks']['menu_block-45'] = array(
-      'module' => 'menu_block',
-      'delta' => 45,
-      'region' => 'navigation_top',
-      'weight' => -10,
-    ); /* WAS: '' */
-    $data['businesspori_error_page']->reactions['block']['blocks']['menu_block-46'] = array(
-      'module' => 'menu_block',
-      'delta' => 46,
-      'region' => 'footer',
-      'weight' => -10,
-    ); /* WAS: '' */
-    unset($data['businesspori_error_page']->reactions['block']['blocks']['menu_block-42']);
-    unset($data['businesspori_error_page']->reactions['block']['blocks']['menu_block-43']);
-  }
-  if (isset($data['businesspori_top_menu'])) {
-    $data['businesspori_top_menu']->reactions['block']['blocks']['menu_block-45'] = array(
-      'module' => 'menu_block',
-      'delta' => 45,
-      'region' => 'navigation_top',
-      'weight' => -10,
-    ); /* WAS: '' */
-  }
-}
-
-/**
  * Implements hook_field_default_field_bases_alter().
  */
 function business_pori_configurations_field_default_field_bases_alter(&$data) {
@@ -69,6 +39,9 @@ function business_pori_configurations_field_default_field_bases_alter(&$data) {
  * Implements hook_field_default_field_instances_alter().
  */
 function business_pori_configurations_field_default_field_instances_alter(&$data) {
+  if (isset($data['node-liftup-field_businesspori_theme'])) {
+    $data['node-liftup-field_businesspori_theme']['display']['small_liftup_banner']['weight'] = 19; /* WAS: 0 */
+  }
   if (isset($data['node-news_item-field_businesspori_theme'])) {
     $data['node-news_item-field_businesspori_theme']['label'] = 'Business Pori theme'; /* WAS: 'Businesspori theme' */
   }
@@ -90,10 +63,6 @@ function business_pori_configurations_field_default_field_instances_alter(&$data
  * Implements hook_strongarm_alter().
  */
 function business_pori_configurations_strongarm_alter(&$data) {
-  if (isset($data['menu_block_ids'])) {
-    $data['menu_block_ids']->value[42] = 44; /* WAS: '' */
-    $data['menu_block_ids']->value[44] = 46; /* WAS: '' */
-  }
   if (isset($data['menu_block_menu_order'])) {
     $data['menu_block_menu_order']->value['menu-business-pori-footer-menu-f'] = ''; /* WAS: '' */
     $data['menu_block_menu_order']->value['menu-business-pori-p-valikko'] = ''; /* WAS: '' */
