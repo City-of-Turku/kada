@@ -1698,6 +1698,7 @@ function pori_configuration_overrides_feature_views_default_views_alter(&$data) 
       'value' => array(
         5 => 5,
         7 => 7,
+        10 => 10,
       ),
       'exposed' => TRUE,
       'expose' => array(
