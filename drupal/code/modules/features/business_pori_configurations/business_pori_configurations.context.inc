@@ -488,9 +488,9 @@ function business_pori_configurations_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'menu_block-47' => array(
+        'menu_block-48' => array(
           'module' => 'menu_block',
-          'delta' => '47',
+          'delta' => '48',
           'region' => 'navigation_top',
           'weight' => '-10',
         ),

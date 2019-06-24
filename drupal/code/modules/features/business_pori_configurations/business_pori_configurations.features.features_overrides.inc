@@ -12,6 +12,14 @@ function business_pori_configurations_features_override_default_overrides() {
   // This code is only used for UI in features. Exported alters hooks do the magic.
   $overrides = array();
 
+  // Exported overrides for: context
+  $overrides["context.businesspori_top_menu.reactions|block|blocks|menu_block-48"] = array(
+    'module' => 'menu_block',
+    'delta' => 48,
+    'region' => 'navigation_top',
+    'weight' => -10,
+  );
+
   // Exported overrides for: field_base
   $overrides["field_base.field_businesspori_theme.field_permissions"] = array(
     'type' => 0,
