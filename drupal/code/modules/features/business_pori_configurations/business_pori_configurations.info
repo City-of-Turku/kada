@@ -92,6 +92,3 @@ features[variable_realm][] = domain_language:businesspori_fi:en
 features[variable_realm][] = domain_language:businesspori_fi:fi
 features[variable_realm][] = domain_language:businesspori_fi:ru
 features[variable_realm][] = domain_language:businesspori_fi:sv
-features_exclude[features_overrides][fe_block_settings.menu_block-42.menu_block-42] = fe_block_settings.menu_block-42.menu_block-42
-features_exclude[features_overrides][fe_block_settings.menu_block-43.menu_block-43] = fe_block_settings.menu_block-43.menu_block-43
-features_exclude[features_overrides][fe_block_settings.menu_block-44.menu_block-44] = fe_block_settings.menu_block-44.menu_block-44
