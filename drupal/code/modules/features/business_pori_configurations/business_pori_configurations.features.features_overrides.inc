@@ -32,10 +32,5 @@ function business_pori_configurations_features_override_default_overrides() {
   $overrides["field_instance.node-page-field_businesspori_theme.display|project|weight"] = 0;
   $overrides["field_instance.node-page-field_businesspori_theme.label"] = 'Business Pori theme';
 
-  // Exported overrides for: variable
-  $overrides["variable.menu_block_menu_order.value|menu-business-pori-footer-menu-f"] = '';
-  $overrides["variable.menu_block_menu_order.value|menu-business-pori-p-valikko"] = '';
-  $overrides["variable.menu_block_menu_order.value|menu-business-pori-top-menu-fi"] = '';
-
  return $overrides;
 }

@@ -58,14 +58,3 @@ function business_pori_configurations_field_default_field_instances_alter(&$data
     $data['node-page-field_businesspori_theme']['label'] = 'Business Pori theme'; /* WAS: 'Businesspori theme' */
   }
 }
-
-/**
- * Implements hook_strongarm_alter().
- */
-function business_pori_configurations_strongarm_alter(&$data) {
-  if (isset($data['menu_block_menu_order'])) {
-    $data['menu_block_menu_order']->value['menu-business-pori-footer-menu-f'] = ''; /* WAS: '' */
-    $data['menu_block_menu_order']->value['menu-business-pori-p-valikko'] = ''; /* WAS: '' */
-    $data['menu_block_menu_order']->value['menu-business-pori-top-menu-fi'] = ''; /* WAS: '' */
-  }
-}
