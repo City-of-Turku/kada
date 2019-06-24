@@ -416,14 +416,6 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
       'weight' => 19,
     ); /* WAS: '' */
   }
-  if (isset($data['node-liftup-field_businesspori_theme'])) {
-    $data['node-liftup-field_businesspori_theme']['display']['small_liftup_banner'] = array(
-      'label' => 'above',
-      'settings' => array(),
-      'type' => 'hidden',
-      'weight' => 19,
-    ); /* WAS: '' */
-  }
   if (isset($data['node-liftup-og_group_ref'])) {
     $data['node-liftup-og_group_ref']['display']['small_liftup_banner'] = array(
       'label' => 'above',
@@ -523,10 +515,6 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
   if (isset($data['node-page-field_visitpori_theme'])) {
     $data['node-page-field_visitpori_theme']['display']['default']['weight'] = 43; /* WAS: 40 */
     $data['node-page-field_visitpori_theme']['widget']['weight'] = 20; /* WAS: 18 */
-  }
-  if (isset($data['node-page-field_businesspori_theme'])) {
-    $data['node-page-field_businesspori_theme']['display']['default']['weight'] = 43; /* WAS: 40 */
-    $data['node-page-field_businesspori_theme']['widget']['weight'] = 20; /* WAS: 18 */
   }
   if (isset($data['node-page-field_widget_before_content'])) {
     $data['node-page-field_widget_before_content']['display']['default']['weight'] = 40; /* WAS: 37 */

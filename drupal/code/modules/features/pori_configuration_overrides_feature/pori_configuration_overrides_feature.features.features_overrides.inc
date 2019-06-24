@@ -305,12 +305,6 @@ function pori_configuration_overrides_feature_features_override_default_override
     'type' => 'hidden',
     'weight' => 19,
   );
-  $overrides["field_instance.node-liftup-field_businesspori_theme.display|small_liftup_banner"] = array(
-    'label' => 'above',
-    'settings' => array(),
-    'type' => 'hidden',
-    'weight' => 20,
-  );
   $overrides["field_instance.node-liftup-og_group_ref.display|small_liftup_banner"] = array(
     'label' => 'above',
     'settings' => array(),
@@ -378,8 +372,6 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["field_instance.node-page-field_topic.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.node-page-field_visitpori_theme.display|default|weight"] = 43;
   $overrides["field_instance.node-page-field_visitpori_theme.widget|weight"] = 20;
-  $overrides["field_instance.node-page-field_businesspori_theme.display|default|weight"] = 43;
-  $overrides["field_instance.node-page-field_businesspori_theme.widget|weight"] = 20;
   $overrides["field_instance.node-page-field_widget_before_content.display|default|weight"] = 40;
   $overrides["field_instance.node-page-field_widget_before_content.display|live_results_search"] = array(
     'label' => 'above',
