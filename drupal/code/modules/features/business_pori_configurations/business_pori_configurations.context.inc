@@ -67,12 +67,6 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'branding',
           'weight' => '-9',
         ),
-        'menu_block-47' => array(
-          'module' => 'menu_block',
-          'delta' => '47',
-          'region' => 'navigation_top',
-          'weight' => '-10',
-        ),
         'menu_block-2' => array(
           'module' => 'menu_block',
           'delta' => '2',

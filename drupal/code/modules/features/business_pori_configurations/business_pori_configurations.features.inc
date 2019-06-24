@@ -24,20 +24,6 @@ function business_pori_configurations_ctools_plugin_api($module = NULL, $api = N
 }
 
 /**
- * Implements hook_context_default_contexts_alter().
- */
-function business_pori_configurations_context_default_contexts_alter(&$data) {
-  if (isset($data['businesspori_top_menu'])) {
-    $data['businesspori_top_menu']->reactions['block']['blocks']['menu_block-48'] = array(
-      'module' => 'menu_block',
-      'delta' => 48,
-      'region' => 'navigation_top',
-      'weight' => -10,
-    ); /* WAS: '' */
-  }
-}
-
-/**
  * Implements hook_field_default_field_bases_alter().
  */
 function business_pori_configurations_field_default_field_bases_alter(&$data) {
@@ -74,10 +60,6 @@ function business_pori_configurations_field_default_field_instances_alter(&$data
  * Implements hook_strongarm_alter().
  */
 function business_pori_configurations_strongarm_alter(&$data) {
-  if (isset($data['menu_block_ids'])) {
-    $data['menu_block_ids']->value[42] = 44; /* WAS: '' */
-    $data['menu_block_ids']->value[44] = 46; /* WAS: '' */
-  }
   if (isset($data['menu_block_menu_order'])) {
     $data['menu_block_menu_order']->value['menu-business-pori-footer-menu-f'] = ''; /* WAS: '' */
     $data['menu_block_menu_order']->value['menu-business-pori-p-valikko'] = ''; /* WAS: '' */
