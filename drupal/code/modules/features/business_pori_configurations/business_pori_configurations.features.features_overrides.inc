@@ -12,22 +12,6 @@ function business_pori_configurations_features_override_default_overrides() {
   // This code is only used for UI in features. Exported alters hooks do the magic.
   $overrides = array();
 
-  // Exported overrides for: context
-  $overrides["context.businesspori_error_page.reactions|block|blocks|menu_block-45"]["DELETED"] = TRUE;
-  $overrides["context.businesspori_error_page.reactions|block|blocks|menu_block-47"] = array(
-    'module' => 'menu_block',
-    'delta' => 47,
-    'region' => 'navigation_top',
-    'weight' => -10,
-  );
-  $overrides["context.businesspori_top_menu.reactions|block|blocks|menu_block-45"]["DELETED"] = TRUE;
-  $overrides["context.businesspori_top_menu.reactions|block|blocks|menu_block-47"] = array(
-    'module' => 'menu_block',
-    'delta' => 47,
-    'region' => 'navigation_top',
-    'weight' => -10,
-  );
-
   // Exported overrides for: field_base
   $overrides["field_base.field_businesspori_theme.field_permissions"] = array(
     'type' => 0,
