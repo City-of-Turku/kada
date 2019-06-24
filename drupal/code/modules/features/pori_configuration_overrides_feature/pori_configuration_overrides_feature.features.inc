@@ -1635,6 +1635,9 @@ function pori_configuration_overrides_feature_strongarm_alter(&$data) {
     $data['menu_block_ids']->value[37] = 39; /* WAS: '' */
     $data['menu_block_ids']->value[38] = 40; /* WAS: '' */
     $data['menu_block_ids']->value[39] = 41; /* WAS: '' */
+    $data['menu_block_ids']->value[40] = 42; /* WAS: '' */
+    $data['menu_block_ids']->value[41] = 43; /* WAS: '' */
+    $data['menu_block_ids']->value[42] = 44; /* WAS: '' */
   }
   if (isset($data['node_options_landing_page'])) {
     $data['node_options_landing_page']->value[1] = 'revision'; /* WAS: '' */
