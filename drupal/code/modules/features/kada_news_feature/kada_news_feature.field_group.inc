@@ -40,9 +40,10 @@ function kada_news_feature_field_group_info() {
       14 => 'field_tweet_embed',
       15 => 'field_vignette',
       16 => 'field_visitpori_theme',
-      17 => 'flag',
-      18 => 'language',
-      19 => 'title',
+      17 => 'field_businesspori_theme',
+      18 => 'flag',
+      19 => 'language',
+      20 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

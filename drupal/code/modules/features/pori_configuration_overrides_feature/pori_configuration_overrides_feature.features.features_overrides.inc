@@ -309,7 +309,7 @@ function pori_configuration_overrides_feature_features_override_default_override
     'label' => 'above',
     'settings' => array(),
     'type' => 'hidden',
-    'weight' => 20,
+    'weight' => 21,
   );
   $overrides["field_instance.node-news_item-field_keywords.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.node-news_item-field_related_content.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
@@ -1308,6 +1308,9 @@ function pori_configuration_overrides_feature_features_override_default_override
   $overrides["variable.menu_block_ids.value|38"] = 40;
   $overrides["variable.menu_block_ids.value|39"] = 41;
   $overrides["variable.node_options_attraction_card.value|1"] = 'revision';
+  $overrides["variable.menu_block_ids.value|40"] = 42;
+  $overrides["variable.menu_block_ids.value|41"] = 43;
+  $overrides["variable.menu_block_ids.value|42"] = 44;
   $overrides["variable.node_options_landing_page.value|1"] = 'revision';
   $overrides["variable.node_options_page.value|1"] = 'revision';
   $overrides["variable.scald_custom_contexts.value|content_250_wide"] = array(

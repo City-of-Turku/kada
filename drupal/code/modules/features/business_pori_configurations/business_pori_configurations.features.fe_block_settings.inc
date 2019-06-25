@@ -24,6 +24,12 @@ function business_pori_configurations_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
       'kada' => array(
         'region' => '',
         'status' => 0,
@@ -64,6 +70,12 @@ function business_pori_configurations_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
       'kada' => array(
         'region' => '',
         'status' => 0,
@@ -104,6 +116,12 @@ function business_pori_configurations_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
       'kada' => array(
         'region' => '',
         'status' => 0,
@@ -144,6 +162,12 @@ function business_pori_configurations_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
       'kada' => array(
         'region' => '',
         'status' => 0,
@@ -177,15 +201,19 @@ function business_pori_configurations_default_fe_block_settings() {
     'cache' => -1,
     'custom' => 0,
     'delta' => 42,
-    'i18n_block_language' => array(
-      0 => 'fi',
-    ),
+    'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'menu_block',
     'node_types' => array(),
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
       'kada' => array(
         'region' => '',
         'status' => 0,
@@ -226,6 +254,12 @@ function business_pori_configurations_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
       'kada' => array(
         'region' => '',
         'status' => 0,
@@ -266,6 +300,12 @@ function business_pori_configurations_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
       'kada' => array(
         'region' => '',
         'status' => 0,

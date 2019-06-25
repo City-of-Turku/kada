@@ -59,6 +59,7 @@ features[field_instance][] = node-news_item-field_theme
 features[field_instance][] = node-news_item-field_tweet_embed
 features[field_instance][] = node-news_item-field_vignette
 features[field_instance][] = node-news_item-field_visitpori_theme
+features[field_instance][] = node-news_item-field_businesspori_theme
 features[field_instance][] = node-news_item-og_group_ref
 features[flag][] = emergency_message
 features[flag][] = main_news

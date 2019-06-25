@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_liftups_feature.features.fe_block_settings.inc
@@ -23,6 +24,12 @@ function kada_liftups_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
       'kada' => array(
         'region' => '',
         'status' => 0,
@@ -63,6 +70,12 @@ function kada_liftups_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
       'kada' => array(
         'region' => '',
         'status' => 0,
