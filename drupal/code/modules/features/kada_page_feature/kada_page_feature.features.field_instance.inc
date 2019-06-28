@@ -1019,7 +1019,7 @@ function kada_page_feature_field_default_field_instances() {
     'bundle' => 'page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Use autocomplete to find what you need. Separate multiple selections with comma , .',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -1059,10 +1059,15 @@ function kada_page_feature_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 20,
+      'module' => 'entityreference',
+      'settings' => array(
+        'content_taxonomy_autocomplete_new_terms' => 'deny',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete_tags',
+      'weight' => 22,
     ),
   );
 
