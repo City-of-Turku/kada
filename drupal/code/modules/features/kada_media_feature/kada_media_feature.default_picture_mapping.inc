@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_media_feature.default_picture_mapping.inc

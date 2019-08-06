@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_sections_feature.features.user_permission.inc
@@ -35,7 +36,6 @@ function kada_sections_feature_user_default_permissions() {
     'name' => 'delete any section content',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -45,7 +45,6 @@ function kada_sections_feature_user_default_permissions() {
     'name' => 'delete own section content',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -55,7 +54,6 @@ function kada_sections_feature_user_default_permissions() {
     'name' => 'delete section content on assigned domains',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'domain',
   );

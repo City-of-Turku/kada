@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_media_feature.views_default.inc
@@ -87,7 +88,7 @@ function kada_media_feature_views_default_views() {
   $handler->display->display_options['relationships']['publisher']['table'] = 'scald_atoms';
   $handler->display->display_options['relationships']['publisher']['field'] = 'publisher';
   $handler->display->display_options['relationships']['publisher']['label'] = 'Publisher';
-  /* Field: Atoms: Title text */
+  /* Field: Mediapankki: Title text */
   $handler->display->display_options['fields']['field_title_text']['id'] = 'field_title_text';
   $handler->display->display_options['fields']['field_title_text']['table'] = 'field_data_field_title_text';
   $handler->display->display_options['fields']['field_title_text']['field'] = 'field_title_text';
@@ -106,7 +107,7 @@ function kada_media_feature_views_default_views() {
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'scald_atoms';
   $handler->display->display_options['fields']['type']['field'] = 'type';
-  /* Field: Atom: Thumbnail */
+  /* Field: Mediapankki: Thumbnail */
   $handler->display->display_options['fields']['scald_thumbnail']['id'] = 'scald_thumbnail';
   $handler->display->display_options['fields']['scald_thumbnail']['table'] = 'field_data_scald_thumbnail';
   $handler->display->display_options['fields']['scald_thumbnail']['field'] = 'scald_thumbnail';
@@ -125,7 +126,7 @@ function kada_media_feature_views_default_views() {
   $handler->display->display_options['sorts']['changed']['table'] = 'scald_atoms';
   $handler->display->display_options['sorts']['changed']['field'] = 'changed';
   $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
-  /* Filter criterion: Atoms: Title text (field_title_text) */
+  /* Filter criterion: Mediapankki: Title text (field_title_text) */
   $handler->display->display_options['filters']['field_title_text_value']['id'] = 'field_title_text_value';
   $handler->display->display_options['filters']['field_title_text_value']['table'] = 'field_data_field_title_text';
   $handler->display->display_options['filters']['field_title_text_value']['field'] = 'field_title_text_value';
@@ -181,7 +182,7 @@ function kada_media_feature_views_default_views() {
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: Atoms: Authors (scald_authors) */
+  /* Filter criterion: Mediapankki: Authors (scald_authors) */
   $handler->display->display_options['filters']['scald_authors_tid']['id'] = 'scald_authors_tid';
   $handler->display->display_options['filters']['scald_authors_tid']['table'] = 'field_data_scald_authors';
   $handler->display->display_options['filters']['scald_authors_tid']['field'] = 'scald_authors_tid';
@@ -203,7 +204,7 @@ function kada_media_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filter criterion: Atoms: Tags (scald_tags) */
+  /* Filter criterion: Mediapankki: Tags (scald_tags) */
   $handler->display->display_options['filters']['scald_tags_tid']['id'] = 'scald_tags_tid';
   $handler->display->display_options['filters']['scald_tags_tid']['table'] = 'field_data_scald_tags';
   $handler->display->display_options['filters']['scald_tags_tid']['field'] = 'scald_tags_tid';
@@ -225,6 +226,15 @@ function kada_media_feature_views_default_views() {
   );
   $handler->display->display_options['filters']['actions']['group'] = 1;
   $handler->display->display_options['filters']['actions']['expose']['operator'] = FALSE;
+  /* Filter criterion: Domain Editor: Domain ID */
+  $handler->display->display_options['filters']['domain_id']['id'] = 'domain_id';
+  $handler->display->display_options['filters']['domain_id']['table'] = 'domain_editor';
+  $handler->display->display_options['filters']['domain_id']['field'] = 'domain_id';
+  $handler->display->display_options['filters']['domain_id']['relationship'] = 'publisher';
+  $handler->display->display_options['filters']['domain_id']['value'] = array(
+    '***CURRENT_DOMAIN***' => '***CURRENT_DOMAIN***',
+  );
+  $handler->display->display_options['filters']['domain_id']['group'] = 1;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
@@ -286,7 +296,7 @@ function kada_media_feature_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Atoms: Title text */
+  /* Field: Mediapankki: Title text */
   $handler->display->display_options['fields']['field_title_text']['id'] = 'field_title_text';
   $handler->display->display_options['fields']['field_title_text']['table'] = 'field_data_field_title_text';
   $handler->display->display_options['fields']['field_title_text']['field'] = 'field_title_text';
@@ -404,7 +414,7 @@ function kada_media_feature_views_default_views() {
   $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['sorts']['title']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['title']['expose']['label'] = 'Title';
-  /* Filter criterion: Atoms: Title text (field_title_text) */
+  /* Filter criterion: Mediapankki: Title text (field_title_text) */
   $handler->display->display_options['filters']['field_title_text_value']['id'] = 'field_title_text_value';
   $handler->display->display_options['filters']['field_title_text_value']['table'] = 'field_data_field_title_text';
   $handler->display->display_options['filters']['field_title_text_value']['field'] = 'field_title_text_value';
@@ -453,7 +463,7 @@ function kada_media_feature_views_default_views() {
   $handler->display->display_options['filters']['uid']['expose']['label'] = 'Publisher';
   $handler->display->display_options['filters']['uid']['expose']['operator'] = 'uid_op';
   $handler->display->display_options['filters']['uid']['expose']['identifier'] = 'uid';
-  /* Filter criterion: Atoms: Authors (scald_authors) */
+  /* Filter criterion: Mediapankki: Authors (scald_authors) */
   $handler->display->display_options['filters']['scald_authors_tid']['id'] = 'scald_authors_tid';
   $handler->display->display_options['filters']['scald_authors_tid']['table'] = 'field_data_scald_authors';
   $handler->display->display_options['filters']['scald_authors_tid']['field'] = 'scald_authors_tid';
@@ -475,7 +485,7 @@ function kada_media_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
-  /* Filter criterion: Atoms: Tags (scald_tags) */
+  /* Filter criterion: Mediapankki: Tags (scald_tags) */
   $handler->display->display_options['filters']['scald_tags_tid']['id'] = 'scald_tags_tid';
   $handler->display->display_options['filters']['scald_tags_tid']['table'] = 'field_data_scald_tags';
   $handler->display->display_options['filters']['scald_tags_tid']['field'] = 'scald_tags_tid';
@@ -497,6 +507,15 @@ function kada_media_feature_views_default_views() {
   );
   $handler->display->display_options['filters']['actions']['group'] = 1;
   $handler->display->display_options['filters']['actions']['expose']['operator'] = FALSE;
+  /* Filter criterion: Domain Editor: Domain ID */
+  $handler->display->display_options['filters']['domain_id']['id'] = 'domain_id';
+  $handler->display->display_options['filters']['domain_id']['table'] = 'domain_editor';
+  $handler->display->display_options['filters']['domain_id']['field'] = 'domain_id';
+  $handler->display->display_options['filters']['domain_id']['relationship'] = 'publisher';
+  $handler->display->display_options['filters']['domain_id']['value'] = array(
+    '***CURRENT_DOMAIN***' => '***CURRENT_DOMAIN***',
+  );
+  $handler->display->display_options['filters']['domain_id']['group'] = 1;
 
   /* Display: Scald Library */
   $handler = $view->new_display('dnd_library', 'Scald Library', 'dnd_library_1');

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_page_feature.ds.inc
@@ -18,9 +19,20 @@ function kada_page_feature_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
     'places_for_services' => array(
-      'weight' => '4',
+      'weight' => 6,
       'label' => 'hidden',
       'format' => 'default',
+    ),
+    'page_places' => array(
+      'weight' => 4,
+      'label' => 'hidden',
+      'format' => 'default',
+      'formatter_settings' => array(
+        'show_title' => 0,
+        'title_wrapper' => '',
+        'ctools' => 'a:3:{s:4:"conf";a:3:{s:14:"override_title";i:0;s:19:"override_title_text";s:0:"";s:22:"override_title_heading";s:2:"h2";}s:4:"type";s:14:"openlayers_map";s:7:"subtype";s:21:"pori_page_service_map";}',
+        'load_terms' => 0,
+      ),
     ),
   );
   $export['node|page|default'] = $ds_fieldsetting;
@@ -138,19 +150,25 @@ function kada_page_feature_ds_layout_settings_info() {
         0 => 'domain',
         1 => 'field_lead_paragraph',
         2 => 'body',
-        3 => 'field_service_offering',
+        3 => 'field_person_reference',
+        4 => 'page_places',
+        5 => 'field_service_offering',
       ),
       'sidebar' => array(
-        4 => 'field_keywords',
         5 => 'places_for_services',
+        6 => 'field_keywords',
+        7 => 'places_for_services',
       ),
       'additional_information' => array(
-        6 => 'field_additional_info_link',
-        7 => 'field_file_attachment',
+        7 => 'field_additional_info_link',
+        8 => 'field_file_attachment',
       ),
       'after_content' => array(
-        8 => 'field_topic',
-        9 => 'field_subpage',
+        10 => 'field_topic',
+        11 => 'field_subpage',
+      ),
+      'contact_information' => array(
+        9 => 'field_contact_person',
       ),
     ),
     'fields' => array(
@@ -164,6 +182,9 @@ function kada_page_feature_ds_layout_settings_info() {
       'field_file_attachment' => 'additional_information',
       'field_topic' => 'after_content',
       'field_subpage' => 'after_content',
+      'field_contact_person' => 'contact_information',
+      'field_person_reference' => 'main_content',
+      'page_places' => 'main_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -171,6 +192,7 @@ function kada_page_feature_ds_layout_settings_info() {
       'sidebar' => 'div',
       'additional_information' => 'div',
       'after_content' => 'div',
+      'contact_information' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',

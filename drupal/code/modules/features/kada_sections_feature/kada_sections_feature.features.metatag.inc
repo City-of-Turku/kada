@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_sections_feature.features.metatag.inc
@@ -10,9 +11,10 @@
 function kada_sections_feature_metatag_export_default() {
   $config = array();
 
-// Exported Metatag config instance: node:section.
+  // Exported Metatag config instance: node:section.
   $config['node:section'] = array(
     'instance' => 'node:section',
+    'disabled' => FALSE,
     'config' => array(
       'description' => array(
         'value' => '',
@@ -62,7 +64,7 @@ function kada_sections_feature_metatag_export_default() {
       'twitter:description' => array(
         'value' => '',
       ),
-      'twitter:image:src' => array(
+      'twitter:image' => array(
         'value' => '[kada:metatag_image]',
       ),
     ),

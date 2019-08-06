@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_service_offer_feature.views_default.inc
@@ -102,7 +103,7 @@ function kada_service_offer_feature_views_default_views() {
   $handler->display->display_options['fields']['field_precondition']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_precondition']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_precondition']['delta_offset'] = '0';
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -155,7 +156,7 @@ function kada_service_offer_feature_views_default_views() {
   $handler->display->display_options['fields']['path']['element_wrapper_class'] = 'link-to-content';
   $handler->display->display_options['fields']['path']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['path']['absolute'] = TRUE;
-  /* Sort criterion: Content: Name (title_field) */
+  /* Sort criterion: Content: Title (title_field) */
   $handler->display->display_options['sorts']['title_field_value']['id'] = 'title_field_value';
   $handler->display->display_options['sorts']['title_field_value']['table'] = 'field_data_title_field';
   $handler->display->display_options['sorts']['title_field_value']['field'] = 'title_field_value';
@@ -177,7 +178,7 @@ function kada_service_offer_feature_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Name (title_field:language) */
+  /* Filter criterion: Content: Title (title_field:language) */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -229,7 +230,7 @@ function kada_service_offer_feature_views_default_views() {
   $handler->display->display_options['fields']['field_precondition']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_precondition']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_precondition']['delta_offset'] = '0';
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -272,7 +273,7 @@ function kada_service_offer_feature_views_default_views() {
   $handler->display->display_options['fields']['path']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['path']['absolute'] = TRUE;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Name (title_field) */
+  /* Sort criterion: Content: Title (title_field) */
   $handler->display->display_options['sorts']['title_field_value']['id'] = 'title_field_value';
   $handler->display->display_options['sorts']['title_field_value']['table'] = 'field_data_title_field';
   $handler->display->display_options['sorts']['title_field_value']['field'] = 'title_field_value';
@@ -287,7 +288,7 @@ function kada_service_offer_feature_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Name (title_field:language) */
+  /* Filter criterion: Content: Title (title_field:language) */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -377,7 +378,7 @@ function kada_service_offer_feature_views_default_views() {
   $handler->display->display_options['relationships']['relation_place_service_node']['entity_deduplication_left'] = 0;
   $handler->display->display_options['relationships']['relation_place_service_node']['entity_deduplication_right'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -392,7 +393,7 @@ function kada_service_offer_feature_views_default_views() {
     'title_class' => '',
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -427,7 +428,7 @@ function kada_service_offer_feature_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Name (title_field:language) */
+  /* Filter criterion: Content: Title (title_field:language) */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -435,7 +436,7 @@ function kada_service_offer_feature_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
-  /* Filter criterion: Content: Name (title_field) */
+  /* Filter criterion: Content: Title (title_field) */
   $handler->display->display_options['filters']['title_field_value']['id'] = 'title_field_value';
   $handler->display->display_options['filters']['title_field_value']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['title_field_value']['field'] = 'title_field_value';
@@ -454,7 +455,7 @@ function kada_service_offer_feature_views_default_views() {
     3 => 0,
     6 => 0,
   );
-  /* Filter criterion: Content: Name (title_field) */
+  /* Filter criterion: Content: Title (title_field) */
   $handler->display->display_options['filters']['title_field_value_1']['id'] = 'title_field_value_1';
   $handler->display->display_options['filters']['title_field_value_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['title_field_value_1']['field'] = 'title_field_value';
@@ -572,7 +573,7 @@ function kada_service_offer_feature_views_default_views() {
   $handler->display->display_options['relationships']['relation_place_service_node']['entity_deduplication_left'] = 0;
   $handler->display->display_options['relationships']['relation_place_service_node']['entity_deduplication_right'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -580,7 +581,7 @@ function kada_service_offer_feature_views_default_views() {
   $handler->display->display_options['fields']['title_field_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title_field_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 0;
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -622,7 +623,7 @@ function kada_service_offer_feature_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Name (title_field:language) */
+  /* Filter criterion: Content: Title (title_field:language) */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -631,7 +632,7 @@ function kada_service_offer_feature_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
-  /* Filter criterion: Content: Name (title_field) */
+  /* Filter criterion: Content: Title (title_field) */
   $handler->display->display_options['filters']['title_field_value_1']['id'] = 'title_field_value_1';
   $handler->display->display_options['filters']['title_field_value_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['title_field_value_1']['field'] = 'title_field_value';
@@ -651,7 +652,7 @@ function kada_service_offer_feature_views_default_views() {
     3 => 0,
     6 => 0,
   );
-  /* Filter criterion: Content: Name (title_field) */
+  /* Filter criterion: Content: Title (title_field) */
   $handler->display->display_options['filters']['title_field_value']['id'] = 'title_field_value';
   $handler->display->display_options['filters']['title_field_value']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['title_field_value']['field'] = 'title_field_value';
@@ -718,7 +719,7 @@ function kada_service_offer_feature_views_default_views() {
   $handler->display->display_options['relationships']['relation_place_service_node']['entity_deduplication_left'] = 0;
   $handler->display->display_options['relationships']['relation_place_service_node']['entity_deduplication_right'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';

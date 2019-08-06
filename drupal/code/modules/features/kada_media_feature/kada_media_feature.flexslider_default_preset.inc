@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_media_feature.flexslider_default_preset.inc
@@ -24,7 +25,7 @@ function kada_media_feature_flexslider_default_presets() {
     'easing' => 'swing',
     'direction' => 'horizontal',
     'reverse' => 0,
-    'smoothHeight' => 1,
+    'smoothHeight' => 0,
     'startAt' => '0',
     'animationSpeed' => '600',
     'initDelay' => '0',

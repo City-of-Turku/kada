@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_blog_feature.ds.inc
@@ -18,7 +19,7 @@ function kada_blog_feature_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'current';
   $ds_fieldsetting->settings = array(
     'post_date' => array(
-      'weight' => '0',
+      'weight' => 1,
       'label' => 'hidden',
       'format' => 'ds_post_date_kada_date_only',
       'formatter_settings' => array(
@@ -229,8 +230,8 @@ function kada_blog_feature_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'header' => array(
-        0 => 'post_date',
-        1 => 'field_main_image',
+        0 => 'field_main_image',
+        1 => 'post_date',
       ),
       'main' => array(
         2 => 'field_quote',

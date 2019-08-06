@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_page_feature.features.user_permission.inc
@@ -36,7 +37,6 @@ function kada_page_feature_user_default_permissions() {
     'name' => 'delete any page content',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -47,7 +47,6 @@ function kada_page_feature_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'content editor' => 'content editor',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -57,7 +56,6 @@ function kada_page_feature_user_default_permissions() {
     'name' => 'delete page content on assigned domains',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'domain',
   );

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_services_feature.features.metatag.inc
@@ -59,7 +60,7 @@ function kada_services_feature_metatag_export_default() {
       'twitter:description' => array(
         'value' => '[kada:metatag_description]',
       ),
-      'twitter:image:src' => array(
+      'twitter:image' => array(
         'value' => '',
       ),
     ),

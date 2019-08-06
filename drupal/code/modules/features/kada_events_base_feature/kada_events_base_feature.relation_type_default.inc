@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_events_base_feature.relation_type_default.inc

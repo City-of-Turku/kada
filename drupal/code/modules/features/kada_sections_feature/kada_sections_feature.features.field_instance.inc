@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_sections_feature.features.field_instance.inc
@@ -10,7 +11,7 @@
 function kada_sections_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_section-comment_body'
+  // Exported field_instance: 'comment-comment_node_section-comment_body'.
   $field_instances['comment-comment_node_section-comment_body'] = array(
     'bundle' => 'comment_node_section',
     'default_value' => NULL,
@@ -47,7 +48,7 @@ function kada_sections_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-section-field_color_palette'
+  // Exported field_instance: 'node-section-field_color_palette'.
   $field_instances['node-section-field_color_palette'] = array(
     'bundle' => 'section',
     'default_value' => NULL,
@@ -59,6 +60,12 @@ function kada_sections_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 5,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -85,13 +92,15 @@ function kada_sections_feature_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
       'type' => 'options_select',
       'weight' => 5,
     ),
   );
 
-  // Exported field_instance: 'node-section-field_contact_information'
+  // Exported field_instance: 'node-section-field_contact_information'.
   $field_instances['node-section-field_contact_information'] = array(
     'bundle' => 'section',
     'default_value' => NULL,
@@ -104,6 +113,12 @@ function kada_sections_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 3,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -136,6 +151,7 @@ function kada_sections_feature_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'content_taxonomy_autocomplete_new_terms' => 'deny',
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -145,7 +161,7 @@ function kada_sections_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-section-field_feed_tabs'
+  // Exported field_instance: 'node-section-field_feed_tabs'.
   $field_instances['node-section-field_feed_tabs'] = array(
     'bundle' => 'section',
     'default_value' => NULL,
@@ -157,6 +173,12 @@ function kada_sections_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 4,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -189,7 +211,7 @@ function kada_sections_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-section-field_link_to_content_multiple'
+  // Exported field_instance: 'node-section-field_link_to_content_multiple'.
   $field_instances['node-section-field_link_to_content_multiple'] = array(
     'bundle' => 'section',
     'default_value' => NULL,
@@ -201,6 +223,12 @@ function kada_sections_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 1,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -258,7 +286,7 @@ function kada_sections_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-section-field_main_image'
+  // Exported field_instance: 'node-section-field_main_image'.
   $field_instances['node-section-field_main_image'] = array(
     'bundle' => 'section',
     'default_value' => NULL,
@@ -270,6 +298,12 @@ function kada_sections_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 8,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -313,7 +347,7 @@ function kada_sections_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-section-field_section_footer'
+  // Exported field_instance: 'node-section-field_section_footer'.
   $field_instances['node-section-field_section_footer'] = array(
     'bundle' => 'section',
     'default_value' => NULL,
@@ -325,6 +359,12 @@ function kada_sections_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 7,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -395,7 +435,7 @@ function kada_sections_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-section-field_sharing_image'
+  // Exported field_instance: 'node-section-field_sharing_image'.
   $field_instances['node-section-field_sharing_image'] = array(
     'bundle' => 'section',
     'default_value' => NULL,
@@ -403,6 +443,12 @@ function kada_sections_feature_field_default_field_instances() {
     'description' => 'This image is used for sharing content to social media when the shared content itself has no other image.',
     'display' => array(
       'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -446,7 +492,7 @@ function kada_sections_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-section-field_site_logo'
+  // Exported field_instance: 'node-section-field_site_logo'.
   $field_instances['node-section-field_site_logo'] = array(
     'bundle' => 'section',
     'default_value' => NULL,
@@ -458,6 +504,12 @@ function kada_sections_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 9,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -497,7 +549,7 @@ function kada_sections_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-section-field_widget_before_content'
+  // Exported field_instance: 'node-section-field_widget_before_content'.
   $field_instances['node-section-field_widget_before_content'] = array(
     'bundle' => 'section',
     'default_value' => NULL,
@@ -510,6 +562,12 @@ function kada_sections_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 2,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -542,6 +600,7 @@ function kada_sections_feature_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'content_taxonomy_autocomplete_new_terms' => 'deny',
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -551,7 +610,7 @@ function kada_sections_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-section-group_group'
+  // Exported field_instance: 'node-section-group_group'.
   $field_instances['node-section-group_group'] = array(
     'bundle' => 'section',
     'default_value' => array(
@@ -567,6 +626,12 @@ function kada_sections_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 6,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'only_title' => array(
         'label' => 'above',

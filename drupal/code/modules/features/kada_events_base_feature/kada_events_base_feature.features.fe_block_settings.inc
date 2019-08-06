@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_events_base_feature.features.fe_block_settings.inc
@@ -23,16 +24,28 @@ function kada_events_base_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'driveturku' => array(
+      'kada' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'driveturku',
+        'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
         'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'visitpori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'visitpori',
         'weight' => 0,
       ),
     ),
@@ -51,16 +64,28 @@ function kada_events_base_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'driveturku' => array(
+      'kada' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'driveturku',
+        'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
         'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'visitpori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'visitpori',
         'weight' => 0,
       ),
     ),
@@ -79,16 +104,28 @@ function kada_events_base_feature_default_fe_block_settings() {
     'pages' => '',
     'roles' => array(),
     'themes' => array(
-      'driveturku' => array(
+      'kada' => array(
         'region' => '',
         'status' => 0,
-        'theme' => 'driveturku',
+        'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
         'weight' => 0,
       ),
       'seven' => array(
         'region' => '',
         'status' => 0,
         'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'visitpori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'visitpori',
         'weight' => 0,
       ),
     ),

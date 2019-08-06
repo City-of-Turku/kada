@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_configuration_feature.views_default.inc
@@ -39,7 +40,7 @@ function kada_configuration_feature_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Taxonomy term: Name */
+  /* Field: Luokittelutermi: Name */
   $handler->display->display_options['fields']['name_field_1']['id'] = 'name_field_1';
   $handler->display->display_options['fields']['name_field_1']['table'] = 'field_data_name_field';
   $handler->display->display_options['fields']['name_field_1']['field'] = 'name_field';
@@ -53,7 +54,7 @@ function kada_configuration_feature_views_default_views() {
   $handler->display->display_options['filters']['machine_name']['value'] = array(
     'accessibility' => 'accessibility',
   );
-  /* Filter criterion: Taxonomy term: Name (name_field:language) */
+  /* Filter criterion: Luokittelutermi: Name (name_field:language) */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'field_data_name_field';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -92,7 +93,7 @@ function kada_configuration_feature_views_default_views() {
   $handler->display->display_options['relationships']['field_accessibility_node']['relationship'] = 'reverse_field_accessibility_type_er_field_collection_item';
   $handler->display->display_options['relationships']['field_accessibility_node']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Taxonomy term: Icon */
+  /* Field: Luokittelutermi: Icon */
   $handler->display->display_options['fields']['field_icon']['id'] = 'field_icon';
   $handler->display->display_options['fields']['field_icon']['table'] = 'field_data_field_icon';
   $handler->display->display_options['fields']['field_icon']['field'] = 'field_icon';
@@ -107,7 +108,7 @@ function kada_configuration_feature_views_default_views() {
     'image_style' => 'accessibility_icon',
     'image_link' => '',
   );
-  /* Field: Taxonomy term: Name */
+  /* Field: Luokittelutermi: Name */
   $handler->display->display_options['fields']['name_field']['id'] = 'name_field';
   $handler->display->display_options['fields']['name_field']['table'] = 'field_data_name_field';
   $handler->display->display_options['fields']['name_field']['field'] = 'name_field';
