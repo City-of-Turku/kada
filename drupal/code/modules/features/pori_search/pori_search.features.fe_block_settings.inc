@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_search.features.fe_block_settings.inc

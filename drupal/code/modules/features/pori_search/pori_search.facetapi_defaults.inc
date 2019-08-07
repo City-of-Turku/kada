@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_search.facetapi_defaults.inc

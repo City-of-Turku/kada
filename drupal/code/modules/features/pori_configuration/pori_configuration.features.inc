@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_configuration.features.inc
@@ -91,67 +92,4 @@ function pori_configuration_image_default_styles() {
   );
 
   return $styles;
-}
-
-/**
- * Implements hook_scald_default_context_types().
- */
-function pori_configuration_scald_default_context_types() {
-  $contexts = array();
-  $contexts['content_250_wide-file'] = array(
-    'player' => array(
-      'file' => array(
-        '*' => 'default',
-      ),
-    ),
-    'transcoder' => array(
-      'file' => array(
-        '*' => 'passthrough',
-      ),
-    ),
-    'data' => array(
-      'file' => array(
-        'width' => '',
-        'height' => '',
-      ),
-    ),
-  );
-  $contexts['content_250_wide-image'] = array(
-    'player' => array(
-      'image' => array(
-        '*' => 'default',
-        'settings' => array(),
-      ),
-    ),
-    'transcoder' => array(
-      'image' => array(
-        '*' => 'style-content_250_wide',
-      ),
-    ),
-    'data' => array(
-      'image' => array(
-        'width' => '',
-        'height' => '',
-      ),
-    ),
-  );
-  $contexts['content_250_wide-video'] = array(
-    'player' => array(
-      'video' => array(
-        '*' => 'default',
-      ),
-    ),
-    'transcoder' => array(
-      'video' => array(
-        '*' => 'passthrough',
-      ),
-    ),
-    'data' => array(
-      'video' => array(
-        'width' => '',
-        'height' => '',
-      ),
-    ),
-  );
-  return $contexts;
 }

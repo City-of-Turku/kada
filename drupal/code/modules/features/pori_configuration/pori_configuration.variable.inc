@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_configuration.variable.inc

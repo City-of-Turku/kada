@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_attraction_feature.views_default.inc
@@ -46,7 +47,7 @@ function pori_attraction_feature_views_default_views() {
   $handler->display->display_options['relationships']['entity_translations']['table'] = 'node';
   $handler->display->display_options['relationships']['entity_translations']['field'] = 'entity_translations';
   $handler->display->display_options['relationships']['entity_translations']['required'] = TRUE;
-  /* Field: Content: Images */
+  /* Field: Field: Images */
   $handler->display->display_options['fields']['field_images']['id'] = 'field_images';
   $handler->display->display_options['fields']['field_images']['table'] = 'field_data_field_images';
   $handler->display->display_options['fields']['field_images']['field'] = 'field_images';
@@ -163,6 +164,7 @@ function pori_attraction_feature_views_default_views() {
     t('Järjestele'),
     t('Nou'),
     t('Las'),
+    t('Translations'),
     t('<div class="attraction-list--item__container">
 <div class=" liftup-box__image attraction-list--item__image">[field_images]</div>
 <div class="liftup-box__caption">
