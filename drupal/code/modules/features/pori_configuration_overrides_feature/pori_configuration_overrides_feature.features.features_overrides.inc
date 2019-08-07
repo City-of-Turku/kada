@@ -31,9 +31,6 @@ function pori_configuration_overrides_feature_features_override_default_override
   // Exported overrides for: field_instance
   $overrides["field_instance.node-news_item-field_keywords.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
   $overrides["field_instance.node-news_item-field_related_content.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'deny';
-  $overrides["field_instance.node-page-field_widgets_after_content.display|default|weight"] = 44;
-  $overrides["field_instance.node-page-field_widgets_after_content.widget|settings|content_taxonomy_autocomplete_new_terms"] = 'allow';
-  $overrides["field_instance.node-page-field_widgets_after_content.widget|weight"] = 23;
   $overrides["field_instance.node-place-field_accessibility.display|live_results_search"] = array(
     'label' => 'above',
     'settings' => array(),

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_domains_feature.strongarm.inc

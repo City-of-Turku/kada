@@ -43,18 +43,6 @@ function pori_configuration_views_api($module = NULL, $api = NULL) {
 }
 
 /**
- * Implements hook_user_default_permissions_alter().
- */
-function pori_configuration_user_default_permissions_alter(&$data) {
-  if (isset($data['access inactive domains'])) {
-    unset($data['access inactive domains']['roles']['web journalist']);
-  }
-  if (isset($data['administer domains'])) {
-    unset($data['administer domains']['roles']['web journalist']);
-  }
-}
-
-/**
  * Implements hook_image_default_styles().
  */
 function pori_configuration_image_default_styles() {

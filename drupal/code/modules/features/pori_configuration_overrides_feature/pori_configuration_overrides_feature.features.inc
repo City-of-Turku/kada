@@ -64,11 +64,6 @@ function pori_configuration_overrides_feature_field_default_field_instances_alte
   if (isset($data['node-news_item-field_related_content'])) {
     $data['node-news_item-field_related_content']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'deny'; /* WAS: '' */
   }
-  if (isset($data['node-page-field_widgets_after_content'])) {
-    $data['node-page-field_widgets_after_content']['display']['default']['weight'] = 44; /* WAS: 41 */
-    $data['node-page-field_widgets_after_content']['widget']['settings']['content_taxonomy_autocomplete_new_terms'] = 'allow'; /* WAS: '' */
-    $data['node-page-field_widgets_after_content']['widget']['weight'] = 23; /* WAS: 12 */
-  }
   if (isset($data['node-place-field_accessibility'])) {
     $data['node-place-field_accessibility']['display']['live_results_search'] = array(
       'label' => 'above',
