@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_geo_feature.openlayers_layers.inc

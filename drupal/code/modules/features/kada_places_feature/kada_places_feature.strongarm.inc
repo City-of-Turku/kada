@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_places_feature.strongarm.inc
@@ -193,6 +194,12 @@ function kada_places_feature_strongarm() {
       'search_result' => array(
         'custom_settings' => TRUE,
       ),
+      'waste_map' => array(
+        'custom_settings' => TRUE,
+      ),
+      'waste_search' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -222,7 +229,7 @@ function kada_places_feature_strongarm() {
             'visible' => FALSE,
           ),
           'teaser' => array(
-            'weight' => '19',
+            'weight' => 23,
             'visible' => FALSE,
           ),
           'accordion' => array(
@@ -235,6 +242,14 @@ function kada_places_feature_strongarm() {
           ),
           'search_result' => array(
             'weight' => '32',
+            'visible' => FALSE,
+          ),
+          'waste_map' => array(
+            'weight' => 31,
+            'visible' => FALSE,
+          ),
+          'waste_search' => array(
+            'weight' => 31,
             'visible' => FALSE,
           ),
         ),

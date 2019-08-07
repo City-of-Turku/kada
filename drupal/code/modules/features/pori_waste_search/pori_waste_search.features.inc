@@ -35,17 +35,3 @@ function pori_waste_search_ctools_plugin_api($module = NULL, $api = NULL) {
 function pori_waste_search_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
-
-/**
- * Implements hook_field_default_field_instances_alter().
- */
-function pori_waste_search_field_default_field_instances_alter(&$data) {
-  if (isset($data['node-place-field_location'])) {
-    $data['node-place-field_location']['widget']['settings']['geocoder_handler'] = 'openstreetmap_nominatim'; /* WAS: 'google' */
-    $data['node-place-field_location']['widget']['settings']['handler_settings']['google']['biasing'] = array(
-      'bounds' => '',
-      'components' => '',
-      'region' => '',
-    ); /* WAS: '' */
-  }
-}

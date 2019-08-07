@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_geo_feature.views_default.inc
@@ -680,7 +681,7 @@ function kada_geo_feature_views_default_views() {
   $handler->display->display_options['relationships']['relation_service_offer_service_node']['r_index'] = '0';
   $handler->display->display_options['relationships']['relation_service_offer_service_node']['entity_deduplication_left'] = 0;
   $handler->display->display_options['relationships']['relation_service_offer_service_node']['entity_deduplication_right'] = 0;
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -694,7 +695,7 @@ function kada_geo_feature_views_default_views() {
   $handler->display->display_options['fields']['field_location']['settings'] = array(
     'data' => 'full',
   );
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -715,7 +716,7 @@ function kada_geo_feature_views_default_views() {
     'place' => 'place',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Name (title_field:language) */
+  /* Filter criterion: Content: Title (title_field:language) */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -837,7 +838,7 @@ function kada_geo_feature_views_default_views() {
   $handler->display->display_options['fields']['field_visiting_address']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['field_visiting_address']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_visiting_address']['type'] = 'text_plain';
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -857,7 +858,7 @@ function kada_geo_feature_views_default_views() {
     'title_class' => '',
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -872,7 +873,7 @@ function kada_geo_feature_views_default_views() {
   );
   $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 1;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Name (title_field) */
+  /* Sort criterion: Content: Title (title_field) */
   $handler->display->display_options['sorts']['title_field_value']['id'] = 'title_field_value';
   $handler->display->display_options['sorts']['title_field_value']['table'] = 'field_data_title_field';
   $handler->display->display_options['sorts']['title_field_value']['field'] = 'title_field_value';
@@ -918,7 +919,7 @@ function kada_geo_feature_views_default_views() {
   $handler->display->display_options['fields']['field_visiting_address']['label'] = '';
   $handler->display->display_options['fields']['field_visiting_address']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_visiting_address']['element_label_colon'] = FALSE;
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -940,7 +941,7 @@ function kada_geo_feature_views_default_views() {
   $handler->display->display_options['fields']['field_location']['settings'] = array(
     'data' => 'full',
   );
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -988,7 +989,7 @@ function kada_geo_feature_views_default_views() {
     t('last »'),
     t('Service offer'),
     t('Service'),
-    t('Name'),
+    t('Title'),
     t('Location'),
     t('Search by keyword'),
     t('Classification'),

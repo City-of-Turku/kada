@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_news_feature.rules_defaults.inc
