@@ -242,8 +242,9 @@ function kada_page_feature_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
+        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'hidden',
+        'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 40,
       ),
       'live_results_search' => array(
@@ -262,7 +263,7 @@ function kada_page_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -273,7 +274,7 @@ function kada_page_feature_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_businesspori_theme',
-    'label' => 'Businesspori theme',
+    'label' => 'Business Pori theme',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -2000,7 +2001,7 @@ function kada_page_feature_field_default_field_instances() {
   t('Add desired attachments here via scald.');
   t('Additional information link');
   t('Body');
-  t('Businesspori theme');
+  t('Business Pori theme');
   t('Comment');
   t('Contact information');
   t('Defaults to Toimipisteet on the dropdown title.');

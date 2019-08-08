@@ -10,16 +10,6 @@
  */
 function kada_page_feature_taxonomy_default_vocabularies() {
   return array(
-    'businesspori_theme' => array(
-      'name' => 'Businesspori-theme',
-      'machine_name' => 'businesspori_theme',
-      'description' => '',
-      'hierarchy' => 0,
-      'module' => 'taxonomy',
-      'weight' => 0,
-      'language' => 'und',
-      'i18n_mode' => 1,
-    ),
     'visitpori_theme' => array(
       'name' => 'Visitpori-theme',
       'machine_name' => 'visitpori_theme',

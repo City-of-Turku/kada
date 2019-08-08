@@ -326,7 +326,7 @@ function kada_news_feature_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_businesspori_theme',
-    'label' => 'Businesspori theme',
+    'label' => 'Business Pori theme',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -1838,7 +1838,7 @@ function kada_news_feature_field_default_field_instances() {
   t('A comma separated list of keywords. Choose the correct keyword from the suggestions or add a new one. <strong>These are not translated</strong>, so each language needs different keywords.');
   t('Address');
   t('Body');
-  t('Businesspori theme');
+  t('Business Pori theme');
   t('Comment');
   t('Contact information');
   t('Content image');
