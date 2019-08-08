@@ -13,7 +13,6 @@ function business_pori_configurations_features_override_default_overrides() {
   $overrides = array();
 
   // Exported overrides for: field_instance
-  $overrides["field_instance.node-liftup-field_businesspori_theme.display|small_liftup_banner|weight"] = 19;
 
  return $overrides;
 }

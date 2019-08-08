@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_editorial_tools_feature.features.filter.inc

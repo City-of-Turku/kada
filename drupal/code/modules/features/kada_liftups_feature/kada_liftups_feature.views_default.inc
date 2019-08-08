@@ -1916,7 +1916,7 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['body']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['body']['group_column'] = 'entity_id';
-  /* Field: Luokittelutermi: Color name */
+  /* Field: Taxonomy term: Color name */
   $handler->display->display_options['fields']['field_color_name']['id'] = 'field_color_name';
   $handler->display->display_options['fields']['field_color_name']['table'] = 'field_data_field_color_name';
   $handler->display->display_options['fields']['field_color_name']['field'] = 'field_color_name';
@@ -3345,7 +3345,7 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['body']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['body']['group_column'] = 'entity_id';
-  /* Field: Luokittelutermi: Color name */
+  /* Field: Taxonomy term: Color name */
   $handler->display->display_options['fields']['field_color_name']['id'] = 'field_color_name';
   $handler->display->display_options['fields']['field_color_name']['table'] = 'field_data_field_color_name';
   $handler->display->display_options['fields']['field_color_name']['field'] = 'field_color_name';
@@ -3484,7 +3484,7 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['body']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['body']['group_column'] = 'entity_id';
-  /* Field: Luokittelutermi: Color name */
+  /* Field: Taxonomy term: Color name */
   $handler->display->display_options['fields']['field_color_name']['id'] = 'field_color_name';
   $handler->display->display_options['fields']['field_color_name']['table'] = 'field_data_field_color_name';
   $handler->display->display_options['fields']['field_color_name']['field'] = 'field_color_name';

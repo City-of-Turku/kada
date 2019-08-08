@@ -48,6 +48,9 @@ function kada_page_feature_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_businesspori_theme',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'indexes' => array(
       'tid' => array(
         0 => 'tid',
@@ -60,6 +63,7 @@ function kada_page_feature_field_default_field_bases() {
         0 => array(
           'vocabulary' => 'businesspori_theme',
           'parent' => 0,
+          'depth' => '',
         ),
       ),
       'entity_translation_sync' => FALSE,

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_editorial_tools_feature.views_default.inc
@@ -295,7 +296,7 @@ function kada_editorial_tools_feature_views_default_views() {
     7 => 0,
   );
   $handler->display->display_options['filters']['language']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Content: Name (title_field:language) */
+  /* Filter criterion: Content: Title (title_field:language) */
   $handler->display->display_options['filters']['language_1']['id'] = 'language_1';
   $handler->display->display_options['filters']['language_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['language_1']['field'] = 'language';

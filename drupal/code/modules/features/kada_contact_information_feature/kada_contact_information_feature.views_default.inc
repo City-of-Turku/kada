@@ -699,7 +699,7 @@ function kada_contact_information_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'position_of_trust' => 'position_of_trust',
   );
-  /* Filter criterion: Luokittelutermi: Hide in listing (field_hide_in_listing) */
+  /* Filter criterion: Taxonomy term: Hide in listing (field_hide_in_listing) */
   $handler->display->display_options['filters']['field_hide_in_listing_value']['id'] = 'field_hide_in_listing_value';
   $handler->display->display_options['filters']['field_hide_in_listing_value']['table'] = 'field_data_field_hide_in_listing';
   $handler->display->display_options['filters']['field_hide_in_listing_value']['field'] = 'field_hide_in_listing_value';
