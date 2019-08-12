@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_news.views_default.inc

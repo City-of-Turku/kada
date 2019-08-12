@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_liftups.default_picture_mapping.inc

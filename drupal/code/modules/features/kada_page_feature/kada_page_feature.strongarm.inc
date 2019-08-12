@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_page_feature.strongarm.inc
@@ -303,6 +304,18 @@ function kada_page_feature_strongarm() {
     7 => 'menu-top-menu-en',
     8 => 'menu-top-menu-fi',
     9 => 'menu-top-menu-sv',
+    10 => 'menu-visitpori-footer-menu-de',
+    11 => 'menu-visitpori-footer-menu-en',
+    12 => 'menu-visitpori-footer-menu-fi',
+    13 => 'menu-visitpori-footer-menu-sv',
+    14 => 'menu-visitpori-main-menu-de',
+    15 => 'menu-visitpori-main-navigation',
+    16 => 'menu-visitpori-main-menu-sv',
+    17 => 'menu-visitpori-main-menu',
+    18 => 'menu-visitpori-top-menu-de',
+    19 => 'menu-visitpori-top-menu-en',
+    20 => 'menu-visitpori-top-menu-fi',
+    21 => 'menu-visitpori-top-menu-sv',
   );
   $export['menu_options_page'] = $strongarm;
 
@@ -319,6 +332,7 @@ function kada_page_feature_strongarm() {
   $strongarm->name = 'node_options_page';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_page'] = $strongarm;
 

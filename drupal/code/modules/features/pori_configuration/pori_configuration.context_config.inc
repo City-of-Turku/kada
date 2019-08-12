@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_configuration.context_config.inc

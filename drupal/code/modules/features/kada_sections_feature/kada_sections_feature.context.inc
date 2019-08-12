@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_sections_feature.context.inc
@@ -71,12 +72,6 @@ function kada_sections_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-kada_pages-top_image' => array(
-          'module' => 'views',
-          'delta' => 'kada_pages-top_image',
-          'region' => 'header',
-          'weight' => '-10',
-        ),
         'og_extras-node_links' => array(
           'module' => 'og_extras',
           'delta' => 'node_links',
@@ -170,7 +165,7 @@ function kada_sections_feature_context_default_contexts() {
           'module' => 'kada_export_feature',
           'delta' => 'kada_rss_feed_for_section',
           'region' => 'before_content',
-          'weight' => '-8',
+          'weight' => -7,
         ),
         'views-kada_project_liftups-section' => array(
           'module' => 'views',
@@ -189,6 +184,18 @@ function kada_sections_feature_context_default_contexts() {
           'delta' => 'kada_section_footer-block_1',
           'region' => 'footer',
           'weight' => '-9',
+        ),
+        'kada_news_feature-news_archive_link' => array(
+          'module' => 'kada_news_feature',
+          'delta' => 'news_archive_link',
+          'region' => 'before_content',
+          'weight' => -8,
+        ),
+        'views-4e860b19463e3f674732c95e074be424' => array(
+          'module' => 'views',
+          'delta' => '4e860b19463e3f674732c95e074be424',
+          'region' => 'above_footer',
+          'weight' => -10,
         ),
       ),
     ),
@@ -229,10 +236,25 @@ function kada_sections_feature_context_default_contexts() {
         'views-kada_section_header-block_1' => array(
           'module' => 'views',
           'delta' => 'kada_section_header-block_1',
-          'region' => 'header_top',
+          'region' => 'branding',
           'weight' => '-10',
         ),
+        'locale-language' => array(
+          'module' => 'locale',
+          'delta' => 'language',
+          'region' => 'branding',
+          'weight' => -8,
+        ),
+        'views--exp-main_search-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-main_search-page',
+          'region' => 'branding',
+          'weight' => -9,
+        ),
       ),
+    ),
+    'theme_html' => array(
+      'class' => 'section-context',
     ),
   );
   $context->condition_mode = 1;
@@ -256,6 +278,11 @@ function kada_sections_feature_context_default_contexts() {
         'section' => 'section',
       ),
     ),
+    'context_all' => array(
+      'values' => array(
+        'default_section' => 'default_section',
+      ),
+    ),
   );
   $context->reactions = array(
     'block' => array(
@@ -266,16 +293,10 @@ function kada_sections_feature_context_default_contexts() {
           'region' => 'navigation',
           'weight' => '-10',
         ),
-        'menu_block-4' => array(
-          'module' => 'menu_block',
-          'delta' => '4',
-          'region' => 'sidebar_first',
-          'weight' => '-10',
-        ),
       ),
     ),
   );
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.

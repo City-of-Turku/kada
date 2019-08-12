@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_geo_feature.openlayers_maps.inc
@@ -176,160 +177,6 @@ function kada_geo_feature_openlayers_maps() {
     ),
   );
   $export['content_near_me'] = $openlayers_maps;
-
-  $openlayers_maps = new stdClass();
-  $openlayers_maps->disabled = FALSE; /* Edit this to true to make a default openlayers_maps disabled initially */
-  $openlayers_maps->api_version = 1;
-  $openlayers_maps->name = 'kada_event_location_input_map';
-  $openlayers_maps->title = 'KADA event location input map';
-  $openlayers_maps->description = '';
-  $openlayers_maps->data = array(
-    'width' => '600px',
-    'height' => '400px',
-    'image_path' => 'sites/all/modules/contrib/openlayers/themes/default_dark/img/',
-    'css_path' => 'sites/all/modules/contrib/openlayers/themes/default_dark/style.css',
-    'proxy_host' => '',
-    'hide_empty_map' => 0,
-    'center' => array(
-      'initial' => array(
-        'centerpoint' => '22.27083191405061, 60.45180034486836',
-        'zoom' => '9',
-      ),
-      'restrict' => array(
-        'restrictextent' => 0,
-        'restrictedExtent' => '',
-      ),
-    ),
-    'behaviors' => array(
-      'openlayers_behavior_geofield' => array(),
-      'openlayers_behavior_keyboarddefaults' => array(),
-      'openlayers_behavior_navigation' => array(
-        'zoomWheelEnabled' => 0,
-        'zoomBoxEnabled' => 1,
-        'documentDrag' => 0,
-      ),
-      'openlayers_behavior_panzoombar' => array(
-        'zoomWorldIcon' => 0,
-        'panIcons' => 1,
-      ),
-      'openlayers_behavior_zoomtolayer' => array(
-        'zoomtolayer' => array(
-          'osm_mapnik' => 'osm_mapnik',
-        ),
-        'point_zoom_level' => '5',
-        'zoomtolayer_scale' => '1',
-      ),
-      'openlayers_behavior_zoomtomaxextent' => array(),
-    ),
-    'default_layer' => 'osm_mapnik',
-    'layers' => array(
-      'osm_mapnik' => 'osm_mapnik',
-    ),
-    'layer_weight' => array(
-      'kada_service_map' => '0',
-      'kada_service_map_page_data' => '0',
-      'ip_geoloc_visitor_marker_layer' => '0',
-      'ip_geoloc_marker_layer1' => '0',
-      'ip_geoloc_marker_layer3' => '0',
-      'ip_geoloc_marker_layer2' => '0',
-      'kada_service_map_place_data' => '0',
-      'kada_place_map_place_data' => '0',
-      'openlayers_geojson_picture_this' => '0',
-      'openlayers_kml_example' => '0',
-      'all_places_openlayers_1' => '0',
-      'kada_proximity_list_openlayers_1' => '0',
-      'kada_services_on_map_ol_service_data' => '0',
-      'geofield_formatter' => '0',
-    ),
-    'layer_styles' => array(
-      'geofield_formatter' => '0',
-      'openlayers_kml_example' => '0',
-      'openlayers_geojson_picture_this' => '0',
-      'all_places_openlayers_1' => '0',
-      'kada_proximity_list_openlayers_1' => '0',
-      'kada_services_on_map_ol_service_data' => '0',
-      'kada_place_map_place_data' => '0',
-      'kada_service_map_place_data' => '0',
-      'kada_service_map_page_data' => '0',
-      'kada_service_map' => '0',
-      'ip_geoloc_visitor_marker_layer' => '0',
-      'ip_geoloc_marker_layer1' => '0',
-      'ip_geoloc_marker_layer2' => '0',
-      'ip_geoloc_marker_layer3' => '0',
-    ),
-    'layer_styles_select' => array(
-      'geofield_formatter' => '0',
-      'openlayers_kml_example' => '0',
-      'openlayers_geojson_picture_this' => '0',
-      'all_places_openlayers_1' => '0',
-      'kada_proximity_list_openlayers_1' => '0',
-      'kada_services_on_map_ol_service_data' => '0',
-      'kada_place_map_place_data' => '0',
-      'kada_service_map_place_data' => '0',
-      'kada_service_map_page_data' => '0',
-      'kada_service_map' => '0',
-      'ip_geoloc_visitor_marker_layer' => '0',
-      'ip_geoloc_marker_layer1' => '0',
-      'ip_geoloc_marker_layer2' => '0',
-      'ip_geoloc_marker_layer3' => '0',
-    ),
-    'layer_styles_temporary' => array(
-      'geofield_formatter' => '0',
-      'openlayers_kml_example' => '0',
-      'openlayers_geojson_picture_this' => '0',
-      'all_places_openlayers_1' => '0',
-      'kada_proximity_list_openlayers_1' => '0',
-      'kada_services_on_map_ol_service_data' => '0',
-      'kada_place_map_place_data' => '0',
-      'kada_service_map_place_data' => '0',
-      'kada_service_map_page_data' => '0',
-      'kada_service_map' => '0',
-      'ip_geoloc_visitor_marker_layer' => '0',
-      'ip_geoloc_marker_layer1' => '0',
-      'ip_geoloc_marker_layer2' => '0',
-      'ip_geoloc_marker_layer3' => '0',
-    ),
-    'layer_activated' => array(
-      'geofield_formatter' => 0,
-      'openlayers_kml_example' => 0,
-      'openlayers_geojson_picture_this' => 0,
-      'all_places_openlayers_1' => 0,
-      'kada_proximity_list_openlayers_1' => 0,
-      'kada_services_on_map_ol_service_data' => 0,
-      'kada_place_map_place_data' => 0,
-      'kada_service_map_place_data' => 0,
-      'kada_service_map_page_data' => 0,
-      'kada_service_map' => 0,
-      'ip_geoloc_visitor_marker_layer' => 0,
-      'ip_geoloc_marker_layer1' => 0,
-      'ip_geoloc_marker_layer2' => 0,
-      'ip_geoloc_marker_layer3' => 0,
-    ),
-    'layer_switcher' => array(
-      'geofield_formatter' => 0,
-      'openlayers_kml_example' => 0,
-      'openlayers_geojson_picture_this' => 0,
-      'all_places_openlayers_1' => 0,
-      'kada_proximity_list_openlayers_1' => 0,
-      'kada_services_on_map_ol_service_data' => 0,
-      'kada_place_map_place_data' => 0,
-      'kada_service_map_place_data' => 0,
-      'kada_service_map_page_data' => 0,
-      'kada_service_map' => 0,
-      'ip_geoloc_visitor_marker_layer' => 0,
-      'ip_geoloc_marker_layer1' => 0,
-      'ip_geoloc_marker_layer2' => 0,
-      'ip_geoloc_marker_layer3' => 0,
-    ),
-    'projection' => 'EPSG:3857',
-    'displayProjection' => 'EPSG:4326',
-    'styles' => array(
-      'default' => 'default',
-      'select' => 'default_select',
-      'temporary' => 'default',
-    ),
-  );
-  $export['kada_event_location_input_map'] = $openlayers_maps;
 
   $openlayers_maps = new stdClass();
   $openlayers_maps->disabled = FALSE; /* Edit this to true to make a default openlayers_maps disabled initially */
@@ -516,6 +363,160 @@ pointRadius|10',
     ),
   );
   $export['kada_demo_map'] = $openlayers_maps;
+
+  $openlayers_maps = new stdClass();
+  $openlayers_maps->disabled = FALSE; /* Edit this to true to make a default openlayers_maps disabled initially */
+  $openlayers_maps->api_version = 1;
+  $openlayers_maps->name = 'kada_event_location_input_map';
+  $openlayers_maps->title = 'KADA event location input map';
+  $openlayers_maps->description = '';
+  $openlayers_maps->data = array(
+    'width' => '600px',
+    'height' => '400px',
+    'image_path' => 'sites/all/modules/contrib/openlayers/themes/default_dark/img/',
+    'css_path' => 'sites/all/modules/contrib/openlayers/themes/default_dark/style.css',
+    'proxy_host' => '',
+    'hide_empty_map' => 0,
+    'center' => array(
+      'initial' => array(
+        'centerpoint' => '22.27083191405061, 60.45180034486836',
+        'zoom' => '9',
+      ),
+      'restrict' => array(
+        'restrictextent' => 0,
+        'restrictedExtent' => '',
+      ),
+    ),
+    'behaviors' => array(
+      'openlayers_behavior_geofield' => array(),
+      'openlayers_behavior_keyboarddefaults' => array(),
+      'openlayers_behavior_navigation' => array(
+        'zoomWheelEnabled' => 0,
+        'zoomBoxEnabled' => 1,
+        'documentDrag' => 0,
+      ),
+      'openlayers_behavior_panzoombar' => array(
+        'zoomWorldIcon' => 0,
+        'panIcons' => 1,
+      ),
+      'openlayers_behavior_zoomtolayer' => array(
+        'zoomtolayer' => array(
+          'osm_mapnik' => 'osm_mapnik',
+        ),
+        'point_zoom_level' => '5',
+        'zoomtolayer_scale' => '1',
+      ),
+      'openlayers_behavior_zoomtomaxextent' => array(),
+    ),
+    'default_layer' => 'osm_mapnik',
+    'layers' => array(
+      'osm_mapnik' => 'osm_mapnik',
+    ),
+    'layer_weight' => array(
+      'kada_service_map' => '0',
+      'kada_service_map_page_data' => '0',
+      'ip_geoloc_visitor_marker_layer' => '0',
+      'ip_geoloc_marker_layer1' => '0',
+      'ip_geoloc_marker_layer3' => '0',
+      'ip_geoloc_marker_layer2' => '0',
+      'kada_service_map_place_data' => '0',
+      'kada_place_map_place_data' => '0',
+      'openlayers_geojson_picture_this' => '0',
+      'openlayers_kml_example' => '0',
+      'all_places_openlayers_1' => '0',
+      'kada_proximity_list_openlayers_1' => '0',
+      'kada_services_on_map_ol_service_data' => '0',
+      'geofield_formatter' => '0',
+    ),
+    'layer_styles' => array(
+      'geofield_formatter' => '0',
+      'openlayers_kml_example' => '0',
+      'openlayers_geojson_picture_this' => '0',
+      'all_places_openlayers_1' => '0',
+      'kada_proximity_list_openlayers_1' => '0',
+      'kada_services_on_map_ol_service_data' => '0',
+      'kada_place_map_place_data' => '0',
+      'kada_service_map_place_data' => '0',
+      'kada_service_map_page_data' => '0',
+      'kada_service_map' => '0',
+      'ip_geoloc_visitor_marker_layer' => '0',
+      'ip_geoloc_marker_layer1' => '0',
+      'ip_geoloc_marker_layer2' => '0',
+      'ip_geoloc_marker_layer3' => '0',
+    ),
+    'layer_styles_select' => array(
+      'geofield_formatter' => '0',
+      'openlayers_kml_example' => '0',
+      'openlayers_geojson_picture_this' => '0',
+      'all_places_openlayers_1' => '0',
+      'kada_proximity_list_openlayers_1' => '0',
+      'kada_services_on_map_ol_service_data' => '0',
+      'kada_place_map_place_data' => '0',
+      'kada_service_map_place_data' => '0',
+      'kada_service_map_page_data' => '0',
+      'kada_service_map' => '0',
+      'ip_geoloc_visitor_marker_layer' => '0',
+      'ip_geoloc_marker_layer1' => '0',
+      'ip_geoloc_marker_layer2' => '0',
+      'ip_geoloc_marker_layer3' => '0',
+    ),
+    'layer_styles_temporary' => array(
+      'geofield_formatter' => '0',
+      'openlayers_kml_example' => '0',
+      'openlayers_geojson_picture_this' => '0',
+      'all_places_openlayers_1' => '0',
+      'kada_proximity_list_openlayers_1' => '0',
+      'kada_services_on_map_ol_service_data' => '0',
+      'kada_place_map_place_data' => '0',
+      'kada_service_map_place_data' => '0',
+      'kada_service_map_page_data' => '0',
+      'kada_service_map' => '0',
+      'ip_geoloc_visitor_marker_layer' => '0',
+      'ip_geoloc_marker_layer1' => '0',
+      'ip_geoloc_marker_layer2' => '0',
+      'ip_geoloc_marker_layer3' => '0',
+    ),
+    'layer_activated' => array(
+      'geofield_formatter' => 0,
+      'openlayers_kml_example' => 0,
+      'openlayers_geojson_picture_this' => 0,
+      'all_places_openlayers_1' => 0,
+      'kada_proximity_list_openlayers_1' => 0,
+      'kada_services_on_map_ol_service_data' => 0,
+      'kada_place_map_place_data' => 0,
+      'kada_service_map_place_data' => 0,
+      'kada_service_map_page_data' => 0,
+      'kada_service_map' => 0,
+      'ip_geoloc_visitor_marker_layer' => 0,
+      'ip_geoloc_marker_layer1' => 0,
+      'ip_geoloc_marker_layer2' => 0,
+      'ip_geoloc_marker_layer3' => 0,
+    ),
+    'layer_switcher' => array(
+      'geofield_formatter' => 0,
+      'openlayers_kml_example' => 0,
+      'openlayers_geojson_picture_this' => 0,
+      'all_places_openlayers_1' => 0,
+      'kada_proximity_list_openlayers_1' => 0,
+      'kada_services_on_map_ol_service_data' => 0,
+      'kada_place_map_place_data' => 0,
+      'kada_service_map_place_data' => 0,
+      'kada_service_map_page_data' => 0,
+      'kada_service_map' => 0,
+      'ip_geoloc_visitor_marker_layer' => 0,
+      'ip_geoloc_marker_layer1' => 0,
+      'ip_geoloc_marker_layer2' => 0,
+      'ip_geoloc_marker_layer3' => 0,
+    ),
+    'projection' => 'EPSG:3857',
+    'displayProjection' => 'EPSG:4326',
+    'styles' => array(
+      'default' => 'default',
+      'select' => 'default_select',
+      'temporary' => 'default',
+    ),
+  );
+  $export['kada_event_location_input_map'] = $openlayers_maps;
 
   $openlayers_maps = new stdClass();
   $openlayers_maps->disabled = FALSE; /* Edit this to true to make a default openlayers_maps disabled initially */
@@ -1003,8 +1004,8 @@ pointRadius|10',
     'hide_empty_map' => 0,
     'center' => array(
       'initial' => array(
-        'centerpoint' => '22.270831921235335, 60.451800341324734',
-        'zoom' => '10',
+        'centerpoint' => '21.6649,61.535',
+        'zoom' => 11,
       ),
       'restrict' => array(
         'restrictextent' => 0,
@@ -1026,6 +1027,7 @@ pointRadius|10',
       'openlayers_behavior_zoomtolayer' => array(
         'zoomtolayer' => array(
           'osm_mapnik' => 'osm_mapnik',
+          'pori_arcgis' => 0,
         ),
         'point_zoom_level' => '5',
         'zoomtolayer_scale' => '1',
@@ -1034,7 +1036,7 @@ pointRadius|10',
     ),
     'default_layer' => 'osm_mapnik',
     'layers' => array(
-      'osm_mapnik' => 'osm_mapnik',
+      'pori_arcgis' => 'pori_arcgis',
     ),
     'layer_weight' => array(
       'kada_service_map' => '0',
@@ -1157,7 +1159,7 @@ pointRadius|10',
     'hide_empty_map' => 1,
     'center' => array(
       'initial' => array(
-        'centerpoint' => '22.26413716347558, 60.45391664873799',
+        'centerpoint' => '21.74,61.49',
         'zoom' => '14',
       ),
       'restrict' => array(
@@ -1189,6 +1191,7 @@ pointRadius|10',
         'zoomtolayer' => array(
           'kada_place_map_place_data' => 'kada_place_map_place_data',
           'osm_mapnik' => 0,
+          'pori_arcgis' => 0,
         ),
         'point_zoom_level' => '10',
         'zoomtolayer_scale' => '1',
@@ -1196,8 +1199,8 @@ pointRadius|10',
     ),
     'default_layer' => 'osm_mapnik',
     'layers' => array(
-      'osm_mapnik' => 'osm_mapnik',
       'kada_place_map_place_data' => 'kada_place_map_place_data',
+      'pori_arcgis' => 'pori_arcgis',
     ),
     'layer_weight' => array(
       'ip_geoloc_visitor_marker_layer' => '0',
@@ -1320,7 +1323,7 @@ pointRadius|10',
     'hide_empty_map' => 0,
     'center' => array(
       'initial' => array(
-        'centerpoint' => '22.26413716347558, 60.45391664873799',
+        'centerpoint' => '21.74,61.49',
         'zoom' => '13',
       ),
       'restrict' => array(
@@ -1376,8 +1379,8 @@ pointRadius|10',
     ),
     'default_layer' => 'osm_mapnik',
     'layers' => array(
-      'osm_mapnik' => 'osm_mapnik',
       'kada_services_on_map_ol_service_data' => 'kada_services_on_map_ol_service_data',
+      'pori_arcgis' => 'pori_arcgis',
     ),
     'layer_weight' => array(
       'ip_geoloc_visitor_marker_layer' => '0',
@@ -1673,7 +1676,7 @@ pointRadius|10',
     'hide_empty_map' => 1,
     'center' => array(
       'initial' => array(
-        'centerpoint' => '22.26413716347558, 60.45391664873799',
+        'centerpoint' => '21.74,61.49',
         'zoom' => '14',
       ),
       'restrict' => array(
@@ -1729,9 +1732,9 @@ pointRadius|10',
     ),
     'default_layer' => 'osm_mapnik',
     'layers' => array(
-      'osm_mapnik' => 'osm_mapnik',
       'kada_service_map_page_data' => 'kada_service_map_page_data',
       'kada_service_map_place_data' => 'kada_service_map_place_data',
+      'pori_arcgis' => 'pori_arcgis',
     ),
     'layer_weight' => array(
       'ip_geoloc_marker_layer1' => '0',

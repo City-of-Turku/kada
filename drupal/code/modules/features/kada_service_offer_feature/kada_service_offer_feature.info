@@ -11,6 +11,7 @@ dependencies[] = kada_field_bases_feature
 dependencies[] = kada_places_feature
 dependencies[] = kada_services_feature
 dependencies[] = node
+dependencies[] = pori_configuration
 dependencies[] = restrict_node_page_view
 dependencies[] = strongarm
 dependencies[] = text

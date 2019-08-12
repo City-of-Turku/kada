@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_media_feature.ds.inc
@@ -339,11 +340,11 @@ function kada_media_feature_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'main' => array(
-        0 => 'scald_thumbnail',
+        0 => 'atom',
       ),
     ),
     'fields' => array(
-      'scald_thumbnail' => 'main',
+      'atom' => 'main',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -354,6 +355,7 @@ function kada_media_feature_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['scald_atom|image|content_full'] = $ds_layout;
 
@@ -367,11 +369,11 @@ function kada_media_feature_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'main' => array(
-        0 => 'scald_thumbnail',
+        0 => 'atom',
       ),
     ),
     'fields' => array(
-      'scald_thumbnail' => 'main',
+      'atom' => 'main',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -382,6 +384,7 @@ function kada_media_feature_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['scald_atom|image|content_half'] = $ds_layout;
 

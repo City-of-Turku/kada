@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_some_content_feature.field_group.inc

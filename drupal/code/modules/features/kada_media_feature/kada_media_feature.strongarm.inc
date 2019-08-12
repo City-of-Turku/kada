@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_media_feature.strongarm.inc
@@ -481,6 +482,12 @@ system/ajax/*';
       'opengraph' => array(
         'custom_settings' => FALSE,
       ),
+      'content_250_wide' => array(
+        'custom_settings' => FALSE,
+      ),
+      'small_liftup_banner' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -501,12 +508,12 @@ system/ajax/*';
             'visible' => TRUE,
           ),
           'content_full' => array(
-            'weight' => '1',
-            'visible' => FALSE,
+            'weight' => 0,
+            'visible' => TRUE,
           ),
           'content_half' => array(
-            'weight' => '1',
-            'visible' => FALSE,
+            'weight' => 0,
+            'visible' => TRUE,
           ),
           'carousel' => array(
             'weight' => '1',
@@ -559,6 +566,10 @@ system/ajax/*';
           'event_top_carousel' => array(
             'weight' => '1',
             'visible' => FALSE,
+          ),
+          'small_liftup_banner' => array(
+            'weight' => 0,
+            'visible' => TRUE,
           ),
         ),
       ),
@@ -1215,6 +1226,30 @@ system/ajax/*';
       'description' => 'Context for social media sharing',
       'render_language' => 'XHTML',
       'parseable' => FALSE,
+      'formats' => array(),
+    ),
+    'content_250_wide' => array(
+      'name' => 'content_250_wide',
+      'title' => 'Content 250 wide',
+      'description' => '',
+      'render_language' => 'XHTML',
+      'parseable' => TRUE,
+      'formats' => array(),
+    ),
+    'page_carousel' => array(
+      'name' => 'page_carousel',
+      'title' => 'Page carousel',
+      'description' => '',
+      'render_language' => 'XHTML',
+      'parseable' => TRUE,
+      'formats' => array(),
+    ),
+    'small_liftup_banner' => array(
+      'name' => 'small_liftup_banner',
+      'title' => 'Small liftup banner',
+      'description' => '',
+      'render_language' => 'XHTML',
+      'parseable' => TRUE,
       'formats' => array(),
     ),
   );

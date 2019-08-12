@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_contact_information_feature.taxonomy_display.inc

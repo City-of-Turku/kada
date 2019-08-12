@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_places_feature.features.user_permission.inc
@@ -36,7 +37,6 @@ function kada_places_feature_user_default_permissions() {
     'name' => 'delete any place content',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -47,7 +47,6 @@ function kada_places_feature_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'content editor' => 'content editor',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -57,7 +56,6 @@ function kada_places_feature_user_default_permissions() {
     'name' => 'delete place content on assigned domains',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'domain',
   );
@@ -98,8 +96,9 @@ function kada_places_feature_user_default_permissions() {
   $permissions['view any node place page'] = array(
     'name' => 'view any node place page',
     'roles' => array(
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
+      'admin' => 'admin',
+      'content editor' => 'content editor',
+      'web journalist' => 'web journalist',
     ),
     'module' => 'restrict_node_page_view',
   );

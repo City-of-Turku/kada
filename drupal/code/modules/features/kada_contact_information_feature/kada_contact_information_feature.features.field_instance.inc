@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_contact_information_feature.features.field_instance.inc
@@ -105,11 +106,23 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'person_card' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 28,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -188,6 +201,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -204,11 +218,23 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 4,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'person_card' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 29,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -235,6 +261,7 @@ function kada_contact_information_feature_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'content_taxonomy_autocomplete_new_terms' => 'deny',
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -265,11 +292,24 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'email_default',
         'weight' => 11,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 3,
+      ),
+      'person_card' => array(
+        'label' => 'hidden',
+        'module' => 'email',
+        'settings' => array(),
+        'type' => 'email_default',
+        'weight' => 6,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -326,11 +366,24 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 5,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 8,
+      ),
+      'person_card' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -430,11 +483,24 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 16,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 12,
+      ),
+      'person_card' => array(
+        'label' => 'inline',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 11,
       ),
       'search_result' => array(
         'label' => 'inline',
@@ -533,12 +599,24 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 0,
+      ),
+      'person_card' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 39,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -637,10 +715,23 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 14,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
+        'weight' => 7,
+      ),
+      'person_card' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
         'weight' => 7,
       ),
       'search_result' => array(
@@ -740,11 +831,24 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 13,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 10,
+      ),
+      'person_card' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
       ),
       'search_result' => array(
         'label' => 'inline',
@@ -842,11 +946,23 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'text_plain',
         'weight' => 11,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'person_card' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 38,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -934,11 +1050,24 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'hs_taxonomy_term_reference_hierarchical_text',
         'weight' => 2,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'person_card' => array(
+        'label' => 'hidden',
+        'module' => 'i18n_taxonomy',
+        'settings' => array(),
+        'type' => 'i18n_taxonomy_term_reference_plain',
+        'weight' => 4,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -996,11 +1125,27 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'person',
         'weight' => 1,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 2,
+      ),
+      'person_card' => array(
+        'label' => 'hidden',
+        'module' => 'atom_reference',
+        'settings' => array(
+          'link' => 0,
+          'override' => 0,
+        ),
+        'type' => 'person',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -1068,11 +1213,23 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'person_card' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 37,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -1120,11 +1277,24 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 12,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 9,
+      ),
+      'person_card' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
       ),
       'search_result' => array(
         'label' => 'inline',
@@ -1223,11 +1393,24 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 15,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 11,
+      ),
+      'person_card' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 10,
       ),
       'search_result' => array(
         'label' => 'inline',
@@ -1317,6 +1500,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -1326,16 +1510,29 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
         'weight' => 8,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 6,
+      ),
+      'person_card' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 36,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -1347,6 +1544,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -1373,7 +1571,9 @@ function kada_contact_information_feature_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
       'type' => 'options_select',
       'weight' => 20,
     ),
@@ -1399,11 +1599,23 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'text_plain',
         'weight' => 10,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'person_card' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 35,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -1491,11 +1703,24 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 7,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 5,
+      ),
+      'person_card' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
       ),
       'search_result' => array(
         'label' => 'inline',
@@ -1593,11 +1818,23 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'text_plain',
         'weight' => 9,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'person_card' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 34,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -1676,6 +1913,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -1692,11 +1930,23 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 5,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'person_card' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 33,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -1723,6 +1973,7 @@ function kada_contact_information_feature_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'content_taxonomy_autocomplete_new_terms' => 'deny',
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -1753,12 +2004,24 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 4,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 1,
+      ),
+      'person_card' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 32,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -1857,11 +2120,23 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 1,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 13,
+      ),
+      'person_card' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -1960,11 +2235,24 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'person_card' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -2052,11 +2340,23 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 19,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 14,
+      ),
+      'person_card' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 30,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -2168,6 +2468,12 @@ function kada_contact_information_feature_field_default_field_instances() {
         'type' => 'entityreference_entity_view',
         'weight' => 7,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2193,6 +2499,7 @@ function kada_contact_information_feature_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'content_taxonomy_autocomplete_new_terms' => 'deny',
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -2237,6 +2544,12 @@ function kada_contact_information_feature_field_default_field_instances() {
         ),
         'type' => 'date_default',
         'weight' => 3,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -2287,6 +2600,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => 1,
         ),
         'type' => 'entityreference_label',
@@ -2296,15 +2610,23 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
         'weight' => 1,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => 0,
         ),
         'type' => 'entityreference_label',
@@ -2331,7 +2653,9 @@ function kada_contact_information_feature_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
       'type' => 'options_select',
       'weight' => -2,
     ),
@@ -2355,6 +2679,12 @@ function kada_contact_information_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'relation_add_endpoints_and_fields',
         'weight' => 4,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'only_title' => array(
         'label' => 'above',
@@ -2406,6 +2736,7 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -2415,15 +2746,23 @@ function kada_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
         'weight' => 2,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'only_title' => array(
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => 0,
         ),
         'type' => 'entityreference_label',
@@ -2450,7 +2789,9 @@ function kada_contact_information_feature_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
       'type' => 'options_select',
       'weight' => -1,
     ),
@@ -2474,6 +2815,12 @@ function kada_contact_information_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 6,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'only_title' => array(
         'label' => 'above',

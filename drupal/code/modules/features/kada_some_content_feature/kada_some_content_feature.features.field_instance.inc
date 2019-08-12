@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_some_content_feature.features.field_instance.inc
@@ -200,7 +201,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_facebook-field_district'
+  // Exported field_instance: 'node-feed_import_facebook-field_district'.
   $field_instances['node-feed_import_facebook-field_district'] = array(
     'bundle' => 'feed_import_facebook',
     'default_value' => NULL,
@@ -213,6 +214,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 6,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -239,7 +246,8 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_facebook-field_feed_client_secret'
+  // Exported field_instance:
+  // 'node-feed_import_facebook-field_feed_client_secret'.
   $field_instances['node-feed_import_facebook-field_feed_client_secret'] = array(
     'bundle' => 'feed_import_facebook',
     'default_value' => NULL,
@@ -252,6 +260,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 4,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -333,6 +347,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -412,6 +432,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -477,7 +503,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_facebook-field_keywords'
+  // Exported field_instance: 'node-feed_import_facebook-field_keywords'.
   $field_instances['node-feed_import_facebook-field_keywords'] = array(
     'bundle' => 'feed_import_facebook',
     'default_value' => NULL,
@@ -490,6 +516,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 8,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -512,6 +544,7 @@ function kada_some_content_feature_field_default_field_instances() {
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'deny',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
@@ -519,7 +552,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_facebook-field_target_audience'
+  // Exported field_instance: 'node-feed_import_facebook-field_target_audience'.
   $field_instances['node-feed_import_facebook-field_target_audience'] = array(
     'bundle' => 'feed_import_facebook',
     'default_value' => array(),
@@ -532,6 +565,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 7,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -558,7 +597,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_facebook-field_theme'
+  // Exported field_instance: 'node-feed_import_facebook-field_theme'.
   $field_instances['node-feed_import_facebook-field_theme'] = array(
     'bundle' => 'feed_import_facebook',
     'default_value' => NULL,
@@ -571,6 +610,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 5,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -609,6 +654,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'module' => 'og_ui',
         'settings' => array(),
         'type' => 'og_list_default',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -657,7 +708,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_instagram-field_access_token'
+  // Exported field_instance: 'node-feed_import_instagram-field_access_token'.
   $field_instances['node-feed_import_instagram-field_access_token'] = array(
     'bundle' => 'feed_import_instagram',
     'default_value' => NULL,
@@ -669,6 +720,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 8,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -741,7 +798,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_instagram-field_district'
+  // Exported field_instance: 'node-feed_import_instagram-field_district'.
   $field_instances['node-feed_import_instagram-field_district'] = array(
     'bundle' => 'feed_import_instagram',
     'default_value' => NULL,
@@ -754,6 +811,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 9,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -780,7 +843,8 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_instagram-field_feed_client_secret'
+  // Exported field_instance:
+  // 'node-feed_import_instagram-field_feed_client_secret'.
   $field_instances['node-feed_import_instagram-field_feed_client_secret'] = array(
     'bundle' => 'feed_import_instagram',
     'default_value' => NULL,
@@ -792,6 +856,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 7,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -862,7 +932,8 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_instagram-field_feed_client_token'
+  // Exported field_instance:
+  // 'node-feed_import_instagram-field_feed_client_token'.
   $field_instances['node-feed_import_instagram-field_feed_client_token'] = array(
     'bundle' => 'feed_import_instagram',
     'default_value' => NULL,
@@ -875,6 +946,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 6,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -959,6 +1036,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 5,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1024,7 +1107,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_instagram-field_keywords'
+  // Exported field_instance: 'node-feed_import_instagram-field_keywords'.
   $field_instances['node-feed_import_instagram-field_keywords'] = array(
     'bundle' => 'feed_import_instagram',
     'default_value' => NULL,
@@ -1037,6 +1120,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 11,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1057,6 +1146,7 @@ function kada_some_content_feature_field_default_field_instances() {
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'deny',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
@@ -1064,7 +1154,8 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_instagram-field_target_audience'
+  // Exported field_instance:
+  // 'node-feed_import_instagram-field_target_audience'.
   $field_instances['node-feed_import_instagram-field_target_audience'] = array(
     'bundle' => 'feed_import_instagram',
     'default_value' => NULL,
@@ -1077,6 +1168,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 10,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1103,7 +1200,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_instagram-field_theme'
+  // Exported field_instance: 'node-feed_import_instagram-field_theme'.
   $field_instances['node-feed_import_instagram-field_theme'] = array(
     'bundle' => 'feed_import_instagram',
     'default_value' => NULL,
@@ -1116,6 +1213,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 4,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1154,6 +1257,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'module' => 'og_ui',
         'settings' => array(),
         'type' => 'og_list_default',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -1202,7 +1311,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_twitter-field_district'
+  // Exported field_instance: 'node-feed_import_twitter-field_district'.
   $field_instances['node-feed_import_twitter-field_district'] = array(
     'bundle' => 'feed_import_twitter',
     'default_value' => NULL,
@@ -1215,6 +1324,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 4,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1254,6 +1369,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 2,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1320,7 +1441,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_twitter-field_keywords'
+  // Exported field_instance: 'node-feed_import_twitter-field_keywords'.
   $field_instances['node-feed_import_twitter-field_keywords'] = array(
     'bundle' => 'feed_import_twitter',
     'default_value' => NULL,
@@ -1333,6 +1454,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 6,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1353,6 +1480,7 @@ function kada_some_content_feature_field_default_field_instances() {
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'deny',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
@@ -1360,7 +1488,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_twitter-field_target_audience'
+  // Exported field_instance: 'node-feed_import_twitter-field_target_audience'.
   $field_instances['node-feed_import_twitter-field_target_audience'] = array(
     'bundle' => 'feed_import_twitter',
     'default_value' => NULL,
@@ -1373,6 +1501,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 5,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1413,6 +1547,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 3,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1450,6 +1590,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'module' => 'og_ui',
         'settings' => array(),
         'type' => 'og_list_default',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -1498,7 +1644,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_youtube_channel-field_district'
+  // Exported field_instance: 'node-feed_import_youtube_channel-field_district'.
   $field_instances['node-feed_import_youtube_channel-field_district'] = array(
     'bundle' => 'feed_import_youtube_channel',
     'default_value' => NULL,
@@ -1511,6 +1657,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 5,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1551,6 +1703,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 4,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1632,6 +1790,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 3,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1697,7 +1861,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_youtube_channel-field_keywords'
+  // Exported field_instance: 'node-feed_import_youtube_channel-field_keywords'.
   $field_instances['node-feed_import_youtube_channel-field_keywords'] = array(
     'bundle' => 'feed_import_youtube_channel',
     'default_value' => NULL,
@@ -1710,6 +1874,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 7,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1732,6 +1902,7 @@ function kada_some_content_feature_field_default_field_instances() {
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'deny',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
@@ -1739,7 +1910,8 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-feed_import_youtube_channel-field_target_audience'
+  // Exported field_instance:
+  // 'node-feed_import_youtube_channel-field_target_audience'.
   $field_instances['node-feed_import_youtube_channel-field_target_audience'] = array(
     'bundle' => 'feed_import_youtube_channel',
     'default_value' => NULL,
@@ -1752,6 +1924,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 6,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1792,6 +1970,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'i18n_taxonomy_term_reference_link',
         'weight' => 2,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1829,6 +2013,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'module' => 'og_ui',
         'settings' => array(),
         'type' => 'og_list_default',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -1889,7 +2079,7 @@ function kada_some_content_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -1903,6 +2093,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 15,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -1967,7 +2163,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-field_district'
+  // Exported field_instance: 'node-social_media_update-field_district'.
   $field_instances['node-social_media_update-field_district'] = array(
     'bundle' => 'social_media_update',
     'default_value' => NULL,
@@ -1978,7 +2174,7 @@ function kada_some_content_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 25,
       ),
       'default' => array(
         'label' => 'above',
@@ -1988,6 +2184,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'weight' => 18,
       ),
       'event_grid_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -2028,11 +2230,11 @@ function kada_some_content_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'image',
         'settings' => array(
-          'image_link' => '',
+          'image_link' => 'content',
           'image_style' => 'current',
         ),
         'type' => 'image',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -2052,6 +2254,12 @@ function kada_some_content_feature_field_default_field_instances() {
           'image_style' => 'grid_item',
         ),
         'type' => 'image',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -2117,6 +2325,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 25,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2178,7 +2392,7 @@ function kada_some_content_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 22,
       ),
       'default' => array(
         'label' => 'above',
@@ -2192,6 +2406,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 27,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2214,6 +2434,7 @@ function kada_some_content_feature_field_default_field_instances() {
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
@@ -2248,6 +2469,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'link_short',
         'weight' => 1,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2310,7 +2537,7 @@ function kada_some_content_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 23,
       ),
       'default' => array(
         'label' => 'above',
@@ -2327,6 +2554,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 28,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2366,7 +2599,7 @@ function kada_some_content_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 27,
       ),
       'default' => array(
         'label' => 'above',
@@ -2380,6 +2613,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 29,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2457,7 +2696,7 @@ function kada_some_content_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 15,
+        'weight' => 31,
       ),
       'default' => array(
         'label' => 'above',
@@ -2471,6 +2710,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 24,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2561,6 +2806,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 18,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2653,6 +2904,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 19,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2727,7 +2984,7 @@ function kada_some_content_feature_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 5,
+        'weight' => 29,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -2741,6 +2998,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 17,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2816,7 +3079,7 @@ function kada_some_content_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 14,
+        'weight' => 30,
       ),
       'default' => array(
         'label' => 'above',
@@ -2830,6 +3093,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 23,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2906,7 +3175,7 @@ function kada_some_content_feature_field_default_field_instances() {
         'module' => 'kada_some_content_feature',
         'settings' => array(),
         'type' => 'kada_some_id_link',
-        'weight' => 16,
+        'weight' => 0,
       ),
       'default' => array(
         'label' => 'above',
@@ -2920,6 +3189,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 22,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -2995,7 +3270,7 @@ function kada_some_content_feature_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 28,
       ),
       'default' => array(
         'label' => 'above',
@@ -3009,6 +3284,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 20,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3035,7 +3316,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-field_target_audience'
+  // Exported field_instance: 'node-social_media_update-field_target_audience'.
   $field_instances['node-social_media_update-field_target_audience'] = array(
     'bundle' => 'social_media_update',
     'default_value' => array(),
@@ -3046,7 +3327,7 @@ function kada_some_content_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 24,
       ),
       'default' => array(
         'label' => 'above',
@@ -3056,6 +3337,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'weight' => 17,
       ),
       'event_grid_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
@@ -3086,7 +3373,7 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-social_media_update-field_theme'
+  // Exported field_instance: 'node-social_media_update-field_theme'.
   $field_instances['node-social_media_update-field_theme'] = array(
     'bundle' => 'social_media_update',
     'default_value' => NULL,
@@ -3097,7 +3384,7 @@ function kada_some_content_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 17,
+        'weight' => 32,
       ),
       'default' => array(
         'label' => 'above',
@@ -3111,6 +3398,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 21,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -3149,7 +3442,7 @@ function kada_some_content_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 26,
       ),
       'default' => array(
         'label' => 'above',
@@ -3163,6 +3456,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 26,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',

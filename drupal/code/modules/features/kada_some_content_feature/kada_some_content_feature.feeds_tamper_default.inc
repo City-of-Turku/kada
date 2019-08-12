@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_some_content_feature.feeds_tamper_default.inc
@@ -84,7 +85,7 @@ function kada_some_content_feature_feeds_tamper_default() {
   $feeds_tamper->importer = 'kada_facebook_json';
   $feeds_tamper->source = 'picture';
   $feeds_tamper->plugin_id = 'convert_php_image';
-  $feeds_tamper->settings = '';
+  $feeds_tamper->settings = array();
   $feeds_tamper->weight = 6;
   $feeds_tamper->description = 'Convert Facebook Safeimage PHP to images';
   $export['kada_facebook_json-picture-convert_php_image'] = $feeds_tamper;

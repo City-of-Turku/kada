@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_service_directory_feature.views_default.inc
@@ -43,7 +44,7 @@ function kada_service_directory_feature_views_default_views() {
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field_1']['id'] = 'title_field_1';
   $handler->display->display_options['fields']['title_field_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field_1']['field'] = 'title_field';
@@ -59,7 +60,7 @@ function kada_service_directory_feature_views_default_views() {
     'trim_length' => '1',
   );
   $handler->display->display_options['fields']['title_field_1']['link_to_entity'] = 0;
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -75,7 +76,7 @@ function kada_service_directory_feature_views_default_views() {
     'title_class' => '',
   );
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
-  /* Sort criterion: Content: Name (title_field) */
+  /* Sort criterion: Content: Title (title_field) */
   $handler->display->display_options['sorts']['title_field_value']['id'] = 'title_field_value';
   $handler->display->display_options['sorts']['title_field_value']['table'] = 'field_data_title_field';
   $handler->display->display_options['sorts']['title_field_value']['field'] = 'title_field_value';
@@ -93,7 +94,7 @@ function kada_service_directory_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'service' => 'service',
   );
-  /* Filter criterion: Content: Name (title_field:language) */
+  /* Filter criterion: Content: Title (title_field:language) */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['language']['field'] = 'language';
