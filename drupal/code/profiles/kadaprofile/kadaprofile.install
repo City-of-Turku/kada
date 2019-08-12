@@ -804,3 +804,15 @@ function kadaprofile_update_7133() {
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Disable and uninstall feature override module
+ */
+function kadaprofile_update_7134() {
+  if( module_exists('features_override')) {
+    module_disable(array('features_override'));
+    drupal_uninstall_modules(array('features_override'));
+  }
+}
