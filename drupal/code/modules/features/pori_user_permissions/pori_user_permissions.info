@@ -5,7 +5,6 @@ version = 7.x-1.0-dev
 dependencies[] = content_lock
 dependencies[] = fe_block
 dependencies[] = features
-dependencies[] = features_override
 dependencies[] = field_permissions
 dependencies[] = kada_user_feature
 dependencies[] = language_access
