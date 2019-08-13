@@ -171,6 +171,8 @@ projects[conditional_fields][subdir] = contrib
 
 projects[content_lock][version] = 3.0-beta1
 projects[content_lock][subdir] = contrib
+; Patch to fix cancel button problem.
+projects[content_lock][patch][] = https://www.drupal.org/files/issues/cancel-edit-fix-2852631.patch
 
 projects[content_taxonomy][version] = 1.0-rc1
 projects[content_taxonomy][subdir] = contrib
