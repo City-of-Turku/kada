@@ -62,7 +62,7 @@ function kada_sections_feature_context_default_contexts() {
     'entity_field' => array(
       'values' => array(
         'entity_type' => 'a:1:{s:4:"node";s:4:"node";}',
-        'view_mode' => 'a:39:{s:4:"full";s:4:"full";s:6:"teaser";i:0;s:3:"rss";i:0;s:13:"diff_standard";i:0;s:5:"token";i:0;s:9:"accordion";i:0;s:8:"carousel";i:0;s:7:"current";i:0;s:7:"project";i:0;s:13:"search_result";i:0;s:15:"event_grid_item";i:0;s:15:"event_list_item";i:0;s:14:"event_map_item";i:0;s:17:"event_mosaic_item";i:0;s:19:"event_search_result";i:0;s:19:"event_tab_list_item";i:0;s:18:"event_top_carousel";i:0;s:9:"main_news";i:0;s:14:"main_news_wide";i:0;s:10:"only_title";i:0;s:3:"map";i:0;s:8:"revision";i:0;s:10:"label_icon";i:0;s:9:"term_name";i:0;s:5:"title";i:0;s:12:"content_full";i:0;s:12:"content_half";i:0;s:6:"topics";i:0;s:16:"main_liftup_wide";i:0;s:11:"main_liftup";i:0;s:12:"main_content";i:0;s:10:"full_modal";i:0;s:10:"event_list";i:0;s:9:"grid_item";i:0;s:10:"event_node";i:0;s:14:"event_tab_item";i:0;s:6:"person";i:0;s:17:"file_linked_title";i:0;s:9:"opengraph";i:0;}',
+        'view_mode' => 'a:48:{s:4:"full";s:4:"full";s:6:"teaser";i:0;s:3:"rss";i:0;s:13:"diff_standard";i:0;s:19:"live_results_search";i:0;s:5:"token";i:0;s:9:"accordion";i:0;s:8:"carousel";i:0;s:7:"current";i:0;s:7:"project";i:0;s:15:"event_grid_item";i:0;s:15:"event_list_item";i:0;s:14:"event_map_item";i:0;s:17:"event_mosaic_item";i:0;s:19:"event_search_result";i:0;s:19:"event_tab_list_item";i:0;s:18:"event_top_carousel";i:0;s:9:"main_news";i:0;s:14:"main_news_wide";i:0;s:10:"only_title";i:0;s:3:"map";i:0;s:27:"attraction_card_mosaic_item";i:0;s:7:"product";i:0;s:11:"person_card";i:0;s:19:"small_liftup_banner";i:0;s:9:"waste_map";i:0;s:12:"waste_search";i:0;s:8:"revision";i:0;s:10:"label_icon";i:0;s:9:"term_name";i:0;s:5:"title";i:0;s:12:"content_full";i:0;s:12:"content_half";i:0;s:6:"topics";i:0;s:16:"main_liftup_wide";i:0;s:11:"main_liftup";i:0;s:12:"main_content";i:0;s:10:"full_modal";i:0;s:10:"event_list";i:0;s:9:"grid_item";i:0;s:10:"event_node";i:0;s:14:"event_tab_item";i:0;s:6:"person";i:0;s:17:"file_linked_title";i:0;s:13:"search_result";i:0;s:9:"opengraph";i:0;s:16:"content_250_wide";i:0;s:13:"page_carousel";i:0;}',
         'field_name' => 'og_group_ref',
         'field_status' => 'all',
         'field_value' => '1',
@@ -149,28 +149,46 @@ function kada_sections_feature_context_default_contexts() {
           'region' => 'tools_container',
           'weight' => '-10',
         ),
+        'views-89b484a51bf5cdc2db6af339b2d71883' => array(
+          'module' => 'views',
+          'delta' => '89b484a51bf5cdc2db6af339b2d71883',
+          'region' => 'before_content',
+          'weight' => '-10',
+        ),
         'kada_widget_feature-widget_before_content' => array(
           'module' => 'kada_widget_feature',
           'delta' => 'widget_before_content',
           'region' => 'before_content',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'quicktabs-feed_tabs_section' => array(
           'module' => 'quicktabs',
           'delta' => 'feed_tabs_section',
           'region' => 'before_content',
-          'weight' => '-9',
+          'weight' => '-8',
+        ),
+        'kada_news_feature-news_archive_link' => array(
+          'module' => 'kada_news_feature',
+          'delta' => 'news_archive_link',
+          'region' => 'before_content',
+          'weight' => '-7',
         ),
         'kada_export_feature-kada_rss_feed_for_section' => array(
           'module' => 'kada_export_feature',
           'delta' => 'kada_rss_feed_for_section',
           'region' => 'before_content',
-          'weight' => -7,
+          'weight' => '-6',
         ),
         'views-kada_project_liftups-section' => array(
           'module' => 'views',
           'delta' => 'kada_project_liftups-section',
           'region' => 'before_footer',
+          'weight' => '-10',
+        ),
+        'views-4e860b19463e3f674732c95e074be424' => array(
+          'module' => 'views',
+          'delta' => '4e860b19463e3f674732c95e074be424',
+          'region' => 'above_footer',
           'weight' => '-10',
         ),
         'views-8800832114b919bcfa2b166f3ecc0aeb' => array(
@@ -184,18 +202,6 @@ function kada_sections_feature_context_default_contexts() {
           'delta' => 'kada_section_footer-block_1',
           'region' => 'footer',
           'weight' => '-9',
-        ),
-        'kada_news_feature-news_archive_link' => array(
-          'module' => 'kada_news_feature',
-          'delta' => 'news_archive_link',
-          'region' => 'before_content',
-          'weight' => -8,
-        ),
-        'views-4e860b19463e3f674732c95e074be424' => array(
-          'module' => 'views',
-          'delta' => '4e860b19463e3f674732c95e074be424',
-          'region' => 'above_footer',
-          'weight' => -10,
         ),
       ),
     ),
