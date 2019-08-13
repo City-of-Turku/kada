@@ -12,6 +12,7 @@ dependencies[] = domain
 dependencies[] = entityreference
 dependencies[] = fe_block
 dependencies[] = features
+dependencies[] = field_collection
 dependencies[] = field_group
 dependencies[] = kada_export_feature
 dependencies[] = kada_field_bases_feature
