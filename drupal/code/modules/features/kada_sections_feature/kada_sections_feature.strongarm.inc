@@ -171,11 +171,35 @@ function kada_sections_feature_strongarm() {
       'event_mosaic_item' => array(
         'custom_settings' => FALSE,
       ),
+      'live_results_search' => array(
+        'custom_settings' => TRUE,
+      ),
+      'event_search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'attraction_card_mosaic_item' => array(
+        'custom_settings' => FALSE,
+      ),
+      'product' => array(
+        'custom_settings' => FALSE,
+      ),
+      'person_card' => array(
+        'custom_settings' => FALSE,
+      ),
+      'small_liftup_banner' => array(
+        'custom_settings' => FALSE,
+      ),
+      'waste_map' => array(
+        'custom_settings' => FALSE,
+      ),
+      'waste_search' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'domain' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
         'language' => array(
           'weight' => '1',
@@ -184,19 +208,19 @@ function kada_sections_feature_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'redirect' => array(
-          'weight' => '9',
+          'weight' => '10',
         ),
         'metatags' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
       ),
       'display' => array(
         'domain' => array(
           'default' => array(
-            'weight' => '10',
+            'weight' => '12',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -210,7 +234,7 @@ function kada_sections_feature_strongarm() {
         ),
         'language' => array(
           'default' => array(
-            'weight' => '11',
+            'weight' => '13',
             'visible' => FALSE,
           ),
           'teaser' => array(
