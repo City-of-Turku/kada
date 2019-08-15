@@ -826,7 +826,7 @@ function kadaprofile_update_7134() {
     module_disable(array('features_override'));
     drupal_uninstall_modules(array('features_override'));
   }
-  
+}
 /**
  *
  * Enables Entity delete log contrib module.
