@@ -286,6 +286,9 @@ projects[entityreference][subdir] = "contrib"
 projects[entityreference_prepopulate][version] = 1.5
 projects[entityreference_prepopulate][subdir] = contrib
 
+projects[entity_delete_log][version] = 1.1
+projects[entity_delete_log][subdir] = contrib
+
 projects[entityqueue][version] = 1.1
 projects[entityqueue][subdir] = contrib
 ; Adds export for entityqueue subqueues

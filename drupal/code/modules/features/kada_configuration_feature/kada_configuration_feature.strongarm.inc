@@ -604,6 +604,35 @@ function kada_configuration_feature_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'entity_delete_log_entity_types';
+  $strongarm->value = array(
+    'node' => 'node',
+    'taxonomy_term' => 'taxonomy_term',
+    'scald_atom' => 'scald_atom',
+    'widget' => 'widget',
+    'file' => 'file',
+    'user' => 'user',
+    'comment' => 0,
+    'entityqueue_subqueue' => 0,
+    'field_collection_item' => 0,
+    'flagging' => 0,
+    'i18n_translation' => 0,
+    'og_membership_type' => 0,
+    'og_membership' => 0,
+    'redirect' => 0,
+    'relation' => 0,
+    'search_api_server' => 0,
+    'search_api_index' => 0,
+    'search_api_live_results_search' => 0,
+    'taxonomy_vocabulary' => 0,
+    'wysiwyg_profile' => 0,
+    'rules_config' => 0,
+  );
+  $export['entity_delete_log_entity_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'entity_translation_entity_types';
   $strongarm->value = array(
     'node' => 'node',
