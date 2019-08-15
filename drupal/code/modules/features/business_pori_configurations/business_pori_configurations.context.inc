@@ -73,9 +73,9 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'navigation_top',
           'weight' => '-10',
         ),
-        'menu_block-47' => array(
+        'menu_block-51' => array(
           'module' => 'menu_block',
-          'delta' => '47',
+          'delta' => '51',
           'region' => 'navigation_top',
           'weight' => '-9',
         ),
@@ -109,9 +109,9 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'footer',
           'weight' => '-10',
         ),
-        'menu_block-45' => array(
+        'menu_block-49' => array(
           'module' => 'menu_block',
-          'delta' => '45',
+          'delta' => '49',
           'region' => 'footer',
           'weight' => '-9',
         ),
@@ -543,29 +543,29 @@ function business_pori_configurations_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'menu_block-47' => array(
-          'module' => 'menu_block',
-          'delta' => '47',
-          'region' => 'navigation_top',
-          'weight' => '-9',
-        ),
         'menu_block-42' => array(
           'module' => 'menu_block',
           'delta' => '42',
           'region' => 'navigation_top',
           'weight' => '-8',
         ),
-        'menu_block-46' => array(
+        'menu_block-51' => array(
           'module' => 'menu_block',
-          'delta' => '46',
-          'region' => 'navigation',
-          'weight' => '-9',
+          'delta' => '51',
+          'region' => 'navigation_top',
+          'weight' => '-7',
         ),
         'menu_block-43' => array(
           'module' => 'menu_block',
           'delta' => '43',
           'region' => 'navigation',
           'weight' => '-8',
+        ),
+        'menu_block-50' => array(
+          'module' => 'menu_block',
+          'delta' => '50',
+          'region' => 'navigation',
+          'weight' => '-7',
         ),
       ),
     ),
