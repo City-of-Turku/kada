@@ -105,6 +105,11 @@ function kada_configuration_feature_context_default_contexts() {
   $context->description = 'This context is triggered on the site main front page';
   $context->tag = 'front page';
   $context->conditions = array(
+    'context' => array(
+      'values' => array(
+        '~visitpori_domain' => '~visitpori_domain',
+      ),
+    ),
     'node' => array(
       'values' => array(
         'page' => 'page',
@@ -118,68 +123,69 @@ function kada_configuration_feature_context_default_contexts() {
         '<front>' => '<front>',
       ),
     ),
-    'context' => array(
-      'values' => array(
-        '~visitpori_domain' => '~visitpori_domain',
-      ),
-    ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-kada_top_carousel-block_1' => array(
+          'module' => 'views',
+          'delta' => 'kada_top_carousel-block_1',
+          'region' => 'header',
+          'weight' => '-10',
+        ),
         'views-kada_recommended-block' => array(
           'module' => 'views',
           'delta' => 'kada_recommended-block',
           'region' => 'header',
-          'weight' => -9,
+          'weight' => '-9',
         ),
-        'kada_widget_feature-widget_before_content' => array(
-          'module' => 'kada_widget_feature',
-          'delta' => 'widget_before_content',
-          'region' => 'before_content',
+        'views-85d7d54088e83da79a6f4da7cf5639a5' => array(
+          'module' => 'views',
+          'delta' => '85d7d54088e83da79a6f4da7cf5639a5',
+          'region' => 'highlighted',
           'weight' => '-10',
-        ),
-        'kada_export_feature-kada_rss_feed_for_news_archive' => array(
-          'module' => 'kada_export_feature',
-          'delta' => 'kada_rss_feed_for_news_archive',
-          'region' => 'before_content',
-          'weight' => -7,
-        ),
-        'kada_news_feature-news_archive_link' => array(
-          'module' => 'kada_news_feature',
-          'delta' => 'news_archive_link',
-          'region' => 'before_content',
-          'weight' => -8,
-        ),
-        'quicktabs-feed_tabs_frontpage_promoted_con' => array(
-          'module' => 'quicktabs',
-          'delta' => 'feed_tabs_frontpage_promoted_con',
-          'region' => 'before_content',
-          'weight' => -9,
         ),
         'views-kada_news-block_1' => array(
           'module' => 'views',
           'delta' => 'kada_news-block_1',
           'region' => 'highlighted',
-          'weight' => -10,
+          'weight' => '-9',
+        ),
+        'kada_widget_feature-widget_before_content' => array(
+          'module' => 'kada_widget_feature',
+          'delta' => 'widget_before_content',
+          'region' => 'before_content',
+          'weight' => '-9',
+        ),
+        'quicktabs-feed_tabs_frontpage_promoted_con' => array(
+          'module' => 'quicktabs',
+          'delta' => 'feed_tabs_frontpage_promoted_con',
+          'region' => 'before_content',
+          'weight' => '-8',
+        ),
+        'kada_news_feature-news_archive_link' => array(
+          'module' => 'kada_news_feature',
+          'delta' => 'news_archive_link',
+          'region' => 'before_content',
+          'weight' => '-7',
+        ),
+        'kada_export_feature-kada_rss_feed_for_news_archive' => array(
+          'module' => 'kada_export_feature',
+          'delta' => 'kada_rss_feed_for_news_archive',
+          'region' => 'before_content',
+          'weight' => '-6',
         ),
         'views-kada_project_liftups-block_1' => array(
           'module' => 'views',
           'delta' => 'kada_project_liftups-block_1',
           'region' => 'before_footer',
-          'weight' => -10,
-        ),
-        'views-kada_top_carousel-block_1' => array(
-          'module' => 'views',
-          'delta' => 'kada_top_carousel-block_1',
-          'region' => 'header',
-          'weight' => -10,
+          'weight' => '-10',
         ),
         'views-pori_small_liftup_banner-block' => array(
           'module' => 'views',
           'delta' => 'pori_small_liftup_banner-block',
           'region' => 'above_footer',
-          'weight' => -10,
+          'weight' => '-10',
         ),
       ),
     ),

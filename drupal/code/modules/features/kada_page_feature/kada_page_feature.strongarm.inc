@@ -200,19 +200,19 @@ function kada_page_feature_strongarm() {
           'weight' => '11',
         ),
         'path' => array(
-          'weight' => '10',
+          'weight' => '11',
         ),
         'redirect' => array(
-          'weight' => '11',
+          'weight' => '12',
         ),
         'language' => array(
           'weight' => '10',
         ),
         'domain' => array(
-          'weight' => '8',
+          'weight' => '9',
         ),
         'metatags' => array(
-          'weight' => '9',
+          'weight' => '10',
         ),
       ),
       'display' => array(
