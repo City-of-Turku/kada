@@ -140,14 +140,16 @@ a.liftup-link__secondary {
   padding: 10px 20px;
   position: absolute;
   width: 100%;
-  background-color: rgba($header-default, 0.8);
+  background-color: rgba($turku-white, 0.8);
   .field--name-field-liftup-description-text {
-    color: $turku-white;
+    color: $pori-black;
   }
 }
 .field--name-field-liftup-main-link {
   a {
-    color: $turku-white;
+    color: $pori-black;
+    font-size: 1.2em;
+    font-weight: bold;
   }
 }
 .transparent-gradient__liftup {
