@@ -2415,6 +2415,9 @@ example.org';
     40 => 42,
     41 => 43,
     42 => 44,
+    43 => 45,
+    44 => 46,
+    45 => 47,
   );
   $export['menu_block_ids'] = $strongarm;
 
