@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_media_feature.views_default.inc
@@ -106,7 +107,7 @@ function kada_media_feature_views_default_views() {
   $handler->display->display_options['fields']['type']['id'] = 'type';
   $handler->display->display_options['fields']['type']['table'] = 'scald_atoms';
   $handler->display->display_options['fields']['type']['field'] = 'type';
-  /* Field: Atom: Thumbnail */
+  /* Field: Atoms: Thumbnail */
   $handler->display->display_options['fields']['scald_thumbnail']['id'] = 'scald_thumbnail';
   $handler->display->display_options['fields']['scald_thumbnail']['table'] = 'field_data_scald_thumbnail';
   $handler->display->display_options['fields']['scald_thumbnail']['field'] = 'scald_thumbnail';
@@ -225,6 +226,15 @@ function kada_media_feature_views_default_views() {
   );
   $handler->display->display_options['filters']['actions']['group'] = 1;
   $handler->display->display_options['filters']['actions']['expose']['operator'] = FALSE;
+  /* Filter criterion: Domain Editor: Domain ID */
+  $handler->display->display_options['filters']['domain_id']['id'] = 'domain_id';
+  $handler->display->display_options['filters']['domain_id']['table'] = 'domain_editor';
+  $handler->display->display_options['filters']['domain_id']['field'] = 'domain_id';
+  $handler->display->display_options['filters']['domain_id']['relationship'] = 'publisher';
+  $handler->display->display_options['filters']['domain_id']['value'] = array(
+    '***CURRENT_DOMAIN***' => '***CURRENT_DOMAIN***',
+  );
+  $handler->display->display_options['filters']['domain_id']['group'] = 1;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page_1');
@@ -497,6 +507,15 @@ function kada_media_feature_views_default_views() {
   );
   $handler->display->display_options['filters']['actions']['group'] = 1;
   $handler->display->display_options['filters']['actions']['expose']['operator'] = FALSE;
+  /* Filter criterion: Domain Editor: Domain ID */
+  $handler->display->display_options['filters']['domain_id']['id'] = 'domain_id';
+  $handler->display->display_options['filters']['domain_id']['table'] = 'domain_editor';
+  $handler->display->display_options['filters']['domain_id']['field'] = 'domain_id';
+  $handler->display->display_options['filters']['domain_id']['relationship'] = 'publisher';
+  $handler->display->display_options['filters']['domain_id']['value'] = array(
+    '***CURRENT_DOMAIN***' => '***CURRENT_DOMAIN***',
+  );
+  $handler->display->display_options['filters']['domain_id']['group'] = 1;
 
   /* Display: Scald Library */
   $handler = $view->new_display('dnd_library', 'Scald Library', 'dnd_library_1');

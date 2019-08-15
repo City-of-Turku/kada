@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_configuration_feature.ds.inc
@@ -16,11 +17,11 @@ function kada_configuration_feature_ds_layout_settings_info() {
   $ds_layout->entity_type = 'taxonomy_term';
   $ds_layout->bundle = 'accessibility';
   $ds_layout->view_mode = 'default';
-  $ds_layout->layout = 'minimal_layout';
+  $ds_layout->layout = 'accessibility_layout';
   $ds_layout->settings = array(
     'classes' => array(),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'main_content' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
@@ -30,13 +31,14 @@ function kada_configuration_feature_ds_layout_settings_info() {
     'regions' => array(
       'main_content' => array(
         0 => 'name_field',
-        1 => 'field_icon',
+        1 => 'description_field',
       ),
     ),
     'fields' => array(
       'name_field' => 'main_content',
-      'field_icon' => 'main_content',
+      'description_field' => 'main_content',
     ),
+    'layout_disable_css' => FALSE,
   );
   $export['taxonomy_term|accessibility|default'] = $ds_layout;
 

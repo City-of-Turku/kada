@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_configuration.views_default.inc

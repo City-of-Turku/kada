@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_front_page_liftups.quicktabs.inc

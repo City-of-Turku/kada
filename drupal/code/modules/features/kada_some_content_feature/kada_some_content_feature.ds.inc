@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_some_content_feature.ds.inc
@@ -18,7 +19,7 @@ function kada_some_content_feature_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'current';
   $ds_fieldsetting->settings = array(
     'post_date' => array(
-      'weight' => '17',
+      'weight' => 1,
       'label' => 'hidden',
       'format' => 'ds_post_date_short',
       'formatter_settings' => array(
@@ -31,83 +32,6 @@ function kada_some_content_feature_ds_field_settings_info() {
           'fi-def-at' => FALSE,
           'fi-odd-even' => FALSE,
           'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'body' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'body',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'field_image' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'liftup-box__image',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'field_link' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'h4',
-          'fi-cl' => 'share-title',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'field_share_caption' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'share-caption',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'field_share_description' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'share-description',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'field_some_id' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_reset',
         ),
       ),
     ),
@@ -191,41 +115,45 @@ function kada_some_content_feature_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'social_media_update';
   $ds_layout->view_mode = 'current';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'liftup_current_layout';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
-        0 => 'group_top',
-        1 => 'body',
+      'header' => array(
+        0 => 'field_some_id',
+        1 => 'group_top',
         2 => 'field_image',
-        3 => 'field_link',
-        4 => 'field_image_url',
-        5 => 'field_share_caption',
-        6 => 'field_share_description',
-        7 => 'field_some_id',
-        8 => 'post_date',
+        3 => 'post_date',
+      ),
+      'main' => array(
+        4 => 'body',
+        5 => 'field_link',
+        6 => 'field_image_url',
+        7 => 'field_share_caption',
+        8 => 'field_share_description',
       ),
     ),
     'fields' => array(
-      'group_top' => 'ds_content',
-      'body' => 'ds_content',
-      'field_image' => 'ds_content',
-      'field_link' => 'ds_content',
-      'field_image_url' => 'ds_content',
-      'field_share_caption' => 'ds_content',
-      'field_share_description' => 'ds_content',
-      'field_some_id' => 'ds_content',
-      'post_date' => 'ds_content',
+      'group_top' => 'header',
+      'body' => 'main',
+      'field_image' => 'header',
+      'field_link' => 'main',
+      'field_image_url' => 'main',
+      'field_share_caption' => 'main',
+      'field_share_description' => 'main',
+      'field_some_id' => 'header',
+      'post_date' => 'header',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'header' => 'div',
+      'main' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|social_media_update|current'] = $ds_layout;
 

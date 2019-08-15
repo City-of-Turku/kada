@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_blog_feature.features.user_permission.inc
@@ -60,7 +61,6 @@ function kada_blog_feature_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'content editor' => 'content editor',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -71,7 +71,6 @@ function kada_blog_feature_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'content editor' => 'content editor',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -82,7 +81,6 @@ function kada_blog_feature_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'content editor' => 'content editor',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'domain',
   );
@@ -93,7 +91,6 @@ function kada_blog_feature_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'content editor' => 'content editor',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'domain',
   );
@@ -104,7 +101,6 @@ function kada_blog_feature_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'content editor' => 'content editor',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -115,7 +111,6 @@ function kada_blog_feature_user_default_permissions() {
     'roles' => array(
       'admin' => 'admin',
       'content editor' => 'content editor',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );

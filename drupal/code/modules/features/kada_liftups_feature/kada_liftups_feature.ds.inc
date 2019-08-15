@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_liftups_feature.ds.inc
@@ -18,12 +19,12 @@ function kada_liftups_feature_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'current';
   $ds_fieldsetting->settings = array(
     'links' => array(
-      'weight' => '5',
+      'weight' => 4,
       'label' => 'hidden',
       'format' => 'default',
     ),
     'post_date' => array(
-      'weight' => '2',
+      'weight' => 1,
       'label' => 'hidden',
       'format' => 'ds_post_date_kada_date_only',
       'formatter_settings' => array(
@@ -32,55 +33,6 @@ function kada_liftups_feature_ds_field_settings_info() {
           'fi' => TRUE,
           'fi-el' => 'div',
           'fi-cl' => 'liftup-box__date',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'body' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-        ),
-      ),
-    ),
-    'field_link_to_content' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'h3',
-          'fi-cl' => 'liftup-box__title',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'field_main_image' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'liftup-box__image',
-          'fi-at' => '',
-          'fi-def-at' => FALSE,
-          'fi-odd-even' => FALSE,
-          'fi-first-last' => FALSE,
-        ),
-      ),
-    ),
-    'field_vignette' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'fi' => TRUE,
-          'fi-el' => 'div',
-          'fi-cl' => 'liftup-box__caption',
           'fi-at' => '',
           'fi-def-at' => FALSE,
           'fi-odd-even' => FALSE,
@@ -305,18 +257,16 @@ function kada_liftups_feature_ds_layout_settings_info() {
     'regions' => array(
       'header' => array(
         0 => 'field_main_image',
-        1 => 'field_vignette',
       ),
       'main' => array(
-        2 => 'post_date',
-        3 => 'field_link_to_content',
-        4 => 'body',
-        5 => 'links',
+        2 => 'field_link_to_content',
+        3 => 'body',
+        4 => 'links',
+        1 => 'post_date',
       ),
     ),
     'fields' => array(
       'field_main_image' => 'header',
-      'field_vignette' => 'header',
       'post_date' => 'main',
       'field_link_to_content' => 'main',
       'body' => 'main',
@@ -332,6 +282,7 @@ function kada_liftups_feature_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|liftup|current'] = $ds_layout;
 
@@ -375,17 +326,15 @@ function kada_liftups_feature_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'left' => array(
-        0 => 'post_date',
-        1 => 'field_visible_title',
-        2 => 'body',
-        3 => 'field_link_to_content',
+        0 => 'field_visible_title',
+        1 => 'body',
+        2 => 'field_link_to_content',
       ),
       'right' => array(
-        4 => 'field_main_image',
+        3 => 'field_main_image',
       ),
     ),
     'fields' => array(
-      'post_date' => 'left',
       'field_visible_title' => 'left',
       'body' => 'left',
       'field_link_to_content' => 'left',

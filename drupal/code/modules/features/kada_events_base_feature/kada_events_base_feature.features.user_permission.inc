@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_events_base_feature.features.user_permission.inc
@@ -24,8 +25,7 @@ function kada_events_base_feature_user_default_permissions() {
     'name' => 'create event content',
     'roles' => array(
       'admin' => 'admin',
-      'anonymous user' => 'anonymous user',
-      'authenticated user' => 'authenticated user',
+      'content editor' => 'content editor',
       'event editor' => 'event editor',
       'web journalist' => 'web journalist',
     ),
@@ -47,7 +47,6 @@ function kada_events_base_feature_user_default_permissions() {
     'name' => 'delete any event content',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -57,7 +56,6 @@ function kada_events_base_feature_user_default_permissions() {
     'name' => 'delete event content on assigned domains',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'domain',
   );
@@ -69,7 +67,6 @@ function kada_events_base_feature_user_default_permissions() {
       'admin' => 'admin',
       'event editor' => 'event editor',
       'event external editor' => 'event external editor',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );

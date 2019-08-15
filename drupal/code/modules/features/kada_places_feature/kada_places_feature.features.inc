@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_places_feature.features.inc

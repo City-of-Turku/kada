@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_places_feature.views_default.inc
@@ -275,7 +276,7 @@ function kada_places_feature_views_default_views() {
   $handler->display->display_options['relationships']['relation_service_offer_service_node']['r_index'] = '-1';
   $handler->display->display_options['relationships']['relation_service_offer_service_node']['entity_deduplication_left'] = 0;
   $handler->display->display_options['relationships']['relation_service_offer_service_node']['entity_deduplication_right'] = 0;
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -391,7 +392,7 @@ function kada_places_feature_views_default_views() {
   /* Display: Places Address Migration */
   $handler = $view->new_display('page', 'Places Address Migration', 'page_1');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -471,7 +472,7 @@ function kada_places_feature_views_default_views() {
     t('Displaying @start - @end of @total'),
     t('Service Offer'),
     t('Service'),
-    t('Name'),
+    t('Title'),
     t('Person responsible'),
     t('Phone'),
     t('Street address'),
@@ -545,7 +546,7 @@ function kada_places_feature_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -558,7 +559,7 @@ function kada_places_feature_views_default_views() {
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Sort criterion: Content: Name (title_field) */
+  /* Sort criterion: Content: Title (title_field) */
   $handler->display->display_options['sorts']['title_field_value']['id'] = 'title_field_value';
   $handler->display->display_options['sorts']['title_field_value']['table'] = 'field_data_title_field';
   $handler->display->display_options['sorts']['title_field_value']['field'] = 'title_field_value';

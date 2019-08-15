@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_media_feature.features.field_instance.inc
@@ -113,6 +114,7 @@ function kada_media_feature_field_default_field_instances() {
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
@@ -195,6 +197,7 @@ function kada_media_feature_field_default_field_instances() {
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
@@ -344,6 +347,12 @@ function kada_media_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 2,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'topics' => array(
         'label' => 'above',
@@ -499,6 +508,12 @@ function kada_media_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 3,
       ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'topics' => array(
         'label' => 'above',
         'settings' => array(),
@@ -653,6 +668,12 @@ function kada_media_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 4,
       ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'topics' => array(
         'label' => 'above',
         'settings' => array(),
@@ -673,6 +694,7 @@ function kada_media_feature_field_default_field_instances() {
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
@@ -777,6 +799,12 @@ function kada_media_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 5,
       ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'topics' => array(
         'label' => 'above',
         'settings' => array(),
@@ -797,6 +825,7 @@ function kada_media_feature_field_default_field_instances() {
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
@@ -1076,6 +1105,12 @@ function kada_media_feature_field_default_field_instances() {
         'type' => 'picture',
         'weight' => 0,
       ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'topics' => array(
         'label' => 'hidden',
         'module' => 'picture',
@@ -1241,6 +1276,7 @@ function kada_media_feature_field_default_field_instances() {
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
@@ -1288,6 +1324,7 @@ function kada_media_feature_field_default_field_instances() {
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',

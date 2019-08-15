@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_events_base_feature.features.conditional_fields.inc
@@ -10,7 +11,7 @@
 function kada_events_base_feature_conditional_fields_default_fields() {
   $items = array();
 
-  $items[] = array(
+  $items["node:event:0"] = array(
     'entity' => 'node',
     'bundle' => 'event',
     'dependent' => 'field_content_image_ext',
@@ -112,7 +113,7 @@ function kada_events_base_feature_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:event:1"] = array(
     'entity' => 'node',
     'bundle' => 'event',
     'dependent' => 'field_date_repeat',
@@ -242,7 +243,7 @@ function kada_events_base_feature_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:event:2"] = array(
     'entity' => 'node',
     'bundle' => 'event',
     'dependent' => 'field_date_repeat_extra',
@@ -372,7 +373,7 @@ function kada_events_base_feature_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:event:3"] = array(
     'entity' => 'node',
     'bundle' => 'event',
     'dependent' => 'field_email',
@@ -474,7 +475,7 @@ function kada_events_base_feature_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:event:4"] = array(
     'entity' => 'node',
     'bundle' => 'event',
     'dependent' => 'field_phone',
@@ -576,7 +577,7 @@ function kada_events_base_feature_conditional_fields_default_fields() {
     ),
   );
 
-  $items[] = array(
+  $items["node:event:5"] = array(
     'entity' => 'node',
     'bundle' => 'event',
     'dependent' => 'field_super_event',

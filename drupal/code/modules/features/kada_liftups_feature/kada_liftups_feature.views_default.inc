@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_liftups_feature.views_default.inc
@@ -22,7 +23,7 @@ function kada_liftups_feature_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['css_class'] = 'liftup-box-list';
+  $handler->display->display_options['css_class'] = 'liftup-box-list liftup-box-list--current';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'views_content_cache';
@@ -67,7 +68,7 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '12';
+  $handler->display->display_options['pager']['options']['items_per_page'] = 8;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
@@ -442,7 +443,7 @@ function kada_liftups_feature_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 2;
-  /* Filter criterion: Content: Name (title_field:language) */
+  /* Filter criterion: Content: Title (title_field:language) */
   $handler->display->display_options['filters']['language_1']['id'] = 'language_1';
   $handler->display->display_options['filters']['language_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['language_1']['field'] = 'language';
@@ -1229,7 +1230,7 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Field: Content: Name */
+  /* Field: Content: Title */
   $handler->display->display_options['fields']['title_field']['id'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['table'] = 'field_data_title_field';
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
@@ -1925,16 +1926,6 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_color_name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_color_name']['type'] = 'list_key';
   $handler->display->display_options['fields']['field_color_name']['group_column'] = 'entity_id';
-  /* Field: Field: Target audience */
-  $handler->display->display_options['fields']['field_target_audience']['id'] = 'field_target_audience';
-  $handler->display->display_options['fields']['field_target_audience']['table'] = 'field_data_field_target_audience';
-  $handler->display->display_options['fields']['field_target_audience']['field'] = 'field_target_audience';
-  $handler->display->display_options['fields']['field_target_audience']['label'] = '';
-  $handler->display->display_options['fields']['field_target_audience']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_target_audience']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_target_audience']['alter']['text'] = '<span class="flex-caption__target-group__item">[field_target_audience]</span>';
-  $handler->display->display_options['fields']['field_target_audience']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_target_audience']['type'] = 'i18n_taxonomy_term_reference_plain';
   /* Field: Content: Theme */
   $handler->display->display_options['fields']['field_theme']['id'] = 'field_theme';
   $handler->display->display_options['fields']['field_theme']['table'] = 'field_data_field_theme';
@@ -1952,13 +1943,13 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_link_to_content']['label'] = '';
   $handler->display->display_options['fields']['field_link_to_content']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_link_to_content']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
-        <div class="flex-caption__body">[body]</div>';
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme]</div>
+                    <div class="flex-caption__body">[body]</div>';
   $handler->display->display_options['fields']['field_link_to_content']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_link_to_content']['alter']['path'] = '[field_link_to_content]';
   $handler->display->display_options['fields']['field_link_to_content']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
-        <div class="flex-caption__body">[body]</div>';
+  $handler->display->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme]</div>
+                    <div class="flex-caption__body">[body]</div>';
   $handler->display->display_options['fields']['field_link_to_content']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_link_to_content']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_link_to_content']['type'] = 'link_plain';
@@ -2014,16 +2005,6 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['body']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['body']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['body']['group_column'] = 'entity_id';
-  /* Field: Field: Target audience */
-  $handler->display->display_options['fields']['field_target_audience']['id'] = 'field_target_audience';
-  $handler->display->display_options['fields']['field_target_audience']['table'] = 'field_data_field_target_audience';
-  $handler->display->display_options['fields']['field_target_audience']['field'] = 'field_target_audience';
-  $handler->display->display_options['fields']['field_target_audience']['label'] = '';
-  $handler->display->display_options['fields']['field_target_audience']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_target_audience']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_target_audience']['alter']['text'] = '<span class="flex-caption__target-group__item">[field_target_audience]</span>';
-  $handler->display->display_options['fields']['field_target_audience']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_target_audience']['type'] = 'i18n_taxonomy_term_reference_plain';
   /* Field: Content: Theme */
   $handler->display->display_options['fields']['field_theme']['id'] = 'field_theme';
   $handler->display->display_options['fields']['field_theme']['table'] = 'field_data_field_theme';
@@ -2041,14 +2022,14 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_link_to_content']['label'] = '';
   $handler->display->display_options['fields']['field_link_to_content']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_link_to_content']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
-        <div class="flex-caption__body">[body]</div>';
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme]</div>
+                    <div class="flex-caption__body">[body]</div>';
   $handler->display->display_options['fields']['field_link_to_content']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_link_to_content']['alter']['path'] = '[field_link_to_content]';
   $handler->display->display_options['fields']['field_link_to_content']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_link_to_content']['element_default_classes'] = FALSE;
-  $handler->display->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
-        <div class="flex-caption__body">[body]</div>';
+  $handler->display->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme]</div>
+                    <div class="flex-caption__body">[body]</div>';
   $handler->display->display_options['fields']['field_link_to_content']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_link_to_content']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_link_to_content']['type'] = 'link_plain';
@@ -3374,16 +3355,6 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_color_name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_color_name']['type'] = 'list_key';
   $handler->display->display_options['fields']['field_color_name']['group_column'] = 'entity_id';
-  /* Field: Field: Target audience */
-  $handler->display->display_options['fields']['field_target_audience']['id'] = 'field_target_audience';
-  $handler->display->display_options['fields']['field_target_audience']['table'] = 'field_data_field_target_audience';
-  $handler->display->display_options['fields']['field_target_audience']['field'] = 'field_target_audience';
-  $handler->display->display_options['fields']['field_target_audience']['label'] = '';
-  $handler->display->display_options['fields']['field_target_audience']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_target_audience']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_target_audience']['alter']['text'] = '<span class="flex-caption__target-group__item">[field_target_audience]</span>';
-  $handler->display->display_options['fields']['field_target_audience']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_target_audience']['type'] = 'i18n_taxonomy_term_reference_plain';
   /* Field: Content: Theme */
   $handler->display->display_options['fields']['field_theme']['id'] = 'field_theme';
   $handler->display->display_options['fields']['field_theme']['table'] = 'field_data_field_theme';
@@ -3401,13 +3372,13 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_link_to_content']['label'] = '';
   $handler->display->display_options['fields']['field_link_to_content']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_link_to_content']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
-        <div class="flex-caption__body">[body]</div>';
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme]</div>
+                    <div class="flex-caption__body">[body]</div>';
   $handler->display->display_options['fields']['field_link_to_content']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_link_to_content']['alter']['path'] = '[field_link_to_content]';
   $handler->display->display_options['fields']['field_link_to_content']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
-        <div class="flex-caption__body">[body]</div>';
+  $handler->display->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme]</div>
+                    <div class="flex-caption__body">[body]</div>';
   $handler->display->display_options['fields']['field_link_to_content']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_link_to_content']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_link_to_content']['type'] = 'link_absolute';
@@ -3523,16 +3494,6 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_color_name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_color_name']['type'] = 'list_key';
   $handler->display->display_options['fields']['field_color_name']['group_column'] = 'entity_id';
-  /* Field: Field: Target audience */
-  $handler->display->display_options['fields']['field_target_audience']['id'] = 'field_target_audience';
-  $handler->display->display_options['fields']['field_target_audience']['table'] = 'field_data_field_target_audience';
-  $handler->display->display_options['fields']['field_target_audience']['field'] = 'field_target_audience';
-  $handler->display->display_options['fields']['field_target_audience']['label'] = '';
-  $handler->display->display_options['fields']['field_target_audience']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_target_audience']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_target_audience']['alter']['text'] = '<span class="flex-caption__target-group__item">[field_target_audience]</span>';
-  $handler->display->display_options['fields']['field_target_audience']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_target_audience']['type'] = 'i18n_taxonomy_term_reference_plain';
   /* Field: Content: Theme */
   $handler->display->display_options['fields']['field_theme']['id'] = 'field_theme';
   $handler->display->display_options['fields']['field_theme']['table'] = 'field_data_field_theme';
@@ -3550,13 +3511,13 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['fields']['field_link_to_content']['label'] = '';
   $handler->display->display_options['fields']['field_link_to_content']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_link_to_content']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
-        <div class="flex-caption__body">[body]</div>';
+  $handler->display->display_options['fields']['field_link_to_content']['alter']['text'] = '<div class="flex-caption__target-group">[field_theme]</div>
+                <div class="flex-caption__body">[body]</div>';
   $handler->display->display_options['fields']['field_link_to_content']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_link_to_content']['alter']['path'] = '[field_link_to_content]';
   $handler->display->display_options['fields']['field_link_to_content']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
-        <div class="flex-caption__body">[body]</div>';
+  $handler->display->display_options['fields']['field_link_to_content']['empty'] = '<div class="flex-caption__target-group">[field_theme]</div>
+                <div class="flex-caption__body">[body]</div>';
   $handler->display->display_options['fields']['field_link_to_content']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_link_to_content']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_link_to_content']['type'] = 'link_plain';
@@ -3591,10 +3552,9 @@ function kada_liftups_feature_views_default_views() {
     t('All'),
     t('FlexSlider'),
     t('Slideshow of liftups per theme'),
-    t('<span class="flex-caption__target-group__item">[field_target_audience]</span>'),
     t('<span class="flex-caption__target-group__item">[field_theme]</span>'),
-    t('<div class="flex-caption__target-group">[field_theme][field_target_audience]</div>
-        <div class="flex-caption__body">[body]</div>'),
+    t('<div class="flex-caption__target-group">[field_theme]</div>
+                    <div class="flex-caption__body">[body]</div>'),
     t('FlexSlider | Section'),
     t('Slideshow of liftups per section'),
     t('Top Image'),
@@ -3619,6 +3579,8 @@ function kada_liftups_feature_views_default_views() {
     t('FlexSlider | promoted content'),
     t('FlexSlider | Target audience'),
     t('Slideshow of liftups per target audience'),
+    t('<div class="flex-caption__target-group">[field_theme]</div>
+                <div class="flex-caption__body">[body]</div>'),
   );
   $export['kada_top_carousel'] = $view;
 

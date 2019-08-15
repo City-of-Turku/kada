@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_landing_page_feature.strongarm.inc
@@ -249,8 +250,8 @@ function kada_landing_page_feature_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_landing_page';
   $strongarm->value = array(
-    0 => 'menu-footer-en',
-    1 => 'menu-footer-fi',
+    0 => 'menu-footer-fi',
+    1 => 'menu-footer-en',
     2 => 'menu-footer-sv',
     3 => 'main-menu',
     4 => 'menu-main-menu-en',
@@ -258,6 +259,18 @@ function kada_landing_page_feature_strongarm() {
     6 => 'menu-top-menu-en',
     7 => 'menu-top-menu-fi',
     8 => 'menu-top-menu-sv',
+    10 => 'menu-visitpori-footer-menu-en',
+    11 => 'menu-visitpori-footer-menu-fi',
+    12 => 'menu-visitpori-footer-menu-sv',
+    13 => 'menu-visitpori-main-menu-de',
+    14 => 'menu-visitpori-main-navigation',
+    15 => 'menu-visitpori-main-menu-sv',
+    16 => 'menu-visitpori-main-menu',
+    17 => 'menu-visitpori-top-menu-de',
+    18 => 'menu-visitpori-top-menu-en',
+    19 => 'menu-visitpori-top-menu-fi',
+    20 => 'menu-visitpori-top-menu-sv',
+    9 => 'menu-visitpori-footer-menu-de',
   );
   $export['menu_options_landing_page'] = $strongarm;
 
@@ -274,6 +287,7 @@ function kada_landing_page_feature_strongarm() {
   $strongarm->name = 'node_options_landing_page';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_landing_page'] = $strongarm;
 

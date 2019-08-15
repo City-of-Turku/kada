@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_services_feature.relation_type_default.inc

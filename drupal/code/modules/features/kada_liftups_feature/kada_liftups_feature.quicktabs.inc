@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_liftups_feature.quicktabs.inc
@@ -14,7 +15,7 @@ function kada_liftups_feature_quicktabs_default_quicktabs() {
   $quicktabs->disabled = FALSE; /* Edit this to true to make a default quicktabs disabled initially */
   $quicktabs->api_version = 1;
   $quicktabs->machine_name = 'feed_tabs';
-  $quicktabs->ajax = 0;
+  $quicktabs->ajax = 1;
   $quicktabs->hide_empty_tabs = FALSE;
   $quicktabs->default_tab = 0;
   $quicktabs->title = 'Feed tabs';
@@ -91,7 +92,7 @@ function kada_liftups_feature_quicktabs_default_quicktabs() {
       'type' => 'view',
     ),
   );
-  $quicktabs->renderer = 'quicktabs';
+  $quicktabs->renderer = 'ui_tabs';
   $quicktabs->style = 'nostyle';
   $quicktabs->options = array();
 
@@ -133,6 +134,7 @@ function kada_liftups_feature_quicktabs_default_quicktabs() {
       'title' => 'News',
       'weight' => '-99',
       'type' => 'view',
+      'use_title' => 0,
     ),
     2 => array(
       'vid' => 'kada_current',
@@ -141,6 +143,7 @@ function kada_liftups_feature_quicktabs_default_quicktabs() {
       'title' => 'Nearby',
       'weight' => '-98',
       'type' => 'view',
+      'use_title' => 0,
     ),
     3 => array(
       'vid' => 'kada_current',
@@ -149,6 +152,7 @@ function kada_liftups_feature_quicktabs_default_quicktabs() {
       'title' => 'Facebook',
       'weight' => '-97',
       'type' => 'view',
+      'use_title' => 0,
     ),
     4 => array(
       'vid' => 'kada_current',
@@ -157,6 +161,7 @@ function kada_liftups_feature_quicktabs_default_quicktabs() {
       'title' => 'Twitter',
       'weight' => '-96',
       'type' => 'view',
+      'use_title' => 0,
     ),
     5 => array(
       'vid' => 'kada_current',
@@ -165,6 +170,7 @@ function kada_liftups_feature_quicktabs_default_quicktabs() {
       'title' => 'Instagram',
       'weight' => '-95',
       'type' => 'view',
+      'use_title' => 0,
     ),
     6 => array(
       'vid' => 'kada_current',
@@ -173,6 +179,7 @@ function kada_liftups_feature_quicktabs_default_quicktabs() {
       'title' => 'LinkedIn',
       'weight' => '-94',
       'type' => 'view',
+      'use_title' => 0,
     ),
     7 => array(
       'vid' => 'kada_current',
@@ -181,6 +188,7 @@ function kada_liftups_feature_quicktabs_default_quicktabs() {
       'title' => 'Youtube',
       'weight' => '-93',
       'type' => 'view',
+      'use_title' => 0,
     ),
     8 => array(
       'vid' => 'kada_current',
@@ -189,11 +197,14 @@ function kada_liftups_feature_quicktabs_default_quicktabs() {
       'title' => 'Blogs',
       'weight' => '-92',
       'type' => 'view',
+      'use_title' => 0,
     ),
   );
-  $quicktabs->renderer = 'quicktabs';
+  $quicktabs->renderer = 'ui_tabs';
   $quicktabs->style = 'nostyle';
-  $quicktabs->options = array();
+  $quicktabs->options = array(
+    'history' => 0,
+  );
 
   // Translatables
   // Included for use with string extractors like potx.

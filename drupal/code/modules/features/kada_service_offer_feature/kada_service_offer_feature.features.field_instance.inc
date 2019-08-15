@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_service_offer_feature.features.field_instance.inc
@@ -10,7 +11,7 @@
 function kada_service_offer_feature_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_service_offer-comment_body'
+  // Exported field_instance: 'comment-comment_node_service_offer-comment_body'.
   $field_instances['comment-comment_node_service_offer-comment_body'] = array(
     'bundle' => 'comment_node_service_offer',
     'default_value' => NULL,
@@ -47,7 +48,7 @@ function kada_service_offer_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-service_offer-field_description'
+  // Exported field_instance: 'node-service_offer-field_description'.
   $field_instances['node-service_offer-field_description'] = array(
     'bundle' => 'service_offer',
     'default_value' => NULL,
@@ -66,6 +67,12 @@ function kada_service_offer_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'map' => array(
@@ -139,7 +146,7 @@ function kada_service_offer_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-service_offer-field_fee'
+  // Exported field_instance: 'node-service_offer-field_fee'.
   $field_instances['node-service_offer-field_fee'] = array(
     'bundle' => 'service_offer',
     'default_value' => NULL,
@@ -159,6 +166,12 @@ function kada_service_offer_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 4,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map' => array(
         'label' => 'inline',
@@ -231,7 +244,7 @@ function kada_service_offer_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-service_offer-field_offered_service'
+  // Exported field_instance: 'node-service_offer-field_offered_service'.
   $field_instances['node-service_offer-field_offered_service'] = array(
     'bundle' => 'service_offer',
     'deleted' => 0,
@@ -249,6 +262,12 @@ function kada_service_offer_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'relation_add_endpoints_and_fields',
         'weight' => 3,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map' => array(
         'label' => 'above',
@@ -294,7 +313,7 @@ function kada_service_offer_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-service_offer-field_precondition'
+  // Exported field_instance: 'node-service_offer-field_precondition'.
   $field_instances['node-service_offer-field_precondition'] = array(
     'bundle' => 'service_offer',
     'default_value' => NULL,
@@ -313,6 +332,12 @@ function kada_service_offer_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 5,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map' => array(
         'label' => 'above',
@@ -384,7 +409,7 @@ function kada_service_offer_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-service_offer-field_provided_at'
+  // Exported field_instance: 'node-service_offer-field_provided_at'.
   $field_instances['node-service_offer-field_provided_at'] = array(
     'bundle' => 'service_offer',
     'deleted' => 0,
@@ -402,6 +427,12 @@ function kada_service_offer_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'relation_add_endpoints_and_fields',
         'weight' => 2,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map' => array(
         'label' => 'above',
@@ -447,7 +478,7 @@ function kada_service_offer_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-service_offer-title_field'
+  // Exported field_instance: 'node-service_offer-title_field'.
   $field_instances['node-service_offer-title_field'] = array(
     'bundle' => 'service_offer',
     'default_value' => NULL,
@@ -465,6 +496,12 @@ function kada_service_offer_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 8,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'map' => array(
         'label' => 'above',
@@ -539,7 +576,7 @@ function kada_service_offer_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'relation-place_service-endpoints'
+  // Exported field_instance: 'relation-place_service-endpoints'.
   $field_instances['relation-place_service-endpoints'] = array(
     'bundle' => 'place_service',
     'default_value' => NULL,
@@ -591,7 +628,7 @@ function kada_service_offer_feature_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'relation-service_offer_service-endpoints'
+  // Exported field_instance: 'relation-service_offer_service-endpoints'.
   $field_instances['relation-service_offer_service-endpoints'] = array(
     'bundle' => 'service_offer_service',
     'default_value' => NULL,
