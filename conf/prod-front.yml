@@ -274,6 +274,11 @@
             - name: prod5_http1
               address: "{{ front1_ip }}"
               port: 8080
+      recv_pre_conditions:
+        - property: req.url
+          operator: '~'
+          value: '\.(pdf|zip)$'
+          action: return (pass);
 
     # There is more customization options for hashes, cookies etc. see ansible/playbook/roles/varnish/templates/default.vcl.j2 for reference
 

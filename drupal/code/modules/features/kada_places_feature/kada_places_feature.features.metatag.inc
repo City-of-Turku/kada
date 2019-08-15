@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_places_feature.features.metatag.inc
@@ -13,6 +14,7 @@ function kada_places_feature_metatag_export_default() {
   // Exported Metatag config instance: node:place.
   $config['node:place'] = array(
     'instance' => 'node:place',
+    'disabled' => FALSE,
     'config' => array(
       'og:street_address' => array(
         'value' => '[node:field-address-visiting]',

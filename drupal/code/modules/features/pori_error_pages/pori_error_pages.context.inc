@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_error_pages.context.inc

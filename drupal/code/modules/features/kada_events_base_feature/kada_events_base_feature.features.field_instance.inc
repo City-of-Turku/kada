@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_events_base_feature.features.field_instance.inc
@@ -81,6 +82,12 @@ function kada_events_base_feature_field_default_field_instances() {
         ),
         'type' => 'title_linked',
         'weight' => 22,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -221,6 +228,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'type' => 'email_default',
         'weight' => 14,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -321,6 +334,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 13,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -492,6 +511,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'type' => 'event_node',
         'weight' => 0,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'hidden',
         'module' => 'atom_reference',
@@ -603,6 +628,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 50,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -717,6 +748,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 49,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -816,6 +853,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 47,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -926,6 +969,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 46,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -1047,6 +1096,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 48,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1144,6 +1199,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 44,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -1283,6 +1344,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 5,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'hidden',
@@ -1428,6 +1495,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'type' => 'taxonomy_term_reference_link',
         'weight' => 18,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1525,6 +1598,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 53,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -1627,6 +1706,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 23,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -1858,6 +1943,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'type' => 'date_default',
         'weight' => 1,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'hidden',
         'module' => 'date',
@@ -1988,6 +2079,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'type' => 'link_default',
         'weight' => 25,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2115,6 +2212,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 57,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2214,6 +2317,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 55,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -2356,6 +2465,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'type' => 'title_linked',
         'weight' => 12,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2494,6 +2609,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 6,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -2636,6 +2757,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'type' => 'link_default',
         'weight' => 11,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2764,6 +2891,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'type' => 'link_default',
         'weight' => 7,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -2887,6 +3020,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 9,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -3027,6 +3166,12 @@ function kada_events_base_feature_field_default_field_instances() {
         'type' => 'link_default',
         'weight' => 26,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3159,6 +3304,12 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
         'type' => 'hidden',
         'weight' => 59,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3258,6 +3409,12 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
         'type' => 'taxonomy_term_reference_link',
         'weight' => 17,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'hidden',
         'module' => 'i18n_taxonomy',
@@ -3286,6 +3443,7 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
       'module' => 'taxonomy',
       'settings' => array(
         'autocomplete_path' => 'taxonomy/autocomplete',
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
@@ -3376,6 +3534,12 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
         ),
         'type' => 'date_default',
         'weight' => 10,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -3500,6 +3664,12 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
         'type' => 'text_default',
         'weight' => 4,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -3585,7 +3755,7 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
     'default_value' => NULL,
     'deleted' => 0,
     'description' => 'When using area select double click at the end point to end selecting.
-You can place multiple single point selections.',
+    You can place multiple single point selections.',
     'display' => array(
       'current' => array(
         'label' => 'above',
@@ -3647,6 +3817,12 @@ You can place multiple single point selections.',
         'type' => 'hidden',
         'weight' => 56,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -3682,10 +3858,15 @@ You can place multiple single point selections.',
           'polygon' => 'polygon',
         ),
         'geocoder_field' => 'field_address',
-        'geocoder_handler' => 'google',
+        'geocoder_handler' => 'openstreetmap_nominatim',
         'handler_settings' => array(
           'google' => array(
             'all_results' => 0,
+            'biasing' => array(
+              'bounds' => '',
+              'components' => '',
+              'region' => '',
+            ),
             'geometry_type' => 'point',
             'reject_results' => array(
               'APPROXIMATE' => 0,
@@ -3769,6 +3950,12 @@ You can place multiple single point selections.',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 51,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -3907,6 +4094,12 @@ You can place multiple single point selections.',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 52,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -4050,6 +4243,12 @@ You can place multiple single point selections.',
         'type' => 'relation_add_endpoints_and_fields',
         'weight' => 21,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4091,6 +4290,123 @@ You can place multiple single point selections.',
       ),
       'type' => 'relation_add',
       'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_radioactivity'.
+  $field_instances['node-event-field_radioactivity'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'radioactivity_energy' => 10,
+        'radioactivity_timestamp' => 1429565385,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'current' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 41,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 38,
+      ),
+      'event_grid_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
+      ),
+      'event_list_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
+      'event_map_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
+      'event_mosaic_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 46,
+      ),
+      'event_search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 35,
+      ),
+      'event_tab_list_item' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 28,
+      ),
+      'event_top_carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 40,
+      ),
+      'full' => array(
+        'label' => 'hidden',
+        'module' => 'radioactivity',
+        'settings' => array(
+          'accuracy' => 100,
+          'energy' => 10,
+          'type' => 'none',
+        ),
+        'type' => 'radioactivity_combo_formatter',
+        'weight' => 19,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'search_result' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 41,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'ds_extras_field_template' => '',
+    'entity_type' => 'node',
+    'field_name' => 'field_radioactivity',
+    'label' => 'Popularity',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'history' => 1,
+      'history_limit' => 8,
+      'profile' => 'events',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'radioactivity',
+      'settings' => array(),
+      'type' => 'radioactivity_basic_widget',
+      'weight' => 3,
     ),
   );
 
@@ -4167,6 +4483,12 @@ You can place multiple single point selections.',
         'type' => 'entityreference_entity_view',
         'weight' => 27,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4198,6 +4520,7 @@ You can place multiple single point selections.',
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'content_taxonomy_autocomplete_new_terms' => 'deny',
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
@@ -4272,6 +4595,12 @@ You can place multiple single point selections.',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 45,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -4384,6 +4713,12 @@ You can place multiple single point selections.',
         'type' => 'hidden',
         'weight' => 58,
       ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
       'search_result' => array(
         'label' => 'above',
         'settings' => array(),
@@ -4482,6 +4817,12 @@ You can place multiple single point selections.',
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 24,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -4606,6 +4947,12 @@ You can place multiple single point selections.',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 54,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -4757,6 +5104,12 @@ You can place multiple single point selections.',
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 60,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'search_result' => array(
         'label' => 'above',
@@ -5039,7 +5392,7 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
   t('Use this field to add link events page in Facebook. If title field has content it will be shown to viewer. The page will open to new tab');
   t('Use this field to add link events page in Twitter. If title field has content it will be shown to viewer. The page will open to new tab');
   t('When using area select double click at the end point to end selecting.
-You can place multiple single point selections.');
+    You can place multiple single point selections.');
   t('endpoints');
 
   return $field_instances;

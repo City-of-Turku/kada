@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_configuration_feature.views_default.inc

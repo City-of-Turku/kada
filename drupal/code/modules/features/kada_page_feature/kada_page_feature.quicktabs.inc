@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_page_feature.quicktabs.inc

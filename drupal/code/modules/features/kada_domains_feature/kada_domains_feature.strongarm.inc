@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_domains_feature.strongarm.inc
@@ -17,6 +18,7 @@ function kada_domains_feature_strongarm() {
   $strongarm->value = array(
     0 => 'domain_alias',
     1 => 'domain_variable',
+    2 => 'domain_conf',
   );
   $export['domain_bootstrap_modules'] = $strongarm;
 

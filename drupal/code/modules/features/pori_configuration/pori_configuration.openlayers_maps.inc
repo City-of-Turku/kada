@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_configuration.openlayers_maps.inc

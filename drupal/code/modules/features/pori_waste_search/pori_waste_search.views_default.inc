@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_waste_search.views_default.inc

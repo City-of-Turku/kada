@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_liftups.views_default.inc
@@ -100,7 +101,6 @@ function pori_liftups_views_default_views() {
   $handler->display->display_options['arguments']['gid']['table'] = 'domain_access';
   $handler->display->display_options['arguments']['gid']['field'] = 'gid';
   $handler->display->display_options['arguments']['gid']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['gid']['exception']['title'] = 'All';
   $handler->display->display_options['arguments']['gid']['default_argument_type'] = 'current_domain';
   $handler->display->display_options['arguments']['gid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['gid']['summary']['format'] = 'default_summary';
@@ -175,7 +175,6 @@ function pori_liftups_views_default_views() {
     t('All'),
     t('Small liftup banner - Section'),
     t('OG membership from node'),
-    t('All'),
   );
   $export['pori_small_liftup_banner'] = $view;
 

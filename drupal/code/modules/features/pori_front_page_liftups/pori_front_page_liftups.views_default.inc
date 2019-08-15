@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_front_page_liftups.views_default.inc
@@ -22,7 +23,7 @@ function pori_front_page_liftups_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['css_class'] = 'liftup-box-list';
+  $handler->display->display_options['css_class'] = 'liftup-box-list liftup-box-list--current';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'views_content_cache';
@@ -67,7 +68,7 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '12';
+  $handler->display->display_options['pager']['options']['items_per_page'] = 8;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
@@ -207,7 +208,7 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['display_description'] = 'All content attached to a theme flagged in current';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '18';
+  $handler->display->display_options['pager']['options']['items_per_page'] = 8;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
@@ -391,7 +392,7 @@ function pori_front_page_liftups_views_default_views() {
   $handler->display->display_options['display_description'] = 'All content attached to a section flagged in current';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '18';
+  $handler->display->display_options['pager']['options']['items_per_page'] = 8;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
@@ -473,7 +474,7 @@ function pori_front_page_liftups_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 2;
-  /* Filter criterion: Content: Name (title_field:language) */
+  /* Filter criterion: Content: Title (title_field:language) */
   $handler->display->display_options['filters']['language_1']['id'] = 'language_1';
   $handler->display->display_options['filters']['language_1']['table'] = 'field_data_title_field';
   $handler->display->display_options['filters']['language_1']['field'] = 'language';
@@ -1004,7 +1005,8 @@ function pori_front_page_liftups_views_default_views() {
   $handler = $view->new_display('block', 'Tab | Blogs', 'tab_blogs');
   $handler->display->display_options['display_description'] = 'Blogs attached to a theme flagged in current';
   $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = 8;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   /* Sort criterion: Flags: Flagged time */

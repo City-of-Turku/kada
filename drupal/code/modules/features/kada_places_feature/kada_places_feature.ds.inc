@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_places_feature.ds.inc
@@ -107,17 +108,6 @@ function kada_places_feature_ds_field_settings_info() {
         'link' => '0',
         'wrapper' => 'h3',
         'class' => 'place__header__title',
-      ),
-    ),
-    'node_link' => array(
-      'weight' => '6',
-      'label' => 'hidden',
-      'format' => 'default',
-      'formatter_settings' => array(
-        'link text' => 'Read more',
-        'link class' => 'place__link',
-        'wrapper' => '',
-        'class' => '',
       ),
     ),
   );
@@ -311,7 +301,7 @@ function kada_places_feature_ds_layout_settings_info() {
         3 => 'field_phone',
         4 => 'field_email',
         5 => 'field_availability',
-        6 => 'node_link',
+        6 => 'field_read_more',
       ),
     ),
     'fields' => array(
@@ -321,7 +311,7 @@ function kada_places_feature_ds_layout_settings_info() {
       'field_phone' => 'main_content',
       'field_email' => 'main_content',
       'field_availability' => 'main_content',
-      'node_link' => 'main_content',
+      'field_read_more' => 'main_content',
     ),
     'classes' => array(),
     'wrappers' => array(

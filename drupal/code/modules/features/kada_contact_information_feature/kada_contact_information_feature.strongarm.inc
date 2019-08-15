@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_contact_information_feature.strongarm.inc
@@ -398,6 +399,24 @@ function kada_contact_information_feature_strongarm() {
       'search_result' => array(
         'custom_settings' => TRUE,
       ),
+      'attraction_card_mosaic_item' => array(
+        'custom_settings' => FALSE,
+      ),
+      'event_mosaic_item' => array(
+        'custom_settings' => FALSE,
+      ),
+      'event_search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'live_results_search' => array(
+        'custom_settings' => TRUE,
+      ),
+      'person_card' => array(
+        'custom_settings' => TRUE,
+      ),
+      'product' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -437,6 +456,10 @@ function kada_contact_information_feature_strongarm() {
           ),
           'search_result' => array(
             'weight' => '28',
+            'visible' => FALSE,
+          ),
+          'person_card' => array(
+            'weight' => 40,
             'visible' => FALSE,
           ),
         ),

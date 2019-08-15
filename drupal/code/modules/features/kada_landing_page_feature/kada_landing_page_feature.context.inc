@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_landing_page_feature.context.inc
@@ -56,7 +57,7 @@ function kada_landing_page_feature_context_default_contexts() {
           'module' => 'kada_export_feature',
           'delta' => 'kada_rss_feed_for_landing_page',
           'region' => 'content',
-          'weight' => '-9',
+          'weight' => -8,
         ),
         'kada_widget_feature-widget_before_content' => array(
           'module' => 'kada_widget_feature',
@@ -69,6 +70,12 @@ function kada_landing_page_feature_context_default_contexts() {
           'delta' => 'kada_project_liftups-block',
           'region' => 'before_footer',
           'weight' => '-10',
+        ),
+        'kada_news_feature-news_archive_link' => array(
+          'module' => 'kada_news_feature',
+          'delta' => 'news_archive_link',
+          'region' => 'content',
+          'weight' => -9,
         ),
       ),
     ),

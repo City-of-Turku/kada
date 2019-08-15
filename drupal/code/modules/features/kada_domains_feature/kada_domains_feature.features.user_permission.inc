@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_domains_feature.features.user_permission.inc
@@ -15,7 +16,6 @@ function kada_domains_feature_user_default_permissions() {
     'name' => 'access inactive domains',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'domain',
   );
@@ -25,7 +25,6 @@ function kada_domains_feature_user_default_permissions() {
     'name' => 'administer domains',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'domain',
   );
@@ -55,7 +54,6 @@ function kada_domains_feature_user_default_permissions() {
     'name' => 'delete domain content',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'domain',
   );
@@ -65,7 +63,6 @@ function kada_domains_feature_user_default_permissions() {
     'name' => 'delete social_media_update content on assigned domains',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'domain',
   );

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_media_feature.context_config.inc
@@ -68,7 +69,7 @@ function kada_media_feature_default_scald_context_config() {
       '*' => 'image_figure',
       'settings' => array(
         'classes' => '',
-        'caption' => '[atom:title_text]',
+        'caption' => '',
       ),
     ),
     'video' => array(
@@ -106,7 +107,7 @@ function kada_media_feature_default_scald_context_config() {
       '*' => 'image_figure',
       'settings' => array(
         'classes' => '',
-        'caption' => '[atom:title_text]',
+        'caption' => '',
       ),
     ),
     'video' => array(
@@ -320,7 +321,7 @@ function kada_media_feature_default_scald_context_config() {
   $context_config->context = 'full';
   $context_config->transcoder = array(
     'image' => array(
-      '*' => 'passthrough',
+      '*' => 'group-responsive_content_full',
     ),
     'video' => array(
       '*' => 'passthrough',
@@ -331,8 +332,11 @@ function kada_media_feature_default_scald_context_config() {
   );
   $context_config->player = array(
     'image' => array(
-      '*' => 'default',
-      'settings' => array(),
+      '*' => 'image_figure',
+      'settings' => array(
+        'caption' => '[atom:title], by [atom:author]',
+        'classes' => '',
+      ),
     ),
     'video' => array(
       '*' => 'default',

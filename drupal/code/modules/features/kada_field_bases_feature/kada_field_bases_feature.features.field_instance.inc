@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_field_bases_feature.features.field_instance.inc
@@ -23,6 +24,7 @@ function kada_field_bases_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'entityreference',
         'settings' => array(
+          'bypass_access' => FALSE,
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
@@ -46,7 +48,9 @@ function kada_field_bases_feature_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
       'type' => 'options_select',
       'weight' => 1,
     ),

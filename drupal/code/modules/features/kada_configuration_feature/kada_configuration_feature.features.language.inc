@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_configuration_feature.features.language.inc
@@ -55,7 +56,7 @@ function kada_configuration_feature_locale_default_languages() {
     'name' => 'Swedish',
     'native' => 'SV',
     'direction' => 0,
-    'enabled' => 0,
+    'enabled' => 1,
     'plurals' => 0,
     'formula' => '',
     'domain' => '',

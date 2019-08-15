@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_search.views_default.inc
@@ -158,7 +159,7 @@ function pori_search_views_default_views() {
   $handler->display->display_options['fields']['field_visitpori_theme']['display'] = 'view';
   $handler->display->display_options['fields']['field_visitpori_theme']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_visitpori_theme']['bypass_access'] = 0;
-  /* Field: Indexed Node: Businesspori theme */
+  /* Field: Indexed Node: Business Pori theme */
   $handler->display->display_options['fields']['field_businesspori_theme']['id'] = 'field_businesspori_theme';
   $handler->display->display_options['fields']['field_businesspori_theme']['table'] = 'search_api_index_pori_search_index';
   $handler->display->display_options['fields']['field_businesspori_theme']['field'] = 'field_businesspori_theme';

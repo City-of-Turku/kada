@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_attraction_feature.default_picture_mapping.inc

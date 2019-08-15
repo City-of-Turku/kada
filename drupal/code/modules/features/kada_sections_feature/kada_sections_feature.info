@@ -27,6 +27,7 @@ dependencies[] = og_extras
 dependencies[] = og_menu_single
 dependencies[] = og_ui
 dependencies[] = options
+dependencies[] = pori_configuration
 dependencies[] = publishcontent
 dependencies[] = quicktabs
 dependencies[] = restrict_node_page_view

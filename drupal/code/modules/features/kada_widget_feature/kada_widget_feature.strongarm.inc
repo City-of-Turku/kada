@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_widget_feature.strongarm.inc
