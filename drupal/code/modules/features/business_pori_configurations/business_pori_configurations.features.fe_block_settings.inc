@@ -107,8 +107,10 @@ function business_pori_configurations_default_fe_block_settings() {
 
   $export['menu-menu-business-pori-footer-menu-e'] = array(
     'cache' => -1,
+    'custom' => 0,
     'delta' => 'menu-business-pori-footer-menu-e',
     'i18n_block_language' => array(),
+    'i18n_mode' => 0,
     'module' => 'menu',
     'node_types' => array(),
     'pages' => '',
@@ -145,6 +147,8 @@ function business_pori_configurations_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['menu-menu-business-pori-footer-menu-f'] = array(
@@ -195,8 +199,10 @@ function business_pori_configurations_default_fe_block_settings() {
 
   $export['menu-menu-business-pori-main-navigati'] = array(
     'cache' => -1,
+    'custom' => 0,
     'delta' => 'menu-business-pori-main-navigati',
     'i18n_block_language' => array(),
+    'i18n_mode' => 0,
     'module' => 'menu',
     'node_types' => array(),
     'pages' => '',
@@ -233,6 +239,8 @@ function business_pori_configurations_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['menu-menu-business-pori-p-valikko'] = array(
@@ -283,8 +291,10 @@ function business_pori_configurations_default_fe_block_settings() {
 
   $export['menu-menu-business-pori-top-menu-en'] = array(
     'cache' => -1,
+    'custom' => 0,
     'delta' => 'menu-business-pori-top-menu-en',
     'i18n_block_language' => array(),
+    'i18n_mode' => 0,
     'module' => 'menu',
     'node_types' => array(),
     'pages' => '',
@@ -321,6 +331,8 @@ function business_pori_configurations_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
+    'title' => '',
+    'visibility' => 0,
   );
 
   $export['menu-menu-business-pori-top-menu-fi'] = array(
@@ -465,6 +477,144 @@ function business_pori_configurations_default_fe_block_settings() {
     'cache' => -1,
     'custom' => 0,
     'delta' => 44,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'menu_block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
+      'kada' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'visitpori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'visitpori',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['menu_block-47'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 47,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'menu_block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
+      'kada' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'visitpori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'visitpori',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['menu_block-48'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 48,
+    'i18n_block_language' => array(),
+    'i18n_mode' => 0,
+    'module' => 'menu_block',
+    'node_types' => array(),
+    'pages' => '',
+    'roles' => array(),
+    'themes' => array(
+      'businesspori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'businesspori',
+        'weight' => 0,
+      ),
+      'kada' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'kada',
+        'weight' => 0,
+      ),
+      'omega' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'omega',
+        'weight' => 0,
+      ),
+      'seven' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'seven',
+        'weight' => 0,
+      ),
+      'visitpori' => array(
+        'region' => '',
+        'status' => 0,
+        'theme' => 'visitpori',
+        'weight' => 0,
+      ),
+    ),
+    'title' => '',
+    'visibility' => 0,
+  );
+
+  $export['menu_block-49'] = array(
+    'cache' => -1,
+    'custom' => 0,
+    'delta' => 49,
     'i18n_block_language' => array(),
     'i18n_mode' => 0,
     'module' => 'menu_block',
