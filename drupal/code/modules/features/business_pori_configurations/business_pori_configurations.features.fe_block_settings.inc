@@ -107,10 +107,8 @@ function business_pori_configurations_default_fe_block_settings() {
 
   $export['menu-menu-business-pori-footer-menu-e'] = array(
     'cache' => -1,
-    'custom' => 0,
     'delta' => 'menu-business-pori-footer-menu-e',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
     'module' => 'menu',
     'node_types' => array(),
     'pages' => '',
@@ -147,8 +145,6 @@ function business_pori_configurations_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
-    'visibility' => 0,
   );
 
   $export['menu-menu-business-pori-footer-menu-f'] = array(
@@ -199,10 +195,8 @@ function business_pori_configurations_default_fe_block_settings() {
 
   $export['menu-menu-business-pori-main-navigati'] = array(
     'cache' => -1,
-    'custom' => 0,
     'delta' => 'menu-business-pori-main-navigati',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
     'module' => 'menu',
     'node_types' => array(),
     'pages' => '',
@@ -239,8 +233,6 @@ function business_pori_configurations_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
-    'visibility' => 0,
   );
 
   $export['menu-menu-business-pori-p-valikko'] = array(
@@ -291,10 +283,8 @@ function business_pori_configurations_default_fe_block_settings() {
 
   $export['menu-menu-business-pori-top-menu-en'] = array(
     'cache' => -1,
-    'custom' => 0,
     'delta' => 'menu-business-pori-top-menu-en',
     'i18n_block_language' => array(),
-    'i18n_mode' => 0,
     'module' => 'menu',
     'node_types' => array(),
     'pages' => '',
@@ -331,8 +321,6 @@ function business_pori_configurations_default_fe_block_settings() {
         'weight' => 0,
       ),
     ),
-    'title' => '',
-    'visibility' => 0,
   );
 
   $export['menu-menu-business-pori-top-menu-fi'] = array(

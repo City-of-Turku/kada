@@ -203,15 +203,78 @@ function business_pori_configurations_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'menu_block_48_admin_title';
+  $strongarm->value = 'Business Pori - main menu block - EN - Dont take to feature';
+  $export['menu_block_48_admin_title'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_block_48_depth';
+  $strongarm->value = '3';
+  $export['menu_block_48_depth'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_block_48_depth_relative';
+  $strongarm->value = 0;
+  $export['menu_block_48_depth_relative'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_block_48_expanded';
+  $strongarm->value = 1;
+  $export['menu_block_48_expanded'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_block_48_follow';
+  $strongarm->value = 0;
+  $export['menu_block_48_follow'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_block_48_level';
+  $strongarm->value = '1';
+  $export['menu_block_48_level'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_block_48_parent';
+  $strongarm->value = 'menu-business-pori-main-navigati:0';
+  $export['menu_block_48_parent'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_block_48_sort';
+  $strongarm->value = 0;
+  $export['menu_block_48_sort'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'menu_block_48_title_link';
+  $strongarm->value = 0;
+  $export['menu_block_48_title_link'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_49_admin_title';
-  $strongarm->value = 'Business Pori EN - footer menu block - EN';
+  $strongarm->value = 'Business Pori - footer menu block - EN - Dont take to feature';
   $export['menu_block_49_admin_title'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_49_depth';
-  $strongarm->value = '0';
+  $strongarm->value = '1';
   $export['menu_block_49_depth'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -225,7 +288,7 @@ function business_pori_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_49_expanded';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['menu_block_49_expanded'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -253,7 +316,7 @@ function business_pori_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_49_sort';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['menu_block_49_sort'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -267,14 +330,14 @@ function business_pori_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_50_admin_title';
-  $strongarm->value = 'Business Pori EN - main menu block - EN';
+  $strongarm->value = 'Business Pori - top menu block - EN - Dont take to feature';
   $export['menu_block_50_admin_title'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_50_depth';
-  $strongarm->value = '3';
+  $strongarm->value = '1';
   $export['menu_block_50_depth'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -309,7 +372,7 @@ function business_pori_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_50_parent';
-  $strongarm->value = 'menu-business-pori-main-navigati:0';
+  $strongarm->value = 'menu-business-pori-top-menu-en:0';
   $export['menu_block_50_parent'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -325,69 +388,6 @@ function business_pori_configurations_strongarm() {
   $strongarm->name = 'menu_block_50_title_link';
   $strongarm->value = 0;
   $export['menu_block_50_title_link'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_block_51_admin_title';
-  $strongarm->value = 'Business Pori EN - top menu block - EN';
-  $export['menu_block_51_admin_title'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_block_51_depth';
-  $strongarm->value = '1';
-  $export['menu_block_51_depth'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_block_51_depth_relative';
-  $strongarm->value = 0;
-  $export['menu_block_51_depth_relative'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_block_51_expanded';
-  $strongarm->value = 1;
-  $export['menu_block_51_expanded'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_block_51_follow';
-  $strongarm->value = 0;
-  $export['menu_block_51_follow'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_block_51_level';
-  $strongarm->value = '1';
-  $export['menu_block_51_level'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_block_51_parent';
-  $strongarm->value = 'menu-business-pori-top-menu-en:0';
-  $export['menu_block_51_parent'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_block_51_sort';
-  $strongarm->value = 0;
-  $export['menu_block_51_sort'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_block_51_title_link';
-  $strongarm->value = 0;
-  $export['menu_block_51_title_link'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
