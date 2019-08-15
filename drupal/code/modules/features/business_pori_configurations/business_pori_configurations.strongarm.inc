@@ -309,7 +309,7 @@ function business_pori_configurations_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_46_parent';
-  $strongarm->value = 'menu-business-pori-p-valikko:0';
+  $strongarm->value = 'menu-business-pori-main-navigati:0';
   $export['menu_block_46_parent'] = $strongarm;
 
   $strongarm = new stdClass();
