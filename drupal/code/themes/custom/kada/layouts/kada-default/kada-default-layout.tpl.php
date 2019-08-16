@@ -31,10 +31,6 @@
           <?php print $messages; ?>
         </div>
       <?php endif; ?>
-
-      <?php if ($tabs): ?>
-        <nav class="tabs"><?php print render($tabs); ?></nav>
-      <?php endif; ?>
         <div class="l-branding">
           <div class="l-branding__container l-branding-inner">
             <?php if($site_name OR $site_slogan): ?>
@@ -113,6 +109,10 @@
         <?php if ($page['highlighted']): ?>
           <div class="highlight-overlay-container">
         <?php endif; ?>
+
+          <?php if ($tabs): ?>
+            <nav class="tabs"><?php print render($tabs); ?></nav>
+          <?php endif; ?>
 
           <?php print render($page['help']); ?>
 

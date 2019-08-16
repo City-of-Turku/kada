@@ -18,15 +18,13 @@
     <div class="page-header__top">
       <div class="l-branding">
         <div class="container l-branding__container l-branding-inner">
+
           <?php if ($messages): ?>
             <div class="drupal-messages">
               <?php print $messages; ?>
             </div>
           <?php endif; ?>
-
-          <?php if ($tabs): ?>
-            <nav class="tabs"><?php print render($tabs); ?></nav>
-          <?php endif; ?>
+          
           <?php if($site_name OR $site_slogan): ?>
           <div class="site-branding site-branding--header l-region l-region--logo">
             <?php if($site_name): ?>
@@ -113,6 +111,10 @@
     <a id="main-content" tabindex="-1"></a>
     <div id="content" class="content l-content">
       <div class="container page-main__container content__container">
+
+        <?php if ($tabs): ?>
+          <nav class="tabs"><?php print render($tabs); ?></nav>
+        <?php endif; ?>
 
         <?php print render($page['help']); ?>
 
