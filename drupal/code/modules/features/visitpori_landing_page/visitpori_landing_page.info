@@ -9,6 +9,7 @@ dependencies[] = ds
 dependencies[] = features
 dependencies[] = kada_export_feature
 dependencies[] = kada_landing_page_feature
+dependencies[] = kada_sections_feature
 dependencies[] = og
 dependencies[] = pori_configuration
 dependencies[] = pori_configuration_overrides_feature

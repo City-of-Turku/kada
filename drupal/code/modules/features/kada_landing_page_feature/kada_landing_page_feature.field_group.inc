@@ -25,11 +25,11 @@ function kada_landing_page_feature_field_group_info() {
     'weight' => '0',
     'children' => array(
       0 => 'field_district',
-      1 => 'field_main_image',
-      2 => 'field_related_content',
-      3 => 'field_target_audience',
-      4 => 'field_topic',
-      5 => 'field_keywords',
+      1 => 'field_keywords',
+      2 => 'field_main_image',
+      3 => 'field_related_content',
+      4 => 'field_target_audience',
+      5 => 'field_topic',
       6 => 'language',
       7 => 'title',
     ),
@@ -48,6 +48,33 @@ function kada_landing_page_feature_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_liftups_1_3x4|node|landing_page|form';
+  $field_group->group_name = 'group_liftups_1_3x4';
+  $field_group->entity_type = 'node';
+  $field_group->bundle = 'landing_page';
+  $field_group->mode = 'form';
+  $field_group->parent_name = '';
+  $field_group->data = array(
+    'label' => 'Liftups - 1-3x4',
+    'weight' => '1',
+    'children' => array(
+      0 => 'field_liftup_1_3x4',
+    ),
+    'format_type' => 'tab',
+    'format_settings' => array(
+      'formatter' => 'closed',
+      'instance_settings' => array(
+        'description' => '',
+        'classes' => 'group-liftups-1-3x4 field-group-tab',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_liftups_1_3x4|node|landing_page|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_recommended_links|node|landing_page|form';
   $field_group->group_name = 'group_recommended_links';
   $field_group->entity_type = 'node';
@@ -56,7 +83,7 @@ function kada_landing_page_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Recommended links',
-    'weight' => '2',
+    'weight' => '3',
     'children' => array(
       0 => 'field_link_to_content_multiple',
     ),
@@ -83,7 +110,7 @@ function kada_landing_page_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Widgets',
-    'weight' => '1',
+    'weight' => '2',
     'children' => array(
       0 => 'field_feed_tabs',
       1 => 'field_widget_before_content',
@@ -103,6 +130,7 @@ function kada_landing_page_feature_field_group_info() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Content');
+  t('Liftups - 1-3x4');
   t('Recommended links');
   t('Widgets');
 
