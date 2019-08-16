@@ -489,7 +489,6 @@ features[variable][] = menu_block_9_level
 features[variable][] = menu_block_9_parent
 features[variable][] = menu_block_9_sort
 features[variable][] = menu_block_9_title_link
-features[variable][] = menu_block_ids
 features[variable][] = menu_block_menu_order
 features[variable][] = menu_expanded
 features[variable][] = menu_options_webform

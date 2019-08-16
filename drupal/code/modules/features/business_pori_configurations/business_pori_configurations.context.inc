@@ -73,9 +73,9 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'navigation_top',
           'weight' => '-10',
         ),
-        'menu_block-47' => array(
+        'menu_block-45' => array(
           'module' => 'menu_block',
-          'delta' => '47',
+          'delta' => '45',
           'region' => 'navigation_top',
           'weight' => '-9',
         ),
@@ -109,9 +109,9 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'footer',
           'weight' => '-10',
         ),
-        'menu_block-45' => array(
+        'menu_block-47' => array(
           'module' => 'menu_block',
-          'delta' => '45',
+          'delta' => '47',
           'region' => 'footer',
           'weight' => '-9',
         ),
@@ -553,25 +553,25 @@ function business_pori_configurations_context_default_contexts() {
           'module' => 'menu_block',
           'delta' => '42',
           'region' => 'navigation_top',
-          'weight' => '-10',
+          'weight' => '-8',
         ),
-        'menu_block-47' => array(
+        'menu_block-45' => array(
           'module' => 'menu_block',
-          'delta' => '47',
+          'delta' => '45',
           'region' => 'navigation_top',
-          'weight' => '-9',
+          'weight' => '-7',
         ),
         'menu_block-43' => array(
           'module' => 'menu_block',
           'delta' => '43',
           'region' => 'navigation',
-          'weight' => '-10',
+          'weight' => '-8',
         ),
         'menu_block-46' => array(
           'module' => 'menu_block',
           'delta' => '46',
           'region' => 'navigation',
-          'weight' => '-9',
+          'weight' => '-7',
         ),
       ),
     ),
