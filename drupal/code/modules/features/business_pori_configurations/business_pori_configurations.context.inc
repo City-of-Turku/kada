@@ -213,7 +213,7 @@ function business_pori_configurations_context_default_contexts() {
           'module' => 'views',
           'delta' => 'kada_section_footer-block_1',
           'region' => 'footer',
-          'weight' => '-10',
+          'weight' => '0',
         ),
       ),
     ),
