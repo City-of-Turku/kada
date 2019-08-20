@@ -209,6 +209,12 @@ function kada_liftups_feature_strongarm() {
       'small_liftup_banner' => array(
         'custom_settings' => TRUE,
       ),
+      'waste_map' => array(
+        'custom_settings' => FALSE,
+      ),
+      'waste_search' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

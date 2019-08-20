@@ -526,7 +526,7 @@ function pori_configuration_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 18,
       ),
       'event_top_carousel' => array(
         'label' => 'above',
