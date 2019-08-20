@@ -177,7 +177,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -296,7 +296,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -324,7 +324,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 17,
+        'weight' => 16,
       ),
       'event_top_carousel' => array(
         'label' => 'above',
@@ -451,7 +451,7 @@ function kada_liftups_feature_field_default_field_instances() {
       'module' => 'multiple_selects',
       'settings' => array(),
       'type' => 'multiple_selects',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -537,7 +537,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -656,7 +656,7 @@ function kada_liftups_feature_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -764,7 +764,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'use_geocoder' => 1,
       ),
       'type' => 'geofield_openlayers',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -876,7 +876,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'context' => 'sdl_editor_representation',
       ),
       'type' => 'atom_reference_textfield',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -972,7 +972,80 @@ function kada_liftups_feature_field_default_field_instances() {
         'context' => 'sdl_editor_representation',
       ),
       'type' => 'atom_reference_textfield',
-      'weight' => 14,
+      'weight' => 15,
+    ),
+  );
+
+  // Exported field_instance: 'node-liftup-field_small_liftup_banner_color'.
+  $field_instances['node-liftup-field_small_liftup_banner_color'] = array(
+    'bundle' => 'liftup',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'You can change the background color of the link in banner by choosing one below. If you pick N/A then the default blue is used.',
+    'display' => array(
+      'carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'current' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
+      ),
+      'event_top_carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_small_liftup_banner_color',
+    'label' => 'Small liftup banner color',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 8,
     ),
   );
 
@@ -1253,7 +1326,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -1380,7 +1453,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -1483,7 +1556,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'module' => 'og_ui',
         'settings' => array(),
         'type' => 'og_list_default',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'event_top_carousel' => array(
         'label' => 'above',
@@ -1594,6 +1667,7 @@ function kada_liftups_feature_field_default_field_instances() {
   t('Secondary image');
   t('Secondary image to be displayed eg. in Carousel caption');
   t('Short description which might float over the image for example. Is not linked to anything by default.');
+  t('Small liftup banner color');
   t('Target audience');
   t('Target audience is not visible in the liftup, but is used to control in which landing page the liftup is visible.');
   t('Theme');
@@ -1601,6 +1675,7 @@ function kada_liftups_feature_field_default_field_instances() {
   t('Vignette');
   t('Visible title');
   t('Visitpori theme');
+  t('You can change the background color of the link in banner by choosing one below. If you pick N/A then the default blue is used.');
 
   return $field_instances;
 }
