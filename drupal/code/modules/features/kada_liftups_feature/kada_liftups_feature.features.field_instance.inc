@@ -979,9 +979,10 @@ function kada_liftups_feature_field_default_field_instances() {
   // Exported field_instance: 'node-liftup-field_small_liftup_banner_color'.
   $field_instances['node-liftup-field_small_liftup_banner_color'] = array(
     'bundle' => 'liftup',
-    'default_value' => array(),
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'You can change the background color of the link in banner by choosing one below. If you pick N/A then the default blue is used.',
+    'description' => 'ONLY TO BE USED FOR "SMALL LIFTUP BANNER" -liftups.
+You can change the background color of the link in banner by choosing one below. If you pick N/A then the default blue is used.',
     'display' => array(
       'carousel' => array(
         'label' => 'above',
@@ -1667,6 +1668,8 @@ function kada_liftups_feature_field_default_field_instances() {
   t('Keywords are not visible in the liftup, but is used to control in which landing page the liftup is visible.');
   t('Link to content');
   t('Location');
+  t('ONLY TO BE USED FOR "SMALL LIFTUP BANNER" -liftups.
+You can change the background color of the link in banner by choosing one below. If you pick N/A then the default blue is used.');
   t('Secondary image');
   t('Secondary image to be displayed eg. in Carousel caption');
   t('Short description which might float over the image for example. Is not linked to anything by default.');
@@ -1678,7 +1681,6 @@ function kada_liftups_feature_field_default_field_instances() {
   t('Vignette');
   t('Visible title');
   t('Visitpori theme');
-  t('You can change the background color of the link in banner by choosing one below. If you pick N/A then the default blue is used.');
 
   return $field_instances;
 }
