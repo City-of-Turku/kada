@@ -979,7 +979,7 @@ function kada_liftups_feature_field_default_field_instances() {
   // Exported field_instance: 'node-liftup-field_small_liftup_banner_color'.
   $field_instances['node-liftup-field_small_liftup_banner_color'] = array(
     'bundle' => 'liftup',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => 'You can change the background color of the link in banner by choosing one below. If you pick N/A then the default blue is used.',
     'display' => array(
@@ -997,9 +997,10 @@ function kada_liftups_feature_field_default_field_instances() {
       ),
       'default' => array(
         'label' => 'above',
+        'module' => 'list',
         'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 17,
+        'type' => 'list_default',
+        'weight' => 19,
       ),
       'event_top_carousel' => array(
         'label' => 'above',
@@ -1043,8 +1044,10 @@ function kada_liftups_feature_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
       'weight' => 8,
     ),
   );
