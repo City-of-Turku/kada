@@ -51,9 +51,9 @@ function kada_liftups_feature_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        1 => 'Pori Orange',
-        2 => 'Pori Green',
-        3 => 'Pori Red',
+        1 => 'Yellow/Orange',
+        2 => 'Green',
+        3 => 'Red',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
