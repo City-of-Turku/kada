@@ -114,11 +114,11 @@
 // Rewrite color if given on liftup.
 .small-liftup-pori-orange {
   .field--name-field-link-to-content {
-    background-color: $banner-small-liftups-orange;
+    background-color: $yellow;
     &:hover,
     &:active,
     &:focus {
-      background-color: $banner-small-liftups-orange-hover;
+      background-color: $orange;
     }
   }
   .field--name-field-main-image {
@@ -126,18 +126,18 @@
     &:active,
     &:focus {
       + .field--name-field-link-to-content {
-        background-color: $banner-small-liftups-orange-hover;
+        background-color: $orange;
       }
     }
   }
 }
 .small-liftup-pori-green {
   .field--name-field-link-to-content {
-    background-color: $banner-small-liftups-green;
+    background-color: $green;
     &:hover,
     &:active,
     &:focus {
-      background-color: $banner-small-liftups-green-hover;
+      background-color: $green-dark;
     }
   }
   .field--name-field-main-image {
@@ -145,18 +145,18 @@
     &:active,
     &:focus {
       + .field--name-field-link-to-content {
-        background-color: $banner-small-liftups-green-hover;
+        background-color: $green-dark;
       }
     }
   }
 }
 .small-liftup-pori-red {
   .field--name-field-link-to-content {
-    background-color: $banner-small-liftups-red;
+    background-color: $red-light;
     &:hover,
     &:active,
     &:focus {
-      background-color: $banner-small-liftups-red-hover;
+      background-color: $red;
     }
   }
   .field--name-field-main-image {
@@ -164,7 +164,7 @@
     &:active,
     &:focus {
       + .field--name-field-link-to-content {
-        background-color: $banner-small-liftups-red-hover;
+        background-color: $red;
       }
     }
   }
