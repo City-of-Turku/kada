@@ -637,7 +637,7 @@ function pori_configuration_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 22,
       ),
       'live_results_search' => array(
         'label' => 'above',

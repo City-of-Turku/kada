@@ -837,3 +837,9 @@ function kadaprofile_update_7135() {
   module_enable($modules, $enable_dependencies);
 
 }
+
+function kadaprofile_update_7136() {
+  $modules = array('sharethis');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}

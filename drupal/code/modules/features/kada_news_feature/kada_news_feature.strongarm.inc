@@ -230,7 +230,7 @@ function kada_news_feature_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => 24,
+            'weight' => '25',
             'visible' => FALSE,
           ),
           'main_news_wide' => array(
@@ -252,7 +252,7 @@ function kada_news_feature_strongarm() {
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => 26,
+            'weight' => '27',
             'visible' => FALSE,
           ),
           'main_news' => array(
@@ -270,6 +270,12 @@ function kada_news_feature_strongarm() {
           'search_result' => array(
             'weight' => '20',
             'visible' => FALSE,
+          ),
+        ),
+        'sharethis' => array(
+          'full' => array(
+            'weight' => '5',
+            'visible' => TRUE,
           ),
         ),
       ),
