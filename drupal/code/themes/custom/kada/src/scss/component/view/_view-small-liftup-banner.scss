@@ -112,7 +112,7 @@
   }
 }
 // Rewrite color if given on liftup.
-.small-liftup-pori-orange {
+.small-liftup-banner__item.small-liftup-pori-orange {
   .field--name-field-link-to-content {
     background-color: $yellow;
     &:hover,
@@ -131,7 +131,7 @@
     }
   }
 }
-.small-liftup-pori-green {
+.small-liftup-banner__item.small-liftup-pori-green {
   .field--name-field-link-to-content {
     background-color: $green;
     &:hover,
@@ -150,7 +150,7 @@
     }
   }
 }
-.small-liftup-pori-red {
+.small-liftup-banner__item.small-liftup-pori-red {
   .field--name-field-link-to-content {
     background-color: $red-light;
     &:hover,
