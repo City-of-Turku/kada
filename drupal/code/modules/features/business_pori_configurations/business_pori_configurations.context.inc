@@ -149,6 +149,7 @@ function business_pori_configurations_context_default_contexts() {
     'path' => array(
       'values' => array(
         '<front>' => '<front>',
+        'en/<front>' => 'en/<front>',
       ),
     ),
   );
