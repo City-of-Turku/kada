@@ -14,7 +14,7 @@ function pori_configuration_metatag_export_default() {
   // Exported Metatag config instance: global:pori_fi frontpage.
   $config['global:pori_fi frontpage'] = array(
     'instance' => 'global:pori_fi frontpage',
-    'disabled' => FALSE,
+    'disabled' => TRUE,
     'config' => array(
       'title' => array(
         'value' => '[site:name]',
@@ -37,7 +37,7 @@ function pori_configuration_metatag_export_default() {
   // Exported Metatag config instance: global:visitpori_fi frontpage.
   $config['global:visitpori_fi frontpage'] = array(
     'instance' => 'global:visitpori_fi frontpage',
-    'disabled' => FALSE,
+    'disabled' => TRUE,
     'config' => array(
       'title' => array(
         'value' => 'Visit Pori | Pori area travel information',

@@ -146,7 +146,7 @@ function kada_configuration_feature_metatag_export_default() {
   // Exported Metatag config instance: global:frontpage.
   $config['global:frontpage'] = array(
     'instance' => 'global:frontpage',
-    'disabled' => FALSE,
+    'disabled' => TRUE,
     'config' => array(
       'title' => array(
         'value' => '[site:name]',
