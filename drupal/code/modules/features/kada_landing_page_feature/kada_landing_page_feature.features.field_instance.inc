@@ -193,7 +193,7 @@ function kada_landing_page_feature_field_default_field_instances() {
     'bundle' => 'landing_page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Be mindful that every liftup needs IMAGE to work properly.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -568,6 +568,7 @@ function kada_landing_page_feature_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Be mindful that every liftup needs IMAGE to work properly.');
   t('Choose one keyword which is used for showing other content tagged with the same keyword on this landing page');
   t('Comment');
   t('District');
