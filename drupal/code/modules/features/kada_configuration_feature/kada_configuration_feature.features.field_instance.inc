@@ -16,7 +16,7 @@ function kada_configuration_feature_field_default_field_instances() {
     'bundle' => 'page',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Be mindful that every liftup needs IMAGE to work properly.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -713,6 +713,7 @@ function kada_configuration_feature_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
+  t('Be mindful that every liftup needs IMAGE to work properly.');
   t('Body');
   t('Code that identifies this entity in MDS, so Drupal entity can be linked to an MDS entity.');
   t('Color name');
