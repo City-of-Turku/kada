@@ -38,7 +38,7 @@ function kada_page_feature_field_formatter_info() {
     'link_to_search' => array(
       'label' => t('Link to search page'),
       'field types' => array('taxonomy_term_reference'),
-    )   
+    )
   );
 }
 
@@ -122,9 +122,26 @@ function kada_page_feature_field_formatter_view($entity_type, $node, $field, $in
     foreach ($items as $delta => $item) {
       $tid = $item['tid'];
       $term = taxonomy_term_load($tid);
-      $result[$delta] = array('#markup' => '<a href="' . $base_url . '/search/keyword/' . $tid . '">' . $term->name . '</a>');  
+      $result[$delta] = array('#markup' => '<a href="' . $base_url . '/search/keyword/' . $tid . '">' . $term->name . '</a>');
     }
   }
-  
+
   return $result;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function kada_page_feature_form_alter(&$form, &$form_state, $form_id) {
+  $node_forms = array(
+    'page_node_form',
+  );
+  // Set of page nids that are used to front pages.
+  $frontpage_nids = ['125', '126'];
+  // If page form but not front page NID then don't show 1-3x4 fieldgroup.
+  if (in_array($form_id, $node_forms) && !in_array($form['nid']['#value'], $frontpage_nids)) {
+    unset($form['#groups']['group_liftups_1_3x4']);
+    unset($form['#fieldgroups']['group_liftups_1_3x4']);
+    unset($form['field_liftup_1_3x4']);
+  }
 }
