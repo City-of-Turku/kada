@@ -13,7 +13,7 @@ function pori_liftups_preprocess_node($variables) {
 
     if(isset($variables['field_small_liftup_banner_color'][LANGUAGE_NONE][0]['value'])) {
       if($variables['field_small_liftup_banner_color'][LANGUAGE_NONE][0]['value'] === '1') {
-        $variables['classes_array'][] = 'small-liftup-pori-orange';
+        $variables['classes_array'][] = 'small-liftup-pori-black';
       }
       else if($variables['field_small_liftup_banner_color'][LANGUAGE_NONE][0]['value'] === '2') {
         $variables['classes_array'][] = 'small-liftup-pori-green';
@@ -22,6 +22,6 @@ function pori_liftups_preprocess_node($variables) {
         $variables['classes_array'][] = 'small-liftup-pori-red';
       }
     }
-    
+
   }
 }
