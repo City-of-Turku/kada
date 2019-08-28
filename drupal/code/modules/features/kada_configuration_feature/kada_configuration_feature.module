@@ -34,7 +34,8 @@ function kada_configuration_feature_init() {
     }
     if($redirect) {
       // Temporary redirect.
-      drupal_goto('page-not-translated', array(), 307);
+      drupal_set_message(t('The page you were looking for doesn\'t have translation yet.'), 'warning');
+      drupal_goto('', array(), 307);
     }
   }
 }

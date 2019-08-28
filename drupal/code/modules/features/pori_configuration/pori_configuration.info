@@ -138,6 +138,7 @@ features[variable][] = pathauto_node_news_item_de_pattern
 features[variable][] = pathauto_node_page_de_pattern
 features[variable_realm][] = domain:pori_fi
 features[vef_video_styles][] = pori_default_style
+features[views_view][] = entity_delete_log_pori
 features[views_view][] = pori_main_image_for_page
 features[views_view][] = pori_place_map
 features_exclude[dependencies][block] = block

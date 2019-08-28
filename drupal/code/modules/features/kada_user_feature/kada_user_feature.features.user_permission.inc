@@ -278,7 +278,9 @@ function kada_user_feature_user_default_permissions() {
   // Exported permission: 'administer content translations'.
   $permissions['administer content translations'] = array(
     'name' => 'administer content translations',
-    'roles' => array(),
+    'roles' => array(
+      'admin' => 'admin',
+    ),
     'module' => 'i18n_node',
   );
 
