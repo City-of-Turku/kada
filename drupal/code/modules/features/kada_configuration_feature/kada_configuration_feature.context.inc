@@ -105,6 +105,12 @@ function kada_configuration_feature_context_default_contexts() {
   $context->description = 'This context is triggered on the site main front page';
   $context->tag = 'front page';
   $context->conditions = array(
+    'context' => array(
+      'values' => array(
+        '~visitpori_domain' => '~visitpori_domain',
+        '~businesspori_domain' => '~businesspori_domain',
+      ),
+    ),
     'node' => array(
       'values' => array(
         'page' => 'page',
@@ -207,23 +213,24 @@ function kada_configuration_feature_context_default_contexts() {
         'person_list' => 'person_list',
         'search_page' => 'search_page',
         'visitpori_domain' => 'visitpori_domain',
+        'businesspori_domain' => 'businesspori_domain',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'locale-language' => array(
-          'module' => 'locale',
-          'delta' => 'language',
-          'region' => 'branding',
-          'weight' => -9,
-        ),
         'views--exp-main_search-page' => array(
           'module' => 'views',
           'delta' => '-exp-main_search-page',
           'region' => 'branding',
-          'weight' => -10,
+          'weight' => '-10',
+        ),
+        'locale-language' => array(
+          'module' => 'locale',
+          'delta' => 'language',
+          'region' => 'branding',
+          'weight' => '-9',
         ),
       ),
     ),
