@@ -66,14 +66,14 @@ function kada_news_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 4,
+        'weight' => 3,
       ),
       'live_results_search' => array(
         'label' => 'above',
@@ -179,7 +179,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 37,
+        'weight' => 39,
       ),
       'full' => array(
         'label' => 'above',
@@ -291,7 +291,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 28,
       ),
       'full' => array(
         'label' => 'above',
@@ -359,7 +359,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 30,
       ),
       'full' => array(
         'label' => 'above',
@@ -451,7 +451,7 @@ function kada_news_feature_field_default_field_instances() {
           'override' => 0,
         ),
         'type' => 'full',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -461,7 +461,7 @@ function kada_news_feature_field_default_field_instances() {
           'override' => 0,
         ),
         'type' => 'content_full',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'live_results_search' => array(
         'label' => 'above',
@@ -552,7 +552,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 33,
       ),
       'full' => array(
         'label' => 'above',
@@ -956,7 +956,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 33,
+        'weight' => 35,
       ),
       'full' => array(
         'label' => 'above',
@@ -1032,7 +1032,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 38,
       ),
       'full' => array(
         'label' => 'above',
@@ -1130,7 +1130,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 34,
       ),
       'full' => array(
         'label' => 'above',
@@ -1216,7 +1216,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 35,
+        'weight' => 37,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -1295,7 +1295,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 30,
+        'weight' => 32,
       ),
       'full' => array(
         'label' => 'above',
@@ -1369,7 +1369,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 38,
+        'weight' => 40,
       ),
       'full' => array(
         'label' => 'above',
@@ -1443,7 +1443,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 27,
       ),
       'full' => array(
         'label' => 'above',
@@ -1560,7 +1560,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 29,
+        'weight' => 31,
       ),
       'full' => array(
         'label' => 'above',
@@ -1673,7 +1673,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 29,
       ),
       'full' => array(
         'label' => 'above',
@@ -1741,7 +1741,7 @@ function kada_news_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 36,
       ),
       'full' => array(
         'label' => 'above',
