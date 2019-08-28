@@ -285,6 +285,7 @@ features[variable][] = ds_extras_region_to_block
 features[variable][] = ds_extras_switch_field
 features[variable][] = ds_extras_switch_view_mode
 features[variable][] = ds_extras_vd
+features[variable][] = entity_delete_log_entity_types
 features[variable][] = entity_translation_entity_types
 features[variable][] = entity_translation_revision_enabled
 features[variable][] = entity_translation_settings_taxonomy_term__accessibility
