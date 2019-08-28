@@ -13,7 +13,7 @@ function pori_visitpori_override_feature_language_switch_links_alter(&$result, $
   $current_domain = domain_get_domain();
   $first_path_argument = arg(0);
   $excluded_domains = array(
-    'en' => array('businesspori_fi'),
+    'en' => array(),
     'de' => array('pori_fi', 'businesspori_fi'),
     'sv' => array('pori_fi', 'visitpori_fi', 'businesspori_fi'),
   );

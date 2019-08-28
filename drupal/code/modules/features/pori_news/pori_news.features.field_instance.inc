@@ -36,7 +36,7 @@ function pori_news_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'live_results_search' => array(
         'label' => 'above',
@@ -138,7 +138,7 @@ function pori_news_field_default_field_instances() {
           'view_mode' => 'person_card',
         ),
         'type' => 'entityreference_entity_view',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'live_results_search' => array(
         'label' => 'above',
@@ -218,7 +218,7 @@ function pori_news_field_default_field_instances() {
           'override' => 0,
         ),
         'type' => 'file_linked_title',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'live_results_search' => array(
         'label' => 'above',
