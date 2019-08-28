@@ -111,4 +111,61 @@
     }
   }
 }
-
+// Rewrite color if given on liftup.
+.small-liftup-banner__item.small-liftup-pori-black {
+  .field--name-field-link-to-content {
+    background-color: $banner-small-liftups-grey;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $banner-small-liftups-black-hover;
+    }
+  }
+  .field--name-field-main-image {
+    &:hover,
+    &:active,
+    &:focus {
+      + .field--name-field-link-to-content {
+        background-color: $banner-small-liftups-black-hover;
+      }
+    }
+  }
+}
+.small-liftup-banner__item.small-liftup-pori-green {
+  .field--name-field-link-to-content {
+    background-color: $banner-small-liftups-green;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $banner-small-liftups-green-hover;
+    }
+  }
+  .field--name-field-main-image {
+    &:hover,
+    &:active,
+    &:focus {
+      + .field--name-field-link-to-content {
+        background-color: $banner-small-liftups-green-hover;
+      }
+    }
+  }
+}
+.small-liftup-banner__item.small-liftup-pori-red {
+  .field--name-field-link-to-content {
+    background-color: $banner-small-liftups-red;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $banner-small-liftups-red-hover;
+    }
+  }
+  .field--name-field-main-image {
+    &:hover,
+    &:active,
+    &:focus {
+      + .field--name-field-link-to-content {
+        background-color: $banner-small-liftups-red-hover;
+      }
+    }
+  }
+}

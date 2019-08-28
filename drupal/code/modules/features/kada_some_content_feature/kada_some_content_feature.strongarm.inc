@@ -1708,5 +1708,138 @@ function kada_some_content_feature_strongarm() {
   $strongarm->value = '1';
   $export['scheduler_use_vertical_tabs_social_media_update'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_button_option';
+  $strongarm->value = 'stbc_large';
+  $export['sharethis_button_option'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_event_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'diff_standard' => 0,
+    'live_results_search' => 0,
+    'token' => 0,
+    'accordion' => 0,
+    'carousel' => 0,
+    'current' => 0,
+    'project' => 0,
+    'event_grid_item' => 0,
+    'event_list_item' => 0,
+    'event_map_item' => 0,
+    'event_mosaic_item' => 0,
+    'event_search_result' => 0,
+    'event_tab_list_item' => 0,
+    'event_top_carousel' => 0,
+    'main_news' => 0,
+    'main_news_wide' => 0,
+    'only_title' => 0,
+    'map' => 0,
+    'attraction_card_mosaic_item' => 0,
+    'product' => 0,
+    'person_card' => 0,
+    'small_liftup_banner' => 0,
+    'waste_map' => 0,
+    'waste_search' => 0,
+    'revision' => 0,
+  );
+  $export['sharethis_event_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_news_item_options';
+  $strongarm->value = array(
+    'full' => 0,
+    'teaser' => 0,
+    'rss' => 0,
+    'diff_standard' => 0,
+    'live_results_search' => 0,
+    'token' => 0,
+    'accordion' => 0,
+    'carousel' => 0,
+    'current' => 0,
+    'project' => 0,
+    'event_grid_item' => 0,
+    'event_list_item' => 0,
+    'event_map_item' => 0,
+    'event_mosaic_item' => 0,
+    'event_search_result' => 0,
+    'event_tab_list_item' => 0,
+    'event_top_carousel' => 0,
+    'main_news' => 0,
+    'main_news_wide' => 0,
+    'only_title' => 0,
+    'map' => 0,
+    'attraction_card_mosaic_item' => 0,
+    'product' => 0,
+    'person_card' => 0,
+    'small_liftup_banner' => 0,
+    'waste_map' => 0,
+    'waste_search' => 0,
+    'revision' => 0,
+  );
+  $export['sharethis_news_item_options'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_node_types';
+  $strongarm->value = array(
+    'event' => 'event',
+    'news_item' => 'news_item',
+    'attraction_card' => 0,
+    'blog' => 0,
+    'blog_post' => 0,
+    'feed_import_facebook' => 0,
+    'feed_import_instagram' => 0,
+    'feed_import_twitter' => 0,
+    'feed_import_youtube_channel' => 0,
+    'landing_page' => 0,
+    'liftup' => 0,
+    'page' => 0,
+    'person' => 0,
+    'place' => 0,
+    'position_of_trust' => 0,
+    'section' => 0,
+    'service' => 0,
+    'service_offer' => 0,
+    'social_media_update' => 0,
+    'webform' => 0,
+  );
+  $export['sharethis_node_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_option_extras';
+  $strongarm->value = array(
+    'Google Plus One:plusone' => 0,
+    'Facebook Like:fblike' => 0,
+    'Facebook Recommend:fbrec' => 0,
+    'Facebook Send:fbsend' => 0,
+  );
+  $export['sharethis_option_extras'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_service_option';
+  $strongarm->value = '"Facebook:facebook","Twitter:twitter","LinkedIn:linkedin"';
+  $export['sharethis_service_option'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'sharethis_weight';
+  $strongarm->value = '10';
+  $export['sharethis_weight'] = $strongarm;
+
   return $export;
 }

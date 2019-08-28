@@ -5,7 +5,7 @@
     padding: 0;
     position: relative;
 
-    @media screen and (max-width: $mobile-menu-breakpoint) {
+    @media screen and (max-width: $mobile-menu-breakpoint - $max-width-deduction) {
       border-left: 1px solid $gray-light;
       font-size: 1.1rem;
       line-height: 3.125rem;
@@ -47,10 +47,17 @@
       display: block;
       padding: 0 .5rem;
 
-      @media screen and (min-width: $mobile-menu-breakpoint) {
-        border-left: 0;
-        padding: .5rem .5rem 0 .5rem;
-      }
+    }
+
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      background: $white;
+      border-left: 1px solid $gray-light;
+      display: block;
+      padding: 0 .5rem;
+    }
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      border-left: 0;
+      padding: .5rem .5rem 0 .5rem;
     }
 
     .form-autocomplete,
@@ -85,7 +92,9 @@
     top: .67rem;
     width: 1.863rem;
     z-index: 1;
-
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      display: block;
+    }
     @media screen and (max-width: $mobile-landscape-narrow) {
       right: .988rem;
     }
@@ -154,6 +163,9 @@
 
     &.is-active {
       display: block;
+      @media screen and (min-width: $mobile-menu-breakpoint) {
+        display: none;
+      }
     }
 
     &:hover,
