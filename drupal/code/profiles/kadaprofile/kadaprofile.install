@@ -815,3 +815,14 @@ function kadaprofile_update_7135() {
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables sharethis contrib module.
+ */
+function kadaprofile_update_7136() {
+  $modules = array('sharethis');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}
