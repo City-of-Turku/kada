@@ -274,8 +274,12 @@ function kada_news_feature_strongarm() {
         ),
         'sharethis' => array(
           'full' => array(
-            'weight' => '5',
+            'weight' => '4',
             'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '23',
+            'visible' => FALSE,
           ),
         ),
       ),

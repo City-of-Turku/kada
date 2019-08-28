@@ -461,7 +461,7 @@ function kada_news_feature_field_default_field_instances() {
           'override' => 0,
         ),
         'type' => 'content_full',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'live_results_search' => array(
         'label' => 'above',
