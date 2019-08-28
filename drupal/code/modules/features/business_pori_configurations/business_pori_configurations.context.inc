@@ -149,6 +149,7 @@ function business_pori_configurations_context_default_contexts() {
     'path' => array(
       'values' => array(
         '<front>' => '<front>',
+        'en/<front>' => 'en/<front>',
       ),
     ),
   );
@@ -167,11 +168,17 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'header',
           'weight' => '-9',
         ),
+        'views-89b484a51bf5cdc2db6af339b2d71883' => array(
+          'module' => 'views',
+          'delta' => '89b484a51bf5cdc2db6af339b2d71883',
+          'region' => 'highlighted',
+          'weight' => '-10',
+        ),
         'views-kada_news-block_1' => array(
           'module' => 'views',
           'delta' => 'kada_news-block_1',
           'region' => 'highlighted',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'views-kada_project_liftups-block_1' => array(
           'module' => 'views',
