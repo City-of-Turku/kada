@@ -94,7 +94,7 @@ function kada_page_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Recommended links',
-    'weight' => '5',
+    'weight' => '7',
     'children' => array(
       0 => 'field_link_to_content_multiple',
     ),
@@ -176,7 +176,7 @@ function kada_page_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Unused',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_contact_information',
       1 => 'field_district',
@@ -208,7 +208,7 @@ function kada_page_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Widgets',
-    'weight' => '4',
+    'weight' => '6',
     'children' => array(
       0 => 'field_feed_tabs',
       1 => 'field_theme_main_page',
