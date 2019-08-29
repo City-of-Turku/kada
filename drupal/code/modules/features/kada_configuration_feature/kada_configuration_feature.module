@@ -277,4 +277,13 @@ function kada_configuration_feature_form_alter(&$form, &$form_state, $form_id) {
     // This change was not possible through interface
     $form['menu']['link']['parent']['#default_value'] = 'label_0';
   }
+  $node_forms = array(
+    'landing_page_node_form',
+    'page_node_form',
+    'section_node_form',
+  );
+  if (in_array($form_id, $node_forms)) {
+    // Adding translations to liftup_image description.
+    $form['field_liftup_1_3x4'][LANGUAGE_NONE][0]['field_liftup_image'][LANGUAGE_NONE][0]['sid']['#description'] = t($form['field_liftup_1_3x4'][LANGUAGE_NONE][0]['field_liftup_image'][LANGUAGE_NONE]['#description']);
+  }
 }
