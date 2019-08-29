@@ -283,7 +283,12 @@ function kada_configuration_feature_form_alter(&$form, &$form_state, $form_id) {
     'section_node_form',
   );
   if (in_array($form_id, $node_forms)) {
-    // Adding translations to liftup_image description.
-    $form['field_liftup_1_3x4'][LANGUAGE_NONE][0]['field_liftup_image'][LANGUAGE_NONE][0]['sid']['#description'] = t($form['field_liftup_1_3x4'][LANGUAGE_NONE][0]['field_liftup_image'][LANGUAGE_NONE]['#description']);
+    if (isset($form['field_liftup_1_3x4'][LANGUAGE_NONE]['#max_delta']) && gettype($form['field_liftup_1_3x4'][LANGUAGE_NONE]['#max_delta'])) {
+      $translation = t($form['field_liftup_1_3x4'][LANGUAGE_NONE][0]['field_liftup_image'][LANGUAGE_NONE]['#description']);
+      // Adding translations to liftup_image description.
+      for ($delta=0; $delta <= $form['field_liftup_1_3x4'][LANGUAGE_NONE]['#max_delta']; $delta++) {
+        $form['field_liftup_1_3x4'][LANGUAGE_NONE][$delta]['field_liftup_image'][LANGUAGE_NONE][0]['sid']['#description'] = $translation;
+      }
+    }
   }
 }
