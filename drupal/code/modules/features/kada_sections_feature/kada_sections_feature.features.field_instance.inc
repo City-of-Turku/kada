@@ -125,7 +125,7 @@ function kada_sections_feature_field_default_field_instances() {
     'bundle' => 'field_liftup_1_3x4',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'THIS FIELD is mandatory for liftups to work properly.',
+    'description' => 'THIS FIELD is mandatory for liftups to work properly. Allowed resource format: image',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -923,7 +923,7 @@ function kada_sections_feature_field_default_field_instances() {
   t('Select which tabs will be shown in feed.');
   t('Sharing image');
   t('Site logo');
-  t('THIS FIELD is mandatory for liftups to work properly.');
+  t('THIS FIELD is mandatory for liftups to work properly. Allowed resource format: image');
   t('This image is used for sharing content to social media when the shared content itself has no other image.');
   t('Widgets before content');
   t('section_footer');
