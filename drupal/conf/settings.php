@@ -117,7 +117,7 @@ if (!empty($env) && $env != 'prod') {
 
 # Warden settings.
 # Shared secret between the site and Warden server.
-$conf['warden_token'] = 'aCsTnss8YMAPzU6COnaYKFcr7BTiir';
+$conf['warden_token'] = getenv('WARDEN_TOKEN');
 # Location of your Warden server. No trailing slash.
 $conf['warden_server_host_path'] = 'https://warden.wunder.io';
 # Allow external callbacks to the site. When set to FALSE pressing refresh site data in
