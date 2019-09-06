@@ -109,7 +109,7 @@ $config = array(
      * A possible way to generate a random salt is by running the following command from a unix shell:
      * LC_CTYPE=C tr -c -d '0123456789abcdefghijklmnopqrstuvwxyz' </dev/urandom | dd bs=32 count=1 2>/dev/null;echo
      */
-    'secretsalt' => '10zh8o3bjo279wxjtl3rzrtjn3auw22g',
+    'secretsalt' => getenv('SAML_SECRETSALT'),
 
     /*
      * This password must be kept secret, and modified from the default value 123.
@@ -117,7 +117,7 @@ $config = array(
      * metadata listing and diagnostics pages.
      * You can also put a hash here; run "bin/pwgen.php" to generate one.
      */
-    'auth.adminpassword' => '{SSHA256}nL6CgjTO5xBcPKFzXNLrCpFyY5wEogY5BPUfcIoWwDUaG1mGTWg2FQ==', // REMOVEME: Ex7MRahZ%u3k
+    'auth.adminpassword' => getenv('SAML_ADMINPASS'),
 
     /*
      * Set this options to true if you want to require administrator password to access the web interface

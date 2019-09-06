@@ -190,6 +190,12 @@
         value: "{{ twitter_consumer_key }}"
       - key: "twitter_consumer_secret"
         value: "{{ twitter_consumer_secret }}"
+      - key: "SAML_SECRETSALT"
+        value: "{{ saml_secretsalt }}"
+      - key: "SAML_ADMINPASS"
+        value: "{{ saml_adminpass }}"
+      - key: "WARDEN_TOKEN"
+        value: "{{ warden_token }}"
 
     solr_memory: 512m
     # Project-specific config for search_api_solr 
