@@ -66,7 +66,7 @@ function kada_some_content_feature_settings($form, &$form_state) {
     '#type' => 'fieldset',
     '#description' => 'Provide the Access token and secret values for a Twitter app. The same values will work when reading any public Twitter feed.',
   );
-  $form['kada_some_content_twitter']['kada_some_content_twitter_token'] = array(
+  $form['kada_some_content_twitter']['  kada_some_content_twitter_token'] = array(
     '#title' => t('Access token'),
     '#description' => 'Copy the <em>Access token</em> value from <a href="https://apps.twitter.com/app/APP_ID/keys" target="_blank">Twitter Apps</a>',
     '#type' => 'textfield',
