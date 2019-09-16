@@ -35,7 +35,7 @@ function pori_some_content_entity_presave($entity, $type) {
  */
 function pori_some_content_feeds_before_import(FeedsSource $source) {
   $fetcher = $source->importer->fetcher;
-  if ($fetcher->getConfig()['kada_some_content_feature_get_tokens_twitter'] == 'kada_some_content_feature_get_tokens_twitter') {
+  if ($fetcher->getConfig()['authenticator'] == 'kada_some_content_feature_get_tokens_twitter') {
     $creds = array(
       'consumer_key' => getenv('twitter_consumer_key'),
       'consumer_secret' => getenv('twitter_consumer_secret'),
