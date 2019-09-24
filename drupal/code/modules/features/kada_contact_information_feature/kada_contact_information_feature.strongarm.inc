@@ -421,16 +421,16 @@ function kada_contact_information_feature_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'domain' => array(
-          'weight' => '9',
-        ),
-        'metatags' => array(
-          'weight' => '12',
-        ),
-        'path' => array(
           'weight' => '11',
         ),
+        'metatags' => array(
+          'weight' => '14',
+        ),
+        'path' => array(
+          'weight' => '13',
+        ),
         'redirect' => array(
-          'weight' => '10',
+          'weight' => '12',
         ),
         'language' => array(
           'weight' => '0',
