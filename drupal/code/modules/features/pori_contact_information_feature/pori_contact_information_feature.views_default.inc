@@ -93,6 +93,14 @@ function pori_contact_information_feature_views_default_views() {
     5 => 0,
     6 => 0,
   );
+  /* Filter criterion: Indexed Node: Prevent from appearing in phonebook */
+  $handler->display->display_options['filters']['field_prevent_phonebook']['id'] = 'field_prevent_phonebook';
+  $handler->display->display_options['filters']['field_prevent_phonebook']['table'] = 'search_api_index_pori_person_index';
+  $handler->display->display_options['filters']['field_prevent_phonebook']['field'] = 'field_prevent_phonebook';
+  $handler->display->display_options['filters']['field_prevent_phonebook']['operator'] = '<>';
+  $handler->display->display_options['filters']['field_prevent_phonebook']['value'] = array(
+    1 => '1',
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');

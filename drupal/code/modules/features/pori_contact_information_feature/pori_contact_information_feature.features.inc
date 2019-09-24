@@ -58,6 +58,7 @@ function pori_contact_information_feature_default_search_api_index() {
         "field_employee_title" : { "type" : "text" },
         "field_first_name" : { "type" : "string" },
         "field_mobile_phone_work" : { "type" : "text" },
+        "field_prevent_phonebook" : { "type" : "boolean" },
         "field_surname" : { "type" : "string" },
         "field_unit" : { "type" : "string" },
         "field_visiting_address" : { "type" : "text" },
