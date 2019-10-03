@@ -7,16 +7,21 @@ Fire up the vagrant environment
 
     $ vagrant up
 
-If all goes well you can proceed to creating a new build.
+If all goes well you can proceed to creating a new build
 
-    $ cd drupal
-    $ ./build.sh create
+    $ vagrant ssh
+    $ cd /vagrant/drupal
+    $ ./build.sh new
 
-Synchronise the database from production .
+Synchronise the database from production.
 
     $ cd .. && ./syncdb.sh
 
-Navigate to <https://local.pori.fi>
+If you run into issues during this step, import database manually (get from server, auth from LastPass) and run
+
+    $ ./build.sh update
+
+When you're done, navigate to <https://local.pori.fi>
 
 
 ## Developer notes
