@@ -557,12 +557,16 @@ projects[redis][subdir] = contrib
 ; Patch to support Predis 1.0
 projects[redis][patch][] = "https://www.drupal.org/files/issues/redis-predis-path-183934-19.patch"
 
-projects[relation][version] = 1.1
+projects[relation][version] = 1.2
 projects[relation][subdir] = contrib
 projects[relation][patch][better_rules] = "https://www.drupal.org/files/issues/relation-query_endpoints-1302788-33.patch"
 
-projects[relation_add][version] = 1.6
+;projects[relation_add][version] = 1.6
+projects[relation_add][type] = module
 projects[relation_add][subdir] = contrib
+projects[relation_add][download][type] = "git"
+projects[relation_add][download][url] = "http://git.drupal.org/project/relation_add.git"
+projects[relation_add][download][revision] = "c4072c92db988e9f6ae355fb33ca8a0284fdbef3"
 projects[relation_add][patch][1993738] = "https://www.drupal.org/files/issues/2019-02-05/7.x-1.6-relation-add-weight-1993738-25.patch"
 
 projects[responsive_menus][version] = 1.7
