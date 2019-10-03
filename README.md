@@ -7,13 +7,14 @@ Fire up the vagrant environment
 
     $ vagrant up
 
-If all goes well you can proceed to creating a new build
+If all goes well you can proceed to creating a new build.
 
+Make sure drupal/files directory exists.If not create manualy 
     $ vagrant ssh
     $ cd /vagrant/drupal
     $ ./build.sh new
 
-Synchronise the database from production.
+Synchronise the database from production .
 
     $ cd .. && ./syncdb.sh
 
