@@ -160,7 +160,7 @@ function kada_contact_information_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Details',
-    'weight' => '8',
+    'weight' => '10',
     'children' => array(
       0 => 'group_employee',
       1 => 'group_trustee',
@@ -255,17 +255,16 @@ function kada_contact_information_feature_field_group_info() {
     'label' => 'Employee',
     'weight' => '16',
     'children' => array(
-      0 => 'field_employee_title',
-      1 => 'field_fax_number',
-      2 => 'field_mobile_phone_work',
-      3 => 'field_phone',
-      4 => 'field_phone_switch',
-      5 => 'field_task_description',
-      6 => 'field_visiting_address',
-      7 => 'field_office_tr',
-      8 => 'field_superior',
-      9 => 'field_assistant',
-      10 => 'field_assistant_id',
+      0 => 'field_assistant',
+      1 => 'field_employee_title',
+      2 => 'field_fax_number',
+      3 => 'field_mobile_phone_work',
+      4 => 'field_office_tr',
+      5 => 'field_phone',
+      6 => 'field_phone_switch',
+      7 => 'field_superior',
+      8 => 'field_task_description',
+      9 => 'field_visiting_address',
     ),
     'format_type' => 'htab',
     'format_settings' => array(
@@ -353,10 +352,8 @@ function kada_contact_information_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Information',
-    'weight' => '13',
-    'children' => array(
-      0 => 'field_nc_id',
-    ),
+    'weight' => '15',
+    'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(
       'formatter' => 'closed',
@@ -442,10 +439,10 @@ function kada_contact_information_feature_field_group_info() {
     'weight' => '17',
     'children' => array(
       0 => 'field_mobile_phone',
-      1 => 'field_political_party',
-      2 => 'field_profession',
-      3 => 'field_municipality',
-      4 => 'field_postal_code',
+      1 => 'field_municipality',
+      2 => 'field_political_party',
+      3 => 'field_postal_code',
+      4 => 'field_profession',
       5 => 'field_street_address',
     ),
     'format_type' => 'htab',
