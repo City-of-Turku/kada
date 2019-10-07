@@ -201,6 +201,88 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-feed_import_facebook-field_access_token_fb'.
+  $field_instances['node-feed_import_facebook-field_access_token_fb'] = array(
+    'bundle' => 'feed_import_facebook',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If facebook token is set it is used over old implementation of user ID and Secret (which are derpecated). More info about token generation can be found from <a href=\'https://drive.google.com/file/d/1sDpzqc8CuehE_OVoMYpyg9JE7g38vEbX/view?usp=sharing\' target=_blank>Documentation pdf</a>',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_access_token_fb',
+    'label' => 'Access token FB',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'wysiwyg' => 'wysiwyg',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'full_html' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'wysiwyg' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Etsi',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 0,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-feed_import_facebook-field_district'.
   $field_instances['node-feed_import_facebook-field_district'] = array(
     'bundle' => 'feed_import_facebook',
@@ -3526,6 +3608,7 @@ function kada_some_content_feature_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Access Token');
+  t('Access token FB');
   t('App ID');
   t('App secret');
   t('Body');
@@ -3538,6 +3621,7 @@ function kada_some_content_feature_field_default_field_instances() {
   t('Facebook secret for the app accessing feed content.');
   t('Google API Key');
   t('Groups audience');
+  t('If facebook token is set it is used over old implementation of user ID and Secret (which are derpecated). More info about token generation can be found from <a href=\'https://drive.google.com/file/d/1sDpzqc8CuehE_OVoMYpyg9JE7g38vEbX/view?usp=sharing\' target=_blank>Documentation pdf</a>');
   t('If you don\'t know your user id, use this service to get it for username: <a target="_blank" href="http://jelled.com/instagram/lookup-user-id">http://jelled.com/instagram/lookup-user-id</a>');
   t('Image');
   t('Image URL');
