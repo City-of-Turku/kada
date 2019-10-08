@@ -35,11 +35,11 @@ $main-liftup-content-padding: 20px;
   width: 100%;
 
   @media screen and (min-width: $tablet-portrait) {
-    margin-bottom: .85rem;
+    margin-bottom: 1.563rem;
   }
 
   @media screen and (min-width: $desktop) {
-    width: 49.5%;
+    width: 49.1%;
   }
 }
 
@@ -87,12 +87,7 @@ $main-liftup-content-padding: 20px;
   padding: 0 $container-gutter;
   width: 100%;
 
-  @media screen and (min-width: $mobile-landscape-wide) {
-    padding: 0 $container-gutter * 2;
-  }
-
   @media screen and (min-width: $tablet-portrait) {
-    padding: 0 2rem;
     width: 50%;
   }
 }

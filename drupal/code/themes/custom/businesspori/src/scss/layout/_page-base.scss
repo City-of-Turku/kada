@@ -1,7 +1,7 @@
-.container {
+.container, .l-highlighted .container {
   @include responsive-whitespace;
   margin: 0 auto;
-  max-width: $container-width;
+  max-width: $content-width;
 }
 
 // Front page before content region needs to be relative so that the news archive button can be placed correctly.
