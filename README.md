@@ -1,6 +1,34 @@
 # Pori project
 
-## Vagrant local setup
+## Local environment with Lando
+
+### Setup
+
+1. Install the latest [Lando](https://docs.lando.dev/basics/installation.html) and read the [documentation](https://docs.lando.dev/).
+2. Setup your public key: <https://key.wunder.io> and/or <https://www.ssh.com/ssh/copy-id>.
+3. Check out the repo and go to the project root: `git clone git@github.com:City-of-Pori/pori-kada.git pori && cd pori`
+4. Start the site by running `lando start`.
+5. Import data:
+   1. `lando syncdb <env>` ([set up your public key](https://key.wunder.io) first if needed) or
+   2. `lando db-import <dumpfile>`.
+6. When you're done, navigate to <https://pori.lndo.site>.
+
+### Services
+
+- <https://pori-adminer.lndo.site> - Adminer for database management, log in **without** entering the credentials.
+- <https://pori-mail.lndo.site> - Mailhog for mail management.
+- <https://pori-solr.lndo.site> - Solr for data indexing.
+
+### Tools
+
+Full commands/tools overview is available at `lando`. Custom tools:
+
+- `lando build.sh` - use `build.sh`
+- `lando npm` - use npm
+- `lando syncdb <env>` - synchronise local database with selected environment (`stage` by default, `prod`)
+- `lando update` - update database & enable develpoment components
+
+## Local environment with Vagrant
 
 Fire up the vagrant environment
 

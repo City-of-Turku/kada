@@ -1,0 +1,88 @@
+name: pori
+recipe: drupal7
+config:
+  drush: ^8
+
+services:
+  adminer:
+    type: compose
+    services:
+      image: dehy/adminer
+      command: /bin/s6-svscan /etc/services.d
+    run_as_root:
+        - /app/.lando/adminer.sh
+    portforward: true
+  appserver:
+    type: php:5.6
+    webroot: web
+    config:
+      via: nginx
+    build:
+      - /app/.lando/aliases.sh
+      - /app/build.sh update lando
+    build_as_root:
+      - apt-get update -y && apt-get install python-yaml -y
+    overrides:
+      environment:
+        WKV_SITE_ENV: lando
+        DB_PASS_DRUPAL: drupal7
+        DB_USER_DRUPAL: drupal7
+        DB_HOST_DRUPAL: database
+        DB_NAME_DRUPAL: drupal7
+  database:
+    type: mariadb:10.2
+  mailhog:
+    type: mailhog
+    hogfrom:
+      - appserver
+  memcached:
+    type: memcached
+    mem: 512
+    portforward: 11211
+  node:
+    type: node
+  redis:
+    type: redis
+    portforward: true
+  solr:
+    type: solr:5
+    config:
+      dir: web/sites/all/modules/contrib/search_api_solr/solr-conf/5.x
+
+tooling:
+  build.sh:
+    description: Executes build.sh
+    cmd:
+      - appserver: /app/build.sh
+  drush:
+    description: Runs Drush from webroot
+    cmd:
+      - appserver: /var/www/.composer/vendor/bin/drush --root=/app/web
+  node:
+    service: node
+  npm:
+    service: node
+  syncdb:
+    description: Synchronizes local db with selected env (lando syncdb dev/prod)
+    cmd:
+      - appserver: /app/.lando/syncdb.sh
+      # - appserver: /app/.lando/update.sh
+  update:
+    description: Updates local site with development settings
+    cmd:
+      - appserver: /app/.lando/update.sh
+
+proxy:
+  mailhog:
+    - pori-mail.lndo.site
+  adminer:
+    - pori-adminer.lndo.site
+  solr:
+    - pori-solr.lndo.site:8983
+
+events:
+  post-db-import:
+    - appserver: /app/.lando/update.sh
+
+# Lando version.
+version: v3.0.0-rc.22
