@@ -21,5 +21,3 @@ features[views_view][] = kada_admin_people
 features[wysiwyg][] = full_html
 features[wysiwyg][] = wysiwyg
 features_exclude[dependencies][ctools] = ctools
-features_exclude[filter][wysiwyg] = wysiwyg
-features_exclude[filter][full_html] = full_html
