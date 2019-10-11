@@ -499,30 +499,6 @@ function kada_editorial_tools_feature_views_default_views() {
     7 => 0,
   );
   $handler->display->display_options['filters']['language']['expose']['reduce'] = TRUE;
-  /* Filter criterion: Content: Title (title_field:language) */
-  $handler->display->display_options['filters']['language_1']['id'] = 'language_1';
-  $handler->display->display_options['filters']['language_1']['table'] = 'field_data_title_field';
-  $handler->display->display_options['filters']['language_1']['field'] = 'language';
-  $handler->display->display_options['filters']['language_1']['value'] = array(
-    'en' => 'en',
-    'fi' => 'fi',
-    'sv' => 'sv',
-  );
-  $handler->display->display_options['filters']['language_1']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['language_1']['expose']['operator_id'] = 'language_1_op';
-  $handler->display->display_options['filters']['language_1']['expose']['label'] = 'Translated title language';
-  $handler->display->display_options['filters']['language_1']['expose']['operator'] = 'language_1_op';
-  $handler->display->display_options['filters']['language_1']['expose']['identifier'] = 'language_1';
-  $handler->display->display_options['filters']['language_1']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    4 => 0,
-    5 => 0,
-    3 => 0,
-    6 => 0,
-    7 => 0,
-  );
-  $handler->display->display_options['filters']['language_1']['expose']['reduce'] = TRUE;
   /* Filter criterion: Domain Access: Domain ID */
   $handler->display->display_options['filters']['gid']['id'] = 'gid';
   $handler->display->display_options['filters']['gid']['table'] = 'domain_access';
