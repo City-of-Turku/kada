@@ -323,6 +323,147 @@ function kada_editorial_tools_feature_views_default_views() {
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
+  /* Filter criterion: User: Name */
+  $handler->display->display_options['filters']['uid']['id'] = 'uid';
+  $handler->display->display_options['filters']['uid']['table'] = 'users';
+  $handler->display->display_options['filters']['uid']['field'] = 'uid';
+  $handler->display->display_options['filters']['uid']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['uid']['value'] = '';
+  $handler->display->display_options['filters']['uid']['group'] = 1;
+  $handler->display->display_options['filters']['uid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['uid']['expose']['operator_id'] = 'uid_op';
+  $handler->display->display_options['filters']['uid']['expose']['label'] = 'Author';
+  $handler->display->display_options['filters']['uid']['expose']['operator'] = 'uid_op';
+  $handler->display->display_options['filters']['uid']['expose']['identifier'] = 'author';
+  $handler->display->display_options['filters']['uid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['filters']['type']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
+  $handler->display->display_options['filters']['status_1']['table'] = 'node';
+  $handler->display->display_options['filters']['status_1']['field'] = 'status';
+  $handler->display->display_options['filters']['status_1']['value'] = 'All';
+  $handler->display->display_options['filters']['status_1']['group'] = 1;
+  $handler->display->display_options['filters']['status_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['status_1']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['status_1']['expose']['label'] = 'Published';
+  $handler->display->display_options['filters']['status_1']['expose']['operator'] = 'status_1_op';
+  $handler->display->display_options['filters']['status_1']['expose']['identifier'] = 'status';
+  $handler->display->display_options['filters']['status_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+  );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    'en' => 'en',
+    'fi' => 'fi',
+    'sv' => 'sv',
+  );
+  $handler->display->display_options['filters']['language']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['language']['expose']['operator_id'] = 'language_op';
+  $handler->display->display_options['filters']['language']['expose']['label'] = 'Language';
+  $handler->display->display_options['filters']['language']['expose']['operator'] = 'language_op';
+  $handler->display->display_options['filters']['language']['expose']['identifier'] = 'language';
+  $handler->display->display_options['filters']['language']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+    6 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['language']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Content: Title (title_field:language) */
+  $handler->display->display_options['filters']['language_1']['id'] = 'language_1';
+  $handler->display->display_options['filters']['language_1']['table'] = 'field_data_title_field';
+  $handler->display->display_options['filters']['language_1']['field'] = 'language';
+  $handler->display->display_options['filters']['language_1']['value'] = array(
+    'en' => 'en',
+    'fi' => 'fi',
+    'sv' => 'sv',
+  );
+  $handler->display->display_options['filters']['language_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['language_1']['expose']['operator_id'] = 'language_1_op';
+  $handler->display->display_options['filters']['language_1']['expose']['label'] = 'Translated title language';
+  $handler->display->display_options['filters']['language_1']['expose']['operator'] = 'language_1_op';
+  $handler->display->display_options['filters']['language_1']['expose']['identifier'] = 'language_1';
+  $handler->display->display_options['filters']['language_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    5 => 0,
+    3 => 0,
+    6 => 0,
+    7 => 0,
+  );
+  $handler->display->display_options['filters']['language_1']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Domain Access: Domain ID */
+  $handler->display->display_options['filters']['gid']['id'] = 'gid';
+  $handler->display->display_options['filters']['gid']['table'] = 'domain_access';
+  $handler->display->display_options['filters']['gid']['field'] = 'gid';
+  $handler->display->display_options['filters']['gid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['gid']['expose']['operator_id'] = 'gid_op';
+  $handler->display->display_options['filters']['gid']['expose']['label'] = 'Domain';
+  $handler->display->display_options['filters']['gid']['expose']['operator'] = 'gid_op';
+  $handler->display->display_options['filters']['gid']['expose']['identifier'] = 'gid';
+  $handler->display->display_options['filters']['gid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    4 => 0,
+    8 => 0,
+    3 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
+  );
   $handler->display->display_options['path'] = 'admin/content';
   $handler->display->display_options['menu']['type'] = 'normal';
   $handler->display->display_options['menu']['title'] = 'Content';
@@ -429,6 +570,7 @@ function kada_editorial_tools_feature_views_default_views() {
     t('Edit'),
     t('Translated title language'),
     t('Page'),
+    t('Domain'),
     t('My Content block'),
     t('My Content'),
     t('All'),
