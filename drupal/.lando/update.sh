@@ -12,6 +12,10 @@ local=@pori.local
 chmod -R a+w "$webroot"
 cd "$webroot"
 
+# Enable development and UI modules
+drush "$local" en stage_file_proxy devel update -y
+drush "$local" variable-set stage_file_proxy_origin "https://www.pori.fi"
+
 # Apply any database updates required.
 drush "$local" updatedb -y
 drush "$local" cc drush
@@ -25,10 +29,8 @@ drush "$local" fra -y
 # drush "$local" vset maillog_log 1
 # drush "$local" vset maillog_send 0
 
-# Enable development and UI modules
+# Enable UI modules
 # drush "$local" en field_ui admin_menu devel views_ui context_ui feeds_ui rules_admin dblog field_ui -y
-drush "$local" en stage_file_proxy devel update -y
-drush "$local" variable-set stage_file_proxy_origin "https://www.pori.fi"
 
 # Disable google analytics
 # drush "$local" dis googleanalytics -y
