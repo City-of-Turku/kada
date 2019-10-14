@@ -19,7 +19,10 @@ drush "$local" variable-set stage_file_proxy_origin "https://www.pori.fi"
 # Apply any database updates required.
 drush "$local" updatedb -y
 drush "$local" cc drush
-drush "$local" fra -y
+
+# Revert only selected features for now.
+# drush "$local" fra -y
+drush "$local" fr kada_domains_feature -y
 
 # # Download maillog to prevent emails being sent
 # drush "$local" dl maillog -y
