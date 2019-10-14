@@ -6,12 +6,17 @@
 
 1. Install the latest [Lando](https://docs.lando.dev/basics/installation.html) and read the [documentation](https://docs.lando.dev/).
 2. Setup your public key: <https://key.wunder.io> and/or <https://www.ssh.com/ssh/copy-id>.
-3. Check out the repo and go to the project root: `git clone git@github.com:City-of-Pori/pori-kada.git pori && cd pori`
+3. Check out the repo and go to the project root: `git clone git@github.com:City-of-Pori/pori-kada.git pori && cd pori/drupal`
 4. Start the site by running `lando start`.
 5. Import data:
    1. `lando syncdb <env>` ([set up your public key](https://key.wunder.io) first if needed) or
    2. `lando db-import <dumpfile>`.
-6. When you're done, navigate to <https://pori.lndo.site>.
+
+### Sites
+
+- <https://pori.lndo.site>
+- <https://businesspori.lndo.site>
+- <https://visitpori.lndo.site>
 
 ### Services
 
