@@ -37,9 +37,13 @@ Full commands/tools overview is available at `lando`. Custom tools:
 
 Fire up the vagrant environment
 
-`vagrant up`
+```sh
+vagrant up
+```
 
 Create a new build
+
+Make sure drupal/files directory exists. If not create manually.
 
 ```sh
 vagrant ssh
@@ -47,13 +51,11 @@ cd /vagrant/drupal
 ./build.sh new
 ```
 
-Synchronise the database from production
+Synchronise the database from production.
 
-`cd .. && ./syncdb.sh`
-
-or manually using dumpfile
-
-a) create a dumpfile:
+```sh
+cd .. && ./syncdb.sh
+```
 
 ```sh
 ssh www-admin@pori.prod.wunder.io
@@ -74,15 +76,9 @@ drush fra -y // reverts all features, use when needed
 drush uli --uri=https://local.pori.fi
 ```
 
-Update the site
-
-`./build.sh update`
-
-Local domains:
-
-- <https://local.pori.fi>
-- <https://local.visitpori.fi>
-- <https://local.businesspori.fi>
+```sh
+./build.sh update
+```
 
 ## Developer notes
 
@@ -94,12 +90,7 @@ All new features must be based on the `master` branch.
 All hotfixes must be based on the `production` branch.
 The `develop` branch is used only for testing and must never be merged back to master.
 
-### Tips
-
-- You can use drush aliases to execute drush commands without loggin into the servers or vagrant box. For example `drush @pori.local cc css-js`.
-- Use `en` language while generating features.
-- Use `drush uli` with `--uri` option to get the correct login URL. Works also with subdomains, for example: `drush uli --uri=https://local.businesspori.fi`.
-- Make sure you have assigned all (sub)domains needed in your account (see _Domain access settings_) for the sites functionality to work properly (Scald widget for example).
+Tip: You can use drush aliases to execute drush commands without loggin into the servers or vagrant box. For example `drush @pori.local cc css-js`.
 
 ### Folder structure
 
