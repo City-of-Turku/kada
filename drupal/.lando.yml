@@ -1,6 +1,9 @@
 name: pori
 recipe: drupal7
 config:
+  php: '5.6'
+  via: nginx
+  webroot: web
   drush: ^8
 
 services:
@@ -13,10 +16,6 @@ services:
         - /app/.lando/adminer.sh
     portforward: true
   appserver:
-    type: php:5.6
-    webroot: web
-    config:
-      via: nginx
     build:
       - /app/.lando/aliases.sh
       - /app/build.sh update lando
@@ -73,6 +72,10 @@ tooling:
       - appserver: /app/.lando/update.sh
 
 proxy:
+  appserver_nginx:
+    - pori.lndo.site
+    - businesspori.lndo.site
+    - visitpori.lndo.site
   mailhog:
     - pori-mail.lndo.site
   adminer:
