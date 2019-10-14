@@ -40,9 +40,9 @@ services:
     portforward: 11211
   node:
     type: node
-  redis:
-    type: redis
-    portforward: true
+  # redis:
+  #   type: redis
+  #   portforward: true
   solr:
     type: solr:5
     config:
@@ -87,5 +87,5 @@ events:
   post-db-import:
     - appserver: /app/.lando/update.sh
 
-# Lando version.
+# Tested with Lando version.
 version: v3.0.0-rc.22
