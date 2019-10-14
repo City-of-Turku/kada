@@ -13,14 +13,19 @@ $databases['default']['default'] = array (
 // Generate the hash_salt setting.
 $drupal_hash_salt = md5(getenv('LANDO_HOST_IP'));
 
-$base_url = 'https://pori.lndo.site';
 $conf['stage_file_proxy_origin'] = 'https://www.pori.fi';
+
+$conf['file_temporary_path'] = "/tmp";
 
 // CACHING
 $conf['cache_backends'][] = 'sites/all/modules/contrib/memcache/memcache.inc';
 $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 $conf['cache_default_class'] = 'MemCacheDrupal';
 $conf['memcache_key_prefix'] = 'wk';
+$conf['memcache_servers'] = array (
+  'memcached:11211' => 'default',
+);
+
 // Needed for Predis-1.0 which changed the library paths from 0.8.7
 #define('PREDIS_BASE_PATH', DRUPAL_ROOT . '/sites/all/libraries/predis/src/');
 
@@ -56,12 +61,13 @@ $conf['cache_prefix']['default'] = 'kada_';
 // $conf['varnish_version'] = "4";
 
 $conf['simple_environment_indicator'] = 'DarkGreen Local';
-$conf['file_temporary_path'] = "/tmp";
+
 // $conf['preprocess_css'] = false;
 // $conf['preprocess_js'] = false;
-$conf['googleanalytics_account'] = ''; // Make sure the GA isn't enabled in this env
 
-$conf['simplesamlphp_auth_installdir'] = '/conf/simplesaml';
+// Make sure the GA isn't enabled in this env
+$conf['googleanalytics_account'] = '';
+
 // Override search API server settings fetched from default configuration.
 $conf['search_api_override_mode'] = 'load';
 $conf['search_api_override_servers'] = array(
@@ -79,51 +85,20 @@ $conf['search_api_override_servers'] = array(
     ),
   ),
 );
-$conf['memcache_servers'] = array (
-  'memcached:11211' => 'default',
-);
 
-// This shouldn't be necessary to set. Memcache module is pretty smart in handling bins.
-$conf['memcache_bins'] = array (
-  'cache' => 'default',
-);
-
-/**
- * Add the domain module setup routine.
- */
+// Add the domain module setup routine.
 if (!defined('IS_BE_PROBE') || !IS_BE_PROBE) {
   include DRUPAL_ROOT . '/sites/all/modules/contrib/domain/settings.inc';
 }
 
-$conf['menu_override_parent_selector'] = true;
-
 // Set "domain space" that is necessary to handle redirects between domains
 define('DOMAIN_SPACE', 'pori.lndo.site');
+
+$conf['menu_override_parent_selector'] = true;
 
 // HACK - REMOVE WHEN DOMAIN URLS FOR DIFFERENT ENVS CAN BE DONE PROPERLY
 //define('KADACALENDAR_BASE_URL', 'http://calendar.pori-kada-development.druid.fi/');
 
-// SimpleSAMLphp_auth Login Path
-$conf['simplesamlphp_auth_login_path'] = 'login';
-
-$conf['drupal_http_request_fails'] = FALSE;
-
-/**
- * Tell all Drupal sites that we're running behind an HTTPS proxy.
- */
-
-$conf['reverse_proxy'] = TRUE;
-$conf['reverse_proxy_addresses'] = ['127.0.0.1', 'appserver.pori.internal', 'pori.lndo.site'];
-
-// Force the protocol provided by the proxy. This isn't always done
-// automatically in Drupal 7. Otherwise, you'll get mixed content warnings
-// and/or some assets will be blocked by the browser.
-if (php_sapi_name() != 'cli') {
-  if (isset($_SERVER['SITE_SUBDIR']) && isset($_SERVER['RAW_HOST'])) {
-    // Handle subdirectory mode.
-    $base_url = $_SERVER['HTTP_X_FORWARDED_PROTO'] . '://' . $_SERVER['RAW_HOST'] . '/' . $_SERVER['SITE_SUBDIR'];
-  }
-  else {
-    $base_url = $_SERVER['HTTP_X_FORWARDED_PROTO'] . '://' . $_SERVER['SERVER_NAME'];
-  }
-}
+// SimpleSAMLphp_auth paths
+// $conf['simplesamlphp_auth_login_path'] = 'login';
+// $conf['simplesamlphp_auth_installdir'] = '/conf/simplesaml';
