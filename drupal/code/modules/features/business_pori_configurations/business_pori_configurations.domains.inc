@@ -54,6 +54,11 @@ function business_pori_configurations_domain_alias_default_aliases() {
       'redirect' => 0,
       'machine_name' => 'businesspori_fi',
     ),
+    'businesspori.lndo.site' => array(
+      'pattern' => 'businesspori.lndo.site',
+      'redirect' => 0,
+      'machine_name' => 'businesspori_fi',
+    ),
   );
 
   return $domain_aliases;

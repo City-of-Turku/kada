@@ -23,6 +23,7 @@ drush "$local" cc drush
 # Revert only selected features for now.
 # drush "$local" fra -y
 drush "$local" fr kada_domains_feature -y
+drush "$local" fr business_pori_configurations -y
 
 # # Download maillog to prevent emails being sent
 # drush "$local" dl maillog -y
