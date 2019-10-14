@@ -5,6 +5,8 @@ config:
   via: nginx
   webroot: web
   drush: ^8
+  config:
+    vhosts: ./.lando/drupal7.conf
 
 services:
   adminer:
