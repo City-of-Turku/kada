@@ -35,11 +35,11 @@ $main-liftup-content-padding: 20px;
   width: 100%;
 
   @media screen and (min-width: $tablet-portrait) {
-    margin-bottom: 1.5625rem;
+    margin-bottom: 2 * $liftup-gutter;
   }
 
   @media screen and (min-width: $desktop) {
-    width: 49.14%;
+    width: 49.2%;
   }
 }
 

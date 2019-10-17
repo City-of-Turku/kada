@@ -66,7 +66,7 @@ $rem-with-px-fallback: false;
 $round-to-nearest-half-line: true;
 
 
-/* Business Pori styles */
+// Business Pori spefific styles
 h1, h2, h4, p, label {
   font-family: $text-font-family;
 }
@@ -79,5 +79,9 @@ h3 {
 
 h4 {
   font-weight: 600;
+}
+
+p {
+  font-size: $base-font-size-rem;
 }
 
