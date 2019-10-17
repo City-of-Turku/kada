@@ -44,15 +44,14 @@ $main-liftup-content-padding: 20px;
 }
 
 .main-liftup-box {
-  background-color: rgba($primary-color, .2);
-  border-top: .938rem solid $primary-color;
+  border-top: $liftup-border solid $green-lime;
   padding-bottom: .5rem;
   position: relative;
 
   // Set theme colored borders and hover.
   @each $theme-color, $color in $theme-colors {
     &.theme-color-#{$theme-color} {
-      border-top: .938rem solid $color;
+      border-top: $liftup-border solid $color;
       background-color: rgba($color, .2);
 
       .field--name-title h3 {
