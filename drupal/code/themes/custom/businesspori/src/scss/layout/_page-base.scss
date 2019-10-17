@@ -1,7 +1,19 @@
 .container {
   @include responsive-whitespace;
   margin: 0 auto;
-  max-width: $container-width;
+  max-width: $content-width;
+}
+
+.l-highlighted .container {
+  .block--views .view-pori-section-1-3x4-liftups {
+    @include responsive-whitespace;
+    margin: 0 auto;
+    max-width: $content-width;
+
+    @media screen and (min-width: $desktop) {
+      padding: 0;
+    }
+  }
 }
 
 // Front page before content region needs to be relative so that the news archive button can be placed correctly.

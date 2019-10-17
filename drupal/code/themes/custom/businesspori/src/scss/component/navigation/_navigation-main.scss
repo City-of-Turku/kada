@@ -2,6 +2,9 @@
   // For some reason the English menu is main-navigation as for Finnish it is main-menu
   .menu-name-menu-business-pori-p-valikko,
   .menu-name-menu-business-pori-main-navigati {
+    background-color: $gray-menu;
+    width: 100%;
+    
     .responsive-menus .menu {
       display: flex;
       justify-content: space-between;
@@ -9,7 +12,8 @@
 
     .responsive-menus > .menu {
       width: 100%;
-      max-width: 100%;
+      max-width: $content-width;
+      margin: 0 auto;
     }
 
     .menu__item {
@@ -38,11 +42,19 @@
     @each $theme-color, $color in $theme-colors {
       .businesspori-theme-color-#{$theme-color} {
         &.menu__item--has-first-level {
-          background-color: $color;
-
           > a {
-            color: $white;
+            &:hover,
+            &:focus {
+              color: $white;
+              background-color: $color !important;
+            }
+          }
 
+          &.is-active {
+            > a {
+              color: $white;
+              background-color: $color !important;
+            }
           }
 
           > .menu {
@@ -51,16 +63,16 @@
           }
 
           .menu__item--has-second-level {
+            a {
+              color: $color;
+            }
+
             &:hover {
               background-color: $color;
 
               a {
                 color: $white;
               }
-            }
-
-            a {
-              color: $color;
             }
 
             &.is-active-trail {
@@ -81,13 +93,20 @@
       > a {
         border-top: 0 none;
         color: $black;
-        padding: .75rem 1.91rem;
+        padding: .5rem 1.91rem;
+        width: 100%;
+        text-align: center;
+        background-color: $default-color-lighter;
 
         &:hover,
         &:focus {
           text-decoration: underline;
           background-color: transparent;
         }
+      }
+
+      &:nth-child(even) > a {
+        background-color: $gray-menu;
       }
 
       > .menu {
