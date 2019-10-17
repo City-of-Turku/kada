@@ -419,6 +419,38 @@
   }
 }
 
+.views-field-field-liftup-1-3x4 {
+  .liftup-1-3x4-grid-item {
+    .liftup-1-3x4__content {
+      border-top: 12px solid $orange;
+
+      .liftup-1-3x4__bottom {
+        padding: 25px;
+
+        .field--name-field-liftup-main-link {
+          text-align: center;
+          margin-bottom: 1.5rem;
+
+          a {
+            font-family: $bergen-mono;
+            font-weight: 600;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: $font-size-heading-3;
+            line-height: 1.2;
+            hyphens: auto;
+          }
+        }
+        .field--name-field-liftup-description-text {
+          font-size: $base-font-size-rem;
+          font-weight: 300;
+          letter-spacing: 0;
+        }
+      }
+    }
+  }
+}
+
 // Project liftup mobile spesific styles
 .view-kada-project-liftups {
   margin: 0 -1.25rem;

@@ -35,16 +35,16 @@ $main-liftup-content-padding: 20px;
   width: 100%;
 
   @media screen and (min-width: $tablet-portrait) {
-    margin-bottom: 1.563rem;
+    margin-bottom: 1.5625rem;
   }
 
   @media screen and (min-width: $desktop) {
-    width: 49.1%;
+    width: 49.14%;
   }
 }
 
 .main-liftup-box {
-  background-color: rgba($primary-color, .2);;
+  background-color: rgba($primary-color, .2);
   border-top: .938rem solid $primary-color;
   padding-bottom: .5rem;
   position: relative;
@@ -76,6 +76,10 @@ $main-liftup-content-padding: 20px;
     width: 50%;
   }
 
+  @media screen and (min-width: $desktop) {
+    width: 55%;
+  }
+
   figure {
     line-height: 0;
     margin: 0;
@@ -84,11 +88,31 @@ $main-liftup-content-padding: 20px;
 
 .main-liftup-box__content {
   background: transparent;
-  padding: 0 $container-gutter;
+  padding: $container-gutter;
   width: 100%;
 
   @media screen and (min-width: $tablet-portrait) {
     width: 50%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 45%;
+  }
+
+  .field--name-post-date {
+    display: none;
+}
+
+  .field--name-title h3 {
+    font-size: $font-size-heading-3;
+    font-family: $bergen-mono;
+    font-weight: 600;
+  }
+
+  .field--name-field-lead-paragraph-long-text {
+    font-size: $base-font-size-rem;
+    font-weight: 300;
+    letter-spacing: 0;
   }
 }
 
@@ -107,6 +131,7 @@ $main-liftup-content-padding: 20px;
   color: $black;
   font-size: 1rem;
   word-break: break-word;
+  margin: 0;
 }
 
 .field--name-post-date {
@@ -140,6 +165,6 @@ $main-liftup-content-padding: 20px;
 
   @media screen and (min-width: $tablet-portrait) {
     flex-direction: row;
-    padding: 2rem 0;
+    padding: 0;
   }
 }
