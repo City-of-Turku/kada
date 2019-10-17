@@ -1,10 +1,18 @@
-.container {
+body:not(.page--highlight-image) .container {
   @include responsive-whitespace;
   margin: 0 auto;
   max-width: $content-width;
 }
 
-.l-highlighted .container {
+.page__after-content {
+  margin: 0 auto;
+  max-width: $content-width;
+}
+
+body .l-highlighted .container {
+  max-width: none;
+  padding: 0;
+
   .block--views .view-pori-section-1-3x4-liftups {
     @include responsive-whitespace;
     margin: 0 auto;

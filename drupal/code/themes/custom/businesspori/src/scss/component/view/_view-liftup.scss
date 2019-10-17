@@ -147,7 +147,7 @@
       }
 
       .liftup-box__image {
-        border-top: 12px solid $color !important;
+        border-top: $liftup-gutter solid $color !important;
       }
 
       .liftup-box__caption {
@@ -159,7 +159,7 @@
   }
 
   .liftup-box__image {
-    border-top: 12px solid $turku-black;
+    border-top: $liftup-gutter solid $turku-black;
     position: relative;
 
     // Image placeholder
@@ -421,8 +421,12 @@
 
 .views-field-field-liftup-1-3x4 {
   .liftup-1-3x4-grid-item {
+    .field-collection-view {
+      margin: 0 $liftup-gutter 0 $liftup-gutter;
+      padding: $liftup-gutter 0 $liftup-gutter 0;
+    }
     .liftup-1-3x4__content {
-      border-top: 12px solid $orange;
+      border-top: $liftup-gutter solid $orange;
 
       .liftup-1-3x4__bottom {
         padding: 25px;
