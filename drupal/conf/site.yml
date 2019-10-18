@@ -37,6 +37,7 @@ default:
     new:
       - verify: "Type yes to verify you want to build a new installation: "
       - shell: /vagrant/drupal/conf/vagrant_aliases.sh
+      - shell: chmod -R a+w web
       - make
       # - backup
       # Install dev modules
@@ -54,12 +55,14 @@ default:
     # Basic site update functionality
     update:
       - shell: /vagrant/drupal/conf/vagrant_aliases.sh
+      - shell: chmod -R a+w web
       - make
       - finalize
       - update
       - cleanup
       - drush: en devel -y
       - drush: cc drush
+      - drush: uli
       #- drush: composer-json-rebuild -y
       #- drush: composer-manager update -y
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
