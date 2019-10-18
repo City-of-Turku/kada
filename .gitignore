@@ -43,3 +43,7 @@ conf/*.retry
 
 # Ignore python virtualenv created by provision.sh
 .virtualenv
+
+# Ignore dumpfiles
+*.sql
+*.gz
