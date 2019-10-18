@@ -42,20 +42,20 @@ $conf['cache_prefix']['default'] = 'kada_';
 #$conf['radioactivity_redis_password'] = $conf['redis_client_password'];
 
 // VARNISH
-$conf['cache_backends'][] = 'sites/all/modules/contrib/varnish/varnish.cache.inc';
-$conf['cache_class_cache_page'] = 'VarnishCache';
-$conf['page_cache_invoke_hooks'] = FALSE;
-// Cache clear strategy:
-// 0=none, handle it yourself, 1=all pages, 2=selective, ie. expire module
-$conf['varnish_cache_clear'] = "2";
-// Control terminal host with port
-$conf['varnish_control_terminal'] = "localhost:6082";
-// Secret if used, look for /etc/varnish/secret
-$conf['varnish_control_key'] = getenv("VARNISH_CONTROL_KEY");
-// Flush caches on cron run
-$conf['varnish_flush_cron'] = "0";
-// Varnish version
-$conf['varnish_version'] = "4";
+// $conf['cache_backends'][] = 'sites/all/modules/contrib/varnish/varnish.cache.inc';
+// $conf['cache_class_cache_page'] = 'VarnishCache';
+// $conf['page_cache_invoke_hooks'] = FALSE;
+// // Cache clear strategy:
+// // 0=none, handle it yourself, 1=all pages, 2=selective, ie. expire module
+// $conf['varnish_cache_clear'] = "2";
+// // Control terminal host with port
+// $conf['varnish_control_terminal'] = "localhost:6082";
+// // Secret if used, look for /etc/varnish/secret
+// $conf['varnish_control_key'] = getenv("VARNISH_CONTROL_KEY");
+// // Flush caches on cron run
+// $conf['varnish_flush_cron'] = "0";
+// // Varnish version
+// $conf['varnish_version'] = "4";
 
 $conf['simple_environment_indicator'] = 'DarkGreen Local';
 $conf['file_temporary_path'] = "/tmp";
