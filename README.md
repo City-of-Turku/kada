@@ -66,6 +66,7 @@ Tip: You can use drush aliases to execute drush commands without loggin into the
 │   ├── code                Custom code including custom modules, features and themes.
 │   ├── conf                Different build configurations.
 │   ├── files               Drupal files.
+│   ├── files_private       Drupal private files.
 │   ├── scripts             Scripts for handling integrations with 3rd party systems.
 │   ├── translations        Exported translations.
 │   ├── web                 Current build.
