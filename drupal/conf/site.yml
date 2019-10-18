@@ -36,6 +36,7 @@ default:
   local_commands:
     new:
       - verify: "Type yes to verify you want to build a new installation: "
+      - shell: /vagrant/drupal/conf/aliases.sh
       - make
       - backup
       # Install dev modules
