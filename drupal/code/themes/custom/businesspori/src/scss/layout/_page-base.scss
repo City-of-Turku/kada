@@ -1,5 +1,6 @@
 body:not(.page--highlight-image) .container {
-  @include responsive-whitespace;
+  padding-left: 0;
+  padding-right: 0;
   margin: 0 auto;
   max-width: $content-width;
 }
