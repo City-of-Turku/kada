@@ -4,14 +4,7 @@
 
 Fire up the vagrant environment
 
-```sh
-vagrant up
-```
-
-Make sure that following folders exists
-
-- `drupal/files`
-- `drupal/files_private`
+`vagrant up`
 
 Create a new build
 
@@ -23,15 +16,15 @@ cd /vagrant/drupal
 
 Synchronise the database from production
 
-```sh
-cd .. && ./syncdb.sh
-```
+`cd .. && ./syncdb.sh`
 
-If you run into issues during this step, get the database dump from server (auth from LastPass), import it manually (local database `drupal`, user `drupal`, password `password`) and run
+or from dumpfile
 
-```sh
-./build.sh update
-```
+`drush sql-cli < /vagrant/dump.sql`
+
+Update the site
+
+`./build.sh update`
 
 Local domains:
 
