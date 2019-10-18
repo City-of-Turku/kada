@@ -19,7 +19,7 @@ default:
     - local
 
   # In development environments we want to use symlinks, note settings.php
-  link: 
+  link:
     - files: sites/default/files
     - code/modules/custom: sites/all/modules/custom
     - code/modules/features: sites/all/modules/features
@@ -60,7 +60,7 @@ default:
       - finalize
       - update
       - cleanup
-      - drush: en devel -y
+      - drush: en devel stage_file_proxy -y
       - drush: cc drush
       - drush: uli
       #- drush: composer-json-rebuild -y
