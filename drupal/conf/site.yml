@@ -36,7 +36,7 @@ default:
   local_commands:
     new:
       - verify: "Type yes to verify you want to build a new installation: "
-      - shell: /vagrant/drupal/conf/vagrant_aliases.sh
+      - shell: ln -sfv /vagrant/drupal/drush/pori-kada.aliases.drushrc.php /home/vagrant/.drush/pori-kada.aliases.drushrc.php
       - shell: chmod -R a+w web
       - make
       # - backup
@@ -54,7 +54,7 @@ default:
     # Running command "./build.sh update" without environment or with "vagrant" as environment "./build.sh update vagrant" will also make sure that stage_file_proxy is enabled.
     # Basic site update functionality
     update:
-      - shell: /vagrant/drupal/conf/vagrant_aliases.sh
+      - shell: ln -sfv /vagrant/drupal/drush/pori-kada.aliases.drushrc.php /home/vagrant/.drush/pori-kada.aliases.drushrc.php
       - shell: chmod -R a+w web
       - make
       - finalize
