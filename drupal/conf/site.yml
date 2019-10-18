@@ -25,7 +25,7 @@ default:
     - code/modules/features: sites/all/modules/features
     - code/themes/custom: sites/all/themes/custom
     - code/profiles/kadaprofile: profiles/kadaprofile
-    - conf/settings.php: sites/default/settings.php
+    - conf/vagrant.settings.php: sites/default/settings.php
     - conf/vagrant.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
     - conf/_ping.php: _ping.php
     - conf/simplesaml: simplesamlphp
