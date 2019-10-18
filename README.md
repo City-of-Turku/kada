@@ -1,35 +1,47 @@
 # Pori project
 
-## Quick start
------------
+## Vagrant local setup
 
 Fire up the vagrant environment
 
-    $ vagrant up
+```sh
+vagrant up
+```
 
-If all goes well you can proceed to creating a new build.
+Make sure that following folders exists
 
-Make sure drupal/files directory exists. If not, create manually:
+- `drupal/files`
+- `drupal/files_private`
 
-    $ vagrant ssh
-    $ cd /vagrant/drupal
-    $ ./build.sh new
+Create a new build
 
-Synchronise the database from production.
+```sh
+vagrant ssh
+cd /vagrant/drupal
+./build.sh new
+```
 
-    $ cd .. && ./syncdb.sh
+Synchronise the database from production
 
-If you run into issues during this step, import database manually (get from server, auth from LastPass) and run
+```sh
+cd .. && ./syncdb.sh
+```
 
-    $ ./build.sh update
+If you run into issues during this step, get the database dump from server (auth from LastPass), import it manually (local database `drupal`, user `drupal`, password `password`) and run
 
-When you're done, navigate to <https://local.pori.fi>
+```sh
+./build.sh update
+```
 
+Local domains:
+
+- <https://local.pori.fi>
+- <https://local.visitpori.fi>
+- <https://local.businesspori.fi>
 
 ## Developer notes
 
 ### General information
--------------------
 
 Note: We use [Wunderflow](http://wunderflow.wunder.io/) as our git workflow.
 
@@ -37,11 +49,11 @@ All new features must be based on the `master` branch.
 All hotfixes must be based on the `production` branch.
 The `develop` branch is used only for testing and must never be merged back to master.
 
-Tip: You can use drush aliases to execute drush commands without loggin into the servers or vagrant box. For example `drush @pori.local cc css-js`
+Tip: You can use drush aliases to execute drush commands without loggin into the servers or vagrant box. For example `drush @pori.local cc css-js`.
 
-Folder structure
-----------------
-```
+### Folder structure
+
+```sh
 ├── ansible                 (Cloned) Ansible roles common for all environments.
 ├── ansible.cfg             Ansible configurations.
 ├── build.sh                Wundertools environment buildscript.
@@ -49,14 +61,14 @@ Folder structure
 ├── conf                    Different environment provisioning configs.
 ├── docs                    Developer documentation.
 ├── drupal  
-│   ├── builds              Folder containing previous builds.           
+│   ├── builds              Folder containing previous builds.
 │   ├── build.sh            Main site build script.
 │   ├── code                Custom code including custom modules, features and themes.
 │   ├── conf                Different build configurations.
 │   ├── files               Drupal files.
 │   ├── scripts             Scripts for handling integrations with 3rd party systems.
 │   ├── translations        Exported translations.
-│   ├── web                 Current build.                  
+│   ├── web                 Current build.
 ├── current                 Link to the latest build directory.
 ├── local_ansible_roles     Custom ansible roles.
 ├── provision.sh            Utility script for handling provision of different enviroments.
@@ -69,4 +81,3 @@ Folder structure
 ├── Vagrantfile             Vagrant environt entry point.
 └── VERSION                 File specifying the current Wundertools version in use.
 ```
-
