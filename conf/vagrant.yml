@@ -92,6 +92,36 @@
                 fastcgi_param PATH_INFO $fastcgi_path_info if_not_empty;
               }
 
+      - server_name: "{{ domain2_name }}"
+        http_port: 8080
+        docroot: /vagrant/drupal/web
+        extra_locations:
+          - location: "/simplesaml"
+            definition: |
+              alias /vagrant/drupal/web/simplesamlphp/www;
+              location ~ \.php(/|$) {
+                include fastcgi_params;
+                fastcgi_pass phpcgi;
+                fastcgi_split_path_info ^((?U).+\.php)(/?.+)$;
+                fastcgi_param SCRIPT_FILENAME $request_filename;
+                fastcgi_param PATH_INFO $fastcgi_path_info if_not_empty;
+              }
+
+      - server_name: "{{ domain3_name }}"
+        http_port: 8080
+        docroot: /vagrant/drupal/web
+        extra_locations:
+          - location: "/simplesaml"
+            definition: |
+              alias /vagrant/drupal/web/simplesamlphp/www;
+              location ~ \.php(/|$) {
+                include fastcgi_params;
+                fastcgi_pass phpcgi;
+                fastcgi_split_path_info ^((?U).+\.php)(/?.+)$;
+                fastcgi_param SCRIPT_FILENAME $request_filename;
+                fastcgi_param PATH_INFO $fastcgi_path_info if_not_empty;
+              }
+
       - server_name: "docs.{{ domain_name}}"
         http_port: 8082
         docroot: /vagrant/docs
