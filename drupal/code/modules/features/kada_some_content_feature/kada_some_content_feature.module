@@ -520,7 +520,7 @@ function kada_some_content_feature_generate_link($network, $some_id, $wrapper) {
       // syntax for the direct link. Using the profile page until then.
       return 'https://www.linkedin.com/';
     case 'twitter':
-      return 'http://twitter.com/statuses/' . $some_id;
+      return 'https://twitter.com/i/web/status/' . $some_id;
     case 'youtube':
       return 'http://www.youtube.com/watch?v=' . $some_id;
     default:
