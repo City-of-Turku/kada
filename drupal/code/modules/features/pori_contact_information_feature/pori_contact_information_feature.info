@@ -38,6 +38,7 @@ features[ds_field_settings][] = node|person|person_card
 features[ds_fields][] = person_availability
 features[ds_fields][] = person_organisation
 features[ds_layout_settings][] = node|person|person_card
+features[ds_view_modes][] = contact_card
 features[ds_view_modes][] = person_card
 features[elysia_cron][] = :contacts
 features[elysia_cron][] = pori_contact_information_feature_cron

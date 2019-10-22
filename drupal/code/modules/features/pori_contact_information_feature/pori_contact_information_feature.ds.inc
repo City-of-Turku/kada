@@ -146,6 +146,15 @@ function pori_contact_information_feature_ds_view_modes_info() {
 
   $ds_view_mode = new stdClass();
   $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'contact_card';
+  $ds_view_mode->label = 'Contact card';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['contact_card'] = $ds_view_mode;
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
   $ds_view_mode->view_mode = 'person_card';
   $ds_view_mode->label = 'Person card';
   $ds_view_mode->entities = array(
