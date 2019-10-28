@@ -3596,5 +3596,79 @@ function kada_liftups_feature_views_default_views() {
   );
   $export['kada_top_carousel'] = $view;
 
+  $view = new view();
+  $view->name = 'pori_video_liftup';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Pori Video Liftup';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = '<none>';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Video */
+  $handler->display->display_options['fields']['field_liftup_video']['id'] = 'field_liftup_video';
+  $handler->display->display_options['fields']['field_liftup_video']['table'] = 'field_data_field_liftup_video';
+  $handler->display->display_options['fields']['field_liftup_video']['field'] = 'field_liftup_video';
+  $handler->display->display_options['fields']['field_liftup_video']['label'] = '';
+  $handler->display->display_options['fields']['field_liftup_video']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_liftup_video']['click_sort_column'] = 'sid';
+  $handler->display->display_options['fields']['field_liftup_video']['type'] = 'video_liftup';
+  $handler->display->display_options['fields']['field_liftup_video']['settings'] = array(
+    'link' => '0',
+  );
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Kaikki';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'page' => 'page',
+  );
+
+  /* Display: Video liftup - Block */
+  $handler = $view->new_display('block', 'Video liftup - Block', 'pori_video_liftup');
+  $translatables['pori_video_liftup'] = array(
+    t('Master'),
+    t('<none>'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Kaikki'),
+    t('Video liftup - Block'),
+  );
+  $export['pori_video_liftup'] = $view;
+
   return $export;
 }
