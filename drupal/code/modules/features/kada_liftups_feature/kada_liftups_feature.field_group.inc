@@ -39,8 +39,9 @@ function kada_liftups_feature_field_group_info() {
       12 => 'field_visitpori_theme',
       13 => 'field_businesspori_theme',
       14 => 'field_small_liftup_banner_color',
-      15 => 'language',
-      16 => 'title',
+      15 => 'field_liftup_video',
+      16 => 'language',
+      17 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

@@ -90,7 +90,14 @@ function kada_media_feature_user_default_permissions() {
   // Exported permission: 'create atom of video type'.
   $permissions['create atom of video type'] = array(
     'name' => 'create atom of video type',
-    'roles' => array(),
+    'roles' => array(
+      'admin' => 'admin',
+      'content editor' => 'content editor',
+      'event editor' => 'event editor',
+      'event external editor' => 'event external editor',
+      'external editor' => 'external editor',
+      'web journalist' => 'web journalist',
+    ),
     'module' => 'scald',
   );
 

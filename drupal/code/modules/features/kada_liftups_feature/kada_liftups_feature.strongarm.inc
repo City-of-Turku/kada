@@ -243,7 +243,7 @@ function kada_liftups_feature_strongarm() {
       'display' => array(
         'language' => array(
           'default' => array(
-            'weight' => '6',
+            'weight' => '7',
             'visible' => TRUE,
           ),
           'teaser' => array(
@@ -255,7 +255,7 @@ function kada_liftups_feature_strongarm() {
             'visible' => FALSE,
           ),
           'carousel' => array(
-            'weight' => '5',
+            'weight' => '25',
             'visible' => FALSE,
           ),
           'current' => array(
@@ -275,13 +275,13 @@ function kada_liftups_feature_strongarm() {
             'visible' => FALSE,
           ),
           'small_liftup_banner' => array(
-            'weight' => 29,
+            'weight' => '29',
             'visible' => FALSE,
           ),
         ),
         'domain' => array(
           'default' => array(
-            'weight' => '9',
+            'weight' => '10',
             'visible' => TRUE,
           ),
           'current' => array(
@@ -305,7 +305,33 @@ function kada_liftups_feature_strongarm() {
             'visible' => FALSE,
           ),
           'small_liftup_banner' => array(
-            'weight' => 30,
+            'weight' => '30',
+            'visible' => FALSE,
+          ),
+          'carousel' => array(
+            'weight' => '23',
+            'visible' => FALSE,
+          ),
+        ),
+        'sharethis' => array(
+          'default' => array(
+            'weight' => '12',
+            'visible' => TRUE,
+          ),
+          'carousel' => array(
+            'weight' => '26',
+            'visible' => FALSE,
+          ),
+          'teaser' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'event_top_carousel' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'small_liftup_banner' => array(
+            'weight' => '10',
             'visible' => FALSE,
           ),
         ),

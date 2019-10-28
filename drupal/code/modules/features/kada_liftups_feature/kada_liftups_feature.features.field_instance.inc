@@ -60,7 +60,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'current' => array(
         'label' => 'hidden',
@@ -74,7 +74,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 3,
+        'weight' => 4,
       ),
       'event_top_carousel' => array(
         'label' => 'hidden',
@@ -177,7 +177,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -192,7 +192,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 27,
       ),
       'current' => array(
         'label' => 'above',
@@ -205,7 +205,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 12,
+        'weight' => 14,
       ),
       'event_top_carousel' => array(
         'label' => 'above',
@@ -296,7 +296,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -311,7 +311,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 13,
       ),
       'current' => array(
         'label' => 'above',
@@ -324,7 +324,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 16,
+        'weight' => 18,
       ),
       'event_top_carousel' => array(
         'label' => 'above',
@@ -385,7 +385,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 22,
+        'weight' => 31,
       ),
       'current' => array(
         'label' => 'above',
@@ -398,7 +398,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'event_top_carousel' => array(
         'label' => 'above',
@@ -451,7 +451,7 @@ function kada_liftups_feature_field_default_field_instances() {
       'module' => 'multiple_selects',
       'settings' => array(),
       'type' => 'multiple_selects',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -466,7 +466,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 24,
+        'weight' => 33,
       ),
       'current' => array(
         'label' => 'above',
@@ -479,7 +479,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 13,
+        'weight' => 15,
       ),
       'event_top_carousel' => array(
         'label' => 'above',
@@ -541,6 +541,95 @@ function kada_liftups_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-liftup-field_liftup_video'.
+  $field_instances['node-liftup-field_liftup_video'] = array(
+    'bundle' => 'liftup',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'carousel' => array(
+        'label' => 'hidden',
+        'module' => 'atom_reference',
+        'settings' => array(
+          'link' => 0,
+          'override' => 0,
+        ),
+        'type' => 'top_video_carousel',
+        'weight' => 1,
+      ),
+      'current' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'atom_reference',
+        'settings' => array(
+          'link' => 0,
+          'override' => 0,
+        ),
+        'type' => 'top_video_carousel',
+        'weight' => 1,
+      ),
+      'event_top_carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_liftup_video',
+    'label' => 'Video',
+    'required' => 0,
+    'settings' => array(
+      'allow_override' => 0,
+      'entity_translation_sync' => FALSE,
+      'referencable_types' => array(
+        'file' => 0,
+        'image' => 0,
+        'video' => 'video',
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'atom_reference',
+      'settings' => array(
+        'context' => 'sdl_editor_representation',
+      ),
+      'type' => 'atom_reference_textfield',
+      'weight' => 14,
+    ),
+  );
+
   // Exported field_instance: 'node-liftup-field_link_to_content'.
   $field_instances['node-liftup-field_link_to_content'] = array(
     'bundle' => 'liftup',
@@ -553,7 +642,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'current' => array(
         'label' => 'hidden',
@@ -567,7 +656,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
-        'weight' => 4,
+        'weight' => 5,
       ),
       'event_top_carousel' => array(
         'label' => 'hidden',
@@ -671,7 +760,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 23,
+        'weight' => 32,
       ),
       'current' => array(
         'label' => 'above',
@@ -686,7 +775,7 @@ function kada_liftups_feature_field_default_field_instances() {
           'data' => 'full',
         ),
         'type' => 'geofield_wkt',
-        'weight' => 11,
+        'weight' => 13,
       ),
       'event_top_carousel' => array(
         'label' => 'above',
@@ -764,7 +853,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'use_geocoder' => 1,
       ),
       'type' => 'geofield_openlayers',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -889,13 +978,9 @@ function kada_liftups_feature_field_default_field_instances() {
     'display' => array(
       'carousel' => array(
         'label' => 'above',
-        'module' => 'atom_reference',
-        'settings' => array(
-          'link' => 0,
-          'override' => 0,
-        ),
-        'type' => 'current',
-        'weight' => 3,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 24,
       ),
       'current' => array(
         'label' => 'above',
@@ -911,7 +996,7 @@ function kada_liftups_feature_field_default_field_instances() {
           'override' => 0,
         ),
         'type' => 'title',
-        'weight' => 14,
+        'weight' => 16,
       ),
       'event_top_carousel' => array(
         'label' => 'above',
@@ -972,7 +1057,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'context' => 'sdl_editor_representation',
       ),
       'type' => 'atom_reference_textfield',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -988,7 +1073,7 @@ You can change the background color of the link in banner by choosing one below.
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 12,
       ),
       'current' => array(
         'label' => 'above',
@@ -1064,7 +1149,7 @@ You can change the background color of the link in banner by choosing one below.
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 21,
+        'weight' => 30,
       ),
       'current' => array(
         'label' => 'above',
@@ -1077,7 +1162,7 @@ You can change the background color of the link in banner by choosing one below.
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 7,
+        'weight' => 8,
       ),
       'event_top_carousel' => array(
         'label' => 'above',
@@ -1145,7 +1230,7 @@ You can change the background color of the link in banner by choosing one below.
         'label' => 'inline',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 27,
+        'weight' => 34,
       ),
       'current' => array(
         'label' => 'hidden',
@@ -1158,7 +1243,7 @@ You can change the background color of the link in banner by choosing one below.
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 5,
+        'weight' => 6,
       ),
       'event_top_carousel' => array(
         'label' => 'inline',
@@ -1225,7 +1310,7 @@ You can change the background color of the link in banner by choosing one below.
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 20,
+        'weight' => 29,
       ),
       'current' => array(
         'label' => 'hidden',
@@ -1239,7 +1324,7 @@ You can change the background color of the link in banner by choosing one below.
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'event_top_carousel' => array(
         'label' => 'above',
@@ -1345,7 +1430,7 @@ You can change the background color of the link in banner by choosing one below.
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 28,
+        'weight' => 35,
       ),
       'current' => array(
         'label' => 'hidden',
@@ -1358,7 +1443,7 @@ You can change the background color of the link in banner by choosing one below.
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'event_top_carousel' => array(
         'label' => 'hidden',
@@ -1472,7 +1557,7 @@ You can change the background color of the link in banner by choosing one below.
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 15,
       ),
       'current' => array(
         'label' => 'above',
@@ -1485,7 +1570,7 @@ You can change the background color of the link in banner by choosing one below.
         'module' => 'i18n_taxonomy',
         'settings' => array(),
         'type' => 'i18n_taxonomy_term_reference_link',
-        'weight' => 15,
+        'weight' => 17,
       ),
       'event_top_carousel' => array(
         'label' => 'above',
@@ -1547,7 +1632,7 @@ You can change the background color of the link in banner by choosing one below.
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 19,
+        'weight' => 28,
       ),
       'current' => array(
         'label' => 'above',
@@ -1560,7 +1645,7 @@ You can change the background color of the link in banner by choosing one below.
         'module' => 'og_ui',
         'settings' => array(),
         'type' => 'og_list_default',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'event_top_carousel' => array(
         'label' => 'above',
@@ -1678,6 +1763,7 @@ You can change the background color of the link in banner by choosing one below.
   t('Target audience is not visible in the liftup, but is used to control in which landing page the liftup is visible.');
   t('Theme');
   t('Theme will give theme\'s color to the liftup and can affect where it is displayed');
+  t('Video');
   t('Vignette');
   t('Visible title');
   t('Visitpori theme');

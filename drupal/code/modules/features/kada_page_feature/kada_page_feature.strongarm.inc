@@ -193,6 +193,21 @@ function kada_page_feature_strongarm() {
       'product' => array(
         'custom_settings' => FALSE,
       ),
+      'live_results_search' => array(
+        'custom_settings' => TRUE,
+      ),
+      'person_card' => array(
+        'custom_settings' => FALSE,
+      ),
+      'small_liftup_banner' => array(
+        'custom_settings' => FALSE,
+      ),
+      'waste_map' => array(
+        'custom_settings' => FALSE,
+      ),
+      'waste_search' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -258,6 +273,12 @@ function kada_page_feature_strongarm() {
           'project' => array(
             'weight' => '0',
             'visible' => TRUE,
+          ),
+        ),
+        'sharethis' => array(
+          'default' => array(
+            'weight' => '10',
+            'visible' => FALSE,
           ),
         ),
       ),
