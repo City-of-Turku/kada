@@ -19,12 +19,12 @@ function kada_page_feature_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
     'places_for_services' => array(
-      'weight' => 6,
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
     ),
     'page_places' => array(
-      'weight' => 4,
+      'weight' => '4',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
