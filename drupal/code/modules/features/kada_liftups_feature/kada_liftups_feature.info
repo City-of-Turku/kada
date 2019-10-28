@@ -151,6 +151,7 @@ features[views_view][] = kada_liftups
 features[views_view][] = kada_project_liftups
 features[views_view][] = kada_related_content
 features[views_view][] = kada_top_carousel
+features[views_view][] = pori_video_liftup
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][features] = features
 features_exclude[dependencies][link] = link
