@@ -1,0 +1,17 @@
+/* Basic styles for scald videos */
+.view-display-id-pori_video_liftup video {
+  max-width: 100%;
+  height: auto;
+}
+.view-id-kada_top_carousel video {
+  max-width: 100%;
+  height: auto;
+}
+.view-display-id-pori_video_liftup .field {
+  display: none;
+}
+.view-id-kada_top_carousel.view-display-id-block_1 .field--name-scald-authors,
+.view-id-kada_top_carousel.view-display-id-block_1 .field--name-scald-tags,
+.view-id-kada_top_carousel.view-display-id-block_1 .field--name-field-title-text {
+  display: none;
+}

@@ -3330,6 +3330,18 @@ function kada_liftups_feature_views_default_views() {
     'link' => '0',
   );
   $handler->display->display_options['fields']['field_main_image']['group_column'] = 'sid';
+  /* Field: Content: Video */
+  $handler->display->display_options['fields']['field_liftup_video']['id'] = 'field_liftup_video';
+  $handler->display->display_options['fields']['field_liftup_video']['table'] = 'field_data_field_liftup_video';
+  $handler->display->display_options['fields']['field_liftup_video']['field'] = 'field_liftup_video';
+  $handler->display->display_options['fields']['field_liftup_video']['label'] = '';
+  $handler->display->display_options['fields']['field_liftup_video']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_liftup_video']['click_sort_column'] = 'sid';
+  $handler->display->display_options['fields']['field_liftup_video']['type'] = 'top_video_carousel';
+  $handler->display->display_options['fields']['field_liftup_video']['settings'] = array(
+    'link' => '0',
+  );
+  $handler->display->display_options['fields']['field_liftup_video']['group_column'] = 'entity_id';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';

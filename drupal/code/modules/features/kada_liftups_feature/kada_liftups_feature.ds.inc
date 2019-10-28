@@ -227,22 +227,27 @@ function kada_liftups_feature_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_main_image',
-        1 => 'field_link_to_content',
-        2 => 'body',
+        1 => 'field_liftup_video',
+        2 => 'field_link_to_content',
+        3 => 'body',
       ),
     ),
     'fields' => array(
       'field_main_image' => 'ds_content',
+      'field_liftup_video' => 'ds_content',
       'field_link_to_content' => 'ds_content',
       'body' => 'ds_content',
     ),
     'classes' => array(),
-    'wrappers' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+    ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
-    'layout_attributes_merge' => TRUE,
-    'layout_link_attribute' => FALSE,
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|liftup|carousel'] = $ds_layout;
 
@@ -313,6 +318,7 @@ function kada_liftups_feature_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|liftup|event_top_carousel'] = $ds_layout;
 
@@ -427,6 +433,7 @@ function kada_liftups_feature_ds_layout_settings_info() {
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
   );
   $export['node|liftup|teaser'] = $ds_layout;
 
