@@ -417,6 +417,21 @@ function kada_contact_information_feature_strongarm() {
       'product' => array(
         'custom_settings' => FALSE,
       ),
+      'person_card_with_skills' => array(
+        'custom_settings' => TRUE,
+      ),
+      'contact_card' => array(
+        'custom_settings' => FALSE,
+      ),
+      'small_liftup_banner' => array(
+        'custom_settings' => FALSE,
+      ),
+      'waste_map' => array(
+        'custom_settings' => FALSE,
+      ),
+      'waste_search' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -460,6 +475,20 @@ function kada_contact_information_feature_strongarm() {
           ),
           'person_card' => array(
             'weight' => 40,
+            'visible' => FALSE,
+          ),
+          'person_card_with_skills' => array(
+            'weight' => '39',
+            'visible' => FALSE,
+          ),
+        ),
+        'sharethis' => array(
+          'default' => array(
+            'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'person_card_with_skills' => array(
+            'weight' => '34',
             'visible' => FALSE,
           ),
         ),
