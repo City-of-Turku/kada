@@ -402,9 +402,8 @@ function pori_contact_information_feature_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'link',
         'settings' => array(),
-        'type' => 'link_default',
+        'type' => 'hidden',
         'weight' => 38,
       ),
       'full' => array(
@@ -436,7 +435,7 @@ function pori_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 26,
+        'weight' => 44,
       ),
     ),
     'entity_type' => 'node',
@@ -491,9 +490,8 @@ function pori_contact_information_feature_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 39,
       ),
       'full' => array(
@@ -670,7 +668,7 @@ function pori_contact_information_feature_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 16,
+        'weight' => 37,
       ),
     ),
     'entity_type' => 'node',
