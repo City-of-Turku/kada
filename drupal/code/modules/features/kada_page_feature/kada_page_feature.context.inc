@@ -56,6 +56,12 @@ function kada_page_feature_context_default_contexts() {
           'region' => 'before_content',
           'weight' => '-10',
         ),
+        'views-facts-page_facts' => array(
+          'module' => 'views',
+          'delta' => 'facts-page_facts',
+          'region' => 'before_content',
+          'weight' => '-9',
+        ),
         'views-pori_main_image_for_page-block' => array(
           'module' => 'views',
           'delta' => 'pori_main_image_for_page-block',
