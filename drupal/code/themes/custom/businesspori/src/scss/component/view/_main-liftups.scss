@@ -26,6 +26,8 @@ $main-liftup-content-padding: 20px;
 
   @media screen and (min-width: $desktop) {
     flex-direction: row;
+    padding-right: $container-gutter;
+    padding-left: $container-gutter;
   }
 }
 

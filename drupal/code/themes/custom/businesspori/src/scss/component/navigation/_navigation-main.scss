@@ -3,7 +3,6 @@
   .menu-name-menu-business-pori-p-valikko,
   .menu-name-menu-business-pori-main-navigati {
     background-color: $gray-menu;
-    width: 100%;
     
     .responsive-menus .menu {
       display: flex;
@@ -12,7 +11,7 @@
 
     .responsive-menus > .menu {
       width: 100%;
-      max-width: $content-width;
+      max-width: 100%;
       margin: 0 auto;
     }
 
