@@ -1,15 +1,3 @@
-body:not(.page--highlight-image) .container {
-  padding-left: 0;
-  padding-right: 0;
-  margin: 0 auto;
-  max-width: $content-width;
-}
-
-.page__after-content {
-  margin: 0 auto;
-  max-width: $content-width;
-}
-
 body .l-highlighted .container {
   max-width: none;
   padding: 0;
@@ -17,11 +5,6 @@ body .l-highlighted .container {
   .block--views .view-pori-section-1-3x4-liftups {
     @include responsive-whitespace;
     margin: 0 auto;
-    max-width: $content-width;
-
-    @media screen and (min-width: $desktop) {
-      padding: 0;
-    }
   }
 }
 

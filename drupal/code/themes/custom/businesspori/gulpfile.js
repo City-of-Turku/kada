@@ -74,7 +74,7 @@ gulp.task('browserSync', function() {
 });
 
 // Sass task
-gulp.task('sass', function(minify) {
+gulp.task('sass', () => {
   return gulp.src(path.styles.src + '**/*.scss')
     .pipe(gulpif(path.sourcemaps.prod, sourcemaps.init()))
     .pipe(sassGlob())
@@ -96,7 +96,7 @@ gulp.task('sass', function(minify) {
     .pipe(autoprefix({
       browsers: ['last 2 versions']
     }))
-    .pipe(path.env.prod === true ? cleanCss() : gutil.noop())
+    .pipe(cleanCss())
     .pipe(gulpif(path.sourcemaps.prod, sourcemaps.write()))
     .pipe(gulp.dest(path.styles.dist))
     .pipe(browserSync.reload({ stream: true }));
