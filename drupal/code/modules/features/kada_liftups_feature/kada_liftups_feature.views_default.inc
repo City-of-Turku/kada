@@ -3330,12 +3330,22 @@ function kada_liftups_feature_views_default_views() {
     'link' => '0',
   );
   $handler->display->display_options['fields']['field_main_image']['group_column'] = 'sid';
+  /* Field: Content: Video scrim */
+  $handler->display->display_options['fields']['field_liftup_video_scrim']['id'] = 'field_liftup_video_scrim';
+  $handler->display->display_options['fields']['field_liftup_video_scrim']['table'] = 'field_data_field_liftup_video_scrim';
+  $handler->display->display_options['fields']['field_liftup_video_scrim']['field'] = 'field_liftup_video_scrim';
+  $handler->display->display_options['fields']['field_liftup_video_scrim']['label'] = '';
+  $handler->display->display_options['fields']['field_liftup_video_scrim']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_liftup_video_scrim']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_liftup_video_scrim']['type'] = 'list_key';
   /* Field: Content: Video */
   $handler->display->display_options['fields']['field_liftup_video']['id'] = 'field_liftup_video';
   $handler->display->display_options['fields']['field_liftup_video']['table'] = 'field_data_field_liftup_video';
   $handler->display->display_options['fields']['field_liftup_video']['field'] = 'field_liftup_video';
   $handler->display->display_options['fields']['field_liftup_video']['label'] = '';
   $handler->display->display_options['fields']['field_liftup_video']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_liftup_video']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['field_liftup_video']['element_wrapper_class'] = 'scrim-[field_liftup_video_scrim]';
   $handler->display->display_options['fields']['field_liftup_video']['click_sort_column'] = 'sid';
   $handler->display->display_options['fields']['field_liftup_video']['type'] = 'top_video_carousel';
   $handler->display->display_options['fields']['field_liftup_video']['settings'] = array(
@@ -3618,11 +3628,20 @@ function kada_liftups_feature_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '1';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Video scrim */
+  $handler->display->display_options['fields']['field_liftup_video_scrim']['id'] = 'field_liftup_video_scrim';
+  $handler->display->display_options['fields']['field_liftup_video_scrim']['table'] = 'field_data_field_liftup_video_scrim';
+  $handler->display->display_options['fields']['field_liftup_video_scrim']['field'] = 'field_liftup_video_scrim';
+  $handler->display->display_options['fields']['field_liftup_video_scrim']['label'] = '';
+  $handler->display->display_options['fields']['field_liftup_video_scrim']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_liftup_video_scrim']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_liftup_video_scrim']['type'] = 'list_key';
   /* Field: Content: Video */
   $handler->display->display_options['fields']['field_liftup_video']['id'] = 'field_liftup_video';
   $handler->display->display_options['fields']['field_liftup_video']['table'] = 'field_data_field_liftup_video';
   $handler->display->display_options['fields']['field_liftup_video']['field'] = 'field_liftup_video';
   $handler->display->display_options['fields']['field_liftup_video']['label'] = '';
+  $handler->display->display_options['fields']['field_liftup_video']['element_class'] = 'scrim-[field_liftup_video_scrim]';
   $handler->display->display_options['fields']['field_liftup_video']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_liftup_video']['click_sort_column'] = 'sid';
   $handler->display->display_options['fields']['field_liftup_video']['type'] = 'video_liftup';
