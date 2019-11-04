@@ -148,7 +148,7 @@ function kada_page_feature_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -1324,7 +1324,7 @@ function kada_page_feature_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 26,
+      'weight' => 27,
     ),
   );
 
