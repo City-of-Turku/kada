@@ -65,15 +65,16 @@ console.log(gutil.env.production);
 // BrowserSync task
 gulp.task('browserSync', function() {
   browserSync.init({
-    //files: path.styles.dist + '*.css', // Does not work when stylesheets have @import
-    files: path.styles.src + '**/*.scss',
-    // proxy: 'localhost:8080/pori-web/',
+    proxy: 'https://local.pori.fi',
+    open: false,
+    injectChanges: true,
+    reload: false,
     // browser: '<browser>'
   })
 });
 
 // Sass task
-gulp.task('sass', function(minify) {
+gulp.task('sass', () => {
   return gulp.src(path.styles.src + '**/*.scss')
     .pipe(gulpif(path.sourcemaps.prod, sourcemaps.init()))
     .pipe(sassGlob())
@@ -95,17 +96,18 @@ gulp.task('sass', function(minify) {
     .pipe(autoprefix({
       browsers: ['last 2 versions']
     }))
-    .pipe(path.env.prod === true ? cleanCss() : gutil.noop())
+    .pipe(cleanCss())
     .pipe(gulpif(path.sourcemaps.prod, sourcemaps.write()))
-    .pipe(gulp.dest(path.styles.dist));
+    .pipe(gulp.dest(path.styles.dist))
+    .pipe(browserSync.reload({ stream: true }));
 });
 
 // Watch task
-gulp.task('watch', gulp.series(gulp.parallel('sass', 'browserSync')), function() {
-  gulp.watch(path.styles.src + '**/*.scss', ['sass']);
+gulp.task('watch', gulp.parallel('browserSync', function() {
+  gulp.watch(path.styles.src + '**/*.scss', gulp.series('sass'));
   gulp.watch(path.templates.dist + '**/*.html.twig', browserSync.reload);
-  gulp.watch(path.scripts.src + '*.js', ['scripts']).on('change', browserSync.reload);
-});
+  gulp.watch(path.scripts.src + '*.js', gulp.series('scripts'));
+}));
 
 // Uglify task
 gulp.task('scripts', function() {
