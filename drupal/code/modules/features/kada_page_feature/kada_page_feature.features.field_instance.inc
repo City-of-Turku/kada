@@ -148,7 +148,7 @@ function kada_page_feature_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -284,7 +284,7 @@ function kada_page_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 20,
+      'weight' => 21,
     ),
   );
 
@@ -647,7 +647,7 @@ function kada_page_feature_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -814,7 +814,7 @@ function kada_page_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -908,7 +908,7 @@ function kada_page_feature_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -972,6 +972,64 @@ function kada_page_feature_field_default_field_instances() {
       ),
       'type' => 'atom_reference_textfield',
       'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'node-page-field_liftup_video_scrim'.
+  $field_instances['node-page-field_liftup_video_scrim'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If you want to, you can select scrim to overlay your video from here.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 47,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'only_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_liftup_video_scrim',
+    'label' => 'Video scrim',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 14,
     ),
   );
 
@@ -1266,7 +1324,7 @@ function kada_page_feature_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 24,
+      'weight' => 26,
     ),
   );
 
@@ -1399,7 +1457,7 @@ function kada_page_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 23,
+      'weight' => 25,
     ),
   );
 
@@ -1461,7 +1519,7 @@ function kada_page_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 21,
+      'weight' => 22,
     ),
   );
 
@@ -1759,7 +1817,7 @@ function kada_page_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 22,
+      'weight' => 23,
     ),
   );
 
@@ -1982,6 +2040,7 @@ function kada_page_feature_field_default_field_instances() {
   t('Give a link to the content if the liftup is a shortcut to somewhere. In some content types this link is displayed as the title for the liftup, in others it is a separate link after the body text. Use the <em>Search content</em> button if the link is not to a external source.');
   t('Go to Twitter and do search for hashtags or keywords you want to get to the KADA site. Then create embed out of the search results, see the tutorial video: <a href="http://monosnap.com/file/5uPXucQCVsialYbdGSlVvlKw3pyq6a" target="_blank">http://monosnap.com/file/5uPXucQCVsialYbdGSlVvlKw3pyq6a</a>');
   t('Groups audience');
+  t('If you want to, you can select scrim to overlay your video from here.');
   t('Info box (bottom)');
   t('Info box (top)');
   t('Keywords');
@@ -2003,6 +2062,7 @@ function kada_page_feature_field_default_field_instances() {
   t('Tweet embed');
   t('Use the City-theme for footer pages');
   t('Video');
+  t('Video scrim');
   t('Visitpori color name');
   t('Visitpori theme');
   t('Widgets before content');

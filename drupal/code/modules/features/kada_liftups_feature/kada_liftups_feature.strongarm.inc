@@ -215,6 +215,12 @@ function kada_liftups_feature_strongarm() {
       'waste_search' => array(
         'custom_settings' => FALSE,
       ),
+      'contact_card' => array(
+        'custom_settings' => FALSE,
+      ),
+      'person_card_with_skills' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(

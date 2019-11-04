@@ -67,9 +67,10 @@ function kada_page_feature_field_group_info() {
       11 => 'field_show_main_image',
       12 => 'field_person_reference',
       13 => 'field_businesspori_theme',
-      14 => 'language',
-      15 => 'title',
-      16 => 'field_liftup_video',
+      14 => 'field_liftup_video',
+      15 => 'language',
+      16 => 'title',
+      17 => 'field_liftup_video_scrim',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

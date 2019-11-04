@@ -177,7 +177,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -296,7 +296,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 18,
+      'weight' => 19,
     ),
   );
 
@@ -451,7 +451,7 @@ function kada_liftups_feature_field_default_field_instances() {
       'module' => 'multiple_selects',
       'settings' => array(),
       'type' => 'multiple_selects',
-      'weight' => 17,
+      'weight' => 18,
     ),
   );
 
@@ -627,6 +627,81 @@ function kada_liftups_feature_field_default_field_instances() {
       ),
       'type' => 'atom_reference_textfield',
       'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance: 'node-liftup-field_liftup_video_scrim'.
+  $field_instances['node-liftup-field_liftup_video_scrim'] = array(
+    'bundle' => 'liftup',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If you wish to place scrim on top of video, please select a color.',
+    'display' => array(
+      'carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'current' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
+      ),
+      'event_top_carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_liftup_video_scrim',
+    'label' => 'Video scrim',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 15,
     ),
   );
 
@@ -853,7 +928,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'use_geocoder' => 1,
       ),
       'type' => 'geofield_openlayers',
-      'weight' => 19,
+      'weight' => 20,
     ),
   );
 
@@ -1057,7 +1132,7 @@ function kada_liftups_feature_field_default_field_instances() {
         'context' => 'sdl_editor_representation',
       ),
       'type' => 'atom_reference_textfield',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -1747,6 +1822,7 @@ You can change the background color of the link in banner by choosing one below.
   t('Give a link to the content if the liftup is a shortcut to somewhere. In some content types this link is displayed as the title for the liftup, in others it is a separate link after the body text. Use the <em>Search content</em> button if the link is not to a external source.');
   t('Give a visible title only if it has to be visible for this liftup. This is not linked to anything by default, use the <em>Link to content</em> field for that.');
   t('Groups audience');
+  t('If you wish to place scrim on top of video, please select a color.');
   t('Image');
   t('Image which will be displayed in different sizes depending on the location');
   t('Keywords');
@@ -1764,6 +1840,7 @@ You can change the background color of the link in banner by choosing one below.
   t('Theme');
   t('Theme will give theme\'s color to the liftup and can affect where it is displayed');
   t('Video');
+  t('Video scrim');
   t('Vignette');
   t('Visible title');
   t('Visitpori theme');
