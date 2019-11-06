@@ -200,6 +200,14 @@ function kada_news_feature_context_default_contexts() {
   $context->description = 'News archive';
   $context->tag = 'views';
   $context->conditions = array(
+    'domain' => array(
+      'values' => array(
+        'calendar' => 'calendar',
+        'pori_fi' => 'pori_fi',
+        'tapahtumat_pori_fi' => 'tapahtumat_pori_fi',
+        'visitpori_fi' => 'visitpori_fi',
+      ),
+    ),
     'views' => array(
       'values' => array(
         'pori_news:page' => 'pori_news:page',
@@ -207,7 +215,7 @@ function kada_news_feature_context_default_contexts() {
     ),
   );
   $context->reactions = array();
-  $context->condition_mode = 0;
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
