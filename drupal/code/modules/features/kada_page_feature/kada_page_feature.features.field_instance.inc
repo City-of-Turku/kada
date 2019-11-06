@@ -242,9 +242,8 @@ function kada_page_feature_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'i18n_taxonomy',
         'settings' => array(),
-        'type' => 'i18n_taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 40,
       ),
       'live_results_search' => array(

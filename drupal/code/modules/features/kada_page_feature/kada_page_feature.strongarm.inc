@@ -196,7 +196,13 @@ function kada_page_feature_strongarm() {
       'live_results_search' => array(
         'custom_settings' => TRUE,
       ),
+      'contact_card' => array(
+        'custom_settings' => FALSE,
+      ),
       'person_card' => array(
+        'custom_settings' => FALSE,
+      ),
+      'person_card_with_skills' => array(
         'custom_settings' => FALSE,
       ),
       'small_liftup_banner' => array(
