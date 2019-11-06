@@ -826,3 +826,14 @@ function kadaprofile_update_7136() {
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enables Pori Facts.
+ */
+function kadaprofile_update_7137() {
+  $modules = array('pori_facts_feature');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}
