@@ -2081,6 +2081,13 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'current_twitter' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -2176,6 +2183,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 25,
       ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'i18n_taxonomy',
@@ -2232,6 +2245,16 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(
           'image_link' => 'content',
           'image_style' => 'current',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'current_twitter' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => '',
         ),
         'type' => 'image',
         'weight' => 1,
@@ -2311,6 +2334,13 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 4,
+      ),
+      'current_twitter' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 11,
       ),
       'default' => array(
         'label' => 'above',
@@ -2394,6 +2424,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 22,
       ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'i18n_taxonomy',
@@ -2455,6 +2491,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 3,
+      ),
+      'current_twitter' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -2539,6 +2581,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 23,
       ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'geofield',
@@ -2600,6 +2648,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 27,
+      ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
       'default' => array(
         'label' => 'above',
@@ -2698,6 +2752,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 31,
       ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'text',
@@ -2793,6 +2853,13 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 6,
+      ),
+      'current_twitter' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -2891,6 +2958,13 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 7,
       ),
+      'current_twitter' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -2986,6 +3060,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 29,
       ),
+      'current_twitter' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -3080,6 +3160,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 30,
+      ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'default' => array(
         'label' => 'above',
@@ -3177,6 +3263,13 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'kada_some_id_link',
         'weight' => 0,
       ),
+      'current_twitter' => array(
+        'label' => 'hidden',
+        'module' => 'kada_some_content_feature',
+        'settings' => array(),
+        'type' => 'kada_some_id_link',
+        'weight' => 8,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'kada_some_content_feature',
@@ -3272,6 +3365,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 28,
       ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
@@ -3328,6 +3427,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 24,
+      ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
       ),
       'default' => array(
         'label' => 'above',
@@ -3386,6 +3491,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 32,
       ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'i18n_taxonomy',
@@ -3443,6 +3554,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 26,
+      ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
       ),
       'default' => array(
         'label' => 'above',
