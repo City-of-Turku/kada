@@ -2938,9 +2938,13 @@ example.org';
   $strongarm->api_version = 1;
   $strongarm->name = 'path_alias_whitelist';
   $strongarm->value = array(
+    'news-archive' => TRUE,
     'node' => TRUE,
+    'phone-book' => TRUE,
     'taxonomy' => TRUE,
     'user' => TRUE,
+    'visitpori' => TRUE,
+    'waste' => TRUE,
   );
   $export['path_alias_whitelist'] = $strongarm;
 

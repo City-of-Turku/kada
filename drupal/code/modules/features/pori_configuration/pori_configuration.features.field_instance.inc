@@ -514,7 +514,7 @@ function pori_configuration_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 14,
       ),
       'current' => array(
         'label' => 'above',
@@ -526,7 +526,7 @@ function pori_configuration_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 18,
+        'weight' => 20,
       ),
       'event_top_carousel' => array(
         'label' => 'above',
@@ -780,7 +780,7 @@ function pori_configuration_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -874,7 +874,7 @@ function pori_configuration_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 23,
+      'weight' => 26,
     ),
   );
 
@@ -936,7 +936,7 @@ function pori_configuration_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 13,
+      'weight' => 15,
     ),
   );
 

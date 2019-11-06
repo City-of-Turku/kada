@@ -20,7 +20,7 @@ function kada_media_feature_default_scald_context_config() {
       '*' => 'group-responsive_top_carousel',
     ),
     'video' => array(
-      '*' => 'passthrough',
+      '*' => 'group-responsive_top_carousel',
     ),
     'file' => array(
       '*' => 'passthrough',
@@ -44,8 +44,8 @@ function kada_media_feature_default_scald_context_config() {
     ),
   );
   $context_config->data = array(
-    'width' => '',
-    'height' => '',
+    'width' => '100%',
+    'height' => 'auto',
   );
   $export['carousel'] = $context_config;
 
@@ -58,7 +58,7 @@ function kada_media_feature_default_scald_context_config() {
       '*' => 'group-responsive_content_full',
     ),
     'video' => array(
-      '*' => 'style-content_full_16_9',
+      '*' => 'passthrough',
     ),
     'file' => array(
       '*' => 'passthrough',
@@ -82,8 +82,8 @@ function kada_media_feature_default_scald_context_config() {
     ),
   );
   $context_config->data = array(
-    'width' => '',
-    'height' => '',
+    'width' => '100%',
+    'height' => 'auto',
   );
   $export['content_full'] = $context_config;
 

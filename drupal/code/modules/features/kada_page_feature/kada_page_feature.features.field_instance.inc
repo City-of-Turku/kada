@@ -148,7 +148,7 @@ function kada_page_feature_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 15,
+      'weight' => 18,
     ),
   );
 
@@ -285,7 +285,7 @@ function kada_page_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 18,
+      'weight' => 21,
     ),
   );
 
@@ -648,7 +648,7 @@ function kada_page_feature_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 17,
+      'weight' => 19,
     ),
   );
 
@@ -815,7 +815,7 @@ function kada_page_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'taxonomy_autocomplete',
-      'weight' => 18,
+      'weight' => 20,
     ),
   );
 
@@ -909,6 +909,127 @@ function kada_page_feature_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
+      'weight' => 16,
+    ),
+  );
+
+  // Exported field_instance: 'node-page-field_liftup_video'.
+  $field_instances['node-page-field_liftup_video'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'You can add single video to be shown on page before the footer.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 46,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'only_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_liftup_video',
+    'label' => 'Video',
+    'required' => 0,
+    'settings' => array(
+      'allow_override' => 0,
+      'entity_translation_sync' => FALSE,
+      'referencable_types' => array(
+        'file' => 0,
+        'image' => 0,
+        'video' => 'video',
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'atom_reference',
+      'settings' => array(
+        'context' => 'sdl_editor_representation',
+      ),
+      'type' => 'atom_reference_textfield',
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'node-page-field_liftup_video_scrim'.
+  $field_instances['node-page-field_liftup_video_scrim'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If you want to, you can select scrim to overlay your video from here.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 47,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'only_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_liftup_video_scrim',
+    'label' => 'Video scrim',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
       'weight' => 14,
     ),
   );
@@ -1204,7 +1325,7 @@ function kada_page_feature_field_default_field_instances() {
         'content_taxonomy_opt_groups' => FALSE,
       ),
       'type' => 'options_select',
-      'weight' => 22,
+      'weight' => 27,
     ),
   );
 
@@ -1217,8 +1338,12 @@ function kada_page_feature_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'settings' => array(),
-        'type' => 'hidden',
+        'module' => 'entityreference',
+        'settings' => array(
+          'bypass_access' => FALSE,
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
         'weight' => 11,
       ),
       'live_results_search' => array(
@@ -1333,7 +1458,7 @@ function kada_page_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 21,
+      'weight' => 25,
     ),
   );
 
@@ -1395,7 +1520,7 @@ function kada_page_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 19,
+      'weight' => 22,
     ),
   );
 
@@ -1693,7 +1818,7 @@ function kada_page_feature_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 20,
+      'weight' => 23,
     ),
   );
 
@@ -1916,6 +2041,7 @@ function kada_page_feature_field_default_field_instances() {
   t('Give a link to the content if the liftup is a shortcut to somewhere. In some content types this link is displayed as the title for the liftup, in others it is a separate link after the body text. Use the <em>Search content</em> button if the link is not to a external source.');
   t('Go to Twitter and do search for hashtags or keywords you want to get to the KADA site. Then create embed out of the search results, see the tutorial video: <a href="http://monosnap.com/file/5uPXucQCVsialYbdGSlVvlKw3pyq6a" target="_blank">http://monosnap.com/file/5uPXucQCVsialYbdGSlVvlKw3pyq6a</a>');
   t('Groups audience');
+  t('If you want to, you can select scrim to overlay your video from here.');
   t('Info box (bottom)');
   t('Info box (top)');
   t('Keywords');
@@ -1936,9 +2062,12 @@ function kada_page_feature_field_default_field_instances() {
   t('Topic');
   t('Tweet embed');
   t('Use the City-theme for footer pages');
+  t('Video');
+  t('Video scrim');
   t('Visitpori color name');
   t('Visitpori theme');
   t('Widgets before content');
+  t('You can add single video to be shown on page before the footer.');
 
   return $field_instances;
 }
