@@ -40,6 +40,21 @@ function kada_some_content_feature_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'node|social_media_update|current_twitter';
+  $ds_fieldsetting->entity_type = 'node';
+  $ds_fieldsetting->bundle = 'social_media_update';
+  $ds_fieldsetting->view_mode = 'current_twitter';
+  $ds_fieldsetting->settings = array(
+    'post_date' => array(
+      'weight' => '12',
+      'label' => 'hidden',
+      'format' => 'ds_post_date_short',
+    ),
+  );
+  $export['node|social_media_update|current_twitter'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
   $ds_fieldsetting->id = 'node|social_media_update|event_grid_item';
   $ds_fieldsetting->entity_type = 'node';
   $ds_fieldsetting->bundle = 'social_media_update';
@@ -159,6 +174,52 @@ function kada_some_content_feature_ds_layout_settings_info() {
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|social_media_update|current_twitter';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'social_media_update';
+  $ds_layout->view_mode = 'current_twitter';
+  $ds_layout->layout = 'liftup_current_layout';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'main' => array(
+        0 => 'body',
+        3 => 'field_share_caption',
+        4 => 'field_share_description',
+        6 => 'field_image_url',
+      ),
+      'header' => array(
+        1 => 'group_top',
+        2 => 'field_image',
+        5 => 'field_some_id',
+        7 => 'post_date',
+      ),
+    ),
+    'fields' => array(
+      'body' => 'main',
+      'group_top' => 'header',
+      'field_image' => 'header',
+      'field_share_caption' => 'main',
+      'field_share_description' => 'main',
+      'field_some_id' => 'header',
+      'field_image_url' => 'main',
+      'post_date' => 'header',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'header' => 'div',
+      'main' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => FALSE,
+  );
+  $export['node|social_media_update|current_twitter'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
   $ds_layout->id = 'node|social_media_update|event_grid_item';
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'social_media_update';
@@ -194,6 +255,24 @@ function kada_some_content_feature_ds_layout_settings_info() {
     'layout_link_custom' => '',
   );
   $export['node|social_media_update|event_grid_item'] = $ds_layout;
+
+  return $export;
+}
+
+/**
+ * Implements hook_ds_view_modes_info().
+ */
+function kada_some_content_feature_ds_view_modes_info() {
+  $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'current_twitter';
+  $ds_view_mode->label = 'Current Twitter';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['current_twitter'] = $ds_view_mode;
 
   return $export;
 }
