@@ -21,10 +21,7 @@
       &.field--name-field-person-image {
         float: none;
         margin: 0 auto 25px;
-        width: 270px;
-        height: 270px;
-        clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-        -webkit-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+        width: 80%;
       }
       &.field--name-person-full-name {
         color: black;
@@ -58,8 +55,8 @@
           line-height: 1.5rem;
           
           @media screen and (min-width: $tablet-portrait-narrow) {
-            line-height: 1.588rem;
-            padding: 0 15px;
+            line-height: 1.488rem;
+            padding: 0 10px;
             font-size: $font-size-small;
             letter-spacing: 1px;
           }
