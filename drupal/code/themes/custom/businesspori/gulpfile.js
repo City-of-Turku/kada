@@ -65,7 +65,7 @@ console.log(gutil.env.production);
 // BrowserSync task
 gulp.task('browserSync', function() {
   browserSync.init({
-    proxy: 'https://local.pori.fi',
+    proxy: 'https://local.businesspori.fi',
     open: false,
     injectChanges: true,
     reload: false,
