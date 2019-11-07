@@ -7,6 +7,10 @@
       background-color: white;
       border-top: none;
       color: #777382;
+
+      a {
+        color: #777382;
+      }
     }
 
     .field {
@@ -21,7 +25,8 @@
       &.field--name-field-person-image {
         float: none;
         margin: 0 auto 25px;
-        width: 80%;
+        width: 250px;
+        height: 250px;
       }
       &.field--name-person-full-name {
         color: black;
@@ -58,7 +63,6 @@
             line-height: 1.488rem;
             padding: 0 10px;
             font-size: $font-size-small;
-            letter-spacing: 1px;
           }
         }
       }
@@ -68,5 +72,7 @@
 
 
 .page-phone-book .person-card {
-  
+  &.field--name-field-person-image {
+    display: none;
+  }
 }
