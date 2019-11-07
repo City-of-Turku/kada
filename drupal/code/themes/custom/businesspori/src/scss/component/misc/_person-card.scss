@@ -1,0 +1,75 @@
+
+.person-card-list {
+  .person-card {
+    .person-card__inner {
+      overflow: visible;
+      padding: 0;
+      background-color: white;
+      border-top: none;
+      color: #777382;
+    }
+
+    .field {
+      margin: 0;
+      width: 100%;
+  
+      @media screen and (min-width: $mobile-landscape-narrow) {
+        margin: 0;
+        width: 100%;
+      }
+  
+      &.field--name-field-person-image {
+        float: none;
+        margin: 0 auto 25px;
+        width: 270px;
+        height: 270px;
+        clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+        -webkit-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+      }
+      &.field--name-person-full-name {
+        color: black;
+        font-weight: bold;
+      }
+      &.field--name-field-mobile-phone-work a {
+        color: #777382;
+      }
+      &.field--name-field-email-single {
+        margin-bottom: 20px;
+        a {
+          color: $green;
+        }
+      }
+      &.field--name-field-visiting-address {
+        display: none;
+      }
+      &.field--name-field-person-skills, &.field--name-field-branch {
+        display: inline-block;
+
+        .field__item {
+          white-space: nowrap;
+          font-family: $bergen-mono;
+          text-transform: uppercase;
+          padding: 0 12px;
+          display: inline-block;
+          border: 1px solid #707070;
+          border-radius: 15px;
+          opacity: 1;
+          margin: 2px 1px;
+          line-height: 1.5rem;
+          
+          @media screen and (min-width: $tablet-portrait-narrow) {
+            line-height: 1.588rem;
+            padding: 0 15px;
+            font-size: $font-size-small;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.page-phone-book .person-card {
+  
+}
