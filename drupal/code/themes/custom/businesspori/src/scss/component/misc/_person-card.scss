@@ -95,6 +95,13 @@
     &.field--name-field-branch, &.field--name-field-person-skills {
       display: none;
     }
+    &.field--name-field-person-image {
+      margin-left: 0 !important;
+  
+      @media screen and (min-width: $tablet-portrait) {
+        margin-left: 0 !important;
+      }
+    }
   }
 }
 
