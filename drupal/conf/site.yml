@@ -97,6 +97,7 @@ develop:
       - update
       - cleanup
       - drush: en devel -y
+      - drush: fra -y
       - drush: cc drush
       # - drush: composer-json-rebuild -y
       # - drush: composer-manager update -y
