@@ -22,6 +22,19 @@
       margin: 0 (-$container-gutter * 2);
     }
   }
+
+  .views-field-field-liftup-video {
+    display: block;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 }
 
 .touchevents .flexslider {
@@ -93,6 +106,18 @@
     }
   }
 }
+li.scrim-dark-gray .flex-caption {
+  color: #fff;
+
+  @media screen and (min-width: $tablet-portrait) {
+    background-color: $black;
+  }
+
+  > a {
+    color: #fff;
+  }
+}
+
 #block-views-kada-top-carousel-block-1,
 #block-views-kada-top-carousel-block-2,
 #block-views-kada-top-carousel-section {
@@ -119,6 +144,15 @@
       top: 0;
       left: 0;
       z-index: -1;
+    }
+  }
+  li.scrim-dark-gray .flex-caption {
+    color: white;
+
+    &:before {
+      content: "";
+      color: white;
+      background: #1E1E1E;
     }
   }
 }
