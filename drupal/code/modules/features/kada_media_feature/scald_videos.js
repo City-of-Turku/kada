@@ -1,25 +1,58 @@
 (function ($) {
   Drupal.behaviors.kada_scald_videos = {
     attach: function(context, settings) {
-      var top_carousel = $('.view-id-kada_top_carousel.view-display-id-block_1');
-      var top_carousel_scald_video = $('.view-id-kada_top_carousel.view-display-id-block_1 .scald_video');
-      var top_carousel_video = $('.view-id-kada_top_carousel.view-display-id-block_1 video');
-      if(top_carousel.length > 0) {
-        top_carousel_scald_video.attr('muted');
-        top_carousel_video.attr('muted');
-        top_carousel_scald_video.attr('playsinline', 'playsinline');
-        top_carousel_video.attr('playsinline', 'playsinline');
-        top_carousel_scald_video.attr('loop', 'true').attr('autoplay', 'true');
-        top_carousel_video.attr('loop', 'true').attr('autoplay', 'true');
-      }
+      var top_carousel_video_container = $('.view-id-kada_top_carousel .views-field-field-liftup-video');
+      var top_carousel_video = $('.view-id-kada_top_carousel video');
+
+      // Required attributes for autoplaying video
+      if (top_carousel_video.length > 0) {
+        top_carousel_video.each(function () {
+          $(this)[0].muted = true;
+          $(this)[0].controls = false;
+          $(this)[0].playsinline,
+          $(this)[0].loop,
+          $(this)[0].autoplay = true;
+        });
+      };
+
+      // Add video scrim to slide
+      function video_scrim() {
+        $('.views-field-field-liftup-video.scrim-dark_gray').each(function () {
+          $(this).parent('li').addClass('scrim-dark-gray');
+        });
+      };
+      video_scrim();
+
+      // Pause button functionality
+      function pause_carousel_video() {
+        var btn = $("<button class='pause-button'></button>");
+
+        top_carousel_video_container.each(function () {
+          btn.appendTo($(this));
+          var pause_button = $(this).find('.pause-button');
+          var video = $(this).find('video')[0];
+          pause_button.addClass('playing');
+          
+          [pause_button[0], video].forEach(function(element){
+            element.addEventListener("click", function() {
+              if (video.paused == false) {
+                video.pause();
+                pause_button.removeClass('playing');
+              } else {
+                video.play();
+                pause_button.addClass('playing');
+              }
+            });
+          });
+        });
+      };
+      pause_carousel_video();
 
       function handle_carousel() {
         window.addEventListener('load', function(){
           var allDivs = $('.view-id-kada_top_carousel.view-display-id-block_1 .slides > li');
           var dvSmallest = allDivs[0];
           $(allDivs).each(function () {
-            console.log($(this).height());
-            console.log($(dvSmallest).height());
             if ($(this).height() < $(dvSmallest).height()) {
               dvSmallest = $(this);
             }

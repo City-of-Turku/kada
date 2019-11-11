@@ -15,3 +15,30 @@
 .view-id-kada_top_carousel.view-display-id-block_1 .field--name-field-title-text {
   display: none;
 }
+
+.pause-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #1E1E1E;
+  border: none;
+}
+.pause-button::before {
+  border-color: transparent transparent transparent white;
+  background: none;
+  border-style: solid;
+  border-width: 7px 0 7px 12px;
+  margin-left: 5px;
+  height: 12px;
+  display: block;
+  content: '';
+}
+.pause-button.playing::before {
+  border-style: double;
+  border-width: 0px 0 0px 12px;
+  margin-left: 3px;
+}
