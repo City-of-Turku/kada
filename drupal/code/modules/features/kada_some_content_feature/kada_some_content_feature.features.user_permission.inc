@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_some_content_feature.features.user_permission.inc
@@ -144,22 +145,11 @@ function kada_some_content_feature_user_default_permissions() {
     'module' => 'node',
   );
 
-  // Exported permission: 'create social_media_update content on assigned domains'.
-  $permissions['create social_media_update content on assigned domains'] = array(
-    'name' => 'create social_media_update content on assigned domains',
-    'roles' => array(
-      'admin' => 'admin',
-      'web journalist' => 'web journalist',
-    ),
-    'module' => 'domain',
-  );
-
   // Exported permission: 'delete any feed_import_facebook content'.
   $permissions['delete any feed_import_facebook content'] = array(
     'name' => 'delete any feed_import_facebook content',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -169,7 +159,6 @@ function kada_some_content_feature_user_default_permissions() {
     'name' => 'delete any feed_import_instagram content',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -179,7 +168,6 @@ function kada_some_content_feature_user_default_permissions() {
     'name' => 'delete any feed_import_twitter content',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -196,7 +184,6 @@ function kada_some_content_feature_user_default_permissions() {
     'name' => 'delete any social_media_update content',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -206,7 +193,6 @@ function kada_some_content_feature_user_default_permissions() {
     'name' => 'delete feed_import_facebook content on assigned domains',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'domain',
   );
@@ -216,7 +202,6 @@ function kada_some_content_feature_user_default_permissions() {
     'name' => 'delete feed_import_instagram content on assigned domains',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'domain',
   );
@@ -226,7 +211,6 @@ function kada_some_content_feature_user_default_permissions() {
     'name' => 'delete feed_import_twitter content on assigned domains',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'domain',
   );
@@ -243,7 +227,6 @@ function kada_some_content_feature_user_default_permissions() {
     'name' => 'delete own feed_import_facebook content',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -253,7 +236,6 @@ function kada_some_content_feature_user_default_permissions() {
     'name' => 'delete own feed_import_instagram content',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -263,7 +245,6 @@ function kada_some_content_feature_user_default_permissions() {
     'name' => 'delete own feed_import_twitter content',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -280,19 +261,8 @@ function kada_some_content_feature_user_default_permissions() {
     'name' => 'delete own social_media_update content',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'delete social_media_update content on assigned domains'.
-  $permissions['delete social_media_update content on assigned domains'] = array(
-    'name' => 'delete social_media_update content on assigned domains',
-    'roles' => array(
-      'admin' => 'admin',
-      'web journalist' => 'web journalist',
-    ),
-    'module' => 'domain',
   );
 
   // Exported permission: 'edit any feed_import_facebook content'.
@@ -534,16 +504,6 @@ function kada_some_content_feature_user_default_permissions() {
   $permissions['update feed_import_youtube_channel content on assigned domains'] = array(
     'name' => 'update feed_import_youtube_channel content on assigned domains',
     'roles' => array(),
-    'module' => 'domain',
-  );
-
-  // Exported permission: 'update social_media_update content on assigned domains'.
-  $permissions['update social_media_update content on assigned domains'] = array(
-    'name' => 'update social_media_update content on assigned domains',
-    'roles' => array(
-      'admin' => 'admin',
-      'web journalist' => 'web journalist',
-    ),
     'module' => 'domain',
   );
 

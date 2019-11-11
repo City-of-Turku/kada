@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_contact_information_feature.features.field_instance.inc
@@ -165,7 +166,7 @@ function pori_contact_information_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 19,
+      'weight' => 18,
     ),
   );
 
@@ -259,7 +260,7 @@ function pori_contact_information_feature_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 27,
+      'weight' => 19,
     ),
   );
 
@@ -354,7 +355,69 @@ function pori_contact_information_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 17,
+      'weight' => 16,
+    ),
+  );
+
+  // Exported field_instance: 'node-person-field_prevent_phonebook'.
+  $field_instances['node-person-field_prevent_phonebook'] = array(
+    'bundle' => 'person',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'By checking this contact is not shown on phonebook.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 36,
+      ),
+      'full' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'only_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'person_card' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_prevent_phonebook',
+    'label' => 'Prevent from appearing in phonebook',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 8,
     ),
   );
 
@@ -448,7 +511,7 @@ function pori_contact_information_feature_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 18,
+      'weight' => 17,
     ),
   );
 
@@ -457,7 +520,9 @@ function pori_contact_information_feature_field_default_field_instances() {
   t('Activity unit');
   t('Availability');
   t('Branch');
+  t('By checking this contact is not shown on phonebook.');
   t('Contact person');
+  t('Prevent from appearing in phonebook');
   t('Unit');
 
   return $field_instances;

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_page_feature.field_group.inc
@@ -25,6 +26,7 @@ function kada_page_feature_field_group_info() {
     'children' => array(
       0 => 'field_additional_info_link',
       1 => 'field_file_attachment',
+      2 => 'field_contact_person',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -59,10 +61,14 @@ function kada_page_feature_field_group_info() {
       5 => 'field_main_image',
       6 => 'field_info_box',
       7 => 'field_visitpori_theme',
-      8 => 'field_visitpori_theme',
-      9 => 'field_service_offering',
-      10 => 'language',
-      11 => 'title',
+      8 => 'field_service_offering',
+      9 => 'field_widgets_after_content',
+      10 => 'field_responsibility',
+      11 => 'field_show_main_image',
+      12 => 'field_person_reference',
+      13 => 'field_businesspori_theme',
+      14 => 'language',
+      15 => 'title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(
@@ -88,7 +94,7 @@ function kada_page_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Recommended links',
-    'weight' => '5',
+    'weight' => '7',
     'children' => array(
       0 => 'field_link_to_content_multiple',
     ),
@@ -170,7 +176,7 @@ function kada_page_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Unused',
-    'weight' => '7',
+    'weight' => '8',
     'children' => array(
       0 => 'field_contact_information',
       1 => 'field_district',
@@ -202,7 +208,7 @@ function kada_page_feature_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Widgets',
-    'weight' => '4',
+    'weight' => '6',
     'children' => array(
       0 => 'field_feed_tabs',
       1 => 'field_theme_main_page',

@@ -171,6 +171,8 @@ projects[conditional_fields][subdir] = contrib
 
 projects[content_lock][version] = 3.0-beta1
 projects[content_lock][subdir] = contrib
+; Patch to fix cancel button problem.
+projects[content_lock][patch][] = https://www.drupal.org/files/issues/cancel-edit-fix-2852631.patch
 
 projects[content_taxonomy][version] = 1.0-rc1
 projects[content_taxonomy][subdir] = contrib
@@ -277,6 +279,9 @@ projects[entityreference][subdir] = "contrib"
 
 projects[entityreference_prepopulate][version] = 1.5
 projects[entityreference_prepopulate][subdir] = contrib
+
+projects[entity_delete_log][version] = 1.1
+projects[entity_delete_log][subdir] = contrib
 
 projects[entityqueue][version] = 1.1
 projects[entityqueue][subdir] = contrib
@@ -461,7 +466,7 @@ projects[menu_block][subdir] = contrib
 projects[metatag][version] = 1.25
 projects[metatag][subdir] = contrib
 
-projects[module_filter][version] = 2.1
+projects[module_filter][version] = 2.2
 projects[module_filter][subdir] = contrib
 
 projects[multiple_entity_form][version] = 1.3
@@ -623,6 +628,11 @@ projects[service_links][subdir] = contrib
 ; Patch for Facebook Like button visibility
 ; projects[service_links][patch][] = "https://www.drupal.org/files/service_links-2039431.patch"
 
+projects[sharethis][version] = 2.13
+projects[sharethis][subdir] = contrib
+projects[sharethis][patch][] = "https://www.drupal.org/files/issues/2759221-unable-to-select-services-90.patch"
+projects[sharethis][patch][] = "https://www.drupal.org/files/issues/2019-08-22/2759221-unable-to-select-services-99.patch"
+
 projects[shortcutperrole][version] = 1.2
 projects[shortcutperrole][subdir] = contrib
 
@@ -681,7 +691,7 @@ projects[token][subdir] = contrib
 projects[transliteration][version] = 3.2
 projects[transliteration][subdir] = contrib
 
-projects[uuid][version] = 1.0
+projects[uuid][version] = 1.3
 projects[uuid][subdir] = contrib
 
 projects[uuid_features][version] = 1.0-rc1

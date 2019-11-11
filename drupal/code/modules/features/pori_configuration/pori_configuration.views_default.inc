@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_configuration.views_default.inc
@@ -9,6 +10,447 @@
  */
 function pori_configuration_views_default_views() {
   $export = array();
+
+  $view = new view();
+  $view->name = 'entity_delete_log_pori';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'entity_delete_log';
+  $view->human_name = 'Entity Delete Log Pori';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Entity Delete Log pori';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['access']['perm'] = 'access site reports';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Filter';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '25';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'entity_id' => 'entity_id',
+    'entity_type' => 'entity_type',
+    'entity_bundle' => 'entity_bundle',
+    'entity_title' => 'entity_title',
+    'name_1' => 'name_1',
+    'revisions' => 'revisions',
+    'created' => 'created',
+    'deleted' => 'deleted',
+    'name' => 'name',
+  );
+  $handler->display->display_options['style_options']['default'] = '-1';
+  $handler->display->display_options['style_options']['info'] = array(
+    'entity_id' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'entity_type' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'entity_bundle' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'entity_title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name_1' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'revisions' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'deleted' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = 'A listing of deleted Entities.';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* No results behavior: Global: Text area */
+  $handler->display->display_options['empty']['area']['id'] = 'area';
+  $handler->display->display_options['empty']['area']['table'] = 'views';
+  $handler->display->display_options['empty']['area']['field'] = 'area';
+  $handler->display->display_options['empty']['area']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area']['content'] = 'There are no records of entities being deleted. Visit the <a href="/admin/config/entity-delete-log">Entity Delete Log Settings</a> to select which entity types will be logged when deleted.';
+  $handler->display->display_options['empty']['area']['format'] = 'full_html';
+  /* Relationship: Entity Delete Log: Acting User Account */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'entity_delete_log';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: Entity Delete Log: Author User Account */
+  $handler->display->display_options['relationships']['author']['id'] = 'author';
+  $handler->display->display_options['relationships']['author']['table'] = 'entity_delete_log';
+  $handler->display->display_options['relationships']['author']['field'] = 'author';
+  /* Field: Entity Delete Log: Entity ID */
+  $handler->display->display_options['fields']['entity_id']['id'] = 'entity_id';
+  $handler->display->display_options['fields']['entity_id']['table'] = 'entity_delete_log';
+  $handler->display->display_options['fields']['entity_id']['field'] = 'entity_id';
+  $handler->display->display_options['fields']['entity_id']['separator'] = '';
+  /* Field: Entity Delete Log: Entity Title */
+  $handler->display->display_options['fields']['entity_title']['id'] = 'entity_title';
+  $handler->display->display_options['fields']['entity_title']['table'] = 'entity_delete_log';
+  $handler->display->display_options['fields']['entity_title']['field'] = 'entity_title';
+  /* Field: Entity Delete Log: Entity Type */
+  $handler->display->display_options['fields']['entity_type']['id'] = 'entity_type';
+  $handler->display->display_options['fields']['entity_type']['table'] = 'entity_delete_log';
+  $handler->display->display_options['fields']['entity_type']['field'] = 'entity_type';
+  /* Field: Entity Delete Log: Entity Bundle */
+  $handler->display->display_options['fields']['entity_bundle']['id'] = 'entity_bundle';
+  $handler->display->display_options['fields']['entity_bundle']['table'] = 'entity_delete_log';
+  $handler->display->display_options['fields']['entity_bundle']['field'] = 'entity_bundle';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['fields']['name_1']['table'] = 'users';
+  $handler->display->display_options['fields']['name_1']['field'] = 'name';
+  $handler->display->display_options['fields']['name_1']['relationship'] = 'author';
+  $handler->display->display_options['fields']['name_1']['label'] = 'Author';
+  /* Field: Entity Delete Log: Revisions */
+  $handler->display->display_options['fields']['revisions']['id'] = 'revisions';
+  $handler->display->display_options['fields']['revisions']['table'] = 'entity_delete_log';
+  $handler->display->display_options['fields']['revisions']['field'] = 'revisions';
+  $handler->display->display_options['fields']['revisions']['separator'] = '';
+  /* Field: Entity Delete Log: Created */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'entity_delete_log';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  /* Field: Entity Delete Log: Deleted */
+  $handler->display->display_options['fields']['deleted']['id'] = 'deleted';
+  $handler->display->display_options['fields']['deleted']['table'] = 'entity_delete_log';
+  $handler->display->display_options['fields']['deleted']['field'] = 'deleted';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = 'Acting User';
+  /* Sort criterion: Entity Delete Log: Deleted */
+  $handler->display->display_options['sorts']['deleted']['id'] = 'deleted';
+  $handler->display->display_options['sorts']['deleted']['table'] = 'entity_delete_log';
+  $handler->display->display_options['sorts']['deleted']['field'] = 'deleted';
+  $handler->display->display_options['sorts']['deleted']['order'] = 'DESC';
+  /* Filter criterion: Entity Delete Log: Entity Type */
+  $handler->display->display_options['filters']['entity_type']['id'] = 'entity_type';
+  $handler->display->display_options['filters']['entity_type']['table'] = 'entity_delete_log';
+  $handler->display->display_options['filters']['entity_type']['field'] = 'entity_type';
+  $handler->display->display_options['filters']['entity_type']['group'] = 1;
+  $handler->display->display_options['filters']['entity_type']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['entity_type']['expose']['operator_id'] = 'entity_type_op';
+  $handler->display->display_options['filters']['entity_type']['expose']['label'] = 'Entity Type';
+  $handler->display->display_options['filters']['entity_type']['expose']['operator'] = 'entity_type_op';
+  $handler->display->display_options['filters']['entity_type']['expose']['identifier'] = 'entity_type';
+  $handler->display->display_options['filters']['entity_type']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['entity_type']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    27 => 0,
+    14 => 0,
+    15 => 0,
+    16 => 0,
+    17 => 0,
+    31 => 0,
+    19 => 0,
+    33 => 0,
+    35 => 0,
+    21 => 0,
+    22 => 0,
+    26 => 0,
+  );
+  $handler->display->display_options['filters']['entity_type']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['entity_type']['group_info']['label'] = 'Entity Type';
+  $handler->display->display_options['filters']['entity_type']['group_info']['identifier'] = 'entity_type';
+  $handler->display->display_options['filters']['entity_type']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'Node',
+      'operator' => '=',
+      'value' => 'node',
+    ),
+    2 => array(
+      'title' => 'File',
+      'operator' => '=',
+      'value' => 'file',
+    ),
+    3 => array(
+      'title' => 'Widget',
+      'operator' => '=',
+      'value' => 'widget',
+    ),
+    4 => array(
+      'title' => 'Taxonomy term',
+      'operator' => '=',
+      'value' => 'taxonomy_term',
+    ),
+    5 => array(
+      'title' => 'Scald atom',
+      'operator' => '=',
+      'value' => 'scald_atom',
+    ),
+    6 => array(
+      'title' => 'User',
+      'operator' => '=',
+      'value' => 'user',
+    ),
+  );
+  /* Filter criterion: Entity Delete Log: Entity Bundle */
+  $handler->display->display_options['filters']['entity_bundle']['id'] = 'entity_bundle';
+  $handler->display->display_options['filters']['entity_bundle']['table'] = 'entity_delete_log';
+  $handler->display->display_options['filters']['entity_bundle']['field'] = 'entity_bundle';
+  $handler->display->display_options['filters']['entity_bundle']['group'] = 1;
+  $handler->display->display_options['filters']['entity_bundle']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['entity_bundle']['expose']['operator_id'] = 'entity_bundle_op';
+  $handler->display->display_options['filters']['entity_bundle']['expose']['label'] = 'Entity Bundle';
+  $handler->display->display_options['filters']['entity_bundle']['expose']['operator'] = 'entity_bundle_op';
+  $handler->display->display_options['filters']['entity_bundle']['expose']['identifier'] = 'entity_bundle';
+  $handler->display->display_options['filters']['entity_bundle']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['entity_bundle']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    10 => 0,
+    11 => 0,
+    12 => 0,
+    13 => 0,
+    27 => 0,
+    14 => 0,
+    15 => 0,
+    16 => 0,
+    17 => 0,
+    31 => 0,
+    19 => 0,
+    33 => 0,
+    35 => 0,
+    21 => 0,
+    22 => 0,
+    26 => 0,
+  );
+  $handler->display->display_options['filters']['entity_bundle']['is_grouped'] = TRUE;
+  $handler->display->display_options['filters']['entity_bundle']['group_info']['label'] = 'Entity Bundle';
+  $handler->display->display_options['filters']['entity_bundle']['group_info']['identifier'] = 'entity_bundle';
+  $handler->display->display_options['filters']['entity_bundle']['group_info']['group_items'] = array(
+    1 => array(
+      'title' => 'Attraction card',
+      'operator' => '=',
+      'value' => 'attraction_card',
+    ),
+    2 => array(
+      'title' => 'Blog',
+      'operator' => '=',
+      'value' => 'blog',
+    ),
+    3 => array(
+      'title' => 'Blog post',
+      'operator' => '=',
+      'value' => 'blog_post',
+    ),
+    4 => array(
+      'title' => 'Event',
+      'operator' => '=',
+      'value' => 'event',
+    ),
+    5 => array(
+      'title' => 'Feed import - Facebook',
+      'operator' => '=',
+      'value' => 'feed_import_facebook',
+    ),
+    6 => array(
+      'title' => 'Feed import - Instagram',
+      'operator' => '=',
+      'value' => 'feed_import_instagram',
+    ),
+    7 => array(
+      'title' => 'Feed import - Twitter',
+      'operator' => '=',
+      'value' => 'feed_import_twitter',
+    ),
+    8 => array(
+      'title' => 'Feed import - Youtube channel',
+      'operator' => '=',
+      'value' => 'feed_import_youtube_channel',
+    ),
+    9 => array(
+      'title' => 'Landing page',
+      'operator' => '=',
+      'value' => 'landing_page',
+    ),
+    10 => array(
+      'title' => 'Liftup',
+      'operator' => '=',
+      'value' => 'liftup',
+    ),
+    11 => array(
+      'title' => 'News item',
+      'operator' => '=',
+      'value' => 'news_item',
+    ),
+    12 => array(
+      'title' => 'Page',
+      'operator' => '=',
+      'value' => 'page',
+    ),
+    13 => array(
+      'title' => 'Person',
+      'operator' => '=',
+      'value' => 'person',
+    ),
+    14 => array(
+      'title' => 'Place',
+      'operator' => '=',
+      'value' => 'place',
+    ),
+    15 => array(
+      'title' => 'Position of trust',
+      'operator' => '=',
+      'value' => 'position_of_trust',
+    ),
+    16 => array(
+      'title' => 'Section',
+      'operator' => '=',
+      'value' => 'section',
+    ),
+    17 => array(
+      'title' => 'Service description',
+      'operator' => '=',
+      'value' => 'service',
+    ),
+    18 => array(
+      'title' => 'Service offer',
+      'operator' => '=',
+      'value' => 'service_offer',
+    ),
+    19 => array(
+      'title' => 'Social media update',
+      'operator' => '=',
+      'value' => 'social_media_update',
+    ),
+    20 => array(
+      'title' => 'Webform',
+      'operator' => '=',
+      'value' => 'webform',
+    ),
+    21 => array(
+      'title' => '-Widget- Attraction list',
+      'operator' => '=',
+      'value' => 'attraction_list',
+    ),
+    22 => array(
+      'title' => '-Widget- Event carousel',
+      'operator' => '=',
+      'value' => 'event_carousel',
+    ),
+    23 => array(
+      'title' => '-Widget- Event mosaic',
+      'operator' => '=',
+      'value' => 'event_mosaic',
+    ),
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
+  $handler->display->display_options['path'] = 'admin/reports/entity-delete-log-pori';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Entity Delete Log Pori';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['weight'] = '0';
+  $translatables['entity_delete_log_pori'] = array(
+    t('Master'),
+    t('Entity Delete Log pori'),
+    t('more'),
+    t('Filter'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('A listing of deleted Entities.'),
+    t('There are no records of entities being deleted. Visit the <a href="/admin/config/entity-delete-log">Entity Delete Log Settings</a> to select which entity types will be logged when deleted.'),
+    t('Acting User Account'),
+    t('Author User Account'),
+    t('Entity ID'),
+    t('.'),
+    t('Entity Title'),
+    t('Entity Type'),
+    t('Entity Bundle'),
+    t('Author'),
+    t('Revisions'),
+    t('Created'),
+    t('Deleted'),
+    t('Acting User'),
+    t('Page'),
+  );
+  $export['entity_delete_log_pori'] = $view;
 
   $view = new view();
   $view->name = 'pori_main_image_for_page';

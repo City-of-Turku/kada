@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_liftups_feature.strongarm.inc
@@ -190,6 +191,30 @@ function kada_liftups_feature_strongarm() {
       'map' => array(
         'custom_settings' => FALSE,
       ),
+      'attraction_card_mosaic_item' => array(
+        'custom_settings' => FALSE,
+      ),
+      'event_search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'live_results_search' => array(
+        'custom_settings' => TRUE,
+      ),
+      'person_card' => array(
+        'custom_settings' => FALSE,
+      ),
+      'product' => array(
+        'custom_settings' => FALSE,
+      ),
+      'small_liftup_banner' => array(
+        'custom_settings' => TRUE,
+      ),
+      'waste_map' => array(
+        'custom_settings' => FALSE,
+      ),
+      'waste_search' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -249,6 +274,10 @@ function kada_liftups_feature_strongarm() {
             'weight' => '20',
             'visible' => FALSE,
           ),
+          'small_liftup_banner' => array(
+            'weight' => 29,
+            'visible' => FALSE,
+          ),
         ),
         'domain' => array(
           'default' => array(
@@ -273,6 +302,10 @@ function kada_liftups_feature_strongarm() {
           ),
           'project' => array(
             'weight' => '25',
+            'visible' => FALSE,
+          ),
+          'small_liftup_banner' => array(
+            'weight' => 30,
             'visible' => FALSE,
           ),
         ),

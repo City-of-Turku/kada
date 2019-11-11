@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_news_feature.strongarm.inc
@@ -167,6 +168,24 @@ function kada_news_feature_strongarm() {
       'map' => array(
         'custom_settings' => FALSE,
       ),
+      'attraction_card_mosaic_item' => array(
+        'custom_settings' => FALSE,
+      ),
+      'event_mosaic_item' => array(
+        'custom_settings' => FALSE,
+      ),
+      'event_search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'live_results_search' => array(
+        'custom_settings' => TRUE,
+      ),
+      'person_card' => array(
+        'custom_settings' => FALSE,
+      ),
+      'product' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -177,19 +196,19 @@ function kada_news_feature_strongarm() {
           'weight' => '1',
         ),
         'path' => array(
-          'weight' => '2',
+          'weight' => 6,
         ),
         'redirect' => array(
-          'weight' => '1',
+          'weight' => 7,
         ),
         'domain' => array(
-          'weight' => '1',
+          'weight' => 4,
         ),
         'language' => array(
           'weight' => '0',
         ),
         'metatags' => array(
-          'weight' => '40',
+          'weight' => 5,
         ),
       ),
       'display' => array(
@@ -203,16 +222,16 @@ function kada_news_feature_strongarm() {
             'visible' => FALSE,
           ),
           'default' => array(
-            'weight' => '1',
-            'visible' => TRUE,
+            'weight' => 23,
+            'visible' => FALSE,
           ),
           'teaser' => array(
             'weight' => '6',
             'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '2',
-            'visible' => TRUE,
+            'weight' => '25',
+            'visible' => FALSE,
           ),
           'main_news_wide' => array(
             'weight' => '11',
@@ -229,11 +248,11 @@ function kada_news_feature_strongarm() {
             'visible' => FALSE,
           ),
           'default' => array(
-            'weight' => '2',
-            'visible' => TRUE,
+            'weight' => 24,
+            'visible' => FALSE,
           ),
           'full' => array(
-            'weight' => '24',
+            'weight' => '27',
             'visible' => FALSE,
           ),
           'main_news' => array(
@@ -250,6 +269,16 @@ function kada_news_feature_strongarm() {
           ),
           'search_result' => array(
             'weight' => '20',
+            'visible' => FALSE,
+          ),
+        ),
+        'sharethis' => array(
+          'full' => array(
+            'weight' => '4',
+            'visible' => TRUE,
+          ),
+          'default' => array(
+            'weight' => '23',
             'visible' => FALSE,
           ),
         ),
@@ -316,6 +345,7 @@ function kada_news_feature_strongarm() {
   $strongarm->name = 'node_options_news_item';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_news_item'] = $strongarm;
 

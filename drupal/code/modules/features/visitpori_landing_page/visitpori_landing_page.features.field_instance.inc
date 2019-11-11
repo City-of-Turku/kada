@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * visitpori_landing_page.features.field_instance.inc
@@ -21,7 +22,7 @@ function visitpori_landing_page_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 3,
       ),
       'live_results_search' => array(
         'label' => 'above',

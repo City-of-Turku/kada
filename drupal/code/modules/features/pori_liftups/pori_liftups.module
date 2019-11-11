@@ -5,3 +5,23 @@
  */
 
 include_once 'pori_liftups.features.inc';
+
+function pori_liftups_preprocess_node($variables) {
+
+  // Add class to liftup to enable individual colors to liftups in small banners.
+  if(isset($variables['type']) && $variables['type'] == 'liftup') {
+
+    if(isset($variables['field_small_liftup_banner_color'][LANGUAGE_NONE][0]['value'])) {
+      if($variables['field_small_liftup_banner_color'][LANGUAGE_NONE][0]['value'] === '1') {
+        $variables['classes_array'][] = 'small-liftup-pori-black';
+      }
+      else if($variables['field_small_liftup_banner_color'][LANGUAGE_NONE][0]['value'] === '2') {
+        $variables['classes_array'][] = 'small-liftup-pori-green';
+      }
+      else if($variables['field_small_liftup_banner_color'][LANGUAGE_NONE][0]['value'] === '3') {
+        $variables['classes_array'][] = 'small-liftup-pori-red';
+      }
+    }
+
+  }
+}

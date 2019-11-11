@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_user_feature.features.user_permission.inc
@@ -115,7 +116,9 @@ function kada_user_feature_user_default_permissions() {
   // Exported permission: 'access contextual links'.
   $permissions['access contextual links'] = array(
     'name' => 'access contextual links',
-    'roles' => array(),
+    'roles' => array(
+      'authenticated user' => 'authenticated user',
+    ),
     'module' => 'contextual',
   );
 
@@ -137,17 +140,6 @@ function kada_user_feature_user_default_permissions() {
       'admin' => 'admin',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
-    ),
-    'module' => 'language_access',
-  );
-
-  // Exported permission: 'access language ru'.
-  $permissions['access language ru'] = array(
-    'name' => 'access language ru',
-    'roles' => array(
-      'admin' => 'admin',
-      'content editor' => 'content editor',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'language_access',
   );
@@ -286,7 +278,9 @@ function kada_user_feature_user_default_permissions() {
   // Exported permission: 'administer content translations'.
   $permissions['administer content translations'] = array(
     'name' => 'administer content translations',
-    'roles' => array(),
+    'roles' => array(
+      'admin' => 'admin',
+    ),
     'module' => 'i18n_node',
   );
 
@@ -476,8 +470,6 @@ function kada_user_feature_user_default_permissions() {
     'name' => 'administer nodes',
     'roles' => array(
       'admin' => 'admin',
-      'content editor' => 'content editor',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -586,7 +578,6 @@ function kada_user_feature_user_default_permissions() {
     'name' => 'administer taxonomy',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'taxonomy',
   );
@@ -739,7 +730,6 @@ function kada_user_feature_user_default_permissions() {
     'name' => 'delete revisions',
     'roles' => array(
       'admin' => 'admin',
-      'web journalist' => 'web journalist',
     ),
     'module' => 'node',
   );
@@ -920,20 +910,6 @@ function kada_user_feature_user_default_permissions() {
       'web journalist' => 'web journalist',
     ),
     'module' => 'node',
-  );
-
-  // Exported permission: 'schedule (un)publishing of nodes'.
-  $permissions['schedule (un)publishing of nodes'] = array(
-    'name' => 'schedule (un)publishing of nodes',
-    'roles' => array(
-      'admin' => 'admin',
-      'content editor' => 'content editor',
-      'event editor' => 'event editor',
-      'event external editor' => 'event external editor',
-      'external editor' => 'external editor',
-      'web journalist' => 'web journalist',
-    ),
-    'module' => 'scheduler',
   );
 
   // Exported permission: 'select account cancellation method'.

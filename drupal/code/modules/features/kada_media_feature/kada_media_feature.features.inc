@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_media_feature.features.inc
@@ -1269,11 +1270,11 @@ function kada_media_feature_image_default_styles() {
   $styles['site_logo'] = array(
     'label' => 'Site logo',
     'effects' => array(
-      9 => array(
+      0 => array(
         'name' => 'image_scale',
         'data' => array(
           'width' => '',
-          'height' => 60,
+          'height' => 50,
           'upscale' => 0,
         ),
         'weight' => 1,

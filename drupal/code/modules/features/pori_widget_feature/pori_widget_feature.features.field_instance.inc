@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_widget_feature.features.field_instance.inc
@@ -25,7 +26,7 @@ function pori_widget_feature_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 41,
+        'weight' => 44,
       ),
       'live_results_search' => array(
         'label' => 'above',
@@ -64,12 +65,13 @@ function pori_widget_feature_field_default_field_instances() {
       'active' => 1,
       'module' => 'entityreference',
       'settings' => array(
+        'content_taxonomy_autocomplete_new_terms' => 'allow',
         'match_operator' => 'CONTAINS',
         'path' => '',
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 12,
+      'weight' => 23,
     ),
   );
 

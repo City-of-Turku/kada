@@ -73,6 +73,12 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'navigation_top',
           'weight' => '-10',
         ),
+        'menu_block-45' => array(
+          'module' => 'menu_block',
+          'delta' => '45',
+          'region' => 'navigation_top',
+          'weight' => '-9',
+        ),
         'menu_block-2' => array(
           'module' => 'menu_block',
           'delta' => '2',
@@ -102,6 +108,12 @@ function business_pori_configurations_context_default_contexts() {
           'delta' => '44',
           'region' => 'footer',
           'weight' => '-10',
+        ),
+        'menu_block-47' => array(
+          'module' => 'menu_block',
+          'delta' => '47',
+          'region' => 'footer',
+          'weight' => '-9',
         ),
       ),
     ),
@@ -137,6 +149,7 @@ function business_pori_configurations_context_default_contexts() {
     'path' => array(
       'values' => array(
         '<front>' => '<front>',
+        'en/<front>' => 'en/<front>',
       ),
     ),
   );
@@ -155,11 +168,17 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'header',
           'weight' => '-9',
         ),
+        'views-89b484a51bf5cdc2db6af339b2d71883' => array(
+          'module' => 'views',
+          'delta' => '89b484a51bf5cdc2db6af339b2d71883',
+          'region' => 'highlighted',
+          'weight' => '-10',
+        ),
         'views-kada_news-block_1' => array(
           'module' => 'views',
           'delta' => 'kada_news-block_1',
           'region' => 'highlighted',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'views-kada_project_liftups-block_1' => array(
           'module' => 'views',
@@ -201,7 +220,7 @@ function business_pori_configurations_context_default_contexts() {
           'module' => 'views',
           'delta' => 'kada_section_footer-block_1',
           'region' => 'footer',
-          'weight' => '-10',
+          'weight' => '0',
         ),
       ),
     ),
@@ -287,6 +306,49 @@ function business_pori_configurations_context_default_contexts() {
   t('Liftups per landing page for businesspori');
   t('sections');
   $export['businesspori_landing_page'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'businesspori_sitewide_en';
+  $context->description = 'This sitewide context is triggered when using page in English';
+  $context->tag = 'section';
+  $context->conditions = array(
+    'context_all' => array(
+      'values' => array(
+        'businesspori_domain' => 'businesspori_domain',
+      ),
+    ),
+    'language' => array(
+      'values' => array(
+        'en' => 'en',
+      ),
+    ),
+    'sitewide' => array(
+      'values' => array(
+        1 => 1,
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'block-10' => array(
+          'module' => 'block',
+          'delta' => '10',
+          'region' => 'footer',
+          'weight' => '-9',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 1;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('This sitewide context is triggered when using page in English');
+  t('section');
+  $export['businesspori_sitewide_en'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
@@ -492,13 +554,25 @@ function business_pori_configurations_context_default_contexts() {
           'module' => 'menu_block',
           'delta' => '42',
           'region' => 'navigation_top',
-          'weight' => '-10',
+          'weight' => '-8',
+        ),
+        'menu_block-45' => array(
+          'module' => 'menu_block',
+          'delta' => '45',
+          'region' => 'navigation_top',
+          'weight' => '-7',
         ),
         'menu_block-43' => array(
           'module' => 'menu_block',
           'delta' => '43',
           'region' => 'navigation',
-          'weight' => '-10',
+          'weight' => '-8',
+        ),
+        'menu_block-46' => array(
+          'module' => 'menu_block',
+          'delta' => '46',
+          'region' => 'navigation',
+          'weight' => '-7',
         ),
       ),
     ),

@@ -25,7 +25,7 @@ default:
     - code/modules/features: sites/all/modules/features
     - code/themes/custom: sites/all/themes/custom
     - code/profiles/kadaprofile: profiles/kadaprofile
-    - conf/settings.php: sites/default/settings.php
+    - conf/vagrant.settings.php: sites/default/settings.php
     - conf/vagrant.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
     - conf/_ping.php: _ping.php
     - conf/simplesaml: simplesamlphp
@@ -36,12 +36,14 @@ default:
   local_commands:
     new:
       - verify: "Type yes to verify you want to build a new installation: "
+      - shell: ln -sfv /vagrant/drupal/drush/pori-kada.aliases.drushrc.php /home/vagrant/.drush/pori-kada.aliases.drushrc.php
+      - shell: chmod -R a+w web
       - make
-      - backup
+      # - backup
       # Install dev modules
-      - purge
-      - finalize
-      - install
+      # - purge
+      # - finalize
+      # - install
       - cleanup
       - drush: cc drush
       #- drush: composer-json-rebuild -y
@@ -52,12 +54,15 @@ default:
     # Running command "./build.sh update" without environment or with "vagrant" as environment "./build.sh update vagrant" will also make sure that stage_file_proxy is enabled.
     # Basic site update functionality
     update:
+      - shell: ln -sfv /vagrant/drupal/drush/pori-kada.aliases.drushrc.php /home/vagrant/.drush/pori-kada.aliases.drushrc.php
+      - shell: chmod -R a+w web
       - make
       - finalize
       - update
       - cleanup
-      - drush: en devel -y
+      - drush: en devel stage_file_proxy -y
       - drush: cc drush
+      - drush: uli
       #- drush: composer-json-rebuild -y
       #- drush: composer-manager update -y
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
@@ -92,6 +97,7 @@ develop:
       - update
       - cleanup
       - drush: en devel -y
+      - drush: fra -y
       - drush: cc drush
       # - drush: composer-json-rebuild -y
       # - drush: composer-manager update -y

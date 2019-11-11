@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_news_feature.context.inc
@@ -70,7 +71,7 @@ function kada_news_feature_context_default_contexts() {
         'kada_news_feature-news_archive_link' => array(
           'module' => 'kada_news_feature',
           'delta' => 'news_archive_link',
-          'region' => 'help',
+          'region' => 'after_content',
           'weight' => '-10',
         ),
         'views-8800832114b919bcfa2b166f3ecc0aeb' => array(
@@ -196,32 +197,29 @@ function kada_news_feature_context_default_contexts() {
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
   $context->name = 'news_list';
-  $context->description = 'News archive/list';
+  $context->description = 'News archive';
   $context->tag = 'views';
   $context->conditions = array(
-    'path' => array(
+    'domain' => array(
       'values' => array(
-        'news' => 'news',
+        'calendar' => 'calendar',
+        'pori_fi' => 'pori_fi',
+        'tapahtumat_pori_fi' => 'tapahtumat_pori_fi',
+        'visitpori_fi' => 'visitpori_fi',
+      ),
+    ),
+    'views' => array(
+      'values' => array(
+        'pori_news:page' => 'pori_news:page',
       ),
     ),
   );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'kada_export_feature-kada_rss_feed_for_news_archive' => array(
-          'module' => 'kada_export_feature',
-          'delta' => 'kada_rss_feed_for_news_archive',
-          'region' => 'after_content',
-          'weight' => '-10',
-        ),
-      ),
-    ),
-  );
-  $context->condition_mode = 0;
+  $context->reactions = array();
+  $context->condition_mode = 1;
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('News archive/list');
+  t('News archive');
   t('views');
   $export['news_list'] = $context;
 

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_places_feature.field_group.inc
@@ -88,11 +89,13 @@ function kada_places_feature_field_group_info() {
       8 => 'field_phone',
       9 => 'field_phone_switch',
       10 => 'field_website_et',
-      11 => 'language',
+      11 => 'field_read_more',
       12 => 'group_billing_address',
       13 => 'group_postal_address',
       14 => 'group_street_address',
       15 => 'group_visiting_address',
+      17 => 'field_sorting_point',
+      18 => 'field_responsibility',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

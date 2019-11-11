@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_configuration_feature.strongarm.inc
@@ -599,6 +600,35 @@ function kada_configuration_feature_strongarm() {
   $strongarm->name = 'ds_extras_vd';
   $strongarm->value = 0;
   $export['ds_extras_vd'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'entity_delete_log_entity_types';
+  $strongarm->value = array(
+    'node' => 'node',
+    'taxonomy_term' => 'taxonomy_term',
+    'scald_atom' => 'scald_atom',
+    'widget' => 'widget',
+    'file' => 'file',
+    'user' => 'user',
+    'comment' => 0,
+    'entityqueue_subqueue' => 0,
+    'field_collection_item' => 0,
+    'flagging' => 0,
+    'i18n_translation' => 0,
+    'og_membership_type' => 0,
+    'og_membership' => 0,
+    'redirect' => 0,
+    'relation' => 0,
+    'search_api_server' => 0,
+    'search_api_index' => 0,
+    'search_api_live_results_search' => 0,
+    'taxonomy_vocabulary' => 0,
+    'wysiwyg_profile' => 0,
+    'rules_config' => 0,
+  );
+  $export['entity_delete_log_entity_types'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -1768,7 +1798,7 @@ example.org';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_20_expanded';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['menu_block_20_expanded'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1824,7 +1854,7 @@ example.org';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_21_expanded';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['menu_block_21_expanded'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1880,7 +1910,7 @@ example.org';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_22_expanded';
-  $strongarm->value = 0;
+  $strongarm->value = 1;
   $export['menu_block_22_expanded'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -2265,7 +2295,7 @@ example.org';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_block_8_depth';
-  $strongarm->value = '0';
+  $strongarm->value = 2;
   $export['menu_block_8_depth'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -2365,39 +2395,6 @@ example.org';
   $strongarm->name = 'menu_block_9_title_link';
   $strongarm->value = 0;
   $export['menu_block_9_title_link'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'menu_block_ids';
-  $strongarm->value = array(
-    0 => 2,
-    1 => 3,
-    2 => 4,
-    3 => 5,
-    4 => 6,
-    5 => 7,
-    6 => 8,
-    7 => 9,
-    8 => 10,
-    9 => 11,
-    10 => 12,
-    11 => 13,
-    12 => 14,
-    13 => 15,
-    14 => 16,
-    15 => 17,
-    16 => 18,
-    17 => 19,
-    18 => 20,
-    19 => 21,
-    20 => 22,
-    21 => 24,
-    22 => 25,
-    23 => 26,
-    24 => 27,
-  );
-  $export['menu_block_ids'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -3161,20 +3158,6 @@ example.org';
   $strongarm->name = 'scheduler_time_only_format';
   $strongarm->value = 'H:i';
   $export['scheduler_time_only_format'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'search_api_ajax_pages';
-  $strongarm->value = '<front>';
-  $export['search_api_ajax_pages'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'search_api_ajax_visibility';
-  $strongarm->value = '1';
-  $export['search_api_ajax_visibility'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

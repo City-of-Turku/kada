@@ -22,6 +22,8 @@ $menu-padding: 1.25rem;
 @media screen and (max-width: $mobile-menu-breakpoint-max) {
   // For some reason the English menu is main-navigation as for Finnish it is main-menu
   .menu-name-menu-business-pori-p-valikko,
+  .menu-name-menu-business-pori-main-navigati,
+  [class*="menu-name-menu-business-pori-main-navigati"],
   [class*="menu-name-menu-business-pori-p-valikko"] {
     .toggler {
       color: transparent;

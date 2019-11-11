@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_news_feature.ds.inc
@@ -18,7 +19,7 @@ function kada_news_feature_ds_field_settings_info() {
   $ds_fieldsetting->view_mode = 'current';
   $ds_fieldsetting->settings = array(
     'title' => array(
-      'weight' => '3',
+      'weight' => 2,
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -37,12 +38,12 @@ function kada_news_feature_ds_field_settings_info() {
       ),
     ),
     'links' => array(
-      'weight' => '5',
+      'weight' => 4,
       'label' => 'hidden',
       'format' => 'default',
     ),
     'post_date' => array(
-      'weight' => '0',
+      'weight' => 1,
       'label' => 'hidden',
       'format' => 'ds_post_date_kada_date_only',
       'formatter_settings' => array(
@@ -71,11 +72,6 @@ function kada_news_feature_ds_field_settings_info() {
       'weight' => '0',
       'label' => 'hidden',
       'format' => 'ds_post_date_kada_date_only',
-    ),
-    'service_links_displays_group' => array(
-      'weight' => '8',
-      'label' => 'hidden',
-      'format' => 'sld_group_text',
     ),
   );
   $export['node|news_item|full'] = $ds_fieldsetting;
@@ -305,20 +301,18 @@ function kada_news_feature_ds_layout_settings_info() {
   $ds_layout->settings = array(
     'regions' => array(
       'header' => array(
-        0 => 'post_date',
-        1 => 'field_content_image',
-        2 => 'field_vignette',
+        0 => 'field_content_image',
+        1 => 'post_date',
       ),
       'main' => array(
-        3 => 'title',
-        4 => 'field_lead_paragraph_long_text',
-        5 => 'links',
+        3 => 'field_lead_paragraph_long_text',
+        4 => 'links',
+        2 => 'title',
       ),
     ),
     'fields' => array(
       'post_date' => 'header',
       'field_content_image' => 'header',
-      'field_vignette' => 'header',
       'title' => 'main',
       'field_lead_paragraph_long_text' => 'main',
       'links' => 'main',
@@ -348,34 +342,41 @@ function kada_news_feature_ds_layout_settings_info() {
     'regions' => array(
       'main_content' => array(
         0 => 'post_date',
-        1 => 'domain',
-        2 => 'field_lead_paragraph_long_text',
-        3 => 'field_content_image',
-        4 => 'field_info_box',
-        5 => 'body',
-        6 => 'field_district',
+        1 => 'field_lead_paragraph_long_text',
+        2 => 'field_info_box',
+        3 => 'body',
+        4 => 'sharethis',
+        5 => 'field_content_image',
       ),
       'sidebar' => array(
-        7 => 'field_keywords',
-        8 => 'service_links_displays_group',
+        6 => 'field_keywords',
+      ),
+      'additional_information' => array(
+        7 => 'field_additional_info_link',
+        8 => 'field_file_attachment',
+      ),
+      'contact_information' => array(
+        9 => 'field_contact_person',
       ),
     ),
     'fields' => array(
       'post_date' => 'main_content',
-      'domain' => 'main_content',
       'field_lead_paragraph_long_text' => 'main_content',
-      'field_content_image' => 'main_content',
       'field_info_box' => 'main_content',
       'body' => 'main_content',
-      'field_district' => 'main_content',
+      'sharethis' => 'main_content',
+      'field_content_image' => 'main_content',
       'field_keywords' => 'sidebar',
-      'service_links_displays_group' => 'sidebar',
+      'field_additional_info_link' => 'additional_information',
+      'field_file_attachment' => 'additional_information',
+      'field_contact_person' => 'contact_information',
     ),
     'classes' => array(),
     'wrappers' => array(
       'main_content' => 'div',
       'sidebar' => 'div',
       'additional_information' => 'div',
+      'contact_information' => 'div',
       'after_content' => 'div',
     ),
     'layout_wrapper' => 'div',

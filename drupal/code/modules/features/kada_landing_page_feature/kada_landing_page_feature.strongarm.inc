@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_landing_page_feature.strongarm.inc
@@ -180,38 +181,62 @@ function kada_landing_page_feature_strongarm() {
       'map' => array(
         'custom_settings' => FALSE,
       ),
+      'live_results_search' => array(
+        'custom_settings' => TRUE,
+      ),
+      'event_search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'attraction_card_mosaic_item' => array(
+        'custom_settings' => FALSE,
+      ),
+      'product' => array(
+        'custom_settings' => FALSE,
+      ),
+      'person_card' => array(
+        'custom_settings' => FALSE,
+      ),
+      'small_liftup_banner' => array(
+        'custom_settings' => FALSE,
+      ),
+      'waste_map' => array(
+        'custom_settings' => FALSE,
+      ),
+      'waste_search' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'domain' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
         'language' => array(
           'weight' => '2',
         ),
         'metatags' => array(
-          'weight' => '7',
+          'weight' => '8',
         ),
         'title' => array(
           'weight' => '4',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
         'redirect' => array(
-          'weight' => '6',
+          'weight' => '7',
         ),
       ),
       'display' => array(
         'domain' => array(
           'default' => array(
-            'weight' => '1',
+            'weight' => '2',
             'visible' => FALSE,
           ),
         ),
         'language' => array(
           'default' => array(
-            'weight' => '5',
+            'weight' => '8',
             'visible' => FALSE,
           ),
         ),
@@ -249,15 +274,33 @@ function kada_landing_page_feature_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_landing_page';
   $strongarm->value = array(
-    0 => 'menu-footer-en',
-    1 => 'menu-footer-fi',
-    2 => 'menu-footer-sv',
-    3 => 'main-menu',
-    4 => 'menu-main-menu-en',
-    5 => 'menu-main-menu-sv',
-    6 => 'menu-top-menu-en',
-    7 => 'menu-top-menu-fi',
-    8 => 'menu-top-menu-sv',
+    0 => 'menu-business-pori-main-navigati',
+    1 => 'menu-business-pori-footer-menu-e',
+    2 => 'menu-business-pori-footer-menu-f',
+    3 => 'menu-business-pori-p-valikko',
+    4 => 'menu-business-pori-top-menu-en',
+    5 => 'menu-business-pori-top-menu-fi',
+    6 => 'menu-footer-en',
+    7 => 'menu-footer-fi',
+    8 => 'menu-footer-sv',
+    9 => 'main-menu',
+    10 => 'menu-main-menu-en',
+    11 => 'menu-main-menu-sv',
+    12 => 'menu-top-menu-en',
+    13 => 'menu-top-menu-fi',
+    14 => 'menu-top-menu-sv',
+    15 => 'menu-visitpori-footer-menu-de',
+    16 => 'menu-visitpori-footer-menu-en',
+    17 => 'menu-visitpori-footer-menu-fi',
+    18 => 'menu-visitpori-footer-menu-sv',
+    19 => 'menu-visitpori-main-menu-de',
+    20 => 'menu-visitpori-main-navigation',
+    21 => 'menu-visitpori-main-menu-sv',
+    22 => 'menu-visitpori-main-menu',
+    23 => 'menu-visitpori-top-menu-de',
+    24 => 'menu-visitpori-top-menu-en',
+    25 => 'menu-visitpori-top-menu-fi',
+    26 => 'menu-visitpori-top-menu-sv',
   );
   $export['menu_options_landing_page'] = $strongarm;
 
@@ -274,6 +317,7 @@ function kada_landing_page_feature_strongarm() {
   $strongarm->name = 'node_options_landing_page';
   $strongarm->value = array(
     0 => 'status',
+    1 => 'revision',
   );
   $export['node_options_landing_page'] = $strongarm;
 

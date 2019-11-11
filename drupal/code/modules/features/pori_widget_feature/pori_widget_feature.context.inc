@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * pori_widget_feature.context.inc

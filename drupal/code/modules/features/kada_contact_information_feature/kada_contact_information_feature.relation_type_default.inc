@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_contact_information_feature.relation_type_default.inc

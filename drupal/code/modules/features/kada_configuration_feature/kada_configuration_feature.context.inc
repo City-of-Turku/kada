@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file
  * kada_configuration_feature.context.inc
@@ -21,6 +22,9 @@ function kada_configuration_feature_context_default_contexts() {
       'values' => array(
         'default_menu' => 'default_menu',
         'landing_page' => 'landing_page',
+        'news_list' => 'news_list',
+        'person_list' => 'person_list',
+        'search_page' => 'search_page',
       ),
     ),
   );
@@ -44,6 +48,12 @@ function kada_configuration_feature_context_default_contexts() {
           'delta' => '10',
           'region' => 'footer',
           'weight' => '-8',
+        ),
+        'menu_block-29' => array(
+          'module' => 'menu_block',
+          'delta' => 29,
+          'region' => 'footer',
+          'weight' => -7,
         ),
       ),
     ),
@@ -79,30 +89,7 @@ function kada_configuration_feature_context_default_contexts() {
       ),
     ),
   );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'menu_block-11' => array(
-          'module' => 'menu_block',
-          'delta' => '11',
-          'region' => 'sidebar_first',
-          'weight' => '-10',
-        ),
-        'menu_block-12' => array(
-          'module' => 'menu_block',
-          'delta' => '12',
-          'region' => 'sidebar_first',
-          'weight' => '-9',
-        ),
-        'menu_block-13' => array(
-          'module' => 'menu_block',
-          'delta' => '13',
-          'region' => 'sidebar_first',
-          'weight' => '-8',
-        ),
-      ),
-    ),
-  );
+  $context->reactions = array();
   $context->condition_mode = 1;
 
   // Translatables
@@ -118,6 +105,12 @@ function kada_configuration_feature_context_default_contexts() {
   $context->description = 'This context is triggered on the site main front page';
   $context->tag = 'front page';
   $context->conditions = array(
+    'context' => array(
+      'values' => array(
+        '~visitpori_domain' => '~visitpori_domain',
+        '~businesspori_domain' => '~businesspori_domain',
+      ),
+    ),
     'node' => array(
       'values' => array(
         'page' => 'page',
@@ -135,22 +128,64 @@ function kada_configuration_feature_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-kada_top_carousel-block_1' => array(
+          'module' => 'views',
+          'delta' => 'kada_top_carousel-block_1',
+          'region' => 'header',
+          'weight' => '-10',
+        ),
         'views-kada_recommended-block' => array(
           'module' => 'views',
           'delta' => 'kada_recommended-block',
           'region' => 'header',
+          'weight' => '-9',
+        ),
+        'views-85d7d54088e83da79a6f4da7cf5639a5' => array(
+          'module' => 'views',
+          'delta' => '85d7d54088e83da79a6f4da7cf5639a5',
+          'region' => 'highlighted',
           'weight' => '-10',
         ),
-        'views-kada_news-front_block' => array(
+        'views-kada_news-block_1' => array(
           'module' => 'views',
-          'delta' => 'kada_news-front_block',
+          'delta' => 'kada_news-block_1',
           'region' => 'highlighted',
-          'weight' => '-86',
+          'weight' => '-9',
         ),
         'kada_widget_feature-widget_before_content' => array(
           'module' => 'kada_widget_feature',
           'delta' => 'widget_before_content',
           'region' => 'before_content',
+          'weight' => '-9',
+        ),
+        'quicktabs-feed_tabs_frontpage_promoted_con' => array(
+          'module' => 'quicktabs',
+          'delta' => 'feed_tabs_frontpage_promoted_con',
+          'region' => 'before_content',
+          'weight' => '-8',
+        ),
+        'kada_news_feature-news_archive_link' => array(
+          'module' => 'kada_news_feature',
+          'delta' => 'news_archive_link',
+          'region' => 'before_content',
+          'weight' => '-7',
+        ),
+        'kada_export_feature-kada_rss_feed_for_news_archive' => array(
+          'module' => 'kada_export_feature',
+          'delta' => 'kada_rss_feed_for_news_archive',
+          'region' => 'before_content',
+          'weight' => '-6',
+        ),
+        'views-kada_project_liftups-block_1' => array(
+          'module' => 'views',
+          'delta' => 'kada_project_liftups-block_1',
+          'region' => 'before_footer',
+          'weight' => '-10',
+        ),
+        'views-pori_small_liftup_banner-block' => array(
+          'module' => 'views',
+          'delta' => 'pori_small_liftup_banner-block',
+          'region' => 'above_footer',
           'weight' => '-10',
         ),
       ),
@@ -174,19 +209,29 @@ function kada_configuration_feature_context_default_contexts() {
     'context' => array(
       'values' => array(
         'default_menu' => 'default_menu',
-        'section_menus' => 'section_menus',
         'landing_page' => 'landing_page',
+        'news_list' => 'news_list',
+        'person_list' => 'person_list',
+        'search_page' => 'search_page',
+        'visitpori_domain' => 'visitpori_domain',
+        'businesspori_domain' => 'businesspori_domain',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views--exp-main_search-page' => array(
+          'module' => 'views',
+          'delta' => '-exp-main_search-page',
+          'region' => 'branding',
+          'weight' => '-10',
+        ),
         'locale-language' => array(
           'module' => 'locale',
           'delta' => 'language',
-          'region' => 'navigation',
-          'weight' => '-50',
+          'region' => 'branding',
+          'weight' => '-9',
         ),
       ),
     ),
@@ -210,6 +255,9 @@ function kada_configuration_feature_context_default_contexts() {
       'values' => array(
         'default_menu' => 'default_menu',
         'landing_page' => 'landing_page',
+        'news_list' => 'news_list',
+        'person_list' => 'person_list',
+        'search_page' => 'search_page',
       ),
     ),
   );
@@ -234,6 +282,12 @@ function kada_configuration_feature_context_default_contexts() {
           'region' => 'navigation',
           'weight' => '-8',
         ),
+        'menu_block-30' => array(
+          'module' => 'menu_block',
+          'delta' => 30,
+          'region' => 'navigation',
+          'weight' => -7,
+        ),
       ),
     ),
   );
@@ -255,6 +309,11 @@ function kada_configuration_feature_context_default_contexts() {
     'path' => array(
       'values' => array(
         'page-not-translated' => 'page-not-translated',
+      ),
+    ),
+    'context_all' => array(
+      'values' => array(
+        '~visitpori_domain' => '~visitpori_domain',
       ),
     ),
   );
@@ -327,12 +386,6 @@ function kada_configuration_feature_context_default_contexts() {
   $context->description = 'This sitewide context is triggered when using page in English';
   $context->tag = 'section';
   $context->conditions = array(
-    'context' => array(
-      'values' => array(
-        '~section' => '~section',
-        '~section_front' => '~section_front',
-      ),
-    ),
     'context_all' => array(
       'values' => array(
         'default_domain' => 'default_domain',
@@ -356,7 +409,7 @@ function kada_configuration_feature_context_default_contexts() {
           'module' => 'block',
           'delta' => '1',
           'region' => 'footer',
-          'weight' => '-10',
+          'weight' => -40,
         ),
       ),
     ),
@@ -376,12 +429,6 @@ function kada_configuration_feature_context_default_contexts() {
   $context->description = 'This sitewide context is triggered when using page in Finnish';
   $context->tag = 'section';
   $context->conditions = array(
-    'context' => array(
-      'values' => array(
-        '~section' => '~section',
-        '~section_front' => '~section_front',
-      ),
-    ),
     'context_all' => array(
       'values' => array(
         'default_domain' => 'default_domain',
@@ -405,7 +452,7 @@ function kada_configuration_feature_context_default_contexts() {
           'module' => 'block',
           'delta' => '2',
           'region' => 'footer',
-          'weight' => '-10',
+          'weight' => -40,
         ),
       ),
     ),
@@ -425,12 +472,6 @@ function kada_configuration_feature_context_default_contexts() {
   $context->description = 'This sitewide context is triggered when using page in Swedish';
   $context->tag = 'section';
   $context->conditions = array(
-    'context' => array(
-      'values' => array(
-        '~section' => '~section',
-        '~section_front' => '~section_front',
-      ),
-    ),
     'context_all' => array(
       'values' => array(
         'default_domain' => 'default_domain',
@@ -478,6 +519,14 @@ function kada_configuration_feature_context_default_contexts() {
       'values' => array(
         'default_menu' => 'default_menu',
         'landing_page' => 'landing_page',
+        'news_list' => 'news_list',
+        'person_list' => 'person_list',
+        'search_page' => 'search_page',
+      ),
+    ),
+    'domain' => array(
+      'values' => array(
+        'pori_fi' => 'pori_fi',
       ),
     ),
   );
@@ -501,6 +550,12 @@ function kada_configuration_feature_context_default_contexts() {
           'delta' => '22',
           'region' => 'navigation_top',
           'weight' => '-8',
+        ),
+        'menu_block-31' => array(
+          'module' => 'menu_block',
+          'delta' => 31,
+          'region' => 'navigation_top',
+          'weight' => -7,
         ),
       ),
     ),
