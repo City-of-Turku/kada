@@ -127,7 +127,7 @@ function pori_user_permissions_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'simplesamlphp_auth_rolepopulation';
-  $strongarm->value = '3:http://schemas.xmlsoap.org/claims/Group,=,GG_Drupal_Pori_Admin|8:http://schemas.xmlsoap.org/claims/Group,=,GG_Drupal_Pori_WebJournalist|3:http://schemas.xmlsoap.org/claims/Group,=,GG_Drupal_Visit_Admin|8:http://schemas.xmlsoap.org/claims/Group,=,GG_Drupal_Visit_WebJournalist';
+  $strongarm->value = '3:http://schemas.xmlsoap.org/claims/Group,=,GG_Drupal_Pori_Admin|8:http://schemas.xmlsoap.org/claims/Group,=,GG_Drupal_Pori_WebJournalist|3:http://schemas.xmlsoap.org/claims/Group,=,GG_Drupal_Visit_Admin|8:http://schemas.xmlsoap.org/claims/Group,=,GG_Drupal_Visit_WebJournalist|3:http://schemas.xmlsoap.org/claims/Group,=,GG_Drupal_Business_Admin|8:http://schemas.xmlsoap.org/claims/Group,=,GG_Drupal_Business_WebJournalist';
   $export['simplesamlphp_auth_rolepopulation'] = $strongarm;
 
   $strongarm = new stdClass();
