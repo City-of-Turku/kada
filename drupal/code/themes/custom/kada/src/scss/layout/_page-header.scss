@@ -140,16 +140,7 @@
   flex-direction: column;
   overflow: hidden;
   position: relative;
-
-  @media screen and (min-width: $tablet-portrait) {
-    margin: 0 $container-gutter;
-    overflow: visible;
-  }
-
-  @media screen and (min-width: $tablet-portrait) and (max-width: $desktop) {
-    margin: 0 $container-gutter * 2;
-  }
-
+  
   .block {
     order: 2;
 

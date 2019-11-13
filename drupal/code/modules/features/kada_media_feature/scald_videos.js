@@ -9,17 +9,17 @@
         top_carousel_video.each(function () {
           $(this)[0].muted = true;
           $(this)[0].controls = false;
-          $(this)[0].playsinline,
-          $(this)[0].loop,
+          $(this)[0].playsinline;
+          $(this)[0].loop = true;
           $(this)[0].autoplay = true;
         });
       };
 
       // Add video scrim to slide
       function video_scrim() {
-        $('.views-field-field-liftup-video.scrim-dark_gray').each(function () {
-          $(this).parent('li').addClass('scrim-dark-gray');
-        });
+        if ($('.views-field-field-liftup-video.scrim-dark_gray')) {
+          $('.flexslider').addClass('scrim-dark-gray');
+        };
       };
       video_scrim();
 
@@ -58,7 +58,7 @@
             }
           });
           $(allDivs).each(function () {
-            if ($(window).width() < 1024) {
+            if ($(window).width() < 767) {
               $(this).css('height', 'auto').css('overflow', 'hidden');
             }
             else {
