@@ -16,9 +16,9 @@
         });
       };
 
-      // Add video scrim to slide
+      // Add video scrim to slides
       function video_scrim() {
-        if ($('.views-field-field-liftup-video.scrim-dark_gray')) {
+        if ($('.views-field-field-liftup-video.scrim-dark_gray').length > 0) {
           $('.flexslider').addClass('scrim-dark-gray');
         };
       };
