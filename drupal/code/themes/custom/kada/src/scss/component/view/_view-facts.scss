@@ -1,0 +1,111 @@
+// Inline SVGs to change colour
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+@function svg-inline($string){
+  $result: str-replace($string, "<svg", "<svg xmlns='http://www.w3.org/2000/svg'");
+  $result: str-replace($result, '%', '%25');
+  $result: str-replace($result, '"', '%22');
+  $result: str-replace($result, "'", '%27');
+  $result: str-replace($result, ' ', '%20');
+  $result: str-replace($result, '<', '%3C');
+  $result: str-replace($result, '>', '%3E');
+  @return "data:image/svg+xml;utf8," + $result;
+}
+
+@function rgb_color($color) {
+  @return "rgb(" + red($color) + ", " + green($color) + ", " + blue($color)+ ")";
+}
+
+// Shape colour list
+$shape-colors: (
+  red: rgb_color(#FF8200),
+  orange: rgb_color(#FFCD00),
+  yellow: rgb_color(#FFEB99),
+  darkgreen: rgb_color(#00AF66),
+  green: rgb_color(#44BF8B),
+  lightgreen: rgb_color(#B2E1D3),
+  gray: rgb_color(#8A8896),
+  lightgray: rgb_color(#D0CFD5)
+);
+
+.view-facts {
+  .views-row {
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-family: $bergen-mono;
+    text-align: center;
+    display: inline-block;
+    padding-top: 60px;
+    margin: 40px 20px;
+    width: 200px;
+    height: 200px;
+
+    @media screen and (min-width: $desktop) {
+      width: 260px;
+      height: 260px;
+    }
+
+    .views-field-field-fact-number {
+      font-size: $font-size-heading-3;
+      font-weight: bold;
+
+      @media screen and (min-width: $desktop) {
+        font-size: $font-size-heading-1;
+      }
+    }
+    .views-field-field-fact-description {
+      line-height: 1;
+      font-size: $font-size-intro-text;
+      text-transform: uppercase;
+    }
+  }
+
+  // Set colored shapes
+  @each $color, $shape-color in $shape-colors {
+
+    //done
+    .frame-circle.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}}</style></defs><circle class='a' cx='53' cy='53' r='53'/></svg>"));
+    }
+    .frame-tilted-square.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}</style></defs><g transform='translate(-215.502 -217)'><path class='a' d='M274.925,240l11.7,5.781,8.3,10.67L297.939,270l-3.014,13.549-8.3,10.67L274.925,300H262.079l-11.7-5.781-8.295-10.67L239.065,270l3.015-13.549,8.295-10.67,11.7-5.781h12.846m5.371-23H256.708l-21.251,10.5-14.706,18.916L215.5,270l5.249,23.587L235.457,312.5,256.708,323H280.3l21.251-10.5,14.706-18.916L321.5,270l-5.249-23.587L301.547,227.5,280.3,217Z'/></g></svg>"));
+    }
+    .frame-hexagon.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}}</style></defs><circle class='a' cx='53' cy='53' r='53'/></svg>"));
+    }
+    .frame-square.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}}</style></defs><circle class='a' cx='53' cy='53' r='53'/></svg>"));
+    }
+
+    //done
+    .frame-diamond.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}</style></defs><rect class='a' width='74.953' height='74.953' transform='matrix(0.707, -0.707, 0.707, 0.707, 0, 53)'/></svg>"));
+    }
+    .frame-tilted-square.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}}</style></defs><circle class='a' cx='53' cy='53' r='53'/></svg>"));
+    }
+    .frame-triangle.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}</style></defs><path class='a' d='M617.994,323l-87.866,67.873,106,38.127Z' transform='translate(-530.128 -323)'/></svg>"));
+    }
+
+    //done
+    .frame-tilted-triangle.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}}</style></defs><circle class='a' cx='53' cy='53' r='53'/></svg>"));
+    }
+    .frame-decagon.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}}</style></defs><circle class='a' cx='53' cy='53' r='53'/></svg>"));
+    }
+    .frame-dodecagon.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}}</style></defs><circle class='a' cx='53' cy='53' r='53'/></svg>"));
+    }
+    .frame-tetradecagon.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}}</style></defs><circle class='a' cx='53' cy='53' r='53'/></svg>"));
+    }
+  }
+}
