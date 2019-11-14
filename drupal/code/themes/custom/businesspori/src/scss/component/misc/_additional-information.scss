@@ -6,7 +6,8 @@
     padding-left: 0;
   }
 
-  .field--name-field-additional-info-link {
+  .field--name-field-additional-info-link,
+  .field--name-field-file-attachment {
     .field__item {
       border-bottom: 1px solid $green-dark;
       a {
