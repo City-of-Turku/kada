@@ -20,7 +20,7 @@ class AnnotationFileLoaderTest extends AbstractAnnotationLoaderTest
     protected $loader;
     protected $reader;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -35,9 +35,6 @@ class AnnotationFileLoaderTest extends AbstractAnnotationLoaderTest
         $this->loader->load(__DIR__.'/../Fixtures/AnnotatedClasses/FooClass.php');
     }
 
-    /**
-     * @requires PHP 5.4
-     */
     public function testLoadTraitWithClassConstant()
     {
         $this->reader->expects($this->never())->method('getClassAnnotation');
@@ -45,24 +42,19 @@ class AnnotationFileLoaderTest extends AbstractAnnotationLoaderTest
         $this->loader->load(__DIR__.'/../Fixtures/AnnotatedClasses/FooTrait.php');
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     * @expectedExceptionMessage Did you forgot to add the "<?php" start tag at the beginning of the file?
-     */
     public function testLoadFileWithoutStartTag()
     {
+        $this->expectException('InvalidArgumentException');
+        $this->expectExceptionMessage('Did you forgot to add the "<?php" start tag at the beginning of the file?');
         $this->loader->load(__DIR__.'/../Fixtures/OtherAnnotatedClasses/NoStartTagClass.php');
     }
 
-    /**
-     * @requires PHP 5.6
-     */
     public function testLoadVariadic()
     {
-        $route = new Route(array('path' => '/path/to/{id}'));
+        $route = new Route(['path' => '/path/to/{id}']);
         $this->reader->expects($this->once())->method('getClassAnnotation');
         $this->reader->expects($this->once())->method('getMethodAnnotations')
-            ->will($this->returnValue(array($route)));
+            ->willReturn([$route]);
 
         $this->loader->load(__DIR__.'/../Fixtures/OtherAnnotatedClasses/VariadicClass.php');
     }
@@ -76,6 +68,14 @@ class AnnotationFileLoaderTest extends AbstractAnnotationLoaderTest
         $this->reader->expects($this->never())->method('getMethodAnnotations');
 
         $this->loader->load(__DIR__.'/../Fixtures/OtherAnnotatedClasses/AnonymousClassInTrait.php');
+    }
+
+    public function testLoadAbstractClass()
+    {
+        $this->reader->expects($this->never())->method('getClassAnnotation');
+        $this->reader->expects($this->never())->method('getMethodAnnotations');
+
+        $this->loader->load(__DIR__.'/../Fixtures/AnnotatedClasses/AbstractClass.php');
     }
 
     public function testSupports()

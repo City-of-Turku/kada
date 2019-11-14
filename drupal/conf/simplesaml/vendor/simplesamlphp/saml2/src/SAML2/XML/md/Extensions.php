@@ -61,11 +61,13 @@ class Extensions
         return $ret;
     }
 
+
     /**
      * Add a list of Extensions to the given element.
      *
      * @param \DOMElement        $parent     The element we should add the extensions to.
      * @param \SAML2\XML\Chunk[] $extensions List of extension objects.
+     * @return void
      */
     public static function addList(\DOMElement $parent, array $extensions)
     {

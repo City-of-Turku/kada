@@ -3,6 +3,7 @@
 namespace SAML2;
 
 use RobRichards\XMLSecLibs\XMLSecurityKey;
+use Webmozart\Assert\Assert;
 
 /**
  * Class which implements the HTTP-Redirect binding.
@@ -12,6 +13,7 @@ use RobRichards\XMLSecLibs\XMLSecurityKey;
 class HTTPRedirect extends Binding
 {
     const DEFLATE = 'urn:oasis:names:tc:SAML:2.0:bindings:URL-Encoding:DEFLATE';
+
 
     /**
      * Create the redirect URL for a message.
@@ -69,12 +71,13 @@ class HTTPRedirect extends Binding
         return $destination;
     }
 
+
     /**
      * Send a SAML 2 message using the HTTP-Redirect binding.
-     *
      * Note: This function never returns.
      *
      * @param \SAML2\Message $message The message we should send.
+     * @return void
      */
     public function send(Message $message)
     {
@@ -83,13 +86,14 @@ class HTTPRedirect extends Binding
         Utils::getContainer()->redirect($destination);
     }
 
+
     /**
      * Receive a SAML 2 message sent using the HTTP-Redirect binding.
      *
      * Throws an exception if it is unable receive the message.
      *
-     * @return \SAML2\Message The received message.
      * @throws \Exception
+     * @return \SAML2\Message The received message.
      *
      * NPath is currently too high but solving that just moves code around.
      * @SuppressWarnings(PHPMD.NPathComplexity)
@@ -147,6 +151,7 @@ class HTTPRedirect extends Binding
         return $message;
     }
 
+
     /**
      * Helper function to parse query data.
      *
@@ -198,6 +203,7 @@ class HTTPRedirect extends Binding
         return $data;
     }
 
+
     /**
      * Validate the signature on a HTTP-Redirect message.
      *
@@ -206,12 +212,13 @@ class HTTPRedirect extends Binding
      * @param array          $data The data we need to validate the query string.
      * @param XMLSecurityKey $key  The key we should validate the query against.
      * @throws \Exception
+     * @return void
      */
     public static function validateSignature(array $data, XMLSecurityKey $key)
     {
-        assert(array_key_exists("Query", $data));
-        assert(array_key_exists("SigAlg", $data));
-        assert(array_key_exists("Signature", $data));
+        Assert::keyExists($data, "Query");
+        Assert::keyExists($data, "SigAlg");
+        Assert::keyExists($data, "Signature");
 
         $query = $data['Query'];
         $sigAlg = $data['SigAlg'];
