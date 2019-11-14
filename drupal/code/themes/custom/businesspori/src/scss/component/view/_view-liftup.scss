@@ -141,7 +141,7 @@
   }
 
   .liftup-box__image {
-    border-top: $liftup-border solid $green-lime;
+    border-top: $liftup-border solid $green-dark;
     position: relative;
 
     // Image placeholder
@@ -276,7 +276,7 @@
   .node--page,
   .node--liftup {
     align-items: flex-start;
-    border-top: $liftup-border solid $green-lime;
+    border-top: $liftup-border solid $green-dark;
     display: flex;
     flex-direction: column-reverse;
     margin: 0 auto;
@@ -522,7 +522,7 @@
   }
 
   .liftup-box__header {
-    border-top: $liftup-border solid $green-lime;
+    border-top: $liftup-border solid $green-dark;
   }
 
   .field--name-title,
