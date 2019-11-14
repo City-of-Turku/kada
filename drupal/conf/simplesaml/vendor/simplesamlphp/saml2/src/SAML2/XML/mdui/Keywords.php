@@ -2,6 +2,8 @@
 
 namespace SAML2\XML\mdui;
 
+use Webmozart\Assert\Assert;
+
 /**
  * Class for handling the Keywords metadata extensions for login and discovery user interface
  *
@@ -25,6 +27,7 @@ class Keywords
      * @var string|null
      */
     public $lang;
+
 
     /**
      * Initialize a Keywords.
@@ -51,6 +54,7 @@ class Keywords
         $this->setLanguage($xml->getAttribute('xml:lang'));
     }
 
+
     /**
      * Collect the value of the lang-property
      * @return string|null
@@ -60,15 +64,18 @@ class Keywords
         return $this->lang;
     }
 
+
     /**
      * Set the value of the lang-property
      * @param string $lang
+     * @return void
      */
     public function setLanguage($lang)
     {
-        assert(is_string($lang) || is_null($lang));
+        Assert::nullOrString($lang);
         $this->lang = $lang;
     }
+
 
     /**
      * Collect the value of the Keywords-property
@@ -79,36 +86,41 @@ class Keywords
         return $this->Keywords;
     }
 
+
     /**
      * Set the value of the Keywords-property
      * @param string[] $keywords
+     * @return void
      */
     public function setKeywords(array $keywords)
     {
         $this->Keywords = $keywords;
     }
 
+
     /**
      * Add the value to the Keywords-property
      * @param string $keyword
+     * @return void
      */
     public function addKeyword($keyword)
     {
-        assert(is_string($keyword));
+        Assert::string($keyword);
         $this->Keywords[] = $keyword;
     }
+
 
     /**
      * Convert this Keywords to XML.
      *
      * @param \DOMElement $parent The element we should append this Keywords to.
-     * @return \DOMElement
      * @throws \Exception
+     * @return \DOMElement
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_string($this->getLanguage()));
-        assert(is_array($this->getKeywords()));
+        Assert::string($this->getLanguage());
+        Assert::isArray($this->getKeywords());
 
         $doc = $parent->ownerDocument;
 

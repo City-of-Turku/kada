@@ -5,6 +5,7 @@ namespace SAML2;
 use RobRichards\XMLSecLibs\XMLSecEnc;
 use RobRichards\XMLSecLibs\XMLSecurityKey;
 use SAML2\XML\saml\NameID;
+use Webmozart\Assert\Assert;
 
 /**
  * Class for SAML 2 logout request messages.
@@ -42,6 +43,7 @@ class LogoutRequest extends Request
      * @var array
      */
     private $sessionIndexes;
+
 
     /**
      * Constructor for SAML 2 logout request messages.
@@ -83,6 +85,7 @@ class LogoutRequest extends Request
         }
     }
 
+
     /**
      * Retrieve the expiration time of this request.
      *
@@ -93,17 +96,20 @@ class LogoutRequest extends Request
         return $this->notOnOrAfter;
     }
 
+
     /**
      * Set the expiration time of this request.
      *
      * @param int|null $notOnOrAfter The expiration time of this request.
+     * @return void
      */
     public function setNotOnOrAfter($notOnOrAfter)
     {
-        assert(is_int($notOnOrAfter) || is_null($notOnOrAfter));
+        Assert::nullOrInteger($notOnOrAfter);
 
         $this->notOnOrAfter = $notOnOrAfter;
     }
+
 
     /**
      * Check whether the NameId is encrypted.
@@ -119,10 +125,12 @@ class LogoutRequest extends Request
         return false;
     }
 
+
     /**
      * Encrypt the NameID in the LogoutRequest.
      *
      * @param XMLSecurityKey $key The encryption key.
+     * @return void
      */
     public function encryptNameId(XMLSecurityKey $key)
     {
@@ -148,17 +156,18 @@ class LogoutRequest extends Request
         $this->setNameId(null);
     }
 
+
     /**
      * Decrypt the NameID in the LogoutRequest.
      *
      * @param XMLSecurityKey $key       The decryption key.
      * @param array          $blacklist Blacklisted decryption algorithms.
+     * @return void
      */
     public function decryptNameId(XMLSecurityKey $key, array $blacklist = [])
     {
         if ($this->getEncryptedNameId() === null) {
             /* No NameID to decrypt. */
-
             return;
         }
 
@@ -169,11 +178,12 @@ class LogoutRequest extends Request
         $this->setEncryptedNameId(null);
     }
 
+
     /**
      * Retrieve the name identifier of the session that should be terminated.
      *
-     * @return \SAML2\XML\saml\NameID The name identifier of the session that should be terminated.
      * @throws \Exception
+     * @return \SAML2\XML\saml\NameID The name identifier of the session that should be terminated.
      */
     public function getNameId()
     {
@@ -184,20 +194,24 @@ class LogoutRequest extends Request
         return $this->nameId;
     }
 
+
     /**
      * Set the name identifier of the session that should be terminated.
      *
      * @param \SAML2\XML\saml\NameID|array|null $nameId The name identifier of the session that should be terminated.
+     * @return void
      */
     public function setNameId($nameId)
     {
-        assert(is_array($nameId) || $nameId instanceof XML\saml\NameID);
+        Assert::true(is_array($nameId) || $nameId instanceof NameID || is_null($nameId));
 
         if (is_array($nameId)) {
-            $nameId = XML\saml\NameID::fromArray($nameId);
+            $nameId = NameID::fromArray($nameId);
         }
         $this->nameId = $nameId;
     }
+
+
     /**
      * Retrieve the encrypted name identifier.
      *
@@ -208,15 +222,18 @@ class LogoutRequest extends Request
         return $this->encryptedNameId;
     }
 
+
     /**
      * Set the encrypted name identifier.
      *
      * @param \DOMElement|null $nameId The name identifier of the session that should be terminated.
+     * @return void
      */
     private function setEncryptedNameId(\DOMElement $nameId = null)
     {
         $this->encryptedNameId = $nameId;
     }
+
 
     /**
      * Retrieve the SessionIndexes of the sessions that should be terminated.
@@ -228,15 +245,18 @@ class LogoutRequest extends Request
         return $this->sessionIndexes;
     }
 
+
     /**
      * Set the SessionIndexes of the sessions that should be terminated.
      *
      * @param array $sessionIndexes The SessionIndexes, or an empty array if all sessions should be terminated.
+     * @return void
      */
     public function setSessionIndexes(array $sessionIndexes)
     {
         $this->sessionIndexes = $sessionIndexes;
     }
+
 
     /**
      * Retrieve the sesion index of the session that should be terminated.
@@ -252,14 +272,16 @@ class LogoutRequest extends Request
         return $this->sessionIndexes[0];
     }
 
+
     /**
      * Set the sesion index of the session that should be terminated.
      *
      * @param string|null $sessionIndex The sesion index of the session that should be terminated.
+     * @return void
      */
     public function setSessionIndex($sessionIndex)
     {
-        assert(is_string($sessionIndex) || is_null($sessionIndex));
+        Assert::nullOrString($sessionIndex);
 
         if (is_null($sessionIndex)) {
             $this->sessionIndexes = [];
@@ -267,6 +289,7 @@ class LogoutRequest extends Request
             $this->sessionIndexes = [$sessionIndex];
         }
     }
+
 
     /**
      * Convert this logout request message to an XML element.
