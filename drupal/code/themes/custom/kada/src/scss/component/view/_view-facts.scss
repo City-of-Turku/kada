@@ -27,11 +27,11 @@ $shape-colors: (
   red: rgb_color(#FF8200),
   orange: rgb_color(#FFCD00),
   yellow: rgb_color(#FFEB99),
-  darkgreen: rgb_color(#00AF66),
+  dark-green: rgb_color(#00AF66),
   green: rgb_color(#44BF8B),
-  lightgreen: rgb_color(#B2E1D3),
+  light-green: rgb_color(#B2E1D3),
   gray: rgb_color(#8A8896),
-  lightgray: rgb_color(#D0CFD5)
+  light-gray: rgb_color(#D0CFD5)
 );
 
 .l-region--before-content .block--views-facts-page-facts {
@@ -104,7 +104,7 @@ $shape-colors: (
     .frame-triangle.color-#{$color} {
       background-image: url(svg-inline("<svg width='105' height='85' viewBox='0 0 115 85'><defs><style>.a{fill:#{$shape-color};}</style></defs><path class='a' d='M 59.674917,0 0,93.627359 l 112.64842,-0.0397 z' /></svg>"));
     }
-    .frame-tilted-triangle.color-#{$color} {
+    .frame-tilted-triange.color-#{$color} {
       background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}</style></defs><path class='a' d='M617.994,323l-87.866,67.873,106,38.127Z' transform='translate(-530.128 -323)'/></svg>"));
     }
     .frame-decagon.color-#{$color} {
