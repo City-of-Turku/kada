@@ -1122,7 +1122,7 @@ function kada_media_feature_image_default_styles() {
       1 => array(
         'name' => 'image_scale',
         'data' => array(
-          'width' => 225,
+          'width' => 250,
           'height' => '',
           'upscale' => 0,
         ),
@@ -1138,8 +1138,8 @@ function kada_media_feature_image_default_styles() {
       9 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 320,
-          'height' => 427,
+          'width' => 350,
+          'height' => 350,
         ),
         'weight' => 1,
       ),
@@ -1153,8 +1153,8 @@ function kada_media_feature_image_default_styles() {
       8 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 380,
-          'height' => 507,
+          'width' => 450,
+          'height' => 450,
         ),
         'weight' => 1,
       ),
@@ -1168,8 +1168,8 @@ function kada_media_feature_image_default_styles() {
       7 => array(
         'name' => 'image_scale_and_crop',
         'data' => array(
-          'width' => 317,
-          'height' => 423,
+          'width' => 550,
+          'height' => 550,
         ),
         'weight' => 1,
       ),
