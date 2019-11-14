@@ -64,6 +64,7 @@ The `develop` branch is used only for testing and must never be merged back to m
 - You can use drush aliases to execute drush commands without loggin into the servers or vagrant box. For example `drush @pori.local cc css-js`.
 - Use `en` language while generating features.
 - Use `drush uli` with `--uri` option to get the correct login URL. Works also with subdomains, for example: `drush uli --uri=https://local.businesspori.fi`.
+- Make sure you have assigned all (sub)domains needed in your account (see _Domain access settings_) for the sites functionality to work properly (Scald widget for example).
 
 ### Folder structure
 
