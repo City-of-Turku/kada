@@ -35,16 +35,16 @@ if (empty($main_content)) {
 <?php if (!empty($main_content) && $no_sidebar == false): ?>
   <<?php print $sidebar_wrapper ?> class="page__sidebar <?php print $sidebar_classes; ?>">
     <?php print $sidebar; ?>
-    <?php if (!empty($additional_information)): ?>
-      <div class="page__additional-information">
-        <h3 class="page__additional-information__header"><?php print t('Additional information') . ':'; ?></h3>
-        <?php print $additional_information ?>
-      </div>
-    <?php endif; ?>
     <?php if (!empty($contact_information)): ?>
       <div class="page__contact-information">
           <h3 class="page__contact-information__header"><?php print t('Contact us') . ':'; ?></h3>
         <?php print $contact_information ?>
+      </div>
+    <?php endif; ?>
+    <?php if (!empty($additional_information)): ?>
+      <div class="page__additional-information">
+        <h3 class="page__additional-information__header"><?php print t('Additional information') . ':'; ?></h3>
+        <?php print $additional_information ?>
       </div>
     <?php endif; ?>
   </<?php print $sidebar_wrapper ?>>
