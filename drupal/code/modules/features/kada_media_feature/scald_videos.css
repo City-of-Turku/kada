@@ -27,6 +27,7 @@
   border-radius: 50%;
   background-color: #1E1E1E;
   border: none;
+  z-index: 9999;
 }
 .pause-button::before {
   border-color: transparent transparent transparent white;
