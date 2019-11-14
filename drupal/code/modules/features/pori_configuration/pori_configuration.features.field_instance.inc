@@ -874,7 +874,7 @@ function pori_configuration_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 23,
+      'weight' => 26,
     ),
   );
 
