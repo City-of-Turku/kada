@@ -45,6 +45,11 @@ $shape-colors: (
     display: flex;
     flex-direction: row;
     justify-content: center;
+    padding: 0 0 30px;
+    
+    @media screen and (min-width: $desktop) {
+      padding: 40px 0 60px;
+    }
   }
   .views-row {
     background-repeat: no-repeat;
