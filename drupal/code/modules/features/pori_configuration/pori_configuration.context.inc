@@ -110,6 +110,12 @@ function pori_configuration_context_default_contexts() {
           'region' => 'highlighted',
           'weight' => '-10',
         ),
+        'views-facts-page_facts' => array(
+          'module' => 'views',
+          'delta' => 'facts-page_facts',
+          'region' => 'before_content',
+          'weight' => '-10',
+        ),
         'views-972eaabfd2a39ff790e08eab4766b876' => array(
           'module' => 'views',
           'delta' => '972eaabfd2a39ff790e08eab4766b876',
