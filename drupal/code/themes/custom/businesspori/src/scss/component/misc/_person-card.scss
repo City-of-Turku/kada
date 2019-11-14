@@ -86,20 +86,24 @@
 }
 
 .page__contact-information {
-  .person-card__inner .field {
-    margin-bottom: 3px;
-
-    &.field--name-field-email-single {
+  .person-card__inner {
+    padding-left: 0;
+    
+    .field {
       margin-bottom: 3px;
-    }
-    &.field--name-field-branch, &.field--name-field-person-skills {
-      display: none;
-    }
-    &.field--name-field-person-image {
-      margin-left: 0 !important;
-  
-      @media screen and (min-width: $tablet-portrait) {
+
+      &.field--name-field-email-single {
+        margin-bottom: 3px;
+      }
+      &.field--name-field-branch, &.field--name-field-person-skills {
+        display: none;
+      }
+      &.field--name-field-person-image {
         margin-left: 0 !important;
+    
+        @media screen and (min-width: $tablet-portrait) {
+          margin-left: 0 !important;
+        }
       }
     }
   }
