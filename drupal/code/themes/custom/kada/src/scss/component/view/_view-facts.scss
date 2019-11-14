@@ -1,0 +1,123 @@
+// Inline SVGs to change colour
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  @return $string;
+}
+
+@function svg-inline($string){
+  $result: str-replace($string, "<svg", "<svg xmlns='http://www.w3.org/2000/svg'");
+  $result: str-replace($result, '%', '%25');
+  $result: str-replace($result, '"', '%22');
+  $result: str-replace($result, "'", '%27');
+  $result: str-replace($result, ' ', '%20');
+  $result: str-replace($result, '<', '%3C');
+  $result: str-replace($result, '>', '%3E');
+  @return "data:image/svg+xml;utf8," + $result;
+}
+
+@function rgb_color($color) {
+  @return "rgb(" + red($color) + ", " + green($color) + ", " + blue($color)+ ")";
+}
+
+// Shape colour list
+$shape-colors: (
+  red: rgb_color(#FF8200),
+  orange: rgb_color(#FFCD00),
+  yellow: rgb_color(#FFEB99),
+  darkgreen: rgb_color(#00AF66),
+  green: rgb_color(#44BF8B),
+  lightgreen: rgb_color(#B2E1D3),
+  gray: rgb_color(#8A8896),
+  lightgray: rgb_color(#D0CFD5)
+);
+
+.l-region--before-content .block--views-facts-page-facts {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 90rem;
+}
+.view-facts {
+  .view-content {
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .views-row {
+    background-repeat: no-repeat;
+    background-size: contain;
+    font-family: $bergen-mono;
+    text-align: center;
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px 7px;
+    width: 150px;
+    height: 150px;
+
+    @media screen and (min-width: $tablet-portrait) {
+      width: 200px;
+      height: 200px;
+    }
+    @media screen and (min-width: $desktop) {
+      margin: 10px 40px;
+      width: 260px;
+      height: 260px;
+    }
+
+    .views-field-field-fact-number {
+      font-size: $font-size-heading-3;
+      font-weight: bold;
+
+      @media screen and (min-width: $tablet-portrait) {
+        font-size: $font-size-heading-2;
+      }
+      @media screen and (min-width: $desktop) {
+        font-size: $font-size-heading-1;
+      }
+    }
+    .views-field-field-fact-description {
+      line-height: 1;
+      font-size: $font-size-intro-text;
+      text-transform: uppercase;
+    }
+  }
+
+  // Set colored shapes
+  @each $color, $shape-color in $shape-colors {
+    .frame-circle.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}}</style></defs><circle class='a' cx='53' cy='53' r='53'/></svg>"));
+    }
+    .frame-square.color-#{$color} {
+      background-image: url(svg-inline("<svg width='50' height='50' viewBox='0 0 50 50'><defs><style>.a{fill:#{$shape-color};}</style></defs><path class='a' d='M 0,0.24858 0.039035,93.13606 93.631641,92.8872 93.590631,0 Z' /></svg>"));
+    }
+    .frame-tilted-square.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='105.168' viewBox='0 0 106 105.168'><defs><style>.a{fill:#{$shape-color};}</style></defs><path class='a' d='M334.851,429.416,321.5,521.339l92.651,13.245L427.5,442.661Z' transform='translate(-321.502 -429.416)'/></svg>"));
+    }
+    .frame-diamond.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}</style></defs><rect class='a' width='74.953' height='74.953' transform='matrix(0.707, -0.707, 0.707, 0.707, 0, 53)'/></svg>"));
+    }
+    .frame-triangle.color-#{$color} {
+      background-image: url(svg-inline("<svg width='105' height='85' viewBox='0 0 115 85'><defs><style>.a{fill:#{$shape-color};}</style></defs><path class='a' d='M 59.674917,0 0,93.627359 l 112.64842,-0.0397 z' /></svg>"));
+    }
+    .frame-tilted-triangle.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}</style></defs><path class='a' d='M617.994,323l-87.866,67.873,106,38.127Z' transform='translate(-530.128 -323)'/></svg>"));
+    }
+    .frame-decagon.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}</style></defs><path class='a' d='M146.053,323h32.756l26.5-20.244L215.431,270l-10.122-32.756L178.809,217H146.053l-26.5,20.244L109.431,270l10.122,32.756Z' transform='translate(-109.431 -217)'/></svg>"));
+    }
+    .frame-octagon.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}</style></defs><path class='a' d='M692,241.9l19.873,8.232L720.1,270l-8.232,19.873L692,298.105l-19.873-8.232L663.9,270l8.232-19.873L692,241.9m0-24.9-37.476,15.523L639,270l15.523,37.477L692,323l37.476-15.523L745,270l-15.523-37.477L692,217Z' transform='translate(-639 -217)'/></svg>"));
+    }
+    .frame-dodecagon.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}</style></defs><g transform='translate(-427 -323)'><path class='a' d='M465.8,323h28.4l24.6,14.2L533,361.8v28.4l-14.2,24.6L494.2,429H465.8l-24.6-14.2L427,390.2V361.8l14.2-24.6Zm21.672,25.12H472.529l-12.939,7.47-7.47,12.94v14.94l7.47,12.94,12.939,7.47h14.942l12.938-7.47,7.471-12.94V368.53l-7.471-12.939Z'/></g></svg>"));
+    }
+    .frame-tetradecagon.color-#{$color} {
+      background-image: url(svg-inline("<svg width='106' height='106' viewBox='0 0 106 106'><defs><style>.a{fill:#{$shape-color};}</style></defs><g transform='translate(-215.502 -217)'><path class='a' d='M274.925,240l11.7,5.781,8.3,10.67L297.939,270l-3.014,13.549-8.3,10.67L274.925,300H262.079l-11.7-5.781-8.295-10.67L239.065,270l3.015-13.549,8.295-10.67,11.7-5.781h12.846m5.371-23H256.708l-21.251,10.5-14.706,18.916L215.5,270l5.249,23.587L235.457,312.5,256.708,323H280.3l21.251-10.5,14.706-18.916L321.5,270l-5.249-23.587L301.547,227.5,280.3,217Z'/></g></svg>"));
+    }
+  }
+}
