@@ -40,14 +40,6 @@ $primary-color-opacity-40: rgba($primary-color, .4);
 $primary-color-opacity-40: rgba($primary-color, .3);
 $primary-color-opacity-20: rgba($primary-color, .2);
 
-// Seconcary colors
-$secondary-color: #ec1c24;
-
-$secondary-color-darkest: lighten($secondary-color, 10%);
-$secondary-color-darker: lighten($secondary-color, 20%);
-$secondary-color-dark: lighten($secondary-color, 30%);
-$secondary-color-medium-dark: lighten($secondary-color, 40%);
-
 // General colors
 $link-color: #009bea;
 $link-color-hover: #005eb8;
@@ -76,6 +68,14 @@ $green-dark: #1E8566;
 $green: #26A982;
 $blue-light: #009BEA;
 $gray-menu: #F1F1F2;
+
+// Seconcary colors
+$secondary-color: $green-dark;
+
+$secondary-color-darkest: lighten($secondary-color, 10%);
+$secondary-color-darker: lighten($secondary-color, 20%);
+$secondary-color-dark: lighten($secondary-color, 30%);
+$secondary-color-medium-dark: lighten($secondary-color, 40%);
 
 $theme-colors: (
   'red': $red-light,
