@@ -7,7 +7,8 @@
       // Required attributes for autoplaying video
       if (top_carousel_video.length > 0) {
         top_carousel_video.each(function () {
-          $(this)[0].muted = true;
+          $(this).prop('muted', true);
+          $(this)[0].setAttribute('muted', true);
           $(this)[0].controls = false;
           $(this)[0].playsinline;
           $(this)[0].loop = true;
