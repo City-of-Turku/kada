@@ -1,4 +1,9 @@
+.l-breadcrumb {
+  border-top: none;
+}
 .breadcrumb {
+  max-width: $container;
+  margin: 0;
   @include responsive-whitespace;
   list-style: none;
   padding-bottom: 0;
