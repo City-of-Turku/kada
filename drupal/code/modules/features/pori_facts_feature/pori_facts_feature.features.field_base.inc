@@ -90,10 +90,9 @@ function pori_facts_feature_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'hexagon' => 'Hexagon',
-        'tilted_square' => 'Tilted square',
         'circle' => 'Circle',
         'square' => 'Square',
+        'tilted_square' => 'Tilted square',
         'diamond' => 'Diamond',
         'triangle' => 'Triangle',
         'tilted_triange' => 'Tilted triangle',
