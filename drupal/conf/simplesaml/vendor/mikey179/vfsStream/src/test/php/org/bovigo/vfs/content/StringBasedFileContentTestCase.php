@@ -14,7 +14,7 @@ namespace org\bovigo\vfs\content;
  * @since  1.3.0
  * @group  issue_79
  */
-class StringBasedFileContentTestCase extends \PHPUnit_Framework_TestCase
+class StringBasedFileContentTestCase extends \BC_PHPUnit_Framework_TestCase
 {
     /**
      * instance to test
@@ -86,8 +86,10 @@ class StringBasedFileContentTestCase extends \PHPUnit_Framework_TestCase
      */
     public function readAfterEndReturnsEmptyString()
     {
-        $this->stringBasedFileContent->read(9);
-        $this->assertEquals('', $this->stringBasedFileContent->read(3));
+        // Read more than the length of the string to test substr() returning
+        // false.
+        $this->stringBasedFileContent->read(10);
+        $this->assertSame('', $this->stringBasedFileContent->read(3));
     }
 
     /**

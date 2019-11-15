@@ -4,6 +4,7 @@ namespace SAML2\XML\md;
 
 use SAML2\Constants;
 use SAML2\Utils;
+use Webmozart\Assert\Assert;
 
 /**
  * Class representing SAML 2 SSODescriptorType.
@@ -48,6 +49,7 @@ abstract class SSODescriptorType extends RoleDescriptor
      */
     public $NameIDFormat = [];
 
+
     /**
      * Initialize a SSODescriptor.
      *
@@ -56,7 +58,7 @@ abstract class SSODescriptorType extends RoleDescriptor
      */
     protected function __construct($elementName, \DOMElement $xml = null)
     {
-        assert(is_string($elementName));
+        Assert::string($elementName);
 
         parent::__construct($elementName, $xml);
 
@@ -79,6 +81,7 @@ abstract class SSODescriptorType extends RoleDescriptor
         $this->setNameIDFormat(Utils::extractStrings($xml, Constants::NS_MD, 'NameIDFormat'));
     }
 
+
     /**
      * Collect the value of the ArtifactResolutionService-property
      * @return \SAML2\XML\md\IndexedEndpointType[]
@@ -88,24 +91,29 @@ abstract class SSODescriptorType extends RoleDescriptor
         return $this->ArtifactResolutionService;
     }
 
+
     /**
      * Set the value of the ArtifactResolutionService-property
      * @param \SAML2\XML\md\IndexedEndpointType[] $artifactResolutionService
+     * @return void
      */
     public function setArtifactResolutionService(array $artifactResolutionService)
     {
         $this->ArtifactResolutionService = $artifactResolutionService;
     }
 
+
     /**
      * Add the value to the ArtifactResolutionService-property
      * @param \SAML2\XML\md\IndexedEndpointType $artifactResolutionService
+     * @return void
      */
     public function addArtifactResolutionService(IndexedEndpointType $artifactResolutionService)
     {
-        assert($artifactResolutionService instanceof IndexedEndpointType);
+        Assert::isInstanceOf($artifactResolutionService, IndexedEndpointType::class);
         $this->ArtifactResolutionService[] = $artifactResolutionService;
     }
+
 
     /**
      * Collect the value of the SingleLogoutService-property
@@ -116,24 +124,29 @@ abstract class SSODescriptorType extends RoleDescriptor
         return $this->SingleLogoutService;
     }
 
+
     /**
      * Set the value of the SingleLogoutService-property
      * @param \SAML2\XML\md\EndpointType[] $singleLogoutService
+     * @return void
      */
     public function setSingleLogoutService(array $singleLogoutService)
     {
         $this->SingleLogoutService = $singleLogoutService;
     }
 
+
     /**
      * Add the value to the SingleLogoutService-property
      * @param \SAML2\XML\md\EndpointType $singleLogoutService
+     * @return void
      */
     public function addSingleLogoutService(EndpointType $singleLogoutService)
     {
-        assert($singleLogoutService instanceof EndpointType);
+        Assert::isInstanceOf($singleLogoutService, EndpointType::class);
         $this->SingleLogoutService[] = $singleLogoutService;
     }
+
 
     /**
      * Collect the value of the ManageNameIDService-property
@@ -144,24 +157,29 @@ abstract class SSODescriptorType extends RoleDescriptor
         return $this->ManageNameIDService;
     }
 
+
     /**
      * Set the value of the ManageNameIDService-property
      * @param \SAML2\XML\md\EndpointType[] $manageNameIDService
+     * @return void
      */
     public function setManageNameIDService(array $manageNameIDService)
     {
         $this->ManageNameIDService = $manageNameIDService;
     }
 
+
     /**
      * Add the value to the ManageNameIDService-property
      * @param \SAML2\XML\md\EndpointType $manageNameIDService
+     * @return void
      */
     public function addManageNameIDService(EndpointType $manageNameIDService)
     {
-        assert($manageNameIDService instanceof EndpointType);
+        Assert::isInstanceOf($manageNameIDService, EndpointType::class);
         $this->ManageNameIDService[] = $manageNameIDService;
     }
+
 
     /**
      * Collect the value of the NameIDFormat-property
@@ -172,14 +190,17 @@ abstract class SSODescriptorType extends RoleDescriptor
         return $this->NameIDFormat;
     }
 
+
     /**
      * Set the value of the NameIDFormat-property
      * @param string[] $nameIDFormat
+     * @return void
      */
     public function setNameIDFormat(array $nameIDFormat)
     {
         $this->NameIDFormat = $nameIDFormat;
     }
+
 
     /**
      * Add this SSODescriptorType to an EntityDescriptor.
@@ -189,10 +210,10 @@ abstract class SSODescriptorType extends RoleDescriptor
      */
     protected function toXML(\DOMElement $parent)
     {
-        assert(is_array($this->getArtifactResolutionService()));
-        assert(is_array($this->getSingleLogoutService()));
-        assert(is_array($this->getManageNameIDService()));
-        assert(is_array($this->getNameIDFormat()));
+        Assert::isArray($this->getArtifactResolutionService());
+        Assert::isArray($this->getSingleLogoutService());
+        Assert::isArray($this->getManageNameIDService());
+        Assert::isArray($this->getNameIDFormat());
 
         $e = parent::toXML($parent);
 

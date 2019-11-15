@@ -24,6 +24,7 @@ class ValidatorChain implements ValidatorInterface
      */
     private $validators = [];
 
+
     /**
      * @param \Psr\Log\LoggerInterface           $logger
      * @param \SAML2\Signature\ChainedValidator[] $validators
@@ -38,13 +39,16 @@ class ValidatorChain implements ValidatorInterface
         }
     }
 
+
     /**
      * @param \SAML2\Signature\ChainedValidator $validator
+     * @return void
      */
     public function appendValidator(ChainedValidator $validator)
     {
         $this->validators[] = $validator;
     }
+
 
     /**
      * @param \SAML2\SignedElement             $signedElement

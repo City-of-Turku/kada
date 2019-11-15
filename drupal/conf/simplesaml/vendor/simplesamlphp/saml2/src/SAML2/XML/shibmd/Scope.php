@@ -3,6 +3,7 @@
 namespace SAML2\XML\shibmd;
 
 use SAML2\Utils;
+use Webmozart\Assert\Assert;
 
 /**
  * Class which represents the Scope element found in Shibboleth metadata.
@@ -31,6 +32,7 @@ class Scope
      */
     public $regexp = false;
 
+
     /**
      * Create a Scope.
      *
@@ -46,6 +48,7 @@ class Scope
         $this->setIsRegexpScope(Utils::parseBoolean($xml, 'regexp', false));
     }
 
+
     /**
      * Collect the value of the scope-property
      * @return string
@@ -55,15 +58,18 @@ class Scope
         return $this->scope;
     }
 
+
     /**
      * Set the value of the scope-property
      * @param string $scope
+     * @return void
      */
     public function setScope($scope)
     {
-        assert(is_string($scope));
+        Assert::string($scope);
         $this->scope = $scope;
     }
+
 
     /**
      * Collect the value of the regexp-property
@@ -74,15 +80,18 @@ class Scope
         return $this->regexp;
     }
 
+
     /**
      * Set the value of the regexp-property
      * @param boolean $regexp
+     * @return void
      */
     public function setIsRegexpScope($regexp)
     {
-        assert(is_bool($regexp));
+        Assert::boolean($regexp);
         $this->regexp = $regexp;
     }
+
 
     /**
      * Convert this Scope to XML.
@@ -92,8 +101,8 @@ class Scope
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_string($this->getScope()));
-        assert(is_bool($this->isRegexpScope()) || is_null($this->isRegexpScope()));
+        Assert::string($this->getScope());
+        Assert::nullOrBoolean($this->isRegexpScope());
 
         $doc = $parent->ownerDocument;
 

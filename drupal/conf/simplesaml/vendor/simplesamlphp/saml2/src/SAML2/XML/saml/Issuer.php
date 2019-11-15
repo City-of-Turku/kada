@@ -4,6 +4,7 @@ namespace SAML2\XML\saml;
 
 use SAML2\Constants;
 use SAML2\DOMDocumentFactory;
+use Webmozart\Assert\Assert;
 
 /**
  * Class representing the saml:Issuer element.
@@ -32,6 +33,7 @@ class Issuer extends NameIDType
      * @var boolean
      */
     public $Saml2IssuerShowAll = false; //setting true break saml-core-2.0-os 8.3.6
+
 
     /**
      * Initialize a saml:NameIDType, either from scratch or from an existing \DOMElement.
@@ -64,6 +66,7 @@ class Issuer extends NameIDType
         parent::__construct($xml);
     }
 
+
     /**
      * Collect the value of the Saml2IssuerShowAll-property
      * @return boolean
@@ -73,15 +76,18 @@ class Issuer extends NameIDType
         return $this->Saml2IssuerShowAll;
     }
 
+
     /**
      * Set the value of the Saml2IssuerShowAll-property
      * @param boolean $saml2IssuerShowAll
+     * @return void
      */
     public function setSaml2IssuerShowAll($saml2IssuerShowAll)
     {
-        assert(is_bool($saml2IssuerShowAll));
+        Assert::boolean($saml2IssuerShowAll);
         $this->Saml2IssuerShowAll = $saml2IssuerShowAll;
     }
+
 
     /**
      * Convert this Issuer to XML.
