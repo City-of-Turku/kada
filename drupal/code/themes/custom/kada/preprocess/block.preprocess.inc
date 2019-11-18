@@ -15,7 +15,12 @@ function kada_preprocess_block(&$variables) {
 
     foreach ($node_wrapper->field_theme->getIterator() as $delta => $term_wrapper) {
       try {
-        $color = $term_wrapper->field_color_name->value();
+        if(is_object($term_wrapper)) {
+          $color = $term_wrapper->field_color_name->value();
+        }
+        else {
+          $color = '';
+        }
         if (!empty($color)) {
           $variables['title_attributes_array']['class'][] = 'theme-color-' . $color;
         }
@@ -54,7 +59,12 @@ function kada_preprocess_block(&$variables) {
     if (!empty($node_content->field_theme['und']['0']['tid'])) {
       $theme_raw = $node_content->field_theme['und']['0']['tid'];
       $theme_term = taxonomy_term_load($theme_raw);
-      $theme = $theme_term->field_color_name['und']['0']['value'];
+      if(!empty($theme_term->field_color_name['und']['0']['value'])) {
+        $theme = $theme_term->field_color_name['und']['0']['value'];
+      }
+      else {
+        $theme = '';
+      }
       $theme_color = 'theme-color-' . $theme;
       $variables['classes_array'][] = $theme_color;
     };
