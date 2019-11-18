@@ -15,7 +15,7 @@ function kada_preprocess_block(&$variables) {
 
     foreach ($node_wrapper->field_theme->getIterator() as $delta => $term_wrapper) {
       try {
-        if(is_object($term_wrapper)) {
+        if(is_object($term_wrapper) && !empty($term_wrapper->field_color_name)) {
           $color = $term_wrapper->field_color_name->value();
         }
         else {
