@@ -11,7 +11,12 @@ function kada_preprocess_node(&$variables) {
     $node_wrapper = entity_metadata_wrapper('node', $node);
     foreach ($node_wrapper->field_theme->getIterator() as $delta => $term_wrapper) {
       try {
-        $color = $term_wrapper->field_color_name->value();
+        if(is_object($term_wrapper)) {
+          $color = $term_wrapper->field_color_name->value();
+        }
+        else {
+          $color = '';
+        }
         if (!empty($color)) {
           $variables['classes_array'][] = 'theme-color-' . $color;
         }
@@ -52,7 +57,12 @@ function kada_preprocess_node(&$variables) {
       $node_wrapper = entity_metadata_wrapper('node', $node);
       foreach ($node_wrapper->field_theme->getIterator() as $delta => $term_wrapper) {
         try {
-          $color = $term_wrapper->field_color_name->value();
+          if(is_object($term_wrapper)) {
+            $color = $term_wrapper->field_color_name->value();
+          }
+          else {
+            $color = '';
+          }
           if (!empty($color)) {
             $variables['classes_array'][] = 'theme-color-' . $color;
           }
