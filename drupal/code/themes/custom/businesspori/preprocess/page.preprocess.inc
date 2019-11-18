@@ -21,7 +21,12 @@ function businesspori_preprocess_page(&$variables) {
     if ($node->type == 'page') {
       foreach ($node_wrapper->field_businesspori_theme->getIterator() as $delta => $term_wrapper) {
         try {
-          $color = $term_wrapper->field_businesspori_color_name->value();
+          if(is_object($term_wrapper) && !empty($term_wrapper->field_businesspori_color_name)) {
+            $color = $term_wrapper->field_businesspori_color_name->value();
+          }
+          else {
+            $color = '';
+          }
           if (!empty($color)) {
             $variables['classes_array'][] = 'theme-color-' . $color;
           }
