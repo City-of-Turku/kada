@@ -22,7 +22,7 @@ function kada_preprocess_node(&$variables) {
         }
       }
       catch (EntityMetadataWrapperException $e) {
-        watchdog('kada_theme', 'EntityMetadataWrapperException with message %message', array('%message' => $e->getMessage()), WATCHDOG_ERROR);
+        // Do nothing.
       }
     }
   }
@@ -68,7 +68,7 @@ function kada_preprocess_node(&$variables) {
           }
         }
         catch (EntityMetadataWrapperException $e) {
-          watchdog('kada_theme', 'EntityMetadataWrapperException with message %message', array('%message' => $e->getMessage()), WATCHDOG_ERROR);
+          // Do nothing.
         }
 
       }
