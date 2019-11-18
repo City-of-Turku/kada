@@ -11,7 +11,7 @@ function kada_preprocess_node(&$variables) {
     $node_wrapper = entity_metadata_wrapper('node', $node);
     foreach ($node_wrapper->field_theme->getIterator() as $delta => $term_wrapper) {
       try {
-        if(is_object($term_wrapper)) {
+        if(is_object($term_wrapper) && !empty($term_wrapper->field_color_name)) {
           $color = $term_wrapper->field_color_name->value();
         }
         else {
@@ -57,7 +57,7 @@ function kada_preprocess_node(&$variables) {
       $node_wrapper = entity_metadata_wrapper('node', $node);
       foreach ($node_wrapper->field_theme->getIterator() as $delta => $term_wrapper) {
         try {
-          if(is_object($term_wrapper)) {
+          if(is_object($term_wrapper) && !empty($term_wrapper->field_color_name)) {
             $color = $term_wrapper->field_color_name->value();
           }
           else {
