@@ -32,7 +32,7 @@ function businesspori_preprocess_page(&$variables) {
           }
         }
         catch (EntityMetadataWrapperException $e) {
-          watchdog('businesspori_theme', 'EntityMetadataWrapperException with message %message', array('%message' => $e->getMessage()), WATCHDOG_ERROR);
+          // Do nothing.
         }
       }
     }
