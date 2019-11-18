@@ -4,6 +4,7 @@ namespace SAML2\XML\md;
 
 use SAML2\Constants;
 use SAML2\Utils;
+use Webmozart\Assert\Assert;
 
 /**
  * Class representing SAML 2 metadata AdditionalMetadataLocation element.
@@ -26,6 +27,7 @@ class AdditionalMetadataLocation
      */
     public $location;
 
+
     /**
      * Initialize an AdditionalMetadataLocation element.
      *
@@ -46,6 +48,7 @@ class AdditionalMetadataLocation
         $this->setLocation($xml->textContent);
     }
 
+
     /**
      * Collect the value of the namespace-property
      * @return string
@@ -55,15 +58,18 @@ class AdditionalMetadataLocation
         return $this->namespace;
     }
 
+
     /**
      * Set the value of the namespace-property
      * @param string $namespace
+     * @return void
      */
     public function setNamespace($namespace)
     {
-        assert(is_string($namespace));
+        Assert::string($namespace);
         $this->namespace = $namespace;
     }
+
 
     /**
      * Collect the value of the location-property
@@ -74,15 +80,18 @@ class AdditionalMetadataLocation
         return $this->location;
     }
 
+
     /**
      * Set the value of the location-property
      * @param string $location
+     * @return void
      */
     public function setLocation($location)
     {
-        assert(is_string($location));
+        Assert::string($location);
         $this->location = $location;
     }
+
 
     /**
      * Convert this AdditionalMetadataLocation to XML.
@@ -92,8 +101,8 @@ class AdditionalMetadataLocation
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_string($this->getNamespace()));
-        assert(is_string($this->getLocation()));
+        Assert::string($this->getNamespace());
+        Assert::string($this->getLocation());
 
         $e = Utils::addString($parent, Constants::NS_MD, 'md:AdditionalMetadataLocation', $this->getLocation());
         $e->setAttribute('namespace', $this->getNamespace());

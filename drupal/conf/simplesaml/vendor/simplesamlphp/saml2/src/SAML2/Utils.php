@@ -11,6 +11,7 @@ use SAML2\XML\ds\KeyInfo;
 use SAML2\XML\ds\X509Certificate;
 use SAML2\XML\ds\X509Data;
 use SAML2\XML\md\KeyDescriptor;
+use Webmozart\Assert\Assert;
 
 /**
  * Helper functions for the SAML2 library.
@@ -35,8 +36,8 @@ class Utils
      * check the signature against a public key.
      *
      * @param  \DOMElement  $root The element which should be validated.
-     * @return array|bool An array with information about the Signature-element.
      * @throws \Exception
+     * @return array|bool An array with information about the Signature-element.
      */
     public static function validateElement(\DOMElement $root)
     {
@@ -106,13 +107,13 @@ class Utils
      * @param  XMLSecurityKey $key       The key.
      * @param  string         $algorithm The desired algorithm.
      * @param  string         $type      Public or private key, defaults to public.
-     * @return XMLSecurityKey The new key.
      * @throws \Exception
+     * @return XMLSecurityKey The new key.
      */
     public static function castKey(XMLSecurityKey $key, $algorithm, $type = 'public')
     {
-        assert(is_string($algorithm));
-        assert($type === "public" || $type === "private");
+        Assert::string($algorithm);
+        Assert::oneOf($type, ["public", "private"]);
 
         // do nothing if algorithm is already the type of the key
         if ($key->type === $algorithm) {
@@ -152,10 +153,11 @@ class Utils
      * @param array          $info The information returned by the validateElement()-function.
      * @param XMLSecurityKey $key  The publickey that should validate the Signature object.
      * @throws \Exception
+     * @return void
      */
     public static function validateSignature(array $info, XMLSecurityKey $key)
     {
-        assert(array_key_exists("Signature", $info));
+        Assert::keyExists($info, "Signature");
 
         /** @var XMLSecurityDSig $objXMLSecDSig */
         $objXMLSecDSig = $info['Signature'];
@@ -185,12 +187,12 @@ class Utils
      * Do an XPath query on an XML node.
      *
      * @param  \DOMNode $node  The XML node.
-     * @param  string  $query The query.
-     * @return \DOMElement[]    Array with matching DOM nodes.
+     * @param  string  $query  The query.
+     * @return \DOMNode[]      Array with matching DOM nodes.
      */
     public static function xpQuery(\DOMNode $node, $query)
     {
-        assert(is_string($query));
+        Assert::string($query);
         static $xpCache = null;
 
         if ($node instanceof \DOMDocument) {
@@ -270,12 +272,12 @@ class Utils
      * @param  \DOMElement $node          The element we should fetch the attribute from.
      * @param  string     $attributeName The name of the attribute.
      * @param  mixed      $default       The value that should be returned if the attribute doesn't exist.
-     * @return bool|mixed The value of the attribute, or $default if the attribute doesn't exist.
      * @throws \Exception
+     * @return bool|mixed The value of the attribute, or $default if the attribute doesn't exist.
      */
     public static function parseBoolean(\DOMElement $node, $attributeName, $default = null)
     {
-        assert(is_string($attributeName));
+        Assert::string($attributeName);
 
         if (!$node->hasAttribute($attributeName)) {
             return $default;
@@ -304,6 +306,7 @@ class Utils
      *
      * @param \DOMElement $node   The DOM node we should append the NameId to.
      * @param array      $nameId The name identifier.
+     * @return void
      *
      * @deprecated Please use \SAML2\XML\saml\NameID objects instead:
      *   $nameId = new \SAML2\XML\saml\NameID();
@@ -313,7 +316,7 @@ class Utils
      */
     public static function addNameId(\DOMElement $node, array $nameId)
     {
-        assert(array_key_exists("Value", $nameId));
+        Assert::keyExists($nameId, "Value");
 
         $nid = new XML\saml\NameID();
 
@@ -331,6 +334,7 @@ class Utils
 
         $nid->toXML($node);
     }
+
 
     /**
      * Parse a NameID element.
@@ -353,6 +357,7 @@ class Utils
         return $ret;
     }
 
+
     /**
      * Insert a Signature-node.
      *
@@ -360,6 +365,7 @@ class Utils
      * @param array          $certificates  The certificates we should add to the signature node.
      * @param \DOMElement     $root          The XML node we should sign.
      * @param \DOMNode        $insertBefore  The XML element we should insert the signature element before.
+     * @return void
      */
     public static function insertSignature(
         XMLSecurityKey $key,
@@ -400,6 +406,7 @@ class Utils
         $objXMLSecDSig->insertSignature($root, $insertBefore);
     }
 
+
     /**
      * Decrypt an encrypted element.
      *
@@ -408,8 +415,8 @@ class Utils
      * @param  \DOMElement     $encryptedData The encrypted data.
      * @param  XMLSecurityKey $inputKey      The decryption key.
      * @param  array          &$blacklist    Blacklisted decryption algorithms.
-     * @return \DOMElement     The decrypted element.
      * @throws \Exception
+     * @return \DOMElement     The decrypted element.
      */
     private static function doDecryptElement(\DOMElement $encryptedData, XMLSecurityKey $inputKey, array &$blacklist)
     {
@@ -546,14 +553,15 @@ class Utils
         return $decryptedElement;
     }
 
+
     /**
      * Decrypt an encrypted element.
      *
      * @param  \DOMElement     $encryptedData The encrypted data.
      * @param  XMLSecurityKey $inputKey      The decryption key.
      * @param  array          $blacklist     Blacklisted decryption algorithms.
-     * @return \DOMElement     The decrypted element.
      * @throws \Exception
+     * @return \DOMElement     The decrypted element.
      */
     public static function decryptElement(\DOMElement $encryptedData, XMLSecurityKey $inputKey, array $blacklist = [])
     {
@@ -569,6 +577,7 @@ class Utils
         }
     }
 
+
     /**
      * Extract localized strings from a set of nodes.
      *
@@ -579,8 +588,8 @@ class Utils
      */
     public static function extractLocalizedStrings(\DOMElement $parent, $namespaceURI, $localName)
     {
-        assert(is_string($namespaceURI));
-        assert(is_string($localName));
+        Assert::string($namespaceURI);
+        Assert::string($localName);
 
         $ret = [];
         for ($node = $parent->firstChild; $node !== null; $node = $node->nextSibling) {
@@ -599,6 +608,7 @@ class Utils
         return $ret;
     }
 
+
     /**
      * Extract strings from a set of nodes.
      *
@@ -609,8 +619,8 @@ class Utils
      */
     public static function extractStrings(\DOMElement $parent, $namespaceURI, $localName)
     {
-        assert(is_string($namespaceURI));
-        assert(is_string($localName));
+        Assert::string($namespaceURI);
+        Assert::string($localName);
 
         $ret = [];
         for ($node = $parent->firstChild; $node !== null; $node = $node->nextSibling) {
@@ -623,6 +633,7 @@ class Utils
         return $ret;
     }
 
+
     /**
      * Append string element.
      *
@@ -634,9 +645,9 @@ class Utils
      */
     public static function addString(\DOMElement $parent, $namespace, $name, $value)
     {
-        assert(is_string($namespace));
-        assert(is_string($name));
-        assert(is_string($value));
+        Assert::string($namespace);
+        Assert::string($name);
+        Assert::string($value);
 
         $doc = $parent->ownerDocument;
 
@@ -647,6 +658,7 @@ class Utils
         return $n;
     }
 
+
     /**
      * Append string elements.
      *
@@ -655,12 +667,13 @@ class Utils
      * @param string     $name      The name of the created elements
      * @param bool       $localized Whether the strings are localized, and should include the xml:lang attribute.
      * @param array      $values    The values we should create the elements from.
+     * @return void
      */
     public static function addStrings(\DOMElement $parent, $namespace, $name, $localized, array $values)
     {
-        assert(is_string($namespace));
-        assert(is_string($name));
-        assert(is_bool($localized));
+        Assert::string($namespace);
+        Assert::string($name);
+        Assert::boolean($localized);
 
         $doc = $parent->ownerDocument;
 
@@ -674,6 +687,7 @@ class Utils
         }
     }
 
+
     /**
      * Create a KeyDescriptor with the given certificate.
      *
@@ -682,7 +696,7 @@ class Utils
      */
     public static function createKeyDescriptor($x509Data)
     {
-        assert(is_string($x509Data));
+        Assert::string($x509Data);
 
         $x509Certificate = new X509Certificate();
         $x509Certificate->setCertificate($x509Data);
@@ -698,6 +712,7 @@ class Utils
 
         return $keyDescriptor;
     }
+
 
     /**
      * This function converts a SAML2 timestamp on the form
@@ -715,8 +730,8 @@ class Utils
      * background.
      *
      * @param string $time The time we should convert.
-     * @return int Converted to a unix timestamp.
      * @throws \Exception
+     * @return int Converted to a unix timestamp.
      */
     public static function xsDateTimeToTimestamp($time)
     {
@@ -745,6 +760,7 @@ class Utils
 
         return $ts;
     }
+
 
     /**
      * @return \SAML2\Compat\Ssp\Container

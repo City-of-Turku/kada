@@ -4,9 +4,9 @@ namespace SAML2;
 
 use RobRichards\XMLSecLibs\XMLSecurityKey;
 use SAML2\Utilities\Temporal;
-use \SimpleSAML\Configuration;
-use \SimpleSAML\Metadata\MetaDataStorageHandler;
-use \SimpleSAML\Store;
+use SimpleSAML\Configuration;
+use SimpleSAML\Metadata\MetaDataStorageHandler;
+use SimpleSAML\Store;
 
 /**
  * Class which implements the HTTP-Artifact binding.
@@ -23,12 +23,13 @@ class HTTPArtifact extends Binding
      */
     private $spMetadata;
 
+
     /**
      * Create the redirect URL for a message.
      *
      * @param  \SAML2\Message $message The message.
-     * @return string        The URL the user should be redirected to in order to send a message.
      * @throws \Exception
+     * @return string        The URL the user should be redirected to in order to send a message.
      */
     public function getRedirectURL(Message $message)
     {
@@ -55,12 +56,14 @@ class HTTPArtifact extends Binding
         return \SimpleSAML\Utils\HTTP::addURLparameter($message->getDestination(), $params);
     }
 
+
     /**
      * Send a SAML 2 message using the HTTP-Redirect binding.
      *
      * Note: This function never returns.
      *
      * @param \SAML2\Message $message The message we should send.
+     * @retrun void
      */
     public function send(Message $message)
     {
@@ -68,13 +71,14 @@ class HTTPArtifact extends Binding
         Utils::getContainer()->redirect($destination);
     }
 
+
     /**
      * Receive a SAML 2 message sent using the HTTP-Artifact binding.
      *
      * Throws an exception if it is unable receive the message.
      *
-     * @return \SAML2\Message The received message.
      * @throws \Exception
+     * @return \SAML2\Message The received message.
      */
     public function receive()
     {
@@ -147,13 +151,16 @@ class HTTPArtifact extends Binding
         return $samlResponse;
     }
 
+
     /**
      * @param \SimpleSAML\Configuration $sp
+     * @return void
      */
     public function setSPMetadata(Configuration $sp)
     {
         $this->spMetadata = $sp;
     }
+
 
     /**
      * A validator which returns true if the ArtifactResponse was signed with the given key
