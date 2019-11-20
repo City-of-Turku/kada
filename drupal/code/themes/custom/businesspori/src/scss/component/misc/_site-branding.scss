@@ -18,14 +18,22 @@
 }
 
 .site-branding--header__link {
-  background: url('../../businesspori-logo-small-black.svg') no-repeat 0 0 transparent;
+  background: url('../../businesspori-logo.svg') no-repeat 0 0 transparent;
   height: 3.125rem;
-  width: 5rem;
-
-  @media screen and (min-width: $tablet-portrait-narrow) {
-    background-image: url('../../businesspori-logo-full.svg');
-    height: 4.625rem;
-    width: 23.125rem;
+  width: 6rem;
+  margin-top: 1.8rem;
+  margin-left: 0.5rem;
+  background-size: contain;
+  
+  @media screen and (min-width: $mobile-landscape-narrow) {
+    width: 9rem;
+    margin-top: 0.8rem;
+  }
+  @media screen and (min-width: $desktop) {
+    background-image: url('../../businesspori-logo.svg');
+    height: 3rem;
+    width: 13rem;
+    margin-top: 0;
   }
 }
 
@@ -50,14 +58,18 @@
   }
 }
 
-.site-branding--footer__link {
-  background: url('../../businesspori-logo-full-white.svg') no-repeat 0 0 transparent;
-  height: 6rem;
-  width: 100%;
+.l-region--logo {
+  max-width: 70%;
+}
 
-  @media screen and (min-width: $mobile-footer-breakpoint) {
-    background-image: url('../../businesspori-logo-small.svg');
-    height: 6.188rem;
-    width: 12.625rem;
+.site-branding--footer__link {
+  background: url('../../businesspori-logo.svg') no-repeat 0 bottom transparent;
+  background-size: contain;
+  width: 15rem;
+  height: 3rem;
+
+  @media screen and (min-width: $desktop) {
+    width: 12rem;
+    height: 6rem;
   }
 }

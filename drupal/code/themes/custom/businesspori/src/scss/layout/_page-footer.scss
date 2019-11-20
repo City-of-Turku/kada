@@ -1,7 +1,7 @@
 .page-footer-top {
   padding-top: 3rem;
   padding-bottom: 3rem;
-  background: $default-color-lightest;
+  background: #E7E7EA;
 }
 
 .page-footer,
@@ -11,10 +11,14 @@
 
 .page-footer {
   padding-top: 3.125rem;
-  background: $gray-light;
+  background: #E7E7EA;
+
+  @media screen and (min-width: $desktop) {
+    padding-top: 1.3rem;
+  }
 
   .page-footer__container {
-    border-bottom: 0.938rem solid $gray-light;
+    border-bottom: 0.938rem solid #E7E7EA;
     padding-bottom: 1.875rem;
     
     @media screen and (min-width: $mobile-footer-breakpoint) {

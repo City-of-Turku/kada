@@ -38,8 +38,9 @@ public
 drupal/SYNCDIR
 drupal/syncdb/*
 
-# Ignore ansible retry files
+# Ignore ansible temp files
 conf/*.retry
+.nfs*
 
 # Ignore python virtualenv created by provision.sh
 .virtualenv

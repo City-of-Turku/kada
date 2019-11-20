@@ -1,3 +1,27 @@
 .quicktabs-ui-wrapper {
-  margin-top: 1.25rem;
+  .ui-tabs-nav {
+    .ui-state-default .ui-tabs-anchor {
+      border-left: .063rem solid $green-dark;
+      border-right: .063rem solid $green-dark;
+      border-top: .063rem solid $green-dark;
+      color: $green-dark;
+    }
+
+    .uutiset.ui-tabs-anchor {
+      background-color: $green-dark;
+      color: $white;
+    }
+
+    .ui-state-default {
+      &.ui-state-active,
+      &:focus, 
+      &:hover {
+        background-color: $green-dark;
+      }
+    }
+  }
+}
+
+.block--kada-news-feature-news-archive-link .block__content a {
+  background-color: $green-dark;
 }

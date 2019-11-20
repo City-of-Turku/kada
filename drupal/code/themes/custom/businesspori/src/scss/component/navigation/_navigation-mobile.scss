@@ -3,7 +3,7 @@ $menu-padding: 1.25rem;
 .toggler {
   background: none;
   border-left: 1px solid $gray-light;
-  color: $red;
+  color: $green-dark;
   display: block;
   height: 3.125rem;
   text-align: center;
@@ -40,8 +40,8 @@ $menu-padding: 1.25rem;
 
       &:hover,
       &:focus {
-        background-color: $red;
-        border-color: $red;
+        background-color: $green-dark;
+        border-color: $green-dark;
 
         &::before {
           color: $white;
@@ -51,9 +51,9 @@ $menu-padding: 1.25rem;
 
     // Once toggled the menu icon should change color
     .responsive-toggled .toggler {
-      background-color: $red;
-      border-color: $red;
-      color: $red;
+      background-color: $green-dark;
+      border-color: $green-dark;
+      color: $green-dark;
 
       &::before {
         color: $white;
@@ -151,7 +151,7 @@ $menu-padding: 1.25rem;
       position: relative;
 
       a {
-        color: $white;
+        color: #000;
         display: block;
         margin-right: 2.813rem; // The amount of space that the menu__item--expanded-toggle requires.
         text-transform: uppercase;
