@@ -795,6 +795,33 @@ function kada_some_content_feature_strongarm() {
       'event_mosaic_item' => array(
         'custom_settings' => FALSE,
       ),
+      'live_results_search' => array(
+        'custom_settings' => TRUE,
+      ),
+      'current_twitter' => array(
+        'custom_settings' => TRUE,
+      ),
+      'event_search_result' => array(
+        'custom_settings' => FALSE,
+      ),
+      'attraction_card_mosaic_item' => array(
+        'custom_settings' => FALSE,
+      ),
+      'product' => array(
+        'custom_settings' => FALSE,
+      ),
+      'person_card' => array(
+        'custom_settings' => FALSE,
+      ),
+      'small_liftup_banner' => array(
+        'custom_settings' => FALSE,
+      ),
+      'waste_map' => array(
+        'custom_settings' => FALSE,
+      ),
+      'waste_search' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -838,6 +865,10 @@ function kada_some_content_feature_strongarm() {
             'weight' => '1',
             'visible' => TRUE,
           ),
+          'current_twitter' => array(
+            'weight' => '1',
+            'visible' => FALSE,
+          ),
         ),
         'language' => array(
           'default' => array(
@@ -854,6 +885,20 @@ function kada_some_content_feature_strongarm() {
           ),
           'event_grid_item' => array(
             'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'current_twitter' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+        ),
+        'sharethis' => array(
+          'default' => array(
+            'weight' => '10',
+            'visible' => TRUE,
+          ),
+          'current_twitter' => array(
+            'weight' => '10',
             'visible' => FALSE,
           ),
         ),
@@ -1794,23 +1839,23 @@ function kada_some_content_feature_strongarm() {
   $strongarm->value = array(
     'event' => 'event',
     'news_item' => 'news_item',
-    'attraction_card' => 0,
     'blog' => 0,
     'blog_post' => 0,
+    'person' => 0,
+    'landing_page' => 0,
+    'position_of_trust' => 0,
+    'liftup' => 0,
+    'page' => 0,
+    'attraction_card' => 0,
+    'service' => 0,
+    'service_offer' => 0,
+    'section' => 0,
+    'social_media_update' => 0,
     'feed_import_facebook' => 0,
     'feed_import_instagram' => 0,
     'feed_import_twitter' => 0,
     'feed_import_youtube_channel' => 0,
-    'landing_page' => 0,
-    'liftup' => 0,
-    'page' => 0,
-    'person' => 0,
     'place' => 0,
-    'position_of_trust' => 0,
-    'section' => 0,
-    'service' => 0,
-    'service_offer' => 0,
-    'social_media_update' => 0,
     'webform' => 0,
   );
   $export['sharethis_node_types'] = $strongarm;

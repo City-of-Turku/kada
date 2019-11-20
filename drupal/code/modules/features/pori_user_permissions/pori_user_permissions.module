@@ -13,6 +13,7 @@ function pori_user_permissions_simplesamlphp_auth_pre_login($attributes, $ext_us
   // Predefine Domain IDs.
   $pori_id = 5;
   $visit_id = 7;
+  $business_id = 10;
 
   $groups = $attributes['http://schemas.xmlsoap.org/claims/Group'];
 
@@ -24,6 +25,11 @@ function pori_user_permissions_simplesamlphp_auth_pre_login($attributes, $ext_us
   // Check for VisitPori access.
   if (in_array('GG_Drupal_Visit_Admin', $groups) || in_array('GG_Drupal_Visit_WebJournalist', $groups)) {
     $domains[$visit_id] = $visit_id;
+  }
+
+  // Check for BusinessPori access.
+  if (in_array('GG_Drupal_Business_Admin', $groups) || in_array('GG_Drupal_Business_WebJournalist', $groups)) {
+    $domains[$business_id] = $business_id;
   }
 
   $ext_user->domain_user = $domains;

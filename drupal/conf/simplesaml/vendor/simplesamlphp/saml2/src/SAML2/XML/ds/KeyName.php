@@ -4,6 +4,7 @@ namespace SAML2\XML\ds;
 
 use RobRichards\XMLSecLibs\XMLSecurityDSig;
 use SAML2\Utils;
+use Webmozart\Assert\Assert;
 
 /**
  * Class representing a ds:KeyName element.
@@ -19,6 +20,7 @@ class KeyName
      */
     public $name;
 
+
     /**
      * Initialize a KeyName element.
      *
@@ -33,6 +35,7 @@ class KeyName
         $this->setName($xml->textContent);
     }
 
+
     /**
      * Collect the value of the name-property
      * @return string
@@ -42,13 +45,15 @@ class KeyName
         return $this->name;
     }
 
+
     /**
      * Set the value of the name-property
      * @param string $name
+     * @return void
      */
     public function setName($name)
     {
-        assert(is_string($name) || is_null($name));
+        Assert::nullOrString($name);
         $this->name = $name;
     }
 
@@ -61,7 +66,7 @@ class KeyName
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_string($this->name));
+        Assert::string($this->name);
 
         return Utils::addString($parent, XMLSecurityDSig::XMLDSIGNS, 'ds:KeyName', $this->name);
     }

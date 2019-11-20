@@ -12,12 +12,13 @@ class Logger implements LoggerInterface
      *
      * @param string $message
      * @param array $context
-     * @return null
+     * @return void
      */
     public function emergency($message, array $context = [])
     {
         \SimpleSAML\Logger::emergency($message.($context ? " ".var_export($context, true) : ""));
     }
+
 
     /**
      * Action must be taken immediately.
@@ -27,12 +28,13 @@ class Logger implements LoggerInterface
      *
      * @param string $message
      * @param array $context
-     * @return null
+     * @return void
      */
     public function alert($message, array $context = [])
     {
         \SimpleSAML\Logger::alert($message.($context ? " ".var_export($context, true) : ""));
     }
+
 
     /**
      * Critical conditions.
@@ -41,12 +43,13 @@ class Logger implements LoggerInterface
      *
      * @param string $message
      * @param array $context
-     * @return null
+     * @return void
      */
     public function critical($message, array $context = [])
     {
         \SimpleSAML\Logger::critical($message.($context ? " ".var_export($context, true) : ""));
     }
+
 
     /**
      * Runtime errors that do not require immediate action but should typically
@@ -54,12 +57,13 @@ class Logger implements LoggerInterface
      *
      * @param string $message
      * @param array $context
-     * @return null
+     * @return void
      */
     public function error($message, array $context = [])
     {
         \SimpleSAML\Logger::error($message.($context ? " ".var_export($context, true) : ""));
     }
+
 
     /**
      * Exceptional occurrences that are not errors.
@@ -69,24 +73,26 @@ class Logger implements LoggerInterface
      *
      * @param string $message
      * @param array $context
-     * @return null
+     * @return void
      */
     public function warning($message, array $context = [])
     {
         \SimpleSAML\Logger::warning($message.($context ? " ".var_export($context, true) : ""));
     }
 
+
     /**
      * Normal but significant events.
      *
      * @param string $message
      * @param array $context
-     * @return null
+     * @return void
      */
     public function notice($message, array $context = [])
     {
         \SimpleSAML\Logger::notice($message.($context ? " ".var_export($context, true) : ""));
     }
+
 
     /**
      * Interesting events.
@@ -95,24 +101,26 @@ class Logger implements LoggerInterface
      *
      * @param string $message
      * @param array $context
-     * @return null
+     * @return void
      */
     public function info($message, array $context = [])
     {
         \SimpleSAML\Logger::info($message.($context ? " ".var_export($context, true) : ""));
     }
 
+
     /**
      * Detailed debug information.
      *
      * @param string $message
      * @param array $context
-     * @return null
+     * @return void
      */
     public function debug($message, array $context = [])
     {
         \SimpleSAML\Logger::debug($message.($context ? " ".var_export($context, true) : ""));
     }
+
 
     /**
      * Logs with an arbitrary level.
@@ -120,7 +128,7 @@ class Logger implements LoggerInterface
      * @param mixed $level
      * @param string $message
      * @param array $context
-     * @return null
+     * @return void
      */
     public function log($level, $message, array $context = [])
     {

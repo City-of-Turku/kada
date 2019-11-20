@@ -2,6 +2,8 @@
 
 namespace SAML2\XML\alg;
 
+use Webmozart\Assert\Assert;
+
 /**
  * Class for handling the alg:DigestMethod element.
  *
@@ -48,13 +50,15 @@ class DigestMethod
         return $this->Algorithm;
     }
 
+
     /**
      * Set the value of the Algorithm-property
      * @param string $algorithm
+     * @return void
      */
     public function setAlgorithm($algorithm)
     {
-        assert(is_string($algorithm));
+        Assert::string($algorithm);
         $this->Algorithm = $algorithm;
     }
 
@@ -67,7 +71,7 @@ class DigestMethod
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_string($this->getAlgorithm()));
+        Assert::string($this->getAlgorithm());
 
         $doc = $parent->ownerDocument;
         $e = $doc->createElementNS(Common::NS, 'alg:DigestMethod');

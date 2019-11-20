@@ -7,6 +7,7 @@ use SAML2\Constants;
 use SAML2\Utils;
 use SAML2\XML\Chunk;
 use SAML2\XML\ds\KeyInfo;
+use Webmozart\Assert\Assert;
 
 /**
  * Class representing SAML 2 SubjectConfirmationData element.
@@ -60,6 +61,7 @@ class SubjectConfirmationData
      */
     public $info = [];
 
+
     /**
      * Collect the value of the NotBefore-property
      * @return int|null
@@ -69,15 +71,18 @@ class SubjectConfirmationData
         return $this->NotBefore;
     }
 
+
     /**
      * Set the value of the NotBefore-property
      * @param int|null $notBefore
+     * @return void
      */
     public function setNotBefore($notBefore = null)
     {
-        assert(is_int($notBefore) || is_null($notBefore));
+        Assert::nullOrInteger($notBefore);
         $this->NotBefore = $notBefore;
     }
+
 
     /**
      * Collect the value of the NotOnOrAfter-property
@@ -88,15 +93,18 @@ class SubjectConfirmationData
         return $this->NotOnOrAfter;
     }
 
+
     /**
      * Set the value of the NotOnOrAfter-property
      * @param int|null $notOnOrAfter
+     * @return void
      */
     public function setNotOnOrAfter($notOnOrAfter = null)
     {
-        assert(is_int($notOnOrAfter) || is_null($notOnOrAfter));
+        Assert::nullOrInteger($notOnOrAfter);
         $this->NotOnOrAfter = $notOnOrAfter;
     }
+
 
     /**
      * Collect the value of the Recipient-property
@@ -107,15 +115,18 @@ class SubjectConfirmationData
         return $this->Recipient;
     }
 
+
     /**
      * Set the value of the Recipient-property
      * @param string|null $recipient
+     * @return void
      */
     public function setRecipient($recipient = null)
     {
-        assert(is_string($recipient) || is_null($recipient));
+        Assert::nullOrString($recipient);
         $this->Recipient = $recipient;
     }
+
 
     /**
      * Collect the value of the InResponseTo-property
@@ -126,15 +137,18 @@ class SubjectConfirmationData
         return $this->InResponseTo;
     }
 
+
     /**
      * Set the value of the InResponseTo-property
      * @param string|null $inResponseTo
+     * @return void
      */
     public function setInResponseTo($inResponseTo = null)
     {
-        assert(is_string($inResponseTo) || is_null($inResponseTo));
+        Assert::nullOrString($inResponseTo);
         $this->InResponseTo = $inResponseTo;
     }
+
 
     /**
      * Collect the value of the Address-property
@@ -145,18 +159,21 @@ class SubjectConfirmationData
         return $this->Address;
     }
 
+
     /**
      * Set the value of the Address-property
      * @param string|null $address
+     * @return void
      */
     public function setAddress($address = null)
     {
-        assert(is_string($address) || is_null($address));
+        Assert::nullOrstring($address);
         if (!is_null($address) && !filter_var($address, FILTER_VALIDATE_IP, FILTER_FLAG_IPV4 | FILTER_FLAG_IPV6)) {
-            throw new \InvalidArgumentException('Provided argument is not a valid IP address.');
+            Utils::getContainer()->getLogger()->warning(sprintf('Provided argument (%s) is not a valid IP address.', $address));
         }
         $this->Address = $address;
     }
+
 
     /**
      * Collect the value of the info-property
@@ -167,24 +184,29 @@ class SubjectConfirmationData
         return $this->info;
     }
 
+
     /**
      * Set the value of the info-property
      * @param (\SAML2\XML\ds\KeyInfo|\SAML2\XML\Chunk)[] $info
+     * @return void
      */
     public function setInfo(array $info)
     {
         $this->info = $info;
     }
 
+
     /**
      * Add the value to the info-property
      * @param \SAML2\XML\Chunk|\SAML2\XML\ds\KeyInfo $info
+     * @return void
      */
     public function addInfo($info)
     {
-        assert($info instanceof Chunk || $info instanceof KeyInfo);
+        Assert::isInstanceOfAny($info, [Chunk::class, KeyInfo::class]);
         $this->info[] = $info;
     }
+
 
     /**
      * Initialize (and parse) a SubjectConfirmationData element.
@@ -231,6 +253,7 @@ class SubjectConfirmationData
         }
     }
 
+
     /**
      * Convert this element to XML.
      *
@@ -239,11 +262,11 @@ class SubjectConfirmationData
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_null($this->getNotBefore()) || is_int($this->getNotBefore()));
-        assert(is_null($this->getNotOnOrAfter()) || is_int($this->getNotOnOrAfter()));
-        assert(is_null($this->getRecipient()) || is_string($this->getRecipient()));
-        assert(is_null($this->getInResponseTo()) || is_string($this->getInResponseTo()));
-        assert(is_null($this->getAddress()) || is_string($this->getAddress()));
+        Assert::nullOrInteger($this->getNotBefore());
+        Assert::nullOrInteger($this->getNotOnOrAfter());
+        Assert::nullOrString($this->getRecipient());
+        Assert::nullOrString($this->getInResponseTo());
+        Assert::nullOrString($this->getAddress());
 
         $e = $parent->ownerDocument->createElementNS(Constants::NS_SAML, 'saml:SubjectConfirmationData');
         $parent->appendChild($e);

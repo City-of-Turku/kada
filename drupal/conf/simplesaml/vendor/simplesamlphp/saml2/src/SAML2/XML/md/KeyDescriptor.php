@@ -6,6 +6,7 @@ use SAML2\Constants;
 use SAML2\Utils;
 use SAML2\XML\Chunk;
 use SAML2\XML\ds\KeyInfo;
+use Webmozart\Assert\Assert;
 
 /**
  * Class representing a KeyDescriptor element.
@@ -39,6 +40,7 @@ class KeyDescriptor
      */
     public $EncryptionMethod = [];
 
+
     /**
      * Initialize an KeyDescriptor.
      *
@@ -68,6 +70,7 @@ class KeyDescriptor
         }
     }
 
+
     /**
      * Collect the value of the use-property
      * @return string
@@ -77,15 +80,18 @@ class KeyDescriptor
         return $this->use;
     }
 
+
     /**
      * Set the value of the use-property
      * @param string|null $use
+     * @return void
      */
     public function setUse($use)
     {
-        assert(is_string($use) || is_null($use));
+        Assert::nullOrString($use);
         $this->use = $use;
     }
+
 
     /**
      * Collect the value of the KeyInfo-property
@@ -96,14 +102,17 @@ class KeyDescriptor
         return $this->KeyInfo;
     }
 
+
     /**
      * Set the value of the KeyInfo-property
      * @param \SAML2\XML\ds\KeyInfo $keyInfo
+     * @return void
      */
     public function setKeyInfo(KeyInfo $keyInfo)
     {
         $this->KeyInfo = $keyInfo;
     }
+
 
     /**
      * Collect the value of the EncryptionMethod-property
@@ -114,23 +123,28 @@ class KeyDescriptor
         return $this->EncryptionMethod;
     }
 
+
     /**
      * Set the value of the EncryptionMethod-property
      * @param \SAML2\XML\Chunk[] $encryptionMethod
+     * @return void
      */
     public function setEncryptionMethod(array $encryptionMethod)
     {
         $this->EncryptionMethod = $encryptionMethod;
     }
 
+
     /**
      * Add the value to the EncryptionMethod-property
      * @param \SAML2\XML\Chunk $encryptionMethod
+     * @return void
      */
     public function addEncryptionMethod(Chunk $encryptionMethod)
     {
         $this->EncryptionMethod[] = $encryptionMethod;
     }
+
 
     /**
      * Convert this KeyDescriptor to XML.
@@ -140,9 +154,9 @@ class KeyDescriptor
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_null($this->getUse()) || is_string($this->getUse()));
-        assert($this->getKeyInfo() instanceof KeyInfo);
-        assert(is_array($this->getEncryptionMethod()));
+        Assert::nullOrString($this->getUse());
+        Assert::isInstanceOf($this->getKeyInfo(), KeyInfo::class);
+        Assert::isArray($this->getEncryptionMethod());
 
         $doc = $parent->ownerDocument;
 
