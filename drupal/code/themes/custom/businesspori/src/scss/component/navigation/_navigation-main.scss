@@ -44,7 +44,7 @@
           > a {
             &:hover,
             &:focus {
-              color: $white;
+              color: $black;
               background-color: $color !important;
             }
           }
@@ -84,6 +84,9 @@
           }
         }
       }
+    }
+    .businesspori-theme-color-green {
+      color: $white;
     }
 
     .menu__item--has-first-level {
