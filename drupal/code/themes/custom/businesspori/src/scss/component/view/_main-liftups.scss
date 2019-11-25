@@ -169,8 +169,6 @@ $main-liftup-content-padding: 20px;
     padding: 0;
   }
 }
-.view-facts {
-  .view-content {
-    justify-content: space-around;
-  }
+.view-facts .view-content {
+  justify-content: space-around;
 }
