@@ -26,6 +26,7 @@ class SimpleSAMLConverter
         return new IdentityProvider($pluckedConfiguration);
     }
 
+
     /**
      * @param \SimpleSAML\Configuration $configuration
      * @param string                    $certificatePrefix
@@ -42,6 +43,7 @@ class SimpleSAMLConverter
 
         return new ServiceProvider($pluckedConfiguration);
     }
+
 
     /**
      * @param \SimpleSAML\Configuration $configuration
@@ -86,17 +88,38 @@ class SimpleSAMLConverter
         return $extracted;
     }
 
+
+    /**
+     * @param \SimpleSAML\Configuration $configuration
+     * @param array                     $baseConfiguration
+     *
+     * @return void
+     */
     protected static function enrichForIdentityProvider(Configuration $configuration, array &$baseConfiguration)
     {
         $baseConfiguration['base64EncodedAttributes'] = $configuration->getBoolean('base64attributes', false);
         $baseConfiguration['entityId'] = $configuration->getString('entityid');
     }
 
+
+    /**
+     * @param \SimpleSAML\Configuration $configuration
+     * @param array                     $baseConfiguration
+     *
+     * @return void
+     */
     protected static function enrichForServiceProvider(Configuration $configuration, array &$baseConfiguration)
     {
         $baseConfiguration['entityId'] = $configuration->getString('entityid');
     }
 
+
+    /**
+     * @param \SimpleSAML\Configuration $configuration
+     * @param array                     $baseConfiguration
+     *
+     * @return void
+     */
     protected static function enrichForDecryptionProvider(
         Configuration $configuration,
         array &$baseConfiguration

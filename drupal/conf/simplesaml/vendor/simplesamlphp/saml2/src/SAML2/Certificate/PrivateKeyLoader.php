@@ -14,22 +14,25 @@ class PrivateKeyLoader
      * Loads a private key based on the configuration given.
      *
      * @param \SAML2\Configuration\PrivateKey $key
-     *
      * @return \SAML2\Certificate\PrivateKey
      */
     public function loadPrivateKey(PrivateKeyConfiguration $key)
     {
-        $privateKey = File::getFileContents($key->getFilePath());
+        if ($key->isFile()) {
+            $privateKey = File::getFileContents($key->getFilePath());
+        } else {
+            $privateKey = $key->getContents();
+        }
 
         return PrivateKey::create($privateKey, $key->getPassPhrase());
     }
 
+
     /**
      * @param \SAML2\Configuration\DecryptionProvider $identityProvider
      * @param \SAML2\Configuration\DecryptionProvider $serviceProvider
-     *
-     * @return \SAML2\Utilities\ArrayCollection
      * @throws \Exception
+     * @return \SAML2\Utilities\ArrayCollection
      */
     public function loadDecryptionKeys(
         DecryptionProvider $identityProvider,
@@ -59,15 +62,15 @@ class PrivateKeyLoader
         return $decryptionKeys;
     }
 
+
     /**
      * @param \SAML2\Certificate\PrivateKey $privateKey
-     *
-     * @return XMLSecurityKey
      * @throws \Exception
+     * @return XMLSecurityKey
      */
     private function convertPrivateKeyToRsaKey(PrivateKey $privateKey)
     {
-        $key        = new XMLSecurityKey(XMLSecurityKey::RSA_1_5, ['type' => 'private']);
+        $key = new XMLSecurityKey(XMLSecurityKey::RSA_1_5, ['type' => 'private']);
         $passphrase = $privateKey->getPassphrase();
         if ($passphrase) {
             $key->passphrase = $passphrase;

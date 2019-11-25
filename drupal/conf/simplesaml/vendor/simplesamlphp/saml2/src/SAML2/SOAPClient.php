@@ -4,7 +4,8 @@ namespace SAML2;
 
 use RobRichards\XMLSecLibs\XMLSecurityKey;
 use SAML2\Exception\RuntimeException;
-use \SimpleSAML\Configuration;
+use SimpleSAML\Configuration;
+use Webmozart\Assert\Assert;
 
 /**
  * Implementation of the SAML 2.0 SOAP binding.
@@ -17,14 +18,15 @@ class SOAPClient
     const START_SOAP_ENVELOPE = '<soap-env:Envelope xmlns:soap-env="http://schemas.xmlsoap.org/soap/envelope/"><soap-env:Header/><soap-env:Body>';
     const END_SOAP_ENVELOPE = '</soap-env:Body></soap-env:Envelope>';
 
+
     /**
      * This function sends the SOAP message to the service location and returns SOAP response
      *
      * @param  \SAML2\Message            $msg         The request that should be sent.
      * @param  \SimpleSAML\Configuration $srcMetadata The metadata of the issuer of the message.
      * @param  \SimpleSAML\Configuration $dstMetadata The metadata of the destination of the message.
-     * @return \SAML2\Message            The response we received.
      * @throws \Exception
+     * @return \SAML2\Message            The response we received.
      */
     public function send(Message $msg, Configuration $srcMetadata, Configuration $dstMetadata = null)
     {
@@ -153,11 +155,13 @@ class SOAPClient
         return $samlresponse;
     }
 
+
     /**
      * Add a signature validator based on a SSL context.
      *
      * @param \SAML2\Message $msg     The message we should add a validator to.
      * @param resource      $context The stream context.
+     * @return void
      */
     private static function addSSLValidator(Message $msg, $context)
     {
@@ -192,6 +196,7 @@ class SOAPClient
         $msg->addValidator(['\SAML2\SOAPClient', 'validateSSL'], $keyInfo['key']);
     }
 
+
     /**
      * Validate a SOAP message against the certificate on the SSL connection.
      *
@@ -201,7 +206,7 @@ class SOAPClient
      */
     public static function validateSSL($data, XMLSecurityKey $key)
     {
-        assert(is_string($data));
+        Assert::string($data);
 
         $keyInfo = openssl_pkey_get_details($key->key);
         if ($keyInfo === false) {
@@ -221,8 +226,10 @@ class SOAPClient
         Utils::getContainer()->getLogger()->debug('Message validated based on SSL certificate.');
     }
 
+
     /*
      * Extracts the SOAP Fault from SOAP message
+     *
      * @param $soapmessage Soap response needs to be type DOMDocument
      * @return string|null $soapfaultstring
      */

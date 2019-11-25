@@ -15,11 +15,21 @@ class DecodeBase64Transformer implements
      */
     private $identityProvider;
 
+
+    /**
+     * @param IdentityProvider $identityProvider
+     * @return void
+     */
     public function setIdentityProvider(IdentityProvider $identityProvider)
     {
         $this->identityProvider = $identityProvider;
     }
 
+
+    /**
+     * @param Assertion $assertion
+     * @return Assertion
+     */
     public function transform(Assertion $assertion)
     {
         if (!$this->identityProvider->hasBase64EncodedAttributes()) {
@@ -33,7 +43,9 @@ class DecodeBase64Transformer implements
         $attributes = array_combine($keys, $decoded);
 
         $assertion->setAttributes($attributes);
+        return $assertion;
     }
+
 
     /**
      * @param $value

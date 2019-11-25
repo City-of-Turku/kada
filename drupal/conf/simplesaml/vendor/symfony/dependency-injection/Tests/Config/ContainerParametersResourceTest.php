@@ -19,9 +19,9 @@ class ContainerParametersResourceTest extends TestCase
     /** @var ContainerParametersResource */
     private $resource;
 
-    protected function setUp()
+    protected function setUp(): void
     {
-        $this->resource = new ContainerParametersResource(array('locales' => array('fr', 'en'), 'default_locale' => 'fr'));
+        $this->resource = new ContainerParametersResource(['locales' => ['fr', 'en'], 'default_locale' => 'fr']);
     }
 
     public function testToString()
@@ -38,6 +38,6 @@ class ContainerParametersResourceTest extends TestCase
 
     public function testGetParameters()
     {
-        $this->assertSame(array('locales' => array('fr', 'en'), 'default_locale' => 'fr'), $this->resource->getParameters());
+        $this->assertSame(['locales' => ['fr', 'en'], 'default_locale' => 'fr'], $this->resource->getParameters());
     }
 }
