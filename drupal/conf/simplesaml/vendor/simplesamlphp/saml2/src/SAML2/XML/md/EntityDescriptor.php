@@ -7,6 +7,9 @@ use SAML2\DOMDocumentFactory;
 use SAML2\SignedElementHelper;
 use SAML2\Utils;
 use SAML2\XML\Chunk;
+use SAML2\XML\md\AffiliationDescriptor;
+use SAML2\XML\md\Organization;
+use Webmozart\Assert\Assert;
 
 /**
  * Class representing SAML 2 EntityDescriptor element.
@@ -88,6 +91,7 @@ class EntityDescriptor extends SignedElementHelper
      * @var \SAML2\XML\md\AdditionalMetadataLocation[]
      */
     public $AdditionalMetadataLocation = [];
+
 
     /**
      * Initialize an EntitiyDescriptor.
@@ -181,6 +185,7 @@ class EntityDescriptor extends SignedElementHelper
         }
     }
 
+
     /**
      * Collect the value of the entityID-property
      * @return string
@@ -190,15 +195,18 @@ class EntityDescriptor extends SignedElementHelper
         return $this->entityID;
     }
 
+
     /**
      * Set the value of the entityID-property
      * @param string|null $entityId
+     * @return void
      */
     public function setEntityID($entityId)
     {
-        assert(is_string($entityId) || is_null($entityId));
+        Assert::nullOrString($entityId);
         $this->entityID = $entityId;
     }
+
 
     /**
      * Collect the value of the ID-property
@@ -209,15 +217,18 @@ class EntityDescriptor extends SignedElementHelper
         return $this->ID;
     }
 
+
     /**
      * Set the value of the ID-property
      * @param string|null $Id
+     * @return void
      */
     public function setID($Id = null)
     {
-        assert(is_string($Id) || is_null($Id));
+        Assert::nullOrString($Id);
         $this->ID = $Id;
     }
+
 
     /**
      * Collect the value of the validUntil-property
@@ -228,15 +239,18 @@ class EntityDescriptor extends SignedElementHelper
         return $this->validUntil;
     }
 
+
     /**
      * Set the value of the validUntil-property
      * @param int|null $validUntil
+     * @return void
      */
     public function setValidUntil($validUntil = null)
     {
-        assert(is_int($validUntil) || is_null($validUntil));
+        Assert::nullOrInteger($validUntil);
         $this->validUntil = $validUntil;
     }
+
 
     /**
      * Collect the value of the cacheDuration-property
@@ -247,15 +261,18 @@ class EntityDescriptor extends SignedElementHelper
         return $this->cacheDuration;
     }
 
+
     /**
      * Set the value of the cacheDuration-property
      * @param string|null $cacheDuration
+     * @return void
      */
     public function setCacheDuration($cacheDuration = null)
     {
-        assert(is_string($cacheDuration) || is_null($cacheDuration));
+        Assert::nullOrString($cacheDuration);
         $this->cacheDuration = $cacheDuration;
     }
+
 
     /**
      * Collect the value of the Extensions-property
@@ -266,24 +283,29 @@ class EntityDescriptor extends SignedElementHelper
         return $this->Extensions;
     }
 
+
     /**
      * Set the value of the Extensions-property
      * @param array $extensions
+     * @return void
      */
     public function setExtensions(array $extensions)
     {
         $this->Extensions = $extensions;
     }
 
+
     /**
      * Add an Extension.
      *
      * @param \SAML2\XML\Chunk $extensions The Extensions
+     * @return void
      */
     public function addExtension(Extensions $extension)
     {
         $this->Extensions[] = $extension;
     }
+
 
     /**
      * Collect the value of the RoleDescriptor-property
@@ -294,23 +316,28 @@ class EntityDescriptor extends SignedElementHelper
         return $this->RoleDescriptor;
     }
 
+
     /**
      * Set the value of the RoleDescriptor-property
      * @param array $roleDescriptor
+     * @return void
      */
     public function setRoleDescriptor(array $roleDescriptor)
     {
         $this->RoleDescriptor = $roleDescriptor;
     }
 
+
     /**
      * Add the value to the RoleDescriptor-property
      * @param \SAML2\XML\md\RoleDescriptor $roleDescriptor
+     * @return void
      */
     public function addRoleDescriptor(RoleDescriptor $roleDescriptor)
     {
         $this->RoleDescriptor[] = $roleDescriptor;
     }
+
 
     /**
      * Collect the value of the AffiliationDescriptor-property
@@ -321,14 +348,17 @@ class EntityDescriptor extends SignedElementHelper
         return $this->AffiliationDescriptor;
     }
 
+
     /**
      * Set the value of the AffliationDescriptor-property
      * @param \SAML2\XML\md\AffiliationDescriptor|null $affiliationDescriptor
+     * @return void
      */
     public function setAffiliationDescriptor(AffiliationDescriptor $affiliationDescriptor = null)
     {
         $this->AffiliationDescriptor = $affiliationDescriptor;
     }
+
 
     /**
      * Collect the value of the Organization-property
@@ -339,9 +369,11 @@ class EntityDescriptor extends SignedElementHelper
         return $this->Organization;
     }
 
+
     /**
      * Set the value of the Organization-property
      * @param \SAML2\XML\md\Organization|null $organization
+     * @return void
      */
     public function setOrganization(Organization $organization = null)
     {
@@ -358,23 +390,28 @@ class EntityDescriptor extends SignedElementHelper
         return $this->ContactPerson;
     }
 
+
     /**
      * Set the value of the ContactPerson-property
      * @param array $contactPerson
+     * @return void
      */
     public function setContactPerson(array $contactPerson)
     {
         $this->ContactPerson = $contactPerson;
     }
 
+
     /**
      * Add the value to the ContactPerson-property
      * @param \SAML2\XML\md\ContactPerson $contactPerson
+     * @return void
      */
     public function addContactPerson(ContactPerson $contactPerson)
     {
         $this->ContactPerson[] = $contactPerson;
     }
+
 
     /**
      * Collect the value of the AdditionalMetadataLocation-property
@@ -385,18 +422,22 @@ class EntityDescriptor extends SignedElementHelper
         return $this->AdditionalMetadataLocation;
     }
 
+
     /**
      * Set the value of the AdditionalMetadataLocation-property
      * @param array $additionalMetadataLocation
+     * @return void
      */
     public function setAdditionalMetadataLocation(array $additionalMetadataLocation)
     {
         $this->AdditionalMetadataLocation = $additionalMetadataLocation;
     }
 
+
     /**
      * Add the value to the AdditionalMetadataLocation-property
      * @param AdditionalMetadataLocation $additionalMetadataLocation
+     * @return void
      */
     public function addAdditionalMetadataLocation(AdditionalMetadataLocation $additionalMetadataLocation)
     {
@@ -412,16 +453,16 @@ class EntityDescriptor extends SignedElementHelper
      */
     public function toXML(\DOMElement $parent = null)
     {
-        assert(is_string($this->getEntityID()));
-        assert(is_null($this->getID()) || is_string($this->getID()));
-        assert(is_null($this->getValidUntil()) || is_int($this->getValidUntil()));
-        assert(is_null($this->getCacheDuration()) || is_string($this->getCacheDuration()));
-        assert(is_array($this->getExtensions()));
-        assert(is_array($this->getRoleDescriptor()));
-        assert(is_null($this->getAffiliationDescriptor()) || $this->getAffiliationDescriptor() instanceof AffiliationDescriptor);
-        assert(is_null($this->getOrganization()) || $this->getOrganization() instanceof Organization);
-        assert(is_array($this->getContactPerson()));
-        assert(is_array($this->getAdditionalMetadataLocation()));
+        Assert::string($this->getEntityID());
+        Assert::nullOrString($this->getID());
+        Assert::nullOrInteger($this->getValidUntil());
+        Assert::nullOrString($this->getCacheDuration());
+        Assert::isArray($this->getExtensions());
+        Assert::isArray($this->getRoleDescriptor());
+        Assert::nullOrIsInstanceOf($this->getAffiliationDescriptor(), AffiliationDescriptor::class);
+        Assert::nullOrIsInstanceOf($this->getOrganization(), Organization::class);
+        Assert::isArray($this->getContactPerson());
+        Assert::isArray($this->getAdditionalMetadataLocation());
 
         if ($parent === null) {
             $doc = DOMDocumentFactory::create();

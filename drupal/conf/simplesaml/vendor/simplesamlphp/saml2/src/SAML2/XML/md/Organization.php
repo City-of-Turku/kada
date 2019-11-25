@@ -5,6 +5,7 @@ namespace SAML2\XML\md;
 use SAML2\Constants;
 use SAML2\Utils;
 use SAML2\XML\Chunk;
+use Webmozart\Assert\Assert;
 
 /**
  * Class representing SAML 2 Organization element.
@@ -43,6 +44,7 @@ class Organization
      */
     public $OrganizationURL = [];
 
+
     /**
      * Initialize an Organization element.
      *
@@ -75,6 +77,7 @@ class Organization
         }
     }
 
+
     /**
      * Collect the value of the Extensions-property
      * @return \SAML2\XML\Chunk[]
@@ -84,24 +87,29 @@ class Organization
         return $this->Extensions;
     }
 
+
     /**
      * Set the value of the Extensions-property
      * @param array $extensions
+     * @return void
      */
     public function setExtensions(array $extensions)
     {
         $this->Extensions = $extensions;
     }
 
+
     /**
      * Add an Extension.
      *
      * @param \SAML2\XML\Chunk $extensions The Extensions
+     * @return void
      */
     public function addExtension(Extensions $extension)
     {
         $this->Extensions[] = $extension;
     }
+
 
     /**
      * Collect the value of the OrganizationName-property
@@ -112,14 +120,17 @@ class Organization
         return $this->OrganizationName;
     }
 
+
     /**
      * Set the value of the OrganizationName-property
      * @param array $organizationName
+     * @return void
      */
     public function setOrganizationName(array $organizationName)
     {
         $this->OrganizationName = $organizationName;
     }
+
 
     /**
      * Collect the value of the OrganizationDisplayName-property
@@ -130,14 +141,17 @@ class Organization
         return $this->OrganizationDisplayName;
     }
 
+
     /**
      * Set the value of the OrganizationDisplayName-property
      * @param array $organizationDisplayName
+     * @return void
      */
     public function setOrganizationDisplayName(array $organizationDisplayName)
     {
         $this->OrganizationDisplayName = $organizationDisplayName;
     }
+
 
     /**
      * Collect the value of the OrganizationURL-property
@@ -148,14 +162,17 @@ class Organization
         return $this->OrganizationURL;
     }
 
+
     /**
      * Set the value of the OrganizationURL-property
      * @param array $organizationURL
+     * @return void
      */
     public function setOrganizationURL(array $organizationURL)
     {
         $this->OrganizationURL = $organizationURL;
     }
+
 
     /**
      * Convert this Organization to XML.
@@ -165,13 +182,13 @@ class Organization
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_array($this->getExtensions()));
-        assert(is_array($organizationName = $this->getOrganizationName()));
-        assert(!empty($organizationName));
-        assert(is_array($organizationDisplayName = $this->getOrganizationDisplayName()));
-        assert(!empty($organizationDisplayName));
-        assert(is_array($organizationURL = $this->getOrganizationURL()));
-        assert(!empty($organizationURL));
+        Assert::isArray($this->getExtensions());
+        Assert::isArray($organizationName = $this->getOrganizationName());
+        Assert::notEmpty($organizationName);
+        Assert::isArray($organizationDisplayName = $this->getOrganizationDisplayName());
+        Assert::notEmpty($organizationDisplayName);
+        Assert::isArray($organizationURL = $this->getOrganizationURL());
+        Assert::notEmpty($organizationURL);
 
         $doc = $parent->ownerDocument;
 

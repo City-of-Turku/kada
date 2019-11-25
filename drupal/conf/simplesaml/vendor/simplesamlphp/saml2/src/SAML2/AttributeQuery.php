@@ -2,6 +2,8 @@
 
 namespace SAML2;
 
+use Webmozart\Assert\Assert;
+
 /**
  * Class for SAML 2 attribute query messages.
  *
@@ -35,6 +37,7 @@ class AttributeQuery extends SubjectQuery
      * @var string
      */
     private $nameFormat;
+
 
     /**
      * Constructor for SAML 2 attribute query messages.
@@ -87,6 +90,7 @@ class AttributeQuery extends SubjectQuery
         }
     }
 
+
     /**
      * Retrieve all requested attributes.
      *
@@ -97,15 +101,18 @@ class AttributeQuery extends SubjectQuery
         return $this->attributes;
     }
 
+
     /**
      * Set all requested attributes.
      *
      * @param array $attributes All requested attributes, as an associative array.
+     * @return void
      */
     public function setAttributes(array $attributes)
     {
         $this->attributes = $attributes;
     }
+
 
     /**
      * Retrieve the NameFormat used on all attributes.
@@ -120,17 +127,20 @@ class AttributeQuery extends SubjectQuery
         return $this->nameFormat;
     }
 
+
     /**
      * Set the NameFormat used on all attributes.
      *
      * @param string $nameFormat The NameFormat used on all attributes.
+     * @return void
      */
     public function setAttributeNameFormat($nameFormat)
     {
-        assert(is_string($nameFormat));
+        Assert::string($nameFormat);
 
         $this->nameFormat = $nameFormat;
     }
+
 
     /**
      * Convert the attribute query message to an XML element.

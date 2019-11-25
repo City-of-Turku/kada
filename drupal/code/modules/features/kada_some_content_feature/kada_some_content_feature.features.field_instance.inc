@@ -201,6 +201,88 @@ function kada_some_content_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-feed_import_facebook-field_access_token_fb'.
+  $field_instances['node-feed_import_facebook-field_access_token_fb'] = array(
+    'bundle' => 'feed_import_facebook',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'If facebook token is set it is used over old implementation of user ID and Secret (which are derpecated). More info about token generation can be found from <a href=\'https://drive.google.com/file/d/1sDpzqc8CuehE_OVoMYpyg9JE7g38vEbX/view?usp=sharing\' target=_blank>Documentation pdf</a>',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_access_token_fb',
+    'label' => 'Access token FB',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'wysiwyg' => 'wysiwyg',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'full_html' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'wysiwyg' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Etsi',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 0,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 3,
+    ),
+  );
+
   // Exported field_instance: 'node-feed_import_facebook-field_district'.
   $field_instances['node-feed_import_facebook-field_district'] = array(
     'bundle' => 'feed_import_facebook',
@@ -2081,6 +2163,13 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 2,
       ),
+      'current_twitter' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -2176,6 +2265,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 25,
       ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 18,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'i18n_taxonomy',
@@ -2232,6 +2327,16 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(
           'image_link' => 'content',
           'image_style' => 'current',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'current_twitter' => array(
+        'label' => 'hidden',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => 'content',
+          'image_style' => '',
         ),
         'type' => 'image',
         'weight' => 1,
@@ -2311,6 +2416,13 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 4,
+      ),
+      'current_twitter' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 11,
       ),
       'default' => array(
         'label' => 'above',
@@ -2394,6 +2506,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 22,
       ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'i18n_taxonomy',
@@ -2455,6 +2573,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'link_default',
         'weight' => 3,
+      ),
+      'current_twitter' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -2539,6 +2663,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 23,
       ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'geofield',
@@ -2600,6 +2730,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 27,
+      ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 16,
       ),
       'default' => array(
         'label' => 'above',
@@ -2698,6 +2834,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 31,
       ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'text',
@@ -2793,6 +2935,13 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'text_default',
         'weight' => 6,
+      ),
+      'current_twitter' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 4,
       ),
       'default' => array(
         'label' => 'hidden',
@@ -2891,6 +3040,13 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'text_default',
         'weight' => 7,
       ),
+      'current_twitter' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 5,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -2986,6 +3142,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 29,
       ),
+      'current_twitter' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
       'default' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -3080,6 +3242,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 30,
+      ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'default' => array(
         'label' => 'above',
@@ -3177,6 +3345,13 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'kada_some_id_link',
         'weight' => 0,
       ),
+      'current_twitter' => array(
+        'label' => 'hidden',
+        'module' => 'kada_some_content_feature',
+        'settings' => array(),
+        'type' => 'kada_some_id_link',
+        'weight' => 8,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'kada_some_content_feature',
@@ -3272,6 +3447,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 28,
       ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 6,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'list',
@@ -3328,6 +3509,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 24,
+      ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 17,
       ),
       'default' => array(
         'label' => 'above',
@@ -3386,6 +3573,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 32,
       ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
       'default' => array(
         'label' => 'above',
         'module' => 'i18n_taxonomy',
@@ -3443,6 +3636,12 @@ function kada_some_content_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 26,
+      ),
+      'current_twitter' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
       ),
       'default' => array(
         'label' => 'above',
@@ -3526,6 +3725,7 @@ function kada_some_content_feature_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Access Token');
+  t('Access token FB');
   t('App ID');
   t('App secret');
   t('Body');
@@ -3538,6 +3738,7 @@ function kada_some_content_feature_field_default_field_instances() {
   t('Facebook secret for the app accessing feed content.');
   t('Google API Key');
   t('Groups audience');
+  t('If facebook token is set it is used over old implementation of user ID and Secret (which are derpecated). More info about token generation can be found from <a href=\'https://drive.google.com/file/d/1sDpzqc8CuehE_OVoMYpyg9JE7g38vEbX/view?usp=sharing\' target=_blank>Documentation pdf</a>');
   t('If you don\'t know your user id, use this service to get it for username: <a target="_blank" href="http://jelled.com/instagram/lookup-user-id">http://jelled.com/instagram/lookup-user-id</a>');
   t('Image');
   t('Image URL');

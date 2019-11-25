@@ -5,6 +5,7 @@ namespace SAML2\XML\mdattr;
 use SAML2\Utils;
 use SAML2\XML\Chunk;
 use SAML2\XML\saml\Attribute;
+use Webmozart\Assert\Assert;
 
 /**
  * Class for handling the EntityAttributes metadata extension.
@@ -28,6 +29,7 @@ class EntityAttributes
      */
     public $children;
 
+
     /**
      * Create a EntityAttributes element.
      *
@@ -48,6 +50,7 @@ class EntityAttributes
         }
     }
 
+
     /**
      * Collect the value of the children-property
      * @return (\SAML2\XML\Chunk|\SAML2\XML\saml\Attribute)[]
@@ -57,24 +60,29 @@ class EntityAttributes
         return $this->children;
     }
 
+
     /**
      * Set the value of the childen-property
      * @param array $children
+     * @return void
      */
     public function setChildren(array $children)
     {
         $this->children = $children;
     }
 
+
     /**
      * Add the value to the children-property
      * @param \SAML2\XML\Chunk|\SAML2\XML\saml\Attribute $child
+     * @return void
      */
     public function addChildren($child)
     {
-        assert($child instanceof Chunk || $child instanceof Attribute);
+        Assert::isInstanceOfAny($child, [Chunk::class, Attribute::class]);
         $this->children[] = $child;
     }
+
 
     /**
      * Convert this EntityAttributes to XML.
@@ -84,7 +92,7 @@ class EntityAttributes
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_array($this->getChildren()));
+        Assert::isArray($this->getChildren());
 
         $doc = $parent->ownerDocument;
 

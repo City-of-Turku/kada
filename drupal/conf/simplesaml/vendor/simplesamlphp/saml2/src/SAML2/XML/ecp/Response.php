@@ -4,8 +4,8 @@ namespace SAML2\XML\ecp;
 
 use DOMElement;
 use InvalidArgumentException;
-
 use SAML2\Constants;
+use Webmozart\Assert\Assert;
 
 /**
  * Class representing the ECP Response element.
@@ -18,6 +18,7 @@ class Response
      * @var string
      */
     public $AssertionConsumerServiceURL;
+
 
     /**
      * Create a ECP Response element.
@@ -51,6 +52,7 @@ class Response
         $this->setAssertionConsumerServiceURL($xml->getAttribute('AssertionConsumerServiceURL'));
     }
 
+
     /**
      * Collect the value of the AssertionConsumerServiceURL-property
      * @return string
@@ -60,28 +62,34 @@ class Response
         return $this->AssertionConsumerServiceURL;
     }
 
+
     /**
      * Set the value of the AssertionConsumerServiceURL-property
      * @param string $assertionConsumerServiceURL
+     * @throws InvalidArgumentException
+     * @return void
      */
     public function setAssertionConsumerServiceURL($assertionConsumerServiceURL)
     {
-        assert(is_string($assertionConsumerServiceURL));
+        Assert::string($assertionConsumerServiceURL);
         if (!filter_var($assertionConsumerServiceURL, FILTER_VALIDATE_URL)) {
-            throw new \InvalidArgumentException('AssertionConsumerServiceURL is not a valid URL.');
+            throw new InvalidArgumentException('AssertionConsumerServiceURL is not a valid URL.');
         }
         $this->AssertionConsumerServiceURL = $assertionConsumerServiceURL;
     }
+
 
     /**
      * Convert this ECP Response to XML.
      *
      * @param \DOMElement $parent The element we should append this element to.
+     * @throws InvalidArgumentException
+     * @return \DOMElement
      */
     public function toXML(\DOMElement $parent)
     {
         if (!is_string($this->getAssertionConsumerServiceURL())) {
-            throw new \InvalidArgumentException("AssertionConsumerServiceURL must be a string");
+            throw new InvalidArgumentException("AssertionConsumerServiceURL must be a string");
         }
 
         $doc = $parent->ownerDocument;

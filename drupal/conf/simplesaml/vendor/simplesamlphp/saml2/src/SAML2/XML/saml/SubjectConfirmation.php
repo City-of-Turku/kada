@@ -4,6 +4,7 @@ namespace SAML2\XML\saml;
 
 use SAML2\Constants;
 use SAML2\Utils;
+use Webmozart\Assert\Assert;
 
 /**
  * Class representing SAML 2 SubjectConfirmation element.
@@ -32,6 +33,7 @@ class SubjectConfirmation
      * @var \SAML2\XML\saml\SubjectConfirmationData|null
      */
     public $SubjectConfirmationData;
+
 
     /**
      * Initialize (and parse? a SubjectConfirmation element.
@@ -65,6 +67,7 @@ class SubjectConfirmation
         }
     }
 
+
     /**
      * Collect the value of the Method-property
      * @return string
@@ -74,15 +77,18 @@ class SubjectConfirmation
         return $this->Method;
     }
 
+
     /**
      * Set the value of the Method-property
      * @param string $method
+     * @return void
      */
     public function setMethod($method)
     {
-        assert(is_string($method));
+        Assert::string($method);
         $this->Method = $method;
     }
+
 
     /**
      * Collect the value of the NameID-property
@@ -93,14 +99,17 @@ class SubjectConfirmation
         return $this->NameID;
     }
 
+
     /**
      * Set the value of the NameID-property
      * @param \SAML2\XML\saml\NameID $nameId
+     * @return void
      */
     public function setNameID(NameID $nameId)
     {
         $this->NameID = $nameId;
     }
+
 
     /**
      * Collect the value of the SubjectConfirmationData-property
@@ -111,14 +120,17 @@ class SubjectConfirmation
         return $this->SubjectConfirmationData;
     }
 
+
     /**
      * Set the value of the SubjectConfirmationData-property
      * @param \SAML2\XML\saml\SubjectConfirmationData|null $subjectConfirmationData
+     * @return void
      */
     public function setSubjectConfirmationData($subjectConfirmationData = null)
     {
         $this->SubjectConfirmationData = $subjectConfirmationData;
     }
+
 
     /**
      * Convert this element to XML.
@@ -128,9 +140,9 @@ class SubjectConfirmation
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_string($this->getMethod()));
-        assert(is_null($this->getNameID()) || $this->getNameID() instanceof NameID);
-        assert(is_null($this->getSubjectConfirmationData()) || $this->getSubjectConfirmationData() instanceof SubjectConfirmationData);
+        Assert::string($this->getMethod());
+        Assert::nullOrIsInstanceOf($this->getNameID(), NameID::class);
+        Assert::nullOrIsInstanceOf($this->getSubjectConfirmationData(), SubjectConfirmationData::class);
 
         $e = $parent->ownerDocument->createElementNS(Constants::NS_SAML, 'saml:SubjectConfirmation');
         $parent->appendChild($e);

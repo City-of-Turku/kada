@@ -15,11 +15,22 @@ class SubjectConfirmationRecipientMatches implements
      */
     private $destination;
 
+
+    /**
+     * Constructor for SubjectConfirmationRecipientMatches
+     * @param Destination $destination
+     */
     public function __construct(Destination $destination)
     {
         $this->destination = $destination;
     }
 
+
+    /**
+     * @param SubjectConfirmation
+     * @param Result $result
+     * @return void
+     */
     public function validate(
         SubjectConfirmation $subjectConfirmation,
         Result $result

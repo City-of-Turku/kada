@@ -4,6 +4,7 @@ namespace SAML2\XML\saml;
 
 use SAML2\Constants;
 use SAML2\Utils;
+use Webmozart\Assert\Assert;
 
 /**
  * Class representing SAML 2 Attribute.
@@ -42,6 +43,7 @@ class Attribute
      */
     public $AttributeValue = [];
 
+
     /**
      * Initialize an Attribute.
      *
@@ -72,6 +74,7 @@ class Attribute
         }
     }
 
+
     /**
      * Collect the value of the Name-property
      * @return string
@@ -81,15 +84,18 @@ class Attribute
         return $this->Name;
     }
 
+
     /**
      * Set the value of the Name-property
      * @param string $name
+     * @return void
      */
     public function setName($name)
     {
-        assert(is_string($name));
+        Assert::string($name);
         $this->Name = $name;
     }
+
 
     /**
      * Collect the value of the NameFormat-property
@@ -100,15 +106,18 @@ class Attribute
         return $this->NameFormat;
     }
 
+
     /**
      * Set the value of the NameFormat-property
      * @param string|null $nameFormat
+     * @return void
      */
     public function setNameFormat($nameFormat = null)
     {
-        assert(is_string($nameFormat) || is_null($nameFormat));
+        Assert::nullOrString($nameFormat);
         $this->NameFormat = $nameFormat;
     }
+
 
     /**
      * Collect the value of the FriendlyName-property
@@ -119,15 +128,18 @@ class Attribute
         return $this->FriendlyName;
     }
 
+
     /**
      * Set the value of the FriendlyName-property
      * @param string|null $friendlyName
+     * @return void
      */
     public function setFriendlyName($friendlyName = null)
     {
-        assert(is_string($friendlyName) || is_null($friendlyName));
+        Assert::nullOrString($friendlyName);
         $this->FriendlyName = $friendlyName;
     }
+
 
     /**
      * Collect the value of the AttributeValue-property
@@ -138,23 +150,28 @@ class Attribute
         return $this->AttributeValue;
     }
 
+
     /**
      * Set the value of the AttributeValue-property
      * @param array $attributeValue
+     * @return void
      */
     public function setAttributeValue(array $attributeValue)
     {
         $this->AttributeValue = $attributeValue;
     }
 
+
     /**
      * Add the value to the AttributeValue-property
      * @param \SAML2\XML\saml\AttributeValue $attributeValue
+     * @return void
      */
     public function addAttributeValue(AttributeValue $attributeValue)
     {
         $this->AttributeValue[] = $attributeValue;
     }
+
 
     /**
      * Internal implementation of toXML.
@@ -165,15 +182,14 @@ class Attribute
      * @param string     $name      The name of the element.
      * @return \DOMElement
      */
-
     protected function toXMLInternal(\DOMElement $parent, $namespace, $name)
     {
-        assert(is_string($namespace));
-        assert(is_string($name));
-        assert(is_string($this->getName()));
-        assert(is_null($this->getNameFormat()) || is_string($this->getNameFormat()));
-        assert(is_null($this->getFriendlyName()) || is_string($this->getFriendlyName()));
-        assert(is_array($this->getAttributeValue()));
+        Assert::string($namespace);
+        Assert::string($name);
+        Assert::string($this->getName());
+        Assert::nullOrString($this->getNameFormat());
+        Assert::nullOrString($this->getFriendlyName());
+        Assert::isArray($this->getAttributeValue());
 
         $e = $parent->ownerDocument->createElementNS($namespace, $name);
         $parent->appendChild($e);
@@ -194,6 +210,7 @@ class Attribute
 
         return $e;
     }
+
 
     /**
      * Convert this Attribute to XML.

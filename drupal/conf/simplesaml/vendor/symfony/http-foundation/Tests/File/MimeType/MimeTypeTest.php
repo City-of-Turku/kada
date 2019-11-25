@@ -17,10 +17,20 @@ use Symfony\Component\HttpFoundation\File\MimeType\MimeTypeGuesser;
 
 /**
  * @requires extension fileinfo
+ * @group legacy
  */
 class MimeTypeTest extends TestCase
 {
-    protected $path;
+    public function testGuessWithLeadingDash()
+    {
+        $cwd = getcwd();
+        chdir(__DIR__.'/../Fixtures');
+        try {
+            $this->assertEquals('image/gif', MimeTypeGuesser::getInstance()->guess('-test'));
+        } finally {
+            chdir($cwd);
+        }
+    }
 
     public function testGuessImageWithoutExtension()
     {
@@ -29,7 +39,7 @@ class MimeTypeTest extends TestCase
 
     public function testGuessImageWithDirectory()
     {
-        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException');
+        $this->expectException('Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException');
 
         MimeTypeGuesser::getInstance()->guess(__DIR__.'/../Fixtures/directory');
     }
@@ -53,7 +63,7 @@ class MimeTypeTest extends TestCase
 
     public function testGuessWithIncorrectPath()
     {
-        $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException');
+        $this->expectException('Symfony\Component\HttpFoundation\File\Exception\FileNotFoundException');
         MimeTypeGuesser::getInstance()->guess(__DIR__.'/../Fixtures/not_here');
     }
 
@@ -72,14 +82,14 @@ class MimeTypeTest extends TestCase
         @chmod($path, 0333);
 
         if ('0333' == substr(sprintf('%o', fileperms($path)), -4)) {
-            $this->{method_exists($this, $_ = 'expectException') ? $_ : 'setExpectedException'}('Symfony\Component\HttpFoundation\File\Exception\AccessDeniedException');
+            $this->expectException('Symfony\Component\HttpFoundation\File\Exception\AccessDeniedException');
             MimeTypeGuesser::getInstance()->guess($path);
         } else {
             $this->markTestSkipped('Can not verify chmod operations, change of file permissions failed');
         }
     }
 
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
         $path = __DIR__.'/../Fixtures/to_delete';
         if (file_exists($path)) {
