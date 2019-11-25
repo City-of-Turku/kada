@@ -90,10 +90,9 @@ function pori_facts_feature_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'hexagon' => 'Hexagon',
-        'tilted_square' => 'Tilted square',
         'circle' => 'Circle',
         'square' => 'Square',
+        'tilted_square' => 'Tilted square',
         'diamond' => 'Diamond',
         'triangle' => 'Triangle',
         'tilted_triange' => 'Tilted triangle',
@@ -119,17 +118,19 @@ function pori_facts_feature_field_default_field_bases() {
     'field_permissions' => array(
       'type' => 0,
     ),
-    'indexes' => array(),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
     'locked' => 0,
-    'module' => 'number',
+    'module' => 'text',
     'settings' => array(
-      'decimal_separator' => '.',
       'entity_translation_sync' => FALSE,
-      'precision' => 20,
-      'scale' => 2,
+      'max_length' => 255,
     ),
     'translatable' => 0,
-    'type' => 'number_decimal',
+    'type' => 'text',
   );
 
   // Exported field_base: 'field_fact_to_specific_page'.

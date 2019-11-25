@@ -46,12 +46,6 @@ function pori_facts_feature_views_default_views() {
   $handler->display->display_options['fields']['field_fact_number']['field'] = 'field_fact_number';
   $handler->display->display_options['fields']['field_fact_number']['label'] = '';
   $handler->display->display_options['fields']['field_fact_number']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_fact_number']['settings'] = array(
-    'thousand_separator' => '',
-    'decimal_separator' => '.',
-    'scale' => '2',
-    'prefix_suffix' => 0,
-  );
   /* Field: Content: Description */
   $handler->display->display_options['fields']['field_fact_description']['id'] = 'field_fact_description';
   $handler->display->display_options['fields']['field_fact_description']['table'] = 'field_data_field_fact_description';
