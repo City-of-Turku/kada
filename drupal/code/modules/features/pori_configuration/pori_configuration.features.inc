@@ -68,7 +68,8 @@ function pori_configuration_flag_default_flags() {
     'link_type' => 'toggle',
     'weight' => 0,
     'show_in_links' => array(
-      'full' => 'full',
+      'presentation' => 'presentation',
+      'full' => 0,
       'teaser' => 0,
       'rss' => 0,
       'diff_standard' => 0,
@@ -104,11 +105,11 @@ function pori_configuration_flag_default_flags() {
     'access_author' => '',
     'show_contextual_link' => 0,
     'i18n' => 0,
-    'api_version' => 3,
     'module' => 'pori_configuration',
     'locked' => array(
       0 => 'name',
     ),
+    'api_version' => 3,
   );
   return $flags;
 

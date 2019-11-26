@@ -84,6 +84,36 @@ function pori_configuration_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_presentation_color_scheme'.
+  $field_bases['field_presentation_color_scheme'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_presentation_color_scheme',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'presentation-colors-1' => 'Presentation colors 1',
+        'presentation-colors-2' => 'Presentation colors 2',
+        'presentation-colors-3' => 'Presentation colors 3',
+      ),
+      'allowed_values_function' => '',
+      'entity_translation_sync' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
   // Exported field_base: 'field_presentation_link'.
   $field_bases['field_presentation_link'] = array(
     'active' => 1,

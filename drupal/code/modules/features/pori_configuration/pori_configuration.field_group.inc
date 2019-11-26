@@ -25,6 +25,7 @@ function pori_configuration_field_group_info() {
     'weight' => '23',
     'children' => array(
       0 => 'field_presentation_link',
+      1 => 'field_presentation_color_scheme',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

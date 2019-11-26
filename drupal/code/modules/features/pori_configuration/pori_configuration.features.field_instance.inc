@@ -503,6 +503,92 @@ function pori_configuration_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-liftup-field_presentation_color_scheme'.
+  $field_instances['node-liftup-field_presentation_color_scheme'] = array(
+    'bundle' => 'liftup',
+    'default_value' => array(
+      0 => array(
+        'value' => 'presentation-colors-1',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'current' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 23,
+      ),
+      'event_top_carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'presentation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_presentation_color_scheme',
+    'label' => 'Presentation color scheme',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 22,
+    ),
+  );
+
   // Exported field_instance: 'node-liftup-field_presentation_link'.
   $field_instances['node-liftup-field_presentation_link'] = array(
     'bundle' => 'liftup',
@@ -542,7 +628,7 @@ function pori_configuration_field_default_field_instances() {
         'weight' => 0,
       ),
       'presentation' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'link',
         'settings' => array(),
         'type' => 'link_default',
@@ -651,7 +737,7 @@ function pori_configuration_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 36,
+        'weight' => 37,
       ),
       'project' => array(
         'label' => 'above',
@@ -1799,6 +1885,7 @@ function pori_configuration_field_default_field_instances() {
   t('If you choose this checkbox the main image will be displayed on the node page.');
   t('Meta information only available to content administrators.');
   t('Person reference');
+  t('Presentation color scheme');
   t('Presentation link');
   t('Read more');
   t('Show main image on the page');
