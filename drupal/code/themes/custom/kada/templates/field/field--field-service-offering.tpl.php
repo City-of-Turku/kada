@@ -45,7 +45,7 @@
  */
 ?>
 <div class="places" <?php print $attributes; ?>>
-  <h2 class="places__header"><?php print t('Places');?></h2>
+  <h2 class="places__header"><?php !empty($element['#object']->field_places_title[LANGUAGE_NONE][0]['safe_value']) ? print t($element['#object']->field_places_title[LANGUAGE_NONE][0]['safe_value'], [], ['context' => 'places title override to page']) : print t('Places');?></h2>
   <?php foreach ($items as $delta => $item): ?>
     <?php print render($item); ?>
   <?php endforeach; ?>

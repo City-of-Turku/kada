@@ -1,4 +1,5 @@
 <?php
+
 /**
  * SAML NameIDType abstract data type.
  *
@@ -7,6 +8,8 @@
  */
 
 namespace SAML2\XML\saml;
+
+use Webmozart\Assert\Assert;
 
 abstract class NameIDType extends BaseIDType
 {
@@ -72,6 +75,7 @@ abstract class NameIDType extends BaseIDType
         $this->setValue(trim($xml->textContent));
     }
 
+
     /**
      * Collect the value of the Format-property
      * @return string|null
@@ -81,15 +85,18 @@ abstract class NameIDType extends BaseIDType
         return $this->Format;
     }
 
+
     /**
      * Set the value of the Format-property
      * @param string|null $format
+     * @return void
      */
     public function setFormat($format = null)
     {
-        assert(is_string($format) || is_null($format));
+        Assert::nullOrString($format);
         $this->Format = $format;
     }
+
 
     /**
      * Collect the value of the value-property
@@ -100,15 +107,18 @@ abstract class NameIDType extends BaseIDType
         return $this->value;
     }
 
+
     /**
      * Set the value of the value-property
      * @param string|null $value
+     * @return void
      */
     public function setValue($value)
     {
-        assert(is_string($value) || is_null($value));
+        Assert::nullOrString($value);
         $this->value = $value;
     }
+
 
     /**
      * Collect the value of the SPProvidedID-property
@@ -119,23 +129,25 @@ abstract class NameIDType extends BaseIDType
         return $this->SPProvidedID;
     }
 
+
     /**
      * Set the value of the SPProvidedID-property
      * @param string|null $spProvidedID
+     * @return void
      */
     public function setSPProvidedID($spProvidedID)
     {
-        assert(is_string($spProvidedID) || is_null($spProvidedID));
+        Assert::nullOrString($spProvidedID);
         $this->SPProvidedID = $spProvidedID;
     }
+
 
     /**
      * Create a \SAML2\XML\saml\NameID object from an array with its contents.
      *
      * @param array $nameId An array whose keys correspond to the fields of a NameID.
-     * @return \SAML2\XML\saml\NameID The corresponding NameID object.
-     *
      * @throws \InvalidArgumentException If the array does not contain the "Value" key.
+     * @return \SAML2\XML\saml\NameID The corresponding NameID object.
      *
      * @deprecated
      */
@@ -167,14 +179,13 @@ abstract class NameIDType extends BaseIDType
      * Convert this NameIDType to XML.
      *
      * @param \DOMElement $parent The element we are converting to XML.
-     *
      * @return \DOMElement The XML element after adding the data corresponding to this NameIDType.
      */
     public function toXML(\DOMElement $parent = null)
     {
-        assert(is_string($this->getFormat()) || is_null($this->getFormat()));
-        assert(is_string($this->getSPProvidedID()) || is_null($this->getSPProvidedID()));
-        assert(is_string($this->getValue()));
+        Assert::nullOrString($this->getFormat());
+        Assert::nullOrString($this->getSPProvidedID());
+        Assert::string($this->getValue());
 
         $element = parent::toXML($parent);
 

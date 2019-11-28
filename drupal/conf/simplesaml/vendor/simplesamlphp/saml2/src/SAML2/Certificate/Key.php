@@ -20,6 +20,7 @@ class Key implements \ArrayAccess
      */
     protected $keyData = [];
 
+
     /**
      * @param array $keyData
      */
@@ -30,6 +31,7 @@ class Key implements \ArrayAccess
             $this->offsetSet($property, $value);
         }
     }
+
 
     /**
      * Whether or not the key is configured to be used for usage given
@@ -46,6 +48,7 @@ class Key implements \ArrayAccess
         return isset($this->keyData[$usage]) && $this->keyData[$usage];
     }
 
+
     /**
      * Returns the list of valid key usage options
      * @return array
@@ -58,6 +61,12 @@ class Key implements \ArrayAccess
         ];
     }
 
+
+    /**
+     * @param mixed $offset
+     * @throws InvalidArgumentException
+     * @return bool
+     */
     public function offsetExists($offset)
     {
         if (!is_string($offset)) {
@@ -66,6 +75,12 @@ class Key implements \ArrayAccess
         return array_key_exists($offset, $this->keyData);
     }
 
+
+    /**
+     * @param mixed $offset
+     * @throws InvalidArgumentException
+     * @return string
+     */
     public function offsetGet($offset)
     {
         if (!is_string($offset)) {
@@ -74,6 +89,13 @@ class Key implements \ArrayAccess
         return $this->keyData[$offset];
     }
 
+
+    /**
+     * @param mixed $offset
+     * @param mixed $value
+     * @throws InvalidArgumentException
+     * @return void
+     */
     public function offsetSet($offset, $value)
     {
         if (!is_string($offset)) {
@@ -82,6 +104,12 @@ class Key implements \ArrayAccess
         $this->keyData[$offset] = $value;
     }
 
+
+    /**
+     * @param mixed $offset
+     * @throws InvalidArgumentException
+     * @return void
+     */
     public function offsetUnset($offset)
     {
         if (!is_string($offset)) {

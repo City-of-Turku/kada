@@ -54,8 +54,6 @@ function kada_liftups_feature_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'orange' => 'Orange (#00AF66)',
-        'green' => 'Green (#FF8200)',
         'dark_gray' => 'Dark Gray (#1E1E1E)',
       ),
       'allowed_values_function' => '',

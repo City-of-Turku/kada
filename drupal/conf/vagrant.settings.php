@@ -102,4 +102,4 @@ $conf['menu_override_parent_selector'] = true;
 //define('KADACALENDAR_BASE_URL', 'http://calendar.pori-kada-development.druid.fi/');
 
 // SimpleSAMLphp_auth Login Path
-$conf['simplesamlphp_auth_login_path'] = 'login';
+$conf['simplesamlphp_auth_login_path'] = 'login_ad';

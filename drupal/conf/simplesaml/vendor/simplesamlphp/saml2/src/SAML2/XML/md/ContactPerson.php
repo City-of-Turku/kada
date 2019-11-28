@@ -5,6 +5,7 @@ namespace SAML2\XML\md;
 use SAML2\Constants;
 use SAML2\Utils;
 use SAML2\XML\Chunk;
+use Webmozart\Assert\Assert;
 
 /**
  * Class representing SAML 2 ContactPerson.
@@ -71,6 +72,7 @@ class ContactPerson
      */
     public $ContactPersonAttributes = [];
 
+
     /**
      * Initialize a ContactPerson element.
      *
@@ -105,6 +107,7 @@ class ContactPerson
         }
     }
 
+
     /**
      * Retrieve the value of a child \DOMElements as an array of strings.
      *
@@ -114,7 +117,7 @@ class ContactPerson
      */
     private static function getStringElements(\DOMElement $parent, $name)
     {
-        assert(is_string($name));
+        Assert::string($name);
 
         $e = Utils::xpQuery($parent, './saml_metadata:'.$name);
 
@@ -126,17 +129,18 @@ class ContactPerson
         return $ret;
     }
 
+
     /**
      * Retrieve the value of a child \DOMElement as a string.
      *
      * @param  \DOMElement  $parent The parent element.
      * @param  string      $name   The name of the child element.
-     * @return string|null The value of the child element.
      * @throws \Exception
+     * @return string|null The value of the child element.
      */
     private static function getStringElement(\DOMElement $parent, $name)
     {
-        assert(is_string($name));
+        Assert::string($name);
 
         $e = self::getStringElements($parent, $name);
         if (empty($e)) {
@@ -149,6 +153,7 @@ class ContactPerson
         return $e[0];
     }
 
+
     /**
      * Collect the value of the contactType-property
      * @return string
@@ -158,15 +163,18 @@ class ContactPerson
         return $this->contactType;
     }
 
+
     /**
      * Set the value of the contactType-property
      * @param string $contactType
+     * @return void
      */
     public function setContactType($contactType)
     {
-        assert(is_string($contactType));
+        Assert::string($contactType);
         $this->contactType = $contactType;
     }
+
 
     /**
      * Collect the value of the Company-property
@@ -177,15 +185,18 @@ class ContactPerson
         return $this->Company;
     }
 
+
     /**
      * Set the value of the Company-property
      * @param string|null $company
+     * @return void
      */
     public function setCompany($company)
     {
-        assert(is_string($company) || is_null($company));
+        Assert::nullOrString($company);
         $this->Company = $company;
     }
+
 
     /**
      * Collect the value of the GivenName-property
@@ -196,15 +207,18 @@ class ContactPerson
         return $this->GivenName;
     }
 
+
     /**
      * Set the value of the GivenName-property
      * @param string|null $givenName
+     * @return void
      */
     public function setGivenName($givenName)
     {
-        assert(is_string($givenName) || is_null($givenName));
+        Assert::nullOrString($givenName);
         $this->GivenName = $givenName;
     }
+
 
     /**
      * Collect the value of the SurName-property
@@ -215,15 +229,18 @@ class ContactPerson
         return $this->SurName;
     }
 
+
     /**
      * Set the value of the SurName-property
      * @param string|null $surName
+     * @return void
      */
     public function setSurName($surName)
     {
-        assert(is_string($surName) || is_null($surName));
+        Assert::nullOrString($surName);
         $this->SurName = $surName;
     }
+
 
     /**
      * Collect the value of the EmailAddress-property
@@ -234,23 +251,28 @@ class ContactPerson
         return $this->EmailAddress;
     }
 
+
     /**
      * Set the value of the EmailAddress-property
      * @param string[] $emailAddress
+     * @return void
      */
     public function setEmailAddress(array $emailAddress)
     {
         $this->EmailAddress = $emailAddress;
     }
 
+
     /**
      * Add the value to the EmailAddress-property
      * @param string $emailAddress
+     * @return void
      */
     public function addEmailAddress($emailAddress)
     {
         $this->EmailAddress[] = $emailAddress;
     }
+
 
     /**
      * Collect the value of the TelephoneNumber-property
@@ -261,23 +283,28 @@ class ContactPerson
         return $this->TelephoneNumber;
     }
 
+
     /**
      * Set the value of the TelephoneNumber-property
      * @param string[] $telephoneNumber
+     * @return void
      */
     public function setTelephoneNumber(array $telephoneNumber)
     {
         $this->TelephoneNumber = $telephoneNumber;
     }
 
+
     /**
      * Add the value to the TelephoneNumber-property
      * @param string $telephoneNumber
+     * @return void
      */
     public function addTelephoneNumber($telephoneNumber)
     {
         $this->TelephoneNumber[] = $telephoneNumber;
     }
+
 
     /**
      * Collect the value of the Extensions-property
@@ -288,24 +315,29 @@ class ContactPerson
         return $this->Extensions;
     }
 
+
     /**
      * Set the value of the Extensions-property
      * @param array $extensions
+     * @return void
      */
     public function setExtensions(array $extensions)
     {
         $this->Extensions = $extensions;
     }
 
+
     /**
      * Add an Extension.
      *
      * @param \SAML2\XML\Chunk $extensions The Extensions
+     * @return void
      */
     public function addExtension(Chunk $extension)
     {
         $this->Extensions[] = $extension;
     }
+
 
     /**
      * Collect the value of the ContactPersonAttributes-property
@@ -316,26 +348,31 @@ class ContactPerson
         return $this->ContactPersonAttributes;
     }
 
+
     /**
      * Set the value of the ContactPersonAttributes-property
      * @param string[] $contactPersonAttributes
+     * @return void
      */
     public function setContactPersonAttributes(array $contactPersonAttributes)
     {
         $this->ContactPersonAttributes = $contactPersonAttributes;
     }
 
+
     /**
      * Add the key/value of the ContactPersonAttributes-property
      * @param string $attr
      * @param string $value
+     * @return void
      */
     public function addContactPersonAttributes($attr, $value)
     {
-        assert(is_string($attr));
-        assert(is_string($value));
+        Assert::string($attr);
+        Assert::string($value);
         $this->ContactPersonAttributes[$attr] = $value;
     }
+
 
     /**
      * Convert this ContactPerson to XML.
@@ -345,14 +382,14 @@ class ContactPerson
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_string($this->getContactType()));
-        assert(is_array($this->getExtensions()));
-        assert(is_null($this->getCompany()) || is_string($this->getCompany()));
-        assert(is_null($this->getGivenName()) || is_string($this->getGivenName()));
-        assert(is_null($this->getSurName()) || is_string($this->getSurName()));
-        assert(is_array($this->getEmailAddress()));
-        assert(is_array($this->getTelephoneNumber()));
-        assert(is_array($this->getContactPersonAttributes()));
+        Assert::string($this->getContactType());
+        Assert::isArray($this->getExtensions());
+        Assert::nullOrString($this->getCompany());
+        Assert::nullOrString($this->getGivenName());
+        Assert::nullOrString($this->getSurName());
+        Assert::isArray($this->getEmailAddress());
+        Assert::isArray($this->getTelephoneNumber());
+        Assert::isArray($this->getContactPersonAttributes());
 
         $doc = $parent->ownerDocument;
 

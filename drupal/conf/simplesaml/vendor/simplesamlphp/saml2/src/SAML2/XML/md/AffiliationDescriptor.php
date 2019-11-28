@@ -5,6 +5,7 @@ namespace SAML2\XML\md;
 use SAML2\Constants;
 use SAML2\SignedElementHelper;
 use SAML2\Utils;
+use Webmozart\Assert\Assert;
 
 /**
  * Class representing SAML 2 AffiliationDescriptor element.
@@ -68,6 +69,7 @@ class AffiliationDescriptor extends SignedElementHelper
      */
     public $KeyDescriptor = [];
 
+
     /**
      * Initialize a AffiliationDescriptor.
      *
@@ -111,6 +113,7 @@ class AffiliationDescriptor extends SignedElementHelper
         }
     }
 
+
     /**
      * Collect the value of the affiliationOwnerId-property
      * @return string
@@ -120,15 +123,18 @@ class AffiliationDescriptor extends SignedElementHelper
         return $this->affiliationOwnerID;
     }
 
+
     /**
      * Set the value of the affiliationOwnerId-property
      * @param string $affiliationOwnerId
+     * @return void
      */
     public function setAffiliationOwnerID($affiliationOwnerId)
     {
-        assert(is_string($affiliationOwnerId));
+        Assert::string($affiliationOwnerId);
         $this->affiliationOwnerID = $affiliationOwnerId;
     }
+
 
     /**
      * Collect the value of the ID-property
@@ -139,15 +145,19 @@ class AffiliationDescriptor extends SignedElementHelper
         return $this->ID;
     }
 
+
     /**
      * Set the value of the ID-property
      * @param string|null $Id
+     * @return void
      */
     public function setID($Id = null)
     {
-        assert(is_string($Id) || is_null($Id));
+        Assert::nullOrString($Id);
+
         $this->ID = $Id;
     }
+
 
     /**
      * Collect the value of the validUntil-property
@@ -158,15 +168,18 @@ class AffiliationDescriptor extends SignedElementHelper
         return $this->validUntil;
     }
 
+
     /**
      * Set the value of the validUntil-property
      * @param int|null $validUntil
+     * @return void
      */
     public function setValidUntil($validUntil = null)
     {
-        assert(is_int($validUntil) || is_null($validUntil));
+        Assert::nullOrInteger($validUntil);
         $this->validUntil = $validUntil;
     }
+
 
     /**
      * Collect the value of the cacheDuration-property
@@ -177,15 +190,18 @@ class AffiliationDescriptor extends SignedElementHelper
         return $this->cacheDuration;
     }
 
+
     /**
      * Set the value of the cacheDuration-property
      * @param string|null $cacheDuration
+     * @return void
      */
     public function setCacheDuration($cacheDuration = null)
     {
-        assert(is_string($cacheDuration) || is_null($cacheDuration));
+        Assert::nullOrString($cacheDuration);
         $this->cacheDuration = $cacheDuration;
     }
+
 
     /**
      * Collect the value of the Extensions-property
@@ -196,24 +212,29 @@ class AffiliationDescriptor extends SignedElementHelper
         return $this->Extensions;
     }
 
+
     /**
      * Set the value of the Extensions-property
      * @param array $extensions
+     * @return void
      */
     public function setExtensions(array $extensions)
     {
         $this->Extensions = $extensions;
     }
 
+
     /**
      * Add an Extension.
      *
      * @param \SAML2\XML\Chunk $extensions The Extensions
+     * @return void
      */
     public function addExtension(Extensions $extension)
     {
         $this->Extensions[] = $extension;
     }
+
 
     /**
      * Collect the value of the AffiliateMember-property
@@ -224,14 +245,17 @@ class AffiliationDescriptor extends SignedElementHelper
         return $this->AffiliateMember;
     }
 
+
     /**
      * Set the value of the AffiliateMember-property
      * @param array $affiliateMember
+     * @return void
      */
     public function setAffiliateMember(array $affiliateMember)
     {
         $this->AffiliateMember = $affiliateMember;
     }
+
 
     /**
      * Collect the value of the KeyDescriptor-property
@@ -242,23 +266,28 @@ class AffiliationDescriptor extends SignedElementHelper
         return $this->KeyDescriptor;
     }
 
+
     /**
      * Set the value of the KeyDescriptor-property
      * @param array $keyDescriptor
+     * @return void
      */
     public function setKeyDescriptor(array $keyDescriptor)
     {
         $this->KeyDescriptor = $keyDescriptor;
     }
 
+
     /**
      * Add the value to the KeyDescriptor-property
      * @param \SAML2\XML\md\KeyDescriptor $keyDescriptor
+     * @return void
      */
     public function addKeyDescriptor(KeyDescriptor $keyDescriptor)
     {
         $this->KeyDescriptor[] = $keyDescriptor;
     }
+
 
     /**
      * Add this AffiliationDescriptor to an EntityDescriptor.
@@ -268,14 +297,14 @@ class AffiliationDescriptor extends SignedElementHelper
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_string($this->getAffiliationOwnerID()));
-        assert(is_null($this->getID()) || is_string($this->getID()));
-        assert(is_null($this->getValidUntil()) || is_int($this->getValidUntil()));
-        assert(is_null($this->getCacheDuration()) || is_string($this->getCacheDuration()));
-        assert(is_array($this->getExtensions()));
-        assert(is_array($affiliateMember = $this->getAffiliateMember()));
-        assert(!empty($affiliateMember));
-        assert(is_array($this->getKeyDescriptor()));
+        Assert::string($this->getAffiliationOwnerID());
+        Assert::nullOrString($this->getID());
+        Assert::nullOrInteger($this->getValidUntil());
+        Assert::nullOrString($this->getCacheDuration());
+        Assert::isArray($this->getExtensions());
+        Assert::isArray($affiliateMember = $this->getAffiliateMember());
+        Assert::notEmpty($affiliateMember);
+        Assert::isArray($this->getKeyDescriptor());
 
         $e = $parent->ownerDocument->createElementNS(Constants::NS_MD, 'md:AffiliationDescriptor');
         $parent->appendChild($e);

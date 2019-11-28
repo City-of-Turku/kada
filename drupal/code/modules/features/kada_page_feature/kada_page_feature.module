@@ -144,4 +144,10 @@ function kada_page_feature_form_alter(&$form, &$form_state, $form_id) {
     unset($form['#fieldgroups']['group_liftups_1_3x4']);
     unset($form['field_liftup_1_3x4']);
   }
+  // Hide places title if field_service_offering is empty.
+  $form['field_places_title']['#states'] = [
+    'invisible' => array(
+      ':input[name="field_service_offering[und]"]' => array('value' => ''),
+    ),
+  ];
 }

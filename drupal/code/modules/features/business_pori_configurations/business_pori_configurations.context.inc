@@ -263,11 +263,17 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'header',
           'weight' => '-99',
         ),
+        'views-26cc4cf3ee6522528a15e4670acb444e' => array(
+          'module' => 'views',
+          'delta' => '26cc4cf3ee6522528a15e4670acb444e',
+          'region' => 'after_content',
+          'weight' => '-10',
+        ),
         'views-kada_project_liftups-block' => array(
           'module' => 'views',
           'delta' => 'kada_project_liftups-block',
           'region' => 'after_content',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'views-pori_presentation_liftup-block' => array(
           'module' => 'views',

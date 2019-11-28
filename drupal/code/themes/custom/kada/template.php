@@ -131,7 +131,7 @@ function kada_process_flexslider_views(&$vars) {
     $i = 0;
     foreach ($vars['rows'] as $id => $row) {
       $item['caption'] = (isset($row->caption) && !empty($row->caption)) ? $row->caption : NULL;
-      if (isset($row->field_color_name[0]['raw']['value'])) {
+      if (!empty($row->field_color_name[0]['raw']['value'])) {
         $vars['items'][$i]['theme_color'] = $row->field_field_color_name[0]['raw']['value'];
       }
       else {
@@ -252,7 +252,11 @@ function kada_views_pre_render(&$view) {
     foreach ($view->result as $result) {
       $theme_raw = $result->_entity_properties['field_theme']['0'];
       $theme_term = taxonomy_term_load($theme_raw);
-      $theme = $theme_term->field_color_name['und']['0']['value'];
+      if(!empty($theme_term->field_color_name['und']['0']['value'])) {
+        $theme = $theme_term->field_color_name['und']['0']['value'];
+      } else {
+        $theme = '';
+      }
       $page = $result->_entity_properties['type'];
       $result->_entity_properties['#attributes']['class']['theme'] = $theme;
       $result->_entity_properties['#attributes']['class']['page'] = $page;
@@ -263,7 +267,11 @@ function kada_views_pre_render(&$view) {
       if (!empty($result->entity->solr_document['im_field_theme'])) {
         $theme_raw = $result->entity->solr_document['im_field_theme'][0];
         $theme_term = taxonomy_term_load($theme_raw);
-        $theme = $theme_term->field_color_name['und']['0']['value'];
+        if(!empty($theme_term->field_color_name['und']['0']['value'])) {
+          $theme = $theme_term->field_color_name['und']['0']['value'];
+        } else {
+          $theme = '';
+        }
         $result->_entity_properties['#attributes']['class']['theme'] = 'theme-color-' . $theme;
       }
     }
@@ -376,7 +384,11 @@ function kada_preprocess_views_view_fields(&$vars) {
       // Set pori.fi theme-color.
       $theme_raw = $result->_entity_properties['field_theme'][0];
       $theme_term = taxonomy_term_load($theme_raw);
-      $theme = $theme_term->field_color_name['und']['0']['value'];
+      if(!empty($theme_term->field_color_name['und']['0']['value'])) {
+        $theme = $theme_term->field_color_name['und']['0']['value'];
+      } else {
+        $theme = '';
+      }
       $result->_entity_properties['#attributes']['class']['theme'] = $theme;
 
       // Content-type of result.

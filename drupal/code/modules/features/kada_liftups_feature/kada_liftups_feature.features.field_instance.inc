@@ -586,7 +586,7 @@ function kada_liftups_feature_field_default_field_instances() {
           'link' => 0,
           'override' => 0,
         ),
-        'type' => 'top_video_carousel',
+        'type' => 'title',
         'weight' => 1,
       ),
       'current' => array(
@@ -602,7 +602,7 @@ function kada_liftups_feature_field_default_field_instances() {
           'link' => 0,
           'override' => 0,
         ),
-        'type' => 'top_video_carousel',
+        'type' => 'title',
         'weight' => 1,
       ),
       'event_top_carousel' => array(

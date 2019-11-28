@@ -93,6 +93,7 @@ features[field_base][] = field_person_image
 features[field_base][] = field_person_responsible
 features[field_base][] = field_phone
 features[field_base][] = field_phone_switch
+features[field_base][] = field_places_title
 features[field_base][] = field_postal_code
 features[field_base][] = field_precondition
 features[field_base][] = field_profession
