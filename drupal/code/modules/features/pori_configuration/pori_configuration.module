@@ -107,3 +107,15 @@ function pori_configuration_responsive_menus_execute_alter(&$settings) {
     }
   }
 }
+
+/**
+ * Implements MODULE_preprocess_HOOK().
+ * DS preprocess field with a machine name field_presentation_color_scheme
+ */
+function pori_configuration_preprocess_node(&$vars) {
+  if ($vars['type'] == 'liftup') {
+    $vars['content']['field_presentation_color_scheme'][0] = array(
+      '#markup' => '<div class="' . $vars['content']['field_presentation_color_scheme']['#items'][0]['value'] . '"></div>',
+    );
+  }
+}
