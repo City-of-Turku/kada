@@ -2,6 +2,8 @@
 
 namespace SAML2;
 
+use Webmozart\Assert\Assert;
+
 /**
  * Base class for SAML 2 bindings.
  *
@@ -16,18 +18,19 @@ abstract class Binding
      */
     protected $destination;
 
+
     /**
      * Retrieve a binding with the given URN.
      *
      * Will throw an exception if it is unable to locate the binding.
      *
-     * @param  string        $urn The URN of the binding.
-     * @return \SAML2\Binding The binding.
+     * @param string $urn The URN of the binding.
      * @throws \Exception
+     * @return \SAML2\Binding The binding.
      */
     public static function getBinding($urn)
     {
-        assert(is_string($urn));
+        Assert::string($urn);
 
         switch ($urn) {
             case Constants::BINDING_HTTP_POST:
@@ -48,6 +51,7 @@ abstract class Binding
         }
     }
 
+
     /**
      * Guess the current binding.
      *
@@ -56,8 +60,8 @@ abstract class Binding
      *
      * An exception will be thrown if it is unable to guess the binding.
      *
-     * @return \SAML2\Binding The binding.
      * @throws \Exception
+     * @return \SAML2\Binding The binding.
      */
     public static function getCurrentBinding()
     {
@@ -104,6 +108,7 @@ abstract class Binding
         throw new \Exception('Unable to find the current binding.');
     }
 
+
     /**
      * Retrieve the destination of a message.
      *
@@ -114,19 +119,22 @@ abstract class Binding
         return $this->destination;
     }
 
+
     /**
      * Override the destination of a message.
      *
      * Set to null to use the destination set in the message.
      *
      * @param string|null $destination The destination the message should be delivered to.
+     * @return void
      */
     public function setDestination($destination)
     {
-        assert(is_string($destination) || is_null($destination));
+        Assert::nullOrString($destination);
 
         $this->destination = $destination;
     }
+
 
     /**
      * Send a SAML 2 message.
@@ -135,8 +143,10 @@ abstract class Binding
      * The message will be delivered to the destination set in the message.
      *
      * @param \SAML2\Message $message The message which should be sent.
+     * @return void
      */
     abstract public function send(Message $message);
+
 
     /**
      * Receive a SAML 2 message.

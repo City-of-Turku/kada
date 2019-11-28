@@ -10,6 +10,7 @@ namespace SAML2\XML\saml;
 
 use SAML2\Constants;
 use SAML2\DOMDocumentFactory;
+use Webmozart\Assert\Assert;
 
 abstract class BaseIDType
 {
@@ -70,6 +71,7 @@ abstract class BaseIDType
         }
     }
 
+
     /**
      * Collect the value of the NameQualifier-property
      * @return string|null
@@ -79,15 +81,18 @@ abstract class BaseIDType
         return $this->NameQualifier;
     }
 
+
     /**
      * Set the value of the NameQualifier-property
      * @param string|null $nameQualifier
+     * @return void
      */
     public function setNameQualifier($nameQualifier = null)
     {
-        assert(is_string($nameQualifier) || is_null($nameQualifier));
+        Assert::nullOrString($nameQualifier);
         $this->NameQualifier = $nameQualifier;
     }
+
 
     /**
      * Collect the value of the SPNameQualifier-property
@@ -98,15 +103,18 @@ abstract class BaseIDType
         return $this->SPNameQualifier;
     }
 
+
     /**
      * Set the value of the SPNameQualifier-property
      * @param string|null $spNameQualifier
+     * @return void
      */
     public function setSPNameQualifier($spNameQualifier = null)
     {
-        assert(is_string($spNameQualifier) || is_null($spNameQualifier));
+        Assert::nullOrString($spNameQualifier);
         $this->SPNameQualifier = $spNameQualifier;
     }
+
 
     /**
      * Convert this BaseID to XML.
@@ -116,8 +124,8 @@ abstract class BaseIDType
      */
     public function toXML(\DOMElement $parent = null)
     {
-        assert(is_string($this->getNameQualifier()) || is_null($this->getNameQualifier()));
-        assert(is_string($this->getSPNameQualifier()) || is_null($this->getSPNameQualifier()));
+        Assert::nullOrString($this->getNameQualifier());
+        Assert::nullOrString($this->getSPNameQualifier());
 
         if ($parent === null) {
             $parent = DOMDocumentFactory::create();

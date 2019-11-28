@@ -4,6 +4,7 @@ namespace SAML2\XML\mdui;
 
 use SAML2\Utils;
 use SAML2\XML\Chunk;
+use Webmozart\Assert\Assert;
 
 /**
  * Class for handling the metadata extensions for login and discovery user interface
@@ -43,6 +44,7 @@ class DiscoHints
      */
     public $GeolocationHint = [];
 
+
     /**
      * Create a DiscoHints element.
      *
@@ -63,6 +65,7 @@ class DiscoHints
         }
     }
 
+
     /**
      * Collect the value of the IPHint-property
      * @return string[]
@@ -72,14 +75,17 @@ class DiscoHints
         return $this->IPHint;
     }
 
+
     /**
      * Set the value of the IPHint-property
      * @param string[] $hints
+     * @return void
      */
     public function setIPHint(array $hints)
     {
         $this->IPHint = $hints;
     }
+
 
     /**
      * Collect the value of the DomainHint-property
@@ -90,14 +96,17 @@ class DiscoHints
         return $this->DomainHint;
     }
 
+
     /**
      * Set the value of the DomainHint-property
      * @param string[] $hints
+     * @return void
      */
     public function setDomainHint(array $hints)
     {
         $this->DomainHint = $hints;
     }
+
 
     /**
      * Collect the value of the GeolocationHint-property
@@ -108,14 +117,17 @@ class DiscoHints
         return $this->GeolocationHint;
     }
 
+
     /**
      * Set the value of the GeolocationHint-property
      * @param string[] $hints
+     * @return void
      */
     public function setGeolocationHint(array $hints)
     {
         $this->GeolocationHint = $hints;
     }
+
 
     /**
      * Collect the value of the children-property
@@ -126,24 +138,29 @@ class DiscoHints
         return $this->children;
     }
 
+
     /**
      * Set the value of the childen-property
      * @param array $children
+     * @return void
      */
     public function setChildren(array $children)
     {
         $this->children = $children;
     }
 
+
     /**
      * Add the value to the children-property
      * @param \SAML2\XML\Chunk $child
+     * @return void
      */
     public function addChildren(Chunk $child)
     {
-        assert($child instanceof Chunk);
+        Assert::isInstanceOf($child, Chunk::class);
         $this->children[] = $child;
     }
+
 
     /**
      * Convert this DiscoHints to XML.
@@ -153,10 +170,10 @@ class DiscoHints
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_array($IPHint = $this->getIPHint()));
-        assert(is_array($DomainHint = $this->getDomainHint()));
-        assert(is_array($GeolocationHint = $this->getGeolocationHint()));
-        assert(is_array($children = $this->getChildren()));
+        Assert::isArray($IPHint = $this->getIPHint());
+        Assert::isArray($DomainHint = $this->getDomainHint());
+        Assert::isArray($GeolocationHint = $this->getGeolocationHint());
+        Assert::isArray($children = $this->getChildren());
 
         if (!empty($IPHint)
          || !empty($DomainHint)

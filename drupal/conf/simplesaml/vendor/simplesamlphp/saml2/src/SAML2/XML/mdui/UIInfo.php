@@ -2,8 +2,10 @@
 
 namespace SAML2\XML\mdui;
 
+use DOMElement;
 use SAML2\Utils;
 use SAML2\XML\Chunk;
+use Webmozart\Assert\Assert;
 
 /**
  * Class for handling the metadata extensions for login and discovery user interface
@@ -64,6 +66,7 @@ class UIInfo
      */
     public $Logo = [];
 
+
     /**
      * Create a UIInfo element.
      *
@@ -96,6 +99,7 @@ class UIInfo
         }
     }
 
+
     /**
      * Collect the value of the Keywords-property
      * @return \SAML2\XML\mdui\Keywords[]
@@ -105,23 +109,29 @@ class UIInfo
         return $this->Keywords;
     }
 
+
     /**
      * Set the value of the Keywords-property
      * @param \SAML2\XML\mdui\Keywords[] $keywords
+     * @return void
      */
     public function setKeywords(array $keywords)
     {
+        Assert::allIsInstanceOf($keywords, Keywords::class);
         $this->Keywords = $keywords;
     }
+
 
     /**
      * Add the value to the Keywords-property
      * @param \SAML2\XML\mdui\Keywords $keyword
+     * @return void
      */
     public function addKeyword(Keywords $keyword)
     {
         $this->Keywords[] = $keyword;
     }
+
 
     /**
      * Collect the value of the DisplayName-property
@@ -132,14 +142,17 @@ class UIInfo
         return $this->DisplayName;
     }
 
+
     /**
      * Set the value of the DisplayName-property
      * @param array $displayName
+     * @return void
      */
     public function setDisplayName(array $displayName)
     {
         $this->DisplayName = $displayName;
     }
+
 
     /**
      * Collect the value of the Description-property
@@ -150,14 +163,17 @@ class UIInfo
         return $this->Description;
     }
 
+
     /**
      * Set the value of the Description-property
      * @param array $description
+     * @return void
      */
     public function setDescription(array $description)
     {
         $this->Description = $description;
     }
+
 
     /**
      * Collect the value of the InformationURL-property
@@ -168,14 +184,17 @@ class UIInfo
         return $this->InformationURL;
     }
 
+
     /**
      * Set the value of the InformationURL-property
      * @param array $informationURL
+     * @return void
      */
     public function setInformationURL(array $informationURL)
     {
         $this->InformationURL = $informationURL;
     }
+
 
     /**
      * Collect the value of the PrivacyStatementURL-property
@@ -186,14 +205,17 @@ class UIInfo
         return $this->PrivacyStatementURL;
     }
 
+
     /**
      * Set the value of the PrivacyStatementURL-property
      * @param array $privacyStatementURL
+     * @return void
      */
     public function setPrivacyStatementURL(array $privacyStatementURL)
     {
         $this->PrivacyStatementURL = $privacyStatementURL;
     }
+
 
     /**
      * Collect the value of the Logo-property
@@ -204,23 +226,28 @@ class UIInfo
         return $this->Logo;
     }
 
+
     /**
      * Set the value of the Logo-property
      * @param \SAML2\XML\mdui\Logo $logo
+     * @return void
      */
     public function setLogo(array $logo)
     {
         $this->Logo = $logo;
     }
 
+
     /**
      * Add the value to the Logo-property
      * @param \SAML2\XML\mdui\Logo $logo
+     * @return void
      */
     public function addLogo(Logo $logo)
     {
         $this->Logo[] = $logo;
     }
+
 
     /**
      * Collect the value of the children-property
@@ -231,23 +258,28 @@ class UIInfo
         return $this->children;
     }
 
+
     /**
      * Set the value of the childen-property
      * @param array $children
+     * @return void
      */
     public function setChildren(array $children)
     {
         $this->children = $children;
     }
 
+
     /**
      * Add the value to the children-property
      * @param \SAML2\XML\Chunk $child
+     * @return void
      */
     public function addChildren(Chunk $child)
     {
         $this->children[] = $child;
     }
+
 
     /**
      * Convert this UIInfo to XML.
@@ -257,13 +289,13 @@ class UIInfo
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_array($displayName = $this->getDisplayName()));
-        assert(is_array($description = $this->getDescription()));
-        assert(is_array($informationURL = $this->getInformationURL()));
-        assert(is_array($privacyStatementURL = $this->getPrivacyStatementURL()));
-        assert(is_array($keywords = $this->getKeywords()));
-        assert(is_array($logo = $this->getLogo()));
-        assert(is_array($children = $this->getChildren()));
+        Assert::isArray($displayName = $this->getDisplayName());
+        Assert::isArray($description = $this->getDescription());
+        Assert::isArray($informationURL = $this->getInformationURL());
+        Assert::isArray($privacyStatementURL = $this->getPrivacyStatementURL());
+        Assert::isArray($keywords = $this->getKeywords());
+        Assert::isArray($logo = $this->getLogo());
+        Assert::isArray($children = $this->getChildren());
 
         $e = null;
         if (!empty($displayName)

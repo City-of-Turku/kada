@@ -4,6 +4,7 @@ namespace SAML2\XML\md;
 
 use SAML2\Constants;
 use SAML2\Utils;
+use Webmozart\Assert\Assert;
 
 /**
  * Class representing SAML 2 Metadata AttributeConsumingService element.
@@ -53,6 +54,7 @@ class AttributeConsumingService
      */
     public $RequestedAttribute = [];
 
+
     /**
      * Initialize / parse an AttributeConsumingService.
      *
@@ -84,6 +86,7 @@ class AttributeConsumingService
         }
     }
 
+
     /**
      * Collect the value of the index-property
      * @return int
@@ -93,15 +96,18 @@ class AttributeConsumingService
         return $this->index;
     }
 
+
     /**
      * Set the value of the index-property
      * @param int $index
+     * @return void
      */
     public function setIndex($index)
     {
-        assert(is_int($index));
+        Assert::integer($index);
         $this->index = $index;
     }
+
 
     /**
      * Collect the value of the isDefault-property
@@ -112,15 +118,18 @@ class AttributeConsumingService
         return $this->isDefault;
     }
 
+
     /**
      * Set the value of the isDefault-property
      * @param boolean|null $flag
+     * @return void
      */
     public function setIsDefault($flag = null)
     {
-        assert(is_bool($flag) || is_null($flag));
+        Assert::nullOrBoolean($flag);
         $this->isDefault = $flag;
     }
+
 
     /**
      * Collect the value of the ServiceName-property
@@ -131,14 +140,17 @@ class AttributeConsumingService
         return $this->ServiceName;
     }
 
+
     /**
      * Set the value of the ServiceName-property
      * @param string[] $serviceName
+     * @return void
      */
     public function setServiceName(array $serviceName)
     {
         $this->ServiceName = $serviceName;
     }
+
 
     /**
      * Collect the value of the ServiceDescription-property
@@ -149,14 +161,17 @@ class AttributeConsumingService
         return $this->ServiceDescription;
     }
 
+
     /**
      * Set the value of the ServiceDescription-property
      * @param string[] $serviceDescription
+     * @return void
      */
     public function setServiceDescription(array $serviceDescription)
     {
         $this->ServiceDescription = $serviceDescription;
     }
+
 
     /**
      * Collect the value of the RequestedAttribute-property
@@ -167,23 +182,28 @@ class AttributeConsumingService
         return $this->RequestedAttribute;
     }
 
+
     /**
      * Set the value of the RequestedAttribute-property
      * @param \SAML2\XML\md\RequestedAttribute[] $requestedAttribute
+     * @return void
      */
     public function setRequestedAttribute(array $requestedAttribute)
     {
         $this->RequestedAttribute = $requestedAttribute;
     }
 
+
     /**
      * Add the value to the RequestedAttribute-property
      * @param \SAML2\XML\md\RequestedAttribute $requestedAttribute
+     * @return void
      */
     public function addRequestedAttribute(RequestedAttribute $requestedAttribute)
     {
         $this->RequestedAttribute[] = $requestedAttribute;
     }
+
 
     /**
      * Convert to \DOMElement.
@@ -193,11 +213,11 @@ class AttributeConsumingService
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_int($this->getIndex()));
-        assert(is_null($this->getIsDefault()) || is_bool($this->getIsDefault()));
-        assert(is_array($this->getServiceName()));
-        assert(is_array($this->getServiceDescription()));
-        assert(is_array($this->getRequestedAttribute()));
+        Assert::integer($this->getIndex());
+        Assert::nullOrBoolean($this->getIsDefault());
+        Assert::isArray($this->getServiceName());
+        Assert::isArray($this->getServiceDescription());
+        Assert::isArray($this->getRequestedAttribute());
 
         $doc = $parent->ownerDocument;
 

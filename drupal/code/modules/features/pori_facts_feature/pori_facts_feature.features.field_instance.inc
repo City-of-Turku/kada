@@ -225,19 +225,14 @@ function pori_facts_feature_field_default_field_instances() {
     'bundle' => 'fact',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Add number for your fact. ',
+    'description' => 'Add number for your fact.',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => 0,
-          'scale' => 2,
-          'thousand_separator' => '',
-        ),
-        'type' => 'number_decimal',
-        'weight' => 0,
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 9,
       ),
       'live_results_search' => array(
         'label' => 'above',
@@ -257,18 +252,52 @@ function pori_facts_feature_field_default_field_instances() {
     'label' => 'Number',
     'required' => 0,
     'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'wysiwyg' => 'wysiwyg',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'full_html' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'wysiwyg' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
       'entity_translation_sync' => FALSE,
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
+      'linkit' => array(
+        'button_text' => 'Search',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 0,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
       'weight' => 3,
     ),
   );
@@ -317,7 +346,7 @@ function pori_facts_feature_field_default_field_instances() {
         'size' => 255,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 8,
+      'weight' => 6,
     ),
   );
 
@@ -389,7 +418,7 @@ function pori_facts_feature_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Add description of fact.');
-  t('Add number for your fact. ');
+  t('Add number for your fact.');
   t('Attach to specific page');
   t('Color');
   t('Comment');
