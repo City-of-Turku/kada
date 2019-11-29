@@ -185,6 +185,12 @@ function kada_sections_feature_context_default_contexts() {
           'region' => 'before_footer',
           'weight' => '-10',
         ),
+        'views-5026dfcaf90de1ccc85d0701992bb2e7' => array(
+          'module' => 'views',
+          'delta' => '5026dfcaf90de1ccc85d0701992bb2e7',
+          'region' => 'before_footer',
+          'weight' => '-9',
+        ),
         'views-4e860b19463e3f674732c95e074be424' => array(
           'module' => 'views',
           'delta' => '4e860b19463e3f674732c95e074be424',
