@@ -59,15 +59,17 @@ function pori_configuration_ds_layout_settings_info() {
         0 => 'field_visible_title',
         1 => 'body',
         2 => 'field_presentation_link',
+        3 => 'field_presentation_color_scheme',
       ),
       'right' => array(
-        3 => 'field_main_image',
+        4 => 'field_main_image',
       ),
     ),
     'fields' => array(
       'field_visible_title' => 'left',
       'body' => 'left',
       'field_presentation_link' => 'left',
+      'field_presentation_color_scheme' => 'left',
       'field_main_image' => 'right',
     ),
     'classes' => array(),
