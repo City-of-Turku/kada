@@ -83,6 +83,12 @@ function kada_landing_page_feature_context_default_contexts() {
           'region' => 'before_footer',
           'weight' => '-10',
         ),
+        'views-pori_presentation_liftup-block' => array(
+          'module' => 'views',
+          'delta' => 'pori_presentation_liftup-block',
+          'region' => 'before_footer',
+          'weight' => '-9',
+        ),
       ),
     ),
     'theme_html' => array(
