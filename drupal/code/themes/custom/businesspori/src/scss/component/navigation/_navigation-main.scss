@@ -44,14 +44,14 @@
           > a {
             &:hover,
             &:focus {
-              color: $white;
+              color: $black;
               background-color: $color !important;
             }
           }
 
           &.is-active {
             > a {
-              color: $white;
+              color: $black !important;
               background-color: $color !important;
             }
           }
@@ -254,4 +254,7 @@
       }
     }
   }
+}
+.businesspori-theme-color-green.menu__item--has-first-level > a:hover {
+  color: white !important;
 }

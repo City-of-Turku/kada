@@ -68,6 +68,7 @@ $green-dark: #1E8566;
 $green: #26A982;
 $blue-light: #009BEA;
 $gray-menu: #F1F1F2;
+$light-blue: #B2E1D3;
 
 // Seconcary colors
 $secondary-color: $green-dark;
@@ -85,4 +86,6 @@ $theme-colors: (
   'green': $green,
   'white': $white,
   'blueLight': $blue-light,
+  'lightBlue': $light-blue,
+  'yellow': $yellow
 );
