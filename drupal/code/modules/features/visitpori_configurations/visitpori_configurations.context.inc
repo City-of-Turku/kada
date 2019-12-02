@@ -92,6 +92,12 @@ function visitpori_configurations_context_default_contexts() {
           'region' => 'before_content',
           'weight' => '-10',
         ),
+        'views-dfe4333f7892fdabcb0e2f26cc029be6' => array(
+          'module' => 'views',
+          'delta' => 'dfe4333f7892fdabcb0e2f26cc029be6',
+          'region' => 'before_content',
+          'weight' => '-8',
+        ),
         'kada_widget_feature-widget_before_content' => array(
           'module' => 'kada_widget_feature',
           'delta' => 'widget_before_content',

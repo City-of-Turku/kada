@@ -107,3 +107,16 @@ function pori_configuration_responsive_menus_execute_alter(&$settings) {
     }
   }
 }
+
+/**
+ * Implements MODULE_preprocess_HOOK().
+ * Adds field_presentation_color_scheme class to presentation liftup.
+ */
+function pori_configuration_preprocess_node(&$vars) {
+  if ($vars['type'] == 'liftup' && isset($vars['content']['field_presentation_color_scheme']['#items'][0])) {
+    // Add field_presentation_color_scheme class to node level.
+    $vars['classes_array'][] = drupal_html_class($vars['content']['field_presentation_color_scheme']['#items'][0]['value']);
+    // Remove field_presentation_color_scheme markup from region level.
+    unset($vars['content']['field_presentation_color_scheme']);
+  }
+}

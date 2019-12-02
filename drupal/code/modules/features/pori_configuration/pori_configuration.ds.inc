@@ -39,3 +39,70 @@ function pori_configuration_ds_custom_fields_info() {
 
   return $export;
 }
+
+/**
+ * Implements hook_ds_layout_settings_info().
+ */
+function pori_configuration_ds_layout_settings_info() {
+  $export = array();
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'node|liftup|presentation';
+  $ds_layout->entity_type = 'node';
+  $ds_layout->bundle = 'liftup';
+  $ds_layout->view_mode = 'presentation';
+  $ds_layout->layout = 'ds_2col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'left' => array(
+        0 => 'field_visible_title',
+        1 => 'body',
+        2 => 'field_presentation_link',
+        3 => 'field_presentation_color_scheme',
+      ),
+      'right' => array(
+        4 => 'field_main_image',
+      ),
+    ),
+    'fields' => array(
+      'field_visible_title' => 'left',
+      'body' => 'left',
+      'field_presentation_link' => 'left',
+      'field_presentation_color_scheme' => 'left',
+      'field_main_image' => 'right',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'left' => 'div',
+      'right' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'layout_disable_css' => 0,
+  );
+  $export['node|liftup|presentation'] = $ds_layout;
+
+  return $export;
+}
+
+/**
+ * Implements hook_ds_view_modes_info().
+ */
+function pori_configuration_ds_view_modes_info() {
+  $export = array();
+
+  $ds_view_mode = new stdClass();
+  $ds_view_mode->api_version = 1;
+  $ds_view_mode->view_mode = 'presentation';
+  $ds_view_mode->label = 'Presentation';
+  $ds_view_mode->entities = array(
+    'node' => 'node',
+  );
+  $export['presentation'] = $ds_view_mode;
+
+  return $export;
+}

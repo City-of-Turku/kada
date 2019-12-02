@@ -36,6 +36,8 @@ scp www-admin@pori.prod.wunder.io:/var/www/pori.prod.wunder.io/current/dump.sql 
 drush sql-drop -y
 drush sql-cli < dump.sql
 drush updb -y
+drush cc all // drush fra fails without it
+drush fra -y // reverts all features, use when needed
 drush uli --uri=https://local.pori.fi
 ```
 

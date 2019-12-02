@@ -180,11 +180,17 @@ function business_pori_configurations_context_default_contexts() {
           'region' => 'highlighted',
           'weight' => '-9',
         ),
+        'views-dfe4333f7892fdabcb0e2f26cc029be6' => array(
+          'module' => 'views',
+          'delta' => 'dfe4333f7892fdabcb0e2f26cc029be6',
+          'region' => 'highlighted',
+          'weight' => '-8',
+        ),
         'views-89b484a51bf5cdc2db6af339b2d71883' => array(
           'module' => 'views',
           'delta' => '89b484a51bf5cdc2db6af339b2d71883',
           'region' => 'highlighted',
-          'weight' => '-8',
+          'weight' => '-7',
         ),
         'kada_widget_feature-widget_before_content' => array(
           'module' => 'kada_widget_feature',
@@ -272,6 +278,12 @@ function business_pori_configurations_context_default_contexts() {
         'views-kada_project_liftups-block' => array(
           'module' => 'views',
           'delta' => 'kada_project_liftups-block',
+          'region' => 'after_content',
+          'weight' => '-9',
+        ),
+        'views-pori_presentation_liftup-block' => array(
+          'module' => 'views',
+          'delta' => 'pori_presentation_liftup-block',
           'region' => 'after_content',
           'weight' => '-9',
         ),

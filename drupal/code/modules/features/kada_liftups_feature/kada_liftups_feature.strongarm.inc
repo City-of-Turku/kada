@@ -221,6 +221,9 @@ function kada_liftups_feature_strongarm() {
       'person_card_with_skills' => array(
         'custom_settings' => FALSE,
       ),
+      'presentation' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -284,6 +287,10 @@ function kada_liftups_feature_strongarm() {
             'weight' => '29',
             'visible' => FALSE,
           ),
+          'presentation' => array(
+            'weight' => '23',
+            'visible' => FALSE,
+          ),
         ),
         'domain' => array(
           'default' => array(
@@ -318,6 +325,10 @@ function kada_liftups_feature_strongarm() {
             'weight' => '23',
             'visible' => FALSE,
           ),
+          'presentation' => array(
+            'weight' => '26',
+            'visible' => FALSE,
+          ),
         ),
         'sharethis' => array(
           'default' => array(
@@ -338,6 +349,10 @@ function kada_liftups_feature_strongarm() {
           ),
           'small_liftup_banner' => array(
             'weight' => '10',
+            'visible' => FALSE,
+          ),
+          'presentation' => array(
+            'weight' => '28',
             'visible' => FALSE,
           ),
         ),
