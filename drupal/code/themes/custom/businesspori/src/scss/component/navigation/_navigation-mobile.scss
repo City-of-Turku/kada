@@ -259,6 +259,8 @@ $menu-padding: 1.25rem;
     }
   }
 }
-.businesspori-theme-color-green.menu__item--has-first-level > a{
-  color:$white !important;
+@media screen and (max-width: $mobile-menu-breakpoint-max) {
+  .businesspori-theme-color-green.menu__item--has-first-level > a{
+    color:$white !important;
+  }
 }
