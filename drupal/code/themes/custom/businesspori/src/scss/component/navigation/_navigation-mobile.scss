@@ -108,7 +108,7 @@ $menu-padding: 1.25rem;
           }
 
           > a {
-            color: $white;
+            color: $black;
 
             @if $color == $white {
               color: $black;
@@ -137,7 +137,7 @@ $menu-padding: 1.25rem;
               background-color: $color;
 
               a {
-                color: $white;
+                color: $black;
               }
             }
           }
@@ -166,7 +166,7 @@ $menu-padding: 1.25rem;
       }
 
       &.is-active-trail a {
-        color: $white;
+        color: $black;
       }
     }
 

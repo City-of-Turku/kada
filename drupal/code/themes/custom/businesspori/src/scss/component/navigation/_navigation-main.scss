@@ -85,7 +85,9 @@
         }
       }
     }
-
+    .businesspori-theme-color-green > a.active-trail {
+      color: $white !important;
+    }
     .menu__item--has-first-level {
       position: relative;
 
