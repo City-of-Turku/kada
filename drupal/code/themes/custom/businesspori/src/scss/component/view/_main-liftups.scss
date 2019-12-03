@@ -173,3 +173,10 @@ $main-liftup-content-padding: 20px;
   justify-content: space-between;
   
 }
+.field--name-field-lead-paragraph-long-text {
+  .field__items {
+    .field__item {
+      margin-bottom: 2.5rem;
+    }
+  }
+}
