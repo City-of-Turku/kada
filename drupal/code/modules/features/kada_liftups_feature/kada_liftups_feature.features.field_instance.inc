@@ -546,7 +546,7 @@ function kada_liftups_feature_field_default_field_instances() {
     'bundle' => 'liftup',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'The optimal video resolution for videos displayed on header should be 1800px * 727px. This is to avoid clipping of the video.',
     'display' => array(
       'carousel' => array(
         'label' => 'hidden',
@@ -1837,6 +1837,7 @@ You can change the background color of the link in banner by choosing one below.
   t('Small liftup banner color');
   t('Target audience');
   t('Target audience is not visible in the liftup, but is used to control in which landing page the liftup is visible.');
+  t('The optimal video resolution for videos displayed on header should be 1800px * 727px. This is to avoid clipping of the video.');
   t('Theme');
   t('Theme will give theme\'s color to the liftup and can affect where it is displayed');
   t('Video');
