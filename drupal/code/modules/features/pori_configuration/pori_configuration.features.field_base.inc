@@ -103,9 +103,9 @@ function pori_configuration_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        'presentation-colors-1' => 'Presentation colors 1',
-        'presentation-colors-2' => 'Presentation colors 2',
-        'presentation-colors-3' => 'Presentation colors 3',
+        'presentation-colors-1' => 'Green presentation',
+        'presentation-colors-2' => 'Orange presentation',
+        'presentation-colors-3' => 'Monotone presentation',
       ),
       'allowed_values_function' => '',
       'entity_translation_sync' => FALSE,
