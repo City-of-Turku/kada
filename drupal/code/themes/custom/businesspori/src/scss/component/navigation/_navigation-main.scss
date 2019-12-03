@@ -51,7 +51,7 @@
 
           &.is-active {
             > a {
-              color: $black !important;
+              color: $black;
               background-color: $color !important;
             }
           }
@@ -84,10 +84,11 @@
           }
         }
       }
+      .businesspori-theme-color-green > a.is-active-trail {
+        color: $white !important;
+      }
     }
-    .businesspori-theme-color-green > a.active-trail {
-      color: $white !important;
-    }
+   
     .menu__item--has-first-level {
       position: relative;
 
@@ -257,6 +258,12 @@
     }
   }
 }
-.businesspori-theme-color-green.menu__item--has-first-level > a:hover {
+.businesspori-theme-color-green.menu__item--has-first-level > a:hover, a:active {
   color: white !important;
+}
+.businesspori-theme-color-green.menu__item--has-first-level > .active-trail > a:active {
+  color: white !important;
+}
+.menu-name-menu-business-pori-p-valikko .businesspori-theme-color-green.menu__item--has-first-level.is-active > a {
+  color:white !important;
 }
