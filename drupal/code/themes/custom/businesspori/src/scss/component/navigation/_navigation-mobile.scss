@@ -264,3 +264,14 @@ $menu-padding: 1.25rem;
     color:$white !important;
   }
 }
+@media screen and (max-width: $mobile-menu-breakpoint-max) {
+  .businesspori-theme-color-green{
+    .menu{
+      .menu__item--has-second-level {
+        .active-trail {
+          color:white !important;
+        }
+      }
+    }
+  }
+}
