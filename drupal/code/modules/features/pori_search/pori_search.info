@@ -30,6 +30,7 @@ features[search_api_live_results_search][] = search_api_views_main_search
 features[search_api_server][] = pori_search_server
 features[variable][] = facetapi_pretty_paths_searcher_search_api@pori_search_index
 features[variable][] = facetapi_pretty_paths_searcher_search_api@pori_search_index_options
+features[variable][] = kada_search_feature_domain_search
 features[views_view][] = main_search
 features_exclude[dependencies][ctools] = ctools
 features_exclude[dependencies][search_api] = search_api
