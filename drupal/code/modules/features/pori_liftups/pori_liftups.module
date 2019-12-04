@@ -22,6 +22,10 @@ function pori_liftups_preprocess_node($variables) {
         $variables['classes_array'][] = 'small-liftup-pori-red';
       }
     }
+    // Add field_presentation_color_scheme class.
+    if(isset($variables['field_presentation_color_scheme'][LANGUAGE_NONE][0]['value'])) {
+      $variables['classes_array'][] = drupal_html_class($variables['field_presentation_color_scheme'][LANGUAGE_NONE][0]['value']);
+    }
 
   }
 }
