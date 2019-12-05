@@ -12,7 +12,7 @@
             margin:3rem;
             .field__items{
                 .field__item{
-                    color: #1E8566;
+                    color: $black;
                     text-align: left;
                     font: Bold 52px BergenText;
                     letter-spacing: 0;
@@ -77,6 +77,17 @@
                 }
             }
         }
+        .field--type-text-with-summary {
+            .field__items{
+                .field__item {
+                    margin:3rem;
+                    p{
+                        color:$black;
+                        font: 500 24px BergenText;
+                    }
+                }
+            }
+        }
         .field--name-field-presentation-link {
             .field__items{
                 margin:3rem;
@@ -118,6 +129,17 @@
                     opacity: 1;
                     text-align: left;
 
+                }
+            }
+        }
+        .field--type-text-with-summary {
+            .field__items{
+                .field__item {
+                    margin:3rem;
+                    p{
+                        color:$black;
+                        font: 500 24px BergenText;
+                    }
                 }
             }
         }
