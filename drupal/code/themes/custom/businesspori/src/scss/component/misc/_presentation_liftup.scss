@@ -1,52 +1,148 @@
-.field--name-field-presentation-link > div:nth-child(1) > div:nth-child(1) > a:nth-child(1) {
-    text-align: center;
-    font: Regular 20px BergenText;
-    letter-spacing: 0;
-    color: 
-    #FFFFFF;
-    text-transform: uppercase;
-    opacity: 1;
-    background-color:
-    #26A982;
-    padding: 10px 18px; 
+.node--liftup--presentation {
+    .liftup-box__group-left{
+        display: flex;
+        flex-direction: column;
+    } 
 }
-.field--name-field-presentation-link > div:nth-child(1) > div:nth-child(1) {
-    margin: 3rem;
-}
-div.field__item:nth-child(2) {
-    margin: 3rem;
-    color:white;
-    }
-div.field__item:nth-child(2) > a:nth-child(1) {
-    text-align: center;
-    font: Regular 15px/20px BergenText;
-    letter-spacing: 0;
-    color:#1E1E1E;
-    text-transform: uppercase;
-    opacity: 1;
-    background-color:orange;
-    padding: 10px 18px;
-}
-div.field--name-body:nth-child(2) > div:nth-child(1) > div:nth-child(1){
-    margin: 3rem;
-}
-.field--name-field-visible-title > div:nth-child(1) > div:nth-child(1){
-    text-align: left;
-    font: Bold 60px BergenText;
-    letter-spacing: 0;
-    color:#F8F8F9;
-    opacity: 1;
-    background:#00AF66;
-    text-align: left;
-}
-.field--name-field-visible-title > div:nth-child(1) {
-    margin: 3rem;
-}
-.node--sticky {
-    background: #00AF66;
-}
-div.field--name-body:nth-child(2) > div:nth-child(1) > div:nth-child(1) > p:nth-child(1){
-    font: 500 34px BergenText;
-    color:#F8F8F9;
+.presentation-colors-1  {
+    border-top: 10px solid #1E8566;
+    background: $white;
+    .liftup-box__group-left{
+        .field--name-field-visible-title{
+            margin:3rem;
+            .field__items{
+                .field__item{
+                    color: #1E8566;
+                    text-align: left;
+                    font: Bold 52px BergenText;
+                    letter-spacing: 0;
+                    opacity: 1;
+                    text-align: left;
 
+                }
+            }
+        }
+        .field--type-text-with-summary {
+            .field__items{
+                .field__item {
+                    margin:3rem;
+                    p{
+                        color:$black;
+                        font: 500 24px BergenText;
+                    }
+                }
+            }
+        }
+        .field--name-field-presentation-link {
+            .field__items{
+                margin:3rem;
+                .field__item {
+                    margin:3rem;
+                    a{
+                        text-align: center;
+                        font: 20px BergenText;
+                        font-weight: 600;
+                        letter-spacing: 0;
+                        color: #1E8566;
+                        text-transform: uppercase;
+                        opacity: 1;
+                        padding: 10px 18px; 
+                        border:1px solid #1E8566;
+                        &:hover {
+                            color:$white;
+                            background: #1E8566;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
+
+.presentation-colors-2  {
+    border-top: 10px solid #B35C00;
+    background: $white;
+    .liftup-box__group-left{
+        .field--name-field-visible-title{
+            margin:3rem;
+            .field__items{
+                .field__item{
+                    color: $black;
+                    text-align: left;
+                    font: Bold 52px BergenText;
+                    letter-spacing: 0;
+                    opacity: 1;
+                    text-align: left;
+
+                }
+            }
+        }
+        .field--name-field-presentation-link {
+            .field__items{
+                margin:3rem;
+                .field__item {
+                    margin:3rem;
+                    a{
+                        text-align: center;
+                        font: 20px BergenText;
+                        font-weight: 600;
+                        letter-spacing: 0;
+                        color: #B35C00;
+                        text-transform: uppercase;
+                        opacity: 1;
+                        padding: 10px 18px; 
+                        border:1px solid #B35C00;
+                        &:hover {
+                            color:$white;
+                            background: #B35C00;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.presentation-colors-3  {
+    border-top: 10px solid #000;
+    background: $white;
+    .liftup-box__group-left{
+        .field--name-field-visible-title{
+            margin:3rem;
+            .field__items{
+                .field__item{
+                    color: $black;
+                    text-align: left;
+                    font: Bold 52px BergenText;
+                    letter-spacing: 0;
+                    opacity: 1;
+                    text-align: left;
+
+                }
+            }
+        }
+        .field--name-field-presentation-link {
+            .field__items{
+                margin:3rem;
+                .field__item {
+                    margin:3rem;
+                    a{
+                        text-align: center;
+                        font: Regular 20px BergenText;
+                        letter-spacing: 0;
+                        color: $black;
+                        text-transform: uppercase;
+                        opacity: 1;
+                        padding: 10px 18px; 
+                        border:1px solid $black;
+                        &:hover {
+                            color:$white;
+                            background: $black;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
