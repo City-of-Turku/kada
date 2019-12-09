@@ -18,7 +18,9 @@
                     letter-spacing: 0;
                     opacity: 1;
                     text-align: left;
-
+                    @media screen and (max-width: 1024px) {
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }
@@ -29,6 +31,9 @@
                     p{
                         color:$black;
                         font: 500 24px BergenText;
+                        @media screen and (max-width: 1024px) {
+                            font-size: 1.125rem;
+                        }
                     }
                 }
             }
@@ -73,7 +78,9 @@
                     letter-spacing: 0;
                     opacity: 1;
                     text-align: left;
-
+                    @media screen and (max-width: 1024px) {
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }
@@ -84,6 +91,9 @@
                     p{
                         color:$black;
                         font: 500 24px BergenText;
+                        @media screen and (max-width: 1024px) {
+                            font-size: 1.125rem;
+                        }
                     }
                 }
             }
@@ -128,7 +138,9 @@
                     letter-spacing: 0;
                     opacity: 1;
                     text-align: left;
-
+                    @media screen and (max-width: 1024px) {
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }
@@ -139,6 +151,9 @@
                     p{
                         color:$black;
                         font: 500 24px BergenText;
+                        @media screen and (max-width: 1024px) {
+                            font-size: 1.125rem;
+                        }
                     }
                 }
             }
@@ -167,4 +182,3 @@
         }
     }
 }
-
