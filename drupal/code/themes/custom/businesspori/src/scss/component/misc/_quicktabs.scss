@@ -6,7 +6,6 @@
       border-top: .063rem solid $green-dark;
       color: $green-dark;
     }
-
     .uutiset.ui-tabs-anchor {
       background-color: $green-dark;
       color: $white;
@@ -24,4 +23,9 @@
 
 .block--kada-news-feature-news-archive-link .block__content a {
   background-color: $green-dark;
+}
+@media screen and (max-width: $mobile-menu-breakpoint-max) {
+  .quicktabs-ui-wrapper .ui-tabs-nav{
+    border-bottom: 5px solid $green-dark !important;
+  }
 }

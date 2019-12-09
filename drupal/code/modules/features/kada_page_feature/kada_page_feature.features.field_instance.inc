@@ -1202,6 +1202,100 @@ function kada_page_feature_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-page-field_places_title'.
+  $field_instances['node-page-field_places_title'] = array(
+    'bundle' => 'page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Set title for Places below. Title defaults to Places (Toimipisteet). You should use english title and translate the string with drupal translation tool. (/admin/config/regional/translate/translate)',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 46,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'only_title' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_places_title',
+    'label' => 'Places title',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'ds_code' => 'ds_code',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'wysiwyg' => 'wysiwyg',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'ds_code' => array(
+              'weight' => 12,
+            ),
+            'full_html' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'wysiwyg' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'context' => 'title',
+      'context_default' => 'sdl_editor_representation',
+      'dnd_enabled' => 0,
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Etsi',
+        'enable' => 0,
+        'profile' => '',
+      ),
+      'mee_enabled' => 0,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 27,
+    ),
+  );
+
   // Exported field_instance: 'node-page-field_related_content'.
   $field_instances['node-page-field_related_content'] = array(
     'bundle' => 'page',
@@ -1271,9 +1365,9 @@ function kada_page_feature_field_default_field_instances() {
   // Exported field_instance: 'node-page-field_service_offering'.
   $field_instances['node-page-field_service_offering'] = array(
     'bundle' => 'page',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Use autocomplete to find what you need. Separate multiple selections with comma , .',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -1319,12 +1413,15 @@ function kada_page_feature_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'options',
+      'module' => 'entityreference',
       'settings' => array(
-        'content_taxonomy_opt_groups' => FALSE,
+        'content_taxonomy_autocomplete_new_terms' => 'deny',
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
       ),
-      'type' => 'options_select',
-      'weight' => 27,
+      'type' => 'entityreference_autocomplete_tags',
+      'weight' => 28,
     ),
   );
 
@@ -2047,10 +2144,12 @@ function kada_page_feature_field_default_field_instances() {
   t('Lead paragraph');
   t('Liftup image');
   t('Link to content multiple');
+  t('Places title');
   t('Related content');
   t('Related service offering');
   t('Search for widget by administrative title. These widgets will be rendered before actual page content.');
   t('Select which tabs will be shown in feed.');
+  t('Set title for Places below. Title defaults to Places (Toimipisteet). You should use english title and translate the string with drupal translation tool. (/admin/config/regional/translate/translate)');
   t('Subpage');
   t('Target audience');
   t('Theme');
@@ -2060,6 +2159,7 @@ function kada_page_feature_field_default_field_instances() {
   t('This value is selected for the main site theme main pages and usually there is no need to change it.');
   t('Topic');
   t('Tweet embed');
+  t('Use autocomplete to find what you need. Separate multiple selections with comma , .');
   t('Use the City-theme for footer pages');
   t('Video');
   t('Video scrim');

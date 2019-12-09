@@ -96,6 +96,13 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'presentation' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 1,
+      ),
       'project' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -219,6 +226,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'presentation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 30,
+      ),
       'project' => array(
         'label' => 'above',
         'settings' => array(),
@@ -338,6 +351,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'presentation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 34,
+      ),
       'project' => array(
         'label' => 'above',
         'settings' => array(),
@@ -411,6 +430,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'presentation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 27,
       ),
       'project' => array(
         'label' => 'above',
@@ -493,6 +518,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'presentation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 31,
+      ),
       'project' => array(
         'label' => 'above',
         'settings' => array(),
@@ -546,7 +577,7 @@ function kada_liftups_feature_field_default_field_instances() {
     'bundle' => 'liftup',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'The optimal video resolution for videos displayed on header should be 1800px * 727px. This is to avoid clipping of the video.',
     'display' => array(
       'carousel' => array(
         'label' => 'hidden',
@@ -555,7 +586,7 @@ function kada_liftups_feature_field_default_field_instances() {
           'link' => 0,
           'override' => 0,
         ),
-        'type' => 'top_video_carousel',
+        'type' => 'title',
         'weight' => 1,
       ),
       'current' => array(
@@ -571,7 +602,7 @@ function kada_liftups_feature_field_default_field_instances() {
           'link' => 0,
           'override' => 0,
         ),
-        'type' => 'top_video_carousel',
+        'type' => 'title',
         'weight' => 1,
       ),
       'event_top_carousel' => array(
@@ -585,6 +616,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'presentation' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 19,
       ),
       'project' => array(
         'label' => 'above',
@@ -666,6 +703,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'presentation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 36,
       ),
       'project' => array(
         'label' => 'above',
@@ -752,6 +795,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'presentation' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 21,
       ),
       'project' => array(
         'label' => 'hidden',
@@ -863,6 +912,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'presentation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 29,
       ),
       'project' => array(
         'label' => 'above',
@@ -981,6 +1036,16 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'presentation' => array(
+        'label' => 'hidden',
+        'module' => 'atom_reference',
+        'settings' => array(
+          'link' => 0,
+          'override' => 0,
+        ),
+        'type' => 'content_full',
+        'weight' => 3,
+      ),
       'project' => array(
         'label' => 'hidden',
         'module' => 'atom_reference',
@@ -1085,6 +1150,12 @@ function kada_liftups_feature_field_default_field_instances() {
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'presentation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 32,
+      ),
       'project' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1175,6 +1246,12 @@ You can change the background color of the link in banner by choosing one below.
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'presentation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 35,
+      ),
       'project' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1250,6 +1327,12 @@ You can change the background color of the link in banner by choosing one below.
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'presentation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 24,
       ),
       'project' => array(
         'label' => 'above',
@@ -1332,6 +1415,12 @@ You can change the background color of the link in banner by choosing one below.
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'presentation' => array(
+        'label' => 'inline',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 22,
+      ),
       'project' => array(
         'label' => 'inline',
         'settings' => array(),
@@ -1412,6 +1501,12 @@ You can change the background color of the link in banner by choosing one below.
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'presentation' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 20,
       ),
       'project' => array(
         'label' => 'hidden',
@@ -1539,6 +1634,13 @@ You can change the background color of the link in banner by choosing one below.
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'presentation' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
       'project' => array(
         'label' => 'hidden',
         'module' => 'text',
@@ -1659,6 +1761,12 @@ You can change the background color of the link in banner by choosing one below.
         'type' => 'hidden',
         'weight' => 0,
       ),
+      'presentation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 33,
+      ),
       'project' => array(
         'label' => 'above',
         'settings' => array(),
@@ -1733,6 +1841,12 @@ You can change the background color of the link in banner by choosing one below.
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'presentation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 25,
       ),
       'project' => array(
         'label' => 'above',
@@ -1837,6 +1951,7 @@ You can change the background color of the link in banner by choosing one below.
   t('Small liftup banner color');
   t('Target audience');
   t('Target audience is not visible in the liftup, but is used to control in which landing page the liftup is visible.');
+  t('The optimal video resolution for videos displayed on header should be 1800px * 727px. This is to avoid clipping of the video.');
   t('Theme');
   t('Theme will give theme\'s color to the liftup and can affect where it is displayed');
   t('Video');

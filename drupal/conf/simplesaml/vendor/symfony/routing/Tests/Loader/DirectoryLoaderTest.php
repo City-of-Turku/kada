@@ -23,18 +23,18 @@ class DirectoryLoaderTest extends AbstractAnnotationLoaderTest
     private $loader;
     private $reader;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
         $locator = new FileLocator();
         $this->reader = $this->getReader();
         $this->loader = new DirectoryLoader($locator);
-        $resolver = new LoaderResolver(array(
+        $resolver = new LoaderResolver([
             new YamlFileLoader($locator),
             new AnnotationFileLoader($locator, $this->getClassLoader($this->reader)),
             $this->loader,
-        ));
+        ]);
         $this->loader->setResolver($resolver);
     }
 

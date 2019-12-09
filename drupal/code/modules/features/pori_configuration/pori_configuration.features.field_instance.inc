@@ -503,6 +503,199 @@ function pori_configuration_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-liftup-field_presentation_color_scheme'.
+  $field_instances['node-liftup-field_presentation_color_scheme'] = array(
+    'bundle' => 'liftup',
+    'default_value' => array(
+      0 => array(
+        'value' => 'presentation-colors-1',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'current' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 23,
+      ),
+      'event_top_carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'presentation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_presentation_color_scheme',
+    'label' => 'Presentation color scheme',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'content_taxonomy_opt_groups' => FALSE,
+      ),
+      'type' => 'options_select',
+      'weight' => 22,
+    ),
+  );
+
+  // Exported field_instance: 'node-liftup-field_presentation_link'.
+  $field_instances['node-liftup-field_presentation_link'] = array(
+    'bundle' => 'liftup',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Give a link to the content if the liftup is a shortcut to somewhere. Use the <em>Search content</em> button if the link is not to a external source.',
+    'display' => array(
+      'carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'current' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'default' => array(
+        'label' => 'above',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 22,
+      ),
+      'event_top_carousel' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'live_results_search' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'presentation' => array(
+        'label' => 'hidden',
+        'module' => 'link',
+        'settings' => array(),
+        'type' => 'link_default',
+        'weight' => 2,
+      ),
+      'project' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'small_liftup_banner' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_presentation_link',
+    'label' => 'Presentation link',
+    'required' => 0,
+    'settings' => array(
+      'absolute_url' => 1,
+      'attributes' => array(
+        'class' => '',
+        'configurable_class' => 0,
+        'configurable_title' => 0,
+        'rel' => '',
+        'target' => 'default',
+        'title' => '',
+      ),
+      'display' => array(
+        'url_cutoff' => 80,
+      ),
+      'enable_tokens' => 1,
+      'entity_translation_sync' => FALSE,
+      'linkit' => array(
+        'button_text' => 'Search content',
+        'enable' => 1,
+        'profile' => 'fields',
+      ),
+      'rel_remove' => 'default',
+      'title' => 'optional',
+      'title_allowed_values' => '',
+      'title_label_use_field_label' => 0,
+      'title_maxlength' => 128,
+      'title_value' => '',
+      'url' => 0,
+      'user_register_form' => FALSE,
+      'validate_url' => 1,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'link',
+      'settings' => array(),
+      'type' => 'link_field',
+      'weight' => 21,
+    ),
+  );
+
   // Exported field_instance: 'node-liftup-field_responsibility'.
   $field_instances['node-liftup-field_responsibility'] = array(
     'bundle' => 'liftup',
@@ -539,6 +732,12 @@ function pori_configuration_field_default_field_instances() {
         'settings' => array(),
         'type' => 'hidden',
         'weight' => 0,
+      ),
+      'presentation' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 37,
       ),
       'project' => array(
         'label' => 'above',
@@ -1681,10 +1880,13 @@ function pori_configuration_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Class');
   t('Content responsibility');
+  t('Give a link to the content if the liftup is a shortcut to somewhere. Use the <em>Search content</em> button if the link is not to a external source.');
   t('If you check this box, this place will be shown on the waste search at /jatehaku');
   t('If you choose this checkbox the main image will be displayed on the node page.');
   t('Meta information only available to content administrators.');
   t('Person reference');
+  t('Presentation color scheme');
+  t('Presentation link');
   t('Read more');
   t('Show main image on the page');
   t('This link is used on listing of places on pages. The text displayed will always be "Read more".');

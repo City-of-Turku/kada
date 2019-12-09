@@ -66,25 +66,23 @@ $conf['stage_file_proxy_origin'] = 'https://www.pori.fi';
 $conf['simplesamlphp_auth_installdir'] = '/vagrant/drupal/conf/simplesaml';
 
 
-if (!empty($env) && $env != 'prod') {
-  // Override search API server settings fetched from default configuration.
-  $conf['search_api_override_mode'] = 'load';
-  $conf['search_api_override_servers'] = array(
-    'pori_search_server' => array(
-      'name' => 'Pori search server',
-      'options' => array(
-        'host' => 'localhost',
-        'port' => '8983',
-        'path' => '/solr',
-        'http_user' => '',
-        'http_pass' => '',
-        'excerpt' => 1,
-        'retrieve_data' => 1,
-        'http_method' => 'AUTO',
-      ),
+// Override search API server settings fetched from default configuration.
+$conf['search_api_override_mode'] = 'load';
+$conf['search_api_override_servers'] = array(
+  'pori_search_server' => array(
+    'name' => 'Pori search server',
+    'options' => array(
+      'host' => 'localhost',
+      'port' => '8983',
+      'path' => '/solr',
+      'http_user' => '',
+      'http_pass' => '',
+      'excerpt' => 1,
+      'retrieve_data' => 1,
+      'http_method' => 'AUTO',
     ),
-  );
-}
+  ),
+);
 
 /**
  * Add the domain module setup routine.
@@ -102,4 +100,4 @@ $conf['menu_override_parent_selector'] = true;
 //define('KADACALENDAR_BASE_URL', 'http://calendar.pori-kada-development.druid.fi/');
 
 // SimpleSAMLphp_auth Login Path
-$conf['simplesamlphp_auth_login_path'] = 'login';
+$conf['simplesamlphp_auth_login_path'] = 'login_ad';

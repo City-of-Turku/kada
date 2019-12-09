@@ -3,6 +3,7 @@
 namespace SAML2\XML\md;
 
 use SAML2\Utils;
+use Webmozart\Assert\Assert;
 
 /**
  * Class representing SAML 2 SPSSODescriptor.
@@ -43,6 +44,7 @@ class SPSSODescriptor extends SSODescriptorType
      */
     public $AttributeConsumingService = [];
 
+
     /**
      * Initialize a SPSSODescriptor.
      *
@@ -68,6 +70,7 @@ class SPSSODescriptor extends SSODescriptorType
         }
     }
 
+
     /**
      * Collect the value of the AuthnRequestsSigned-property
      * @return bool|null
@@ -77,15 +80,18 @@ class SPSSODescriptor extends SSODescriptorType
         return $this->AuthnRequestsSigned;
     }
 
+
     /**
      * Set the value of the AuthnRequestsSigned-property
      * @param bool|null $flag
+     * @return void
      */
     public function setAuthnRequestsSigned($flag = null)
     {
-        assert(is_bool($flag) || is_null($flag));
+        Assert::nullOrBoolean($flag);
         $this->AuthnRequestsSigned = $flag;
     }
+
 
     /**
      * Collect the value of the WantAssertionsSigned-property
@@ -96,15 +102,18 @@ class SPSSODescriptor extends SSODescriptorType
         return $this->WantAssertionsSigned;
     }
 
+
     /**
      * Set the value of the WantAssertionsSigned-property
      * @param bool|null $flag
+     * @return void
      */
     public function setWantAssertionsSigned($flag = null)
     {
-        assert(is_bool($flag) || is_null($flag));
+        Assert::nullOrBoolean($flag);
         $this->WantAssertionsSigned = $flag;
     }
+
 
     /**
      * Collect the value of the AssertionConsumerService-property
@@ -115,23 +124,28 @@ class SPSSODescriptor extends SSODescriptorType
         return $this->AssertionConsumerService;
     }
 
+
     /**
      * Set the value of the AssertionConsumerService-property
      * @param array $acs
+     * @return void
      */
     public function setAssertionConsumerService(array $acs)
     {
         $this->AssertionConsumerService = $acs;
     }
 
+
     /**
      * Add the value to the AssertionConsumerService-property
      * @param \SAML2\XML\md\IndexedEndpointType $acs
+     * @return void
      */
     public function addAssertionConsumerService(IndexedEndpointType $acs)
     {
         $this->AssertionConsumerService[] = $acs;
     }
+
 
     /**
      * Collect the value of the AttributeConsumingService-property
@@ -142,18 +156,22 @@ class SPSSODescriptor extends SSODescriptorType
         return $this->AttributeConsumingService;
     }
 
+
     /**
      * Add the value to the AttributeConsumingService-property
      * @param \SAML2\XML\md\AttributeConsumingService $acs
+     * @return void
      */
     public function addAttributeConsumingService(AttributeConsumingService $acs)
     {
         $this->AttributeConsumingService[] = $acs;
     }
 
+
     /**
      * Set the value of the AttributeConsumingService-property
      * @param array $acs
+     * @return void
      */
     public function setAttributeConsumingService(array $acs)
     {
@@ -165,14 +183,14 @@ class SPSSODescriptor extends SSODescriptorType
      * Add this SPSSODescriptor to an EntityDescriptor.
      *
      * @param \DOMElement $parent The EntityDescriptor we should append this SPSSODescriptor to.
-     * @return void
+     * @return \DOMElement
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_null($this->getAuthnRequestsSigned()) || is_bool($this->getAuthnRequestsSigned()));
-        assert(is_null($this->wantAssertionsSigned()) || is_bool($this->wantAssertionsSigned()));
-        assert(is_array($this->getAssertionConsumerService()));
-        assert(is_array($this->getAttributeConsumingService()));
+        Assert::nullOrBoolean($this->getAuthnRequestsSigned());
+        Assert::nullOrBoolean($this->wantAssertionsSigned());
+        Assert::isArray($this->getAssertionConsumerService());
+        Assert::isArray($this->getAttributeConsumingService());
 
         $e = parent::toXML($parent);
 
@@ -195,5 +213,7 @@ class SPSSODescriptor extends SSODescriptorType
         foreach ($this->getAttributeConsumingService() as $acs) {
             $acs->toXML($e);
         }
+
+        return $e;
     }
 }

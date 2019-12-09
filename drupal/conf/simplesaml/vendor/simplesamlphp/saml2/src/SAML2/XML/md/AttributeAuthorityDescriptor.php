@@ -5,6 +5,7 @@ namespace SAML2\XML\md;
 use SAML2\Constants;
 use SAML2\Utils;
 use SAML2\XML\saml\Attribute;
+use Webmozart\Assert\Assert;
 
 /**
  * Class representing SAML 2 metadata AttributeAuthorityDescriptor.
@@ -58,6 +59,7 @@ class AttributeAuthorityDescriptor extends RoleDescriptor
      */
     public $Attribute = [];
 
+
     /**
      * Initialize an IDPSSODescriptor.
      *
@@ -92,6 +94,7 @@ class AttributeAuthorityDescriptor extends RoleDescriptor
         }
     }
 
+
     /**
      * Collect the value of the AttributeService-property
      * @return \SAML2\XML\md\EndpointType[]
@@ -101,24 +104,29 @@ class AttributeAuthorityDescriptor extends RoleDescriptor
         return $this->AttributeService;
     }
 
+
     /**
      * Set the value of the AttributeService-property
      * @param \SAML2\XML\md\EndpointType[] $attributeService
+     * @return void
      */
     public function setAttributeService(array $attributeService)
     {
         $this->AttributeService = $attributeService;
     }
 
+
     /**
      * Add the value to the AttributeService-property
      * @param \SAML2\XML\md\EndpointType $attributeService
+     * @return void
      */
     public function addAttributeService(EndpointType $attributeService)
     {
-        assert($attributeService instanceof EndpointType);
+        Assert::isInstanceOf($attributeService, EndpointType::class);
         $this->AttributeService[] = $attributeService;
     }
+
 
     /**
      * Collect the value of the NameIDFormat-property
@@ -129,14 +137,17 @@ class AttributeAuthorityDescriptor extends RoleDescriptor
         return $this->NameIDFormat;
     }
 
+
     /**
      * Set the value of the NameIDFormat-property
      * @param string[] $nameIDFormat
+     * @return void
      */
     public function setNameIDFormat(array $nameIDFormat)
     {
         $this->NameIDFormat = $nameIDFormat;
     }
+
 
     /**
      * Collect the value of the AssertionIDRequestService-property
@@ -147,24 +158,29 @@ class AttributeAuthorityDescriptor extends RoleDescriptor
         return $this->AssertionIDRequestService;
     }
 
+
     /**
      * Set the value of the AssertionIDRequestService-property
      * @param \SAML2\XML\md\EndpointType[] $assertionIDRequestService
+     * @return void
      */
     public function setAssertionIDRequestService(array $assertionIDRequestService)
     {
         $this->AssertionIDRequestService = $assertionIDRequestService;
     }
 
+
     /**
      * Add the value to the AssertionIDRequestService-property
      * @param \SAML2\XML\md\EndpointType $assertionIDRequestService
+     * @return void
      */
     public function addAssertionIDRequestService(EndpointType $assertionIDRequestService)
     {
-        assert($assertionIDRequestService instanceof EndpointType);
+        Assert::isInstanceOf($assertionIDRequestService, EndpointType::class);
         $this->AssertionIDRequestService[] = $assertionIDRequestService;
     }
+
 
     /**
      * Collect the value of the AttributeProfile-property
@@ -175,14 +191,17 @@ class AttributeAuthorityDescriptor extends RoleDescriptor
         return $this->AttributeProfile;
     }
 
+
     /**
      * Set the value of the AttributeProfile-property
      * @param string[] $attributeProfile
+     * @return void
      */
     public function setAttributeProfile(array $attributeProfile)
     {
         $this->AttributeProfile = $attributeProfile;
     }
+
 
     /**
      * Collect the value of the Attribute-property
@@ -193,24 +212,29 @@ class AttributeAuthorityDescriptor extends RoleDescriptor
         return $this->Attribute;
     }
 
+
     /**
      * Set the value of the Attribute-property
      * @param \SAML2\XML\saml\Attribute[] $attribute
+     * @return void
      */
     public function setAttribute(array $attribute)
     {
         $this->Attribute = $attribute;
     }
 
+
     /**
      * Add the value to the Attribute-property
      * @param \SAML2\XML\saml\Attribute $attribute
+     * @return void
      */
     public function addAttribute(Attribute $attribute)
     {
-        assert($attribute instanceof Attribute);
+        Assert::isInstanceOf($attribute, Attribute::class);
         $this->Attribute[] = $attribute;
     }
+
 
     /**
      * Add this AttributeAuthorityDescriptor to an EntityDescriptor.
@@ -220,12 +244,12 @@ class AttributeAuthorityDescriptor extends RoleDescriptor
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_array($attributeService = $this->getAttributeService()));
-        assert(!empty($attributeService));
-        assert(is_array($this->getAssertionIDRequestService()));
-        assert(is_array($this->getNameIDFormat()));
-        assert(is_array($this->getAttributeProfile()));
-        assert(is_array($this->Attribute));
+        Assert::isArray($attributeService = $this->getAttributeService());
+        Assert::notEmpty($attributeService);
+        Assert::isArray($this->getAssertionIDRequestService());
+        Assert::isArray($this->getNameIDFormat());
+        Assert::isArray($this->getAttributeProfile());
+        Assert::isArray($this->Attribute);
 
         $e = parent::toXML($parent);
 

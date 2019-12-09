@@ -4,6 +4,7 @@ namespace SAML2\XML\md;
 
 use SAML2\Constants;
 use SAML2\Utils;
+use Webmozart\Assert\Assert;
 
 /**
  * Class representing SAML 2 metadata PDPDescriptor.
@@ -39,6 +40,7 @@ class PDPDescriptor extends RoleDescriptor
      */
     public $NameIDFormat = [];
 
+
     /**
      * Initialize an IDPSSODescriptor.
      *
@@ -67,6 +69,7 @@ class PDPDescriptor extends RoleDescriptor
         $this->setNameIDFormat(Utils::extractStrings($xml, Constants::NS_MD, 'NameIDFormat'));
     }
 
+
     /**
      * Collect the value of the AuthzService-property
      * @return \SAML2\XML\md\EndpointType[]
@@ -76,24 +79,29 @@ class PDPDescriptor extends RoleDescriptor
         return $this->AuthzService;
     }
 
+
     /**
      * Set the value of the AuthzService-property
      * @param \SAML2\XML\md\EndpointType[] $authzService
+     * @return void
      */
     public function setAuthzService(array $authzService = [])
     {
         $this->AuthzService = $authzService;
     }
 
+
     /**
      * Add the value to the AuthzService-property
      * @param \SAML2\XML\md\EndpointType $authzService
+     * @return void
      */
     public function addAuthzService(EndpointType $authzService)
     {
-        assert($authzService instanceof EndpointType);
+        Assert::isInstanceOf($authzService, EndpointType::class);
         $this->AuthzService[] = $authzService;
     }
+
 
     /**
      * Collect the value of the AssertionIDRequestService-property
@@ -104,22 +112,26 @@ class PDPDescriptor extends RoleDescriptor
         return $this->AssertionIDRequestService;
     }
 
+
     /**
      * Set the value of the AssertionIDRequestService-property
      * @param \SAML2\XML\md\EndpointType[] $assertionIDRequestService
+     * @return void
      */
     public function setAssertionIDRequestService(array $assertionIDRequestService)
     {
         $this->AssertionIDRequestService = $assertionIDRequestService;
     }
 
+
     /**
      * Add the value to the AssertionIDRequestService-property
      * @param \SAML2\XML\md\EndpointType $assertionIDRequestService
+     * @return void
      */
     public function addAssertionIDRequestService(EndpointType $assertionIDRequestService)
     {
-        assert($assertionIDRequestService instanceof EndpointType);
+        Assert::isInstanceOf($assertionIDRequestService, EndpointType::class);
         $this->AssertionIDRequestService[] = $assertionIDRequestService;
     }
 
@@ -133,14 +145,17 @@ class PDPDescriptor extends RoleDescriptor
         return $this->NameIDFormat;
     }
 
+
     /**
      * Set the value of the NameIDFormat-property
      * @param string[] $nameIDFormat
+     * @return void
      */
     public function setNameIDFormat(array $nameIDFormat)
     {
         $this->NameIDFormat = $nameIDFormat;
     }
+
 
     /**
      * Add this PDPDescriptor to an EntityDescriptor.
@@ -150,10 +165,10 @@ class PDPDescriptor extends RoleDescriptor
      */
     public function toXML(\DOMElement $parent)
     {
-        assert(is_array($authzService = $this->getAuthzService()));
-        assert(!empty($authzService));
-        assert(is_array($this->getAssertionIDRequestService()));
-        assert(is_array($this->getNameIDFormat()));
+        Assert::isArray($authzService = $this->getAuthzService());
+        Assert::notEmpty($authzService);
+        Assert::isArray($this->getAssertionIDRequestService());
+        Assert::isArray($this->getNameIDFormat());
 
         $e = parent::toXML($parent);
 
