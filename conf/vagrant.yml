@@ -69,6 +69,10 @@
             val: 1
           - key: opcache.revalidate_freq
             val: 0
+    
+    # Increase default max_allowed_packet value to avoid MySQL server has gone away error
+    # @see https://www.drupal.org/project/drupal/issues/1014172#comment-4142046
+    max_allowed_packet: 256M
 
     # letsencrypt variables are also used by selfencrypt
     letsencrypt_email: support@example.com
