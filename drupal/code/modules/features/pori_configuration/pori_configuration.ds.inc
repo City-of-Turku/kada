@@ -70,11 +70,7 @@ function pori_configuration_ds_layout_settings_info() {
       'field_presentation_link' => 'ds_content',
       'field_main_image' => 'ds_content',
     ),
-    'classes' => array(
-      'layout_class' => array(
-        '' => '',
-      ),
-    ),
+    'classes' => array(),
     'wrappers' => array(
       'ds_content' => 'div',
     ),
