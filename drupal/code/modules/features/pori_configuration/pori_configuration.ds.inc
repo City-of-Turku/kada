@@ -52,37 +52,38 @@ function pori_configuration_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'liftup';
   $ds_layout->view_mode = 'presentation';
-  $ds_layout->layout = 'ds_2col';
+  $ds_layout->layout = 'ds_1col';
   $ds_layout->settings = array(
     'regions' => array(
-      'left' => array(
-        0 => 'field_visible_title',
-        1 => 'body',
-        2 => 'field_presentation_link',
-        3 => 'field_presentation_color_scheme',
-      ),
-      'right' => array(
+      'ds_content' => array(
+        0 => 'field_presentation_color_scheme',
+        1 => 'field_visible_title',
+        2 => 'body',
+        3 => 'field_presentation_link',
         4 => 'field_main_image',
       ),
     ),
     'fields' => array(
-      'field_visible_title' => 'left',
-      'body' => 'left',
-      'field_presentation_link' => 'left',
-      'field_presentation_color_scheme' => 'left',
-      'field_main_image' => 'right',
+      'field_presentation_color_scheme' => 'ds_content',
+      'field_visible_title' => 'ds_content',
+      'body' => 'ds_content',
+      'field_presentation_link' => 'ds_content',
+      'field_main_image' => 'ds_content',
     ),
-    'classes' => array(),
+    'classes' => array(
+      'layout_class' => array(
+        '' => '',
+      ),
+    ),
     'wrappers' => array(
-      'left' => 'div',
-      'right' => 'div',
+      'ds_content' => 'div',
     ),
     'layout_wrapper' => 'div',
     'layout_attributes' => '',
     'layout_attributes_merge' => 1,
     'layout_link_attribute' => '',
     'layout_link_custom' => '',
-    'layout_disable_css' => 0,
+    'layout_disable_css' => FALSE,
   );
   $export['node|liftup|presentation'] = $ds_layout;
 
