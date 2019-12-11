@@ -207,6 +207,8 @@
     }     
  }
  .node--liftup--presentation {
-     display: flex;
-     flex-direction: column-reverse;
+    @media screen and (max-width: 1024px){
+        display: flex;
+        flex-direction: column-reverse;
+    }
  }
