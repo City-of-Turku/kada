@@ -36,6 +36,10 @@
                 margin:3rem;
                 .field__item {
                     margin:3rem;
+                    @media screen and (max-width: 600px) {
+                        margin: 0;
+                        margin-top:1rem;
+                    }
                     a{
                         text-align: center;
                         font: 20px BergenText;
@@ -49,6 +53,11 @@
                         &:hover {
                             color:$white;
                             background: #1E8566;
+                        }
+                        @media screen and (max-width: 600px) {
+                            font-size: 12px;
+                            font-weight: 400;
+                            padding:5px;
                         }
                     }
                 }
@@ -94,6 +103,10 @@
                 margin:3rem;
                 .field__item {
                     margin:3rem;
+                    @media screen and (max-width: 600px) {
+                        margin: 0;
+                        margin-top:1rem;
+                    }
                     a{
                         text-align: center;
                         font: 20px BergenText;
@@ -107,6 +120,11 @@
                         &:hover {
                             color:$white;
                             background: #B35C00;
+                        }
+                        @media screen and (max-width: 600px) {
+                            font-size: 12px;
+                            font-weight: 400;
+                            padding:5px;
                         }
                     }
                 }
@@ -152,6 +170,10 @@
                 margin:3rem;
                 .field__item {
                     margin:3rem;
+                    @media screen and (max-width: 600px) {
+                        margin: 0;
+                        margin-top:1rem;
+                    }
                     a{
                         text-align: center;
                         font: Regular 20px BergenText;
@@ -165,20 +187,31 @@
                             color:$white;
                             background: $black;
                         }
+                        @media screen and (max-width: 600px) {
+                            font-size: 12px;
+                            font-weight: 400;
+                            padding:5px;
+                        }
                     }
                 }
             }
         }
     }
-.ds-2col > .group-left {
+.node--liftup--presentation > .group-left {
+    @media screen and (max-width: 1024px){
+        float: none !important;
+        width:100%;
+        display:flex;
+        flex-direction: row-reverse;
+    }     
+ }
+ .node--liftup--presentation > .group-right {
     @media screen and (max-width: 1024px){
         float: none !important;
         width:100%;
     }     
  }
- .ds-2col > .group-right {
-    @media screen and (max-width: 1024px){
-        float: none !important;
-        width:100%;
-    }     
+ .node--liftup--presentation {
+     display: flex;
+     flex-direction: column-reverse;
  }
