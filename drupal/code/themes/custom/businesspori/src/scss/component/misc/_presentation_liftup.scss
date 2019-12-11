@@ -55,9 +55,8 @@
                             background: #1E8566;
                         }
                         @media screen and (max-width: 600px) {
-                            font-size: 12px;
-                            font-weight: 400;
-                            padding:5px;
+                            display:inline-block;
+                            width:100%;
                         }
                     }
                 }
@@ -122,9 +121,8 @@
                             background: #B35C00;
                         }
                         @media screen and (max-width: 600px) {
-                            font-size: 12px;
-                            font-weight: 400;
-                            padding:5px;
+                            display:inline-block;
+                            width:100%;
                         }
                     }
                 }
@@ -188,9 +186,8 @@
                             background: $black;
                         }
                         @media screen and (max-width: 600px) {
-                            font-size: 12px;
-                            font-weight: 400;
-                            padding:5px;
+                            display:inline-block;
+                            width:100%;
                         }
                     }
                 }
