@@ -112,16 +112,18 @@
         http_port: 8080
         docroot: "{{ drupal_web_root }}"
         extra_locations:
-        - location: "/simplesaml"
-          definition: |
-            alias /var/www/pori.stage.wunder.io/current/web/simplesamlphp/www;
-            location ~ \.php(/|$) {
-              include fastcgi_params;
-              fastcgi_pass phpcgi;
-              fastcgi_split_path_info ^((?U).+\.php)(/?.+)$;
-              fastcgi_param SCRIPT_FILENAME $request_filename;
-              fastcgi_param PATH_INFO $fastcgi_path_info if_not_empty;
-            }
+          - location: "^~ /simplesaml"
+            definition: |
+              alias /var/www/pori.dev.wunder.io/current/conf/simplesaml/www;
+              index index.php;
+
+              location ~ ^(?<prefix>/simplesaml)(?<phpfile>.+?\.php)(?<pathinfo>/.*)?$ {
+                fastcgi_split_path_info ^(.+?\.php)(/.+)$;
+                fastcgi_param SCRIPT_FILENAME $document_root$phpfile;
+                fastcgi_param PATH_INFO $pathinfo if_not_empty;
+                fastcgi_pass phpcgi;
+                include fastcgi_params;
+              }
 
     create_docroot: True
 
@@ -129,6 +131,11 @@
     varnish:
       port: 8081
       memory: 512M
+      recv_pre_conditions:
+        - property: req.url
+          operator: '~'
+          value: '^/simplesaml'
+          action: return (pass);
       directors:
         - name: example
           host: "{{ domain_name }}"
