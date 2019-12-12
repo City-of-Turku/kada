@@ -125,8 +125,8 @@ function kada_sections_feature_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
 
-  /* Display: Section Footer BP search EN */
-  $handler = $view->new_display('block', 'Section Footer BP search EN', 'block_3');
+  /* Display: BP search EN */
+  $handler = $view->new_display('block', 'BP search EN', 'block_3');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -141,8 +141,8 @@ function kada_sections_feature_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
 
-  /* Display: Section Footer BP search FI */
-  $handler = $view->new_display('block', 'Section Footer BP search FI', 'block_4');
+  /* Display: BP search FI */
+  $handler = $view->new_display('block', 'BP search FI', 'block_4');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Contextual filter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
@@ -168,8 +168,8 @@ function kada_sections_feature_views_default_views() {
     t('Block'),
     t('KADAcalendar | Hobbies frontpage'),
     t('All'),
-    t('Section Footer BP search EN'),
-    t('Section Footer BP search FI'),
+    t('BP search EN'),
+    t('BP search FI'),
   );
   $export['kada_section_footer'] = $view;
 
