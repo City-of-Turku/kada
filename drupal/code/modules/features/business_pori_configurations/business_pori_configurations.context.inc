@@ -640,7 +640,7 @@ function business_pori_configurations_context_default_contexts() {
           'module' => 'views',
           'delta' => '-exp-main_search-page',
           'region' => 'before_content',
-          'weight' => '-9',
+          'weight' => '-10',
         ),
         'views-kada_section_footer-block_3' => array(
           'module' => 'views',
