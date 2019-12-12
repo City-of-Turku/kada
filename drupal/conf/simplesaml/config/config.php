@@ -449,7 +449,7 @@ $config = array(
      * option to TRUE. It can also be overridden on a pr. SP basis by adding an option with the
      * same name to the metadata of the SP.
      */
-    'shib13.signresponse' => true,
+    'shib13.signresponse' => false,
 
 
 
