@@ -28,10 +28,16 @@ $config = array(
         'assertion.encryption' => true,
         'sign.logout' => true,
 
-        'privatekey' => 'saml.pem',
-        'certificate' => 'saml.crt',
+        'privatekey' => 'new.pem',
+        'certificate' => 'new.crt',
+
+        'metadata.sign.enable' => TRUE,
+        'metadata.sign.algorithm' => 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha256',
+        'NameIDFormat' => 'urn:oasis:names:tc:SAML:2.0:nameid-format:transient',
+        
 
         'signature.algorithm' => 'http://www.w3.org/2001/04/xmldsig-more#rsa-sha256',
+        'attributes.NameFormat' => 'urn:oasis:names:tc:SAML:2.0:attrname-format:basic',
 
         // The URL to the discovery service.
         // Can be NULL/unset, in which case a builtin discovery service will be used.
