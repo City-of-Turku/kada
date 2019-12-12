@@ -141,7 +141,7 @@
               port: 8080
       extra_cookies:
         - cookie: |
-            elseif (req.http.Cookie ~ "(?i)simplesaml" || req.http.Cookie ~ "NO_CACHE") { return (pass); }"
+            elseif (req.http.Cookie ~ "(?i)simplesaml" || req.http.Cookie ~ "NO_CACHE") { return (pass); }
 
     # Use https for this host
     sslterminators:
