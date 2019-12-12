@@ -60,61 +60,69 @@
         http_port: 8080
         docroot: "/var/www/{{ domain1_name }}/current/web"
         extra_locations:
-        - location: "/simplesaml"
-          definition: |
-            alias /var/www/pori.prod.wunder.io/current/web/simplesamlphp/www;
-            location ~ \.php(/|$) {
-              include fastcgi_params;
-              fastcgi_pass phpcgi;
-              fastcgi_split_path_info ^((?U).+\.php)(/?.+)$;
-              fastcgi_param SCRIPT_FILENAME $request_filename;
-              fastcgi_param PATH_INFO $fastcgi_path_info if_not_empty;
-            }
+          - location: "^~ /simplesaml"
+            definition: |
+              alias /var/www/pori.prod.wunder.io/current/conf/simplesaml/www;
+              index index.php;
+
+              location ~ ^(?<prefix>/simplesaml)(?<phpfile>.+?\.php)(?<pathinfo>/.*)?$ {
+                fastcgi_split_path_info ^(.+?\.php)(/.+)$;
+                fastcgi_param SCRIPT_FILENAME $document_root$phpfile;
+                fastcgi_param PATH_INFO $pathinfo if_not_empty;
+                fastcgi_pass phpcgi;
+                include fastcgi_params;
+              }
       - server_name: "www.{{ domain2_name }}"
         server_forwards: "{{ domain2_name }} beta.{{ domain2_name }} {{ domain1_name }}"  # we redirect to beta subdomain
         http_port: 8080
         docroot: "/var/www/{{ domain1_name }}/current/web"
         extra_locations:
-        - location: "/simplesaml"
-          definition: |
-            alias /var/www/pori.prod.wunder.io/current/web/simplesamlphp/www;
-            location ~ \.php(/|$) {
-              include fastcgi_params;
-              fastcgi_pass phpcgi;
-              fastcgi_split_path_info ^((?U).+\.php)(/?.+)$;
-              fastcgi_param SCRIPT_FILENAME $request_filename;
-              fastcgi_param PATH_INFO $fastcgi_path_info if_not_empty;
-            }
+          - location: "^~ /simplesaml"
+            definition: |
+              alias /var/www/pori.prod.wunder.io/current/conf/simplesaml/www;
+              index index.php;
+
+              location ~ ^(?<prefix>/simplesaml)(?<phpfile>.+?\.php)(?<pathinfo>/.*)?$ {
+                fastcgi_split_path_info ^(.+?\.php)(/.+)$;
+                fastcgi_param SCRIPT_FILENAME $document_root$phpfile;
+                fastcgi_param PATH_INFO $pathinfo if_not_empty;
+                fastcgi_pass phpcgi;
+                include fastcgi_params;
+              }
       - server_name: "www.{{ domain3_name }}"
         server_forwards: "beta.{{ domain3_name }} {{ domain3_name }} {{ domain4_name }} www.{{ domain4_name }}"
         http_port: 8080
         docroot: "/var/www/{{ domain1_name }}/current/web"
         extra_locations:
-        - location: "/simplesaml"
-          definition: |
-            alias /var/www/pori.prod.wunder.io/current/web/simplesamlphp/www;
-            location ~ \.php(/|$) {
-              include fastcgi_params;
-              fastcgi_pass phpcgi;
-              fastcgi_split_path_info ^((?U).+\.php)(/?.+)$;
-              fastcgi_param SCRIPT_FILENAME $request_filename;
-              fastcgi_param PATH_INFO $fastcgi_path_info if_not_empty;
-            }
+          - location: "^~ /simplesaml"
+            definition: |
+              alias /var/www/pori.prod.wunder.io/current/conf/simplesaml/www;
+              index index.php;
+
+              location ~ ^(?<prefix>/simplesaml)(?<phpfile>.+?\.php)(?<pathinfo>/.*)?$ {
+                fastcgi_split_path_info ^(.+?\.php)(/.+)$;
+                fastcgi_param SCRIPT_FILENAME $document_root$phpfile;
+                fastcgi_param PATH_INFO $pathinfo if_not_empty;
+                fastcgi_pass phpcgi;
+                include fastcgi_params;
+              }
       - server_name: "www.{{ domain5_name }}"
         server_forwards: "{{ domain5_name }}"
         http_port: 8080
         docroot: "/var/www/{{ domain1_name }}/current/web"
         extra_locations:
-        - location: "/simplesaml"
-          definition: |
-            alias /var/www/pori.prod.wunder.io/current/web/simplesamlphp/www;
-            location ~ \.php(/|$) {
-              include fastcgi_params;
-              fastcgi_pass phpcgi;
-              fastcgi_split_path_info ^((?U).+\.php)(/?.+)$;
-              fastcgi_param SCRIPT_FILENAME $request_filename;
-              fastcgi_param PATH_INFO $fastcgi_path_info if_not_empty;
-            }
+          - location: "^~ /simplesaml"
+            definition: |
+              alias /var/www/pori.prod.wunder.io/current/conf/simplesaml/www;
+              index index.php;
+
+              location ~ ^(?<prefix>/simplesaml)(?<phpfile>.+?\.php)(?<pathinfo>/.*)?$ {
+                fastcgi_split_path_info ^(.+?\.php)(/.+)$;
+                fastcgi_param SCRIPT_FILENAME $document_root$phpfile;
+                fastcgi_param PATH_INFO $pathinfo if_not_empty;
+                fastcgi_pass phpcgi;
+                include fastcgi_params;
+              }
 
     # You can also define aliases with app_dir_aliases, see ansible/playbook/roles/nginx/templates/all_apps.conf.j2
 
@@ -278,6 +286,10 @@
         - property: req.url
           operator: '~'
           value: '\.(pdf|zip)$'
+          action: return (pass);
+        - property: req.url
+          operator: '~'
+          value: '^/simplesaml'
           action: return (pass);
 
     # There is more customization options for hashes, cookies etc. see ansible/playbook/roles/varnish/templates/default.vcl.j2 for reference
