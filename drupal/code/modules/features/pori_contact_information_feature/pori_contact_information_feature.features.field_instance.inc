@@ -117,7 +117,7 @@ function pori_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 44,
+        'weight' => 51,
       ),
       'person_card_with_skills' => array(
         'label' => 'above',
@@ -222,7 +222,7 @@ function pori_contact_information_feature_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 34,
+        'weight' => 48,
       ),
       'person_card_with_skills' => array(
         'label' => 'above',
@@ -328,14 +328,14 @@ function pori_contact_information_feature_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_plain',
-        'weight' => 6,
+        'weight' => 10,
       ),
       'person_card_with_skills' => array(
         'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_plain',
-        'weight' => 14,
+        'weight' => 10,
       ),
     ),
     'entity_type' => 'node',
@@ -516,7 +516,7 @@ function pori_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 31,
       ),
       'person_card_with_skills' => array(
         'label' => 'hidden',
@@ -592,7 +592,7 @@ function pori_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 32,
+        'weight' => 46,
       ),
       'person_card_with_skills' => array(
         'label' => 'above',
@@ -662,7 +662,7 @@ function pori_contact_information_feature_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 31,
+        'weight' => 43,
       ),
       'person_card_with_skills' => array(
         'label' => 'hidden',
@@ -767,7 +767,7 @@ function pori_contact_information_feature_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 42,
+        'weight' => 50,
       ),
       'person_card_with_skills' => array(
         'label' => 'above',
