@@ -92,6 +92,12 @@ function visitpori_configurations_context_default_contexts() {
           'region' => 'before_content',
           'weight' => '-10',
         ),
+        'views-dfe4333f7892fdabcb0e2f26cc029be6' => array(
+          'module' => 'views',
+          'delta' => 'dfe4333f7892fdabcb0e2f26cc029be6',
+          'region' => 'before_content',
+          'weight' => '-8',
+        ),
         'kada_widget_feature-widget_before_content' => array(
           'module' => 'kada_widget_feature',
           'delta' => 'widget_before_content',
@@ -121,6 +127,12 @@ function visitpori_configurations_context_default_contexts() {
           'delta' => '4e860b19463e3f674732c95e074be424',
           'region' => 'above_footer',
           'weight' => '-10',
+        ),
+        'views-972eaabfd2a39ff790e08eab4766b876' => array(
+          'module' => 'views',
+          'delta' => '972eaabfd2a39ff790e08eab4766b876',
+          'region' => 'above_footer',
+          'weight' => '-9',
         ),
         'views-kada_section_footer-block_1' => array(
           'module' => 'views',

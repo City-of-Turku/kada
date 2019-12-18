@@ -6,7 +6,8 @@
 
 .theme-main-page,
 .front,
-.node-type-landing-page {
+.node-type-landing-page,
+body:not(.page--highlight-image) {
   .page-main__container,
   .content-top {
     padding-top: 1.25rem;

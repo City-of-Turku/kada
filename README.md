@@ -18,9 +18,28 @@ Synchronise the database from production
 
 `cd .. && ./syncdb.sh`
 
-or from dumpfile
+or manually using dumpfile
 
-`drush sql-cli < /vagrant/dump.sql`
+a) create a dumpfile:
+
+```sh
+ssh www-admin@pori.prod.wunder.io
+cd /var/www/pori.prod.wunder.io/current/web
+drush sql-dump > ../dump.sql
+```
+
+b) copy dumpfile to local webroot & import into database:
+
+```sh
+cd /vagrant/drupal/web
+scp www-admin@pori.prod.wunder.io:/var/www/pori.prod.wunder.io/current/dump.sql dump.sql
+drush sql-drop -y
+drush sql-cli < dump.sql
+drush updb -y
+drush cc all // drush fra fails without it
+drush fra -y // reverts all features, use when needed
+drush uli --uri=https://local.pori.fi
+```
 
 Update the site
 
@@ -42,7 +61,12 @@ All new features must be based on the `master` branch.
 All hotfixes must be based on the `production` branch.
 The `develop` branch is used only for testing and must never be merged back to master.
 
-Tip: You can use drush aliases to execute drush commands without loggin into the servers or vagrant box. For example `drush @pori.local cc css-js`.
+### Tips
+
+- You can use drush aliases to execute drush commands without loggin into the servers or vagrant box. For example `drush @pori.local cc css-js`.
+- Use `en` language while generating features.
+- Use `drush uli` with `--uri` option to get the correct login URL. Works also with subdomains, for example: `drush uli --uri=https://local.businesspori.fi`.
+- Make sure you have assigned all (sub)domains needed in your account (see _Domain access settings_) for the sites functionality to work properly (Scald widget for example).
 
 ### Folder structure
 

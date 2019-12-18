@@ -2,6 +2,16 @@
   .person-card__inner {
     margin: 0;
     padding: 1.25rem 1.875rem;
+
+    .field--name-field-person-image {
+      margin: 0 auto 30px !important;
+      max-width: 200px;
+  
+      @media screen and (min-width: $tablet-portrait) {
+        margin: 0 auto 30px !important;
+        max-width: 250px;
+      }
+    }
   }
 
   .field {
@@ -37,23 +47,12 @@
 
   .person-card__inner--has-image {
     overflow: hidden;
+  }
+}
 
-    .field {
-      @media screen and (min-width: $mobile-landscape-narrow) {
-        margin-left: 33%;
-        width: 67%;
-      }
-
-      &.field--name-field-person-image {
-        @media screen and (min-width: $mobile-landscape-narrow) {
-          float: left;
-          margin-bottom: 0;
-          margin-left: 0;
-          margin-right: -100%;
-          width: 30%;
-        }
-
-      }
-    }
+.page-phone-book .person-card {
+  .field--name-field-person-image,
+  .field--name-field-person-cta {
+    display: none;
   }
 }

@@ -1252,6 +1252,22 @@ system/ajax/*';
       'parseable' => TRUE,
       'formats' => array(),
     ),
+    'top_video_carousel' => array(
+      'name' => 'top_video_carousel',
+      'title' => 'Top video carousel',
+      'description' => 'Top video carousel',
+      'render_language' => 'XHTML',
+      'parseable' => TRUE,
+      'formats' => array(),
+    ),
+    'video_liftup' => array(
+      'name' => 'video_liftup',
+      'title' => 'Video liftup',
+      'description' => '',
+      'render_language' => 'XHTML',
+      'parseable' => FALSE,
+      'formats' => array(),
+    ),
   );
   $export['scald_custom_contexts'] = $strongarm;
 

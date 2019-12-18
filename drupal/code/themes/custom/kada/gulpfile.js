@@ -63,9 +63,10 @@ console.log(gutil.env.production);
 // BrowserSync task
 gulp.task('browserSync', function() {
   browserSync.init({
-    //files: path.styles.dist + '*.css', // Does not work when stylesheets have @import
-    files: path.styles.src + '**/*.scss',
-    // proxy: 'localhost:8080/pori-web/',
+    proxy: 'https://local.pori.fi',
+    open: false,
+    injectChanges: true,
+    reload: false,
     // browser: '<browser>'
   })
 });
@@ -92,22 +93,22 @@ gulp.task('sass', function(minify) {
     .pipe(autoprefix({
       browsers: ['last 2 versions']
     }))
-    .pipe(path.env.prod === true ? cleanCss() : gutil.noop())
-    .pipe(gulpif(path.sourcemaps.prod, sourcemaps.write()))
+    .pipe(cleanCss())
+    // .pipe(gulpif(path.sourcemaps.prod, sourcemaps.write()))
     .pipe(gulp.dest(path.styles.dist));
 });
 
 // Watch task
-gulp.task('watch', ['sass', 'browserSync'], function() {
-  gulp.watch(path.styles.src + '**/*.scss', ['sass']);
+gulp.task('watch', gulp.parallel('browserSync', function() {
+  gulp.watch(path.styles.src + '**/*.scss', gulp.series('sass'));
   gulp.watch(path.templates.dist + '**/*.html.twig', browserSync.reload);
-  gulp.watch(path.scripts.src + '*.js', ['scripts']).on('change', browserSync.reload);
-});
+  gulp.watch(path.scripts.src + '*.js', gulp.series('scripts'));
+}));
 
 // Uglify task
 gulp.task('scripts', function() {
-  gulp.src(path.scripts.src + '/*.js')
-    .pipe(path.env.prod === true ? uglify() : gutil.noop())
+  return gulp.src(path.scripts.src + '/*.js')
+    .pipe(uglify())
     .pipe(rename({
       suffix: '.min'
     }))
@@ -116,16 +117,16 @@ gulp.task('scripts', function() {
 
 // Image task
 gulp.task('imagemin', function() {
-  gulp.src(path.images.src + '*')
+  return gulp.src(path.images.src + '*')
     .pipe(path.env.prod === true ? imagemin() : gutil.noop())
     .pipe(gulp.dest(path.images.dist));
 });
 
 // Default tasks
-gulp.task('default', ['sass', 'watch', 'scripts'], function() {
+gulp.task('default', gulp.series(gulp.parallel('sass', 'watch', 'scripts')), function() {
   console.log('Running default tasks');
 });
 
-gulp.task('build', ['sass', 'scripts', 'imagemin'], function() {
+gulp.task('build', gulp.series(gulp.parallel('sass', 'scripts', 'imagemin')), function() {
   console.log('Running build tasks');
 });

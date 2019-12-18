@@ -10,6 +10,10 @@
         position: relative;
       }
     }
+    &.scrim-dark-gray {
+      color: white;
+      background: #1E1E1E;
+    }
   }
 
   figure {
@@ -20,6 +24,20 @@
 
     @media screen and (min-width: $tablet-portrait) and (max-width: $desktop) {
       margin: 0 (-$container-gutter * 2);
+    }
+  }
+
+  .views-field-field-liftup-video {
+    display: block;
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+
+    video {
+      width: 100%;
+      min-height: 208px;
+      object-fit: cover;
+      display: block;
     }
   }
 }
@@ -93,6 +111,18 @@
     }
   }
 }
+.scrim-dark-gray .flex-caption {
+  color: #fff;
+
+  @media screen and (min-width: $tablet-portrait) {
+    background-color: $black;
+  }
+
+  > a {
+    color: #fff;
+  }
+}
+
 #block-views-kada-top-carousel-block-1,
 #block-views-kada-top-carousel-block-2,
 #block-views-kada-top-carousel-section {
@@ -119,6 +149,15 @@
       top: 0;
       left: 0;
       z-index: -1;
+    }
+  }
+  .scrim-dark-gray .flex-caption {
+    color: white;
+
+    &:before {
+      content: "";
+      color: white;
+      background: #1E1E1E;
     }
   }
 }
@@ -234,4 +273,30 @@
   }
 }
 
+.scrim-dark-gray .flexslider__controls {
+  a {
+    border: 1.5px solid #fff;
+
+    &:hover,
+    &:focus {
+      background: #fff;
+    }
+
+    @media screen and (max-width: $tablet-portrait - $max-width-deduction) {
+      border-color: #fff;
+
+      &:hover,
+      &:focus {
+        background: #fff;
+      }
+    }
+  }
+
+  .flex-active,
+  .flex-active:hover,
+  .flex-active:focus {
+    border-color: #fff;
+    background: #fff;
+  }
+}
 

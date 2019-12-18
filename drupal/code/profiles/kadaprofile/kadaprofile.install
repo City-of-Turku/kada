@@ -716,6 +716,17 @@ function kadaprofile_update_7126() {
  * Enables Views block area.
  */
 function kadaprofile_update_7127() {
+  $modules = array('domain_path', 'domain_path_rewrite');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Enables Views block area.
+ */
+function kadaprofile_update_7128() {
   $modules = array('views_block_area');
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
@@ -726,7 +737,7 @@ function kadaprofile_update_7127() {
  *
  * Enables Simple environment indicator..
  */
-function kadaprofile_update_7128() {
+function kadaprofile_update_7129() {
   $modules = array('simplei');
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
@@ -737,7 +748,7 @@ function kadaprofile_update_7128() {
  *
  * Enables Pori events base overrides.
  */
-function kadaprofile_update_7129() {
+function kadaprofile_update_7130() {
   $modules = array('pori_events_base_overrides');
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
@@ -808,6 +819,16 @@ function kadaprofile_update_7133() {
 /**
  * Implements hook_update().
  *
+ * Disable and uninstall feature override module
+ */
+function kadaprofile_update_7134() {
+  if( module_exists('features_override')) {
+    module_disable(array('features_override'));
+    drupal_uninstall_modules(array('features_override'));
+  }
+}
+/**
+ *
  * Enables Entity delete log contrib module.
  */
 function kadaprofile_update_7135() {
@@ -823,6 +844,17 @@ function kadaprofile_update_7135() {
  */
 function kadaprofile_update_7136() {
   $modules = array('sharethis');
+  $enable_dependencies = TRUE;
+  module_enable($modules, $enable_dependencies);
+}
+
+/**
+ * Implements hook_update().
+ *
+ * Enables Pori Facts.
+ */
+function kadaprofile_update_7137() {
+  $modules = array('pori_facts_feature');
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }

@@ -38,6 +38,26 @@ function pori_configuration_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'flag presentation'.
+  $permissions['flag presentation'] = array(
+    'name' => 'flag presentation',
+    'roles' => array(
+      'admin' => 'admin',
+      'web journalist' => 'web journalist',
+    ),
+    'module' => 'flag',
+  );
+
+  // Exported permission: 'unflag presentation'.
+  $permissions['unflag presentation'] = array(
+    'name' => 'unflag presentation',
+    'roles' => array(
+      'admin' => 'admin',
+      'web journalist' => 'web journalist',
+    ),
+    'module' => 'flag',
+  );
+
   // Exported permission: 'use bigmenu'.
   $permissions['use bigmenu'] = array(
     'name' => 'use bigmenu',
