@@ -27,7 +27,7 @@ if(!empty($row->_entity_properties['title'][0]) && strlen($row->_entity_properti
   $title_text = $row->_entity_properties['title'][0];
 }
 else {
-  $row->_entity_properties['title'];
+  $title_text = $row->_entity_properties['title'];
 }
 $title = '<a href="' . substr($row->_entity_properties['domain_path'][0], 0, -1) . url("node/$row->entity") . '">' . $title_text . '</a>';
 ?>
