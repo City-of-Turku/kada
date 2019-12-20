@@ -23,7 +23,7 @@
  *
  * @ingroup views_templates
  */
-if(!empty($row->_entity_properties['title'][0]) && strlen(($row->_entity_properties['title'][0]) > 1)) {
+if(!empty($row->_entity_properties['title'][0]) && strlen($row->_entity_properties['title'][0]) > 1) {
   $title_text = $row->_entity_properties['title'][0];
 }
 else {
