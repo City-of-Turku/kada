@@ -728,7 +728,7 @@ function kada_places_feature_field_default_field_instances() {
       'better_formats' => array(
         'allowed_formats' => array(
           'ds_code' => 0,
-          'full_html' => 0,
+          'full_html' => 'full_html',
           'plain_text' => 'plain_text',
           'wysiwyg' => 'wysiwyg',
         ),
