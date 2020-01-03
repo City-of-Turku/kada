@@ -424,7 +424,7 @@ function _kada_feed_content_type_config() {
       'url' => 'https://api.instagram.com/v1/users/[FEED_USER_ID]/media/recent/?client_id=[FEED_CLIENT_TOKEN]&access_token=[ACCESS_TOKEN]',
     ),
     'feed_import_facebook' => array(
-      'url' => 'https://graph.facebook.com/v3.2/[FEED_USER_ID]/posts?access_token=[FEED_CLIENT_TOKEN]|[FEED_CLIENT_SECRET]&fields=created_time,message,picture,link,name,caption,description,type,object_id',
+      'url' => 'https://graph.facebook.com/v5.0/[FEED_USER_ID]/posts?access_token=[FEED_CLIENT_TOKEN]|[FEED_CLIENT_SECRET]&fields=full_picture,id,message,permalink_url,timeline_visibility,attachments{title,media_type,description,target{id},unshimmed_url}&limit=25',
     ),
     'feed_import_twitter' => array(
       'url' => 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=[FEED_USER_ID]',
