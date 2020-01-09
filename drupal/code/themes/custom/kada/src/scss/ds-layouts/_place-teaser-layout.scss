@@ -141,7 +141,37 @@
       }
     }
   }
+  // Added .ui-widget-content to be more specific to override .ui-widget-content a {} styles.
+  .ui-widget-content .place__link {
+    border: 1px solid $secondary-color;
+    color: $secondary-color;
+    display: inline-block;
+    font-family: $bergen-mono;
+    font-size: .875rem;
+    margin-top: .313rem;
+    padding: .625rem .875rem;
+    text-transform: uppercase;
 
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      font-size: 1.4rem;
+      margin-top: 1.25rem;
+    }
+
+    &::after {
+      @include fa('\f105', 1.1rem, 1, false);
+      margin-left: .938rem;
+
+      @media screen and (min-width: $mobile-menu-breakpoint) {
+        font-size: 1.75rem;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $secondary-color;
+      color: $white;
+    }
+  }
   .place__link {
     border: 1px solid $secondary-color;
     color: $secondary-color;
@@ -172,4 +202,5 @@
       color: $white;
     }
   }
+
 }
