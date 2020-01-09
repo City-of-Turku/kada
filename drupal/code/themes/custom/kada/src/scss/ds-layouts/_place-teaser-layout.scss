@@ -142,7 +142,7 @@
     }
   }
 
-  .place__link {
+  .ui-widget-content .place__link {
     border: 1px solid $secondary-color;
     color: $secondary-color;
     display: inline-block;
@@ -172,4 +172,5 @@
       color: $white;
     }
   }
+
 }
