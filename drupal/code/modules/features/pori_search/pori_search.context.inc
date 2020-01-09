@@ -91,6 +91,30 @@ function pori_search_context_default_contexts() {
           'region' => 'before_content',
           'weight' => '-10',
         ),
+        'views-kada_section_footer-block_5' => array(
+          'module' => 'views',
+          'delta' => 'kada_section_footer-block_5',
+          'region' => 'footer',
+          'weight' => '-10',
+        ),
+        'views-kada_section_footer-block_6' => array(
+          'module' => 'views',
+          'delta' => 'kada_section_footer-block_6',
+          'region' => 'footer',
+          'weight' => '-9',
+        ),
+        'views-kada_section_footer-block_7' => array(
+          'module' => 'views',
+          'delta' => 'kada_section_footer-block_7',
+          'region' => 'footer',
+          'weight' => '-8',
+        ),
+        'views-kada_section_footer-block_8' => array(
+          'module' => 'views',
+          'delta' => 'kada_section_footer-block_8',
+          'region' => 'footer',
+          'weight' => '-7',
+        ),
       ),
     ),
     'theme_html' => array(

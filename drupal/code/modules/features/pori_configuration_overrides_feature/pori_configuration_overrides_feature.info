@@ -55,5 +55,6 @@ features_exclude[features_overrides][field_group.group_street_address|node|place
 features_exclude[features_overrides][field_group.group_street_address|node|place|form.data|children|1] = field_group.group_street_address|node|place|form.data|children|1
 features_exclude[features_overrides][field_group.group_street_address|node|place|form.data|children|3] = field_group.group_street_address|node|place|form.data|children|3
 features_exclude[features_overrides][field_group.group_visiting_address|node|place|form.data|weight] = field_group.group_visiting_address|node|place|form.data|weight
+features_exclude[dependencies][kada_geo_feature] = kada_geo_feature
 features_exclude[dependencies][pori_attraction_feature] = pori_attraction_feature
 features_exclude[dependencies][visitpori_configurations] = visitpori_configurations

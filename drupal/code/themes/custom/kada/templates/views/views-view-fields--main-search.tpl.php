@@ -23,7 +23,13 @@
  *
  * @ingroup views_templates
  */
-$title = '<a href="' . substr($row->_entity_properties['domain_path'][0], 0, -1) . url("node/$row->entity") . '">' . $row->_entity_properties['title'] . '</a>';
+if(!empty($row->_entity_properties['title'][0]) && strlen($row->_entity_properties['title'][0]) > 1) {
+  $title_text = $row->_entity_properties['title'][0];
+}
+else {
+  $title_text = $row->_entity_properties['title'];
+}
+$title = '<a href="' . substr($row->_entity_properties['domain_path'][0], 0, -1) . url("node/$row->entity") . '">' . $title_text . '</a>';
 ?>
 <div class="search-result--container search-result--<?php print $row->_entity_properties['#attributes']['class']['page']; ?>
       theme-color-<?php print $row->_entity_properties['#attributes']['class']['theme']; ?>

@@ -126,7 +126,7 @@
   }
 
   .liftup-box--topic__container {
-    background-color: rgba($primary-color, .2);
+    background-color: $default-color-lighter;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -135,31 +135,13 @@
 
   .liftup-box__caption {
     color: $primary-color;
-    font-weight: 400;
+    font-weight: bold;
     margin: 1.25rem;
-  }
-
-  // Set theme colored borders.
-  @each $theme-color, $color in $theme-colors {
-    &.theme-color-#{$theme-color} {
-      .liftup-box--topic__container {
-        background-color: rgba($color, .2);
-      }
-
-      .liftup-box__image {
-        border-top: 12px solid $color !important;
-      }
-
-      .liftup-box__caption {
-        color: $color;
-        font-weight: 400;
-        margin: 1.25rem;
-      }
-    }
+    text-transform: none;
   }
 
   .liftup-box__image {
-    border-top: 12px solid $turku-black;
+    border-top: $liftup-border solid $green-dark;
     position: relative;
 
     // Image placeholder
@@ -185,6 +167,25 @@
       left: 0;
       position: absolute;
       top: 0;
+    }
+  }
+
+  // Set theme colored borders.
+  @each $theme-color, $color in $theme-colors {
+    &.theme-color-#{$theme-color} {
+      .liftup-box--topic__container {
+        background-color: rgba($color, .2);
+      }
+
+      .liftup-box__image {
+        border-top: $liftup-border solid $color !important;
+      }
+
+      .liftup-box__caption {
+        color: $color;
+        font-weight: 400;
+        margin: 1.25rem;
+      }
     }
   }
 }
@@ -275,8 +276,7 @@
   .node--page,
   .node--liftup {
     align-items: flex-start;
-    border-top: .938rem solid $primary-color;
-    background-color: rgba($primary-color, .2);
+    border-top: $liftup-border solid $green-dark;
     display: flex;
     flex-direction: column-reverse;
     margin: 0 auto;
@@ -286,7 +286,7 @@
     @each $theme-color, $color in $theme-colors {
       &.theme-color-#{$theme-color} {
         background-color: rgba($color, .2);
-        border-top: .938rem solid $color;
+        border-top: $liftup-border solid $color;
 
         .field--name-title h2,
         .field--name-field-visible-title h2 {
@@ -336,8 +336,8 @@
 
   .field--name-duplicate-title a,
   .field--name-field-link-to-content a {
-    border: 1px solid $primary-color;
-    color: $primary-color;
+    border: 1px solid $green-dark;
+    color: $green-dark;
     display: inline-block;
     margin-top: 2rem;
     padding: .65rem 1.5rem;
@@ -357,7 +357,7 @@
 
     &:hover,
     &:focus {
-      background-color: $primary-color;
+      background-color: $green-dark;
       color: $white;
     }
   }
@@ -419,6 +419,42 @@
   }
 }
 
+.views-field-field-liftup-1-3x4 {
+  .liftup-1-3x4-grid-item {
+    .field-collection-view {
+      margin: 0 $liftup-gutter 0 $liftup-gutter;
+      padding: $liftup-gutter 0 $liftup-gutter 0;
+    }
+    .liftup-1-3x4__content {
+      border-top: $liftup-border solid $orange;
+
+      .liftup-1-3x4__bottom {
+        padding: 25px;
+
+        .field--name-field-liftup-main-link {
+          text-align: center;
+          margin-bottom: 1.5rem;
+
+          a {
+            font-family: $bergen-mono;
+            font-weight: 600;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: $font-size-heading-3;
+            line-height: 1.2;
+            hyphens: auto;
+          }
+        }
+        .field--name-field-liftup-description-text {
+          font-size: $base-font-size-rem;
+          font-weight: 300;
+          letter-spacing: 0;
+        }
+      }
+    }
+  }
+}
+
 // Project liftup mobile spesific styles
 .view-kada-project-liftups {
   margin: 0 -1.25rem;
@@ -448,7 +484,7 @@
 
     @media screen and (min-width: $mobile-landscape-wide) {
       margin-top: 2rem;
-      padding: .5%;
+      padding: $liftup-gutter;
       width: 49.999%;
     }
 
@@ -472,7 +508,7 @@
     @each $theme-color, $color in $theme-colors {
       &.theme-color-#{$theme-color} {
         .liftup-box__header {
-          border-top: .938rem solid $color;
+          border-top: $liftup-border solid $color;
         }
 
         .field--name-title,
@@ -486,7 +522,7 @@
   }
 
   .liftup-box__header {
-    border-top: .938rem solid $primary-color;
+    border-top: $liftup-border solid $green-dark;
   }
 
   .field--name-title,

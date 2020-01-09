@@ -40,14 +40,6 @@ $primary-color-opacity-40: rgba($primary-color, .4);
 $primary-color-opacity-40: rgba($primary-color, .3);
 $primary-color-opacity-20: rgba($primary-color, .2);
 
-// Seconcary colors
-$secondary-color: #ec1c24;
-
-$secondary-color-darkest: lighten($secondary-color, 10%);
-$secondary-color-darker: lighten($secondary-color, 20%);
-$secondary-color-dark: lighten($secondary-color, 30%);
-$secondary-color-medium-dark: lighten($secondary-color, 40%);
-
 // General colors
 $link-color: #009bea;
 $link-color-hover: #005eb8;
@@ -64,15 +56,27 @@ $linkedin-color: #0077B5;
 $twitter-color: #55acee;
 $youtube-color: #FF0000;
 
-// businesspori colors
+// Businesspori colors
 $red-light: #E44E34;
 $red: #EC1C24;
 $blue: #005EB8;
 $yellow: #FFCD00;
 $orange: #FF8200;
-$green-dark: #007A33;
-$green: #00AF66;
+$orange-dark: #B35C00;
+$green-lime: #009A6C;
+$green-dark: #1E8566;
+$green: #26A982;
 $blue-light: #009BEA;
+$gray-menu: #F1F1F2;
+$light-blue: #B2E1D3;
+
+// Seconcary colors
+$secondary-color: $green-dark;
+
+$secondary-color-darkest: lighten($secondary-color, 10%);
+$secondary-color-darker: lighten($secondary-color, 20%);
+$secondary-color-dark: lighten($secondary-color, 30%);
+$secondary-color-medium-dark: lighten($secondary-color, 40%);
 
 $theme-colors: (
   'red': $red-light,
@@ -82,4 +86,6 @@ $theme-colors: (
   'green': $green,
   'white': $white,
   'blueLight': $blue-light,
+  'lightBlue': $light-blue,
+  'yellow': $yellow
 );

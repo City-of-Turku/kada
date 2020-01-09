@@ -53,6 +53,10 @@ function pori_configuration_form_views_exposed_form_alter(&$form, &$form_state, 
  */
 function pori_configuration_form_alter(&$form, &$form_state, $form_id) {
   // Node edit forms.
+  if(isset($form['#node_edit_form']) && $form['#node_edit_form'] == TRUE && $form_id == 'page_node_form') {
+    $form['field_liftup_video']['#access'] = FALSE;
+    $form['field_liftup_video_scrim']['#access'] = FALSE;
+  }
   if(isset($form['#node_edit_form']) && $form['#node_edit_form'] == TRUE) {
     global $user;
     // Web journalist get some additional permission grants.

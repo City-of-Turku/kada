@@ -385,6 +385,7 @@ function kada_some_content_feature_feed_import_form_validate($form, &$form_state
   $replace = array();
   $replace_fields = array(
     'feed_user_id',
+    'access_token_fb',
     'feed_client_token',
     'feed_client_secret',
     'access_token',
@@ -396,6 +397,15 @@ function kada_some_content_feature_feed_import_form_validate($form, &$form_state
 
       $replace['[' . strtoupper($field) . ']'] = $val;
     }
+  }
+  // If FB access token is used then replace client token and secret token combination
+  // with access_token_fb value and unset client token and secret. Use access_token
+  // primarily.
+  if (!empty($replace['[ACCESS_TOKEN_FB]'])) {
+    $replace['[FEED_CLIENT_TOKEN]|[FEED_CLIENT_SECRET]'] = $replace['[ACCESS_TOKEN_FB]'];
+    unset($replace['[FEED_CLIENT_TOKEN]']);
+    unset($replace['[FEED_CLIENT_SECRET]']);
+    unset($replace['[ACCESS_TOKEN_FB]']);
   }
   // Get fetcher key from form structure.
   $feeds_fetcher = array_keys($form_state['values']['feeds']);
@@ -414,7 +424,7 @@ function _kada_feed_content_type_config() {
       'url' => 'https://api.instagram.com/v1/users/[FEED_USER_ID]/media/recent/?client_id=[FEED_CLIENT_TOKEN]&access_token=[ACCESS_TOKEN]',
     ),
     'feed_import_facebook' => array(
-      'url' => 'https://graph.facebook.com/v2.8/[FEED_USER_ID]/posts?access_token=[FEED_CLIENT_TOKEN]|[FEED_CLIENT_SECRET]&fields=created_time,message,picture,link,name,caption,description,type,object_id',
+      'url' => 'https://graph.facebook.com/v5.0/[FEED_USER_ID]/posts?access_token=[FEED_CLIENT_TOKEN]|[FEED_CLIENT_SECRET]&fields=full_picture,created_time,id,message,permalink_url,timeline_visibility,attachments{title,media_type,description,target{id},unshimmed_url}&limit=25',
     ),
     'feed_import_twitter' => array(
       'url' => 'https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=[FEED_USER_ID]',
@@ -520,7 +530,7 @@ function kada_some_content_feature_generate_link($network, $some_id, $wrapper) {
       // syntax for the direct link. Using the profile page until then.
       return 'https://www.linkedin.com/';
     case 'twitter':
-      return 'http://twitter.com/statuses/' . $some_id;
+      return 'https://twitter.com/i/web/status/' . $some_id;
     case 'youtube':
       return 'http://www.youtube.com/watch?v=' . $some_id;
     default:

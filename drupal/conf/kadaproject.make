@@ -20,7 +20,7 @@ api = 2
 ; Core project
 ; ------------
 projects[drupal][type] = core
-projects[drupal][version] = "7.67"
+projects[drupal][version] = "7.69"
 
 ; Use vocabulary machine name for permissions (https://www.drupal.org/node/995156)
 projects[drupal][patch][995156] = https://www.drupal.org/files/issues/995156-5_portable_taxonomy_permissions.patch
@@ -248,6 +248,12 @@ projects[domain_views][subdir] = "contrib"
 projects[domain_views][download][type] = "git"
 projects[domain_views][download][url] = "http://git.drupal.org/project/domain_views.git"
 projects[domain_views][download][revision] = 074a167b82b0db9c19a3a9dddfb0f8e77e6ee068
+
+projects[domain_path][version] = 1.0-beta4
+projects[domain_path][subdir] = contrib
+
+projects[domain_path_rewrite][version] = 1.0-alpha4
+projects[domain_path_rewrite][subdir] = contrib
 
 projects[domaincontext][version] = 1.0-alpha1
 projects[domaincontext][subdir] = contrib
@@ -551,12 +557,16 @@ projects[redis][subdir] = contrib
 ; Patch to support Predis 1.0
 projects[redis][patch][] = "https://www.drupal.org/files/issues/redis-predis-path-183934-19.patch"
 
-projects[relation][version] = 1.1
+projects[relation][version] = 1.2
 projects[relation][subdir] = contrib
 projects[relation][patch][better_rules] = "https://www.drupal.org/files/issues/relation-query_endpoints-1302788-33.patch"
 
-projects[relation_add][version] = 1.6
+;projects[relation_add][version] = 1.6
+projects[relation_add][type] = module
 projects[relation_add][subdir] = contrib
+projects[relation_add][download][type] = "git"
+projects[relation_add][download][url] = "http://git.drupal.org/project/relation_add.git"
+projects[relation_add][download][revision] = "c4072c92db988e9f6ae355fb33ca8a0284fdbef3"
 projects[relation_add][patch][1993738] = "https://www.drupal.org/files/issues/2019-02-05/7.x-1.6-relation-add-weight-1993738-25.patch"
 
 projects[responsive_menus][version] = 1.7
@@ -756,7 +766,7 @@ projects[views_block_area][subdir] = contrib
 projects[warden][version] = 1.0
 projects[warden][subdir] = contrib
 
-projects[webform][version] = 4.19
+projects[webform][version] = 4.21
 projects[webform][subdir] = contrib
 
 projects[wysiwyg][type] = "module"
