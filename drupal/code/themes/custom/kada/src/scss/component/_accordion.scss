@@ -25,6 +25,16 @@
     color: $black;
     background-color: $gray-lighter;
     border: 0 none;
+    a {
+      color: $link-color;
+      text-decoration: none;
+      transition: all 150ms linear;
+
+      &:hover,
+      &:focus {
+        color: $link-color-hover;
+      }
+    }
   }
 
   .ui-accordion-header-icon {
