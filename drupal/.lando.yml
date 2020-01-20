@@ -38,13 +38,14 @@ services:
       - appserver
   memcached:
     type: memcached
-    mem: 512
-    portforward: 11211
+    portforward: true
+    run:
+      - /bin/sh -c '/opt/bitnami/memcached/bin/memcached start -d'
   node:
     type: node
   # redis:
   #   type: redis
-  #   portforward: true
+  #   portforward: true 
   solr:
     type: solr:5
     config:
@@ -82,8 +83,6 @@ proxy:
     - pori-mail.lndo.site
   adminer:
     - pori-adminer.lndo.site
-  solr:
-    - pori-solr.lndo.site:8983
 
 events:
   post-db-import:
