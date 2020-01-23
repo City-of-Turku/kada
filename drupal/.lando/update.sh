@@ -59,5 +59,7 @@ php -r "print json_encode("-1");" | drush vset --format=json httprl_server_addr 
 drush "$local" cc drush
 drush "$local" cc all
 
-# Generate login URL.
+# Generate login URLs.
 drush "$local" uli
+drush @pori.v.local uli
+drush @pori.b.local uli

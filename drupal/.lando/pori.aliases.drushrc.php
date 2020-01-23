@@ -41,6 +41,12 @@ $aliases['local'] = [
   ],
 ];
 
+$aliases['v.local'] = $aliases['local'];
+$aliases['v.local']['uri'] = 'https://visitpori.lndo.site';
+
+$aliases['b.local'] = $aliases['local'];
+$aliases['b.local']['uri'] = 'https://businesspori.lndo.site';
+
 $aliases['dev'] = array(
   'uri' => 'https://pori.dev.wunder.io',
   'remote-user' => 'www-admin',
@@ -58,6 +64,12 @@ $aliases['dev'] = array(
     ),
   ),
 );
+
+$aliases['v.dev'] = $aliases['dev'];
+$aliases['v.dev']['uri'] = 'https://visitpori.dev.wunder.io';
+
+$aliases['b.dev'] = $aliases['stage'];
+$aliases['b.dev']['uri'] = 'https://businesspori.dev.wunder.io';
 
 $aliases['stage'] = array(
   'uri' => 'https://pori.stage.wunder.io',
@@ -80,8 +92,11 @@ $aliases['stage'] = array(
 $aliases['v.stage'] = $aliases['stage'];
 $aliases['v.stage']['uri'] = 'https://visitpori.stage.wunder.io';
 
+$aliases['b.stage'] = $aliases['stage'];
+$aliases['b.stage']['uri'] = 'https://businesspori.stage.wunder.io';
+
 $aliases['prod'] = array(
-  'uri' => 'https://beta.pori.fi',
+  'uri' => 'https://www.pori.fi',
   'remote-user' => 'www-admin',
   'remote-host' => 'pori.prod.wunder.io',
   'root' => '/var/www/pori.prod.wunder.io/current/web',
@@ -100,3 +115,6 @@ $aliases['prod'] = array(
 
 $aliases['v.prod'] = $aliases['stage'];
 $aliases['v.prod']['uri'] = 'https://www.visitpori.fi';
+
+$aliases['b.prod'] = $aliases['stage'];
+$aliases['b.prod']['uri'] = 'https://www.businesspori.fi';
