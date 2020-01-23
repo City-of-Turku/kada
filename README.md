@@ -5,12 +5,12 @@
 ### Setup
 
 1. Install the latest [Lando](https://docs.lando.dev/basics/installation.html) and read the [documentation](https://docs.lando.dev/).
-2. Setup your public key: <https://key.wunder.io> and/or <https://www.ssh.com/ssh/copy-id>.
-3. Check out the repo and go to the project root: `git clone git@github.com:City-of-Pori/pori-kada.git pori && cd pori/drupal`
-4. Start the site by running `lando start`.
-5. Import data:
-   1. `lando syncdb <env>` ([set up your public key](https://key.wunder.io) first if needed) or
+2. Check out the repo and go to the project root: `git clone git@github.com:City-of-Pori/pori-kada.git pori && cd pori/drupal`
+3. Start the site by running `lando start`.
+4. Import data:
+   1. `lando syncdb <env>` ([set up your public key](https://key.wunder.io) & connect to VPN first if needed) or
    2. `lando db-import <dumpfile>`.
+5. Update the database & activate local settings: `lando update`.
 
 ### Local sites
 
@@ -45,7 +45,6 @@
 
 - <https://pori-adminer.lndo.site> - Adminer for database management, log in **without** entering the credentials.
 - <https://pori-mail.lndo.site> - Mailhog for mail management.
-- <https://pori-solr.lndo.site> - Solr for data indexing.
 
 ### Tools
 
