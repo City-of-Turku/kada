@@ -340,7 +340,7 @@ projects[features_extra][version] = 1.0
 projects[features_extra][subdir] = contrib
 
 projects[features_override][version] = 2.0-rc3
-projects[features_extra][subdir] = contrib
+projects[features_override][subdir] = contrib
 
 projects[field_collection][version] = 1.0-beta12
 projects[field_collection][subdir] = contrib
