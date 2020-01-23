@@ -28,7 +28,7 @@
 
 Full commands/tools overview is available at `lando`. Custom tools:
 
-- `lando build.sh` - use `build.sh`. `lando build.sh update lando` updates makefile changes.
+- `lando build` - build the local site, incl. run makefile.
 - `lando npm` - use npm
 - `lando syncdb <env>` - synchronise local database with selected environment (`stage` by default, `prod`)
 - `lando update` - update database & enable develpoment components

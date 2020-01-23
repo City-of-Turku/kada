@@ -19,10 +19,7 @@ services:
     portforward: true
   appserver:
     build:
-      - /app/.lando/aliases.sh
-      - /app/build.sh update lando
-    build_as_root:
-      - apt-get update -y && apt-get install python-yaml -y
+      - /app/.lando/build.sh
     overrides:
       environment:
         WKV_SITE_ENV: lando
@@ -52,10 +49,10 @@ services:
       dir: web/sites/all/modules/contrib/search_api_solr/solr-conf/5.x
 
 tooling:
-  build.sh:
-    description: Executes build.sh
+  build:
+    description: Builds the local site
     cmd:
-      - appserver: /app/build.sh
+      - appserver: /app/.lando/build.sh
   drush:
     description: Runs Drush from webroot
     cmd:
