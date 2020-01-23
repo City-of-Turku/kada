@@ -46,6 +46,15 @@ drush "$local" vset site_mail "admin@example.com"
 # Set imagemagick convert path
 # drush "$local" vset imagemagick_convert "/opt/local/bin/convert"
 
+# Override the httprl settings.
+# If set to -1 httprl will use the host name
+#instead of an IP address for self-server requests.
+drush "$local" vset httprl_server_hostname "pori.lndo.site"
+drush vset httprl_non_blocking_fclose_delay "5"
+# drush vset doesn't work for negative values, use workaround.
+# @see https://drupal.stackexchange.com/a/246301/90763
+php -r "print json_encode("-1");" | drush vset --format=json httprl_server_addr - --y
+
 # Clear caches.
 drush "$local" cc drush
 drush "$local" cc all

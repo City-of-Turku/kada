@@ -102,3 +102,7 @@ $conf['menu_override_parent_selector'] = true;
 // SimpleSAMLphp_auth paths
 // $conf['simplesamlphp_auth_login_path'] = 'login';
 // $conf['simplesamlphp_auth_installdir'] = '/conf/simplesaml';
+
+# SSL cert problems when using PHP 5.6+
+# @see: https://www.drupal.org/project/httprl/issues/2780147#comment-11748659
+$conf['drupal_ssl_context_options'] = ['verify_peer_name' => FALSE, 'verify_peer' => FALSE];
