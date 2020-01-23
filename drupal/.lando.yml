@@ -53,10 +53,6 @@ tooling:
     description: Builds the local site
     cmd:
       - appserver: /app/.lando/build.sh
-  drush:
-    description: Runs Drush from webroot
-    cmd:
-      - appserver: /var/www/.composer/vendor/bin/drush --root=/app/web
   node:
     service: node
   npm:
