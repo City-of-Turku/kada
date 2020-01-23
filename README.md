@@ -12,11 +12,34 @@
    1. `lando syncdb <env>` ([set up your public key](https://key.wunder.io) first if needed) or
    2. `lando db-import <dumpfile>`.
 
-### Sites
+### Local sites
 
 - <https://pori.lndo.site>
 - <https://businesspori.lndo.site>
 - <https://visitpori.lndo.site>
+
+### Site aliases
+
+#### pori.fi
+
+- @pori.dev
+- @pori.local
+- @pori.prod
+- @pori.stage
+
+#### businesspori.fi
+
+- @pori.b.dev
+- @pori.b.local
+- @pori.b.prod
+- @pori.b.stage
+
+#### visitpori.fi
+
+- @pori.v.dev
+- @pori.v.local
+- @pori.v.prod
+- @pori.v.stage
 
 ### Services
 
@@ -29,9 +52,9 @@
 Full commands/tools overview is available at `lando`. Custom tools:
 
 - `lando build` - build the local site, incl. run makefile.
-- `lando npm` - use npm
-- `lando syncdb <env>` - synchronise local database with selected environment (`stage` by default, `prod`)
-- `lando update` - update database & enable develpoment components
+- `lando npm` - use npm.
+- `lando syncdb <env>` - synchronise local database with selected environment (`stage` by default, `prod`).
+- `lando update` - update database & enable develpoment components.
 
 ## Local environment with Vagrant
 
