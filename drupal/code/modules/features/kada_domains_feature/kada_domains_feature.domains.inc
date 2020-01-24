@@ -67,6 +67,11 @@ function kada_domains_feature_domain_alias_default_aliases() {
       'redirect' => 0,
       'machine_name' => 'pori_fi',
     ),
+    'pori.lndo.site' => array(
+      'pattern' => 'pori.lndo.site',
+      'redirect' => 0,
+      'machine_name' => 'pori_fi',
+    ),
   );
   $domain_aliases['tapahtumat_pori_fi'] = array();
   $domain_aliases['visitpori_fi'] = array(
@@ -97,6 +102,11 @@ function kada_domains_feature_domain_alias_default_aliases() {
     ),
     'local.visitpori.fi:8095' => array(
       'pattern' => 'local.visitpori.fi:8095',
+      'redirect' => 0,
+      'machine_name' => 'visitpori_fi',
+    ),
+    'visitpori.lndo.site' => array(
+      'pattern' => 'visitpori.lndo.site',
       'redirect' => 0,
       'machine_name' => 'visitpori_fi',
     ),

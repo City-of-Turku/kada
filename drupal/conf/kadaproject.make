@@ -340,7 +340,7 @@ projects[features_extra][version] = 1.0
 projects[features_extra][subdir] = contrib
 
 projects[features_override][version] = 2.0-rc3
-projects[features_extra][subdir] = contrib
+projects[features_override][subdir] = contrib
 
 projects[field_collection][version] = 1.0-beta12
 projects[field_collection][subdir] = contrib
@@ -415,8 +415,13 @@ projects[honeypot][subdir] = contrib
 projects[hotjar][version] = 1.2
 projects[hotjar][subdir] = contrib
 
-projects[httprl][version] = 1.14
+; SSL cert problems when using PHP 5.6+
+; @see: https://www.drupal.org/project/httprl/issues/2780147#comment-11748659
+projects[httprl][version] = 1.x-dev
 projects[httprl][subdir] = contrib
+projects[httprl][download][type] = "git"
+projects[httprl][download][url] = "http://git.drupal.org/project/httprl.git"
+projects[httprl][download][revision] = "21f1d202f30bc4af888c0fab8618c8d606fb9c3d"
 
 projects[i18n][version] = 1.18
 projects[i18n][subdir] = contrib
