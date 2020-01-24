@@ -54,6 +54,9 @@ Full commands/tools overview is available at `lando`. Custom tools:
 - `lando npm` - use npm.
 - `lando syncdb <env>` - synchronise local database with selected environment (`stage` by default, `prod`).
 - `lando update` - update database & enable develpoment components.
+- `lando phpcs`, `lando phpcbf`- use PHP_CodeSniffer:
+  - Use Drupal & DrupalPractice standard for selected extensions: `lando phpcs --standard=Drupal,DrupalPractice sites/all/modules --extensions=php,inc,module,install`
+  - Check `code` folder for PHP 7.2 compatibility using [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility) standard: `lando phpcs --standard=PHPCompatibility --extensions=php,inc,module,install --report-full=report_72.txt --runtime-set testVersion 7.2 -ps code`,
 
 ## Local environment with Vagrant
 

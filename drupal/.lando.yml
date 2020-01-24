@@ -53,6 +53,14 @@ tooling:
     description: Builds the local site
     cmd:
       - appserver: /app/.lando/build.sh
+  phpcbf:
+    description: Runs phpcbf
+    cmd:
+      - appserver: /var/www/.composer/vendor/bin/phpcbf
+  phpcs:
+    description: Runs phpcs
+    cmd:
+      - appserver: /var/www/.composer/vendor/bin/phpcs
   node:
     service: node
   npm:

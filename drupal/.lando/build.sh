@@ -1,6 +1,14 @@
 #!/bin/bash
 set -exu
 
+# Install php_codesniffer & dependencies.
+cd /var/www/.composer/
+rm -rf composer.lock vendor
+composer require --dev squizlabs/php_codesniffer
+composer require --dev dealerdirect/phpcodesniffer-composer-installer
+composer require --dev phpcompatibility/php-compatibility:*
+composer require --dev drupal/coder:^8.3.7
+
 # Symlink the aliases file.
 rm -Rf $HOME/.drush
 mkdir -p $HOME/.drush
