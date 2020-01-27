@@ -77,7 +77,7 @@ lando:
     - code/themes/custom: sites/all/themes/custom
     - code/profiles/kadaprofile: profiles/kadaprofile
     - .lando/settings.php: sites/default/settings.php
-    - conf/lando.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
+    - .lando/radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
 
   # We can provide local commands or override global ones.
   local_commands:

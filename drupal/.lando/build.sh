@@ -30,7 +30,7 @@ drush @pori.local make conf/kadaproject.make web
 chmod -R a+w /app/web
 ln -sfv /app/files web/sites/default
 ln -sfv /app/.lando/settings.php web/sites/default/settings.php 
-ln -sfv /app/.lando/lando.radioactivity-bootstrap.cfg.inc web/sites/default/radioactivity-bootstrap.cfg.inc
+ln -sfv /app/.lando/radioactivity-bootstrap.cfg.inc web/sites/default/radioactivity-bootstrap.cfg.inc
 ln -sfv /app/code/modules/custom web/sites/all/modules
 ln -sfv /app/code/modules/features web/sites/all/modules
 ln -sfv /app/code/themes/custom web/sites/all/themes
