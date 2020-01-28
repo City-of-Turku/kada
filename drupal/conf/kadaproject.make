@@ -687,10 +687,6 @@ projects[system_status][subdir] = contrib
 projects[taxonomy_access_fix][version] = 2.4
 projects[taxonomy_access_fix][subdir] = contrib
 
-projects[taxonomy_csv][version] = 5.10
-projects[taxonomy_csv][subdir] = contrib
-projects[taxonomy_csv][patch][] = "https://www.drupal.org/files/issues/fatal_error_break-2833513-3.patch"
-
 projects[taxonomy_display][version] = 1.1
 projects[taxonomy_display][subdir] = contrib
 
