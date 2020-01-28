@@ -1,12 +1,74 @@
 # Pori project
 
-## Vagrant local setup
+## Local environment with Lando
+
+### Setup
+
+1. Install the latest [Lando](https://docs.lando.dev/basics/installation.html) and read the [documentation](https://docs.lando.dev/).
+2. Check out the repo and go to the project root: `git clone git@github.com:City-of-Pori/pori-kada.git pori && cd pori/drupal`
+3. Start the site by running `lando start`.
+4. Import data:
+   1. `lando syncdb <env>` ([set up your public key](https://key.wunder.io) & connect to VPN first if needed) or
+   2. `lando db-import <dumpfile>`.
+5. Update the database & activate local settings: `lando update`.
+
+### Local sites
+
+- <https://pori.lndo.site>
+- <https://businesspori.lndo.site>
+- <https://visitpori.lndo.site>
+
+### Site aliases
+
+#### pori.fi
+
+- @pori.dev
+- @pori.local
+- @pori.prod
+- @pori.stage
+
+#### businesspori.fi
+
+- @pori.b.dev
+- @pori.b.local
+- @pori.b.prod
+- @pori.b.stage
+
+#### visitpori.fi
+
+- @pori.v.dev
+- @pori.v.local
+- @pori.v.prod
+- @pori.v.stage
+
+### Services
+
+- <https://pori-adminer.lndo.site> - Adminer for database management, log in **without** entering the credentials.
+- <https://pori-mail.lndo.site> - Mailhog for mail management.
+
+### Tools
+
+Full commands/tools overview is available at `lando`. Custom tools:
+
+- `lando build` - build the local site, incl. run makefile.
+- `lando npm` - use npm.
+- `lando syncdb <env>` - synchronise local database with selected environment (`stage` by default, `prod`).
+- `lando update` - update database & enable develpoment components.
+- `lando phpcs`, `lando phpcbf`- use PHP_CodeSniffer:
+  - Use Drupal & DrupalPractice standard for selected extensions: `lando phpcs --standard=Drupal,DrupalPractice sites/all/modules --extensions=php,inc,module,install`
+  - Check `code` folder for PHP 7.2 compatibility using [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility) standard: `lando phpcs --standard=PHPCompatibility --extensions=php,inc,module,install --report-full=report_72.txt --runtime-set testVersion 7.2 -ps code`,
+
+## Local environment with Vagrant
 
 Fire up the vagrant environment
 
-`vagrant up`
+```sh
+vagrant up
+```
 
 Create a new build
+
+Make sure drupal/files directory exists. If not create manually.
 
 ```sh
 vagrant ssh
@@ -14,13 +76,11 @@ cd /vagrant/drupal
 ./build.sh new
 ```
 
-Synchronise the database from production
+Synchronise the database from production.
 
-`cd .. && ./syncdb.sh`
-
-or manually using dumpfile
-
-a) create a dumpfile:
+```sh
+cd .. && ./syncdb.sh
+```
 
 ```sh
 ssh www-admin@pori.prod.wunder.io
@@ -41,15 +101,9 @@ drush fra -y // reverts all features, use when needed
 drush uli --uri=https://local.pori.fi
 ```
 
-Update the site
-
-`./build.sh update`
-
-Local domains:
-
-- <https://local.pori.fi>
-- <https://local.visitpori.fi>
-- <https://local.businesspori.fi>
+```sh
+./build.sh update
+```
 
 ## Developer notes
 
@@ -61,12 +115,7 @@ All new features must be based on the `master` branch.
 All hotfixes must be based on the `production` branch.
 The `develop` branch is used only for testing and must never be merged back to master.
 
-### Tips
-
-- You can use drush aliases to execute drush commands without loggin into the servers or vagrant box. For example `drush @pori.local cc css-js`.
-- Use `en` language while generating features.
-- Use `drush uli` with `--uri` option to get the correct login URL. Works also with subdomains, for example: `drush uli --uri=https://local.businesspori.fi`.
-- Make sure you have assigned all (sub)domains needed in your account (see _Domain access settings_) for the sites functionality to work properly (Scald widget for example).
+Tip: You can use drush aliases to execute drush commands without loggin into the servers or vagrant box. For example `drush @pori.local cc css-js`.
 
 ### Folder structure
 

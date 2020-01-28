@@ -67,6 +67,38 @@ default:
       #- drush: composer-manager update -y
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
 
+# Lando environment:
+lando:
+
+  link:
+    - files: sites/default/files
+    - code/modules/custom: sites/all/modules/custom
+    - code/modules/features: sites/all/modules/features
+    - code/themes/custom: sites/all/themes/custom
+    - code/profiles/kadaprofile: profiles/kadaprofile
+    - .lando/settings.php: sites/default/settings.php
+    - conf/lando.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
+
+  # We can provide local commands or override global ones.
+  local_commands:
+
+    update:
+      - shell: mkdir -vp /app/files
+      - shell: chmod -R a+w /app/files
+      - shell: mkdir -vp /app/files_private
+      - shell: chmod -R a+w /app/files_private
+      - make
+      # - backup:
+      #     ignore:
+      #       - sites/default/files
+      - shell: chmod -R a+w web
+      - finalize
+      # - update
+      - cleanup
+      # - shell: cd web && drush en devel -y
+      # - shell: cd web && drush cc drush && drush composer-json-rebuild -y
+      # - shell: cd web && drush composer-manager update -y
+
 # Test environment:
 develop:
 
