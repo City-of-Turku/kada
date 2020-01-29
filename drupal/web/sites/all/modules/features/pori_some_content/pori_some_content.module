@@ -1,0 +1,45 @@
+<?php
+/**
+ * @file
+ * Code for the Pori some content feature.
+ */
+
+include_once 'pori_some_content.features.inc';
+
+/**
+ * Implements hook_entity_presave().
+ */
+function pori_some_content_entity_presave($entity, $type) {
+  if (empty($entity->type) || $entity->type != 'social_media_update') {
+    return;
+  }
+  if (isset($entity->feeds_item->feed_nid)) {
+    // If the importer has promote set, promote the imported node instead.
+    $importer = node_load($entity->feeds_item->feed_nid);
+    if ($importer->promote) {
+      $entity->promote = 1;
+    }
+    if (!empty($importer->domains)) {
+      $entity->domains = $importer->domains;
+      $entity->domain_source = $importer->domain_source;
+      $entity->domain_site = $importer->domain_site;
+    }
+  }
+  return;
+}
+
+/**
+ * Implements hook_feeds_before_import().
+ *
+ * Override the Twitter API credentials from environment variables.
+ */
+function pori_some_content_feeds_before_import(FeedsSource $source) {
+  $fetcher = $source->importer->fetcher;
+  if ($fetcher->getConfig()['authenticator'] == 'kada_some_content_feature_get_tokens_twitter') {
+    $creds = array(
+      'consumer_key' => getenv('twitter_consumer_key'),
+      'consumer_secret' => getenv('twitter_consumer_secret'),
+    );
+    $fetcher->addConfig($creds);
+  }
+}

@@ -1,0 +1,40 @@
+<?php
+/**
+ * @file
+ * Code for the KADA News feature.
+ */
+
+include_once 'kada_news_feature.features.inc';
+
+function kada_news_feature_block_info() {
+  return array(
+    'news_archive_link' => array(
+      'info' => t('Link to news archive'),
+      'cache' => DRUPAL_CACHE_GLOBAL,
+    ),
+  );
+}
+
+function kada_news_feature_block_view($delta = '') {
+  $block = array();
+  if ($delta == 'news_archive_link') {
+    global $language, $_domain;
+    if ($language->language == 'fi') {
+      $url = 'uutisarkisto';
+    }
+    elseif ($language->language == 'en' ) {
+      $url = 'news-archive';
+    }
+    elseif ($language->language == 'sv' ) {
+      $url = 'nyhetsarkiv';
+    }
+    if ($_domain['machine_name'] == 'visitpori_fi') {
+      $url = 'visitpori/' . $url;
+    }
+    if ($_domain['machine_name'] == 'businesspori_fi') {
+      //$url = 'businesspori/' . $url;
+    }
+    $block['content'] = l(t('Read more news'), $url);
+  }
+  return $block;
+}

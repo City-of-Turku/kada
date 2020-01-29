@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the KADA Landing page feature.
+ */
+
+include_once 'kada_landing_page_feature.features.inc';

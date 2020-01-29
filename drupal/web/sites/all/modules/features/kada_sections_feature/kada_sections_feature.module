@@ -1,0 +1,228 @@
+<?php
+/**
+ * @file
+ * Code for the KADA Sections feature.
+ */
+
+include_once 'kada_sections_feature.features.inc';
+
+
+/**
+ * Implements hook_init();
+ */
+function kada_sections_feature_init(){
+  kada_sections_feature_set_og_context();
+}
+
+/**
+ * Set the correct og_context() for currently handed event node.
+ * Only manipulate context if an event is added to multiple sections,
+ * and we can find a specific group which matches current language.
+ */
+function kada_sections_feature_set_og_context(){
+  if (arg(0) == 'node') {
+    $node = menu_get_object();
+    global $language;
+
+    // If we have multiple groups, get one.
+    $group = kada_sections_feature_get_section_based_on_language($node, 2);
+    // Set og context from a group node with the same language.
+    if (!empty($group) && $group->language == $language->language) {
+      og_context('node', $group);
+      return;
+    }
+  }
+}
+
+/**
+* Helper used to find currently active section based on language.
+*/
+function kada_sections_feature_get_section_based_on_language($node, $min_groups = 1, $lang_code = ''){
+  global $language;
+  if (empty($lang_code)) {
+    $lang_code = $language->language;
+  }
+
+  $group_nids = kada_sections_feature_fetch_group_nids($node);
+
+  // Only try to find the correct section if enough groups exist.
+  if (!empty($group_nids) && count($group_nids) >= $min_groups) {
+    foreach ($group_nids as $nid) {
+      $group = node_load($nid);
+      // Return the group node if the language matches.
+      if (!empty($group) && $group->language == $lang_code) {
+        return $group;
+      }
+    }
+  }
+  return NULL;
+}
+
+/**
+ * Implements hook_validate();
+ */
+function kada_sections_feature_node_validate($node, $form, &$form_state) {
+  if ($node->type == 'section') {
+    // If more than one domain was chosen
+    if (count(array_filter($form_state['input']['domains'])) > 1) {
+      // Display error
+      form_set_error('domains', t('Please choose only one domain per section.'));
+    }
+    else {
+      $domain_id = reset($node->domains);
+      $domain = domain_lookup($domain_id);
+
+      if (is_array($domain) && !$domain['is_default']) {
+        // Make sure it's not the default domain
+        if (module_exists('domain_variable_i18n') && module_exists('variable_store')) {
+          // Storing the frontpage multilingual with variable_store module
+          $realm = 'domain_language';
+          $key = $domain['machine_name'] . ':' . $node->language;
+          $name = 'site_frontpage';
+          $nid = $node->nid;
+          $value = 'node/' . $nid;
+          $domain_frontpage = variable_store_get($realm, $key, $name);
+
+          if (empty($nid)) {
+            // When adding a new section, check if there is already a frontpage
+            if (!empty($domain_frontpage)) {
+              $message_with_link = t('This section already has <a href="@edit-link">a frontpage for this language</a>, please edit that instead.', array('@edit-link' => url($domain_frontpage)));
+              form_set_error('domains', $message_with_link);
+            }
+          }
+          else {
+            // Editing an existing section, make sure user is editing the same
+            // section node which is the frontpage and not trying to change the
+            // domain of existing section. That would leave a frontpage variable
+            // for the old domain and prevent creating a new frontpage for it.
+            if (empty($domain_frontpage)) {
+              // No frontpage for selected domain exist
+              // I think we are good to go then!
+              // $message_with_link = t('This section is a frontpage of another domain, so the domain cannot be changed. Please <a href="@edit-link">add a new section</a>, if you want to add a new frontpage for existing domain. And delete this section if it is not needed.', array('@edit-link' => url('node/add/section')));
+              // form_set_error('domains', $message_with_link);
+            }
+            elseif ($domain_frontpage != $value) {
+              // Domain already has a frontpage
+              $message_with_link = t('The selected domain already has <a href="@edit-link">a frontpage for this language</a>, please edit that section instead.', array('@edit-link' => url($domain_frontpage)));
+              form_set_error('domains', $message_with_link);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_entity_delete();
+ */
+function kada_sections_feature_entity_delete($entity, $type) {
+  // When deleting a section from other than default domain, remove the custom
+  // variable which was created during section creation.
+  if (isset($entity->type) && $entity->type == 'section') {
+    $domain_id = reset($entity->domains);
+    $domain = domain_lookup($domain_id);
+    if (is_array($domain) && !$domain['is_default']) {
+      if (module_exists('domain_variable_i18n') && module_exists('variable_store')) {
+        $nid = $entity->nid;
+        // Removing the domain front page variable if it's this node
+        $realm = 'domain_language';
+        $key = $domain['machine_name'] . ':' . $entity->language;
+        $name = 'site_frontpage';
+        $value = 'node/' . $nid;
+        $domain_frontpage = variable_store_get($realm, $key, $name);
+        if ($domain_frontpage == $value) {
+          variable_store_del($realm, $key, $name);
+          drupal_set_message(t('This domain does not have a front page anymore.'));
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_form_alter();
+ */
+function kada_sections_feature_form_section_node_form_alter(&$form, &$form_state, $form_id) {
+  // Add a checkbox to let admins define if this section overrides domain frontpage value
+  $form['domain']['set_domain_frontpage'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Set frontpage of the domain'),
+  );
+  $form['domain']['set_domain_frontpage_confirm'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Confirm domain frontpage setting'),
+    '#description' => t('Existing frontpage setting for this language will be discarded. Type "yes" if you understand.'),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="set_domain_frontpage"]' => array('checked' => TRUE),
+      ),
+    ),
+  );
+  // Define additional validate and submit functions to process domain frontpage settings
+  $form['#validate'][] = 'kada_sections_feature_form_section_node_form_validate';
+  $form['#submit'][] = 'kada_sections_feature_form_section_node_form_submit';
+}
+
+/**
+ * Submit handler for custom form elements defined in hook_form_alter
+ */
+function kada_sections_feature_form_section_node_form_validate($form, &$form_state) {
+  // Make sure the admin has really understood the consequences
+  if ($form_state['values']['set_domain_frontpage'] && $form_state['values']['set_domain_frontpage_confirm'] != 'yes') {
+    form_set_error('set_domain_frontpage_confirm', 'Please confirm section frontpage setting by typing "yes".');
+  }
+}
+
+/**
+ * Submit handler for custom form elements defined in hook_form_alter
+ */
+function kada_sections_feature_form_section_node_form_submit($form, &$form_state) {
+  if ($form_state['values']['set_domain_frontpage']) {
+    $node = $form_state['node'];
+    // @TODO: Need to maybe write a validate function if somebody tries to
+    // assign a section to several domains
+    $domain_id = reset($node->domains);
+    $domain = domain_lookup($domain_id);
+    // Do not ever react on default domain
+    if (is_array($domain) && !$domain['is_default']) {
+      if (module_exists('domain_variable_i18n') && module_exists('variable_store')) {
+        $nid = $node->nid;
+        // Storing the frontpage multilingual with variable_store module
+        $realm = 'domain_language';
+        $key = $domain['machine_name'] . ':' . $node->language;
+        $name = 'site_frontpage';
+        $value = 'node/' . $nid;
+        $current_domain_frontpage = variable_store_get($realm, $key, $name);
+        variable_store_set($realm, $key, $name, $value);
+        drupal_set_message(t('This is now the front page for the domain'));
+      }
+    }
+  }
+}
+
+/**
+* Helper to find out if node has multiple groups.
+* Returns false if no groups were found, and an array of nids
+* if groups were found.
+*/
+function kada_sections_feature_fetch_group_nids(&$node, $node_type = 'event') {
+  if (empty($node->nid)) {
+    return false;
+  }
+  if ($node_type != 'any' && $node_type != $node->type) {
+    return false;
+  }
+  if (empty($node->og_group_ref[LANGUAGE_NONE])) {
+    return false;
+  }
+
+  // We got this far, so we have at least one group. Fetch all nids.
+  $group_nids = array();
+  foreach ($node->og_group_ref[LANGUAGE_NONE] as $group) {
+    if (!empty($group['target_id'])) {
+      $group_nids[$group['target_id']] = $group['target_id'];
+    }
+  }
+  return $group_nids;
+}

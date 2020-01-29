@@ -1,0 +1,69 @@
+<?php
+/**
+ * @file
+ * Code for the KADA Service offer feature.
+ */
+
+include_once 'kada_service_offer_feature.features.inc';
+
+/**
+ * Implementation of hook_form_alter()
+ */
+function kada_service_offer_feature_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == "service_offer_node_form") {
+    // If content editor is using a link from place page to create a new service
+    // offer, then try to fetch the given node and prepopulate the form with the
+    // matching title + nid
+    if (isset($_GET['place_id'])) {
+      $place_nid = $_GET['place_id'];
+      $place = node_load($place_nid);
+      $place_wrapper = entity_metadata_wrapper('node', $place);
+      $title = $place_wrapper->title->value();
+      // Set relation target node to the form in the format Relation module
+      //  wants them
+      $form['field_provided_at']['und'][0]['relation_options']['targets']['target_2']['#default_value'] = "$title [node:$place_nid]";
+    }
+  }
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function kada_service_offer_feature_block_info() {
+  $blocks = array();
+  $blocks['service_offer_add'] = array(
+    'info' => t('Add a service offer to place block'),
+  );
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function kada_service_offer_feature_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'service_offer_add':
+      // Display links to add a new service offer or edit the current place node
+      if (arg(1) != NULL) {
+        global $language;
+        $nid = arg(1);
+        if (empty($language->prefix)) {
+          // Add language profix to URLs if there is one
+          $add_service_url = '/node/add/service-offer?place_id=' . $nid;
+          $edit_place_url = '/node/' . $nid . '/edit';
+        } else {
+          $add_service_url = '/' . $language->prefix . '/node/add/service-offer?place_id=' . $nid;
+          $edit_place_url = '/' . $language->prefix . '/node/' . $nid . '/edit';
+        }
+        $content = '<ul><li><a href="' . $add_service_url . '">' . t("Add a <strong>new</strong> service offer") .' </a></li><li><a href="' . $edit_place_url .'">' . t("Add an existing service offer") . '</a></li></ul>';
+      }
+      if (!empty($content)) {
+        $block['subject'] = t('Add a service offer to this place');
+        $block['content'] = $content;
+      }
+      break;
+  }
+  return $block;
+}

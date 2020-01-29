@@ -1,0 +1,159 @@
+<?php
+/**
+ * @file
+ * Code for the KADA Domains feature.
+ */
+
+define('ADMIN_ROLE_MACHINE_NAME', 'admin');
+include_once 'kada_domains_feature.features.inc';
+
+/**
+ * Implements hook_init()
+ * Handle domain redirects for viewing nodes
+ */
+function kada_domains_feature_init() {
+  // Make sure we react only on node view mode.
+  if (arg(0) != 'node' || arg(2)) {
+    return;
+  }
+
+  // Get page object
+  // TO-DO: this might not be node
+  $node = menu_get_object();
+  if (arg(0) != 'node' || arg(2)) {
+    return;
+  }
+
+  // Check if content is inside a section.
+  if (isset($node->og_group_ref['und']['0'])) {
+    // If content belongs to more than one section, don't redirect anywhere.
+    //
+    // NOTE: This might not be the best way to handle for example
+    // theatre-events.
+    // Currently we avoid some redirect issues by handling linking to event
+    // node in a specific (or rather hardcoded) way depending on domain/groups.
+    // See: tkufi_events_division_event_url()
+    // Solution options:
+    // a) find out the first section in currently active language
+    // b) or just use the primary group anyway, the sections should be in the
+    //    same domain
+    //  --> going with a).
+
+    // Find the correct language version of the section, if there are multiple.
+    $section_in_current_language = kada_sections_feature_get_section_based_on_language($node, 2);
+
+    // If we have a section of the current language, let's go with that.
+    if (!empty($section_in_current_language)) {
+      $section = $section_in_current_language;
+    }
+    // Otherwise choose the only section.
+    elseif (count($node->og_group_ref['und']) == 1) {
+      // Get the first section.
+      $section = node_load($node->og_group_ref['und']['0']['target_id']);
+    }
+    // And if we don't have a language match and still have multiple choices,
+    // we can't make an educated guess. Bail out.
+    else {
+      return;
+    }
+
+    // Make sure we have domain set on the section.
+    if (!isset($section->domains) || !is_array($section->domains)) {
+      return;
+    }
+
+    // Gather variables for domain evaluations.
+    global $_domain;
+    $default_domain = domain_lookup(1);
+    $section_domain = domain_get_node_match($section->nid);
+
+    // Redirect rules back to default domain
+    // More than one domain, we need to redirect to default domain
+    if (count($section->domains) > 1 && !$_domain['is_default']) {
+      $domain = 'http://' . rtrim($default_domain['subdomain'], '/');
+      drupal_goto(url(drupal_get_path_alias(), array('absolute' => TRUE, 'base_url' => $domain)));
+    }
+    // Redirect rules to specific domain
+    // Section should have one domain only, check if we are not currently in it
+    if (!isset($section->domains[$_domain['domain_id']])) {
+      $domain = rtrim($section_domain['path'], '/');
+      drupal_goto(url(drupal_get_path_alias(), array('absolute' => TRUE, 'base_url' => $domain)), array(), 301);
+    }
+  }
+  elseif (!in_array($node->type, array('section', 'event', 'liftup'))) {
+    // Redirect to default domain when content doesn't have a section with
+    // a different domain assigned, or it's not a section itself.
+    // Gather variables for domain evaluations.
+    global $_domain;
+    $default_domain = domain_lookup(5);
+    // Redirect happens only when user is not already in default domain and if
+    // we found the default domain.
+    if (!$_domain['is_default'] && $default_domain != -1) {
+      $domain = 'http://' . rtrim($default_domain['subdomain'], '/');
+      drupal_goto(url(drupal_get_path_alias(), array('absolute' => TRUE, 'base_url' => $domain)), array(), 301);
+    }
+  }
+}
+
+/**
+ * Implementation of hook_rules_action_info().
+ */
+function kada_domains_feature_rules_action_info() {
+  return array(
+    'kada_domains_feature_rules_action_node_domain_copy' => array(
+      'label' => t('Copy domain settings from node A to node B'),
+      'parameter' => array(
+        'source_node' => array(
+          'type' => 'node',
+          'label' => t('Source node - take domain settings from this'),
+          'restriction' => 'selector',
+        ),
+        'target_node' => array(
+          'type' => 'node',
+          'label' => t('Target node - override domain settings for this node based on source node.
+                      Note: this entity needs to be saved in a separate action.'),
+          'restriction' => 'selector',
+        ),
+      ),
+      'group' => t('Domain Integration'),
+      'base' => 'kada_domains_feature_rules_action_node_domain_copy',
+    ),
+  );
+}
+
+/**
+ * Rules Action Callback that changes domain settings for nodes.
+ *
+ * Note: domain assignment is required for nodes.
+ */
+function kada_domains_feature_rules_action_node_domain_copy($source_node, $target_node) {
+  if (!empty($source_node->nid) && !empty($target_node->type)){
+    $target_node->domains = $source_node->domains;
+    $target_node->domain_source = $source_node->domain_source;
+    $target_node->domain_site = $source_node->domain_site;
+  }
+}
+
+
+function kada_domains_feature_form_alter(&$form, &$form_state, $form_id) {
+  global $user;
+  $is_admin = in_array(ADMIN_ROLE_MACHINE_NAME, array_values($user->roles));
+
+  // All the node forms which have the domain selection option enabled:
+  if (isset($form['domain']['domain_site'])) {
+
+    // Administrators:
+    if ($is_admin) {
+      // Set the default value to false (do not publish to all domains.
+      $form['domain']['domain_site']['#default_value'] = FALSE;
+    }
+    // "Normal" content editors:
+    else {
+      // Hide the checkbox "Send to all affiliates" (content published to all domains)
+      // and set the value to false.
+      $form['domain']['domain_site'] = array('#type' => 'value', '#value' => FALSE);
+
+    }
+
+  }
+}

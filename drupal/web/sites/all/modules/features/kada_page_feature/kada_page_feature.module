@@ -1,0 +1,153 @@
+<?php
+/**
+ * @file
+ * Code for the KADA Page feature.
+ */
+
+include_once 'kada_page_feature.features.inc';
+
+function kada_page_feature_views_post_execute(&$view) {
+  $kada_page_classes = &drupal_static('kada_page_classes');
+
+  if ($view->name == 'kada_pages' && $view->current_display == 'top_image') {
+    if (!empty($view->result)) {
+      $result = reset($view->result);
+
+      foreach (array('field_field_main_image', 'field_field_main_image_1', 'field_field_main_image_2', 'field_field_main_image_3') as $field) {
+        if (!empty($result->{$field})) {
+          $kada_page_classes = 'has-main-image';
+          break;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function kada_page_feature_field_formatter_info() {
+  return array(
+    'kada_page_service_offering_formatter' => array( //Machine name of the formatter
+      'label' => t('Service offering'),
+      'field types' => array('entityreference'), //This will only be available to entity reference fields
+      'settings' => array(
+        'view_mode' => 'teaser', // Default is 'teaser'
+      ),
+    ),
+    'link_to_search' => array(
+      'label' => t('Link to search page'),
+      'field types' => array('taxonomy_term_reference'),
+    )
+  );
+}
+
+/**
+ * Implements hook_field_formatter_settings_form().
+ */
+function kada_page_feature_field_formatter_settings_form($field, $instance, $view_mode, $form, &$form_state) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+
+  // Get the list of display modes for the content type 'page'
+  $view_mode_settings = field_view_mode_settings($instance['entity_type'], $instance['bundle']);
+  $view_mode_names = array_keys($view_mode_settings);
+  // Create an associated array where key and value are the same:
+  $options = array_combine($view_mode_names, $view_mode_names);
+
+  $element = array();
+  $element['view_mode'] = array(
+    '#type' => 'select',
+    '#title' => t('View mode'),
+    '#default_value' => $settings['view_mode'],
+    '#options' => $options,
+  );
+  return $element;
+}
+
+/**
+ * Implements hook_field_formatter_settings_summary().
+ */
+function kada_page_feature_field_formatter_settings_summary($field, $instance, $view_mode) {
+  $display = $instance['display'][$view_mode];
+  $settings = $display['settings'];
+  $summary = t('Use @view_mode to display @content_type items', array(
+    '@view_mode' => $settings['view_mode'],
+    '@content_type' => 'place',
+  ));
+  return $summary;
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function kada_page_feature_field_formatter_view($entity_type, $node, $field, $instance, $langcode, $items, $display) {
+  $result = array();
+
+  $settings = $display['settings'];
+  $view_mode = $settings['view_mode'];
+
+  if ($display['type'] == 'kada_page_service_offering_formatter') {
+    foreach ($items as $delta => $item) {
+      // Protect ourselves from recursive rendering.
+      static $depth = 0;
+      $depth++;
+      if ($depth > 20) {
+        throw new Exception(t('Recursive rendering detected when rendering entity @entity_type(@entity_id). Aborting rendering.', array('@entity_type' => $entity_type, '@entity_id' => $item['target_id'])));
+      }
+
+      $service_offer_node = node_load($item['target_id']);
+      // 'field_provided_at' is available in the 'service_offer' content type
+      if (isset($service_offer_node->field_provided_at)) {
+        foreach($service_offer_node->field_provided_at as $relations) {
+          foreach ($relations as $relation_data) {
+            if ($relation_data['relation_type'] == 'place_service') {
+              $place_nid = $relation_data['endpoints'][LANGUAGE_NONE][0]['entity_id'];
+              $place_node = node_load($place_nid);
+              $result[$delta][] = node_view($place_node, $view_mode, $langcode);
+            }
+          }
+        }
+
+        drupal_add_js(drupal_get_path('module', 'kada_page_feature') . '/js/accordion_config.js');
+      }
+
+      $depth = 0;
+    }
+
+    drupal_add_library('system', 'ui.accordion');
+  }
+
+  if ($display['type'] == 'link_to_search') {
+    foreach ($items as $delta => $item) {
+      $tid = $item['tid'];
+      $term = taxonomy_term_load($tid);
+      $result[$delta] = array('#markup' => '<a href="' . $base_url . '/search/keyword/' . $tid . '">' . $term->name . '</a>');
+    }
+  }
+
+  return $result;
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function kada_page_feature_form_alter(&$form, &$form_state, $form_id) {
+  $node_forms = array(
+    'page_node_form',
+  );
+  // Set of page nids that are used to front pages.
+  $frontpage_nids = ['125', '126'];
+  // If page form but not front page NID then don't show 1-3x4 fieldgroup.
+  if (in_array($form_id, $node_forms) && !in_array($form['nid']['#value'], $frontpage_nids)) {
+    unset($form['#groups']['group_liftups_1_3x4']);
+    unset($form['#fieldgroups']['group_liftups_1_3x4']);
+    unset($form['field_liftup_1_3x4']);
+  }
+  // Hide places title if field_service_offering is empty.
+  $form['field_places_title']['#states'] = [
+    'invisible' => array(
+      ':input[name="field_service_offering[und]"]' => array('value' => ''),
+    ),
+  ];
+}

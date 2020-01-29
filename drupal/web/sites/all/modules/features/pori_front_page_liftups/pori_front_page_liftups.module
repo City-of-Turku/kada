@@ -1,0 +1,64 @@
+<?php
+/**
+ * @file
+ * Code for the Pori front page liftups feature.
+ */
+
+include_once 'pori_front_page_liftups.features.inc';
+
+
+/**
+ * Implements hook_quicktabs_alter().
+ *
+ * If we are on the front page, hide quicktabs that are not enabled via
+ * the current tabs pseudo-configuration on the front page node
+ */
+function pori_front_page_liftups_quicktabs_alter(&$quicktabs) {
+  if ($quicktabs->machine_name == 'feed_tabs_frontpage_promoted_con' ||
+    $quicktabs->machine_name == 'feed_tabs' ||
+    $quicktabs->machine_name == 'feed_tabs_section') {
+    $node = menu_get_object();
+    if ($node) {
+      $mapping = array(
+        'tab_news' => 'news',
+        'tab_nearby' => 'nearby',
+        'tab_facebook' => 'facebook',
+        'tab_twitter' => 'twitter',
+        'tab_instagram' => 'instagram',
+        'tab_linkedin' => 'linkedin',
+        'tab_youtube' => 'youtube',
+        'tab_blogs' => 'blogs',
+        'tab_section_news' => 'news',
+        'tab_section_nearby' => 'nearby',
+        'tab_section_facebook' => 'facebook',
+        'tab_section_twitter' => 'twitter',
+        'tab_section_instagram' => 'instagram',
+        'tab_section_linkedin' => 'linkedin',
+        'tab_section_youtube' => 'youtube',
+        'tab_section_blogs' => 'blogs'
+      );
+      $enabled_qtabs = array_map(function($e) { return $e['value']; }, $node->field_feed_tabs[LANGUAGE_NONE]);
+      $count = count($quicktabs->tabs);
+      for ($i = 0; $i < $count; $i++) {
+        if (isset($quicktabs->tabs[$i]['display']) &&
+          !in_array($mapping[$quicktabs->tabs[$i]['display']], $enabled_qtabs)) {
+          unset($quicktabs->tabs[$i]);
+        }
+        elseif (isset($quicktabs->tabs[$i]['bid']) &&
+          $quicktabs->tabs[$i]['bid'] == 'kada_liftups_feature_delta_current_combined' &&
+          !in_array('new', $enabled_qtabs)) {
+          unset($quicktabs->tabs[$i]);
+        }
+        elseif (isset($quicktabs->tabs[$i]['bid']) &&
+          $quicktabs->tabs[$i]['bid'] == 'kada_liftups_feature_delta_current_combined_section' &&
+          !in_array('new', $enabled_qtabs)) {
+          unset($quicktabs->tabs[$i]);
+        }
+      }
+      // Make quicktabs titles translatable.
+      foreach ($quicktabs->tabs as $key => $tab) {
+        $quicktabs->tabs[$key]['title'] = t($quicktabs->tabs[$key]['title']);
+      }
+    }
+  }
+}

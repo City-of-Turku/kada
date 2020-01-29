@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Code for the Business Pori configurations feature.
+ */
+
+include_once 'business_pori_configurations.features.inc';
+
+/**
+ * Implements hook_form_alter().
+ */
+function business_pori_configurations_form_alter(&$form, &$form_state, $form_id) {
+  $domain = domain_get_domain();
+  if($domain['machine_name'] == 'businesspori_fi' && $form['#id'] == 'views-exposed-form-pori-news-page') {
+    // Unset unwanted exposedm filters.
+    unset($form['field_theme_tid']);
+    unset($form['field_target_audience_tid']);
+    unset($form['#info']['filter-field_theme_tid']);
+    unset($form['#info']['filter-field_target_audience_tid']);
+  }
+}

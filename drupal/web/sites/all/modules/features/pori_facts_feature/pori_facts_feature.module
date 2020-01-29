@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Pori Facts feature.
+ */
+
+include_once 'pori_facts_feature.features.inc';

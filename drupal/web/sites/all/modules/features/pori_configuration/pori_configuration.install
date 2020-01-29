@@ -1,0 +1,95 @@
+<?php
+
+/**
+ * Enable the overrides module.
+ */
+function pori_configuration_update_7100(&$sandbox) {
+  module_enable(array('pori_configuration_overrides_feature'));
+}
+
+/**
+ * Enable domain_views module.
+ */
+function pori_configuration_update_7101(&$sandbox) {
+  module_enable(array('domain_views'));
+}
+
+/**
+ * Enable content_lock module.
+ */
+function pori_configuration_update_7102(&$sandbox) {
+  module_enable(array('content_lock'));
+}
+
+/**
+ * Enable contact information feature.
+ */
+function pori_configuration_update_7103(&$sandbox) {
+  module_enable(array('pori_contact_information_feature'));
+}
+
+/**
+ * Enables domain configuration module
+ */
+function pori_configuration_update_7104(&$sandbox) {
+  module_enable(array('domain_conf'));
+}
+
+/**
+ * Enable widget feature.
+ */
+function pori_configuration_update_7105(&$sandbox) {
+  module_enable(array('pori_widget_feature'));
+}
+
+/**
+ * Enable the entity_action_log module.
+ */
+function pori_configuration_update_7106(&$sandbox) {
+  module_enable(array('entity_action_log'));
+}
+
+/**
+ * Enable the bigmenu module.
+ */
+function pori_configuration_update_7107(&$sandbox) {
+  module_enable(array('bigmenu'));
+}
+
+/**
+ * Enable the Section override feature.
+ */
+function pori_configuration_update_7108(&$sandbox) {
+  module_enable(array('pori_section_override_feature'));
+}
+
+/**
+ * Remove Radioactivity.
+ */
+function pori_configuration_update_7109(&$sandbox) {
+  field_delete_field('field_radioactivity');
+  field_purge_batch(50);
+  module_disable(array('radioactivity'));
+  drupal_uninstall_modules(array('radioactivity'));
+}
+
+/*
+ * Enable the API feature.
+ */
+function pori_configuration_update_7110(&$sandbox) {
+  module_enable(array('pori_api_feature'));
+}
+
+/**
+ * Enable the error page feature
+ */
+function pori_configuration_update_7111(&$sandbox) {
+  module_enable(array('pori_error_pages'));
+}
+
+/**
+ * Enable the Domains Metatag module.
+ */
+function pori_configuration_update_7112(&$sandbox) {
+  module_enable(array('domains_metatag'));
+}
