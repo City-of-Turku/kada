@@ -4,7 +4,6 @@ config:
   php: '7.3'
   via: nginx
   webroot: web
-  drush: ^8
   config:
     vhosts: ./.lando/drupal7.conf
 
@@ -56,11 +55,11 @@ tooling:
   phpcbf:
     description: Runs phpcbf
     cmd:
-      - appserver: /var/www/.composer/vendor/bin/phpcbf
+      - appserver: /app/vendor/bin/phpcbf
   phpcs:
     description: Runs phpcs
     cmd:
-      - appserver: /var/www/.composer/vendor/bin/phpcs
+      - appserver: /app/vendor/bin/phpcs
   node:
     service: node
   npm:
