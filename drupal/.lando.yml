@@ -17,6 +17,9 @@ services:
         - /app/.lando/adminer.sh
     portforward: true
   appserver:
+    build_as_root:
+      - "apt-get update -y"
+      - "apt-get install python-yaml -y"
     build:
       - /app/.lando/build.sh
     overrides:
@@ -49,15 +52,19 @@ services:
 
 tooling:
   build:
-    description: Builds the local site
+    description: Build the local site.
     cmd:
       - appserver: /app/.lando/build.sh
+  build.sh:
+    description: Run build.sh commands.
+    cmd:
+      - appserver: /app/build.sh
   phpcbf:
-    description: Runs phpcbf
+    description: Run phpcbf commands.
     cmd:
       - appserver: /app/vendor/bin/phpcbf
   phpcs:
-    description: Runs phpcs
+    description: Run phpcs commands.
     cmd:
       - appserver: /app/vendor/bin/phpcs
   node:
@@ -65,12 +72,12 @@ tooling:
   npm:
     service: node
   syncdb:
-    description: Synchronizes local db with selected env (lando syncdb dev/prod)
+    description: Synchronize local db with selected env (lando syncdb stage/prod).
     cmd:
       - appserver: /app/.lando/syncdb.sh
       # - appserver: /app/.lando/update.sh
   update:
-    description: Updates local site with development settings
+    description: Update local site with development settings.
     cmd:
       - appserver: /app/.lando/update.sh
 
