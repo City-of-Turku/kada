@@ -1,0 +1,484 @@
+<?php
+
+/**
+ * @file
+ * KADA event management for external users.
+ */
+
+module_load_include('inc', 'node', 'node.pages');
+
+/**
+ * Implements hook_menu().
+ *
+ * @TODO: Figure out correct access restriction.
+ */
+function kada_event_ext_menu() {
+  $items['event/add'] = array(
+    'title' => 'Create event',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('kada_event_ext_event_translations_form'),
+    'access callback' => 'user_access',
+    'access arguments' => array('access content overview'),
+    );
+  return $items;
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function kada_event_ext_form_event_node_form_alter(&$form, &$form_state) {
+  // Hide the ext image fields in node form.
+  $form['field_content_image_ext_rights']['#access'] = FALSE;
+  $form['field_content_image_ext']['#access'] = FALSE;
+}
+
+/**
+ * Documentation (@TODO).
+ */
+function kada_event_ext_event_translations_form($form, &$form_state) {
+  // Define an array of data for the entities to show in the form.
+  $entity_data = array();
+
+  $languages = array('fi', 'sv', 'en');
+  $hide_fields = array(
+    'field_provided_at',
+    'field_content_image_et',
+    'field_related_content_et',
+    'field_keywords_et',
+    'field_radioactivity',
+    'field_event_import_id',
+    'og_group_ref',
+  );
+
+  // Separate translatable and shared fields.
+  $fields = array();
+  $shared_fields = array();
+  foreach (field_info_instances('node', 'event') as $instance) {
+    $field_name = $instance['field_name'];
+    // Don't add hidden fields to the list.
+    if (in_array($field_name, $hide_fields)) {
+      continue;
+    }
+    $field = field_info_field($field_name);
+    if ($field['translatable']) {
+      $fields[] = $field_name;
+    }
+    else {
+      $shared_fields[] = $field_name;
+    }
+  }
+
+  // Fields for all languages.
+  $entity_type = 'node';
+  $entity = entity_create($entity_type, array('type' => 'event'));
+  $entity->language = 'und';
+  $entity_data[] = array(
+    'entity_type' => 'node',
+    'entity' => $entity,
+    'fields' => $shared_fields,
+    'fieldset' => t("Shared between languages"),
+  );
+
+  foreach ($languages as $lang_code) {
+    // Create entity per language.
+    $entity_type = 'node';
+    $entity = entity_create($entity_type, array('type' => 'event'));
+    $entity->language = $lang_code;
+    $entity_data[] = array(
+      'entity_type' => 'node',
+      'entity' => $entity,
+      'fields' => $fields,
+      'fieldset' => t("Language: @lang_code", array('@lang_code' => $lang_code)),
+    );
+  }
+
+  $form['language_tabs'] = array(
+    '#type' => 'horizontal_tabs',
+    '#tree' => TRUE,
+    '#weight' => 2,
+  );
+
+  $form['language_tabs'] +=
+    multiple_entity_form($form['language_tabs'], $form_state, $entity_data);
+
+  $form_by_lang = array();
+  // Figure out the source language.
+  foreach ($form['language_tabs']['#entity_form_keys'] as $form_key) {
+    $form_by_lang[$form['language_tabs'][$form_key]['#entity']->language] = $form_key;
+  }
+
+  foreach ($form['language_tabs']['#entity_form_keys'] as $entity_key) {
+    $subform = &$form['language_tabs'][$entity_key];
+    // It's a lang-specific tab.
+    if (!empty($subform['title_field'])) {
+      // Guess the lang.
+      foreach ($languages as $lang_candidate) {
+        if (isset($subform['title_field'][$lang_candidate])) {
+          // @TODO: Check if this really does something, commented out for now.
+          // $lang = $lang_candidate;
+          break;
+        }
+      }
+    }
+
+    // Hide Scald Mee resource manager.
+    if (isset($subform['field_description'])) {
+      $field = &$subform['field_description'][$subform['field_description']['#language']][0];
+      unset($field['mee']);
+      unset($field['#attached']);
+    }
+
+    $subform['#node_edit_form'] = TRUE;
+    field_group_attach_groups($subform, 'form');
+    $subform += array(
+      '#pre_render' => array('field_group_form_pre_render'),
+      '#collapsible' => FALSE,
+      '#collapsed' => FALSE,
+    );
+  }
+
+  // Anonymous users cannot create events in series nor attach them to
+  // event series.
+  unset($form['language_tabs']['node:new_0']['field_date_type']['und']['#options']['sub']);
+  unset($form['language_tabs']['node:new_0']['field_super_event']);
+
+  // N/A selection is useless, but Drupal creates it automatically for required
+  // fields. Let's get rid of that!
+  unset($form['language_tabs']['node:new_0']['field_date_type']['und']['#options']['_none']);
+
+  // Disabling "Add more" button for date repeat field, which is normally
+  // done by date_repeat_field module.
+  $form['language_tabs']['node:new_0']['field_date_repeat']['und']['add_more']['#access'] = FALSE;
+
+  // Conditional fields won't work on this custom form because of changed css id
+  // values, so we need to do some Form API #states magic here.
+  // Hide repeat fields when user is adding a single event.
+  $form['language_tabs']['node:new_0']['field_date_repeat']['#states'] = array(
+    'invisible' => array(
+      ':input[name="node:new_0[field_date_type][und]"]' => array('value' => 'single'),
+    ),
+  );
+  $form['language_tabs']['node:new_0']['field_date_repeat_extra']['#states'] = array(
+    'invisible' => array(
+      ':input[name="node:new_0[field_date_type][und]"]' => array('value' => 'single'),
+    ),
+  );
+
+  // Display image field only if user has checked the rights checkbox.
+  $form['language_tabs']['node:new_0']['field_content_image_ext']['#states'] = array(
+    'visible' => array(
+      ':input[name="node:new_0[field_content_image_ext_rights][und]"]' => array('checked' => TRUE),
+    ),
+  );
+
+  // Custom submit function for geocoder button because of our custom form
+  // structure will not work with the default submit function.
+  $form['language_tabs']['node:new_0']['field_location']['und'][0]['use_geocoder']['#submit'][0] = 'kada_event_ext_use_geocoder_submit';
+
+  // Custom validate function for date_repeat field.
+  $form['language_tabs']['node:new_0']['field_date_repeat']['und'][0]['#element_validate'][] = 'kada_event_ext_date_repeat_widget_validate';
+
+  $form['#attached']['css'][] = drupal_get_path('module', 'field_group') . '/horizontal-tabs/horizontal-tabs.css';
+  $form['#attached']['js'][] = drupal_get_path('module', 'field_group') . '/horizontal-tabs/horizontal-tabs.js';
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Add translated event'),
+    '#validate' => array('kada_event_ext_event_translations_validate'),
+    '#submit' => array('kada_event_ext_event_translations_submit'),
+    '#limit_validation_errors' => array(array($form_by_lang['und'])),
+    '#weight' => 99,
+    '#prefix' => '<p class="submit__info">' . t('Do not save while filling the form. Fill information to all tabs and save when completed. You cannot edit your event after saving.') . '</p>',
+  );
+
+  // Add honeypot check to form.
+  honeypot_add_form_protection($form, $form_state, array('honeypot', 'time_restriction'));
+
+  $form['#after_build'][] = 'kada_event_ext_after_build';
+
+  return $form;
+}
+
+/**
+ * Documentation (@TODO).
+ */
+function kada_event_ext_event_translations_validate(&$form, &$form_state) {
+  foreach ($form['language_tabs']['#entity_form_keys'] as $key => $form_key) {
+    if (!isset($form_state['values'][$form_key]['title_field'])) {
+      continue;
+    }
+    reset($form_state['values'][$form_key]['title_field']);
+    $lang = key($form_state['values'][$form_key]['title_field']);
+    if (empty($form_state['values'][$form_key]['title_field'][$lang][0]['value'])) {
+      unset($form['language_tabs']['#entity_form_keys'][$key]);
+    }
+    else {
+      // Clear the validation preventers.
+      _kada_event_ext_clear_key($form['language_tabs'][$form_key], '#limit_validation_errors');
+      _kada_event_ext_clear_key($form_state['triggering_element'], '#limit_validation_errors');
+      _kada_event_ext_clear_key($form['language_tabs'][$form_key], '#validated');
+      drupal_static_reset('form_set_error');
+      drupal_static_reset('form_set_error:limit_validation_errors');
+
+      // Run the validation.
+      _form_validate($form['language_tabs'][$form_key], $form_state);
+    }
+  }
+  // If no languages have been entered,
+  // throw a validation error on the FI title.
+  if (count($form['language_tabs']['#entity_form_keys']) <= 1) {
+    _kada_event_ext_clear_key($form['language_tabs']['node:new_1'], '#limit_validation_errors');
+    _kada_event_ext_clear_key($form_state['triggering_element'], '#limit_validation_errors');
+    drupal_static_reset('form_set_error:limit_validation_errors');
+
+    form_set_error('node:new_1][title_field][fi][0][value', t('At least one language must be submitted!'));
+  }
+
+  // Custom validation for date repeat fields to make sure that time is given.
+  // @TODO: Probably should find out why the default validation doesn't work.
+  // That'd probably cause prettier error msgs than this hack.
+  $date_repeat_fields = array(
+    'field_event_date',
+    'field_date_repeat',
+    'field_date_repeat_extra',
+  );
+  $validation_errors = FALSE;
+  foreach ($date_repeat_fields as $field_name) {
+    foreach ($form_state['input']['node:new_0'][$field_name]['und'] as $key => $value) {
+      // If start value has date but no time.
+      if (!empty($form_state['input']['node:new_0'][$field_name]['und'][$key]['value']['date']) && empty($form_state['input']['node:new_0'][$field_name]['und'][$key]['value']['time'])) {
+        form_set_error('node:new_0][' . $field_name . '][und][' . $key . '][value', t('You need to give time together with a date value.'));
+        $validation_errors = TRUE;
+      }
+      // If end value has date but no time.
+      if (!empty($form_state['input']['node:new_0'][$field_name]['und'][$key]['value2']['date']) && empty($form_state['input']['node:new_0'][$field_name]['und'][$key]['value2']['time'])) {
+        form_set_error('node:new_0][' . $field_name . '][und][' . $key . '][value', t('You need to give time together with a date value.'));
+        $validation_errors = TRUE;
+      }
+    }
+  }
+
+  // We need to stop further validation because there seems to be a problem
+  // with date repeat module when validating values.
+  if ($validation_errors) {
+    return;
+  }
+}
+
+/**
+ * Documentation (@TODO).
+ */
+function _kada_event_ext_clear_key(&$parent, $key) {
+  unset($parent[$key]);
+  foreach ($parent as $k => &$v) {
+    if (is_array($v)) {
+      _kada_event_ext_clear_key($v, $key);
+    }
+  }
+}
+
+/**
+ * Documentation (@TODO).
+ */
+function kada_event_ext_event_translations_submit($form, &$form_state) {
+  multiple_entity_form_submit($form['language_tabs'], $form_state);
+
+  $source_language = '';
+  $source_wrapper = NULL;
+  $source_entity = NULL;
+  $handler = NULL;
+
+  $languages = array('fi', 'sv', 'en');
+  $form_by_lang = array();
+  // Figure out the source language.
+  foreach ($form['language_tabs']['#entity_form_keys'] as $form_key) {
+    $form_by_lang[$form['language_tabs'][$form_key]['#entity']->language] = $form_key;
+  }
+
+  // Choose the source language and save it.
+  foreach ($languages as $lang_code) {
+    if (!empty($form_by_lang[$lang_code])) {
+      $source_entity = $form['language_tabs'][$form_by_lang[$lang_code]]['#entity'];
+      $source_language = $source_entity->language;
+      $source_wrapper = entity_metadata_wrapper('node', $source_entity);
+      // Set the title_field value to core title.
+      $source_entity->title = $source_wrapper->title_field->value();
+
+      // Get the translation handler in place.
+      $handler = entity_translation_get_handler('node', $source_entity);
+
+      // Copy untranslatable field values to source entity.
+      $entity = $form['language_tabs'][$form_by_lang[LANGUAGE_NONE]]['#entity'];
+      foreach (field_info_instances('node', $source_entity->type) as $instance) {
+        $field_name = $instance['field_name'];
+        $field = field_info_field($field_name);
+        if (!$field['translatable']) {
+          $value = $entity->{$field_name}[LANGUAGE_NONE];
+          $source_entity->{$field_name}[LANGUAGE_NONE] = $value;
+        }
+      }
+
+      // The source language was already done,
+      // don't do it again as a translation.
+      $key = array_search($form_by_lang[$lang_code], $form['language_tabs']['#entity_form_keys']);
+      unset($form['language_tabs']['#entity_form_keys'][$key]);
+      $key = array_search(LANGUAGE_NONE, $form['language_tabs']['#entity_form_keys']);
+      unset($form['language_tabs']['#entity_form_keys'][$key]);
+      break;
+    }
+  }
+
+  // This shouldn't really happen.
+  if (empty($source_entity)) {
+    return FALSE;
+  }
+
+  // Save the translations.
+  foreach ($form['language_tabs']['#entity_form_keys'] as $form_key) {
+    $entity = $form['language_tabs'][$form_key]['#entity'];
+
+    // Copy translatable field values to translations.
+    foreach (field_info_instances('node', $entity->type) as $instance) {
+      $field_name = $instance['field_name'];
+      $field = field_info_field($field_name);
+      if ($field['translatable']) {
+        $value = $entity->{$field_name}[$entity->language];
+        $source_entity->{$field_name}[$entity->language] = $value;
+      }
+    }
+
+    $translation = array(
+      'translate' => 0,
+      'status' => 1,
+    // Here is the target language.
+      'language' => $entity->language,
+    // Here is the source language.
+      'source' => $source_language,
+    );
+
+    $handler->setTranslation($translation);
+  }
+
+  if (!user_is_logged_in()) {
+    $source_entity->status = NODE_NOT_PUBLISHED;
+  }
+
+  // Set the domain.
+  $source_entity->domain_source = 16;
+  $source_entity->domains = array(16 => 16);
+  // Save the formed translated entity.
+  $source_wrapper->save();
+
+  // Create url alias for translations.
+  // This is necessary in order for the translated node get a correct alias.
+  unset($source_entity->translations->data[$source_entity->translations->original]);
+  foreach ($source_entity->translations->data as $lang_code => $value) {
+    pathauto_node_update_alias($source_entity, 'update', array('language' => $lang_code));
+  }
+
+  drupal_set_message(t('Event %title has been saved. You can now create another one if necessary.', array('%title' => $source_entity->title)), 'status');
+  // @TODO: drupal_goto() breaks the submit chain and hooks, needs fix.
+  drupal_goto('event/add');
+  return ' ';
+}
+
+/**
+ * Short desciption missing (@TODO).
+ *
+ * Custom submit callback for geocoder widget form. Copied and alter from
+ * geofield module's openlayers_use_geocoder_submit() function. Geocoder module
+ * assumes that the field used for geocoding is always on the form array root
+ * level, which is not the case in the custom form.
+ */
+function kada_event_ext_use_geocoder_submit($form, &$form_state) {
+  $button = $form_state['triggering_element'];
+
+  // Go one level up in the form, to the widgets container.
+  $element = drupal_array_get_nested_value($form, array_slice($button['#array_parents'], 0, -1));
+  $field_name = $element['#field_name'];
+  $langcode = $element['#language'];
+  $delta = $element['#delta'];
+  $parents = $element['#field_parents'];
+
+  // Set the widget value based on geocoding results.
+  $field_state = field_form_get_state($parents, $field_name, $langcode, $form_state);
+  $geocoder_field = $field_state['instance']['widget']['settings']['geocoder_field'];
+  $geocoder_field_lang = $form['language_tabs']['node:new_0'][$geocoder_field]['#language'];
+
+  if ($field_value = geocoder_widget_get_field_value($element['#entity_type'], $field_state['instance'], NULL, $form_state['input']['node:new_0'][$geocoder_field][$geocoder_field_lang])) {
+    geophp_load();
+    $geometry = geoPHP::load($field_value[$langcode][$delta]['geom']);
+    // OpenLayers can only use WKT, so translate.
+    $field_value[$langcode][$delta]['geom'] = $geometry->out('wkt');
+    $field_value[$langcode][$delta]['input_format'] = 'wkt';
+    // Override the field's value in the 'input' array to substitute the new
+    // field value for the one that was submitted.
+    drupal_array_set_nested_value($form_state, array_merge(array('values'), $parents, array($field_name)), $field_value);
+  }
+}
+
+/**
+ * Custom validation for date repeat form element.
+ *
+ * Limit creation of repeating events to 20, so that anonymous users cannot
+ * cause harm for server with huge amounts of events. Copied and altered from
+ * date_repeat_field module and patch from issue
+ * https://www.drupal.org/node/2051033
+ */
+function kada_event_ext_date_repeat_widget_validate($element, &$form_state) {
+  $field = field_widget_field($element, $form_state);
+  if (empty($field['settings']['repeat'])) {
+    return;
+  }
+
+  module_load_include('inc', 'date_repeat', 'date_repeat_form');
+
+  // Here 'values' returns an array of input values, which includes
+  // the original RRULE, as a string
+  // and 'input' returns an array of the form elements created by the
+  // repeating date widget, with
+  // RRULE values as an array of the selected elements and their chosen values.
+  $item = drupal_array_get_nested_value(
+    $form_state['values'],
+    $element['#parents'],
+    $input_exists);
+
+  $input = drupal_array_get_nested_value(
+    $form_state['input'],
+    $element['#parents'],
+    $input_exists);
+
+  $rrule_values = date_repeat_merge($input['rrule'], $element['rrule']);
+
+  // Limit repeating date values.
+  $value = date_repeat_build_dates($item['rrule'], $rrule_values, $field, $item);
+  $date_repeats = count($value);
+
+  $max_repeats = 20;
+  if ($date_repeats > $max_repeats) {
+    $error_field_base = implode('][', $element['#parents']);
+    $error_field = $rrule_values['range_of_repeat'] ===
+    'COUNT' ? $error_field_base . '][rrule][count_child'
+      : $error_field_base . '][rrule][until_child][datetime';
+
+    form_set_error($error_field,
+      t('You are trying to create too many (!repeats) repeating events.
+      The maximum is (!max_repeats).',
+        array('!repeats' => $date_repeats, '!max_repeats' => $max_repeats),
+        array('context' => 'Date repeat')));
+  }
+}
+
+/**
+ * Custom after build function.
+ */
+function kada_event_ext_after_build($form, &$form_state) {
+  // Hiding additions and exceptions fields because they are not working on
+  // custom event form.
+  $form['language_tabs']['node:new_0']['field_date_repeat'][LANGUAGE_NONE][0]['rrule']['show_additions']['#access'] = FALSE;
+  $form['language_tabs']['node:new_0']['field_date_repeat'][LANGUAGE_NONE][0]['rrule']['additions']['#access'] = FALSE;
+  $form['language_tabs']['node:new_0']['field_date_repeat'][LANGUAGE_NONE][0]['rrule']['show_exceptions']['#access'] = FALSE;
+  $form['language_tabs']['node:new_0']['field_date_repeat'][LANGUAGE_NONE][0]['rrule']['exceptions']['#access'] = FALSE;
+
+  return $form;
+}

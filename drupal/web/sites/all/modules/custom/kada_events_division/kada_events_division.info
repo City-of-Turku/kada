@@ -1,0 +1,4 @@
+name = KADA events division
+description = Event calendar division.
+core = 7.x
+package = KADA

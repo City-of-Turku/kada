@@ -1,0 +1,7 @@
+name = KADA Scald DnD Translation
+description = Provides functionality for using the Entity Translation UI through Scald's DnD UI
+package = KADA
+core = 7.x
+
+dependencies[] = scald
+dependencies[] = entity_translation

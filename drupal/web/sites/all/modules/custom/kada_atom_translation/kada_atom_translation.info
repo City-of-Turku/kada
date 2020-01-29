@@ -1,0 +1,4 @@
+name = KADA Atom Translation
+description = Adds needed form alters and other code fixes for atom translation.
+core = 7.x
+package = KADA
