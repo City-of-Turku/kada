@@ -36,7 +36,7 @@ $aliases['local'] = [
   'uri' => 'https://pori.lndo.site',
   'path-aliases' =>
   [
-    '%drush' => '/var/www/.composer/vendor/bin/drush',
+    '%drush' => '/app/vendor/bin/drush',
     '%files' => '/app/files',
   ],
 ];

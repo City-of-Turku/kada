@@ -1,18 +1,9 @@
 #!/bin/bash
 set -exu
 
-# Install php_codesniffer & dependencies.
-cd /var/www/.composer/
-rm -rf composer.lock vendor
-composer require --dev squizlabs/php_codesniffer
-composer require --dev dealerdirect/phpcodesniffer-composer-installer
-composer require --dev phpcompatibility/php-compatibility:*
-composer require --dev drupal/coder:^8.3.7
-
 # Symlink the aliases file.
-rm -Rf $HOME/.drush
 mkdir -p $HOME/.drush
-ln -sfv /app/.lando/pori.aliases.drushrc.php $HOME/.drush/pori.aliases.drushrc.php
+ln -sfv /app/drush/pori.aliases.drushrc.php $HOME/.drush/pori.aliases.drushrc.php
 drush cc drush
 
 # Create the required folders.
