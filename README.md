@@ -1,62 +1,45 @@
 # Pori project
 
-## Local environment with Lando
+## Local environment
 
-### Setup
+### [Setup](https://docs.lando.dev/basics/installation.html)
 
-1. Install the latest [Lando](https://docs.lando.dev/basics/installation.html) and read the [documentation](https://docs.lando.dev/).
-2. Check out the repo and go to the project root: `git clone git@github.com:City-of-Pori/pori-kada.git pori && cd pori/drupal`
-3. Start the site by running `lando start`.
-4. Import data:
-   1. `lando syncdb <env>` ([set up your public key](https://key.wunder.io) & connect to VPN first if needed) or
-   2. `lando db-import <dumpfile>`.
-5. Update the database & activate local settings: `lando update`.
+1. Install the [latest Lando](https://github.com/lando/lando/releases) and read the [documentation](https://docs.lando.dev/).
+2. Check out the repo and go to the project root: `git clone git@github.com:wunderio/client-fi-pori.git pori && cd pori`
+3. Run `lando start`.
+4. Import data with `lando syncdb` (staging environment) or `lando syncdb prod` (production). Register your public key and connect to the required VPN first.
+5. Run `lando update` to update database, revert the features and enable development modules.
 
-### Local sites
+### Local sites with drush site aliases
 
-- <https://pori.lndo.site>
-- <https://businesspori.lndo.site>
-- <https://visitpori.lndo.site>
+- <https://pori.lndo.site>, alias `@pori.local`,
+- <https://businesspori.lndo.site>, alias `@pori.b.local`,
+- <https://visitpori.lndo.site>, alias `@pori.v.local`.
 
-### Site aliases
+### Production sites
 
-#### pori.fi
+- <https://www.pori.fi/>, `@pori.prod`,
+- <https://www.businesspori.fi/>, `@pori.b.prod`,
+- <https://www.visitpori.fi/>, `@pori.v.prod`.
 
-- @pori.dev
-- @pori.local
-- @pori.prod
-- @pori.stage
+### [Services](https://docs.lando.dev/config/services.html)
 
-#### businesspori.fi
+- <https://adminer-pori.lndo.site> - [Adminer](https://hub.docker.com/r/dehy/adminer/) for database management, log in **without** entering the credentials.
+- <https://mail-pori.lndo.site> - [MailHog](https://docs.lando.dev/config/mailhog.html) for mail management.
 
-- @pori.b.dev
-- @pori.b.local
-- @pori.b.prod
-- @pori.b.stage
+### [Tools](https://docs.lando.dev/config/tooling.html)
 
-#### visitpori.fi
+Full commands/tools overview is available by running `lando`. Custom tools:
 
-- @pori.v.dev
-- @pori.v.local
-- @pori.v.prod
-- @pori.v.stage
-
-### Services
-
-- <https://pori-adminer.lndo.site> - Adminer for database management, log in **without** entering the credentials.
-- <https://pori-mail.lndo.site> - Mailhog for mail management.
-
-### Tools
-
-Full commands/tools overview is available at `lando`. Custom tools:
-
-- `lando build` - build the local site, incl. run makefile.
-- `lando npm` - use npm.
-- `lando syncdb <env>` - synchronise local database with selected environment (`stage` by default, `prod`).
-- `lando update` - update database & enable develpoment components.
+- `lando build` - build the local site.
+- `lando npm` - run [npm](https://www.npmjs.com/) commands.
+- `lando node` - run [Node.js](https://nodejs.org/) commands.
 - `lando phpcs`, `lando phpcbf`- use PHP_CodeSniffer:
-  - Use Drupal & DrupalPractice standard for selected extensions: `lando phpcs --standard=Drupal,DrupalPractice sites/all/modules --extensions=php,inc,module,install`
-  - Check `code` folder for PHP 7.2 compatibility using [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility) standard: `lando phpcs --standard=PHPCompatibility --extensions=php,inc,module,install --report-full=report_72.txt --runtime-set testVersion 7.2 -ps code`,
+  - Use Drupal & DrupalPractice standard for selected extensions: `lando phpcs --standard=Drupal,DrupalPractice web/sites/all/modules/contrib --extensions=php,inc,module,install`
+  - Check `web/sites/all/modules/custom` folder for PHP 7.2 compatibility using [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility) standard: `lando phpcs --standard=PHPCompatibility --extensions=php,inc,module,install --report-full=report_72.txt --runtime-set testVersion 7.2 -ps web/sites/all/modules/custom`.
+- `lando syncdb <remote>` - synchronize local database with selected remote environment. Options: `stage` (default), `prod`.
+- `lando update` - apply required (database) updates.
+- `lando xdebug-on`, `lando xdebug-off` - enable / disable [Xdebug](https://xdebug.org/) for [nginx](https://nginx.org/en/).
 
 ## Local environment with Vagrant
 
