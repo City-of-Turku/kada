@@ -1,0 +1,16 @@
+body .l-highlighted .container {
+  max-width: none;
+  padding: 0;
+
+  .block--views .view-pori-section-1-3x4-liftups {
+    @include responsive-whitespace;
+    margin: 0 auto;
+  }
+}
+
+// Front page before content region needs to be relative so that the news archive button can be placed correctly.
+.front .l-content .l-region--after-content {
+  @media screen and (min-width: $container) {
+    position: relative;
+  }
+}

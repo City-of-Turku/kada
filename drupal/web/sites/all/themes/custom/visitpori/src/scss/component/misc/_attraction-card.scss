@@ -1,0 +1,13 @@
+// Disable keyword link temporarely.
+.attraction .attraction__sidebar .field--name-field-keywords-et {
+  a {
+    pointer-events: none;
+  }
+}
+
+// Disable keyword link temporarely.
+.liftup-box.liftup-box--attraction-item {
+  .attraction-list--item__keywords a {
+    pointer-events: none;
+  }
+}

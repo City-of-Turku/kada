@@ -1,0 +1,269 @@
+@media screen and (min-width: $mobile-menu-breakpoint) {
+  // For some reason the English menu is main-navigation as for Finnish it is main-menu
+  .menu-name-menu-business-pori-p-valikko,
+  .menu-name-menu-business-pori-main-navigati {
+    background-color: $gray-menu;
+    
+    .responsive-menus .menu {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .responsive-menus > .menu {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .menu__item {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      margin-top: 0;
+      width: 100%;
+
+      a {
+        color: #000;
+        display: block;
+        font-size: 1rem;
+        padding: 1.25rem $container-gutter;
+        text-transform: uppercase;
+      }
+    }
+
+    // Hide mobile menu specific stuff
+    .menu__item--expanded-toggle,
+    .menu__item--top-menu {
+      display: none;
+    }
+
+    // Set theme colored menu.
+    @each $theme-color, $color in $theme-colors {
+      .businesspori-theme-color-#{$theme-color} {
+        &.menu__item--has-first-level {
+          > a {
+            &:hover,
+            &:focus {
+              color: $black;
+              background-color: $color !important;
+            }
+          }
+
+          &.is-active {
+            > a {
+              color: $black;
+              background-color: $color !important;
+            }
+          }
+
+          > .menu {
+            border-bottom: 4px solid $color;
+            border-top: 0;
+          }
+
+          .menu__item--has-second-level {
+            a {
+              color: $color;
+            }
+
+            &:hover {
+              background-color: $color;
+
+              a {
+                color: $white;
+              }
+            }
+
+            &.is-active-trail {
+              background-color: $color;
+
+              a {
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+      .businesspori-theme-color-green > a.is-active-trail {
+        color: $white !important;
+      }
+    }
+   
+    .menu__item--has-first-level {
+      position: relative;
+
+      > a {
+        border-top: 0 none;
+        color: $black;
+        padding: .5rem 1.91rem;
+        width: 100%;
+        text-align: center;
+        background-color: $default-color-lighter;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+          background-color: transparent;
+        }
+      }
+
+      &:nth-child(even) > a {
+        background-color: $gray-menu;
+      }
+
+      > .menu {
+        background-color: $gray-lighter;
+        box-sizing: content-box;
+        display: none;
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        z-index: 100;
+      }
+
+      &.menu__item--hover {
+        > .menu {
+          display: block;
+        }
+      }
+
+      > .menu__item--expanded-toggle {
+        display: none;
+      }
+    }
+
+    .menu__item--has-second-level {
+      background-color: $white;
+      clear: both;
+      display: block;
+      position: static;
+      width: 100%;
+      z-index: 101;
+
+      > .menu {
+        background-color: $gray-lighter;
+        display: none;
+        left: 100%;
+        position: absolute;
+        top: 0;
+        width: 31%;
+      }
+
+      > a {
+        color: $black;
+        position: relative;
+      }
+
+      &:first-child {
+        > a {
+          border-top: 0 none;
+        }
+      }
+
+      &.menu__item--hover {
+
+        > a {
+          color: $white;
+        }
+
+        > .menu {
+          display: block;
+          z-index: 102;
+        }
+      }
+
+      &.is-expanded {
+        > a::before {
+          background: url('../../dist/image/plus-icon--white.svg') no-repeat center center $black;
+          background-size: auto .7rem;
+          border-radius: 100%;
+          content: "";
+          display: block;
+          height: 1.563rem;
+          position: absolute;
+          right: 1.875rem;
+          top: 1.188rem;
+          width: 1.563rem;
+        }
+
+        &.menu__item--hover {
+          > a::before {
+            background-color: $white;
+            background-image: url('../../dist/image/minus-icon.svg');
+          }
+        }
+      }
+
+      &.is-active-trail {
+        background-color: $secondary-color;
+
+        > a {
+          color: $white;
+
+          &::before {
+            background-color: $white;
+            background-image: url('../../dist/image/minus-icon.svg');
+          }
+        }
+
+        > .menu {
+          display: block;
+        }
+      }
+    }
+
+    .e-service-wrapper {
+      background-color: $secondary-color-medium-dark;
+      margin: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 34%;
+
+      > a {
+        background: url('../../dist/image/e-service-icon--white.svg') no-repeat 1.875rem center $secondary-color;
+        background-size: 1.875rem auto;
+        border-top: 0;
+        color: $white;
+        font-weight: bold;
+        padding-left: 4.688rem;
+      }
+
+      > .menu {
+        display: block;
+        list-style-type: none;
+        margin: 0;
+        padding: 0 1.875rem;
+
+        .menu__item {
+          border-bottom: 1px solid $primary-color;
+          margin: 0;
+
+          a {
+            background: url('../../dist/image/arrow-right-icon.svg') no-repeat right center transparent;
+            background-size: .938rem auto;
+            border-bottom: 0 none;
+            display: inline-block;
+            font-weight: bold;
+            padding: 1.25rem 1.875rem 1.25rem 0;
+            text-transform: none;
+          }
+
+          &:last-child {
+            border-bottom: 0 none;
+          }
+        }
+      }
+    }
+  }
+}
+.businesspori-theme-color-green.menu__item--has-first-level > a:hover, a:active {
+  color: white !important;
+}
+.businesspori-theme-color-green.menu__item--has-first-level > .active-trail > a:active {
+  color: white !important;
+}
+.menu-name-menu-business-pori-p-valikko .businesspori-theme-color-green.menu__item--has-first-level.is-active > a {
+  color:white !important;
+}

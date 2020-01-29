@@ -1,0 +1,171 @@
+.small-liftup-banner {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: $mobile-landscape-wide) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.small-liftup-banner__item {
+  margin: .625rem 0;
+  position: relative;
+
+  @media screen and (min-width: $mobile-landscape-wide) {
+    margin: 1vw 0;
+    width: 49%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin: 0;
+    width: 24.5%;
+  }
+
+  &:first-child {
+    margin-top: 0;
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      margin-left: 0;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      margin-right: 0;
+    }
+  }
+
+  &:nth-child(2) {
+    @media screen and (min-width: $mobile-landscape-wide) {
+      margin-top: 0;
+    }
+  }
+
+  &:nth-child(3) {
+    @media screen and (min-width: $mobile-landscape-wide) {
+      margin-bottom: 0;
+    }
+  }
+
+  // Link button styles
+  .field--name-field-link-to-content {
+    background-color: $link-color;
+    color: $white;
+    display: block;
+    font-family: $bergen-mono;
+    font-size: .8rem;
+    left: 50%;
+    padding: .625rem;
+    position: absolute;
+    text-align: center;
+    text-transform: uppercase;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    @media screen and (min-width: $mobile-landscape-narrow) {
+      font-size: 1.1rem;
+    }
+
+    @media screen and (min-width: $mobile-landscape-wide) {
+      font-size: .8rem;
+    }
+
+    @media screen and (min-width: $tablet-portrait) {
+      font-size: 1rem;
+    }
+
+    @media screen and (min-width: $tablet-landscape) {
+      font-size: 1.1rem;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-size: .85rem;
+    }
+
+    @media screen and (min-width: $full) {
+      font-size: 1.1rem;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $link-color-hover;
+    }
+  }
+
+  // Image styles
+  .field--name-field-main-image {
+    line-height: 0;
+    margin: 0;
+
+    &:hover,
+    &:active,
+    &:focus {
+      + .field--name-field-link-to-content {
+        background-color: $link-color-hover;
+      }
+    }
+  }
+}
+// Rewrite color if given on liftup.
+.small-liftup-banner__item.small-liftup-pori-black {
+  .field--name-field-link-to-content {
+    background-color: $banner-small-liftups-grey;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $banner-small-liftups-black-hover;
+    }
+  }
+  .field--name-field-main-image {
+    &:hover,
+    &:active,
+    &:focus {
+      + .field--name-field-link-to-content {
+        background-color: $banner-small-liftups-black-hover;
+      }
+    }
+  }
+}
+.small-liftup-banner__item.small-liftup-pori-green {
+  .field--name-field-link-to-content {
+    background-color: $banner-small-liftups-green;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $banner-small-liftups-green-hover;
+    }
+  }
+  .field--name-field-main-image {
+    &:hover,
+    &:active,
+    &:focus {
+      + .field--name-field-link-to-content {
+        background-color: $banner-small-liftups-green-hover;
+      }
+    }
+  }
+}
+.small-liftup-banner__item.small-liftup-pori-red {
+  .field--name-field-link-to-content {
+    background-color: $banner-small-liftups-red;
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $banner-small-liftups-red-hover;
+    }
+  }
+  .field--name-field-main-image {
+    &:hover,
+    &:active,
+    &:focus {
+      + .field--name-field-link-to-content {
+        background-color: $banner-small-liftups-red-hover;
+      }
+    }
+  }
+}

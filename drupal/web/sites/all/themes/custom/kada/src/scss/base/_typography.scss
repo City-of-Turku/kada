@@ -1,0 +1,201 @@
+//
+// @file
+//
+// This file includes everything related to the basic typography
+//
+
+// ########## General ########## //
+body {
+  @include font-size-responsive($base-font-size-rem);
+  font-family: $text-font-family;
+  line-height: $base-line-height;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  transition: all 150ms linear;
+
+  &:hover,
+  &:focus {
+    color: $link-color-hover;
+  }
+}
+
+strong {
+  font-weight: 700;
+}
+
+small {
+  font-size: 80%;
+}
+
+// ########## Headings ########## //
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $heading-font-family;
+  margin-top: 0;
+  text-transform: uppercase;
+
+  a {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+  }
+}
+
+h1 {
+  font-size: $font-size-heading-1;
+  line-height: 1.1666;
+  margin-bottom: 3.15rem;
+
+  @media screen and (max-width: 599px) {
+    font-size: $font-size-heading-1-small;
+    margin-bottom: 2.15rem;
+}
+
+  @media screen and (min-width: 600px) and (max-width: 1024px) {
+    font-size: $font-size-heading-1-medium;
+  }
+}
+
+h2 {
+  font-size: $font-size-heading-2;
+  font-weight: 600;
+  line-height: 1.1111;
+  margin-bottom: 1.875rem;
+
+  @media screen and (max-width: 599px) {
+    font-size: $font-size-heading-2-small;
+    margin-bottom: 1.5rem;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1024px) {
+    font-size: $font-size-heading-2-medium;
+  }
+}
+
+h3 {
+  font-size: $font-size-heading-3;
+  line-height: 1.25;
+  margin-bottom: 1.875rem;
+
+  @media screen and (max-width: 599px) {
+    font-size: $font-size-heading-3-small;
+    margin-bottom: 1.3rem;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1024px) {
+    font-size: $font-size-heading-3-medium;
+  }
+}
+
+h4 {
+  font-size: $font-size-heading-4;
+  line-height: 1.5;
+  margin-bottom: 1.875rem;
+  text-transform: none;
+
+  @media screen and (max-width: 599px) {
+    font-size: $font-size-heading-4-small;
+    margin-bottom: 1.3rem;
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1024px) {
+    font-size: $font-size-heading-4-medium;
+  }
+}
+
+h5 {
+  @include font-size-responsive($font-size-heading-5);
+  line-height: 1.556;
+  margin-bottom: 1.875rem;
+  text-transform: none;
+}
+
+p {
+  margin-bottom: 1.875rem;
+  margin-top: 0;
+}
+
+p,
+ul,
+ol {
+  + h2 {
+    margin-top: 3.15rem;
+  }
+
+  + h3 {
+    margin-top: 3rem;
+
+    @media screen and (max-width: 599px) {
+      margin-top: 2rem;
+    }
+  }
+
+  + h4 {
+    margin-top: 3rem;
+
+    @media screen and (max-width: 599px) {
+      margin-top: 2rem;
+    }
+  }
+}
+
+ul,
+ol {
+  li {
+    margin-top: .275rem;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  ul,
+  ol {
+    margin-top: .625rem;
+  }
+
+  + p {
+    margin-top: 1rem;
+  }
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+ol {
+  padding-left: 1.275rem;
+}
+
+
+// Medium font-sizes
+.font-zoom-level--medium {
+  font-size: 1.286rem;
+
+  .flexslider {
+    @media screen and (min-width: $tablet-portrait) {
+      font-size: 1.14rem;
+    }
+  }
+}
+
+// Large font-sizes
+.font-zoom-level--large {
+  font-size: 1.57rem;
+
+  .flexslider {
+    @media screen and (min-width: $tablet-portrait) {
+      font-size: 1.286rem;
+    }
+
+    @media screen and (min-width: $desktop) {
+      font-size: 1.43rem;
+    }
+  }
+}

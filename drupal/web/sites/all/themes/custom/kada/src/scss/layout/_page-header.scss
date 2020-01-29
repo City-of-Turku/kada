@@ -1,0 +1,151 @@
+.page-header {
+  // Mobile, height of the mobile header since the mobile header is fixed.
+  @media screen and (max-width: $mobile-menu-breakpoint-max) {
+    padding-top: 3.125rem;
+  }
+
+  .l-navigation-top {
+    display: none;
+
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      background-color: $gray-lighter;
+      display: block;
+    }
+  }
+
+  .l-brand-navigation-container {
+    // Mobile
+    @media screen and (max-width: $mobile-menu-breakpoint-max) {
+      background-color: $white;
+      border-bottom: 1px solid $gray-light;
+      width: 100%;
+      z-index: 100;
+    }
+  }
+
+  .l-branding {
+    height: 3.125rem;
+
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      height: 6.25rem;
+      margin: 0 auto;
+      max-width: $inner-container-width;
+      position: relative;
+    }
+  }
+
+  .l-navigation {
+    width: 100%;
+
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      background-color: $primary-color;
+    }
+  }
+
+  .l-branding__container {
+    align-items: center;
+    display: flex;
+    height: auto;
+    justify-content: space-between;
+    padding: 0 $container-gutter;
+    width: 100%;
+
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      height: 100%;
+    }
+  }
+
+  .l-navigation__container {
+    margin: 0 auto;
+    max-width: $container-width;
+
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      position: relative;
+    }
+  }
+
+  .l-banner {
+    position: relative;
+
+    @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
+      width: 100%;
+    }
+  }
+}
+
+.page-header__top {
+  padding-top: 1.25rem;
+
+  @media screen and (max-width: $desktop-narrow - $max-width-deduction) {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 0;
+    padding-top: 0;
+    position: relative;
+    z-index: 10;
+  }
+}
+
+.l-region--branding {
+  .block--views-exp-main-search-page {
+    // Mobile
+    @media screen and (max-width: $mobile-menu-breakpoint-max) {
+      position: absolute;
+      right: 8rem;
+      top: 0;
+    }
+  }
+
+  .block--locale-language {
+    // Mobile
+    @media screen and (max-width: $mobile-menu-breakpoint-max) {
+      position: absolute;
+      right: 3.75rem;
+      top: 0;
+    }
+  }
+}
+
+.l-region--navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  position: relative;
+
+  @media screen and (min-width: $mobile-menu-breakpoint) {
+    justify-content: space-between;
+  }
+
+  .block--menu-block,
+  .block--og-menu-single {
+    width: 100%;
+
+    @media screen and (max-width: $mobile-menu-breakpoint-max) {
+      top: 0;
+      right: 0;
+    }
+
+    .toggler {
+      @media screen and (max-width: $mobile-menu-breakpoint-max) {
+        width: 3.75rem;
+      }
+    }
+  }
+}
+
+.l-region--header {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  
+  .block {
+    order: 2;
+
+    &.block--views-kada-recommended-block {
+      order: 1;
+    }
+  }
+}

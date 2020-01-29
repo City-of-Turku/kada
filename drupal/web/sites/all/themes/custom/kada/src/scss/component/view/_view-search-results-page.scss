@@ -1,0 +1,69 @@
+// TODO: Find a better way to hide breadcrumb on search-page.
+.search-page .breadcrumb {
+  display: none;
+}
+
+.search-results-page {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 62rem;
+  padding: 0 $container-gutter;
+
+  .view-header {
+    font-size: .9rem;
+    margin: 5px 0 15px;
+    text-align: right;
+  }
+}
+
+.search-result--container {
+  align-items: flex-start;
+  border-top: .938rem solid $primary-color;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 3rem auto;
+  padding-top: 1.25rem;
+  width: 100%;
+
+  // Set theme colored borders.
+  @each $theme-color, $color in $theme-colors {
+    &.theme-color-#{$theme-color} {
+      border-top: .938rem solid $color;
+    }
+  }
+}
+
+.search-result__information {
+  color: $gray;
+  font-family: $bergen-mono;
+  font-size: .875rem;
+  margin-bottom: .5rem;
+
+  @media screen and (min-width: $tablet-portrait) {
+    font-size: 1rem;
+  }
+
+  .search-result__information__divider {
+    margin: 0 .4rem;
+  }
+}
+
+.search-result__title {
+  @media screen and (min-width: $tablet-landscape) {
+    margin-bottom: 1.25rem;
+  }
+}
+
+.search-result__content {
+  background-color: $white;
+  bottom: 20px;
+  color: $black;
+  font-size: 1rem;
+  padding: 0;
+  width: auto;
+
+  @media screen and (min-width: $tablet-landscape) {
+    left: auto;
+    right: 0;
+  }
+}

@@ -1,0 +1,339 @@
+@media screen and (min-width: $mobile-menu-breakpoint) {
+  .menu-name-main-menu,
+  .menu-name-menu-main-menu-en,
+  .menu-name-menu-main-menu-sv,
+  .menu-name-menu-main-menu-de,
+  .menu-name-og-menu-single,
+  .block--og-menu-single-menu {
+    .responsive-menus .menu {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .responsive-menus > .menu {
+      margin: 0 auto;
+      max-width: $inner-container-width;
+    }
+
+    .menu__item {
+      margin-top: 0;
+
+      a {
+        border-top: 1px solid $gray-light;
+        color: $primary-color;
+        display: block;
+        font-size: 1rem;
+        padding: 1.25rem $container-gutter;
+        text-transform: uppercase;
+      }
+    }
+
+    // Hide mobile menu specific stuff
+    .menu__item--expanded-toggle,
+    .menu__item--top-menu {
+      display: none;
+    }
+
+    // Set theme colored menu.
+    @each $theme-color, $color in $theme-colors {
+      .theme-color-#{$theme-color} {
+        &.menu__item--has-first-level {
+          > a {
+
+            &:hover,
+            &:focus {
+              @if $color == $yellow {
+                color: $primary-color;
+              }
+
+              background-color: $color !important;
+            }
+          }
+
+          > .menu {
+            border-bottom: 4px solid $color !important;
+            border-top: 4px solid $color !important;
+          }
+
+          &.is-active-trail {
+            background-color: $color !important;
+
+            > a {
+              @if $color == $yellow {
+                color: $primary-color;
+              }
+            }
+          }
+
+          .menu__item--has-second-level,
+          .menu__item--has-third-level {
+            &:hover {
+              background-color: $color !important;
+
+              > a {
+                @if $color == $yellow {
+                  color: $primary-color;
+                }
+              }
+            }
+            &.is-active-trail {
+              background-color: $color !important;
+
+              > a {
+                @if $color == $yellow {
+                  color: $primary-color;
+                }
+
+                &::before {
+                  color: $color !important;
+                }
+              }
+            }
+
+            &.is-expanded {
+              &:hover {
+                > a::before {
+                  color: $color !important;
+                }
+              }
+            }
+          }
+
+          .e-service-wrapper {
+            background-color: lighten($color, 45%);
+
+            @if $color == $green {
+              background-color: lighten($color, 60%);
+            }
+
+            @if $color == $yellow {
+              color: $primary-color;
+            }
+
+            > a {
+              background-color: $color;
+            }
+
+            > .menu {
+              .menu__item {
+                &:hover,
+                &:focus {
+                  background-color: lighten($color, 30%);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .menu__item--has-first-level {
+      > a {
+        border-top: 0 none;
+        color: $white;
+        padding: .75rem $container-gutter;
+
+        &:hover,
+        &:focus {
+          background-color: $secondary-color;
+        }
+      }
+
+      > .menu {
+        background-color: $gray-lighter;
+        border-bottom: 4px solid $secondary-color;
+        box-sizing: content-box;
+        border-top: 4px solid $secondary-color;
+        display: none;
+        left: 0;
+        position: absolute;
+        top: 100%;
+        width: 100%;
+        z-index: 100;
+      }
+
+      &.menu__item--hover {
+        > .menu {
+          display: block;
+        }
+      }
+
+      &.is-active-trail {
+        background-color: $secondary-color;
+      }
+
+      > .menu__item--expanded-toggle {
+        display: none;
+      }
+    }
+
+    .menu__item--has-second-level {
+      background-color: $white;
+      clear: both;
+      display: block;
+      position: static;
+      width: 35%;
+      z-index: 101;
+
+      > .menu {
+        background-color: $gray-lighter;
+        display: none;
+        left: 35%;
+        position: absolute;
+        top: 0;
+        width: 31%;
+      }
+
+      > a {
+        position: relative;
+      }
+
+      &:first-child {
+        > a {
+          border-top: 0 none;
+        }
+      }
+
+      &.menu__item--hover {
+        background-color: $secondary-color;
+
+        > a {
+          color: $white;
+        }
+
+        > .menu {
+          display: block;//
+          z-index: 102;
+        }
+      }
+
+      &.is-expanded {
+        > a::before {
+          @include fa('\f067', .9rem, 1, false);
+          color: $white;
+          height: 1.563rem;
+          line-height: 1.6rem;
+          position: absolute;
+          right: 1.875rem;
+          text-align: center;
+          top: 1.188rem;
+          width: 1.563rem;
+          z-index: 2;
+        }
+
+        > a::after {
+          background-color: $black;
+          border-radius: 100%;
+          content: "";
+          display: block;
+          height: 1.563rem;
+          position: absolute;
+          right: 1.875rem;
+          top: 1.188rem;
+          width: 1.563rem;
+          z-index: 1;
+        }
+
+        &.menu__item--hover {
+          > a::before {
+            @include fa('\f068', .9rem, 1, false);
+            color: $white;
+            line-height: 1.6rem;
+          }
+        }
+      }
+
+      &.is-active-trail {
+        background-color: $secondary-color;
+
+        > a {
+          color: $white;
+        }
+
+        > .menu {
+          display: block;
+        }
+      }
+    }
+
+    .menu__item--has-third-level {
+      > a {
+        border-color: $gray-lighter;
+        font-weight: bold;
+        text-transform: none;
+      }
+
+      &:first-child {
+        > a {
+          border-top: 0 none;
+        }
+      }
+
+      &.menu__item--hover {
+        background-color: $secondary-color;
+
+        > a {
+          color: $white;
+        }
+      }
+
+      &.is-active-trail {
+        background-color: $secondary-color;
+
+        > a {
+          color: $white;
+        }
+      }
+    }
+
+    .e-service-wrapper {
+      background-color: $secondary-color-medium-dark;
+      margin: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 34%;
+
+      > a {
+        background: url('../../dist/image/e-service-icon--white.svg') no-repeat 1.875rem center $secondary-color;
+        background-size: 1.875rem auto;
+        border-top: 0;
+        color: $white;
+        font-weight: bold;
+        padding-left: 4.688rem;
+      }
+
+      > .menu {
+        display: block;
+        list-style-type: none;
+        margin: 0;
+
+        .menu__item {
+          border-bottom: 1px solid $primary-color;
+          margin: 0;
+          padding: 0 1.875rem;
+
+          &:hover,
+          &:focus {
+            background-color: $secondary-color-medium-dark;
+          }
+
+          a {
+            background: url('../../dist/image/arrow-right-icon.svg') no-repeat right center transparent;
+            background-size: .938rem auto;
+            border-bottom: 0 none;
+            border-top: 0 none;
+            display: inline-block;
+            font-weight: bold;
+            padding: 1.25rem 1.875rem 1.25rem 0;
+            text-transform: none;
+          }
+
+          &:last-child {
+            border-bottom: 0 none;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,115 @@
+.person-card-list, .page__contact-information {
+  .page__contact-information__header {
+    display: none;
+  }
+
+  .person-card {
+    .person-card__inner {
+      overflow: visible;
+      padding: $container-gutter;
+      background-color: white;
+      border-top: none;
+      color: #757575;
+
+      a {
+        color: #757575;
+      }
+    }
+
+    .field {
+      margin: 0;
+      width: 100%;
+  
+      @media screen and (min-width: $mobile-landscape-narrow) {
+        margin: 0;
+        width: 100%;
+      }
+  
+      &.field--name-person-full-name {
+        color: black;
+        font-weight: bold;
+      }
+      &.field--name-field-mobile-phone-work a {
+        color: #757575;
+      }
+      &.field--name-field-email-single {
+        margin-bottom: 15px;
+        a {
+          color: $green-dark;
+        }
+      }
+      &.field--name-field-visiting-address {
+        display: none;
+      }
+      &.field--name-field-person-skills, &.field--name-field-branch {
+        display: inline-block;
+
+        .field__item {
+          white-space: nowrap;
+          font-family: $bergen-mono;
+          text-transform: uppercase;
+          padding: 0 12px;
+          display: inline-block;
+          border: 1px solid #757575;
+          border-radius: 15px;
+          opacity: 1;
+          margin: 2px 1px;
+          line-height: 1.5rem;
+          
+          @media screen and (min-width: $tablet-portrait-narrow) {
+            line-height: 1.488rem;
+            padding: 0 10px;
+            font-size: $font-size-small;
+          }
+        }
+      }
+      &.field--name-field-person-cta {
+        width: auto;
+        margin-top: 25px;
+
+        a {
+          background-color: $green-dark;
+          font-size: $base-font-size-rem;
+          font-family: $bergen-mono;
+          color: white;
+          text-transform: uppercase;
+          padding: .625rem 1.563rem;
+          &:hover,
+          &:focus {
+            background-color: $black;
+          }
+        }
+      }
+    }
+  }
+}
+
+.page__contact-information {
+  .person-card .person-card__inner {
+    padding-left: 0;
+    
+    .field {
+      margin-bottom: 3px;
+
+      &.field--name-field-email-single {
+        margin-bottom: 3px;
+      }
+      &.field--name-field-branch, &.field--name-field-person-skills {
+        display: none;
+      }
+      &.field--name-field-person-image {
+        margin-left: 0 !important;
+    
+        @media screen and (min-width: $tablet-portrait) {
+          margin-left: 0 !important;
+        }
+      }
+    }
+  }
+}
+
+.page-phone-book {
+  .person-card__inner .field.field--name-field-email-single {
+    margin-bottom: 0;
+  }
+}

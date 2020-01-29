@@ -1,0 +1,36 @@
+/*******************************************************************************
+ * kada-default.layout.scss
+ *
+ * Layout built with Susy 2.
+ ******************************************************************************/
+
+@charset 'UTF-8';
+
+@import 'lib/variables/*';
+@import 'lib/mixins/*';
+
+.l-before-content,
+.l-after-content {
+  background: none 0 0 $darker-gray;
+}
+
+.l-main {
+  @include clearfix();
+  background-color: $after-content-bg;
+}
+
+.l-content .l-region--before-content {
+  margin: 0;
+}
+
+// Main container goes over the header image on content pages
+.has-main-image {
+  .l-before-header {
+    @include in-front-of-header;
+    position: relative;
+  }
+
+  .l-branding {
+    @include branding-in-front-of-header;
+  }
+}

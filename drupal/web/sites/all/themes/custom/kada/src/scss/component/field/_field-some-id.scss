@@ -1,0 +1,51 @@
+.field--name-field-some-id {
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.some-id {
+  display: block;
+  height: 2.5rem;
+  margin: .625rem 0;
+  text-indent: -9999px;
+  overflow: hidden;
+  position: relative;
+  width: 2.5rem;
+
+  &::after {
+    left: 50%;
+    position: absolute;
+    text-indent: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .liftup-box--social.node--facebook & {
+    &::after {
+      @include fa('\f082', 2.5rem, 1, false);
+      color: $facebook-color;
+    }
+  }
+
+  .liftup-box--social.node--twitter & {
+    &::after {
+      @include fa('\f099', 2.5rem, 1, false);
+      color: $twitter-color;
+    }
+  }
+
+  .liftup-box--social.node--instagram & {
+    &::after {
+      @include fa('\f16d', 2.5rem, 1, false);
+      color: $instagram-color;
+    }
+  }
+
+  .liftup-box--social.node--youtube & {
+    &::after {
+      @include fa('\f167', 2.5rem, 1, false);
+      color: $youtube-color;
+    }
+  }
+}

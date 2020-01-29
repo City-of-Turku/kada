@@ -1,0 +1,30 @@
+// Use REMs with a pixel fallback for font sizing.
+@mixin font-size($font-size){
+  font-size: $font-size;
+  font-size: ($font-size / $base-font-size)*1rem;
+}
+
+//
+// @file
+// This file includes all mixins related to the typography
+//
+
+@mixin fontsmoothing ($smooting: antialiased, $uses-text-shadow: false) {
+  -webkit-font-smoothing: $smooting;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-smoothing: $smooting;
+  -ms-font-smoothing: $smooting;
+  font-smoothing: $smooting;
+
+  @if $uses-text-shadow {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .004);
+  }
+}
+
+@mixin font-size-responsive($size) {
+  font-size: $size;
+
+  @media screen and (max-width: 599px) {
+    font-size: ($size / 1.2857142857);
+  }
+}

@@ -1,0 +1,26 @@
+.l-region--sidebar-second {
+
+  .contact-information.contact-information {
+    @extend .info-box;
+    background-color: $navigation-bg;
+    font-size: 0.875em;
+
+    @media screen and (min-width: $tablet-portrait) {
+      clear: none;
+      float: none;
+      margin: 0;
+      width: 100%;
+    }
+  }
+}
+
+.contact-information,
+.node--place--teaser {
+   h3 {
+    border-bottom: 2px solid $turku-white;
+    font-size: 1.25em;
+    margin-top: 0;
+    padding-bottom: 0.2em;
+    text-transform: uppercase;
+  }
+}

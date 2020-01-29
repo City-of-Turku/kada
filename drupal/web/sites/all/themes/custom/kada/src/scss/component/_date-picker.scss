@@ -1,0 +1,246 @@
+.ui-datepicker {
+  border: none;
+  color: inherit;
+  font-family: $helvetica;
+  margin: 0 auto;
+  padding: 0 0 2em;
+
+  .ui-datepicker-header {
+    background: transparent;
+    border-color: inherit;
+    border-left: none;
+    border-right: none;
+    color: inherit;
+    font-weight: normal;
+    padding: 0;
+    text-transform: uppercase;
+
+    .ui-datepicker-title {
+      font-size: 1.2em;
+      line-height: 33px;
+    }
+
+    .ui-datepicker-prev,
+    .ui-datepicker-next {
+      color: inherit;
+      height: 33px;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      top: 0;
+
+      &:before {
+        font-size: 22px;
+        line-height: 33px;
+      }
+
+      &:hover {
+        background: $turkucalendar-darkgray;
+        border: none;
+        cursor: pointer;
+      }
+
+      .ui-icon {
+        background: none;
+        display: none;
+      }
+    }
+
+    .ui-datepicker-prev {
+      //@include icon-arrow-left;
+      float: left;
+
+      &:hover {
+        left: 2px;
+      }
+    }
+
+    .ui-datepicker-next {
+      //@include icon-arrow-right;
+      float: right;
+
+      &:hover {
+        right: 2px;
+      }
+    }
+  }
+
+  .ui-datepicker-calendar {
+    display: table;
+
+    thead {
+      border-bottom: none;
+      display: table-header-group;
+
+      tr {
+        display: table-row;
+        left: auto;
+        opacity: 1;
+        position: static;
+        top: auto;
+      }
+
+      th {
+        display: table-cell;
+        font-weight: normal;
+        padding: 22px 5px 12px 5px;
+        text-transform: uppercase;
+      }
+    }
+
+    tbody {
+      display: table-row-group;
+
+      tr {
+        border-bottom: none;
+        display: table-row;
+        margin: 0;
+        padding: 0;
+
+        td {
+          background-color: transparent;
+          display: table-cell;
+          padding: 5px 1px;
+          text-align: center;
+
+          &:first-child:nth-of-type(1)::after {
+            background-color: transparent;
+            height: 0;
+            width: 0;
+          }
+
+          span,
+          a {
+            color: #FFFFFF;
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            padding: 0;
+            text-align: center;
+            width: 30px;
+          }
+
+          a {
+            border-radius: 100px;
+            background-color: $turkucalendar-darkgray;
+          }
+        }
+
+        .ui-datepicker-unselectable {
+          opacity: 1;
+        }
+
+        .is-active {
+          span,
+          a {
+            border-radius: 100px;
+            background-color: #ed0c6e;
+          }
+        }
+
+        .ui-datepicker-today {
+          position: relative;
+          vertical-align: bottom;
+
+          &:before {
+            border-radius: 100px;
+            background-color: #ffc233;
+            content: '';
+            display: block;
+            height: 5px;
+            left: 50%;
+            margin-left: -2.5px;
+            position: absolute;
+            bottom: -7px;
+            width: 5px;
+          }
+        }
+      }
+    }
+  }
+
+  .ui-datepicker-buttonpane {
+    border-top: none;
+
+    .ui-datepicker-current {
+      background-color: $turkucalendar-darkgray;
+      color: #FFFFFF;
+      font-size: 0.9em;
+      opacity: 1;
+      padding: 8px 20px;
+    }
+  }
+}
+
+// When the datepicker is used in the search as part of the facets it needs background-color to be visible
+.l-region--sidebar-first .facetapi-facetapi-calendar-links .datepicker {
+  background-color: $search-background;
+
+  .ui-datepicker {
+    color: #000;
+    padding-top: 30px;
+    width: auto;
+
+    @media screen and (min-width: $desktop) {
+      width: 17em;
+    }
+
+    .ui-datepicker-calendar thead th {
+      font-size: 0.8em;
+
+      @media screen and (min-width: $desktop) {
+        font-size: 0.9em;
+      }
+    }
+    .ui-datepicker-header {
+      border-color: #000;
+
+      .ui-datepicker-title {
+        font-size: 0.9em;
+        text-transform: none;
+
+        @media screen and (min-width: $desktop) {
+          font-size: 1.2em;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    .ui-datepicker-calendar tbody tr td span,
+    .ui-datepicker-calendar tbody tr td a {
+      height: 20px;
+      line-height: 20px;
+      width: 20px;
+
+      @media screen and (min-width: $desktop) {
+        height: 30px;
+        line-height: 30px;
+        width: 30px;
+      }
+    }
+
+    .ui-datepicker-header,
+    .ui-datepicker-header .ui-datepicker-prev,
+    .ui-datepicker-header .ui-datepicker-next,
+    .ui-datepicker-calendar tbody tr td span {
+      color: #000;
+    }
+
+    .ui-datepicker-header .ui-datepicker-prev:hover,
+    .ui-datepicker-header .ui-datepicker-next:hover {
+      background-color: $turku-blue;
+      color: #FFFFFF;
+    }
+
+    .ui-datepicker-calendar tbody tr td a,
+    .ui-datepicker-buttonpane .ui-datepicker-current {
+      color: #FFFFFF;
+      background-color: $turku-blue;
+    }
+
+    .ui-datepicker-calendar tbody tr td.is-active span,
+    .ui-datepicker-calendar tbody tr td.is-active a {
+      background-color: $turku-green;
+    }
+  }
+}

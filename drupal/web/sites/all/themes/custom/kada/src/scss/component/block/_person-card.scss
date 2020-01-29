@@ -1,0 +1,58 @@
+.person-card {
+  .person-card__inner {
+    margin: 0;
+    padding: 1.25rem 1.875rem;
+
+    .field--name-field-person-image {
+      margin: 0 auto 30px !important;
+      max-width: 200px;
+  
+      @media screen and (min-width: $tablet-portrait) {
+        margin: 0 auto 30px !important;
+        max-width: 250px;
+      }
+    }
+  }
+
+  .field {
+    margin-bottom: .8rem;
+
+    &.field--name-person-full-name {
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+
+    &.field--name-field-visiting-address,
+    &.field--name-field-email-single,
+    &.field--name-field-mobile-phone-work,
+    &.field--name-field-phone,
+    &.field--name-field-phone-switch,
+    &.field--name-field-fax-number {
+      margin-bottom: 0;
+    }
+
+    &.field--label-inline {
+      .field__label {
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+        width: auto;
+      }
+
+      .field__items {
+        margin: 0;
+      }
+    }
+  }
+
+  .person-card__inner--has-image {
+    overflow: hidden;
+  }
+}
+
+.page-phone-book .person-card {
+  .field--name-field-person-image,
+  .field--name-field-person-cta {
+    display: none;
+  }
+}

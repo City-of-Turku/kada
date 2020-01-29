@@ -1,0 +1,252 @@
+$news-filter-margin: .313rem;
+
+.news-archive__filters {
+  margin-bottom: 1.25rem;
+
+  @media screen and (min-width: $mobile-menu-breakpoint) {
+    background-color: $gray-lighter;
+    padding: 2.125rem;
+  }
+
+  .views-exposed-widgets {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+
+    .views-exposed-widget {
+      order: 2;
+      padding: 0 0 .938rem;
+
+      @media screen and (min-width: $mobile-menu-breakpoint) {
+        padding: 0 0 2.125rem - $news-filter-margin;
+      }
+
+      label {
+        background-color: $link-color-hover;
+        color: $white;
+        display: block;
+        padding: .625rem .938rem;
+        position: relative;
+        text-transform: uppercase;
+
+        @media screen and (min-width: $mobile-menu-breakpoint) {
+          display: none;
+        }
+
+        &::before {
+          @include fa('\f067', .9rem, 1, false);
+          color: $link-color-hover;
+          height: 1.563rem;
+          line-height: 1.6rem;
+          position: absolute;
+          right: .938rem;
+          text-align: center;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1.563rem;
+          z-index: 2;
+        }
+
+        &::after {
+          background-color: $white;
+          border-radius: 100%;
+          content: "";
+          display: block;
+          height: 1.563rem;
+          position: absolute;
+          right: .938rem;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1.563rem;
+          z-index: 1;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .views-widget {
+        display: none;
+
+        @media screen and (min-width: $mobile-menu-breakpoint) {
+          display: block;
+        }
+      }
+
+      &.open {
+        label::before {
+          @include fa('\f068', .9rem, 1, false);
+          color: $link-color-hover;
+          line-height: 1.6rem;
+        }
+
+        .views-widget {
+          display: block;
+        }
+      }
+
+      &.views-submit-button {
+        padding: 0;
+      }
+    }
+
+    .views-widget-filter-date_filter {
+      @media screen and (min-width: $mobile-menu-breakpoint) {
+        display: flex;
+      }
+
+      label {
+        @media screen and (min-width: $mobile-menu-breakpoint) {
+          background-color: transparent;
+          color: #333;
+          display: inline-block;
+          padding: 0 .625rem 0 0;
+        }
+
+        &::before {
+          @media screen and (min-width: $mobile-menu-breakpoint) {
+            display: none;
+          }
+        }
+
+        &::after {
+          @media screen and (min-width: $mobile-menu-breakpoint) {
+            background-color: transparent;
+            border-radius: 0;
+            content: ":";
+            display: inline;
+            font-family: $bergen-mono;
+            height: auto;
+            right: 0;
+            width: .625rem;
+          }
+        }
+      }
+      .views-widget {
+        padding-top: .938rem;
+
+        @media screen and (min-width: $mobile-menu-breakpoint) {
+          padding-top: 0;
+        }
+      }
+
+      .form-type-date-select {
+        display: block;
+        margin: 0;
+        width: 100%;
+      }
+
+      .date-padding {
+        float: none;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .form-item {
+          display: block;
+          float: none;
+          width: 47%;
+
+          @media screen and (min-width: $mobile-menu-breakpoint) {
+            margin-left: .938rem;
+            width: auto;
+          }
+
+          .form-select {
+            margin: 0;
+            width: 100%;
+          }
+        }
+
+        &.clearfix::after {
+          display: none;
+        }
+      }
+    }
+
+    .views-widget-filter-field_target_audience_tid {
+      @media screen and (min-width: $mobile-menu-breakpoint) {
+        padding: 0;
+      }
+    }
+
+    .views-widget-filter-combine {
+      order: 10;
+      padding: 0;
+      position: relative;
+
+      @media screen and (min-width: $mobile-menu-breakpoint) {
+        order: 1;
+        margin: 0 0 2.125rem;
+      }
+
+      label {
+        display: none;
+      }
+
+      .views-widget {
+        display: block;
+      }
+
+      input {
+        padding: .625rem 1.875rem .625rem .625rem;
+        width: 100%;
+      }
+
+      &::after {
+        @include fa('\f002', 1rem, 1, false);
+        position: absolute;
+        right: .813rem;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .form-type-select {
+      .form-item {
+        @media screen and (min-width: $mobile-menu-breakpoint) {
+          display: flex;
+          flex-wrap: wrap;
+        }
+      }
+
+      .form-type-bef-link {
+        a {
+          border-bottom: .063rem solid $gray;
+          color: $black;
+          display: block;
+          padding: .625rem 0;
+          text-transform: uppercase;
+
+          @media screen and (min-width: $mobile-menu-breakpoint) {
+            border: .063rem solid $black;
+            margin: $news-filter-margin;
+            padding: .625rem 1.563rem;
+          }
+
+          &.active,
+          &:hover {
+            color: $link-color-hover;
+            padding: .625rem .938rem;
+
+            @media screen and (min-width: $mobile-menu-breakpoint) {
+              background-color: $link-color;
+              border-color: $link-color;
+              color: $white;
+              padding: .625rem 1.563rem;
+            }
+          }
+        }
+
+        &:last-child a {
+          border-bottom: 0 none;
+
+          @media screen and (min-width: $mobile-menu-breakpoint) {
+            border-bottom: .063rem solid $black;
+          }
+        }
+      }
+    }
+  }
+}

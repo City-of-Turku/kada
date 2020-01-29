@@ -1,0 +1,80 @@
+// Jquery UI accordion overrides
+.ui-accordion {
+  .ui-helper-reset {
+    font-size: .875rem;
+    line-height: 1.556;
+
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      font-size: 1.125rem;
+    }
+  }
+
+  .ui-accordion-header {
+    margin-top: 0;
+  }
+
+  .ui-accordion-icons {
+    padding: 0;
+  }
+
+  &.ui-widget {
+    font-family: $bergen-text;
+  }
+
+  .ui-widget-content {
+    color: $black;
+    background-color: $gray-lighter;
+    border: 0 none;
+    a {
+      color: $link-color;
+      text-decoration: none;
+      transition: all 150ms linear;
+
+      &:hover,
+      &:focus {
+        color: $link-color-hover;
+      }
+    }
+  }
+
+  .ui-accordion-header-icon {
+    display: none;
+  }
+}
+
+.ui-widget-content {
+  background: none;
+}
+
+.ui-state-default {
+  a,
+  a:focus,
+  a:link,
+  a:visited,
+  a:hover {
+   color: #FFFFFF;
+  }
+}
+
+.ui-icon,
+.ui-stage-default .ui-icon,
+.ui-state-active .ui-icon {
+  background: none;
+}
+
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-br,
+.ui-corner-left,
+.ui-corner-right,
+.ui-corner-top,
+.ui-corner-tr {
+  border-radius: 0;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+  background: none;
+  border: none;
+}

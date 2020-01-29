@@ -1,0 +1,35 @@
+.page-footer-top {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background: $default-color-lightest;
+}
+
+.page-footer-above {
+  background-color: $gray-light;
+
+  .page-footer-above__container {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+  }
+}
+
+.page-footer,
+.page-footer a {
+  color: $black;
+}
+
+.page-footer {
+  padding-top: 3.125rem;
+  background: $white;
+
+  .page-footer__container {
+    border-bottom: 0.938rem solid $secondary-color;
+    padding: 0 0 1.875rem;
+    
+    @media screen and (min-width: $mobile-footer-breakpoint) {
+      padding-right: $container-gutter;
+      padding-left: $container-gutter;
+      position: relative;
+    }
+  }
+}

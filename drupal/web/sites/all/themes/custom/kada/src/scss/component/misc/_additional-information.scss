@@ -1,0 +1,45 @@
+.page__additional-information {
+  font-family: $bergen-mono;
+  margin: 3.15rem 0 0;
+  padding: 0;
+  text-transform: uppercase;
+
+  @media screen and (min-width: $desktop) {
+    margin: 0 0 3.15rem;
+  }
+
+  .field__item {
+    border-bottom: 1px solid $gray;
+    list-style: none;
+    margin: 0;
+
+    a {
+      @include font-size-responsive($base-font-size-rem);
+      color: $primary-color;
+      font-weight: normal;
+      display: block;
+      padding: 1.25rem 0;
+
+      @media screen and (min-width: $tablet-portrait-narrow) {
+        padding: 1.25rem 1.875rem;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: $light-gray;
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.page__additional-information__header {
+  background-color: $yellow;
+  font-weight: normal;
+  margin: 0;
+  padding: 1.25rem;
+
+  @media screen and (min-width: $desktop) {
+    padding: 1.25rem 1.875rem;
+  }
+}

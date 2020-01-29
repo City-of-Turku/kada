@@ -1,0 +1,9 @@
+@mixin responsive-whitespace {
+  padding-right: $container-gutter;
+  padding-left: $container-gutter;
+
+  @media screen and (min-width: $mobile-landscape-wide) and (max-width: $desktop) {
+    padding-right: $container-gutter * 2;
+    padding-left: $container-gutter * 2;
+  }
+}

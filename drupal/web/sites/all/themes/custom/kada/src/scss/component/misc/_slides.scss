@@ -1,0 +1,148 @@
+
+.slider-container {
+  margin: 0 -2.5rem;
+  position: relative;
+
+  @media (min-width: $tablet-portrait) {
+    margin: 0;
+  }
+}
+
+.slick-slider {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+.slick-list {
+  display: block;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.dragging {
+    cursor: pointer;
+  }
+}
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+  display: block;
+  left: 0;
+  position: relative;
+  top: 0;
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  .slick-loading & {
+    visibility: hidden;
+  }
+}
+
+.slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+
+  [dir="rtl"] & {
+    float: right;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  &.slick-loading img {
+    display: none;
+  }
+
+  &.dragging img {
+    pointer-events: none;
+  }
+
+  .slick-initialized & {
+    display: block;
+    position: relative;
+  }
+
+  .slick-loading & {
+    visibility: hidden;
+  }
+
+  .slick-vertical & {
+    border: 1px solid transparent;
+    display: block;
+    height: auto;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.slick-arrow.slick-hidden {
+  display: none;
+}
+
+// Slide dots styles.
+.slide-container__dots {
+  display: block;
+  position: relative;
+}
+
+.slick-dots {
+  bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  font-size: 0;
+  left: 1rem;
+  list-style-type: none;
+  position: absolute;
+  padding: 0;
+
+  @media (min-width: $tablet-portrait) {
+    bottom: 2.5rem;
+    left: 2rem;
+  }
+
+  li {
+    background-color: transparent;
+    border: 1.5px solid $white;
+    border-radius: 100%;
+    cursor: pointer;
+    height: .75rem;
+    margin: 0 4px;
+    width: .75rem;
+    
+    button {
+      background: transparent;
+      border: 0 none;
+    }
+  }
+
+  .slick-active {
+    background-color: $white;
+  }
+}

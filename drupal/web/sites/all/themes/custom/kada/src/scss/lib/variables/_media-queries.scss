@@ -1,0 +1,24 @@
+//
+// @file
+// This file includes all variables related to media queries
+//
+
+$mobile-menu-breakpoint: 64.063rem; // 1025px
+// When ever using max-width to break between mobile menu and desktop menu use the following variable.
+$mobile-menu-breakpoint-max: 64rem; // 1024px
+
+$mobile-portrait: 20rem; // = 320px;
+$mobile-landscape-narrow: 30rem; // = 480px;
+$tablet-portrait-narrow: 37.5rem; // = 600px;
+$mobile-landscape-wide: 40rem; // = 640px;
+$tablet-portrait: 48rem; // = 768px;
+$desktop-narrow: 60rem; // = 960px;
+$tablet-landscape: 64rem; // = 1024px;
+$desktop: 75rem; // = 1200px;
+$container: 84.5rem; // = 1320px + 2 * 1rem
+$full: 100rem; // 1600px
+
+$max-width-deduction: .0625rem;
+
+$mobile-footer-breakpoint: $desktop;
+$mobile-footer-breakpoint-max: 74.063rem;

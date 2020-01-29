@@ -1,0 +1,75 @@
+.block--locale-language {
+  .toggler {
+    // We might need to move this to FontAwesome, now using separate icon.
+    background: url(../../dist/image/language-icon.svg) no-repeat 10px center transparent;
+    background-size: auto 25px;
+    font-size: 1.1rem;
+    line-height: 3.125rem;
+    padding-left: 1.875rem;
+    width: 4.375rem;
+
+    // Show language toggler always
+    @media screen and (min-width: $mobile-menu-breakpoint) {
+      display: block;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $primary-color;
+      background-image: url(../../dist/image/language-icon--white.svg);
+      border-color: $primary-color;
+      color: $white;
+    }
+  }
+
+  .responsive-toggled {
+    position: relative;
+
+    .toggler {
+      background-color: $primary-color;
+      background-image: url(../../dist/image/language-icon--white.svg);
+      border-color: $primary-color;
+      color: $white;
+    }
+  }
+}
+
+.menu--language-switcher {
+  background: $default-color-lightest;
+  box-shadow: 0 9px 8px 0 rgba($primary-color, .75);
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  width: 100%;
+  z-index: 5;
+
+  .menu__item {
+    margin-top: 0;
+  }
+
+  .menu__link {
+    color: $primary-color;
+    display: block;
+    font-size: 1.1rem;
+    padding: .75rem;
+    text-align: center;
+
+    &:hover,
+    &:focus {
+      background: $primary-color;
+      color: $white;
+    }
+
+    &.active {
+      display: none;
+    }
+  }
+}
+
+.menu--language-switcher--is-hidden,
+.responsive-toggled .menu--language-switcher--is-hidden {
+  @media screen and (min-width: $desktop-narrow) {
+    display: none;
+  }
+}

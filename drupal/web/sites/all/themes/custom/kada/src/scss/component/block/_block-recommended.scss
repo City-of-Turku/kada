@@ -1,0 +1,160 @@
+.no-js {
+  .recommended-block__close {
+    display: none;
+  }
+}
+
+.block--views-kada-recommended-block {
+  width: 100%;
+
+  @media screen and (min-width: $tablet-portrait) {
+    bottom: 0;
+    max-width: ($container-width - ($container-gutter * 2)) * 0.4; // max-width
+    position: absolute;
+    right: 0;
+    width: 40%;
+    z-index: 3;
+
+    @media screen and (min-width: $container-width) {
+      margin-right: -(43rem - 10.75rem); // -(max-width -(max-width/2/2)
+      right: 50%;
+      transform: translateX(50%);
+    }
+  }
+
+  button {
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    color: $black;
+    height: 1.563rem;
+    width: 1.563rem;
+
+    .fa-icon {
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.recommended-block {
+  overflow: hidden;
+}
+
+.recommended-block__header {
+  background-color: $link-color-hover;
+  padding: 1.25rem 0.625rem;
+  position: relative;
+
+  @media screen and (min-width: $tablet-portrait) {
+    padding: 1.25rem;
+  }
+}
+
+.recommended-block__content {
+  background-color: $gray-lighter;
+  padding: 0;
+}
+
+.recommended-block__title {
+  color: $white;
+  font-size: .875rem;
+  font-weight: 400;
+  line-height: 1.556;
+  margin: 0;
+
+  @media screen and (min-width: $tablet-portrait-narrow) {
+    font-size: 1.125rem;
+  }
+
+}
+
+.recommended-block__item {
+  border-top: 1px solid $gray;
+
+  &:first-of-type {
+    border-top: 0 none;
+  }
+
+  a {
+    color: $primary-color;
+    display: block;
+    padding: 1.25rem 0.625rem;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @media screen and (min-width: $tablet-portrait) {
+      padding: 1.25rem;
+    }
+
+    &:hover,
+    &:focus,
+    &:hover::after,
+    &:focus::after {
+      background-color: $gray;
+      color: $white;
+    }
+  }
+}
+
+.recommended-block__close {
+  font-size: 0;
+  position: absolute;
+  right: 1.25rem;
+  top: 1.063rem;
+
+  @media screen and (min-width: $tablet-portrait-narrow) {
+    top: 1.25rem;
+  }
+
+  .fa-icon--close {
+    background-color: $white;
+    border-radius: 100%;
+    content: "";
+    display: block;
+    height: 1.563rem;
+    width: 1.563rem;
+    z-index: 1;
+
+    &::before {
+      color: $black;
+      display: block;
+      font-style: normal;
+      height: 1.563rem;
+      text-align: center;
+      width: 1.563rem;
+      z-index: 2;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+}
+
+.block--views-recommended-block--is-hidden {
+  .recommended-block__content {
+    display: none;
+  }
+  .fa-icon--close {
+    &::before {
+      @include fa('\f067', .9rem, 1, false);
+      line-height: 1.6rem;
+    }
+  }
+}
+
+.block--views-recommended-block--is-visible {
+  .recommended-block__content {
+    display: block;
+  }
+  .fa-icon--close {
+    &::before {
+      @include fa('\f068', .9rem, 1, false);
+      line-height: 1.6rem;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+//
+// @file
+// This file includes all variables related to defaults
+//
+
+// Set true to set the global box-sizing to border-box.
+$default-border-box: true !default;
+
+// Set true to use font smoothing
+$default-font-smoothing: true !default;
+
+// Set true to disable the outlines
+$default-disable-outline: false !default;
+
+// Set true to clean menu's of margins and paddings
+$default-clean-menus: true !default;
+
+// Set true to clean menu's of list styles
+$default-clean-list-styles: true !default;
+
+$default-responsive-font-size: true !default;
+
+// Other defaults
+$default-border-radius: 0 !default;

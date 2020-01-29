@@ -1,0 +1,36 @@
+.page-node {
+  .page__additional-information__header {
+    background-color: transparent;
+    color: #000;
+    font-weight: bold;
+    padding-left: 0;
+  }
+
+  .field--name-field-additional-info-link,
+  .field--name-field-file-attachment {
+    .field__item {
+      border-bottom: 1px solid $green-dark;
+      a {
+        &:hover, &:active {
+          background-color: white;
+          color: $green-dark;
+        }
+      }
+    }
+  }
+  // Set theme colors for additional-info.
+  @each $theme-color, $color in $theme-colors {
+    .theme-color-#{$theme-color} {
+      .page__additional-information {
+        .field__item {
+          border-bottom: 1px solid $color;
+        }
+
+        .page__additional-information__header {
+          background-color: $color !important;
+          color: $white;
+        }
+      }
+    }
+  }
+}
