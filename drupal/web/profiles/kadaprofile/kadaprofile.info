@@ -1,0 +1,61 @@
+name = KADA profile
+core = 7.x
+description = Drupal install profile for KADA project
+distribution_name = Kuntien avoin Drupal-alusta
+exclusive = 1
+
+; Core
+dependencies[] = block
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = file
+dependencies[] = image
+dependencies[] = list
+dependencies[] = locale
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = field_ui
+dependencies[] = text
+
+; Contrib
+dependencies[] = admin_menu
+dependencies[] = admin_menu_toolbar
+dependencies[] = ctools
+dependencies[] = date
+dependencies[] = diff
+dependencies[] = entity
+dependencies[] = entity_translation
+dependencies[] = features
+dependencies[] = fe_block
+dependencies[] = field_group
+dependencies[] = i18n
+dependencies[] = i18n_field
+dependencies[] = i18n_menu
+dependencies[] = i18n_node
+dependencies[] = i18n_path
+dependencies[] = i18n_select
+dependencies[] = i18n_string
+dependencies[] = i18n_taxonomy
+dependencies[] = i18n_variable
+dependencies[] = jquery_update
+dependencies[] = libraries
+dependencies[] = module_filter
+dependencies[] = pathauto
+dependencies[] = rules
+dependencies[] = rules_conditional
+dependencies[] = strongarm
+dependencies[] = title
+dependencies[] = token
+dependencies[] = uuid
+dependencies[] = views
+dependencies[] = views_ui
+
+; Features
+
+; Custom
+
+; Theme
