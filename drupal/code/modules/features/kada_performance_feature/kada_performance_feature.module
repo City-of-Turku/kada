@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the KADA Performance feature.
- */
-
-include_once 'kada_performance_feature.features.inc';

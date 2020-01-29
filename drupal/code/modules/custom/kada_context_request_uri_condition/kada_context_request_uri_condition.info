@@ -1,4 +1,0 @@
-name = Context Request URI condition
-description = Adds a Request URI condition to Context.
-core = 7.x
-package = KADA

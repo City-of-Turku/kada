@@ -1,7 +1,0 @@
-name = Pori blog
-description = Blog feature overrides
-core = 7.x
-package = Pori
-version = 7.x-1.0
-dependencies[] = kada_blog_feature
-features[features_api][] = api:2

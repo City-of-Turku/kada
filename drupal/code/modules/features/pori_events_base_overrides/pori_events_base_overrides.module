@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the PORI events base overrides feature.
- */
-
-include_once 'pori_events_base_overrides.features.inc';

@@ -1,6 +1,0 @@
-name = KADA Event Ext
-description = KADA event management for external users
-core = 7.x
-package = KADA
-
-dependencies[] = multiple_entity_form

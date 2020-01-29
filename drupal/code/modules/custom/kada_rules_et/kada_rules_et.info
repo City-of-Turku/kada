@@ -1,7 +1,0 @@
-name = KADA Rules Entity translation
-description = Entity translation support for Rules module
-package = KADA
-core = 7.x
-
-dependencies[] = rules
-dependencies[] = entity_translation

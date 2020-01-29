@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Visitpori landing-page feature.
- */
-
-include_once 'visitpori_landing_page.features.inc';

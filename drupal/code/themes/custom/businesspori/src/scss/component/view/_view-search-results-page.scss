@@ -1,8 +1,0 @@
-.search-result--container {
-  // Set theme colored borders.
-  @each $theme-color, $color in $theme-colors {
-    &.theme-visit-color-#{$theme-color} {
-      border-top: .938rem solid $color !important;
-    }
-  }
-}

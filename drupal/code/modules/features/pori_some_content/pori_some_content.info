@@ -1,7 +1,0 @@
-name = Pori some content
-description = SoMe content feature overrides
-core = 7.x
-package = Pori
-version = 7.x-1.0
-dependencies[] = kada_some_content_feature
-features[features_api][] = api:2

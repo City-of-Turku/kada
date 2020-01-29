@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Pori configuration overrides feature.
- */
-
-include_once 'pori_configuration_overrides_feature.features.inc';

@@ -1,8 +1,0 @@
-name = VisitPori override feature
-core = 7.x
-package = Pori
-version = 7.x-1.0-dev
-dependencies[] = kada_configuration_feature
-dependencies[] = kada_landing_page_feature
-dependencies[] = visitpori_configurations
-features[features_api][] = api:2

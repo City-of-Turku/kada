@@ -1,4 +1,0 @@
-name = Active menu context condition
-description = Context condition for active menu
-core = 7.x
-package = KADA

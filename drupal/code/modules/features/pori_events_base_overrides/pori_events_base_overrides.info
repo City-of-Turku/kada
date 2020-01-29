@@ -1,6 +1,0 @@
-name = PORI events base overrides
-description = Overrides for feature 'KADA events base'.
-core = 7.x
-package = Pori
-dependencies[] = kada_events_base_feature
-features[features_api][] = api:2
