@@ -103,3 +103,21 @@ function pori_configuration_update_7113() {
     drupal_uninstall_modules(array('httprl'));
   }
 }
+
+/**
+ * Delete the missing modules from the database for speed.
+ */
+function pori_configuration_update_7114() {
+  $modules = array(
+    'imagestyleflush',
+    'tkufi_contact_information_feature',
+    'tkufi_event_ext',
+    'tkufi_places_feature',
+    'tkufi_rules_et',
+    'tkufi_service_offer_feature',
+  );
+  db_delete('system')
+    ->condition('name', $modules, 'IN')
+    ->condition('type', 'module')
+    ->execute();
+}
