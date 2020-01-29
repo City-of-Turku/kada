@@ -1,7 +1,7 @@
 name: pori
 recipe: drupal7
 config:
-  php: '7.3'
+  php: '7.2'
   via: nginx
   webroot: web
   config:
