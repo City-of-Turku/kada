@@ -74,16 +74,12 @@ develop:
 
   # Test environment only symlinks files
   link:
-    - /var/www/pori.dev.wunder.io/files: sites/default/files
+    - /var/www/pori.dev.wunder.io/files: web/sites/default/files
 
   # Other files are copied, note settings.php
   copy:
-    - code/modules/custom: sites/all/modules/custom
-    - code/modules/features: sites/all/modules/features
-    - code/themes/custom: sites/all/themes/custom
-    - code/profiles/kadaprofile: profiles/kadaprofile
-    - conf/settings.php: sites/default/settings.php
-    - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
+    - conf/settings.php: web/sites/default/settings.local.php
+    - conf/dev.radioactivity-bootstrap.cfg.inc: web/sites/default/radioactivity-bootstrap.cfg.inc
     # - conf/simplesaml: simplesamlphp
     - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
     - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
@@ -111,16 +107,12 @@ stage:
 
   # Test environment only symlinks files
   link:
-    - /var/www/pori.stage.wunder.io/files: sites/default/files
+    - /var/www/pori.stage.wunder.io/files: web/sites/default/files
 
   # Other files are copied, note settings.php
   copy:
-    - code/modules/custom: sites/all/modules/custom
-    - code/modules/features: sites/all/modules/features
-    - code/themes/custom: sites/all/themes/custom
-    - code/profiles/kadaprofile: profiles/kadaprofile
-    - conf/settings.php: sites/default/settings.php
-    - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
+    - conf/settings.php: web/sites/default/settings.local.php
+    - conf/dev.radioactivity-bootstrap.cfg.inc: web/sites/default/radioactivity-bootstrap.cfg.inc
     # - conf/simplesaml: simplesamlphp
     - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
     - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
@@ -148,16 +140,12 @@ prod:
 
   # Test environment only symlinks files
   link:
-    - /var/www/pori.prod.wunder.io/files: sites/default/files
+    - /var/www/pori.prod.wunder.io/files: web/sites/default/files
 
   # Other files are copied, note settings.php
   copy:
-    - code/modules/custom: sites/all/modules/custom
-    - code/modules/features: sites/all/modules/features
-    - code/themes/custom: sites/all/themes/custom
-    - code/profiles/kadaprofile: profiles/kadaprofile
-    - conf/settings.php: sites/default/settings.php
-    - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
+    - conf/settings.php: web/sites/default/settings.local.php
+    - conf/dev.radioactivity-bootstrap.cfg.inc: web/sites/default/radioactivity-bootstrap.cfg.inc
     # - conf/simplesaml: simplesamlphp
     - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
     - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
@@ -180,6 +168,3 @@ prod:
       - shell: chmod -R a-w web
       - drush: cc all
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
-
-
-
