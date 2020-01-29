@@ -3,15 +3,11 @@ set -exu
 
 # Synchronise local database with selected environment.
 
-# Set paths.
-webroot=/app/web
+# Construct local drush site alias.
+LOCAL=@"$LANDO_APP_NAME".local
 
-# Set Drush aliases.
-site=@pori
-local=@pori.local
-
-#Set default syncdb environment.
-env=stage
+# Define the default remote environment.
+REMOTE=stage
 
 function usage {
   echo "Usage: $0 [prod]"
@@ -26,17 +22,18 @@ if [ "$#" -eq 1 ]; then
   if [ "$1" != "prod" ]; then
     usage
   fi
-  env=prod
+  REMOTE=prod
 fi
 
 # Synchronize & sanitize database from selected environment.
-cd "$webroot"
 rm -rf /app/dump.sql
-drush "$site.$env" sql-dump --structure-tables-list="cache,cache_*,history,sessions,watchdog" > /app/dump.sql
-drush "$local" sql-drop -y
-drush "$local" sql-query --file=/app/dump.sql -y
-drush "$local" sqlsan -y
-# drush "$local" cc drush
-drush "$local" cc all
-rm /app/dump.sql
-drush "$local" uli
+drush @"$LANDO_APP_NAME"."$REMOTE" sql-dump --structure-tables-list=cache,cache_*,history,sessions,watchdog > /app/dump.sql
+drush "$LOCAL" sql-drop -y
+# drush sql-sync @"$LANDO_APP_NAME"."$REMOTE" "$LOCAL" -y
+drush "$LOCAL" sql-query --file=/app/dump.sql -y
+drush "$LOCAL" sqlsan -y
+drush "$LOCAL" updb -y
+drush "$LOCAL" cc drush
+drush "$LOCAL" cc all
+rm -rf /app/dump.sql
+drush "$LOCAL" uli
