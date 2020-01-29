@@ -388,6 +388,7 @@
         "phayes/geophp": "dev-master",
         "proj4js/proj4js": "^1.1.0",
         "select2/select2": "^4.0.5",
+        "simplesamlphp/simplesamlphp": "^1.18",
         "symfony/filesystem": "~2.7|^3",
         "webflo/drupal-finder": "^1.0.0",
         "woothemes/flexslider": "^2.2.2"
@@ -433,6 +434,9 @@
         ],
         "post-create-project-cmd": [
             "DrupalProject\\composer\\ScriptHandler::removeInternalFiles"
+        ],
+        "post-autoload-dump": [
+          "cp -rf vendor/simplesamlphp/simplesamlphp web/"
         ]
     },
     "extra": {

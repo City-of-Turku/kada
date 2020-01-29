@@ -14,7 +14,7 @@ default:
   # In development environments we want to use symlinks, note settings.php
   link:
     - files: web/sites/default/files
-    - conf/simplesaml: simplesamlphp
+    # - conf/simplesaml: simplesamlphp
     - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
     - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
 
@@ -84,8 +84,7 @@ develop:
     - code/profiles/kadaprofile: profiles/kadaprofile
     - conf/settings.php: sites/default/settings.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
-    - conf/_ping.php: _ping.php
-    - conf/simplesaml: simplesamlphp
+    # - conf/simplesaml: simplesamlphp
     - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
     - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
 
@@ -122,8 +121,7 @@ stage:
     - code/profiles/kadaprofile: profiles/kadaprofile
     - conf/settings.php: sites/default/settings.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
-    - conf/_ping.php: _ping.php
-    - conf/simplesaml: simplesamlphp
+    # - conf/simplesaml: simplesamlphp
     - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
     - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
 
@@ -160,8 +158,7 @@ prod:
     - code/profiles/kadaprofile: profiles/kadaprofile
     - conf/settings.php: sites/default/settings.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
-    - conf/_ping.php: _ping.php
-    - conf/simplesaml: simplesamlphp
+    # - conf/simplesaml: simplesamlphp
     - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
     - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
 
