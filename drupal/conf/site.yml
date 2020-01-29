@@ -1,33 +1,19 @@
 ---
 
-#
-# NORMAL SITE
-#
-
-# Default environment is Vagrant:
 default:
 
-  makefile: conf/kadaproject.make
-  temporary: _build
-  final: web
-  previous: builds
+  # It's D7, but build.sh doesn't support D7 composer builds.
+  drupal_version: d8
+
   profile: kadaprofile
   site: KADA
 
   aliases:
-    - vagrant
     - local
 
   # In development environments we want to use symlinks, note settings.php
   link:
-    - files: sites/default/files
-    - code/modules/custom: sites/all/modules/custom
-    - code/modules/features: sites/all/modules/features
-    - code/themes/custom: sites/all/themes/custom
-    - code/profiles/kadaprofile: profiles/kadaprofile
-    - conf/vagrant.settings.php: sites/default/settings.php
-    - conf/vagrant.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
-    - conf/_ping.php: _ping.php
+    - files: web/sites/default/files
     - conf/simplesaml: simplesamlphp
     - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
     - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
@@ -69,35 +55,19 @@ default:
 
 # Lando environment:
 lando:
+lando:
+  # Allow development modules to be installed.
+  allow_composer_dev: true
 
+  # Symlink files folder. This is generic location for both dev and stage environments.
   link:
-    - files: sites/default/files
-    - code/modules/custom: sites/all/modules/custom
-    - code/modules/features: sites/all/modules/features
-    - code/themes/custom: sites/all/themes/custom
-    - code/profiles/kadaprofile: profiles/kadaprofile
-    - .lando/settings.php: sites/default/settings.php
-    - .lando/radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
+    - files: web/sites/default/files
 
-  # We can provide local commands or override global ones.
+  # These commands will be used in all environments unless they are overridden.
   local_commands:
-
-    update:
-      - shell: mkdir -vp /app/files
-      - shell: chmod -R a+w /app/files
-      - shell: mkdir -vp /app/files_private
-      - shell: chmod -R a+w /app/files_private
+    # Set up a new build
+    build:
       - make
-      # - backup:
-      #     ignore:
-      #       - sites/default/files
-      - shell: chmod -R a+w web
-      - finalize
-      # - update
-      - cleanup
-      # - shell: cd web && drush en devel -y
-      # - shell: cd web && drush cc drush && drush composer-json-rebuild -y
-      # - shell: cd web && drush composer-manager update -y
 
 # Test environment:
 develop:
