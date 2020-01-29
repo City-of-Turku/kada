@@ -28,7 +28,6 @@ dependencies[] = geophp
 dependencies[] = hierarchical_select
 dependencies[] = honeypot
 dependencies[] = hs_taxonomy
-dependencies[] = httprl
 dependencies[] = i18n_block
 dependencies[] = i18n_taxonomy
 dependencies[] = image

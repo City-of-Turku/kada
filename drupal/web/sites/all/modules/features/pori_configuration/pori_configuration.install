@@ -93,3 +93,13 @@ function pori_configuration_update_7111(&$sandbox) {
 function pori_configuration_update_7112(&$sandbox) {
   module_enable(array('domains_metatag'));
 }
+
+/**
+ * Disable and uninstall the httprl module.
+ */
+function pori_configuration_update_7113() {
+  if( module_exists('httprl')) {
+    module_disable(array('httprl'));
+    drupal_uninstall_modules(array('httprl'));
+  }
+}
