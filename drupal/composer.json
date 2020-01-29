@@ -582,7 +582,8 @@
             }
         },
         "preserve-paths": [
-            "web/sites"
+            "web/sites",
+            "web/profiles"
         ]
     }
 
