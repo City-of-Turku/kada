@@ -5,7 +5,7 @@
 ### [Setup](https://docs.lando.dev/basics/installation.html)
 
 1. Install the [latest Lando](https://github.com/lando/lando/releases) and read the [documentation](https://docs.lando.dev/).
-2. Check out the repo and go to the project root: `git clone git@github.com:wunderio/client-fi-pori.git pori && cd pori`
+2. Check out the repo and go to the project root: `git clone git@github.com:City-of-Pori/pori-kada.git pori && cd pori`
 3. Run `lando start`.
 4. Import data with `lando syncdb` (staging environment) or `lando syncdb prod` (production). Register your public key and connect to the required VPN first.
 5. Run `lando update` to update database, revert the features and enable development modules.
