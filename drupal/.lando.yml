@@ -102,5 +102,8 @@ events:
   post-db-import:
     - appserver: /app/.lando/update.sh
 
+env_file:
+  - .lando/.env
+
 # Tested with Lando version.
 version: v3.0.0-rc.23
