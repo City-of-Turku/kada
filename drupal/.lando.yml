@@ -39,6 +39,11 @@ services:
       - /bin/sh -c '/opt/bitnami/memcached/bin/memcached start -d'
   node:
     type: node
+    globals:
+      gulp-cli: latest
+      bower: latest
+    build:
+      - /app/.lando/node.sh
   # redis:
   #   type: redis
   #   portforward: true 
@@ -52,10 +57,14 @@ tooling:
     description: Build the local site.
     cmd:
       - appserver: /app/.lando/build.sh
-  build.sh:
-    description: Run build.sh commands.
-    cmd:
-      - appserver: /app/build.sh
+  # build.sh:
+  #   description: Run build.sh commands.
+  #   cmd:
+  #     - appserver: /app/build.sh
+  bower: 
+    service: node
+  gulp: 
+    service: node
   phpcbf:
     description: Run phpcbf commands.
     cmd:
