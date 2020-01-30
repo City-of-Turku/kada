@@ -473,26 +473,30 @@ function kada_ds_pre_render_alter(&$layout_render_array, $context, &$variables) 
       if (!empty($variables['field_image'][0]['fid'])) {
         if (!empty($variables['field_image_url'][0])) {
           // Some updates have separate Image URL value
-          foreach ($layout_render_array['ds_content'] as $key => $value) {
-            if (isset($value['#field_name'])) {
-              if ($value['#field_name'] == 'field_image') {
-                $layout_render_array['ds_content'][$key][0]['#path']['path'] = $variables['field_image_url'][0]['url'];
-                // Hide Image URL because the image is linked to the URL
-                $hide_link = TRUE;
+          if (!empty($layout_render_array['ds_content'])) {
+            foreach ($layout_render_array['ds_content'] as $key => $value) {
+              if (isset($value['#field_name'])) {
+                if ($value['#field_name'] == 'field_image') {
+                  $layout_render_array['ds_content'][$key][0]['#path']['path'] = $variables['field_image_url'][0]['url'];
+                  // Hide Image URL because the image is linked to the URL
+                  $hide_link = TRUE;
+                }
               }
             }
           }
         } elseif (!empty($variables['field_link'][0]['url'])) {
           // Some updates do not have separate Image URL value, such as Facebook
           // link shares, so link the image to the share link
-          foreach ($layout_render_array['ds_content'] as $key => $value) {
-            if (isset($value['#field_name'])) {
-              if ($value['#field_name'] == 'field_image') {
-                $link = $variables['field_link'][0];
-                $layout_render_array['ds_content'][$key][0]['#path']['path'] = $link['url'];
-                $layout_render_array['ds_content'][$key][0]['#path']['options']['query'] = $link['query'];
-                // Hide Image URL because the image is linked to the URL
-                $hide_link = TRUE;
+          if (!empty($layout_render_array['ds_content'])) {
+            foreach ($layout_render_array['ds_content'] as $key => $value) {
+              if (isset($value['#field_name'])) {
+                if ($value['#field_name'] == 'field_image') {
+                  $link = $variables['field_link'][0];
+                  $layout_render_array['ds_content'][$key][0]['#path']['path'] = $link['url'];
+                  $layout_render_array['ds_content'][$key][0]['#path']['options']['query'] = $link['query'];
+                  // Hide Image URL because the image is linked to the URL
+                  $hide_link = TRUE;
+                }
               }
             }
           }
@@ -509,7 +513,7 @@ function kada_ds_pre_render_alter(&$layout_render_array, $context, &$variables) 
       }
       // We cannot remove link field from display mode settings, because otherwise
       // it will not appear in $variables, so we hide it here.
-      if ($hide_link) {
+      if ($hide_link && !empty($layout_render_array['ds_content'])) {
         foreach ($layout_render_array['ds_content'] as $key => $value) {
           if (!empty($value['#field_name']) && ($value['#field_name'] == 'field_link' || $value['#field_name'] == 'field_image_url')) {
             unset($layout_render_array['ds_content'][$key]);
