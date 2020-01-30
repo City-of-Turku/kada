@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eb8c9e63f53b59d9d290cf2ea1ce4e20",
+    "content-hash": "3e66fb5a31f844a130256f5e22ba83e1",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
@@ -5848,6 +5848,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "#2912469: i18n Warning: Invalid argument supplied for foreach() 18n_taxonomy_views_pre_render()": "https://www.drupal.org/files/issues/i18n_taxonomy-2912469-1.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/7/downloads",

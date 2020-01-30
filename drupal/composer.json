@@ -510,6 +510,9 @@
                 "Enter drupal/geofield patch #0 description here": "https://www.drupal.org/files/issues/geofield-delete_feature_fix-1350320-20.patch",
                 "Enter drupal/geofield patch #1 description here": "patches/geofield-entity-translation-field-lang.patch"
             },
+            "drupal/i18n": {
+                "#2912469: i18n Warning: Invalid argument supplied for foreach() 18n_taxonomy_views_pre_render()": "https://www.drupal.org/files/issues/i18n_taxonomy-2912469-1.patch"
+            },
             "drupal/imagecache_token": {
                 "Enter drupal/imagecache_token patch #0 description here": "https://www.drupal.org/files/issues/2019-09-16/2528180-19.patch"
             },
