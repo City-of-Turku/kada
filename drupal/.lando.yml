@@ -4,6 +4,7 @@ config:
   php: '7.2'
   via: nginx
   webroot: web
+  xdebug: false
   config:
     vhosts: ./.lando/drupal7.conf
 
@@ -85,6 +86,18 @@ tooling:
     description: Update local site with development settings.
     cmd:
       - appserver: /app/.lando/update.sh
+  xdebug-on:
+    service: appserver
+    description: Enables xdebug for nginx
+    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disables xdebug for nginx
+    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm
+    user: root
+  yarn:
+    service: node
 
 proxy:
   appserver_nginx:
