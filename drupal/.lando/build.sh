@@ -11,4 +11,5 @@ chmod -R a+w /app/files
 mkdir -vp /app/files_private
 chmod -R a+w /app/files_private
 chmod -R a+w /app/web/sites/default
+cd /app
 ln -sfv /app/files web/sites/default
