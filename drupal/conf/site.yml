@@ -14,9 +14,6 @@ default:
   # In development environments we want to use symlinks, note settings.php
   link:
     - files: web/sites/default/files
-    # - conf/simplesaml: simplesamlphp
-    # - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
-    # - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
 
   # We can provide local commands or override global ones.
   local_commands:
@@ -80,9 +77,6 @@ develop:
   copy:
     - conf/settings.php: web/sites/default/settings.local.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: web/sites/default/radioactivity-bootstrap.cfg.inc
-    # - conf/simplesaml: simplesamlphp
-    # - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
-    # - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
@@ -113,9 +107,6 @@ stage:
   copy:
     - conf/settings.php: web/sites/default/settings.local.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: web/sites/default/radioactivity-bootstrap.cfg.inc
-    # - conf/simplesaml: simplesamlphp
-    # - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
-    # - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
@@ -146,9 +137,6 @@ prod:
   copy:
     - conf/settings.php: web/sites/default/settings.local.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: web/sites/default/radioactivity-bootstrap.cfg.inc
-    # - conf/simplesaml: simplesamlphp
-    # - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
-    # - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
