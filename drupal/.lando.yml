@@ -27,6 +27,7 @@ services:
     overrides:
       environment:
         WKV_SITE_ENV: lando
+        SAML_MEMCACHE_STORE: memcached
   database:
     type: mariadb:10.2
   mailhog:
