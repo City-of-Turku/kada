@@ -25,7 +25,7 @@ drush "$LOCAL" vset stage_file_proxy_origin 'https://www.pori.fi'
 drush "$LOCAL" vset site_mail "admin@example.com"
 
 
-# drush "$LOCAL" vset simplesamlphp_auth_installdir "/app/conf/simplesaml"
+drush "$LOCAL" vset simplesamlphp_auth_installdir "/app/web/simplesaml"
 
 # drush "$LOCAL" cron
 drush "$LOCAL" cc drush
