@@ -86,7 +86,6 @@ develop:
       - shell: chmod -R a+w web
       - make
       - shell: chmod -R a-w web
-      # - finalize
 
     update:
       - drush: updb -y
@@ -116,10 +115,10 @@ stage:
     build:
       - shell: chmod -R a+w web
       - make
-      - finalize
+      - shell: chmod -R a-w web
 
     update:
-      - update
+      - drush: updb -y
       - cleanup
       - drush: omega-revert kada
       - drush: en devel -y
@@ -146,10 +145,10 @@ prod:
     build:
       - shell: chmod -R a+w web
       - make
-      - finalize
+      - shell: chmod -R a-w web
 
     update:
-      - update
+      - drush: updb -y
       - cleanup
       - drush: omega-revert kada
       - drush: dis devel -y
