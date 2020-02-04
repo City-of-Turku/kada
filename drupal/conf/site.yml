@@ -1,15 +1,17 @@
 ---
 
 default:
+  aliases:
+    - local
 
   # It's D7, but build.sh doesn't support D7 composer builds.
   drupal_version: d8
 
+  # Installation profile to use
   profile: kadaprofile
-  site: KADA
 
-  aliases:
-    - local
+  # Site name given at installation phase
+  site: KADA
 
   # In development environments we want to use symlinks, note settings.php
   link:
@@ -52,7 +54,6 @@ default:
 
 # Lando environment:
 lando:
-lando:
   # Allow development modules to be installed.
   allow_composer_dev: true
 
@@ -68,8 +69,10 @@ lando:
 
 # Test environment:
 develop:
+  # Allow development modules to be installed.
+  allow_composer_dev: true
 
-  # Test environment only symlinks files
+  # Symlink files folder.
   link:
     - /var/www/pori.dev.wunder.io/files: web/sites/default/files
 
@@ -82,10 +85,11 @@ develop:
     build:
       - shell: chmod -R a+w web
       - make
-      - finalize
+      - shell: chmod -R a-w web
+      # - finalize
 
     update:
-      - update
+      - drush: updb -y
       - cleanup
       - drush: en devel -y
       - drush: fra -y
