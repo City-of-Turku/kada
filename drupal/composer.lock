@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bbf3af4c0b4b77ef2c51990b57388f5b",
+    "content-hash": "e374907d5c6c28cf0f2bde70287c8f86",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
@@ -12628,6 +12628,49 @@
             "type": "drupal-library"
         },
         {
+            "name": "koodimonni/composer-dropin-installer",
+            "version": "1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Koodimonni/Composer-Dropin-Installer.git",
+                "reference": "a749f19e3a3bc05529190961ed7529592b20138e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Koodimonni/Composer-Dropin-Installer/zipball/a749f19e3a3bc05529190961ed7529592b20138e",
+                "reference": "a749f19e3a3bc05529190961ed7529592b20138e",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*-dev"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Koodimonni\\Composer\\Dropin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Koodimonni\\Composer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "WTFPL"
+            ],
+            "authors": [
+                {
+                    "name": "Onni Hakala",
+                    "email": "onni@koodimonni.fi",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Install packages or a few files from packages into custom paths without overwriting existing stuff.",
+            "time": "2018-02-04T10:52:01+00:00"
+        },
+        {
             "name": "moxiecode/plupload",
             "version": "1.5.8",
             "dist": {
@@ -16156,6 +16199,39 @@
                     "Enter woothemes/flexslider patch #0 description here": "patches/flexslider_ie_vertical_pan_support.patch"
                 }
             }
+        },
+        {
+            "name": "wunderio/drupal-ping",
+            "version": "7.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wunderio/drupal-ping",
+                "reference": "aa1fae843b8547338974aec07811654d79e76bdc"
+            },
+            "require": {
+                "drupal/drupal": "~7.0",
+                "koodimonni/composer-dropin-installer": ">=1.0.1"
+            },
+            "type": "web-dropin",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Janne Koponen",
+                    "email": "janne.koponen@wunder.io",
+                    "homepage": "https://github.com/tharna",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Drupal health check endpoint for load balancers",
+            "homepage": "https://github.com/wunderio/drupal-ping",
+            "keywords": [
+                "drupal",
+                "healthcheck",
+                "ping"
+            ],
+            "time": "2019-03-14T11:22:44+00:00"
         }
     ],
     "packages-dev": [
@@ -16539,7 +16615,8 @@
         "drupal/simplesamlphp_auth": 20,
         "drupal/views_datasource": 20,
         "jhuang0427/php-proauth": 20,
-        "phayes/geophp": 20
+        "phayes/geophp": 20,
+        "wunderio/drupal-ping": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

@@ -15,6 +15,10 @@
             "url": "https://packages.drupal.org/7"
         },
         {
+            "type": "git",
+            "url": "https://github.com/wunderio/drupal-ping"
+        },
+        {
             "type": "package",
             "package": {
                 "name": "ckeditor/ckeditor",
@@ -391,7 +395,8 @@
         "simplesamlphp/simplesamlphp": "^1.18",
         "symfony/filesystem": "~2.7|^3",
         "webflo/drupal-finder": "^1.0.0",
-        "woothemes/flexslider": "^2.2.2"
+        "woothemes/flexslider": "^2.2.2",
+        "wunderio/drupal-ping": "7.x-dev"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.6.0",
@@ -447,6 +452,9 @@
             "web/sites/all/libraries/{$name}/": ["type:drupal-library"],
             "web/sites/all/modules/contrib/{$name}/": ["type:drupal-module"],
             "web/sites/all/themes/contrib/{$name}/": ["type:drupal-theme"]
+        },
+        "dropin-paths": {
+            "web/": ["type:web-dropin"]
         },
         "patches": {
             "cweagans/composer-patches": {

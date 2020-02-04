@@ -10,8 +10,6 @@
 # Ignore Drupal 7 core files.
 /web/*
 !/web/*/
-# Don't ignore _ping.php.
-!/web/_ping.php
 /web/includes/
 /web/misc/
 /web/modules/
