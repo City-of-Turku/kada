@@ -35,6 +35,9 @@
 /files
 /files_private
 
+# Ignore SimpleSAML folder.
+/web/simplesaml
+
 # Ignore other files.
 /.idea/
 *.sql
