@@ -436,10 +436,7 @@
             "DrupalProject\\composer\\ScriptHandler::removeInternalFiles"
         ],
         "post-autoload-dump": [
-          "cp -rf vendor/simplesamlphp/simplesamlphp web/",
-          "mkdir -p web/simplesamlphp/www/config",
-          "cp -rf conf/simplesaml/config/config.php web/simplesamlphp/www/config/config.php",
-          "cp -rf conf/simplesaml/config/authsources.php web/simplesamlphp/www/config/authsources.php"
+          "DrupalProject\\composer\\ScriptHandler::setupSimpleSaml"
         ]
     },
     "extra": {

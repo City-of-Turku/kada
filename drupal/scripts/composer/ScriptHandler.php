@@ -133,4 +133,23 @@ class ScriptHandler {
     }
   }
 
+
+  /**
+   * Set up SimpleSAMLphp instance.
+   */
+  public static function setupSimpleSaml(Event $event) {
+    $fs = new Filesystem();
+    $drupalFinder = new DrupalFinder();
+    $drupalFinder->locateRoot(getcwd());
+    $drupalRoot = $drupalFinder->getDrupalRoot();
+    $composerRoot = $drupalFinder->getComposerRoot();
+
+    // Copy the simplesamlphp/www directory to drupalRoot.
+    $fs->remove($drupalRoot . '/simplesaml');
+    $fs->mirror($composerRoot . '/vendor/simplesamlphp/simplesamlphp/www', $drupalRoot . '/simplesaml');
+    $fs->remove($drupalRoot . '/simplesaml/config');
+    $fs->mkdir($drupalRoot . '/simplesaml/config', 0755);
+    $fs->copy($composerRoot . '/conf/simplesaml/config/authsources.php', $drupalRoot . '/simplesaml/config/authsources.php');
+    $fs->copy($composerRoot . '/conf/simplesaml/config/config.php', $drupalRoot . '/simplesaml/config/config.php');
+  }
 }
