@@ -86,7 +86,9 @@ function kada_page_feature_field_formatter_view($entity_type, $node, $field, $in
   $result = array();
 
   $settings = $display['settings'];
-  $view_mode = $settings['view_mode'];
+  if(!empty($settings['view_mode'])){
+    $view_mode = $settings['view_mode'];
+  }
 
   if ($display['type'] == 'kada_page_service_offering_formatter') {
     foreach ($items as $delta => $item) {
