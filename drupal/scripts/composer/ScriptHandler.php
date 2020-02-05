@@ -144,7 +144,7 @@ class ScriptHandler {
     $composerRoot = $drupalFinder->getComposerRoot();
 
     // Copy _ping.php to drupalRoot.
-    $fs->copy($composerRoot . '/conf/_ping.php', $drupalRoot . '_ping.php');
+    $fs->copy($composerRoot . '/conf/_ping.php', $drupalRoot . '/_ping.php');
   }
 
   /**
