@@ -81,6 +81,9 @@ develop:
     - conf/_ping.php: web/_ping.php
     - conf/settings.php: web/sites/default/settings.local.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: web/sites/default/radioactivity-bootstrap.cfg.inc
+    - conf/simplesaml: web/simplesamlphp
+    - conf/simplesaml/config/config.php: web/simplesamlphp/www/config/config.php
+    - conf/simplesaml/config/authsources.php: web/simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
@@ -112,6 +115,9 @@ stage:
     - conf/_ping.php: web/_ping.php
     - conf/settings.php: web/sites/default/settings.local.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: web/sites/default/radioactivity-bootstrap.cfg.inc
+    - conf/simplesaml: web/simplesamlphp
+    - conf/simplesaml/config/config.php: web/simplesamlphp/www/config/config.php
+    - conf/simplesaml/config/authsources.php: web/simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
@@ -143,6 +149,9 @@ prod:
     - conf/_ping.php: web/_ping.php
     - conf/settings.php: web/sites/default/settings.local.php
     - conf/dev.radioactivity-bootstrap.cfg.inc: web/sites/default/radioactivity-bootstrap.cfg.inc
+    - conf/simplesaml: web/simplesamlphp
+    - conf/simplesaml/config/config.php: web/simplesamlphp/www/config/config.php
+    - conf/simplesaml/config/authsources.php: web/simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
