@@ -7,7 +7,7 @@ composer.json
 *.sass-cache*
 
 # node
-bower_components
+# bower_components
 node_modules
 npm-debug.log
 .gulp

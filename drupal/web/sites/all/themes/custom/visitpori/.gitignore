@@ -9,7 +9,7 @@ composer.json
 # node
 libraries
 node_modules
-bower_components
+# bower_components
 npm-debug.log
 .gulp
 
