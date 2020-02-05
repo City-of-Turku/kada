@@ -1,7 +1,6 @@
 # Generic ones
 .DS_Store
 .vagrant
-drupal/web
 drupal/builds
 drupal/.make_cache
 drupal/drupal.sqlite
@@ -16,16 +15,7 @@ VERSION
 tests/_output/*
 
 # Ignore paths that contain user-generated content.
-
-drupal/files/*
-drupal/private_files/*
-drupal/_build
-sites/*/files
-files/*
-private_files/*
-sites/*/private
 /bin/
-drupal/files_private
 drupal/tmp
 /current/
 /builds/

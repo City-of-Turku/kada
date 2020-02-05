@@ -1,36 +1,21 @@
 ---
 
-#
-# NORMAL SITE
-#
-
-# Default environment is Vagrant:
 default:
-
-  makefile: conf/kadaproject.make
-  temporary: _build
-  final: web
-  previous: builds
-  profile: kadaprofile
-  site: KADA
-
   aliases:
-    - vagrant
     - local
+
+  # It's D7, but build.sh doesn't support D7 composer builds.
+  drupal_version: d8
+
+  # Installation profile to use
+  profile: kadaprofile
+
+  # Site name given at installation phase
+  site: KADA
 
   # In development environments we want to use symlinks, note settings.php
   link:
-    - files: sites/default/files
-    - code/modules/custom: sites/all/modules/custom
-    - code/modules/features: sites/all/modules/features
-    - code/themes/custom: sites/all/themes/custom
-    - code/profiles/kadaprofile: profiles/kadaprofile
-    - conf/vagrant.settings.php: sites/default/settings.php
-    - conf/vagrant.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
-    - conf/_ping.php: _ping.php
-    - conf/simplesaml: simplesamlphp
-    - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
-    - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
+    - files: web/sites/default/files
 
   # We can provide local commands or override global ones.
   local_commands:
@@ -69,68 +54,49 @@ default:
 
 # Lando environment:
 lando:
+  # Allow development modules to be installed.
+  allow_composer_dev: true
 
+  # Symlink files folder. This is generic location for both dev and stage environments.
   link:
-    - files: sites/default/files
-    - code/modules/custom: sites/all/modules/custom
-    - code/modules/features: sites/all/modules/features
-    - code/themes/custom: sites/all/themes/custom
-    - code/profiles/kadaprofile: profiles/kadaprofile
-    - .lando/settings.php: sites/default/settings.php
-    - conf/lando.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
+    - files: web/sites/default/files
 
-  # We can provide local commands or override global ones.
+  # These commands will be used in all environments unless they are overridden.
   local_commands:
-
-    update:
-      - shell: mkdir -vp /app/files
-      - shell: chmod -R a+w /app/files
-      - shell: mkdir -vp /app/files_private
-      - shell: chmod -R a+w /app/files_private
+    # Set up a new build
+    build:
       - make
-      # - backup:
-      #     ignore:
-      #       - sites/default/files
-      - shell: chmod -R a+w web
-      - finalize
-      # - update
-      - cleanup
-      # - shell: cd web && drush en devel -y
-      # - shell: cd web && drush cc drush && drush composer-json-rebuild -y
-      # - shell: cd web && drush composer-manager update -y
 
 # Test environment:
 develop:
+  # Allow development modules to be installed.
+  allow_composer_dev: true
 
-  # Test environment only symlinks files
+  # Symlink files folder.
   link:
-    - /var/www/pori.dev.wunder.io/files: sites/default/files
+    - /var/www/pori.dev.wunder.io/files: web/sites/default/files
 
   # Other files are copied, note settings.php
   copy:
-    - code/modules/custom: sites/all/modules/custom
-    - code/modules/features: sites/all/modules/features
-    - code/themes/custom: sites/all/themes/custom
-    - code/profiles/kadaprofile: profiles/kadaprofile
-    - conf/settings.php: sites/default/settings.php
-    - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
-    - conf/_ping.php: _ping.php
-    - conf/simplesaml: simplesamlphp
-    - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
-    - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
+    - conf/settings.php: web/sites/default/settings.local.php
+    - conf/dev.radioactivity-bootstrap.cfg.inc: web/sites/default/radioactivity-bootstrap.cfg.inc
+    - conf/simplesaml: web/simplesamlphp
+    - conf/simplesaml/config/config.php: web/simplesamlphp/www/config/config.php
+    - conf/simplesaml/config/authsources.php: web/simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
       - shell: chmod -R a+w web
       - make
-      - finalize
+      - shell: chmod -R a-w web
 
     update:
-      - update
+      - drush: updb -y
       - cleanup
       - drush: en devel -y
-      - drush: fra -y
       - drush: cc drush
+      - drush: fra -y
+      - drush: cc all
       # - drush: composer-json-rebuild -y
       # - drush: composer-manager update -y
       - shell: chmod -R a-w web
@@ -142,34 +108,30 @@ stage:
 
   # Test environment only symlinks files
   link:
-    - /var/www/pori.stage.wunder.io/files: sites/default/files
+    - /var/www/pori.stage.wunder.io/files: web/sites/default/files
 
   # Other files are copied, note settings.php
   copy:
-    - code/modules/custom: sites/all/modules/custom
-    - code/modules/features: sites/all/modules/features
-    - code/themes/custom: sites/all/themes/custom
-    - code/profiles/kadaprofile: profiles/kadaprofile
-    - conf/settings.php: sites/default/settings.php
-    - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
-    - conf/_ping.php: _ping.php
-    - conf/simplesaml: simplesamlphp
-    - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
-    - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
+    - conf/settings.php: web/sites/default/settings.local.php
+    - conf/dev.radioactivity-bootstrap.cfg.inc: web/sites/default/radioactivity-bootstrap.cfg.inc
+    - conf/simplesaml: web/simplesamlphp
+    - conf/simplesaml/config/config.php: web/simplesamlphp/www/config/config.php
+    - conf/simplesaml/config/authsources.php: web/simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
       - shell: chmod -R a+w web
       - make
-      - finalize
+      - shell: chmod -R a-w web
 
     update:
-      - update
+      - drush: updb -y
       - cleanup
       - drush: omega-revert kada
       - drush: en devel -y
-      - drush: fra -y
       - drush: cc drush
+      - drush: fra -y
+      - drush: cc all
       # - drush: composer-json-rebuild -y
       # - drush: composer-manager update -y
       - shell: chmod -R a-w web
@@ -180,39 +142,32 @@ prod:
 
   # Test environment only symlinks files
   link:
-    - /var/www/pori.prod.wunder.io/files: sites/default/files
+    - /var/www/pori.prod.wunder.io/files: web/sites/default/files
 
   # Other files are copied, note settings.php
   copy:
-    - code/modules/custom: sites/all/modules/custom
-    - code/modules/features: sites/all/modules/features
-    - code/themes/custom: sites/all/themes/custom
-    - code/profiles/kadaprofile: profiles/kadaprofile
-    - conf/settings.php: sites/default/settings.php
-    - conf/dev.radioactivity-bootstrap.cfg.inc: sites/default/radioactivity-bootstrap.cfg.inc
-    - conf/_ping.php: _ping.php
-    - conf/simplesaml: simplesamlphp
-    - conf/simplesaml/config/config.php: simplesamlphp/www/config/config.php
-    - conf/simplesaml/config/authsources.php: simplesamlphp/www/config/authsources.php
+    - conf/settings.php: web/sites/default/settings.local.php
+    - conf/dev.radioactivity-bootstrap.cfg.inc: web/sites/default/radioactivity-bootstrap.cfg.inc
+    - conf/simplesaml: web/simplesamlphp
+    - conf/simplesaml/config/config.php: web/simplesamlphp/www/config/config.php
+    - conf/simplesaml/config/authsources.php: web/simplesamlphp/www/config/authsources.php
 
   local_commands:
     build:
       - shell: chmod -R a+w web
       - make
-      - finalize
+      - shell: chmod -R a-w web
 
     update:
-      - update
+      - drush: updb -y
       - cleanup
       - drush: omega-revert kada
       - drush: dis devel -y
-      - drush: fra -y
       - drush: cc drush
+      - drush: fra -y
+      - drush: cc all
       #- drush: composer-json-rebuild -y
       #- drush: composer-manager update -y
       - shell: chmod -R a-w web
       - drush: cc all
       - shell: sudo systemctl restart nginx php-fpm varnish memcached
-
-
-

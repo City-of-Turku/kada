@@ -1,10 +1,10 @@
 name: pori
 recipe: drupal7
 config:
-  php: '5.6'
+  php: '7.2'
   via: nginx
   webroot: web
-  drush: ^8
+  xdebug: false
   config:
     vhosts: ./.lando/drupal7.conf
 
@@ -18,15 +18,16 @@ services:
         - /app/.lando/adminer.sh
     portforward: true
   appserver:
+    # build_as_root:
+    #   - "apt-get update -y"
+    #   - "apt-get install python-yaml -y"
     build:
       - /app/.lando/build.sh
+      # - /app/build.sh build lando
     overrides:
       environment:
         WKV_SITE_ENV: lando
-        DB_PASS_DRUPAL: drupal7
-        DB_USER_DRUPAL: drupal7
-        DB_HOST_DRUPAL: database
-        DB_NAME_DRUPAL: drupal7
+        SAML_MEMCACHE_STORE: memcached
   database:
     type: mariadb:10.2
   mailhog:
@@ -40,6 +41,11 @@ services:
       - /bin/sh -c '/opt/bitnami/memcached/bin/memcached start -d'
   node:
     type: node
+    globals:
+      gulp-cli: latest
+      bower: latest
+    build:
+      - /app/.lando/node.sh
   # redis:
   #   type: redis
   #   portforward: true 
@@ -50,30 +56,49 @@ services:
 
 tooling:
   build:
-    description: Builds the local site
+    description: Build the local site.
     cmd:
       - appserver: /app/.lando/build.sh
+  # build.sh:
+  #   description: Run build.sh commands.
+  #   cmd:
+  #     - appserver: /app/build.sh
+  bower: 
+    service: node
+  gulp: 
+    service: node
   phpcbf:
-    description: Runs phpcbf
+    description: Run phpcbf commands.
     cmd:
-      - appserver: /var/www/.composer/vendor/bin/phpcbf
+      - appserver: /app/vendor/bin/phpcbf
   phpcs:
-    description: Runs phpcs
+    description: Run phpcs commands.
     cmd:
-      - appserver: /var/www/.composer/vendor/bin/phpcs
+      - appserver: /app/vendor/bin/phpcs
   node:
     service: node
   npm:
     service: node
   syncdb:
-    description: Synchronizes local db with selected env (lando syncdb dev/prod)
+    description: Synchronize local db with selected env (lando syncdb stage/prod).
     cmd:
       - appserver: /app/.lando/syncdb.sh
-      # - appserver: /app/.lando/update.sh
   update:
-    description: Updates local site with development settings
+    description: Update local site with development settings.
     cmd:
       - appserver: /app/.lando/update.sh
+  xdebug-on:
+    service: appserver
+    description: Enables xdebug for nginx
+    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disables xdebug for nginx
+    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm
+    user: root
+  yarn:
+    service: node
 
 proxy:
   appserver_nginx:
@@ -86,8 +111,13 @@ proxy:
     - pori-adminer.lndo.site
 
 events:
+  pre-start:
+    - appserver: composer install
   post-db-import:
     - appserver: /app/.lando/update.sh
+
+env_file:
+  - .lando/.env
 
 # Tested with Lando version.
 version: v3.0.0-rc.23
