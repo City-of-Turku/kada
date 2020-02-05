@@ -95,8 +95,9 @@ develop:
       - drush: updb -y
       - cleanup
       - drush: en devel -y
-      - drush: fra -y
       - drush: cc drush
+      - drush: fra -y
+      - drush: cc all
       # - drush: composer-json-rebuild -y
       # - drush: composer-manager update -y
       - shell: chmod -R a-w web
@@ -130,8 +131,9 @@ stage:
       - cleanup
       - drush: omega-revert kada
       - drush: en devel -y
-      - drush: fra -y
       - drush: cc drush
+      - drush: fra -y
+      - drush: cc all
       # - drush: composer-json-rebuild -y
       # - drush: composer-manager update -y
       - shell: chmod -R a-w web
@@ -164,8 +166,9 @@ prod:
       - cleanup
       - drush: omega-revert kada
       - drush: dis devel -y
-      - drush: fra -y
       - drush: cc drush
+      - drush: fra -y
+      - drush: cc all
       #- drush: composer-json-rebuild -y
       #- drush: composer-manager update -y
       - shell: chmod -R a-w web
