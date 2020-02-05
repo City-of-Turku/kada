@@ -88,7 +88,7 @@ develop:
     build:
       - shell: chmod -R a+w web
       - make
-      - shell: chmod -R a-w web
+      # - shell: chmod -R a-w web
 
     update:
       - drush: updb -y
@@ -104,7 +104,6 @@ develop:
 
 # Test environment:
 stage:
-
 
   # Test environment only symlinks files
   link:
@@ -122,7 +121,7 @@ stage:
     build:
       - shell: chmod -R a+w web
       - make
-      - shell: chmod -R a-w web
+      # - shell: chmod -R a-w web
 
     update:
       - drush: updb -y
@@ -156,7 +155,7 @@ prod:
     build:
       - shell: chmod -R a+w web
       - make
-      - shell: chmod -R a-w web
+      # - shell: chmod -R a-w web
 
     update:
       - drush: updb -y
