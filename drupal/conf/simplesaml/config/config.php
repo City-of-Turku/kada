@@ -634,8 +634,7 @@ $config = array(
      */
     'memcache_store.servers' => array(
         array(
-            // Use envvar if available, otherwise use default `localhost`.
-            array('hostname' => getenv('SAML_MEMCACHE_STORE') ?? 'localhost'),
+            array('hostname' => 'localhost'),
         ),
     ),
 
