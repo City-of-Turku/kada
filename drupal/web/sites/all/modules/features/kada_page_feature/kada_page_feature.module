@@ -82,6 +82,7 @@ function kada_page_feature_field_formatter_settings_summary($field, $instance, $
  * Implements hook_field_formatter_view().
  */
 function kada_page_feature_field_formatter_view($entity_type, $node, $field, $instance, $langcode, $items, $display) {
+  global $base_url;
   $result = array();
 
   $settings = $display['settings'];
