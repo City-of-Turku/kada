@@ -45,9 +45,8 @@ $conf['cache_prefix']['default'] = 'kada_';
 $conf['cache_backends'][] = 'sites/all/modules/contrib/varnish/varnish.cache.inc';
 $conf['cache_class_cache_page'] = 'VarnishCache';
 $conf['page_cache_invoke_hooks'] = FALSE;
-// Cache clear strategy:
-// 0=none, handle it yourself, 1=all pages, 2=selective, ie. expire module
-$conf['varnish_cache_clear'] = "2";
+// Cache clear strategy: 
+// vary across environments.
 // Control terminal host with port
 $conf['varnish_control_terminal'] = "localhost:6082";
 // Secret if used, look for /etc/varnish/secret
@@ -65,6 +64,9 @@ switch ($env) {
       $conf['file_private_path'] = '/var/www/pori.prod.wunder.io/private_files';
       $conf['file_temporary_path'] = '/var/www/pori.prod.wunder.io/tmp';
       $conf['simplesamlphp_auth_installdir'] = '/var/www/pori.prod.wunder.io/current/conf/simplesaml';
+      // Cache clear strategy:
+      // 0=none, handle it yourself, 1=all pages, 2=selective, ie. expire module
+      $conf['varnish_cache_clear'] = "2";
     break;
 
     case 'stage':
@@ -73,6 +75,9 @@ switch ($env) {
       $conf['file_temporary_path'] = '/var/www/pori.stage.wunder.io/tmp';
       $conf['googleanalytics_account'] = ''; // Make sure the GA isn't enabled in this env
       $conf['simplesamlphp_auth_installdir'] = '/var/www/pori.stage.wunder.io/current/conf/simplesaml';
+      // Cache clear strategy:
+      // 0=none, handle it yourself, 1=all pages, 2=selective, ie. expire module
+      $conf['varnish_cache_clear'] = "0";
     break;
 
     case 'develop':
@@ -81,6 +86,9 @@ switch ($env) {
       $conf['file_temporary_path'] = '/var/www/pori.dev.wunder.io/tmp';
       $conf['googleanalytics_account'] = ''; // Make sure the GA isn't enabled in this env
       $conf['simplesamlphp_auth_installdir'] = '/var/www/pori.dev.wunder.io/current/conf/simplesaml';
+      // Cache clear strategy:
+      // 0=none, handle it yourself, 1=all pages, 2=selective, ie. expire module
+      $conf['varnish_cache_clear'] = "0";
     break;
 
     case 'local':
@@ -91,6 +99,9 @@ switch ($env) {
       $conf['googleanalytics_account'] = ''; // Make sure the GA isn't enabled in this env
       $conf['stage_file_proxy_origin'] = 'https://www.pori.fi';
       $conf['simplesamlphp_auth_installdir'] = '/vagrant/drupal/conf/simplesaml';
+      // Cache clear strategy:
+      // 0=none, handle it yourself, 1=all pages, 2=selective, ie. expire module
+      $conf['varnish_cache_clear'] = "0";
     break;
 }
 
