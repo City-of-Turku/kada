@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bbf3af4c0b4b77ef2c51990b57388f5b",
+    "content-hash": "126802e8fab26ff2fc089927f885ba85",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
@@ -7704,6 +7704,9 @@
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "#3111338-2: Fix The following { theme_engine / module / theme } is missing from the file system: sites": "https://www.drupal.org/files/issues/2020-02-05/3111338-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/7/downloads",
@@ -16569,8 +16572,14 @@
             "version": "7.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/wunderio/drupal-ping",
+                "url": "https://github.com/wunderio/drupal-ping.git",
                 "reference": "aa1fae843b8547338974aec07811654d79e76bdc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wunderio/drupal-ping/zipball/aa1fae843b8547338974aec07811654d79e76bdc",
+                "reference": "aa1fae843b8547338974aec07811654d79e76bdc",
+                "shasum": ""
             },
             "require": {
                 "drupal/drupal": "~7.0",

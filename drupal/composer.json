@@ -536,6 +536,9 @@
                 "Enter drupal/og_webform patch #0 description here": "https://git.drupalcode.org/project/og_webform/commit/b60f03ae4de8050bb2499106484df085b9884b25.patch",
                 "Enter drupal/og_webform patch #1 description here": "https://www.drupal.org/files/og_webform_api2-1946432_0.patch"
             },
+            "drupal/omega": {
+                "#3111338-2: Fix The following { theme_engine / module / theme } is missing from the file system: sites": "https://www.drupal.org/files/issues/2020-02-05/3111338-2.patch"
+            },
             "drupal/quicktabs": {
                 "Enter drupal/quicktabs patch #0 description here": "https://www.drupal.org/files/issues/quicktabs-tab-title-class-quicktab-ui-tabs-accordion-2640174-9.patch"
             },
