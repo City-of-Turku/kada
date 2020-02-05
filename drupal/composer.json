@@ -436,7 +436,8 @@
             "DrupalProject\\composer\\ScriptHandler::removeInternalFiles"
         ],
         "post-autoload-dump": [
-          "DrupalProject\\composer\\ScriptHandler::setupSimpleSaml"
+          "DrupalProject\\composer\\ScriptHandler::setupSimpleSaml",
+          "DrupalProject\\composer\\ScriptHandler::setupPing"
         ]
     },
     "extra": {

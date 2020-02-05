@@ -133,6 +133,19 @@ class ScriptHandler {
     }
   }
 
+    /**
+   * Set up _ping.php instance.
+   */
+  public static function setupPing(Event $event) {
+    $fs = new Filesystem();
+    $drupalFinder = new DrupalFinder();
+    $drupalFinder->locateRoot(getcwd());
+    $drupalRoot = $drupalFinder->getDrupalRoot();
+    $composerRoot = $drupalFinder->getComposerRoot();
+
+    // Copy _ping.php to drupalRoot.
+    $fs->copy($composerRoot . '/conf/_ping.php', $drupalRoot . '_ping.php');
+  }
 
   /**
    * Set up SimpleSAMLphp instance.
