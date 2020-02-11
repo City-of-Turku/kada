@@ -195,6 +195,18 @@ function kada_sections_feature_strongarm() {
       'waste_search' => array(
         'custom_settings' => FALSE,
       ),
+      'current_twitter' => array(
+        'custom_settings' => FALSE,
+      ),
+      'presentation' => array(
+        'custom_settings' => FALSE,
+      ),
+      'contact_card' => array(
+        'custom_settings' => FALSE,
+      ),
+      'person_card_with_skills' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -220,7 +232,7 @@ function kada_sections_feature_strongarm() {
       'display' => array(
         'domain' => array(
           'default' => array(
-            'weight' => '12',
+            'weight' => '14',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -234,7 +246,7 @@ function kada_sections_feature_strongarm() {
         ),
         'language' => array(
           'default' => array(
-            'weight' => '13',
+            'weight' => '15',
             'visible' => FALSE,
           ),
           'teaser' => array(
@@ -244,6 +256,12 @@ function kada_sections_feature_strongarm() {
           'only_title' => array(
             'weight' => '7',
             'visible' => FALSE,
+          ),
+        ),
+        'sharethis' => array(
+          'default' => array(
+            'weight' => '1',
+            'visible' => TRUE,
           ),
         ),
       ),

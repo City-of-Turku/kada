@@ -110,6 +110,7 @@ function kada_sections_feature_field_group_info() {
       1 => 'field_main_image',
       2 => 'field_sharing_image',
       3 => 'field_site_logo',
+      4 => 'field_news_title',
     ),
     'format_type' => 'tab',
     'format_settings' => array(

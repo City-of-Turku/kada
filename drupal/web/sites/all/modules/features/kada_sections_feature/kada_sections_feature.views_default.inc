@@ -66,6 +66,11 @@ function kada_sections_feature_views_default_views() {
   );
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Hae';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Palauta oletusarvoihin';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Järjestele';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Nou';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Las';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -73,7 +78,7 @@ function kada_sections_feature_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: section_footer */
+  /* Kenttä: Sisältö: section_footer */
   $handler->display->display_options['fields']['field_section_footer']['id'] = 'field_section_footer';
   $handler->display->display_options['fields']['field_section_footer']['table'] = 'field_data_field_section_footer';
   $handler->display->display_options['fields']['field_section_footer']['field'] = 'field_section_footer';
@@ -81,7 +86,7 @@ function kada_sections_feature_views_default_views() {
   $handler->display->display_options['fields']['field_section_footer']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_section_footer']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_section_footer']['delta_offset'] = '0';
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Sisältö: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -92,7 +97,7 @@ function kada_sections_feature_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -100,7 +105,7 @@ function kada_sections_feature_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -114,7 +119,7 @@ function kada_sections_feature_views_default_views() {
   /* Display: BP search FI */
   $handler = $view->new_display('block', 'BP search FI', 'block_4');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Sisältö: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -130,7 +135,7 @@ function kada_sections_feature_views_default_views() {
   /* Display: BP search EN */
   $handler = $view->new_display('block', 'BP search EN', 'block_3');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Sisältö: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -146,7 +151,7 @@ function kada_sections_feature_views_default_views() {
   /* Display: VP search FI */
   $handler = $view->new_display('block', 'VP search FI', 'block_5');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Sisältö: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -162,7 +167,7 @@ function kada_sections_feature_views_default_views() {
   /* Display: VP search EN */
   $handler = $view->new_display('block', 'VP search EN', 'block_6');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Sisältö: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -178,7 +183,7 @@ function kada_sections_feature_views_default_views() {
   /* Display: VP search DE */
   $handler = $view->new_display('block', 'VP search DE', 'block_7');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Sisältö: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -194,7 +199,7 @@ function kada_sections_feature_views_default_views() {
   /* Display: VP search SE */
   $handler = $view->new_display('block', 'VP search SE', 'block_8');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Sisältö: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -210,11 +215,12 @@ function kada_sections_feature_views_default_views() {
   /* Display: KADAcalendar | Hobbies frontpage */
   $handler = $view->new_display('block', 'KADAcalendar | Hobbies frontpage', 'block_2');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Sisältö: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Kaikki';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
@@ -223,11 +229,11 @@ function kada_sections_feature_views_default_views() {
   $translatables['kada_section_footer'] = array(
     t('Master'),
     t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
+    t('Hae'),
+    t('Palauta oletusarvoihin'),
+    t('Järjestele'),
+    t('Nou'),
+    t('Las'),
     t('Kaikki'),
     t('Block'),
     t('BP search FI'),
@@ -237,7 +243,6 @@ function kada_sections_feature_views_default_views() {
     t('VP search DE'),
     t('VP search SE'),
     t('KADAcalendar | Hobbies frontpage'),
-    t('All'),
   );
   $export['kada_section_footer'] = $view;
 
@@ -296,13 +301,18 @@ function kada_sections_feature_views_default_views() {
   );
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Hae';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Palauta oletusarvoihin';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Järjestele';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Nou';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Las';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Title */
+  /* Kenttä: Sisältö: Otsikko */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -312,16 +322,17 @@ function kada_sections_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Sisältö: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
   $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Kaikki';
   $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'og_context';
   $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -335,12 +346,12 @@ function kada_sections_feature_views_default_views() {
   $translatables['kada_section_header'] = array(
     t('Master'),
     t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('All'),
+    t('Hae'),
+    t('Palauta oletusarvoihin'),
+    t('Järjestele'),
+    t('Nou'),
+    t('Las'),
+    t('Kaikki'),
     t('Block'),
   );
   $export['kada_section_header'] = $view;
@@ -402,13 +413,18 @@ function kada_sections_feature_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Hae';
+  $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Palauta oletusarvoihin';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Järjestele';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Nou';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Las';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'section-footer__item';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Field: Content: Liftup 1-3x4 */
+  /* Kenttä: Sisältö: Liftup 1-3x4 */
   $handler->display->display_options['fields']['field_liftup_1_3x4']['id'] = 'field_liftup_1_3x4';
   $handler->display->display_options['fields']['field_liftup_1_3x4']['table'] = 'field_data_field_liftup_1_3x4';
   $handler->display->display_options['fields']['field_liftup_1_3x4']['field'] = 'field_liftup_1_3x4';
@@ -428,7 +444,7 @@ function kada_sections_feature_views_default_views() {
   );
   $handler->display->display_options['fields']['field_liftup_1_3x4']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_liftup_1_3x4']['separator'] = '';
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Sisältö: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -439,14 +455,14 @@ function kada_sections_feature_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['nid']['break_phrase'] = TRUE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -454,7 +470,7 @@ function kada_sections_feature_views_default_views() {
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
-  /* Filter criterion: Content: Liftup 1-3x4 (field_liftup_1_3x4) */
+  /* Filter criterion: Sisältö: Liftup 1-3x4 (field_liftup_1_3x4) */
   $handler->display->display_options['filters']['field_liftup_1_3x4_value']['id'] = 'field_liftup_1_3x4_value';
   $handler->display->display_options['filters']['field_liftup_1_3x4_value']['table'] = 'field_data_field_liftup_1_3x4';
   $handler->display->display_options['filters']['field_liftup_1_3x4_value']['field'] = 'field_liftup_1_3x4_value';
@@ -464,7 +480,7 @@ function kada_sections_feature_views_default_views() {
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Sisältö: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -479,7 +495,7 @@ function kada_sections_feature_views_default_views() {
   /* Display: Page view */
   $handler = $view->new_display('block', 'Page view', 'block_1');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Sisältö: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -494,7 +510,7 @@ function kada_sections_feature_views_default_views() {
   /* Display: Landingpage view */
   $handler = $view->new_display('block', 'Landingpage view', 'block_2');
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Sisältö: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -508,11 +524,11 @@ function kada_sections_feature_views_default_views() {
   $translatables['pori_section_1_3x4_liftups'] = array(
     t('Master'),
     t('more'),
-    t('Apply'),
-    t('Reset'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
+    t('Hae'),
+    t('Palauta oletusarvoihin'),
+    t('Järjestele'),
+    t('Nou'),
+    t('Las'),
     t('<div class="liftup-1-3x4-grid-item">[field_liftup_1_3x4]</div>'),
     t('Kaikki'),
     t('Block'),
