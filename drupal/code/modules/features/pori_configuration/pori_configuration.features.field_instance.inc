@@ -506,13 +506,9 @@ function pori_configuration_field_default_field_instances() {
   // Exported field_instance: 'node-liftup-field_presentation_color_scheme'.
   $field_instances['node-liftup-field_presentation_color_scheme'] = array(
     'bundle' => 'liftup',
-    'default_value' => array(
-      0 => array(
-        'value' => 'presentation-colors-1',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'This field can be used to select color scheme for presentation liftups. Please note that this should not be used if liftup is used for non-presentation liftup purposes.',
     'display' => array(
       'carousel' => array(
         'label' => 'above',
@@ -1889,6 +1885,7 @@ function pori_configuration_field_default_field_instances() {
   t('Presentation link');
   t('Read more');
   t('Show main image on the page');
+  t('This field can be used to select color scheme for presentation liftups. Please note that this should not be used if liftup is used for non-presentation liftup purposes.');
   t('This link is used on listing of places on pages. The text displayed will always be "Read more".');
   t('This place should be visible on the waste search');
 
