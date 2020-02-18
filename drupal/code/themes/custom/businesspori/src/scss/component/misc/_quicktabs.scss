@@ -10,15 +10,23 @@
       background-color: $green-dark;
       color: $white;
     }
-
+    .ui-state-default {
+      .ui-tabs-anchor {
+        &.all::after,
+        &.kaikki::after {
+          background-image: url('../../dist/image/current-all-icon--green.svg');
+        }
+      }
+    }
     .ui-state-default {
       &.ui-state-active,
-      &:focus, 
+      &:focus,
       &:hover {
         background-color: $green-dark;
       }
     }
   }
+
 }
 
 .block--kada-news-feature-news-archive-link .block__content a {
