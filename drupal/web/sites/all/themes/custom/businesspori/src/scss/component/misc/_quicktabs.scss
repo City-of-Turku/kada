@@ -13,7 +13,7 @@
 
     .ui-state-default {
       &.ui-state-active,
-      &:focus, 
+      &:focus,
       &:hover {
         background-color: $green-dark;
       }
@@ -27,5 +27,11 @@
 @media screen and (max-width: $mobile-menu-breakpoint-max) {
   .quicktabs-ui-wrapper .ui-tabs-nav{
     border-bottom: 5px solid $green-dark !important;
+  }
+}
+
+.domain-businesspori-fi {
+  #block-quicktabs-feed-tabs-frontpage-promoted-con {
+    margin-top: 20px;
   }
 }

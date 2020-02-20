@@ -18,3 +18,21 @@ body:not(.page--highlight-image) {
     padding-top: 0;
   }
 }
+
+#block-views-kada-news-news-title-block .view-content {
+  display: flex;
+  padding-top: 1.25rem;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    padding-right: $container-gutter;
+    padding-left: $container-gutter;
+  }
+}
