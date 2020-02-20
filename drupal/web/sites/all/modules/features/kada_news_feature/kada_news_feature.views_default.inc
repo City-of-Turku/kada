@@ -67,33 +67,38 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['query']['options']['distinct'] = TRUE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Hae';
   $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Palauta oletusarvoihin';
+  $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Järjestele';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Nou';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Las';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Tuloksia sivulla';
   $handler->display->display_options['pager']['options']['tags']['first'] = '« ensimmäinen';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ edellinen';
   $handler->display->display_options['pager']['options']['tags']['next'] = 'seuraava ›';
   $handler->display->display_options['pager']['options']['tags']['last'] = 'viimeinen »';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Relationship: Content: Keywords (field_keywords) */
+  /* Relationship: Sisältö: Keywords (field_keywords) */
   $handler->display->display_options['relationships']['field_keywords_tid']['id'] = 'field_keywords_tid';
   $handler->display->display_options['relationships']['field_keywords_tid']['table'] = 'field_data_field_keywords';
   $handler->display->display_options['relationships']['field_keywords_tid']['field'] = 'field_keywords_tid';
-  /* Relationship: Content: Theme (field_theme) */
+  /* Relationship: Sisältö: Theme (field_theme) */
   $handler->display->display_options['relationships']['field_theme_tid']['id'] = 'field_theme_tid';
   $handler->display->display_options['relationships']['field_theme_tid']['table'] = 'field_data_field_theme';
   $handler->display->display_options['relationships']['field_theme_tid']['field'] = 'field_theme_tid';
-  /* Relationship: Content: District (field_district) */
+  /* Relationship: Sisältö: District (field_district) */
   $handler->display->display_options['relationships']['field_district_tid']['id'] = 'field_district_tid';
   $handler->display->display_options['relationships']['field_district_tid']['table'] = 'field_data_field_district';
   $handler->display->display_options['relationships']['field_district_tid']['field'] = 'field_district_tid';
-  /* Relationship: Field: Target audience (field_target_audience) */
+  /* Relationship: Kenttä: Target audience (field_target_audience) */
   $handler->display->display_options['relationships']['field_target_audience_tid']['id'] = 'field_target_audience_tid';
   $handler->display->display_options['relationships']['field_target_audience_tid']['table'] = 'field_data_field_target_audience';
   $handler->display->display_options['relationships']['field_target_audience_tid']['field'] = 'field_target_audience_tid';
-  /* Field: Content: Title */
+  /* Kenttä: Sisältö: Otsikko */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -102,7 +107,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['title']['element_type'] = 'h2';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
-  /* Field: Content: Main image */
+  /* Kenttä: Sisältö: Main image */
   $handler->display->display_options['fields']['field_main_image']['id'] = 'field_main_image';
   $handler->display->display_options['fields']['field_main_image']['table'] = 'field_data_field_main_image';
   $handler->display->display_options['fields']['field_main_image']['field'] = 'field_main_image';
@@ -110,7 +115,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['fields']['field_main_image']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_main_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_main_image']['type'] = 'carousel';
-  /* Field: Content: Post date */
+  /* Kenttä: Sisältö: Post date */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -118,7 +123,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'short';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
-  /* Field: Content: Path */
+  /* Kenttä: Sisältö: Polku */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
   $handler->display->display_options['fields']['path']['field'] = 'path';
@@ -126,7 +131,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['fields']['path']['exclude'] = TRUE;
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['path']['absolute'] = TRUE;
-  /* Field: Content: Body */
+  /* Kenttä: Sisältö: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -139,7 +144,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '250',
   );
-  /* Field: Content: Keywords */
+  /* Kenttä: Sisältö: Keywords */
   $handler->display->display_options['fields']['field_keywords']['id'] = 'field_keywords';
   $handler->display->display_options['fields']['field_keywords']['table'] = 'field_data_field_keywords';
   $handler->display->display_options['fields']['field_keywords']['field'] = 'field_keywords';
@@ -147,7 +152,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['fields']['field_keywords']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_keywords']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_keywords']['delta_offset'] = '0';
-  /* Field: Content: District */
+  /* Kenttä: Sisältö: District */
   $handler->display->display_options['fields']['field_district']['id'] = 'field_district';
   $handler->display->display_options['fields']['field_district']['table'] = 'field_data_field_district';
   $handler->display->display_options['fields']['field_district']['field'] = 'field_district';
@@ -155,7 +160,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['fields']['field_district']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_district']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_district']['delta_offset'] = '0';
-  /* Field: Content: Theme */
+  /* Kenttä: Sisältö: Theme */
   $handler->display->display_options['fields']['field_theme']['id'] = 'field_theme';
   $handler->display->display_options['fields']['field_theme']['table'] = 'field_data_field_theme';
   $handler->display->display_options['fields']['field_theme']['field'] = 'field_theme';
@@ -163,7 +168,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['fields']['field_theme']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_theme']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_theme']['delta_offset'] = '0';
-  /* Field: Field: Target audience */
+  /* Kenttä: Kenttä: Target audience */
   $handler->display->display_options['fields']['field_target_audience']['id'] = 'field_target_audience';
   $handler->display->display_options['fields']['field_target_audience']['table'] = 'field_data_field_target_audience';
   $handler->display->display_options['fields']['field_target_audience']['field'] = 'field_target_audience';
@@ -171,7 +176,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['fields']['field_target_audience']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_target_audience']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_target_audience']['delta_offset'] = '0';
-  /* Sort criterion: Content: Post date */
+  /* Sort criterion: Sisältö: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
@@ -232,14 +237,14 @@ function kada_news_feature_views_default_views() {
   );
   $handler->display->display_options['arguments']['name_2']['validate_options']['type'] = 'name';
   $handler->display->display_options['arguments']['name_2']['limit'] = '0';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -247,7 +252,7 @@ function kada_news_feature_views_default_views() {
     'news_item' => 'news_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -260,7 +265,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['filters']['language']['expose']['label'] = 'Kieli';
   $handler->display->display_options['filters']['language']['expose']['operator'] = 'language_op';
   $handler->display->display_options['filters']['language']['expose']['identifier'] = 'language';
-  /* Filter criterion: Date: Date (node) */
+  /* Filter criterion: Päivämäärä: Date (node) */
   $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
   $handler->display->display_options['filters']['date_filter']['table'] = 'node';
   $handler->display->display_options['filters']['date_filter']['field'] = 'date_filter';
@@ -283,14 +288,14 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['filters']['date_filter']['date_fields'] = array(
     'node.created' => 'node.created',
   );
-  /* Filter criterion: Content: District (field_district) */
+  /* Filter criterion: Sisältö: District (field_district) */
   $handler->display->display_options['filters']['field_district_tid']['id'] = 'field_district_tid';
   $handler->display->display_options['filters']['field_district_tid']['table'] = 'field_data_field_district';
   $handler->display->display_options['filters']['field_district_tid']['field'] = 'field_district_tid';
   $handler->display->display_options['filters']['field_district_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_district_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_district_tid']['expose']['operator_id'] = 'field_district_tid_op';
-  $handler->display->display_options['filters']['field_district_tid']['expose']['label'] = 'District';
+  $handler->display->display_options['filters']['field_district_tid']['expose']['label'] = 'Kaupunginosa/Alue';
   $handler->display->display_options['filters']['field_district_tid']['expose']['operator'] = 'field_district_tid_op';
   $handler->display->display_options['filters']['field_district_tid']['expose']['identifier'] = 'district';
   $handler->display->display_options['filters']['field_district_tid']['expose']['multiple'] = TRUE;
@@ -305,14 +310,14 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['filters']['field_district_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_district_tid']['vocabulary'] = 'district';
   $handler->display->display_options['filters']['field_district_tid']['hierarchy'] = 1;
-  /* Filter criterion: Content: Theme (field_theme) */
+  /* Filter criterion: Sisältö: Theme (field_theme) */
   $handler->display->display_options['filters']['field_theme_tid']['id'] = 'field_theme_tid';
   $handler->display->display_options['filters']['field_theme_tid']['table'] = 'field_data_field_theme';
   $handler->display->display_options['filters']['field_theme_tid']['field'] = 'field_theme_tid';
   $handler->display->display_options['filters']['field_theme_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_theme_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_theme_tid']['expose']['operator_id'] = 'field_theme_tid_op';
-  $handler->display->display_options['filters']['field_theme_tid']['expose']['label'] = 'Theme';
+  $handler->display->display_options['filters']['field_theme_tid']['expose']['label'] = 'Teema';
   $handler->display->display_options['filters']['field_theme_tid']['expose']['operator'] = 'field_theme_tid_op';
   $handler->display->display_options['filters']['field_theme_tid']['expose']['identifier'] = 'theme';
   $handler->display->display_options['filters']['field_theme_tid']['expose']['multiple'] = TRUE;
@@ -326,14 +331,14 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['filters']['field_theme_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_theme_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_theme_tid']['vocabulary'] = 'theme';
-  /* Filter criterion: Field: Target audience (field_target_audience) */
+  /* Filter criterion: Kenttä: Target audience (field_target_audience) */
   $handler->display->display_options['filters']['field_target_audience_tid']['id'] = 'field_target_audience_tid';
   $handler->display->display_options['filters']['field_target_audience_tid']['table'] = 'field_data_field_target_audience';
   $handler->display->display_options['filters']['field_target_audience_tid']['field'] = 'field_target_audience_tid';
   $handler->display->display_options['filters']['field_target_audience_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_target_audience_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_target_audience_tid']['expose']['operator_id'] = 'field_target_audience_tid_op';
-  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['label'] = 'Target audience';
+  $handler->display->display_options['filters']['field_target_audience_tid']['expose']['label'] = 'Kohderyhmä';
   $handler->display->display_options['filters']['field_target_audience_tid']['expose']['operator'] = 'field_target_audience_tid_op';
   $handler->display->display_options['filters']['field_target_audience_tid']['expose']['identifier'] = 'audience';
   $handler->display->display_options['filters']['field_target_audience_tid']['expose']['multiple'] = TRUE;
@@ -346,7 +351,7 @@ function kada_news_feature_views_default_views() {
   );
   $handler->display->display_options['filters']['field_target_audience_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_target_audience_tid']['vocabulary'] = 'target_audience';
-  /* Filter criterion: Content: Keywords (field_keywords) */
+  /* Filter criterion: Sisältö: Keywords (field_keywords) */
   $handler->display->display_options['filters']['field_keywords_tid']['id'] = 'field_keywords_tid';
   $handler->display->display_options['filters']['field_keywords_tid']['table'] = 'field_data_field_keywords';
   $handler->display->display_options['filters']['field_keywords_tid']['field'] = 'field_keywords_tid';
@@ -380,6 +385,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['pager']['options']['quantity'] = '9';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Tuloksia sivulla';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
   $handler->display->display_options['pager']['options']['tags']['first'] = '« ensimmäinen';
   $handler->display->display_options['pager']['options']['tags']['previous'] = '‹ edellinen';
@@ -415,7 +421,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['relationships']['reverse_field_topic_node_1']['ui_name'] = 'Content-Service Package';
   $handler->display->display_options['relationships']['reverse_field_topic_node_1']['label'] = 'topic_service';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Main image */
+  /* Kenttä: Sisältö: Main image */
   $handler->display->display_options['fields']['field_main_image_1']['id'] = 'field_main_image_1';
   $handler->display->display_options['fields']['field_main_image_1']['table'] = 'field_data_field_main_image';
   $handler->display->display_options['fields']['field_main_image_1']['field'] = 'field_main_image';
@@ -424,7 +430,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['fields']['field_main_image_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_main_image_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_main_image_1']['type'] = 'carousel';
-  /* Field: Content: Main image */
+  /* Kenttä: Sisältö: Main image */
   $handler->display->display_options['fields']['field_main_image_2']['id'] = 'field_main_image_2';
   $handler->display->display_options['fields']['field_main_image_2']['table'] = 'field_data_field_main_image';
   $handler->display->display_options['fields']['field_main_image_2']['field'] = 'field_main_image';
@@ -433,7 +439,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['fields']['field_main_image_2']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_main_image_2']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_main_image_2']['type'] = 'carousel';
-  /* Field: Content: Main image */
+  /* Kenttä: Sisältö: Main image */
   $handler->display->display_options['fields']['field_main_image_3']['id'] = 'field_main_image_3';
   $handler->display->display_options['fields']['field_main_image_3']['table'] = 'field_data_field_main_image';
   $handler->display->display_options['fields']['field_main_image_3']['field'] = 'field_main_image';
@@ -442,7 +448,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['fields']['field_main_image_3']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_main_image_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_main_image_3']['type'] = 'carousel';
-  /* Field: Content: Main image */
+  /* Kenttä: Sisältö: Main image */
   $handler->display->display_options['fields']['field_main_image']['id'] = 'field_main_image';
   $handler->display->display_options['fields']['field_main_image']['table'] = 'field_data_field_main_image';
   $handler->display->display_options['fields']['field_main_image']['field'] = 'field_main_image';
@@ -450,7 +456,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['fields']['field_main_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_main_image']['type'] = 'carousel';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Nid */
+  /* Contextual filter: Sisältö: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -462,14 +468,14 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -508,14 +514,14 @@ function kada_news_feature_views_default_views() {
   );
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Flags: emergency_message */
+  /* Relationship: Nostovaihtoehdot: emergency_message */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'emergency_message';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Title */
+  /* Kenttä: Sisältö: Otsikko */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -527,7 +533,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_wrapper_type'] = '0';
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
-  /* Field: Content: Lead paragraph */
+  /* Kenttä: Sisältö: Lead paragraph */
   $handler->display->display_options['fields']['field_lead_paragraph_long_text']['id'] = 'field_lead_paragraph_long_text';
   $handler->display->display_options['fields']['field_lead_paragraph_long_text']['table'] = 'field_data_field_lead_paragraph_long_text';
   $handler->display->display_options['fields']['field_lead_paragraph_long_text']['field'] = 'field_lead_paragraph_long_text';
@@ -540,14 +546,14 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -555,7 +561,7 @@ function kada_news_feature_views_default_views() {
     'news_item' => 'news_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -568,7 +574,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['filters']['language']['expose']['label'] = 'Kieli';
   $handler->display->display_options['filters']['language']['expose']['operator'] = 'language_op';
   $handler->display->display_options['filters']['language']['expose']['identifier'] = 'language';
-  /* Filter criterion: Flags: Flagged */
+  /* Filter criterion: Nostovaihtoehdot: Flagged */
   $handler->display->display_options['filters']['flagged']['id'] = 'flagged';
   $handler->display->display_options['filters']['flagged']['table'] = 'flagging';
   $handler->display->display_options['filters']['flagged']['field'] = 'flagged';
@@ -607,11 +613,11 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'main_news';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Theme (field_theme) */
+  /* Relationship: Sisältö: Theme (field_theme) */
   $handler->display->display_options['relationships']['field_theme_tid']['id'] = 'field_theme_tid';
   $handler->display->display_options['relationships']['field_theme_tid']['table'] = 'field_data_field_theme';
   $handler->display->display_options['relationships']['field_theme_tid']['field'] = 'field_theme_tid';
-  /* Relationship: Flags: main_news */
+  /* Relationship: Nostovaihtoehdot: main_news */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
@@ -619,18 +625,18 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'main_news';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Sticky */
+  /* Sort criterion: Sisältö: Sticky status */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
-  /* Sort criterion: Content: Order time (field_order_time) */
+  /* Sort criterion: Sisältö: Order time (field_order_time) */
   $handler->display->display_options['sorts']['field_order_time_value']['id'] = 'field_order_time_value';
   $handler->display->display_options['sorts']['field_order_time_value']['table'] = 'field_data_field_order_time';
   $handler->display->display_options['sorts']['field_order_time_value']['field'] = 'field_order_time_value';
   $handler->display->display_options['sorts']['field_order_time_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Content: Theme (field_theme) */
+  /* Contextual filter: Sisältö: Theme (field_theme) */
   $handler->display->display_options['arguments']['field_theme_tid']['id'] = 'field_theme_tid';
   $handler->display->display_options['arguments']['field_theme_tid']['table'] = 'field_data_field_theme';
   $handler->display->display_options['arguments']['field_theme_tid']['field'] = 'field_theme_tid';
@@ -648,14 +654,14 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['arguments']['field_theme_tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -663,7 +669,7 @@ function kada_news_feature_views_default_views() {
     'news_item' => 'news_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -710,11 +716,11 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'main_news';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Theme (field_theme) */
+  /* Relationship: Sisältö: Theme (field_theme) */
   $handler->display->display_options['relationships']['field_theme_tid']['id'] = 'field_theme_tid';
   $handler->display->display_options['relationships']['field_theme_tid']['table'] = 'field_data_field_theme';
   $handler->display->display_options['relationships']['field_theme_tid']['field'] = 'field_theme_tid';
-  /* Relationship: Flags: main_news */
+  /* Relationship: Nostovaihtoehdot: main_news */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
@@ -726,18 +732,18 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['relationships']['og_membership_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['og_membership_rel']['field'] = 'og_membership_rel';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Sticky */
+  /* Sort criterion: Sisältö: Sticky status */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
-  /* Sort criterion: Content: Order time (field_order_time) */
+  /* Sort criterion: Sisältö: Order time (field_order_time) */
   $handler->display->display_options['sorts']['field_order_time_value']['id'] = 'field_order_time_value';
   $handler->display->display_options['sorts']['field_order_time_value']['table'] = 'field_data_field_order_time';
   $handler->display->display_options['sorts']['field_order_time_value']['field'] = 'field_order_time_value';
   $handler->display->display_options['sorts']['field_order_time_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Contextual filter: Field: Groups audience (og_group_ref) */
+  /* Contextual filter: Kenttä: Groups audience (og_group_ref) */
   $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
   $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
@@ -750,14 +756,14 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['arguments']['og_group_ref_target_id']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -765,7 +771,7 @@ function kada_news_feature_views_default_views() {
     'news_item' => 'news_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -815,7 +821,7 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['row_options']['default_fieldset']['view_mode'] = 'main_news';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Flags: main_news */
+  /* Relationship: Nostovaihtoehdot: main_news */
   $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
   $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
@@ -823,12 +829,12 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'main_news';
   $handler->display->display_options['relationships']['flag_content_rel']['user_scope'] = 'any';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Sticky */
+  /* Sort criterion: Sisältö: Sticky status */
   $handler->display->display_options['sorts']['sticky']['id'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['table'] = 'node';
   $handler->display->display_options['sorts']['sticky']['field'] = 'sticky';
   $handler->display->display_options['sorts']['sticky']['order'] = 'DESC';
-  /* Sort criterion: Content: Order time (field_order_time) */
+  /* Sort criterion: Sisältö: Order time (field_order_time) */
   $handler->display->display_options['sorts']['field_order_time_value']['id'] = 'field_order_time_value';
   $handler->display->display_options['sorts']['field_order_time_value']['table'] = 'field_data_field_order_time';
   $handler->display->display_options['sorts']['field_order_time_value']['field'] = 'field_order_time_value';
@@ -836,14 +842,14 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Sisältö: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filter criterion: Content: Type */
+  /* Filter criterion: Sisältö: Tyyppi */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -851,7 +857,7 @@ function kada_news_feature_views_default_views() {
     'news_item' => 'news_item',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Language */
+  /* Filter criterion: Sisältö: Kieli */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -861,10 +867,10 @@ function kada_news_feature_views_default_views() {
   );
   $handler->display->display_options['filters']['language']['group'] = 1;
   $handler->display->display_options['filters']['language']['expose']['operator_id'] = 'language_op';
-  $handler->display->display_options['filters']['language']['expose']['label'] = 'Language';
+  $handler->display->display_options['filters']['language']['expose']['label'] = 'Kieli';
   $handler->display->display_options['filters']['language']['expose']['operator'] = 'language_op';
   $handler->display->display_options['filters']['language']['expose']['identifier'] = 'language';
-  /* Filter criterion: Content: Promoted to front page */
+  /* Filter criterion: Sisältö: Promoted to front page status */
   $handler->display->display_options['filters']['promote']['id'] = 'promote';
   $handler->display->display_options['filters']['promote']['table'] = 'node';
   $handler->display->display_options['filters']['promote']['field'] = 'promote';
@@ -874,16 +880,49 @@ function kada_news_feature_views_default_views() {
   $handler->display->display_options['filters']['current_all']['table'] = 'domain_access';
   $handler->display->display_options['filters']['current_all']['field'] = 'current_all';
   $handler->display->display_options['filters']['current_all']['value'] = '1';
+
+  /* Display: News title block */
+  $handler = $view->new_display('block', 'News title block', 'news_title_block');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Kenttä: Sisältö: News title */
+  $handler->display->display_options['fields']['field_news_title']['id'] = 'field_news_title';
+  $handler->display->display_options['fields']['field_news_title']['table'] = 'field_data_field_news_title';
+  $handler->display->display_options['fields']['field_news_title']['field'] = 'field_news_title';
+  $handler->display->display_options['fields']['field_news_title']['label'] = '';
+  $handler->display->display_options['fields']['field_news_title']['element_type'] = 'h2';
+  $handler->display->display_options['fields']['field_news_title']['element_class'] = 'news-title';
+  $handler->display->display_options['fields']['field_news_title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_news_title']['element_default_classes'] = FALSE;
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Sisältö: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['exception']['title'] = 'Kaikki';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  $handler->display->display_options['block_description'] = 'News title block';
   $translatables['kada_news'] = array(
     t('Master'),
     t('KADA News'),
     t('more'),
-    t('Apply'),
+    t('Hae'),
     t('Palauta oletusarvoihin'),
-    t('Sort by'),
-    t('Asc'),
-    t('Desc'),
-    t('Items per page'),
+    t('Järjestele'),
+    t('Nou'),
+    t('Las'),
+    t('Tuloksia sivulla'),
     t('- All -'),
     t('Offset'),
     t('« ensimmäinen'),
@@ -897,9 +936,9 @@ function kada_news_feature_views_default_views() {
     t('Kaikki'),
     t('Kieli'),
     t('Päivämäärä'),
-    t('District'),
-    t('Theme'),
-    t('Target audience'),
+    t('Kaupunginosa/Alue'),
+    t('Teema'),
+    t('Kohderyhmä'),
     t('Avainsanat'),
     t('Archive page'),
     t('Top image'),
@@ -916,7 +955,7 @@ function kada_news_feature_views_default_views() {
     t('OG membership from node'),
     t('Front main block (promoted)'),
     t('Show content based on the promote to front page status'),
-    t('Language'),
+    t('News title block'),
   );
   $export['kada_news'] = $view;
 

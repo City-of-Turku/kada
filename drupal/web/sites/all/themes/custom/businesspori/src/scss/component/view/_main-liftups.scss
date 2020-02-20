@@ -18,8 +18,14 @@ $main-liftup-content-padding: 20px;
   }
 }
 
-.main-liftups .view-content,
 #block-quicktabs-feed-tabs-frontpage-promoted-con {
+  @media screen and (min-width: $desktop) {
+    padding-right: $container-gutter;
+    padding-left: $container-gutter;
+  }
+}
+
+.main-liftups .view-content {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -31,7 +37,6 @@ $main-liftup-content-padding: 20px;
     padding-left: $container-gutter;
   }
 }
-
 
 .main-liftup-row {
   border: 0;
@@ -179,5 +184,12 @@ $main-liftup-content-padding: 20px;
     .field__item {
       margin-bottom: 2.5rem;
     }
+  }
+}
+
+.block--views-kada-news-news-title-block {
+  .news-title {
+    text-transform: none;
+    margin-top: 20px;
   }
 }
