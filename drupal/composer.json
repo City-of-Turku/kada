@@ -353,7 +353,6 @@
         "drupal/styleguide": "^1.1",
         "drupal/system_status": "^3.3",
         "drupal/taxonomy_access_fix": "^2.4",
-        "drupal/taxonomy_csv": "5.10",
         "drupal/taxonomy_display": "^1.1",
         "drupal/taxonomy_manager": "^1.0",
         "drupal/title": "^1.0-beta3",
@@ -571,9 +570,6 @@
             },
             "drupal/styleguide": {
                 "Enter drupal/styleguide patch #0 description here": "patches/styleguide-group.patch"
-            },
-            "drupal/taxonomy_csv": {
-                "Enter drupal/taxonomy_csv patch #0 description here": "https://www.drupal.org/files/issues/fatal_error_break-2833513-3.patch"
             },
             "drupal/views_content_cache": {
                 "Enter drupal/views_content_cache patch #og description here": "https://www.drupal.org/files/issues/views_content_cache-og-2054811-9.patch"
