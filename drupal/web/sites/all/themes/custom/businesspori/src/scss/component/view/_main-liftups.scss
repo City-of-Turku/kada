@@ -188,6 +188,10 @@ $main-liftup-content-padding: 20px;
   h2.news-title {
     text-transform: none;
     margin-top: 20px;
+    margin-bottom: 20px !important;
+    @media screen and (min-width: $mobile-landscape-wide) {
+      margin-bottom: 0 !important;
+    }
     font-size: 34px !important;
   }
 }
