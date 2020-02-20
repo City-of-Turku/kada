@@ -239,7 +239,7 @@
         "drupal/domain_path_rewrite": "^1.0-alpha4",
         "drupal/domain_variable": "^1.1",
         "drupal/domain_views": "1.x-dev",
-        "drupal/domaincontext": "^1.0-alpha1",
+        "drupal/domaincontext": "^1.0",
         "drupal/domains_metatag": "^1.1",
         "drupal/drupal": "^7.69",
         "drupal/ds": "^2.16",
@@ -483,7 +483,8 @@
                 "Enter drupal/domain_variable patch #0 description here": "https://www.drupal.org/files/issues/domain_variable_i18n_fixes-2308283-4.patch"
             },
             "drupal/domaincontext": {
-                "Enter drupal/domaincontext patch #0 description here": "https://www.drupal.org/files/1542406-5-domain-machine-names.patch"
+                "Enter drupal/domaincontext patch #0 description here": "https://www.drupal.org/files/1542406-5-domain-machine-names.patch",
+                "#1185216-16": "https://www.drupal.org/files/issues/fatal_error_class-1185216-16.patch"
             },
             "drupal/entityqueue": {
                 "Enter drupal/entityqueue patch #0 description here": "patches/entityqueue_subqueue_export.patch"
