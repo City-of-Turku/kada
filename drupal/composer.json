@@ -1,0 +1,598 @@
+{
+    "name": "city-of-pori/pori-kada",
+    "description": "pori.fi project",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "",
+            "role": ""
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/7"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor/ckeditor",
+                "version": "4.4.5",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "ckeditor"
+                },
+                "dist": {
+                    "url": "https://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.5/ckeditor_4.4.5_full.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor/lineutils",
+                "version": "4.4.8",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "ckeditor/plugins/lineutils"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/lineutils/releases/lineutils_4.4.8.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "ckeditor/widget",
+                "version": "4.4.8",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "ckeditor/plugins/widget"
+                },
+                "dist": {
+                    "url": "https://download.ckeditor.com/widget/releases/widget_4.4.8.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jackmoore/colorbox",
+                "version": "1.6.4",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/jackmoore/colorbox/archive/1.6.4.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "davatron5000/fitvids",
+                "version": "dev-master",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "fitvids"
+                },
+                "dist": {
+                    "url": "https://raw.githubusercontent.com/davatron5000/FitVids.js/master/jquery.fitvids.js",
+                    "type": "file"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "woothemes/flexslider",
+                "version": "2.2.2",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "flexslider"
+                },
+                "dist": {
+                    "url": "https://github.com/woothemes/FlexSlider/archive/version/2.2.2.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "openlayers/ol2",
+                "version": "2.13.1",
+                "type": "drupal-library",
+                "extra": {
+                    "installer-name": "openlayers"
+                },
+                "dist": {
+                    "url": "https://github.com/openlayers/ol2/releases/download/release-2.13.1/OpenLayers-2.13.1.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "phayes/geophp",
+                "version": "dev-master",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/phayes/geoPHP/archive/master.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "jhuang0427/php-proauth",
+                "version": "dev-master",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/jhuang0427/php-proauth/archive/master.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "moxiecode/plupload",
+                "version": "1.5.8",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/moxiecode/plupload/archive/v1.5.8.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "nrk/predis",
+                "version": "1.0.0",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/nrk/predis/archive/v1.0.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "proj4js/proj4js",
+                "version": "1.1.0",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://download.osgeo.org/proj4js/proj4js-1.1.0.zip",
+                    "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "select2/select2",
+                "version": "4.0.5",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js",
+                    "type": "file"
+                }
+            }
+        }
+    ],
+    "require": {
+        "php": ">=7.0.8",
+        "ext-curl": "*",
+        "ext-gd": "*",
+        "ext-json": "*",
+        "ext-openssl": "*",
+        "ext-pdo": "*",
+        "ext-xml": "*",
+        "ckeditor/ckeditor": "^4.4.5",
+        "ckeditor/lineutils": "^4.4.8",
+        "ckeditor/widget": "^4.4.8",
+        "composer/installers": "^1.2",
+        "composer/semver": "^1.4",
+        "cweagans/composer-patches": "^1.6",
+        "davatron5000/fitvids": "dev-master",
+        "drupal-composer/preserve-paths": "^0.1",
+        "drupal/addressfield": "^1.3",
+        "drupal/admin_menu": "^3.0-rc6",
+        "drupal/admin_notification": "^1.0-rc3",
+        "drupal/admin_theme": "^1.1",
+        "drupal/advagg": "^2.13",
+        "drupal/auto_entitylabel": "^1.4",
+        "drupal/better_exposed_filters": "^3.6",
+        "drupal/better_formats": "^1.0-beta2",
+        "drupal/bigmenu": "dev-1.x#41db001",
+        "drupal/breakpoints": "^1.6",
+        "drupal/cache_actions": "^2.0-alpha5",
+        "drupal/cdn": "^2.10",
+        "drupal/ckeditor_link": "^2.4",
+        "drupal/colorbox": "^2.13",
+        "drupal/composer_autoloader": "^1.0",
+        "drupal/conditional_fields": "^3.0-alpha2",
+        "drupal/content_lock": "^3.0-beta1",
+        "drupal/content_taxonomy": "^1.0-rc1",
+        "drupal/context": "^3.10",
+        "drupal/context_entity_field": "1.x-dev",
+        "drupal/context_error": "^1.0",
+        "drupal/context_omega": "^1.1",
+        "drupal/ctools": "^1.15",
+        "drupal/date": "^2.11-beta3",
+        "drupal/date_facets": "dev-1.x#9037608",
+        "drupal/diff": "^3.4",
+        "drupal/domain": "^3.17",
+        "drupal/domain_analytics": "^1.0-alpha2",
+        "drupal/domain_feeds": "^1.4",
+        "drupal/domain_integration": "^1.2",
+        "drupal/domain_path": "^1.0-beta4",
+        "drupal/domain_path_rewrite": "^1.0-alpha4",
+        "drupal/domain_variable": "^1.1",
+        "drupal/domain_views": "1.x-dev",
+        "drupal/domaincontext": "^1.0-alpha1",
+        "drupal/domains_metatag": "^1.1",
+        "drupal/drupal": "^7.69",
+        "drupal/ds": "^2.16",
+        "drupal/eck": "2.x-dev",
+        "drupal/elysia_cron": "^2.7",
+        "drupal/email": "^1.3",
+        "drupal/entity": "^1.9",
+        "drupal/entity_action_log": "^1.0-beta2",
+        "drupal/entity_base_type": "^1.0",
+        "drupal/entity_delete_log": "^1.1",
+        "drupal/entity_translation": "^1.1",
+        "drupal/entityqueue": "^1.5",
+        "drupal/entityreference": "^1.5",
+        "drupal/entityreference_prepopulate": "^1.5",
+        "drupal/expire": "^2.0-rc4",
+        "drupal/facetapi": "^1.6",
+        "drupal/facetapi_bonus": "^1.3",
+        "drupal/facetapi_collapsible": "1.x-dev",
+        "drupal/facetapi_pretty_paths": "^1.4",
+        "drupal/facetapi_select": "^1.3",
+        "drupal/features": "^2.11",
+        "drupal/features_extra": "^1.0",
+        "drupal/features_override": "^2.0-rc3",
+        "drupal/feeds": "^2.0-beta3",
+        "drupal/feeds_ex": "^1.0-beta2",
+        "drupal/feeds_oauth": "^1.0-beta3",
+        "drupal/feeds_tamper": "^1.2",
+        "drupal/feeds_tamper_conditional": "^1.0-beta2",
+        "drupal/field_collection": "^1.1",
+        "drupal/field_group": "^1.6",
+        "drupal/field_permissions": "^1.1",
+        "drupal/fitvids": "^1.17",
+        "drupal/flag": "^3.9",
+        "drupal/flexslider": "2.0-alpha3",
+        "drupal/geocoder": "^1.4",
+        "drupal/geocoder_rules": "1.x-dev",
+        "drupal/geofield": "^2.3",
+        "drupal/geophp": "^1.7",
+        "drupal/google_analytics": "^2.6",
+        "drupal/hierarchical_select": "^3.0-beta9",
+        "drupal/honeypot": "^1.26",
+        "drupal/hotjar": "^1.3",
+        "drupal/httprl": "1.x-dev",
+        "drupal/i18n": "^1.26",
+        "drupal/imageapi_optimize": "^1.2",
+        "drupal/imagecache_token": "^1.0",
+        "drupal/ip_geoloc": "^1.30",
+        "drupal/job_scheduler": "^2.0",
+        "drupal/jquery_update": "^2.7",
+        "drupal/language_access": "^1.01",
+        "drupal/libraries": "^2.5",
+        "drupal/link": "^1.7",
+        "drupal/linkchecker": "^1.4",
+        "drupal/linkit": "^3.5",
+        "drupal/matomo": "^2.12",
+        "drupal/maxlength": "^3.2",
+        "drupal/memcache": "^1.6",
+        "drupal/menu_attributes": "^1.0",
+        "drupal/menu_block": "2.7",
+        "drupal/metatag": "^1.26",
+        "drupal/module_filter": "^2.2",
+        "drupal/multiple_entity_form": "^1.3",
+        "drupal/multiple_selects": "^1.2",
+        "drupal/node_clone": "^1.0",
+        "drupal/og": "^2.10",
+        "drupal/og_extras": "^1.2",
+        "drupal/og_menu_single": "^1.0-beta2",
+        "drupal/og_webform": "^1.0-beta1",
+        "drupal/omega": "^4.4",
+        "drupal/openlayers": "^2.0-beta11",
+        "drupal/openlayers_geolocate_button": "1.0",
+        "drupal/options_element": "^1.12",
+        "drupal/pathauto": "^1.3",
+        "drupal/picture": "^2.13",
+        "drupal/piwik": "^2.12",
+        "drupal/plupload": "^1.7",
+        "drupal/prepopulate": "^2.1",
+        "drupal/proj4js": "^1.2",
+        "drupal/publishcontent": "^1.4",
+        "drupal/quicktabs": "^3.8",
+        "drupal/radioactivity": "^2.12",
+        "drupal/redirect": "1.x-dev",
+        "drupal/redis": "^2.15",
+        "drupal/relation": "^1.2",
+        "drupal/relation_add": "1.x-dev",
+        "drupal/responsive_menus": "^1.7",
+        "drupal/restrict_node_page_view": "^1.2",
+        "drupal/rules": "^2.12",
+        "drupal/rules_batch": "^1.0",
+        "drupal/rules_conditional": "^1.0",
+        "drupal/scald": "^1.12",
+        "drupal/scald_file": "^1.4",
+        "drupal/scald_vimeo": "^1.5",
+        "drupal/scald_youtube": "^1.8",
+        "drupal/scheduler": "^1.5",
+        "drupal/search_api": "^1.26",
+        "drupal/search_api_ajax": "^1.2",
+        "drupal/search_api_et": "^2.0-alpha7",
+        "drupal/search_api_live_results": "^1.0",
+        "drupal/search_api_override": "^1.0-rc1",
+        "drupal/search_api_solr": "^1.15",
+        "drupal/service_links": "^2.4",
+        "drupal/sharethis": "^2.13",
+        "drupal/shortcutperrole": "^1.2",
+        "drupal/shorten": "^1.4",
+        "drupal/simplei": "^1.1",
+        "drupal/simplesamlphp_auth": "3.x-dev",
+        "drupal/smtp": "^1.7",
+        "drupal/stringoverrides": "^1.8",
+        "drupal/strongarm": "^2.0",
+        "drupal/styleguide": "^1.1",
+        "drupal/system_status": "^3.3",
+        "drupal/taxonomy_access_fix": "^2.4",
+        "drupal/taxonomy_display": "^1.1",
+        "drupal/taxonomy_manager": "^1.0",
+        "drupal/title": "^1.0-beta3",
+        "drupal/token": "^1.7",
+        "drupal/transliteration": "^3.2",
+        "drupal/uuid": "^1.3",
+        "drupal/uuid_features": "^1.0-rc2",
+        "drupal/variable": "^2.5",
+        "drupal/varnish": "^1.9",
+        "drupal/video_embed_field": "^2.0-beta11",
+        "drupal/view_unpublished": "^1.2",
+        "drupal/views": "^3.23",
+        "drupal/views_accordion": "^1.6",
+        "drupal/views_ajax_get": "^1.3",
+        "drupal/views_block_area": "^1.2",
+        "drupal/views_bulk_operations": "^3.5",
+        "drupal/views_content_cache": "^3.0-alpha3",
+        "drupal/views_data_export": "^3.2",
+        "drupal/views_datasource": "dev-1.x#d048d81",
+        "drupal/views_default_view_override": "^2.0",
+        "drupal/views_distinct": "^1.0",
+        "drupal/views_rss": "^2.0-rc4",
+        "drupal/warden": "^1.0",
+        "drupal/webform": "^4.21",
+        "drupal/wysiwyg": "^2.6",
+        "drush/drush": "^8.0",
+        "jackmoore/colorbox": "^1.6.4",
+        "jhuang0427/php-proauth": "dev-master",
+        "moxiecode/plupload": "^1.5.8",
+        "nrk/predis": "^1.0.0",
+        "openlayers/ol2": "^2.13.1",
+        "phayes/geophp": "dev-master",
+        "proj4js/proj4js": "^1.1.0",
+        "select2/select2": "^4.0.5",
+        "simplesamlphp/simplesamlphp": "^1.18",
+        "symfony/filesystem": "~2.7|^3",
+        "webflo/drupal-finder": "^1.0.0",
+        "woothemes/flexslider": "^2.2.2"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.6.0",
+        "drupal/coder": "^8.3.7",
+        "drupal/devel": "^1.7",
+        "drupal/stage_file_proxy": "^1.9",
+        "phpcompatibility/php-compatibility": "^9.3.5",
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "conflict": {
+        "drupal/core": "8.*"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true
+    },
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ]
+    },
+    "scripts": {
+        "pre-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion",
+            "DrupalProject\\composer\\ScriptHandler::removeInternalFiles"
+        ],
+        "pre-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::checkComposerVersion",
+            "DrupalProject\\composer\\ScriptHandler::removeInternalFiles"
+        ],
+        "post-install-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "DrupalProject\\composer\\ScriptHandler::removeInternalFiles"
+        ],
+        "post-update-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::createRequiredFiles",
+            "DrupalProject\\composer\\ScriptHandler::removeInternalFiles"
+        ],
+        "post-create-project-cmd": [
+            "DrupalProject\\composer\\ScriptHandler::removeInternalFiles"
+        ],
+        "post-autoload-dump": [
+          "DrupalProject\\composer\\ScriptHandler::setupSimpleSaml",
+          "DrupalProject\\composer\\ScriptHandler::setupPing"
+        ]
+    },
+    "extra": {
+        "installer-paths": {
+            "web/": ["type:drupal-core"],
+            "web/profiles/{$name}/": ["type:drupal-profile"],
+            "web/sites/all/drush/{$name}/": ["type:drupal-drush"],
+            "web/sites/all/libraries/{$name}/": ["type:drupal-library"],
+            "web/sites/all/modules/contrib/{$name}/": ["type:drupal-module"],
+            "web/sites/all/themes/contrib/{$name}/": ["type:drupal-theme"]
+        },
+        "patches": {
+            "cweagans/composer-patches": {
+                "Call the preserve paths hooks" : "https://github.com/SebCorbin/composer-patches/commit/1cb9bacba51f8bba0c5f3f322c3bb61e4ceae974.patch"
+            },
+            "drupal/drupal": {
+                "Enter drupal/drupal patch #995156 description here": "https://www.drupal.org/files/issues/995156-5_portable_taxonomy_permissions.patch",
+                "Enter drupal/drupal patch #1018614 description here": "https://www.drupal.org/files/drupal-menu_navigation_links-1018614-83.patch",
+                "Enter drupal/drupal patch #2 description here": "https://www.drupal.org/files/issues/image_derivatives-1109312-200.patch"
+            },
+            "drupal/plupload_lib": {
+                "Enter drupal/plupload_lib patch #0 description here": "https://www.drupal.org/files/issues/plupload-1_5_8-rm_examples-1903850-21.patch"
+            },
+            "drupal/auto_entitylabel": {
+                "Enter drupal/auto_entitylabel patch #0 description here": "https://www.drupal.org/files/issues/auto_entitylabel_translation_placeholder_2427539_1.patch"
+            },
+            "drupal/content_lock": {
+                "Enter drupal/content_lock patch #0 description here": "https://www.drupal.org/files/issues/cancel-edit-fix-2852631.patch"
+            },
+            "drupal/context": {
+                "Enter drupal/context patch #0 description here": "https://www.drupal.org/files/issues/context-node-taxonomy-performance-autocomplete-873936-47.patch"
+            },
+            "drupal/context_entity_field": {
+                "Enter drupal/context_entity_field patch #0 description here": "https://www.drupal.org/files/issues/context_entity_field-view_mode-2022197-4.patch"
+            },
+            "drupal/context_omega": {
+                "Enter drupal/context_omega patch #0 description here": "https://www.drupal.org/files/i2115997-3.patch"
+            },
+            "drupal/date_facets": {
+                "Enter drupal/date_facets patch #0 description here": "https://www.drupal.org/files/issues/2226429-date_facets_not_translatable-4.patch",
+                "Enter drupal/date_facets patch #1 description here": "https://www.drupal.org/files/issues/date_facets-undefined-index-2220227-2.patch"
+            },
+            "drupal/domain_variable": {
+                "Enter drupal/domain_variable patch #0 description here": "https://www.drupal.org/files/issues/domain_variable_i18n_fixes-2308283-4.patch"
+            },
+            "drupal/domaincontext": {
+                "Enter drupal/domaincontext patch #0 description here": "https://www.drupal.org/files/1542406-5-domain-machine-names.patch"
+            },
+            "drupal/entityqueue": {
+                "Enter drupal/entityqueue patch #0 description here": "patches/entityqueue_subqueue_export.patch"
+            },
+            "drupal/entity_action_log": {
+                "Enter drupal/entity_action_log patch #0 description here": "https://www.drupal.org/files/issues/2018-03-23/2955606-2_fix_notice.patch"
+            },
+            "drupal/field_group": {
+                "Enter drupal/field_group patch #0 description here": "https://www.drupal.org/files/issues/2019-10-03/3085340-2.patch"
+            },
+            "drupal/feeds_oauth": {
+                "Enter drupal/feeds_oauth patch #0 description here": "patches/feeds_oauth_library_404_fix.patch"
+            },
+            "drupal/feeds_tamper": {
+                "Enter drupal/feeds_tamper patch #0 description here": "https://www.drupal.org/files/issues/easyconfigimport_1946222_0.patch"
+            },
+            "drupal/flexslider": {
+                "Enter drupal/flexslider patch #0 description here": "https://www.drupal.org/files/issues/0001-Issue-2086525-by-alvar0hurtad0-Johnny-vd-Laar-Flexsl_0.patch"
+            },
+            "drupal/geocoder": {
+                "Enter drupal/geocoder patch #0 description here": "patches/geocoder_proximity_cache_record_fix.patch"
+            },
+            "drupal/geofield": {
+                "Enter drupal/geofield patch #0 description here": "https://www.drupal.org/files/issues/geofield-delete_feature_fix-1350320-20.patch",
+                "Enter drupal/geofield patch #1 description here": "patches/geofield-entity-translation-field-lang.patch"
+            },
+            "drupal/i18n": {
+                "#2912469: i18n Warning: Invalid argument supplied for foreach() 18n_taxonomy_views_pre_render()": "https://www.drupal.org/files/issues/i18n_taxonomy-2912469-1.patch"
+            },
+            "drupal/imagecache_token": {
+                "Enter drupal/imagecache_token patch #0 description here": "https://www.drupal.org/files/issues/2019-09-16/2528180-19.patch",
+                "#3110073: Undefined index: uri in imagecache_token_tokens() (line 165)": "https://www.drupal.org/files/issues/2020-01-30/3110073-2.patch"
+            },
+            "drupal/ip_geoloc": {
+                "Enter drupal/ip_geoloc patch #0 description here": "patches/ip_geoloc_google_maps_version_bump.patch",
+                "Enter drupal/ip_geoloc patch #1 description here": "patches/ip_geoloc_update_current_location_marker_to_use_predefined_markers.patch"
+            },
+            "drupal/openlayers": {
+                "Enter drupal/openlayers patch #0 description here": "patches/openlayers_internal_variant.patch",
+                "Enter drupal/openlayers patch #1 description here": "https://www.drupal.org/files/issues/0001-Issue-2888123-QuickMap-Plugin-for-Quicktabs-Causes-F.patch"
+            },
+            "drupal/openlayers_geolocate_button": {
+                "Enter drupal/openlayers_geolocate_button patch #0 description here": "patches/openlayers_geolocate_button-show-location.patch"
+            },
+            "drupal/og_menu_single": {
+                "Enter drupal/og_menu_single patch #0 description here": "https://www.drupal.org/files/issues/og_menu_single-check-menu-access-2027109-14.patch"
+            },
+            "drupal/og_webform": {
+                "Enter drupal/og_webform patch #0 description here": "https://git.drupalcode.org/project/og_webform/commit/b60f03ae4de8050bb2499106484df085b9884b25.patch",
+                "Enter drupal/og_webform patch #1 description here": "https://www.drupal.org/files/og_webform_api2-1946432_0.patch"
+            },
+            "drupal/omega": {
+                "#3111338-2: Fix The following { theme_engine / module / theme } is missing from the file system: sites": "https://www.drupal.org/files/issues/2020-02-05/3111338-2.patch"
+            },
+            "drupal/quicktabs": {
+                "Enter drupal/quicktabs patch #0 description here": "https://www.drupal.org/files/issues/quicktabs-tab-title-class-quicktab-ui-tabs-accordion-2640174-9.patch"
+            },
+            "drupal/radioactivity": {
+                "Enter drupal/radioactivity patch #0 description here": "patches/radioactivity-config-location.patch"
+            },
+            "drupal/relation": {
+                "Enter drupal/relation patch #better_rules description here": "https://www.drupal.org/files/issues/relation-query_endpoints-1302788-33.patch"
+            },
+            "drupal/relation_add": {
+                "Enter drupal/relation_add patch #1993738 description here": "https://www.drupal.org/files/issues/2019-02-05/7.x-1.6-relation-add-weight-1993738-25.patch"
+            },
+            "drupal/sarnia": {
+                "Enter drupal/sarnia patch #0 description here": "https://www.drupal.org/files/issues/2513444-sarnia-date-facets-1.patch",
+                "Enter drupal/sarnia patch #1 description here": "https://www.drupal.org/files/issues/displayHighlight-2507513-10032369.patch"
+            },
+            "drupal/scald": {
+                "Enter drupal/scald patch #0 description here": "patches/restructure-library-render.patch"
+            },
+            "drupal/search_api_live_results": {
+                "Enter drupal/search_api_live_results patch #0 description here": "https://www.drupal.org/files/views-integration-1392650.patch",
+                "Enter drupal/search_api_live_results patch #1 description here": "patches/search_api_live_results.patch"
+            },
+            "drupal/sharethis": {
+                "Enter drupal/sharethis patch #0 description here": "https://www.drupal.org/files/issues/2759221-unable-to-select-services-90.patch",
+                "Enter drupal/sharethis patch #1 description here": "https://www.drupal.org/files/issues/2019-08-22/2759221-unable-to-select-services-99.patch"
+            },
+            "drupal/simplesamlphp_auth": {
+                "Enter drupal/simplesamlphp_auth patch #2717473 description here": "https://www.drupal.org/files/issues/init-logout-notice-2717473-5.patch"
+            },
+            "drupal/styleguide": {
+                "Enter drupal/styleguide patch #0 description here": "patches/styleguide-group.patch"
+            },
+            "drupal/views_content_cache": {
+                "Enter drupal/views_content_cache patch #og description here": "https://www.drupal.org/files/issues/views_content_cache-og-2054811-9.patch"
+            },
+            "drupal/views_data_export": {
+                "Enter drupal/views_data_export patch #0 description here": "https://www.drupal.org/files/issues/2018-10-09/views_data_export-phpcs_warning-php_tag.patch"
+            },
+            "drupal/views_datasource": {
+                "Enter drupal/views_datasource patch #0 description here": "https://www.drupal.org/files/issues/views_datasource-1881670-16-multiple-fields-render.patch",
+                "Enter drupal/views_datasource patch #1 description here": "https://www.drupal.org/files/issues/2018-03-26/2955990-2_fix_keys.patch",
+                "Enter drupal/views_datasource patch #2 description here": "https://www.drupal.org/files/issues/2018-03-26/2956000-2_link_scald_support.patch"
+            },
+            "drupal/views_distinct": {
+                "Enter drupal/views_distinct patch #0 description here": "https://www.drupal.org/files/issues/2018-04-06/views_distinct-use_variables_as_storage-2098557-15.patch"
+            },
+              "woothemes/flexslider": {
+                "Enter woothemes/flexslider patch #0 description here": "patches/flexslider_ie_vertical_pan_support.patch"
+            }
+        },
+        "preserve-paths": [
+            "web/sites",
+            "web/profiles"
+        ]
+    }
+
+}

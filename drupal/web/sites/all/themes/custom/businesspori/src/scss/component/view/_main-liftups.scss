@@ -1,0 +1,197 @@
+$main-liftup-box-list-background: $darker-gray;
+$main-liftup-separator-color: darken($main-liftup-box-list-background, 5%);
+$main-liftups-background: $white;
+$main-liftup-title-color: $body-font-color;
+
+$main-liftup-content-padding: 20px;
+
+
+.main-liftups {
+  margin: 0 -1.25rem;
+
+  @media screen and (min-width: $mobile-landscape-wide) {
+    margin: 3% -2.5rem 2%;
+  }
+
+  @media screen and (min-width: $tablet-portrait) {
+    margin: 3% 0 2%;
+  }
+}
+
+#block-quicktabs-feed-tabs-frontpage-promoted-con {
+  @include responsive-whitespace;
+}
+
+.main-liftups .view-content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    padding-right: $container-gutter;
+    padding-left: $container-gutter;
+  }
+}
+
+.main-liftup-row {
+  border: 0;
+  width: 100%;
+
+  @media screen and (min-width: $tablet-portrait) {
+    margin-bottom: 2 * $liftup-gutter;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 49.2%;
+  }
+}
+
+.main-liftup-box {
+  border-top: $liftup-border solid $green-dark;
+  padding-bottom: .5rem;
+  position: relative;
+
+  // Set theme colored borders and hover.
+  @each $theme-color, $color in $theme-colors {
+    &.theme-color-#{$theme-color} {
+      border-top: $liftup-border solid $color;
+      background-color: rgba($color, .2);
+
+      .field--name-title h3 {
+        color: $color;
+      }
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.main-liftup-box__media {
+  background: transparent;
+  height: auto;
+  position: relative;
+  width: 100%;
+
+  @media screen and (min-width: $tablet-portrait) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 55%;
+  }
+
+  figure {
+    line-height: 0;
+    margin: 0;
+  }
+}
+
+.main-liftup-box__content {
+  background: transparent;
+  padding: $container-gutter;
+  width: 100%;
+
+  @media screen and (min-width: $tablet-portrait) {
+    width: 50%;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 45%;
+  }
+
+  .field--name-post-date {
+    display: none;
+}
+
+  .field--name-title h3 {
+    font-size: $font-size-heading-3;
+    font-family: $bergen-mono;
+    font-weight: 600;
+  }
+
+  .field--name-field-lead-paragraph-long-text {
+    font-size: $base-font-size-rem;
+    font-weight: 300;
+    letter-spacing: 0;
+  }
+}
+
+.field--name-title h3 {
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.main-liftup-box__text {
+  line-height: 1.6;
+}
+
+.field--name-field-lead-paragraph-long-text {
+  background-color: transparent;
+  bottom: 1.250rem;
+  color: $black;
+  font-size: 1rem;
+  word-break: break-word;
+  margin: 0;
+}
+
+.field--name-post-date {
+  color: $gray;
+  text-align: left;
+  margin: 1rem 0 1rem 0;
+  @media screen and (min-width: $tablet-portrait) {
+    margin: 0 0 1rem 0;
+  }
+}
+
+.main-liftup-box-4 {
+  clear: both;
+
+  .main-liftup-box__content {
+    width: 100%;
+
+    @media screen and (min-width: $desktop) {
+      padding: 1.875rem;
+      width: 50%;
+    }
+  }
+}
+
+.main-liftup-box-2 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 0 1.75rem 0;
+
+  @media screen and (min-width: $tablet-portrait) {
+    flex-direction: row;
+    padding: 0;
+  }
+}
+.view-facts .view-content {
+  justify-content: space-around;
+
+}
+.field--name-field-lead-paragraph-long-text {
+  .field__items {
+    .field__item {
+      margin-bottom: 2.5rem;
+    }
+  }
+}
+
+.block--views-kada-news-news-title-block {
+  h2.news-title {
+    text-transform: none;
+    margin-top: 20px;
+    margin-bottom: 20px !important;
+    @media screen and (min-width: $mobile-landscape-wide) {
+      margin-bottom: 0 !important;
+    }
+    font-size: 34px !important;
+  }
+}

@@ -1,0 +1,63 @@
+.domain-businesspori-fi {
+    .quicktabs-ui-wrapper {
+      .ui-tabs-nav {
+        margin: 1rem (-$container-gutter * 2);
+        padding: 0 ($container-gutter * 2);
+        @media screen and (min-width: $mobile-landscape-wide) {
+          margin: 0 (-$container-gutter * 2);
+          padding: 0 ($container-gutter * 2);
+        }
+
+        @media screen and (min-width: $tablet-landscape) {
+          border: 0;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+}
+.quicktabs-ui-wrapper {
+  .ui-tabs-nav {
+    .ui-state-default .ui-tabs-anchor {
+      border-left: .063rem solid $green-dark;
+      border-right: .063rem solid $green-dark;
+      border-top: .063rem solid $green-dark;
+      color: $green-dark;
+    }
+    .uutiset.ui-tabs-anchor {
+      background-color: $green-dark;
+      color: $white;
+    }
+    .ui-state-default {
+      .ui-tabs-anchor {
+        &.all::after,
+        &.kaikki::after {
+          background-image: url('../../dist/image/current-all-icon--green.svg');
+        }
+      }
+    }
+    .ui-state-default {
+      &.ui-state-active,
+      &:focus,
+      &:hover {
+        background-color: $green-dark;
+      }
+    }
+  }
+
+}
+
+.block--kada-news-feature-news-archive-link .block__content a {
+  background-color: $green-dark;
+}
+@media screen and (max-width: $mobile-menu-breakpoint-max) {
+  .quicktabs-ui-wrapper .ui-tabs-nav{
+    border-bottom: 5px solid $green-dark !important;
+  }
+}
+
+.domain-businesspori-fi {
+  #block-quicktabs-feed-tabs-frontpage-promoted-con {
+    margin-top: 20px;
+  }
+}

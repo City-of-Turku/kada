@@ -1,0 +1,130 @@
+<?php
+/**
+ * @file
+ * Code for the KADA Liftups feature.
+ */
+
+include_once 'kada_liftups_feature.features.inc';
+
+/**
+ * Implements hook_block_info().
+ */
+function kada_liftups_feature_block_info() {
+  return array(
+    'current_combined' => array(
+      'info' => t('Combined content'),
+    ),
+    'current_combined_section' => array(
+      'info' => t('Combined content for section'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function kada_liftups_feature_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'current_combined':
+    case 'current_combined_section':
+      $block['subject'] = t('New');
+      $block['content'] = kada_liftups_feature_current_combined_output($delta == 'current_combined_section');
+      break;
+  }
+  return $block;
+}
+
+/**
+ * Gathers view results from multiple displays and combines those into one.
+ * @param  bool $is_section Is content for section
+ */
+function kada_liftups_feature_current_combined_output($is_section) {
+  $nids = array();
+  // Initialize view vars.
+  $view_name = 'kada_current';
+  $domain = domain_get_domain();
+  if ($domain['machine_name'] == 'businesspori_fi' || $domain['machine_name'] == 'visitpori_fi') {
+    $view_name = 'kada_current_promoted_';
+  }
+  $display_prefix = 'tab_';
+  if ($is_section) {
+    $display_prefix .= 'section_';
+  }
+  // Map displays with item count what to show.
+  $display_mapping = array(
+    'news' => 8, // Only 4 will be shown
+    'blogs' => 3,
+    'facebook' => 2,
+    'twitter' => 3,
+    'instagram' => 1,
+    'linkedin' => 1,
+  );
+  // Gather all news nids in order to show only 4 in view.
+  // This is because in view template we do not display the ones that already are in page.
+  $news_nids = &drupal_static('current_news_nids');
+  $news_nids = array();
+  // Go through content mapping of displays.
+  foreach ($display_mapping as $display => $num) {
+    // Prepare view for query execution.
+    $view = views_get_view($view_name);
+    $view->set_display($display_prefix . $display);
+    $view->pre_execute();
+    $view->execute();
+    if (!empty($view->result)) {
+      $found_nids = 0;
+      // Gather needed amount of nodes out of display results.
+      foreach ($view->result as $obj) {
+        if ($found_nids == $num) {
+          break;
+        }
+        $nids[] = $obj->nid;
+        $found_nids++;
+        if ($display == 'news') {
+          $news_nids[] = $obj->nid;
+        }
+      }
+    }
+  }
+  // Prepare nids for view argument.
+  $domain = domain_get_domain();
+  if ($domain['machine_name'] == 'businesspori_fi') {
+    $nids = array_slice($nids, 0, 4);
+  }
+  $nids = implode('+', $nids);
+  // Return rendered view.
+  return views_embed_view($view_name, $display_prefix . 'new', $nids);
+}
+
+/**
+ * Implements hook_search_api_index_items_alter().
+ */
+function kada_liftups_feature_search_api_index_items_alter(&$items, $index) {
+  if ($index->machine_name == 'default_node_index') {
+    foreach ($items as $key => $node) {
+      // We only want liftups which are flagged to current and have a link to
+      // search index
+      if ($node->type == 'liftup') {
+        $wrapper = entity_metadata_wrapper('node', $node);
+        $flagged_current = $wrapper->flag_current->value();
+
+        // Make sure liftup is flagged to current
+        if (empty($flagged_current)) {
+          // If not, prevent indexing
+          unset($items[$key]);
+        } else {
+          // Make sure liftup has a link
+          if (empty($wrapper->field_link_to_content->value()['url'])) {
+            // If not, prevent indexing
+            unset($items[$key]);
+          }
+          else {
+            // We don't want to use the drupal title which content editors see
+            // to the search index, but the link title instead
+            $items[$key]->title = $wrapper->field_link_to_content->value()['title'];
+          }
+        }
+      }
+    }
+  }
+}
