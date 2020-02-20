@@ -19,10 +19,7 @@ $main-liftup-content-padding: 20px;
 }
 
 #block-quicktabs-feed-tabs-frontpage-promoted-con {
-  @media screen and (min-width: $desktop) {
-    padding-right: $container-gutter;
-    padding-left: $container-gutter;
-  }
+  @include responsive-whitespace;
 }
 
 .main-liftups .view-content {
