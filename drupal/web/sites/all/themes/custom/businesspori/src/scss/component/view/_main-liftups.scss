@@ -18,7 +18,8 @@ $main-liftup-content-padding: 20px;
   }
 }
 
-.main-liftups .view-content {
+.main-liftups .view-content,
+#block-quicktabs-feed-tabs-frontpage-promoted-con {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -171,7 +172,7 @@ $main-liftup-content-padding: 20px;
 }
 .view-facts .view-content {
   justify-content: space-around;
-  
+
 }
 .field--name-field-lead-paragraph-long-text {
   .field__items {
