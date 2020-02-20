@@ -19,6 +19,8 @@ function business_pori_configurations_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 1,
+      'base_i18n_mode' => 1,
+      'base_language' => 'und',
     ),
   );
 }

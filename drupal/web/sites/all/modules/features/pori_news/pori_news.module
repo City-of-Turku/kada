@@ -5,3 +5,13 @@
  */
 
 include_once 'pori_news.features.inc';
+
+/**
+ * Implements hook_views_pre_build
+ **/
+function pori_news_views_pre_build(&$view) {
+  $domain = domain_get_domain();
+  if ($view->name == 'kada_current_promoted_' && $domain['machine_name'] == 'businesspori_fi') {
+    $view->set_items_per_page(4);
+  }
+}

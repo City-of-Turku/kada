@@ -43,6 +43,10 @@ function kada_liftups_feature_current_combined_output($is_section) {
   $nids = array();
   // Initialize view vars.
   $view_name = 'kada_current';
+  $domain = domain_get_domain();
+  if ($domain['machine_name'] == 'businesspori_fi' || $domain['machine_name'] == 'visitpori_fi') {
+    $view_name = 'kada_current_promoted_';
+  }
   $display_prefix = 'tab_';
   if ($is_section) {
     $display_prefix .= 'section_';
@@ -83,6 +87,10 @@ function kada_liftups_feature_current_combined_output($is_section) {
     }
   }
   // Prepare nids for view argument.
+  $domain = domain_get_domain();
+  if ($domain['machine_name'] == 'businesspori_fi') {
+    $nids = array_slice($nids, 0, 4);
+  }
   $nids = implode('+', $nids);
   // Return rendered view.
   return views_embed_view($view_name, $display_prefix . 'new', $nids);
