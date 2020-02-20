@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "126802e8fab26ff2fc089927f885ba85",
+    "content-hash": "b8c370066f59d32a7c9310ea68ebe313",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
@@ -1131,7 +1131,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/bigmenu.git",
-                "reference": "ab3bc05"
+                "reference": "41db001"
             },
             "require": {
                 "drupal/drupal": "~7.0"
@@ -1169,7 +1169,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/bigmenu"
             },
-            "time": "2014-12-01T20:42:03+00:00"
+            "time": "2016-06-16T22:12:48+00:00"
         },
         {
             "name": "drupal/breakpoints",
@@ -6911,17 +6911,17 @@
         },
         {
             "name": "drupal/menu_block",
-            "version": "2.8.0",
+            "version": "2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/menu_block.git",
-                "reference": "7.x-2.8"
+                "reference": "7.x-2.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/menu_block-7.x-2.8.zip",
-                "reference": "7.x-2.8",
-                "shasum": "83cfa40376ade930913d5d6ad5b4261176a2134a"
+                "url": "https://ftp.drupal.org/files/projects/menu_block-7.x-2.7.zip",
+                "reference": "7.x-2.7",
+                "shasum": "aaf9080530d39a5d8924dbd3f60a135d9a5b06fa"
             },
             "require": {
                 "drupal/drupal": "^7.12"
@@ -6932,7 +6932,7 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "7.x-2.8",
+                    "version": "7.x-2.7",
                     "datestamp": "1543950480",
                     "security-coverage": {
                         "status": "covered",
@@ -10525,60 +10525,6 @@
             "homepage": "https://www.drupal.org/project/taxonomy_access_fix",
             "support": {
                 "source": "https://git.drupalcode.org/project/taxonomy_access_fix"
-            }
-        },
-        {
-            "name": "drupal/taxonomy_csv",
-            "version": "5.10.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/taxonomy_csv.git",
-                "reference": "7.x-5.10"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/taxonomy_csv-7.x-5.10.zip",
-                "reference": "7.x-5.10",
-                "shasum": "cf78ade621501c02395707911b2695e55c64dfbe"
-            },
-            "require": {
-                "drupal/drupal": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-5.x": "5.x-dev"
-                },
-                "drupal": {
-                    "version": "7.x-5.10",
-                    "datestamp": "1578608043",
-                    "security-coverage": {
-                        "status": "revoked",
-                        "message": "Project has been unsupported by the Drupal Security Team"
-                    }
-                },
-                "patches_applied": {
-                    "Enter drupal/taxonomy_csv patch #0 description here": "https://www.drupal.org/files/issues/fatal_error_break-2833513-3.patch"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/7/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Unsupported Projects",
-                    "homepage": "https://www.drupal.org/user/291168"
-                },
-                {
-                    "name": "hanoii",
-                    "homepage": "https://www.drupal.org/user/23157"
-                }
-            ],
-            "description": "Export and import complete taxonomies, hierarchical structure or simple lists of terms and fields to or from a CSV file, url or text.",
-            "homepage": "https://www.drupal.org/project/taxonomy_csv",
-            "support": {
-                "source": "https://git.drupalcode.org/project/taxonomy_csv"
             }
         },
         {

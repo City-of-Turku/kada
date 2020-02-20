@@ -113,8 +113,8 @@ proxy:
 events:
   pre-start:
     - appserver: composer install
-  post-db-import:
-    - appserver: /app/.lando/update.sh
+  # post-db-import:
+  #   - appserver: /app/.lando/update.sh
 
 env_file:
   - .lando/.env

@@ -115,6 +115,7 @@ function pori_configuration_update_7114() {
     'tkufi_places_feature',
     'tkufi_rules_et',
     'tkufi_service_offer_feature',
+    'taxonomy_csv',
   );
   db_delete('system')
     ->condition('name', $modules, 'IN')
