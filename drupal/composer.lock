@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b8c370066f59d32a7c9310ea68ebe313",
+    "content-hash": "485a72e8492e609049aa83b332cd1908",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
@@ -2890,7 +2890,8 @@
                     }
                 },
                 "patches_applied": {
-                    "Enter drupal/domaincontext patch #0 description here": "https://www.drupal.org/files/1542406-5-domain-machine-names.patch"
+                    "Enter drupal/domaincontext patch #0 description here": "https://www.drupal.org/files/1542406-5-domain-machine-names.patch",
+                    "#1185216-16": "https://www.drupal.org/files/issues/fatal_error_class-1185216-16.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/7/downloads",
