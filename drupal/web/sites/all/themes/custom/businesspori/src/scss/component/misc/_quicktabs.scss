@@ -1,3 +1,21 @@
+.domain-businesspori-fi {
+    .quicktabs-ui-wrapper {
+      .ui-tabs-nav {
+        margin: 1rem (-$container-gutter * 2);
+        padding: 0 ($container-gutter * 2);
+        @media screen and (min-width: $mobile-landscape-wide) {
+          margin: 0 (-$container-gutter * 2);
+          padding: 0 ($container-gutter * 2);
+        }
+
+        @media screen and (min-width: $tablet-landscape) {
+          border: 0;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+}
 .quicktabs-ui-wrapper {
   .ui-tabs-nav {
     .ui-state-default .ui-tabs-anchor {
