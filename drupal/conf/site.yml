@@ -160,6 +160,7 @@ prod:
     update:
       - drush: updb -y
       - cleanup
+      - drush: cc drush
       - drush: omega-revert kada
       - drush: dis devel -y
       - drush: cc drush
