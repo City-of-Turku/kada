@@ -1827,7 +1827,7 @@ function kada_places_feature_field_default_field_instances() {
         'title' => '',
       ),
       'display' => array(
-        'url_cutoff' => 80,
+        'url_cutoff' => 0,
       ),
       'enable_tokens' => 0,
       'entity_translation_sync' => FALSE,
