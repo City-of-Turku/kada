@@ -72,7 +72,7 @@
     <meta name="msapplication-TileImage" content="<?php echo file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/favicon/mstile-144x144.png?v=M4yYbYA4bq">
     <meta name="theme-color" content="#ffffff">
 
-    <meta property="og:image" content="<?php print file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/icon/image_src.png" /> <!-- @todo create a 200x200 png file -->
+    <meta property="og:image" content="<?php print file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))); ?>/dist/image/image_src.png" /> <!-- @todo create a 200x200 png file -->
 
     <?php print $styles; ?>
     <?php print $scripts; ?>
