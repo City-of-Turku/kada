@@ -1298,7 +1298,7 @@ function pori_configuration_field_default_field_instances() {
         'title' => '',
       ),
       'display' => array(
-        'url_cutoff' => 80,
+        'url_cutoff' => 0,
       ),
       'enable_tokens' => 1,
       'entity_translation_sync' => FALSE,
