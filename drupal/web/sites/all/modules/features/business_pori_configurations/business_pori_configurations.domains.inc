@@ -70,7 +70,7 @@ function business_pori_configurations_domain_alias_default_aliases() {
 function business_pori_configurations_domain_conf_default_variables() {
   $domain_variables = array();
   $domain_variables['businesspori_fi'] = array(
-    'googleanalytics_account' => 'UA-76043723-2',
+    'googleanalytics_account' => 'UA-76043723-7',
     'googleanalytics_domain_mode' => 0,
     'googleanalytics_cross_domains' => '',
     'igoogleanalytics_visibility_pages' => 0,

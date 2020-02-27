@@ -177,10 +177,16 @@ function kada_metatag_tokens($type, $tokens, array $data = array(), array $optio
     'metatag_image' => array(
       'fallbacks' => array(
         '[node:field-main-image:scald-file:opengraph]',
+        '[node:field-main-image:scald-file]',
         '[node:field-content-image:scald-file:opengraph]',
+        '[node:field-content-image:scald-file]',
         '[node:field-content-image-et:scald-file:opengraph]',
+        '[node:field-content-image-et:scald-file]',
         '[node:field_content_image_ext:opengraph]',
+        '[node:field_content_image_ext:scald-file]',
         '[node:field-person-image:scald-file:opengraph]',
+        '[node:field-person-image:scald-file]',
+        '[node:field-sharing-image:scald-file]',
         '[kada:metatag_section_sharing_image]',
         '[kada:metatag_default_sharing_image]',
       ),
@@ -213,6 +219,9 @@ function kada_metatag_tokens($type, $tokens, array $data = array(), array $optio
     foreach ($mapping as $token => $token_options) {
       if (isset($tokens[$token])) {
         $replacements[$tokens[$token]] = _token_fallback($token_options, $node);
+      }
+      if($token == 'metatag_image' && empty($replacements[$tokens[$token]])) {
+        $replacements[$tokens[$token]] = file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))) . '/dist/image/image_src.png';
       }
     }
     if (isset($tokens['metatag_default_sharing_image'])) {
@@ -255,11 +264,11 @@ function kada_metatag_page_alter(&$page) {
 function _get_token($token, &$node) {
   global $language;
   $token_content = token_replace($token, array('node' => $node), array(
-    'language' => $language,
+    'language' => $language->language,
     'sanitize' => TRUE,
   ));
   // See if token gets replaced.
-  if ($token_content != $token) {
+  if ($token_content != $token && $token_content != 'Array') {
     // See if token has actual content.
     if (!empty($token_content)) {
       $token_content = strip_tags($token_content);
@@ -276,8 +285,8 @@ function _get_token($token, &$node) {
  */
 function _token_fallback($token_options, &$node) {
   $options = array();
-  if (isset($token_options['options'])) {
-    $options = $token_options['options'];
+  if (isset($token_options['fallbacks'])) {
+    $options = $token_options['fallbacks'];
   }
   // Loop through fallbacks.
   while ($token = array_shift($token_options['fallbacks'])) {
@@ -324,7 +333,7 @@ function _get_sharing_image(&$node) {
   // Check if content is inside a section.
   if (isset($node->og_group_ref[LANGUAGE_NONE]['0']['target_id'])) {
     $section = node_load($node->og_group_ref[LANGUAGE_NONE]['0']['target_id']);
-    return _get_token('[node:field-sharing-image:scald-file:opengraph]', $section);
+    return _get_token('[node:field-sharing-image:scald-file]', $section);
   }
   else {
     return FALSE;
