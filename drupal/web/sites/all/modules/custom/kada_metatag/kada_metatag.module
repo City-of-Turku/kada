@@ -264,7 +264,7 @@ function kada_metatag_page_alter(&$page) {
 function _get_token($token, &$node) {
   global $language;
   $token_content = token_replace($token, array('node' => $node), array(
-    'language' => $language->language,
+    'language' => $language,
     'sanitize' => TRUE,
   ));
   // See if token gets replaced.
