@@ -220,8 +220,10 @@ function kada_metatag_tokens($type, $tokens, array $data = array(), array $optio
       if (isset($tokens[$token])) {
         $replacements[$tokens[$token]] = _token_fallback($token_options, $node);
       }
-      if($token == 'metatag_image' && empty($replacements[$tokens[$token]])) {
-        $replacements[$tokens[$token]] = file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))) . '/dist/image/image_src.png';
+      if (array_key_exists('metatag_image', $token_options)) {
+        if (empty($replacements[$tokens[$token]])) {
+          $replacements[$tokens[$token]] = file_create_url(drupal_get_path('theme', variable_get('theme_default', NULL))) . '/dist/image/image_src.png';
+        }
       }
     }
     if (isset($tokens['metatag_default_sharing_image'])) {
