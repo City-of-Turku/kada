@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "485a72e8492e609049aa83b332cd1908",
+    "content-hash": "415ab66cf6fa724ec1b79a06a5c55387",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
@@ -6912,17 +6912,17 @@
         },
         {
             "name": "drupal/menu_block",
-            "version": "2.7.0",
+            "version": "2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/menu_block.git",
-                "reference": "7.x-2.7"
+                "reference": "7.x-2.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/menu_block-7.x-2.7.zip",
-                "reference": "7.x-2.7",
-                "shasum": "aaf9080530d39a5d8924dbd3f60a135d9a5b06fa"
+                "url": "https://ftp.drupal.org/files/projects/menu_block-7.x-2.8.zip",
+                "reference": "7.x-2.8",
+                "shasum": "83cfa40376ade930913d5d6ad5b4261176a2134a"
             },
             "require": {
                 "drupal/drupal": "^7.12"
@@ -6933,12 +6933,15 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "7.x-2.7",
+                    "version": "7.x-2.8",
                     "datestamp": "1543950480",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
                     }
+                },
+                "patches_applied": {
+                    "#3019808-4": "https://www.drupal.org/files/issues/2019-02-27/undefined-index-fix-3019808-4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/7/downloads",
@@ -6975,17 +6978,17 @@
         },
         {
             "name": "drupal/metatag",
-            "version": "1.26.0",
+            "version": "1.27.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/metatag.git",
-                "reference": "7.x-1.26"
+                "reference": "7.x-1.27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/metatag-7.x-1.26.zip",
-                "reference": "7.x-1.26",
-                "shasum": "17b9217a3f37516ce0d1d1c0cfa1cef90c72c25c"
+                "url": "https://ftp.drupal.org/files/projects/metatag-7.x-1.27.zip",
+                "reference": "7.x-1.27",
+                "shasum": "549a26ecdbfc9f2c08d6b428d6875444895ee3c9"
             },
             "require": {
                 "drupal/ctools": "*",
@@ -7016,8 +7019,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "7.x-1.26",
-                    "datestamp": "1576870387",
+                    "version": "7.x-1.27",
+                    "datestamp": "1581369085",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
