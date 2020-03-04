@@ -186,6 +186,7 @@ function kada_metatag_tokens($type, $tokens, array $data = array(), array $optio
         '[node:field_content_image_ext:scald-file]',
         '[node:field-person-image:scald-file:opengraph]',
         '[node:field-person-image:scald-file]',
+        '[node:field-sharing-image:scald-file:opengraph]',
         '[node:field-sharing-image:scald-file]',
         '[kada:metatag_section_sharing_image]',
         '[kada:metatag_default_sharing_image]',
