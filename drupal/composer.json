@@ -285,7 +285,7 @@
         "drupal/httprl": "1.x-dev",
         "drupal/i18n": "^1.26",
         "drupal/imageapi_optimize": "^1.2",
-        "drupal/imagecache_token": "^1.0",
+        "drupal/imagecache_token": "dev-1.x#8d3ec91e613155cf826aed04e9c9e736c984f304",
         "drupal/ip_geoloc": "^1.30",
         "drupal/job_scheduler": "^2.0",
         "drupal/jquery_update": "^2.7",
@@ -515,8 +515,7 @@
                 "#2912469: i18n Warning: Invalid argument supplied for foreach() 18n_taxonomy_views_pre_render()": "https://www.drupal.org/files/issues/i18n_taxonomy-2912469-1.patch"
             },
             "drupal/imagecache_token": {
-                "Enter drupal/imagecache_token patch #0 description here": "https://www.drupal.org/files/issues/2019-09-16/2528180-19.patch",
-                "#3110073: Undefined index: uri in imagecache_token_tokens() (line 165)": "https://www.drupal.org/files/issues/2020-01-30/3110073-2.patch"
+                "Enter drupal/imagecache_token patch #0 description here": "https://www.drupal.org/files/issues/imagecache_token-scald_compatibility-2528180-3.patch"
             },
             "drupal/ip_geoloc": {
                 "Enter drupal/ip_geoloc patch #0 description here": "patches/ip_geoloc_google_maps_version_bump.patch",
