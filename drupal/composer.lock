@@ -4527,6 +4527,9 @@
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
+                },
+                "patches_applied": {
+                    "Enter drupal/feeds patch #0 description here": "https://www.drupal.org/files/issues/2019-03-21/feeds-field-attach-validate-bypass-3042007-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/7/downloads",
@@ -11361,17 +11364,17 @@
         },
         {
             "name": "drupal/views",
-            "version": "3.23.0",
+            "version": "3.24.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views.git",
-                "reference": "7.x-3.23"
+                "reference": "7.x-3.24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views-7.x-3.23.zip",
-                "reference": "7.x-3.23",
-                "shasum": "fa18ff7c64416053129b689021ddf4f4e6b6094d"
+                "url": "https://ftp.drupal.org/files/projects/views-7.x-3.24.zip",
+                "reference": "7.x-3.24",
+                "shasum": "2169872cbdfabdf6595aa77b48230314c3fcb97c"
             },
             "require": {
                 "drupal/ctools": "*",

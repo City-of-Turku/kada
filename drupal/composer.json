@@ -495,6 +495,9 @@
             "drupal/field_group": {
                 "Enter drupal/field_group patch #0 description here": "https://www.drupal.org/files/issues/2019-10-03/3085340-2.patch"
             },
+            "drupal/feeds": {
+                "Enter drupal/feeds patch #0 description here": "https://www.drupal.org/files/issues/2019-03-21/feeds-field-attach-validate-bypass-3042007-2.patch"
+            },
             "drupal/feeds_oauth": {
                 "Enter drupal/feeds_oauth patch #0 description here": "patches/feeds_oauth_library_404_fix.patch"
             },
