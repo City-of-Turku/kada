@@ -4,14 +4,14 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0304da4b34eee44636e5f115563b1c56",
+    "content-hash": "08659514f378e307154d0034a2266c70",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
-            "version": "4.4.5",
+            "version": "4.14.0",
             "dist": {
                 "type": "zip",
-                "url": "https://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.5/ckeditor_4.4.5_full.zip"
+                "url": "https://download.cksource.com/CKEditor/CKEditor/CKEditor%204.14.0/ckeditor_4.14.0_full.zip"
             },
             "type": "drupal-library",
             "extra": {
@@ -3870,6 +3870,90 @@
             }
         },
         {
+            "name": "drupal/eu_cookie_compliance",
+            "version": "1.31.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/eu-cookie-compliance.git",
+                "reference": "7.x-1.31"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/eu_cookie_compliance-7.x-1.31.zip",
+                "reference": "7.x-1.31",
+                "shasum": "ac17319399e0cf9a2bac5d4e6cf0c35879316139"
+            },
+            "require": {
+                "drupal/ctools": "*",
+                "drupal/drupal": "~7.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "7.x-1.31",
+                    "datestamp": "1563997407",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/7/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Marcin Pajdzik",
+                    "homepage": "https://www.drupal.org/user/160555"
+                },
+                {
+                    "name": "achton",
+                    "homepage": "https://www.drupal.org/user/712454"
+                },
+                {
+                    "name": "blairski",
+                    "homepage": "https://www.drupal.org/user/120835"
+                },
+                {
+                    "name": "dakku",
+                    "homepage": "https://www.drupal.org/user/97634"
+                },
+                {
+                    "name": "grzegorz.bartman",
+                    "homepage": "https://www.drupal.org/user/363120"
+                },
+                {
+                    "name": "id.tornado",
+                    "homepage": "https://www.drupal.org/user/2754049"
+                },
+                {
+                    "name": "killua99",
+                    "homepage": "https://www.drupal.org/user/699418"
+                },
+                {
+                    "name": "mibfire",
+                    "homepage": "https://www.drupal.org/user/155136"
+                },
+                {
+                    "name": "naveenvalecha",
+                    "homepage": "https://www.drupal.org/user/2665733"
+                },
+                {
+                    "name": "svenryen",
+                    "homepage": "https://www.drupal.org/user/667244"
+                }
+            ],
+            "description": "This module aims at making the web site compliant with the EU cookie regulation.",
+            "homepage": "https://www.drupal.org/project/eu_cookie_compliance",
+            "support": {
+                "source": "https://git.drupalcode.org/project/eu_cookie_compliance"
+            }
+        },
+        {
             "name": "drupal/expire",
             "version": "2.0.0-rc4",
             "source": {
@@ -4527,6 +4611,9 @@
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
                     }
+                },
+                "patches_applied": {
+                    "Enter drupal/feeds patch #0 description here": "https://www.drupal.org/files/issues/2019-03-21/feeds-field-attach-validate-bypass-3042007-2.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/7/downloads",
@@ -6849,17 +6936,17 @@
         },
         {
             "name": "drupal/menu_attributes",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/menu_attributes.git",
-                "reference": "7.x-1.0"
+                "reference": "7.x-1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/menu_attributes-7.x-1.0.zip",
-                "reference": "7.x-1.0",
-                "shasum": "c7caf430c38225dca5eb79e3c0412c024669cbcd"
+                "url": "https://ftp.drupal.org/files/projects/menu_attributes-7.x-1.1.zip",
+                "reference": "7.x-1.1",
+                "shasum": "1bd655b9d73e6e1e314597239414f53d14273334"
             },
             "require": {
                 "drupal/drupal": "*"
@@ -6870,8 +6957,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "7.x-1.0",
-                    "datestamp": "1455568739",
+                    "version": "7.x-1.1",
+                    "datestamp": "1584488230",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -11361,17 +11448,17 @@
         },
         {
             "name": "drupal/views",
-            "version": "3.23.0",
+            "version": "3.24.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/views.git",
-                "reference": "7.x-3.23"
+                "reference": "7.x-3.24"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/views-7.x-3.23.zip",
-                "reference": "7.x-3.23",
-                "shasum": "fa18ff7c64416053129b689021ddf4f4e6b6094d"
+                "url": "https://ftp.drupal.org/files/projects/views-7.x-3.24.zip",
+                "reference": "7.x-3.24",
+                "shasum": "2169872cbdfabdf6595aa77b48230314c3fcb97c"
             },
             "require": {
                 "drupal/ctools": "*",
@@ -11383,8 +11470,8 @@
                     "dev-3.x": "3.x-dev"
                 },
                 "drupal": {
-                    "version": "7.x-3.23",
-                    "datestamp": "1557505381",
+                    "version": "7.x-3.24",
+                    "datestamp": "1583615729",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -12185,17 +12272,11 @@
         },
         {
             "name": "drupal/wysiwyg",
-            "version": "2.6.0",
+            "version": "dev-2.x",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/wysiwyg.git",
-                "reference": "7.x-2.6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/wysiwyg-7.x-2.6.zip",
-                "reference": "7.x-2.6",
-                "shasum": "18a7b55d93e4f6064c6534671260338668f4401b"
+                "reference": "1f52209"
             },
             "require": {
                 "drupal/drupal": "~7.0"
@@ -12206,11 +12287,11 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "7.x-2.6",
-                    "datestamp": "1563397062",
+                    "version": "7.x-2.6+1-dev",
+                    "datestamp": "1563480481",
                     "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -12232,6 +12313,54 @@
             "homepage": "https://www.drupal.org/project/wysiwyg",
             "support": {
                 "source": "https://git.drupalcode.org/project/wysiwyg"
+            },
+            "time": "2020-03-18T20:14:21+00:00"
+        },
+        {
+            "name": "drupal/xautoload",
+            "version": "5.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/xautoload.git",
+                "reference": "7.x-5.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/xautoload-7.x-5.7.zip",
+                "reference": "7.x-5.7",
+                "shasum": "09dc14d65eeb78c34cb6ecc0eed67f3152c4b300"
+            },
+            "require": {
+                "drupal/drupal": "~7.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-5.x": "5.x-dev"
+                },
+                "drupal": {
+                    "version": "7.x-5.7",
+                    "datestamp": "1461353639",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/7/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "donquixote",
+                    "homepage": "https://www.drupal.org/user/459338"
+                }
+            ],
+            "description": "Autoload based on PSR-0, PSR-4 and a custom PHP 5.2 compatibility mode.",
+            "homepage": "https://www.drupal.org/project/xautoload",
+            "support": {
+                "source": "https://git.drupalcode.org/project/xautoload"
             }
         },
         {
@@ -12796,16 +12925,16 @@
         },
         {
             "name": "phpmailer/phpmailer",
-            "version": "v6.1.4",
+            "version": "v6.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/PHPMailer/PHPMailer.git",
-                "reference": "c5e61d0729507049cec9673aa1a679f9adefd683"
+                "reference": "a8bf068f64a580302026e484ee29511f661b2ad3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/c5e61d0729507049cec9673aa1a679f9adefd683",
-                "reference": "c5e61d0729507049cec9673aa1a679f9adefd683",
+                "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/a8bf068f64a580302026e484ee29511f661b2ad3",
+                "reference": "a8bf068f64a580302026e484ee29511f661b2ad3",
                 "shasum": ""
             },
             "require": {
@@ -12854,7 +12983,7 @@
                 }
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
-            "time": "2019-12-10T11:17:38+00:00"
+            "time": "2020-03-14T14:23:48+00:00"
         },
         {
             "name": "proj4js/proj4js",
@@ -12963,32 +13092,31 @@
         },
         {
             "name": "psy/psysh",
-            "version": "v0.9.12",
+            "version": "v0.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/psysh.git",
-                "reference": "90da7f37568aee36b116a030c5f99c915267edd4"
+                "reference": "e361c8b7e5114534078e0ce04ddc442b39018a3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/90da7f37568aee36b116a030c5f99c915267edd4",
-                "reference": "90da7f37568aee36b116a030c5f99c915267edd4",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/e361c8b7e5114534078e0ce04ddc442b39018a3c",
+                "reference": "e361c8b7e5114534078e0ce04ddc442b39018a3c",
                 "shasum": ""
             },
             "require": {
                 "dnoegel/php-xdg-base-dir": "0.1.*",
                 "ext-json": "*",
                 "ext-tokenizer": "*",
-                "jakub-onderka/php-console-highlighter": "0.3.*|0.4.*",
-                "nikic/php-parser": "~1.3|~2.0|~3.0|~4.0",
-                "php": ">=5.4.0",
-                "symfony/console": "~2.3.10|^2.4.2|~3.0|~4.0|~5.0",
-                "symfony/var-dumper": "~2.7|~3.0|~4.0|~5.0"
+                "jakub-onderka/php-console-highlighter": "0.4.*|0.3.*",
+                "nikic/php-parser": "~4.0|~3.0|~2.0|~1.3",
+                "php": "^8.0 || ^7.0 || ^5.5.9",
+                "symfony/console": "~5.0|~4.0|~3.0|^2.4.2|~2.3.10",
+                "symfony/var-dumper": "~5.0|~4.0|~3.0|~2.7"
             },
             "require-dev": {
                 "bamarni/composer-bin-plugin": "^1.2",
-                "hoa/console": "~2.15|~3.16",
-                "phpunit/phpunit": "~4.8.35|~5.0|~6.0|~7.0"
+                "hoa/console": "~3.16|~2.15"
             },
             "suggest": {
                 "ext-pcntl": "Enabling the PCNTL extension makes PsySH a lot happier :)",
@@ -13003,7 +13131,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-develop": "0.9.x-dev"
+                    "dev-master": "0.10.x-dev"
                 }
             },
             "autoload": {
@@ -13033,7 +13161,7 @@
                 "interactive",
                 "shell"
             ],
-            "time": "2019-12-06T14:19:43+00:00"
+            "time": "2020-03-15T22:52:37+00:00"
         },
         {
             "name": "robrichards/xmlseclibs",
@@ -13115,16 +13243,16 @@
         },
         {
             "name": "simplesamlphp/saml2",
-            "version": "v4.1.4",
+            "version": "v4.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/simplesamlphp/saml2.git",
-                "reference": "1038c3335cb707058d6e49520e756765ddf7c741"
+                "reference": "d1a932052e4e034edb3d9b69414d45dbf27dcf3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/simplesamlphp/saml2/zipball/1038c3335cb707058d6e49520e756765ddf7c741",
-                "reference": "1038c3335cb707058d6e49520e756765ddf7c741",
+                "url": "https://api.github.com/repos/simplesamlphp/saml2/zipball/d1a932052e4e034edb3d9b69414d45dbf27dcf3c",
+                "reference": "d1a932052e4e034edb3d9b69414d45dbf27dcf3c",
                 "shasum": ""
             },
             "require": {
@@ -13166,7 +13294,7 @@
                 }
             ],
             "description": "SAML2 PHP library from SimpleSAMLphp",
-            "time": "2020-02-02T10:18:54+00:00"
+            "time": "2020-03-18T20:27:51+00:00"
         },
         {
             "name": "simplesamlphp/simplesamlphp",
@@ -13386,16 +13514,16 @@
         },
         {
             "name": "simplesamlphp/simplesamlphp-module-authfacebook",
-            "version": "v0.9.2",
+            "version": "v0.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/simplesamlphp/simplesamlphp-module-authfacebook.git",
-                "reference": "661cc25ac21ea422552a2394ea35ce9e8873ce39"
+                "reference": "9152731e939ad4a49e0f06da5f0009ebde0d2b5c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/simplesamlphp/simplesamlphp-module-authfacebook/zipball/661cc25ac21ea422552a2394ea35ce9e8873ce39",
-                "reference": "661cc25ac21ea422552a2394ea35ce9e8873ce39",
+                "url": "https://api.github.com/repos/simplesamlphp/simplesamlphp-module-authfacebook/zipball/9152731e939ad4a49e0f06da5f0009ebde0d2b5c",
+                "reference": "9152731e939ad4a49e0f06da5f0009ebde0d2b5c",
                 "shasum": ""
             },
             "require": {
@@ -13431,20 +13559,20 @@
                 "facebook",
                 "simplesamlphp"
             ],
-            "time": "2019-12-03T08:58:26+00:00"
+            "time": "2020-03-13T11:29:21+00:00"
         },
         {
             "name": "simplesamlphp/simplesamlphp-module-authorize",
-            "version": "v0.9.1",
+            "version": "v0.9.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/simplesamlphp/simplesamlphp-module-authorize.git",
-                "reference": "648954077e1cb8dd7b694eebfca7c619c401145b"
+                "reference": "c2607a5252ee1256b50ce7795e35513b116998d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/simplesamlphp/simplesamlphp-module-authorize/zipball/648954077e1cb8dd7b694eebfca7c619c401145b",
-                "reference": "648954077e1cb8dd7b694eebfca7c619c401145b",
+                "url": "https://api.github.com/repos/simplesamlphp/simplesamlphp-module-authorize/zipball/c2607a5252ee1256b50ce7795e35513b116998d4",
+                "reference": "c2607a5252ee1256b50ce7795e35513b116998d4",
                 "shasum": ""
             },
             "require": {
@@ -13476,7 +13604,7 @@
                 "authorize",
                 "simplesamlphp"
             ],
-            "time": "2019-12-13T07:49:26+00:00"
+            "time": "2020-02-25T15:16:57+00:00"
         },
         {
             "name": "simplesamlphp/simplesamlphp-module-authtwitter",
@@ -16488,6 +16616,7 @@
         "drupal/relation_add": 20,
         "drupal/simplesamlphp_auth": 20,
         "drupal/views_datasource": 20,
+        "drupal/wysiwyg": 20,
         "jhuang0427/php-proauth": 20,
         "phayes/geophp": 20
     },

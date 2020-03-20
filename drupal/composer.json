@@ -18,13 +18,13 @@
             "type": "package",
             "package": {
                 "name": "ckeditor/ckeditor",
-                "version": "4.4.5",
+                "version": "4.14.0",
                 "type": "drupal-library",
                 "extra": {
                     "installer-name": "ckeditor"
                 },
                 "dist": {
-                    "url": "https://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.5/ckeditor_4.4.5_full.zip",
+                    "url": "https://download.cksource.com/CKEditor/CKEditor/CKEditor%204.14.0/ckeditor_4.14.0_full.zip",
                     "type": "zip"
                 }
             }
@@ -254,6 +254,7 @@
         "drupal/entityqueue": "^1.5",
         "drupal/entityreference": "^1.5",
         "drupal/entityreference_prepopulate": "^1.5",
+        "drupal/eu_cookie_compliance": "^1.31",
         "drupal/expire": "^2.0-rc4",
         "drupal/facetapi": "^1.6",
         "drupal/facetapi_bonus": "^1.3",
@@ -377,7 +378,8 @@
         "drupal/views_rss": "^2.0-rc4",
         "drupal/warden": "^1.0",
         "drupal/webform": "^4.21",
-        "drupal/wysiwyg": "^2.6",
+        "drupal/wysiwyg": "dev-2.x#1f52209",
+        "drupal/xautoload": "^5.7",
         "drush/drush": "^8.0",
         "jackmoore/colorbox": "^1.6.4",
         "jhuang0427/php-proauth": "dev-master",
@@ -494,6 +496,9 @@
             },
             "drupal/field_group": {
                 "Enter drupal/field_group patch #0 description here": "https://www.drupal.org/files/issues/2019-10-03/3085340-2.patch"
+            },
+            "drupal/feeds": {
+                "Enter drupal/feeds patch #0 description here": "https://www.drupal.org/files/issues/2019-03-21/feeds-field-attach-validate-bypass-3042007-2.patch"
             },
             "drupal/feeds_oauth": {
                 "Enter drupal/feeds_oauth patch #0 description here": "patches/feeds_oauth_library_404_fix.patch"
