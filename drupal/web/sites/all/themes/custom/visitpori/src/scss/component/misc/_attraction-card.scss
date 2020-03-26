@@ -11,3 +11,24 @@
     pointer-events: none;
   }
 }
+
+#filter-toggle-attractions {
+  background-color: $gray-light;
+  border-radius: 1.875rem;
+  color: $primary-color;
+  font-family: $bergen-mono;
+  font-size: .875rem;
+  padding: .313rem .938rem;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+
+  &:hover {
+    background-color: $black;
+    color: $white;
+  }
+
+  &.active {
+    background-color: $black;
+    color: $white;
+  }
+}

@@ -73,7 +73,7 @@
           $('body').addClass('mobile-menu-open');
         } else {
           $('body').removeClass('mobile-menu-open');
-        }        
+        }
       });
 
       // Open and close sub-menu items from toggle button
@@ -139,6 +139,28 @@
   Drupal.behaviors.kadaMainMenuBehavior = {
     attach: function (context) {
       switchMainMenuBehavior(context);
+    }
+  };
+
+  // Switch between mobile and desktop menu behavior before page load
+  Drupal.behaviors.kadaAttractionFilters = {
+    attach: function (context) {
+      $( document ).ready(function() {
+        $('#block-pori-widget-feature-widget-after-content').one().prepend('<button tabindex="0" role="button" aria-expanded="false" id="filter-toggle-attractions" aria-pressed="false" class="filter-toggle-attractions">'+Drupal.t('Show filters')+'</button>');
+        $('.attraction-list__filters-wrapper').hide();
+        $('.filter-toggle-attractions').click(function () {
+          $('.attraction-list__filters-wrapper').toggle();
+          $(this).toggleClass('toggled').toggleClass('active');
+          if($(this).hasClass('toggled')) {
+            $('#filter-toggle-attractions').attr('aria-pressed','true').attr('aria-expanded','true');
+            $(this).text(Drupal.t('Hide filters'));
+          }
+          else {
+            $('#filter-toggle-attractions').attr('aria-pressed','false').attr('aria-expanded','false');
+            $(this).text(Drupal.t('Show filters'));
+          }
+        });
+      });
     }
   };
 
@@ -223,7 +245,7 @@
         const activeFilters = [];
         const liftups = $('.liftup-box--attraction-item', '.widget-attraction-list');
         const filters = (function () {
-          const attractionListContainer = $('.widget-attraction-list');
+          const attractionListContainer = $('#block-pori-widget-feature-widget-after-content');
           const filterContainer = $('<div class="attraction-list__filters-wrapper"><div class="attraction-list__filters"></div></div>');
 
           attractionListContainer.prepend(filterContainer);
