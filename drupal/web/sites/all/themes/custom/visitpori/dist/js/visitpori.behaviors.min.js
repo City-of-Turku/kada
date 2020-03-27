@@ -146,6 +146,12 @@
   Drupal.behaviors.kadaAttractionFilters = {
     attach: function (context) {
       $( document ).ready(function() {
+        // Cleanup empty paragraphs.
+        $('.attraction-list--item__description p')
+          .filter(function() {
+            return $.trim($(this).text()) === '' && $(this).children().length === 0;
+          })
+          .remove();
         $('#block-pori-widget-feature-widget-after-content').one().prepend('<button tabindex="0" role="button" aria-expanded="false" id="filter-toggle-attractions" aria-pressed="false" class="filter-toggle-attractions">'+Drupal.t('Show filters')+'</button>');
         $('.attraction-list__filters-wrapper').hide();
         $('.filter-toggle-attractions').click(function () {
