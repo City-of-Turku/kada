@@ -45,5 +45,5 @@
  */
 ?>
 <?php foreach ($items as $delta => $item): ?>
-  <a href="<?php print $item['#element']['display_url']; ?>" title="<?php print $item['#element']['title']; ?>" class="place__link"><?php print t('Read more'); ?></a>
+  <a href="<?php print $item['#element']['original_url']; ?>" title="<?php print $item['#element']['title']; ?>" class="place__link"><?php print t('Read more'); ?></a>
 <?php endforeach; ?>
