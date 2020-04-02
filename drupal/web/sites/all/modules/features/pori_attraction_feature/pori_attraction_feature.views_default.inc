@@ -88,6 +88,29 @@ function pori_attraction_feature_views_default_views() {
     'title_link' => 'content',
     'title_class' => '',
   );
+  /* Field: Entity translation: Description: translated */
+  $handler->display->display_options['fields']['field_description_et']['id'] = 'field_description_et';
+  $handler->display->display_options['fields']['field_description_et']['table'] = 'field_data_field_description';
+  $handler->display->display_options['fields']['field_description_et']['field'] = 'field_description_et';
+  $handler->display->display_options['fields']['field_description_et']['label'] = '';
+  $handler->display->display_options['fields']['field_description_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_description_et']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['field_description_et']['alter']['max_length'] = '115';
+  $handler->display->display_options['fields']['field_description_et']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_description_et']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_description_et']['alter']['html'] = TRUE;
+  $handler->display->display_options['fields']['field_description_et']['element_label_colon'] = FALSE;
+  /* Field: Entity translation: Lead paragraph: translated */
+  $handler->display->display_options['fields']['field_lead_paragraph_et_et']['id'] = 'field_lead_paragraph_et_et';
+  $handler->display->display_options['fields']['field_lead_paragraph_et_et']['table'] = 'field_data_field_lead_paragraph_et';
+  $handler->display->display_options['fields']['field_lead_paragraph_et_et']['field'] = 'field_lead_paragraph_et_et';
+  $handler->display->display_options['fields']['field_lead_paragraph_et_et']['label'] = '';
+  $handler->display->display_options['fields']['field_lead_paragraph_et_et']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_lead_paragraph_et_et']['alter']['max_length'] = '115';
+  $handler->display->display_options['fields']['field_lead_paragraph_et_et']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_lead_paragraph_et_et']['alter']['html'] = TRUE;
+  $handler->display->display_options['fields']['field_lead_paragraph_et_et']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_lead_paragraph_et_et']['empty'] = '[field_description_et]';
   /* Field: Global: Custom text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
@@ -97,7 +120,8 @@ function pori_attraction_feature_views_default_views() {
 <div class=" liftup-box__image attraction-list--item__image">[field_images]</div>
 <div class="liftup-box__caption">
 <h3 class="attraction-list--item__title">[title_field_et]</h3>
-<div class="attraction-list--item__keywords"> [field_keywords_et]</div>
+<div class="attraction-list--item__description">[field_lead_paragraph_et_et]</div>
+<div class="attraction-list--item__keywords" style="display: none;">[field_keywords_et]</div>
 </div>
 </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
@@ -129,7 +153,7 @@ function pori_attraction_feature_views_default_views() {
   $handler->display->display_options['arguments']['field_keywords_et_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_keywords_et_tid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['field_keywords_et_tid']['break_phrase'] = TRUE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -165,11 +189,13 @@ function pori_attraction_feature_views_default_views() {
     t('Nou'),
     t('Las'),
     t('Translations'),
+    t('[field_description_et]'),
     t('<div class="attraction-list--item__container">
 <div class=" liftup-box__image attraction-list--item__image">[field_images]</div>
 <div class="liftup-box__caption">
 <h3 class="attraction-list--item__title">[title_field_et]</h3>
-<div class="attraction-list--item__keywords"> [field_keywords_et]</div>
+<div class="attraction-list--item__description">[field_lead_paragraph_et_et]</div>
+<div class="attraction-list--item__keywords" style="display: none;">[field_keywords_et]</div>
 </div>
 </div>'),
     t('Kaikki'),
@@ -259,7 +285,7 @@ function pori_attraction_feature_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -405,7 +431,7 @@ function pori_attraction_feature_views_default_views() {
     'attraction_card' => 'attraction_card',
   );
   $handler->display->display_options['arguments']['nid']['validate_options']['access'] = TRUE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -559,7 +585,7 @@ function pori_attraction_feature_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';

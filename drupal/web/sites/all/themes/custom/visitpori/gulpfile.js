@@ -60,8 +60,6 @@ var changeEvent = function(evt) {
     gutil.log('File', gutil.colors.cyan(evt.path.replace(new RegExp('/.*(?=/' + basePath.src + ')/'), '')), 'was', gutil.colors.magenta(evt.type));
 };
 
-console.log(gutil.env.production);
-
 // BrowserSync task
 gulp.task('browserSync', function() {
   browserSync.init({
@@ -109,7 +107,7 @@ gulp.task('watch', gulp.series(gulp.parallel('sass', 'browserSync')), function()
 
 // Uglify task
 gulp.task('scripts', function() {
-  gulp.src(path.scripts.src + '/*.js')
+  return gulp.src(path.scripts.src + '/*.js')
     //.pipe(path.env.prod === true ? uglify() : gutil.noop())
     .pipe(rename({
       suffix: '.min'
@@ -119,7 +117,7 @@ gulp.task('scripts', function() {
 
 // Image task
 gulp.task('imagemin', function() {
-  gulp.src(path.images.src + '*')
+  return gulp.src(path.images.src + '*')
     .pipe(path.env.prod === true ? imagemin() : gutil.noop())
     .pipe(gulp.dest(path.images.dist));
 });
