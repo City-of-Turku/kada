@@ -1,7 +1,8 @@
 <?php
 
 /**
- * @file field.tpl.php
+ * @file
+ * Field.tpl.php
  * Default template implementation to display the value of a field.
  *
  * This file is not used and is here as a starting point for customization only.
@@ -45,5 +46,9 @@
  */
 ?>
 <?php foreach ($items as $delta => $item): ?>
-  <a href="<?php print $item['#element']['original_url']; ?>" title="<?php print $item['#element']['title']; ?>" class="place__link"><?php print t('Read more'); ?></a>
+  <?php if (strpos($item['#element']['original_url'], 'node/') !== false): ?>
+    <a href="<?php print $item['#element']['display_url']; ?>" title="<?php print $item['#element']['title']; ?>" class="place__link"><?php print t('Read more'); ?></a>
+  <?php else: ?>
+    <a href="<?php print $item['#element']['original_url']; ?>" title="<?php print $item['#element']['title']; ?>" class="place__link"><?php print t('Read more'); ?></a>
+  <?php endif; ?>
 <?php endforeach; ?>
