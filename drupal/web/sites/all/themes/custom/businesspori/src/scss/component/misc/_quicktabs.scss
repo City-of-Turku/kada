@@ -46,7 +46,16 @@
   }
 
 }
-
+.front.domain-businesspori-fi {
+  #block-kada-news-feature-news-archive-link {
+    @media screen and (min-width: $desktop) {
+      @include responsive-whitespace;
+    }
+    .block__content {
+      justify-content: flex-end;
+    }
+  }
+}
 .block--kada-news-feature-news-archive-link .block__content a {
   background-color: $green-dark;
 }
