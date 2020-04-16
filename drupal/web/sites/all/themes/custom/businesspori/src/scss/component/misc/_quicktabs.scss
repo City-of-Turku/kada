@@ -50,9 +50,9 @@
   #block-kada-news-feature-news-archive-link {
     @media screen and (min-width: $desktop) {
       @include responsive-whitespace;
-    }
-    .block__content {
-      justify-content: flex-end;
+      .block__content {
+        justify-content: flex-end;
+      }
     }
   }
 }
