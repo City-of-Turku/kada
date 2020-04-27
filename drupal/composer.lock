@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "08659514f378e307154d0034a2266c70",
+    "content-hash": "e3fc42d798f3f45d678267ebcb870baf",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
@@ -12315,53 +12315,6 @@
                 "source": "https://git.drupalcode.org/project/wysiwyg"
             },
             "time": "2020-03-18T20:14:21+00:00"
-        },
-        {
-            "name": "drupal/xautoload",
-            "version": "5.7.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/xautoload.git",
-                "reference": "7.x-5.7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/xautoload-7.x-5.7.zip",
-                "reference": "7.x-5.7",
-                "shasum": "09dc14d65eeb78c34cb6ecc0eed67f3152c4b300"
-            },
-            "require": {
-                "drupal/drupal": "~7.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-5.x": "5.x-dev"
-                },
-                "drupal": {
-                    "version": "7.x-5.7",
-                    "datestamp": "1461353639",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/7/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "donquixote",
-                    "homepage": "https://www.drupal.org/user/459338"
-                }
-            ],
-            "description": "Autoload based on PSR-0, PSR-4 and a custom PHP 5.2 compatibility mode.",
-            "homepage": "https://www.drupal.org/project/xautoload",
-            "support": {
-                "source": "https://git.drupalcode.org/project/xautoload"
-            }
         },
         {
             "name": "drush/drush",

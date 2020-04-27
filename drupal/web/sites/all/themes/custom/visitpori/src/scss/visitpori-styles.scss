@@ -3,12 +3,12 @@
 // This file includes all imports
 //
 
-@charset 'UTF-8';
+@charset "UTF-8";
 
 @import 'lib/variables/*';
 @import 'lib/mixins/*';
 
-@import 'base/*';
+// @import 'base/*';
 @import 'component/**/*';
 @import 'ds-layouts/*';
 @import 'layout/*';

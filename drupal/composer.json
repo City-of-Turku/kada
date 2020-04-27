@@ -379,7 +379,6 @@
         "drupal/warden": "^1.0",
         "drupal/webform": "^4.21",
         "drupal/wysiwyg": "dev-2.x#1f52209",
-        "drupal/xautoload": "^5.7",
         "drush/drush": "^8.0",
         "jackmoore/colorbox": "^1.6.4",
         "jhuang0427/php-proauth": "dev-master",
