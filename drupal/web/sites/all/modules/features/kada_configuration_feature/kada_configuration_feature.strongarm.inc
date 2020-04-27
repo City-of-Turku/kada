@@ -3813,11 +3813,12 @@ example.org';
   $strongarm->api_version = 1;
   $strongarm->name = 'variable_realm_list_language';
   $strongarm->value = array(
-    0 => 'site_name',
-    1 => 'site_slogan',
-    2 => 'site_frontpage',
-    3 => 'site_403',
-    4 => 'site_404',
+    0 => 'eu_cookie_compliance',
+    1 => 'site_name',
+    2 => 'site_slogan',
+    3 => 'site_frontpage',
+    4 => 'site_403',
+    5 => 'site_404',
   );
   $export['variable_realm_list_language'] = $strongarm;
 

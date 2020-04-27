@@ -342,6 +342,7 @@
         "drupal/search_api_live_results": "^1.0",
         "drupal/search_api_override": "^1.0-rc1",
         "drupal/search_api_solr": "^1.15",
+        "drupal/search_krumo": "^1.6",
         "drupal/service_links": "^2.4",
         "drupal/sharethis": "^2.13",
         "drupal/shortcutperrole": "^1.2",

@@ -11,6 +11,15 @@
 function pori_configuration_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'administer EU Cookie Compliance popup'.
+  $permissions['administer EU Cookie Compliance popup'] = array(
+    'name' => 'administer EU Cookie Compliance popup',
+    'roles' => array(
+      'admin' => 'admin',
+    ),
+    'module' => 'eu_cookie_compliance',
+  );
+
   // Exported permission: 'create field_show_main_image'.
   $permissions['create field_show_main_image'] = array(
     'name' => 'create field_show_main_image',
@@ -18,6 +27,22 @@ function pori_configuration_user_default_permissions() {
       'admin' => 'admin',
     ),
     'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'display EU Cookie Compliance popup'.
+  $permissions['display EU Cookie Compliance popup'] = array(
+    'name' => 'display EU Cookie Compliance popup',
+    'roles' => array(
+      'admin' => 'admin',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+      'content editor' => 'content editor',
+      'event editor' => 'event editor',
+      'event external editor' => 'event external editor',
+      'external editor' => 'external editor',
+      'web journalist' => 'web journalist',
+    ),
+    'module' => 'eu_cookie_compliance',
   );
 
   // Exported permission: 'edit field_show_main_image'.
