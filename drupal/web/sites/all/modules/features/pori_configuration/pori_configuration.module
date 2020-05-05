@@ -134,6 +134,6 @@ function pori_configuration_page_alter(&$page) {
     $admin = FALSE;
   }
   if ($domain['machine_name'] == 'visitpori_fi' && !$admin) {
-    drupal_add_js(drupal_get_path('module', 'pori_configuration') . '/js/pixel.js');
+    drupal_add_js(drupal_get_path('module', 'pori_configuration') . '/js/pixel.js', array('cache' => FALSE));
   }
 }
