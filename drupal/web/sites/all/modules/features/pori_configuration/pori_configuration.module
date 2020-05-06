@@ -64,6 +64,9 @@ function pori_configuration_wysiwyg_load_includes_alter(&$info, $hook) {
  * node form.
  */
 function pori_configuration_form_alter(&$form, &$form_state, $form_id) {
+  if ($form['#id'] == 'eu-cookie-compliance-admin-form') {
+    unset($form['popup_message']['eu_cookie_compliance']['popup_agree_button_message']['#states']);
+  }
   // Node edit forms.
   if(isset($form['#node_edit_form']) && $form['#node_edit_form'] == TRUE && $form_id == 'page_node_form') {
     $form['field_liftup_video']['#access'] = FALSE;
