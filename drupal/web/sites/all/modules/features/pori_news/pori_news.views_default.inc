@@ -142,6 +142,13 @@ function pori_news_views_default_views() {
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  /* Field: Content: Lead paragraph */
+  $handler->display->display_options['fields']['field_lead_paragraph_long_text']['id'] = 'field_lead_paragraph_long_text';
+  $handler->display->display_options['fields']['field_lead_paragraph_long_text']['table'] = 'field_data_field_lead_paragraph_long_text';
+  $handler->display->display_options['fields']['field_lead_paragraph_long_text']['field'] = 'field_lead_paragraph_long_text';
+  $handler->display->display_options['fields']['field_lead_paragraph_long_text']['label'] = '';
+  $handler->display->display_options['fields']['field_lead_paragraph_long_text']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_lead_paragraph_long_text']['element_label_colon'] = FALSE;
   /* Field: Content: Rendered Node */
   $handler->display->display_options['fields']['rendered_entity']['id'] = 'rendered_entity';
   $handler->display->display_options['fields']['rendered_entity']['table'] = 'views_entity_node';
@@ -157,7 +164,7 @@ function pori_news_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -185,17 +192,11 @@ function pori_news_views_default_views() {
   $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'text';
   $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
-    4 => 0,
-    8 => 0,
-    3 => 0,
-    7 => 0,
-    5 => 0,
-    6 => 0,
   );
   $handler->display->display_options['filters']['combine']['fields'] = array(
     'title' => 'title',
     'body' => 'body',
+    'field_lead_paragraph_long_text' => 'field_lead_paragraph_long_text',
   );
   /* Filter criterion: Date: Date (node) */
   $handler->display->display_options['filters']['date_filter']['id'] = 'date_filter';
@@ -384,7 +385,7 @@ function pori_news_views_default_views() {
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
