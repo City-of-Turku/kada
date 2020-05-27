@@ -89,6 +89,103 @@ function pori_configuration_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'eu_cookie_compliance';
+  $strongarm->value = array(
+    'popup_enabled' => 1,
+    'method' => 'opt_in',
+    'info_template' => 'new',
+    'cookie_categories' => 'facebook|Facebook Pixel|My description',
+    'enable_save_preferences_button' => 1,
+    'save_preferences_button_label' => 'Save preferences',
+    'accept_all_categories_button_label' => 'Accept all cookies',
+    'fix_first_cookie_category' => 0,
+    'select_all_categories_by_default' => 1,
+    'disabled_javascripts' => '',
+    'whitelisted_cookies' => '',
+    'consent_storage_method' => 'do_not_store',
+    'popup_clicking_confirmation' => FALSE,
+    'popup_info' => array(
+      'value' => '<h2>Keksejä</h2><p>Voit hyväksyä keksit&nbsp;painamalla &quot;Hyväksy&quot;</p>',
+      'format' => 'wysiwyg',
+    ),
+    'use_mobile_message' => 1,
+    'mobile_popup_info' => array(
+      'value' => '<h2>Keksejä kännyllä</h2><p>Hyväksy kännykeksit&nbsp;painamalla &quot;Hyväksy&quot;.</p>',
+      'format' => 'wysiwyg',
+    ),
+    'mobile_breakpoint' => '600',
+    'popup_agree_button_message' => 'OK, I agree',
+    'show_disagree_button' => TRUE,
+    'popup_disagree_button_message' => 'Lisätietoja',
+    'disagree_button_label' => 'Ei, kiitos',
+    'withdraw_enabled' => 0,
+    'withdraw_button_on_info_popup' => 0,
+    'withdraw_message' => array(
+      'value' => '<h2>We use cookies on this site to enhance your user experience</h2><p>You have given your consent for us to set cookies.</p>',
+      'format' => 'wysiwyg',
+    ),
+    'withdraw_tab_button_label' => 'Evästeet',
+    'withdraw_action_button_label' => 'Peruuta päätös',
+    'popup_agreed_enabled' => 0,
+    'popup_hide_agreed' => 0,
+    'popup_agreed' => array(
+      'value' => '<h2>Kiitos kun otit keksejä</h2><p>Voit piilottaa tämän viestin tai lukea kekseistä lisää</p>',
+      'format' => 'wysiwyg',
+    ),
+    'popup_find_more_button_message' => 'Lisää tietoa',
+    'popup_hide_button_message' => 'Piilota',
+    'popup_link' => 'https://pori.fi/tietosuoja',
+    'popup_link_new_window' => 1,
+    'popup_position' => TRUE,
+    'use_bare_css' => 0,
+    'popup_text_hex' => 'fff',
+    'popup_bg_hex' => '000',
+    'popup_height' => '',
+    'popup_width' => '100%',
+    'fixed_top_position' => 1,
+    'popup_delay' => '500',
+    'disagree_do_not_show_popup' => 0,
+    'reload_page' => 0,
+    'popup_scrolling_confirmation' => FALSE,
+    'cookie_name' => '',
+    'domains_option' => '0',
+    'domains_list' => 'https://visitpori.fi
+https://visitpori.lndo.site
+https://visitpori.dev.wunder.io
+https://visitpori.stage.wunder.io',
+    'exclude_paths' => '',
+    'exclude_admin_pages' => 1,
+    'exclude_uid_1' => 0,
+    'script_scope' => 'header',
+    'better_support_for_screen_readers' => 1,
+    'cookie_session' => 0,
+  );
+  $export['eu_cookie_compliance'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'eu_cookie_compliance_cookie_lifetime';
+  $strongarm->value = '100';
+  $export['eu_cookie_compliance_cookie_lifetime'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'eu_cookie_compliance_domain';
+  $strongarm->value = '';
+  $export['eu_cookie_compliance_domain'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'eu_cookie_compliance_domain_all_sites';
+  $strongarm->value = 0;
+  $export['eu_cookie_compliance_domain_all_sites'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'googleanalytics_account';
   $strongarm->value = 'UA-76043723-2';
   $export['googleanalytics_account'] = $strongarm;
