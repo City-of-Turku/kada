@@ -46,12 +46,27 @@ function pori_configuration_form_views_exposed_form_alter(&$form, &$form_state, 
 }
 
 /**
+ * @param $info
+ * @param $hook
+ * Unset sas plugin for cookie compliance as it breaks the form.
+ */
+function pori_configuration_wysiwyg_load_includes_alter(&$info, $hook) {
+  $path = current_path();
+  if($path == 'admin/config/system/eu-cookie-compliance') {
+    unset($info['sas']);
+  }
+}
+
+/**
  * Implements hook_form_alter().
  *
  * If the user only has one domain set, default to the corresponding section in
  * node form.
  */
 function pori_configuration_form_alter(&$form, &$form_state, $form_id) {
+  if ($form['#id'] == 'eu-cookie-compliance-admin-form') {
+    unset($form['popup_message']['eu_cookie_compliance']['popup_agree_button_message']['#states']);
+  }
   // Node edit forms.
   if(isset($form['#node_edit_form']) && $form['#node_edit_form'] == TRUE && $form_id == 'page_node_form') {
     $form['field_liftup_video']['#access'] = FALSE;
@@ -109,5 +124,19 @@ function pori_configuration_responsive_menus_execute_alter(&$settings) {
         $settings[0]['selectors'][$key] = str_replace('&gt;', '>', $value);
       }
     }
+  }
+}
+
+function pori_configuration_page_alter(&$page) {
+  $domain = domain_get_domain();
+  $args = arg();
+  if (!empty($args[0]) && $args[0] == 'admin') {
+    $admin = TRUE;
+  }
+  else {
+    $admin = FALSE;
+  }
+  if ($domain['machine_name'] == 'visitpori_fi' && !$admin) {
+    drupal_add_js(drupal_get_path('module', 'pori_configuration') . '/js/pixel.js', array('cache' => FALSE));
   }
 }
