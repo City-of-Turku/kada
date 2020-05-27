@@ -150,6 +150,7 @@ function pori_configuration_strongarm() {
     'cookie_name' => '',
     'domains_option' => '0',
     'domains_list' => 'https://visitpori.fi
+https://www.visitpori.fi
 https://visitpori.lndo.site
 https://visitpori.dev.wunder.io
 https://visitpori.stage.wunder.io',
