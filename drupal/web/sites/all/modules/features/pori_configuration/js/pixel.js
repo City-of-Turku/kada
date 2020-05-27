@@ -2,8 +2,10 @@
   Drupal.behaviors.facebookCookies = {
     attach: function(context) {
       var agreed = false;
-      if (Drupal.eu_cookie_compliance.hasAgreed() !== undefined) {
-        agreed = true;
+      if (Drupal.eu_cookie_compliance !== undefined) {
+        if (Drupal.eu_cookie_compliance.hasAgreed() === true) {
+          agreed = true;
+        }
       }
       if (agreed === true) {
         $(document).ready(function () {
