@@ -34,6 +34,13 @@
   .content__header {
     width: 100%;
   }
+  .person-card {
+    .field--name-field-email-single {
+      a {
+        word-break: break-all;
+      }
+    }
+  }
 }
 
 .facetapi-facet-field-political-party,
