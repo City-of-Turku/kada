@@ -39,7 +39,6 @@ Full commands/tools overview is available by running `lando`. Custom tools:
 - `lando syncdb <remote>` - synchronize local database with selected remote environment. Options: `stage` (default), `prod`.
 - `lando update` - apply required (database) updates.
 - `lando xdebug-on`, `lando xdebug-off` - enable / disable [Xdebug](https://xdebug.org/) for [nginx](https://nginx.org/en/).
-- `lando drush mass-change-passwords [filename]` - Change emails to random 30-character ones for each email address in a file. One line per email address. The file should be saved in webroot and deleted after running.
 
 ### Theming
 
