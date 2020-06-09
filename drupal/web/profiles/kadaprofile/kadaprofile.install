@@ -858,3 +858,12 @@ function kadaprofile_update_7137() {
   $enable_dependencies = TRUE;
   module_enable($modules, $enable_dependencies);
 }
+
+/**
+ * Implements hook_update().
+ *
+ * Enable KADA Password Changer.
+ */
+function kadaprofile_update_7138() {
+  module_enable(['kada_password_changer']);
+}
