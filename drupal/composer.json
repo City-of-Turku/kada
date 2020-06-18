@@ -295,7 +295,6 @@
         "drupal/link": "^1.7",
         "drupal/linkchecker": "^1.4",
         "drupal/linkit": "^3.5",
-        "drupal/matomo": "^2.12",
         "drupal/maxlength": "^3.2",
         "drupal/memcache": "^1.6",
         "drupal/menu_attributes": "^1.0",
