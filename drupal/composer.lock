@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8c73b3067c0d716b47b92215f68ed943",
+    "content-hash": "83fda6fb661f1070f66580b09bd980db",
     "packages": [
         {
             "name": "ckeditor/ckeditor",
@@ -6789,56 +6789,6 @@
             }
         },
         {
-            "name": "drupal/matomo",
-            "version": "2.12.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/matomo.git",
-                "reference": "7.x-2.12"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/matomo-7.x-2.12.zip",
-                "reference": "7.x-2.12",
-                "shasum": "573603182a8d2ca354631468f3bdaefc9ebf7299"
-            },
-            "require": {
-                "drupal/drupal": "~7.0"
-            },
-            "require-dev": {
-                "drupal/token": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
-                "drupal": {
-                    "version": "7.x-2.12",
-                    "datestamp": "1548968880",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/7/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "hass",
-                    "homepage": "https://www.drupal.org/user/85918"
-                }
-            ],
-            "description": "Adds Matomo javascript tracking code to all your site's pages.",
-            "homepage": "https://www.drupal.org/project/matomo",
-            "support": {
-                "source": "https://git.drupalcode.org/project/matomo"
-            }
-        },
-        {
             "name": "drupal/maxlength",
             "version": "3.3.0",
             "source": {
@@ -8197,57 +8147,6 @@
             "homepage": "https://www.drupal.org/project/picture",
             "support": {
                 "source": "https://git.drupalcode.org/project/picture"
-            }
-        },
-        {
-            "name": "drupal/piwik",
-            "version": "2.12.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/piwik.git",
-                "reference": "7.x-2.12"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/piwik-7.x-2.12.zip",
-                "reference": "7.x-2.12",
-                "shasum": "2b4090dde1eb4cd1e61fe2bf72edc54f95cd1e81"
-            },
-            "require": {
-                "drupal/drupal": "~7.0",
-                "drupal/matomo": "*"
-            },
-            "require-dev": {
-                "drupal/token": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
-                "drupal": {
-                    "version": "7.x-2.12",
-                    "datestamp": "1530437797",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/7/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "hass",
-                    "homepage": "https://www.drupal.org/user/85918"
-                }
-            ],
-            "description": "Adds Piwik javascript tracking code to all your site's pages.",
-            "homepage": "https://www.drupal.org/project/piwik",
-            "support": {
-                "source": "https://git.drupalcode.org/project/piwik"
             }
         },
         {
