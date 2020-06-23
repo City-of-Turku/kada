@@ -114,7 +114,7 @@ function kada_editorial_tools_feature_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Relationship: Content: Author */
+  /* Relationship: Content: Content author */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
@@ -169,7 +169,7 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'uid';
   $handler->display->display_options['fields']['name']['label'] = 'Author';
-  /* Field: Content: Published */
+  /* Field: Content: Published status */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'node';
   $handler->display->display_options['fields']['status']['field'] = 'status';
@@ -254,7 +254,7 @@ function kada_editorial_tools_feature_views_default_views() {
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
   $handler->display->display_options['filters']['status_1']['field'] = 'status';
@@ -369,7 +369,7 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'uid';
   $handler->display->display_options['fields']['name']['label'] = 'Author';
-  /* Field: Content: Published */
+  /* Field: Content: Published status */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'node';
   $handler->display->display_options['fields']['status']['field'] = 'status';
@@ -457,7 +457,7 @@ function kada_editorial_tools_feature_views_default_views() {
     5 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Published */
+  /* Filter criterion: Content: Published status */
   $handler->display->display_options['filters']['status_1']['id'] = 'status_1';
   $handler->display->display_options['filters']['status_1']['table'] = 'node';
   $handler->display->display_options['filters']['status_1']['field'] = 'status';
@@ -567,13 +567,13 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['fields']['language']['field'] = 'language';
   $handler->display->display_options['fields']['language']['label'] = '';
   $handler->display->display_options['fields']['language']['element_label_colon'] = FALSE;
-  /* Field: Content: Edit link */
+  /* Field: Content: Link to edit content */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-  /* Field: Content: Delete link */
+  /* Field: Content: Link to delete content */
   $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
   $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
@@ -617,11 +617,12 @@ function kada_editorial_tools_feature_views_default_views() {
     t('Theme'),
     t('Type'),
     t('Author'),
-    t('Published'),
+    t('Published status'),
     t('Updated'),
     t('Language'),
     t('node/[nid]/edit'),
     t('Edit'),
+    t('Published'),
     t('Translated title language'),
     t('Page'),
     t('Domain'),
@@ -686,7 +687,7 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
   $handler->display->display_options['fields']['rid']['field'] = 'rid';
   $handler->display->display_options['fields']['rid']['type'] = 'ul';
-  /* Field: User: Active */
+  /* Field: User: Active status */
   $handler->display->display_options['fields']['status']['id'] = 'status';
   $handler->display->display_options['fields']['status']['table'] = 'users';
   $handler->display->display_options['fields']['status']['field'] = 'status';
@@ -704,7 +705,7 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['fields']['access']['field'] = 'access';
   $handler->display->display_options['fields']['access']['date_format'] = 'today time ago';
   $handler->display->display_options['fields']['access']['second_date_format'] = 'short';
-  /* Field: User: Edit link */
+  /* Field: User: Link to edit user */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'users';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -715,7 +716,7 @@ function kada_editorial_tools_feature_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'users';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filter criterion: User: Active */
+  /* Filter criterion: User: Active status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
@@ -787,7 +788,7 @@ function kada_editorial_tools_feature_views_default_views() {
     t('Name'),
     t('E-mail'),
     t('Roles'),
-    t('Active'),
+    t('Active status'),
     t('Member since'),
     t('Last access'),
     t('Page'),

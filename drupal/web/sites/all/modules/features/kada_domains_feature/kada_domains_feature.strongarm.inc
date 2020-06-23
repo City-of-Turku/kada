@@ -301,9 +301,10 @@ forum/%t';
   $strongarm->name = 'variable_realm_list_domain';
   $strongarm->value = array(
     0 => 'googleanalytics_account',
-    1 => 'piwik_site_id',
-    2 => 'site_name',
-    3 => 'site_frontpage',
+    1 => 'eu_cookie_compliance',
+    2 => 'piwik_site_id',
+    3 => 'site_name',
+    4 => 'site_frontpage',
   );
   $export['variable_realm_list_domain'] = $strongarm;
 

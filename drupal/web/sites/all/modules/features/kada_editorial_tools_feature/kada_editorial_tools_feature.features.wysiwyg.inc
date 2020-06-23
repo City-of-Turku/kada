@@ -11,15 +11,11 @@
 function kada_editorial_tools_feature_wysiwyg_default_profiles() {
   $profiles = array();
 
-  // Exported profile: full_html
+  // Exported profile: full_html.
   $profiles['full_html'] = array(
     'format' => 'full_html',
     'editor' => 'ckeditor',
     'settings' => array(
-      'default' => 1,
-      'user_choose' => 0,
-      'show_toggle' => 1,
-      'add_to_summaries' => 1,
       'theme' => '',
       'language' => 'en',
       'buttons' => array(
@@ -78,17 +74,21 @@ function kada_editorial_tools_feature_wysiwyg_default_profiles() {
       'advanced__active_tab' => 'edit-basic',
       'forcePasteAsPlainText' => 0,
     ),
+    'preferences' => array(
+      'add_to_summaries' => 1,
+      'default' => 1,
+      'show_toggle' => 1,
+      'user_choose' => 0,
+      'version' => '4.14.0.8a12b04171',
+    ),
+    'name' => 'formatfull_html',
   );
 
-  // Exported profile: wysiwyg
+  // Exported profile: wysiwyg.
   $profiles['wysiwyg'] = array(
     'format' => 'wysiwyg',
     'editor' => 'ckeditor',
     'settings' => array(
-      'default' => 1,
-      'user_choose' => 0,
-      'show_toggle' => 1,
-      'add_to_summaries' => 1,
       'theme' => '',
       'language' => 'en',
       'buttons' => array(
@@ -151,6 +151,14 @@ function kada_editorial_tools_feature_wysiwyg_default_profiles() {
       'advanced__active_tab' => 'edit-basic',
       'forcePasteAsPlainText' => 0,
     ),
+    'preferences' => array(
+      'add_to_summaries' => 1,
+      'default' => 1,
+      'show_toggle' => 1,
+      'user_choose' => 0,
+      'version' => '4.14.0.8a12b04171',
+    ),
+    'name' => 'formatwysiwyg',
   );
 
   return $profiles;

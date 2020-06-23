@@ -58,6 +58,7 @@ dependencies[] = metatag_google_plus
 dependencies[] = metatag_opengraph
 dependencies[] = metatag_twitter_cards
 dependencies[] = metatag_views
+dependencies[] = node
 dependencies[] = number
 dependencies[] = og_extras
 dependencies[] = og_ui

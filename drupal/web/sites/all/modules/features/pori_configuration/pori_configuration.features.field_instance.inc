@@ -607,7 +607,9 @@ function pori_configuration_field_default_field_instances() {
       'default' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 22,
       ),
@@ -626,7 +628,9 @@ function pori_configuration_field_default_field_instances() {
       'presentation' => array(
         'label' => 'hidden',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 2,
       ),
@@ -1266,7 +1270,9 @@ function pori_configuration_field_default_field_instances() {
       'teaser' => array(
         'label' => 'hidden',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 6,
       ),
@@ -1298,7 +1304,7 @@ function pori_configuration_field_default_field_instances() {
         'title' => '',
       ),
       'display' => array(
-        'url_cutoff' => 0,
+        'url_cutoff' => '',
       ),
       'enable_tokens' => 1,
       'entity_translation_sync' => FALSE,
@@ -1309,6 +1315,7 @@ function pori_configuration_field_default_field_instances() {
       ),
       'rel_remove' => 'default',
       'title' => 'optional',
+      'title_allowed_values' => '',
       'title_label_use_field_label' => 0,
       'title_maxlength' => 128,
       'title_value' => '',

@@ -829,9 +829,11 @@ function kada_blog_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'title',
         'settings' => array(
+          'enable_trim' => FALSE,
           'title_class' => '',
           'title_link' => 'content',
           'title_style' => '_none',
+          'trim_length' => 50,
         ),
         'type' => 'title_linked',
         'weight' => 2,

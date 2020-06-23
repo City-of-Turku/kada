@@ -76,9 +76,11 @@ function kada_events_base_feature_field_default_field_instances() {
         'label' => 'above',
         'module' => 'title',
         'settings' => array(
+          'enable_trim' => FALSE,
           'title_class' => '',
           'title_link' => '',
           'title_style' => '_none',
+          'trim_length' => 50,
         ),
         'type' => 'title_linked',
         'weight' => 22,
@@ -1797,6 +1799,7 @@ function kada_events_base_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'kada_date_only',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -1812,6 +1815,7 @@ function kada_events_base_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'short',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -1827,6 +1831,7 @@ function kada_events_base_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'day_and_month_only',
           'fromto' => 'value',
           'multiple_from' => '',
@@ -1842,6 +1847,7 @@ function kada_events_base_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'short',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -1857,6 +1863,7 @@ function kada_events_base_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'short',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -1872,6 +1879,7 @@ function kada_events_base_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'kada_day_month_only_with_time',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -1887,6 +1895,7 @@ function kada_events_base_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'short',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -1902,6 +1911,7 @@ function kada_events_base_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'short',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -1917,6 +1927,7 @@ function kada_events_base_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'kada_date_only',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -1932,6 +1943,7 @@ function kada_events_base_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'short',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -1953,6 +1965,7 @@ function kada_events_base_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'short',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -1968,6 +1981,7 @@ function kada_events_base_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'short',
           'fromto' => 'value',
           'multiple_from' => '',
@@ -2075,7 +2089,9 @@ function kada_events_base_feature_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 25,
       ),
@@ -2458,9 +2474,11 @@ function kada_events_base_feature_field_default_field_instances() {
         'label' => 'above',
         'module' => 'title',
         'settings' => array(
+          'enable_trim' => FALSE,
           'title_class' => '',
           'title_link' => '',
           'title_style' => '_none',
+          'trim_length' => 50,
         ),
         'type' => 'title_linked',
         'weight' => 12,
@@ -2753,7 +2771,9 @@ function kada_events_base_feature_field_default_field_instances() {
       'full' => array(
         'label' => 'hidden',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 11,
       ),
@@ -2847,7 +2867,9 @@ function kada_events_base_feature_field_default_field_instances() {
       'event_list_item' => array(
         'label' => 'hidden',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 6,
       ),
@@ -2860,14 +2882,18 @@ function kada_events_base_feature_field_default_field_instances() {
       'event_mosaic_item' => array(
         'label' => 'hidden',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 0,
       ),
       'event_search_result' => array(
         'label' => 'hidden',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 6,
       ),
@@ -2880,14 +2906,18 @@ function kada_events_base_feature_field_default_field_instances() {
       'event_top_carousel' => array(
         'label' => 'hidden',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 4,
       ),
       'full' => array(
         'label' => 'hidden',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 7,
       ),
@@ -3162,7 +3192,9 @@ function kada_events_base_feature_field_default_field_instances() {
       'full' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 26,
       ),
@@ -3503,6 +3535,7 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
         'label' => 'inline',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'short',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -3524,6 +3557,7 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
         'label' => 'above',
         'module' => 'date',
         'settings' => array(
+          'custom_date_format' => '',
           'format_type' => 'short',
           'fromto' => 'both',
           'multiple_from' => '',
@@ -4814,7 +4848,9 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
       'full' => array(
         'label' => 'above',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 24,
       ),
@@ -5019,9 +5055,11 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
         'label' => 'hidden',
         'module' => 'title',
         'settings' => array(
+          'enable_trim' => FALSE,
           'title_class' => '',
           'title_link' => 'content',
           'title_style' => '_none',
+          'trim_length' => 50,
         ),
         'type' => 'title_linked',
         'weight' => 3,
@@ -5042,9 +5080,11 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
         'label' => 'hidden',
         'module' => 'title',
         'settings' => array(
+          'enable_trim' => FALSE,
           'title_class' => '',
           'title_link' => 'content',
           'title_style' => '_none',
+          'trim_length' => 50,
         ),
         'type' => 'title_linked',
         'weight' => 2,
@@ -5053,9 +5093,11 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
         'label' => 'hidden',
         'module' => 'title',
         'settings' => array(
+          'enable_trim' => FALSE,
           'title_class' => '',
           'title_link' => 'content',
           'title_style' => '_none',
+          'trim_length' => 50,
         ),
         'type' => 'title_linked',
         'weight' => 3,
@@ -5070,9 +5112,11 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
         'label' => 'hidden',
         'module' => 'title',
         'settings' => array(
+          'enable_trim' => FALSE,
           'title_class' => '',
           'title_link' => 'content',
           'title_style' => '_none',
+          'trim_length' => 50,
         ),
         'type' => 'title_linked',
         'weight' => 2,
@@ -5081,9 +5125,11 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
         'label' => 'hidden',
         'module' => 'title',
         'settings' => array(
+          'enable_trim' => FALSE,
           'title_class' => '',
           'title_link' => 'content',
           'title_style' => '_none',
+          'trim_length' => 50,
         ),
         'type' => 'title_linked',
         'weight' => 4,
@@ -5092,9 +5138,11 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
         'label' => 'hidden',
         'module' => 'title',
         'settings' => array(
+          'enable_trim' => FALSE,
           'title_class' => '',
           'title_link' => 'content',
           'title_style' => '_none',
+          'trim_length' => 50,
         ),
         'type' => 'title_linked',
         'weight' => 2,
@@ -5121,9 +5169,11 @@ Choose <strong>either</strong> Event <strong>or</strong> hobby - not both! Rule 
         'label' => 'hidden',
         'module' => 'title',
         'settings' => array(
+          'enable_trim' => FALSE,
           'title_class' => '',
           'title_link' => 'content',
           'title_style' => '_none',
+          'trim_length' => 50,
         ),
         'type' => 'title_linked',
         'weight' => 3,

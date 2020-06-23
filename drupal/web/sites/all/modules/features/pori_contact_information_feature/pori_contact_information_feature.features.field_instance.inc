@@ -427,7 +427,9 @@ function pori_contact_information_feature_field_default_field_instances() {
       'person_card' => array(
         'label' => 'hidden',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 15,
       ),

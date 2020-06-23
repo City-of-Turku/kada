@@ -19,6 +19,7 @@ function pori_contact_information_feature_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_activity_unit';
   $facet->enabled = TRUE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -68,6 +69,7 @@ function pori_contact_information_feature_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_branch';
   $facet->enabled = TRUE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',
@@ -117,6 +119,7 @@ function pori_contact_information_feature_facetapi_default_facet_settings() {
   $facet->realm = 'block';
   $facet->facet = 'field_unit';
   $facet->enabled = TRUE;
+  $facet->hash = '0';
   $facet->settings = array(
     'weight' => 0,
     'widget' => 'facetapi_links',

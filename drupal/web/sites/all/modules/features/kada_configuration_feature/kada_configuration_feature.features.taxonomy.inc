@@ -19,6 +19,8 @@ function kada_configuration_feature_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 0,
+      'base_i18n_mode' => 0,
+      'base_language' => 'und',
     ),
     'district' => array(
       'name' => 'District',
@@ -29,6 +31,8 @@ function kada_configuration_feature_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 1,
+      'base_i18n_mode' => 1,
+      'base_language' => 'und',
     ),
     'keywords' => array(
       'name' => 'Keywords',
@@ -39,6 +43,8 @@ function kada_configuration_feature_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 0,
+      'base_i18n_mode' => 0,
+      'base_language' => 'und',
     ),
     'municipality' => array(
       'name' => 'Municipality',
@@ -49,6 +55,8 @@ function kada_configuration_feature_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 1,
+      'base_i18n_mode' => 1,
+      'base_language' => 'und',
     ),
     'service_classification' => array(
       'name' => 'Service classification',
@@ -59,6 +67,8 @@ function kada_configuration_feature_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 0,
+      'base_i18n_mode' => 0,
+      'base_language' => 'und',
     ),
     'target_audience' => array(
       'name' => 'Target audience',
@@ -69,6 +79,8 @@ function kada_configuration_feature_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 1,
+      'base_i18n_mode' => 1,
+      'base_language' => 'und',
     ),
     'theme' => array(
       'name' => 'Theme',
@@ -79,6 +91,8 @@ function kada_configuration_feature_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 1,
+      'base_i18n_mode' => 1,
+      'base_language' => 'und',
     ),
   );
 }

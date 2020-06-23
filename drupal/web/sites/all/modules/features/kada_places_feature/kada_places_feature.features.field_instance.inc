@@ -1481,9 +1481,11 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'title',
         'settings' => array(
+          'enable_trim' => FALSE,
           'title_class' => 'waste-unit-detail',
           'title_link' => '',
           'title_style' => 'div',
+          'trim_length' => 50,
         ),
         'type' => 'title_linked',
         'weight' => 2,
@@ -1556,9 +1558,11 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'title',
         'settings' => array(
+          'enable_trim' => FALSE,
           'title_class' => '',
           'title_link' => '',
           'title_style' => '',
+          'trim_length' => 50,
         ),
         'type' => 'title_linked',
         'weight' => 2,
@@ -1760,14 +1764,18 @@ function kada_places_feature_field_default_field_instances() {
       'accordion' => array(
         'label' => 'inline',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 4,
       ),
       'default' => array(
         'label' => 'inline',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 6,
       ),
@@ -1780,7 +1788,9 @@ function kada_places_feature_field_default_field_instances() {
       'map' => array(
         'label' => 'inline',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 4,
       ),
@@ -1806,7 +1816,9 @@ function kada_places_feature_field_default_field_instances() {
       'waste_search' => array(
         'label' => 'hidden',
         'module' => 'link',
-        'settings' => array(),
+        'settings' => array(
+          'custom_title' => '',
+        ),
         'type' => 'link_default',
         'weight' => 6,
       ),
@@ -1901,9 +1913,11 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'title',
         'settings' => array(
+          'enable_trim' => FALSE,
           'title_class' => '',
           'title_link' => '',
           'title_style' => 'h3',
+          'trim_length' => 50,
         ),
         'type' => 'title_linked',
         'weight' => 0,
@@ -1912,9 +1926,11 @@ function kada_places_feature_field_default_field_instances() {
         'label' => 'hidden',
         'module' => 'title',
         'settings' => array(
+          'enable_trim' => FALSE,
           'title_class' => '',
           'title_link' => '',
           'title_style' => 'h3',
+          'trim_length' => 50,
         ),
         'type' => 'title_linked',
         'weight' => 0,

@@ -19,6 +19,8 @@ function pori_waste_search_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 4,
+      'base_i18n_mode' => 4,
+      'base_language' => 'und',
     ),
     'waste_type' => array(
       'name' => 'Waste',
@@ -29,6 +31,8 @@ function pori_waste_search_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 4,
+      'base_i18n_mode' => 4,
+      'base_language' => 'und',
     ),
   );
 }

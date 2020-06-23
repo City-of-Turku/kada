@@ -26,6 +26,9 @@ function kada_events_base_feature_default_rules_configuration() {
         { "BATCH LOOP" : {
             "USING" : { "list" : [ "node:relation-super-event-node" ] },
             "ITEM" : { "relation_event" : "Relation event" },
+            "BATCH_NAME" : null,
+            "PROGRESSIVE" : null,
+            "REDIRECT_PATH" : null,
             "DO" : [
               { "CONDITIONAL" : [
                   {
@@ -294,6 +297,9 @@ function kada_events_base_feature_default_rules_configuration() {
                 { "BATCH LOOP" : {
                     "USING" : { "list" : [ "node:field-date-repeat" ] },
                     "ITEM" : { "repeate_date" : "Repeate date" },
+                    "BATCH_NAME" : null,
+                    "PROGRESSIVE" : null,
+                    "REDIRECT_PATH" : null,
                     "DO" : [
                       { "component_rules_create_repeating_event_skeleton" : {
                           "original_event" : [ "node" ],
@@ -307,6 +313,9 @@ function kada_events_base_feature_default_rules_configuration() {
                 { "BATCH LOOP" : {
                     "USING" : { "list" : [ "node:field-date-repeat-extra" ] },
                     "ITEM" : { "extra_repeat_date" : "Extra repeat date" },
+                    "BATCH_NAME" : null,
+                    "PROGRESSIVE" : null,
+                    "REDIRECT_PATH" : null,
                     "DO" : [
                       { "component_rules_create_repeating_event_skeleton" : {
                           "original_event" : [ "node" ],

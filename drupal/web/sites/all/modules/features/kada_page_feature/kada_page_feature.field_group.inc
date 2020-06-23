@@ -72,7 +72,6 @@ function kada_page_feature_field_group_info() {
       16 => 'language',
       17 => 'title',
       18 => 'field_places_title',
-
     ),
     'format_type' => 'tab',
     'format_settings' => array(

@@ -19,6 +19,8 @@ function kada_contact_information_feature_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 0,
+      'base_i18n_mode' => 0,
+      'base_language' => 'und',
     ),
     'political_party' => array(
       'name' => 'Political party',
@@ -29,6 +31,8 @@ function kada_contact_information_feature_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 0,
+      'base_i18n_mode' => 0,
+      'base_language' => 'und',
     ),
     'trust_unit' => array(
       'name' => 'Trust unit',
@@ -39,6 +43,8 @@ function kada_contact_information_feature_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 0,
+      'base_i18n_mode' => 0,
+      'base_language' => 'und',
     ),
     'trustee_role' => array(
       'name' => 'Trustee role',
@@ -49,6 +55,8 @@ function kada_contact_information_feature_taxonomy_default_vocabularies() {
       'weight' => 0,
       'language' => 'und',
       'i18n_mode' => 0,
+      'base_i18n_mode' => 0,
+      'base_language' => 'und',
     ),
   );
 }

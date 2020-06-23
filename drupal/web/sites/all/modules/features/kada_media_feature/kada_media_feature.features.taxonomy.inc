@@ -19,6 +19,8 @@ function kada_media_feature_taxonomy_default_vocabularies() {
       'weight' => -5,
       'language' => 'und',
       'i18n_mode' => 0,
+      'base_i18n_mode' => 0,
+      'base_language' => 'und',
     ),
     'scald_tags' => array(
       'name' => 'Scald tags',
@@ -29,6 +31,8 @@ function kada_media_feature_taxonomy_default_vocabularies() {
       'weight' => -5,
       'language' => 'und',
       'i18n_mode' => 0,
+      'base_i18n_mode' => 0,
+      'base_language' => 'und',
     ),
   );
 }
