@@ -134,7 +134,7 @@ function pori_configuration_strongarm() {
     ),
     'popup_find_more_button_message' => 'Lisää tietoa',
     'popup_hide_button_message' => 'Piilota',
-    'popup_link' => 'https://www.visitpori.fi/tietosuojaseloste',
+    'popup_link' => 'https://www.visitpori.fi/hyva-tietaa/tietosuojaselosteet/evasteet',
     'popup_link_new_window' => 1,
     'popup_position' => TRUE,
     'use_bare_css' => 0,
