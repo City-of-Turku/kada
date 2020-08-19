@@ -856,6 +856,7 @@ function kada_some_content_feature_feeds_importer_default() {
         'request_timeout' => NULL,
         'auto_scheme' => 'http',
         'accept_invalid_cert' => FALSE,
+        'cache_http_result' => TRUE,
       ),
     ),
     'parser' => array(
@@ -1024,7 +1025,7 @@ function kada_some_content_feature_feeds_importer_default() {
     ),
     'content_type' => 'feed_import_youtube_channel',
     'update' => 0,
-    'import_period' => '0',
+    'import_period' => '10800',
     'expire_period' => 3600,
     'import_on_create' => 1,
     'process_in_background' => 0,

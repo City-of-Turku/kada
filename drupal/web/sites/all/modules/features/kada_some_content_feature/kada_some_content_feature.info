@@ -9,6 +9,7 @@ dependencies[] = domain
 dependencies[] = ds
 dependencies[] = elysia_cron
 dependencies[] = entity
+dependencies[] = fe_block
 dependencies[] = features
 dependencies[] = feeds
 dependencies[] = feeds_ex

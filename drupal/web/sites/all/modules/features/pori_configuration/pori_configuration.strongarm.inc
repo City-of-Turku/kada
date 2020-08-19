@@ -92,8 +92,8 @@ function pori_configuration_strongarm() {
   $strongarm->name = 'eu_cookie_compliance';
   $strongarm->value = array(
     'popup_enabled' => 1,
-    'method' => 'default',
-    'info_template' => 'legacy',
+    'method' => 'opt_in',
+    'info_template' => 'new',
     'cookie_categories' => 'facebook|Facebook Pixel|My description',
     'enable_save_preferences_button' => 1,
     'save_preferences_button_label' => 'Save preferences',
@@ -103,22 +103,22 @@ function pori_configuration_strongarm() {
     'disabled_javascripts' => '',
     'whitelisted_cookies' => '',
     'consent_storage_method' => 'do_not_store',
-    'popup_clicking_confirmation' => 0,
+    'popup_clicking_confirmation' => FALSE,
     'popup_info' => array(
-      'value' => '<h2>Evästeiden käyttö</h2><p>Hyödynnämme evästeitä, jotta voimme palvella sinua jatkossa paremmin. Käytämme tätä tietoa analytiikan,&nbsp;sivujen käyttökokemuksen parantamiseen ja kohdennetun markkinoinnin suorittamiseen.&nbsp;Jatkamalla sivuston käyttöä hyväksyt evästeiden käytön.</p>',
+      'value' => '<h2>Evästeiden käyttö</h2><p>Hyödynnämme evästeitä, jotta voimme palvella sinua jatkossa paremmin. Käytämme tätä tietoa analytiikan ja sivujen käyttökokemuksen parantamiseen. Suostumuksellasi käytämme evästeitä myös kohdennetun markkinoinnin suorittamiseen.</p>',
       'format' => 'wysiwyg',
     ),
     'use_mobile_message' => 1,
     'mobile_popup_info' => array(
-      'value' => '<h2>Evästeiden käyttö</h2><p>Hyödynnämme evästeitä, jotta voimme palvella sinua jatkossa paremmin. Jatkamalla sivuston käyttöä hyväksyt evästeiden käytön.</p>',
+      'value' => '<h2>Evästeiden käyttö</h2><p>Hyödynnämme evästeitä, jotta voimme palvella sinua jatkossa paremmin. Suostumuksellasi käytämme evästeitä myös kohdennetun markkinoinnin suorittamiseen.</p>',
       'format' => 'wysiwyg',
     ),
     'mobile_breakpoint' => '600',
     'popup_agree_button_message' => 'Hyväksyn',
-    'show_disagree_button' => 1,
+    'show_disagree_button' => TRUE,
     'popup_disagree_button_message' => 'Lisätietoja',
     'disagree_button_label' => 'Ei, kiitos',
-    'withdraw_enabled' => FALSE,
+    'withdraw_enabled' => 0,
     'withdraw_button_on_info_popup' => 0,
     'withdraw_message' => array(
       'value' => '<h2>Evästeiden käyttö</h2><p>Hyödynnämme evästeitä, jotta voimme palvella sinua jatkossa paremmin. Käytämme tätä tietoa analytiikan,&nbsp;sivujen käyttökokemuksen parantamiseen ja kohdennetun markkinoinnin suorittamiseen.&nbsp;Jatkamalla sivuston käyttöä hyväksyt evästeiden käytön.</p>',
@@ -146,7 +146,7 @@ function pori_configuration_strongarm() {
     'popup_delay' => '500',
     'disagree_do_not_show_popup' => 0,
     'reload_page' => 0,
-    'popup_scrolling_confirmation' => 0,
+    'popup_scrolling_confirmation' => FALSE,
     'cookie_name' => '',
     'domains_option' => '0',
     'domains_list' => 'https://visitpori.fi
