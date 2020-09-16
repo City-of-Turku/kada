@@ -121,7 +121,6 @@ features[variable][] = content_lock_allowed_node_types
 features[variable][] = content_lock_unload_js
 features[variable][] = content_lock_unload_js_message
 features[variable][] = content_lock_unload_js_message_enable
-features[variable][] = eu_cookie_compliance
 features[variable][] = eu_cookie_compliance_cookie_lifetime
 features[variable][] = eu_cookie_compliance_domain
 features[variable][] = eu_cookie_compliance_domain_all_sites
