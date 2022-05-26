@@ -86,7 +86,7 @@ GEM
       hitimes
     toolkit (2.6.0)
       sass (~> 3.3)
-    yajl-ruby (1.2.1)
+    yajl-ruby (1.4.3)
 
 PLATFORMS
   ruby
